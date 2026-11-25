@@ -1,0 +1,332 @@
+<!doctype html>
+<html lang="en" class="no-js">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Mathlib gap analysis for the IUT prerequisites: IUT in Lean</title>
+<meta name="description" content="The project document docs/MATHLIB_GAP_ANALYSIS.md, rendered.">
+<meta name="color-scheme" content="light dark">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="assets/style.css">
+<script src="assets/site.js"></script>
+</head>
+<body>
+<a class="skip" href="#content">Skip to content</a>
+<header class="site-header">
+<nav class="navbar" aria-label="Main">
+<a class="brand" href="index.html"><svg class="logo" viewBox="0 0 32 32" aria-hidden="true" focusable="false"><circle cx="16" cy="16" r="14" fill="none" stroke="currentColor" stroke-width="2.5"/><text x="16" y="21.5" text-anchor="middle" font-size="16" font-family="Georgia, serif" fill="currentColor">Θ</text></svg><span>Inter-universal Teichmüller Theory <small>in Lean</small></span></a>
+<ul class="tabs" id="site-tabs">
+<li class="sec"><button type="button" class="sec-btn" aria-expanded="false" aria-controls="nav-learn">Learn<svg class="chev" viewBox="0 0 12 12" aria-hidden="true" focusable="false"><path d="M2.5 4.5 6 8l3.5-3.5" fill="none" stroke="currentColor" stroke-width="1.6"/></svg></button><ul class="sec-list" id="nav-learn"><li><a href="background.html"><b>Background</b><span>The four papers, the two central statements, the abc conjecture, and a glossary.</span></a></li><li><a href="critical-path.html"><b>Critical path</b><span>The chain from IUT III, Corollary 3.12 to abc, and what is checked at each step.</span></a></li><li><a href="corollary-3-12.html"><b>Corollary 3.12</b><span>The step by step analysis and the open obligations.</span></a></li><li><a href="dispute.html"><b>The dispute</b><span>The Scholze–Stix objections, the responses, and the formal obligations.</span></a></li></ul></li>
+<li class="sec"><button type="button" class="sec-btn" aria-expanded="false" aria-controls="nav-library">Library<svg class="chev" viewBox="0 0 12 12" aria-hidden="true" focusable="false"><path d="M2.5 4.5 6 8l3.5-3.5" fill="none" stroke="currentColor" stroke-width="1.6"/></svg></button><ul class="sec-list" id="nav-library"><li><a href="statements.html"><b>Statements</b><span>Every statement of the index and every curated record, with status and a filter.</span></a></li><li><a href="theorems.html"><b>Highlights</b><span>Selected Lean results in plain language, with their statements.</span></a></li><li><a href="reference.html"><b>Reference</b><span>Every Lean module and public declaration, with its docstring and a filter.</span></a></li><li><a href="documents.html"><b>Documents</b><span>The project documents, rendered.</span></a></li></ul></li>
+<li class="sec"><button type="button" class="sec-btn" aria-expanded="false" aria-controls="nav-status">Status<svg class="chev" viewBox="0 0 12 12" aria-hidden="true" focusable="false"><path d="M2.5 4.5 6 8l3.5-3.5" fill="none" stroke="currentColor" stroke-width="1.6"/></svg></button><ul class="sec-list" id="nav-status"><li><a href="status.html"><b>Status</b><span>The dashboard: statements formalized and proved in full, and fragments with their parents.</span></a></li><li><a href="doc-OPEN_PROBLEMS.html"><b>Open problems</b><span>Every unresolved obligation, grouped by kind, with its source page.</span></a></li><li><a href="roadmap.html"><b>Roadmap</b><span>The plan by stage, the prerequisites and the external projects.</span></a></li><li><a href="obstacles.html"><b>Obstacles</b><span>The countermodel catalog, what each entry refutes, and the obligations.</span></a></li><li><a href="milestones.html"><b>Milestones</b><span>The commits in the history of the built commit.</span></a></li></ul></li>
+<li class="sec"><button type="button" class="sec-btn" aria-expanded="false" aria-controls="nav-take-part">Take part<svg class="chev" viewBox="0 0 12 12" aria-hidden="true" focusable="false"><path d="M2.5 4.5 6 8l3.5-3.5" fill="none" stroke="currentColor" stroke-width="1.6"/></svg></button><ul class="sec-list" id="nav-take-part"><li><a href="procedure.html"><b>Procedure</b><span>What each check does and does not establish, and how to contribute.</span></a></li></ul></li>
+</ul>
+<div class="nav-end"><a class="source" href="https://github.com/adamrsophie/IUTLean">Source</a></div>
+</nav>
+</header>
+<div class="status-strip" role="note"><div class="wrap"><strong>Neutral status.</strong> The abc conjecture is not proved here. The project neither assumes that inter-universal Teichmüller theory is correct nor that it is wrong; a countermodel to a simplified abstraction is not a counterexample to the papers.</div></div>
+<div class="page wrap with-toc">
+<aside class="toc-col" aria-label="Table of contents"><details class="toc" open><summary>On this page</summary><nav aria-label="On this page"><ul><li class="l2"><a href="#most-cited-outside-references">Most cited outside references</a></li><li class="l2"><a href="#summary-table">Summary table</a></li><li class="l2"><a href="#areas">Areas</a></li><li class="l3"><a href="#algebraic-number-fields-and-their-completions">Algebraic number fields and their completions</a></li><li class="l3"><a href="#local-and-global-class-field-theory">Local and global class field theory</a></li><li class="l3"><a href="#algebraic-closures-and-galois-theory-finite-and-infinite">Algebraic closures and Galois theory (finite and infinite)</a></li><li class="l3"><a href="#profinite-groups-and-continuous-cohomology">Profinite groups and continuous cohomology</a></li><li class="l3"><a href="#etale-fundamental-groups">Etale fundamental groups</a></li><li class="l3"><a href="#tempered-fundamental-groups">Tempered fundamental groups</a></li><li class="l3"><a href="#algebraic-and-arithmetic-geometry-schemes-stacks-orbicurves">Algebraic and arithmetic geometry: schemes, stacks, orbicurves</a></li><li class="l3"><a href="#hyperbolic-curves">Hyperbolic curves</a></li><li class="l3"><a href="#grothendiecks-anabelian-geometry-absolute-and-mono-anabelian-reconstruction-category-theoretic-reconstruction">Grothendieck&#x27;s anabelian geometry, absolute and mono-anabelian reconstruction, category-theoretic reconstruction</a></li><li class="l3"><a href="#frobenioids">Frobenioids</a></li><li class="l3"><a href="#kummer-theory">Kummer theory</a></li><li class="l3"><a href="#tate-curves-and-tate-uniformization">Tate curves and Tate uniformization</a></li><li class="l3"><a href="#elliptic-curves-with-level-structures">Elliptic curves with level structures</a></li><li class="l3"><a href="#etale-theta-functions">Etale theta functions</a></li><li class="l3"><a href="#hodge-arakelov-theory">Hodge-Arakelov theory</a></li><li class="l3"><a href="#valuations-and-normalized-absolute-values">Valuations and normalized absolute values</a></li><li class="l3"><a href="#nonarchimedean-analysis">Nonarchimedean analysis</a></li><li class="l3"><a href="#p-adic-logarithms-and-exponentials">p-adic logarithms and exponentials</a></li><li class="l3"><a href="#arithmetic-divisors">Arithmetic divisors</a></li><li class="l3"><a href="#arakelov-degrees">Arakelov degrees</a></li><li class="l3"><a href="#heights-and-discriminants">Heights and discriminants</a></li><li class="l3"><a href="#ramification-theory-and-the-different">Ramification theory and the different</a></li><li class="l3"><a href="#haar-measures-and-log-volumes">Haar measures and log-volumes</a></li><li class="l3"><a href="#tensor-products-of-local-fields">Tensor products of local fields</a></li><li class="l3"><a href="#diophantine-geometry">Diophantine geometry</a></li><li class="l3"><a href="#szpiro-type-and-vojta-type-inequalities">Szpiro-type and Vojta-type inequalities</a></li><li class="l3"><a href="#set-theoretic-foundations-and-universe-management">Set-theoretic foundations and universe management</a></li><li class="l2"><a href="#rough-dependency-order">Rough dependency order</a></li><li class="l2"><a href="#verified-prerequisites">Verified prerequisites</a></li><li class="l2"><a href="#candidates-not-formalized-and-why">Candidates not formalized, and why</a></li><li class="l2"><a href="#external-repository-lana-agentsiut">External repository <code>lana-agents/iut</code></a></li></ul></nav></details></aside>
+<main id="content" tabindex="-1">
+<p class="kicker">Document</p><h1 id="mathlib-gap-analysis-for-the-iut-prerequisites">Mathlib gap analysis for the IUT prerequisites</h1>
+<p>This document lists, for every prerequisite area that the four papers draw on, what the installed Mathlib (tag v4.36.0, Lean 4.36.0) provides, what is missing, and how each part is classified. The same content is in <code>data/prerequisites.json</code>.</p>
+<p>Method. Every Mathlib declaration named below was checked by <code>#check</code> against the installed library, and the file given is the module in which Lean reports it is declared. File paths are relative to <code>.lake/packages/mathlib/Mathlib/</code>. Absence claims come from text searches of the Mathlib sources and are stated with the search used; a failed search is not a proof of absence. Material in other Lean libraries is reported from their README files or file names only; it was not built.</p>
+<p>Classes: (1) exists in Mathlib; (2) derivable from Mathlib; (3) needs substantial new formalization; (4) exists in another verifiable Lean library; (5) needs additional literature; (6) unresolved or disputed claim.</p>
+<p>&quot;Needed first by&quot; uses statement ids of <code>data/statements.json</code>. The mechanical index is not a reading of the papers.</p>
+<h2 id="most-cited-outside-references">Most cited outside references</h2>
+<div class="tablewrap"><table><thead><tr><th scope="col">Key</th><th scope="col">Citations</th><th scope="col">By paper</th><th scope="col">First citing statements (mechanical)</th></tr></thead><tbody><tr><td>[AbsTopIII]</td><td>406</td><td>IUT1: 198, IUT2: 91, IUT3: 99, IUT4: 18</td><td>IUT1.Cor1_2, IUT2.Prop1_2, IUT3.Def1_1, IUT4.Prop1_4</td></tr><tr><td>[EtTh]</td><td>380</td><td>IUT1: 151, IUT2: 167, IUT3: 48, IUT4: 14</td><td>IUT1.Cor1_2, IUT2.Def1_1, IUT3.Rem2_1_1, IUT4.Rem1_10_6</td></tr><tr><td>[FrdI]</td><td>144</td><td>IUT1: 97, IUT2: 20, IUT3: 22, IUT4: 5</td><td>IUT1.Rem3_1_5, IUT2.Prop1_2, IUT3.Rem2_1_1, IUT4.Rem2_3_3</td></tr><tr><td>[SemiAnbd]</td><td>100</td><td>IUT1: 88, IUT2: 9, IUT3: 1, IUT4: 2</td><td>IUT1.ThmB, IUT2.Rem1_4_1, IUT3.Rem2_1_2, IUT4.Rem2_3_3</td></tr><tr><td>[GenEll]</td><td>69</td><td>IUT1: 5, IUT4: 64</td><td>IUT1.Def3_1, IUT4.ThmA</td></tr><tr><td>[FrdII]</td><td>58</td><td>IUT1: 40, IUT2: 13, IUT3: 5</td><td>IUT1.Rem2_5_3, IUT2.Prop1_2, IUT3.Rem2_4_2</td></tr><tr><td>[HASurI]</td><td>36</td><td>IUT1: 10, IUT2: 14, IUT4: 12</td><td>IUT1.Rem4_3_1, IUT2.Rem1_12_5, IUT4.Rem1_10_1</td></tr><tr><td>[AbsTopI]</td><td>34</td><td>IUT1: 28, IUT2: 4, IUT4: 2</td><td>IUT1.Cor1_2, IUT2.Rem1_6_1, IUT4.Rem2_3_5</td></tr><tr><td>[pOrd]</td><td>32</td><td>IUT1: 14, IUT2: 1, IUT3: 4, IUT4: 13</td><td>IUT1.Rem4_3_3, IUT2.Rem3_6_5, IUT3.Rem3_12_3, IUT4.Rem1_10_2</td></tr><tr><td>[AbsTopII]</td><td>27</td><td>IUT1: 17, IUT2: 7, IUT4: 3</td><td>IUT1.Cor1_2, IUT2.Rem1_5_2, IUT4.Rem2_3_5</td></tr><tr><td>[pTeich]</td><td>27</td><td>IUT1: 14, IUT2: 4, IUT3: 3, IUT4: 6</td><td>IUT1.Rem4_3_3, IUT2.Rem1_11_6, IUT3.Rem3_12_3, IUT4.Rem1_10_2</td></tr><tr><td>[AbsAnab]</td><td>25</td><td>IUT1: 13, IUT2: 11, IUT3: 1</td><td>IUT1.Rem1_2_2, IUT2.Prop1_6, IUT3.Cor3_12</td></tr></tbody></table></div>
+<h2 id="summary-table">Summary table</h2>
+<div class="tablewrap"><table><thead><tr><th scope="col">Area</th><th scope="col">Classes</th></tr></thead><tbody><tr><td>Algebraic number fields and their completions</td><td>1, 2</td></tr><tr><td>Local and global class field theory</td><td>3, 4</td></tr><tr><td>Algebraic closures and Galois theory (finite and infinite)</td><td>1</td></tr><tr><td>Profinite groups and continuous cohomology</td><td>1, 3</td></tr><tr><td>Etale fundamental groups</td><td>3, 4</td></tr><tr><td>Tempered fundamental groups</td><td>3, 4, 5</td></tr><tr><td>Algebraic and arithmetic geometry: schemes, stacks, orbicurves</td><td>1, 3, 4</td></tr><tr><td>Hyperbolic curves</td><td>3, 4</td></tr><tr><td>Grothendieck&#x27;s anabelian geometry, absolute and mono-anabelian reconstruction, category-theoretic reconstruction</td><td>3, 5</td></tr><tr><td>Frobenioids</td><td>3, 5</td></tr><tr><td>Kummer theory</td><td>2, 3, 4</td></tr><tr><td>Tate curves and Tate uniformization</td><td>3, 4</td></tr><tr><td>Elliptic curves with level structures</td><td>1, 3, 4</td></tr><tr><td>Etale theta functions</td><td>3, 5</td></tr><tr><td>Hodge-Arakelov theory</td><td>5</td></tr><tr><td>Valuations and normalized absolute values</td><td>1, 2</td></tr><tr><td>Nonarchimedean analysis</td><td>1, 3</td></tr><tr><td>p-adic logarithms and exponentials</td><td>2, 3, 4</td></tr><tr><td>Arithmetic divisors</td><td>2</td></tr><tr><td>Arakelov degrees</td><td>2, 3</td></tr><tr><td>Heights and discriminants</td><td>1, 2, 3, 4, 5</td></tr><tr><td>Ramification theory and the different</td><td>1, 2, 3, 4</td></tr><tr><td>Haar measures and log-volumes</td><td>1, 2, 3</td></tr><tr><td>Tensor products of local fields</td><td>2, 3</td></tr><tr><td>Diophantine geometry</td><td>3, 4, 5</td></tr><tr><td>Szpiro-type and Vojta-type inequalities</td><td>6</td></tr><tr><td>Set-theoretic foundations and universe management</td><td>1, 2, 3, 5</td></tr></tbody></table></div>
+<h2 id="areas">Areas</h2>
+<h3 id="algebraic-number-fields-and-their-completions">Algebraic number fields and their completions</h3>
+<p>Classes: (1) EXISTS_IN_MATHLIB, (2) DERIVABLE_FROM_MATHLIB.</p>
+<p>In Mathlib:</p>
+<ul><li><code>NumberTheory/NumberField/Basic.lean</code>: <code>NumberField</code>, <code>NumberField.RingOfIntegers</code></li><li><code>NumberTheory/NumberField/InfinitePlace/Basic.lean</code>: <code>NumberField.InfinitePlace</code>, <code>NumberField.InfinitePlace.mult</code></li><li><code>NumberTheory/NumberField/Completion/InfinitePlace.lean</code>: <code>NumberField.InfinitePlace.Completion</code></li><li><code>NumberTheory/NumberField/Completion/FinitePlace.lean</code>: <code>NumberField.FinitePlace</code>, <code>NumberField.FinitePlace.mk</code>, <code>NumberField.FinitePlace.equivHeightOneSpectrum</code></li><li><code>RingTheory/DedekindDomain/AdicValuation/Completion.lean</code>: <code>IsDedekindDomain.HeightOneSpectrum.adicCompletion</code>, <code>IsDedekindDomain.HeightOneSpectrum.adicCompletionIntegers</code></li><li><code>RingTheory/DedekindDomain/FiniteAdeleRing.lean</code>: <code>IsDedekindDomain.FiniteAdeleRing</code>, <code>IsDedekindDomain.FiniteAdeleRing.isUnit_iff</code></li><li><code>NumberTheory/NumberField/AdeleRing.lean</code>: <code>NumberField.AdeleRing</code></li><li><code>NumberTheory/NumberField/InfiniteAdeleRing.lean</code>: <code>NumberField.InfiniteAdeleRing</code></li><li><code>NumberTheory/Padics/PadicNumbers.lean</code>: <code>Padic</code></li><li><code>NumberTheory/Padics/PadicIntegers.lean</code>: <code>PadicInt</code></li><li><code>NumberTheory/Padics/Complex.lean</code>: <code>PadicComplex</code></li><li><code>NumberTheory/LocalField/Basic.lean</code>: <code>IsNonarchimedeanLocalField</code></li><li><code>NumberTheory/NumberField/Discriminant/Defs.lean</code>: <code>NumberField.discr</code></li><li><code>NumberTheory/NumberField/Units/DirichletTheorem.lean</code>: <code>NumberField.Units.rank</code>, <code>NumberField.Units.fundSystem</code></li></ul>
+<p>In this project:</p>
+<ul><li><code>IUT/PaperIV/ArithmeticDivisor.lean</code>: <code>IUT.PaperIV.Valuations</code></li><li><code>IUT/Prerequisites/PositiveRationalsZhatUnits.lean</code>: <code>IUT.Prerequisites.Zhat</code>, <code>IUT.Prerequisites.Zhat.toFiniteAdeles</code></li></ul>
+<p>Missing:</p>
+<ul><li>A uniform interface identifying the completion of a number field at a finite place with a finite extension of Q_p as an instance of IsNonarchimedeanLocalField (not searched exhaustively). Classes 2.</li><li>The ring Zhat as a named object; modeled in this project as the product of the adicCompletionIntegers over the primes of Z. Classes 2.</li></ul>
+<p>Needed first by: IUT1.Def3_1, IUT4.Def1_9.</p>
+<p>Read: IUT I Definition 3.1 (a), pages 61 and 62 (a number field containing a square root of -1, an algebraic closure, valuation sets); IUT IV Definition 1.9, pages 21 and 22.</p>
+<h3 id="local-and-global-class-field-theory">Local and global class field theory</h3>
+<p>Classes: (3) NEEDS_SUBSTANTIAL_FORMALIZATION, (4) EXISTS_IN_OTHER_LEAN_LIBRARY.</p>
+<p>In Mathlib:</p>
+<ul><li><code>NumberTheory/LegendreSymbol/QuadraticReciprocity.lean</code>: quadratic reciprocity only</li><li><code>RepresentationTheory/Homological/TateCohomology/Basic.lean</code>: Tate cohomology of finite groups, an ingredient of cohomological class field theory</li></ul>
+<p>Missing:</p>
+<ul><li>Local reciprocity map and existence theorem for p-adic fields. Classes 3, 4.</li><li>Global class field theory (idelic Artin map, reciprocity, existence). Classes 3.</li></ul>
+<p>Other Lean libraries:</p>
+<ul><li><code>lana-agents/local-class-field-theory (dependency pinned by lana-agents/iut)</code>: local reciprocity, the Artin map for p-adic fields and the existence theorem, per its README. Lean 4.32, not built here, cannot be imported.</li></ul>
+<p>Bibliography keys: [NSW].</p>
+<p>A plain text search of the Mathlib sources for &quot;ClassField&quot;, &quot;reciprocity&quot; and &quot;Artin&quot; found no class field theory; the two &quot;ClassField&quot; hits are references, in module docstrings of TateCohomology/Basic.lean and RingTheory/Valuation/Discrete/Basic.lean, to external class field theory projects. Which IUT statements need class field theory was not determined from the pages read; the mechanical index shows [NSW] only in remarks and one example.</p>
+<h3 id="algebraic-closures-and-galois-theory-finite-and-infinite">Algebraic closures and Galois theory (finite and infinite)</h3>
+<p>Classes: (1) EXISTS_IN_MATHLIB.</p>
+<p>In Mathlib:</p>
+<ul><li><code>FieldTheory/Galois/Basic.lean</code>: <code>IsGalois</code>, <code>IsGalois.intermediateFieldEquivSubgroup</code></li><li><code>FieldTheory/IsAlgClosed/AlgebraicClosure.lean</code>: <code>AlgebraicClosure</code></li><li><code>FieldTheory/IsAlgClosed/Basic.lean</code>: <code>IsAlgClosure</code></li><li><code>FieldTheory/AbsoluteGaloisGroup.lean</code>: <code>Field.absoluteGaloisGroup</code>, <code>Field.absoluteGaloisGroupAbelianization</code></li><li><code>FieldTheory/KrullTopology.lean</code>: <code>krullTopology</code></li><li><code>FieldTheory/Galois/Infinite.lean</code>: <code>InfiniteGalois.IntermediateFieldEquivClosedSubgroup</code></li><li><code>NumberTheory/Cyclotomic/Basic.lean</code>: <code>IsCyclotomicExtension</code></li><li><code>RingTheory/RootsOfUnity/Basic.lean</code>: <code>rootsOfUnity</code></li><li><code>RingTheory/RootsOfUnity/PrimitiveRoots.lean</code>: <code>IsPrimitiveRoot</code></li></ul>
+<p>Missing:</p>
+<ul><li>Decomposition and inertia subgroups of absolute Galois groups of number fields at places, in the form used for prime-strips (not searched exhaustively). Classes 2, 3.</li></ul>
+<p>Needed first by: IUT1.Def3_1.</p>
+<p>Infinite Galois theory with the Krull topology and the fundamental theorem for closed subgroups exists. IUT I Definition 3.1 (a), (c), pages 61 and 62 (read), uses the absolute Galois group of a number field and the image of its action on l-torsion points in GL_2(F_l).</p>
+<h3 id="profinite-groups-and-continuous-cohomology">Profinite groups and continuous cohomology</h3>
+<p>Classes: (1) EXISTS_IN_MATHLIB, (3) NEEDS_SUBSTANTIAL_FORMALIZATION.</p>
+<p>In Mathlib:</p>
+<ul><li><code>Topology/Algebra/Category/ProfiniteGrp/Basic.lean</code>: <code>ProfiniteGrp</code></li><li><code>Topology/Algebra/Category/ProfiniteGrp/Completion.lean</code>: <code>ProfiniteGrp.ProfiniteCompletion.completion</code></li><li><code>RepresentationTheory/Homological/ContCohomology/Basic.lean</code>: <code>continuousCohomology</code></li><li><code>RepresentationTheory/Homological/GroupCohomology/Basic.lean</code>: <code>groupCohomology</code></li><li><code>RepresentationTheory/Homological/GroupCohomology/Hilbert90.lean</code>: <code>groupCohomology.H1ofAutOnUnitsUnique</code></li></ul>
+<p>Missing:</p>
+<ul><li>Cyclotomes Hom(Q/Z, M) and cyclotomic rigidity isomorphisms, as in IUT I, Example 5.1 (v), page 127 (read). Classes 3.</li></ul>
+<p>Bibliography keys: [AbsTopIII].</p>
+<p>Needed first by: IUT1.Def3_1, IUT1.Ex5_1.</p>
+<p>IUT I Definition 3.1 (b), page 61 (read), uses profinite etale fundamental groups and the exact sequences of profinite groups 1 to Delta to Pi to G_F to 1.</p>
+<h3 id="etale-fundamental-groups">Etale fundamental groups</h3>
+<p>Classes: (3) NEEDS_SUBSTANTIAL_FORMALIZATION, (4) EXISTS_IN_OTHER_LEAN_LIBRARY.</p>
+<p>In Mathlib:</p>
+<ul><li><code>CategoryTheory/Galois/Basic.lean</code>: <code>CategoryTheory.PreGaloisCategory</code>, <code>CategoryTheory.GaloisCategory</code>, <code>CategoryTheory.PreGaloisCategory.FiberFunctor</code></li><li><code>CategoryTheory/Galois/IsFundamentalgroup.lean</code>: <code>CategoryTheory.PreGaloisCategory.IsFundamentalGroup</code></li><li><code>AlgebraicGeometry/Morphisms/Etale.lean</code>: <code>AlgebraicGeometry.Etale</code></li><li><code>AlgebraicGeometry/Sites/Etale.lean</code>: <code>AlgebraicGeometry.Scheme.etaleTopology</code></li></ul>
+<p>Missing:</p>
+<ul><li>The etale fundamental group of a connected scheme (finite etale covers form a Galois category). Classes 3, 4.</li><li>Arithmetic fundamental groups of hyperbolic orbicurves over number fields and local fields, with the outer Galois action. Classes 3.</li></ul>
+<p>Other Lean libraries:</p>
+<ul><li><code>lana-agents/pi1 (dependency pinned by lana-agents/iut)</code>: etale fundamental group of a connected scheme via Galois categories, per its README. Lean 4.32, not built here, cannot be imported.</li></ul>
+<p>Bibliography keys: [AbsTopI], [AbsTopII], [AbsTopIII].</p>
+<p>Needed first by: IUT1.Def3_1.</p>
+<p>Mathlib has the abstract Galois category framework but no etale fundamental group of a scheme was found by name search. IUT I Definition 3.1 (b), page 61 (read), uses the etale fundamental groups of the curve, of the orbicurve, and of their geometric base changes.</p>
+<h3 id="tempered-fundamental-groups">Tempered fundamental groups</h3>
+<p>Classes: (3) NEEDS_SUBSTANTIAL_FORMALIZATION, (4) EXISTS_IN_OTHER_LEAN_LIBRARY, (5) NEEDS_ADDITIONAL_LITERATURE.</p>
+<p>In Mathlib: nothing found.</p>
+<p>Missing:</p>
+<ul><li>Andre&#x27;s tempered fundamental group of a p-adic hyperbolic curve and its relation to semi-graphs of anabelioids. Classes 3, 4, 5.</li></ul>
+<p>Other Lean libraries:</p>
+<ul><li><code>lana-agents/tempered-fundamental-groups (dependency pinned by lana-agents/iut)</code>: tempered fundamental groups over integral models, per its README (algebraic models instead of rigid or Berkovich geometry). Lean 4.32, not built here, cannot be imported; agreement with the definition used in [SemiAnbd] and [EtTh] not checked.</li></ul>
+<p>Bibliography keys: [SemiAnbd], [EtTh].</p>
+<p>Needed first by: IUT1.ThmB, IUT2.Rem1_4_1.</p>
+<p>A search for &quot;tempered&quot; in the Mathlib sources finds only tempered distributions. The needed_by entries are from the mechanical index.</p>
+<h3 id="algebraic-and-arithmetic-geometry-schemes-stacks-orbicurves">Algebraic and arithmetic geometry: schemes, stacks, orbicurves</h3>
+<p>Classes: (1) EXISTS_IN_MATHLIB, (3) NEEDS_SUBSTANTIAL_FORMALIZATION, (4) EXISTS_IN_OTHER_LEAN_LIBRARY.</p>
+<p>In Mathlib:</p>
+<ul><li><code>AlgebraicGeometry/Scheme.lean</code>: <code>AlgebraicGeometry.Scheme</code>, <code>AlgebraicGeometry.Scheme.Hom</code></li><li><code>AlgebraicGeometry/Morphisms/Smooth.lean</code>: <code>AlgebraicGeometry.SmoothOfRelativeDimension</code></li><li><code>CategoryTheory/Sites/Descent/DescentData.lean</code>: <code>CategoryTheory.Pseudofunctor.IsStackFor</code></li></ul>
+<p>Missing:</p>
+<ul><li>Algebraic stacks, Deligne-Mumford stacks, and one-dimensional orbifolds (orbicurves) over a field; stack-theoretic quotients by finite group actions. Classes 3.</li><li>Moduli stack of elliptic curves and its coarse space. Classes 3.</li></ul>
+<p>Other Lean libraries:</p>
+<ul><li><code>lana-agents/orbicurve-cores (dependency pinned by lana-agents/iut)</code>: cores of once-punctured elliptic curves, [CanLift] Proposition 2.7, per its README. Lean 4.32, not built here, cannot be imported.</li><li><code>lana-agents/curves-jacobian (dependency pinned by lana-agents/iut)</code>: smooth proper curves as schemes, Jacobians, per its README. Lean 4.32, not built here, cannot be imported.</li></ul>
+<p>Bibliography keys: [CanLift], [AbsTopIII], [EtTh].</p>
+<p>Needed first by: IUT1.Def3_1.</p>
+<p>Mathlib has schemes and a categorical notion of stack for a pseudofunctor; no algebraic stacks or orbicurves were found. IUT I Definition 3.1 (b), (d), pages 61 and 62 (read), forms a hyperbolic orbicurve as a stack-theoretic quotient by the involution -1, and uses hyperbolic orbicurves of type (1, l-tors) with a K-core ([EtTh] Definition 2.1, [CanLift] Remark 2.1.1).</p>
+<h3 id="hyperbolic-curves">Hyperbolic curves</h3>
+<p>Classes: (3) NEEDS_SUBSTANTIAL_FORMALIZATION, (4) EXISTS_IN_OTHER_LEAN_LIBRARY.</p>
+<p>In Mathlib: nothing found.</p>
+<p>Missing:</p>
+<ul><li>Smooth proper curves, genus, hyperbolicity 2g-2+r&gt;0, stable reduction, and their arithmetic fundamental groups. Classes 3, 4.</li></ul>
+<p>Other Lean libraries:</p>
+<ul><li><code>lana-agents/curves-jacobian (dependency pinned by lana-agents/iut)</code>: smooth proper curves, per its README. Lean 4.32, not built here, cannot be imported.</li><li><code>lana-agents/belyi (dependency pinned by lana-agents/iut)</code>: Belyi&#x27;s theorem, per its README. Lean 4.32, not built here, cannot be imported.</li></ul>
+<p>Bibliography keys: [AbsAnab], [AbsTopIII].</p>
+<p>Needed first by: IUT1.Def3_1.</p>
+<p>A plain text search for &quot;hyperbolic curve&quot; and declaration name searches for &quot;genus&quot; and &quot;IsCurve&quot; in Mathlib found nothing relevant. IUT I Definition 3.1 (b), page 61 (read), takes a once-punctured elliptic curve, a hyperbolic curve of type (1,1), with stable reduction at all nonarchimedean valuations.</p>
+<h3 id="grothendiecks-anabelian-geometry-absolute-and-mono-anabelian-reconstruction-category-theoretic-reconstruction">Grothendieck&#x27;s anabelian geometry, absolute and mono-anabelian reconstruction, category-theoretic reconstruction</h3>
+<p>Classes: (3) NEEDS_SUBSTANTIAL_FORMALIZATION, (5) NEEDS_ADDITIONAL_LITERATURE.</p>
+<p>In Mathlib: nothing found.</p>
+<p>Missing:</p>
+<ul><li>Anabelian reconstruction theorems of [AbsTopI], [AbsTopII], [AbsTopIII], [AbsAnab], [CombGC], [SemiAnbd]. Classes 3, 5.</li><li>Mono-anabelian reconstruction algorithms (for example [AbsTopIII], Theorem 1.9, cited on IUT I page 127, read). Classes 3, 5.</li></ul>
+<p>Other Lean libraries:</p>
+<ul><li><code>lana-agents/iut (Iut/Anabelian, Iut/Reconstruction)</code>: anabelian objects and reconstruction material, per its README. Lean 4.32, not built here, cannot be imported.</li></ul>
+<p>Bibliography keys: [AbsTopIII], [AbsTopI], [AbsTopII], [AbsAnab], [CombGC], [SemiAnbd].</p>
+<p>Needed first by: IUT1.Cor1_2, IUT2.Prop1_2, IUT3.Def1_1, IUT4.Prop1_4.</p>
+<p>[AbsTopIII] is the most cited outside reference (406 citations counting all four papers). The needed_by entries are from the mechanical index.</p>
+<h3 id="frobenioids">Frobenioids</h3>
+<p>Classes: (3) NEEDS_SUBSTANTIAL_FORMALIZATION, (5) NEEDS_ADDITIONAL_LITERATURE.</p>
+<p>In Mathlib: nothing found.</p>
+<p>Missing:</p>
+<ul><li>The general theory of Frobenioids [FrdI] and poly-Frobenioids [FrdII]. Classes 3, 5.</li></ul>
+<p>Other Lean libraries:</p>
+<ul><li><code>lana-agents/iut (Iut/Frobenioid)</code>: Frobenioid material, per its README. Lean 4.32, not built here, cannot be imported.</li></ul>
+<p>Bibliography keys: [FrdI], [FrdII].</p>
+<p>Needed first by: IUT1.Rem3_1_5, IUT2.Prop1_2, IUT3.Rem2_1_1, IUT4.Rem2_3_3.</p>
+<p>No declaration named Frobenioid exists in Mathlib. IUT I page 61 (read) states that Theta-Hodge theaters are formulated via the theory of Frobenioids. The needed_by entries are from the mechanical index.</p>
+<h3 id="kummer-theory">Kummer theory</h3>
+<p>Classes: (2) DERIVABLE_FROM_MATHLIB, (3) NEEDS_SUBSTANTIAL_FORMALIZATION, (4) EXISTS_IN_OTHER_LEAN_LIBRARY.</p>
+<p>In Mathlib:</p>
+<ul><li><code>FieldTheory/KummerExtension.lean</code>: <code>autAdjoinRootXPowSubC</code></li><li><code>RepresentationTheory/Homological/GroupCohomology/Hilbert90.lean</code>: <code>groupCohomology.H1ofAutOnUnitsUnique</code></li></ul>
+<p>Missing:</p>
+<ul><li>The Kummer map from the multiplicative group into H^1(G, mu_n) and its profinite limit (Kummer classes), as in IUT I page 127 (read). Classes 2, 3, 4.</li></ul>
+<p>Other Lean libraries:</p>
+<ul><li><code>lana-agents/continuous-kummer-theory (dependency pinned by lana-agents/iut)</code>: continuous Kummer theory for local fields, per its README. Lean 4.32, not built here, cannot be imported.</li></ul>
+<p>Bibliography keys: [AbsTopIII].</p>
+<p>Needed first by: IUT1.Ex5_1.</p>
+<p>Mathlib has cyclic Kummer extensions and Hilbert 90; no declaration with &quot;Kummer&quot; in its name was found for the Kummer map.</p>
+<h3 id="tate-curves-and-tate-uniformization">Tate curves and Tate uniformization</h3>
+<p>Classes: (3) NEEDS_SUBSTANTIAL_FORMALIZATION, (4) EXISTS_IN_OTHER_LEAN_LIBRARY.</p>
+<p>In Mathlib:</p>
+<ul><li><code>NumberTheory/ModularForms/JacobiTheta/OneVariable.lean</code>: <code>jacobiTheta</code></li><li><code>NumberTheory/ModularForms/JacobiTheta/TwoVariable.lean</code>: <code>jacobiTheta₂</code></li></ul>
+<p>Missing:</p>
+<ul><li>The Tate curve over a complete nonarchimedean field and q-uniformization. Classes 3, 4.</li></ul>
+<p>Other Lean libraries:</p>
+<ul><li><code>lana-agents/tate-curves-theta (dependency pinned by lana-agents/iut)</code>: q-uniformization and the formal algebraic theta function, per its README. Lean 4.32, not built here, cannot be imported; the README claims it is sorry-free at its tip, not checked here.</li></ul>
+<p>Bibliography keys: [EtTh].</p>
+<p>Needed first by: IUT1.Cor1_2, IUT2.Def1_1.</p>
+<p>Only complex analytic Jacobi theta functions exist in Mathlib; a plain text search for &quot;TateCurve&quot; and &quot;Tate curve&quot; found nothing. The needed_by entries are from the mechanical index.</p>
+<h3 id="elliptic-curves-with-level-structures">Elliptic curves with level structures</h3>
+<p>Classes: (1) EXISTS_IN_MATHLIB, (3) NEEDS_SUBSTANTIAL_FORMALIZATION, (4) EXISTS_IN_OTHER_LEAN_LIBRARY.</p>
+<p>In Mathlib:</p>
+<ul><li><code>AlgebraicGeometry/EllipticCurve/Weierstrass.lean</code>: <code>WeierstrassCurve</code>, <code>WeierstrassCurve.j</code>, <code>WeierstrassCurve.IsElliptic</code></li><li><code>AlgebraicGeometry/EllipticCurve/Affine/Point.lean</code>: <code>WeierstrassCurve.Affine.Point</code></li><li><code>AlgebraicGeometry/EllipticCurve/DivisionPolynomial/Basic.lean</code>: <code>WeierstrassCurve.Ψ</code></li><li><code>AlgebraicGeometry/EllipticCurve/Reduction.lean</code>: <code>WeierstrassCurve.IsIntegral</code></li></ul>
+<p>Missing:</p>
+<ul><li>Level structures, the l-torsion as a Galois module, and the fields of definition of torsion points, as in IUT I Definition 3.1 (b), (c) and IUT IV Theorem 1.10. Classes 3, 4.</li><li>Semistable reduction and Neron models, cited in the proof of IUT IV Proposition 1.8 ([NerMod], [Silv]). Classes 3, 5.</li></ul>
+<p>Other Lean libraries:</p>
+<ul><li><code>lana-agents/elliptic-curves (dependency pinned by lana-agents/iut)</code>: reduction theory of elliptic curves following Silverman, per its README. Lean 4.32, not built here, cannot be imported; a plain text search finds the word sorry in several files, status not checked.</li></ul>
+<p>Bibliography keys: [GenEll], [Silv], [NerMod].</p>
+<p>Needed first by: IUT1.Def3_1, IUT4.Prop1_8, IUT4.Thm1_10.</p>
+<p>Read: IUT I Definition 3.1 (b), (c), pages 61 and 62 (rational 2 and 3 torsion points, l at least 5, image of G_F in GL_2(F_l) containing SL_2(F_l), q-parameters at bad places); IUT IV page 21 (end of the proof of Proposition 1.8, citing [Silv] and [NerMod]) and page 22 (Theorem 1.10: torsion points of order 2, 3 and 5, Legendre form).</p>
+<h3 id="etale-theta-functions">Etale theta functions</h3>
+<p>Classes: (3) NEEDS_SUBSTANTIAL_FORMALIZATION, (5) NEEDS_ADDITIONAL_LITERATURE.</p>
+<p>In Mathlib: nothing found.</p>
+<p>Missing:</p>
+<ul><li>The etale theta function and mono-theta environments of [EtTh]. Classes 3, 5.</li></ul>
+<p>Other Lean libraries:</p>
+<ul><li><code>lana-agents/iut (Iut/EtaleTheta)</code>: etale theta material, per its README. Lean 4.32, not built here, cannot be imported.</li></ul>
+<p>Bibliography keys: [EtTh].</p>
+<p>Needed first by: IUT1.Cor1_2, IUT2.Def1_1, IUT3.Rem2_1_1, IUT4.Rem1_10_6.</p>
+<p>[EtTh] is cited 380 times across the four papers (bibliography index). The needed_by entries are from the mechanical index.</p>
+<h3 id="hodge-arakelov-theory">Hodge-Arakelov theory</h3>
+<p>Classes: (5) NEEDS_ADDITIONAL_LITERATURE.</p>
+<p>In Mathlib: nothing found.</p>
+<p>Missing:</p>
+<ul><li>Hodge-Arakelov theory of elliptic curves ([HASurI], [HASurII]). Classes 5.</li></ul>
+<p>Bibliography keys: [HASurI], [HASurII].</p>
+<p>Needed first by: IUT1.Rem4_3_1, IUT2.Rem1_12_5, IUT4.Rem1_10_1.</p>
+<p>By the mechanical index every statement whose page span cites [HASurI] or [HASurII] is a Remark, which suggests, without having been checked by reading, that this theory serves as motivation rather than as a logical input.</p>
+<h3 id="valuations-and-normalized-absolute-values">Valuations and normalized absolute values</h3>
+<p>Classes: (1) EXISTS_IN_MATHLIB, (2) DERIVABLE_FROM_MATHLIB.</p>
+<p>In Mathlib:</p>
+<ul><li><code>RingTheory/Valuation/Basic.lean</code>: <code>Valuation</code></li><li><code>Topology/Algebra/Valued/ValuationTopology.lean</code>: <code>Valued</code></li><li><code>Algebra/Order/AbsoluteValue/Basic.lean</code>: <code>AbsoluteValue</code></li><li><code>Algebra/Order/Ring/Basic.lean</code>: <code>IsNonarchimedean</code></li><li><code>NumberTheory/Padics/PadicNorm.lean</code>: <code>padicNorm</code></li><li><code>NumberTheory/Padics/PadicVal/Basic.lean</code>: <code>padicValRat</code></li><li><code>NumberTheory/Ostrowski.lean</code>: <code>Rat.AbsoluteValue.equiv_padic_of_bounded</code></li><li><code>RingTheory/DedekindDomain/AdicValuation/Valuation.lean</code>: <code>IsDedekindDomain.HeightOneSpectrum.valuation</code>, <code>IsDedekindDomain.HeightOneSpectrum.mem_integers_of_valuation_le_one</code></li><li><code>NumberTheory/NumberField/ProductFormula.lean</code>: <code>NumberField.prod_abs_eq_one</code>, <code>NumberField.FinitePlace.prod_eq_inv_abs_norm</code></li></ul>
+<p>In this project:</p>
+<ul><li><code>IUT/Prerequisites/ProductFormula.lean</code>: <code>IUT.Prerequisites.normAbs</code>, <code>IUT.Prerequisites.prod_normAbs_eq_one</code>, <code>IUT.Prerequisites.sum_log_normAbs_eq_zero</code></li><li><code>IUT/Prerequisites/PositiveRationalsZhatUnits.lean</code>: <code>IUT.Prerequisites.eq_one_of_forall_valuation_eq_one</code></li></ul>
+<p>Needed first by: IUT4.Def1_9, IUT3.Rem3_12_1.</p>
+<p>The product formula exists in Mathlib; this project restates it over the valuation set of IUT IV Definition 1.9. IUT III Remark 3.12.1 (iii), pages 186 and 187 (read), refers to the product formula.</p>
+<h3 id="nonarchimedean-analysis">Nonarchimedean analysis</h3>
+<p>Classes: (1) EXISTS_IN_MATHLIB, (3) NEEDS_SUBSTANTIAL_FORMALIZATION.</p>
+<p>In Mathlib:</p>
+<ul><li><code>Topology/MetricSpace/Ultra/Basic.lean</code>: <code>IsUltrametricDist</code></li><li><code>NumberTheory/Padics/Hensel.lean</code>: <code>hensels_lemma</code></li><li><code>NumberTheory/Padics/Complex.lean</code>: <code>PadicComplex</code></li></ul>
+<p>Missing:</p>
+<ul><li>Rigid analytic or Berkovich geometry, used in the literature for the tempered fundamental group and the Tate curve. Classes 3, 5.</li></ul>
+<p>Bibliography keys: [EtTh], [SemiAnbd].</p>
+<p>Basic ultrametric analysis exists; analytic spaces over nonarchimedean fields were not found.</p>
+<h3 id="p-adic-logarithms-and-exponentials">p-adic logarithms and exponentials</h3>
+<p>Classes: (2) DERIVABLE_FROM_MATHLIB, (3) NEEDS_SUBSTANTIAL_FORMALIZATION, (4) EXISTS_IN_OTHER_LEAN_LIBRARY.</p>
+<p>In Mathlib:</p>
+<ul><li><code>Analysis/Normed/Algebra/Logarithm.lean</code>: <code>NormedSpace.log</code>, <code>NormedSpace.logSeries</code></li><li><code>Analysis/Normed/Algebra/Exponential.lean</code>: <code>NormedSpace.exp</code></li></ul>
+<p>Missing:</p>
+<ul><li>Convergence of NormedSpace.log on the disc of radius 1 over a complete ultrametric field, the homomorphism property, its extension to all units of a p-adic local field, and its image; these are listed as TODO items in the Mathlib file. Outside the region of convergence NormedSpace.log takes a junk value, so it is not yet the p-adic logarithm of the papers. The p-adic radius of convergence of NormedSpace.exp was not found either. Classes 2, 3, 4.</li><li>Log-shells: IUT III Definition 1.1 (page 24, rendered and read) defines the log-shell as (p_v*)^{-1} times the pre-log-shell, the image under the p_v-adic logarithm of the Galois invariant units, with p_v* = p_v for p_v odd and p_v* = p_v^2 for p_v = 2, citing [AbsTopIII], Definition 5.4 (iii). Classes 3.</li></ul>
+<p>Other Lean libraries:</p>
+<ul><li><code>lana-agents/padic-log-volume (dependency pinned by lana-agents/iut)</code>: the p-adic logarithm of a complete discretely valued field of characteristic 0 and normalized Haar log-volume, per its README. Lean 4.32, not built here, cannot be imported.</li><li><code>lana-agents/iut (Iut/Concrete/LocalConstruct/LocalLogShell.lean)</code>: a log-shell defined as (2p)^{-1} log of the principal units. Lean 4.32, not built here, cannot be imported. By an elementary argument not formalized here this is the same set as on IUT III page 24: log of the units equals log of the principal units, which is a Z_p-module, and 2p differs from p* by a unit when p is odd and equals p* = 4 when p = 2.</li></ul>
+<p>Bibliography keys: [AbsTopIII].</p>
+<p>Needed first by: IUT3.Def1_1, IUT3.Prop3_9, IUT4.Prop1_2.</p>
+<p>Mathlib v4.36.0 defines NormedSpace.log for any topological Q-algebra, hence for Q_p, with only its algebraic properties at 1. The log-shell was therefore not formalized. IUT3.Prop3_9 and IUT4.Prop1_2 are cited from their titles (Log-volume for Packets and Processions; Differents and Logarithms).</p>
+<h3 id="arithmetic-divisors">Arithmetic divisors</h3>
+<p>Classes: (2) DERIVABLE_FROM_MATHLIB.</p>
+<p>In Mathlib:</p>
+<ul><li><code>NumberTheory/RamificationInertia/Basic.lean</code>: <code>Ideal.sum_ramification_inertia</code></li></ul>
+<p>In this project:</p>
+<ul><li><code>IUT/PaperIV/ArithmeticDivisor.lean</code>: <code>IUT.PaperIV.ADiv</code>, <code>IUT.PaperIV.degF</code>, <code>IUT.PaperIV.normalizedDeg</code></li></ul>
+<p>Missing:</p>
+<ul><li>Pull-back of arithmetic divisors to a finite extension and the identity deg(a|_K) = deg(a) of IUT IV Definition 1.9 (i), which the paper defines &quot;in the evident fashion&quot;; the natural proof uses the fundamental identity, which Mathlib has as Ideal.sum_ramification_inertia. Classes 2.</li><li>Normalized E-degree of Definition 1.9 (ii). Classes 2.</li><li>The arithmetic divisors of the different ideal, of the q-parameters and of the conductor used in IUT IV Theorem 1.10 (pages 22 and 23, read). Classes 2, 3.</li></ul>
+<p>Other Lean libraries:</p>
+<ul><li><code>lana-agents/iut (Iut4Sec1/Global/Pullback.lean, Iut4Sec1/Global/ArithmeticDivisor.lean)</code>: pull-back of arithmetic divisors (coefficient times ramification index at finite places, times local degree at infinite places) and invariance of the normalized degree, per its module docstring. Lean 4.32, not built here, cannot be imported; this is one choice of the pull-back that the paper leaves to the reader.</li></ul>
+<p>Bibliography keys: [GenEll].</p>
+<p>Needed first by: IUT4.Def1_9, IUT4.Thm1_10.</p>
+<p>Read: IUT IV pages 21 to 23.</p>
+<h3 id="arakelov-degrees">Arakelov degrees</h3>
+<p>Classes: (2) DERIVABLE_FROM_MATHLIB, (3) NEEDS_SUBSTANTIAL_FORMALIZATION.</p>
+<p>In Mathlib: nothing found.</p>
+<p>In this project:</p>
+<ul><li><code>IUT/PaperIV/ArithmeticDivisor.lean</code>: <code>IUT.PaperIV.degF</code></li></ul>
+<p>Missing:</p>
+<ul><li>Arithmetic line bundles on the spectrum of the ring of integers of a number field and their Arakelov degree. Which statements use them was not determined by reading in this pass. Classes 2, 3.</li></ul>
+<p>Other Lean libraries:</p>
+<ul><li><code>lana-agents/iut (Iut/Arakelov: FractionalIdeal.lean, LineBundle.lean, Container.lean, ArchScaling.lean, QPilot.lean)</code>: Arakelov line bundle material, per its file names and README. Lean 4.32, not built here, cannot be imported.</li></ul>
+<p>Bibliography keys: [Arak].</p>
+<p>Needed first by: IUT4.Rem1_10_4.</p>
+<p>A plain text search for &quot;Arakelov&quot; in the Mathlib sources finds nothing. The needed_by entry is from the mechanical index.</p>
+<h3 id="heights-and-discriminants">Heights and discriminants</h3>
+<p>Classes: (1) EXISTS_IN_MATHLIB, (2) DERIVABLE_FROM_MATHLIB, (3) NEEDS_SUBSTANTIAL_FORMALIZATION, (4) EXISTS_IN_OTHER_LEAN_LIBRARY, (5) NEEDS_ADDITIONAL_LITERATURE.</p>
+<p>In Mathlib:</p>
+<ul><li><code>NumberTheory/Height/Basic.lean</code>: <code>Height.AdmissibleAbsValues</code>, <code>Height.mulHeight₁</code>, <code>Height.logHeight₁</code></li><li><code>NumberTheory/Height/NumberField.lean</code>: <code>NumberField.absLogHeight₁</code></li><li><code>NumberTheory/Height/EllipticCurve.lean</code>: <code>WeierstrassCurve.Affine.Point.naiveHeight</code></li><li><code>NumberTheory/NumberField/Discriminant/Defs.lean</code>: <code>NumberField.discr</code></li><li><code>NumberTheory/NumberField/Discriminant/Different.lean</code>: <code>NumberField.absNorm_differentIdeal</code></li></ul>
+<p>Missing:</p>
+<ul><li>The normalized degrees log(d), log(q), log(f) of the different, q-parameter and conductor divisors, as in the statement of IUT IV Theorem 1.10, pages 22 and 23 (read); the q-parameters are the local heights of [GenEll], Definition 3.3, per IUT I page 62 (read). Classes 2, 3.</li><li>Heights of elliptic curves and of points of hyperbolic curves in the sense of [GenEll] (not read). Classes 3, 4, 5.</li></ul>
+<p>Other Lean libraries:</p>
+<ul><li><code>lana-agents/heights (dependency pinned by lana-agents/iut)</code>: Weil heights, the height machine on curves, and conductor and different bounds of [GenEll], per its README. Lean 4.32, not built here, cannot be imported.</li><li><code>lana-agents/genl (dependency pinned by lana-agents/iut)</code>: [GenEll] Theorem 2.1 project, per its README. Lean 4.32, not built here, cannot be imported; its README and a text search show a sorry in Challenge.lean.</li></ul>
+<p>Bibliography keys: [GenEll].</p>
+<p>Needed first by: IUT1.Def3_1, IUT4.Thm1_10.</p>
+<h3 id="ramification-theory-and-the-different">Ramification theory and the different</h3>
+<p>Classes: (1) EXISTS_IN_MATHLIB, (2) DERIVABLE_FROM_MATHLIB, (3) NEEDS_SUBSTANTIAL_FORMALIZATION, (4) EXISTS_IN_OTHER_LEAN_LIBRARY.</p>
+<p>In Mathlib:</p>
+<ul><li><code>RingTheory/RamificationInertia/Ramification.lean</code>: <code>Ideal.ramificationIdx</code></li><li><code>RingTheory/RamificationInertia/Inertia.lean</code>: <code>Ideal.inertiaDeg</code></li><li><code>NumberTheory/RamificationInertia/Basic.lean</code>: <code>Ideal.sum_ramification_inertia</code></li><li><code>RingTheory/DedekindDomain/Different.lean</code>: <code>differentIdeal</code></li><li><code>NumberTheory/NumberField/Discriminant/Different.lean</code>: <code>NumberField.absNorm_differentIdeal</code></li><li><code>RingTheory/Valuation/RamificationGroup.lean</code>: <code>ValuationSubring.inertiaSubgroup</code></li></ul>
+<p>Missing:</p>
+<ul><li>Higher ramification groups (no declaration with &quot;RamificationGroup&quot; or &quot;lowerNumbering&quot; found). Classes 3.</li><li>Estimates of the different of local fields and of tensor products of local fields, IUT IV Propositions 1.1 to 1.3 (titles: Multiple Tensor Products and Differents; Differents and Logarithms; Estimates of Differents; not read). Classes 2, 3.</li></ul>
+<p>Other Lean libraries:</p>
+<ul><li><code>lana-agents/padic-log-volume (dependency pinned by lana-agents/iut)</code>: trace duality in finite Q_p algebras and their tensor products, ingredients of IUT IV Proposition 1.1, per its README. Lean 4.32, not built here, cannot be imported.</li><li><code>lana-agents/iut (Iut/Tower: Different.lean, DifferentBound.lean, Inertia.lean, RamIdx.lean, WildBound.lean)</code>: different and ramification bounds in towers, per file names. Lean 4.32, not built here, cannot be imported.</li></ul>
+<p>Bibliography keys: [Kobl].</p>
+<p>Needed first by: IUT4.Prop1_1, IUT4.Prop1_2, IUT4.Prop1_3, IUT4.Thm1_10.</p>
+<p>IUT IV Theorem 1.10, pages 22 and 23 (read), uses the arithmetic divisor of the different ideal of a number field over Q.</p>
+<h3 id="haar-measures-and-log-volumes">Haar measures and log-volumes</h3>
+<p>Classes: (1) EXISTS_IN_MATHLIB, (2) DERIVABLE_FROM_MATHLIB, (3) NEEDS_SUBSTANTIAL_FORMALIZATION.</p>
+<p>In Mathlib:</p>
+<ul><li><code>MeasureTheory/Measure/Haar/Basic.lean</code>: <code>MeasureTheory.Measure.haarMeasure</code>, <code>MeasureTheory.Measure.haar</code></li><li><code>MeasureTheory/Group/Measure.lean</code>: <code>MeasureTheory.Measure.IsAddHaarMeasure</code></li><li><code>MeasureTheory/Measure/Haar/Unique.lean</code>: <code>MeasureTheory.Measure.haarScalarFactor</code></li></ul>
+<p>Missing:</p>
+<ul><li>Normalized Haar measure on a p-adic local field (ring of integers of volume 1) and the scaling rule vol(aS) = |a| vol(S). Classes 2.</li><li>Log-volumes of packets and processions and of tensor packets of log-shells, IUT III Proposition 3.9 and IUT IV Proposition 1.4 (titles only, not read). Classes 3.</li></ul>
+<p>Other Lean libraries:</p>
+<ul><li><code>lana-agents/padic-log-volume (dependency pinned by lana-agents/iut)</code>: normalized Haar log-volume, per its README. Lean 4.32, not built here, cannot be imported.</li><li><code>lana-agents/iut (Iut/Concrete/LocalConstruct/Haar.lean, Volume.lean)</code>: Haar log-volume constructions, per file names. Lean 4.32, not built here, cannot be imported.</li></ul>
+<p>Bibliography keys: [AbsTopIII].</p>
+<p>Needed first by: IUT3.Prop3_9, IUT4.Prop1_4.</p>
+<h3 id="tensor-products-of-local-fields">Tensor products of local fields</h3>
+<p>Classes: (2) DERIVABLE_FROM_MATHLIB, (3) NEEDS_SUBSTANTIAL_FORMALIZATION.</p>
+<p>In Mathlib:</p>
+<ul><li><code>LinearAlgebra/TensorProduct/Defs.lean</code>: <code>TensorProduct</code></li><li><code>RingTheory/TensorProduct/Basic.lean</code>: <code>Algebra.TensorProduct.includeLeft</code></li></ul>
+<p>Missing:</p>
+<ul><li>Decomposition of a tensor product of finite extensions of Q_p into a product of fields, integral structures, and differents (IUT IV Proposition 1.1; IUT III Propositions 3.1 and 3.2 on tensor packets; titles only, not read). Classes 2, 3.</li></ul>
+<p>Other Lean libraries:</p>
+<ul><li><code>lana-agents/padic-log-volume (dependency pinned by lana-agents/iut)</code>: trace duality for tensor products of finite Q_p algebras, per its README. Lean 4.32, not built here, cannot be imported.</li><li><code>lana-agents/iut (Iut/Concrete/LocalConstruct/TensorIntegral.lean, PacketDifferent.lean, LocalDifferent.lean)</code>: integral structures and differents of tensor packets, per file names. Lean 4.32, not built here, cannot be imported.</li></ul>
+<p>Needed first by: IUT3.Prop3_1, IUT3.Prop3_2, IUT4.Prop1_1.</p>
+<h3 id="diophantine-geometry">Diophantine geometry</h3>
+<p>Classes: (3) NEEDS_SUBSTANTIAL_FORMALIZATION, (4) EXISTS_IN_OTHER_LEAN_LIBRARY, (5) NEEDS_ADDITIONAL_LITERATURE.</p>
+<p>In Mathlib:</p>
+<ul><li><code>NumberTheory/FLT/MasonStothers.lean</code>: <code>Polynomial.abc</code></li><li><code>NumberTheory/SiegelsLemma.lean</code>: <code>Int.Matrix.exists_ne_zero_int_vec_norm_le</code></li></ul>
+<p>In this project:</p>
+<ul><li><code>IUT/Applications/ABC.lean</code></li></ul>
+<p>Missing:</p>
+<ul><li>The equivalence of [GenEll] Theorem 2.1 between bounded-degree Vojta or abc type statements for hyperbolic curves and a restricted abc statement for the tripod, as described in the README of the genl library; its use in IUT IV Corollaries 2.2 and 2.3 was not read. Classes 3, 4, 5.</li><li>Faltings&#x27; theorem and related results cited in remarks ([Falt]). Classes 5.</li></ul>
+<p>Other Lean libraries:</p>
+<ul><li><code>lana-agents/genl (dependency pinned by lana-agents/iut)</code>: [GenEll] project, per its README. Lean 4.32, not built here, cannot be imported.</li></ul>
+<p>Bibliography keys: [GenEll], [Falt], [vFr].</p>
+<p>Needed first by: IUT4.Cor2_2, IUT4.Cor2_3.</p>
+<p>The function field abc (Mason-Stothers) and Siegel lemma exist in Mathlib. IUT4.Cor2_2 and IUT4.Cor2_3 are cited from their titles (Construction of Suitable Initial Theta-Data; Diophantine Inequalities).</p>
+<h3 id="szpiro-type-and-vojta-type-inequalities">Szpiro-type and Vojta-type inequalities</h3>
+<p>Classes: (6) UNRESOLVED_OR_DISPUTED.</p>
+<p>In Mathlib: nothing found.</p>
+<p>Missing:</p>
+<ul><li>Szpiro and Vojta type inequalities over number fields: open conjectures in general. IUT IV Corollary 2.3 (title: Diophantine Inequalities; not read in this pass) is where the papers state Diophantine inequalities as consequences of the theory. Whether that derivation is valid is the disputed point; nothing here takes a position. Classes 6.</li><li>Function field (geometric) Szpiro inequality via Bogomolov ([BogIUT]), cited in remarks. Classes 5.</li></ul>
+<p>Bibliography keys: [GenEll], [BogIUT].</p>
+<p>Needed first by: IUT4.Cor2_3.</p>
+<p>These are targets of the papers, not prerequisites; they must never enter the library as assumptions of unconditional results.</p>
+<h3 id="set-theoretic-foundations-and-universe-management">Set-theoretic foundations and universe management</h3>
+<p>Classes: (1) EXISTS_IN_MATHLIB, (2) DERIVABLE_FROM_MATHLIB, (3) NEEDS_SUBSTANTIAL_FORMALIZATION, (5) NEEDS_ADDITIONAL_LITERATURE.</p>
+<p>In Mathlib:</p>
+<ul><li><code>SetTheory/ZFC/Basic.lean</code>: <code>ZFSet</code>, <code>ZFSet.omega</code>, <code>ZFSet.powerset</code>, <code>ZFSet.sUnion</code>, <code>ZFSet.IsFunc</code>, <code>ZFSet.mem_wf</code>, <code>ZFSet.range</code></li><li><code>SetTheory/ZFC/VonNeumann.lean</code>: <code>ZFSet.vonNeumann</code></li><li><code>SetTheory/Cardinal/Regular.lean</code>: <code>Cardinal.IsInaccessible</code></li><li><code>Logic/Small/Defs.lean</code>: <code>Small</code></li><li><code>Basic/UnivLE.lean</code>: <code>UnivLE</code></li></ul>
+<p>In this project:</p>
+<ul><li><code>IUT/Foundations/GrothendieckUniverse.lean</code>: <code>IUT.Foundations.IsGrothendieckUniverse</code>, <code>IUT.Foundations.ExistenceAxiom</code>, <code>IUT.Foundations.exists_universe_forall_mem</code>, <code>IUT.Foundations.exists_ascending_chain</code>, <code>IUT.Foundations.not_exists_descending_mem_chain</code></li></ul>
+<p>Missing:</p>
+<ul><li>The existence axiom (dagger G): every set lies in a Grothendieck universe. Not a theorem of ZFC; the paper assumes it (IUT IV page 67) and leaves the existence of ZFCG-models aside, citing Feferman (page 68). In Lean, <code>ExistenceAxiom</code> is independent of what can be proved about <code>ZFSet.{u}</code> (see the module docstring of <code>IUT/Foundations/GrothendieckUniverse.lean</code>). Classes 5.</li><li>No Grothendieck universe on ZFSet is exhibited (for example the image of ZFSet.{u} inside ZFSet.{u+1}); Mathlib has the embedding only at the PSet level (PSet.embed). Classes 2.</li><li>Species, set-theoretic formulas, and absoluteness of formulas between universes (IUT IV Definition 3.1 and page 68); needs a formal syntax for set-theoretic formulas. Classes 3, 5.</li></ul>
+<p>Bibliography keys: [McLn], [Drk], [Ffmn].</p>
+<p>Needed first by: IUT4.Def3_1.</p>
+<p>Read: IUT IV pages 67 and 68. A search for &quot;GrothendieckUniverse&quot; in Mathlib declaration names found nothing.</p>
+<h2 id="rough-dependency-order">Rough dependency order</h2>
+<p>A coarse planning order: most items in a layer use items of earlier layers. It is not a proved dependency graph; for example the universe material is independent of the arithmetic layers.</p>
+<ol><li>Valuations and normalized absolute values; Algebraic number fields and their completions; Algebraic closures and Galois theory (finite and infinite); Profinite groups and continuous cohomology.</li><li>p-adic logarithms and exponentials; Haar measures and log-volumes; Tensor products of local fields; Ramification theory and the different; Arithmetic divisors; Arakelov degrees; Kummer theory; Local and global class field theory.</li><li>Algebraic and arithmetic geometry: schemes, stacks, orbicurves; Hyperbolic curves; Elliptic curves with level structures; Tate curves and Tate uniformization; Etale fundamental groups; Nonarchimedean analysis.</li><li>Tempered fundamental groups; Grothendieck&#x27;s anabelian geometry, absolute and mono-anabelian reconstruction, category-theoretic reconstruction; Frobenioids; Etale theta functions; Heights and discriminants.</li><li>Diophantine geometry; Set-theoretic foundations and universe management; Hodge-Arakelov theory.</li><li>Szpiro-type and Vojta-type inequalities.</li></ol>
+<h2 id="verified-prerequisites">Verified prerequisites</h2>
+<ul><li><code>IUT.Prerequisites.posRat_inter_zhatUnits</code> in <code>IUT/Prerequisites/PositiveRationalsZhatUnits.lean</code>: <code>{q : ℚ | 0 &lt; q ∧ ∃ u : Zhatˣ, Zhat.toFiniteAdeles ↑u = (algebraMap ℚ (FiniteAdeleRing ℤ ℚ)) q} = {1}</code>. Source: IUT I, Example 5.1 (v), page 127 (rendered); IUT III, Remark 3.12.1 (iii), pages 186 and 187 (rendered).</li><li><code>IUT.Prerequisites.eq_one_of_forall_valuation_eq_one</code> in <code>IUT/Prerequisites/PositiveRationalsZhatUnits.lean</code>: <code>∀ {q : ℚ}, 0 &lt; q → (∀ (v : HeightOneSpectrum ℤ), (valuation ℚ v) q = 1) → q = 1</code>. Source: as above.</li><li><code>IUT.Prerequisites.prod_normAbs_eq_one</code> in <code>IUT/Prerequisites/ProductFormula.lean</code>: <code>∀ {F : Type*} [Field F] [NumberField F] {x : F}, x ≠ 0 → ∏ᶠ (v : Valuations F), normAbs v x = 1</code>. Source: IUT IV, Definition 1.9, pages 21 and 22 (rendered); Mathlib NumberField.prod_abs_eq_one.</li><li><code>IUT.Prerequisites.sum_log_normAbs_eq_zero</code> in <code>IUT/Prerequisites/ProductFormula.lean</code>: <code>∀ {F : Type*} [Field F] [NumberField F] {x : F}, x ≠ 0 → ∑ᶠ (v : Valuations F), Real.log (normAbs v x) = 0</code>. Source: as above.</li><li><code>IUT.Foundations.exists_universe_forall_mem</code> in <code>IUT/Foundations/GrothendieckUniverse.lean</code>: <code>ExistenceAxiom → ∀ {I : Type*} [Small.{u} I] (V : I → ZFSet.{u}), ∃ W, IsGrothendieckUniverse W ∧ ∀ (i : I), V i ∈ W</code>. Source: IUT IV, page 67 (rendered).</li><li><code>IUT.Foundations.exists_ascending_chain</code> in <code>IUT/Foundations/GrothendieckUniverse.lean</code>: <code>ExistenceAxiom → ∃ V : ℕ → ZFSet.{u}, (∀ n, IsGrothendieckUniverse (V n)) ∧ (∀ n, V n ∈ V (n + 1)) ∧ ∃ W, IsGrothendieckUniverse W ∧ ∀ n, V n ∈ W</code>. Source: IUT IV, page 67 (rendered).</li><li><code>IUT.Foundations.not_exists_descending_mem_chain</code> in <code>IUT/Foundations/GrothendieckUniverse.lean</code>: <code>¬∃ V : ℕ → ZFSet.{u}, ∀ (n : ℕ), V (n + 1) ∈ V n</code>. Source: IUT IV, page 68 (rendered).</li></ul>
+<p>The universe results use the existence axiom only as an explicit hypothesis <code>ExistenceAxiom</code>; it is not proved. <code>ExistenceAxiom</code> is a statement about Lean&#x27;s model <code>ZFSet.{u}</code>, not the paper&#x27;s axiom in the paper&#x27;s set theory, and it is not expected to be provable or refutable in Lean: in the standard semantics where <code>Type u</code> is <code>V_κ</code> for an inaccessible <code>κ</code>, it fails when <code>κ</code> is the least inaccessible (then <code>ZFSet.{u}</code> contains no Grothendieck universe) and holds when <code>κ</code> is an inaccessible limit of inaccessibles. This argument is about models and is not formalized. In models where it fails, the two conditional theorems <code>exists_universe_forall_mem</code> and <code>exists_ascending_chain</code> are vacuous. All seven results depend only on the axioms <code>propext</code>, <code>Classical.choice</code>, <code>Quot.sound</code>.</p>
+<h2 id="candidates-not-formalized-and-why">Candidates not formalized, and why</h2>
+<ul><li>Log-shell of Q_p: Mathlib v4.36.0 defines NormedSpace.log, but without convergence on the disc, the homomorphism property, or the extension to all units (open TODO items in Analysis/Normed/Algebra/Logarithm.lean). Defining the log-shell faithfully (IUT III Definition 1.1, page 24) needs these. Replacing the log-shell by Z_p for p odd would be a shell and was not done.</li><li>Pull-back invariance deg(a|_K) = deg(a) of IUT IV Definition 1.9 (i): The paper defines the pull-back only &quot;in the evident fashion&quot;; choosing the pull-back so that the identity holds would make it nearly definitional. Deferred until the convention is fixed from [GenEll], section 1, which was not read.</li><li>Degree zero of principal arithmetic divisors: Not defined on the pages read (IUT IV pages 21 to 23); with the archimedean weight 1 of Definition 1.9 (i) the coefficient convention at complex places would have to be chosen. Only the product formula itself was formalized.</li><li>Existence of a Grothendieck universe in ZFSet.{u+1}: Mathlib has the embedding only at the PSet level (PSet.embed); building it for ZFSet and checking axioms (i) to (v) is a separate task.</li></ul>
+<h2 id="external-repository-lana-agentsiut">External repository <code>lana-agents/iut</code></h2>
+<p>Read only. Its README states a proof of an implication from a variant of IUT III Corollary 3.12 to the abc conjecture, with the variant itself not proved. It depends on fifteen further Lean libraries, pinned dependencies of the lana-agents organization at the revisions in data/external_projects.json. None of this can be imported here because of the toolchain difference; statements and definitions would have to be ported and rechecked. Toolchain: leanprover/lean4:v4.32.0 with Mathlib v4.32.0.</p><p class="src-link">Rendered from <a href="https://github.com/adamrsophie/IUTLean/blob/2274f917ddbca57bbe16b783f0f24968de079bba/docs/MATHLIB_GAP_ANALYSIS.md"><code>docs/MATHLIB_GAP_ANALYSIS.md</code></a>. All documents: <a href="documents.html">Documents</a>.</p>
+</main>
+</div>
+<footer class="site-footer"><div class="wrap">
+<p>Maintained by Adam R Sophie. Source: <a href="https://github.com/adamrsophie/IUTLean">github.com/adamrsophie/IUTLean</a>. Built on Lean 4 and Mathlib.</p>
+<p>Built on November 25, 2026 from commit <a href="https://github.com/adamrsophie/IUTLean/commit/2274f917ddbca57bbe16b783f0f24968de079bba"><code>2274f91</code></a>.</p>
+</div></footer>
+</body>
+</html>

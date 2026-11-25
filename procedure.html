@@ -1,0 +1,142 @@
+<!doctype html>
+<html lang="en" class="no-js">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Procedure: IUT in Lean</title>
+<meta name="description" content="The trust policy of IUTLean, what each check of the continuous integration does and does not establish, the limits of the tooling, how to reproduce the build, and how to contribute.">
+<meta name="color-scheme" content="light dark">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="assets/style.css">
+<script src="assets/site.js"></script>
+</head>
+<body>
+<a class="skip" href="#content">Skip to content</a>
+<header class="site-header">
+<nav class="navbar" aria-label="Main">
+<a class="brand" href="index.html"><svg class="logo" viewBox="0 0 32 32" aria-hidden="true" focusable="false"><circle cx="16" cy="16" r="14" fill="none" stroke="currentColor" stroke-width="2.5"/><text x="16" y="21.5" text-anchor="middle" font-size="16" font-family="Georgia, serif" fill="currentColor">Θ</text></svg><span>Inter-universal Teichmüller Theory <small>in Lean</small></span></a>
+<ul class="tabs" id="site-tabs">
+<li class="sec"><button type="button" class="sec-btn" aria-expanded="false" aria-controls="nav-learn">Learn<svg class="chev" viewBox="0 0 12 12" aria-hidden="true" focusable="false"><path d="M2.5 4.5 6 8l3.5-3.5" fill="none" stroke="currentColor" stroke-width="1.6"/></svg></button><ul class="sec-list" id="nav-learn"><li><a href="background.html"><b>Background</b><span>The four papers, the two central statements, the abc conjecture, and a glossary.</span></a></li><li><a href="critical-path.html"><b>Critical path</b><span>The chain from IUT III, Corollary 3.12 to abc, and what is checked at each step.</span></a></li><li><a href="corollary-3-12.html"><b>Corollary 3.12</b><span>The step by step analysis and the open obligations.</span></a></li><li><a href="dispute.html"><b>The dispute</b><span>The Scholze–Stix objections, the responses, and the formal obligations.</span></a></li></ul></li>
+<li class="sec"><button type="button" class="sec-btn" aria-expanded="false" aria-controls="nav-library">Library<svg class="chev" viewBox="0 0 12 12" aria-hidden="true" focusable="false"><path d="M2.5 4.5 6 8l3.5-3.5" fill="none" stroke="currentColor" stroke-width="1.6"/></svg></button><ul class="sec-list" id="nav-library"><li><a href="statements.html"><b>Statements</b><span>Every statement of the index and every curated record, with status and a filter.</span></a></li><li><a href="theorems.html"><b>Highlights</b><span>Selected Lean results in plain language, with their statements.</span></a></li><li><a href="reference.html"><b>Reference</b><span>Every Lean module and public declaration, with its docstring and a filter.</span></a></li><li><a href="documents.html"><b>Documents</b><span>The project documents, rendered.</span></a></li></ul></li>
+<li class="sec"><button type="button" class="sec-btn" aria-expanded="false" aria-controls="nav-status">Status<svg class="chev" viewBox="0 0 12 12" aria-hidden="true" focusable="false"><path d="M2.5 4.5 6 8l3.5-3.5" fill="none" stroke="currentColor" stroke-width="1.6"/></svg></button><ul class="sec-list" id="nav-status"><li><a href="status.html"><b>Status</b><span>The dashboard: statements formalized and proved in full, and fragments with their parents.</span></a></li><li><a href="doc-OPEN_PROBLEMS.html"><b>Open problems</b><span>Every unresolved obligation, grouped by kind, with its source page.</span></a></li><li><a href="roadmap.html"><b>Roadmap</b><span>The plan by stage, the prerequisites and the external projects.</span></a></li><li><a href="obstacles.html"><b>Obstacles</b><span>The countermodel catalog, what each entry refutes, and the obligations.</span></a></li><li><a href="milestones.html"><b>Milestones</b><span>The commits in the history of the built commit.</span></a></li></ul></li>
+<li class="sec current"><button type="button" class="sec-btn" aria-expanded="false" aria-controls="nav-take-part">Take part<svg class="chev" viewBox="0 0 12 12" aria-hidden="true" focusable="false"><path d="M2.5 4.5 6 8l3.5-3.5" fill="none" stroke="currentColor" stroke-width="1.6"/></svg></button><ul class="sec-list" id="nav-take-part"><li><a href="procedure.html" aria-current="page"><b>Procedure</b><span>What each check does and does not establish, and how to contribute.</span></a></li></ul></li>
+</ul>
+<div class="nav-end"><a class="source" href="https://github.com/adamrsophie/IUTLean">Source</a></div>
+</nav>
+</header>
+<div class="status-strip" role="note"><div class="wrap"><strong>Neutral status.</strong> The abc conjecture is not proved here. The project neither assumes that inter-universal Teichmüller theory is correct nor that it is wrong; a countermodel to a simplified abstraction is not a counterexample to the papers.</div></div>
+<div class="page wrap with-toc">
+<aside class="toc-col" aria-label="Table of contents"><details class="toc" open><summary>On this page</summary><nav aria-label="On this page"><ul><li class="l2"><a href="#principles">Principles</a></li><li class="l2"><a href="#trusted">What a reader has to trust or compare</a></li><li class="l2"><a href="#checks">The checks</a></li><li class="l3"><a href="#check-scan">Source scan</a></li><li class="l3"><a href="#check-root">Root file check</a></li><li class="l3"><a href="#check-build">Build</a></li><li class="l3"><a href="#check-fingerprints">Fingerprint check</a></li><li class="l3"><a href="#check-gate">Axiom gate</a></li><li class="l3"><a href="#check-controls">Gate controls</a></li><li class="l3"><a href="#check-comparator">Comparator</a></li><li class="l3"><a href="#check-replay">Kernel replay</a></li><li class="l3"><a href="#check-data">Generated data and documents</a></li><li class="l2"><a href="#limits">Limits the tooling states about itself</a></li><li class="l2"><a href="#reproduce">Reproduce the build</a></li><li class="l2"><a href="#contribute">Contribute</a></li><li class="l2"><a href="#site">This site</a></li></ul></nav></details></aside>
+<main id="content" tabindex="-1">
+<h1>Procedure and trust policy</h1>
+<p class="lead">Two different things are established, by different means. Kernel acceptance says that a Lean declaration is proved as written from the allowed axioms; it is mechanical. Source review says that a Lean statement says what the cited statement of the papers says; it is a human comparison, and no script performs it. This page describes each check by what it does.</p>
+
+<h2 id="principles">Principles</h2>
+<ol class="steps">
+<li><b>Formalize what the papers claim.</b>Each statement keeps the hypotheses, quantifier order, constants and inequality directions of the source. Where an interpretation has to be chosen, the choice is recorded in the docstring.</li>
+<li><b>No shells.</b>A result of the papers is stated as a Lean proposition only when every term in it is defined in Lean with its real meaning. Until then it is a catalog entry in <code>data/</code> and <code>docs/</code>.</li>
+<li><b>Full statements and fragments are counted apart.</b>A record of a statement of the papers counts as formalized or verified only when one Lean declaration states its entire content. A Lean lemma that checks one step is a fragment record of its own and gives its parent no status.</li>
+<li><b>No vacuity.</b>No placeholder propositions, no hypotheses that restate the conclusion, no empty domains, no inconsistent hypotheses. A conditional theorem names each hypothesis as a genuine proposition and says where the paper claims it.</li>
+<li><b>Expose what is unproved.</b>A missing step becomes a named obligation. Failing to prove an obligation is never presented as evidence that it is false.</li>
+</ol>
+
+<h2 id="trusted">What a reader has to trust or compare</h2>
+<ul>
+<li>The Lean kernel of the pinned toolchain <code>leanprover/lean4:v4.36.0</code>, Mathlib at <code>fc4f59e577feb1a4956671bc04ac18aaaf8cd842</code>, and the three axioms <code>Classical.choice</code>, <code>Quot.sound</code>, <code>propext</code>.</li>
+<li><a href="https://github.com/adamrsophie/IUTLean/blob/2274f917ddbca57bbe16b783f0f24968de079bba/Challenge/Defs.lean"><code>Challenge/Defs.lean</code></a>: the definitions of <code>rad</code> and of the three forms of the abc conjecture. A reader must check by hand that they say what the abc conjecture says.</li>
+<li>The seven statements of <a href="https://github.com/adamrsophie/IUTLean/blob/2274f917ddbca57bbe16b783f0f24968de079bba/Challenge.lean"><code>Challenge.lean</code></a>, listed in <a href="https://github.com/adamrsophie/IUTLean/blob/2274f917ddbca57bbe16b783f0f24968de079bba/comparator.json"><code>comparator.json</code></a>. <code>lake comparator</code> checks that <a href="https://github.com/adamrsophie/IUTLean/blob/2274f917ddbca57bbe16b783f0f24968de079bba/Solution.lean"><code>Solution.lean</code></a> proves exactly these statements; it cannot check that they are the intended ones. Each of them, and any change to it, needs a human comparison with its source.</li>
+<li>Every correspondence between a statement of the papers and a Lean declaration: every <code>lean_declaration</code> of <code>data/curated/</code> and every docstring that names a statement of the papers. Each depends on a human reading of the cited pages.</li>
+</ul>
+
+<h2 id="checks">The checks</h2>
+<p>The continuous integration workflow <a href="https://github.com/adamrsophie/IUTLean/blob/2274f917ddbca57bbe16b783f0f24968de079bba/.github/workflows/axiom-gate.yml"><code>.github/workflows/axiom-gate.yml</code></a> runs on every push and pull request to <code>main</code>, in this order.</p>
+
+<h3 id="check-scan">Source scan</h3>
+<p><a href="https://github.com/adamrsophie/IUTLean/blob/2274f917ddbca57bbe16b783f0f24968de079bba/scripts/Controls/source_scan.py"><code>scripts/Controls/source_scan.py</code></a> is a lexical scan, with comments, docstrings and string literals removed, of <code>IUT.lean</code>, <code>IUT/</code>, <code>Challenge.lean</code>, <code>Challenge/</code>, <code>Solution.lean</code>, <code>lakefile.toml</code> and <code>lake-manifest.json</code>. It reports what the axiom gate cannot see in the compiled environment: <code>debug</code> options and any <code>set_option</code> outside an allowed list (empty at present), commands that run code at elaboration time, new syntax, macros, elaborators and notation, instances and deriving clauses. It also reports the words <code>sorry</code>, <code>admit</code>, <code>sorryAx</code>, <code>axiom</code>, <code>opaque</code>, <code>unsafe</code>, <code>partial</code>, <code>native_decide</code>, <code>implemented_by</code> and <code>extern</code>; <code>sorry</code> and <code>admit</code> are allowed only in <code>Challenge.lean</code> and <code>IUT/Experimental/</code>. It rejects imports of experimental modules outside that folder, challenge files that import anything but Mathlib and <code>Challenge.*</code>, build options in <code>lakefile.toml</code> that pass arguments to Lean, a lakefile or a manifest that differs from the recorded configuration, a <code>lakefile.lean</code>, library files that <code>IUT.lean</code> does not import, and tracked <code>.lean</code> files outside the scanned roots and the listed tooling files. It does not parse Lean, so it can report a construct that the parser would read differently.</p>
+
+<h3 id="check-root">Root file check</h3>
+<p><a href="https://github.com/adamrsophie/IUTLean/blob/2274f917ddbca57bbe16b783f0f24968de079bba/scripts/gen_root.py"><code>scripts/gen_root.py</code></a> <code>--check</code> confirms that <code>IUT.lean</code> imports exactly the library files outside <code>IUT/Experimental/</code>. It says nothing about their content.</p>
+
+<h3 id="check-build">Build</h3>
+<p><code>lake build</code> builds the default targets, the libraries <code>IUT</code> and <code>Solution</code>; the kernel accepts every declaration. <code>Challenge.lean</code> is not a default target; it is built separately for the fingerprint check.</p>
+
+<h3 id="check-fingerprints">Fingerprint check</h3>
+<p><a href="https://github.com/adamrsophie/IUTLean/blob/2274f917ddbca57bbe16b783f0f24968de079bba/scripts/Controls/fingerprints.py"><code>scripts/Controls/fingerprints.py</code></a> <code>--check</code>, after <code>lake build Challenge</code>, compares with the record <a href="https://github.com/adamrsophie/IUTLean/blob/2274f917ddbca57bbe16b783f0f24968de079bba/data/challenge_fingerprints.json"><code>data/challenge_fingerprints.json</code></a>: the SHA-256 of a structural dump of the elaborated type and value of every constant of <code>Challenge.Defs</code>; the SHA-256 of the elaborated type of every theorem of <code>Challenge.lean</code>, whose names must be exactly the theorem names of <code>comparator.json</code>; and the SHA-256 of the trust files (the challenge, the comparator configuration, the gate and its controls, the scripts of <code>scripts/Controls/</code>, <code>lakefile.toml</code>, <code>lake-manifest.json</code>, <code>lean-toolchain</code>, the workflow and <a href="https://github.com/adamrsophie/IUTLean/blob/2274f917ddbca57bbe16b783f0f24968de079bba/.github/CODEOWNERS"><code>.github/CODEOWNERS</code></a>). It fails on any difference. It does not compare solutions with the challenge; <code>lake comparator</code> does that. The continuous integration only checks the record and never writes it.</p>
+
+<h3 id="check-gate">Axiom gate</h3>
+<p><a href="https://github.com/adamrsophie/IUTLean/blob/2274f917ddbca57bbe16b783f0f24968de079bba/AxiomGate.lean"><code>AxiomGate.lean</code></a>, run with <code>lake env lean AxiomGate.lean</code> and the list of tracked library files in <code>AXIOM_GATE_TRACKED_FILES</code>, checks every constant whose module is <code>IUT</code> or <code>IUT.*</code> (except <code>IUT.Experimental.*</code>), <code>Challenge.Defs</code> or <code>Solution</code>, private and auxiliary declarations included:</p>
+<ol>
+<li>no experimental module is in the import closure;</li>
+<li>every axiom it depends on, transitively through Mathlib and core, is among the three allowed ones, which rejects <code>sorryAx</code>, the auxiliary axioms of <code>native_decide</code> and any added axiom;</li>
+<li>it is not an axiom, not <code>unsafe</code>, <code>partial</code> or <code>opaque</code>, and carries neither <code>@[implemented_by]</code> nor <code>@[extern]</code>, with one exemption for compiler helpers of the exact shape the elaborator produces, which are printed;</li>
+<li>no statement settles a registered form of the abc conjecture (<code>Challenge.ABC</code>, <code>Challenge.ABCFinite</code>, <code>Challenge.ABCLog</code> and three equivalent forms of the library) or its negation, unless the name of the theorem ends in <code>abcConjecture</code>, in which case it is printed prominently with its axioms;</li>
+<li>every tracked library file is a module of the import closure and conversely, and every module of the closure is a checked module, part of the toolchain, or a dependency package;</li>
+<li>no checked constant has a name whose suffix names a constant of a dependency, and no instance has a class and argument heads that are all foreign, since either would change what later statements mean.</li>
+</ol>
+<p>It ends with one summary line and fails with a nonzero exit status if any check fails.</p>
+
+<h3 id="check-controls">Gate controls</h3>
+<p><a href="https://github.com/adamrsophie/IUTLean/blob/2274f917ddbca57bbe16b783f0f24968de079bba/GateControls/run.sh"><code>GateControls/run.sh</code></a> compiles a copy of the gate in a temporary directory and runs it on control files with known defects. It passes only if the clean control is accepted with the summary line and the expected list of exempted helpers, and each of the controls for <code>sorry</code>, a forbidden axiom, <code>native_decide</code>, a renamed conjecture statement, an equivalent form, a shadowing name and a foreign instance, and an experimental import is rejected with the expected number of problems and its diagnostic line. It also runs the gate with a tracked file list that names a file the root does not import, which must fail and name it, and the source scan on its own controls, which must report every expected construct and nothing else. It shows that the gate catches the defects represented by a control, not others.</p>
+
+<h3 id="check-comparator">Comparator</h3>
+<p><code>lake comparator</code>, configured by <code>comparator.json</code>, checks inside a bubblewrap sandbox that every theorem listed there has in <code>Solution</code> exactly the statement of <code>Challenge</code>, uses only the permitted axioms, and is accepted by the kernel. It says nothing about theorems not listed. It needs Linux with unprivileged user namespaces; the continuous integration runs it on Ubuntu 24.04.</p>
+
+<h3 id="check-replay">Kernel replay</h3>
+<p><code>lake check</code> exports the default targets and replays them through the kernel of the pinned toolchain, which catches declarations added while kernel checking was disabled. It also runs only on Linux.</p>
+
+<h3 id="check-data">Generated data and documents</h3>
+<p><a href="https://github.com/adamrsophie/IUTLean/blob/2274f917ddbca57bbe16b783f0f24968de079bba/scripts/run_all.sh"><code>scripts/run_all.sh</code></a> regenerates the Lean inventory, the merged statement records, the dependency graph, the dashboard and the generated documents, and fails on an invalid record. The workflow then fails if a generated file under <code>data/</code> or <code>docs/</code> differs from the committed one or is untracked (the picture <code>docs/dependency_graph.svg</code> is regenerated but not compared). These steps run last, after every enforcement step, because the pipeline scripts are not part of the trust set. They count and compare; they do not check mathematics. <a href="https://github.com/adamrsophie/IUTLean/blob/2274f917ddbca57bbe16b783f0f24968de079bba/scripts/README.md"><code>scripts/README.md</code></a> describes each stage.</p>
+
+<h2 id="limits">Limits the tooling states about itself</h2>
+<ul>
+<li><strong>The conjecture check</strong> detects registered forms of the abc conjecture by definitional unfolding only. A form that is only propositionally equivalent, for example with an extra hypothesis <code>True → Challenge.ABC</code>, a conjunction with the conjecture, an unregistered formulation, or an alias marked irreducible, is not detected; consequences of the conjecture are a matter for reading the statements.</li>
+<li><strong>Vacuous hypotheses</strong> (<code>h : False</code>, or hypotheses that cannot hold together) make any conclusion provable and cannot be caught mechanically. Hypotheses and statements are a matter for reading.</li>
+<li><strong>The fingerprint record</strong> is a hash stored beside the file it protects: it stops accidents, not intent, since whoever can change the file can change the hash in the same commit. A change of the record must be approved separately by a person; the rest needs the code owners of <code>.github/CODEOWNERS</code> and branch protection that requires their approval, which must be enabled in the repository settings.</li>
+<li><strong>No second kernel</strong> is configured. <code>lake check</code> and <code>lake comparator</code> replay the declarations through the kernel of the pinned toolchain; no independent checker is installed.</li>
+<li><strong>The extraction stage</strong> needs the four manuscripts, which are not redistributed. The continuous integration does not run it; its outputs (<code>data/source_manifest.json</code>, <code>data/mechanical_index.json</code>, <code>data/dependencies.json</code>, <code>data/references.json</code>) are inputs there.</li>
+<li><strong>The source scan</strong> is lexical, and the comparator and the kernel replay run only on Linux.</li>
+</ul>
+<p>The full account of what each check establishes, with the pages checked against renders module by module, is <a href="doc-VERIFICATION_REPORT.html"><code>docs/VERIFICATION_REPORT.md</code></a>.</p>
+
+<h2 id="reproduce">Reproduce the build</h2>
+<ol>
+<li>Install <a href="https://github.com/leanprover/elan">elan</a>; it reads the toolchain from <code>lean-toolchain</code>.</li>
+<li>Clone <a href="https://github.com/adamrsophie/IUTLean">the repository</a> and enter it.</li>
+<li>Fetch the compiled Mathlib with <code>lake exe cache get</code>, then build with <code>lake build</code>.</li>
+<li>Run the checks in the order of the continuous integration, as below. The last two need Linux.</li>
+</ol>
+<pre><code>git clone https://github.com/adamrsophie/IUTLean.git
+cd IUTLean
+lake exe cache get
+python3 -I scripts/Controls/source_scan.py
+python3 -I scripts/gen_root.py --check
+lake build
+lake build Challenge
+python3 -I scripts/Controls/fingerprints.py --check
+git ls-files -- IUT.lean IUT &gt; tracked-files.txt
+AXIOM_GATE_TRACKED_FILES=tracked-files.txt lake env lean AxiomGate.lean
+AXIOM_GATE_TRACKED_FILES=tracked-files.txt sh GateControls/run.sh AxiomGate.lean
+lake comparator
+lake check</code></pre>
+
+<h2 id="contribute">Contribute</h2>
+<p>Contributions are welcome as issues and pull requests on <a href="https://github.com/adamrsophie/IUTLean">the repository</a>; the rules are in <a href="doc-CONTRIBUTING.html"><code>CONTRIBUTING.md</code></a>. Useful contributions include:</p>
+<ul>
+<li>a curated record for a statement, read from the pages and written in the format of <code>data/curated/</code>, with the pages read;</li>
+<li>a Lean proof of an elementary step, recorded as a fragment of its parent, or of a prerequisite, that follows the trust policy;</li>
+<li>a countermodel that refutes a principle an argument might use, with a precise statement of what it refutes and what it does not;</li>
+<li>a correction: a statement whose formalization differs from the source, with the page.</li>
+</ul>
+<p>A contribution must not change the toolchain, the Mathlib pin, <code>Challenge/Defs.lean</code> or <code>Challenge.lean</code> without saying so explicitly, and every claim attributed to a paper must cite the pages it comes from.</p>
+
+<h2 id="site">This site</h2>
+<p>The site is generated from commit <code>2274f91</code> of the repository: the generator refuses to run on a working tree with uncommitted changes unless told to, and reads every input from that commit, not from the working tree. It reads the data files, the Lean sources, the documents and the git history, and stops if a required input or key is missing. Every count in the text of the site comes from <code>data/dashboard.json</code>, with its caption from <code>docs/DASHBOARD.md</code>; the documents are rendered as committed. Every link to a file of the repository is pinned to the commit and checked against its file list. Before publishing, every page is scanned for text that breaks the writing rules of the project. The site is published at <a href="https://adamrsophie.github.io/IUTLean/">https://adamrsophie.github.io/IUTLean/</a>.</p>
+
+</main>
+</div>
+<footer class="site-footer"><div class="wrap">
+<p>Maintained by Adam R Sophie. Source: <a href="https://github.com/adamrsophie/IUTLean">github.com/adamrsophie/IUTLean</a>. Built on Lean 4 and Mathlib.</p>
+<p>Built on November 25, 2026 from commit <a href="https://github.com/adamrsophie/IUTLean/commit/2274f917ddbca57bbe16b783f0f24968de079bba"><code>2274f91</code></a>.</p>
+</div></footer>
+</body>
+</html>
