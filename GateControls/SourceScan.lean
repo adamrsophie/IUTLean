@@ -116,3 +116,29 @@ attribute [instance] n
 structure o where
   x : Nat
 deriving Repr
+
+#check _root_.sorryAx
+
+#check «sorryAx»
+
+@[«instance»] def p : Inhabited Nat := ⟨0⟩
+
+attribute [default_instance 2000] instOfNat
+
+@[«default_instance»] def q : Inhabited Nat := ⟨1⟩
+
+example : 2 + 2 = 4 := by decide +native
+
+#check Lean.ofReduceBool
+
+#check Lean.trustCompiler
+
+open Real renaming exp → log
+
+open Nat hiding succ
+
+export Nat (succ)
+
+open Opposite2
+
+import Mathlib import IUT.Experimental.Hidden

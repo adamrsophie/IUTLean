@@ -31264,7 +31264,7 @@
   {
    "from": "lean:IUT.ABC.FormalConjectures.abc",
    "kind": "lean_uses",
-   "to": "lean:IUT.ABC.FormalConjectures.radical"
+   "to": "lean:IUT.ABC.FormalConjectures.fcRadical"
   },
   {
    "from": "lean:IUT.ABC.FormalConjectures.abcSet_eq",
@@ -31289,7 +31289,7 @@
   {
    "from": "lean:IUT.ABC.FormalConjectures.abcSet_eq",
    "kind": "lean_uses",
-   "to": "lean:IUT.ABC.FormalConjectures.radical"
+   "to": "lean:IUT.ABC.FormalConjectures.fcRadical"
   },
   {
    "from": "lean:IUT.ABC.FormalConjectures.abcSet_eq",
@@ -31369,12 +31369,12 @@
   {
    "from": "lean:IUT.ABC.FormalConjectures.abc_iff_abcFinite",
    "kind": "lean_uses",
-   "to": "lean:IUT.ABC.FormalConjectures.radical"
+   "to": "lean:IUT.ABC.FormalConjectures.fcRadical"
   },
   {
    "from": "lean:IUT.ABC.FormalConjectures.ltConstantMul",
    "kind": "lean_uses",
-   "to": "lean:IUT.ABC.FormalConjectures.radical"
+   "to": "lean:IUT.ABC.FormalConjectures.fcRadical"
   },
   {
    "from": "lean:IUT.ABC.FormalConjectures.ltConstantMul_iff_ABC",
@@ -31389,12 +31389,12 @@
   {
    "from": "lean:IUT.ABC.FormalConjectures.ltConstantMul_iff_ABC",
    "kind": "lean_uses",
-   "to": "lean:IUT.ABC.FormalConjectures.ltConstantMul"
+   "to": "lean:IUT.ABC.FormalConjectures.fcRadical"
   },
   {
    "from": "lean:IUT.ABC.FormalConjectures.ltConstantMul_iff_ABC",
    "kind": "lean_uses",
-   "to": "lean:IUT.ABC.FormalConjectures.radical"
+   "to": "lean:IUT.ABC.FormalConjectures.ltConstantMul"
   },
   {
    "from": "lean:IUT.ABC.FormalConjectures.ltConstantMul_iff_ABC",
@@ -31414,7 +31414,7 @@
   {
    "from": "lean:IUT.ABC.FormalConjectures.quality",
    "kind": "lean_uses",
-   "to": "lean:IUT.ABC.FormalConjectures.radical"
+   "to": "lean:IUT.ABC.FormalConjectures.fcRadical"
   },
   {
    "from": "lean:IUT.ABC.FormalConjectures.qualitySet_eq",
@@ -31439,17 +31439,17 @@
   {
    "from": "lean:IUT.ABC.FormalConjectures.qualitySet_eq",
    "kind": "lean_uses",
+   "to": "lean:IUT.ABC.FormalConjectures.fcRadical"
+  },
+  {
+   "from": "lean:IUT.ABC.FormalConjectures.qualitySet_eq",
+   "kind": "lean_uses",
    "to": "lean:IUT.ABC.FormalConjectures.quality"
   },
   {
    "from": "lean:IUT.ABC.FormalConjectures.qualitySet_eq",
    "kind": "lean_uses",
    "to": "lean:IUT.ABC.FormalConjectures.quality_gt_iff"
-  },
-  {
-   "from": "lean:IUT.ABC.FormalConjectures.qualitySet_eq",
-   "kind": "lean_uses",
-   "to": "lean:IUT.ABC.FormalConjectures.radical"
   },
   {
    "from": "lean:IUT.ABC.FormalConjectures.qualityVariant",
@@ -31494,6 +31494,11 @@
   {
    "from": "lean:IUT.ABC.FormalConjectures.qualityVariant_iff_ABC",
    "kind": "lean_uses",
+   "to": "lean:IUT.ABC.FormalConjectures.fcRadical"
+  },
+  {
+   "from": "lean:IUT.ABC.FormalConjectures.qualityVariant_iff_ABC",
+   "kind": "lean_uses",
    "to": "lean:IUT.ABC.FormalConjectures.quality"
   },
   {
@@ -31507,11 +31512,6 @@
    "to": "lean:IUT.ABC.FormalConjectures.qualityVariant"
   },
   {
-   "from": "lean:IUT.ABC.FormalConjectures.qualityVariant_iff_ABC",
-   "kind": "lean_uses",
-   "to": "lean:IUT.ABC.FormalConjectures.radical"
-  },
-  {
    "from": "lean:IUT.ABC.FormalConjectures.quality_gt_iff",
    "kind": "lean_uses",
    "to": "lean:Challenge.rad"
@@ -31519,12 +31519,12 @@
   {
    "from": "lean:IUT.ABC.FormalConjectures.quality_gt_iff",
    "kind": "lean_uses",
-   "to": "lean:IUT.ABC.FormalConjectures.quality"
+   "to": "lean:IUT.ABC.FormalConjectures.fcRadical"
   },
   {
    "from": "lean:IUT.ABC.FormalConjectures.quality_gt_iff",
    "kind": "lean_uses",
-   "to": "lean:IUT.ABC.FormalConjectures.radical"
+   "to": "lean:IUT.ABC.FormalConjectures.quality"
   },
   {
    "from": "lean:IUT.ABC.FormalConjectures.quality_gt_iff",
@@ -31544,7 +31544,7 @@
   {
    "from": "lean:IUT.ABC.FormalConjectures.radical_eq_rad",
    "kind": "lean_uses",
-   "to": "lean:IUT.ABC.FormalConjectures.radical"
+   "to": "lean:IUT.ABC.FormalConjectures.fcRadical"
   },
   {
    "from": "lean:IUT.ABC.FormalConjectures.two_le_rad",
@@ -31839,12 +31839,12 @@
   {
    "from": "lean:IUT.ABC.Variants.quality_one_two_three_pow_seven_gt",
    "kind": "lean_uses",
-   "to": "lean:IUT.ABC.FormalConjectures.quality"
+   "to": "lean:IUT.ABC.FormalConjectures.fcRadical"
   },
   {
    "from": "lean:IUT.ABC.Variants.quality_one_two_three_pow_seven_gt",
    "kind": "lean_uses",
-   "to": "lean:IUT.ABC.FormalConjectures.radical"
+   "to": "lean:IUT.ABC.FormalConjectures.quality"
   },
   {
    "from": "lean:IUT.ABC.Variants.quality_one_two_three_pow_seven_gt",
@@ -31864,12 +31864,12 @@
   {
    "from": "lean:IUT.ABC.Variants.quality_reyssat_gt",
    "kind": "lean_uses",
-   "to": "lean:IUT.ABC.FormalConjectures.quality"
+   "to": "lean:IUT.ABC.FormalConjectures.fcRadical"
   },
   {
    "from": "lean:IUT.ABC.Variants.quality_reyssat_gt",
    "kind": "lean_uses",
-   "to": "lean:IUT.ABC.FormalConjectures.radical"
+   "to": "lean:IUT.ABC.FormalConjectures.quality"
   },
   {
    "from": "lean:IUT.ABC.Variants.quality_reyssat_gt",
@@ -37904,7 +37904,7 @@
   {
    "from": "lean:IUT.PaperIII.Corollary312.IntervalExample.example_bridge_hypotheses",
    "kind": "lean_uses",
-   "to": "lean:IUT.PaperIII.Corollary312.IntervalExample.image"
+   "to": "lean:IUT.PaperIII.Corollary312.IntervalExample.intervalImage"
   },
   {
    "from": "lean:IUT.PaperIII.Corollary312.IntervalExample.example_bridge_hypotheses",
@@ -38104,7 +38104,7 @@
   {
    "from": "lean:IUT.PaperIII.Corollary312.IntervalExample.example_union_matters",
    "kind": "lean_uses",
-   "to": "lean:IUT.PaperIII.Corollary312.IntervalExample.image"
+   "to": "lean:IUT.PaperIII.Corollary312.IntervalExample.intervalImage"
   },
   {
    "from": "lean:IUT.PaperIII.Corollary312.IntervalExample.example_union_matters",
@@ -38139,7 +38139,7 @@
   {
    "from": "lean:IUT.PaperIII.Corollary312.IntervalExample.hull_union",
    "kind": "lean_uses",
-   "to": "lean:IUT.PaperIII.Corollary312.IntervalExample.image"
+   "to": "lean:IUT.PaperIII.Corollary312.IntervalExample.intervalImage"
   },
   {
    "from": "lean:IUT.PaperIII.Corollary312.IntervalExample.hull_union",
@@ -38147,12 +38147,12 @@
    "to": "lean:IUT.PaperIII.Corollary312.IntervalExample.union_eq"
   },
   {
-   "from": "lean:IUT.PaperIII.Corollary312.IntervalExample.image",
+   "from": "lean:IUT.PaperIII.Corollary312.IntervalExample.intervalImage",
    "kind": "lean_uses",
    "to": "ext:Nat.instAtLeastTwoHAddOfNat"
   },
   {
-   "from": "lean:IUT.PaperIII.Corollary312.IntervalExample.image",
+   "from": "lean:IUT.PaperIII.Corollary312.IntervalExample.intervalImage",
    "kind": "lean_uses",
    "to": "ext:Nat.instNeZeroSucc"
   },
@@ -38209,7 +38209,7 @@
   {
    "from": "lean:IUT.PaperIII.Corollary312.IntervalExample.setting",
    "kind": "lean_uses",
-   "to": "lean:IUT.PaperIII.Corollary312.IntervalExample.image"
+   "to": "lean:IUT.PaperIII.Corollary312.IntervalExample.intervalImage"
   },
   {
    "from": "lean:IUT.PaperIII.Corollary312.IntervalExample.setting",
@@ -38249,7 +38249,7 @@
   {
    "from": "lean:IUT.PaperIII.Corollary312.IntervalExample.union_eq",
    "kind": "lean_uses",
-   "to": "lean:IUT.PaperIII.Corollary312.IntervalExample.image"
+   "to": "lean:IUT.PaperIII.Corollary312.IntervalExample.intervalImage"
   },
   {
    "from": "lean:IUT.PaperIII.Corollary312.IntervalExample.volume_hullOfUnion",
@@ -38439,12 +38439,12 @@
   {
    "from": "lean:IUT.PaperIII.Corollary312.LabelExample.example_label_conclusion_fails",
    "kind": "lean_uses",
-   "to": "lean:IUT.PaperIII.Corollary312.average"
+   "to": "lean:IUT.PaperIII.Corollary312.average_ne_bot"
   },
   {
    "from": "lean:IUT.PaperIII.Corollary312.LabelExample.example_label_conclusion_fails",
    "kind": "lean_uses",
-   "to": "lean:IUT.PaperIII.Corollary312.average_ne_bot"
+   "to": "lean:IUT.PaperIII.Corollary312.equalWeightAverage"
   },
   {
    "from": "lean:IUT.PaperIII.Corollary312.LabelExample.example_label_conclusion_fails",
@@ -38544,7 +38544,7 @@
   {
    "from": "lean:IUT.PaperIII.Corollary312.LabelExample.procQLogVolume_eq",
    "kind": "lean_uses",
-   "to": "lean:IUT.PaperIII.Corollary312.average"
+   "to": "lean:IUT.PaperIII.Corollary312.equalWeightAverage"
   },
   {
    "from": "lean:IUT.PaperIII.Corollary312.LabelExample.procQLogVolume_eq",
@@ -38619,7 +38619,7 @@
   {
    "from": "lean:IUT.PaperIII.Corollary312.LabelExample.procThetaLogVolume_eq",
    "kind": "lean_uses",
-   "to": "lean:IUT.PaperIII.Corollary312.average"
+   "to": "lean:IUT.PaperIII.Corollary312.equalWeightAverage"
   },
   {
    "from": "lean:IUT.PaperIII.Corollary312.LabelExample.procThetaLogVolume_eq",
@@ -41179,7 +41179,7 @@
   {
    "from": "lean:IUT.PaperIII.Corollary312.TwoPlaceExample.qPair_volume_ne_zero",
    "kind": "lean_uses",
-   "to": "lean:IUT.PaperIII.Corollary312.IntervalExample.image"
+   "to": "lean:IUT.PaperIII.Corollary312.IntervalExample.intervalImage"
   },
   {
    "from": "lean:IUT.PaperIII.Corollary312.TwoPlaceExample.qPair_volume_ne_zero",
@@ -41229,22 +41229,22 @@
   {
    "from": "lean:IUT.PaperIII.Corollary312.average_mono",
    "kind": "lean_uses",
-   "to": "lean:IUT.PaperIII.Corollary312.average"
+   "to": "lean:IUT.PaperIII.Corollary312.equalWeightAverage"
   },
   {
    "from": "lean:IUT.PaperIII.Corollary312.average_ne_bot",
    "kind": "lean_uses",
-   "to": "lean:IUT.PaperIII.Corollary312.average"
+   "to": "lean:IUT.PaperIII.Corollary312.equalWeightAverage"
   },
   {
    "from": "lean:IUT.PaperIII.Corollary312.average_ne_top",
    "kind": "lean_uses",
-   "to": "lean:IUT.PaperIII.Corollary312.average"
+   "to": "lean:IUT.PaperIII.Corollary312.equalWeightAverage"
   },
   {
    "from": "lean:IUT.PaperIII.Corollary312.average_of_isEmpty",
    "kind": "lean_uses",
-   "to": "lean:IUT.PaperIII.Corollary312.average"
+   "to": "lean:IUT.PaperIII.Corollary312.equalWeightAverage"
   },
   {
    "from": "lean:IUT.PaperIII.Corollary312.card_nonzeroLabel",
@@ -41484,17 +41484,17 @@
   {
    "from": "lean:IUT.PaperIII.Corollary312.conclusion_of_labelContainment",
    "kind": "lean_uses",
-   "to": "lean:IUT.PaperIII.Corollary312.average"
-  },
-  {
-   "from": "lean:IUT.PaperIII.Corollary312.conclusion_of_labelContainment",
-   "kind": "lean_uses",
    "to": "lean:IUT.PaperIII.Corollary312.average_ne_bot"
   },
   {
    "from": "lean:IUT.PaperIII.Corollary312.conclusion_of_labelContainment",
    "kind": "lean_uses",
    "to": "lean:IUT.PaperIII.Corollary312.conclusion_of_procContainment"
+  },
+  {
+   "from": "lean:IUT.PaperIII.Corollary312.conclusion_of_labelContainment",
+   "kind": "lean_uses",
+   "to": "lean:IUT.PaperIII.Corollary312.equalWeightAverage"
   },
   {
    "from": "lean:IUT.PaperIII.Corollary312.conclusion_of_labelContainment",
@@ -41689,17 +41689,17 @@
   {
    "from": "lean:IUT.PaperIII.Corollary312.conclusion_of_procContainment",
    "kind": "lean_uses",
-   "to": "lean:IUT.PaperIII.Corollary312.average"
-  },
-  {
-   "from": "lean:IUT.PaperIII.Corollary312.conclusion_of_procContainment",
-   "kind": "lean_uses",
    "to": "lean:IUT.PaperIII.Corollary312.average_ne_bot"
   },
   {
    "from": "lean:IUT.PaperIII.Corollary312.conclusion_of_procContainment",
    "kind": "lean_uses",
    "to": "lean:IUT.PaperIII.Corollary312.average_ne_top"
+  },
+  {
+   "from": "lean:IUT.PaperIII.Corollary312.conclusion_of_procContainment",
+   "kind": "lean_uses",
+   "to": "lean:IUT.PaperIII.Corollary312.equalWeightAverage"
   },
   {
    "from": "lean:IUT.PaperIII.Corollary312.conclusion_of_procContainment",
@@ -42254,12 +42254,12 @@
   {
    "from": "lean:IUT.PaperIII.Corollary312.labelAverage_const",
    "kind": "lean_uses",
-   "to": "lean:IUT.PaperIII.Corollary312.average"
+   "to": "lean:IUT.PaperIII.Corollary312.card_nonzeroLabel"
   },
   {
    "from": "lean:IUT.PaperIII.Corollary312.labelAverage_const",
    "kind": "lean_uses",
-   "to": "lean:IUT.PaperIII.Corollary312.card_nonzeroLabel"
+   "to": "lean:IUT.PaperIII.Corollary312.equalWeightAverage"
   },
   {
    "from": "lean:IUT.PaperIII.Corollary312.labelAverage_const",
@@ -42299,12 +42299,12 @@
   {
    "from": "lean:IUT.PaperIII.Corollary312.labelAverage_eq_average",
    "kind": "lean_uses",
-   "to": "lean:IUT.PaperIII.Corollary312.average"
+   "to": "lean:IUT.PaperIII.Corollary312.card_nonzeroLabel"
   },
   {
    "from": "lean:IUT.PaperIII.Corollary312.labelAverage_eq_average",
    "kind": "lean_uses",
-   "to": "lean:IUT.PaperIII.Corollary312.card_nonzeroLabel"
+   "to": "lean:IUT.PaperIII.Corollary312.equalWeightAverage"
   },
   {
    "from": "lean:IUT.PaperIII.Corollary312.labelAverage_eq_average",
@@ -42409,12 +42409,12 @@
   {
    "from": "lean:IUT.PaperIII.Corollary312.nonempty_of_average_neg",
    "kind": "lean_uses",
-   "to": "lean:IUT.PaperIII.Corollary312.average"
+   "to": "lean:IUT.PaperIII.Corollary312.average_of_isEmpty"
   },
   {
    "from": "lean:IUT.PaperIII.Corollary312.nonempty_of_average_neg",
    "kind": "lean_uses",
-   "to": "lean:IUT.PaperIII.Corollary312.average_of_isEmpty"
+   "to": "lean:IUT.PaperIII.Corollary312.equalWeightAverage"
   },
   {
    "from": "lean:IUT.PaperIII.Corollary312.possibleLogVolumes",
@@ -42519,12 +42519,12 @@
   {
    "from": "lean:IUT.PaperIII.Corollary312.procPilotLogVolumes",
    "kind": "lean_uses",
-   "to": "lean:IUT.PaperIII.Corollary312.average"
+   "to": "lean:IUT.PaperIII.Corollary312.average_ne_bot"
   },
   {
    "from": "lean:IUT.PaperIII.Corollary312.procPilotLogVolumes",
    "kind": "lean_uses",
-   "to": "lean:IUT.PaperIII.Corollary312.average_ne_bot"
+   "to": "lean:IUT.PaperIII.Corollary312.equalWeightAverage"
   },
   {
    "from": "lean:IUT.PaperIII.Corollary312.procPilotLogVolumes",
@@ -42559,7 +42559,7 @@
   {
    "from": "lean:IUT.PaperIII.Corollary312.procQLogVolume",
    "kind": "lean_uses",
-   "to": "lean:IUT.PaperIII.Corollary312.average"
+   "to": "lean:IUT.PaperIII.Corollary312.equalWeightAverage"
   },
   {
    "from": "lean:IUT.PaperIII.Corollary312.procThetaLogVolume",
@@ -42574,7 +42574,7 @@
   {
    "from": "lean:IUT.PaperIII.Corollary312.procThetaLogVolume",
    "kind": "lean_uses",
-   "to": "lean:IUT.PaperIII.Corollary312.average"
+   "to": "lean:IUT.PaperIII.Corollary312.equalWeightAverage"
   },
   {
    "from": "lean:IUT.PaperIII.Corollary312.stepXIf_inclusion_iff_inequality",
@@ -42924,7 +42924,7 @@
   {
    "from": "lean:IUT.PaperIV.Corollary2_2.P1_bound",
    "kind": "lean_uses",
-   "to": "lean:IUT.PaperIV.Proposition2_1.log_le_self"
+   "to": "lean:IUT.PaperIV.Proposition2_1.log_le_self_of_one_le"
   },
   {
    "from": "lean:IUT.PaperIV.Corollary2_2.P1_lower",
@@ -42954,7 +42954,7 @@
   {
    "from": "lean:IUT.PaperIV.Corollary2_2.sqrt_mul_log_l",
    "kind": "lean_uses",
-   "to": "lean:IUT.PaperIV.Proposition2_1.log_le_self"
+   "to": "lean:IUT.PaperIV.Proposition2_1.log_le_self_of_one_le"
   },
   {
    "from": "lean:IUT.PaperIV.Corollary2_3.BDeq.le",
@@ -43544,7 +43544,7 @@
   {
    "from": "lean:IUT.PaperIV.Proposition2_1.proposition2_1",
    "kind": "lean_uses",
-   "to": "lean:IUT.PaperIV.Proposition2_1.log_le_self"
+   "to": "lean:IUT.PaperIV.Proposition2_1.log_le_self_of_one_le"
   },
   {
    "from": "lean:IUT.PaperIV.Proposition2_1.proposition2_1",
@@ -56574,6 +56574,17 @@
     "Quot.sound",
     "propext"
    ],
+   "id": "lean:IUT.ABC.FormalConjectures.fcRadical",
+   "kind": "definition",
+   "module": "IUT.Applications.ABCFormalConjectures",
+   "type": "lean_declaration"
+  },
+  {
+   "axioms": [
+    "Classical.choice",
+    "Quot.sound",
+    "propext"
+   ],
    "id": "lean:IUT.ABC.FormalConjectures.ltConstantMul",
    "kind": "definition",
    "module": "IUT.Applications.ABCFormalConjectures",
@@ -56642,17 +56653,6 @@
    ],
    "id": "lean:IUT.ABC.FormalConjectures.quality_gt_iff",
    "kind": "theorem",
-   "module": "IUT.Applications.ABCFormalConjectures",
-   "type": "lean_declaration"
-  },
-  {
-   "axioms": [
-    "Classical.choice",
-    "Quot.sound",
-    "propext"
-   ],
-   "id": "lean:IUT.ABC.FormalConjectures.radical",
-   "kind": "definition",
    "module": "IUT.Applications.ABCFormalConjectures",
    "type": "lean_declaration"
   },
@@ -61567,7 +61567,7 @@
     "Quot.sound",
     "propext"
    ],
-   "id": "lean:IUT.PaperIII.Corollary312.IntervalExample.image",
+   "id": "lean:IUT.PaperIII.Corollary312.IntervalExample.intervalImage",
    "kind": "definition",
    "module": "IUT.PaperIII.Corollary312.Comparison",
    "type": "lean_declaration"
@@ -62897,17 +62897,6 @@
     "Quot.sound",
     "propext"
    ],
-   "id": "lean:IUT.PaperIII.Corollary312.average",
-   "kind": "definition",
-   "module": "IUT.PaperIII.Corollary312.Comparison",
-   "type": "lean_declaration"
-  },
-  {
-   "axioms": [
-    "Classical.choice",
-    "Quot.sound",
-    "propext"
-   ],
    "id": "lean:IUT.PaperIII.Corollary312.average_mono",
    "kind": "theorem",
    "module": "IUT.PaperIII.Corollary312.Comparison",
@@ -63043,6 +63032,17 @@
    "id": "lean:IUT.PaperIII.Corollary312.constantForm_of_top",
    "kind": "theorem",
    "module": "IUT.PaperIII.Corollary312.Numerical",
+   "type": "lean_declaration"
+  },
+  {
+   "axioms": [
+    "Classical.choice",
+    "Quot.sound",
+    "propext"
+   ],
+   "id": "lean:IUT.PaperIII.Corollary312.equalWeightAverage",
+   "kind": "definition",
+   "module": "IUT.PaperIII.Corollary312.Comparison",
    "type": "lean_declaration"
   },
   {
@@ -64550,7 +64550,7 @@
     "Quot.sound",
     "propext"
    ],
-   "id": "lean:IUT.PaperIV.Proposition2_1.log_le_self",
+   "id": "lean:IUT.PaperIV.Proposition2_1.log_le_self_of_one_le",
    "kind": "theorem",
    "module": "IUT.PaperIV.Proposition2_1",
    "type": "lean_declaration"

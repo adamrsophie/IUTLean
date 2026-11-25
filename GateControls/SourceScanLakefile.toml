@@ -29,3 +29,6 @@ roots = ["Other"]
 name = "IUTExperimental"
 roots = []
 globs = ["IUT.Experimental.+"]
+
+[[lean_lib]]
+name = "Challenge"

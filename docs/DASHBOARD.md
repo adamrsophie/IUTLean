@@ -17,8 +17,9 @@ A statement counts as formalized only when one Lean declaration states its entir
 | Statement records formalized in full | 10 |
 | Statement records proved in full, unconditionally | 3 |
 | Statement records proved in full, conditionally (named hypotheses) | 0 |
-| Fragments checked in Lean, unconditionally | 84 |
+| Fragments checked in Lean, unconditionally | 81 |
 | Fragments checked in Lean, conditionally | 49 |
+| Model tests (fragments that test a model or an example, not a step of the papers; scope model_test) | 3 |
 | Records (statements and fragments) whose declaration is a definition, structure or other non-theorem typed in Lean (never counted as proved) | 36 |
 | Parents with at least one checked fragment (not counted as formalized) | 33 |
 | Obligation entries (items of the obligations lists, open claims and notes alike) | 927 |
@@ -45,170 +46,170 @@ Entries of `data/countermodels.json`, by the kind that each entry gives itself. 
 
 Each row is one Lean lemma that checks a piece of the parent named. The parent keeps its own status.
 
-| Fragment | Parent | Lean declaration | Declaration kind | Proof status |
-|---|---|---|---|---|
-| `IUT1.Def3_1.a.frag.sqrtNegOne` | `IUT1.Def3_1.a` | `IUT.PaperI.SqrtNegOneMem` | definition | NOT_EXTRACTED |
-| `IUT1.Def3_1.b.frag.badSetOddNonempty` | `IUT1.Def3_1.b` | `IUT.PaperI.BadSetOddNonempty` | definition | NOT_EXTRACTED |
-| `IUT1.Def3_1.b.frag.galoisDegreePrimeTo` | `IUT1.Def3_1.b` | `IUT.PaperI.GaloisOfDegreePrimeTo` | definition | NOT_EXTRACTED |
-| `IUT1.Def3_1.b.frag.multiplicativeOverBadSet` | `IUT1.Def3_1.b` | `IUT.PaperI.MultiplicativeOverBadSet` | definition | NOT_EXTRACTED |
-| `IUT1.Def3_1.b.frag.semistable` | `IUT1.Def3_1.b` | `IUT.PaperI.SemistableAtFinitePlaces` | definition | NOT_EXTRACTED |
-| `IUT1.Def3_1.b.frag.torsionSix` | `IUT1.Def3_1.b` | `IUT.PaperI.TorsionRational` | definition | NOT_EXTRACTED |
-| `IUT1.Def3_1.c.frag.firstClause` | `IUT1.Def3_1.c` | `IUT.PaperI.AuxiliaryPrimeFirstClause` | definition | NOT_EXTRACTED |
-| `IUT1.Def3_1.c.frag.primeToBadResidueChars` | `IUT1.Def3_1.c` | `IUT.PaperI.PrimeToBadResidueChars` | definition | NOT_EXTRACTED |
-| `IUT1.Def3_1.frag.partialConditions` | `IUT1.Def3_1` | `IUT.PaperI.PartialInitialThetaConditions` | structure | NOT_EXTRACTED |
-| `IUT1.Rem2_5_3.frag.galois_countable` | `IUT1.Rem2_5_3` | `IUT.PaperI.IsGaloisCountableTemperedGroup` | definition | NOT_EXTRACTED |
-| `IUT1.Sec0.TemperedGroup.frag.btemp_category` | `IUT1.Sec0.TemperedGroup` | `IUT.PaperI.TemperedSetCategory` | definition | NOT_EXTRACTED |
-| `IUT1.Sec0.TemperedGroup.frag.connected_temperoid` | `IUT1.Sec0.TemperedGroup` | `IUT.PaperI.IsConnectedTemperoid` | definition | NOT_EXTRACTED |
-| `IUT1.Sec0.TemperedGroup.frag.tempered_group` | `IUT1.Sec0.TemperedGroup` | `IUT.PaperI.IsTemperedGroup` | definition | NOT_EXTRACTED |
-| `IUT1.Sec0.TemperoidMorphism.frag.morphism_class` | `IUT1.Sec0.TemperoidMorphism` | `IUT.PaperI.TemperoidMorphismClass` | definition | NOT_EXTRACTED |
-| `IUT2.Prop4_1.frag.sum_exponents` | `IUT2.Prop4_1` | `IUT.PaperII.Labels.sum_exponents` | theorem | KERNEL_VERIFIED |
-| `IUT2.Rem2_5_1.frag.labelRep_bijective` | `IUT2.Rem2_5_1` | `IUT.PaperII.Labels.labelRep_bijective` | theorem | KERNEL_VERIFIED |
-| `IUT2.Rem2_5_1.frag.theta_series_padic_instance` | `IUT2.Rem2_5_1` | `IUT.Prerequisites.ThetaFunction.padic_five_norm_thetaRatio` | theorem | KERNEL_VERIFIED |
-| `IUT2.Rem2_5_1.frag.theta_series_quasi_periodicity` | `IUT2.Rem2_5_1` | `IUT.Prerequisites.ThetaFunction.thetaSeries_zpow_mul` | theorem | KERNEL_VERIFIED |
-| `IUT2.Rem2_5_1.frag.theta_series_zeros` | `IUT2.Rem2_5_1` | `IUT.Prerequisites.ThetaFunction.thetaSeries_zpow` | theorem | KERNEL_VERIFIED |
-| `IUT2.Rem2_5_1.frag.theta_value_label_orbit` | `IUT2.Rem2_5_1` | `IUT.Prerequisites.ThetaFunction.pow_mul_thetaRatio_sq_eq_one_iff` | theorem | KERNEL_VERIFIED |
-| `IUT2.Rem2_5_1.frag.theta_values_at_sqrt_neg_one` | `IUT2.Rem2_5_1` | `IUT.Prerequisites.ThetaFunction.thetaSeries_zpow_mul_of_sq_eq_neg_one` | theorem | KERNEL_VERIFIED |
-| `IUT2.Rem2_6_3.frag.gammaNormValue_strictMono` | `IUT2.Rem2_6_3` | `IUT.PaperII.Labels.gammaNormValue_strictMono` | theorem | KERNEL_VERIFIED |
-| `IUT2.Rem2_6_3.frag.gammaNorm_eq_max_iff` | `IUT2.Rem2_6_3` | `IUT.PaperII.Labels.gammaNorm_eq_max_iff` | theorem | KERNEL_VERIFIED |
-| `IUT2.Rem2_6_3.frag.gammaNorm_eq` | `IUT2.Rem2_6_3` | `IUT.PaperII.Labels.gammaNorm_eq` | theorem | KERNEL_VERIFIED |
-| `IUT2.Rem4_7_3.frag.average_exponents` | `IUT2.Rem4_7_3` | `IUT.PaperII.Labels.average_exponents` | theorem | KERNEL_VERIFIED |
-| `IUT3.Cor3_12.Reduction.frag.inequality_of_nonneg` | `IUT3.Cor3_12.Reduction` | `IUT.PaperIII.Corollary312.inequality_of_nonneg` | theorem | CONDITIONALLY_VERIFIED |
-| `IUT3.Cor3_12.Statement.frag.ComparisonSetting` | `IUT3.Cor3_12.Statement` | `IUT.PaperIII.Corollary312.ComparisonSetting` | structure | NOT_EXTRACTED |
-| `IUT3.Cor3_12.Statement.frag.Containment` | `IUT3.Cor3_12.Statement` | `IUT.PaperIII.Corollary312.ComparisonSetting.Containment` | definition | NOT_EXTRACTED |
-| `IUT3.Cor3_12.Statement.frag.IndeterminacyOrbit` | `IUT3.Cor3_12.Statement` | `IUT.PaperIII.Corollary312.IndeterminacyOrbit` | structure | NOT_EXTRACTED |
-| `IUT3.Cor3_12.Statement.frag.LogVolumeComparison` | `IUT3.Cor3_12.Statement` | `IUT.PaperIII.Corollary312.ComparisonSetting.LogVolumeComparison` | definition | NOT_EXTRACTED |
-| `IUT3.Cor3_12.Statement.frag.RegionComparison_conclusion_of_containment` | `IUT3.Cor3_12.Statement` | `IUT.PaperIII.Corollary312.RegionComparison.conclusion_of_containment` | theorem | CONDITIONALLY_VERIFIED |
-| `IUT3.Cor3_12.Statement.frag.RegionComparison` | `IUT3.Cor3_12.Statement` | `IUT.PaperIII.Corollary312.RegionComparison` | structure | NOT_EXTRACTED |
-| `IUT3.Cor3_12.Statement.frag.conclusion_iff_constantForm` | `IUT3.Cor3_12.Statement` | `IUT.PaperIII.Corollary312.conclusion_iff_constantForm` | theorem | CONDITIONALLY_VERIFIED |
-| `IUT3.Cor3_12.Statement.frag.conclusion_iff` | `IUT3.Cor3_12.Statement` | `IUT.PaperIII.Corollary312.ComparisonSetting.conclusion_iff` | theorem | CONDITIONALLY_VERIFIED |
-| `IUT3.Cor3_12.Statement.frag.conclusion_of_constantForm` | `IUT3.Cor3_12.Statement` | `IUT.PaperIII.Corollary312.conclusion_of_constantForm` | theorem | CONDITIONALLY_VERIFIED |
-| `IUT3.Cor3_12.Statement.frag.conclusion_of_containment` | `IUT3.Cor3_12.Statement` | `IUT.PaperIII.Corollary312.ComparisonSetting.conclusion_of_containment` | theorem | CONDITIONALLY_VERIFIED |
-| `IUT3.Cor3_12.Statement.frag.conclusion_of_labelContainment` | `IUT3.Cor3_12.Statement` | `IUT.PaperIII.Corollary312.conclusion_of_labelContainment` | theorem | CONDITIONALLY_VERIFIED |
-| `IUT3.Cor3_12.Statement.frag.conclusion_of_placewiseContainment` | `IUT3.Cor3_12.Statement` | `IUT.PaperIII.Corollary312.conclusion_of_placewiseContainment` | theorem | CONDITIONALLY_VERIFIED |
-| `IUT3.Cor3_12.Statement.frag.conclusion_of_procContainment` | `IUT3.Cor3_12.Statement` | `IUT.PaperIII.Corollary312.conclusion_of_procContainment` | theorem | CONDITIONALLY_VERIFIED |
-| `IUT3.Cor3_12.Statement.frag.constantForm_of_conclusion` | `IUT3.Cor3_12.Statement` | `IUT.PaperIII.Corollary312.constantForm_of_conclusion` | theorem | CONDITIONALLY_VERIFIED |
-| `IUT3.Cor3_12.Statement.frag.constantForm_of_top` | `IUT3.Cor3_12.Statement` | `IUT.PaperIII.Corollary312.constantForm_of_top` | theorem | CONDITIONALLY_VERIFIED |
-| `IUT3.Cor3_12.Statement.frag.example_bridge_hypotheses` | `IUT3.Cor3_12.Statement` | `IUT.PaperIII.Corollary312.IntervalExample.example_bridge_hypotheses` | theorem | KERNEL_VERIFIED |
-| `IUT3.Cor3_12.Statement.frag.example_comparison_fails` | `IUT3.Cor3_12.Statement` | `IUT.PaperIII.Corollary312.IntervalExample.example_comparison_fails` | theorem | KERNEL_VERIFIED |
-| `IUT3.Cor3_12.Statement.frag.example_union_matters` | `IUT3.Cor3_12.Statement` | `IUT.PaperIII.Corollary312.IntervalExample.example_union_matters` | theorem | KERNEL_VERIFIED |
-| `IUT3.Cor3_12.Statement.frag.logVolume_orbitImage_le` | `IUT3.Cor3_12.Statement` | `IUT.PaperIII.Corollary312.IndeterminacyOrbit.logVolume_orbitImage_le` | theorem | KERNEL_VERIFIED |
-| `IUT3.Cor3_12.Statement.frag.logVolume` | `IUT3.Cor3_12.Statement` | `IUT.PaperIII.Corollary312.logVolume` | definition | NOT_EXTRACTED |
-| `IUT3.Cor3_12.StepX.frag.logVolume_orbitImage_eq` | `IUT3.Cor3_12.StepX` | `IUT.PaperIII.Corollary312.IndeterminacyOrbit.logVolume_orbitImage_eq` | theorem | CONDITIONALLY_VERIFIED |
-| `IUT3.Cor3_12.StepX.frag.smul_hull_orbitUnion` | `IUT3.Cor3_12.StepX` | `IUT.PaperIII.Corollary312.IndeterminacyOrbit.smul_hull_orbitUnion` | theorem | CONDITIONALLY_VERIFIED |
-| `IUT3.Cor3_12.StepXI.f.frag.example_global_not_placewise` | `IUT3.Cor3_12.StepXI.f` | `IUT.PaperIII.Corollary312.TwoPlaceExample.example_global_not_placewise` | theorem | KERNEL_VERIFIED |
-| `IUT3.Cor3_12.StepXI.f.frag.logVolumeComparison_of_containment` | `IUT3.Cor3_12.StepXI.f` | `IUT.PaperIII.Corollary312.ComparisonSetting.logVolumeComparison_of_containment` | theorem | CONDITIONALLY_VERIFIED |
-| `IUT3.Cor3_12.StepXI.f.frag.stepXIf_inclusion_iff_inequality` | `IUT3.Cor3_12.StepXI.f` | `IUT.PaperIII.Corollary312.stepXIf_inclusion_iff_inequality` | theorem | CONDITIONALLY_VERIFIED |
-| `IUT3.Def1_1.frag.log_shell_Qp` | `IUT3.Def1_1` | `IUT.Prerequisites.PadicLog.padicLogShell_eq_range_coe` | theorem | KERNEL_VERIFIED |
-| `IUT3.Prop1_2.v.frag.nonarch_Qp` | `IUT3.Prop1_2.v` | `IUT.Prerequisites.PadicLog.padicInt_subset_padicLogShell` | theorem | KERNEL_VERIFIED |
-| `IUT3.Prop3_9.iii.frag.globalLogVolume_mono` | `IUT3.Prop3_9.iii` | `IUT.PaperIII.Corollary312.globalLogVolume_mono` | theorem | KERNEL_VERIFIED |
-| `IUT3.Prop3_9.iii.frag.globalLogVolume` | `IUT3.Prop3_9.iii` | `IUT.PaperIII.Corollary312.globalLogVolume` | definition | NOT_EXTRACTED |
-| `IUT3.Rem3_9_5.ii.frag.eq_sInter` | `IUT3.Rem3_9_5.ii` | `IUT.PaperIII.Remark3_9_5.IsHullMap.eq_sInter` | theorem | KERNEL_VERIFIED |
-| `IUT3.Rem3_9_5.ii.frag.isHullMap_sInter` | `IUT3.Rem3_9_5.ii` | `IUT.PaperIII.Remark3_9_5.isHullMap_sInter` | theorem | CONDITIONALLY_VERIFIED |
-| `IUT3.Rem3_9_5.ii.frag.unique` | `IUT3.Rem3_9_5.ii` | `IUT.PaperIII.Remark3_9_5.IsHullMap.unique` | theorem | KERNEL_VERIFIED |
-| `IUT4.Cor2_2.ProofApply.frag.apply_theorem_1_10` | `IUT4.Cor2_2.ProofApply` | `IUT.PaperIV.Corollary2_2.apply_theorem_1_10` | theorem | CONDITIONALLY_VERIFIED |
-| `IUT4.Cor2_2.ProofAssembly.frag.assembly` | `IUT4.Cor2_2.ProofAssembly` | `IUT.PaperIV.Corollary2_2.assembly` | theorem | CONDITIONALLY_VERIFIED |
-| `IUT4.Cor2_2.ProofAssembly.frag.epsE_ge` | `IUT4.Cor2_2.ProofAssembly` | `IUT.PaperIV.Corollary2_2.epsE_ge` | theorem | KERNEL_VERIFIED |
-| `IUT4.Cor2_2.ProofAssembly.frag.fifteen_delta_step` | `IUT4.Cor2_2.ProofAssembly` | `IUT.PaperIV.Corollary2_2.fifteen_delta_step` | theorem | KERNEL_VERIFIED |
-| `IUT4.Cor2_2.ProofAssembly.frag.final_step` | `IUT4.Cor2_2.ProofAssembly` | `IUT.PaperIV.Corollary2_2.final_step` | theorem | CONDITIONALLY_VERIFIED |
-| `IUT4.Cor2_2.ProofAssembly.frag.q_not2_step` | `IUT4.Cor2_2.ProofAssembly` | `IUT.PaperIV.Corollary2_2.q_not2_step` | theorem | CONDITIONALLY_VERIFIED |
-| `IUT4.Cor2_2.ProofP1.frag.P1_bound` | `IUT4.Cor2_2.ProofP1` | `IUT.PaperIV.Corollary2_2.P1_bound` | theorem | KERNEL_VERIFIED |
-| `IUT4.Cor2_2.ProofP1.frag.P1_l_ge_seven` | `IUT4.Cor2_2.ProofP1` | `IUT.PaperIV.Corollary2_2.P1_l_ge_seven` | theorem | KERNEL_VERIFIED |
-| `IUT4.Cor2_2.ProofP1.frag.P1_lower` | `IUT4.Cor2_2.ProofP1` | `IUT.PaperIV.Corollary2_2.P1_lower` | theorem | KERNEL_VERIFIED |
-| `IUT4.Cor2_2.ProofP1.frag.P1_upper` | `IUT4.Cor2_2.ProofP1` | `IUT.PaperIV.Corollary2_2.P1_upper` | theorem | CONDITIONALLY_VERIFIED |
-| `IUT4.Cor2_2.ProofP1.frag.S1_bound` | `IUT4.Cor2_2.ProofP1` | `IUT.PaperIV.Corollary2_2.S1_bound` | theorem | CONDITIONALLY_VERIFIED |
-| `IUT4.Cor2_2.ProofP1.frag.thetaA_chain` | `IUT4.Cor2_2.ProofP1` | `IUT.PaperIV.Corollary2_2.thetaA_chain` | theorem | CONDITIONALLY_VERIFIED |
-| `IUT4.Cor2_2.ProofP4.frag.P4_bound` | `IUT4.Cor2_2.ProofP4` | `IUT.PaperIV.Corollary2_2.P4_bound` | theorem | CONDITIONALLY_VERIFIED |
-| `IUT4.Cor2_2.ProofP5.frag.P5_bound` | `IUT4.Cor2_2.ProofP5` | `IUT.PaperIV.Corollary2_2.P5_bound` | theorem | CONDITIONALLY_VERIFIED |
-| `IUT4.Cor2_2.ProofP5.frag.sqrt_mul_log_l_steps` | `IUT4.Cor2_2.ProofP5` | `IUT.PaperIV.Corollary2_2.sqrt_mul_log_l_steps` | theorem | KERNEL_VERIFIED |
-| `IUT4.Cor2_2.ProofP5.frag.sqrt_mul_log_l` | `IUT4.Cor2_2.ProofP5` | `IUT.PaperIV.Corollary2_2.sqrt_mul_log_l` | theorem | CONDITIONALLY_VERIFIED |
-| `IUT4.Cor2_2.ii.C2.frag.C2_of_final` | `IUT4.Cor2_2.ii.C2` | `IUT.PaperIV.Corollary2_2.C2_of_final` | theorem | CONDITIONALLY_VERIFIED |
-| `IUT4.Cor2_2.iii.frag.eps_star_estimates` | `IUT4.Cor2_2.iii` | `IUT.PaperIV.Corollary2_2.eps_star_estimates` | theorem | KERNEL_VERIFIED |
-| `IUT4.Cor2_2.iii.frag.h_bound_Hunif` | `IUT4.Cor2_2.iii` | `IUT.PaperIV.Corollary2_2.h_bound_Hunif` | theorem | KERNEL_VERIFIED |
-| `IUT4.Cor2_2.iii.frag.h_lt_of_eps_lt_epsE` | `IUT4.Cor2_2.iii` | `IUT.PaperIV.Corollary2_2.h_lt_of_eps_lt_epsE` | theorem | KERNEL_VERIFIED |
-| `IUT4.Cor2_3.frag.BDle_mono_eps` | `IUT4.Cor2_3` | `IUT.PaperIV.Corollary2_3.BDle_mono_eps` | theorem | KERNEL_VERIFIED |
-| `IUT4.Cor2_3.frag.BDle_of_finite_exceptions` | `IUT4.Cor2_3` | `IUT.PaperIV.Corollary2_3.BDle_of_finite_exceptions` | theorem | KERNEL_VERIFIED |
-| `IUT4.Cor2_3.frag.cor2_3_on_KV` | `IUT4.Cor2_3` | `IUT.PaperIV.Corollary2_3.cor2_3_on_KV` | theorem | CONDITIONALLY_VERIFIED |
-| `IUT4.Cor2_3.frag.rational_points_P1_minus_three` | `IUT4.Cor2_3` | `IUT.ABCSpecialization.VojtaLineMinusThreePointsRational` | definition | NOT_EXTRACTED |
-| `IUT4.Def1_9.frag.degE_arc_eq_normalizedDeg` | `IUT4.Def1_9` | `IUT.PaperIV.degE_arc_eq_normalizedDeg` | theorem | KERNEL_VERIFIED |
-| `IUT4.Def1_9.frag.degE` | `IUT4.Def1_9` | `IUT.PaperIV.degE` | definition | NOT_EXTRACTED |
-| `IUT4.Def1_9.frag.degF` | `IUT4.Def1_9` | `IUT.PaperIV.degF` | definition | NOT_EXTRACTED |
-| `IUT4.Def1_9.frag.normalizedDeg` | `IUT4.Def1_9` | `IUT.PaperIV.normalizedDeg` | definition | NOT_EXTRACTED |
-| `IUT4.Prop1_2.frag.a_b_of_e_one` | `IUT4.Prop1_2` | `IUT.PaperIV.Proposition1_2.a_b_of_e_one` | theorem | KERNEL_VERIFIED |
-| `IUT4.Prop1_2.frag.a_b_of_le` | `IUT4.Prop1_2` | `IUT.PaperIV.Proposition1_2.a_b_of_le` | theorem | KERNEL_VERIFIED |
-| `IUT4.Prop1_2.frag.a_gt` | `IUT4.Prop1_2` | `IUT.PaperIV.Proposition1_2.a_gt` | theorem | KERNEL_VERIFIED |
-| `IUT4.Prop1_2.frag.i_Qp` | `IUT4.Prop1_2` | `IUT.Prerequisites.PadicLog.padicLogUnit_range` | theorem | KERNEL_VERIFIED |
-| `IUT4.Prop1_2.frag.iii_floor` | `IUT4.Prop1_2` | `IUT.PaperIV.Proposition1_2.iii_floor` | theorem | KERNEL_VERIFIED |
-| `IUT4.Prop1_2.frag.log_hom` | `IUT4.Prop1_2` | `IUT.Prerequisites.PadicLog.padicLogOnePlus_add_add_mul` | theorem | KERNEL_VERIFIED |
-| `IUT4.Prop1_2.frag.log_series_def` | `IUT4.Prop1_2` | `IUT.Prerequisites.PadicLog.padicLogOnePlus` | definition | NOT_EXTRACTED |
-| `IUT4.Prop1_2.frag.log_series_norm` | `IUT4.Prop1_2` | `IUT.Prerequisites.PadicLog.padicLogOnePlus_norm_eq` | theorem | KERNEL_VERIFIED |
-| `IUT4.Prop1_2.frag.rpow_b_gt` | `IUT4.Prop1_2` | `IUT.PaperIV.Proposition1_2.rpow_b_gt` | theorem | KERNEL_VERIFIED |
-| `IUT4.Prop1_3.frag.differentOrder` | `IUT4.Prop1_3` | `IUT.PaperIV.LocalFields.differentOrder` | definition | NOT_EXTRACTED |
-| `IUT4.Prop1_3.frag.i_differentOrder_ge_tower` | `IUT4.Prop1_3` | `IUT.PaperIV.LocalFields.differentOrder_ge_tower` | theorem | KERNEL_VERIFIED |
-| `IUT4.Prop1_3.frag.i_differentOrder_ge` | `IUT4.Prop1_3` | `IUT.PaperIV.LocalFields.differentOrder_ge` | theorem | KERNEL_VERIFIED |
-| `IUT4.Prop1_3.frag.i_min` | `IUT4.Prop1_3` | `IUT.PaperIV.Proposition1_3.i_min` | theorem | KERNEL_VERIFIED |
-| `IUT4.Prop1_3.frag.i_padic_differentOrder_ge` | `IUT4.Prop1_3` | `IUT.PaperIV.LocalFields.padic_differentOrder_ge` | theorem | KERNEL_VERIFIED |
-| `IUT4.Prop1_3.frag.ii_base` | `IUT4.Prop1_3` | `IUT.PaperIV.Proposition1_3.ii_base` | theorem | CONDITIONALLY_VERIFIED |
-| `IUT4.Prop1_3.frag.ii_of_forall_eps` | `IUT4.Prop1_3` | `IUT.PaperIV.Proposition1_3.ii_of_forall_eps` | theorem | KERNEL_VERIFIED |
-| `IUT4.Prop1_3.frag.ii_step` | `IUT4.Prop1_3` | `IUT.PaperIV.Proposition1_3.ii_step` | theorem | CONDITIONALLY_VERIFIED |
-| `IUT4.Prop1_4.frag.a_add_b_le` | `IUT4.Prop1_4` | `IUT.PaperIV.Proposition1_4.a_add_b_le` | theorem | KERNEL_VERIFIED |
-| `IUT4.Prop1_4.frag.a_sub_le` | `IUT4.Prop1_4` | `IUT.PaperIV.Proposition1_2.a_sub_le` | theorem | KERNEL_VERIFIED |
-| `IUT4.Prop1_4.frag.b_add_le` | `IUT4.Prop1_4` | `IUT.PaperIV.Proposition1_2.b_add_le` | theorem | KERNEL_VERIFIED |
-| `IUT4.Prop1_4.frag.dI_add_aI_ge` | `IUT4.Prop1_4` | `IUT.PaperIV.Proposition1_4.dI_add_aI_ge` | theorem | CONDITIONALLY_VERIFIED |
-| `IUT4.Prop1_4.frag.d_add_a_ge` | `IUT4.Prop1_4` | `IUT.PaperIV.Proposition1_2.d_add_a_ge` | theorem | CONDITIONALLY_VERIFIED |
-| `IUT4.Prop1_4.frag.four_div_le` | `IUT4.Prop1_4` | `IUT.PaperIV.Proposition1_2.four_div_le` | theorem | KERNEL_VERIFIED |
-| `IUT4.Prop1_4.frag.ii_identity` | `IUT4.Prop1_4` | `IUT.PaperIV.Proposition1_4.ii_identity` | theorem | KERNEL_VERIFIED |
-| `IUT4.Prop1_4.frag.ii_le` | `IUT4.Prop1_4` | `IUT.PaperIV.Proposition1_4.ii_le` | theorem | CONDITIONALLY_VERIFIED |
-| `IUT4.Prop1_4.frag.iii_first` | `IUT4.Prop1_4` | `IUT.PaperIV.Proposition1_4.iii_first` | theorem | CONDITIONALLY_VERIFIED |
-| `IUT4.Prop1_4.frag.iii_padic_dI_add_aI_ge` | `IUT4.Prop1_4` | `IUT.PaperIV.LocalFields.padic_dI_add_aI_ge` | theorem | KERNEL_VERIFIED |
-| `IUT4.Prop1_4.frag.iii_padic_differentOrder_add_a_ge` | `IUT4.Prop1_4` | `IUT.PaperIV.LocalFields.padic_differentOrder_add_a_ge` | theorem | KERNEL_VERIFIED |
-| `IUT4.Prop1_4.frag.iii_second` | `IUT4.Prop1_4` | `IUT.PaperIV.Proposition1_4.iii_second` | theorem | CONDITIONALLY_VERIFIED |
-| `IUT4.Prop1_5.frag.count_iii` | `IUT4.Prop1_5` | `IUT.PaperIV.Proposition1_5.count_iii` | theorem | KERNEL_VERIFIED |
-| `IUT4.Prop1_5.frag.crt_normSq` | `IUT4.Prop1_5` | `IUT.PaperIV.Proposition1_5.crt_normSq` | theorem | KERNEL_VERIFIED |
-| `IUT4.Prop1_5.frag.crt_pure` | `IUT4.Prop1_5` | `IUT.PaperIV.Proposition1_5.crt_pure` | theorem | KERNEL_VERIFIED |
-| `IUT4.Rem2_3_1.frag.BDle` | `IUT4.Rem2_3_1` | `IUT.PaperIV.Corollary2_3.BDle` | definition | NOT_EXTRACTED |
-| `IUT4.Thm1_10.StepI.frag.E1` | `IUT4.Thm1_10.StepI` | `IUT.PaperIV.Theorem1_10.E1` | theorem | KERNEL_VERIFIED |
-| `IUT4.Thm1_10.StepI.frag.E2` | `IUT4.Thm1_10.StepI` | `IUT.PaperIV.Theorem1_10.E2` | theorem | KERNEL_VERIFIED |
-| `IUT4.Thm1_10.StepI.frag.E4_product` | `IUT4.Thm1_10.StepI` | `IUT.PaperIV.Theorem1_10.E4_product` | theorem | KERNEL_VERIFIED |
-| `IUT4.Thm1_10.StepI.frag.E4` | `IUT4.Thm1_10.StepI` | `IUT.PaperIV.Theorem1_10.E4` | theorem | KERNEL_VERIFIED |
-| `IUT4.Thm1_10.StepI.frag.E6` | `IUT4.Thm1_10.StepI` | `IUT.PaperIV.Theorem1_10.E6` | theorem | KERNEL_VERIFIED |
-| `IUT4.Thm1_10.StepI.frag.card_GL2` | `IUT4.Thm1_10.StepI` | `IUT.PaperIV.Theorem1_10.card_GL2` | theorem | KERNEL_VERIFIED |
-| `IUT4.Thm1_10.StepII.frag.log_E_ii` | `IUT4.Thm1_10.StepII` | `IUT.PaperIV.Theorem1_10.log_E_ii` | theorem | KERNEL_VERIFIED |
-| `IUT4.Thm1_10.StepII.frag.log_div_le_half` | `IUT4.Thm1_10.StepII` | `IUT.PaperIV.Theorem1_10.log_div_le_half` | theorem | KERNEL_VERIFIED |
-| `IUT4.Thm1_10.StepII.frag.one_add_four_div_le_two` | `IUT4.Thm1_10.StepII` | `IUT.PaperIV.Theorem1_10.one_add_four_div_le_two` | theorem | KERNEL_VERIFIED |
-| `IUT4.Thm1_10.StepII.frag.step_ii_F` | `IUT4.Thm1_10.StepII` | `IUT.PaperIV.Theorem1_10.step_ii_F` | theorem | CONDITIONALLY_VERIFIED |
-| `IUT4.Thm1_10.StepII.frag.step_ii_K` | `IUT4.Thm1_10.StepII` | `IUT.PaperIV.Theorem1_10.step_ii_K` | theorem | CONDITIONALLY_VERIFIED |
-| `IUT4.Thm1_10.StepII.frag.step_ii_final` | `IUT4.Thm1_10.StepII` | `IUT.PaperIV.Theorem1_10.step_ii_final` | theorem | CONDITIONALLY_VERIFIED |
-| `IUT4.Thm1_10.StepIII.frag.R4` | `IUT4.Thm1_10.StepIII` | `IUT.PaperIV.Theorem1_10.R4` | theorem | CONDITIONALLY_VERIFIED |
-| `IUT4.Thm1_10.StepIII.frag.log_30_mul_le` | `IUT4.Thm1_10.StepIII` | `IUT.PaperIV.Theorem1_10.log_30_mul_le` | theorem | KERNEL_VERIFIED |
-| `IUT4.Thm1_10.StepIII.frag.step_iii_final` | `IUT4.Thm1_10.StepIII` | `IUT.PaperIV.Theorem1_10.step_iii_final` | theorem | CONDITIONALLY_VERIFIED |
-| `IUT4.Thm1_10.StepIII.frag.step_iii_p_eq_l` | `IUT4.Thm1_10.StepIII` | `IUT.PaperIV.Theorem1_10.step_iii_p_eq_l` | theorem | KERNEL_VERIFIED |
-| `IUT4.Thm1_10.StepIII.frag.step_iii_sQ` | `IUT4.Thm1_10.StepIII` | `IUT.PaperIV.Theorem1_10.step_iii_sQ` | theorem | CONDITIONALLY_VERIFIED |
-| `IUT4.Thm1_10.StepV.frag.betaAvg_affine` | `IUT4.Thm1_10.StepV` | `IUT.PaperIV.Theorem1_10.betaAvg_affine` | theorem | KERNEL_VERIFIED |
-| `IUT4.Thm1_10.StepV.frag.procession_average_l` | `IUT4.Thm1_10.StepV` | `IUT.PaperIV.Theorem1_10.procession_average_l` | theorem | KERNEL_VERIFIED |
-| `IUT4.Thm1_10.StepV.frag.procession_average` | `IUT4.Thm1_10.StepV` | `IUT.PaperIV.Theorem1_10.procession_average` | theorem | KERNEL_VERIFIED |
-| `IUT4.Thm1_10.StepV.frag.procession_sum` | `IUT4.Thm1_10.StepV` | `IUT.PaperIV.Theorem1_10.procession_sum` | theorem | KERNEL_VERIFIED |
-| `IUT4.Thm1_10.StepV.frag.step_v_final` | `IUT4.Thm1_10.StepV` | `IUT.PaperIV.Theorem1_10.step_v_final` | theorem | KERNEL_VERIFIED |
-| `IUT4.Thm1_10.StepV.frag.step_v_weighted` | `IUT4.Thm1_10.StepV` | `IUT.PaperIV.Theorem1_10.step_v_weighted` | theorem | KERNEL_VERIFIED |
-| `IUT4.Thm1_10.StepV.frag.sum_Istar_le` | `IUT4.Thm1_10.StepV` | `IUT.PaperIV.Theorem1_10.sum_Istar_le` | theorem | CONDITIONALLY_VERIFIED |
-| `IUT4.Thm1_10.StepV.frag.weighted_average_normalized` | `IUT4.Thm1_10.StepV` | `IUT.PaperIV.Theorem1_10.weighted_average_normalized` | theorem | KERNEL_VERIFIED |
-| `IUT4.Thm1_10.StepVII.frag.step_vii_archimedean` | `IUT4.Thm1_10.StepVII` | `IUT.PaperIV.Theorem1_10.step_vii_archimedean` | theorem | KERNEL_VERIFIED |
-| `IUT4.Thm1_10.StepVII.frag.step_vii_average` | `IUT4.Thm1_10.StepVII` | `IUT.PaperIV.Theorem1_10.step_vii_average` | theorem | KERNEL_VERIFIED |
-| `IUT4.Thm1_10.StepVIII.frag.constant_bound_of_raw` | `IUT4.Thm1_10.StepVIII` | `IUT.PaperIV.Theorem1_10.constant_bound_of_raw` | theorem | CONDITIONALLY_VERIFIED |
-| `IUT4.Thm1_10.StepVIII.frag.step_viii_absorb` | `IUT4.Thm1_10.StepVIII` | `IUT.PaperIV.Theorem1_10.step_viii_absorb` | theorem | KERNEL_VERIFIED |
-| `IUT4.Thm1_10.StepVIII.frag.step_viii_constant` | `IUT4.Thm1_10.StepVIII` | `IUT.PaperIV.Theorem1_10.step_viii_constant` | theorem | CONDITIONALLY_VERIFIED |
-| `IUT4.Thm1_10.StepVIII.frag.step_viii_estimate` | `IUT4.Thm1_10.StepVIII` | `IUT.PaperIV.Theorem1_10.step_viii_estimate` | theorem | KERNEL_VERIFIED |
-| `IUT4.Thm1_10.StepVIII.frag.step_viii_prime_count_prm` | `IUT4.Thm1_10.StepVIII` | `IUT.PaperIV.Theorem1_10.step_viii_prime_count_prm` | theorem | KERNEL_VERIFIED |
-| `IUT4.Thm1_10.StepVIII.frag.step_viii_prime_count` | `IUT4.Thm1_10.StepVIII` | `IUT.PaperIV.Theorem1_10.step_viii_prime_count` | theorem | KERNEL_VERIFIED |
-| `IUT4.Thm1_10.StepVIII.frag.step_viii_raw` | `IUT4.Thm1_10.StepVIII` | `IUT.PaperIV.Theorem1_10.step_viii_raw` | theorem | CONDITIONALLY_VERIFIED |
-| `IUT4.Thm1_10.StepVIII.frag.step_viii_substitute` | `IUT4.Thm1_10.StepVIII` | `IUT.PaperIV.Theorem1_10.step_viii_substitute` | theorem | KERNEL_VERIFIED |
-| `IUT4.Thm1_10.StepVIII.frag.step_viii_sum` | `IUT4.Thm1_10.StepVIII` | `IUT.PaperIV.Theorem1_10.step_viii_sum` | theorem | CONDITIONALLY_VERIFIED |
-| `IUT4.Thm1_10.final.frag.final_estimate_one` | `IUT4.Thm1_10.final` | `IUT.PaperIV.Theorem1_10.final_estimate_one` | theorem | KERNEL_VERIFIED |
-| `IUT4.Thm1_10.final.frag.final_estimate_two` | `IUT4.Thm1_10.final` | `IUT.PaperIV.Theorem1_10.final_estimate_two` | theorem | KERNEL_VERIFIED |
-| `IUT4.Thm1_10.final.frag.final_inequality_F` | `IUT4.Thm1_10.final` | `IUT.PaperIV.Theorem1_10.final_inequality_F` | theorem | CONDITIONALLY_VERIFIED |
-| `IUT4.Thm1_10.final.frag.final_inequality` | `IUT4.Thm1_10.final` | `IUT.PaperIV.Theorem1_10.final_inequality` | theorem | CONDITIONALLY_VERIFIED |
-| `IUT4.Thm1_10.final.frag.of_cor312` | `IUT4.Thm1_10.final` | `IUT.PaperIII.Corollary312.thm1_10_final_of_cor312` | theorem | CONDITIONALLY_VERIFIED |
-| `IUT4.Thm1_10.frag.constant` | `IUT4.Thm1_10` | `IUT.PaperIV.Theorem1_10.constant` | definition | NOT_EXTRACTED |
-| `IUT4.ThmA.frag.equiv_abc` | `IUT4.ThmA` | `IUT.ABCSpecialization.vojta_iff_ABC` | theorem | KERNEL_VERIFIED |
+| Fragment | Parent | Lean declaration | Declaration kind | Proof status | Scope |
+|---|---|---|---|---|---|
+| `IUT1.Def3_1.a.frag.sqrtNegOne` | `IUT1.Def3_1.a` | `IUT.PaperI.SqrtNegOneMem` | definition | NOT_EXTRACTED |  |
+| `IUT1.Def3_1.b.frag.badSetOddNonempty` | `IUT1.Def3_1.b` | `IUT.PaperI.BadSetOddNonempty` | definition | NOT_EXTRACTED |  |
+| `IUT1.Def3_1.b.frag.galoisDegreePrimeTo` | `IUT1.Def3_1.b` | `IUT.PaperI.GaloisOfDegreePrimeTo` | definition | NOT_EXTRACTED |  |
+| `IUT1.Def3_1.b.frag.multiplicativeOverBadSet` | `IUT1.Def3_1.b` | `IUT.PaperI.MultiplicativeOverBadSet` | definition | NOT_EXTRACTED |  |
+| `IUT1.Def3_1.b.frag.semistable` | `IUT1.Def3_1.b` | `IUT.PaperI.SemistableAtFinitePlaces` | definition | NOT_EXTRACTED |  |
+| `IUT1.Def3_1.b.frag.torsionSix` | `IUT1.Def3_1.b` | `IUT.PaperI.TorsionRational` | definition | NOT_EXTRACTED |  |
+| `IUT1.Def3_1.c.frag.firstClause` | `IUT1.Def3_1.c` | `IUT.PaperI.AuxiliaryPrimeFirstClause` | definition | NOT_EXTRACTED |  |
+| `IUT1.Def3_1.c.frag.primeToBadResidueChars` | `IUT1.Def3_1.c` | `IUT.PaperI.PrimeToBadResidueChars` | definition | NOT_EXTRACTED |  |
+| `IUT1.Def3_1.frag.partialConditions` | `IUT1.Def3_1` | `IUT.PaperI.PartialInitialThetaConditions` | structure | NOT_EXTRACTED |  |
+| `IUT1.Rem2_5_3.frag.galois_countable` | `IUT1.Rem2_5_3` | `IUT.PaperI.IsGaloisCountableTemperedGroup` | definition | NOT_EXTRACTED |  |
+| `IUT1.Sec0.TemperedGroup.frag.btemp_category` | `IUT1.Sec0.TemperedGroup` | `IUT.PaperI.TemperedSetCategory` | definition | NOT_EXTRACTED |  |
+| `IUT1.Sec0.TemperedGroup.frag.connected_temperoid` | `IUT1.Sec0.TemperedGroup` | `IUT.PaperI.IsConnectedTemperoid` | definition | NOT_EXTRACTED |  |
+| `IUT1.Sec0.TemperedGroup.frag.tempered_group` | `IUT1.Sec0.TemperedGroup` | `IUT.PaperI.IsTemperedGroup` | definition | NOT_EXTRACTED |  |
+| `IUT1.Sec0.TemperoidMorphism.frag.morphism_class` | `IUT1.Sec0.TemperoidMorphism` | `IUT.PaperI.TemperoidMorphismClass` | definition | NOT_EXTRACTED |  |
+| `IUT2.Prop4_1.frag.sum_exponents` | `IUT2.Prop4_1` | `IUT.PaperII.Labels.sum_exponents` | theorem | KERNEL_VERIFIED |  |
+| `IUT2.Rem2_5_1.frag.labelRep_bijective` | `IUT2.Rem2_5_1` | `IUT.PaperII.Labels.labelRep_bijective` | theorem | KERNEL_VERIFIED |  |
+| `IUT2.Rem2_5_1.frag.theta_series_padic_instance` | `IUT2.Rem2_5_1` | `IUT.Prerequisites.ThetaFunction.padic_five_norm_thetaRatio` | theorem | KERNEL_VERIFIED |  |
+| `IUT2.Rem2_5_1.frag.theta_series_quasi_periodicity` | `IUT2.Rem2_5_1` | `IUT.Prerequisites.ThetaFunction.thetaSeries_zpow_mul` | theorem | KERNEL_VERIFIED |  |
+| `IUT2.Rem2_5_1.frag.theta_series_zeros` | `IUT2.Rem2_5_1` | `IUT.Prerequisites.ThetaFunction.thetaSeries_zpow` | theorem | KERNEL_VERIFIED |  |
+| `IUT2.Rem2_5_1.frag.theta_value_label_orbit` | `IUT2.Rem2_5_1` | `IUT.Prerequisites.ThetaFunction.pow_mul_thetaRatio_sq_eq_one_iff` | theorem | KERNEL_VERIFIED |  |
+| `IUT2.Rem2_5_1.frag.theta_values_at_sqrt_neg_one` | `IUT2.Rem2_5_1` | `IUT.Prerequisites.ThetaFunction.thetaSeries_zpow_mul_of_sq_eq_neg_one` | theorem | KERNEL_VERIFIED |  |
+| `IUT2.Rem2_6_3.frag.gammaNormValue_strictMono` | `IUT2.Rem2_6_3` | `IUT.PaperII.Labels.gammaNormValue_strictMono` | theorem | KERNEL_VERIFIED |  |
+| `IUT2.Rem2_6_3.frag.gammaNorm_eq_max_iff` | `IUT2.Rem2_6_3` | `IUT.PaperII.Labels.gammaNorm_eq_max_iff` | theorem | KERNEL_VERIFIED |  |
+| `IUT2.Rem2_6_3.frag.gammaNorm_eq` | `IUT2.Rem2_6_3` | `IUT.PaperII.Labels.gammaNorm_eq` | theorem | KERNEL_VERIFIED |  |
+| `IUT2.Rem4_7_3.frag.average_exponents` | `IUT2.Rem4_7_3` | `IUT.PaperII.Labels.average_exponents` | theorem | KERNEL_VERIFIED |  |
+| `IUT3.Cor3_12.Reduction.frag.inequality_of_nonneg` | `IUT3.Cor3_12.Reduction` | `IUT.PaperIII.Corollary312.inequality_of_nonneg` | theorem | CONDITIONALLY_VERIFIED |  |
+| `IUT3.Cor3_12.Statement.frag.ComparisonSetting` | `IUT3.Cor3_12.Statement` | `IUT.PaperIII.Corollary312.ComparisonSetting` | structure | NOT_EXTRACTED |  |
+| `IUT3.Cor3_12.Statement.frag.Containment` | `IUT3.Cor3_12.Statement` | `IUT.PaperIII.Corollary312.ComparisonSetting.Containment` | definition | NOT_EXTRACTED |  |
+| `IUT3.Cor3_12.Statement.frag.IndeterminacyOrbit` | `IUT3.Cor3_12.Statement` | `IUT.PaperIII.Corollary312.IndeterminacyOrbit` | structure | NOT_EXTRACTED |  |
+| `IUT3.Cor3_12.Statement.frag.LogVolumeComparison` | `IUT3.Cor3_12.Statement` | `IUT.PaperIII.Corollary312.ComparisonSetting.LogVolumeComparison` | definition | NOT_EXTRACTED |  |
+| `IUT3.Cor3_12.Statement.frag.RegionComparison_conclusion_of_containment` | `IUT3.Cor3_12.Statement` | `IUT.PaperIII.Corollary312.RegionComparison.conclusion_of_containment` | theorem | CONDITIONALLY_VERIFIED |  |
+| `IUT3.Cor3_12.Statement.frag.RegionComparison` | `IUT3.Cor3_12.Statement` | `IUT.PaperIII.Corollary312.RegionComparison` | structure | NOT_EXTRACTED |  |
+| `IUT3.Cor3_12.Statement.frag.conclusion_iff_constantForm` | `IUT3.Cor3_12.Statement` | `IUT.PaperIII.Corollary312.conclusion_iff_constantForm` | theorem | CONDITIONALLY_VERIFIED |  |
+| `IUT3.Cor3_12.Statement.frag.conclusion_iff` | `IUT3.Cor3_12.Statement` | `IUT.PaperIII.Corollary312.ComparisonSetting.conclusion_iff` | theorem | CONDITIONALLY_VERIFIED |  |
+| `IUT3.Cor3_12.Statement.frag.conclusion_of_constantForm` | `IUT3.Cor3_12.Statement` | `IUT.PaperIII.Corollary312.conclusion_of_constantForm` | theorem | CONDITIONALLY_VERIFIED |  |
+| `IUT3.Cor3_12.Statement.frag.conclusion_of_containment` | `IUT3.Cor3_12.Statement` | `IUT.PaperIII.Corollary312.ComparisonSetting.conclusion_of_containment` | theorem | CONDITIONALLY_VERIFIED |  |
+| `IUT3.Cor3_12.Statement.frag.conclusion_of_labelContainment` | `IUT3.Cor3_12.Statement` | `IUT.PaperIII.Corollary312.conclusion_of_labelContainment` | theorem | CONDITIONALLY_VERIFIED |  |
+| `IUT3.Cor3_12.Statement.frag.conclusion_of_placewiseContainment` | `IUT3.Cor3_12.Statement` | `IUT.PaperIII.Corollary312.conclusion_of_placewiseContainment` | theorem | CONDITIONALLY_VERIFIED |  |
+| `IUT3.Cor3_12.Statement.frag.conclusion_of_procContainment` | `IUT3.Cor3_12.Statement` | `IUT.PaperIII.Corollary312.conclusion_of_procContainment` | theorem | CONDITIONALLY_VERIFIED |  |
+| `IUT3.Cor3_12.Statement.frag.constantForm_of_conclusion` | `IUT3.Cor3_12.Statement` | `IUT.PaperIII.Corollary312.constantForm_of_conclusion` | theorem | CONDITIONALLY_VERIFIED |  |
+| `IUT3.Cor3_12.Statement.frag.constantForm_of_top` | `IUT3.Cor3_12.Statement` | `IUT.PaperIII.Corollary312.constantForm_of_top` | theorem | CONDITIONALLY_VERIFIED |  |
+| `IUT3.Cor3_12.Statement.frag.example_bridge_hypotheses` | `IUT3.Cor3_12.Statement` | `IUT.PaperIII.Corollary312.IntervalExample.example_bridge_hypotheses` | theorem | KERNEL_VERIFIED | model test |
+| `IUT3.Cor3_12.Statement.frag.example_comparison_fails` | `IUT3.Cor3_12.Statement` | `IUT.PaperIII.Corollary312.IntervalExample.example_comparison_fails` | theorem | KERNEL_VERIFIED | model test |
+| `IUT3.Cor3_12.Statement.frag.example_union_matters` | `IUT3.Cor3_12.Statement` | `IUT.PaperIII.Corollary312.IntervalExample.example_union_matters` | theorem | KERNEL_VERIFIED | model test |
+| `IUT3.Cor3_12.Statement.frag.logVolume_orbitImage_le` | `IUT3.Cor3_12.Statement` | `IUT.PaperIII.Corollary312.IndeterminacyOrbit.logVolume_orbitImage_le` | theorem | KERNEL_VERIFIED |  |
+| `IUT3.Cor3_12.Statement.frag.logVolume` | `IUT3.Cor3_12.Statement` | `IUT.PaperIII.Corollary312.logVolume` | definition | NOT_EXTRACTED |  |
+| `IUT3.Cor3_12.StepX.frag.logVolume_orbitImage_eq` | `IUT3.Cor3_12.StepX` | `IUT.PaperIII.Corollary312.IndeterminacyOrbit.logVolume_orbitImage_eq` | theorem | CONDITIONALLY_VERIFIED |  |
+| `IUT3.Cor3_12.StepX.frag.smul_hull_orbitUnion` | `IUT3.Cor3_12.StepX` | `IUT.PaperIII.Corollary312.IndeterminacyOrbit.smul_hull_orbitUnion` | theorem | CONDITIONALLY_VERIFIED |  |
+| `IUT3.Cor3_12.StepXI.f.frag.example_global_not_placewise` | `IUT3.Cor3_12.StepXI.f` | `IUT.PaperIII.Corollary312.TwoPlaceExample.example_global_not_placewise` | theorem | KERNEL_VERIFIED |  |
+| `IUT3.Cor3_12.StepXI.f.frag.logVolumeComparison_of_containment` | `IUT3.Cor3_12.StepXI.f` | `IUT.PaperIII.Corollary312.ComparisonSetting.logVolumeComparison_of_containment` | theorem | CONDITIONALLY_VERIFIED |  |
+| `IUT3.Cor3_12.StepXI.f.frag.stepXIf_inclusion_iff_inequality` | `IUT3.Cor3_12.StepXI.f` | `IUT.PaperIII.Corollary312.stepXIf_inclusion_iff_inequality` | theorem | CONDITIONALLY_VERIFIED |  |
+| `IUT3.Def1_1.frag.log_shell_Qp` | `IUT3.Def1_1` | `IUT.Prerequisites.PadicLog.padicLogShell_eq_range_coe` | theorem | KERNEL_VERIFIED |  |
+| `IUT3.Prop1_2.v.frag.nonarch_Qp` | `IUT3.Prop1_2.v` | `IUT.Prerequisites.PadicLog.padicInt_subset_padicLogShell` | theorem | KERNEL_VERIFIED |  |
+| `IUT3.Prop3_9.iii.frag.globalLogVolume_mono` | `IUT3.Prop3_9.iii` | `IUT.PaperIII.Corollary312.globalLogVolume_mono` | theorem | KERNEL_VERIFIED |  |
+| `IUT3.Prop3_9.iii.frag.globalLogVolume` | `IUT3.Prop3_9.iii` | `IUT.PaperIII.Corollary312.globalLogVolume` | definition | NOT_EXTRACTED |  |
+| `IUT3.Rem3_9_5.ii.frag.eq_sInter` | `IUT3.Rem3_9_5.ii` | `IUT.PaperIII.Remark3_9_5.IsHullMap.eq_sInter` | theorem | KERNEL_VERIFIED |  |
+| `IUT3.Rem3_9_5.ii.frag.isHullMap_sInter` | `IUT3.Rem3_9_5.ii` | `IUT.PaperIII.Remark3_9_5.isHullMap_sInter` | theorem | CONDITIONALLY_VERIFIED |  |
+| `IUT3.Rem3_9_5.ii.frag.unique` | `IUT3.Rem3_9_5.ii` | `IUT.PaperIII.Remark3_9_5.IsHullMap.unique` | theorem | KERNEL_VERIFIED |  |
+| `IUT4.Cor2_2.ProofApply.frag.apply_theorem_1_10` | `IUT4.Cor2_2.ProofApply` | `IUT.PaperIV.Corollary2_2.apply_theorem_1_10` | theorem | CONDITIONALLY_VERIFIED |  |
+| `IUT4.Cor2_2.ProofAssembly.frag.assembly` | `IUT4.Cor2_2.ProofAssembly` | `IUT.PaperIV.Corollary2_2.assembly` | theorem | CONDITIONALLY_VERIFIED |  |
+| `IUT4.Cor2_2.ProofAssembly.frag.epsE_ge` | `IUT4.Cor2_2.ProofAssembly` | `IUT.PaperIV.Corollary2_2.epsE_ge` | theorem | KERNEL_VERIFIED |  |
+| `IUT4.Cor2_2.ProofAssembly.frag.fifteen_delta_step` | `IUT4.Cor2_2.ProofAssembly` | `IUT.PaperIV.Corollary2_2.fifteen_delta_step` | theorem | KERNEL_VERIFIED |  |
+| `IUT4.Cor2_2.ProofAssembly.frag.final_step` | `IUT4.Cor2_2.ProofAssembly` | `IUT.PaperIV.Corollary2_2.final_step` | theorem | CONDITIONALLY_VERIFIED |  |
+| `IUT4.Cor2_2.ProofAssembly.frag.q_not2_step` | `IUT4.Cor2_2.ProofAssembly` | `IUT.PaperIV.Corollary2_2.q_not2_step` | theorem | CONDITIONALLY_VERIFIED |  |
+| `IUT4.Cor2_2.ProofP1.frag.P1_bound` | `IUT4.Cor2_2.ProofP1` | `IUT.PaperIV.Corollary2_2.P1_bound` | theorem | KERNEL_VERIFIED |  |
+| `IUT4.Cor2_2.ProofP1.frag.P1_l_ge_seven` | `IUT4.Cor2_2.ProofP1` | `IUT.PaperIV.Corollary2_2.P1_l_ge_seven` | theorem | KERNEL_VERIFIED |  |
+| `IUT4.Cor2_2.ProofP1.frag.P1_lower` | `IUT4.Cor2_2.ProofP1` | `IUT.PaperIV.Corollary2_2.P1_lower` | theorem | KERNEL_VERIFIED |  |
+| `IUT4.Cor2_2.ProofP1.frag.P1_upper` | `IUT4.Cor2_2.ProofP1` | `IUT.PaperIV.Corollary2_2.P1_upper` | theorem | CONDITIONALLY_VERIFIED |  |
+| `IUT4.Cor2_2.ProofP1.frag.S1_bound` | `IUT4.Cor2_2.ProofP1` | `IUT.PaperIV.Corollary2_2.S1_bound` | theorem | CONDITIONALLY_VERIFIED |  |
+| `IUT4.Cor2_2.ProofP1.frag.thetaA_chain` | `IUT4.Cor2_2.ProofP1` | `IUT.PaperIV.Corollary2_2.thetaA_chain` | theorem | CONDITIONALLY_VERIFIED |  |
+| `IUT4.Cor2_2.ProofP4.frag.P4_bound` | `IUT4.Cor2_2.ProofP4` | `IUT.PaperIV.Corollary2_2.P4_bound` | theorem | CONDITIONALLY_VERIFIED |  |
+| `IUT4.Cor2_2.ProofP5.frag.P5_bound` | `IUT4.Cor2_2.ProofP5` | `IUT.PaperIV.Corollary2_2.P5_bound` | theorem | CONDITIONALLY_VERIFIED |  |
+| `IUT4.Cor2_2.ProofP5.frag.sqrt_mul_log_l_steps` | `IUT4.Cor2_2.ProofP5` | `IUT.PaperIV.Corollary2_2.sqrt_mul_log_l_steps` | theorem | KERNEL_VERIFIED |  |
+| `IUT4.Cor2_2.ProofP5.frag.sqrt_mul_log_l` | `IUT4.Cor2_2.ProofP5` | `IUT.PaperIV.Corollary2_2.sqrt_mul_log_l` | theorem | CONDITIONALLY_VERIFIED |  |
+| `IUT4.Cor2_2.ii.C2.frag.C2_of_final` | `IUT4.Cor2_2.ii.C2` | `IUT.PaperIV.Corollary2_2.C2_of_final` | theorem | CONDITIONALLY_VERIFIED |  |
+| `IUT4.Cor2_2.iii.frag.eps_star_estimates` | `IUT4.Cor2_2.iii` | `IUT.PaperIV.Corollary2_2.eps_star_estimates` | theorem | KERNEL_VERIFIED |  |
+| `IUT4.Cor2_2.iii.frag.h_bound_Hunif` | `IUT4.Cor2_2.iii` | `IUT.PaperIV.Corollary2_2.h_bound_Hunif` | theorem | KERNEL_VERIFIED |  |
+| `IUT4.Cor2_2.iii.frag.h_lt_of_eps_lt_epsE` | `IUT4.Cor2_2.iii` | `IUT.PaperIV.Corollary2_2.h_lt_of_eps_lt_epsE` | theorem | KERNEL_VERIFIED |  |
+| `IUT4.Cor2_3.frag.BDle_mono_eps` | `IUT4.Cor2_3` | `IUT.PaperIV.Corollary2_3.BDle_mono_eps` | theorem | KERNEL_VERIFIED |  |
+| `IUT4.Cor2_3.frag.BDle_of_finite_exceptions` | `IUT4.Cor2_3` | `IUT.PaperIV.Corollary2_3.BDle_of_finite_exceptions` | theorem | KERNEL_VERIFIED |  |
+| `IUT4.Cor2_3.frag.cor2_3_on_KV` | `IUT4.Cor2_3` | `IUT.PaperIV.Corollary2_3.cor2_3_on_KV` | theorem | CONDITIONALLY_VERIFIED |  |
+| `IUT4.Cor2_3.frag.rational_points_P1_minus_three` | `IUT4.Cor2_3` | `IUT.ABCSpecialization.VojtaLineMinusThreePointsRational` | definition | NOT_EXTRACTED |  |
+| `IUT4.Def1_9.frag.degE_arc_eq_normalizedDeg` | `IUT4.Def1_9` | `IUT.PaperIV.degE_arc_eq_normalizedDeg` | theorem | KERNEL_VERIFIED |  |
+| `IUT4.Def1_9.frag.degE` | `IUT4.Def1_9` | `IUT.PaperIV.degE` | definition | NOT_EXTRACTED |  |
+| `IUT4.Def1_9.frag.degF` | `IUT4.Def1_9` | `IUT.PaperIV.degF` | definition | NOT_EXTRACTED |  |
+| `IUT4.Def1_9.frag.normalizedDeg` | `IUT4.Def1_9` | `IUT.PaperIV.normalizedDeg` | definition | NOT_EXTRACTED |  |
+| `IUT4.Prop1_2.frag.a_b_of_e_one` | `IUT4.Prop1_2` | `IUT.PaperIV.Proposition1_2.a_b_of_e_one` | theorem | KERNEL_VERIFIED |  |
+| `IUT4.Prop1_2.frag.a_b_of_le` | `IUT4.Prop1_2` | `IUT.PaperIV.Proposition1_2.a_b_of_le` | theorem | KERNEL_VERIFIED |  |
+| `IUT4.Prop1_2.frag.a_gt` | `IUT4.Prop1_2` | `IUT.PaperIV.Proposition1_2.a_gt` | theorem | KERNEL_VERIFIED |  |
+| `IUT4.Prop1_2.frag.i_Qp` | `IUT4.Prop1_2` | `IUT.Prerequisites.PadicLog.padicLogUnit_range` | theorem | KERNEL_VERIFIED |  |
+| `IUT4.Prop1_2.frag.iii_floor` | `IUT4.Prop1_2` | `IUT.PaperIV.Proposition1_2.iii_floor` | theorem | KERNEL_VERIFIED |  |
+| `IUT4.Prop1_2.frag.log_hom` | `IUT4.Prop1_2` | `IUT.Prerequisites.PadicLog.padicLogOnePlus_add_add_mul` | theorem | KERNEL_VERIFIED |  |
+| `IUT4.Prop1_2.frag.log_series_def` | `IUT4.Prop1_2` | `IUT.Prerequisites.PadicLog.padicLogOnePlus` | definition | NOT_EXTRACTED |  |
+| `IUT4.Prop1_2.frag.log_series_norm` | `IUT4.Prop1_2` | `IUT.Prerequisites.PadicLog.padicLogOnePlus_norm_eq` | theorem | KERNEL_VERIFIED |  |
+| `IUT4.Prop1_2.frag.rpow_b_gt` | `IUT4.Prop1_2` | `IUT.PaperIV.Proposition1_2.rpow_b_gt` | theorem | KERNEL_VERIFIED |  |
+| `IUT4.Prop1_3.frag.differentOrder` | `IUT4.Prop1_3` | `IUT.PaperIV.LocalFields.differentOrder` | definition | NOT_EXTRACTED |  |
+| `IUT4.Prop1_3.frag.i_differentOrder_ge_tower` | `IUT4.Prop1_3` | `IUT.PaperIV.LocalFields.differentOrder_ge_tower` | theorem | KERNEL_VERIFIED |  |
+| `IUT4.Prop1_3.frag.i_differentOrder_ge` | `IUT4.Prop1_3` | `IUT.PaperIV.LocalFields.differentOrder_ge` | theorem | KERNEL_VERIFIED |  |
+| `IUT4.Prop1_3.frag.i_min` | `IUT4.Prop1_3` | `IUT.PaperIV.Proposition1_3.i_min` | theorem | KERNEL_VERIFIED |  |
+| `IUT4.Prop1_3.frag.i_padic_differentOrder_ge` | `IUT4.Prop1_3` | `IUT.PaperIV.LocalFields.padic_differentOrder_ge` | theorem | KERNEL_VERIFIED |  |
+| `IUT4.Prop1_3.frag.ii_base` | `IUT4.Prop1_3` | `IUT.PaperIV.Proposition1_3.ii_base` | theorem | CONDITIONALLY_VERIFIED |  |
+| `IUT4.Prop1_3.frag.ii_of_forall_eps` | `IUT4.Prop1_3` | `IUT.PaperIV.Proposition1_3.ii_of_forall_eps` | theorem | KERNEL_VERIFIED |  |
+| `IUT4.Prop1_3.frag.ii_step` | `IUT4.Prop1_3` | `IUT.PaperIV.Proposition1_3.ii_step` | theorem | CONDITIONALLY_VERIFIED |  |
+| `IUT4.Prop1_4.frag.a_add_b_le` | `IUT4.Prop1_4` | `IUT.PaperIV.Proposition1_4.a_add_b_le` | theorem | KERNEL_VERIFIED |  |
+| `IUT4.Prop1_4.frag.a_sub_le` | `IUT4.Prop1_4` | `IUT.PaperIV.Proposition1_2.a_sub_le` | theorem | KERNEL_VERIFIED |  |
+| `IUT4.Prop1_4.frag.b_add_le` | `IUT4.Prop1_4` | `IUT.PaperIV.Proposition1_2.b_add_le` | theorem | KERNEL_VERIFIED |  |
+| `IUT4.Prop1_4.frag.dI_add_aI_ge` | `IUT4.Prop1_4` | `IUT.PaperIV.Proposition1_4.dI_add_aI_ge` | theorem | CONDITIONALLY_VERIFIED |  |
+| `IUT4.Prop1_4.frag.d_add_a_ge` | `IUT4.Prop1_4` | `IUT.PaperIV.Proposition1_2.d_add_a_ge` | theorem | CONDITIONALLY_VERIFIED |  |
+| `IUT4.Prop1_4.frag.four_div_le` | `IUT4.Prop1_4` | `IUT.PaperIV.Proposition1_2.four_div_le` | theorem | KERNEL_VERIFIED |  |
+| `IUT4.Prop1_4.frag.ii_identity` | `IUT4.Prop1_4` | `IUT.PaperIV.Proposition1_4.ii_identity` | theorem | KERNEL_VERIFIED |  |
+| `IUT4.Prop1_4.frag.ii_le` | `IUT4.Prop1_4` | `IUT.PaperIV.Proposition1_4.ii_le` | theorem | CONDITIONALLY_VERIFIED |  |
+| `IUT4.Prop1_4.frag.iii_first` | `IUT4.Prop1_4` | `IUT.PaperIV.Proposition1_4.iii_first` | theorem | CONDITIONALLY_VERIFIED |  |
+| `IUT4.Prop1_4.frag.iii_padic_dI_add_aI_ge` | `IUT4.Prop1_4` | `IUT.PaperIV.LocalFields.padic_dI_add_aI_ge` | theorem | KERNEL_VERIFIED |  |
+| `IUT4.Prop1_4.frag.iii_padic_differentOrder_add_a_ge` | `IUT4.Prop1_4` | `IUT.PaperIV.LocalFields.padic_differentOrder_add_a_ge` | theorem | KERNEL_VERIFIED |  |
+| `IUT4.Prop1_4.frag.iii_second` | `IUT4.Prop1_4` | `IUT.PaperIV.Proposition1_4.iii_second` | theorem | CONDITIONALLY_VERIFIED |  |
+| `IUT4.Prop1_5.frag.count_iii` | `IUT4.Prop1_5` | `IUT.PaperIV.Proposition1_5.count_iii` | theorem | KERNEL_VERIFIED |  |
+| `IUT4.Prop1_5.frag.crt_normSq` | `IUT4.Prop1_5` | `IUT.PaperIV.Proposition1_5.crt_normSq` | theorem | KERNEL_VERIFIED |  |
+| `IUT4.Prop1_5.frag.crt_pure` | `IUT4.Prop1_5` | `IUT.PaperIV.Proposition1_5.crt_pure` | theorem | KERNEL_VERIFIED |  |
+| `IUT4.Rem2_3_1.frag.BDle` | `IUT4.Rem2_3_1` | `IUT.PaperIV.Corollary2_3.BDle` | definition | NOT_EXTRACTED |  |
+| `IUT4.Thm1_10.StepI.frag.E1` | `IUT4.Thm1_10.StepI` | `IUT.PaperIV.Theorem1_10.E1` | theorem | KERNEL_VERIFIED |  |
+| `IUT4.Thm1_10.StepI.frag.E2` | `IUT4.Thm1_10.StepI` | `IUT.PaperIV.Theorem1_10.E2` | theorem | KERNEL_VERIFIED |  |
+| `IUT4.Thm1_10.StepI.frag.E4_product` | `IUT4.Thm1_10.StepI` | `IUT.PaperIV.Theorem1_10.E4_product` | theorem | KERNEL_VERIFIED |  |
+| `IUT4.Thm1_10.StepI.frag.E4` | `IUT4.Thm1_10.StepI` | `IUT.PaperIV.Theorem1_10.E4` | theorem | KERNEL_VERIFIED |  |
+| `IUT4.Thm1_10.StepI.frag.E6` | `IUT4.Thm1_10.StepI` | `IUT.PaperIV.Theorem1_10.E6` | theorem | KERNEL_VERIFIED |  |
+| `IUT4.Thm1_10.StepI.frag.card_GL2` | `IUT4.Thm1_10.StepI` | `IUT.PaperIV.Theorem1_10.card_GL2` | theorem | KERNEL_VERIFIED |  |
+| `IUT4.Thm1_10.StepII.frag.log_E_ii` | `IUT4.Thm1_10.StepII` | `IUT.PaperIV.Theorem1_10.log_E_ii` | theorem | KERNEL_VERIFIED |  |
+| `IUT4.Thm1_10.StepII.frag.log_div_le_half` | `IUT4.Thm1_10.StepII` | `IUT.PaperIV.Theorem1_10.log_div_le_half` | theorem | KERNEL_VERIFIED |  |
+| `IUT4.Thm1_10.StepII.frag.one_add_four_div_le_two` | `IUT4.Thm1_10.StepII` | `IUT.PaperIV.Theorem1_10.one_add_four_div_le_two` | theorem | KERNEL_VERIFIED |  |
+| `IUT4.Thm1_10.StepII.frag.step_ii_F` | `IUT4.Thm1_10.StepII` | `IUT.PaperIV.Theorem1_10.step_ii_F` | theorem | CONDITIONALLY_VERIFIED |  |
+| `IUT4.Thm1_10.StepII.frag.step_ii_K` | `IUT4.Thm1_10.StepII` | `IUT.PaperIV.Theorem1_10.step_ii_K` | theorem | CONDITIONALLY_VERIFIED |  |
+| `IUT4.Thm1_10.StepII.frag.step_ii_final` | `IUT4.Thm1_10.StepII` | `IUT.PaperIV.Theorem1_10.step_ii_final` | theorem | CONDITIONALLY_VERIFIED |  |
+| `IUT4.Thm1_10.StepIII.frag.R4` | `IUT4.Thm1_10.StepIII` | `IUT.PaperIV.Theorem1_10.R4` | theorem | CONDITIONALLY_VERIFIED |  |
+| `IUT4.Thm1_10.StepIII.frag.log_30_mul_le` | `IUT4.Thm1_10.StepIII` | `IUT.PaperIV.Theorem1_10.log_30_mul_le` | theorem | KERNEL_VERIFIED |  |
+| `IUT4.Thm1_10.StepIII.frag.step_iii_final` | `IUT4.Thm1_10.StepIII` | `IUT.PaperIV.Theorem1_10.step_iii_final` | theorem | CONDITIONALLY_VERIFIED |  |
+| `IUT4.Thm1_10.StepIII.frag.step_iii_p_eq_l` | `IUT4.Thm1_10.StepIII` | `IUT.PaperIV.Theorem1_10.step_iii_p_eq_l` | theorem | KERNEL_VERIFIED |  |
+| `IUT4.Thm1_10.StepIII.frag.step_iii_sQ` | `IUT4.Thm1_10.StepIII` | `IUT.PaperIV.Theorem1_10.step_iii_sQ` | theorem | CONDITIONALLY_VERIFIED |  |
+| `IUT4.Thm1_10.StepV.frag.betaAvg_affine` | `IUT4.Thm1_10.StepV` | `IUT.PaperIV.Theorem1_10.betaAvg_affine` | theorem | KERNEL_VERIFIED |  |
+| `IUT4.Thm1_10.StepV.frag.procession_average_l` | `IUT4.Thm1_10.StepV` | `IUT.PaperIV.Theorem1_10.procession_average_l` | theorem | KERNEL_VERIFIED |  |
+| `IUT4.Thm1_10.StepV.frag.procession_average` | `IUT4.Thm1_10.StepV` | `IUT.PaperIV.Theorem1_10.procession_average` | theorem | KERNEL_VERIFIED |  |
+| `IUT4.Thm1_10.StepV.frag.procession_sum` | `IUT4.Thm1_10.StepV` | `IUT.PaperIV.Theorem1_10.procession_sum` | theorem | KERNEL_VERIFIED |  |
+| `IUT4.Thm1_10.StepV.frag.step_v_final` | `IUT4.Thm1_10.StepV` | `IUT.PaperIV.Theorem1_10.step_v_final` | theorem | KERNEL_VERIFIED |  |
+| `IUT4.Thm1_10.StepV.frag.step_v_weighted` | `IUT4.Thm1_10.StepV` | `IUT.PaperIV.Theorem1_10.step_v_weighted` | theorem | KERNEL_VERIFIED |  |
+| `IUT4.Thm1_10.StepV.frag.sum_Istar_le` | `IUT4.Thm1_10.StepV` | `IUT.PaperIV.Theorem1_10.sum_Istar_le` | theorem | CONDITIONALLY_VERIFIED |  |
+| `IUT4.Thm1_10.StepV.frag.weighted_average_normalized` | `IUT4.Thm1_10.StepV` | `IUT.PaperIV.Theorem1_10.weighted_average_normalized` | theorem | KERNEL_VERIFIED |  |
+| `IUT4.Thm1_10.StepVII.frag.step_vii_archimedean` | `IUT4.Thm1_10.StepVII` | `IUT.PaperIV.Theorem1_10.step_vii_archimedean` | theorem | KERNEL_VERIFIED |  |
+| `IUT4.Thm1_10.StepVII.frag.step_vii_average` | `IUT4.Thm1_10.StepVII` | `IUT.PaperIV.Theorem1_10.step_vii_average` | theorem | KERNEL_VERIFIED |  |
+| `IUT4.Thm1_10.StepVIII.frag.constant_bound_of_raw` | `IUT4.Thm1_10.StepVIII` | `IUT.PaperIV.Theorem1_10.constant_bound_of_raw` | theorem | CONDITIONALLY_VERIFIED |  |
+| `IUT4.Thm1_10.StepVIII.frag.step_viii_absorb` | `IUT4.Thm1_10.StepVIII` | `IUT.PaperIV.Theorem1_10.step_viii_absorb` | theorem | KERNEL_VERIFIED |  |
+| `IUT4.Thm1_10.StepVIII.frag.step_viii_constant` | `IUT4.Thm1_10.StepVIII` | `IUT.PaperIV.Theorem1_10.step_viii_constant` | theorem | CONDITIONALLY_VERIFIED |  |
+| `IUT4.Thm1_10.StepVIII.frag.step_viii_estimate` | `IUT4.Thm1_10.StepVIII` | `IUT.PaperIV.Theorem1_10.step_viii_estimate` | theorem | KERNEL_VERIFIED |  |
+| `IUT4.Thm1_10.StepVIII.frag.step_viii_prime_count_prm` | `IUT4.Thm1_10.StepVIII` | `IUT.PaperIV.Theorem1_10.step_viii_prime_count_prm` | theorem | KERNEL_VERIFIED |  |
+| `IUT4.Thm1_10.StepVIII.frag.step_viii_prime_count` | `IUT4.Thm1_10.StepVIII` | `IUT.PaperIV.Theorem1_10.step_viii_prime_count` | theorem | KERNEL_VERIFIED |  |
+| `IUT4.Thm1_10.StepVIII.frag.step_viii_raw` | `IUT4.Thm1_10.StepVIII` | `IUT.PaperIV.Theorem1_10.step_viii_raw` | theorem | CONDITIONALLY_VERIFIED |  |
+| `IUT4.Thm1_10.StepVIII.frag.step_viii_substitute` | `IUT4.Thm1_10.StepVIII` | `IUT.PaperIV.Theorem1_10.step_viii_substitute` | theorem | KERNEL_VERIFIED |  |
+| `IUT4.Thm1_10.StepVIII.frag.step_viii_sum` | `IUT4.Thm1_10.StepVIII` | `IUT.PaperIV.Theorem1_10.step_viii_sum` | theorem | CONDITIONALLY_VERIFIED |  |
+| `IUT4.Thm1_10.final.frag.final_estimate_one` | `IUT4.Thm1_10.final` | `IUT.PaperIV.Theorem1_10.final_estimate_one` | theorem | KERNEL_VERIFIED |  |
+| `IUT4.Thm1_10.final.frag.final_estimate_two` | `IUT4.Thm1_10.final` | `IUT.PaperIV.Theorem1_10.final_estimate_two` | theorem | KERNEL_VERIFIED |  |
+| `IUT4.Thm1_10.final.frag.final_inequality_F` | `IUT4.Thm1_10.final` | `IUT.PaperIV.Theorem1_10.final_inequality_F` | theorem | CONDITIONALLY_VERIFIED |  |
+| `IUT4.Thm1_10.final.frag.final_inequality` | `IUT4.Thm1_10.final` | `IUT.PaperIV.Theorem1_10.final_inequality` | theorem | CONDITIONALLY_VERIFIED |  |
+| `IUT4.Thm1_10.final.frag.of_cor312` | `IUT4.Thm1_10.final` | `IUT.PaperIII.Corollary312.thm1_10_final_of_cor312` | theorem | CONDITIONALLY_VERIFIED |  |
+| `IUT4.Thm1_10.frag.constant` | `IUT4.Thm1_10` | `IUT.PaperIV.Theorem1_10.constant` | definition | NOT_EXTRACTED |  |
+| `IUT4.ThmA.frag.equiv_abc` | `IUT4.ThmA` | `IUT.ABCSpecialization.vojta_iff_ABC` | theorem | KERNEL_VERIFIED |  |
 
 ## Coverage per paper and on the critical path
 
@@ -218,35 +219,86 @@ Statement records only; the fragment column counts checked fragments whose paren
 |---|---|---|---|---|---|---|---|
 | IUT1 | 166 | 166 | 7 | 0 | 0 | 0 | 108 |
 | IUT2 | 192 | 192 | 0 | 0 | 0 | 11 | 72 |
-| IUT3 | 189 | 189 | 0 | 0 | 0 | 26 | 130 |
+| IUT3 | 189 | 189 | 0 | 0 | 0 | 23 | 130 |
 | IUT4 | 82 | 82 | 3 | 3 | 0 | 96 | 36 |
-| Critical path | 562 | 562 | 3 | 3 | 0 | 133 | 313 |
+| Critical path | 562 | 562 | 3 | 3 | 0 | 130 | 313 |
 
 ## Statement fidelity status
 
+One table per kind of record, so that no table adds fragments to statements: full statements (numbered statements and unnumbered section items, no parent), parts and proof steps (records with a parent), and fragments.
+
+### Full statements
+
 | Status | IUT1 | IUT2 | IUT3 | IUT4 |
 |---|---|---|---|---|
-| EXTRACTED | 126 | 191 | 159 | 79 |
-| INTERPRETATION_AMBIGUOUS | 0 | 1 | 30 | 0 |
-| STATEMENT_FORMALIZED | 21 | 11 | 33 | 107 |
-| BLOCKED_BY_MATHLIB | 33 | 0 | 0 | 0 |
+| EXTRACTED | 103 | 118 | 61 | 47 |
+| INTERPRETATION_AMBIGUOUS | 0 | 1 | 17 | 0 |
+| STATEMENT_FORMALIZED | 7 | 0 | 0 | 3 |
+| BLOCKED_BY_MATHLIB | 30 | 0 | 0 | 0 |
+
+### Parts and proof steps
+
+| Status | IUT1 | IUT2 | IUT3 | IUT4 |
+|---|---|---|---|---|
+| EXTRACTED | 23 | 73 | 98 | 32 |
+| INTERPRETATION_AMBIGUOUS | 0 | 0 | 13 | 0 |
+| BLOCKED_BY_MATHLIB | 3 | 0 | 0 | 0 |
+
+### Fragments
+
+| Status | IUT1 | IUT2 | IUT3 | IUT4 |
+|---|---|---|---|---|
+| STATEMENT_FORMALIZED | 14 | 11 | 33 | 104 |
 
 ## Proof status
 
+### Full statements
+
 | Status | IUT1 | IUT2 | IUT3 | IUT4 |
 |---|---|---|---|---|
-| NOT_EXTRACTED | 107 | 59 | 18 | 17 |
-| EXTRACTED | 0 | 19 | 64 | 40 |
+| NOT_EXTRACTED | 84 | 47 | 4 | 2 |
+| EXTRACTED | 0 | 12 | 23 | 35 |
 | PROOF_IN_PROGRESS | 0 | 1 | 0 | 0 |
-| BLOCKED_BY_MATHLIB | 1 | 63 | 0 | 7 |
-| BLOCKED_BY_EXTERNAL_THEOREM | 24 | 24 | 51 | 23 |
-| BLOCKED_BY_MISSING_JUSTIFICATION | 48 | 26 | 63 | 0 |
+| BLOCKED_BY_MATHLIB | 1 | 27 | 0 | 5 |
+| BLOCKED_BY_EXTERNAL_THEOREM | 15 | 13 | 19 | 5 |
+| BLOCKED_BY_MISSING_JUSTIFICATION | 40 | 19 | 32 | 0 |
+| KERNEL_VERIFIED | 0 | 0 | 0 | 3 |
+
+### Parts and proof steps
+
+| Status | IUT1 | IUT2 | IUT3 | IUT4 |
+|---|---|---|---|---|
+| NOT_EXTRACTED | 9 | 12 | 7 | 7 |
+| EXTRACTED | 0 | 7 | 41 | 5 |
+| BLOCKED_BY_MATHLIB | 0 | 36 | 0 | 2 |
+| BLOCKED_BY_EXTERNAL_THEOREM | 9 | 11 | 32 | 18 |
+| BLOCKED_BY_MISSING_JUSTIFICATION | 8 | 7 | 31 | 0 |
+
+### Fragments
+
+| Status | IUT1 | IUT2 | IUT3 | IUT4 |
+|---|---|---|---|---|
+| NOT_EXTRACTED | 14 | 0 | 7 | 8 |
 | CONDITIONALLY_VERIFIED | 0 | 0 | 16 | 33 |
-| KERNEL_VERIFIED | 0 | 11 | 10 | 66 |
+| KERNEL_VERIFIED | 0 | 11 | 10 | 63 |
 
 Statement status NOT_EXTRACTED means that the statement is not yet recorded to the standard of an extracted statement (content, hypotheses and conclusion from pages read); the record may already hold partial content. Proof status NOT_EXTRACTED means that no proof has been recorded to that standard, and it is also the proof status of a record whose Lean declaration is a definition. 172 statement records have a statement status other than NOT_EXTRACTED and proof status NOT_EXTRACTED.
 
 BLOCKED_BY_MISSING_JUSTIFICATION: the text gives an assertion where a formalization needs a derivation; this is not a claim that the result is false.
+EXTERNAL_CLAIM: a statement of another paper, stated in Lean as a proposition and used only as a hypothesis; it is not proved in this project.
+
+## Statements of other papers
+
+Records whose id has a prefix of `records.EXTERNAL_PAPERS`: results and claims of other papers (`EXPL`: S. Mochizuki, I. Fesenko, Y. Hoshi, A. Minamide, W. Porowski, "Explicit Estimates in Inter-universal Teichmuller Theory"; `ZHOU1`: Z.-P. Zhou, arXiv 2503.14510; `ZHOU2`: Z.-P. Zhou, arXiv 2510.05448; `DH`: T. Dupuy, A. Hilado, arXiv 2004.13228 and 2004.13108), and the Lean fragments that check pieces of them. They are not counted in any number above or in the tables of the four papers. A statement with proof status EXTERNAL_CLAIM is stated in Lean as a proposition and only assumed. "Assumes" gives, for a conditional fragment, the claims its theorem takes as hypotheses.
+
+| Measure | Count |
+|---|---|
+| Statements of other papers | 0 |
+| Of these, stated in Lean (EXTERNAL_CLAIM, assumed, not proved) | 0 |
+| Their fragments checked in Lean, unconditionally | 0 |
+| Their fragments checked in Lean, conditionally | 0 |
+
+None yet.
 
 ## Validation of the records
 

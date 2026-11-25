@@ -32,6 +32,8 @@ def table(rows, header):
 
 
 def pages(s):
+    if s.get("page_spans"):
+        return records.format_spans([tuple(sp) for sp in s["page_spans"]], s.get("paper"))
     a, b = s.get("pdf_page"), s.get("pdf_page_end")
     if a is None:
         src = s.get("source")
@@ -102,8 +104,9 @@ def catalog_doc(statements, critical):
            "and some symbols of the printed titles are dropped or flattened. Statuses: NOT_EXTRACTED means that only the "
            "mechanical index has seen the statement. \"Path\" marks the critical path of "
            "`docs/CRITICAL_PATH.md`. PDF pages are the pages a reader gave in the curated "
-           "record when there is one, and otherwise the mechanical span from the header to "
-           "the next recognized header.", "",
+           "record when there is one, listed span by span, with the paper in front of each "
+           "span on another paper than the record's (\"III 173 to 174; IV 23\"), and "
+           "otherwise the mechanical span from the header to the next recognized header.", "",
            "Rows of kind \"fragment\" are Lean lemmas that check one piece of the parent "
            "above them; the Lean declaration column of a fragment names that lemma. A parent "
            "is formalized only when its own row names a declaration, which then states its "
@@ -136,6 +139,33 @@ def catalog_doc(statements, critical):
 
             for s in sorted(group, key=lambda s: (s.get("pdf_page") or 0, s["id"])):
                 add(s, 0)
+            doc += [table(rows, header), ""]
+    external = [s for s in statements if records.external_prefix(s["id"])
+                and not s.get("parent")]
+    if external:
+        doc += ["## Statements of other papers", "",
+                "Results and claims of papers other than IUT I to IV, with the Lean fragments "
+                "that check pieces of them. Pages are pages of that paper. Proof status "
+                "EXTERNAL_CLAIM: stated in Lean as a proposition and only assumed. None of "
+                "these rows is counted for the four papers.", ""]
+        for prefix, (paper, _) in records.EXTERNAL_PAPERS.items():
+            group = [s for s in external if records.external_prefix(s["id"]) == prefix]
+            if not group:
+                continue
+            doc += [f"### `{prefix}`: {paper}", ""]
+            rows = []
+
+            def add_ext(s, depth):
+                lean = s.get("lean_declaration")
+                rows.append(["&nbsp;&nbsp;" * depth + f"`{s['id']}`", s.get("kind"),
+                             (s.get("source") or {}).get("statement") or s.get("title") or "",
+                             pages(s), s.get("statement_status"), s.get("proof_status"),
+                             f"`{lean}`" if lean else "", ""])
+                for c in sorted(children[s["id"]], key=lambda c: c["id"]):
+                    add_ext(c, depth + 1)
+
+            for s in sorted(group, key=lambda s: s["id"]):
+                add_ext(s, 0)
             doc += [table(rows, header), ""]
     orphans = [s for s in statements if s.get("parent")
                and s["parent"] not in {t["id"] for t in statements}]

@@ -76,7 +76,7 @@ uses Proposition 2.1 (i). -/
 theorem P1_bound {δ s : ℝ} (hδ : 1 ≤ δ) (hs : 1 ≤ s) :
     10 * δ * s * Real.log (2 * δ * s ^ 2) ≤ 20 * δ ^ 2 * (s ^ 2) ^ 2 := by
   have hx : 1 ≤ 2 * δ * s ^ 2 := by nlinarith
-  have hlog := Proposition2_1.log_le_self hx
+  have hlog := Proposition2_1.log_le_self_of_one_le hx
   have h0 : 0 ≤ 10 * δ * s := by positivity
   have := mul_le_mul_of_nonneg_left hlog h0
   have hs3 : s ^ 3 ≤ s ^ 4 := pow_le_pow_right₀ hs (by norm_num)
@@ -117,7 +117,7 @@ theorem sqrt_mul_log_l {a b l : ℝ} (ha : 1 ≤ a) (hb : 1 ≤ b) (hl0 : 0 < l)
   have h1 : Real.log l ≤ 8 * Real.log (2 * a * b) := by
     have := Real.log_le_log hl0 hl8
     rwa [Real.log_pow] at this
-  have h2 : Real.log (2 * a * b) ≤ 2 * a * b := Proposition2_1.log_le_self hab
+  have h2 : Real.log (2 * a * b) ≤ 2 * a * b := Proposition2_1.log_le_self_of_one_le hab
   have hb2 : 0 ≤ b ^ 2 := by positivity
   calc b ^ 2 * Real.log l ≤ b ^ 2 * (8 * (2 * a * b)) := by
         apply mul_le_mul_of_nonneg_left _ hb2; linarith

@@ -35,6 +35,7 @@ Not on the critical path (no chain of edges from the roots reaches them):
 Unresolved means a proof status other than KERNEL_VERIFIED or INDEPENDENTLY_CHECKED. Ranked by the number of statements whose text cites them.
 
 BLOCKED_BY_MISSING_JUSTIFICATION: the text gives an assertion where a formalization needs a derivation; this is not a claim that the result is false.
+EXTERNAL_CLAIM: a statement of another paper, stated in Lean as a proposition and used only as a hypothesis; it is not proved in this project.
 
 | Statement | Kind | Cited by | Cited by critical-path statements | On path | Proof status |
 |---|---|---|---|---|---|

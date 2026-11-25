@@ -8,12 +8,13 @@ The checks are run by CI on every push and pull request to `main`
 
 | Command | Establishes | Does not establish |
 |---|---|---|
-| `python3 -I scripts/Controls/source_scan.py` | No library file contains constructs the gate cannot see in the compiled environment: `debug.*` options, `set_option` outside an allowed list, new syntax, macros, elaborators or notation, commands that run code at elaboration time, local or scoped instances. Placeholders occur only in `Challenge.lean` and `IUT/Experimental/`. No experimental import outside that folder; the challenge files import only Mathlib and `Challenge.*`; no Lean options in `lakefile.toml`; every library file is imported by `IUT.lean`. | It is a syntactic search over sources with comments and strings blanked. It is untrusted. |
+| `python3 -I scripts/Controls/source_scan.py` | No library file contains constructs the gate cannot see in the compiled environment: `debug.*` options, `set_option` outside an allowed list, new syntax, macros, elaborators or notation, commands that run code at elaboration time, `export`, `open ... renaming` and `open ... hiding`, an `open` of a namespace outside its list, instance commands and attributes other than the one allowed line (which must occur once), `deriving`, `default_instance` in any spelling, and native evaluation (`native_decide`, `decide +native`, `Lean.ofReduceBool`, `Lean.trustCompiler`). Identifiers are compared after quoted names `«…»` are decoded and `_root_.` is removed, so `_root_.sorryAx` is found. Placeholders occur only in `Challenge.lean` and `IUT/Experimental/`. No experimental import outside that folder; the challenge files import only Mathlib and `Challenge.*`; no Lean options in `lakefile.toml`, and its decoded configuration equals the recorded one, each library declared once; `lake-manifest.json` equals the recorded manifest in every field of every package, with multiplicity, and in its top-level keys; `lean-toolchain` is the recorded toolchain; no tracked file under `.lake/`; every library file is imported by `IUT.lean`; every other tracked `.lean` file is a tooling file listed by exact path. | It is a lexical search over sources with comments and strings blanked; it does not resolve names. It is untrusted. The gate catches `sorryAx`, `native_decide` and `Lean.ofReduceBool` independently through the axioms they add (check 1); it does not see `export`, `open ... renaming` or a `default_instance` attribute on a constant of a dependency except through the registries of check 7. |
 | `python3 -I scripts/gen_root.py --check` | `IUT.lean` imports exactly the library files outside `IUT/Experimental/`. | Anything about their content. |
 | `lake build` | The default targets `IUT` and `Solution` elaborate and the kernel accepts every declaration. | That the statements mean what the papers say. |
-| `python3 -I scripts/Controls/fingerprints.py --check` | The elaborated type and value of each constant of `Challenge/Defs.lean`, the elaborated type of each statement of `Challenge.lean`, the list of names in `comparator.json`, and the hashes of the trust files listed in the script are unchanged since the last recorded approval. | That the definitions and statements are right; that is the human comparison with the source. |
-| `lake env lean AxiomGate.lean` (with `AXIOM_GATE_TRACKED_FILES`) | Every constant of `IUT`, `Challenge.Defs` and `Solution` depends only on `propext`, `Classical.choice`, `Quot.sound` (so no `sorryAx` and no `native_decide` axiom); none is an axiom, `unsafe`, `partial`, `opaque`, `@[implemented_by]` or `@[extern]`; no experimental module is imported; no constant settles a form of the abc conjecture unless named `abcConjecture`; every tracked library file is a module of the build and conversely; no module comes from outside the toolchain, Mathlib and the project. | It cannot see `debug.skipKernelTC` (covered by `lake check`) or custom elaborators (covered by the source scan). It detects conjecture statements only up to definitional equality, not, for example, `True → Challenge.ABC`. |
-| `sh GateControls/run.sh AxiomGate.lean` | The gate accepts a clean control and rejects each control with a known defect (`sorry`, a forbidden axiom, `native_decide`, a renamed conjecture statement, an experimental import), with the expected diagnostic; the coverage check fails on a file the root does not import; the source scan reports every construct in its control. | That the gate catches defects not represented by a control. |
+| `lake build Challenge` | `Challenge.lean`, which is not a default target, elaborates; the fingerprint helper imports it. | Anything about its statements, which are proved with `sorry` on purpose. |
+| `python3 -I scripts/Controls/fingerprints.py --check` | The elaborated type and value of each constant of `Challenge/Defs.lean`, the elaborated type of each statement of `Challenge.lean`, the list of names in `comparator.json`, and the hashes of the trust files listed in the script (among them `scripts/gen_root.py`, which runs before the build) are unchanged since the record was last written with `--write`. | That the definitions and statements are right; that is the human comparison with the source. That a change of the record was approved: no step ties the record to an approval (see the trust policy in `CONTRIBUTING.md`). |
+| `lake env lean AxiomGate.lean` (with `AXIOM_GATE_TRACKED_FILES`) | Every constant of `IUT`, `Challenge.Defs` and `Solution` depends only on `propext`, `Classical.choice`, `Quot.sound` (so no `sorryAx` and no `native_decide` axiom); none is an axiom, `unsafe`, `partial`, `opaque`, `@[implemented_by]` or `@[extern]`; no experimental module is imported; check 3: no constant (axioms included) proves a registered open statement without a hypothesis that mentions a registered statement (see "Registries of open statements" below), unless named `abcConjecture`; every tracked library file is a module of the build and conversely; no module comes from outside the toolchain, Mathlib and the project. Check 6: no project name captures, by name resolution, a constant of a dependency or a trusted constant of `Challenge.*` (a proper suffix of the name, at the root or under an enclosing namespace, names such a constant; or the last component of a name declared directly in a namespace names such a constant in a namespace that the library opens), apart from seven names allowlisted by full name. Check 7: the only instance the library registers is `IUT.PaperI.Capsule.fintype` (by full name and class) besides the `SizeOf` instances Lean generates; no instance is on a dependency class with only dependency arguments after unfolding reducible definitions; the library registers no default instance. | It cannot see `debug.skipKernelTC` (covered by `lake check`) or custom elaborators (covered by the source scan). Check 3 detects registered statements only up to definitional equality, through leading `∀` binders, `∧` and `↔`, and only registered ones: not, for example, `True → Challenge.ABC`, an equivalence of a registered statement with a true statement that mentions a registered constant, or a structure field; a hypothesis that merely mentions a registered constant (`Challenge.ABC → True`) exempts the declaration. Check 6 does not know which file opens which namespace, so its rule over-approximates for names declared directly in a namespace; it does not report a project name that shadows another project name, a member of a project type (`S.c` inside `namespace S`) that shadows an opened name, or a private name shadowing another private name. These remain for reading. |
+| `sh GateControls/run.sh AxiomGate.lean` | The gate accepts the clean controls (`Clean`, and `OpenStatementsClean`: conditional statements, refuted instances of a family, an equivalence of two registered statements) and rejects each control with a known defect (`sorry`, a forbidden axiom, `native_decide`, a renamed or restated conjecture statement in `RenamedConjecture`, `EquivalentForm` and `VojtaRestated`, an open statement proved through a local alias, behind binders, in a conjunction or an equivalence, an instance of an open family, an author statement, and the registered `ABCInt` and `ABCWithExponent` of the library from a hypothesis `False` in `OpenStatements`, shadowing names in `Shadowing`, `PrivateShadowing` and `TrustedNames`, instances on aliases and default instances in `ForeignInstances`, an experimental import), with the expected diagnostic; the coverage check fails on a file the root does not import; the source scan reports every construct in its controls, reports unlisted tooling files, and rejects a repeated allowed instance line. | That the gate catches defects not represented by a control. |
 | `lake comparator` | Every theorem listed in `comparator.json` has in `Solution` exactly the statement of `Challenge`, uses only the allowed axioms, and is accepted by the kernel in a sandbox. | Anything about theorems not listed there. |
 | `lake check` | The default targets, exported and replayed through the kernel, are accepted. This catches declarations added while kernel checking was disabled. | Anything about the meaning of the statements. |
 
@@ -105,8 +106,8 @@ Two different things are established, by different means, and neither implies th
 
 * Toolchain `leanprover/lean4:v4.36.0` (`lean-toolchain`); Mathlib tag v4.36.0, commit
   `fc4f59e577feb1a4956671bc04ac18aaaf8cd842` (`lakefile.toml`, `lake-manifest.json`).
-* Gates configured in CI, in order: the source scan, the root check, `lake build`, the
-  fingerprint check, the axiom gate, the gate controls, `lake comparator` and `lake check`
+* Gates configured in CI, in order: the source scan, the root check, `lake build`,
+  `lake build Challenge`, the fingerprint check, the axiom gate, the gate controls, `lake comparator` and `lake check`
   (`.github/workflows/axiom-gate.yml`). This report describes what each establishes; it does
   not record the outcome of a particular run. The outcome for a given revision is the CI log of
   that revision.
@@ -115,6 +116,58 @@ Two different things are established, by different means, and neither implies th
   `lake comparator`). The axiom gate detects statements of the abc conjecture only up to
   definitional equality. The source scan is syntactic. `lake comparator` and `lake check` run
   only on Linux.
+
+## Registries of open statements
+
+Check 3 of `AxiomGate.lean` enforces the rule that no declaration of the library proves an
+open statement without assuming one. The open statements are three plain lists near the top
+of `AxiomGate.lean`; an entry is the full name of a definition and the module that declares
+it, and adding one needs no change of the logic.
+
+* `closedForms`: statements of type `Prop` that are open and that the library proves
+  equivalent to the abc conjecture: `Challenge.ABC`, `Challenge.ABCFinite`,
+  `Challenge.ABCLog`, the three forms of `IUT.ABC.FormalConjectures`,
+  `IUT.ABC.Variants.ABCInt`, `IUT.ABC.Variants.ABCIntSum`, and
+  `IUT.ABCSpecialization.VojtaLineMinusThreePointsRational` and `...UnitInterval`. Neither a
+  form nor its negation may be proved outright.
+* `openFamilies`: constants of type `… → Prop` some of whose instances are open:
+  `IUT.ABC.Variants.ABCWithExponent` (open for `κ > 1`) and
+  `IUT.ABCSpecialization.RationalPointBoundFor`. No instance may be proved outright, for any
+  argument; negated instances may (`not_abcWithExponent_of_le_one` refutes `κ ≤ 1`), and so
+  may implications whose hypothesis is an instance (`abcWithExponent_mono`).
+* `authorStatements`: statements of results or claims of other papers that the library may
+  assume but never proves. It is empty: no module of the library states such a claim yet.
+
+A further list, `provedInstances`, accepts a declaration that concludes a registered statement
+without assuming one, by full name and the hash of its statement (the gate prints the hash in
+its report); it is empty. A proved instance of a family that is not open, stated other than
+as a negation, goes there.
+
+To register a statement, add one line `(`Full.Name, `Module.Name),` to `closedForms`,
+`openFamilies` or `authorStatements` in the section "Registries of check 3" of
+`AxiomGate.lean`; nothing else changes.
+
+How a statement is compared: the whole statement, and then each conclusion after stripping
+the leading `∀` binders one at a time (after reducible unfolding), each with its conjuncts and
+with each side of an `↔` whose other side mentions no registered constant, is compared with
+`c ?x₁ … ?xₙ` for each entry `c` and fresh metavariables, and with its negation for closed
+forms and author statements. Both sides are first expanded: every definition of the project
+(`IUT.*`, `Challenge.*`, `Solution`, the file being checked; instances excepted) and `Not` are
+unfolded, whatever their reducibility. Then `isDefEq` runs at the transparency of instances,
+so definitions of Mathlib stay folded and a near miss (an exponent `3 : ℕ` against `κ : ℝ`,
+an extra `+ 0` on `ℝ`) fails at once instead of unfolding the reals; the control
+`ExponentThree` checks this. A local `def Y : Prop := Challenge.ABC` followed by `theorem t : Y`
+is caught, since `Y` is expanded, and so is an alias marked `@[irreducible]`. Not caught: a
+statement equal to a registered one only after unfolding a Mathlib definition, and an alias
+that hides the `∀`, `∧` or `↔` around a registered statement (`def Z : Prop := 1 = 1 ∧ ABC`;
+the binders and connectives are seen up to reducible unfolding only). Each statement has a
+heartbeat budget; running out of it is an error that names the statement, never a pass. A match is accepted when a stripped
+hypothesis mentions a registered constant by name. The limits: propositional reformulations
+that are not definitionally equal to a registered statement, and a hypothesis that mentions a registered constant without assuming it are
+not detected; an alias of a registered statement used as a hypothesis is not recognized as an
+assumption, so such a declaration is reported (this fails closed). An entry whose module the
+import closure does not contain is skipped with a note, and is an error under continuous
+integration.
 
 ## Known limits
 
@@ -150,6 +203,13 @@ statement or the record; none is an error in the papers.
   manuscript; see `docs/SCHOLZE_STIX_ANALYSIS.md`.
 * Statements with status `NOT_EXTRACTED` in `docs/DASHBOARD.md` were located by the
   mechanical index only.
+
+**Name resolution.** The gate compares names, not the elaborated meaning of identifiers in
+source files. A reader must still check by eye: that an identifier in a statement means the
+constant its spelling suggests when a project constant of the same name exists in an enclosing
+project namespace (project names shadowing project names are not reported); members of a
+project type used inside `namespace S` of that type; the effect of `open` of a library
+namespace; and the three allowlisted names of check 6 (`shadowAllowed` in `AxiomGate.lean`).
 
 **Checks that run only in CI.** `lake comparator` and `lake check` need Linux. A contributor on
 another system relies on CI for them.

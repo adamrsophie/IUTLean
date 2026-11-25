@@ -16,9 +16,17 @@ Everything in `IUT/` outside `IUT/Experimental/`, and everything in `Solution.le
 * **Forbidden constructs.** `sorry`, `admit`, `axiom`, `opaque`, `unsafe`, `partial`,
   `native_decide`, `@[implemented_by]`, `@[extern]`, `debug.*` options, `set_option` with an
   option outside the allowed list of the source scan, new syntax, macros, elaborators or
-  notation, `run_cmd` and the other commands that run code at elaboration time, `#eval`, and
-  local or scoped instances. The full list is in the header of
+  notation, `run_cmd` and the other commands that run code at elaboration time, `#eval`,
+  instances (commands, attributes, `deriving`) other than the one allowlisted line,
+  `default_instance` attributes, native evaluation (`decide +native`, `Lean.ofReduceBool`,
+  `Lean.trustCompiler`), `export`, `open ... renaming`, `open ... hiding`, and an `open` of a
+  namespace outside the list `ALLOWED_OPENS` of the scan. The full list is in the header of
   `scripts/Controls/source_scan.py`. `Challenge.lean` alone may contain `sorry`, on purpose.
+* **Names.** No declaration may capture a name of a dependency or of `Challenge.*` by name
+  resolution: no `IUT.X.Real.log`, no `IUT.X.Challenge.ABC`, and no name declared directly in a
+  namespace whose last component is a constant of an opened namespace (`IUT.X.log` against
+  `Real.log`). Check 6 of `AxiomGate.lean` gives the exact rule and its allowlist; prefer a
+  specific name to an entry there.
 * **No placeholders and no shells.** A Lean `Prop` for a result of the papers exists only when
   every term in it is genuinely defined. A structure whose fields are the conclusions of the
   paper, a hypothesis that restates the conclusion, or a definition chosen so that the
@@ -37,7 +45,10 @@ Everything in `IUT/` outside `IUT/Experimental/`, and everything in `Solution.le
   change to any of them (a statement, a constant, a hypothesis, a name) needs a separate
   approval, by a reviewer other than the author of the change, after a comparison with the
   cited source. A matching change in `Solution.lean` passes the comparator, so the comparator
-  alone does not protect the baseline.
+  alone does not protect the baseline. No mechanism enforces the approval:
+  `fingerprints.py --write` records whatever is current, and `.github/CODEOWNERS` names a
+  single owner, so a change authored by that owner cannot receive a code-owner approval from
+  someone else. The rule binds by agreement until a second owner is named.
 
 ## Every Lean module cites its source
 
@@ -94,7 +105,32 @@ Statement fidelity and proof status are reported separately. The status values a
 
 A record that claims a verified status must name a `lean_declaration` that exists in the built
 library and depends only on the allowed axioms; `scripts/dashboard.py` does not count it as
-verified otherwise. The definitions of the dashboard counts are in the docstring of
+verified otherwise, and a record of the proved family (conditional ones included) whose
+declaration depends on another axiom is a validation error. A fragment id is
+`<parent>.frag.<name>` with exactly the `parent` field as prefix. Page fields (`source.pages`
+or `source.pdf_pages`) are read by `scripts/records.py`: "page 7", "pages 41 to 43",
+"pages 10 to 12, 15", and, for spans on several papers, "IUT III pages 173 to 174; IUT IV
+page 23"; any other form is a validation error.
+
+A fragment whose declaration tests a model or an example (a simplified setting, an interval
+model, a countermodel to an abstraction) rather than checking a step of the papers has
+`"scope": "model_test"`. The dashboard counts such fragments on their own line, "model tests",
+and never among the fragments checked in Lean. `model_test` is the one fixed value of
+`scope`; any other value is free text describing the scope, and `model_test` is allowed only
+on fragment records.
+
+Statements of other papers (the explicit estimates paper, Zhou's papers, Dupuy and Hilado)
+go in `data/curated/external.json`, with an id prefix registered in `EXTERNAL_PAPERS` of
+`scripts/records.py` (`EXPL.Thm5_4`, `ZHOU1.Thm3_2`). A parent has `"kind":
+"external_statement"`, no `parent`, and in `source` the fields `authors`, `title`, `arxiv` (an
+identifier listed for the prefix) or `journal`, `statement` (its number in that paper) and
+`pages_in_paper` ("pages 27 to 29"); never `pages` or `pdf_pages`, which are pages of IUT I to
+IV. Its `lean_declaration` is null unless a `def ... : Prop` states it exactly; then its
+statuses are `STATEMENT_FORMALIZED` and `EXTERNAL_CLAIM` (stated, assumed, not proved), and
+the definition is registered in `authorStatements` of `AxiomGate.lean`, so that no
+declaration proves it outright. Its fragments follow the fragment rules above; a conditional
+fragment lists the claims it assumes in `obligations`, which the dashboard prints. A record
+of IUT I to IV may also give pages of another paper it relies on in `source.pages_in_paper`. The definitions of the dashboard counts are in the docstring of
 `scripts/dashboard.py`.
 After editing curated data, regenerate the derived files:
 
@@ -129,6 +165,7 @@ From the repository root, after `lake exe cache get`:
 python3 -I scripts/Controls/source_scan.py
 python3 -I scripts/gen_root.py --check
 lake build
+lake build Challenge
 python3 -I scripts/Controls/fingerprints.py --check
 git ls-files -- IUT.lean IUT > tracked-files.txt
 AXIOM_GATE_TRACKED_FILES=tracked-files.txt lake env lean AxiomGate.lean

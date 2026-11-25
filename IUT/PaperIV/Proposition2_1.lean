@@ -25,7 +25,7 @@ open Filter Finset
 namespace IUT.PaperIV.Proposition2_1
 
 /-- **Proposition 2.1 (i).** `log(x) ≤ x` for `x ≥ 1` (it holds for every `x > 0`). -/
-theorem log_le_self {x : ℝ} (hx : 1 ≤ x) : Real.log x ≤ x := by
+theorem log_le_self_of_one_le {x : ℝ} (hx : 1 ≤ x) : Real.log x ≤ x := by
   have := Real.log_le_sub_one_of_pos (by linarith : (0 : ℝ) < x); linarith
 
 /-- **Proposition 2.1 (ii), first part.** There is `ξ_prm ≥ 5` with
@@ -94,7 +94,7 @@ theorem proposition2_1 :
     ∃ ξ : ℝ, 5 ≤ ξ ∧ (∀ x : ℝ, ξ ≤ x → 2 / 3 * x ≤ Chebyshev.theta x ∧
       Chebyshev.theta x ≤ 4 / 3 * x) ∧
       ∀ A : Finset ℕ, ∃ p : ℕ, p.Prime ∧ p ∉ A ∧ (p : ℝ) ≤ 2 * (thetaA A + ξ) := by
-  refine ⟨fun x hx => log_le_self hx, ?_⟩
+  refine ⟨fun x hx => log_le_self_of_one_le hx, ?_⟩
   obtain ⟨ξ, hξ, h⟩ := exists_xi_prm
   exact ⟨ξ, hξ, h, fun A =>
     exists_prime_not_mem_of (by linarith) (fun x hx => (h x hx).1) A⟩

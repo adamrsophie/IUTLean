@@ -6,9 +6,10 @@
 #   * for every constant stored in the module Challenge (Challenge.lean, the challenge
 #     statements of lake comparator), the SHA-256 of the dump of its elaborated type, and the
 #     list of its theorems, which must be exactly the theorem_names of comparator.json;
-#   * the SHA-256 of each file of TRUST_FILES: the challenge, the comparator configuration, the
-#     gate and its controls, the scripts of this folder, the build configuration and the
-#     workflow.
+#   * the SHA-256 of each file of trust_files(): the challenge, the comparator configuration,
+#     the gate and its controls, the scripts of this folder, scripts/gen_root.py (the
+#     continuous integration runs it before the build), the build configuration, the workflow
+#     and the code owners file.
 # The dumps are printed by the Lean helper scripts/Controls/Fingerprints.lean, which imports
 # the module Challenge; Challenge.lean is not a default target, so build it first.
 # Run from the repository root after `lake build Challenge`:
@@ -35,7 +36,7 @@ MODULES = ('Challenge.Defs', 'Challenge')
 def trust_files():
     fixed = ['Challenge.lean', 'Challenge/Defs.lean', 'comparator.json', 'AxiomGate.lean',
              'lakefile.toml', 'lake-manifest.json', 'lean-toolchain',
-             '.github/workflows/axiom-gate.yml', '.github/CODEOWNERS']
+             '.github/workflows/axiom-gate.yml', '.github/CODEOWNERS', 'scripts/gen_root.py']
     return sorted(set(fixed + glob.glob('scripts/Controls/*') + glob.glob('GateControls/*')))
 
 

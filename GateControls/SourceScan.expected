@@ -47,14 +47,33 @@ SourceScan.lean:110: sorryAx
 SourceScan.lean:112: instance
 SourceScan.lean:114: instance
 SourceScan.lean:118: deriving
+SourceScan.lean:120: sorryAx
+SourceScan.lean:122: sorryAx
+SourceScan.lean:124: instance
+SourceScan.lean:126: default_instance
+SourceScan.lean:128: default_instance
+SourceScan.lean:130: native evaluation
+SourceScan.lean:132: ofReduceBool
+SourceScan.lean:134: trustCompiler
+SourceScan.lean:136: renaming
+SourceScan.lean:138: hiding
+SourceScan.lean:138: open of namespace Nat
+SourceScan.lean:140: export
+SourceScan.lean:142: open of namespace Opposite2
+SourceScan.lean:144: import of experimental module IUT.Experimental.Hidden
 SourceScanLakefile.toml:4: lakefile key name differs from the recorded configuration
 SourceScanLakefile.toml:5: lakefile option moreLeanArgs
 SourceScanLakefile.toml:9: lakefile option leanOptions
 SourceScanLakefile.toml:12: lakefile key require differs from the recorded configuration
 SourceScanLakefile.toml:17: library IUT differs from the recorded configuration
+SourceScanLakefile.toml:21: library Challenge is declared 2 times
 SourceScanLakefile.toml:24: library Solution differs from the recorded configuration
+SourceScan.lake-manifest.json: key packagesDir is 'vendor', recorded '.lake/packages'
+SourceScan.lake-manifest.json: package batteries is listed 2 times
+SourceScan.lake-manifest.json: package batteries (https://github.com/leanprover-community/batteries at b4b25a3886a16daacaf6615c2eea7170a6e8f458) is not in the recorded list
 SourceScan.lake-manifest.json: package mathlib (https://github.com/someone-else/mathlib4.git at fc4f59e577feb1a4956671bc04ac18aaaf8cd842) is not in the recorded list
 SourceScan.lake-manifest.json: package plausible (https://github.com/leanprover-community/plausible at 0000000000000000000000000000000000000000) is not in the recorded list
 SourceScan.lake-manifest.json: recorded package mathlib (https://github.com/leanprover-community/mathlib4.git at fc4f59e577feb1a4956671bc04ac18aaaf8cd842) is missing
 SourceScan.lake-manifest.json: recorded package plausible (https://github.com/leanprover-community/plausible at 054b228ce0ac61d767c6e71ba73a24728f191b72) is missing
-source scan FAILED: 59 findings in 3 files
+SourceScan.lake-manifest.json: package aesop: subDir is 'x', recorded None
+source scan FAILED: 78 findings in 3 files

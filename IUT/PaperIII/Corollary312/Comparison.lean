@@ -47,7 +47,7 @@ gives evidence for or against it.
   conjunction of finiteness and `LogVolumeComparison`; nothing derived) and
   `conclusion_of_containment` (the inequality derived from containment, a sufficient
   condition; finiteness assumed).
-* Averaging over a finite set of labels `j` with equal weights (`average`,
+* Averaging over a finite set of labels `j` with equal weights (`equalWeightAverage`,
   `conclusion_of_procContainment`).
 * Nonvacuity on `ℝ` with Lebesgue measure and the interval hull `Icc (sInf P) (sSup P)`:
   a setting where every hypothesis of the bridge holds (`example_bridge_hypotheses`), one where
@@ -101,7 +101,7 @@ gives evidence for or against it.
    normalizes "with respect to `j ∈ |𝔽_l|`". Proposition 3.9 (i), page 116, defines the
    procession-normalization as "the average, over the various capsules". The average here is
    uniform over an arbitrary finite index type `J` (on an empty `J` the formula gives `0`,
-   a value that no theorem uses, see `average`); the statement itself averages over
+   a value that no theorem uses, see `equalWeightAverage`); the statement itself averages over
    `𝔽_l^⊛` with factor `1 / l^⊛` (pages 173 and 181); the file keeps `J` general.
 
 ## What the interface omits, and what could be added next
@@ -477,25 +477,27 @@ procession-normalization of Proposition 3.9 (i), page 116 ("the average, over th
 capsules"). The paper's index set is nonempty. On an empty `J` the formula gives `0`
 (`average_of_isEmpty`); no theorem below uses that value: the bridge assumes the averaged
 q-side log-volume is negative, which excludes an empty `J` (`nonempty_of_average_neg`). -/
-noncomputable def average (v : J → EReal) : EReal :=
+noncomputable def equalWeightAverage (v : J → EReal) : EReal :=
   (((Fintype.card J : ℝ)⁻¹ : ℝ) : EReal) * ∑ j, v j
 
 /-- On an empty index type the average is `0`, a value of the formula, not of the paper. -/
-theorem average_of_isEmpty [IsEmpty J] (v : J → EReal) : average v = 0 := by
-  simp [average]
+theorem average_of_isEmpty [IsEmpty J] (v : J → EReal) : equalWeightAverage v = 0 := by
+  simp [equalWeightAverage]
 
 /-- A negative average forces a nonempty index type. -/
-theorem nonempty_of_average_neg {v : J → EReal} (h : average v < 0) : Nonempty J := by
+theorem nonempty_of_average_neg {v : J → EReal} (h : equalWeightAverage v < 0) :
+    Nonempty J := by
   by_contra hJ
   rw [not_nonempty_iff] at hJ
   rw [average_of_isEmpty] at h
   exact lt_irrefl _ h
 
-theorem average_mono {v w : J → EReal} (h : ∀ j, v j ≤ w j) : average v ≤ average w :=
+theorem average_mono {v w : J → EReal} (h : ∀ j, v j ≤ w j) :
+    equalWeightAverage v ≤ equalWeightAverage w :=
   mul_le_mul_of_nonneg_left (Finset.sum_le_sum fun j _ => h j)
     (EReal.coe_nonneg.mpr (inv_nonneg.mpr (Nat.cast_nonneg _)))
 
-theorem average_ne_bot {v : J → EReal} (h : ∀ j, v j ≠ ⊥) : average v ≠ ⊥ := by
+theorem average_ne_bot {v : J → EReal} (h : ∀ j, v j ≠ ⊥) : equalWeightAverage v ≠ ⊥ := by
   have hs : ∑ j, v j ≠ ⊥ :=
     Finset.sum_induction _ (· ≠ ⊥) (fun _ _ ha hb => EReal.add_ne_bot_iff.mpr ⟨ha, hb⟩)
       (by simp) fun j _ => h j
@@ -503,7 +505,7 @@ theorem average_ne_bot {v : J → EReal} (h : ∀ j, v j ≠ ⊥) : average v �
     Or.inl (EReal.coe_ne_top _),
     Or.inl (EReal.coe_nonneg.mpr (inv_nonneg.mpr (Nat.cast_nonneg _)))⟩
 
-theorem average_ne_top {v : J → EReal} (h : ∀ j, v j ≠ ⊤) : average v ≠ ⊤ := by
+theorem average_ne_top {v : J → EReal} (h : ∀ j, v j ≠ ⊤) : equalWeightAverage v ≠ ⊤ := by
   have hs : ∑ j, v j ≠ ⊤ :=
     Finset.sum_induction _ (· ≠ ⊤) (fun _ _ ha hb => EReal.add_ne_top ha hb)
       (by simp) fun j _ => h j
@@ -516,11 +518,11 @@ variable {X : J → Type*} [∀ j, MeasurableSpace (X j)] {ι : Type*}
 
 /-- The averaged log-volume of the hulls of the unions: `− |log(Θ)|` with the
 procession-normalization. -/
-noncomputable def procThetaLogVolume : EReal := average fun j => (S j).thetaLogVolume
+noncomputable def procThetaLogVolume : EReal := equalWeightAverage fun j => (S j).thetaLogVolume
 
 /-- The averaged log-volume of the q-pilot regions: `− |log(q)|` with the
 procession-normalization. -/
-noncomputable def procQLogVolume : EReal := average fun j => (S j).qLogVolume
+noncomputable def procQLogVolume : EReal := equalWeightAverage fun j => (S j).qLogVolume
 
 /-- Region form of the comparison for a family of components: componentwise containment.
 Page 174 writes regions as collections indexed by `(j, v_Q)` and their containment
@@ -585,14 +587,14 @@ theorem isHullMap : IsHullMap domain hulls hull where
   P3 P₁ h₁ P₂ h₂ h := Icc_subset_Icc (csInf_le_csInf h₂.2.1 h₁.1 h) (csSup_le_csSup h₂.2.2 h₁.1 h)
 
 /-- The two possible images `[0, 1/8]` and `[3/8, 1/2]`, indexed by `Bool`. -/
-noncomputable def image : Bool → Set ℝ
+noncomputable def intervalImage : Bool → Set ℝ
   | false => Icc 0 (1 / 8)
   | true => Icc (3 / 8) (1 / 2)
 
-theorem union_eq : (⋃ i, image i) = Icc 0 (1 / 8) ∪ Icc (3 / 8) (1 / 2) := by
-  ext x; simp [image]
+theorem union_eq : (⋃ i, intervalImage i) = Icc 0 (1 / 8) ∪ Icc (3 / 8) (1 / 2) := by
+  ext x; simp [intervalImage]
 
-theorem hull_union : hull (⋃ i, image i) = Icc 0 (1 / 2) := by
+theorem hull_union : hull (⋃ i, intervalImage i) = Icc 0 (1 / 2) := by
   rw [union_eq, hull]
   have hL : IsLeast (Icc (0 : ℝ) (1 / 8) ∪ Icc (3 / 8) (1 / 2)) 0 :=
     ⟨Or.inl ⟨le_rfl, by norm_num⟩, by
@@ -611,7 +613,7 @@ noncomputable def setting (q : Set ℝ) : ComparisonSetting ℝ Bool where
   hull := hull
   isHullMap := isHullMap
   qPilot := q
-  image := image
+  image := intervalImage
   union_mem := by
     rw [union_eq]
     exact ⟨⟨0, Or.inl ⟨le_rfl, by norm_num⟩⟩, bddBelow_Icc.union bddBelow_Icc,
@@ -684,11 +686,11 @@ of no single possible image contains the q-pilot region, nor does any single ima
 numerical comparison with its own hull; the union itself does not contain the q-pilot region;
 but the hull of the union does. -/
 theorem example_union_matters :
-    (∀ i, ¬ Icc (0 : ℝ) (1 / 2) ⊆ hull (image i)) ∧
-    (∀ i, ¬ logVolume volume (Icc (0 : ℝ) (1 / 2)) ≤ logVolume volume (hull (image i))) ∧
-    ¬ Icc (0 : ℝ) (1 / 2) ⊆ ⋃ i, image i ∧
+    (∀ i, ¬ Icc (0 : ℝ) (1 / 2) ⊆ hull (intervalImage i)) ∧
+    (∀ i, ¬ logVolume volume (Icc (0 : ℝ) (1 / 2)) ≤ logVolume volume (hull (intervalImage i))) ∧
+    ¬ Icc (0 : ℝ) (1 / 2) ⊆ ⋃ i, intervalImage i ∧
     (setting (Icc 0 (1 / 2))).Containment := by
-  have himg : ∀ i, hull (image i) = image i := fun i => by
+  have himg : ∀ i, hull (intervalImage i) = intervalImage i := fun i => by
     cases i
     · exact isHullMap.P1 _ ⟨0, 1 / 8, by norm_num, rfl⟩
     · exact isHullMap.P1 _ ⟨3 / 8, 1 / 2, by norm_num, rfl⟩
@@ -699,7 +701,7 @@ theorem example_union_matters :
     · have := (h ⟨le_rfl, by norm_num⟩ : (0 : ℝ) ∈ Icc (3 / 8) (1 / 2)).1; norm_num at this
   · rw [himg, logVolume, logVolume, ENNReal.log_le_log_iff] at h
     cases i <;>
-    · simp only [image, Real.volume_Icc] at h
+    · simp only [intervalImage, Real.volume_Icc] at h
       rw [ENNReal.ofReal_le_ofReal_iff (by norm_num)] at h
       norm_num at h
   · rw [union_eq] at h

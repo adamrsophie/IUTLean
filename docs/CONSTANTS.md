@@ -71,7 +71,7 @@ hypotheses that encode unformalized inputs. Unless stated, Lean names are in the
 
 | Constant | Page | Definition or role | Used in | Lean |
 |---|---|---|---|---|
-| `1` in `log x ≤ x` for `x ≥ 1` | 40 | Prop 2.1 (i) | Cor 2.2 | `Proposition2_1.log_le_self` |
+| `1` in `log x ≤ x` for `x ≥ 1` | 40 | Prop 2.1 (i) | Cor 2.2 | `Proposition2_1.log_le_self_of_one_le` |
 | `ξ_prm ≥ 5`, `2/3`, `4/3` | 40 | Prop 2.1 (ii) | Cor 2.2 | `Proposition2_1.exists_xi_prm` (kernel checked from Mathlib) |
 | `2(θ_A + ξ_prm)` | 40 | prime outside `A` | Cor 2.2 (P1) | `Proposition2_1.exists_prime_not_mem` |
 | `1/6` | 41 | `(1/6)·log 𝔮 ≈ ht_{ω_X(D)}`; degree `6` of the divisor at infinity of `M̄_ell` and `1` of `ω_X(D)` | Cor 2.2 (i) | not formalized |

@@ -32,8 +32,12 @@ has not been extracted by a reader). Curated records set their own statuses.
 Pages. The mechanical span of a statement runs from its header to the next recognized header
 (or section heading), so it can include a page after the end of the statement. When a
 curated record gives its pages in `source` (`pages`, or else `pdf_pages`), `pdf_page` and
-`pdf_page_end` are that reviewed span, and the mechanical span is kept in
-`extraction_window`.
+`pdf_page_end` are that reviewed span on the record's own paper, and the mechanical span is
+kept in `extraction_window`. The full list of spans, per paper, is `page_spans`
+([paper, first, last] for each span; see `records.parse_pages`, which rejects a page text it
+cannot read instead of guessing). A statement of another paper (an id prefix of
+`records.EXTERNAL_PAPERS`) is merged without a paper of IUT I to IV; its spans, read from
+`source.pages_in_paper`, are pages of that paper and go in `page_spans` only.
 """
 import hashlib
 import json
@@ -473,29 +477,37 @@ def merge():
         else:
             parent = records.parent_of(sid, record)
             section = records.SECTION_ITEM.match(sid)
-            if parent is None and not section:
+            external = records.external_prefix(sid)
+            if parent is None and not section and not external:
                 errors.append(f"{sid} ({origin[sid]}): not in the mechanical index, and neither "
                               f"a part, a fragment nor an unnumbered section item")
                 continue
-            target = {"id": sid, "paper": int(sid[3]) if sid[3:4].isdigit() else None,
+            target = {"id": sid,
+                      "paper": int(sid[3]) if sid[:3] == "IUT" and sid[3:4].isdigit() else None,
                       "curated_in": origin[sid], **record}
             if parent is not None:
                 target["parent"] = parent
                 for field in ("section", "section_title"):
                     target.setdefault(field, by_id.get(parent, {}).get(field))
                 target.setdefault("kind", by_id.get(parent, {}).get("kind"))
-            else:
+            elif section:
                 target.setdefault("section", int(section.group(2)))
                 target.setdefault("kind", None)
             statements.append(target)
             by_id[sid] = target
-        span = records.reviewed_pages(target)
+        external = records.external_prefix(sid)
+        # Pages of another paper are kept in page_spans only, never as pdf_page of IUT I to IV.
+        span = None if external else records.reviewed_pages(target)
+        spans = records.page_spans(target)
+        if spans:
+            target["page_spans"] = [list(sp) for sp in spans]
         if span:
             if target["id"] in indexed:
                 target["extraction_window"] = {"pdf_page": target["pdf_page"],
                                                "pdf_page_end": target.get("pdf_page_end")}
             target["pdf_page"], target["pdf_page_end"] = span
-        elif target.get("source") is not None and target.get("pdf_page") is None:
+        elif (not external and target.get("source") is not None
+              and target.get("pdf_page") is None):
             errors.append(f"{sid} ({origin[sid]}): source pages not readable")
     errors += records.structural_errors(statements)
     write("statements.json", statements)

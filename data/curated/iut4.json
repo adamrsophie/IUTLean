@@ -3408,7 +3408,7 @@
   "statement_status": "STATEMENT_FORMALIZED",
   "proof_status": "KERNEL_VERIFIED",
   "obligations": [
-   "proposition2_1 states (i) and (ii) with a single xi_prm, proved from Mathlib's Chebyshev.tendsto_theta_div_atTop; log_le_self, exists_xi_prm, exists_prime_not_mem_of and exists_prime_not_mem are the components. A is any finite set of natural numbers in Lean, which includes the paper's sets of primes."
+   "proposition2_1 states (i) and (ii) with a single xi_prm, proved from Mathlib's Chebyshev.tendsto_theta_div_atTop; log_le_self_of_one_le, exists_xi_prm, exists_prime_not_mem_of and exists_prime_not_mem are the components. A is any finite set of natural numbers in Lean, which includes the paper's sets of primes."
   ],
   "ambiguities": [
    "The extracted text reads 'p in A'; the render shows 'p not in A'."

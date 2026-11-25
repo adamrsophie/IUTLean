@@ -12,7 +12,7 @@
   "ambiguous": 313,
   "extracted_by_reading": 562,
   "formalized_in_full": 3,
-  "fragments_checked": 133,
+  "fragments_checked": 130,
   "proved_in_full_conditional": 0,
   "proved_in_full_unconditional": 3,
   "statement_records": 562
@@ -40,7 +40,7 @@
    "ambiguous": 130,
    "extracted_by_reading": 189,
    "formalized_in_full": 0,
-   "fragments_checked": 26,
+   "fragments_checked": 23,
    "proved_in_full_conditional": 0,
    "proved_in_full_unconditional": 0,
    "statement_records": 189
@@ -58,13 +58,20 @@
  "curated_parts_and_steps": 242,
  "curated_records": 791,
  "definitions_typed_in_lean": 36,
+ "external": {
+  "by_paper": {},
+  "fragments_checked_conditional": 0,
+  "fragments_checked_unconditional": 0,
+  "stated_in_lean": 0,
+  "statements": 0
+ },
  "external_keys_on_critical_path": 51,
  "extracted_by_reading": 629,
  "extracted_statement_with_proof_status_not_extracted": 172,
  "formalized_in_full": 10,
  "fragments": 162,
  "fragments_checked_conditional": 49,
- "fragments_checked_unconditional": 84,
+ "fragments_checked_unconditional": 81,
  "lean_declarations_claimed_but_missing": [],
  "lean_modules_checked": [
   "Challenge.Defs",
@@ -126,6 +133,12 @@
   "Solution"
  ],
  "lean_modules_on_disk_not_checked": [],
+ "model_test_records": [
+  "IUT3.Cor3_12.Statement.frag.example_bridge_hypotheses",
+  "IUT3.Cor3_12.Statement.frag.example_comparison_fails",
+  "IUT3.Cor3_12.Statement.frag.example_union_matters"
+ ],
+ "model_tests": 3,
  "obligation_entries": 927,
  "parents_with_checked_fragments": [
   "IUT2.Prop4_1",
@@ -164,23 +177,46 @@
  ],
  "placeholders": [],
  "proof_status": {
-  "BLOCKED_BY_EXTERNAL_THEOREM": 122,
-  "BLOCKED_BY_MATHLIB": 71,
-  "BLOCKED_BY_MISSING_JUSTIFICATION": 137,
-  "CONDITIONALLY_VERIFIED": 49,
-  "EXTRACTED": 123,
-  "KERNEL_VERIFIED": 87,
-  "NOT_EXTRACTED": 201,
-  "PROOF_IN_PROGRESS": 1
+  "fragments": {
+   "CONDITIONALLY_VERIFIED": 49,
+   "KERNEL_VERIFIED": 84,
+   "NOT_EXTRACTED": 29
+  },
+  "full_statements": {
+   "BLOCKED_BY_EXTERNAL_THEOREM": 52,
+   "BLOCKED_BY_MATHLIB": 33,
+   "BLOCKED_BY_MISSING_JUSTIFICATION": 91,
+   "EXTRACTED": 70,
+   "KERNEL_VERIFIED": 3,
+   "NOT_EXTRACTED": 137,
+   "PROOF_IN_PROGRESS": 1
+  },
+  "parts_and_steps": {
+   "BLOCKED_BY_EXTERNAL_THEOREM": 70,
+   "BLOCKED_BY_MATHLIB": 38,
+   "BLOCKED_BY_MISSING_JUSTIFICATION": 46,
+   "EXTRACTED": 53,
+   "NOT_EXTRACTED": 35
+  }
  },
  "proved_in_full_conditional": 0,
  "proved_in_full_unconditional": 3,
  "records_with_obligations": 638,
  "statement_status": {
-  "BLOCKED_BY_MATHLIB": 33,
-  "EXTRACTED": 555,
-  "INTERPRETATION_AMBIGUOUS": 31,
-  "STATEMENT_FORMALIZED": 172
+  "fragments": {
+   "STATEMENT_FORMALIZED": 162
+  },
+  "full_statements": {
+   "BLOCKED_BY_MATHLIB": 30,
+   "EXTRACTED": 329,
+   "INTERPRETATION_AMBIGUOUS": 18,
+   "STATEMENT_FORMALIZED": 10
+  },
+  "parts_and_steps": {
+   "BLOCKED_BY_MATHLIB": 3,
+   "EXTRACTED": 226,
+   "INTERPRETATION_AMBIGUOUS": 13
+  }
  },
  "statements_by_kind": {
   "Corollary": 33,

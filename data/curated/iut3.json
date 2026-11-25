@@ -7129,7 +7129,7 @@
     ],
     "ambiguities": [],
     "lemmas": [
-      "IUT.PaperIII.Corollary312.average",
+      "IUT.PaperIII.Corollary312.equalWeightAverage",
       "IUT.PaperIII.Corollary312.average_mono",
       "IUT.PaperIII.Corollary312.average_ne_bot",
       "IUT.PaperIII.Corollary312.average_ne_top",
@@ -7169,7 +7169,8 @@
       "IUT.PaperIII.Corollary312.IntervalExample.example_conclusion",
       "IUT.PaperIII.Corollary312.IntervalExample.isHullMap",
       "IUT.PaperIII.Corollary312.IntervalExample.setting"
-    ]
+    ],
+    "scope": "model_test"
   },
   "IUT3.Cor3_12.Statement.frag.example_comparison_fails": {
     "kind": "fragment",
@@ -7194,7 +7195,8 @@
     "statement_status": "STATEMENT_FORMALIZED",
     "proof_status": "KERNEL_VERIFIED",
     "obligations": [],
-    "ambiguities": []
+    "ambiguities": [],
+    "scope": "model_test"
   },
   "IUT3.Cor3_12.Statement.frag.example_union_matters": {
     "kind": "fragment",
@@ -7219,7 +7221,8 @@
     "statement_status": "STATEMENT_FORMALIZED",
     "proof_status": "KERNEL_VERIFIED",
     "obligations": [],
-    "ambiguities": []
+    "ambiguities": [],
+    "scope": "model_test"
   },
   "IUT3.Cor3_12.Statement.frag.conclusion_of_placewiseContainment": {
     "kind": "fragment",

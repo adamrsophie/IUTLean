@@ -36,7 +36,8 @@ comparison of the q-pilot region with the hull of the union of the possible imag
   `IUT.PaperII.Labels`), which is `𝔽_l^⋇` through the decomposition `|𝔽_l| = {0} ∪ 𝔽_l^⋇`.
   It has `l^⋇` elements for odd `l` (`card_nonzeroLabel`).
 * `labelAverage l v = (1/l^⋇) · ∑_{j ∈ 𝔽_l^⋇} v_j`, the normalization of pages 173 and 181,
-  and `labelAverage_eq_average`: it is the `average` of `Comparison.lean` at this index set.
+  and `labelAverage_eq_average`: it is the `equalWeightAverage` of `Comparison.lean` at this
+  index set.
 * `conclusion_of_labelContainment`: the averaged bridge of `Comparison.lean` at this index set,
   with the two numbers identified as label averages.
 * Nonvacuity for every odd `l ≥ 3`: every hypothesis of the bridge holds (`example_label_conclusion`), and
@@ -89,10 +90,10 @@ Step (x), page 181). -/
 noncomputable def labelAverage (l : ℕ) (v : NonzeroLabel l → EReal) : EReal :=
   (((lstar l : ℝ)⁻¹ : ℝ) : EReal) * ∑ᶠ j, v j
 
-/-- The label average is the equal-weight `average` of `Comparison.lean` over `𝔽_l^⋇`. -/
+/-- The label average is the `equalWeightAverage` of `Comparison.lean` over `𝔽_l^⋇`. -/
 theorem labelAverage_eq_average {l : ℕ} (hl : Odd l) [Fintype (NonzeroLabel l)]
-    (v : NonzeroLabel l → EReal) : labelAverage l v = average v := by
-  rw [labelAverage, average, card_nonzeroLabel hl, finsum_eq_sum_of_fintype]
+    (v : NonzeroLabel l → EReal) : labelAverage l v = equalWeightAverage v := by
+  rw [labelAverage, equalWeightAverage, card_nonzeroLabel hl, finsum_eq_sum_of_fintype]
 
 /-- The average of a constant real family is that constant, for odd `l ≥ 3`. -/
 theorem labelAverage_const {l : ℕ} (hl : Odd l) (h3 : 3 ≤ l) (c : ℝ) :
@@ -100,7 +101,7 @@ theorem labelAverage_const {l : ℕ} (hl : Odd l) (h3 : 3 ≤ l) (c : ℝ) :
   have := finite_nonzeroLabel hl
   let := Fintype.ofFinite (NonzeroLabel l)
   have hne : (lstar l : ℝ) ≠ 0 := by unfold lstar; norm_cast; omega
-  rw [labelAverage_eq_average hl, average, card_nonzeroLabel hl, Finset.sum_const,
+  rw [labelAverage_eq_average hl, equalWeightAverage, card_nonzeroLabel hl, Finset.sum_const,
     Finset.card_univ, card_nonzeroLabel hl, ← EReal.coe_nsmul, ← EReal.coe_mul, nsmul_eq_mul,
     inv_mul_cancel_left₀ hne]
 

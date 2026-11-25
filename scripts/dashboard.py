@@ -22,9 +22,18 @@ or an unnumbered section item).
                          INDEPENDENTLY_CHECKED, and the declaration depends only on the
                          allowed axioms
   proved in full, conditional    formalized in full and proof_status CONDITIONALLY_VERIFIED
-  fragments checked      fragment records whose declaration exists; unconditional when
-                         KERNEL_VERIFIED with allowed axioms, conditional when
-                         CONDITIONALLY_VERIFIED. A parent is never counted through them.
+  fragments checked      fragment records whose declaration exists, other than model tests;
+                         unconditional when KERNEL_VERIFIED, conditional when
+                         CONDITIONALLY_VERIFIED, in both cases only when the declaration
+                         depends on the allowed axioms alone (otherwise the record is a
+                         validation error). A parent is never counted through them.
+  model tests            fragment records with scope "model_test" (scripts/records.py): a
+                         declaration that tests a model or an example rather than checking a
+                         step of the papers; counted when a theorem with a proof status of
+                         the proved family and allowed axioms, never among fragments checked
+  record kinds           the status tables and the status totals are split into full
+                         statements (records without a parent), parts and steps (records
+                         with a parent, not fragments) and fragments
   obligation entries     items of the obligations lists (open claims and notes alike, as the
                          curated files write them), and the number of records with one
   BLOCKED_BY_EXTERNAL_THEOREM  records with that proof status
@@ -32,6 +41,10 @@ or an unnumbered section item).
   unauthorized axioms    axioms other than propext, Classical.choice, Quot.sound that a
                          project declaration depends on, and declarations of kind axiom
   placeholders           project declarations that depend on sorryAx
+  other papers           records whose id has a prefix of records.EXTERNAL_PAPERS (statements
+                         of other papers and their fragments) are left out of every count
+                         above and reported in their own section and in the "external" part
+                         of data/dashboard.json; a conditional fragment shows what it assumes
 """
 import json
 import sys
@@ -48,6 +61,9 @@ PROOF = ["NOT_EXTRACTED", "EXTRACTED", "PROOF_IN_PROGRESS", "BLOCKED_BY_MATHLIB"
          "BLOCKED_BY_EXTERNAL_THEOREM", "BLOCKED_BY_MISSING_JUSTIFICATION",
          "CONDITIONALLY_VERIFIED", "KERNEL_VERIFIED", "INDEPENDENTLY_CHECKED",
          "COUNTERMODEL_FOUND"]
+KINDS = ["full_statements", "parts_and_steps", "fragments"]
+KIND_TITLES = {"full_statements": "Full statements", "parts_and_steps": "Parts and proof steps",
+               "fragments": "Fragments"}
 COUNTERMODEL_KINDS = {"countermodel": "Countermodels (of a simplified abstraction unless the "
                                       "entry says otherwise)",
                       "positive": "Positive results", "lemma": "Lemmas"}
@@ -72,6 +88,8 @@ def main():
     critical = set(graph["analysis"]["critical_path"])
     errors = records.structural_errors(statements)
     errors += records.declaration_errors(statements, decls, set(lean["modules"]))
+    external = [s for s in statements if records.external_prefix(s["id"])]
+    statements = [s for s in statements if not records.external_prefix(s["id"])]
 
     def exists(s):
         return s.get("lean_declaration") in decls
@@ -97,12 +115,21 @@ def main():
         return formalized(s) and theorem(s) and s.get("proof_status") == "CONDITIONALLY_VERIFIED"
 
     def frag_unconditional(s):
-        return (records.is_fragment(s) and theorem(s) and s.get("proof_status") == "KERNEL_VERIFIED"
-                and clean_axioms(s))
+        return (records.is_fragment(s) and not records.is_model_test(s) and theorem(s)
+                and s.get("proof_status") == "KERNEL_VERIFIED" and clean_axioms(s))
 
     def frag_conditional(s):
-        return (records.is_fragment(s) and theorem(s)
-                and s.get("proof_status") == "CONDITIONALLY_VERIFIED")
+        return (records.is_fragment(s) and not records.is_model_test(s) and theorem(s)
+                and s.get("proof_status") == "CONDITIONALLY_VERIFIED" and clean_axioms(s))
+
+    def model_test(s):
+        return (records.is_fragment(s) and records.is_model_test(s) and theorem(s)
+                and s.get("proof_status") in records.PROVED_FAMILY and clean_axioms(s))
+
+    def record_kind(s):
+        if records.is_fragment(s):
+            return "fragments"
+        return "parts_and_steps" if s.get("parent") else "full_statements"
 
     def ambiguous(s):
         return s.get("statement_status") == "INTERPRETATION_AMBIGUOUS" or bool(s.get("ambiguities"))
@@ -146,7 +173,8 @@ def main():
     fragment_rows = sorted(
         ([f"`{f['id']}`", f"`{f.get('parent')}`", f"`{f.get('lean_declaration')}`",
           decls[f["lean_declaration"]]["kind"] if exists(f) else "not found",
-          f.get("proof_status")] for f in fragments), key=lambda r: r[0])
+          f.get("proof_status"), "model test" if records.is_model_test(f) else ""]
+         for f in fragments), key=lambda r: r[0])
 
     per_paper = {f"IUT{p}": coverage([s for s in paper_records if s.get("paper") == p])
                  for p in range(1, 5)}
@@ -165,6 +193,8 @@ def main():
         "proved_in_full_conditional": sum(conditional(s) for s in statements),
         "fragments_checked_unconditional": sum(frag_unconditional(s) for s in fragments),
         "fragments_checked_conditional": sum(frag_conditional(s) for s in fragments),
+        "model_tests": sum(model_test(s) for s in fragments),
+        "model_test_records": sorted(s["id"] for s in fragments if records.is_model_test(s)),
         "definitions_typed_in_lean": sum(typed_definition(s) for s in statements),
         "parents_with_checked_fragments": sorted({f["parent"] for f in fragments
                                                   if frag_unconditional(f) or frag_conditional(f)}),
@@ -186,11 +216,24 @@ def main():
         "validation_errors": errors,
         "lean_modules_checked": lean["modules"],
         "lean_modules_on_disk_not_checked": not_built,
-        "statement_status": dict(sorted(Counter(s.get("statement_status")
-                                                for s in statements).items())),
-        "proof_status": dict(sorted(Counter(s.get("proof_status") for s in statements).items())),
+        "statement_status": {kind: dict(sorted(Counter(
+            s.get("statement_status") for s in statements if record_kind(s) == kind).items()))
+            for kind in KINDS},
+        "proof_status": {kind: dict(sorted(Counter(
+            s.get("proof_status") for s in statements if record_kind(s) == kind).items()))
+            for kind in KINDS},
         "coverage_per_paper": per_paper,
         "coverage_critical_path": coverage([s for s in paper_records if s["id"] in critical]),
+        "external": {
+            "statements": sum(not records.is_fragment(s) for s in external),
+            "stated_in_lean": sum(not records.is_fragment(s) and exists(s)
+                                  and s.get("proof_status") == "EXTERNAL_CLAIM"
+                                  for s in external),
+            "fragments_checked_unconditional": sum(frag_unconditional(s) for s in external),
+            "fragments_checked_conditional": sum(frag_conditional(s) for s in external),
+            "by_paper": dict(sorted(Counter(records.external_prefix(s["id"])
+                                            for s in external).items())),
+        },
     }
     (ROOT / "data" / "dashboard.json").write_text(
         json.dumps(data, indent=1, ensure_ascii=False, sort_keys=True) + "\n")
@@ -200,18 +243,53 @@ def main():
     cov_header = ["Scope", "Statement records", "Extracted by reading", "Formalized in full",
                   "Proved in full, unconditional", "Proved in full, conditional",
                   "Fragments checked (of these parents)", "Ambiguous"]
-    by_paper = defaultdict(Counter)
-    by_paper_proof = defaultdict(Counter)
+    by_paper = {kind: defaultdict(Counter) for kind in KINDS}
+    by_paper_proof = {kind: defaultdict(Counter) for kind in KINDS}
     for s in statements:
-        by_paper[s.get("paper")][s.get("statement_status")] += 1
-        by_paper_proof[s.get("paper")][s.get("proof_status")] += 1
+        by_paper[record_kind(s)][s.get("paper")][s.get("statement_status")] += 1
+        by_paper_proof[record_kind(s)][s.get("paper")][s.get("proof_status")] += 1
 
     def status_table(counts, order):
         seen = order + sorted({k for c in counts.values() for k in c if k not in order},
                               key=str)
         seen = [k for k in seen if any(c.get(k) for c in counts.values())]
         rows = [[k] + [counts[p].get(k, 0) for p in range(1, 5)] for k in seen]
-        return table(rows, ["Status", "IUT1", "IUT2", "IUT3", "IUT4"])
+        return table(rows, ["Status", "IUT1", "IUT2", "IUT3", "IUT4"]) if rows else "None."
+
+    def status_tables(counts, order):
+        out = []
+        for kind in KINDS:
+            out += [f"### {KIND_TITLES[kind]}", "", status_table(counts[kind], order), ""]
+        return out
+
+    def assumes(s):
+        if s.get("proof_status") != "CONDITIONALLY_VERIFIED":
+            return ""
+        return "; ".join(str(o) for o in s.get("obligations") or [])
+
+    external_rows = [[f"`{s['id']}`", s.get("kind"),
+                      f"`{s.get('parent')}`" if s.get("parent") else "",
+                      f"`{s['lean_declaration']}`" if s.get("lean_declaration") else "",
+                      s.get("statement_status"), s.get("proof_status"), assumes(s)]
+                     for s in sorted(external, key=lambda s: s["id"])]
+    external_doc = [
+        "## Statements of other papers", "",
+        "Records whose id has a prefix of `records.EXTERNAL_PAPERS`: results and claims of "
+        "other papers (" + "; ".join(f"`{k}`: {v[0]}" for k, v in
+                                    records.EXTERNAL_PAPERS.items()) + "), and the Lean "
+        "fragments that check pieces of them. They are not counted in any number above or "
+        "in the tables of the four papers. A statement with proof status EXTERNAL_CLAIM is "
+        "stated in Lean as a proposition and only assumed. \"Assumes\" gives, for a "
+        "conditional fragment, the claims its theorem takes as hypotheses.", "",
+        table([["Statements of other papers", data["external"]["statements"]],
+               ["Of these, stated in Lean (EXTERNAL_CLAIM, assumed, not proved)",
+                data["external"]["stated_in_lean"]],
+               ["Their fragments checked in Lean, unconditionally",
+                data["external"]["fragments_checked_unconditional"]],
+               ["Their fragments checked in Lean, conditionally",
+                data["external"]["fragments_checked_conditional"]]], ["Measure", "Count"]), "",
+        table(external_rows, ["Id", "Kind", "Parent", "Lean declaration", "Statement",
+                              "Proof", "Assumes"]) if external_rows else "None yet.", ""]
 
     def listing(items):
         return "\n".join(f"- `{i}`" for i in items) if items else "None."
@@ -249,6 +327,8 @@ def main():
                ["Fragments checked in Lean, unconditionally",
                 data["fragments_checked_unconditional"]],
                ["Fragments checked in Lean, conditionally", data["fragments_checked_conditional"]],
+               ["Model tests (fragments that test a model or an example, not a step of the "
+                "papers; scope model_test)", data["model_tests"]],
                ["Records (statements and fragments) whose declaration is a definition, "
                 "structure or other non-theorem typed in Lean (never counted as proved)",
                 data["definitions_typed_in_lean"]],
@@ -279,7 +359,7 @@ def main():
            "Each row is one Lean lemma that checks a piece of the parent named. The parent "
            "keeps its own status.", "",
            table(fragment_rows, ["Fragment", "Parent", "Lean declaration", "Declaration kind",
-                                 "Proof status"]) if fragment_rows else "None yet.", "",
+                                 "Proof status", "Scope"]) if fragment_rows else "None yet.", "",
            "## Coverage per paper and on the critical path", "",
            "Statement records only; the fragment column counts checked fragments whose parent "
            "is in the row. The critical path is defined in `docs/CRITICAL_PATH.md`; it is "
@@ -288,8 +368,11 @@ def main():
            "under-approximates it (citations not written as \"Kind N.M\", citations of "
            "targets that are not indexed, and uses the text does not cite are missing).", "",
            table(cov_rows, cov_header), "",
-           "## Statement fidelity status", "", status_table(by_paper, FIDELITY), "",
-           "## Proof status", "", status_table(by_paper_proof, PROOF), "",
+           "## Statement fidelity status", "",
+           "One table per kind of record, so that no table adds fragments to statements: full "
+           "statements (numbered statements and unnumbered section items, no parent), parts and "
+           "proof steps (records with a parent), and fragments.", ""] + status_tables(by_paper, FIDELITY) + [
+           "## Proof status", ""] + status_tables(by_paper_proof, PROOF) + [
            "Statement status NOT_EXTRACTED means that the statement is not yet recorded to the "
            "standard of an extracted statement (content, hypotheses and conclusion from pages "
            "read); the record may already hold partial content. Proof status NOT_EXTRACTED "
@@ -297,6 +380,7 @@ def main():
            f"status of a record whose Lean declaration is a definition. {extracted_proof_open} "
            "statement records have a statement status other than NOT_EXTRACTED and proof "
            "status NOT_EXTRACTED.", ""] + legend + ["",
+           ] + external_doc + [
            "## Validation of the records", "",
            "Rules of `scripts/records.py`. Any line here makes `scripts/dashboard.py` and the "
            "continuous integration fail.", "", listing(errors), "",

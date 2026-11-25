@@ -51,26 +51,27 @@ open Challenge
 /-! ## Restated definitions (bodies as in `FormalConjectures/Wikipedia/ABC.lean`) -/
 
 /-- The radical of `n` denoted is the product of the distinct prime factors of `n`.
-(Their `ABC.radical`, same body.) -/
-def radical (n : ℕ) : ℕ := n.primeFactors.prod id
+(Their `ABC.radical`, same body. Named `fcRadical` here: a project constant `radical` would
+shadow `Ideal.radical` in any file of this namespace that opens `Ideal`.) -/
+def fcRadical (n : ℕ) : ℕ := n.primeFactors.prod id
 
 /-- Quality `q(a, b, c)` of the triple `(a, b, c)` is defined as
 `q(a,b,c) = log (c) / log (rad(abc))`. (Their `ABC.quality`, same body.) -/
-noncomputable def quality (a b c : ℕ) : ℝ := (c : ℝ).log / (radical <| a * b * c : ℝ).log
+noncomputable def quality (a b c : ℕ) : ℝ := (c : ℝ).log / (fcRadical <| a * b * c : ℝ).log
 
 /-- For every positive real number `ε`, there exist only finitely many triples `(a, b, c)` of
 coprime positive integers, with `a + b = c`, such that `c > rad(abc)^(1+ε)`.
 (Statement of their theorem `ABC.abc`.) -/
 def abc : Prop := ∀ ε : ℝ, 0 < ε →
     {(a, b, c) : ℕ × ℕ × ℕ | 0 < a ∧ 0 < b ∧ 0 < c ∧ ({a, b, c} : Set ℕ).Pairwise Nat.Coprime ∧
-    a + b = c ∧ (radical <| a * b * c : ℝ)^(1 + ε) < c}.Finite
+    a + b = c ∧ (fcRadical <| a * b * c : ℝ)^(1 + ε) < c}.Finite
 
 /-- For every positive real number ε, there exists a constant `K_ε` such that for all triples
 (a, b, c) of coprime positive integers, with a + b = c we have `c < K_ε rad(abc)^(1+ε)`.
 (Statement of their theorem `ABC.abc.variants.lt_constant_mul`.) -/
 def ltConstantMul : Prop := ∀ ε : ℝ, 0 < ε → ∃ K,
     ∀ (a b c : ℕ), 0 < a → 0 < b → 0 < c → ({a, b, c} : Set ℕ).Pairwise Nat.Coprime →
-    a + b = c → c < K * (radical <| a * b * c : ℝ)^(1 + ε)
+    a + b = c → c < K * (fcRadical <| a * b * c : ℝ)^(1 + ε)
 
 /-- For every positive real number ε, there exist only finitely many triples `(a, b, c)` of
 coprime positive integers with `a + b = c` such that `q(a, b, c) > 1 + ε`.
@@ -82,7 +83,7 @@ def qualityVariant : Prop := ∀ ε : ℝ, 0 < ε →
 /-! ## Comparison lemmas -/
 
 /-- Their radical is the radical of `Challenge.Defs`. -/
-theorem radical_eq_rad (n : ℕ) : radical n = rad n := rfl
+theorem radical_eq_rad (n : ℕ) : fcRadical n = rad n := rfl
 
 /-- `rad n ≥ 2` for `n ≥ 2`: some prime divides `n`, hence divides `rad n`. -/
 theorem two_le_rad {n : ℕ} (hn : 2 ≤ n) : 2 ≤ rad n := by
@@ -110,7 +111,7 @@ theorem quality_gt_iff {a b c : ℕ} (ha : 0 < a) (hb : 0 < b) (h : a + b = c) (
 /-- The set of the finiteness form of Formal Conjectures is the set of `Challenge.ABCFinite`. -/
 theorem abcSet_eq (ε : ℝ) :
     {(a, b, c) : ℕ × ℕ × ℕ | 0 < a ∧ 0 < b ∧ 0 < c ∧ ({a, b, c} : Set ℕ).Pairwise Nat.Coprime ∧
-      a + b = c ∧ (radical <| a * b * c : ℝ)^(1 + ε) < c} =
+      a + b = c ∧ (fcRadical <| a * b * c : ℝ)^(1 + ε) < c} =
     {t : ℕ × ℕ × ℕ | 0 < t.1 ∧ 0 < t.2.1 ∧ 0 < t.2.2 ∧
       Nat.Coprime t.1 t.2.1 ∧ t.1 + t.2.1 = t.2.2 ∧
       ((rad (t.1 * t.2.1 * t.2.2) : ℝ) ^ (1 + ε) < t.2.2)} := by
@@ -127,7 +128,7 @@ theorem qualitySet_eq (ε : ℝ) :
     {(a, b, c) : ℕ × ℕ × ℕ | 0 < a ∧ 0 < b ∧ 0 < c ∧ ({a, b, c} : Set ℕ).Pairwise Nat.Coprime ∧
       a + b = c ∧ quality a b c > (1 + ε)} =
     {(a, b, c) : ℕ × ℕ × ℕ | 0 < a ∧ 0 < b ∧ 0 < c ∧ ({a, b, c} : Set ℕ).Pairwise Nat.Coprime ∧
-      a + b = c ∧ (radical <| a * b * c : ℝ)^(1 + ε) < c} := by
+      a + b = c ∧ (fcRadical <| a * b * c : ℝ)^(1 + ε) < c} := by
   ext ⟨a, b, c⟩
   simp only [Set.mem_ofPred_eq, radical_eq_rad]
   constructor

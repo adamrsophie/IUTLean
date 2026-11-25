@@ -1640,7 +1640,8 @@
   "parent": "IUT2.Rem2_5_1",
   "source": {
    "paper": "Inter-universal Teichmuller Theory II (December 2020); Mochizuki, The Etale Theta Function and its Frobenioid-theoretic Manifestations, Section 1",
-   "pdf_pages": "IUT II pages 72 to 73; EtTh pages 20 to 21",
+   "pdf_pages": "IUT II pages 72 to 73",
+   "pages_in_paper": "EtTh pages 20 to 21",
    "pages_read": "IUT II pages 24, 72, 73 and EtTh pages 18 to 21, all rendered and checked; Comments on EtTh (March 2022): all items read, pages 3, 4, 6 rendered"
   },
   "content": "The theta series Theta(u) = sum over n in Z of (-1)^n r^(n(n+1)) u^(2n+1), which is the series of EtTh Proposition 1.4 with q_X = r^2 (since (1/2)(n+1/2)^2 - 1/8 = n(n+1)/2), satisfies Theta(r^a u) = (-1)^a r^(-a^2) u^(-2a) Theta(u) for a in Z; also Theta(u) = -Theta(u^(-1)) and Theta(-u) = -Theta(u); the series is summable for u nonzero when 0 < |r| < 1.",
@@ -1685,7 +1686,8 @@
   "parent": "IUT2.Rem2_5_1",
   "source": {
    "paper": "Inter-universal Teichmuller Theory II (December 2020); Mochizuki, The Etale Theta Function and its Frobenioid-theoretic Manifestations, Section 1",
-   "pdf_pages": "IUT II pages 72 to 73; EtTh pages 20 to 21",
+   "pdf_pages": "IUT II pages 72 to 73",
+   "pages_in_paper": "EtTh pages 20 to 21",
    "pages_read": "IUT II pages 24, 72, 73 and EtTh pages 18 to 21, all rendered and checked; Comments on EtTh (March 2022): all items read, pages 3, 4, 6 rendered"
   },
   "content": "For 0 < |r| < 1 in a complete normed field, Theta(1) = Theta(-1) = 0 and Theta(r^a) = Theta(-r^a) = 0 for every integer a.",
@@ -1719,7 +1721,8 @@
   "parent": "IUT2.Rem2_5_1",
   "source": {
    "paper": "Inter-universal Teichmuller Theory II (December 2020); Mochizuki, The Etale Theta Function and its Frobenioid-theoretic Manifestations, Section 1",
-   "pdf_pages": "IUT II pages 72 to 73; EtTh pages 20 to 21",
+   "pdf_pages": "IUT II pages 72 to 73",
+   "pages_in_paper": "EtTh pages 20 to 21",
    "pages_read": "IUT II pages 24, 72, 73 and EtTh pages 18 to 21, all rendered and checked; Comments on EtTh (March 2022): all items read, pages 3, 4, 6 rendered"
   },
   "content": "For c with c^2 = -1 and j in Z, Theta(r^j c) = r^(-j^2) Theta(c), i.e. Theta(+-sqrt(-1) q_X^(j/2)) = q_X^(-j^2/2) Theta(+-sqrt(-1)) with no sign. In a complete ultrametric field with 0 < |r| < 1: Theta(c) = 2c sum_{n>=0} r^(n(n+1)), |Theta(c)| = |2|, Theta(c) is nonzero when 2 is nonzero, and Theta(r^j c)/Theta(c) = r^(-j^2).",
@@ -1758,7 +1761,8 @@
   "parent": "IUT2.Rem2_5_1",
   "source": {
    "paper": "Inter-universal Teichmuller Theory II (December 2020); Mochizuki, The Etale Theta Function and its Frobenioid-theoretic Manifestations, Section 1",
-   "pdf_pages": "IUT II pages 72 to 73; EtTh pages 20 to 21",
+   "pdf_pages": "IUT II pages 72 to 73",
+   "pages_in_paper": "EtTh pages 20 to 21",
    "pages_read": "IUT II pages 24, 72, 73 and EtTh pages 18 to 21, all rendered and checked; Comments on EtTh (March 2022): all items read, pages 3, 4, 6 rendered"
   },
   "content": "With qq^l = r (so qq^(2l) = q_X = r^2), c^2 = -1 and R_j = Theta(r^j c)/Theta(c): (qq^(j^2))^l Theta(r^j c) = Theta(c), and for x in K, x^(2l) R_j^2 = 1 if and only if x = zeta qq^(j^2) for some zeta in K with zeta^(2l) = 1.",
@@ -1794,7 +1798,8 @@
   "parent": "IUT2.Rem2_5_1",
   "source": {
    "paper": "Inter-universal Teichmuller Theory II (December 2020); Mochizuki, The Etale Theta Function and its Frobenioid-theoretic Manifestations, Section 1",
-   "pdf_pages": "IUT II pages 72 to 73; EtTh pages 20 to 21",
+   "pdf_pages": "IUT II pages 72 to 73",
+   "pages_in_paper": "EtTh pages 20 to 21",
    "pages_read": "IUT II pages 24, 72, 73 and EtTh pages 18 to 21, all rendered and checked; Comments on EtTh (March 2022): all items read, pages 3, 4, 6 rendered"
   },
   "content": "Over Q_p with r = p (q_X = p^2): the theta series is summable at every nonzero u, Theta(+-p^a) = 0, and |Theta(p^j c)/Theta(c)| = p^(j^2) for c with c^2 = -1; for p = 5 such a c exists (Hensel's lemma for X^2 + 1 at 2), so the last statement holds unconditionally there.",

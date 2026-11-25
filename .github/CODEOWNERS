@@ -1,5 +1,6 @@
 # The trust set: the challenge statements and definitions, the comparator configuration, the
-# gate and its controls, the fingerprint record, the build configuration and the workflows.
+# gate and its controls, the fingerprint record, the build configuration, the workflows, and
+# scripts/gen_root.py, which the continuous integration runs before the build.
 # A change to any of these paths needs the approval of the code owner. This takes effect only
 # when branch protection that requires the approval of code owners is enabled in the
 # repository settings.
@@ -10,6 +11,7 @@
 /AxiomGate.lean @adamrsophie
 /GateControls/ @adamrsophie
 /scripts/Controls/ @adamrsophie
+/scripts/gen_root.py @adamrsophie
 /data/challenge_fingerprints.json @adamrsophie
 /lakefile.toml @adamrsophie
 /lake-manifest.json @adamrsophie

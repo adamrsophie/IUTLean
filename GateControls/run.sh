@@ -14,9 +14,13 @@
 # exits with status 1 (a normal Lean error exit), reports the expected number of problems, and
 # prints its intended diagnostic line. Any other status (a crash or a signal), a panic, or a
 # missing diagnostic fails the runner. Also runs the gate on the library with a tracked file
-# list that names a file the root does not import (must fail and name it), and the source scan
+# list that names a file the root does not import (must fail and name it), the source scan
 # on its controls GateControls/SourceScan.lean, GateControls/SourceScanLakefile.toml and
-# GateControls/SourceScan.lake-manifest.json (every construct reported, nothing else).
+# GateControls/SourceScan.lake-manifest.json (every construct reported, nothing else), the
+# scan's rule for tracked tooling files on a list of paths, and its rule for the allowed instance
+# line on a scratch file. The controls
+# VojtaRestated and ExponentThree import IUT.Applications.ABCSpecialization and
+# IUT.ABC.Variants, which `lake build` builds.
 
 set -u
 
@@ -108,8 +112,38 @@ check EquivalentForm 1 8 \
   'GateControls.finiteTriples: states IUT.ABC.FormalConjectures.abc but is not named abcConjecture' \
   'GateControls.noConstant: states the negation of IUT.ABC.FormalConjectures.ltConstantMul but is not named abcConjecture'
 check Shadowing 1 2 \
-  'GateControls.Real.log: its suffix Real.log names a constant of a dependency' \
+  'GateControls.Real.log: its suffix names the constant Real.log' \
   'GateControls.fakeLE: instance of a dependency class on dependency arguments only'
+check PrivateShadowing 1 1 \
+  'GateControls.Nat.succ (private): its suffix names the constant Nat.succ'
+check TrustedNames 1 3 \
+  'GateControls.Challenge.ABC: its suffix names the constant Challenge.ABC' \
+  'GateControls.log: under `open ' \
+  'GateControls._aux.Real.log: its suffix names the constant Real.log'
+check ForeignInstances 1 6 \
+  'GateControls.counterInhabited: instance of a dependency class on dependency arguments only' \
+  'GateControls.realRel: instance of a dependency class on dependency arguments only' \
+  'GateControls.Capsule.fintype: instance of a dependency class on dependency arguments only' \
+  'GateControls.natDefault: default instance of Inhabited registered by a checked module' \
+  'instOfNat: default instance of OfNat registered by a checked module'
+check VojtaRestated 1 9 \
+  'GateControls.heightConductorBound: states IUT.ABCSpecialization.VojtaLineMinusThreePointsRational but is not named abcConjecture' \
+  'GateControls.rationalPointBound: states IUT.ABCSpecialization.VojtaLineMinusThreePointsRational but is not named abcConjecture' \
+  'GateControls.noVojta: states the negation of IUT.ABCSpecialization.VojtaLineMinusThreePointsRational but is not named abcConjecture'
+check OpenStatements 1 9 \
+  'GateControls.viaAlias: states GateControls.ABCIntModel but is not named abcConjecture' \
+  'GateControls.viaBinders: concludes GateControls.ABCIntModel (registered form) without a hypothesis that mentions a registered statement' \
+  'GateControls.viaAnd: concludes GateControls.ABCIntModel (registered form)' \
+  'GateControls.viaIff: concludes GateControls.ABCIntModel (registered form)' \
+  'GateControls.exp24: concludes GateControls.ExponentModel (registered family)' \
+  'GateControls.expAll: concludes GateControls.ExponentModel (registered family)' \
+  'GateControls.zhou: concludes GateControls.ZhouModel (registered author statement)' \
+  'GateControls.libraryInt: concludes IUT.ABC.Variants.ABCInt (registered form)' \
+  'GateControls.libraryExp: concludes IUT.ABC.Variants.ABCWithExponent (registered family)'
+check OpenStatementsClean 0 - \
+  'matches, 0 undecided'
+check ExponentThree 0 - \
+  '0 matches, 0 undecided'
 PROBE=1 check ExperimentalImport 1 1 \
   'module IUT.Experimental.GateProbe is experimental and must not be in the import closure'
 
@@ -140,6 +174,45 @@ done < "$dir/SourceScan.expected"
 [ "$(grep -c ': ' "$log")" -eq "$(grep -c ': ' "$dir/SourceScan.expected")" ] ||
   { echo "FAIL source scan: other findings than the expected ones"; ok=0; }
 report "source scan of its controls (exit $status)" "$ok" "$log"
+
+# Tooling exemptions are exact paths: an unlisted Lean file under scripts/ or GateControls/
+# is reported, the listed ones are not.
+log="$tmp/tracked-scan.log"
+python3 -I -c '
+import sys
+sys.path.insert(0, "scripts/Controls")
+import source_scan as s
+tracked = ["AxiomGate.lean", "GateControls/Clean.lean", "scripts/LeanDeclarations.lean",
+           "scripts/Controls/Fingerprints.lean", "scripts/Unused.lean", "GateControls/Unused.lean",
+           "scripts/x/Evil.lean", "IUT.lean"]
+for path, label in s.tracked_problems(["IUT.lean"], tracked):
+    print(f"{path}: {label}")
+' > "$log" 2>&1
+ok=1
+for line in 'scripts/Unused.lean: tracked Lean file outside every checked root' \
+  'GateControls/Unused.lean: tracked Lean file outside every checked root' \
+  'scripts/x/Evil.lean: tracked Lean file outside every checked root'; do
+  grep -qF -- "$line" "$log" || { echo "FAIL tracked files: missing line: $line"; ok=0; }
+done
+[ "$(grep -c ': ' "$log")" -eq 3 ] || { echo "FAIL tracked files: other findings"; ok=0; }
+report "tracked tooling files by exact path" "$ok" "$log"
+
+# The allowed instance line may occur only once in its file.
+log="$tmp/instance-scan.log"
+mkdir -p "$tmp/scanroot/IUT/PaperI"
+printf 'attribute [instance] Capsule.fintype\nattribute [instance] Capsule.fintype\n' \
+  > "$tmp/scanroot/IUT/PaperI/PolyMorphism.lean"
+root=$(pwd)
+(cd "$tmp/scanroot" && python3 -I "$root/scripts/Controls/source_scan.py" \
+  IUT/PaperI/PolyMorphism.lean) > "$log" 2>&1
+ok=1
+for line in 'IUT/PaperI/PolyMorphism.lean:1: allowed instance line repeated' \
+  'IUT/PaperI/PolyMorphism.lean:2: allowed instance line repeated' \
+  'source scan FAILED: 2 findings'; do
+  grep -qF -- "$line" "$log" || { echo "FAIL repeated instance line: missing line: $line"; ok=0; }
+done
+report "allowed instance line repeated" "$ok" "$log"
+
 
 if [ "$failures" -ne 0 ]; then
   echo "gate controls FAILED: $failures of $total"
