@@ -1,5 +1,7 @@
+import IUT.ABC.Variants
 import IUT.Applications.ABC
 import IUT.Applications.ABCFormalConjectures
+import IUT.Applications.ABCSpecialization
 import IUT.Audit.MochizukiResponses.LVEx
 import IUT.Audit.MochizukiResponses.LVExMeasure
 import IUT.Audit.MochizukiResponses.SSIdEx
@@ -19,14 +21,20 @@ import IUT.Countermodels.ReconstructionComparison
 import IUT.Foundations.GrothendieckUniverse
 import IUT.PaperI.InitialThetaData
 import IUT.PaperI.PolyMorphism
+import IUT.PaperI.Temperoid
 import IUT.PaperII.Labels
 import IUT.PaperIII.Corollary312.Comparison
+import IUT.PaperIII.Corollary312.Indeterminacy
+import IUT.PaperIII.Corollary312.LabelAverage
 import IUT.PaperIII.Corollary312.Numerical
+import IUT.PaperIII.Corollary312.Places
 import IUT.PaperIII.Remark3_9_5.HullOperator
 import IUT.PaperIV.ArithmeticDivisor
 import IUT.PaperIV.Corollary2_2.Arithmetic
 import IUT.PaperIV.Corollary2_3
 import IUT.PaperIV.Definition1_9
+import IUT.PaperIV.LocalFields.Different
+import IUT.PaperIV.LocalFields.Padic
 import IUT.PaperIV.Proposition1_2
 import IUT.PaperIV.Proposition1_3
 import IUT.PaperIV.Proposition1_4
@@ -40,5 +48,7 @@ import IUT.PaperIV.Theorem1_10.StepII
 import IUT.PaperIV.Theorem1_10.StepIII
 import IUT.PaperIV.Theorem1_10.StepV
 import IUT.PaperIV.Theorem1_10.StepVIII
+import IUT.Prerequisites.PadicLog
 import IUT.Prerequisites.PositiveRationalsZhatUnits
 import IUT.Prerequisites.ProductFormula
+import IUT.Prerequisites.ThetaFunction

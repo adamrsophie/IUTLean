@@ -9,8 +9,18 @@ rendered images for this file; every definition below was checked against those 
 
 These are the unnumbered definitions of poly-morphisms and capsules that the later sections of
 IUT I to IV use throughout (for example, the radial data of IUT II, Example 1.8 (i), page 35,
-read as a rendered image, include a full poly-isomorphism of topological groups `Π/Δ ⥲ G`). They are elementary and are stated here in full, for an arbitrary category
-`C` of Mathlib.
+read as a rendered image, include a full poly-isomorphism of topological groups `Π/Δ ⥲ G`).
+They are stated for an arbitrary category `C` of Mathlib. The definitions of page 33
+(poly-morphisms, poly-isomorphisms, poly-automorphisms, full poly-isomorphisms, composites)
+are stated in full. Of page 34 the file supplies only capsules, morphisms of capsules with
+their identities and composition, and the set of capsule morphisms attached to a fixed
+injection of index sets. Open, and not supplied here:
+
+* the category laws for morphisms of capsules (identity and associativity), hence the
+  category `Capsule(C)` of page 34 itself;
+* capsule-full poly-morphisms as poly-morphisms in `Capsule(C)`, which needs that category;
+* capsule-full poly-isomorphisms as a notion: `IsCapsuleFullPolyIso` tests only that the
+  chosen injection of index sets is bijective.
 
 ## Definitions of page 33, stated in full
 
@@ -158,7 +168,10 @@ def capsuleFullPolyMorphism (A A' : Capsule C) (ι : A.index ↪ A'.index) : Set
   {φ | φ.ι = ι ∧ ∀ j, IsIso (φ.app j)}
 
 /-- IUT I, page 34: a capsule-full poly-morphism is a **capsule-full poly-isomorphism** when
-the associated injection between index sets is a bijection. -/
+the associated injection between index sets is a bijection. This predicate records only that
+condition: it tests whether the chosen injection `ι` is bijective, and it does not construct
+the capsule-full poly-isomorphism as a poly-morphism in `Capsule(C)`, a category that is not
+constructed in this file. -/
 def IsCapsuleFullPolyIso {A A' : Capsule C} (ι : A.index ↪ A'.index) : Prop :=
   Function.Bijective ι
 
