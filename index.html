@@ -16,9 +16,10 @@
 <nav class="navbar" aria-label="Main">
 <a class="brand" href="index.html" aria-current="page"><svg class="logo" viewBox="0 0 32 32" aria-hidden="true" focusable="false"><circle cx="16" cy="16" r="14" fill="none" stroke="currentColor" stroke-width="2.5"/><text x="16" y="21.5" text-anchor="middle" font-size="16" font-family="Georgia, serif" fill="currentColor">Θ</text></svg><span>Inter-universal Teichmüller Theory <small>in Lean</small></span></a>
 <ul class="tabs" id="site-tabs">
+<li><a href="map.html">Map</a></li>
 <li class="sec"><button type="button" class="sec-btn" aria-expanded="false" aria-controls="nav-learn">Learn<svg class="chev" viewBox="0 0 12 12" aria-hidden="true" focusable="false"><path d="M2.5 4.5 6 8l3.5-3.5" fill="none" stroke="currentColor" stroke-width="1.6"/></svg></button><ul class="sec-list" id="nav-learn"><li><a href="background.html"><b>Background</b><span>The four papers, the two central statements, the abc conjecture, and a glossary.</span></a></li><li><a href="critical-path.html"><b>Critical path</b><span>The chain from IUT III, Corollary 3.12 to abc, and what is checked at each step.</span></a></li><li><a href="corollary-3-12.html"><b>Corollary 3.12</b><span>The step by step analysis and the open obligations.</span></a></li><li><a href="dispute.html"><b>The dispute</b><span>The Scholze–Stix objections, the responses, and the formal obligations.</span></a></li></ul></li>
 <li class="sec"><button type="button" class="sec-btn" aria-expanded="false" aria-controls="nav-library">Library<svg class="chev" viewBox="0 0 12 12" aria-hidden="true" focusable="false"><path d="M2.5 4.5 6 8l3.5-3.5" fill="none" stroke="currentColor" stroke-width="1.6"/></svg></button><ul class="sec-list" id="nav-library"><li><a href="statements.html"><b>Statements</b><span>Every statement of the index and every curated record, with status and a filter.</span></a></li><li><a href="theorems.html"><b>Highlights</b><span>Selected Lean results in plain language, with their statements.</span></a></li><li><a href="reference.html"><b>Reference</b><span>Every Lean module and public declaration, with its docstring and a filter.</span></a></li><li><a href="documents.html"><b>Documents</b><span>The project documents, rendered.</span></a></li></ul></li>
-<li class="sec"><button type="button" class="sec-btn" aria-expanded="false" aria-controls="nav-status">Status<svg class="chev" viewBox="0 0 12 12" aria-hidden="true" focusable="false"><path d="M2.5 4.5 6 8l3.5-3.5" fill="none" stroke="currentColor" stroke-width="1.6"/></svg></button><ul class="sec-list" id="nav-status"><li><a href="status.html"><b>Status</b><span>The dashboard: statements formalized and proved in full, and fragments with their parents.</span></a></li><li><a href="doc-OPEN_PROBLEMS.html"><b>Open problems</b><span>Every unresolved obligation, grouped by kind, with its source page.</span></a></li><li><a href="roadmap.html"><b>Roadmap</b><span>The plan by stage, the prerequisites and the external projects.</span></a></li><li><a href="obstacles.html"><b>Obstacles</b><span>The countermodel catalog, what each entry refutes, and the obligations.</span></a></li><li><a href="milestones.html"><b>Milestones</b><span>The commits in the history of the built commit.</span></a></li></ul></li>
+<li class="sec"><button type="button" class="sec-btn" aria-expanded="false" aria-controls="nav-status">Status<svg class="chev" viewBox="0 0 12 12" aria-hidden="true" focusable="false"><path d="M2.5 4.5 6 8l3.5-3.5" fill="none" stroke="currentColor" stroke-width="1.6"/></svg></button><ul class="sec-list" id="nav-status"><li><a href="status.html"><b>Status</b><span>The dashboard: statements formalized and proved in full, and fragments with their parents.</span></a></li><li><a href="doc-OPEN_PROBLEMS.html"><b>Open problems</b><span>Every unresolved obligation, grouped by kind, with its source page.</span></a></li><li><a href="roadmap.html"><b>Roadmap</b><span>The plan by stage, the prerequisites and the external projects.</span></a></li><li><a href="obstacles.html"><b>Obstacles</b><span>The countermodel catalog, what each entry refutes, and the obligations.</span></a></li><li><a href="milestones.html"><b>Milestones</b><span>The timeline of verified commits on the main branch.</span></a></li></ul></li>
 <li class="sec"><button type="button" class="sec-btn" aria-expanded="false" aria-controls="nav-take-part">Take part<svg class="chev" viewBox="0 0 12 12" aria-hidden="true" focusable="false"><path d="M2.5 4.5 6 8l3.5-3.5" fill="none" stroke="currentColor" stroke-width="1.6"/></svg></button><ul class="sec-list" id="nav-take-part"><li><a href="procedure.html"><b>Procedure</b><span>What each check does and does not establish, and how to contribute.</span></a></li></ul></li>
 </ul>
 <div class="nav-end"><a class="source" href="https://github.com/adamrsophie/IUTLean">Source</a></div>
@@ -32,28 +33,191 @@
 <p class="kicker">Lean 4 and Mathlib</p>
 <h1 id="hero-title">Inter-universal Teichmüller Theory in Lean</h1>
 <p class="lead">A Lean 4 project on Shinichi Mochizuki's <em>Inter-universal Teichmüller Theory</em> I to IV. It catalogs every numbered statement of the four papers, states in Lean what can be stated without inventing definitions, and proves what it can with the kernel as the only judge. Every step that cannot yet be stated or proved is recorded as an open obligation with its source page.</p>
-<p class="note legend"><strong>blocked by missing justification</strong> (<code>BLOCKED_BY_MISSING_JUSTIFICATION</code>): the text gives an assertion where a formalization needs a derivation; this is not a claim that the result is false.</p>
 </section>
 
-<section aria-label="Status">
+<section class="map-home" aria-label="Map of the library">
+<div class="mapc" id="mapc">
+<div class="mapc-switch" role="group" aria-label="Map view">
+<button type="button" data-view="clusters" aria-pressed="true">Clusters</button>
+<button type="button" data-view="lines" aria-pressed="false">Lines</button>
+</div>
+<div class="mapc-view" data-view="clusters">
+<div class="sky" id="sky">
+<div class="sky-top">
+<div class="sky-head">
+<p class="sky-title">328 public theorems in 44 library modules, checked by the Lean kernel. The abc conjecture is not proved here.</p>
+<p class="sky-sub">Generated from commit <code>2274f91</code></p>
+</div>
+<div class="sky-search">
+<label for="sky-q" class="sky-vh">Search theorems, modules and lines</label>
+<input id="sky-q" type="search" placeholder="Search theorems, modules, lines" autocomplete="off" spellcheck="false" role="combobox" aria-autocomplete="list" aria-expanded="false" aria-controls="sky-results">
+<kbd aria-hidden="true">/</kbd>
+<ul id="sky-results" role="listbox" aria-label="Search results" hidden></ul>
+</div>
+</div>
+<canvas id="sky-canvas" role="img" tabindex="0" aria-label="Map of the library: one dot per public theorem, in one disc per group. The list below the map holds the same groups, lines and modules."></canvas>
+<noscript><p class="sky-noscript">The map needs JavaScript. The list below holds the same groups, lines and modules.</p></noscript>
+<div class="sky-legend">
+<span><i class="k-dot"></i>Public theorem</span>
+<span><i class="k-ring"></i>Public theorem named by a record of the statement catalog</span>
+<span><i class="k-target"></i>Not proved or not formalized here</span>
+<span><i class="k-line"></i>Line: modules of one group import modules of the other</span>
+</div>
+<div class="sky-nav">
+<button type="button" id="sky-in" aria-label="Zoom in">+</button>
+<button type="button" id="sky-out" aria-label="Zoom out">−</button>
+<button type="button" id="sky-fit" aria-label="Fit the whole map">Fit</button>
+<canvas id="sky-mini" aria-label="Overview; click to move the view there"></canvas>
+</div>
+<div class="sky-tip" id="sky-tip" hidden></div>
+<aside class="sky-panel" id="sky-panel" hidden aria-live="polite">
+<button type="button" class="sky-close" id="sky-close" aria-label="Close the panel">×</button>
+<div id="sky-panel-body"></div>
+</aside>
+</div>
+</div>
+<div class="mapc-view" data-view="lines" hidden>
+<div class="dm" id="dm">
+<div class="dm-tools">
+<label for="dm-q">Filter lines</label>
+<input id="dm-q" type="search" placeholder="for example Theorem 1.10, LVEx, hull" autocomplete="off" spellcheck="false">
+<output id="dm-count" for="dm-q" aria-live="polite"></output>
+<span class="dm-zoom">
+<button type="button" class="icon-btn" id="dm-out" aria-label="Zoom out">−</button>
+<button type="button" class="icon-btn" id="dm-in" aria-label="Zoom in">+</button>
+<button type="button" class="icon-btn" id="dm-fit">Fit</button>
+<button type="button" class="icon-btn" id="dm-clear">Clear selection</button>
+</span>
+</div>
+<div class="dm-body">
+<div class="dm-view" id="dm-view" tabindex="0" role="region" aria-label="Lines map. Drag to move, scroll or pinch to zoom, plus and minus keys zoom, arrow keys move, 0 fits.">
+<div class="dm-stage" id="dm-stage">
+<div class="dm-canvas" id="dm-canvas" style="width:1072px;height:1660px">
+<div class="dm-band" style="top:0px;height:180px" data-lane="The abc statement and its equivalent forms"></div>
+<div class="dm-band" style="top:180px;height:180px" data-lane="Prerequisites and foundations"></div>
+<div class="dm-band" style="top:360px;height:180px" data-lane="IUT I"></div>
+<div class="dm-band" style="top:540px;height:180px" data-lane="IUT II"></div>
+<div class="dm-band" style="top:720px;height:180px" data-lane="IUT III and Corollary 3.12"></div>
+<div class="dm-band" style="top:900px;height:290px" data-lane="IUT IV"></div>
+<div class="dm-band" style="top:1190px;height:180px" data-lane="The dispute: models of the objections and responses"></div>
+<div class="dm-band" style="top:1370px;height:290px" data-lane="Countermodels to simplified abstractions"></div>
+<svg class="dm-edges" width="1072" height="1660" viewBox="0 0 1072 1660" aria-hidden="true" focusable="false"><defs><marker id="dm-arrow" viewBox="0 0 10 10" refX="1" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" class="dm-head"/></marker><marker id="dm-arrow-on" viewBox="0 0 10 10" refX="1" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" class="dm-head on"/></marker></defs><path class="e" data-from="0" data-to="1" d="M216,94.0 C252,94.0 237,94.0 273,94.0"/><path class="e" data-from="8" data-to="7" d="M216,814.0 C360,814.0 393,809.0 537,809.0"/><path class="e" data-from="9" data-to="2" d="M216,994.0 C252,994.0 237,274.0 273,274.0"/><path class="e" data-from="10" data-to="7" d="M480,984.0 C516,984.0 501,819.0 537,819.0"/><path class="e" data-from="10" data-to="11" d="M480,994.0 C516,994.0 501,994.0 537,994.0"/><path class="e" data-from="10" data-to="13" d="M480,1004.0 C516,1004.0 501,1120.0 537,1120.0"/><path class="e" data-from="11" data-to="12" d="M744,994.0 C780,994.0 765,994.0 801,994.0"/></svg>
+<button type="button" class="dm-card" id="line-0" data-line="0" style="left:16px;top:38px"><span class="dm-t">Equivalent formulations</span><span class="dm-m">1 module · 18 theorems</span><span class="dm-d">The abc conjecture: basic facts and equivalent formulations</span></button>
+<button type="button" class="dm-card" id="line-1" data-line="1" style="left:280px;top:38px"><span class="dm-t">Formal Conjectures statements</span><span class="dm-m">1 module · 9 theorems</span><span class="dm-d">Comparison with the abc statements of the Formal Conjectures project</span></button>
+<button type="button" class="dm-card" id="line-2" data-line="2" style="left:280px;top:218px"><span class="dm-t">Product formula and profinite units</span><span class="dm-m">2 modules · 9 theorems</span><span class="dm-d">Normalized absolute values and the product formula over <code>𝕍(F)</code></span></button>
+<button type="button" class="dm-card" id="line-3" data-line="3" style="left:16px;top:218px"><span class="dm-t">Grothendieck universes</span><span class="dm-m">1 module · 3 theorems</span><span class="dm-d">Grothendieck universes and the existence axiom of IUT IV, Section 3</span></button>
+<button type="button" class="dm-card" id="line-4" data-line="4" style="left:16px;top:398px"><span class="dm-t">Initial Θ-data</span><span class="dm-m">1 module · 5 theorems</span><span class="dm-d">IUT I, Definition 3.1: the conditions on initial Θ-data that Mathlib can state today</span></button>
+<button type="button" class="dm-card" id="line-5" data-line="5" style="left:280px;top:398px"><span class="dm-t">Poly-morphisms and capsules</span><span class="dm-m">1 module · 4 theorems</span><span class="dm-d">IUT I, Section 0: poly-morphisms and capsules</span></button>
+<button type="button" class="dm-card" id="line-6" data-line="6" style="left:16px;top:578px"><span class="dm-t">Labels and theta exponents</span><span class="dm-m">1 module · 20 theorems · <b>6</b> in records</span><span class="dm-d">IUT II: the label sets <code>|𝔽_l|</code>, <code>𝔽_l^⋇</code> and the exponents <code>j²</code> of the theta values</span></button>
+<button type="button" class="dm-card" id="line-7" data-line="7" style="left:544px;top:758px"><span class="dm-t">Corollary 3.12</span><span class="dm-m">2 modules · 33 theorems · <b>15</b> in records</span><span class="dm-d">IUT III, Corollary 3.12: an interface for the final comparison of regions</span></button>
+<button type="button" class="dm-card" id="line-8" data-line="8" style="left:16px;top:758px"><span class="dm-t">Hull operator of Remark 3.9.5</span><span class="dm-m">1 module · 3 theorems · <b>3</b> in records</span><span class="dm-d">IUT III, Remark 3.9.5 (ii): the order-theoretic characterization of the hull map</span></button>
+<button type="button" class="dm-card" id="line-9" data-line="9" style="left:16px;top:938px"><span class="dm-t">Arithmetic divisors</span><span class="dm-m">2 modules · 13 theorems · <b>1</b> in records</span><span class="dm-d">IUT IV, Definition 1.9 (ii): the degree <code>deg_E</code> of an arithmetic divisor relative to a set of valuations</span></button>
+<button type="button" class="dm-card" id="line-10" data-line="10" style="left:280px;top:938px"><span class="dm-t">Theorem 1.10: elementary facts and arithmetic</span><span class="dm-m">2 modules · 23 theorems · <b>19</b> in records</span><span class="dm-d">IUT IV, Theorem 1.10, Step (i): the elementary facts (E3), (E4), (E6) and numerical bounds</span></button>
+<button type="button" class="dm-card" id="line-11" data-line="11" style="left:544px;top:938px"><span class="dm-t">Section 1 propositions</span><span class="dm-m">6 modules · 35 theorems · <b>24</b> in records</span><span class="dm-d">IUT IV, Proposition 1.2: the constants <code>a_i</code>, <code>b_i</code> (elementary part)</span></button>
+<button type="button" class="dm-card" id="line-12" data-line="12" style="left:808px;top:938px"><span class="dm-t">Theorem 1.10: steps of the proof</span><span class="dm-m">4 modules · 21 theorems · <b>21</b> in records</span><span class="dm-d">IUT IV, Theorem 1.10, Steps (v) and (vii): weighted averages and procession-normalized bounds</span></button>
+<button type="button" class="dm-card" id="line-13" data-line="13" style="left:544px;top:1064px"><span class="dm-t">Section 2 corollaries</span><span class="dm-m">3 modules · 30 theorems · <b>24</b> in records</span><span class="dm-d">IUT IV, Corollary 2.2: the real arithmetic of (C1), (C2) and of the proof</span></button>
+<button type="button" class="dm-card" id="line-14" data-line="14" style="left:16px;top:1228px"><span class="dm-t">Scholze–Stix: displays and identifications</span><span class="dm-m">3 modules · 12 theorems</span><span class="dm-d">Scholze–Stix, end of Section 2.2: the size of the &quot;blurring&quot</span></button>
+<button type="button" class="dm-card" id="line-15" data-line="15" style="left:280px;top:1228px"><span class="dm-t">Scholze–Stix: from Claim 6 to Vojta</span><span class="dm-m">1 module · 4 theorems</span><span class="dm-d">Scholze–Stix, Section 1.2: from Claim 6 to Vojta&#x27;s inequality, as real analysis</span></button>
+<button type="button" class="dm-card" id="line-16" data-line="16" style="left:544px;top:1228px"><span class="dm-t">Mochizuki: the example (LVEx)</span><span class="dm-m">2 modules · 19 theorems</span><span class="dm-d">Mochizuki&#x27;s example (LVEx), with Lebesgue measure</span></button>
+<button type="button" class="dm-card" id="line-17" data-line="17" style="left:808px;top:1228px"><span class="dm-t">Mochizuki: (SSIdEx) and the toy models</span><span class="dm-m">2 modules · 27 theorems</span><span class="dm-d">Mochizuki&#x27;s example (SSIdEx): two complex structures on <code>ℝ²</code></span></button>
+<button type="button" class="dm-card" id="line-18" data-line="18" style="left:16px;top:1408px"><span class="dm-t">Simplified principles</span><span class="dm-m">1 module · 7 theorems</span><span class="dm-d">Countermodels to simplified abstractions</span></button>
+<button type="button" class="dm-card" id="line-19" data-line="19" style="left:280px;top:1408px"><span class="dm-t">Indeterminacies and joint witnesses</span><span class="dm-m">2 modules · 7 theorems</span><span class="dm-d">Countermodels: separate indeterminacies versus their combined action</span></button>
+<button type="button" class="dm-card" id="line-20" data-line="20" style="left:544px;top:1408px"><span class="dm-t">Volumes and levels</span><span class="dm-m">2 modules · 11 theorems</span><span class="dm-d">Countermodels: canonical reconstruction and a chosen normalization of volume</span></button>
+<button type="button" class="dm-card" id="line-21" data-line="21" style="left:808px;top:1408px"><span class="dm-t">Hulls and reconstruction</span><span class="dm-m">2 modules · 8 theorems</span><span class="dm-d">Countermodel: a link plus per-copy reconstruction does not give a comparison</span></button>
+<button type="button" class="dm-card" id="line-22" data-line="22" style="left:16px;top:1534px"><span class="dm-t">Multiplicative and additive structure</span><span class="dm-m">1 module · 7 theorems</span><span class="dm-d">Countermodels: multiplicative data and additive structure</span></button>
+</div>
+</div>
+<div class="dm-lanes" id="dm-lanes" aria-hidden="true"></div>
+</div>
+<aside class="dm-panel" id="dm-panel" aria-label="Selected line" hidden>
+<button type="button" class="dm-close" id="dm-close" aria-label="Close">×</button>
+<div id="dm-panel-body" aria-live="polite"></div>
+</aside>
+</div>
+<p class="sub">Select a card to list its modules and the theorems in it that a record of the statement catalog names. Each card is a line of work: a short sequence of related modules of one group. An arrow from card A to card B means that a module of B imports a module of A. Only direct dependencies are drawn: an arrow is left out when a longer chain of arrows already leads from A to B.</p>
+</div>
+</div>
+</div>
+<details class="sky-list"><summary>All groups and lines</summary>
+<h3>The abc statement and its equivalent forms <small>27 theorems, 2 modules</small></h3><ul>
+<li><b>Equivalent formulations</b> (1 module): <a href="reference.html#mod-IUT.Applications.ABC"><code>IUT.Applications.ABC</code></a></li>
+<li><b>Formal Conjectures statements</b> (1 module): <a href="reference.html#mod-IUT.Applications.ABCFormalConjectures"><code>IUT.Applications.ABCFormalConjectures</code></a></li>
+</ul>
+<h3>Prerequisites and foundations <small>12 theorems, 3 modules</small></h3><ul>
+<li><b>Product formula and profinite units</b> (2 modules): <a href="reference.html#mod-IUT.Prerequisites.ProductFormula"><code>IUT.Prerequisites.ProductFormula</code></a>, <a href="reference.html#mod-IUT.Prerequisites.PositiveRationalsZhatUnits"><code>IUT.Prerequisites.PositiveRationalsZhatUnits</code></a></li>
+<li><b>Grothendieck universes</b> (1 module): <a href="reference.html#mod-IUT.Foundations.GrothendieckUniverse"><code>IUT.Foundations.GrothendieckUniverse</code></a></li>
+</ul>
+<h3>IUT I <small>9 theorems, 2 modules</small></h3><ul>
+<li><b>Initial Θ-data</b> (1 module): <a href="reference.html#mod-IUT.PaperI.InitialThetaData"><code>IUT.PaperI.InitialThetaData</code></a></li>
+<li><b>Poly-morphisms and capsules</b> (1 module): <a href="reference.html#mod-IUT.PaperI.PolyMorphism"><code>IUT.PaperI.PolyMorphism</code></a></li>
+</ul>
+<h3>IUT II <small>20 theorems, 1 modules</small></h3><ul>
+<li><b>Labels and theta exponents</b> (1 module): <a href="reference.html#mod-IUT.PaperII.Labels"><code>IUT.PaperII.Labels</code></a></li>
+</ul>
+<h3>IUT III and Corollary 3.12 <small>36 theorems, 3 modules</small></h3><ul>
+<li><b>Corollary 3.12</b> (2 modules): <a href="reference.html#mod-IUT.PaperIII.Corollary312.Numerical"><code>IUT.PaperIII.Corollary312.Numerical</code></a>, <a href="reference.html#mod-IUT.PaperIII.Corollary312.Comparison"><code>IUT.PaperIII.Corollary312.Comparison</code></a></li>
+<li><b>Hull operator of Remark 3.9.5</b> (1 module): <a href="reference.html#mod-IUT.PaperIII.Remark3_9_5.HullOperator"><code>IUT.PaperIII.Remark3_9_5.HullOperator</code></a></li>
+</ul>
+<h3>IUT IV <small>122 theorems, 17 modules</small></h3><ul>
+<li><b>Arithmetic divisors</b> (2 modules): <a href="reference.html#mod-IUT.PaperIV.ArithmeticDivisor"><code>IUT.PaperIV.ArithmeticDivisor</code></a>, <a href="reference.html#mod-IUT.PaperIV.Definition1_9"><code>IUT.PaperIV.Definition1_9</code></a></li>
+<li><b>Theorem 1.10: elementary facts and arithmetic</b> (2 modules): <a href="reference.html#mod-IUT.PaperIV.Theorem1_10.ElementaryFacts"><code>IUT.PaperIV.Theorem1_10.ElementaryFacts</code></a>, <a href="reference.html#mod-IUT.PaperIV.Theorem1_10.Arithmetic"><code>IUT.PaperIV.Theorem1_10.Arithmetic</code></a></li>
+<li><b>Section 1 propositions</b> (6 modules): <a href="reference.html#mod-IUT.PaperIV.Proposition1_2"><code>IUT.PaperIV.Proposition1_2</code></a>, <a href="reference.html#mod-IUT.PaperIV.Proposition1_3"><code>IUT.PaperIV.Proposition1_3</code></a>, <a href="reference.html#mod-IUT.PaperIV.Proposition1_4"><code>IUT.PaperIV.Proposition1_4</code></a>, <a href="reference.html#mod-IUT.PaperIV.Proposition1_5"><code>IUT.PaperIV.Proposition1_5</code></a>, <a href="reference.html#mod-IUT.PaperIV.Proposition1_6"><code>IUT.PaperIV.Proposition1_6</code></a>, <a href="reference.html#mod-IUT.PaperIV.Proposition1_7"><code>IUT.PaperIV.Proposition1_7</code></a></li>
+<li><b>Theorem 1.10: steps of the proof</b> (4 modules): <a href="reference.html#mod-IUT.PaperIV.Theorem1_10.StepII"><code>IUT.PaperIV.Theorem1_10.StepII</code></a>, <a href="reference.html#mod-IUT.PaperIV.Theorem1_10.StepIII"><code>IUT.PaperIV.Theorem1_10.StepIII</code></a>, <a href="reference.html#mod-IUT.PaperIV.Theorem1_10.StepV"><code>IUT.PaperIV.Theorem1_10.StepV</code></a>, <a href="reference.html#mod-IUT.PaperIV.Theorem1_10.StepVIII"><code>IUT.PaperIV.Theorem1_10.StepVIII</code></a></li>
+<li><b>Section 2 corollaries</b> (3 modules): <a href="reference.html#mod-IUT.PaperIV.Proposition2_1"><code>IUT.PaperIV.Proposition2_1</code></a>, <a href="reference.html#mod-IUT.PaperIV.Corollary2_2.Arithmetic"><code>IUT.PaperIV.Corollary2_2.Arithmetic</code></a>, <a href="reference.html#mod-IUT.PaperIV.Corollary2_3"><code>IUT.PaperIV.Corollary2_3</code></a></li>
+</ul>
+<h3>The dispute: models of the objections and responses <small>62 theorems, 8 modules</small></h3><ul>
+<li><b>Scholze–Stix: displays and identifications</b> (3 modules): <a href="reference.html#mod-IUT.Audit.ScholzeStix.Section1_3"><code>IUT.Audit.ScholzeStix.Section1_3</code></a>, <a href="reference.html#mod-IUT.Audit.ScholzeStix.Diagram"><code>IUT.Audit.ScholzeStix.Diagram</code></a>, <a href="reference.html#mod-IUT.Audit.ScholzeStix.Blurring"><code>IUT.Audit.ScholzeStix.Blurring</code></a></li>
+<li><b>Scholze–Stix: from Claim 6 to Vojta</b> (1 module): <a href="reference.html#mod-IUT.Audit.ScholzeStix.Reduction"><code>IUT.Audit.ScholzeStix.Reduction</code></a></li>
+<li><b>Mochizuki: the example (LVEx)</b> (2 modules): <a href="reference.html#mod-IUT.Audit.MochizukiResponses.LVEx"><code>IUT.Audit.MochizukiResponses.LVEx</code></a>, <a href="reference.html#mod-IUT.Audit.MochizukiResponses.LVExMeasure"><code>IUT.Audit.MochizukiResponses.LVExMeasure</code></a></li>
+<li><b>Mochizuki: (SSIdEx) and the toy models</b> (2 modules): <a href="reference.html#mod-IUT.Audit.MochizukiResponses.SSIdEx"><code>IUT.Audit.MochizukiResponses.SSIdEx</code></a>, <a href="reference.html#mod-IUT.Audit.MochizukiResponses.ToyModels"><code>IUT.Audit.MochizukiResponses.ToyModels</code></a></li>
+</ul>
+<h3>Countermodels to simplified abstractions <small>40 theorems, 8 modules</small></h3><ul>
+<li><b>Simplified principles</b> (1 module): <a href="reference.html#mod-IUT.Countermodels.Basic"><code>IUT.Countermodels.Basic</code></a></li>
+<li><b>Indeterminacies and joint witnesses</b> (2 modules): <a href="reference.html#mod-IUT.Countermodels.CombinedIndeterminacies"><code>IUT.Countermodels.CombinedIndeterminacies</code></a>, <a href="reference.html#mod-IUT.Countermodels.JointWitness"><code>IUT.Countermodels.JointWitness</code></a></li>
+<li><b>Volumes and levels</b> (2 modules): <a href="reference.html#mod-IUT.Countermodels.HaarNormalization"><code>IUT.Countermodels.HaarNormalization</code></a>, <a href="reference.html#mod-IUT.Countermodels.LevelMismatch"><code>IUT.Countermodels.LevelMismatch</code></a></li>
+<li><b>Hulls and reconstruction</b> (2 modules): <a href="reference.html#mod-IUT.Countermodels.HullTransport"><code>IUT.Countermodels.HullTransport</code></a>, <a href="reference.html#mod-IUT.Countermodels.ReconstructionComparison"><code>IUT.Countermodels.ReconstructionComparison</code></a></li>
+<li><b>Multiplicative and additive structure</b> (1 module): <a href="reference.html#mod-IUT.Countermodels.MultiplicativeAdditive"><code>IUT.Countermodels.MultiplicativeAdditive</code></a></li>
+</ul>
+<h3>Not proved or not formalized here</h3><ul><li><b>The abc conjecture</b>: Challenge.ABC is stated in Challenge/Defs.lean. No theorem of the library proves it, and it is never assumed. <a href="doc-OPEN_PROBLEMS.html">See the open problems</a></li><li><b>Corollary 3.12</b>: IUT III, Corollary 3.12 is not formalized. The library checks its numerical layer and an abstract interface for its final comparison whose regions are inputs, not the objects of the papers. <a href="doc-OPEN_PROBLEMS.html">See the open problems</a></li></ul>
+</details>
+<script src="assets/map-data.js"></script>
+<script src="assets/sky.js"></script>
+<script src="assets/lanes.js"></script>
+
+<p class="map-open"><a href="map.html">Open the full map</a></p>
+</section>
+
+<section aria-label="Status and statement">
 <div class="banner" role="note"><strong>The abc conjecture is not proved here, and IUT III, Corollary 3.12 is not formalized.</strong>
 The project takes no side in the dispute about the theory: it neither assumes that the theory is correct nor that it is wrong. A countermodel in this repository refutes a simplified abstraction stated in Lean; it is not a counterexample to a statement of the papers.</div>
+<p class="formula">a + b = c coprime ⟹ c ≤ K<sub>ε</sub> · rad(abc)<sup>1+ε</sup></p>
+<p class="sub">The <a href="background.html#abc">abc conjecture</a> says that for every ε &gt; 0 there is a constant K<sub>ε</sub> such that every sum a + b = c of coprime positive integers satisfies c ≤ K<sub>ε</sub> · rad(abc)<sup>1+ε</sup>, where the <a href="background.html#radical">radical</a> rad(n) is the product of the distinct primes dividing n. The papers derive it from the inequalities of IUT IV; the <a href="critical-path.html">critical path</a> shows each step and what of it is checked.</p>
 </section>
 
-<h2 id="stopping-point">Where the work stops</h2>
-<p>Nothing in the library constructs the objects of IUT I to III. Not done: Hodge theaters, prime strips, the Θ-link and the log-link, the log-theta-lattice, log-shells and tensor packets with their normalized log-volumes, the indeterminacies (Ind1) to (Ind3), the holomorphic hull of possible images, a Lean statement of Theorem 3.11 or of Corollary 3.12, the comparison of Corollary 3.12 stated on the papers' objects, and the specialization of IUT IV, Theorem A to abc triples.</p>
-<p>The module <a href="reference.html#mod-IUT.PaperIII.Corollary312.Comparison"><code>IUT.PaperIII.Corollary312.Comparison</code></a> is an abstract interface: it takes the regions as inputs (a measure, a hull map, a q-pilot region, a family of possible images), states the comparison as a region containment and as a log-volume inequality on those given regions, and proves the conditional passage to the numerical layer. Its objects are not the papers' objects.</p>
-<p>What is done is arithmetic and order-theoretic: numerical consequences of stated inequalities, elementary estimates of IUT IV, countermodels to simplified abstractions, and models of the arguments in the published discussion. Three statement records of the papers are proved in full in Lean, all in IUT IV, Sections 1 and 2:</p>
-<ul><li><a href="statements.html#IUT4.Prop1_6">IUT IV, Proposition 1.6</a> (<em>The Prime Number Theorem</em>), Section 1, page 16: <a href="reference.html#IUT.PaperIV.Proposition1_6.proposition1_6"><code>IUT.PaperIV.Proposition1_6.proposition1_6</code></a></li><li><a href="statements.html#IUT4.Prop1_7">IUT IV, Proposition 1.7</a> (<em>Weighted Averages</em>), Section 1, pages 16 to 17: <a href="reference.html#IUT.PaperIV.Proposition1_7.weighted_averages"><code>IUT.PaperIV.Proposition1_7.weighted_averages</code></a></li><li><a href="statements.html#IUT4.Prop2_1">IUT IV, Proposition 2.1</a> (<em>Well-known Estimates</em>), Section 2, page 40: <a href="reference.html#IUT.PaperIV.Proposition2_1.proposition2_1"><code>IUT.PaperIV.Proposition2_1.proposition2_1</code></a></li></ul>
-<p>Kernel acceptance establishes that a Lean declaration is proved as written. Whether it says what the paper says is a separate, human comparison against the cited pages; the <a href="procedure.html">procedure page</a> says what each check establishes and what it does not.</p>
+<h2 id="definitions">The statement</h2>
+<p class="sub">The target is stated once, as a proposition, and is never assumed anywhere in the library. Both declarations are copied from <a href="reference.html#mod-Challenge.Defs"><code>Challenge/Defs.lean</code></a> at this commit; a reader must check by hand that they say what the abc conjecture says.</p>
+<pre class="lean" aria-label="Lean definitions"><code><span class="k">def</span> <span class="n">rad</span> (n : <span class="t">ℕ</span>) : <span class="t">ℕ</span> := <span class="k">∏</span> p ∈ n.primeFactors, p
 
-<h2 id="numbers">Headline figures</h2>
-<p class="sub">Each figure and its caption is taken from <code>data/dashboard.json</code> and <a href="doc-DASHBOARD.html"><code>docs/DASHBOARD.md</code></a>, generated by <code>scripts/dashboard.py</code> at this commit. They count records and their statuses, not distance to a proof. The <a href="status.html">status page</a> has every figure, the coverage per paper and the list of fragments.</p>
-<div class="stats" aria-label="Headline figures"><div class="stat"><b>369</b><small>Statements in the mechanical index (numbered and lettered)</small></div><div class="stat"><b>88</b><small>Curated parts and proof steps</small></div><div class="stat"><b>17</b><small>Curated unnumbered items of a section</small></div><div class="stat"><b>236</b><small>Statement records extracted by reading (statement status other than NOT_EXTRACTED)</small></div><div class="stat"><b>10</b><small>Statement records formalized in full</small></div><div class="stat"><b>3</b><small>Statement records proved in full, unconditionally</small></div><div class="stat"><b>0</b><small>Statement records proved in full, conditionally (named hypotheses)</small></div><div class="stat"><b>66</b><small>Fragments checked in Lean, unconditionally</small></div><div class="stat"><b>44</b><small>Fragments checked in Lean, conditionally</small></div><div class="stat"><b>28</b><small>Parents with at least one checked fragment (not counted as formalized)</small></div><div class="stat"><b>25</b><small>Records (statements and fragments) whose declaration is a definition, structure or other non-theorem typed in Lean (never counted as proved)</small></div><div class="stat"><b>413</b><small>Obligation entries (items of the obligations lists, open claims and notes alike)</small></div><div class="stat"><b>283</b><small>Records with at least one obligation entry</small></div><div class="stat"><b>174</b><small>Statement records with an ambiguity (status INTERPRETATION_AMBIGUOUS or a nonempty ambiguities list)</small></div><div class="stat"><b>22</b><small>Countermodel catalog of data/countermodels.json: countermodels (of a simplified abstraction unless the entry says otherwise)</small></div><div class="stat"><b>14</b><small>Countermodel catalog of data/countermodels.json: positive results</small></div><div class="stat"><b>1</b><small>Countermodel catalog of data/countermodels.json: lemmas</small></div><div class="stat"><b>0</b><small>Unauthorized axioms</small></div><div class="stat"><b>0</b><small>Proof placeholders (sorryAx)</small></div><div class="stat"><b>0</b><small>Validation errors of the records</small></div></div><p class="note">A <strong>fragment</strong> is a Lean lemma that checks one step or one arithmetic piece of a statement of the papers. It is counted on its own; its parent statement is not counted as formalized or proved through it. <strong>Formalized in full</strong> means that one Lean declaration states the entire content of the record; <strong>proved in full</strong> means that, in addition, the declaration is a theorem accepted with the allowed axioms. Unauthorized axioms and placeholders are counted over the 47 modules of the compiled inventory <code>data/lean_declarations.json</code>.</p>
+<span class="k">def</span> <span class="n">ABC</span> : <span class="k">Prop</span> :=
+  <span class="k">∀</span> ε : <span class="t">ℝ</span>, 0 &lt; ε → <span class="k">∃</span> K : <span class="t">ℝ</span>, 0 &lt; K ∧ <span class="k">∀</span> a b c : <span class="t">ℕ</span>, 0 &lt; a → 0 &lt; b → 0 &lt; c →
+    Nat.Coprime a b → a + b = c → (c : <span class="t">ℝ</span>) ≤ K * (rad (a * b * c) : <span class="t">ℝ</span>) ^ (1 + ε)</code></pre><p class="src-link">From <a href="https://github.com/adamrsophie/IUTLean/blob/2274f917ddbca57bbe16b783f0f24968de079bba/Challenge/Defs.lean"><code>Challenge/Defs.lean</code></a></p>
 
-<h2 id="path">The critical path</h2>
-<p class="sub">The chain of claims that leads from IUT II and III to the Diophantine inequalities of IUT IV and from there to the abc conjecture, and how much of each step is checked. The <a href="critical-path.html">critical path page</a> has the details.</p>
-<figure class="diagram cp"><svg viewBox="0 0 640 806" role="group" aria-labelledby="cp-title cp-desc"><title id="cp-title">The critical path from the papers to the abc conjecture</title><desc id="cp-desc">A vertical chain of 7 steps: IUT II, Corollary 4.10 (Not formalized); then IUT III, Theorem 3.11 (Not formalized); then IUT III, Corollary 3.12 (Not formalized in full; fragments of it are checked in Lean); then IUT IV, Theorem 1.10 (Not formalized in full; fragments of it are checked in Lean); then IUT IV, Corollary 2.2 (Not formalized in full; fragments of it are checked in Lean); then IUT IV, Corollary 2.3 (Not formalized in full; fragments of it are checked in Lean); then The abc conjecture (Defined in Challenge/Defs.lean; not proved).</desc><defs><marker id="cp-arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" class="cp-head"/></marker></defs><a href="critical-path.html#step-IUT2.Cor4_10"><rect class="cp-none" x="10" y="10" width="620" height="78" rx="10"/><text class="cp-t" x="30" y="38">IUT II, Corollary 4.10</text><text class="cp-s" x="30" y="60">Not formalized</text><text class="cp-s" x="30" y="78">statement: extracted; proof: blocked by mathlib</text></a><line class="cp-e" x1="320.0" y1="90" x2="320.0" y2="122" marker-end="url(#cp-arrow)"/><text class="cp-el" x="332.0" y="113.0">cited in the proof or statement</text><a href="critical-path.html#step-IUT3.Thm3_11"><rect class="cp-none" x="10" y="128" width="620" height="78" rx="10"/><text class="cp-t" x="30" y="156">IUT III, Theorem 3.11</text><text class="cp-s" x="30" y="178">Not formalized</text><text class="cp-s" x="30" y="196">statement: extracted; proof: blocked by missing justification</text></a><line class="cp-e" x1="320.0" y1="208" x2="320.0" y2="240" marker-end="url(#cp-arrow)"/><text class="cp-el" x="332.0" y="231.0">cited in the proof or statement</text><a href="critical-path.html#step-IUT3.Cor3_12"><rect class="cp-part" x="10" y="246" width="620" height="78" rx="10"/><text class="cp-t" x="30" y="274">IUT III, Corollary 3.12</text><text class="cp-s" x="30" y="296">Not formalized in full; fragments of it are checked in Lean</text><text class="cp-s" x="30" y="314">statement: extracted; proof: blocked by missing justification</text></a><line class="cp-e" x1="320.0" y1="326" x2="320.0" y2="358" marker-end="url(#cp-arrow)"/><text class="cp-el" x="332.0" y="349.0">cited in the proof or statement</text><a href="critical-path.html#step-IUT4.Thm1_10"><rect class="cp-part" x="10" y="364" width="620" height="78" rx="10"/><text class="cp-t" x="30" y="392">IUT IV, Theorem 1.10</text><text class="cp-s" x="30" y="414">Not formalized in full; fragments of it are checked in Lean</text><text class="cp-s" x="30" y="432">statement: extracted; proof: blocked by external theorem</text></a><line class="cp-e" x1="320.0" y1="444" x2="320.0" y2="476" marker-end="url(#cp-arrow)"/><text class="cp-el" x="332.0" y="467.0">cited in the proof or statement</text><a href="critical-path.html#step-IUT4.Cor2_2"><rect class="cp-part" x="10" y="482" width="620" height="78" rx="10"/><text class="cp-t" x="30" y="510">IUT IV, Corollary 2.2</text><text class="cp-s" x="30" y="532">Not formalized in full; fragments of it are checked in Lean</text><text class="cp-s" x="30" y="550">statement: extracted; proof: blocked by external theorem</text></a><line class="cp-e" x1="320.0" y1="562" x2="320.0" y2="594" marker-end="url(#cp-arrow)"/><text class="cp-el" x="332.0" y="585.0">cited in the proof or statement</text><a href="critical-path.html#step-IUT4.Cor2_3"><rect class="cp-part" x="10" y="600" width="620" height="78" rx="10"/><text class="cp-t" x="30" y="628">IUT IV, Corollary 2.3</text><text class="cp-s" x="30" y="650">Not formalized in full; fragments of it are checked in Lean</text><text class="cp-s" x="30" y="668">statement: extracted; proof: blocked by external theorem</text></a><line class="cp-e" x1="320.0" y1="680" x2="320.0" y2="712" stroke-dasharray="5 4" marker-end="url(#cp-arrow)"/><text class="cp-el" x="332.0" y="703.0">declared link, not a citation</text><a href="critical-path.html#step-ABC"><rect class="cp-none" x="10" y="718" width="620" height="78" rx="10"/><text class="cp-t" x="30" y="746">The abc conjecture</text><text class="cp-s" x="30" y="768">Defined in Challenge/Defs.lean; not proved</text></a></svg><figcaption>Each box is a step; an arrow means that the lower step uses the upper one. A solid arrow is a citation edge of <code>data/dependencies.json</code>; a dashed arrow is a link declared by hand. Green: the statement is proved in full in Lean; amber: some fragment of the statement or of its parts is checked in Lean, and the statement itself is not formalized; gray: nothing is checked. Select a box for details.</figcaption></figure>
+<div class="stats" aria-label="Library statistics">
+<div class="stat"><b>61</b><small>Lean files at this commit: the 44 library modules under <code>IUT/</code>, the root import file, the trusted definitions, the challenge and solution files, the axiom gate and its control files, and the Lean helpers of the scripts</small></div>
+<div class="stat"><b>8,014</b><small>lines of Lean</small></div>
+<div class="stat"><b>328</b><small>public theorems in the library modules, one dot each on the map</small></div>
+<div class="stat"><b>0</b><small>uses of sorry, admit, native_decide or added axioms in the library (<code>IUT.lean</code> and <code>IUT/</code>; <code>Challenge.lean</code> states its theorems with sorry on purpose, and the control files of the axiom gate use such constructs on purpose, to test the gate)</small></div>
+<div class="stat"><b>369</b><small>Statements in the mechanical index (numbered and lettered)</small></div>
+<div class="stat"><b>3</b><small>Statement records proved in full, unconditionally</small></div>
+</div>
+<p class="note">These numbers measure the size of the library and say little about the distance to a proof. Library counts are computed from commit <code>2274f91</code> by the site generator; the last two are values of <code>data/dashboard.json</code>, with their captions from <a href="doc-DASHBOARD.html"><code>docs/DASHBOARD.md</code></a>. The <a href="status.html">status page</a> has every figure, the coverage per paper and the list of fragments.</p>
+
+<h2 id="status">What is and is not proved</h2>
+<div class="grid">
+<div class="card"><h3>What is proved</h3><p>Arithmetic and order-theoretic content: numerical consequences of stated inequalities, elementary estimates of IUT IV, countermodels to simplified abstractions, and models of the arguments in the published discussion. Three statement records of the papers are proved in full in Lean, all in IUT IV, Sections 1 and 2:</p><ul><li><a href="statements.html#IUT4.Prop1_6">IUT IV, Proposition 1.6</a> (<em>The Prime Number Theorem</em>), Section 1, page 16: <a href="reference.html#IUT.PaperIV.Proposition1_6.proposition1_6"><code>IUT.PaperIV.Proposition1_6.proposition1_6</code></a></li><li><a href="statements.html#IUT4.Prop1_7">IUT IV, Proposition 1.7</a> (<em>Weighted Averages</em>), Section 1, pages 16 to 17: <a href="reference.html#IUT.PaperIV.Proposition1_7.weighted_averages"><code>IUT.PaperIV.Proposition1_7.weighted_averages</code></a></li><li><a href="statements.html#IUT4.Prop2_1">IUT IV, Proposition 2.1</a> (<em>Well-known Estimates</em>), Section 2, page 40: <a href="reference.html#IUT.PaperIV.Proposition2_1.proposition2_1"><code>IUT.PaperIV.Proposition2_1.proposition2_1</code></a></li></ul><p>Kernel acceptance establishes that a declaration is proved as written; whether it says what the paper says is a human comparison against the cited pages, described on the <a href="procedure.html">procedure page</a>.</p></div>
+<div class="card"><h3>What is not proved</h3><p>The abc conjecture, and IUT III, Corollary 3.12. Nothing in the library constructs the objects of IUT I to III: Hodge theaters, prime strips, the Θ-link and the log-link, the log-theta-lattice, log-shells and tensor packets with their normalized log-volumes, the indeterminacies (Ind1) to (Ind3), the holomorphic hull of possible images, a Lean statement of Theorem 3.11 or of Corollary 3.12, and the specialization of IUT IV, Theorem A to abc triples.</p></div>
+<div class="card"><h3>An interface for Corollary 3.12</h3><p>The module <a href="reference.html#mod-IUT.PaperIII.Corollary312.Comparison"><code>IUT.PaperIII.Corollary312.Comparison</code></a> takes the regions as inputs (a measure, a hull map, a q-pilot region, a family of possible images), states the comparison as a region containment and as a log-volume inequality on those given regions, and proves the conditional passage to the numerical layer. Its objects are not the papers' objects.</p></div>
+</div>
 
 <h2 id="explore">Explore</h2>
 <div class="grid">
@@ -66,12 +230,12 @@ The project takes no side in the dispute about the theory: it neither assumes th
 </div>
 
 <h2 id="latest">Latest milestones</h2>
-<p class="sub">The latest commits of the history of the commit the site is built from, newest first. The <a href="milestones.html">full list</a> is generated from the git history.</p>
-<ol class="timeline">
-<li class="event"><time datetime="2026-11-25T10:50:42-05:00">November 25, 2026</time><p class="ev-title"><b>Run the regeneration check after every enforcement step in CI</b> <a href="https://github.com/adamrsophie/IUTLean/commit/2274f917ddbca57bbe16b783f0f24968de079bba"><code class="hash">2274f91</code></a></p></li>
-<li class="event"><time datetime="2026-11-25T10:47:04-05:00">November 25, 2026</time><p class="ev-title"><b>Separate checked fragments from full statements and harden the trust tooling</b> <a href="https://github.com/adamrsophie/IUTLean/commit/a636fd35abe02f16d8fed83f40f08bf6c47247fe"><code class="hash">a636fd3</code></a></p></li>
-<li class="event"><time datetime="2026-11-25T09:54:02-05:00">November 25, 2026</time><p class="ev-title"><b>Add the README, contribution guide, open problems, and project documents</b> <a href="https://github.com/adamrsophie/IUTLean/commit/e8b756f77e3d8524fcd0a1592f6a61080cb29c1a"><code class="hash">e8b756f</code></a></p></li>
-<li class="event"><time datetime="2026-11-25T09:20:54-05:00">November 25, 2026</time><p class="ev-title"><b>Add the statement catalog, the trust gate, and checks across the four papers</b> <a href="https://github.com/adamrsophie/IUTLean/commit/709dd1b733d32c45e10a4ca6f8a2bf0c9060417e"><code class="hash">709dd1b</code></a></p></li>
+<p class="sub">Each entry is a verified commit on the main branch. Times are local (UTC−5). The <a href="milestones.html">full timeline</a> has 5 entries.</p>
+<ol class="timeline" reversed>
+<li class="event minor"><time datetime="2026-11-25T10:50">25 November 2026, 10:50</time><p class="ev-title"><b>CI: the regeneration check runs last.</b> <span class="cls trust">trust tooling</span> The pipeline scripts, which are outside the hashed trust set, now run after every enforcement step; the workflow token is read only.</p></li>
+<li class="event"><time datetime="2026-11-25T10:47">10:47</time><p class="ev-title"><b>Checked fragments separated from full statements.</b> <span class="cls full">full statement proved in Lean</span> A record counts as formalized only when one Lean declaration states its entire content; IUT IV, Propositions 1.6, 1.7 and 2.1 are the records counted as proved in full.</p></li>
+<li class="event"><time datetime="2026-11-25T09:54">09:54</time><p class="ev-title"><b>Project documents.</b> <span class="cls docs">documentation</span> The README, the contribution guide, the open problems with their source pages, design decisions, the verification report, a notation dictionary and a roadmap.</p></li>
+<li class="event"><time datetime="2026-11-25T09:20">09:20</time><p class="ev-title"><b>Statement catalog, trust gate and checks across the four papers.</b> <span class="cls fragment">fragment checked in Lean</span> Elementary content of IUT IV, Sections 1 and 2 and checks across the four papers, with the curated records, the axiom gate and its CI workflow.</p></li>
 </ol>
 
 </main>
