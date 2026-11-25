@@ -1,0 +1,58 @@
+[
+ {
+  "paper": 1,
+  "citation_key": "IUTchI",
+  "file": "Inter-universal Teichmuller Theory I.pdf",
+  "sha256": "7360e3ed27c235b5497a0743d3ed1646fbb97688547d16b7c784fc7f127f1f03",
+  "bytes": 1280589,
+  "pdf_pages": 186,
+  "title_page_date": "May 2020",
+  "pdf_creation_date": "2020-05-18T23:41:02+09",
+  "pdf_title": "iu-teich-1-zu-iri.pdf",
+  "pdf_producer": "Acrobat Distiller 11.0 (Windows)",
+  "numbered_statements": 120,
+  "lettered_results": 2
+ },
+ {
+  "paper": 2,
+  "citation_key": "IUTchII",
+  "file": "Inter-universal Teichmuller Theory II.pdf",
+  "sha256": "180bfa6aaddc4ae37af37acaad51f61e0a47b33b8255ad3169e28a970ae39b7c",
+  "bytes": 1203855,
+  "pdf_pages": 174,
+  "title_page_date": "December 2020",
+  "pdf_creation_date": "2020-12-23T12:48:19+09",
+  "pdf_title": "iu-teich-2.pdf",
+  "pdf_producer": "Acrobat Distiller 11.0 (Windows)",
+  "numbered_statements": 117,
+  "lettered_results": 2
+ },
+ {
+  "paper": 3,
+  "citation_key": "IUTchIII",
+  "file": "Inter-universal Teichmuller Theory III.pdf",
+  "sha256": "9a7ee3c77b1c7717210c0613eb39b6844649d0040dc3d9e1be7d544f8f91a0b9",
+  "bytes": 1307865,
+  "pdf_pages": 199,
+  "title_page_date": "May 2020",
+  "pdf_creation_date": "2020-05-18T23:44:06+09",
+  "pdf_title": "iu-teich-3.pdf",
+  "pdf_producer": "Acrobat Distiller 11.0 (Windows)",
+  "numbered_statements": 76,
+  "lettered_results": 2
+ },
+ {
+  "paper": 4,
+  "citation_key": "IUTchIV",
+  "file": "Inter-universal Teichmuller Theory IV.pdf",
+  "sha256": "5bf4b1e0a8c2686562a6859e5009d301335044cfb5efec5d3a9edf764e4af87f",
+  "bytes": 632447,
+  "pdf_pages": 87,
+  "title_page_date": "April 2020",
+  "pdf_creation_date": "2020-04-22T00:58:19+09",
+  "pdf_title": "iu-teich-4.pdf",
+  "pdf_producer": "Acrobat Distiller 11.0 (Windows)",
+  "numbered_statements": 48,
+  "lettered_results": 1
+ }
+]

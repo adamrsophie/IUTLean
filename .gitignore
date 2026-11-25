@@ -1,0 +1,7 @@
+.lake/
+.DS_Store
+documentation/
+__pycache__/
+.claude/
+.gstack/
+CLAUDE.md
