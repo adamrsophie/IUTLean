@@ -8,6 +8,9 @@ on:
   workflow_dispatch:
 
 # One run at a time per branch and event; a run in progress is never canceled.
+permissions:
+  contents: read
+
 concurrency:
   group: axiom-gate-${{ github.event_name }}-${{ github.ref }}
   cancel-in-progress: false
@@ -57,27 +60,6 @@ jobs:
       - name: Fingerprint check
         run: python3 -I scripts/Controls/fingerprints.py --check
 
-      # Regenerates everything that needs no PDF (Lean inventory, merge of the curated
-      # records with data/mechanical_index.json, graph, dashboard, documents), fails on an
-      # invalid record, and fails if a generated file differs from the committed one. The PDF
-      # stage is not run here: its outputs data/source_manifest.json,
-      # data/mechanical_index.json, data/dependencies.json and data/references.json are
-      # inputs. The picture docs/dependency_graph.svg is regenerated but not compared, since
-      # its bytes depend on the Graphviz version.
-      - name: Install Graphviz
-        run: |
-          sudo apt-get update
-          sudo apt-get install -y graphviz
-
-      - name: Regenerate data and documents
-        run: scripts/run_all.sh
-
-      - name: Generated files are up to date
-        run: |
-          git diff --exit-code -- data docs ':(exclude)docs/dependency_graph.svg'
-          untracked=$(git ls-files --others --exclude-standard -- data docs)
-          [ -z "$untracked" ] || { echo "untracked generated files: $untracked"; exit 1; }
-
       # Source coverage input: the library files tracked in this checkout. Under CI the gate
       # refuses to run without this list.
       - name: List tracked library sources
@@ -116,3 +98,26 @@ jobs:
       - name: Kernel replay of the default targets
         timeout-minutes: 120
         run: lake check
+
+      # Regenerates everything that needs no PDF (Lean inventory, merge of the curated
+      # records with data/mechanical_index.json, graph, dashboard, documents), fails on an
+      # invalid record, and fails if a generated file differs from the committed one. The PDF
+      # stage is not run here: its outputs data/source_manifest.json,
+      # data/mechanical_index.json, data/dependencies.json and data/references.json are
+      # inputs. The picture docs/dependency_graph.svg is regenerated but not compared, since
+      # its bytes depend on the Graphviz version. These steps come last on purpose: the
+      # pipeline scripts are not part of the trust set, so nothing that enforces the policy
+      # runs after them.
+      - name: Install Graphviz
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y graphviz
+
+      - name: Regenerate data and documents
+        run: scripts/run_all.sh
+
+      - name: Generated files are up to date
+        run: |
+          git diff --exit-code -- data docs ':(exclude)docs/dependency_graph.svg'
+          untracked=$(git ls-files --others --exclude-standard -- data docs)
+          [ -z "$untracked" ] || { echo "untracked generated files: $untracked"; exit 1; }
