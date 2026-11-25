@@ -6,9 +6,9 @@ import IUT.Audit.MochizukiResponses.LVEx
 
 Source: S. Mochizuki, *Report on Discussions, Held During the Period March 15 to 20, 2018,
 Concerning Inter-universal Teichmüller Theory (IUTch)*, version dated February 2019, item
-(LVEx), pages 24 to 26. The whole report was read; the definitions of `R_{a,b}`, `S_{a,b}`,
-the displayed log-volumes, and the inequalities on `λ` were checked against the rendered
-pages 24 and 25.
+(LVEx), pages 24 to 26. Read for this file: report pages 24 to 26; the definitions of
+`R_{a,b}`, `S_{a,b}`, the displayed log-volumes, and the inequalities on `λ` were checked
+against the rendered pages 24 and 25.
 
 **Whose argument.** Mochizuki gives (LVEx), together with (MlLV), in reply to what he calls
 the assertion (Lin) underlying Section 2.2 of the Scholze–Stix manuscript (comments on the
@@ -166,7 +166,11 @@ theorem σ_R_ne {a b : ℝ} (ha : 0 < a) (hb : 0 < b) : σ '' R a b ≠ R a b :=
   · rw [abs_of_pos (by linarith)] at h2; linarith
   · linarith
 
-/-- The log-volume `μ^log` (natural logarithm of the Lebesgue measure). -/
+/-- The log-volume `μ^log` (natural logarithm of the Lebesgue measure). It is meaningful only on
+sets of finite positive measure, which is the case of the two regions of the report for
+`a, b > 0` (`volume_R`, `volume_S`). Outside that domain the definition is a totalization:
+through `ENNReal.toReal` and `Real.log`, both a set of measure `0` and a set of infinite
+measure get the value `0`. Every lemma below about `μlog` assumes `a, b > 0`. -/
 noncomputable def μlog (A : Set (ℝ × ℝ)) : ℝ := Real.log (volume A).toReal
 
 /-- The log-volumes agree with those taken as given in `LVEx.lean`. -/
@@ -193,7 +197,11 @@ theorem admissible_exists :
     linarith
 
 /-- With `μ^log(S) > 0 > λ > μ^log(R)`: `ρ = μ^log(R) · λ⁻¹ > 1`, the gluing `x ↦ x / ρ`
-sends `μ^log(R)` to `λ`, and `μ^log(S) > λ`. -/
+sends `μ^log(R)` to `λ`, and `μ^log(S) > λ`.
+
+The third conjunct `λ < μ^log(S)` follows from `μ^log(S) > 0 > λ` alone, without the gluing
+(`logVolS_gt_lambda`). So this comparison adds no evidence about the gluing: the "logical
+consistency" that the report describes is built into the admissibility conditions on `λ`. -/
 theorem gluing {mS mR lam : ℝ} (hS : 0 < mS) (hlam : lam < 0) (hR : mR < lam) :
     1 < mR * lam⁻¹ ∧ mR / (mR * lam⁻¹) = lam ∧ lam < mS := by
   have hmR : mR < 0 := hR.trans hlam

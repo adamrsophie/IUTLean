@@ -83,6 +83,7 @@
       "principle_refuted": null,
       "principle_established": "For a single-valued quantity, invariance under each indeterminacy gives invariance under their composite.",
       "hypotheses_satisfied": [
+        "g, h arbitrary self-maps",
         "F invariant under g",
         "F invariant under h"
       ],
@@ -162,11 +163,11 @@
         "label": "counterexample to a simplified abstraction",
         "note": "The hypotheses of the abstraction stated in principle_refuted are shown insufficient for its conclusion. Not a counterexample to an intermediate claim of the papers, not a counterexample to a faithfully formalized statement of the papers, not a demonstrated contradiction."
       },
-      "statement": "Doubling is an automorphism of the additive group of R and doubles the length of [0, 1].",
+      "statement": "Doubling is additive on R, and the Lebesgue measure of [2 * 0, 2 * 1] differs from that of [0, 1]. Doubling is an automorphism of the topological group R, but the theorem states only its additivity.",
       "principle_refuted": "An automorphism of a locally compact group preserves a chosen normalization of Haar measure.",
       "principle_established": null,
       "hypotheses_satisfied": [
-        "additive automorphism of R"
+        "additive map of R (doubling)"
       ],
       "full_hypotheses_of_original_claim": "No. The hypotheses are those of a simplified abstraction, not the full hypotheses of any statement of the IUT papers.",
       "bears_on": [
@@ -190,7 +191,7 @@
       },
       "statement": "For c, m > 0, log(c m) = log c + log m.",
       "principle_refuted": null,
-      "principle_established": "Rescaling a measure by c > 0 shifts every log-volume by log c.",
+      "principle_established": "Rescaling a measure by c > 0 shifts by log c the log-volume of every set of finite positive measure; sets of measure 0 or infinite measure get log-volume 0 by totalization and are not shifted.",
       "hypotheses_satisfied": [
         "c > 0",
         "m > 0"
@@ -599,12 +600,14 @@
         "label": "counterexample to a simplified abstraction",
         "note": "The hypotheses of the abstraction stated in principle_refuted are shown insufficient for its conclusion. Not a counterexample to an intermediate claim of the papers, not a counterexample to a faithfully formalized statement of the papers, not a demonstrated contradiction."
       },
-      "statement": "For c > 0, c volume is an additive Haar measure, differs from volume if c /= 1, and shifts every log-volume by log c.",
+      "statement": "For c > 0, c volume is an additive Haar measure, differs from volume if c /= 1, and shifts by log c the log-volume of every set s with 0 < volume s < infinity. Without this hypothesis the shift fails: for s empty and c = 2 both log-volumes are 0.",
       "principle_refuted": "The structure of locally compact group determines the log-volume.",
       "principle_established": null,
       "hypotheses_satisfied": [
+        "c > 0",
         "c volume is an additive Haar measure",
-        "invariant under translations"
+        "invariant under translations",
+        "the shift is claimed only for s with volume s /= 0 and volume s /= infinity"
       ],
       "full_hypotheses_of_original_claim": "No. The hypotheses are those of a simplified abstraction, not the full hypotheses of any statement of the IUT papers.",
       "bears_on": [
@@ -627,11 +630,14 @@
         "label": "counterexample to a simplified abstraction",
         "note": "The hypotheses of the abstraction stated in principle_refuted are shown insufficient for its conclusion. Not a counterexample to an intermediate claim of the papers, not a counterexample to a faithfully formalized statement of the papers, not a demonstrated contradiction."
       },
-      "statement": "For every c > 0, the log-volume of c volume satisfies logVol(a s) = log|a| + logVol(s).",
+      "statement": "For every c > 0, every a /= 0 and every s with 0 < volume s < infinity, the log-volume for c volume satisfies logVol(a s) = log|a| + logVol(s).",
       "principle_refuted": "The scaling law (multiplying a region by a shifts its log-volume by a fixed amount) fixes the normalization.",
       "principle_established": null,
       "hypotheses_satisfied": [
+        "c > 0",
         "Haar measure c volume",
+        "a /= 0",
+        "volume s /= 0, volume s /= infinity",
         "scaling law"
       ],
       "full_hypotheses_of_original_claim": "No. The hypotheses are those of a simplified abstraction, not the full hypotheses of any statement of the IUT papers.",
@@ -655,12 +661,13 @@
         "label": "counterexample to a simplified abstraction",
         "note": "The hypotheses of the abstraction stated in principle_refuted are shown insufficient for its conclusion. Not a counterexample to an intermediate claim of the papers, not a counterexample to a faithfully formalized statement of the papers, not a demonstrated contradiction."
       },
-      "statement": "Transporting Lebesgue measure along x maps to a x shifts every log-volume by -log|a|.",
+      "statement": "For a /= 0, transporting Lebesgue measure along x maps to a x shifts by -log|a| the log-volume of every set s with 0 < volume s < infinity.",
       "principle_refuted": "A normalization transported along an isomorphism of topological groups does not depend on the isomorphism.",
       "principle_established": null,
       "hypotheses_satisfied": [
-        "automorphism of the topological group R",
-        "Lebesgue measure on the source"
+        "a /= 0, so x maps to a x is an automorphism of the topological group R",
+        "Lebesgue measure on the source",
+        "volume s /= 0, volume s /= infinity"
       ],
       "full_hypotheses_of_original_claim": "No. The hypotheses are those of a simplified abstraction, not the full hypotheses of any statement of the IUT papers.",
       "bears_on": [
@@ -687,7 +694,7 @@
       "classification": {
         "label": "positive statement: a valid principle of the same flavor, proved in Lean"
       },
-      "statement": "Transport along x maps to a x preserves Lebesgue measure iff |a| = 1.",
+      "statement": "For a /= 0, transport along x maps to a x preserves Lebesgue measure iff |a| = 1.",
       "principle_refuted": null,
       "principle_established": "Exactly the isomorphisms respecting the anchor carry the normalization.",
       "hypotheses_satisfied": [
@@ -743,7 +750,7 @@
         "label": "counterexample to a simplified abstraction",
         "note": "The hypotheses of the abstraction stated in principle_refuted are shown insufficient for its conclusion. Not a counterexample to an intermediate claim of the papers, not a counterexample to a faithfully formalized statement of the papers, not a demonstrated contradiction."
       },
-      "statement": "Among maps x maps to c x with c > 0, 1 maps to 1 and theta maps to q are each satisfiable, jointly iff theta = q.",
+      "statement": "For theta > 0 and q > 0, among maps x maps to c x with c > 0, 1 maps to 1 and theta maps to q are each satisfiable, jointly iff theta = q.",
       "principle_refuted": "A transport respecting a normalization and a transport matching pilot values combine into one transport.",
       "principle_established": null,
       "hypotheses_satisfied": [
@@ -798,10 +805,11 @@
       "classification": {
         "label": "positive statement: a valid principle of the same flavor, proved in Lean"
       },
-      "statement": "A set mapped onto itself by g and by h is mapped onto itself by every element of the group they generate.",
+      "statement": "A set mapped onto itself by the permutations g and h is mapped onto itself by every element of the group they generate.",
       "principle_refuted": null,
       "principle_established": "Stability under generators gives stability under the generated group.",
       "hypotheses_satisfied": [
+        "g, h permutations of the ambient type",
         "g T = T",
         "h T = T"
       ],
@@ -825,10 +833,11 @@
       "classification": {
         "label": "positive statement: a valid principle of the same flavor, proved in Lean"
       },
-      "statement": "A function invariant under g and under h is invariant under the group they generate.",
+      "statement": "A function invariant under the permutations g and h is invariant under every element of the group they generate.",
       "principle_refuted": null,
       "principle_established": "For single-valued quantities, invariance under each indeterminacy gives invariance under the combined action.",
       "hypotheses_satisfied": [
+        "g, h permutations of the domain",
         "F invariant under g",
         "F invariant under h"
       ],
@@ -976,7 +985,8 @@
       "hypotheses_satisfied": [
         "e measurable bijection",
         "e carries measure to measure",
-        "e carries pilot onto pilot"
+        "e carries pilot onto pilot",
+        "no positivity assumed: for nonpositive scale the measure is the zero measure and the invariant is 0 by totalization"
       ],
       "full_hypotheses_of_original_claim": "Not applicable: this is a proved positive statement or lemma, not a countermodel.",
       "bears_on": [
@@ -1004,11 +1014,12 @@
         "label": "counterexample to a simplified abstraction",
         "note": "The hypotheses of the abstraction stated in principle_refuted are shown insufficient for its conclusion. Not a counterexample to an intermediate claim of the papers, not a counterexample to a faithfully formalized statement of the papers, not a demonstrated contradiction."
       },
-      "statement": "For any pilot lengths and any reals alpha, beta, there are normalizations and a continuous increasing additive link carrying pilot onto pilot with invariants alpha and beta.",
+      "statement": "For any positive pilot lengths a0, a1 and any reals alpha, beta, there are positive normalizations c0, c1 and a continuous strictly increasing additive automorphism of R carrying the pilot region [0, a0] onto [0, a1], such that the invariants of the two normalized lines are alpha and beta.",
       "principle_refuted": "A link identifying part of the structure (additive group and pilot object) together with per-copy reconstruction of a log-volume determines a relation between the two log-volumes.",
       "principle_established": null,
       "hypotheses_satisfied": [
-        "two normalized lines with positive normalization and pilot length",
+        "pilot lengths a0 > 0, a1 > 0",
+        "normalizations c0 > 0, c1 > 0 (produced by the theorem)",
         "link: additive automorphism of R, continuous, strictly increasing, pilot onto pilot",
         "per-copy reconstruction (invariant_of_iso)"
       ],
@@ -1033,11 +1044,12 @@
         "label": "counterexample to a simplified abstraction",
         "note": "The hypotheses of the abstraction stated in principle_refuted are shown insufficient for its conclusion. Not a counterexample to an intermediate claim of the papers, not a counterexample to a faithfully formalized statement of the papers, not a demonstrated contradiction."
       },
-      "statement": "For fixed pilot lengths, links and reconstruction are compatible both with invariant 0 < invariant 1 and with the reverse.",
+      "statement": "For fixed positive pilot lengths, links and per-copy reconstruction are compatible both with invariant 0 < invariant 1 and with the reverse.",
       "principle_refuted": "A link plus per-copy reconstruction forces an inequality between the invariants.",
       "principle_established": null,
       "hypotheses_satisfied": [
-        "same as link_and_reconstruction_no_relation"
+        "pilot lengths a0 > 0, a1 > 0",
+        "otherwise as link_and_reconstruction_no_relation"
       ],
       "full_hypotheses_of_original_claim": "No. Same model and same limitations as link_and_reconstruction_no_relation.",
       "bears_on": [
@@ -1059,14 +1071,15 @@
       "classification": {
         "label": "positive statement: a valid principle of the same flavor, proved in Lean"
       },
-      "statement": "If a link carries measure to measure and the first pilot into the second, the first invariant is at most the second.",
+      "statement": "If a measurable bijection e carries the measure of T0 to the measure of T1 and the pilot region of T0 into that of T1, and the pilot region of T0 has nonzero measure and that of T1 finite measure, then the invariant of T0 is at most that of T1.",
       "principle_refuted": null,
       "principle_established": "A named extra compatibility (volume compatibility of the link) gives the comparison.",
       "hypotheses_satisfied": [
         "e measurable bijection",
-        "e carries measure 0 to measure 1",
-        "e(pilot 0) contained in pilot 1",
-        "positive and finite measures"
+        "e carries measure of T0 to measure of T1",
+        "e(pilot of T0) contained in pilot of T1",
+        "measure of the pilot of T0 /= 0",
+        "measure of the pilot of T1 /= infinity"
       ],
       "full_hypotheses_of_original_claim": "Not applicable: this is a proved positive statement or lemma, not a countermodel.",
       "bears_on": [

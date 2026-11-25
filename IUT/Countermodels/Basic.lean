@@ -93,9 +93,10 @@ theorem hull_transport_not_commute :
 
 /-! ## Isomorphisms and normalized volumes -/
 
-/-- Doubling is an automorphism of the additive group `ℝ`, and it sends the unit interval to
-an interval of twice the length. An isomorphism of topological groups does not preserve a
-chosen normalization of Haar measure.
+/-- Doubling `x ↦ 2x` is additive on `ℝ`, and the interval `[2 · 0, 2 · 1]` has Lebesgue
+measure different from that of `[0, 1]`. (Doubling is an automorphism of the topological group
+`ℝ`; the theorem states only its additivity, not its bijectivity or continuity.) So an
+isomorphism of topological groups need not preserve a chosen normalization of Haar measure.
 
 Bears on: log-volumes in IUT III and IV are normalized. Transporting a volume along an
 isomorphism that preserves only a weaker structure requires a separate proof that the
@@ -107,8 +108,10 @@ theorem additive_iso_changes_volume :
   rw [Real.volume_Icc, Real.volume_Icc]
   norm_num
 
-/-- The corresponding statement for log-volumes: rescaling a measure by `c > 0` shifts every
-log-volume by `log c`. Two normalizations give comparable log-volumes only after the shift
+/-- The arithmetic behind the corresponding statement for log-volumes: for `c > 0` and `μ > 0`,
+`log (c μ) = log c + log μ`. So rescaling a measure by `c > 0` shifts the log-volume of every
+set of finite positive measure by `log c`; for a set of measure `0` or `∞` the log-volume
+`log (μ s).toReal` is `0` by totalization and no shift occurs. Two normalizations give comparable log-volumes only after the shift
 is accounted for. -/
 theorem log_volume_shift {c μ : ℝ} (hc : 0 < c) (hμ : 0 < μ) :
     Real.log (c * μ) = Real.log c + Real.log μ :=

@@ -84,4 +84,19 @@ theorem exists_prime_not_mem :
   exact ⟨ξ, hξ, fun A =>
     exists_prime_not_mem_of (by linarith) (fun x hx => (h x hx).1) A⟩
 
+/-- **Proposition 2.1**, both parts with a single `ξ_prm`, as on page 40: (i) `log(x) ≤ x` for
+`x ≥ 1`; (ii) there is `ξ_prm ≥ 5` with `(2/3)·x ≤ θ(x) ≤ (4/3)·x` for all `x ≥ ξ_prm`, and, for
+the same `ξ_prm`, every finite set `A` admits a prime `p ∉ A` with `p ≤ 2(θ_A + ξ_prm)`. The
+paper takes `A` to be a set of primes; here `A` is any finite set of natural numbers, which is
+more general. -/
+theorem proposition2_1 :
+    (∀ x : ℝ, 1 ≤ x → Real.log x ≤ x) ∧
+    ∃ ξ : ℝ, 5 ≤ ξ ∧ (∀ x : ℝ, ξ ≤ x → 2 / 3 * x ≤ Chebyshev.theta x ∧
+      Chebyshev.theta x ≤ 4 / 3 * x) ∧
+      ∀ A : Finset ℕ, ∃ p : ℕ, p.Prime ∧ p ∉ A ∧ (p : ℝ) ≤ 2 * (thetaA A + ξ) := by
+  refine ⟨fun x hx => log_le_self hx, ?_⟩
+  obtain ⟨ξ, hξ, h⟩ := exists_xi_prm
+  exact ⟨ξ, hξ, h, fun A =>
+    exists_prime_not_mem_of (by linarith) (fun x hx => (h x hx).1) A⟩
+
 end IUT.PaperIV.Proposition2_1

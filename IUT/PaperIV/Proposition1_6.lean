@@ -26,9 +26,11 @@ final portion follows formally", that is, the second display follows from the fi
 * `∑_{p ≤ η} 1` is `Nat.primeCounting ⌊η⌋₊`, the number of primes `≤ ⌊η⌋`, which is the
   number of primes `≤ η`.
 * The paper's `p_n` is `Nat.nth Nat.Prime (n - 1)`, since Mathlib's `Nat.nth` is 0-indexed.
-* We produce `η_prm ≥ 2`, which the paper does not state but which Step (viii) of the proof of
-  Theorem 1.10 needs, because it divides by `log(η_prm)` (see
+* We produce `η_prm ≥ 2`, which is stronger than the paper's "positive". Nothing later needs
+  more than positivity: Step (viii) of the proof of Theorem 1.10 divides by `log(η_prm)` only in
+  the case `1 < e*_mod·l < η_prm`, where `log(η_prm) > 0` already holds (page 31; see
   `IUT.PaperIV.Theorem1_10.StepVIII`).
+* `proposition1_6` states both displays together, as the proposition does.
 -/
 
 open Filter Asymptotics
@@ -82,6 +84,17 @@ theorem exists_n0 :
     linarith [Nat.le_ceil ηprm]
   have := h (p n) hη
   rwa [Nat.floor_natCast, primeCounting_p h1] at this
+
+/-- **Proposition 1.6** (both displays, unconditional): there is an `n₀` with
+`n ≤ 4·p_n / (3·log(p_n))` for all `n ≥ n₀` (`n ≥ 1`), and there is a real `η_prm > 0`
+(in fact `≥ 2`) with `∑_{p ≤ η} 1 ≤ 4·η / (3·log(η))` for all real `η ≥ η_prm`. -/
+theorem proposition1_6 :
+    (∃ n₀ : ℕ, ∀ n : ℕ, n₀ ≤ n → 1 ≤ n →
+      (n : ℝ) ≤ 4 * (p n : ℝ) / (3 * Real.log (p n))) ∧
+    ∃ ηprm : ℝ, 0 < ηprm ∧ 2 ≤ ηprm ∧ ∀ η : ℝ, ηprm ≤ η →
+      (Nat.primeCounting ⌊η⌋₊ : ℝ) ≤ 4 * η / (3 * Real.log η) := by
+  obtain ⟨η, h2, h⟩ := exists_eta_prm
+  exact ⟨exists_n0, η, by linarith, h2, h⟩
 
 /-- The function `x / log x` is monotone on `[e, ∞)`. -/
 theorem div_log_monotoneOn {x y : ℝ} (hx : Real.exp 1 ≤ x) (hxy : x ≤ y) :

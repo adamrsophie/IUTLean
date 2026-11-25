@@ -31,6 +31,31 @@ of set-theoretic formulas, or of the "absoluteness" proviso on page 68.
   It is proved for arbitrary sets, which covers chains of universes.
 * No Grothendieck universe is exhibited here, so the definition is not shown to be inhabited.
 
+## Status of `ExistenceAxiom` in the model `ZFSet.{u}`, and the risk of vacuity
+
+`ExistenceAxiom.{u}` is a statement about the particular model `ZFSet.{u}`, not about the
+paper's axiom `(†G)` in the paper's set theory. Neither it nor its negation is proved here, and
+we do not expect either to be provable in Lean. The reason is an argument about models of
+Lean's type theory, which is not formalized: in the standard set-theoretic semantics the
+universe `Type u` is interpreted by `V_κ` for an inaccessible cardinal `κ`, and `ZFSet.{u}` then
+corresponds to `V_κ`. A Grothendieck universe that is an element of `V_κ` and contains `ω` is
+`V_λ` for an inaccessible `λ < κ`.
+
+* If `κ` is the least inaccessible cardinal, `ZFSet.{u}` contains no Grothendieck universe at
+  all, so `ExistenceAxiom.{u}` is false. In such a model the two conditional theorems
+  `exists_universe_forall_mem` and `exists_ascending_chain` are vacuous: their hypothesis fails.
+* If `κ` is an inaccessible limit of inaccessible cardinals, every element of `V_κ` lies in some
+  `V_λ` with `λ < κ` inaccessible, so `ExistenceAxiom.{u}` holds. The existence of such a model
+  needs a stronger consistency assumption than the consistency of Lean itself.
+
+So, assuming the consistency of ZFC with enough inaccessible cardinals of the second kind,
+`ExistenceAxiom.{u}` is independent of Lean, and the two conditional theorems carry content only
+in models where it holds. A refutation of `ExistenceAxiom` was attempted along the lines "an
+ascending chain gives `W` containing all `V n`, and iterating would require unboundedly many
+universes"; it does not work, because no single set of `ZFSet.{u}` has rank cofinal in the
+model, and unboundedly many universes below `κ` is exactly what the second kind of model
+provides.
+
 ## Interpretation choices, recorded
 
 * "The set of natural numbers `ℕ`" in axiom (ii) is Mathlib's von Neumann `ZFSet.omega`.
@@ -71,13 +96,16 @@ structure IsGrothendieckUniverse (V : ZFSet.{u}) : Prop where
   /-- (v) If `x ∈ V`, `y ⊆ V`, and `f : x → y` is a surjection, then `y ∈ V`. -/
   mem_of_surjection : ∀ x ∈ V, ∀ y, y ⊆ V → ∀ f, IsSurjection x y f → y ∈ V
 
-/-- The existence axiom `(†G)` of the Grothendieck school (IUT IV, page 67): every set is an
-element of some universe. This is an assumption of the paper, not a theorem of ZFC; it is not
-proved here. -/
+/-- The existence axiom `(†G)` of the Grothendieck school (IUT IV, page 67), read in the model
+`ZFSet.{u}`: every set is an element of some universe that is itself an element of `ZFSet.{u}`.
+This is an assumption of the paper, not a theorem of ZFC. Neither it nor its negation is proved
+here; it is false in some models of Lean and true in others (see the module docstring), so
+theorems that assume it are vacuous in the former. -/
 def ExistenceAxiom : Prop :=
   ∀ x : ZFSet.{u}, ∃ V, IsGrothendieckUniverse V ∧ x ∈ V
 
-/-- IUT IV, page 67: under the existence axiom `(†G)`, any family of sets `Vᵢ` indexed by a set
+/-- IUT IV, page 67: under the existence axiom `(†G)` (which may fail in `ZFSet.{u}`; see the
+module docstring), any family of sets `Vᵢ` indexed by a set
 `I` is contained, elementwise, in a single universe `V`, that is, `Vᵢ ∈ V` for all `i ∈ I`.
 The paper states this for a family of universes; the proof does not use that the `Vᵢ` are
 universes. As in the paper, the proof applies `(†G)` to the set `{Vᵢ}` and then uses
@@ -87,7 +115,8 @@ theorem exists_universe_forall_mem (hG : ExistenceAxiom.{u}) {I : Type*} [Small.
   obtain ⟨W, hW, hmem⟩ := hG (ZFSet.range V)
   exact ⟨W, hW, fun i => hW.transitive _ hmem _ (mem_range_self i)⟩
 
-/-- IUT IV, page 67: under the existence axiom `(†G)`, there is an infinite ascending chain of
+/-- IUT IV, page 67: under the existence axiom `(†G)` (which may fail in `ZFSet.{u}`; see the
+module docstring), there is an infinite ascending chain of
 universes `V₀ ∈ V₁ ∈ V₂ ∈ ⋯ ∈ Vₙ ∈ ⋯ ∈ V`, where `V` is itself a universe. -/
 theorem exists_ascending_chain (hG : ExistenceAxiom.{u}) :
     ∃ V : ℕ → ZFSet.{u}, (∀ n, IsGrothendieckUniverse (V n)) ∧ (∀ n, V n ∈ V (n + 1)) ∧

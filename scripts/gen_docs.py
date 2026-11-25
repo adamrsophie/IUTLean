@@ -7,10 +7,15 @@ Writes
   docs/SOURCE_MANIFEST.md      the four PDFs: hashes, dates, publication data
   docs/STATEMENT_CATALOG.md    every statement, grouped by paper and section
   docs/REFERENCE_INVENTORY.md  every bibliography key, citation counts, critical-path use
+
+Exits nonzero if a record is invalid (scripts/records.py), after writing.
 """
 import json
+import sys
 from collections import defaultdict
 from pathlib import Path
+
+import records
 
 ROOT = Path(__file__).resolve().parent.parent
 ROMAN = {1: "I", 2: "II", 3: "III", 4: "IV"}
@@ -43,7 +48,17 @@ def manifest_doc(manifest):
            "manuscript page numbers (in these files the PDF page number equals the printed "
            "page number), and they differ from the journal pagination listed under "
            "Publication. The publication data was checked by resolving each DOI at doi.org "
-           "and reading its Crossref record; the check date is recorded with each entry.", ""]
+           "and reading its Crossref record; the check date is recorded with each entry.", "",
+           "## Where to get the PDFs", "",
+           "The PDFs are not redistributed in this repository. They are the author's "
+           "manuscripts, listed on the author's page of papers, "
+           "<https://www.kurims.kyoto-u.ac.jp/~motizuki/papers-english.html>, under the file "
+           "names given below; the journal editions linked by the DOIs are paginated "
+           "differently and are not the files indexed here. Put the four files in one folder "
+           "and run `python3 scripts/extract_statements.py index <folder>`: it first compares "
+           "the SHA-256 of each file with the value below and stops on a difference. The "
+           "author updates the manuscripts from time to time, so a file downloaded later may "
+           "be a different edition; the hash check then fails rather than index it.", ""]
     for m in manifest:
         pub = m["publication"]
         doc += [f"## IUT {ROMAN[m['paper']]} (`{m['citation_key']}`)", "",
@@ -86,7 +101,14 @@ def catalog_doc(statements, critical):
            "title phrase after the number), read from the PDF text layer only: subscripts, superscripts "
            "and some symbols of the printed titles are dropped or flattened. Statuses: NOT_EXTRACTED means that only the "
            "mechanical index has seen the statement. \"Path\" marks the critical path of "
-           "`docs/CRITICAL_PATH.md`.", ""]
+           "`docs/CRITICAL_PATH.md`. PDF pages are the pages a reader gave in the curated "
+           "record when there is one, and otherwise the mechanical span from the header to "
+           "the next recognized header.", "",
+           "Rows of kind \"fragment\" are Lean lemmas that check one piece of the parent "
+           "above them; the Lean declaration column of a fragment names that lemma. A parent "
+           "is formalized only when its own row names a declaration, which then states its "
+           "entire content; its fragments never make it formalized or verified.", ""]
+    doc += [f"{k}: {v}." for k, v in sorted(records.LEGEND.items())] + [""]
     header = ["Id", "Kind", "Title", "PDF pages", "Statement", "Proof", "Lean declaration",
               "Path"]
     for paper in range(1, 5):
@@ -101,8 +123,12 @@ def catalog_doc(statements, critical):
 
             def add(s, depth):
                 lean = s.get("lean_declaration")
-                rows.append(["&nbsp;&nbsp;" * depth + f"`{s['id']}`", s.get("kind") or "part",
-                             s.get("title") or "", pages(s), s.get("statement_status"),
+                kind = s.get("kind") if records.is_fragment(s) or not s.get("parent") else None
+                title = s.get("title") or ""
+                if s.get("scope"):
+                    title = (title + " " if title else "") + f"(scope: {s['scope']})"
+                rows.append(["&nbsp;&nbsp;" * depth + f"`{s['id']}`", kind or "part",
+                             title, pages(s), s.get("statement_status"),
                              s.get("proof_status"), f"`{lean}`" if lean else "",
                              "yes" if s["id"] in critical else ""])
                 for c in sorted(children[s["id"]], key=lambda c: c["id"]):
@@ -114,7 +140,7 @@ def catalog_doc(statements, critical):
     orphans = [s for s in statements if s.get("parent")
                and s["parent"] not in {t["id"] for t in statements}]
     if orphans:
-        doc += ["## Curated records whose parent is not indexed", "",
+        doc += ["## Curated records whose parent is not a record (invalid)", "",
                 table([[f"`{s['id']}`", s["parent"]] for s in orphans], ["Id", "Parent"]), ""]
     return "\n".join(doc)
 
@@ -149,6 +175,7 @@ def main():
     statements = load("statements.json")
     references = load("references.json")
     critical = set(load("dependency_graph.json")["analysis"]["critical_path"])
+    errors = records.structural_errors(statements)
     docs = ROOT / "docs"
     (docs / "SOURCE_MANIFEST.md").write_text(manifest_doc(manifest) + "\n")
     (docs / "STATEMENT_CATALOG.md").write_text(catalog_doc(statements, critical) + "\n")
@@ -156,6 +183,10 @@ def main():
         references_doc(references, statements, critical) + "\n")
     print(f"docs: {len(manifest)} sources, {len(statements)} statements, "
           f"{len(references)} references")
+    for e in errors:
+        print("error: " + e, file=sys.stderr)
+    if errors:
+        sys.exit(f"gen_docs: {len(errors)} invalid records")
 
 
 if __name__ == "__main__":

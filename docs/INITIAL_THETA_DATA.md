@@ -91,7 +91,7 @@ of the `q`-parameters of `E_F` at the elements of `𝕍(F)^bad` ([GenEll] Defini
 | `E[l](F̄) ≅ (Z/lZ)^2` | absent | |
 | Tate curve, `q`-parameter | absent | |
 
-Lean: `IsAuxiliaryPrime l := l.Prime ∧ 5 ≤ l`, with `coprime_six`; `PrimeToBadResidueChars`.
+Lean: `AuxiliaryPrimeFirstClause l := l.Prime ∧ 5 ≤ l`, with `coprime_six`; `PrimeToBadResidueChars`.
 Not stated: the `SL_2` condition (needs the structure of `E[l]` to fix a basis and give the
 representation its meaning), `K`, and the `q`-parameter condition. Expressing the order of
 the `q`-parameter through the valuation of the minimal discriminant or of `j` would be an
@@ -168,12 +168,35 @@ Points a reader of the proof should check:
 2. The structure theorem `E[n](F̄) ≅ (Z/nZ)^2` and the mod `l` Galois representation.
 3. An open image result giving `SL_2(F_l) ⊆` image for some prime `l` in the required range,
    which is the role of [GenEll] Lemma 3.1 (iii) and IUT IV Proposition 2.1.
-4. The prime number theorem in the form used by IUT IV Proposition 2.1. Mathlib contains a
-   weak form (`NumberTheory/LSeries/WeakPNT.lean`); whether it suffices was not checked.
+4. The prime number theorem in the form used by IUT IV Proposition 2.1. This is available:
+   `IUT/PaperIV/Proposition2_1.lean` proves both parts of that proposition from Mathlib's
+   `Chebyshev.tendsto_theta_div_atTop`, and the prime-selection statement is the theorem
+   `IUT.PaperIV.Proposition2_1.exists_prime_not_mem` (for every finite set `A` there is a prime
+   `p ∉ A` with `p ≤ 2(θ_A + ξ_prm)`, for a fixed `ξ_prm ≥ 5`).
 5. The existence of an elliptic curve with the required bad reduction, for example from the
    λ-line setting of IUT IV.
 
-A weaker, Lean-checkable target is nonvacuity of `PartialInitialThetaConditions` on a
-concrete curve over a concrete field, for example `Q(i)` and a curve with full rational
-`6`-torsion. That needs explicit computation of minimal models and reduction types, and was
-not attempted.
+A weaker, Lean-checkable target is nonvacuity of `PartialInitialThetaConditions`: no inhabitant
+is exhibited in Lean, so its consistency is an open obligation. A witness cannot have `F = Q(i)`.
+`TorsionRational W 6` requires every geometric `6`-torsion point to be `F`-rational, hence the
+full `3`-torsion; since the Weil pairing `E[3] × E[3] → μ_3` is surjective and Galois
+equivariant, `G_F` then acts trivially on `μ_3`, so `F` contains a primitive cube root of unity.
+`Q(i)` does not, so no elliptic curve over `Q(i)` has full rational `6`-torsion. Any witness field
+contains `Q(√−1, √−3) = Q(ζ_12)`. (The Weil pairing is not in Mathlib, so this argument is not
+checked in Lean.)
+
+One way a witness could be built, with no specific curve claimed to work:
+
+1. fix an elliptic curve `E` over a number field `k` (standing in for `F_mod`) and set
+   `F = k(E[6], √−1)`; then `F` contains `√−1` and the `6`-torsion is `F`-rational by
+   construction;
+2. check that `F/k` is Galois (it is, as a compositum of Galois extensions) and compute its degree,
+   which must be prime to the chosen `l`;
+3. check semistable reduction of `E_F` at every finite place of `F`, on minimal models, possibly
+   after enlarging `F`, which changes step 2;
+4. choose a nonempty set `S` of places of `k` of odd residue characteristic over which `E_F` has
+   multiplicative reduction, and check it at every place of `F` above `S`;
+5. choose a prime `l ≥ 5` prime to `[F : k]` and to the residue characteristics in `S`.
+
+Each step needs explicit computation (division polynomials, minimal models, reduction types) that
+has not been done, and Mathlib has no machinery yet to certify the degree `[k(E[6]) : k]`.

@@ -3,7 +3,7 @@ import Mathlib
 /-!
 # Countermodels: hull formation and transport
 
-Source context: Mochizuki, *Inter-universal Teichmüller Theory III*, read in this session from
+Source context: Mochizuki, *Inter-universal Teichmüller Theory III*, read for this file from
 the extracted text: the statement of Corollary 3.12 (pages 173 and 174, "holomorphic hull" of
 the union of the possible images) and Steps (xi-c), (xi-d) of its proof (pages 182 and 183),
 where the output data of the multiradial algorithm, expressed in tensor packets of

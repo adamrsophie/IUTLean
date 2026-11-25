@@ -366,7 +366,7 @@
    ],
    "other_lean_libraries": [
     {
-     "location": "documentation/external/lana-deps/local-class-field-theory",
+     "location": "lana-agents/local-class-field-theory (dependency pinned by lana-agents/iut)",
      "provides": "local reciprocity, the Artin map for p-adic fields and the existence theorem, per its README",
      "caveat": "Lean 4.32, not built here, cannot be imported"
     }
@@ -569,7 +569,7 @@
    ],
    "other_lean_libraries": [
     {
-     "location": "documentation/external/lana-deps/pi1",
+     "location": "lana-agents/pi1 (dependency pinned by lana-agents/iut)",
      "provides": "etale fundamental group of a connected scheme via Galois categories, per its README",
      "caveat": "Lean 4.32, not built here, cannot be imported"
     }
@@ -606,7 +606,7 @@
    ],
    "other_lean_libraries": [
     {
-     "location": "documentation/external/lana-deps/tempered-fundamental-groups",
+     "location": "lana-agents/tempered-fundamental-groups (dependency pinned by lana-agents/iut)",
      "provides": "tempered fundamental groups over integral models, per its README (algebraic models instead of rigid or Berkovich geometry)",
      "caveat": "Lean 4.32, not built here, cannot be imported; agreement with the definition used in [SemiAnbd] and [EtTh] not checked"
     }
@@ -667,12 +667,12 @@
    ],
    "other_lean_libraries": [
     {
-     "location": "documentation/external/lana-deps/orbicurve-cores",
+     "location": "lana-agents/orbicurve-cores (dependency pinned by lana-agents/iut)",
      "provides": "cores of once-punctured elliptic curves, [CanLift] Proposition 2.7, per its README",
      "caveat": "Lean 4.32, not built here, cannot be imported"
     },
     {
-     "location": "documentation/external/lana-deps/curves-jacobian",
+     "location": "lana-agents/curves-jacobian (dependency pinned by lana-agents/iut)",
      "provides": "smooth proper curves as schemes, Jacobians, per its README",
      "caveat": "Lean 4.32, not built here, cannot be imported"
     }
@@ -707,12 +707,12 @@
    ],
    "other_lean_libraries": [
     {
-     "location": "documentation/external/lana-deps/curves-jacobian",
+     "location": "lana-agents/curves-jacobian (dependency pinned by lana-agents/iut)",
      "provides": "smooth proper curves, per its README",
      "caveat": "Lean 4.32, not built here, cannot be imported"
     },
     {
-     "location": "documentation/external/lana-deps/belyi",
+     "location": "lana-agents/belyi (dependency pinned by lana-agents/iut)",
      "provides": "Belyi's theorem, per its README",
      "caveat": "Lean 4.32, not built here, cannot be imported"
     }
@@ -753,7 +753,7 @@
    ],
    "other_lean_libraries": [
     {
-     "location": "documentation/external/lana-iut (Iut/Anabelian, Iut/Reconstruction)",
+     "location": "lana-agents/iut (Iut/Anabelian, Iut/Reconstruction)",
      "provides": "anabelian objects and reconstruction material, per its README",
      "caveat": "Lean 4.32, not built here, cannot be imported"
     }
@@ -794,7 +794,7 @@
    ],
    "other_lean_libraries": [
     {
-     "location": "documentation/external/lana-iut (Iut/Frobenioid)",
+     "location": "lana-agents/iut (Iut/Frobenioid)",
      "provides": "Frobenioid material, per its README",
      "caveat": "Lean 4.32, not built here, cannot be imported"
     }
@@ -846,7 +846,7 @@
    ],
    "other_lean_libraries": [
     {
-     "location": "documentation/external/lana-deps/continuous-kummer-theory",
+     "location": "lana-agents/continuous-kummer-theory (dependency pinned by lana-agents/iut)",
      "provides": "continuous Kummer theory for local fields, per its README",
      "caveat": "Lean 4.32, not built here, cannot be imported"
     }
@@ -892,7 +892,7 @@
    ],
    "other_lean_libraries": [
     {
-     "location": "documentation/external/lana-deps/tate-curves-theta",
+     "location": "lana-agents/tate-curves-theta (dependency pinned by lana-agents/iut)",
      "provides": "q-uniformization and the formal algebraic theta function, per its README",
      "caveat": "Lean 4.32, not built here, cannot be imported; the README claims it is sorry-free at its tip, not checked here"
     }
@@ -961,7 +961,7 @@
    ],
    "other_lean_libraries": [
     {
-     "location": "documentation/external/lana-deps/elliptic-curves",
+     "location": "lana-agents/elliptic-curves (dependency pinned by lana-agents/iut)",
      "provides": "reduction theory of elliptic curves following Silverman, per its README",
      "caveat": "Lean 4.32, not built here, cannot be imported; a plain text search finds the word sorry in several files, status not checked"
     }
@@ -998,7 +998,7 @@
    ],
    "other_lean_libraries": [
     {
-     "location": "documentation/external/lana-iut (Iut/EtaleTheta)",
+     "location": "lana-agents/iut (Iut/EtaleTheta)",
      "provides": "etale theta material, per its README",
      "caveat": "Lean 4.32, not built here, cannot be imported"
     }
@@ -1219,12 +1219,12 @@
    ],
    "other_lean_libraries": [
     {
-     "location": "documentation/external/lana-deps/padic-log-volume",
+     "location": "lana-agents/padic-log-volume (dependency pinned by lana-agents/iut)",
      "provides": "the p-adic logarithm of a complete discretely valued field of characteristic 0 and normalized Haar log-volume, per its README",
      "caveat": "Lean 4.32, not built here, cannot be imported"
     },
     {
-     "location": "documentation/external/lana-iut (Iut/Concrete/LocalConstruct/LocalLogShell.lean)",
+     "location": "lana-agents/iut (Iut/Concrete/LocalConstruct/LocalLogShell.lean)",
      "provides": "a log-shell defined as (2p)^{-1} log of the principal units",
      "caveat": "Lean 4.32, not built here, cannot be imported. By an elementary argument not formalized here this is the same set as on IUT III page 24: log of the units equals log of the principal units, which is a Z_p-module, and 2p differs from p* by a unit when p is odd and equals p* = 4 when p = 2"
     }
@@ -1286,7 +1286,7 @@
    ],
    "other_lean_libraries": [
     {
-     "location": "documentation/external/lana-iut (Iut4Sec1/Global/Pullback.lean, Iut4Sec1/Global/ArithmeticDivisor.lean)",
+     "location": "lana-agents/iut (Iut4Sec1/Global/Pullback.lean, Iut4Sec1/Global/ArithmeticDivisor.lean)",
      "provides": "pull-back of arithmetic divisors (coefficient times ramification index at finite places, times local degree at infinite places) and invariance of the normalized degree, per its module docstring",
      "caveat": "Lean 4.32, not built here, cannot be imported; this is one choice of the pull-back that the paper leaves to the reader"
     }
@@ -1327,7 +1327,7 @@
    ],
    "other_lean_libraries": [
     {
-     "location": "documentation/external/lana-iut (Iut/Arakelov: FractionalIdeal.lean, LineBundle.lean, Container.lean, ArchScaling.lean, QPilot.lean)",
+     "location": "lana-agents/iut (Iut/Arakelov: FractionalIdeal.lean, LineBundle.lean, Container.lean, ArchScaling.lean, QPilot.lean)",
      "provides": "Arakelov line bundle material, per its file names and README",
      "caveat": "Lean 4.32, not built here, cannot be imported"
     }
@@ -1404,12 +1404,12 @@
    ],
    "other_lean_libraries": [
     {
-     "location": "documentation/external/lana-deps/heights",
+     "location": "lana-agents/heights (dependency pinned by lana-agents/iut)",
      "provides": "Weil heights, the height machine on curves, and conductor and different bounds of [GenEll], per its README",
      "caveat": "Lean 4.32, not built here, cannot be imported"
     },
     {
-     "location": "documentation/external/lana-deps/genl",
+     "location": "lana-agents/genl (dependency pinned by lana-agents/iut)",
      "provides": "[GenEll] Theorem 2.1 project, per its README",
      "caveat": "Lean 4.32, not built here, cannot be imported; its README and a text search show a sorry in Challenge.lean"
     }
@@ -1488,12 +1488,12 @@
    ],
    "other_lean_libraries": [
     {
-     "location": "documentation/external/lana-deps/padic-log-volume",
+     "location": "lana-agents/padic-log-volume (dependency pinned by lana-agents/iut)",
      "provides": "trace duality in finite Q_p algebras and their tensor products, ingredients of IUT IV Proposition 1.1, per its README",
      "caveat": "Lean 4.32, not built here, cannot be imported"
     },
     {
-     "location": "documentation/external/lana-iut (Iut/Tower: Different.lean, DifferentBound.lean, Inertia.lean, RamIdx.lean, WildBound.lean)",
+     "location": "lana-agents/iut (Iut/Tower: Different.lean, DifferentBound.lean, Inertia.lean, RamIdx.lean, WildBound.lean)",
      "provides": "different and ramification bounds in towers, per file names",
      "caveat": "Lean 4.32, not built here, cannot be imported"
     }
@@ -1555,12 +1555,12 @@
    ],
    "other_lean_libraries": [
     {
-     "location": "documentation/external/lana-deps/padic-log-volume",
+     "location": "lana-agents/padic-log-volume (dependency pinned by lana-agents/iut)",
      "provides": "normalized Haar log-volume, per its README",
      "caveat": "Lean 4.32, not built here, cannot be imported"
     },
     {
-     "location": "documentation/external/lana-iut (Iut/Concrete/LocalConstruct/Haar.lean, Volume.lean)",
+     "location": "lana-agents/iut (Iut/Concrete/LocalConstruct/Haar.lean, Volume.lean)",
      "provides": "Haar log-volume constructions, per file names",
      "caveat": "Lean 4.32, not built here, cannot be imported"
     }
@@ -1607,12 +1607,12 @@
    ],
    "other_lean_libraries": [
     {
-     "location": "documentation/external/lana-deps/padic-log-volume",
+     "location": "lana-agents/padic-log-volume (dependency pinned by lana-agents/iut)",
      "provides": "trace duality for tensor products of finite Q_p algebras, per its README",
      "caveat": "Lean 4.32, not built here, cannot be imported"
     },
     {
-     "location": "documentation/external/lana-iut (Iut/Concrete/LocalConstruct/TensorIntegral.lean, PacketDifferent.lean, LocalDifferent.lean)",
+     "location": "lana-agents/iut (Iut/Concrete/LocalConstruct/TensorIntegral.lean, PacketDifferent.lean, LocalDifferent.lean)",
      "provides": "integral structures and differents of tensor packets, per file names",
      "caveat": "Lean 4.32, not built here, cannot be imported"
     }
@@ -1671,7 +1671,7 @@
    ],
    "other_lean_libraries": [
     {
-     "location": "documentation/external/lana-deps/genl",
+     "location": "lana-agents/genl (dependency pinned by lana-agents/iut)",
      "provides": "[GenEll] project, per its README",
      "caveat": "Lean 4.32, not built here, cannot be imported"
     }
@@ -1780,7 +1780,7 @@
    ],
    "missing": [
     {
-     "item": "The existence axiom (dagger G): every set lies in a Grothendieck universe. Not a theorem of ZFC; the paper assumes it (IUT IV page 67) and leaves the existence of ZFCG-models aside, citing Feferman (page 68).",
+     "item": "The existence axiom (dagger G): every set lies in a Grothendieck universe. Not a theorem of ZFC; the paper assumes it (IUT IV page 67) and leaves the existence of ZFCG-models aside, citing Feferman (page 68). In Lean, ExistenceAxiom is a statement about the model ZFSet.{u} and is independent of what Lean proves: it fails when Type u is interpreted at the least inaccessible cardinal and holds at an inaccessible limit of inaccessibles (an argument about models, not formalized). The two conditional theorems are vacuous in models where it fails.",
      "classification": [
       "NEEDS_ADDITIONAL_LITERATURE"
      ]
@@ -1881,13 +1881,15 @@
    "name": "IUT.Foundations.exists_universe_forall_mem",
    "file": "IUT/Foundations/GrothendieckUniverse.lean",
    "statement": "ExistenceAxiom → ∀ {I : Type*} [Small.{u} I] (V : I → ZFSet.{u}), ∃ W, IsGrothendieckUniverse W ∧ ∀ (i : I), V i ∈ W",
-   "source": "IUT IV, page 67 (rendered)"
+   "source": "IUT IV, page 67 (rendered)",
+   "note": "Conditional on ExistenceAxiom, which is independent of what Lean proves about ZFSet.{u}; vacuous in models where it fails."
   },
   {
    "name": "IUT.Foundations.exists_ascending_chain",
    "file": "IUT/Foundations/GrothendieckUniverse.lean",
    "statement": "ExistenceAxiom → ∃ V : ℕ → ZFSet.{u}, (∀ n, IsGrothendieckUniverse (V n)) ∧ (∀ n, V n ∈ V (n + 1)) ∧ ∃ W, IsGrothendieckUniverse W ∧ ∀ n, V n ∈ W",
-   "source": "IUT IV, page 67 (rendered)"
+   "source": "IUT IV, page 67 (rendered)",
+   "note": "Conditional on ExistenceAxiom, which is independent of what Lean proves about ZFSet.{u}; vacuous in models where it fails."
   },
   {
    "name": "IUT.Foundations.not_exists_descending_mem_chain",
@@ -1915,8 +1917,8 @@
   }
  ],
  "external_repository": {
-  "location": "documentation/external/lana-iut",
+  "location": "lana-agents/iut",
   "toolchain": "leanprover/lean4:v4.32.0 with Mathlib v4.32.0",
-  "summary": "Read only. Its README states a proof of an implication from a variant of IUT III Corollary 3.12 to the abc conjecture, with the variant itself not proved. It depends on fifteen further Lean libraries, cloned under documentation/external/lana-deps. None of this can be imported here because of the toolchain difference; statements and definitions would have to be ported and rechecked."
+  "summary": "Read only. Its README states a proof of an implication from a variant of IUT III Corollary 3.12 to the abc conjecture, with the variant itself not proved. It depends on fifteen further Lean libraries, pinned dependencies of the lana-agents organization at the revisions in data/external_projects.json. None of this can be imported here because of the toolchain difference; statements and definitions would have to be ported and rechecked."
  }
 }

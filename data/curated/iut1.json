@@ -42,21 +42,24 @@
     "source": {
       "paper": "Inter-universal Teichmuller Theory I",
       "pdf_pages": "15 to 16",
-      "pages_read": "15 to 16 (text only)"
+      "pages_read": "15 to 16 (rendered images)"
     },
-    "content": "For a hyperbolic curve over a mixed characteristic local field with stable reduction, profinite conjugates of tempered decomposition and inertia groups that land in the tempered group are tempered conjugates.",
+    "content": "Let k be a mixed-characteristic nonarchimedean local field and X a hyperbolic curve over k, with tempered fundamental group Π^tp_X and étale fundamental group Π̂_X, so that Π^tp_X ⊆ Π̂_X and Π̂_X is the profinite completion of Π^tp_X. (1) A decomposition group in Π̂_X of a closed point or cusp of X (respectively an inertia group in Π̂_X of a cusp) is contained in Π^tp_X if and only if it is a decomposition group in Π^tp_X of a closed point or cusp (respectively an inertia group in Π^tp_X of a cusp). (2) A Π̂_X-conjugate of Π^tp_X contains a decomposition group in Π^tp_X of a closed point or cusp (respectively an inertia group in Π^tp_X of a cusp) if and only if it is equal to Π^tp_X.",
     "explicit_hypotheses": [
-      "X a hyperbolic curve over an MLF k with stable model; Π^tp_X tempered fundamental group; Π_X its profinite completion."
+      "k a mixed-characteristic nonarchimedean local field (MLF)",
+      "X a hyperbolic curve over k",
+      "Π^tp_X the tempered fundamental group and Π̂_X the étale fundamental group of X, relative to suitable basepoints, with the natural inclusion Π^tp_X ⊆ Π̂_X"
     ],
     "implicit_hypotheses": [],
-    "conclusion": "Same content as Corollary 2.5 with Σ = Primes.",
+    "conclusion": "(1) For every decomposition group D ⊆ Π̂_X of a closed point or cusp (respectively inertia group I ⊆ Π̂_X of a cusp): D ⊆ Π^tp_X if and only if D is a decomposition group in Π^tp_X of a closed point or cusp (respectively I ⊆ Π^tp_X if and only if I is an inertia group in Π^tp_X of a cusp). (2) For every γ ∈ Π̂_X: γ·Π^tp_X·γ^{-1} contains some decomposition group in Π^tp_X of a closed point or cusp (respectively some inertia group in Π^tp_X of a cusp) if and only if γ·Π^tp_X·γ^{-1} = Π^tp_X.",
     "definitions_required": [
       "tempered fundamental group",
       "decomposition group",
       "inertia group"
     ],
     "results_used": [
-      "IUT1.Cor2_5"
+      "IUT1.Cor2_5",
+      "IUT1.Prop2_4"
     ],
     "external_dependencies": [
       "[SemiAnbd] tempered groups and semi-graphs of anabelioids"
@@ -67,20 +70,26 @@
     "obligations": [
       "Tempered fundamental groups are not in Mathlib."
     ],
-    "ambiguities": []
+    "ambiguities": [
+      "Page 16 says Theorem B is essentially Corollary 2.5 (with Remark 2.5.2), and that the stable reduction hypothesis of Corollary 2.5 is unnecessary by Proposition 2.4 (iii). This is a relation between the two statements, not part of Theorem B; Theorem B itself has no stable reduction hypothesis."
+    ]
   },
   "IUT1.Def1_1": {
     "source": {
       "paper": "Inter-universal Teichmuller Theory I",
       "pdf_pages": "38 to 39",
-      "pages_read": "37 to 40 (text only)"
+      "pages_read": "37 to 39 (rendered images); 40 (text only, proof of Corollary 1.2)"
     },
-    "content": "Hyperbolic orbicurves of type (1, l-tors with arrow) and (1, l-tors with arrow)±: coverings of a once-punctured elliptic curve X over k, with l ≥ 5 prime to 6 and k-rational l-torsion quotient data.",
+    "content": "Notation: Xu, Cu denote X, C with an underline in the paper; X→, C→ the arrow-decorated curves. Setting of page 37: l ≥ 5 an integer prime to 6; X a hyperbolic curve of type (1,1) over a field k of characteristic zero; Cu a hyperbolic orbicurve of type (1, l-tors)± over k whose k-core C also forms a k-core of X; Xu = Cu ×_C X, of type (1, l-tors); assumption (∗): G_k acts trivially on Δ_{Xu}^ab ⊗ Z/lZ. Pages 37 and 38 choose a nonzero cusp ε of Cu, use the decomposition group of the cusp 2ε to get a section σ : G_k → J_{Cu}, and obtain finite étale cyclic coverings X→ → Xu and C→ → Cu through cartesian diagrams, with Gal(C→/Cu) ≅ Z/lZ. Definition 1.1: a hyperbolic orbicurve over k isomorphic to the X→ (respectively C→) so constructed, for some choice of l and ε, is of type (1, l-tors→) (respectively (1, l-tors→)±).",
     "explicit_hypotheses": [
-      "k of characteristic zero; l ≥ 5 prime; X once-punctured elliptic curve over k; assumption (∗) that G_k acts trivially on Δ_X^ab ⊗ Z/lZ in the relevant setting."
+      "k a field of characteristic zero",
+      "l ≥ 5 an integer prime to 6 (page 37; l is not required to be prime here)",
+      "X a hyperbolic curve of type (1,1) over k; Cu a hyperbolic orbicurve of type (1, l-tors)± over k ([EtTh] Definition 2.1) whose k-core C is also a k-core of X; Xu = Cu ×_C X",
+      "assumption (∗): the natural action of G_k on Δ_{Xu}^ab ⊗ (Z/lZ) is trivial",
+      "ε a nonzero cusp of Cu"
     ],
     "implicit_hypotheses": [],
-    "conclusion": "Definition: no proof obligation.",
+    "conclusion": "Definition (no proof obligation): it names the types (1, l-tors→) and (1, l-tors→)± of the orbicurves X→ and C→ constructed on pages 37 and 38.",
     "definitions_required": [
       "hyperbolic orbicurve [Cusp] §0",
       "[EtTh] Definition 2.1"
@@ -97,19 +106,22 @@
       "Orbicurves (stacks) are not in Mathlib."
     ],
     "ambiguities": [
-      "The arrow decoration is lost in the extracted text; read from the statement text only, pages 38 and 39 not rendered."
+      "The arrow decoration and the underlines were read from the rendered pages 37 to 39; Remark 1.1.1 (page 39) says the arrow denotes the archimedean ordered labels 1, 2, ... determined by the choice of ε."
     ]
   },
   "IUT1.Cor1_2": {
     "source": {
       "paper": "Inter-universal Teichmuller Theory I",
       "pdf_pages": "39 to 40",
-      "pages_read": "39 to 40 (text only)"
+      "pages_read": "39 (rendered image); 40 (text only, end of proof)"
     },
-    "content": "For k an NF or MLF, a functorial group-theoretic algorithm reconstructs Π_X, Π_{C with arrow}, Π_C from Π_{X with arrow}.",
-    "explicit_hypotheses": [],
+    "content": "Notation as in IUT1.Def1_1 (Xu, Cu underlined; X→, C→ arrow-decorated). Suppose k is an NF or an MLF. There is a functorial group-theoretic algorithm that reconstructs Π_{Xu}, Π_{C→}, Π_{Cu} (respectively Π_{Cu}) together with the conjugacy classes of the decomposition groups determined by the sets of cusps {ε′, ε″}; {ε} (respectively {ε}) from Π_{X→} (respectively Π_{C→}); functoriality is with respect to isomorphisms of topological groups, and the groups are reconstructed as subgroups of Aut(Π_{X→}) (respectively Aut(Π_{C→})).",
+    "explicit_hypotheses": [
+      "k an NF or an MLF",
+      "the setting of Section 1, pages 37 and 38"
+    ],
     "implicit_hypotheses": [],
-    "conclusion": "Group-theoretic reconstruction of related fundamental groups.",
+    "conclusion": "Existence of a functorial group-theoretic algorithm reconstructing Π_{Xu}, Π_{C→}, Π_{Cu} (respectively Π_{Cu}) and the stated conjugacy classes of decomposition groups of cusps from Π_{X→} (respectively Π_{C→}), as subgroups of Aut(Π_{X→}) (respectively Aut(Π_{C→})).",
     "definitions_required": [
       "IUT1.Def1_1"
     ],
@@ -132,12 +144,16 @@
     "source": {
       "paper": "Inter-universal Teichmuller Theory I",
       "pdf_pages": "45",
-      "pages_read": "45 to 52 (text only; statements only)"
+      "pages_read": "45 (rendered image); 46 to 52 (text only; statements only)"
     },
-    "content": "Profinite conjugates of nontrivial compact subgroups: if Λ ⊆ Π^tp_G is a nontrivial compact subgroup and γ ∈ Π_G with γΛγ^{-1} ⊆ Π^tp_G, then γ ∈ Π^tp_G.",
-    "explicit_hypotheses": [],
+    "content": "In the notation of the preceding discussion, let Λ ⊆ Π^tp_G be a nontrivial compact subgroup and γ ∈ Π̂_G with γ·Λ·γ^{-1} ⊆ Π^tp_G (equivalently Λ ⊆ γ^{-1}·Π^tp_G·γ). Then γ ∈ Π^tp_G.",
+    "explicit_hypotheses": [
+      "the notation of the discussion preceding Proposition 2.1 (a semi-graph of anabelioids G with tempered group Π^tp_G ⊆ Π̂_G)",
+      "Λ ⊆ Π^tp_G a nontrivial compact subgroup",
+      "γ ∈ Π̂_G with γ·Λ·γ^{-1} ⊆ Π^tp_G"
+    ],
     "implicit_hypotheses": [],
-    "conclusion": "Profinite conjugates of nontrivial compact subgroups: if Λ ⊆ Π^tp_G is a nontrivial compact subgroup and γ ∈ Π_G with γΛγ^{-1} ⊆ Π^tp_G, then γ ∈ Π^tp_G.",
+    "conclusion": "γ ∈ Π^tp_G.",
     "definitions_required": [
       "semi-graph of anabelioids",
       "tempered fundamental group"
@@ -160,12 +176,14 @@
     "source": {
       "paper": "Inter-universal Teichmuller Theory I",
       "pdf_pages": "45 to 46",
-      "pages_read": "45 to 52 (text only; statements only)"
+      "pages_read": "45 (rendered image); 46 to 52 (text only; statements only)"
     },
-    "content": "Commensurators of tempered subgroups attached to sub-semi-graphs in the profinite completion.",
-    "explicit_hypotheses": [],
+    "content": "In the notation of the preceding discussion, Π̂_H (respectively Π^tp_H), the decomposition subgroup associated to a sub-semi-graph H, is commensurably terminal in Π̂_G (respectively in Π̂_G, hence also in Π^tp_G). In particular Π^tp_G is commensurably terminal in Π̂_G.",
+    "explicit_hypotheses": [
+      "the notation of the discussion preceding Proposition 2.1: a semi-graph of anabelioids G, a sub-semi-graph H, decomposition subgroups Π^tp_H ⊆ Π^tp_G and Π̂_H ⊆ Π̂_G"
+    ],
     "implicit_hypotheses": [],
-    "conclusion": "Commensurators of tempered subgroups attached to sub-semi-graphs in the profinite completion.",
+    "conclusion": "Π̂_H is commensurably terminal in Π̂_G; Π^tp_H is commensurably terminal in Π̂_G and in Π^tp_G; Π^tp_G is commensurably terminal in Π̂_G.",
     "definitions_required": [
       "semi-graph of anabelioids",
       "tempered fundamental group"
@@ -203,13 +221,14 @@
       "[SemiAnbd] §§2 to 3, Theorem 3.7"
     ],
     "lean_declaration": null,
-    "statement_status": "BLOCKED_BY_MATHLIB",
+    "statement_status": "NOT_EXTRACTED",
     "proof_status": "NOT_EXTRACTED",
     "obligations": [
       "Semi-graphs of anabelioids and tempered groups are not in Mathlib."
     ],
     "ambiguities": [
-      "Read at the level of statements only; proofs not checked."
+      "Read at the level of statements only; proofs not checked.",
+      "The record names the topic of parts (i) to (vi) but does not state them; NOT_EXTRACTED until the pages are reread. Sub-semi-graphs and tempered groups are also absent from Mathlib."
     ]
   },
   "IUT1.Prop2_4": {
@@ -231,25 +250,30 @@
       "[SemiAnbd] §§2 to 3, Theorem 3.7"
     ],
     "lean_declaration": null,
-    "statement_status": "BLOCKED_BY_MATHLIB",
+    "statement_status": "INTERPRETATION_AMBIGUOUS",
     "proof_status": "NOT_EXTRACTED",
     "obligations": [
-      "Semi-graphs of anabelioids and tempered groups are not in Mathlib."
+      "Semi-graphs of anabelioids and tempered groups are not in Mathlib.",
+      "Also blocked by Mathlib (status before the transcription check was BLOCKED_BY_MATHLIB)."
     ],
     "ambiguities": [
-      "Read at the level of statements only; proofs not checked."
+      "Read at the level of statements only; proofs not checked.",
+      "Formulas and decorated symbols in this record were read from the extracted text only; the pages were not checked against a rendered image for this record, so the transcription may lose decorations (subscripts, underlines, arrows, hats)."
     ]
   },
   "IUT1.Cor2_5": {
     "source": {
       "paper": "Inter-universal Teichmuller Theory I",
       "pdf_pages": "51 to 52",
-      "pages_read": "45 to 52 (text only; statements only)"
+      "pages_read": "51 (rendered image); 52 (text only)"
     },
-    "content": "Profinite conjugates of tempered decomposition and inertia groups (the content of Theorem B).",
-    "explicit_hypotheses": [],
+    "content": "In the notation of the preceding discussion (Proposition 2.4), with Σ̂ = Primes: every decomposition group in Π̂_X of a closed point or cusp (respectively inertia group in Π̂_X of a cusp) is contained in Π^tp_X if and only if it is a decomposition group (respectively inertia group) in Π^tp_X of a closed point or cusp (respectively cusp); and a Π̂_X-conjugate of Π^tp_X contains a decomposition group (respectively inertia group) in Π^tp_X of a closed point or cusp (respectively cusp) if and only if it equals Π^tp_X.",
+    "explicit_hypotheses": [
+      "the notation of the discussion preceding Proposition 2.4 (pages 49 and 50, not rendered; it includes a stable model, cf. page 16)",
+      "Σ̂ = Primes"
+    ],
     "implicit_hypotheses": [],
-    "conclusion": "Profinite conjugates of tempered decomposition and inertia groups (the content of Theorem B).",
+    "conclusion": "The two equivalences above, the second with an existential quantifier over decomposition (inertia) groups contained in the conjugate.",
     "definitions_required": [
       "semi-graph of anabelioids",
       "tempered fundamental group"
@@ -265,16 +289,16 @@
       "Semi-graphs of anabelioids and tempered groups are not in Mathlib."
     ],
     "ambiguities": [
-      "Read at the level of statements only; proofs not checked."
+      "The setting of Proposition 2.4 (pages 49 and 50) was read from the text layer only; page 16 says the stable reduction assumption of this corollary is unnecessary."
     ]
   },
   "IUT1.Thm2_6": {
     "source": {
       "paper": "Inter-universal Teichmuller Theory I",
       "pdf_pages": "56 to 57",
-      "pages_read": "56 to 57 (text only)"
+      "pages_read": "56 to 57 (rendered images)"
     },
-    "content": "Let F contain a finite index subgroup G that is free of finite rank or an orientable surface group of genus ≥ 2, and H ⊆ F an infinite subgroup. If γ in the profinite completion satisfies γHγ^{-1} ⊆ F, then with H_G = H ∩ G one has γ ∈ F · N(closure of H_G); if H_G is nonabelian then γ ∈ F.",
+    "content": "Let F be a group containing a finite index subgroup G that is a free discrete group of finite rank or the fundamental group of a compact orientable topological surface of genus ≥ 2, and H ⊆ F an infinite subgroup. Regard H, G ⊆ F ⊆ F̂ (F is residually finite), F̂ the profinite completion. Let γ ∈ F̂ with γ·H·γ^{-1} ⊆ F. Write H_G = H ∩ G. Then γ ∈ F·N_F̂(H_G), that is, γ·H_G·γ^{-1} = δ·H_G·δ^{-1} for some δ ∈ F. If moreover H_G is nonabelian, then γ ∈ F.",
     "explicit_hypotheses": [
       "G ⊆ F of finite index, G free of finite rank or orientable surface group of genus ≥ 2",
       "H ⊆ F infinite",
@@ -283,7 +307,7 @@
     "implicit_hypotheses": [
       "F residually finite, cited from [Config] Proposition 7.1 (ii)."
     ],
-    "conclusion": "γ ∈ F · N_{F̂}(H̄_G), and γ ∈ F when H_G is nonabelian.",
+    "conclusion": "γ ∈ F·N_F̂(H_G), the normalizer in F̂ of H_G itself (not of its closure); equivalently γ·H_G·γ^{-1} = δ·H_G·δ^{-1} for some δ ∈ F. If H_G is nonabelian, γ ∈ F.",
     "definitions_required": [
       "profinite completion",
       "normalizer"
@@ -301,29 +325,38 @@
       "Statable in Lean: Mathlib has free groups and profinite completion of groups in some form; surface groups would need a definition. Not attempted."
     ],
     "ambiguities": [
-      "The bars over H_G and the meaning of N_F̂ are lost in the extracted text; page 56 not rendered. The reading of the normalizer as taken in F̂ of the closure of H_G is from the text only."
+      "Page 56 (rendered) shows N_F̂(H_G) with H_G undecorated; the closure Ĥ_G appears only in the proof on page 57, in N_Ĝ(H_G) = Ĥ_G."
     ]
   },
   "IUT1.Lem2_7": {
     "source": {
       "paper": "Inter-universal Teichmuller Theory I",
       "pdf_pages": "57 to 59",
-      "pages_read": "57 to 59 (text only; statements only)"
+      "pages_read": "57 to 59 (rendered images; statement on 57 to 58, proof on 58 to 59)"
     },
-    "content": "Well-known properties of free groups and orientable surface groups, parts (i) to (vii); for instance (i) any subgroup of G generated by two elements is free.",
+    "content": "Let G be as in Theorem 2.6 (free of finite rank, or an orientable surface group of genus ≥ 2) and Ĝ its profinite completion. (i) Any subgroup of G generated by two elements is free. (ii) For x ∈ G, x ≠ 1, there is a finite index subgroup G_1 ⊆ G with x ∈ G_1 and x of nontrivial image in G_1^ab. (iii) For noncommuting x, y ∈ G there are a finite index subgroup G_1 ⊆ G and n ≥ 1 with x^n, y^n ∈ G_1 whose images in G_1^ab generate a free abelian subgroup of rank two. (iv) Every abelian subgroup of G is cyclic. (v) If T̂ ⊆ Ĝ is a closed subgroup and there is a continuous surjection Ĝ ↠ Ẑ inducing an isomorphism T̂ ≅ Ẑ, then T̂ is normally terminal in Ĝ. (vi) If G is nonabelian and N̂ = Ker(Ĝ ↠ Ĝ^ab), the centralizer Z_Ĝ(N̂) is trivial. (vii) In the notation of (vi), an automorphism of the profinite group Ĝ that preserves N̂ and restricts to the identity on N̂ is the identity.",
     "explicit_hypotheses": [
-      "G as in Theorem 2.6."
+      "G a free discrete group of finite rank or the fundamental group of a compact orientable surface of genus ≥ 2 (as in Theorem 2.6)",
+      "Ĝ the profinite completion of G",
+      "(ii): x ∈ G, x ≠ 1",
+      "(iii): x, y ∈ G noncommuting",
+      "(v): T̂ ⊆ Ĝ closed, with a continuous surjection Ĝ ↠ Ẑ inducing T̂ ≅ Ẑ",
+      "(vi), (vii): G nonabelian; (vii): α an automorphism of Ĝ preserving N̂ with α|_N̂ = id"
     ],
     "implicit_hypotheses": [],
-    "conclusion": "Parts (i) to (vii).",
+    "conclusion": "(i) two-generated subgroups are free; (ii) separation of x ≠ 1 in the abelianization of a finite index subgroup; (iii) x^n, y^n span a rank two free abelian subgroup of G_1^ab; (iv) abelian subgroups are cyclic; (v) T̂ is normally terminal in Ĝ; (vi) Z_Ĝ(N̂) = {1}; (vii) α = id.",
     "definitions_required": [],
     "results_used": [],
-    "external_dependencies": [],
+    "external_dependencies": [
+      "[Config] Proposition 7.1 (ii)",
+      "[Stl] p. 142",
+      "[FRS] Theorem A1"
+    ],
     "lean_declaration": null,
     "statement_status": "EXTRACTED",
     "proof_status": "NOT_EXTRACTED",
     "obligations": [
-      "Several parts are classical facts whose Mathlib coverage was not checked."
+      "Several parts are classical facts whose Mathlib coverage was not checked; surface groups are not defined in Mathlib."
     ],
     "ambiguities": []
   },
@@ -331,12 +364,17 @@
     "source": {
       "paper": "Inter-universal Teichmuller Theory I",
       "pdf_pages": "59",
-      "pages_read": "59 (text only)"
+      "pages_read": "59 (rendered image)"
     },
-    "content": "Analogue of Theorem B for hyperbolic curves over the complex numbers, discrete versus profinite fundamental groups.",
-    "explicit_hypotheses": [],
+    "content": "Let Z be a hyperbolic curve over ℂ, Π_Z its usual topological fundamental group, Π̂_Z the profinite completion, H ⊆ Π_Z an infinite subgroup (such as a cuspidal inertia group), and γ ∈ Π̂_Z with γ·H·γ^{-1} ⊆ Π_Z. Then γ ∈ Π_Z·N_{Π̂_Z}(H), i.e. γ·H·γ^{-1} = δ·H·δ^{-1} for some δ ∈ Π_Z. If moreover H is nonabelian, then γ ∈ Π_Z.",
+    "explicit_hypotheses": [
+      "Z a hyperbolic curve over ℂ",
+      "Π_Z the topological fundamental group of Z, Π̂_Z its profinite completion",
+      "H ⊆ Π_Z an infinite subgroup",
+      "γ ∈ Π̂_Z with γ·H·γ^{-1} ⊆ Π_Z"
+    ],
     "implicit_hypotheses": [],
-    "conclusion": "Discrete conjugacy statement.",
+    "conclusion": "γ ∈ Π_Z·N_{Π̂_Z}(H), equivalently γ·H·γ^{-1} = δ·H·δ^{-1} for some δ ∈ Π_Z; if H is nonabelian, γ ∈ Π_Z.",
     "definitions_required": [],
     "results_used": [
       "IUT1.Thm2_6"
@@ -348,7 +386,9 @@
     "obligations": [
       "Topological fundamental groups of Riemann surfaces."
     ],
-    "ambiguities": []
+    "ambiguities": [
+      "Remark 2.8.1 (page 59) says Corollary 2.8 is an immediate consequence of Theorem 2.6."
+    ]
   },
   "IUT1.Def3_1": {
     "source": {
@@ -376,15 +416,19 @@
       "[CanLift] Remark 2.1.1",
       "[SemiAnbd]"
     ],
-    "lean_declaration": "IUT.PaperI.PartialInitialThetaConditions",
-    "statement_status": "LEAN_STATEMENT_DRAFT",
+    "lean_declaration": null,
+    "statement_status": "EXTRACTED",
     "proof_status": "NOT_EXTRACTED",
     "obligations": [
-      "Only clauses of (a), (b), (c) are stated in Lean; see the condition records.",
-      "Existence of initial Θ-data is asserted in IUT IV Corollary 2.2 (pages 41 and 42), not in IUT I."
+      "Only clauses of (a), (b), (c) are stated in Lean, as fragments (see fragments).",
+      "Existence of initial Θ-data is asserted in IUT IV Corollary 2.2 (pages 41 and 42), not in IUT I.",
+      "No inhabitant of IUT.PaperI.PartialInitialThetaConditions is exhibited in Lean, so even the consistency of the formalized clauses is open. A witness needs a number field F containing √−1 and the full 6-torsion of E_F (hence, by the Weil pairing, a primitive cube root of unity, so F ⊇ Q(ζ_12); in particular F = Q(i) is impossible), semistable reduction of E_F at all finite places, a nonempty odd set S of places of k with multiplicative reduction above S, F/k Galois of degree prime to l, and a prime l ≥ 5 prime to the residue characteristics of S. See docs/INITIAL_THETA_DATA.md for a construction outline; no specific curve has been checked."
     ],
     "ambiguities": [
       "Remark 3.1.3 (page 65): the data is determined up to insignificant choices by (F̄/F, X_F, C_K, V, V^bad_mod); the choice of V is described as insignificant."
+    ],
+    "fragments": [
+      "IUT1.Def3_1.frag.partialConditions"
     ]
   },
   "IUT1.Def3_1.a": {
@@ -404,13 +448,16 @@
     ],
     "results_used": [],
     "external_dependencies": [],
-    "lean_declaration": "IUT.PaperI.SqrtNegOneMem",
-    "statement_status": "STATEMENT_FORMALIZED",
+    "lean_declaration": null,
+    "statement_status": "EXTRACTED",
     "proof_status": "NOT_EXTRACTED",
     "obligations": [
       "F̄ is fixed as AlgebraicClosure F in the Lean file."
     ],
-    "ambiguities": []
+    "ambiguities": [],
+    "fragments": [
+      "IUT1.Def3_1.a.frag.sqrtNegOne"
+    ]
   },
   "IUT1.Def3_1.b": {
     "source": {
@@ -436,11 +483,10 @@
       "[SemiAnbd] §0 (hyperbolic curve)",
       "[Cusp] §0 (hyperbolic orbicurve)"
     ],
-    "lean_declaration": "IUT.PaperI.SemistableAtFinitePlaces",
-    "statement_status": "LEAN_STATEMENT_DRAFT",
+    "lean_declaration": null,
+    "statement_status": "EXTRACTED",
     "proof_status": "NOT_EXTRACTED",
     "obligations": [
-      "Further Lean predicates for the clauses of (b): IUT.PaperI.TorsionRational, IUT.PaperI.BadSetOddNonempty, IUT.PaperI.MultiplicativeOverBadSet, IUT.PaperI.GaloisOfDegreePrimeTo.",
       "Field of moduli F_mod is not defined in Lean; the clauses mentioning it are stated relative to an arbitrary number field k.",
       "C_F, Π_{X_F}, Π_{C_F}, Δ_X, Δ_C not statable.",
       "Stable reduction is read as semistable reduction of E_F; this reading is recorded, not proved equivalent."
@@ -448,6 +494,13 @@
     "ambiguities": [
       "\"Stable reduction\" of the punctured curve X_F is identified with semistable reduction of E_F; page 61 does not spell this out.",
       "\"Bad\" is glossed on page 61 as multiplicative; the Lean statement uses multiplicative reduction of a minimal model."
+    ],
+    "fragments": [
+      "IUT1.Def3_1.b.frag.torsionSix",
+      "IUT1.Def3_1.b.frag.semistable",
+      "IUT1.Def3_1.b.frag.badSetOddNonempty",
+      "IUT1.Def3_1.b.frag.multiplicativeOverBadSet",
+      "IUT1.Def3_1.b.frag.galoisDegreePrimeTo"
     ]
   },
   "IUT1.Def3_1.c": {
@@ -468,15 +521,18 @@
     "external_dependencies": [
       "[GenEll] Definition 3.3 (orders of q-parameters, local heights)"
     ],
-    "lean_declaration": "IUT.PaperI.IsAuxiliaryPrime",
-    "statement_status": "LEAN_STATEMENT_DRAFT",
+    "lean_declaration": null,
+    "statement_status": "EXTRACTED",
     "proof_status": "NOT_EXTRACTED",
     "obligations": [
-      "Further Lean predicate: IUT.PaperI.PrimeToBadResidueChars.",
       "SL2 image condition needs E[l](F̄) ≅ (Z/lZ)^2, absent from Mathlib.",
       "q-parameter orders need the Tate uniformization; absent from Mathlib (an expression via the valuation of j could be used but is an interpretation not made here)."
     ],
-    "ambiguities": []
+    "ambiguities": [],
+    "fragments": [
+      "IUT1.Def3_1.c.frag.firstClause",
+      "IUT1.Def3_1.c.frag.primeToBadResidueChars"
+    ]
   },
   "IUT1.Def3_1.d": {
     "source": {
@@ -577,10 +633,12 @@
     ],
     "external_dependencies": [],
     "lean_declaration": null,
-    "statement_status": "EXTRACTED",
+    "statement_status": "INTERPRETATION_AMBIGUOUS",
     "proof_status": "NOT_EXTRACTED",
     "obligations": [],
-    "ambiguities": []
+    "ambiguities": [
+      "Decorated symbols in this record (underlines, superscripts, hats) were read from the extracted text only; the pages were not checked against a rendered image for this record."
+    ]
   },
   "IUT1.Rem3_1_2": {
     "source": {
@@ -598,10 +656,12 @@
     ],
     "external_dependencies": [],
     "lean_declaration": null,
-    "statement_status": "EXTRACTED",
+    "statement_status": "NOT_EXTRACTED",
     "proof_status": "NOT_EXTRACTED",
     "obligations": [],
-    "ambiguities": []
+    "ambiguities": [
+      "The record names the topic of the remark but does not state its assertions; downgraded to NOT_EXTRACTED until the pages are reread."
+    ]
   },
   "IUT1.Rem3_1_3": {
     "source": {
@@ -619,10 +679,12 @@
     ],
     "external_dependencies": [],
     "lean_declaration": null,
-    "statement_status": "EXTRACTED",
+    "statement_status": "INTERPRETATION_AMBIGUOUS",
     "proof_status": "NOT_EXTRACTED",
     "obligations": [],
-    "ambiguities": []
+    "ambiguities": [
+      "Decorated symbols in this record (underlines, superscripts, hats) were read from the extracted text only; the pages were not checked against a rendered image for this record."
+    ]
   },
   "IUT1.Rem3_1_4": {
     "source": {
@@ -640,10 +702,12 @@
     ],
     "external_dependencies": [],
     "lean_declaration": null,
-    "statement_status": "EXTRACTED",
+    "statement_status": "NOT_EXTRACTED",
     "proof_status": "NOT_EXTRACTED",
     "obligations": [],
-    "ambiguities": []
+    "ambiguities": [
+      "The record names the topic of the remark but does not state its assertions; downgraded to NOT_EXTRACTED until the pages are reread."
+    ]
   },
   "IUT1.Rem3_1_5": {
     "source": {
@@ -663,11 +727,12 @@
       "IUT IV Proposition 1.8 (iv)"
     ],
     "lean_declaration": null,
-    "statement_status": "EXTRACTED",
+    "statement_status": "INTERPRETATION_AMBIGUOUS",
     "proof_status": "NOT_EXTRACTED",
     "obligations": [],
     "ambiguities": [
-      "Depends on IUT IV Proposition 1.8 (iv), not read for this record."
+      "Depends on IUT IV Proposition 1.8 (iv), not read for this record.",
+      "Decorated symbols in this record (underlines, superscripts, hats) were read from the extracted text only; the pages were not checked against a rendered image for this record."
     ]
   },
   "IUT1.Rem3_1_6": {
@@ -711,10 +776,12 @@
     ],
     "external_dependencies": [],
     "lean_declaration": null,
-    "statement_status": "EXTRACTED",
+    "statement_status": "NOT_EXTRACTED",
     "proof_status": "NOT_EXTRACTED",
     "obligations": [],
-    "ambiguities": []
+    "ambiguities": [
+      "The record names the topic of the remark but does not state its assertions; downgraded to NOT_EXTRACTED until the pages are reread."
+    ]
   },
   "IUT1.Ex3_2": {
     "source": {
@@ -722,7 +789,7 @@
       "pdf_pages": "69 to 73",
       "pages_read": "69 to 73 (text only); 70, 71, 72 (text and rendered image)"
     },
-    "content": "Bad nonarchimedean v: the tempered Frobenioid F_v over the base D_v (category of connected tempered coverings of X_v); D^⊢_v = B(K_v)^0 as a full subcategory; the reciprocal theta function Θ_v normalized at √−1, defined up to 2l-th roots of unity; q_v = q_v^{1/2l}; split Frobenioids C^⊢_v and C^Θ_v with characteristic splittings; F^⊢_v and an isomorphism with the Θ-version.",
+    "content": "Bad nonarchimedean v: the tempered Frobenioid F_v over the base D_v (category of connected tempered coverings of X_v); D^⊢_v = B(K_v)^0 as a full subcategory; the reciprocal theta function Θ_v normalized at √−1, defined up to 2l-th roots of unity; qq_v = q_v^{1/2l} (the q with a double underline, a chosen 2l-th root of the Tate parameter q_v, determined up to a μ_{2l}-multiple; page 71 rendered); split Frobenioids C^⊢_v and C^Θ_v with characteristic splittings; F^⊢_v and an isomorphism with the Θ-version.",
     "explicit_hypotheses": [],
     "implicit_hypotheses": [],
     "conclusion": "Construction of the local model data at bad v.",
@@ -800,7 +867,7 @@
       "pdf_pages": "84 to 86",
       "pages_read": "84 to 86 (text and rendered image)"
     },
-    "content": "Global realified Frobenioid C^⊩_mod with Prime(C^⊩_mod) ≅ V; isomorphisms ρ_v sending log^⊩_mod(p_v) to log_Φ(p_v)/[K_v:(F_mod)_v], and at bad v the variant with log_Φ(Θ_v)/log_Φ(q_v); collections F^⊩_mod ≅ F^⊩_tht; F^⊩_D; the weights e_v at nonarchimedean v and 2π at archimedean v.",
+    "content": "Global realified Frobenioid C^⊩_mod with Prime(C^⊩_mod) ≅ V; isomorphisms ρ_v sending log^⊩_mod(p_v) to log_Φ(p_v)/[K_v:(F_mod)_v], and at bad v the variant with log_Φ(Θ_v)/log_Φ(qq_v); collections F^⊩_mod ≅ F^⊩_tht; F^⊩_D; the weights e_v at nonarchimedean v and 2π at archimedean v.",
     "explicit_hypotheses": [],
     "implicit_hypotheses": [],
     "conclusion": "Construction of the global q-pilot and Θ-pilot data.",
@@ -820,7 +887,8 @@
       "Global realified Frobenioids."
     ],
     "ambiguities": [
-      "The two normalizations (Θ versus q) differ only through the formal symbol log_Φ(Θ_v)/log_Φ(q_v) at bad v; their compatibility is a definitional matter in Example 3.5."
+      "The two normalizations (Θ versus q) differ only through the formal symbol log_Φ(Θ_v)/log_Φ(q_v) at bad v; their compatibility is a definitional matter in Example 3.5.",
+      "qq_v is the q with a double underline, q_v^{1/2l} (page 71); confirmed in the display of page 85 (rendered)."
     ]
   },
   "IUT1.Def3_6": {
@@ -978,10 +1046,12 @@
     "results_used": [],
     "external_dependencies": [],
     "lean_declaration": null,
-    "statement_status": "EXTRACTED",
+    "statement_status": "INTERPRETATION_AMBIGUOUS",
     "proof_status": "NOT_EXTRACTED",
     "obligations": [],
-    "ambiguities": []
+    "ambiguities": [
+      "Decorated symbols in this record (underlines, superscripts, hats) were read from the extracted text only; the pages were not checked against a rendered image for this record."
+    ]
   },
   "IUT1.Rem3_2_4": {
     "source": {
@@ -997,11 +1067,12 @@
     "results_used": [],
     "external_dependencies": [],
     "lean_declaration": null,
-    "statement_status": "EXTRACTED",
+    "statement_status": "NOT_EXTRACTED",
     "proof_status": "NOT_EXTRACTED",
     "obligations": [],
     "ambiguities": [
-      "Records corrections to [EtTh]; not checked against [EtTh]."
+      "Records corrections to [EtTh]; not checked against [EtTh].",
+      "The record names the topic of the remark but does not state its assertions; downgraded to NOT_EXTRACTED until the pages are reread."
     ]
   },
   "IUT1.Rem3_3_1": {
@@ -1075,10 +1146,12 @@
     "results_used": [],
     "external_dependencies": [],
     "lean_declaration": null,
-    "statement_status": "EXTRACTED",
+    "statement_status": "INTERPRETATION_AMBIGUOUS",
     "proof_status": "NOT_EXTRACTED",
     "obligations": [],
-    "ambiguities": []
+    "ambiguities": [
+      "Decorated symbols in this record (underlines, superscripts, hats) were read from the extracted text only; the pages were not checked against a rendered image for this record."
+    ]
   },
   "IUT1.Rem3_4_3": {
     "source": {
@@ -1094,10 +1167,12 @@
     "results_used": [],
     "external_dependencies": [],
     "lean_declaration": null,
-    "statement_status": "EXTRACTED",
+    "statement_status": "NOT_EXTRACTED",
     "proof_status": "NOT_EXTRACTED",
     "obligations": [],
-    "ambiguities": []
+    "ambiguities": [
+      "The record names the topic of the remark but does not state its assertions; downgraded to NOT_EXTRACTED until the pages are reread."
+    ]
   },
   "IUT1.Rem3_5_1": {
     "source": {
@@ -1105,10 +1180,10 @@
       "pdf_pages": "86 to 87",
       "pages_read": "86 to 87 (text only)"
     },
-    "content": "The formal symbol log(Θ) identifies the quotients log_Φ(Θ_v)/log_Φ(q_v) over v ∈ V^bad; the global Frobenioids act as exchange devices between local divisor monoids.",
+    "content": "The formal symbol log(Θ) identifies the quotients log_Φ(Θ_v)/log_Φ(qq_v) over v ∈ V^bad; the global Frobenioids act as exchange devices between local divisor monoids.",
     "explicit_hypotheses": [],
     "implicit_hypotheses": [],
-    "conclusion": "The formal symbol log(Θ) identifies the quotients log_Φ(Θ_v)/log_Φ(q_v) over v ∈ V^bad; the global Frobenioids act as exchange devices between local divisor monoids.",
+    "conclusion": "The formal symbol log(Θ) identifies the quotients log_Φ(Θ_v)/log_Φ(qq_v) over v ∈ V^bad; the global Frobenioids act as exchange devices between local divisor monoids.",
     "definitions_required": [],
     "results_used": [],
     "external_dependencies": [],
@@ -1116,7 +1191,9 @@
     "statement_status": "EXTRACTED",
     "proof_status": "NOT_EXTRACTED",
     "obligations": [],
-    "ambiguities": []
+    "ambiguities": [
+      "The quotient is log_Φ(Θ_v)/log_Φ(qq_v), with the double-underlined q, as checked on page 86 (rendered)."
+    ]
   },
   "IUT1.Rem3_5_2": {
     "source": {
@@ -1199,21 +1276,23 @@
     ],
     "external_dependencies": [],
     "lean_declaration": null,
-    "statement_status": "EXTRACTED",
+    "statement_status": "INTERPRETATION_AMBIGUOUS",
     "proof_status": "NOT_EXTRACTED",
     "obligations": [],
-    "ambiguities": []
+    "ambiguities": [
+      "Decorated symbols in this record (underlines, superscripts, hats) were read from the extracted text only; the pages were not checked against a rendered image for this record."
+    ]
   },
   "IUT1.Rem3_8_1": {
     "source": {
       "paper": "Inter-universal Teichmuller Theory I",
       "pdf_pages": "90 to 91",
-      "pages_read": "90 to 91 (text only)"
+      "pages_read": "90 (rendered display of (i)); 90 to 91 (text only)"
     },
-    "content": "The Frobenius-picture is characterized by the Θ-link sending Θ_v of one theater to q_v of the next, at bad v.",
+    "content": "The Frobenius-picture is characterized by the Θ-link sending Θ_v of one theater to qq_v of the next, at bad v.",
     "explicit_hypotheses": [],
     "implicit_hypotheses": [],
-    "conclusion": "The Frobenius-picture is characterized by the Θ-link sending Θ_v of one theater to q_v of the next, at bad v.",
+    "conclusion": "The Frobenius-picture is characterized by the Θ-link sending Θ_v of one theater to qq_v of the next, at bad v.",
     "definitions_required": [],
     "results_used": [
       "IUT1.Def3_6"
@@ -1223,7 +1302,9 @@
     "statement_status": "EXTRACTED",
     "proof_status": "NOT_EXTRACTED",
     "obligations": [],
-    "ambiguities": []
+    "ambiguities": [
+      "The assignment is nΘ_v ↦ (n+1)qq_v with the double-underlined q, as checked in the display on page 90 (rendered)."
+    ]
   },
   "IUT1.Rem3_9_1": {
     "source": {
@@ -1241,10 +1322,12 @@
     ],
     "external_dependencies": [],
     "lean_declaration": null,
-    "statement_status": "EXTRACTED",
+    "statement_status": "INTERPRETATION_AMBIGUOUS",
     "proof_status": "NOT_EXTRACTED",
     "obligations": [],
-    "ambiguities": []
+    "ambiguities": [
+      "Decorated symbols in this record (underlines, superscripts, hats) were read from the extracted text only; the pages were not checked against a rendered image for this record."
+    ]
   },
   "IUT1.Rem3_9_2": {
     "source": {
@@ -1262,10 +1345,12 @@
     ],
     "external_dependencies": [],
     "lean_declaration": null,
-    "statement_status": "EXTRACTED",
+    "statement_status": "INTERPRETATION_AMBIGUOUS",
     "proof_status": "NOT_EXTRACTED",
     "obligations": [],
-    "ambiguities": []
+    "ambiguities": [
+      "Decorated symbols in this record (underlines, superscripts, hats) were read from the extracted text only; the pages were not checked against a rendered image for this record."
+    ]
   },
   "IUT1.Rem3_9_3": {
     "source": {
@@ -1283,11 +1368,12 @@
     ],
     "external_dependencies": [],
     "lean_declaration": null,
-    "statement_status": "EXTRACTED",
+    "statement_status": "NOT_EXTRACTED",
     "proof_status": "NOT_EXTRACTED",
     "obligations": [],
     "ambiguities": [
-      "Heuristic; no mathematical claim to extract."
+      "Heuristic; no mathematical claim to extract.",
+      "The record names the topic of the remark but does not state its assertions; downgraded to NOT_EXTRACTED until the pages are reread."
     ]
   },
   "IUT1.Rem3_9_4": {
@@ -1296,10 +1382,10 @@
       "pdf_pages": "94 to 95",
       "pages_read": "94 to 95 (text only)"
     },
-    "content": "The assignment Θ_v ↦ q_v of the Θ-link is distinguished from an evaluation map of the theta function at torsion points within one Hodge theater.",
+    "content": "The assignment Θ_v ↦ qq_v of the Θ-link is distinguished from an evaluation map of the theta function at torsion points within one Hodge theater.",
     "explicit_hypotheses": [],
     "implicit_hypotheses": [],
-    "conclusion": "The assignment Θ_v ↦ q_v of the Θ-link is distinguished from an evaluation map of the theta function at torsion points within one Hodge theater.",
+    "conclusion": "The assignment Θ_v ↦ qq_v of the Θ-link is distinguished from an evaluation map of the theta function at torsion points within one Hodge theater.",
     "definitions_required": [],
     "results_used": [
       "IUT1.Def3_6"
@@ -1309,7 +1395,9 @@
     "statement_status": "EXTRACTED",
     "proof_status": "NOT_EXTRACTED",
     "obligations": [],
-    "ambiguities": []
+    "ambiguities": [
+      "The assignment is nΘ_v ↦ (n+1)qq_v with the double-underlined q, as checked on page 94 (rendered)."
+    ]
   },
   "IUT1.Def4_1": {
     "source": {
@@ -1355,10 +1443,14 @@
     ],
     "external_dependencies": [],
     "lean_declaration": null,
-    "statement_status": "BLOCKED_BY_MATHLIB",
+    "statement_status": "INTERPRETATION_AMBIGUOUS",
     "proof_status": "NOT_EXTRACTED",
-    "obligations": [],
-    "ambiguities": []
+    "obligations": [
+      "Also blocked by Mathlib (status before the transcription check was BLOCKED_BY_MATHLIB)."
+    ],
+    "ambiguities": [
+      "Formulas and decorated symbols in this record were read from the extracted text only; the pages were not checked against a rendered image for this record, so the transcription may lose decorations (subscripts, underlines, arrows, hats)."
+    ]
   },
   "IUT1.Ex4_3": {
     "source": {
@@ -1422,10 +1514,14 @@
     ],
     "external_dependencies": [],
     "lean_declaration": null,
-    "statement_status": "BLOCKED_BY_MATHLIB",
+    "statement_status": "INTERPRETATION_AMBIGUOUS",
     "proof_status": "NOT_EXTRACTED",
-    "obligations": [],
-    "ambiguities": []
+    "obligations": [
+      "Also blocked by Mathlib (status before the transcription check was BLOCKED_BY_MATHLIB)."
+    ],
+    "ambiguities": [
+      "Formulas and decorated symbols in this record were read from the extracted text only; the pages were not checked against a rendered image for this record, so the transcription may lose decorations (subscripts, underlines, arrows, hats)."
+    ]
   },
   "IUT1.Def4_6": {
     "source": {
@@ -1469,10 +1565,14 @@
     ],
     "external_dependencies": [],
     "lean_declaration": null,
-    "statement_status": "BLOCKED_BY_MATHLIB",
+    "statement_status": "INTERPRETATION_AMBIGUOUS",
     "proof_status": "NOT_EXTRACTED",
-    "obligations": [],
-    "ambiguities": []
+    "obligations": [
+      "Also blocked by Mathlib (status before the transcription check was BLOCKED_BY_MATHLIB)."
+    ],
+    "ambiguities": [
+      "Formulas and decorated symbols in this record were read from the extracted text only; the pages were not checked against a rendered image for this record, so the transcription may lose decorations (subscripts, underlines, arrows, hats)."
+    ]
   },
   "IUT1.Prop4_8": {
     "source": {
@@ -1491,12 +1591,15 @@
     ],
     "external_dependencies": [],
     "lean_declaration": null,
-    "statement_status": "BLOCKED_BY_MATHLIB",
+    "statement_status": "INTERPRETATION_AMBIGUOUS",
     "proof_status": "NOT_EXTRACTED",
     "obligations": [
-      "A formal proof needs the model objects; the torsor statements are combinatorial once the automorphism groups of the models are known."
+      "A formal proof needs the model objects; the torsor statements are combinatorial once the automorphism groups of the models are known.",
+      "Also blocked by Mathlib (status before the transcription check was BLOCKED_BY_MATHLIB)."
     ],
-    "ambiguities": []
+    "ambiguities": [
+      "Formulas and decorated symbols in this record were read from the extracted text only; the pages were not checked against a rendered image for this record, so the transcription may lose decorations (subscripts, underlines, arrows, hats)."
+    ]
   },
   "IUT1.Ex5_1": {
     "source": {
@@ -1596,11 +1699,14 @@
       "[AbsTopIII] Corollaries 2.8, 2.9"
     ],
     "lean_declaration": null,
-    "statement_status": "BLOCKED_BY_MATHLIB",
+    "statement_status": "INTERPRETATION_AMBIGUOUS",
     "proof_status": "NOT_EXTRACTED",
-    "obligations": [],
+    "obligations": [
+      "Also blocked by Mathlib (status before the transcription check was BLOCKED_BY_MATHLIB)."
+    ],
     "ambiguities": [
-      "F^⊚|_δ is only defined up to isomorphism (page 148), so poly-morphisms into F^⊚ are defined as full poly-isomorphisms to some such localization."
+      "F^⊚|_δ is only defined up to isomorphism (page 148), so poly-morphisms into F^⊚ are defined as full poly-isomorphisms to some such localization.",
+      "Formulas and decorated symbols in this record were read from the extracted text only; the pages were not checked against a rendered image for this record, so the transcription may lose decorations (subscripts, underlines, arrows, hats)."
     ]
   },
   "IUT1.Def5_5": {
@@ -1622,11 +1728,14 @@
     "results_used": [],
     "external_dependencies": [],
     "lean_declaration": null,
-    "statement_status": "BLOCKED_BY_MATHLIB",
+    "statement_status": "INTERPRETATION_AMBIGUOUS",
     "proof_status": "NOT_EXTRACTED",
-    "obligations": [],
+    "obligations": [
+      "Also blocked by Mathlib (status before the transcription check was BLOCKED_BY_MATHLIB)."
+    ],
     "ambiguities": [
-      "Morphisms of Θ-bridges use isomorphisms of Θ-Hodge theaters (Remark 3.6.2), whose definition is left to the reader."
+      "Morphisms of Θ-bridges use isomorphisms of Θ-Hodge theaters (Remark 3.6.2), whose definition is left to the reader.",
+      "Formulas and decorated symbols in this record were read from the extracted text only; the pages were not checked against a rendered image for this record, so the transcription may lose decorations (subscripts, underlines, arrows, hats)."
     ]
   },
   "IUT1.Cor5_6": {
@@ -1646,11 +1755,14 @@
     ],
     "external_dependencies": [],
     "lean_declaration": null,
-    "statement_status": "BLOCKED_BY_MATHLIB",
+    "statement_status": "INTERPRETATION_AMBIGUOUS",
     "proof_status": "NOT_EXTRACTED",
-    "obligations": [],
+    "obligations": [
+      "Also blocked by Mathlib (status before the transcription check was BLOCKED_BY_MATHLIB)."
+    ],
     "ambiguities": [
-      "A planning list of this project named \"Proposition 5.6\"; the paper's statement with that number is Corollary 5.6. There is no Proposition 5.6 in §5."
+      "A planning list of this project named \"Proposition 5.6\"; the paper's statement with that number is Corollary 5.6. There is no Proposition 5.6 in §5.",
+      "Formulas and decorated symbols in this record were read from the extracted text only; the pages were not checked against a rendered image for this record, so the transcription may lose decorations (subscripts, underlines, arrows, hats)."
     ]
   },
   "IUT1.Def6_1": {
@@ -1697,10 +1809,14 @@
     ],
     "external_dependencies": [],
     "lean_declaration": null,
-    "statement_status": "BLOCKED_BY_MATHLIB",
+    "statement_status": "INTERPRETATION_AMBIGUOUS",
     "proof_status": "NOT_EXTRACTED",
-    "obligations": [],
-    "ambiguities": []
+    "obligations": [
+      "Also blocked by Mathlib (status before the transcription check was BLOCKED_BY_MATHLIB)."
+    ],
+    "ambiguities": [
+      "Formulas and decorated symbols in this record were read from the extracted text only; the pages were not checked against a rendered image for this record, so the transcription may lose decorations (subscripts, underlines, arrows, hats)."
+    ]
   },
   "IUT1.Ex6_3": {
     "source": {
@@ -1719,10 +1835,14 @@
     ],
     "external_dependencies": [],
     "lean_declaration": null,
-    "statement_status": "BLOCKED_BY_MATHLIB",
+    "statement_status": "INTERPRETATION_AMBIGUOUS",
     "proof_status": "NOT_EXTRACTED",
-    "obligations": [],
-    "ambiguities": []
+    "obligations": [
+      "Also blocked by Mathlib (status before the transcription check was BLOCKED_BY_MATHLIB)."
+    ],
+    "ambiguities": [
+      "Formulas and decorated symbols in this record were read from the extracted text only; the pages were not checked against a rendered image for this record, so the transcription may lose decorations (subscripts, underlines, arrows, hats)."
+    ]
   },
   "IUT1.Def6_4": {
     "source": {
@@ -1742,10 +1862,14 @@
     "results_used": [],
     "external_dependencies": [],
     "lean_declaration": null,
-    "statement_status": "BLOCKED_BY_MATHLIB",
+    "statement_status": "INTERPRETATION_AMBIGUOUS",
     "proof_status": "NOT_EXTRACTED",
-    "obligations": [],
-    "ambiguities": []
+    "obligations": [
+      "Also blocked by Mathlib (status before the transcription check was BLOCKED_BY_MATHLIB)."
+    ],
+    "ambiguities": [
+      "Formulas and decorated symbols in this record were read from the extracted text only; the pages were not checked against a rendered image for this record, so the transcription may lose decorations (subscripts, underlines, arrows, hats)."
+    ]
   },
   "IUT1.Prop6_6": {
     "source": {
@@ -1785,12 +1909,15 @@
     ],
     "external_dependencies": [],
     "lean_declaration": null,
-    "statement_status": "BLOCKED_BY_MATHLIB",
+    "statement_status": "INTERPRETATION_AMBIGUOUS",
     "proof_status": "NOT_EXTRACTED",
     "obligations": [
-      "Proof: \"follows immediately from the definitions\"."
+      "Proof: \"follows immediately from the definitions\".",
+      "Also blocked by Mathlib (status before the transcription check was BLOCKED_BY_MATHLIB)."
     ],
-    "ambiguities": []
+    "ambiguities": [
+      "Formulas and decorated symbols in this record were read from the extracted text only; the pages were not checked against a rendered image for this record, so the transcription may lose decorations (subscripts, underlines, arrows, hats)."
+    ]
   },
   "IUT1.Cor6_10": {
     "source": {
@@ -1882,5 +2009,637 @@
     "ambiguities": [
       "Uniqueness of the gluing is asserted in Remark 6.12.2 via Proposition 6.7; it is a claim, recorded as such."
     ]
+  },
+  "IUT1.Def3_1.frag.partialConditions": {
+    "kind": "fragment",
+    "parent": "IUT1.Def3_1",
+    "source": {
+      "paper": "Inter-universal Teichmuller Theory I",
+      "pdf_pages": "61 to 63",
+      "pages_read": "61 to 63 (text and rendered image)"
+    },
+    "content": "The conjunction of the Lean predicates for the clauses of conditions (a), (b), (c) that Mathlib can state, for a number field F, a Weierstrass curve W with W.IsElliptic, a natural number l, a number field k with F a k-algebra standing in for F_mod, and a set S of finite places of k standing in for V^bad_mod.",
+    "explicit_hypotheses": [
+      "F a number field; W an elliptic Weierstrass curve over F; l a natural number; k a number field with Algebra k F; S a set of height one primes of the ring of integers of k"
+    ],
+    "implicit_hypotheses": [],
+    "conclusion": "A proposition (structure) on (F, W, l, k, S).",
+    "definitions_required": [],
+    "results_used": [],
+    "external_dependencies": [],
+    "lean_declaration": "IUT.PaperI.PartialInitialThetaConditions",
+    "covers": "Clauses of (a), (b), (c), page 61 and 62",
+    "not_covered": "k is not required to be the field of moduli F_mod; conditions (d), (e), (f); the SL_2 image and q-parameter clauses of (c); C_F, F_sol, fundamental groups.",
+    "statement_status": "STATEMENT_FORMALIZED",
+    "proof_status": "NOT_EXTRACTED",
+    "obligations": [
+      "The Lean declaration is a definition; there is no proof to verify, so no verified proof status is given.",
+      "No inhabitant is exhibited, so consistency of the conjunction is not shown (open obligation; see the parent record)."
+    ],
+    "ambiguities": []
+  },
+  "IUT1.Def3_1.a.frag.sqrtNegOne": {
+    "kind": "fragment",
+    "parent": "IUT1.Def3_1.a",
+    "source": {
+      "paper": "Inter-universal Teichmuller Theory I",
+      "pdf_pages": "61",
+      "pages_read": "61 (text and rendered image)"
+    },
+    "content": "SqrtNegOneMem F: there is x ∈ F with x^2 = −1.",
+    "explicit_hypotheses": [
+      "F a field"
+    ],
+    "implicit_hypotheses": [],
+    "conclusion": "A proposition on F.",
+    "definitions_required": [],
+    "results_used": [],
+    "external_dependencies": [],
+    "lean_declaration": "IUT.PaperI.SqrtNegOneMem",
+    "covers": "The clause '√−1 ∈ F' of condition (a), page 61",
+    "not_covered": "That F is a number field (a typeclass assumption elsewhere), the choice of F̄ and G_F = Gal(F̄/F).",
+    "statement_status": "STATEMENT_FORMALIZED",
+    "proof_status": "NOT_EXTRACTED",
+    "obligations": [
+      "The Lean declaration is a definition; there is no proof to verify, so no verified proof status is given."
+    ],
+    "ambiguities": []
+  },
+  "IUT1.Def3_1.b.frag.torsionSix": {
+    "kind": "fragment",
+    "parent": "IUT1.Def3_1.b",
+    "source": {
+      "paper": "Inter-universal Teichmuller Theory I",
+      "pdf_pages": "61 to 62",
+      "pages_read": "61 to 62 (text and rendered image)"
+    },
+    "content": "TorsionRational W n: every point P of W over AlgebraicClosure F with n • P = 0 lies in the image of the base change map from the F-points. With n = 6 this is the clause on 2·3-torsion.",
+    "explicit_hypotheses": [
+      "F a field; W a Weierstrass curve over F; n a natural number"
+    ],
+    "implicit_hypotheses": [],
+    "conclusion": "A proposition on (W, n).",
+    "definitions_required": [],
+    "results_used": [],
+    "external_dependencies": [],
+    "lean_declaration": "IUT.PaperI.TorsionRational",
+    "covers": "The clause 'the 2·3-torsion points of E_F are defined over F' of condition (b), page 62, with n = 6",
+    "not_covered": "All other clauses of (b).",
+    "statement_status": "STATEMENT_FORMALIZED",
+    "proof_status": "NOT_EXTRACTED",
+    "obligations": [
+      "The Lean declaration is a definition; there is no proof to verify, so no verified proof status is given."
+    ],
+    "ambiguities": []
+  },
+  "IUT1.Def3_1.b.frag.semistable": {
+    "kind": "fragment",
+    "parent": "IUT1.Def3_1.b",
+    "source": {
+      "paper": "Inter-universal Teichmuller Theory I",
+      "pdf_pages": "61 to 62",
+      "pages_read": "61 to 62 (text and rendered image)"
+    },
+    "content": "SemistableAtFinitePlaces W: at every height one prime v of the ring of integers of F, the minimal model of W over the valuation ring of v has good or multiplicative reduction.",
+    "explicit_hypotheses": [
+      "F a number field; W an elliptic Weierstrass curve over F"
+    ],
+    "implicit_hypotheses": [],
+    "conclusion": "A proposition on W.",
+    "definitions_required": [],
+    "results_used": [],
+    "external_dependencies": [],
+    "lean_declaration": "IUT.PaperI.SemistableAtFinitePlaces",
+    "covers": "The clause 'X_F admits stable reduction over all v ∈ V(F)^non' of condition (b), page 61, read as semistable reduction of E_F",
+    "not_covered": "That the reading of stable reduction of X_F as semistable reduction of E_F is equivalent is not proved; all other clauses of (b).",
+    "statement_status": "STATEMENT_FORMALIZED",
+    "proof_status": "NOT_EXTRACTED",
+    "obligations": [
+      "The Lean declaration is a definition; there is no proof to verify, so no verified proof status is given."
+    ],
+    "ambiguities": []
+  },
+  "IUT1.Def3_1.b.frag.badSetOddNonempty": {
+    "kind": "fragment",
+    "parent": "IUT1.Def3_1.b",
+    "source": {
+      "paper": "Inter-universal Teichmuller Theory I",
+      "pdf_pages": "61 to 62",
+      "pages_read": "61 to 62 (text and rendered image)"
+    },
+    "content": "BadSetOddNonempty S: S is nonempty and 2 ∉ w for every w ∈ S.",
+    "explicit_hypotheses": [
+      "k a number field; S a set of height one primes of the ring of integers of k"
+    ],
+    "implicit_hypotheses": [],
+    "conclusion": "A proposition on S.",
+    "definitions_required": [],
+    "results_used": [],
+    "external_dependencies": [],
+    "lean_declaration": "IUT.PaperI.BadSetOddNonempty",
+    "covers": "The clause 'V^bad_mod is a nonempty set of nonarchimedean valuations of odd residue characteristic' of condition (b), page 61, relative to an arbitrary k",
+    "not_covered": "That k is the field of moduli F_mod and that S is exactly the set of places over which X_F has bad reduction.",
+    "statement_status": "STATEMENT_FORMALIZED",
+    "proof_status": "NOT_EXTRACTED",
+    "obligations": [
+      "The Lean declaration is a definition; there is no proof to verify, so no verified proof status is given."
+    ],
+    "ambiguities": []
+  },
+  "IUT1.Def3_1.b.frag.multiplicativeOverBadSet": {
+    "kind": "fragment",
+    "parent": "IUT1.Def3_1.b",
+    "source": {
+      "paper": "Inter-universal Teichmuller Theory I",
+      "pdf_pages": "61 to 62",
+      "pages_read": "61 to 62 (text and rendered image)"
+    },
+    "content": "MultiplicativeOverBadSet W S: at every height one prime v of the ring of integers of F lying over some w ∈ S, the minimal model of W has multiplicative reduction.",
+    "explicit_hypotheses": [
+      "k, F number fields with Algebra k F; W a Weierstrass curve over F; S a set of height one primes of the ring of integers of k"
+    ],
+    "implicit_hypotheses": [],
+    "conclusion": "A proposition on (W, S).",
+    "definitions_required": [],
+    "results_used": [],
+    "external_dependencies": [],
+    "lean_declaration": "IUT.PaperI.MultiplicativeOverBadSet",
+    "covers": "The clause that X_F has bad (multiplicative) reduction at the places over V^bad_mod, condition (b), page 61, relative to an arbitrary k",
+    "not_covered": "That k is F_mod; good reduction at places outside the preimage of S is not stated.",
+    "statement_status": "STATEMENT_FORMALIZED",
+    "proof_status": "NOT_EXTRACTED",
+    "obligations": [
+      "The Lean declaration is a definition; there is no proof to verify, so no verified proof status is given."
+    ],
+    "ambiguities": []
+  },
+  "IUT1.Def3_1.b.frag.galoisDegreePrimeTo": {
+    "kind": "fragment",
+    "parent": "IUT1.Def3_1.b",
+    "source": {
+      "paper": "Inter-universal Teichmuller Theory I",
+      "pdf_pages": "61 to 62",
+      "pages_read": "61 to 62 (text and rendered image)"
+    },
+    "content": "GaloisOfDegreePrimeTo k F l: F/k is Galois and [F : k] is coprime to l.",
+    "explicit_hypotheses": [
+      "k, F number fields with Algebra k F; l a natural number"
+    ],
+    "implicit_hypotheses": [],
+    "conclusion": "A proposition on (k, F, l).",
+    "definitions_required": [],
+    "results_used": [],
+    "external_dependencies": [],
+    "lean_declaration": "IUT.PaperI.GaloisOfDegreePrimeTo",
+    "covers": "The clause 'F/F_mod is Galois of degree prime to l' of condition (b), pages 61 and 62, relative to an arbitrary k",
+    "not_covered": "That k is F_mod.",
+    "statement_status": "STATEMENT_FORMALIZED",
+    "proof_status": "NOT_EXTRACTED",
+    "obligations": [
+      "The Lean declaration is a definition; there is no proof to verify, so no verified proof status is given."
+    ],
+    "ambiguities": []
+  },
+  "IUT1.Def3_1.c.frag.firstClause": {
+    "kind": "fragment",
+    "parent": "IUT1.Def3_1.c",
+    "source": {
+      "paper": "Inter-universal Teichmuller Theory I",
+      "pdf_pages": "62",
+      "pages_read": "62 (text and rendered image)"
+    },
+    "content": "AuxiliaryPrimeFirstClause l: l is a prime number and 5 ≤ l.",
+    "explicit_hypotheses": [
+      "l a natural number"
+    ],
+    "implicit_hypotheses": [],
+    "conclusion": "A proposition on l.",
+    "definitions_required": [],
+    "results_used": [],
+    "external_dependencies": [],
+    "lean_declaration": "IUT.PaperI.AuxiliaryPrimeFirstClause",
+    "covers": "The first clause 'l ≥ 5 is a prime number' of condition (c), page 62",
+    "not_covered": "The SL_2(F_l) image clause, the field K, and the coprimality of l to the residue characteristics of V^bad_mod and to the orders of the q-parameters.",
+    "statement_status": "STATEMENT_FORMALIZED",
+    "proof_status": "NOT_EXTRACTED",
+    "obligations": [
+      "The Lean declaration is a definition; there is no proof to verify, so no verified proof status is given."
+    ],
+    "ambiguities": []
+  },
+  "IUT1.Def3_1.c.frag.primeToBadResidueChars": {
+    "kind": "fragment",
+    "parent": "IUT1.Def3_1.c",
+    "source": {
+      "paper": "Inter-universal Teichmuller Theory I",
+      "pdf_pages": "62",
+      "pages_read": "62 (text and rendered image)"
+    },
+    "content": "PrimeToBadResidueChars l S: (l : 𝓞 k) ∉ w for every w ∈ S.",
+    "explicit_hypotheses": [
+      "k a number field; l a natural number; S a set of height one primes of the ring of integers of k"
+    ],
+    "implicit_hypotheses": [],
+    "conclusion": "A proposition on (l, S).",
+    "definitions_required": [],
+    "results_used": [],
+    "external_dependencies": [],
+    "lean_declaration": "IUT.PaperI.PrimeToBadResidueChars",
+    "covers": "The clause 'l is prime to the residue characteristics of the valuations in V^bad_mod' of condition (c), page 62, relative to an arbitrary k",
+    "not_covered": "That k is F_mod; the clause on the orders of the q-parameters; the SL_2 image clause.",
+    "statement_status": "STATEMENT_FORMALIZED",
+    "proof_status": "NOT_EXTRACTED",
+    "obligations": [
+      "The Lean declaration is a definition; there is no proof to verify, so no verified proof status is given."
+    ],
+    "ambiguities": []
+  },
+  "IUT1.Sec0.PseudoMonoid": {
+    "kind": "definition",
+    "source": {
+      "paper": "Inter-universal Teichmuller Theory I",
+      "pdf_pages": "33",
+      "pages_read": "33 to 36 (rendered images)"
+    },
+    "content": "A topological pseudo-monoid is a topological space P with a continuous map S → P, S ⊆ P × P, such that there are a topological abelian group M (written multiplicatively) and an embedding ι : P ↪ M with S = {(a, b) | ι(a)·ι(b) ∈ ι(P)} and S → P the restriction of the group law. With M discrete, P is a pseudo-monoid. P is divisible if M, ι can be chosen so that every element of M has n-th roots for all n ≥ 1 and a ∈ ι(P) if and only if a^n ∈ ι(P); P is cyclotomic if M, ι can be chosen with μ_M ≅ Q/Z, μ_M ⊆ ι(P) and μ_M·ι(P) ⊆ ι(P).",
+    "explicit_hypotheses": [],
+    "implicit_hypotheses": [],
+    "conclusion": "Definition (no proof obligation).",
+    "definitions_required": [],
+    "results_used": [],
+    "external_dependencies": [
+      "[FrdI] §0"
+    ],
+    "lean_declaration": null,
+    "statement_status": "EXTRACTED",
+    "proof_status": "NOT_EXTRACTED",
+    "obligations": [],
+    "ambiguities": []
+  },
+  "IUT1.Sec0.Isomorph": {
+    "kind": "definition",
+    "source": {
+      "paper": "Inter-universal Teichmuller Theory I",
+      "pdf_pages": "33",
+      "pages_read": "33 to 36 (rendered images)"
+    },
+    "content": "An isomorph of an object is an isomorphic copy of it.",
+    "explicit_hypotheses": [],
+    "implicit_hypotheses": [],
+    "conclusion": "Definition (no proof obligation).",
+    "definitions_required": [],
+    "results_used": [],
+    "external_dependencies": [],
+    "lean_declaration": null,
+    "statement_status": "EXTRACTED",
+    "proof_status": "NOT_EXTRACTED",
+    "obligations": [],
+    "ambiguities": []
+  },
+  "IUT1.Sec0.CategoryIsomorphism": {
+    "kind": "definition",
+    "source": {
+      "paper": "Inter-universal Teichmuller Theory I",
+      "pdf_pages": "33",
+      "pages_read": "33 to 36 (rendered images)"
+    },
+    "content": "For categories C, D, an isomorphism C → D means an isomorphism class of equivalences of categories C → D (differing from standard terminology); equivalently an isomorphism in the coarsification of the 2-category of small 1-categories relative to a suitable universe.",
+    "explicit_hypotheses": [],
+    "implicit_hypotheses": [],
+    "conclusion": "Definition (no proof obligation).",
+    "definitions_required": [],
+    "results_used": [],
+    "external_dependencies": [
+      "[FrdI] Appendix, Definition A.1 (ii)"
+    ],
+    "lean_declaration": null,
+    "statement_status": "EXTRACTED",
+    "proof_status": "NOT_EXTRACTED",
+    "obligations": [],
+    "ambiguities": []
+  },
+  "IUT1.Sec0.PolyMorphism": {
+    "kind": "definition",
+    "source": {
+      "paper": "Inter-universal Teichmuller Theory I",
+      "pdf_pages": "33",
+      "pages_read": "33 to 36 (rendered images)"
+    },
+    "content": "For objects A, B of a category C, a poly-morphism A → B is a collection of morphisms A → B, that is, a subset of the set of morphisms A → B.",
+    "explicit_hypotheses": [],
+    "implicit_hypotheses": [],
+    "conclusion": "Definition (no proof obligation).",
+    "definitions_required": [],
+    "results_used": [],
+    "external_dependencies": [],
+    "lean_declaration": "IUT.PaperI.PolyMorphism",
+    "statement_status": "STATEMENT_FORMALIZED",
+    "proof_status": "NOT_EXTRACTED",
+    "obligations": [
+      "The Lean declaration is a definition; there is no proof to verify."
+    ],
+    "ambiguities": [
+      "The empty subset is allowed by the wording 'a subset'."
+    ]
+  },
+  "IUT1.Sec0.PolyIsomorphism": {
+    "kind": "definition",
+    "source": {
+      "paper": "Inter-universal Teichmuller Theory I",
+      "pdf_pages": "33",
+      "pages_read": "33 to 36 (rendered images)"
+    },
+    "content": "A poly-morphism all of whose members are isomorphisms is a poly-isomorphism.",
+    "explicit_hypotheses": [],
+    "implicit_hypotheses": [],
+    "conclusion": "Definition (no proof obligation).",
+    "definitions_required": [],
+    "results_used": [],
+    "external_dependencies": [],
+    "lean_declaration": "IUT.PaperI.IsPolyIso",
+    "statement_status": "STATEMENT_FORMALIZED",
+    "proof_status": "NOT_EXTRACTED",
+    "obligations": [
+      "The Lean declaration is a definition; there is no proof to verify."
+    ],
+    "ambiguities": []
+  },
+  "IUT1.Sec0.PolyAutomorphism": {
+    "kind": "definition",
+    "source": {
+      "paper": "Inter-universal Teichmuller Theory I",
+      "pdf_pages": "33",
+      "pages_read": "33 to 36 (rendered images)"
+    },
+    "content": "A poly-isomorphism A ⥲ A (with A = B) is a poly-automorphism.",
+    "explicit_hypotheses": [],
+    "implicit_hypotheses": [],
+    "conclusion": "Definition (no proof obligation).",
+    "definitions_required": [],
+    "results_used": [],
+    "external_dependencies": [],
+    "lean_declaration": "IUT.PaperI.IsPolyAut",
+    "statement_status": "STATEMENT_FORMALIZED",
+    "proof_status": "NOT_EXTRACTED",
+    "obligations": [
+      "The Lean declaration is a definition; there is no proof to verify."
+    ],
+    "ambiguities": []
+  },
+  "IUT1.Sec0.FullPolyIsomorphism": {
+    "kind": "definition",
+    "source": {
+      "paper": "Inter-universal Teichmuller Theory I",
+      "pdf_pages": "33",
+      "pages_read": "33 to 36 (rendered images)"
+    },
+    "content": "The full poly-isomorphism A ⥲ B is the poly-morphism given by the collection of all isomorphisms A ⥲ B.",
+    "explicit_hypotheses": [],
+    "implicit_hypotheses": [],
+    "conclusion": "Definition (no proof obligation).",
+    "definitions_required": [],
+    "results_used": [],
+    "external_dependencies": [],
+    "lean_declaration": "IUT.PaperI.fullPolyIso",
+    "statement_status": "STATEMENT_FORMALIZED",
+    "proof_status": "NOT_EXTRACTED",
+    "obligations": [
+      "The Lean declaration is a definition; there is no proof to verify."
+    ],
+    "ambiguities": []
+  },
+  "IUT1.Sec0.PolyMorphismComposite": {
+    "kind": "definition",
+    "source": {
+      "paper": "Inter-universal Teichmuller Theory I",
+      "pdf_pages": "33",
+      "pages_read": "33 to 36 (rendered images)"
+    },
+    "content": "The composite of a poly-morphism {f_i : A → B}_{i∈I} with a poly-morphism {g_j : B → C}_{j∈J} is the poly-morphism given by the set {g_j ∘ f_i}_{(i,j)∈I×J}, multiplicities ignored.",
+    "explicit_hypotheses": [],
+    "implicit_hypotheses": [],
+    "conclusion": "Definition (no proof obligation).",
+    "definitions_required": [],
+    "results_used": [],
+    "external_dependencies": [],
+    "lean_declaration": "IUT.PaperI.PolyMorphism.comp",
+    "statement_status": "STATEMENT_FORMALIZED",
+    "proof_status": "NOT_EXTRACTED",
+    "obligations": [
+      "The Lean declaration is a definition; there is no proof to verify."
+    ],
+    "ambiguities": [
+      "Lean composes in diagrammatic order: g_j ∘ f_i is f_i ≫ g_j."
+    ]
+  },
+  "IUT1.Sec0.Capsule": {
+    "kind": "definition",
+    "source": {
+      "paper": "Inter-universal Teichmuller Theory I",
+      "pdf_pages": "33 to 34",
+      "pages_read": "33 to 36 (rendered images)"
+    },
+    "content": "A capsule of objects of a category C is a finite collection {A_j}_{j∈J} of objects of C indexed by a finite index set J; it is a |J|-capsule, and π_0({A_j}_{j∈J}) = J.",
+    "explicit_hypotheses": [],
+    "implicit_hypotheses": [],
+    "conclusion": "Definition (no proof obligation).",
+    "definitions_required": [],
+    "results_used": [],
+    "external_dependencies": [],
+    "lean_declaration": "IUT.PaperI.Capsule",
+    "statement_status": "STATEMENT_FORMALIZED",
+    "proof_status": "NOT_EXTRACTED",
+    "obligations": [
+      "The Lean declaration is a definition; there is no proof to verify.",
+      "The |J|-capsule terminology and π_0 are IUT.PaperI.Capsule.IsNCapsule and IUT.PaperI.Capsule.π₀."
+    ],
+    "ambiguities": [
+      "The index set is a Lean type in Type with a Fintype instance."
+    ]
+  },
+  "IUT1.Sec0.CapsuleMorphism": {
+    "kind": "definition",
+    "source": {
+      "paper": "Inter-universal Teichmuller Theory I",
+      "pdf_pages": "34",
+      "pages_read": "33 to 36 (rendered images)"
+    },
+    "content": "A morphism of capsules {A_j}_{j∈J} → {A'_{j'}}_{j'∈J'} consists of an injection ι : J ↪ J' and, for each j ∈ J, a morphism A_j → A'_{ι(j)}; capsules of objects of C form a category Capsule(C).",
+    "explicit_hypotheses": [],
+    "implicit_hypotheses": [],
+    "conclusion": "Definition (no proof obligation).",
+    "definitions_required": [],
+    "results_used": [],
+    "external_dependencies": [],
+    "lean_declaration": null,
+    "statement_status": "EXTRACTED",
+    "proof_status": "NOT_EXTRACTED",
+    "obligations": [
+      "IUT.PaperI.Capsule.Hom, Hom.id and Hom.comp state the morphisms, identities and composition, but the category laws of Capsule(C) are not proved in Lean, so this record is not linked to a Lean declaration."
+    ],
+    "ambiguities": []
+  },
+  "IUT1.Sec0.CapsuleFullPolyMorphism": {
+    "kind": "definition",
+    "source": {
+      "paper": "Inter-universal Teichmuller Theory I",
+      "pdf_pages": "34",
+      "pages_read": "33 to 36 (rendered images)"
+    },
+    "content": "A capsule-full poly-morphism {A_j}_{j∈J} → {A'_{j'}}_{j'∈J'} is the poly-morphism associated to a fixed injection ι : J ↪ J' consisting of the capsule morphisms given by collections of arbitrary isomorphisms A_j ⥲ A'_{ι(j)}, j ∈ J.",
+    "explicit_hypotheses": [],
+    "implicit_hypotheses": [],
+    "conclusion": "Definition (no proof obligation).",
+    "definitions_required": [],
+    "results_used": [],
+    "external_dependencies": [],
+    "lean_declaration": "IUT.PaperI.Capsule.capsuleFullPolyMorphism",
+    "statement_status": "STATEMENT_FORMALIZED",
+    "proof_status": "NOT_EXTRACTED",
+    "obligations": [
+      "The Lean declaration is a definition; there is no proof to verify."
+    ],
+    "ambiguities": []
+  },
+  "IUT1.Sec0.CapsuleFullPolyIsomorphism": {
+    "kind": "definition",
+    "source": {
+      "paper": "Inter-universal Teichmuller Theory I",
+      "pdf_pages": "34",
+      "pages_read": "33 to 36 (rendered images)"
+    },
+    "content": "A capsule-full poly-isomorphism is a capsule-full poly-morphism whose associated injection between index sets is a bijection.",
+    "explicit_hypotheses": [],
+    "implicit_hypotheses": [],
+    "conclusion": "Definition (no proof obligation).",
+    "definitions_required": [],
+    "results_used": [],
+    "external_dependencies": [],
+    "lean_declaration": null,
+    "statement_status": "EXTRACTED",
+    "proof_status": "NOT_EXTRACTED",
+    "obligations": [
+      "IUT.PaperI.Capsule.IsCapsuleFullPolyIso states only the bijectivity condition on the injection ι, not the whole definition, so the record is not linked."
+    ],
+    "ambiguities": []
+  },
+  "IUT1.Sec0.FiniteEtaleCategory": {
+    "kind": "definition",
+    "source": {
+      "paper": "Inter-universal Teichmuller Theory I",
+      "pdf_pages": "34",
+      "pages_read": "33 to 36 (rendered images)"
+    },
+    "content": "For a connected noetherian algebraic stack X that is generically scheme-like, B(X) is the category of finite étale coverings of X (with morphisms over X); for a noetherian ring A, B(A) = B(Spec(A)); B(X)^0 ⊆ B(X) is the subcategory of connected objects.",
+    "explicit_hypotheses": [],
+    "implicit_hypotheses": [],
+    "conclusion": "Definition (no proof obligation).",
+    "definitions_required": [],
+    "results_used": [],
+    "external_dependencies": [
+      "[Cusp] §0",
+      "[FrdI] §0"
+    ],
+    "lean_declaration": null,
+    "statement_status": "BLOCKED_BY_MATHLIB",
+    "proof_status": "NOT_EXTRACTED",
+    "obligations": [
+      "Algebraic stacks are not in Mathlib."
+    ],
+    "ambiguities": []
+  },
+  "IUT1.Sec0.TemperedGroup": {
+    "kind": "definition",
+    "source": {
+      "paper": "Inter-universal Teichmuller Theory I",
+      "pdf_pages": "34",
+      "pages_read": "33 to 36 (rendered images)"
+    },
+    "content": "For a topological group Π, B^temp(Π) is the category of countable discrete sets with continuous Π-action and Π-equivariant maps. Π is tempered if it is an inverse limit of an inverse system of surjections of countable discrete topological groups. A category equivalent to B^temp(Π) with Π tempered is a connected temperoid; then C ≃ (C^0)^⊤. For Galois-countable Π, Π is reconstructed up to inner automorphism from B^temp(Π) or B^temp(Π)^0, which defines π_1(C), π_1(C^0) for a Galois-countable connected temperoid C.",
+    "explicit_hypotheses": [],
+    "implicit_hypotheses": [],
+    "conclusion": "Definition (no proof obligation).",
+    "definitions_required": [],
+    "results_used": [],
+    "external_dependencies": [
+      "[SemiAnbd] §3, Definition 3.1 (i), (ii)",
+      "[FrdI] §0"
+    ],
+    "lean_declaration": null,
+    "statement_status": "BLOCKED_BY_MATHLIB",
+    "proof_status": "NOT_EXTRACTED",
+    "obligations": [
+      "Tempered groups and temperoids are not in Mathlib; the reconstruction of π_1 cites Remark 2.5.3 (i), (T1), (T5)."
+    ],
+    "ambiguities": []
+  },
+  "IUT1.Sec0.TemperoidMorphism": {
+    "kind": "definition",
+    "source": {
+      "paper": "Inter-universal Teichmuller Theory I",
+      "pdf_pages": "35",
+      "pages_read": "33 to 36 (rendered images)"
+    },
+    "content": "For connected temperoids C_1, C_2, a morphism C_1 → C_2 is an isomorphism class of functors C_2 → C_1 preserving finite limits and countable colimits; a morphism C_1^0 → C_2^0 is a morphism (C_1^0)^⊤ → (C_2^0)^⊤. For Galois-countable tempered Π_1, Π_2 there are natural bijections between continuous outer homomorphisms Π_1 → Π_2, morphisms B^temp(Π_1) → B^temp(Π_2), and morphisms B^temp(Π_1)^0 → B^temp(Π_2)^0.",
+    "explicit_hypotheses": [],
+    "implicit_hypotheses": [],
+    "conclusion": "Definition (no proof obligation).",
+    "definitions_required": [],
+    "results_used": [],
+    "external_dependencies": [
+      "[SemiAnbd] Definition 3.1 (iii), Proposition 3.2"
+    ],
+    "lean_declaration": null,
+    "statement_status": "BLOCKED_BY_MATHLIB",
+    "proof_status": "NOT_EXTRACTED",
+    "obligations": [
+      "Temperoids are not in Mathlib."
+    ],
+    "ambiguities": [
+      "Page 35 notes this differs slightly from [SemiAnbd] Definition 3.1 (iii)."
+    ]
+  },
+  "IUT1.Sec0.AbstractlyEquivalent": {
+    "kind": "definition",
+    "source": {
+      "paper": "Inter-universal Teichmuller Theory I",
+      "pdf_pages": "35",
+      "pages_read": "33 to 36 (rendered images)"
+    },
+    "content": "Isomorphism classes of functors φ : C_1 → C_2 and φ' : C'_1 → C'_2 are abstractly equivalent if there are isomorphisms α_i : C_i ⥲ C'_i (i = 1, 2) with φ' ∘ α_1 = α_2 ∘ φ; the same terminology applies to morphisms of (connected) temperoids and of their subcategories of connected objects.",
+    "explicit_hypotheses": [],
+    "implicit_hypotheses": [],
+    "conclusion": "Definition (no proof obligation).",
+    "definitions_required": [],
+    "results_used": [],
+    "external_dependencies": [],
+    "lean_declaration": null,
+    "statement_status": "EXTRACTED",
+    "proof_status": "NOT_EXTRACTED",
+    "obligations": [],
+    "ambiguities": []
+  },
+  "IUT1.Sec0.Valuations": {
+    "kind": "definition",
+    "source": {
+      "paper": "Inter-universal Teichmuller Theory I",
+      "pdf_pages": "35 to 36",
+      "pages_read": "33 to 36 (rendered images)"
+    },
+    "content": "NF, MLF, CAF abbreviate number field, mixed-characteristic nonarchimedean local field, complex archimedean field; Primes is the set of prime numbers. For a number field F, V(F) = V(F)^arc ∪ V(F)^non is the set of valuations (places) of F; F_v is the completion at v; an element is integral at v if of norm ≤ 1; for a Galois extension L of F, L_v is the completion at a valuation of L over v; p_v is the residue characteristic for nonarchimedean v and, for archimedean v, the positive real element of F_v with natural logarithm 1 (p_v = e). These notations extend to infinite extensions of Q by projective or inductive limits.",
+    "explicit_hypotheses": [],
+    "implicit_hypotheses": [],
+    "conclusion": "Definition (no proof obligation).",
+    "definitions_required": [],
+    "results_used": [],
+    "external_dependencies": [
+      "[AbsTopI] §0",
+      "[AbsTopIII] §0"
+    ],
+    "lean_declaration": null,
+    "statement_status": "EXTRACTED",
+    "proof_status": "NOT_EXTRACTED",
+    "obligations": [],
+    "ambiguities": []
   }
 }

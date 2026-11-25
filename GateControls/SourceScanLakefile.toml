@@ -1,7 +1,31 @@
 # A control for the source scan, not the project's lakefile: GateControls/run.sh scans it as a
-# lakefile. Each key below passes options or arguments to Lean and must be reported.
+# lakefile. Each key below passes options or arguments to Lean, or differs from the recorded
+# configuration, and must be reported.
 name = "GateControl"
 moreLeanArgs = ["-Ddebug.skipKernelTC=true"]
+defaultTargets = ["IUT", "Solution"]
+version = "0.1.0"
 
 [leanOptions]
 maxHeartbeats = 0
+
+[[require]]
+name = "mathlib"
+git = "https://github.com/someone-else/mathlib4.git"
+rev = "main"
+
+[[lean_lib]]
+name = "IUT"
+srcDir = "alt"
+
+[[lean_lib]]
+name = "Challenge"
+
+[[lean_lib]]
+name = "Solution"
+roots = ["Other"]
+
+[[lean_lib]]
+name = "IUTExperimental"
+roots = []
+globs = ["IUT.Experimental.+"]

@@ -24,9 +24,12 @@ unformalized Steps (iii) to (vii)). What is checked:
 * the assembly into the bound `C_Θ ≤ constant` of Theorem 1.10 (`step_viii_constant`), given
   that `C_Θ·|log(𝔮)|` is at most the summed bound.
 
-The first case of the prime count divides by `log(e*_mod·l)` and the second by `log(η_prm)`; the
-paper only says `η_prm` is positive, and the second case needs `log(η_prm) > 0`, that is,
-`η_prm > 1`. Proposition 1.6 as proved in `IUT.PaperIV.Proposition1_6` supplies `η_prm ≥ 2`.
+The first case of the prime count (`e*_mod·l ≥ η_prm`) divides by `log(e*_mod·l)` and the second
+(`e*_mod·l < η_prm`) by `log(η_prm)`. No condition on `η_prm` beyond the paper's positivity is
+needed: since `e*_mod·l ≥ 1`, the second case has `1 ≤ e*_mod·l < η_prm`, which already gives
+`log(η_prm) > 0` (page 31). Accordingly `step_viii_prime_count` and `step_viii_constant` assume
+only `η > 0`, the positivity stated in Proposition 1.6, together with `e*_mod·l > 1`, which holds
+since `e*_mod·l ≥ 2¹²·3³·5·5`.
 
 Notation: `x = e*_mod·l`, `sle = log(𝔰^≤)`, `Q = log(𝔮)`, `L = l*_mod·log(𝔰^≤)`,
 `E = e*_mod·l + η_prm`.
@@ -82,17 +85,18 @@ theorem step_viii_raw {X dK Q sQ L d D l : ℝ} (hl : 5 ≤ l) (hQ : 0 ≤ Q)
   rw [e]
   nlinarith
 
-/-- **The prime count of Step (viii)** (two cases, pages 30 and 31). Let `x = e*_mod·l ≥ 1` and
-let `η ≥ 2` satisfy the conclusion of Proposition 1.6. If `0 ≤ sle ≤ π(x)` (the paper's
+/-- **The prime count of Step (viii)** (two cases, pages 30 and 31). Let `x = e*_mod·l > 1` and
+let `η > 0` satisfy the conclusion of Proposition 1.6. In the case `x < η` the inequality
+`1 < x < η` gives `log(η) > 0`, so no further condition on `η` is used. If `0 ≤ sle ≤ π(x)` (the paper's
 `log(𝔰^≤) = ∑_{p ≤ x} 1` over the distinguished primes, so at most the number of primes
 `≤ x`), then `log(x)·sle ≤ (4/3)·(x + η)`. -/
-theorem step_viii_prime_count {x η sle : ℝ} (hx : 1 ≤ x) (hη : 2 ≤ η)
+theorem step_viii_prime_count {x η sle : ℝ} (hx : 1 < x) (hη : 0 < η)
     (hprm : ∀ y : ℝ, η ≤ y → (Nat.primeCounting ⌊y⌋₊ : ℝ) ≤ 4 * y / (3 * Real.log y))
     (hs0 : 0 ≤ sle) (hs : sle ≤ Nat.primeCounting ⌊x⌋₊) :
     Real.log x * sle ≤ 4 / 3 * (x + η) := by
-  have hlx : 0 ≤ Real.log x := Real.log_nonneg hx
+  have hlx : 0 ≤ Real.log x := Real.log_nonneg hx.le
   rcases le_or_gt η x with hxη | hxη
-  · have hlog : 0 < Real.log x := Real.log_pos (by linarith)
+  · have hlog : 0 < Real.log x := Real.log_pos hx
     have h1 := hprm x hxη
     have h2 : Real.log x * sle ≤ Real.log x * (4 * x / (3 * Real.log x)) :=
       mul_le_mul_of_nonneg_left (hs.trans h1) hlx
@@ -115,17 +119,17 @@ theorem step_viii_prime_count {x η sle : ℝ} (hx : 1 ≤ x) (hη : 2 ≤ η)
 /-- The prime count bound with the `η_prm` of Proposition 1.6, proved unconditionally from
 Mathlib's prime number theorem. -/
 theorem step_viii_prime_count_prm :
-    ∃ η : ℝ, 2 ≤ η ∧ ∀ x sle : ℝ, 1 ≤ x → 0 ≤ sle → sle ≤ Nat.primeCounting ⌊x⌋₊ →
+    ∃ η : ℝ, 2 ≤ η ∧ ∀ x sle : ℝ, 1 < x → 0 ≤ sle → sle ≤ Nat.primeCounting ⌊x⌋₊ →
       Real.log x * sle ≤ 4 / 3 * (x + η) := by
   obtain ⟨η, hη, hprm⟩ := Proposition1_6.exists_eta_prm
-  exact ⟨η, hη, fun x sle hx hs0 hs => step_viii_prime_count hx hη hprm hs0 hs⟩
+  exact ⟨η, hη, fun x sle hx hs0 hs => step_viii_prime_count hx (by linarith) hprm hs0 hs⟩
 
 /-- **Assembly of Step (viii).** Let `e = e_mod ≥ 1`, `x = 2¹²·3³·5·e·l = e*_mod·l`,
-`E = x + η` with `η ≥ 2` as in Proposition 1.6, `L = log(x)·sle` with `0 ≤ sle ≤ π(x)`,
+`E = x + η` with `η > 0` as in Proposition 1.6, `L = log(x)·sle` with `0 ≤ sle ≤ π(x)`,
 `q = Q/(2l) > 0`, and `X` bounded by the summed local bound. Then
 `X/q ≤ constant l d D E Q q`, the right-hand side of the bound for `C_Θ` in Theorem 1.10. -/
 theorem step_viii_constant {X dK Q sQ sle d D l e η q : ℝ} (hl : 5 ≤ l) (he : 1 ≤ e)
-    (hη : 2 ≤ η)
+    (hη : 0 < η)
     (hprm : ∀ y : ℝ, η ≤ y → (Nat.primeCounting ⌊y⌋₊ : ℝ) ≤ 4 * y / (3 * Real.log y))
     (hs0 : 0 ≤ sle) (hs : sle ≤ Nat.primeCounting ⌊2 ^ 12 * 3 ^ 3 * 5 * e * l⌋₊)
     (hq : 0 < q) (hqQ : q = Q / (2 * l))
@@ -137,9 +141,9 @@ theorem step_viii_constant {X dK Q sQ sle d D l e η q : ℝ} (hl : 5 ≤ l) (he
   have hQ : 0 ≤ Q := by
     have : Q = q * (2 * l) := by rw [hqQ]; field_simp
     rw [this]; positivity
-  have hx : 1 ≤ 2 ^ 12 * 3 ^ 3 * 5 * e * l := by nlinarith
+  have hx : 1 < 2 ^ 12 * 3 ^ 3 * 5 * e * l := by nlinarith
   have hL := step_viii_prime_count hx hη hprm hs0 hs
-  have habs := step_viii_absorb hl he (by linarith : (0 : ℝ) ≤ η)
+  have habs := step_viii_absorb hl he hη.le
   have hraw := step_viii_raw hl hQ hsum hiii
   exact constant_bound_of_raw hl0 hq hqQ (by positivity) hL habs hraw
 

@@ -3,7 +3,7 @@ import Mathlib
 /-!
 # Countermodels: separate indeterminacies versus their combined action
 
-Source context: Mochizuki, *Inter-universal Teichmüller Theory III*, read in this session from
+Source context: Mochizuki, *Inter-universal Teichmüller Theory III*, read for this file from
 the extracted text: Theorem 3.11 (i), (ii), pages 153 to 157 (the indeterminacies (Ind1),
 (Ind2), (Ind3)); the statement of Corollary 3.12, pages 173 and 174, where `− |log(Θ)|` is the
 log-volume of the holomorphic hull of the union of the possible images of a Θ-pilot object

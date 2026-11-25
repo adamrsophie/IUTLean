@@ -82,7 +82,8 @@ writes them as follows, matching the rendered pages.
 | `F_v` (double underline) | 69 to 70 (70 image) | tempered Frobenioid at bad `v` |
 | `D_v`, `D^⊢_v = B(K_v)^0` | 70 (image) | base category and its mono-analytic part |
 | `Θ_v` (underlined) | 70 (image) | reciprocal of the normalized `l`-th root theta function |
-| `q_v` (underlined) | 71 (image) | `q_v^{1/2l}` |
+| `q_v` (single underline) | 71 (image) | Tate parameter of `E_v` over `K_v` |
+| `qq_v` (double underline) | 71 (image) | `q_v^{1/2l}`, a chosen `2l`-th root of `q_v`, determined up to a `μ_{2l}`-multiple; the value of `Θ_v` at `√−q_v` |
 | `C^⊢_v`, `C^Θ_v`, `τ^⊢_v`, `F^⊢_v` | 71 to 73, 78, 81 (71, 72, 78, 81 image) | split Frobenioids and characteristic splittings |
 | `Φ_{C_v}`, `O^▷` | 78 (image) | divisor monoid; monoid of nonzero integral elements |
 | `TM^⊢` | 81 (image) | category of split topological monoids |

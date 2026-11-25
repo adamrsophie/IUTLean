@@ -9,7 +9,8 @@ the lines of `GateControls/SourceScan.expected`. Each command below is one const
 the scan must report; the runner checks the reported line of each. Mentions inside comments,
 docstrings, strings, raw strings and quoted identifiers must not be reported: notation, macro,
 run_cmd, debug.skipKernelTC, set_option pp.all true. The commands right after the quoted
-identifier and the raw string check that the scan finds the end of each.
+identifier and the raw string check that the scan finds the end of each. The commands at the
+end check `sorryAx`, an instance command, an instance attribute and a deriving clause.
 -/
 
 set_option debug.skipKernelTC true in
@@ -105,3 +106,13 @@ partial def j (n : Nat) : Nat := j n
 @[implemented_by i] def k : Nat := 0
 
 @[extern "gate_l"] def l : Nat := 0
+
+theorem m : True := sorryAx True
+
+instance n : Inhabited Nat := ⟨0⟩
+
+attribute [instance] n
+
+structure o where
+  x : Nat
+deriving Repr

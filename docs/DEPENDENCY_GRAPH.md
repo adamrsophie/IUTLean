@@ -5,25 +5,36 @@ Machine-readable form: `data/dependency_graph.json`. Picture of the critical pat
 
 ## What an edge means
 
-Citation edges are mechanical. A citation of B in the text of A is recorded as an edge A to B whether or not A logically depends on B: the text cites results for comparison, motivation and notation as well as for proof steps. The graph therefore over-approximates logical dependence in that respect. It can also miss dependencies: citations not written as "Kind N.M" (by section, by display, by unnumbered discussion), citations whose target is not indexed, and uses that the text does not cite at all are not edges. The critical path is therefore neither an upper nor a lower bound on what the derivation of abc uses; it is a reading list for checking that derivation.
+Citation edges are mechanical. A citation of B in the text of A is recorded as an edge A to B whether or not A logically depends on B: the text cites results for comparison, motivation and notation as well as for proof steps. The graph therefore over-approximates logical dependence in that respect. It also under-approximates it: citations not written as "Kind N.M" (by section, by display, by unnumbered discussion), citations whose target is not indexed, and uses that the text does not cite at all are not edges. The critical path is therefore neither an upper nor a lower bound on what the derivation of abc uses; it is a reading list for checking that derivation.
 
-Citation edges distinguish where the citation occurs: in the statement, in the proof (from the line starting with "Proof." to the next header; a statement with no such line has all of its text, up to the next header, counted as statement), or, for the lettered results of the Introductions, in the paragraph before or after the result. Curated records add edges from a statement to its parts and proof steps and to the results their readers listed. Lean edges are read from the elaborated declarations (`scripts/LeanDeclarations.lean`) and are exact for the modules imported by `IUT.lean`.
+Citation edges distinguish where the citation occurs: in the statement, in the proof (from the line starting with "Proof." to the next header; a statement with no such line has all of its text, up to the next header, counted as statement), or, for the lettered results of the Introductions, in the paragraph before or after the result. A citation that follows a bibliography key of another work ("[Silv], Chapter VII, Proposition 5.4") is a citation of that work and is not an edge. Curated records add typed edges: `part_of` from a part or proof step to its parent, `fragment_of` from a fragment (one Lean lemma that checks a piece of a statement) to its parent, `depends_on` to the results their readers listed, and `depends_on_external` to the statements of other papers and the bibliography keys listed as external dependencies. `formalized_by` links a record to a Lean declaration that states its entire content; a fragment never makes its parent formalized. Lean edges (`lean_uses`) are read from the elaborated declarations (`scripts/LeanDeclarations.lean`) and are exact for the modules imported by `IUT.lean` and for `Solution`; edges to theorems of Mathlib and other dependencies are kept for a declaration that uses at most 5 of them directly, and the full lists are in the field `external_theorems` of `data/lean_declarations.json`. Every edge ends at a node: a citation target that is not a record is a node of type `unresolved_citation`.
 
 | Edge kind | Count |
 |---|---|
 | cites_in_context | 36 |
-| cites_in_proof | 135 |
-| cites_in_statement | 1999 |
-| formalized_by | 38 |
-| lean_refs | 890 |
-| part_of_proof | 86 |
-| results_used | 326 |
+| cites_in_proof | 132 |
+| cites_in_statement | 1996 |
+| depends_on | 360 |
+| depends_on_external | 220 |
+| formalized_by | 138 |
+| fragment_of | 128 |
+| lean_uses | 1574 |
+| part_of | 88 |
+
+| Node type | Count |
+|---|---|
+| external_lean_theorem | 93 |
+| external_reference | 27 |
+| fragment | 128 |
+| lean_declaration | 596 |
+| statement | 474 |
+| unresolved_citation | 35 |
 
 ## Circular citation
 
 5 strongly connected components with more than one statement. A cycle of citations is not a circular argument: a remark may cite a later result that cites the remark back for context. Each cycle below needs a reader to decide whether any edge in it is a logical use.
 
-- 329 statements: `IUT1.Cor3_7`, `IUT1.Cor3_8`, `IUT1.Cor3_9`, `IUT1.Cor4_12`, `IUT1.Cor5_3`, `IUT1.Cor5_6`, `IUT1.Cor6_10`, `IUT1.Cor6_12`, `IUT1.Def3_6`, `IUT1.Def4_1`, `IUT1.Def4_6`, `IUT1.Def5_2`, `IUT1.Def5_5`, `IUT1.Def6_1`, `IUT1.Def6_11`, `IUT1.Def6_13`, `IUT1.Def6_4`, `IUT1.Ex3_2`, `IUT1.Ex3_3`, `IUT1.Ex3_4`, `IUT1.Ex3_5`, `IUT1.Ex4_3`, `IUT1.Ex4_4`, `IUT1.Ex4_5`, `IUT1.Ex5_1`, `IUT1.Ex5_4`, `IUT1.Ex6_2`, `IUT1.Ex6_3`, `IUT1.Prop4_11`, `IUT1.Prop4_2`, `IUT1.Prop4_7`, `IUT1.Prop4_8`, `IUT1.Prop4_9`, `IUT1.Prop6_5`, `IUT1.Prop6_6`, `IUT1.Prop6_7`, `IUT1.Prop6_8`, `IUT1.Prop6_9`, `IUT1.Rem3_1_2`, `IUT1.Rem3_1_5`, `IUT1.Rem3_1_7`, `IUT1.Rem3_2_1`, `IUT1.Rem3_2_3`, `IUT1.Rem3_3_2`, `IUT1.Rem3_4_2`, `IUT1.Rem3_4_3`, `IUT1.Rem3_5_1`, `IUT1.Rem3_5_2`, `IUT1.Rem3_6_2`, `IUT1.Rem3_7_1`, `IUT1.Rem3_8_1`, `IUT1.Rem3_9_1`, `IUT1.Rem3_9_2`, `IUT1.Rem3_9_3`, `IUT1.Rem4_2_1`, `IUT1.Rem4_3_1`, `IUT1.Rem4_3_2`, `IUT1.Rem4_3_3`, `IUT1.Rem4_5_1`, `IUT1.Rem4_7_1`, `IUT1.Rem4_7_2`, `IUT1.Rem4_9_1`, `IUT1.Rem4_9_2`, `IUT1.Rem4_9_3`, `IUT1.Rem5_1_2`, `IUT1.Rem5_1_4`, `IUT1.Rem5_1_5`, `IUT1.Rem5_2_1`, `IUT1.Rem5_2_3`, `IUT1.Rem5_3_1`, `IUT1.Rem5_3_3`, `IUT1.Rem5_4_1`, `IUT1.Rem5_4_2`, `IUT1.Rem5_6_1`, `IUT1.Rem6_12_1`, `IUT1.Rem6_12_2`, `IUT1.Rem6_12_3`, `IUT1.Rem6_12_4`, `IUT1.Rem6_12_5`, `IUT1.Rem6_12_6`, `IUT1.Rem6_1_1`, `IUT1.Rem6_6_1`, `IUT2.Cor1_10`, `IUT2.Cor1_11`, `IUT2.Cor1_12`, `IUT2.Cor2_4`, `IUT2.Cor2_5`, `IUT2.Cor2_6`, `IUT2.Cor2_8`, `IUT2.Cor2_9`, `IUT2.Cor3_5`, `IUT2.Cor3_6`, `IUT2.Cor3_7`, `IUT2.Cor4_10`, `IUT2.Cor4_11`, `IUT2.Cor4_5`, `IUT2.Cor4_6`, `IUT2.Cor4_7`, `IUT2.Cor4_8`, `IUT2.Def2_3`, `IUT2.Def2_7`, `IUT2.Def3_8`, `IUT2.Def4_9`, `IUT2.Ex1_7`, `IUT2.Ex1_8`, `IUT2.Ex1_9`, `IUT2.Ex3_2`, `IUT2.Prop1_2`, `IUT2.Prop1_3`, `IUT2.Prop1_4`, `IUT2.Prop1_5`, `IUT2.Prop1_6`, `IUT2.Prop2_1`, `IUT2.Prop2_2`, `IUT2.Prop3_1`, `IUT2.Prop3_3`, `IUT2.Prop3_4`, `IUT2.Prop4_1`, `IUT2.Prop4_2`, `IUT2.Prop4_3`, `IUT2.Prop4_4`, `IUT2.Rem1_10_2`, `IUT2.Rem1_11_1`, `IUT2.Rem1_11_2`, `IUT2.Rem1_11_3`, `IUT2.Rem1_11_4`, `IUT2.Rem1_11_5`, `IUT2.Rem1_12_1`, `IUT2.Rem1_12_2`, `IUT2.Rem1_12_3`, `IUT2.Rem1_12_4`, `IUT2.Rem1_12_5`, `IUT2.Rem1_1_1`, `IUT2.Rem1_4_1`, `IUT2.Rem1_5_1`, `IUT2.Rem1_5_2`, `IUT2.Rem1_6_1`, `IUT2.Rem1_7_1`, `IUT2.Rem1_8_1`, `IUT2.Rem1_9_1`, `IUT2.Rem1_9_2`, `IUT2.Rem2_1_1`, `IUT2.Rem2_2_1`, `IUT2.Rem2_3_1`, `IUT2.Rem2_5_1`, `IUT2.Rem2_5_2`, `IUT2.Rem2_6_1`, `IUT2.Rem2_6_2`, `IUT2.Rem2_6_3`, `IUT2.Rem2_8_1`, `IUT2.Rem2_8_2`, `IUT2.Rem2_8_3`, `IUT2.Rem2_9_1`, `IUT2.Rem3_4_1`, `IUT2.Rem3_5_1`, `IUT2.Rem3_5_2`, `IUT2.Rem3_5_3`, `IUT2.Rem3_6_1`, `IUT2.Rem3_6_2`, `IUT2.Rem3_6_3`, `IUT2.Rem3_6_4`, `IUT2.Rem3_6_5`, `IUT2.Rem3_7_1`, `IUT2.Rem3_8_1`, `IUT2.Rem3_8_2`, `IUT2.Rem3_8_3`, `IUT2.Rem4_10_1`, `IUT2.Rem4_10_3`, `IUT2.Rem4_11_1`, `IUT2.Rem4_11_2`, `IUT2.Rem4_11_3`, `IUT2.Rem4_11_4`, `IUT2.Rem4_1_1`, `IUT2.Rem4_2_1`, `IUT2.Rem4_3_1`, `IUT2.Rem4_4_1`, `IUT2.Rem4_5_1`, `IUT2.Rem4_5_2`, `IUT2.Rem4_5_3`, `IUT2.Rem4_5_4`, `IUT2.Rem4_6_1`, `IUT2.Rem4_6_2`, `IUT2.Rem4_7_1`, `IUT2.Rem4_7_2`, `IUT2.Rem4_7_3`, `IUT2.Rem4_7_4`, `IUT2.Rem4_7_5`, `IUT2.Rem4_7_6`, `IUT2.Rem4_8_1`, `IUT2.Rem4_8_2`, `IUT2.Rem4_8_3`, `IUT3.Cor2_3`, `IUT3.Cor3_12`, `IUT3.Cor3_12.Reduction`, `IUT3.Cor3_12.StepI`, `IUT3.Cor3_12.StepII`, `IUT3.Cor3_12.StepIII`, `IUT3.Cor3_12.StepIV`, `IUT3.Cor3_12.StepIX`, `IUT3.Cor3_12.StepV`, `IUT3.Cor3_12.StepVI`, `IUT3.Cor3_12.StepVII`, `IUT3.Cor3_12.StepVIII`, `IUT3.Cor3_12.StepX`, `IUT3.Cor3_12.StepXI`, `IUT3.Cor3_12.StepXI.a`, `IUT3.Cor3_12.StepXI.b`, `IUT3.Cor3_12.StepXI.c`, `IUT3.Cor3_12.StepXI.d`, `IUT3.Cor3_12.StepXI.e`, `IUT3.Cor3_12.StepXI.f`, `IUT3.Cor3_12.StepXI.g`, `IUT3.Cor3_12.StepXI.h`, `IUT3.Cor3_12.StepXII`, `IUT3.Def1_1`, `IUT3.Def1_4`, `IUT3.Def2_4`, `IUT3.Def3_8`, `IUT3.Ex3_6`, `IUT3.Prop1_2`, `IUT3.Prop1_2.x`, `IUT3.Prop1_3`, `IUT3.Prop2_1`, `IUT3.Prop3_1`, `IUT3.Prop3_10`, `IUT3.Prop3_2`, `IUT3.Prop3_3`, `IUT3.Prop3_4`, `IUT3.Prop3_5`, `IUT3.Prop3_7`, `IUT3.Prop3_9`, `IUT3.Prop3_9.ii`, `IUT3.Prop3_9.iii`, `IUT3.Prop3_9.iv`, `IUT3.Rem1_1_1`, `IUT3.Rem1_2_1`, `IUT3.Rem1_2_2`, `IUT3.Rem1_2_3`, `IUT3.Rem1_2_4`, `IUT3.Rem1_3_2`, `IUT3.Rem1_4_1`, `IUT3.Rem1_4_2`, `IUT3.Rem1_5_1`, `IUT3.Rem1_5_2`, `IUT3.Rem1_5_3`, `IUT3.Rem1_5_4`, `IUT3.Rem2_1_1`, `IUT3.Rem2_2_1`, `IUT3.Rem2_2_2`, `IUT3.Rem2_3_2`, `IUT3.Rem2_3_3`, `IUT3.Rem2_3_4`, `IUT3.Rem2_4_2`, `IUT3.Rem3_10_1`, `IUT3.Rem3_10_2`, `IUT3.Rem3_11_1`, `IUT3.Rem3_11_2`, `IUT3.Rem3_11_3`, `IUT3.Rem3_11_4`, `IUT3.Rem3_12_1`, `IUT3.Rem3_12_2`, `IUT3.Rem3_12_3`, `IUT3.Rem3_12_4`, `IUT3.Rem3_1_1`, `IUT3.Rem3_1_2`, `IUT3.Rem3_2_2`, `IUT3.Rem3_3_1`, `IUT3.Rem3_3_2`, `IUT3.Rem3_6_1`, `IUT3.Rem3_6_2`, `IUT3.Rem3_8_1`, `IUT3.Rem3_8_2`, `IUT3.Rem3_8_3`, `IUT3.Rem3_9_1`, `IUT3.Rem3_9_2`, `IUT3.Rem3_9_3`, `IUT3.Rem3_9_4`, `IUT3.Rem3_9_5`, `IUT3.Rem3_9_5.vii`, `IUT3.Rem3_9_5.viii_x`, `IUT3.Rem3_9_6`, `IUT3.Rem3_9_7`, `IUT3.Thm1_5`, `IUT3.Thm1_5.i`, `IUT3.Thm1_5.iv`, `IUT3.Thm2_2`, `IUT3.Thm3_11`, `IUT3.Thm3_11.i`, `IUT3.Thm3_11.i.Ind2`, `IUT3.Thm3_11.i.a`, `IUT3.Thm3_11.i.b`, `IUT3.Thm3_11.i.c`, `IUT3.Thm3_11.ii`, `IUT3.Thm3_11.ii.Ind3`, `IUT3.Thm3_11.ii.a`, `IUT3.Thm3_11.ii.b`, `IUT3.Thm3_11.ii.c`, `IUT3.Thm3_11.ii.mutual`, `IUT3.Thm3_11.iii`, `IUT3.Thm3_11.iii.c`, `IUT3.Thm3_11.iii.d`, `IUT3.ThmA`, `IUT3.ThmB`, `IUT4.Cor2_2`, `IUT4.Cor2_2.ProofApply`, `IUT4.Cor2_2.ProofAssembly`, `IUT4.Cor2_2.ii.C2`, `IUT4.Cor2_3`, `IUT4.Ex3_5`, `IUT4.Prop1_5`, `IUT4.Prop1_8`, `IUT4.Rem1_10_1`, `IUT4.Rem1_10_5`, `IUT4.Rem1_10_7`, `IUT4.Rem1_7_1`, `IUT4.Rem2_2_1`, `IUT4.Rem2_2_2`, `IUT4.Rem2_3_1`, `IUT4.Rem2_3_2`, `IUT4.Rem2_3_3`, `IUT4.Rem3_3_1`, `IUT4.Rem3_6_1`, `IUT4.Rem3_6_2`, `IUT4.Rem3_6_3`, `IUT4.Thm1_10`, `IUT4.Thm1_10.StepVII`, `IUT4.Thm1_10.StepVIII`, `IUT4.Thm1_10.final`, `IUT4.ThmA`
+- 338 statements: `IUT1.Cor3_7`, `IUT1.Cor3_8`, `IUT1.Cor3_9`, `IUT1.Cor4_12`, `IUT1.Cor5_3`, `IUT1.Cor5_6`, `IUT1.Cor6_10`, `IUT1.Cor6_12`, `IUT1.Def3_6`, `IUT1.Def4_1`, `IUT1.Def4_6`, `IUT1.Def5_2`, `IUT1.Def5_5`, `IUT1.Def6_1`, `IUT1.Def6_11`, `IUT1.Def6_13`, `IUT1.Def6_4`, `IUT1.Ex3_2`, `IUT1.Ex3_3`, `IUT1.Ex3_4`, `IUT1.Ex3_5`, `IUT1.Ex4_3`, `IUT1.Ex4_4`, `IUT1.Ex4_5`, `IUT1.Ex5_1`, `IUT1.Ex5_4`, `IUT1.Ex6_2`, `IUT1.Ex6_3`, `IUT1.Prop4_11`, `IUT1.Prop4_2`, `IUT1.Prop4_7`, `IUT1.Prop4_8`, `IUT1.Prop4_9`, `IUT1.Prop6_5`, `IUT1.Prop6_6`, `IUT1.Prop6_7`, `IUT1.Prop6_8`, `IUT1.Prop6_9`, `IUT1.Rem3_1_2`, `IUT1.Rem3_1_5`, `IUT1.Rem3_1_7`, `IUT1.Rem3_2_1`, `IUT1.Rem3_2_3`, `IUT1.Rem3_3_2`, `IUT1.Rem3_4_2`, `IUT1.Rem3_4_3`, `IUT1.Rem3_5_1`, `IUT1.Rem3_5_2`, `IUT1.Rem3_6_2`, `IUT1.Rem3_7_1`, `IUT1.Rem3_8_1`, `IUT1.Rem3_9_1`, `IUT1.Rem3_9_2`, `IUT1.Rem3_9_3`, `IUT1.Rem4_2_1`, `IUT1.Rem4_3_1`, `IUT1.Rem4_3_2`, `IUT1.Rem4_3_3`, `IUT1.Rem4_5_1`, `IUT1.Rem4_7_1`, `IUT1.Rem4_7_2`, `IUT1.Rem4_9_1`, `IUT1.Rem4_9_2`, `IUT1.Rem4_9_3`, `IUT1.Rem5_1_2`, `IUT1.Rem5_1_4`, `IUT1.Rem5_1_5`, `IUT1.Rem5_2_1`, `IUT1.Rem5_2_3`, `IUT1.Rem5_3_1`, `IUT1.Rem5_3_3`, `IUT1.Rem5_4_1`, `IUT1.Rem5_4_2`, `IUT1.Rem5_6_1`, `IUT1.Rem6_12_1`, `IUT1.Rem6_12_2`, `IUT1.Rem6_12_3`, `IUT1.Rem6_12_4`, `IUT1.Rem6_12_5`, `IUT1.Rem6_12_6`, `IUT1.Rem6_1_1`, `IUT1.Rem6_6_1`, `IUT2.Cor1_10`, `IUT2.Cor1_11`, `IUT2.Cor1_12`, `IUT2.Cor2_4`, `IUT2.Cor2_5`, `IUT2.Cor2_6`, `IUT2.Cor2_8`, `IUT2.Cor2_9`, `IUT2.Cor3_5`, `IUT2.Cor3_6`, `IUT2.Cor3_7`, `IUT2.Cor4_10`, `IUT2.Cor4_11`, `IUT2.Cor4_5`, `IUT2.Cor4_6`, `IUT2.Cor4_7`, `IUT2.Cor4_8`, `IUT2.Def2_3`, `IUT2.Def2_7`, `IUT2.Def3_8`, `IUT2.Def4_9`, `IUT2.Ex1_7`, `IUT2.Ex1_8`, `IUT2.Ex1_9`, `IUT2.Ex3_2`, `IUT2.Prop1_2`, `IUT2.Prop1_3`, `IUT2.Prop1_4`, `IUT2.Prop1_5`, `IUT2.Prop1_6`, `IUT2.Prop2_1`, `IUT2.Prop2_2`, `IUT2.Prop3_1`, `IUT2.Prop3_3`, `IUT2.Prop3_4`, `IUT2.Prop4_1`, `IUT2.Prop4_2`, `IUT2.Prop4_3`, `IUT2.Prop4_4`, `IUT2.Rem1_10_2`, `IUT2.Rem1_11_1`, `IUT2.Rem1_11_2`, `IUT2.Rem1_11_3`, `IUT2.Rem1_11_4`, `IUT2.Rem1_11_5`, `IUT2.Rem1_12_1`, `IUT2.Rem1_12_2`, `IUT2.Rem1_12_2.i`, `IUT2.Rem1_12_3`, `IUT2.Rem1_12_4`, `IUT2.Rem1_12_5`, `IUT2.Rem1_1_1`, `IUT2.Rem1_4_1`, `IUT2.Rem1_5_1`, `IUT2.Rem1_5_2`, `IUT2.Rem1_6_1`, `IUT2.Rem1_7_1`, `IUT2.Rem1_8_1`, `IUT2.Rem1_9_1`, `IUT2.Rem1_9_2`, `IUT2.Rem2_1_1`, `IUT2.Rem2_2_1`, `IUT2.Rem2_3_1`, `IUT2.Rem2_5_1`, `IUT2.Rem2_5_2`, `IUT2.Rem2_6_1`, `IUT2.Rem2_6_2`, `IUT2.Rem2_6_3`, `IUT2.Rem2_8_1`, `IUT2.Rem2_8_2`, `IUT2.Rem2_8_3`, `IUT2.Rem2_9_1`, `IUT2.Rem3_4_1`, `IUT2.Rem3_5_1`, `IUT2.Rem3_5_2`, `IUT2.Rem3_5_3`, `IUT2.Rem3_6_1`, `IUT2.Rem3_6_2`, `IUT2.Rem3_6_3`, `IUT2.Rem3_6_4`, `IUT2.Rem3_6_5`, `IUT2.Rem3_7_1`, `IUT2.Rem3_8_1`, `IUT2.Rem3_8_2`, `IUT2.Rem3_8_2.ii`, `IUT2.Rem3_8_3`, `IUT2.Rem4_10_1`, `IUT2.Rem4_10_3`, `IUT2.Rem4_11_1`, `IUT2.Rem4_11_2`, `IUT2.Rem4_11_3`, `IUT2.Rem4_11_4`, `IUT2.Rem4_1_1`, `IUT2.Rem4_2_1`, `IUT2.Rem4_3_1`, `IUT2.Rem4_4_1`, `IUT2.Rem4_5_1`, `IUT2.Rem4_5_2`, `IUT2.Rem4_5_3`, `IUT2.Rem4_5_4`, `IUT2.Rem4_6_1`, `IUT2.Rem4_6_2`, `IUT2.Rem4_7_1`, `IUT2.Rem4_7_2`, `IUT2.Rem4_7_3`, `IUT2.Rem4_7_4`, `IUT2.Rem4_7_5`, `IUT2.Rem4_7_6`, `IUT2.Rem4_8_1`, `IUT2.Rem4_8_2`, `IUT2.Rem4_8_3`, `IUT3.Cor2_3`, `IUT3.Cor3_12`, `IUT3.Cor3_12.Reduction`, `IUT3.Cor3_12.Statement`, `IUT3.Cor3_12.StepI`, `IUT3.Cor3_12.StepII`, `IUT3.Cor3_12.StepIII`, `IUT3.Cor3_12.StepIV`, `IUT3.Cor3_12.StepIX`, `IUT3.Cor3_12.StepV`, `IUT3.Cor3_12.StepVI`, `IUT3.Cor3_12.StepVII`, `IUT3.Cor3_12.StepVIII`, `IUT3.Cor3_12.StepX`, `IUT3.Cor3_12.StepXI`, `IUT3.Cor3_12.StepXI.a`, `IUT3.Cor3_12.StepXI.b`, `IUT3.Cor3_12.StepXI.c`, `IUT3.Cor3_12.StepXI.d`, `IUT3.Cor3_12.StepXI.e`, `IUT3.Cor3_12.StepXI.f`, `IUT3.Cor3_12.StepXI.g`, `IUT3.Cor3_12.StepXI.h`, `IUT3.Cor3_12.StepXII`, `IUT3.Def1_1`, `IUT3.Def1_4`, `IUT3.Def2_4`, `IUT3.Def3_8`, `IUT3.Ex3_6`, `IUT3.Prop1_2`, `IUT3.Prop1_2.x`, `IUT3.Prop1_3`, `IUT3.Prop2_1`, `IUT3.Prop3_1`, `IUT3.Prop3_10`, `IUT3.Prop3_2`, `IUT3.Prop3_3`, `IUT3.Prop3_4`, `IUT3.Prop3_5`, `IUT3.Prop3_7`, `IUT3.Prop3_9`, `IUT3.Prop3_9.ii`, `IUT3.Prop3_9.iii`, `IUT3.Prop3_9.iv`, `IUT3.Rem1_1_1`, `IUT3.Rem1_2_1`, `IUT3.Rem1_2_2`, `IUT3.Rem1_2_3`, `IUT3.Rem1_2_4`, `IUT3.Rem1_3_2`, `IUT3.Rem1_4_1`, `IUT3.Rem1_4_2`, `IUT3.Rem1_5_1`, `IUT3.Rem1_5_2`, `IUT3.Rem1_5_3`, `IUT3.Rem1_5_4`, `IUT3.Rem2_1_1`, `IUT3.Rem2_2_1`, `IUT3.Rem2_2_2`, `IUT3.Rem2_3_2`, `IUT3.Rem2_3_3`, `IUT3.Rem2_3_4`, `IUT3.Rem2_4_2`, `IUT3.Rem3_10_1`, `IUT3.Rem3_10_2`, `IUT3.Rem3_11_1`, `IUT3.Rem3_11_2`, `IUT3.Rem3_11_3`, `IUT3.Rem3_11_4`, `IUT3.Rem3_12_1`, `IUT3.Rem3_12_2`, `IUT3.Rem3_12_3`, `IUT3.Rem3_12_4`, `IUT3.Rem3_1_1`, `IUT3.Rem3_1_2`, `IUT3.Rem3_2_2`, `IUT3.Rem3_3_1`, `IUT3.Rem3_3_2`, `IUT3.Rem3_6_1`, `IUT3.Rem3_6_2`, `IUT3.Rem3_8_1`, `IUT3.Rem3_8_2`, `IUT3.Rem3_8_3`, `IUT3.Rem3_9_1`, `IUT3.Rem3_9_2`, `IUT3.Rem3_9_3`, `IUT3.Rem3_9_4`, `IUT3.Rem3_9_5`, `IUT3.Rem3_9_5.vii`, `IUT3.Rem3_9_5.viii_x`, `IUT3.Rem3_9_6`, `IUT3.Rem3_9_7`, `IUT3.Thm1_5`, `IUT3.Thm1_5.i`, `IUT3.Thm1_5.iii`, `IUT3.Thm1_5.iv`, `IUT3.Thm2_2`, `IUT3.Thm3_11`, `IUT3.Thm3_11.i`, `IUT3.Thm3_11.i.Ind2`, `IUT3.Thm3_11.i.a`, `IUT3.Thm3_11.i.b`, `IUT3.Thm3_11.i.c`, `IUT3.Thm3_11.ii`, `IUT3.Thm3_11.ii.Ind3`, `IUT3.Thm3_11.ii.a`, `IUT3.Thm3_11.ii.b`, `IUT3.Thm3_11.ii.c`, `IUT3.Thm3_11.ii.mutual`, `IUT3.Thm3_11.iii`, `IUT3.Thm3_11.iii.a`, `IUT3.Thm3_11.iii.c`, `IUT3.Thm3_11.iii.d`, `IUT3.ThmA`, `IUT3.ThmB`, `IUT4.Cor2_2`, `IUT4.Cor2_2.ProofApply`, `IUT4.Cor2_2.ProofAssembly`, `IUT4.Cor2_2.ii`, `IUT4.Cor2_2.ii.C2`, `IUT4.Cor2_2.iii`, `IUT4.Cor2_3`, `IUT4.Ex3_5`, `IUT4.Prop1_5`, `IUT4.Prop1_8`, `IUT4.Rem1_10_1`, `IUT4.Rem1_10_5`, `IUT4.Rem1_10_7`, `IUT4.Rem1_7_1`, `IUT4.Rem2_2_1`, `IUT4.Rem2_2_2`, `IUT4.Rem2_3_1`, `IUT4.Rem2_3_2`, `IUT4.Rem2_3_3`, `IUT4.Rem3_3_1`, `IUT4.Rem3_6_1`, `IUT4.Rem3_6_2`, `IUT4.Rem3_6_3`, `IUT4.Thm1_10`, `IUT4.Thm1_10.StepIV`, `IUT4.Thm1_10.StepVI`, `IUT4.Thm1_10.StepVII`, `IUT4.Thm1_10.StepVIII`, `IUT4.Thm1_10.final`, `IUT4.ThmA`
 - 6 statements: `IUT1.Cor2_5`, `IUT1.Prop2_1`, `IUT1.Prop2_2`, `IUT1.Prop2_4`, `IUT1.Rem2_2_2`, `IUT1.Rem2_5_3`
 - 2 statements: `IUT1.Def3_1`, `IUT1.Rem3_1_1`
 - 2 statements: `IUT1.Lem2_7`, `IUT1.Thm2_6`
@@ -31,112 +42,209 @@ Citation edges distinguish where the citation occurs: in the statement, in the p
 
 ## Independent subtheories
 
-The citation graph, read without direction, has 5 connected components; 4 of them are single statements that cite no indexed statement and are cited by none. Component sizes: 452.
+The graph of statement records (citations and curated edges, read without direction) has 22 connected components over 474 records; 21 of them are single statements that cite no indexed statement and are cited by none. The count covers 474 statement records; 128 fragments and 35 unresolved citation targets are left out. Component sizes: 453.
 
-## Citations to statements not in the index
+## Citations to targets that are not records
 
-A citation whose target is not an indexed statement is usually a numbered result of an external paper whose key the text gives only once for a list, or a typo in the source. Each is listed so that it can be checked.
+48 edges end at an `unresolved_citation` node. Such a target is usually a numbered result of an external paper whose key the text gives only once for a list, or a typo in the source. Each is listed so that it can be checked.
 
-| From | To |
-|---|---|
-| `IUT1.Def5_2` | `IUT1.Cor2_7` |
-| `IUT1.Def5_2` | `IUT1.Thm1_9` |
-| `IUT1.Ex3_4` | `IUT1.Def5_6` |
-| `IUT1.Ex5_1` | `IUT1.Thm1_9` |
-| `IUT1.Prop2_4` | `IUT1.Prop3_9` |
-| `IUT1.Rem1_2_2` | `IUT1.Lem1_3_7` |
-| `IUT1.Rem1_2_3` | `IUT1.Prop1_2` |
-| `IUT1.Rem1_2_3` | `IUT1.Rem1_1_3` |
-| `IUT1.Rem1_2_3` | `IUT1.Rem1_4_2` |
-| `IUT1.Rem1_2_3` | `IUT1.Rem1_4_3` |
-| `IUT1.Rem2_2_2` | `IUT1.Ex3_10` |
-| `IUT1.Rem2_2_2` | `IUT1.Lem3_2_1` |
-| `IUT1.Rem2_4_1` | `IUT1.Cor6_2_2` |
-| `IUT1.Rem2_4_1` | `IUT1.Lem3_2_1` |
-| `IUT1.Rem2_5_3` | `IUT1.Ex2_10` |
-| `IUT1.Rem2_5_3` | `IUT1.Lem3_2_1` |
-| `IUT1.Rem3_1_2` | `IUT1.Rem1_10_1` |
-| `IUT1.Rem3_1_2` | `IUT1.Thm1_9` |
-| `IUT1.Rem3_4_3` | `IUT1.Ex3_6` |
-| `IUT1.Rem5_1_5` | `IUT1.Thm12_2_7` |
-| `IUT1.ThmB` | `IUT1.Lem3_2_1` |
-| `IUT2.Cor1_11` | `IUT2.Rem3_2_1` |
-| `IUT2.Cor4_10` | `IUT2.Def6_13` |
-| `IUT2.Cor4_6` | `IUT1.Def5_2_1` |
-| `IUT2.Cor4_6` | `IUT2.Prop3_7` |
-| `IUT2.Cor4_7` | `IUT2.Ex5_4` |
-| `IUT2.Def2_3` | `IUT2.Rem3_1_1` |
-| `IUT2.Prop1_3` | `IUT2.Rem3_2_1` |
-| `IUT2.Prop1_6` | `IUT2.Cor3_3` |
-| `IUT2.Prop2_2` | `IUT2.Thm1_6` |
-| `IUT2.Prop4_1` | `IUT2.Prop5_8` |
-| `IUT2.Prop4_3` | `IUT2.Prop5_8` |
-| `IUT2.Prop4_4` | `IUT2.Def6_1` |
-| `IUT2.Rem2_5_2` | `IUT2.Def6_1` |
-| `IUT3.Def1_4` | `IUT3.Cor4_10` |
-| `IUT3.Prop1_2` | `IUT3.Cor5_10` |
-| `IUT3.Prop1_2` | `IUT3.Prop5_7` |
-| `IUT3.Prop1_3` | `IUT3.Def6_13` |
-| `IUT3.Prop2_1` | `IUT3.Cor4_10` |
-| `IUT3.Prop3_3` | `IUT3.Def6_13` |
-| `IUT3.Rem2_3_3` | `IUT3.Prop1_4` |
-| `IUT3.Rem3_6_2` | `IUT3.Thm5_2` |
-| `IUT3.Rem3_9_4` | `IUT3.Prop5_7` |
-| `IUT3.Rem3_9_5` | `IUT3.Thm5_2` |
-| `IUT3.Thm1_5` | `IUT3.Def6_11` |
-| `IUT3.Thm1_5` | `IUT3.Def6_13` |
-| `IUT4.Cor2_2` | `IUT4.Lem3_7` |
-| `IUT4.Ex3_6` | `IUT4.Prop3_16` |
-| `IUT4.Prop1_8` | `IUT4.Prop4_6` |
-| `IUT4.Prop1_8` | `IUT4.Prop5_4` |
-| `IUT4.Rem2_3_3` | `IUT4.Prop3_10` |
-| `IUT4.Rem3_1_1` | `IUT4.Def2_3` |
-| `IUT4.Rem3_1_1` | `IUT4.Def2_9` |
-
-## Statements and Lean declarations
-
-| Statement | Lean declaration | Found |
+| From | To | Edge kind |
 |---|---|---|
-| `IUT1.Def3_1` | `IUT.PaperI.PartialInitialThetaConditions` | yes |
-| `IUT1.Def3_1.a` | `IUT.PaperI.SqrtNegOneMem` | yes |
-| `IUT1.Def3_1.b` | `IUT.PaperI.SemistableAtFinitePlaces` | yes |
-| `IUT1.Def3_1.c` | `IUT.PaperI.IsAuxiliaryPrime` | yes |
-| `IUT2.Prop4_1` | `IUT.PaperII.Labels.sum_exponents` | yes |
-| `IUT2.Rem2_5_1` | `IUT.PaperII.Labels.labelRep_bijective` | yes |
-| `IUT2.Rem2_6_3` | `IUT.PaperII.Labels.gammaNorm_eq` | yes |
-| `IUT2.Rem4_5_4` | `IUT.PaperII.Labels.sum_exponents` | yes |
-| `IUT2.Rem4_7_3` | `IUT.PaperII.Labels.average_exponents` | yes |
-| `IUT4.Cor2_2.ProofApply` | `IUT.PaperIV.Corollary2_2.apply_theorem_1_10` | yes |
-| `IUT4.Cor2_2.ProofAssembly` | `IUT.PaperIV.Corollary2_2.assembly` | yes |
-| `IUT4.Cor2_2.ProofP1` | `IUT.PaperIV.Corollary2_2.P1_upper` | yes |
-| `IUT4.Cor2_2.ProofP3` | `IUT.PaperIV.Corollary2_2.q_not2_step` | yes |
-| `IUT4.Cor2_2.ProofP4` | `IUT.PaperIV.Corollary2_2.P4_bound` | yes |
-| `IUT4.Cor2_2.ProofP5` | `IUT.PaperIV.Corollary2_2.P5_bound` | yes |
-| `IUT4.Cor2_2.ii.C1` | `IUT.PaperIV.Corollary2_2.P1_upper` | yes |
-| `IUT4.Cor2_2.ii.C2` | `IUT.PaperIV.Corollary2_2.final_step` | yes |
-| `IUT4.Cor2_2.iii` | `IUT.PaperIV.Corollary2_2.h_lt_of_eps_lt_epsE` | yes |
-| `IUT4.Cor2_3` | `IUT.PaperIV.Corollary2_3.cor2_3_on_KV` | yes |
-| `IUT4.Def1_9` | `IUT.PaperIV.degE` | yes |
-| `IUT4.Prop1_2` | `IUT.PaperIV.Proposition1_2.a_b_of_le` | yes |
-| `IUT4.Prop1_2.elementary` | `IUT.PaperIV.Proposition1_2.a_sub_le` | yes |
-| `IUT4.Prop1_3` | `IUT.PaperIV.Proposition1_3.ii_step` | yes |
-| `IUT4.Prop1_4` | `IUT.PaperIV.Proposition1_4.iii_first` | yes |
-| `IUT4.Prop1_5` | `IUT.PaperIV.Proposition1_5.crt_normSq` | yes |
-| `IUT4.Prop1_6` | `IUT.PaperIV.Proposition1_6.exists_eta_prm` | yes |
-| `IUT4.Prop1_7` | `IUT.PaperIV.Proposition1_7.weighted_averages` | yes |
-| `IUT4.Prop2_1` | `IUT.PaperIV.Proposition2_1.exists_prime_not_mem` | yes |
-| `IUT4.Rem2_3_1` | `IUT.PaperIV.Corollary2_3.BDle` | yes |
-| `IUT4.Thm1_10` | `IUT.PaperIV.Theorem1_10.step_viii_constant` | yes |
-| `IUT4.Thm1_10.StepI` | `IUT.PaperIV.Theorem1_10.card_GL2` | yes |
-| `IUT4.Thm1_10.StepII` | `IUT.PaperIV.Theorem1_10.step_ii_final` | yes |
-| `IUT4.Thm1_10.StepIII` | `IUT.PaperIV.Theorem1_10.step_iii_final` | yes |
-| `IUT4.Thm1_10.StepV` | `IUT.PaperIV.Theorem1_10.step_v_final` | yes |
-| `IUT4.Thm1_10.StepVI` | `IUT.PaperIV.Theorem1_10.step_vi` | yes |
-| `IUT4.Thm1_10.StepVII` | `IUT.PaperIV.Theorem1_10.step_vii_average` | yes |
-| `IUT4.Thm1_10.StepVIII` | `IUT.PaperIV.Theorem1_10.step_viii_constant` | yes |
-| `IUT4.Thm1_10.final` | `IUT.PaperIV.Theorem1_10.final_inequality` | yes |
+| `IUT1.Def5_2` | `IUT1.Cor2_7` | cites_in_statement |
+| `IUT1.Def5_2` | `IUT1.Thm1_9` | cites_in_statement |
+| `IUT1.Ex3_4` | `IUT1.Def5_6` | cites_in_statement |
+| `IUT1.Ex5_1` | `IUT1.Thm1_9` | cites_in_statement |
+| `IUT1.Prop2_4` | `IUT1.Prop3_9` | cites_in_proof |
+| `IUT1.Rem1_2_2` | `IUT1.Lem1_3_7` | cites_in_statement |
+| `IUT1.Rem1_2_3` | `IUT1.Prop1_2` | cites_in_statement |
+| `IUT1.Rem1_2_3` | `IUT1.Rem1_1_3` | cites_in_statement |
+| `IUT1.Rem1_2_3` | `IUT1.Rem1_4_2` | cites_in_statement |
+| `IUT1.Rem1_2_3` | `IUT1.Rem1_4_3` | cites_in_statement |
+| `IUT1.Rem2_2_2` | `IUT1.Ex3_10` | cites_in_statement |
+| `IUT1.Rem2_2_2` | `IUT1.Lem3_2_1` | cites_in_statement |
+| `IUT1.Rem2_4_1` | `IUT1.Cor6_2_2` | cites_in_statement |
+| `IUT1.Rem2_4_1` | `IUT1.Lem3_2_1` | cites_in_statement |
+| `IUT1.Rem2_5_3` | `IUT1.Ex2_10` | cites_in_statement |
+| `IUT1.Rem2_5_3` | `IUT1.Lem3_2_1` | cites_in_statement |
+| `IUT1.Rem3_1_2` | `IUT1.Rem1_10_1` | cites_in_statement |
+| `IUT1.Rem3_1_2` | `IUT1.Thm1_9` | cites_in_statement |
+| `IUT1.Rem3_4_3` | `IUT1.Ex3_6` | cites_in_statement |
+| `IUT1.Rem5_1_5` | `IUT1.Thm12_2_7` | cites_in_statement |
+| `IUT1.ThmB` | `IUT1.Lem3_2_1` | cites_in_context |
+| `IUT2.Cor1_11` | `IUT2.Rem3_2_1` | cites_in_statement |
+| `IUT2.Cor4_10` | `IUT2.Def6_13` | cites_in_statement |
+| `IUT2.Cor4_6` | `IUT1.Def5_2_1` | cites_in_statement |
+| `IUT2.Cor4_6` | `IUT2.Prop3_7` | cites_in_statement |
+| `IUT2.Cor4_7` | `IUT2.Ex5_4` | cites_in_statement |
+| `IUT2.Def2_3` | `IUT2.Rem3_1_1` | cites_in_statement |
+| `IUT2.Prop1_3` | `IUT2.Rem3_2_1` | cites_in_statement |
+| `IUT2.Prop1_6` | `IUT2.Cor3_3` | cites_in_statement |
+| `IUT2.Prop2_2` | `IUT2.Thm1_6` | cites_in_statement |
+| `IUT2.Prop4_1` | `IUT2.Prop5_8` | cites_in_statement |
+| `IUT2.Prop4_3` | `IUT2.Prop5_8` | cites_in_statement |
+| `IUT2.Prop4_4` | `IUT2.Def6_1` | cites_in_statement |
+| `IUT2.Rem2_5_2` | `IUT2.Def6_1` | cites_in_statement |
+| `IUT3.Def1_4` | `IUT3.Cor4_10` | cites_in_statement |
+| `IUT3.Prop1_2` | `IUT3.Cor5_10` | cites_in_statement |
+| `IUT3.Prop1_2` | `IUT3.Prop5_7` | cites_in_statement |
+| `IUT3.Prop1_3` | `IUT3.Def6_13` | cites_in_statement |
+| `IUT3.Prop2_1` | `IUT3.Cor4_10` | cites_in_statement |
+| `IUT3.Prop3_3` | `IUT3.Def6_13` | cites_in_statement |
+| `IUT3.Rem2_3_3` | `IUT3.Prop1_4` | cites_in_statement |
+| `IUT3.Rem3_6_2` | `IUT3.Thm5_2` | cites_in_statement |
+| `IUT3.Rem3_9_4` | `IUT3.Prop5_7` | cites_in_statement |
+| `IUT3.Rem3_9_5` | `IUT3.Thm5_2` | cites_in_statement |
+| `IUT3.Thm1_5` | `IUT3.Def6_11` | cites_in_statement |
+| `IUT3.Thm1_5` | `IUT3.Def6_13` | cites_in_statement |
+| `IUT4.Cor2_2` | `IUT4.Lem3_7` | cites_in_proof |
+| `IUT4.Rem2_3_3` | `IUT4.Prop3_10` | cites_in_statement |
+
+## Records and Lean declarations
+
+Scope "whole statement" means that the record claims the declaration states its entire content; "fragment" means that the record is a fragment of the parent named, and the parent is not formalized by it.
+
+| Record | Lean declaration | Scope | Parent | Found |
+|---|---|---|---|---|
+| `IUT1.Def3_1.a.frag.sqrtNegOne` | `IUT.PaperI.SqrtNegOneMem` | fragment | `IUT1.Def3_1.a` | yes |
+| `IUT1.Def3_1.b.frag.badSetOddNonempty` | `IUT.PaperI.BadSetOddNonempty` | fragment | `IUT1.Def3_1.b` | yes |
+| `IUT1.Def3_1.b.frag.galoisDegreePrimeTo` | `IUT.PaperI.GaloisOfDegreePrimeTo` | fragment | `IUT1.Def3_1.b` | yes |
+| `IUT1.Def3_1.b.frag.multiplicativeOverBadSet` | `IUT.PaperI.MultiplicativeOverBadSet` | fragment | `IUT1.Def3_1.b` | yes |
+| `IUT1.Def3_1.b.frag.semistable` | `IUT.PaperI.SemistableAtFinitePlaces` | fragment | `IUT1.Def3_1.b` | yes |
+| `IUT1.Def3_1.b.frag.torsionSix` | `IUT.PaperI.TorsionRational` | fragment | `IUT1.Def3_1.b` | yes |
+| `IUT1.Def3_1.c.frag.firstClause` | `IUT.PaperI.AuxiliaryPrimeFirstClause` | fragment | `IUT1.Def3_1.c` | yes |
+| `IUT1.Def3_1.c.frag.primeToBadResidueChars` | `IUT.PaperI.PrimeToBadResidueChars` | fragment | `IUT1.Def3_1.c` | yes |
+| `IUT1.Def3_1.frag.partialConditions` | `IUT.PaperI.PartialInitialThetaConditions` | fragment | `IUT1.Def3_1` | yes |
+| `IUT1.Sec0.Capsule` | `IUT.PaperI.Capsule` | whole statement |  | yes |
+| `IUT1.Sec0.CapsuleFullPolyMorphism` | `IUT.PaperI.Capsule.capsuleFullPolyMorphism` | whole statement |  | yes |
+| `IUT1.Sec0.FullPolyIsomorphism` | `IUT.PaperI.fullPolyIso` | whole statement |  | yes |
+| `IUT1.Sec0.PolyAutomorphism` | `IUT.PaperI.IsPolyAut` | whole statement |  | yes |
+| `IUT1.Sec0.PolyIsomorphism` | `IUT.PaperI.IsPolyIso` | whole statement |  | yes |
+| `IUT1.Sec0.PolyMorphism` | `IUT.PaperI.PolyMorphism` | whole statement |  | yes |
+| `IUT1.Sec0.PolyMorphismComposite` | `IUT.PaperI.PolyMorphism.comp` | whole statement |  | yes |
+| `IUT2.Prop4_1.frag.sum_exponents` | `IUT.PaperII.Labels.sum_exponents` | fragment | `IUT2.Prop4_1` | yes |
+| `IUT2.Rem2_5_1.frag.labelRep_bijective` | `IUT.PaperII.Labels.labelRep_bijective` | fragment | `IUT2.Rem2_5_1` | yes |
+| `IUT2.Rem2_6_3.frag.gammaNormValue_strictMono` | `IUT.PaperII.Labels.gammaNormValue_strictMono` | fragment | `IUT2.Rem2_6_3` | yes |
+| `IUT2.Rem2_6_3.frag.gammaNorm_eq` | `IUT.PaperII.Labels.gammaNorm_eq` | fragment | `IUT2.Rem2_6_3` | yes |
+| `IUT2.Rem2_6_3.frag.gammaNorm_eq_max_iff` | `IUT.PaperII.Labels.gammaNorm_eq_max_iff` | fragment | `IUT2.Rem2_6_3` | yes |
+| `IUT2.Rem4_7_3.frag.average_exponents` | `IUT.PaperII.Labels.average_exponents` | fragment | `IUT2.Rem4_7_3` | yes |
+| `IUT3.Cor3_12.Reduction.frag.inequality_of_nonneg` | `IUT.PaperIII.Corollary312.inequality_of_nonneg` | fragment | `IUT3.Cor3_12.Reduction` | yes |
+| `IUT3.Cor3_12.Statement.frag.ComparisonSetting` | `IUT.PaperIII.Corollary312.ComparisonSetting` | fragment | `IUT3.Cor3_12.Statement` | yes |
+| `IUT3.Cor3_12.Statement.frag.Containment` | `IUT.PaperIII.Corollary312.ComparisonSetting.Containment` | fragment | `IUT3.Cor3_12.Statement` | yes |
+| `IUT3.Cor3_12.Statement.frag.LogVolumeComparison` | `IUT.PaperIII.Corollary312.ComparisonSetting.LogVolumeComparison` | fragment | `IUT3.Cor3_12.Statement` | yes |
+| `IUT3.Cor3_12.Statement.frag.conclusion_iff` | `IUT.PaperIII.Corollary312.ComparisonSetting.conclusion_iff` | fragment | `IUT3.Cor3_12.Statement` | yes |
+| `IUT3.Cor3_12.Statement.frag.conclusion_iff_constantForm` | `IUT.PaperIII.Corollary312.conclusion_iff_constantForm` | fragment | `IUT3.Cor3_12.Statement` | yes |
+| `IUT3.Cor3_12.Statement.frag.conclusion_of_constantForm` | `IUT.PaperIII.Corollary312.conclusion_of_constantForm` | fragment | `IUT3.Cor3_12.Statement` | yes |
+| `IUT3.Cor3_12.Statement.frag.conclusion_of_containment` | `IUT.PaperIII.Corollary312.ComparisonSetting.conclusion_of_containment` | fragment | `IUT3.Cor3_12.Statement` | yes |
+| `IUT3.Cor3_12.Statement.frag.conclusion_of_logVolumeComparison` | `IUT.PaperIII.Corollary312.ComparisonSetting.conclusion_of_logVolumeComparison` | fragment | `IUT3.Cor3_12.Statement` | yes |
+| `IUT3.Cor3_12.Statement.frag.conclusion_of_procContainment` | `IUT.PaperIII.Corollary312.conclusion_of_procContainment` | fragment | `IUT3.Cor3_12.Statement` | yes |
+| `IUT3.Cor3_12.Statement.frag.constantForm_of_conclusion` | `IUT.PaperIII.Corollary312.constantForm_of_conclusion` | fragment | `IUT3.Cor3_12.Statement` | yes |
+| `IUT3.Cor3_12.Statement.frag.constantForm_of_top` | `IUT.PaperIII.Corollary312.constantForm_of_top` | fragment | `IUT3.Cor3_12.Statement` | yes |
+| `IUT3.Cor3_12.Statement.frag.example_bridge_hypotheses` | `IUT.PaperIII.Corollary312.IntervalExample.example_bridge_hypotheses` | fragment | `IUT3.Cor3_12.Statement` | yes |
+| `IUT3.Cor3_12.Statement.frag.example_comparison_fails` | `IUT.PaperIII.Corollary312.IntervalExample.example_comparison_fails` | fragment | `IUT3.Cor3_12.Statement` | yes |
+| `IUT3.Cor3_12.Statement.frag.example_union_matters` | `IUT.PaperIII.Corollary312.IntervalExample.example_union_matters` | fragment | `IUT3.Cor3_12.Statement` | yes |
+| `IUT3.Cor3_12.Statement.frag.logVolume` | `IUT.PaperIII.Corollary312.logVolume` | fragment | `IUT3.Cor3_12.Statement` | yes |
+| `IUT3.Cor3_12.Statement.frag.thm1_10_final_of_cor312` | `IUT.PaperIII.Corollary312.thm1_10_final_of_cor312` | fragment | `IUT4.Thm1_10.final` | yes |
+| `IUT3.Cor3_12.StepXI.f.frag.logVolumeComparison_of_containment` | `IUT.PaperIII.Corollary312.ComparisonSetting.logVolumeComparison_of_containment` | fragment | `IUT3.Cor3_12.StepXI.f` | yes |
+| `IUT3.Cor3_12.StepXI.f.frag.stepXIf_inclusion_iff_inequality` | `IUT.PaperIII.Corollary312.stepXIf_inclusion_iff_inequality` | fragment | `IUT3.Cor3_12.StepXI.f` | yes |
+| `IUT3.Rem3_9_5.ii.frag.eq_sInter` | `IUT.PaperIII.Remark3_9_5.IsHullMap.eq_sInter` | fragment | `IUT3.Rem3_9_5.ii` | yes |
+| `IUT3.Rem3_9_5.ii.frag.isHullMap_sInter` | `IUT.PaperIII.Remark3_9_5.isHullMap_sInter` | fragment | `IUT3.Rem3_9_5.ii` | yes |
+| `IUT3.Rem3_9_5.ii.frag.unique` | `IUT.PaperIII.Remark3_9_5.IsHullMap.unique` | fragment | `IUT3.Rem3_9_5.ii` | yes |
+| `IUT4.Cor2_2.ProofApply.frag.apply_theorem_1_10` | `IUT.PaperIV.Corollary2_2.apply_theorem_1_10` | fragment | `IUT4.Cor2_2.ProofApply` | yes |
+| `IUT4.Cor2_2.ProofAssembly.frag.assembly` | `IUT.PaperIV.Corollary2_2.assembly` | fragment | `IUT4.Cor2_2.ProofAssembly` | yes |
+| `IUT4.Cor2_2.ProofAssembly.frag.epsE_ge` | `IUT.PaperIV.Corollary2_2.epsE_ge` | fragment | `IUT4.Cor2_2.ProofAssembly` | yes |
+| `IUT4.Cor2_2.ProofAssembly.frag.fifteen_delta_step` | `IUT.PaperIV.Corollary2_2.fifteen_delta_step` | fragment | `IUT4.Cor2_2.ProofAssembly` | yes |
+| `IUT4.Cor2_2.ProofAssembly.frag.final_step` | `IUT.PaperIV.Corollary2_2.final_step` | fragment | `IUT4.Cor2_2.ProofAssembly` | yes |
+| `IUT4.Cor2_2.ProofAssembly.frag.q_not2_step` | `IUT.PaperIV.Corollary2_2.q_not2_step` | fragment | `IUT4.Cor2_2.ProofAssembly` | yes |
+| `IUT4.Cor2_2.ProofP1.frag.P1_bound` | `IUT.PaperIV.Corollary2_2.P1_bound` | fragment | `IUT4.Cor2_2.ProofP1` | yes |
+| `IUT4.Cor2_2.ProofP1.frag.P1_l_ge_seven` | `IUT.PaperIV.Corollary2_2.P1_l_ge_seven` | fragment | `IUT4.Cor2_2.ProofP1` | yes |
+| `IUT4.Cor2_2.ProofP1.frag.P1_lower` | `IUT.PaperIV.Corollary2_2.P1_lower` | fragment | `IUT4.Cor2_2.ProofP1` | yes |
+| `IUT4.Cor2_2.ProofP1.frag.P1_upper` | `IUT.PaperIV.Corollary2_2.P1_upper` | fragment | `IUT4.Cor2_2.ProofP1` | yes |
+| `IUT4.Cor2_2.ProofP1.frag.S1_bound` | `IUT.PaperIV.Corollary2_2.S1_bound` | fragment | `IUT4.Cor2_2.ProofP1` | yes |
+| `IUT4.Cor2_2.ProofP1.frag.thetaA_chain` | `IUT.PaperIV.Corollary2_2.thetaA_chain` | fragment | `IUT4.Cor2_2.ProofP1` | yes |
+| `IUT4.Cor2_2.ProofP4.frag.P4_bound` | `IUT.PaperIV.Corollary2_2.P4_bound` | fragment | `IUT4.Cor2_2.ProofP4` | yes |
+| `IUT4.Cor2_2.ProofP5.frag.P5_bound` | `IUT.PaperIV.Corollary2_2.P5_bound` | fragment | `IUT4.Cor2_2.ProofP5` | yes |
+| `IUT4.Cor2_2.ProofP5.frag.sqrt_mul_log_l` | `IUT.PaperIV.Corollary2_2.sqrt_mul_log_l` | fragment | `IUT4.Cor2_2.ProofP5` | yes |
+| `IUT4.Cor2_2.ProofP5.frag.sqrt_mul_log_l_steps` | `IUT.PaperIV.Corollary2_2.sqrt_mul_log_l_steps` | fragment | `IUT4.Cor2_2.ProofP5` | yes |
+| `IUT4.Cor2_2.ii.C2.frag.C2_of_final` | `IUT.PaperIV.Corollary2_2.C2_of_final` | fragment | `IUT4.Cor2_2.ii.C2` | yes |
+| `IUT4.Cor2_2.iii.frag.eps_star_estimates` | `IUT.PaperIV.Corollary2_2.eps_star_estimates` | fragment | `IUT4.Cor2_2.iii` | yes |
+| `IUT4.Cor2_2.iii.frag.h_bound_Hunif` | `IUT.PaperIV.Corollary2_2.h_bound_Hunif` | fragment | `IUT4.Cor2_2.iii` | yes |
+| `IUT4.Cor2_2.iii.frag.h_lt_of_eps_lt_epsE` | `IUT.PaperIV.Corollary2_2.h_lt_of_eps_lt_epsE` | fragment | `IUT4.Cor2_2.iii` | yes |
+| `IUT4.Cor2_3.frag.BDle_mono_eps` | `IUT.PaperIV.Corollary2_3.BDle_mono_eps` | fragment | `IUT4.Cor2_3` | yes |
+| `IUT4.Cor2_3.frag.BDle_of_finite_exceptions` | `IUT.PaperIV.Corollary2_3.BDle_of_finite_exceptions` | fragment | `IUT4.Cor2_3` | yes |
+| `IUT4.Cor2_3.frag.cor2_3_on_KV` | `IUT.PaperIV.Corollary2_3.cor2_3_on_KV` | fragment | `IUT4.Cor2_3` | yes |
+| `IUT4.Def1_9.frag.degE` | `IUT.PaperIV.degE` | fragment | `IUT4.Def1_9` | yes |
+| `IUT4.Def1_9.frag.degE_arc_eq_normalizedDeg` | `IUT.PaperIV.degE_arc_eq_normalizedDeg` | fragment | `IUT4.Def1_9` | yes |
+| `IUT4.Def1_9.frag.degF` | `IUT.PaperIV.degF` | fragment | `IUT4.Def1_9` | yes |
+| `IUT4.Def1_9.frag.normalizedDeg` | `IUT.PaperIV.normalizedDeg` | fragment | `IUT4.Def1_9` | yes |
+| `IUT4.Prop1_2.frag.a_b_of_e_one` | `IUT.PaperIV.Proposition1_2.a_b_of_e_one` | fragment | `IUT4.Prop1_2` | yes |
+| `IUT4.Prop1_2.frag.a_b_of_le` | `IUT.PaperIV.Proposition1_2.a_b_of_le` | fragment | `IUT4.Prop1_2` | yes |
+| `IUT4.Prop1_2.frag.a_gt` | `IUT.PaperIV.Proposition1_2.a_gt` | fragment | `IUT4.Prop1_2` | yes |
+| `IUT4.Prop1_2.frag.iii_floor` | `IUT.PaperIV.Proposition1_2.iii_floor` | fragment | `IUT4.Prop1_2` | yes |
+| `IUT4.Prop1_2.frag.rpow_b_gt` | `IUT.PaperIV.Proposition1_2.rpow_b_gt` | fragment | `IUT4.Prop1_2` | yes |
+| `IUT4.Prop1_3.frag.i_min` | `IUT.PaperIV.Proposition1_3.i_min` | fragment | `IUT4.Prop1_3` | yes |
+| `IUT4.Prop1_3.frag.ii_base` | `IUT.PaperIV.Proposition1_3.ii_base` | fragment | `IUT4.Prop1_3` | yes |
+| `IUT4.Prop1_3.frag.ii_of_forall_eps` | `IUT.PaperIV.Proposition1_3.ii_of_forall_eps` | fragment | `IUT4.Prop1_3` | yes |
+| `IUT4.Prop1_3.frag.ii_step` | `IUT.PaperIV.Proposition1_3.ii_step` | fragment | `IUT4.Prop1_3` | yes |
+| `IUT4.Prop1_4.frag.a_add_b_le` | `IUT.PaperIV.Proposition1_4.a_add_b_le` | fragment | `IUT4.Prop1_4` | yes |
+| `IUT4.Prop1_4.frag.a_sub_le` | `IUT.PaperIV.Proposition1_2.a_sub_le` | fragment | `IUT4.Prop1_4` | yes |
+| `IUT4.Prop1_4.frag.b_add_le` | `IUT.PaperIV.Proposition1_2.b_add_le` | fragment | `IUT4.Prop1_4` | yes |
+| `IUT4.Prop1_4.frag.dI_add_aI_ge` | `IUT.PaperIV.Proposition1_4.dI_add_aI_ge` | fragment | `IUT4.Prop1_4` | yes |
+| `IUT4.Prop1_4.frag.d_add_a_ge` | `IUT.PaperIV.Proposition1_2.d_add_a_ge` | fragment | `IUT4.Prop1_4` | yes |
+| `IUT4.Prop1_4.frag.four_div_le` | `IUT.PaperIV.Proposition1_2.four_div_le` | fragment | `IUT4.Prop1_4` | yes |
+| `IUT4.Prop1_4.frag.ii_identity` | `IUT.PaperIV.Proposition1_4.ii_identity` | fragment | `IUT4.Prop1_4` | yes |
+| `IUT4.Prop1_4.frag.ii_le` | `IUT.PaperIV.Proposition1_4.ii_le` | fragment | `IUT4.Prop1_4` | yes |
+| `IUT4.Prop1_4.frag.iii_first` | `IUT.PaperIV.Proposition1_4.iii_first` | fragment | `IUT4.Prop1_4` | yes |
+| `IUT4.Prop1_4.frag.iii_second` | `IUT.PaperIV.Proposition1_4.iii_second` | fragment | `IUT4.Prop1_4` | yes |
+| `IUT4.Prop1_5.frag.count_iii` | `IUT.PaperIV.Proposition1_5.count_iii` | fragment | `IUT4.Prop1_5` | yes |
+| `IUT4.Prop1_5.frag.crt_normSq` | `IUT.PaperIV.Proposition1_5.crt_normSq` | fragment | `IUT4.Prop1_5` | yes |
+| `IUT4.Prop1_5.frag.crt_pure` | `IUT.PaperIV.Proposition1_5.crt_pure` | fragment | `IUT4.Prop1_5` | yes |
+| `IUT4.Prop1_6` | `IUT.PaperIV.Proposition1_6.proposition1_6` | whole statement |  | yes |
+| `IUT4.Prop1_7` | `IUT.PaperIV.Proposition1_7.weighted_averages` | whole statement |  | yes |
+| `IUT4.Prop2_1` | `IUT.PaperIV.Proposition2_1.proposition2_1` | whole statement |  | yes |
+| `IUT4.Rem2_3_1.frag.BDle` | `IUT.PaperIV.Corollary2_3.BDle` | fragment | `IUT4.Rem2_3_1` | yes |
+| `IUT4.Thm1_10.StepI.frag.E1` | `IUT.PaperIV.Theorem1_10.E1` | fragment | `IUT4.Thm1_10.StepI` | yes |
+| `IUT4.Thm1_10.StepI.frag.E2` | `IUT.PaperIV.Theorem1_10.E2` | fragment | `IUT4.Thm1_10.StepI` | yes |
+| `IUT4.Thm1_10.StepI.frag.E4` | `IUT.PaperIV.Theorem1_10.E4` | fragment | `IUT4.Thm1_10.StepI` | yes |
+| `IUT4.Thm1_10.StepI.frag.E4_product` | `IUT.PaperIV.Theorem1_10.E4_product` | fragment | `IUT4.Thm1_10.StepI` | yes |
+| `IUT4.Thm1_10.StepI.frag.E6` | `IUT.PaperIV.Theorem1_10.E6` | fragment | `IUT4.Thm1_10.StepI` | yes |
+| `IUT4.Thm1_10.StepI.frag.card_GL2` | `IUT.PaperIV.Theorem1_10.card_GL2` | fragment | `IUT4.Thm1_10.StepI` | yes |
+| `IUT4.Thm1_10.StepII.frag.log_E_ii` | `IUT.PaperIV.Theorem1_10.log_E_ii` | fragment | `IUT4.Thm1_10.StepII` | yes |
+| `IUT4.Thm1_10.StepII.frag.log_div_le_half` | `IUT.PaperIV.Theorem1_10.log_div_le_half` | fragment | `IUT4.Thm1_10.StepII` | yes |
+| `IUT4.Thm1_10.StepII.frag.one_add_four_div_le_two` | `IUT.PaperIV.Theorem1_10.one_add_four_div_le_two` | fragment | `IUT4.Thm1_10.StepII` | yes |
+| `IUT4.Thm1_10.StepII.frag.step_ii_F` | `IUT.PaperIV.Theorem1_10.step_ii_F` | fragment | `IUT4.Thm1_10.StepII` | yes |
+| `IUT4.Thm1_10.StepII.frag.step_ii_K` | `IUT.PaperIV.Theorem1_10.step_ii_K` | fragment | `IUT4.Thm1_10.StepII` | yes |
+| `IUT4.Thm1_10.StepII.frag.step_ii_final` | `IUT.PaperIV.Theorem1_10.step_ii_final` | fragment | `IUT4.Thm1_10.StepII` | yes |
+| `IUT4.Thm1_10.StepIII.frag.R4` | `IUT.PaperIV.Theorem1_10.R4` | fragment | `IUT4.Thm1_10.StepIII` | yes |
+| `IUT4.Thm1_10.StepIII.frag.log_30_mul_le` | `IUT.PaperIV.Theorem1_10.log_30_mul_le` | fragment | `IUT4.Thm1_10.StepIII` | yes |
+| `IUT4.Thm1_10.StepIII.frag.step_iii_final` | `IUT.PaperIV.Theorem1_10.step_iii_final` | fragment | `IUT4.Thm1_10.StepIII` | yes |
+| `IUT4.Thm1_10.StepIII.frag.step_iii_p_eq_l` | `IUT.PaperIV.Theorem1_10.step_iii_p_eq_l` | fragment | `IUT4.Thm1_10.StepIII` | yes |
+| `IUT4.Thm1_10.StepIII.frag.step_iii_sQ` | `IUT.PaperIV.Theorem1_10.step_iii_sQ` | fragment | `IUT4.Thm1_10.StepIII` | yes |
+| `IUT4.Thm1_10.StepV.frag.betaAvg_affine` | `IUT.PaperIV.Theorem1_10.betaAvg_affine` | fragment | `IUT4.Thm1_10.StepV` | yes |
+| `IUT4.Thm1_10.StepV.frag.procession_average` | `IUT.PaperIV.Theorem1_10.procession_average` | fragment | `IUT4.Thm1_10.StepV` | yes |
+| `IUT4.Thm1_10.StepV.frag.procession_average_l` | `IUT.PaperIV.Theorem1_10.procession_average_l` | fragment | `IUT4.Thm1_10.StepV` | yes |
+| `IUT4.Thm1_10.StepV.frag.procession_sum` | `IUT.PaperIV.Theorem1_10.procession_sum` | fragment | `IUT4.Thm1_10.StepV` | yes |
+| `IUT4.Thm1_10.StepV.frag.step_v_final` | `IUT.PaperIV.Theorem1_10.step_v_final` | fragment | `IUT4.Thm1_10.StepV` | yes |
+| `IUT4.Thm1_10.StepV.frag.step_v_weighted` | `IUT.PaperIV.Theorem1_10.step_v_weighted` | fragment | `IUT4.Thm1_10.StepV` | yes |
+| `IUT4.Thm1_10.StepV.frag.sum_Istar_le` | `IUT.PaperIV.Theorem1_10.sum_Istar_le` | fragment | `IUT4.Thm1_10.StepV` | yes |
+| `IUT4.Thm1_10.StepV.frag.weighted_average_normalized` | `IUT.PaperIV.Theorem1_10.weighted_average_normalized` | fragment | `IUT4.Thm1_10.StepV` | yes |
+| `IUT4.Thm1_10.StepVII.frag.step_vii_archimedean` | `IUT.PaperIV.Theorem1_10.step_vii_archimedean` | fragment | `IUT4.Thm1_10.StepVII` | yes |
+| `IUT4.Thm1_10.StepVII.frag.step_vii_average` | `IUT.PaperIV.Theorem1_10.step_vii_average` | fragment | `IUT4.Thm1_10.StepVII` | yes |
+| `IUT4.Thm1_10.StepVIII.frag.constant_bound_of_raw` | `IUT.PaperIV.Theorem1_10.constant_bound_of_raw` | fragment | `IUT4.Thm1_10.StepVIII` | yes |
+| `IUT4.Thm1_10.StepVIII.frag.step_viii_absorb` | `IUT.PaperIV.Theorem1_10.step_viii_absorb` | fragment | `IUT4.Thm1_10.StepVIII` | yes |
+| `IUT4.Thm1_10.StepVIII.frag.step_viii_constant` | `IUT.PaperIV.Theorem1_10.step_viii_constant` | fragment | `IUT4.Thm1_10.StepVIII` | yes |
+| `IUT4.Thm1_10.StepVIII.frag.step_viii_estimate` | `IUT.PaperIV.Theorem1_10.step_viii_estimate` | fragment | `IUT4.Thm1_10.StepVIII` | yes |
+| `IUT4.Thm1_10.StepVIII.frag.step_viii_prime_count` | `IUT.PaperIV.Theorem1_10.step_viii_prime_count` | fragment | `IUT4.Thm1_10.StepVIII` | yes |
+| `IUT4.Thm1_10.StepVIII.frag.step_viii_prime_count_prm` | `IUT.PaperIV.Theorem1_10.step_viii_prime_count_prm` | fragment | `IUT4.Thm1_10.StepVIII` | yes |
+| `IUT4.Thm1_10.StepVIII.frag.step_viii_raw` | `IUT.PaperIV.Theorem1_10.step_viii_raw` | fragment | `IUT4.Thm1_10.StepVIII` | yes |
+| `IUT4.Thm1_10.StepVIII.frag.step_viii_substitute` | `IUT.PaperIV.Theorem1_10.step_viii_substitute` | fragment | `IUT4.Thm1_10.StepVIII` | yes |
+| `IUT4.Thm1_10.StepVIII.frag.step_viii_sum` | `IUT.PaperIV.Theorem1_10.step_viii_sum` | fragment | `IUT4.Thm1_10.StepVIII` | yes |
+| `IUT4.Thm1_10.final.frag.final_estimate_one` | `IUT.PaperIV.Theorem1_10.final_estimate_one` | fragment | `IUT4.Thm1_10.final` | yes |
+| `IUT4.Thm1_10.final.frag.final_estimate_two` | `IUT.PaperIV.Theorem1_10.final_estimate_two` | fragment | `IUT4.Thm1_10.final` | yes |
+| `IUT4.Thm1_10.final.frag.final_inequality` | `IUT.PaperIV.Theorem1_10.final_inequality` | fragment | `IUT4.Thm1_10.final` | yes |
+| `IUT4.Thm1_10.final.frag.final_inequality_F` | `IUT.PaperIV.Theorem1_10.final_inequality_F` | fragment | `IUT4.Thm1_10.final` | yes |
+| `IUT4.Thm1_10.frag.constant` | `IUT.PaperIV.Theorem1_10.constant` | fragment | `IUT4.Thm1_10` | yes |
 
 ## Lean declarations
 
-474 declarations (plus 365 internal auxiliary ones) in 44 modules: `Challenge.Defs`, `IUT`, `IUT.Applications.ABC`, `IUT.Applications.ABCFormalConjectures`, `IUT.Audit.MochizukiResponses.LVEx`, `IUT.Audit.MochizukiResponses.LVExMeasure`, `IUT.Audit.MochizukiResponses.SSIdEx`, `IUT.Audit.MochizukiResponses.ToyModels`, `IUT.Audit.ScholzeStix.Blurring`, `IUT.Audit.ScholzeStix.Diagram`, `IUT.Audit.ScholzeStix.Reduction`, `IUT.Audit.ScholzeStix.Section1_3`, `IUT.Countermodels.Basic`, `IUT.Countermodels.CombinedIndeterminacies`, `IUT.Countermodels.HaarNormalization`, `IUT.Countermodels.HullTransport`, `IUT.Countermodels.JointWitness`, `IUT.Countermodels.LevelMismatch`, `IUT.Countermodels.MultiplicativeAdditive`, `IUT.Countermodels.ReconstructionComparison`, `IUT.Foundations.GrothendieckUniverse`, `IUT.PaperI.InitialThetaData`, `IUT.PaperII.Labels`, `IUT.PaperIII.Corollary312.Numerical`, `IUT.PaperIII.Remark3_9_5.HullOperator`, `IUT.PaperIV.ArithmeticDivisor`, `IUT.PaperIV.Corollary2_2.Arithmetic`, `IUT.PaperIV.Corollary2_3`, `IUT.PaperIV.Definition1_9`, `IUT.PaperIV.Proposition1_2`, `IUT.PaperIV.Proposition1_3`, `IUT.PaperIV.Proposition1_4`, `IUT.PaperIV.Proposition1_5`, `IUT.PaperIV.Proposition1_6`, `IUT.PaperIV.Proposition1_7`, `IUT.PaperIV.Proposition2_1`, `IUT.PaperIV.Theorem1_10.Arithmetic`, `IUT.PaperIV.Theorem1_10.ElementaryFacts`, `IUT.PaperIV.Theorem1_10.StepII`, `IUT.PaperIV.Theorem1_10.StepIII`, `IUT.PaperIV.Theorem1_10.StepV`, `IUT.PaperIV.Theorem1_10.StepVIII`, `IUT.Prerequisites.PositiveRationalsZhatUnits`, `IUT.Prerequisites.ProductFormula`. Direct project references per declaration are in `data/dependency_graph.json` (edge kind `lean_refs`).
+596 declarations (plus 396 internal auxiliary ones) in 47 modules: `Challenge.Defs`, `IUT`, `IUT.Applications.ABC`, `IUT.Applications.ABCFormalConjectures`, `IUT.Audit.MochizukiResponses.LVEx`, `IUT.Audit.MochizukiResponses.LVExMeasure`, `IUT.Audit.MochizukiResponses.SSIdEx`, `IUT.Audit.MochizukiResponses.ToyModels`, `IUT.Audit.ScholzeStix.Blurring`, `IUT.Audit.ScholzeStix.Diagram`, `IUT.Audit.ScholzeStix.Reduction`, `IUT.Audit.ScholzeStix.Section1_3`, `IUT.Countermodels.Basic`, `IUT.Countermodels.CombinedIndeterminacies`, `IUT.Countermodels.HaarNormalization`, `IUT.Countermodels.HullTransport`, `IUT.Countermodels.JointWitness`, `IUT.Countermodels.LevelMismatch`, `IUT.Countermodels.MultiplicativeAdditive`, `IUT.Countermodels.ReconstructionComparison`, `IUT.Foundations.GrothendieckUniverse`, `IUT.PaperI.InitialThetaData`, `IUT.PaperI.PolyMorphism`, `IUT.PaperII.Labels`, `IUT.PaperIII.Corollary312.Comparison`, `IUT.PaperIII.Corollary312.Numerical`, `IUT.PaperIII.Remark3_9_5.HullOperator`, `IUT.PaperIV.ArithmeticDivisor`, `IUT.PaperIV.Corollary2_2.Arithmetic`, `IUT.PaperIV.Corollary2_3`, `IUT.PaperIV.Definition1_9`, `IUT.PaperIV.Proposition1_2`, `IUT.PaperIV.Proposition1_3`, `IUT.PaperIV.Proposition1_4`, `IUT.PaperIV.Proposition1_5`, `IUT.PaperIV.Proposition1_6`, `IUT.PaperIV.Proposition1_7`, `IUT.PaperIV.Proposition2_1`, `IUT.PaperIV.Theorem1_10.Arithmetic`, `IUT.PaperIV.Theorem1_10.ElementaryFacts`, `IUT.PaperIV.Theorem1_10.StepII`, `IUT.PaperIV.Theorem1_10.StepIII`, `IUT.PaperIV.Theorem1_10.StepV`, `IUT.PaperIV.Theorem1_10.StepVIII`, `IUT.Prerequisites.PositiveRationalsZhatUnits`, `IUT.Prerequisites.ProductFormula`, `Solution`. Direct project references per declaration are in `data/dependency_graph.json` (edge kind `lean_uses`).
 

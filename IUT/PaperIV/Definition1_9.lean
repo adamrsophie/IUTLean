@@ -15,23 +15,30 @@ portion of `𝔞` supported in `E` and set
 `deg_E(𝔞) = deg(𝔞_E) / ∑_{v ∈ E} [F_v : ℚ_{v_ℚ}]`.
 
 The paper then states that `deg_{E|K}(𝔞|_K) = deg_E(𝔞)` for a finite extension `K` of `F`, where
-`E|K` is the set of valuations of `K` over `E`.
+`E|K` is the set of valuations of `K` over `E`; part (i) states the analogous invariance
+`deg(𝔞|_K) = deg(𝔞)` of the normalized degree.
 
-**Interpretation.** In the render the numerator `deg` is not underlined, so it is the
-unnormalized degree `deg_F` of Definition 1.9 (i), not the normalized degree `deg` (underlined).
-With `deg_F` in the numerator, passing to `K` multiplies both the numerator and the denominator
-by `[K : F]`, so the stated invariance holds; with the normalized degree in the numerator it
-would fail by the factor `1/[K : F]`, and the averaging in Steps (v) and (viii) of the proof of
-Theorem 1.10 would not be consistent. This file therefore uses `degF` in the numerator
-(`degE`). The reading differs from one in which the numerator is the normalized degree.
+**Interpretation of the numerator.** In the render of page 22 the line under `deg(𝔞_E)` is the
+fraction bar, so the numerator is the degree `deg_F` of Definition 1.9 (i), not the normalized
+degree; this file uses `degF` in the numerator.
 
-What is formalized: the definition (`degE`), the local degree `[F_v : ℚ_{v_ℚ}]` (`localDeg`, as
-`e_v·f_v` at finite places and as `InfinitePlace.mult` at infinite places), basic properties
-(`degE_add`, `degE_nonneg`), the identification `deg_E(𝔞) = deg(𝔞_E)` (normalized degree) when
-the local degrees over `E` sum to `[F : ℚ]` (`degE_eq_normalizedDeg`), its unconditional
-instance for the set of all archimedean valuations (`degE_arc_eq_normalizedDeg`), and the
-scaling fact behind the invariance (`degE_ratio_invariant`). The invariance itself, which needs
-pullback of arithmetic divisors along an extension `K/F`, is not formalized.
+**Domain.** `degE` is defined only on `PlaceSet F`, the finite sets `E` that are nonempty and
+whose elements all lie over one place of `ℚ` (`LiesOverOnePlace`). Interpretation choice: the
+place of `ℚ` below a valuation is encoded by `placeBelow` as `some p`, with `p` the residue
+characteristic `ringChar (𝓞 F ⧸ 𝔭)`, for a finite place `𝔭`, and as `none` for an archimedean
+place.
+
+What is formalized: the domain (`placeBelow`, `LiesOverOnePlace`, `PlaceSet`), the definition
+(`degE`), the local degree `[F_v : ℚ_{v_ℚ}]` (`localDeg`, as `e_v·f_v` at finite places and as
+`InfinitePlace.mult` at infinite places), basic properties (`degE_add`, `degE_nonneg`), the
+identification `deg_E(𝔞) = deg(𝔞_E)` (normalized degree) under the hypothesis that the local
+degrees over `E` sum to `[F : ℚ]` (`degE_eq_normalizedDeg`), and its unconditional instance for
+the set of all archimedean valuations (`degE_arc_eq_normalizedDeg`).
+
+What is not formalized: the pull-back `𝔞|_K` of arithmetic divisors along a finite extension
+`K/F`, the set `E|K`, and both invariance statements (`deg(𝔞|_K) = deg(𝔞)` of (i) and
+`deg_{E|K}(𝔞|_K) = deg_E(𝔞)` of (ii)); the fact that the local degrees over all valuations above
+one finite `v_ℚ` sum to `[F : ℚ]` is also not proved here.
 -/
 
 open NumberField
@@ -46,15 +53,31 @@ noncomputable def localDeg : Valuations F → ℕ
   | .inl v => v.asIdeal.ramificationIdx ℤ * v.asIdeal.inertiaDeg ℤ
   | .inr w => w.mult
 
+/-- The place of `ℚ` below a valuation of `F`: `some p` for a finite place `𝔭`, where `p` is the
+residue characteristic of `𝔭`, and `none` for an archimedean place. -/
+noncomputable def placeBelow : Valuations F → Option ℕ
+  | .inl v => some (ringChar (𝓞 F ⧸ v.asIdeal))
+  | .inr _ => none
+
+/-- The domain condition of Definition 1.9 (ii): `E` is nonempty and all its elements lie over
+one place `v_ℚ` of `ℚ`. -/
+def LiesOverOnePlace (E : Finset (Valuations F)) : Prop :=
+  E.Nonempty ∧ ∃ vQ : Option ℕ, ∀ v ∈ E, placeBelow v = vQ
+
+variable (F) in
+/-- The finite sets of valuations on which Definition 1.9 (ii) defines `deg_E`. -/
+abbrev PlaceSet : Type _ := {E : Finset (Valuations F) // LiesOverOnePlace E}
+
 open scoped Classical in
 /-- `𝔞_E`, the portion of `𝔞` supported in `E`. -/
 noncomputable def ADiv.restrict (E : Finset (Valuations F)) (a : ADiv F) : ADiv F :=
   a.filter (· ∈ E)
 
 /-- **Definition 1.9 (ii)**, with the unnormalized degree in the numerator (see the module
-docstring): `deg_E(𝔞) = deg_F(𝔞_E) / ∑_{v ∈ E} [F_v : ℚ_{v_ℚ}]`. -/
-noncomputable def degE (E : Finset (Valuations F)) (a : ADiv F) : ℝ :=
-  degF (ADiv.restrict E a) / ∑ v ∈ E, (localDeg v : ℝ)
+docstring): for `E` a nonempty set of valuations over one place of `ℚ`,
+`deg_E(𝔞) = deg_F(𝔞_E) / ∑_{v ∈ E} [F_v : ℚ_{v_ℚ}]`. -/
+noncomputable def degE (E : PlaceSet F) (a : ADiv F) : ℝ :=
+  degF (ADiv.restrict E.1 a) / ∑ v ∈ E.1, (localDeg v : ℝ)
 
 omit [NumberField F] in
 theorem ADiv.restrict_add (E : Finset (Valuations F)) (a b : ADiv F) :
@@ -63,7 +86,7 @@ theorem ADiv.restrict_add (E : Finset (Valuations F)) (a b : ADiv F) :
   simp only [ADiv.restrict]
   exact Finsupp.filter_add
 
-theorem degE_add (E : Finset (Valuations F)) (a b : ADiv F) :
+theorem degE_add (E : PlaceSet F) (a b : ADiv F) :
     degE E (a + b) = degE E a + degE E b := by
   simp [degE, ADiv.restrict_add, add_div]
 
@@ -78,16 +101,17 @@ theorem ADiv.restrict_effective {E : Finset (Valuations F)} {a : ADiv F} (h : a.
   · exact h v
   · exact le_rfl
 
-theorem degE_nonneg {E : Finset (Valuations F)} {a : ADiv F} (h : a.Effective) :
+theorem degE_nonneg {E : PlaceSet F} {a : ADiv F} (h : a.Effective) :
     0 ≤ degE E a :=
   div_nonneg (degF_nonneg (ADiv.restrict_effective h))
     (Finset.sum_nonneg fun _ _ => Nat.cast_nonneg _)
 
-/-- When the local degrees over `E` sum to `[F : ℚ]` (as they do when `E` is the set of all
-valuations over a single `v_ℚ`), `deg_E(𝔞)` is the normalized degree of `𝔞_E`. -/
-theorem degE_eq_normalizedDeg {E : Finset (Valuations F)} (a : ADiv F)
-    (hE : ∑ v ∈ E, (localDeg v : ℝ) = Module.finrank ℚ F) :
-    degE E a = normalizedDeg (ADiv.restrict E a) := by
+/-- If the local degrees over `E` sum to `[F : ℚ]`, then `deg_E(𝔞)` is the normalized degree of
+`𝔞_E`. The hypothesis holds when `E` is the set of all valuations over one `v_ℚ`; this file proves
+that only for the archimedean place (`sum_localDeg_arc`). -/
+theorem degE_eq_normalizedDeg {E : PlaceSet F} (a : ADiv F)
+    (hE : ∑ v ∈ E.1, (localDeg v : ℝ) = Module.finrank ℚ F) :
+    degE E a = normalizedDeg (ADiv.restrict E.1 a) := by
   rw [degE, hE, normalizedDeg]
 
 /-- The set of all archimedean valuations, i.e. the valuations over the archimedean place of
@@ -103,21 +127,21 @@ theorem sum_localDeg_arc :
   simp only [Function.Embedding.coeFn_mk, localDeg]
   exact_mod_cast InfinitePlace.sum_mult_eq
 
+/-- The set of all archimedean valuations, as an element of `PlaceSet F`: it is nonempty and all
+its elements lie over the archimedean place of `ℚ`. -/
+noncomputable def arcPlaceSet (F : Type*) [Field F] [NumberField F] : PlaceSet F :=
+  ⟨arcValuations F, by
+    refine ⟨?_, none, ?_⟩
+    · rw [arcValuations, Finset.map_nonempty]; exact Finset.univ_nonempty
+    · intro v hv
+      rw [arcValuations, Finset.mem_map] at hv
+      obtain ⟨w, -, rfl⟩ := hv
+      rfl⟩
+
 /-- **Unconditional instance.** For `E` the set of all archimedean valuations,
 `deg_E(𝔞) = deg(𝔞_E)`. -/
 theorem degE_arc_eq_normalizedDeg (a : ADiv F) :
-    degE (arcValuations F) a = normalizedDeg (ADiv.restrict (arcValuations F) a) :=
+    degE (arcPlaceSet F) a = normalizedDeg (ADiv.restrict (arcValuations F) a) :=
   degE_eq_normalizedDeg a sum_localDeg_arc
-
-/-- **The scaling fact behind the invariance `deg_{E|K}(𝔞|_K) = deg_E(𝔞)`.** Passing to a
-finite extension of degree `κ` multiplies `deg_F(𝔞_E)` by `κ` and `∑_{v ∈ E} [F_v : ℚ_{v_ℚ}]` by
-`κ`; the quotient is unchanged. With the normalized degree in the numerator, the numerator would
-be unchanged while the denominator is multiplied by `κ`, and the quotient would change by
-`1/κ` (`degE_ratio_normalized`). -/
-theorem degE_ratio_invariant {N S κ : ℝ} (hκ : κ ≠ 0) : (κ * N) / (κ * S) = N / S :=
-  mul_div_mul_left N S hκ
-
-theorem degE_ratio_normalized {N S κ : ℝ} (hκ : κ ≠ 0) : N / (κ * S) = (1 / κ) * (N / S) := by
-  field_simp
 
 end IUT.PaperIV

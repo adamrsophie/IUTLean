@@ -14,7 +14,7 @@ displays of pages 153, 154, 156, 173 and 174 were checked against rendered page 
 
 ## 1. Summary
 
-| Project | Commit | Date | License | Lean / Mathlib | Lean files | Kernel-checked claim |
+| Project | Commit | Date | License | Lean / Mathlib | Lean files | Claim inspected in source or reported by the project |
 |---|---|---|---|---|---|---|
 | `lana-agents/iut` | `b4a9966f` | 2026-11-22 | Apache-2.0 | `v4.32.0` / `v4.32.0` | 768 | a variant of IUT III Cor. 3.12 (assumed) implies classical abc |
 | `LANA-Project/genl` | `6e9a6543` | 2026-07-19 | none in repository | `v4.32.0` / `v4.32.0` | 16 | [GenEll] Thm 2.1 (ii) implies (i), relative to abstract height data |
@@ -22,7 +22,7 @@ displays of pages 153, 154, 156, 173 and 174 were checked against rendered page 
 | `google-deepmind/formal-conjectures` | `9097e2f9` | 2026-11-24 | Apache-2.0 | `v4.33.1` / `v4.33.1` | 2199 | statements only (abc is stated, with `sorry`) |
 | Mochizuki, "On the formalization of IUT" (slides) | file of 2026-04-07 | April 2026 | not stated | no code published | 0 | none (describes unpublished skeletal code) |
 
-Full commits and Mathlib revisions are in the JSON file.
+Full commits and Mathlib revisions are in the JSON file. The last column records what the source, read at the listed commit, states, or what the project reports; none of it was replayed by our kernel, since no external project was built. Independent replay of each project, and equivalence of its statements with the statements of the manuscripts (for example of the LANA variant of Corollary 3.12 with the paper's multiradial images and extended-real formulation), remain open.
 
 ## 2. `lana-agents/iut`
 
@@ -184,8 +184,8 @@ with the factor `3/2`).
 
 ### 2.6 Dependencies (transitive)
 
-Pinned in `lake-manifest.json`; downloaded at the pinned revisions to
-`documentation/external/lana-deps/` and grepped. All carry a LICENSE file.
+Pinned in `lake-manifest.json`; downloaded at the pinned revisions to a local, untracked
+directory and grepped. All carry a LICENSE file.
 
 | Package | Revision | Files | Lines | Findings |
 |---|---|---|---|---|
@@ -320,7 +320,7 @@ compatibility problem at the final stage, compares it with Scholze and Stix, and
 project "has not yet reconstructed a proof of the required compatibility". This is the report cited
 as "[LANA]" in `lana-agents/iut/Iut/WallEquiv/README.md`.
 
-Downloaded copies (not tracked) are in `documentation/external/mochizuki/`.
+Downloaded copies are kept in a local, untracked directory; the URLs above are the sources.
 
 ## 7. Mathlib
 

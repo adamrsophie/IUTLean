@@ -26,9 +26,14 @@ proved here: that the arithmetic objects of the paper satisfy those hypotheses.
 
 namespace IUT.PaperIV.Theorem1_10
 
-/-- The constant `C_Θ` displayed in the statement of Theorem 1.10:
+/-- The value of `C_Θ` displayed in the statement of Theorem 1.10 (page 23):
 `(l+1)/(4·|log(q)|) · {(1 + 12·d_mod/l)·(log 𝔡 + log 𝔣) + 10·(e*_mod·l + η_prm)
-  − (1/6)·(1 − 12/l²)·log(𝔮)} − 1`. -/
+  − (1/6)·(1 − 12/l²)·log(𝔮)} − 1`.
+The two `q`-quantities are distinct arguments: `Q` stands for `log(𝔮)`, the normalized degree of
+the `q`-parameter divisor, and `q` stands for `|log(q)|`, the absolute value of the `q`-pilot
+log-volume of IUT III, Corollary 3.12, which page 23 states equals `log(𝔮)/(2l)`. The relation
+`q = Q/(2l)` is not built into the definition; the theorems that need it take it as a
+hypothesis (`constant_bound_of_raw`, `step_viii_constant`). -/
 noncomputable def constant (l d D E Q q : ℝ) : ℝ :=
   (l + 1) / (4 * q) * ((1 + 12 * d / l) * D + 10 * E - 1 / 6 * (1 - 12 / l ^ 2) * Q) - 1
 

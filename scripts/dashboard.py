@@ -1,43 +1,56 @@
 #!/usr/bin/env python3
 """Formalization status dashboard.
 
-Usage: python3 scripts/dashboard.py   (after extract_statements.py and build_graph.py)
+Usage: python3 scripts/dashboard.py   (after extract_statements.py merge and build_graph.py)
 
 Writes docs/DASHBOARD.md and data/dashboard.json. Every number is computed from
 data/statements.json (mechanical index merged with data/curated/*.json),
-data/dependency_graph.json and data/lean_declarations.json. Nothing is typed by hand.
+data/dependency_graph.json, data/lean_declarations.json and data/countermodels.json. The
+statuses that drive the counts are written by hand in data/curated/*.json; this script only
+checks them against the rules of scripts/records.py and against the Lean inventory. It exits
+nonzero, after writing, if a record is invalid (scripts/records.py: unknown status, parent
+that is not a record, formalized or verified status without a declaration, EXTRACTED without
+content, hypotheses and conclusion) or if a declaration named in data/ is not in the
+inventory.
 
-Definitions used for the counts:
-  formalized            statement_status STATEMENT_FORMALIZED or STATEMENT_REVIEWED, and the
-                        named lean_declaration exists in the built library
-  unconditional verified  formalized, proof_status KERNEL_VERIFIED or INDEPENDENTLY_CHECKED,
-                        and the declaration depends only on the allowed axioms
-  conditional           proof_status CONDITIONALLY_VERIFIED
-  unresolved obligations  entries of the obligations lists of all records
-  ambiguous             statement_status INTERPRETATION_AMBIGUOUS, or a nonempty
-                        ambiguities list
-  external gaps         records with proof_status BLOCKED_BY_EXTERNAL_THEOREM; separately,
-                        the bibliography keys cited by critical-path statements
-  countermodels         records with status COUNTERMODEL_FOUND; separately, theorems in the
-                        Lean modules IUT.Countermodels.*
-  unauthorized axioms   axioms other than propext, Classical.choice, Quot.sound that a
-                        project declaration depends on, and declarations of kind axiom
-  placeholders          project declarations that depend on sorryAx
+Definitions used for the counts. A record is a fragment when its kind is "fragment"; every
+other record is a statement record (a numbered or lettered statement, a part or proof step,
+or an unnumbered section item).
+  formalized in full     statement record, statement_status STATEMENT_FORMALIZED or
+                         STATEMENT_REVIEWED, and the named lean_declaration exists
+  proved in full, unconditional  formalized in full, proof_status KERNEL_VERIFIED or
+                         INDEPENDENTLY_CHECKED, and the declaration depends only on the
+                         allowed axioms
+  proved in full, conditional    formalized in full and proof_status CONDITIONALLY_VERIFIED
+  fragments checked      fragment records whose declaration exists; unconditional when
+                         KERNEL_VERIFIED with allowed axioms, conditional when
+                         CONDITIONALLY_VERIFIED. A parent is never counted through them.
+  obligation entries     items of the obligations lists (open claims and notes alike, as the
+                         curated files write them), and the number of records with one
+  BLOCKED_BY_EXTERNAL_THEOREM  records with that proof status
+  countermodel catalog   the entries of data/countermodels.json by their kind
+  unauthorized axioms    axioms other than propext, Classical.choice, Quot.sound that a
+                         project declaration depends on, and declarations of kind axiom
+  placeholders           project declarations that depend on sorryAx
 """
 import json
+import sys
 from collections import Counter, defaultdict
 from pathlib import Path
 
+import records
+
 ROOT = Path(__file__).resolve().parent.parent
-ALLOWED = {"propext", "Classical.choice", "Quot.sound"}
+ALLOWED = records.ALLOWED_AXIOMS
 FIDELITY = ["NOT_EXTRACTED", "EXTRACTED", "INTERPRETATION_AMBIGUOUS", "LEAN_STATEMENT_DRAFT",
             "STATEMENT_FORMALIZED", "STATEMENT_REVIEWED"]
 PROOF = ["NOT_EXTRACTED", "EXTRACTED", "PROOF_IN_PROGRESS", "BLOCKED_BY_MATHLIB",
          "BLOCKED_BY_EXTERNAL_THEOREM", "BLOCKED_BY_MISSING_JUSTIFICATION",
          "CONDITIONALLY_VERIFIED", "KERNEL_VERIFIED", "INDEPENDENTLY_CHECKED",
          "COUNTERMODEL_FOUND"]
-FORMALIZED = {"STATEMENT_FORMALIZED", "STATEMENT_REVIEWED"}
-VERIFIED = {"KERNEL_VERIFIED", "INDEPENDENTLY_CHECKED"}
+COUNTERMODEL_KINDS = {"countermodel": "Countermodels (of a simplified abstraction unless the "
+                                      "entry says otherwise)",
+                      "positive": "Positive results", "lemma": "Lemmas"}
 
 
 def load(name, default=None):
@@ -53,92 +66,140 @@ def table(rows, header):
 def main():
     statements = load("statements.json")
     graph = load("dependency_graph.json")
-    lean = load("lean_declarations.json", {"modules": [], "declarations": []})
+    lean = load("lean_declarations.json")
+    countermodels = load("countermodels.json", {"entries": []})
     decls = {d["name"]: d for d in lean["declarations"]}
     critical = set(graph["analysis"]["critical_path"])
+    errors = records.structural_errors(statements)
+    errors += records.declaration_errors(statements, decls, set(lean["modules"]))
+
+    def exists(s):
+        return s.get("lean_declaration") in decls
+
+    def clean_axioms(s):
+        return exists(s) and set(decls[s["lean_declaration"]]["axioms"]) <= ALLOWED
+
+    def theorem(s):
+        return exists(s) and records.is_theorem(decls[s["lean_declaration"]])
+
+    def typed_definition(s):
+        return exists(s) and not theorem(s)
 
     def formalized(s):
-        return s.get("statement_status") in FORMALIZED and s.get("lean_declaration") in decls
+        return (not records.is_fragment(s) and s.get("statement_status") in records.FORMALIZED
+                and exists(s))
 
-    def verified(s):
-        d = decls.get(s.get("lean_declaration"))
-        return (formalized(s) and s.get("proof_status") in VERIFIED
-                and set(d["axioms"]) <= ALLOWED)
+    def proved(s):
+        return (formalized(s) and theorem(s) and s.get("proof_status") in records.VERIFIED
+                and clean_axioms(s))
+
+    def conditional(s):
+        return formalized(s) and theorem(s) and s.get("proof_status") == "CONDITIONALLY_VERIFIED"
+
+    def frag_unconditional(s):
+        return (records.is_fragment(s) and theorem(s) and s.get("proof_status") == "KERNEL_VERIFIED"
+                and clean_axioms(s))
+
+    def frag_conditional(s):
+        return (records.is_fragment(s) and theorem(s)
+                and s.get("proof_status") == "CONDITIONALLY_VERIFIED")
 
     def ambiguous(s):
         return s.get("statement_status") == "INTERPRETATION_AMBIGUOUS" or bool(s.get("ambiguities"))
 
+    paper_records = [s for s in statements if not records.is_fragment(s)]
+    fragments = [s for s in statements if records.is_fragment(s)]
+
     def coverage(group):
-        return {"statements": len(group),
+        group_frag = [s for s in fragments if s.get("parent") in {g["id"] for g in group}]
+        return {"statement_records": len(group),
                 "extracted_by_reading": sum(s.get("statement_status") != "NOT_EXTRACTED"
                                             for s in group),
-                "formalized": sum(formalized(s) for s in group),
-                "unconditional_verified": sum(verified(s) for s in group),
-                "conditional": sum(s.get("proof_status") == "CONDITIONALLY_VERIFIED"
-                                   for s in group),
+                "formalized_in_full": sum(formalized(s) for s in group),
+                "proved_in_full_unconditional": sum(proved(s) for s in group),
+                "proved_in_full_conditional": sum(conditional(s) for s in group),
+                "fragments_checked": sum(frag_unconditional(s) or frag_conditional(s)
+                                         for s in group_frag),
                 "ambiguous": sum(ambiguous(s) for s in group)}
 
-    indexed = [s for s in statements if not s.get("parent")]
-    parts = [s for s in statements if s.get("parent")]
+    indexed_ids = {m["id"] for m in load("mechanical_index.json")}
+    indexed = [s for s in paper_records if s["id"] in indexed_ids]
+    section_items = [s for s in paper_records if records.SECTION_ITEM.match(s["id"])]
+    parts = [s for s in paper_records if s.get("parent")]
     obligations = [(s["id"], o) for s in statements for o in (s.get("obligations") or [])]
     claimed_missing = sorted(s["id"] for s in statements
-                             if s.get("lean_declaration") and s["lean_declaration"] not in decls)
-    unconfirmed = sorted(s["id"] for s in statements
-                         if s.get("proof_status") in VERIFIED and not verified(s))
+                             if s.get("lean_declaration") and not exists(s))
+    unconfirmed = sorted(s["id"] for s in paper_records
+                         if s.get("proof_status") in records.VERIFIED and not proved(s))
     bad_axioms = sorted({(d["name"], a) for d in decls.values() for a in d["axioms"]
                          if a not in ALLOWED})
     axiom_decls = sorted(d["name"] for d in decls.values() if d["kind"] == "axiom")
     placeholders = sorted(d["name"] for d in decls.values() if "sorryAx" in d["axioms"])
-    countermodel_theorems = sorted(d["name"] for d in decls.values()
-                                   if d["module"].startswith("IUT.Countermodels")
-                                   and d["kind"] == "theorem" and not d["internal"])
     on_disk = sorted(".".join(p.relative_to(ROOT).with_suffix("").parts)
                      for base in ("IUT", "Challenge") for p in (ROOT / base).rglob("*.lean"))
     not_built = [m for m in on_disk if m not in lean["modules"]
                  and not m.startswith("IUT.Experimental")]
+    extracted_proof_open = sum(s.get("statement_status") not in ("NOT_EXTRACTED", None)
+                               and s.get("proof_status") == "NOT_EXTRACTED"
+                               for s in paper_records)
+    catalog = Counter(e.get("kind") for e in countermodels.get("entries", []))
+    fragment_rows = sorted(
+        ([f"`{f['id']}`", f"`{f.get('parent')}`", f"`{f.get('lean_declaration')}`",
+          decls[f["lean_declaration"]]["kind"] if exists(f) else "not found",
+          f.get("proof_status")] for f in fragments), key=lambda r: r[0])
 
-    per_paper = {f"IUT{p}": coverage([s for s in statements if s.get("paper") == p])
+    per_paper = {f"IUT{p}": coverage([s for s in paper_records if s.get("paper") == p])
                  for p in range(1, 5)}
     data = {
-        "statements_indexed": len(indexed),
+        "statements_indexed": len(indexed_ids),
         "statements_by_kind": dict(sorted(Counter(s.get("kind") for s in indexed).items())),
         "curated_parts_and_steps": len(parts),
+        "unnumbered_section_items": len(section_items),
+        "fragments": len(fragments),
         "curated_records": sum(bool(s.get("curated_in")) for s in statements),
         "extracted_by_reading": sum(s.get("statement_status") != "NOT_EXTRACTED"
-                                    for s in statements),
-        "formalized": sum(formalized(s) for s in statements),
-        "unconditional_verified": sum(verified(s) for s in statements),
-        "conditional": sum(s.get("proof_status") == "CONDITIONALLY_VERIFIED" for s in statements),
-        "unresolved_obligations": len(obligations),
+                                    for s in paper_records),
+        "extracted_statement_with_proof_status_not_extracted": extracted_proof_open,
+        "formalized_in_full": sum(formalized(s) for s in statements),
+        "proved_in_full_unconditional": sum(proved(s) for s in statements),
+        "proved_in_full_conditional": sum(conditional(s) for s in statements),
+        "fragments_checked_unconditional": sum(frag_unconditional(s) for s in fragments),
+        "fragments_checked_conditional": sum(frag_conditional(s) for s in fragments),
+        "definitions_typed_in_lean": sum(typed_definition(s) for s in statements),
+        "parents_with_checked_fragments": sorted({f["parent"] for f in fragments
+                                                  if frag_unconditional(f) or frag_conditional(f)}),
+        "obligation_entries": len(obligations),
         "records_with_obligations": len({i for i, _ in obligations}),
-        "ambiguous": sum(ambiguous(s) for s in statements),
-        "external_prerequisite_gaps": sum(s.get("proof_status") == "BLOCKED_BY_EXTERNAL_THEOREM"
-                                          for s in statements),
+        "ambiguous": sum(ambiguous(s) for s in paper_records),
+        "blocked_by_external_theorem": sum(s.get("proof_status") == "BLOCKED_BY_EXTERNAL_THEOREM"
+                                           for s in paper_records),
         "external_keys_on_critical_path": len(graph["analysis"]["external_keys_on_critical_path"]),
         "countermodel_statuses": sum(s.get("statement_status") == "COUNTERMODEL_FOUND"
                                      or s.get("proof_status") == "COUNTERMODEL_FOUND"
                                      for s in statements),
-        "countermodel_theorems_in_lean": len(countermodel_theorems),
+        "countermodel_catalog": dict(sorted(catalog.items(), key=lambda kv: str(kv[0]))),
         "unauthorized_axioms": [{"declaration": n, "axiom": a} for n, a in bad_axioms],
         "axiom_declarations": axiom_decls,
         "placeholders": placeholders,
         "lean_declarations_claimed_but_missing": claimed_missing,
         "verified_status_not_confirmed": unconfirmed,
+        "validation_errors": errors,
         "lean_modules_checked": lean["modules"],
         "lean_modules_on_disk_not_checked": not_built,
         "statement_status": dict(sorted(Counter(s.get("statement_status")
                                                 for s in statements).items())),
         "proof_status": dict(sorted(Counter(s.get("proof_status") for s in statements).items())),
         "coverage_per_paper": per_paper,
-        "coverage_critical_path": coverage([s for s in statements if s["id"] in critical]),
+        "coverage_critical_path": coverage([s for s in paper_records if s["id"] in critical]),
     }
     (ROOT / "data" / "dashboard.json").write_text(
         json.dumps(data, indent=1, ensure_ascii=False, sort_keys=True) + "\n")
 
     cov_rows = [[k] + list(v.values()) for k, v in per_paper.items()]
     cov_rows.append(["Critical path"] + list(data["coverage_critical_path"].values()))
-    cov_header = ["Scope", "Statements", "Extracted by reading", "Formalized",
-                  "Unconditional verified", "Conditional", "Ambiguous"]
+    cov_header = ["Scope", "Statement records", "Extracted by reading", "Formalized in full",
+                  "Proved in full, unconditional", "Proved in full, conditional",
+                  "Fragments checked (of these parents)", "Ambiguous"]
     by_paper = defaultdict(Counter)
     by_paper_proof = defaultdict(Counter)
     for s in statements:
@@ -155,47 +216,90 @@ def main():
     def listing(items):
         return "\n".join(f"- `{i}`" for i in items) if items else "None."
 
+    legend = [f"{k}: {v}." for k, v in sorted(records.LEGEND.items())]
     doc = ["# Formalization dashboard", "",
            "Generated by `scripts/dashboard.py` from `data/statements.json`, "
-           "`data/dependency_graph.json` and `data/lean_declarations.json`. Do not edit by "
-           "hand; rerun the scripts (see `scripts/README.md`). Machine-readable form: "
-           "`data/dashboard.json`.", "",
+           "`data/dependency_graph.json`, `data/lean_declarations.json` and "
+           "`data/countermodels.json`. Do not edit by hand; rerun the scripts (see "
+           "`scripts/README.md`). Machine-readable form: `data/dashboard.json`. The statuses "
+           "behind the counts are written by hand in `data/curated/*.json`; the scripts check "
+           "them against fixed rules and against the Lean inventory, not against the papers.", "",
            "Progress is measured by statements and their statuses, not by lines of Lean or "
            "numbers of files. Statement fidelity (is the statement extracted and faithfully "
            "stated in Lean?) and proof status (is it proved, and under which hypotheses?) are "
            "reported separately.", "",
+           "A statement counts as formalized only when one Lean declaration states its entire "
+           "content. A Lean lemma that checks one step or one arithmetic piece of a statement "
+           "is a fragment record of its own (`<parent>.frag.<name>`); fragments are counted "
+           "separately, and a parent is never counted as formalized or proved through its "
+           "fragments.", "",
            "## Summary", "",
            table([
-               ["Statements in the index (numbered and lettered)", data["statements_indexed"]],
+               ["Statements in the mechanical index (numbered and lettered)",
+                data["statements_indexed"]],
                ["Curated parts and proof steps", data["curated_parts_and_steps"]],
-               ["Records extracted by reading (status other than NOT_EXTRACTED)",
-                data["extracted_by_reading"]],
-               ["Formalized statements", data["formalized"]],
-               ["Unconditional verified results", data["unconditional_verified"]],
-               ["Conditional results", data["conditional"]],
-               ["Unresolved obligations (in records)",
-                f"{data['unresolved_obligations']} (in {data['records_with_obligations']} records)"],
-               ["Ambiguous statements", data["ambiguous"]],
-               ["External prerequisite gaps (BLOCKED_BY_EXTERNAL_THEOREM)",
-                data["external_prerequisite_gaps"]],
-               ["External bibliography keys cited on the critical path",
+               ["Curated unnumbered items of a section", data["unnumbered_section_items"]],
+               ["Statement records extracted by reading (statement status other than "
+                "NOT_EXTRACTED)", data["extracted_by_reading"]],
+               ["Statement records formalized in full", data["formalized_in_full"]],
+               ["Statement records proved in full, unconditionally",
+                data["proved_in_full_unconditional"]],
+               ["Statement records proved in full, conditionally (named hypotheses)",
+                data["proved_in_full_conditional"]],
+               ["Fragments checked in Lean, unconditionally",
+                data["fragments_checked_unconditional"]],
+               ["Fragments checked in Lean, conditionally", data["fragments_checked_conditional"]],
+               ["Records (statements and fragments) whose declaration is a definition, "
+                "structure or other non-theorem typed in Lean (never counted as proved)",
+                data["definitions_typed_in_lean"]],
+               ["Parents with at least one checked fragment (not counted as formalized)",
+                len(data["parents_with_checked_fragments"])],
+               ["Obligation entries (items of the obligations lists, open claims and notes "
+                "alike)", data["obligation_entries"]],
+               ["Records with at least one obligation entry", data["records_with_obligations"]],
+               ["Statement records with an ambiguity (status INTERPRETATION_AMBIGUOUS or a "
+                "nonempty ambiguities list)", data["ambiguous"]],
+               ["Statement records with proof status BLOCKED_BY_EXTERNAL_THEOREM",
+                data["blocked_by_external_theorem"]],
+               ["External bibliography keys cited by critical-path statements",
                 data["external_keys_on_critical_path"]],
-               ["Countermodels (status COUNTERMODEL_FOUND)", data["countermodel_statuses"]],
-               ["Countermodel theorems in IUT.Countermodels", data["countermodel_theorems_in_lean"]],
+               ["Records with status COUNTERMODEL_FOUND", data["countermodel_statuses"]],
                ["Unauthorized axioms", len(bad_axioms) + len(axiom_decls)],
                ["Proof placeholders (sorryAx)", len(placeholders)],
+               ["Validation errors of the records", len(errors)],
            ], ["Measure", "Count"]), "",
-           "A countermodel theorem in Lean refutes a simplified abstraction unless its "
-           "docstring says otherwise; it is not by itself a counterexample to a statement of "
-           "the papers.", "",
+           "## Countermodel catalog", "",
+           "Entries of `data/countermodels.json`, by the kind that each entry gives itself. A "
+           "countermodel refutes a simplified abstraction unless its entry says otherwise; it "
+           "is not by itself a counterexample to a statement of the papers.", "",
+           table([[COUNTERMODEL_KINDS.get(k, str(k)), n]
+                  for k, n in sorted(catalog.items(), key=lambda kv: str(kv[0]))]
+                 or [["None", 0]], ["Kind", "Entries"]), "",
+           "## Fragments", "",
+           "Each row is one Lean lemma that checks a piece of the parent named. The parent "
+           "keeps its own status.", "",
+           table(fragment_rows, ["Fragment", "Parent", "Lean declaration", "Declaration kind",
+                                 "Proof status"]) if fragment_rows else "None yet.", "",
            "## Coverage per paper and on the critical path", "",
-           "The critical path is defined in `docs/CRITICAL_PATH.md`; it is an over-approximation "
-           "built from mechanical citations.", "",
+           "Statement records only; the fragment column counts checked fragments whose parent "
+           "is in the row. The critical path is defined in `docs/CRITICAL_PATH.md`; it is "
+           "built from mechanical citations and curated edges, and it both over-approximates "
+           "logical dependence (citations for comparison or motivation are edges) and "
+           "under-approximates it (citations not written as \"Kind N.M\", citations of "
+           "targets that are not indexed, and uses the text does not cite are missing).", "",
            table(cov_rows, cov_header), "",
            "## Statement fidelity status", "", status_table(by_paper, FIDELITY), "",
            "## Proof status", "", status_table(by_paper_proof, PROOF), "",
-           "NOT_EXTRACTED in either table means that only the mechanical index has seen the "
-           "statement: its location is known, its content has not been read.", "",
+           "Statement status NOT_EXTRACTED means that the statement is not yet recorded to the "
+           "standard of an extracted statement (content, hypotheses and conclusion from pages "
+           "read); the record may already hold partial content. Proof status NOT_EXTRACTED "
+           "means that no proof has been recorded to that standard, and it is also the proof "
+           f"status of a record whose Lean declaration is a definition. {extracted_proof_open} "
+           "statement records have a statement status other than NOT_EXTRACTED and proof "
+           "status NOT_EXTRACTED.", ""] + legend + ["",
+           "## Validation of the records", "",
+           "Rules of `scripts/records.py`. Any line here makes `scripts/dashboard.py` and the "
+           "continuous integration fail.", "", listing(errors), "",
            "## Trust checks on the Lean library", "",
            f"Modules checked: {len(lean['modules'])}. Allowed axioms: "
            + ", ".join(sorted(ALLOWED)) + ".", "",
@@ -205,15 +309,20 @@ def main():
            "Declarations depending on sorryAx:", "", listing(placeholders), "",
            "Lean declarations named by a record but missing from the built library:", "",
            listing(claimed_missing), "",
-           "Records whose proof status says verified but that fail the checks above (no "
-           "formalized statement status, declaration missing, or disallowed axioms); they are "
-           "not counted as verified:", "", listing(unconfirmed), "",
+           "Statement records whose proof status says verified but that fail the checks above "
+           "(no formalized statement status, declaration missing, or disallowed axioms); they "
+           "are not counted as proved:", "", listing(unconfirmed), "",
            "Modules on disk that the inventory did not see (not imported by `IUT.lean`, or "
            "not built when `scripts/LeanDeclarations.lean` last ran):", "",
            listing(not_built), ""]
     (ROOT / "docs" / "DASHBOARD.md").write_text("\n".join(doc))
     print(f"dashboard: {data['statements_indexed']} indexed, {data['extracted_by_reading']} "
-          f"read, {data['formalized']} formalized, {data['unconditional_verified']} verified")
+          f"read, {data['formalized_in_full']} formalized in full, "
+          f"{data['proved_in_full_unconditional']} proved in full, {len(fragments)} fragments")
+    for e in errors:
+        print("error: " + e, file=sys.stderr)
+    if errors:
+        sys.exit(f"dashboard: {len(errors)} validation errors")
 
 
 if __name__ == "__main__":

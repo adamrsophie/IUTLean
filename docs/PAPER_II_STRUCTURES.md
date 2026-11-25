@@ -1,8 +1,8 @@
 # Structures of IUT II
 
 Source: Mochizuki, *Inter-universal Teichmüller Theory II: Hodge-Arakelov-theoretic
-Evaluation*. Page numbers are PDF pages of `documentation/ref/Inter-universal Teichmuller
-Theory II.pdf`. Displays marked "rendered" were checked against a page render; others come from
+Evaluation*, in the author's manuscript edition. Page numbers are the PDF pages of that
+manuscript, which equal its printed pages. Displays marked "rendered" were checked against a page render; others come from
 the text layer only.
 
 Notation: l ≥ 5 is a prime; l^⋇ = (l − 1)/2; |F_l| = F_l/{±1} = {0} ⊔ F_l^⋇ with
@@ -27,9 +27,16 @@ is proved in `IUT/PaperII/Labels.lean` (`labelRep_bijective`).
   the μ_−-translate of the cusp labeled t (Corollary 2.4 (ii), pages 69 to 70). The values
   depend only on |t| ∈ |F_l| (Corollary 2.5 (ii), page 71).
 * **Values.** Relative to the standard cyclotomic rigidity and Kummer map, for j ∈ |F_l| the
-  set θ^j consists of the μ_{2l}-orbit of q_v^{j²}, with j read in {0, 1, …, l^⋇} (Remark
-  2.5.1 (i), page 72, rendered). The Introduction gives the same list: q^{j²} up to a 2l-th
-  root of unity (page 2).
+  set θ^j consists of the μ_{2l}-orbit of qq_v^{j²}, with j read in {0, 1, …, l^⋇} (Remark
+  2.5.1 (i), page 72, rendered). Here qq_v (a q with a double underline) is a chosen 2l-th root
+  of the Tate parameter q_v: qq_v = q_v^{1/2l}, determined up to a μ_{2l}-multiple (IUT I,
+  Example 3.2 (iv), page 71, rendered; IUT II page 2, rendered). Relative to q_v itself the
+  theta value is q_v^{j²/(2l)}. The Introduction gives the same list: qq_v^{j²} up to a 2l-th
+  root of unity (page 2, rendered).
+* **Relation to the theta series.** Remark 2.5.1 (ii), page 73 (rendered): the reciprocals of
+  the l-th powers of these theta values (not the values themselves) correspond to the values
+  Θ̈(±√−1 · q_X^{j/2}) of the theta series of [EtTh], Proposition 1.4, i.e. to values at points
+  separated by periods from ±√−1.
 * **Up to what.** Each value is a μ_{2l}-orbit (θ) or μ-orbit (∞θ) (Corollary 2.5 (ii),
   page 71). The μ_{2l}-indeterminacies for different j are independent of each other, not
   synchronized (Remark 2.5.1 (iii), page 73). A value-profile chooses one element of each

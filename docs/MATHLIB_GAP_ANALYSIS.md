@@ -110,7 +110,7 @@ Missing:
 
 Other Lean libraries:
 
-* `documentation/external/lana-deps/local-class-field-theory`: local reciprocity, the Artin map for p-adic fields and the existence theorem, per its README. Lean 4.32, not built here, cannot be imported.
+* `lana-agents/local-class-field-theory (dependency pinned by lana-agents/iut)`: local reciprocity, the Artin map for p-adic fields and the existence theorem, per its README. Lean 4.32, not built here, cannot be imported.
 
 Bibliography keys: [NSW].
 
@@ -180,7 +180,7 @@ Missing:
 
 Other Lean libraries:
 
-* `documentation/external/lana-deps/pi1`: etale fundamental group of a connected scheme via Galois categories, per its README. Lean 4.32, not built here, cannot be imported.
+* `lana-agents/pi1 (dependency pinned by lana-agents/iut)`: etale fundamental group of a connected scheme via Galois categories, per its README. Lean 4.32, not built here, cannot be imported.
 
 Bibliography keys: [AbsTopI], [AbsTopII], [AbsTopIII].
 
@@ -200,7 +200,7 @@ Missing:
 
 Other Lean libraries:
 
-* `documentation/external/lana-deps/tempered-fundamental-groups`: tempered fundamental groups over integral models, per its README (algebraic models instead of rigid or Berkovich geometry). Lean 4.32, not built here, cannot be imported; agreement with the definition used in [SemiAnbd] and [EtTh] not checked.
+* `lana-agents/tempered-fundamental-groups (dependency pinned by lana-agents/iut)`: tempered fundamental groups over integral models, per its README (algebraic models instead of rigid or Berkovich geometry). Lean 4.32, not built here, cannot be imported; agreement with the definition used in [SemiAnbd] and [EtTh] not checked.
 
 Bibliography keys: [SemiAnbd], [EtTh].
 
@@ -225,8 +225,8 @@ Missing:
 
 Other Lean libraries:
 
-* `documentation/external/lana-deps/orbicurve-cores`: cores of once-punctured elliptic curves, [CanLift] Proposition 2.7, per its README. Lean 4.32, not built here, cannot be imported.
-* `documentation/external/lana-deps/curves-jacobian`: smooth proper curves as schemes, Jacobians, per its README. Lean 4.32, not built here, cannot be imported.
+* `lana-agents/orbicurve-cores (dependency pinned by lana-agents/iut)`: cores of once-punctured elliptic curves, [CanLift] Proposition 2.7, per its README. Lean 4.32, not built here, cannot be imported.
+* `lana-agents/curves-jacobian (dependency pinned by lana-agents/iut)`: smooth proper curves as schemes, Jacobians, per its README. Lean 4.32, not built here, cannot be imported.
 
 Bibliography keys: [CanLift], [AbsTopIII], [EtTh].
 
@@ -246,8 +246,8 @@ Missing:
 
 Other Lean libraries:
 
-* `documentation/external/lana-deps/curves-jacobian`: smooth proper curves, per its README. Lean 4.32, not built here, cannot be imported.
-* `documentation/external/lana-deps/belyi`: Belyi's theorem, per its README. Lean 4.32, not built here, cannot be imported.
+* `lana-agents/curves-jacobian (dependency pinned by lana-agents/iut)`: smooth proper curves, per its README. Lean 4.32, not built here, cannot be imported.
+* `lana-agents/belyi (dependency pinned by lana-agents/iut)`: Belyi's theorem, per its README. Lean 4.32, not built here, cannot be imported.
 
 Bibliography keys: [AbsAnab], [AbsTopIII].
 
@@ -268,7 +268,7 @@ Missing:
 
 Other Lean libraries:
 
-* `documentation/external/lana-iut (Iut/Anabelian, Iut/Reconstruction)`: anabelian objects and reconstruction material, per its README. Lean 4.32, not built here, cannot be imported.
+* `lana-agents/iut (Iut/Anabelian, Iut/Reconstruction)`: anabelian objects and reconstruction material, per its README. Lean 4.32, not built here, cannot be imported.
 
 Bibliography keys: [AbsTopIII], [AbsTopI], [AbsTopII], [AbsAnab], [CombGC], [SemiAnbd].
 
@@ -288,7 +288,7 @@ Missing:
 
 Other Lean libraries:
 
-* `documentation/external/lana-iut (Iut/Frobenioid)`: Frobenioid material, per its README. Lean 4.32, not built here, cannot be imported.
+* `lana-agents/iut (Iut/Frobenioid)`: Frobenioid material, per its README. Lean 4.32, not built here, cannot be imported.
 
 Bibliography keys: [FrdI], [FrdII].
 
@@ -311,7 +311,7 @@ Missing:
 
 Other Lean libraries:
 
-* `documentation/external/lana-deps/continuous-kummer-theory`: continuous Kummer theory for local fields, per its README. Lean 4.32, not built here, cannot be imported.
+* `lana-agents/continuous-kummer-theory (dependency pinned by lana-agents/iut)`: continuous Kummer theory for local fields, per its README. Lean 4.32, not built here, cannot be imported.
 
 Bibliography keys: [AbsTopIII].
 
@@ -334,7 +334,7 @@ Missing:
 
 Other Lean libraries:
 
-* `documentation/external/lana-deps/tate-curves-theta`: q-uniformization and the formal algebraic theta function, per its README. Lean 4.32, not built here, cannot be imported; the README claims it is sorry-free at its tip, not checked here.
+* `lana-agents/tate-curves-theta (dependency pinned by lana-agents/iut)`: q-uniformization and the formal algebraic theta function, per its README. Lean 4.32, not built here, cannot be imported; the README claims it is sorry-free at its tip, not checked here.
 
 Bibliography keys: [EtTh].
 
@@ -360,7 +360,7 @@ Missing:
 
 Other Lean libraries:
 
-* `documentation/external/lana-deps/elliptic-curves`: reduction theory of elliptic curves following Silverman, per its README. Lean 4.32, not built here, cannot be imported; a plain text search finds the word sorry in several files, status not checked.
+* `lana-agents/elliptic-curves (dependency pinned by lana-agents/iut)`: reduction theory of elliptic curves following Silverman, per its README. Lean 4.32, not built here, cannot be imported; a plain text search finds the word sorry in several files, status not checked.
 
 Bibliography keys: [GenEll], [Silv], [NerMod].
 
@@ -380,7 +380,7 @@ Missing:
 
 Other Lean libraries:
 
-* `documentation/external/lana-iut (Iut/EtaleTheta)`: etale theta material, per its README. Lean 4.32, not built here, cannot be imported.
+* `lana-agents/iut (Iut/EtaleTheta)`: etale theta material, per its README. Lean 4.32, not built here, cannot be imported.
 
 Bibliography keys: [EtTh].
 
@@ -463,8 +463,8 @@ Missing:
 
 Other Lean libraries:
 
-* `documentation/external/lana-deps/padic-log-volume`: the p-adic logarithm of a complete discretely valued field of characteristic 0 and normalized Haar log-volume, per its README. Lean 4.32, not built here, cannot be imported.
-* `documentation/external/lana-iut (Iut/Concrete/LocalConstruct/LocalLogShell.lean)`: a log-shell defined as (2p)^{-1} log of the principal units. Lean 4.32, not built here, cannot be imported. By an elementary argument not formalized here this is the same set as on IUT III page 24: log of the units equals log of the principal units, which is a Z_p-module, and 2p differs from p* by a unit when p is odd and equals p* = 4 when p = 2.
+* `lana-agents/padic-log-volume (dependency pinned by lana-agents/iut)`: the p-adic logarithm of a complete discretely valued field of characteristic 0 and normalized Haar log-volume, per its README. Lean 4.32, not built here, cannot be imported.
+* `lana-agents/iut (Iut/Concrete/LocalConstruct/LocalLogShell.lean)`: a log-shell defined as (2p)^{-1} log of the principal units. Lean 4.32, not built here, cannot be imported. By an elementary argument not formalized here this is the same set as on IUT III page 24: log of the units equals log of the principal units, which is a Z_p-module, and 2p differs from p* by a unit when p is odd and equals p* = 4 when p = 2.
 
 Bibliography keys: [AbsTopIII].
 
@@ -492,7 +492,7 @@ Missing:
 
 Other Lean libraries:
 
-* `documentation/external/lana-iut (Iut4Sec1/Global/Pullback.lean, Iut4Sec1/Global/ArithmeticDivisor.lean)`: pull-back of arithmetic divisors (coefficient times ramification index at finite places, times local degree at infinite places) and invariance of the normalized degree, per its module docstring. Lean 4.32, not built here, cannot be imported; this is one choice of the pull-back that the paper leaves to the reader.
+* `lana-agents/iut (Iut4Sec1/Global/Pullback.lean, Iut4Sec1/Global/ArithmeticDivisor.lean)`: pull-back of arithmetic divisors (coefficient times ramification index at finite places, times local degree at infinite places) and invariance of the normalized degree, per its module docstring. Lean 4.32, not built here, cannot be imported; this is one choice of the pull-back that the paper leaves to the reader.
 
 Bibliography keys: [GenEll].
 
@@ -516,7 +516,7 @@ Missing:
 
 Other Lean libraries:
 
-* `documentation/external/lana-iut (Iut/Arakelov: FractionalIdeal.lean, LineBundle.lean, Container.lean, ArchScaling.lean, QPilot.lean)`: Arakelov line bundle material, per its file names and README. Lean 4.32, not built here, cannot be imported.
+* `lana-agents/iut (Iut/Arakelov: FractionalIdeal.lean, LineBundle.lean, Container.lean, ArchScaling.lean, QPilot.lean)`: Arakelov line bundle material, per its file names and README. Lean 4.32, not built here, cannot be imported.
 
 Bibliography keys: [Arak].
 
@@ -543,8 +543,8 @@ Missing:
 
 Other Lean libraries:
 
-* `documentation/external/lana-deps/heights`: Weil heights, the height machine on curves, and conductor and different bounds of [GenEll], per its README. Lean 4.32, not built here, cannot be imported.
-* `documentation/external/lana-deps/genl`: [GenEll] Theorem 2.1 project, per its README. Lean 4.32, not built here, cannot be imported; its README and a text search show a sorry in Challenge.lean.
+* `lana-agents/heights (dependency pinned by lana-agents/iut)`: Weil heights, the height machine on curves, and conductor and different bounds of [GenEll], per its README. Lean 4.32, not built here, cannot be imported.
+* `lana-agents/genl (dependency pinned by lana-agents/iut)`: [GenEll] Theorem 2.1 project, per its README. Lean 4.32, not built here, cannot be imported; its README and a text search show a sorry in Challenge.lean.
 
 Bibliography keys: [GenEll].
 
@@ -571,8 +571,8 @@ Missing:
 
 Other Lean libraries:
 
-* `documentation/external/lana-deps/padic-log-volume`: trace duality in finite Q_p algebras and their tensor products, ingredients of IUT IV Proposition 1.1, per its README. Lean 4.32, not built here, cannot be imported.
-* `documentation/external/lana-iut (Iut/Tower: Different.lean, DifferentBound.lean, Inertia.lean, RamIdx.lean, WildBound.lean)`: different and ramification bounds in towers, per file names. Lean 4.32, not built here, cannot be imported.
+* `lana-agents/padic-log-volume (dependency pinned by lana-agents/iut)`: trace duality in finite Q_p algebras and their tensor products, ingredients of IUT IV Proposition 1.1, per its README. Lean 4.32, not built here, cannot be imported.
+* `lana-agents/iut (Iut/Tower: Different.lean, DifferentBound.lean, Inertia.lean, RamIdx.lean, WildBound.lean)`: different and ramification bounds in towers, per file names. Lean 4.32, not built here, cannot be imported.
 
 Bibliography keys: [Kobl].
 
@@ -597,8 +597,8 @@ Missing:
 
 Other Lean libraries:
 
-* `documentation/external/lana-deps/padic-log-volume`: normalized Haar log-volume, per its README. Lean 4.32, not built here, cannot be imported.
-* `documentation/external/lana-iut (Iut/Concrete/LocalConstruct/Haar.lean, Volume.lean)`: Haar log-volume constructions, per file names. Lean 4.32, not built here, cannot be imported.
+* `lana-agents/padic-log-volume (dependency pinned by lana-agents/iut)`: normalized Haar log-volume, per its README. Lean 4.32, not built here, cannot be imported.
+* `lana-agents/iut (Iut/Concrete/LocalConstruct/Haar.lean, Volume.lean)`: Haar log-volume constructions, per file names. Lean 4.32, not built here, cannot be imported.
 
 Bibliography keys: [AbsTopIII].
 
@@ -620,8 +620,8 @@ Missing:
 
 Other Lean libraries:
 
-* `documentation/external/lana-deps/padic-log-volume`: trace duality for tensor products of finite Q_p algebras, per its README. Lean 4.32, not built here, cannot be imported.
-* `documentation/external/lana-iut (Iut/Concrete/LocalConstruct/TensorIntegral.lean, PacketDifferent.lean, LocalDifferent.lean)`: integral structures and differents of tensor packets, per file names. Lean 4.32, not built here, cannot be imported.
+* `lana-agents/padic-log-volume (dependency pinned by lana-agents/iut)`: trace duality for tensor products of finite Q_p algebras, per its README. Lean 4.32, not built here, cannot be imported.
+* `lana-agents/iut (Iut/Concrete/LocalConstruct/TensorIntegral.lean, PacketDifferent.lean, LocalDifferent.lean)`: integral structures and differents of tensor packets, per file names. Lean 4.32, not built here, cannot be imported.
 
 Needed first by: IUT3.Prop3_1, IUT3.Prop3_2, IUT4.Prop1_1.
 
@@ -646,7 +646,7 @@ Missing:
 
 Other Lean libraries:
 
-* `documentation/external/lana-deps/genl`: [GenEll] project, per its README. Lean 4.32, not built here, cannot be imported.
+* `lana-agents/genl (dependency pinned by lana-agents/iut)`: [GenEll] project, per its README. Lean 4.32, not built here, cannot be imported.
 
 Bibliography keys: [GenEll], [Falt], [vFr].
 
@@ -689,7 +689,7 @@ In this project:
 
 Missing:
 
-* The existence axiom (dagger G): every set lies in a Grothendieck universe. Not a theorem of ZFC; the paper assumes it (IUT IV page 67) and leaves the existence of ZFCG-models aside, citing Feferman (page 68). Classes 5.
+* The existence axiom (dagger G): every set lies in a Grothendieck universe. Not a theorem of ZFC; the paper assumes it (IUT IV page 67) and leaves the existence of ZFCG-models aside, citing Feferman (page 68). In Lean, `ExistenceAxiom` is independent of what can be proved about `ZFSet.{u}` (see the module docstring of `IUT/Foundations/GrothendieckUniverse.lean`). Classes 5.
 * No Grothendieck universe on ZFSet is exhibited (for example the image of ZFSet.{u} inside ZFSet.{u+1}); Mathlib has the embedding only at the PSet level (PSet.embed). Classes 2.
 * Species, set-theoretic formulas, and absoluteness of formulas between universes (IUT IV Definition 3.1 and page 68); needs a formal syntax for set-theoretic formulas. Classes 3, 5.
 
@@ -720,7 +720,7 @@ A coarse planning order: most items in a layer use items of earlier layers. It i
 * `IUT.Foundations.exists_ascending_chain` in `IUT/Foundations/GrothendieckUniverse.lean`: `ExistenceAxiom → ∃ V : ℕ → ZFSet.{u}, (∀ n, IsGrothendieckUniverse (V n)) ∧ (∀ n, V n ∈ V (n + 1)) ∧ ∃ W, IsGrothendieckUniverse W ∧ ∀ n, V n ∈ W`. Source: IUT IV, page 67 (rendered).
 * `IUT.Foundations.not_exists_descending_mem_chain` in `IUT/Foundations/GrothendieckUniverse.lean`: `¬∃ V : ℕ → ZFSet.{u}, ∀ (n : ℕ), V (n + 1) ∈ V n`. Source: IUT IV, page 68 (rendered).
 
-The universe results use the existence axiom only as an explicit hypothesis `ExistenceAxiom`; it is not proved. All seven results depend only on the axioms `propext`, `Classical.choice`, `Quot.sound`.
+The universe results use the existence axiom only as an explicit hypothesis `ExistenceAxiom`; it is not proved. `ExistenceAxiom` is a statement about Lean's model `ZFSet.{u}`, not the paper's axiom in the paper's set theory, and it is not expected to be provable or refutable in Lean: in the standard semantics where `Type u` is `V_κ` for an inaccessible `κ`, it fails when `κ` is the least inaccessible (then `ZFSet.{u}` contains no Grothendieck universe) and holds when `κ` is an inaccessible limit of inaccessibles. This argument is about models and is not formalized. In models where it fails, the two conditional theorems `exists_universe_forall_mem` and `exists_ascending_chain` are vacuous. All seven results depend only on the axioms `propext`, `Classical.choice`, `Quot.sound`.
 
 ## Candidates not formalized, and why
 
@@ -729,6 +729,6 @@ The universe results use the existence axiom only as an explicit hypothesis `Exi
 * Degree zero of principal arithmetic divisors: Not defined on the pages read (IUT IV pages 21 to 23); with the archimedean weight 1 of Definition 1.9 (i) the coefficient convention at complex places would have to be chosen. Only the product formula itself was formalized.
 * Existence of a Grothendieck universe in ZFSet.{u+1}: Mathlib has the embedding only at the PSet level (PSet.embed); building it for ZFSet and checking axioms (i) to (v) is a separate task.
 
-## External repository `documentation/external/lana-iut`
+## External repository `lana-agents/iut`
 
-Read only. Its README states a proof of an implication from a variant of IUT III Corollary 3.12 to the abc conjecture, with the variant itself not proved. It depends on fifteen further Lean libraries, cloned under documentation/external/lana-deps. None of this can be imported here because of the toolchain difference; statements and definitions would have to be ported and rechecked. Toolchain: leanprover/lean4:v4.32.0 with Mathlib v4.32.0.
+Read only. Its README states a proof of an implication from a variant of IUT III Corollary 3.12 to the abc conjecture, with the variant itself not proved. It depends on fifteen further Lean libraries, pinned dependencies of the lana-agents organization at the revisions in data/external_projects.json. None of this can be imported here because of the toolchain difference; statements and definitions would have to be ported and rechecked. Toolchain: leanprover/lean4:v4.32.0 with Mathlib v4.32.0.

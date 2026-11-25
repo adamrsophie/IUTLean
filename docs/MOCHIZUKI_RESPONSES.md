@@ -6,12 +6,14 @@ Layers: **M** is what Mochizuki says; **SS** is what Scholze and Stix say; **Ass
 
 ## Sources
 
-* **Rpt** = *Report on Discussions, Held During the Period March 15 to 20, 2018, Concerning Inter-universal Teichmüller Theory (IUTch)*, `documentation/external/secondary/Rpt2018.pdf`, 45 pages, title page dated February 2019. Read in full. Pages 2, 17, 18, 24, 25 checked against renders.
-* **Cmt-05** = *Comments on the Manuscript by Scholze–Stix Concerning IUTch*, July 2018, `Cmt2018-05.pdf`, 8 pages, read in full. It answers the May 2018 version of the manuscript (not available here); its references to footnotes and remarks use that version's numbering.
+* **Rpt** = *Report on Discussions, Held During the Period March 15 to 20, 2018, Concerning Inter-universal Teichmüller Theory (IUTch)*, `Rpt2018.pdf` from <https://www.kurims.kyoto-u.ac.jp/~motizuki/> (SHA-256 in `data/dispute_map.json`), 45 pages, title page dated February 2019. Read in full. Pages 2, 17, 18, 24, 25 checked against renders.
+* **Cmt-05** = *Comments on the Manuscript by Scholze–Stix Concerning IUTch*, July 2018, `Cmt2018-05.pdf`, 8 pages, read in full. It answers the May 2018 version of the manuscript, which is not available here; text of that version is known only through Cmt-05's quotations, which this document attributes to Cmt-05, not to the manuscript. Its references to footnotes and remarks use that version's numbering.
 * **Cmt-08** = *Comments on the Manuscript (2018-08 Version) by Scholze–Stix*, September 2018, `Cmt2018-08.pdf`, 5 pages, read in full. Its references match the July 16, 2018 file used here.
 * IUT III, May 2020 manuscript, pages 173, 174, 180 to 195.
 
 ## Part 1. Comments on the May 2018 version (Cmt-05)
+
+The May 2018 version of the manuscript is not among the available sources. Phrases of it quoted in this part are quoted as Cmt-05 gives them; they are attributed to Cmt-05, not to the manuscript.
 
 | Item | Page | Target in SS | Content (paraphrase) | Proposition, where one can be stated |
 |---|---|---|---|---|
@@ -38,7 +40,7 @@ Layers: **M** is what Mochizuki says; **SS** is what Scholze and Stix say; **Ass
 
 | Item | Page | Target | Content | Proposition |
 |---|---|---|---|---|
-| (C1) | 1 to 2 | Remark 5 | The finiteness follows from elementary height theory (bounded `j`-invariants satisfy monic integer polynomials of bounded degree and coefficients), not Faltings; also the discriminant of `k/ℚ` must be bounded for the Faltings route. | P-R5: for fixed `d`, `b`, finitely many `E/k` with `[k:ℚ] ≤ d`, `h(P) ≤ b` (both sides accept the statement). Assessment: the reduction SS-5 does not need P-R5 (`Reduction.lean`). |
+| (C1) | 1 to 2 | Remark 5 | The finiteness follows from elementary height theory: the `j`-invariant (times a suitable integer depending on `d`, `b`) satisfies a monic integer polynomial of degree `d` with bounded coefficients; not Faltings. Also the discriminant of `k/ℚ` must be bounded for the Faltings route. | Two propositions, to be kept apart. P-R5j (moduli values): for fixed `d`, `b`, the `j`-invariants of degree at most `d` and height at most `b` form a finite set; this is Northcott's theorem, and it is what M's argument establishes. P-R5E (curves, SS's Remark 5): for fixed `d`, `b`, finitely many `E/k` corresponding to `P ∈ M_ell(k)` **as above** (the restrictions (1) to (3) of SS Section 1.2) with `[k:ℚ] ≤ d`, `h(P) ≤ b`. P-R5j does not imply P-R5E without further argument, since infinitely many quadratic twists over `ℚ` share one `j`-invariant; P-R5E, and finiteness of the fibers of the Weil restriction, need their own argument from the restrictions "as above", not checked here. Assessment: the reduction SS-5 needs neither; it uses only `N ≥ 0` (`Reduction.lean`). |
 | (C2) | 2 | 2.1 (3) | "explain" replaced by "convince"; refers to (T3), §10, (SSId), (SSIdFs), (SSIdEx), (ModEll). | See those. |
 | (C3) | 2 | 2.1.2 | The claimed equivalence of categories (Hodge theaters ≃ the one-object category of `X`) is false as stated: the choices of `ℓ` and `V` are ignored. "Not such a central issue." | P-HT: the stated functor is not an equivalence without fixing `ℓ`, `V`. Not checked here. |
 | (C4) | 2 | footnote 7 | The image of the `p`-adic logarithm is not in the maximal ideal already for sufficiently ramified finite extensions. Minor. | Standard fact; not disputed. |
@@ -49,7 +51,7 @@ Layers: **M** is what Mochizuki says; **SS** is what Scholze and Stix say; **Ass
 | (C11) | 3 | 2.2 | Multiradial algorithm and tensor packets are now mentioned but still misunderstood. | None. |
 | (C12) | 3 | footnote 10 | The q- and Θ-"concrete realizations" are exactly the q- and Θ-arithmetic holomorphic structures (the intertwining of value and unit group portions); the failure to distinguish arises because SS do not distinguish the holomorphic structures. See (LbLV). | Interpretive identification. |
 | (C13) | 3 to 4 | footnote 12 | The simplifications are the id-version; then Theorem 3.11 cannot be applied (SSIdFs); see (SSIdEx), (ModEll), (HstMod). | See (SSIdFs). |
-| (C14) | 4 | 2.2 | SS's argument rests on **(Lin)**: every relationship between two of the copies of `ℝ` is multiplication by a positive scalar. (Lin) is false: such linear relations exist between copies of `ℝ` arising (via the Θ-link) from `F^{×μ}`-prime strips, but where indeterminacies are involved, as for the multiradial representation of the Θ-pilot, the relation between log-volumes of regions with and without indeterminacies is "highly non-linear" and depends on the region. See (MlLV), (LVEx), (DsInd). | P-Lin-neg: the map from the log-volume of the Θ-pilot in its own holomorphic structure to the log-volume of the holomorphic hull of its multiradial representation is not of the form `x ↦ c x`. |
+| (C14) | 4 | 2.2 | SS's argument rests on **(Lin)**: every relationship between two of the copies of `ℝ` is multiplication by a positive scalar. (Lin) is false as a statement about all the copies: such linear relations do exist between copies of `ℝ` arising (via the Θ-link) from `F^{×μ}`-prime strips, but where indeterminacies are involved, as for the multiradial representation of the Θ-pilot, the relation between log-volumes of regions with and without indeterminacies is "highly non-linear" and depends on the region. See (MlLV), (LVEx), (DsInd). | P-Lin-neg: the map from the log-volume of the Θ-pilot in its own holomorphic structure to the log-volume of the holomorphic hull of its multiradial representation is not of the form `x ↦ c x`. Two levels are distinguished: linearity of the link at the level of prime strips (accepted by M) and linearity of log-volume under the indeterminacies (denied by M). |
 
 ## Part 3. Labeled assertions of the report (Rpt)
 
@@ -108,7 +110,7 @@ Every labeled item was read. Items are grouped; page numbers refer to the Februa
 * **(SSDLFs)** (page 23). Deleting labels identifies the holomorphic structures, which is stronger than (SSInd), (SSId).
 * **(LbLV)** (pages 23 to 24). Labels are markers saying whether the pilot value-group generator is identified with the log-volume of `q` (q-hol. str.) or of `{q^{j²}}` (Θ-hol. str.). Refers to the toy models of IUT III Remark 3.12.2 (ii).
 * **(MlLV)** (page 24). The Θ-link gives a linear relation between copies of `ℝ`; the computation via Theorem 3.11 of the log-volume of the Θ-pilot in the q-hol. str. involves indeterminacies giving a highly non-linear relation between the Θ-pilot's log-volume and that of its multiradial representation.
-* **(LVEx)** (pages 24 to 26). `R_{a,b}`, `S_{a,b} = R ∪ σR` in `ℝ²`; `μ^log(S) = log(4a + 4b) > μ^log(R) = log(4a + 2b)`; the ratio varies with `(a, b)`; with `μ^log(S) > 0 > λ > μ^log(R)`, `ρ = μ^log(R)/λ > 1`, gluing `x ↦ x/ρ`, and `μ^log(S) > λ`. Correspondence: `R` ↔ Θ-pilot in Θ-hol. str., `S` ↔ holomorphic hull of the multiradial representation, `R_λ` ↔ q-pilot, the gluing ↔ Θ-link. Formalized: areas from Lebesgue measure (`LVExMeasure.lean`: `volume_R`, `volume_S`, `σ_S`, `σ_R_ne`, `admissible_exists`, `gluing`), non-linearity (`LVEx.lean`: `not_linear`, `not_affine_shift`). Assessment: the inequality `μ^log(S) > λ` is part of the hypotheses on `λ` (`logVolS_gt_lambda`), so the example illustrates consistency rather than deriving it. It refutes (Lin) for the pair (rigid region, symmetrized hull). Whether the pair of log-volumes in Step (xi) behaves this way is not decided by the example.
+* **(LVEx)** (pages 24 to 26). `R_{a,b}`, `S_{a,b} = R ∪ σR` in `ℝ²`; `μ^log(S) = log(4a + 4b) > μ^log(R) = log(4a + 2b)`; the ratio varies with `(a, b)`; with `μ^log(S) > 0 > λ > μ^log(R)`, `ρ = μ^log(R)/λ > 1`, gluing `x ↦ x/ρ`, and `μ^log(S) > λ`. Correspondence: `R` ↔ Θ-pilot in Θ-hol. str., `S` ↔ holomorphic hull of the multiradial representation, `R_λ` ↔ q-pilot, the gluing ↔ Θ-link. Formalized: areas from Lebesgue measure (`LVExMeasure.lean`: `volume_R`, `volume_S`, `σ_S`, `σ_R_ne`, `admissible_exists`, `gluing`), non-linearity (`LVEx.lean`: `not_linear`, `not_affine_shift`). The log-volume `μlog` is meaningful on sets of finite positive measure (both regions, for `a, b > 0`); elsewhere it is `0` by totalization. Assessment: the inequality `μ^log(S) > λ` follows from the hypotheses `μ^log(S) > 0 > λ` alone (`logVolS_gt_lambda`), so the third conjunct of `gluing` adds no evidence about the gluing; the example illustrates consistency rather than deriving it. It refutes (Lin) for the pair (rigid region, symmetrized hull). Whether the pair of log-volumes in Step (xi) behaves this way is not decided by the example.
 * **(PMInd), (PMEx1), (PMEx2), (PMTrv), (PMQut), (PMEss)** (pages 26 to 27). Poly-morphisms are common (homotopy classes, derived categories); IUT's are not single maps between quotient sets; they produce the symmetries underlying multiradiality.
 * **(LbRl), (LbEx1) to (LbEx6), (DfLb)** (pages 28 to 32). Labels distinguish copies. (LbEx1): segment versus loop graph, monodromy; the incompatibility (AD) is monodromy around the loop obtained by identifying the two ends of the Θ-link. (LbEx2): localization `A_f` as a colimit needs a base label. (LbEx3): colimit of `F_p[t]` under Frobenius without labels. (LbEx4): `ℚ(∛2)` and `ℚ(ω∛2)`. (LbEx5): manifolds. (LbEx6): the id-version itself uses labels; identifying them yields the (VUC1) contradiction unless exponents of `q` are taken up to `j²`. (DfLb): "remembering" without explicit labeling risks non-equivalent structures. Assessment: (LbEx3) is correct as stated: the colimit of the one-object diagram `A` with endomorphism `φ` is the coequalizer of `id` and `φ`, namely `F_p[t]/(t^p − t) ≅ F_p^p` by the Chinese remainder theorem, whereas the ℤ-indexed system gives the perfection. Not formalized.
 * **(LbHT)** (page 32). Labels for evaluation points inside one Hodge theater.
@@ -149,7 +151,7 @@ All entries in the last four columns are this project's assessment.
 
 | Response | Objection answered | Same definitions? | Statement or interpretation | Hypothesis that would resolve it | In IUT I to IV? | Obligation |
 |---|---|---|---|---|---|---|
-| Cmt-08 (C1) | SS Remark 5 | yes | method only | none | n/a | OB-RED |
+| Cmt-08 (C1) | SS Remark 5 | partly: `j`-invariants versus curves | method, and what is counted | none for the reduction | n/a | OB-RED |
 | Cmt-08 (C3) | SS-S4 | no | statement | equivalence with `ℓ`, `V` fixed | not checked | OB-HT |
 | Cmt-05 (C6), (LbLp), (Lblog) | SS-S5 | no | statement (Q3) | non-invariance of the Θ-link | asserted, Rpt §15 | OB-LOG |
 | (SSInd), (PMEss), Cmt-05 (C7) | SS-S6 | no | statement | Theorem 3.11 fails or trivializes without (Ind1, 2) | asserted | OB-IND |
@@ -158,14 +160,14 @@ All entries in the last four columns are this project's assessment.
 | Cmt-05 (C17) (N1) to (N5), (C18) | SS-13 | no | interpretation of Step (xi) | single container with one log-volume | Step (xi-d), page 183, asserts it | OB-XI-CONTAINER |
 | (AD), (IUAD), (LbEx1), (Smm) | SS-14 | partly | interpretation | distinct labels for the two holomorphic structures | IUT III Step (xi-a), Remark 3.12.2 (c^itw) | OB-XI-CONTAINER |
 | (SSADFs), Cmt-08 (C14), (MlLV) | SS-15 | no | statement | non-linear (non-(Lin)) relation via (Ind1, 2, 3) between the two log-volumes | Theorem 3.11 (ii), Proposition 3.9; not verified here | OB-XI-F |
-| (LVEx), (DsInd) | SS-16 | no | statement | quantitative size of the indeterminacies on log-volumes | IUT IV, Proposition 1.2, Theorem 1.10 (not read here) | OB-IND-SIZE |
+| (LVEx), (DsInd) | SS-16 | no | statement | quantitative size of the indeterminacies on log-volumes, and how a blurring of that size enters (1.4) | IUT IV, Proposition 1.2, Theorem 1.10 (not read here) | OB-IND-SIZE, OB-BLUR-QUANT |
 | Remark 3.12.2 toy models | SS-12, SS-15 | n/a | restates the disputed step | (e^toy) for the real objects | asserted as (xi-e), (xi-f) | OB-XI-F |
 
 ## Lean modules for this document
 
-* `IUT/Audit/MochizukiResponses/LVEx.lean` (existing): non-linearity from the stated areas.
-* `IUT/Audit/MochizukiResponses/LVExMeasure.lean` (new): the areas from Lebesgue measure; the `λ`, `ρ` assertions.
-* `IUT/Audit/MochizukiResponses/SSIdEx.lean` (new): the two complex structures, (≇), (Dilat).
-* `IUT/Audit/MochizukiResponses/ToyModels.lean` (new): (Smm) and the toy model of Remark 3.12.2 (ii).
+* `IUT/Audit/MochizukiResponses/LVEx.lean`: non-linearity from the stated areas.
+* `IUT/Audit/MochizukiResponses/LVExMeasure.lean`: the areas from Lebesgue measure; the `λ`, `ρ` assertions.
+* `IUT/Audit/MochizukiResponses/SSIdEx.lean`: the two complex structures, (≇), (Dilat).
+* `IUT/Audit/MochizukiResponses/ToyModels.lean`: (Smm) and the toy model of Remark 3.12.2 (ii).
 
 None settles the dispute: the disputed propositions (OB-311-HYP, OB-XI-CONTAINER, OB-XI-F, OB-IND-SIZE) are not formalized, because the objects they mention are not yet defined in Lean.

@@ -8,15 +8,26 @@
 # attributes), local or scoped instances, and set_option with an option outside
 # ALLOWED_OPTIONS (exactly the options the library uses, none at present).
 # It also reports, as a direct syntactic search next to the environment check of
-# AxiomGate.lean, the words sorry, admit, axiom, opaque, unsafe, partial, native_decide,
-# implemented_by and extern. sorry and admit are allowed only in Challenge.lean and in
-# IUT/Experimental/**.lean; everything else applies there too.
+# AxiomGate.lean, the words sorry, admit, sorryAx, axiom, opaque, unsafe, partial,
+# native_decide, implemented_by and extern. sorry and admit are allowed only in Challenge.lean
+# and in IUT/Experimental/**.lean; everything else applies there too.
+# Instances: the library declares none, so every instance command, instance attribute
+# (attribute [instance], @[instance]) and deriving clause is reported. The scan cannot tell a
+# lexical instance on a project type from one on a foreign type such as LE on the reals;
+# check 7 of AxiomGate.lean makes that distinction in the compiled environment. Instances that
+# were read and accepted are listed in ALLOWED_INSTANCES by their source line.
 # Imports: no file outside IUT/Experimental/ may import IUT.Experimental or IUT.Experimental.*;
 # Challenge.lean and Challenge/**.lean may import only Mathlib and Challenge.*.
 # It also rejects build options in lakefile.toml that pass options or arguments to Lean, and
-# (in the default form, on the whole tree) every file IUT/**.lean outside IUT/Experimental/
-# that the root file IUT.lean does not import directly, and every import of the root file
-# without a file.
+# compares the decoded lakefile with the recorded configuration LAKEFILE (exact require set
+# with name, URL and revision; exact library names and keys, so no srcDir, roots or globs
+# beyond the recorded ones). In the default form, on the whole tree, it also rejects: a file
+# lakefile.lean; a lake-manifest.json whose packages differ from the recorded list MANIFEST
+# (name, URL, revision); every file IUT/**.lean outside IUT/Experimental/ that the root file
+# IUT.lean does not import directly, and every import of the root file without a file; every
+# file under Solution/ and every file under Challenge/ other than Challenge/Defs.lean (the
+# gate checks only the modules Solution and Challenge.Defs); and every tracked .lean file
+# (git ls-files) outside the scanned roots and the tooling files of TOOLING.
 # Comments, docstrings, string literals (raw strings included) and quoted identifiers «...» are
 # removed before ordinary token matching; attribute matching also preserves quoted names.
 # The match runs on the whole text, so a construct in the middle of a line or after a line
@@ -26,9 +37,10 @@
 # Run from the repository root:
 #     python3 -I scripts/Controls/source_scan.py                 (IUT.lean, IUT/**.lean,
 #                                       Challenge.lean, Challenge/**.lean, Solution.lean,
-#                                       lakefile.toml)
+#                                       Solution/**.lean, lakefile.toml, lake-manifest.json)
 #     python3 -I scripts/Controls/source_scan.py FILE [FILE ...] (the given files only; a file
-#                                       ending in .toml is scanned as a lakefile; the rules for a
+#                                       ending in .toml is scanned as a lakefile, one ending in
+#                                       lake-manifest.json as a manifest; the rules for a
 #                                       file depend on its path as given, relative to the root)
 # Prints one line per finding, "path:line: construct", then a summary line.
 # Policy: bang-prefixed string syntax (s!, m!, or another such prefix) is forbidden in library
@@ -40,8 +52,10 @@
 # Exit status: 0 when nothing is found, 1 when something is found, 2 for a usage error.
 # License: GPL 3, same as the repository.
 
+import json
 import os
 import re
+import subprocess
 import sys
 import tomllib
 
@@ -52,7 +66,49 @@ ALLOWED_OPTIONS = set()
 # Placeholders and trust escapes, matched as whole tokens. PLACEHOLDERS are allowed in the
 # files that placeholder_allowed accepts.
 PLACEHOLDERS = {'sorry', 'admit'}
-ESCAPES = {'axiom', 'opaque', 'unsafe', 'partial', 'native_decide', 'implemented_by', 'extern'}
+ESCAPES = {'axiom', 'opaque', 'unsafe', 'partial', 'native_decide', 'implemented_by', 'extern',
+           'sorryAx'}
+
+# The decoded lakefile.toml as it is recorded. A change of the build configuration changes
+# this constant too, in the same change, so that it is seen.
+MATHLIB_URL = 'https://github.com/leanprover-community/mathlib4.git'
+LAKEFILE = {
+    'name': 'IUT', 'version': '0.1.0', 'defaultTargets': ['IUT', 'Solution'],
+    'require': [{'name': 'mathlib', 'git': MATHLIB_URL,
+                 'rev': 'fc4f59e577feb1a4956671bc04ac18aaaf8cd842'}],
+    'lean_lib': [{'name': 'IUT'}, {'name': 'Challenge'}, {'name': 'Solution'},
+                 {'name': 'IUTExperimental', 'roots': [], 'globs': ['IUT.Experimental.+']}],
+}
+
+# The packages of lake-manifest.json: (name, URL, revision).
+MANIFEST = [
+    ('mathlib', MATHLIB_URL, 'fc4f59e577feb1a4956671bc04ac18aaaf8cd842'),
+    ('plausible', 'https://github.com/leanprover-community/plausible',
+     '054b228ce0ac61d767c6e71ba73a24728f191b72'),
+    ('LeanSearchClient', 'https://github.com/leanprover-community/LeanSearchClient',
+     '4fb58e749ef3fc0395fe274f6cab70c2ea85f1c9'),
+    ('importGraph', 'https://github.com/leanprover-community/import-graph',
+     '8370c640afcd1cc3fb1cb9bf1560cc66eafee5e0'),
+    ('proofwidgets', 'https://github.com/leanprover-community/ProofWidgets4',
+     '2f0f3520daeac2d9310ff25b7a877a0e5cdaa203'),
+    ('aesop', 'https://github.com/leanprover-community/aesop',
+     '66ff77cf0c4c898799e4b94d14db55f7a02d0c5a'),
+    ('Qq', 'https://github.com/leanprover-community/quote4',
+     'ff055a2fcc835935e0ae607339b455a5f5896b4b'),
+    ('batteries', 'https://github.com/leanprover-community/batteries',
+     'b4b25a3886a16daacaf6615c2eea7170a6e8f458'),
+    ('Cli', 'https://github.com/leanprover/lean4-cli', '50810f72af7618bee62fe9800dc26e806c188703'),
+]
+
+# Instance commands that were read and accepted: (path, the whole source line). Each is an
+# instance on a project type; check 7 of AxiomGate.lean also checks every instance.
+ALLOWED_INSTANCES = {
+    ('IUT/PaperI/PolyMorphism.lean', 'attribute [instance] Capsule.fintype'),
+}
+
+# Tracked Lean files that are tooling, not proof sources: no default target contains them and
+# nothing in the library imports them. Paths, or folders ending in a slash.
+TOOLING = ['AxiomGate.lean', 'GateControls/', 'scripts/']
 
 
 def norm(path):
@@ -203,9 +259,17 @@ def scan_lean(path):
     attribute_text = strip(raw, preserve_quoted=True)
     found = [(line_of(raw, pos), 'interpolated string syntax ' + prefix)
              for pos, prefix in interpolations]
+    prev = None
     for m in TOKEN.finditer(text):
-        tok = m.group(0)
-        if tok in PLACEHOLDERS and not placeholder_allowed(path):
+        tok, before = m.group(0), prev
+        prev = tok
+        if tok == 'instance' and before not in ('local', 'scoped'):
+            line = line_of(text, m.start())
+            if (norm(path), raw.splitlines()[line - 1].strip()) not in ALLOWED_INSTANCES:
+                found.append((line, 'instance'))
+        elif tok == 'deriving':
+            found.append((line_of(text, m.start()), 'deriving'))
+        elif tok in PLACEHOLDERS and not placeholder_allowed(path):
             found.append((line_of(text, m.start()), tok))
         elif tok in ESCAPES:
             found.append((line_of(text, m.start()), tok))
@@ -253,6 +317,24 @@ def scan_lake(path):
             for child in value:
                 visit(child)
     visit(data)
+    found = []
+    for key in sorted(set(data) | set(LAKEFILE)):
+        if LAKE_KEYS.fullmatch(key):
+            continue
+        if key == 'lean_lib':
+            libs = {lib.get('name'): lib for lib in data.get(key, []) if isinstance(lib, dict)}
+            want = {lib['name']: lib for lib in LAKEFILE[key]}
+            where = {}
+            for m in re.finditer(r'^\[\[lean_lib\]\][^\[]*?^name\s*=\s*"([^"]*)"', text, re.M | re.S):
+                where.setdefault(m.group(1), line_of(text, m.start()))
+            for name in sorted(set(libs) | set(want), key=str):
+                if libs.get(name) != want.get(name):
+                    found.append((where.get(name, 1),
+                                  f'library {name} differs from the recorded configuration'))
+        elif data.get(key) != LAKEFILE.get(key):
+            m = re.search(r'^\[*' + re.escape(key) + r'\b', text, re.M)
+            found.append((line_of(text, m.start()) if m else 1,
+                          f'lakefile key {key} differs from the recorded configuration'))
     # Locations are diagnostic only; acceptance uses the decoded TOML keys above.
     locations = {}
     for m in LAKE_KEYS.finditer(text):
@@ -264,12 +346,55 @@ def scan_lake(path):
             continue
         if isinstance(value, str) and value in keys:
             locations.setdefault(value, line_of(text, m.start()))
-    return sorted((locations.get(key, 1), 'lakefile option ' + key) for key in keys)
+    return sorted(found + [(locations.get(key, 1), 'lakefile option ' + key) for key in keys])
+
+
+def manifest_problems(path='lake-manifest.json'):
+    try:
+        with open(path, encoding='utf-8') as f:
+            packages = json.load(f).get('packages', [])
+        got = [(p.get('name'), p.get('url'), p.get('rev')) for p in packages]
+    except (OSError, ValueError, AttributeError) as exc:
+        return [(path, f'cannot read: {exc}')]
+    if sorted(got, key=str) == sorted(MANIFEST):
+        return []
+    return ([(path, f'package {p[0]} ({p[1]} at {p[2]}) is not in the recorded list')
+             for p in sorted(set(got) - set(MANIFEST), key=str)]
+            + [(path, f'recorded package {p[0]} ({p[1]} at {p[2]}) is missing')
+               for p in sorted(set(MANIFEST) - set(got), key=str)])
+
+
+def tracked_problems(files):
+    """Tracked .lean files outside the scanned roots and the tooling files, and files under
+    Solution/ or Challenge/ (other than Challenge/Defs.lean) that no gate check covers."""
+    try:
+        out = subprocess.run(['git', 'ls-files', '-z', '--', '*.lean'], capture_output=True,
+                             check=True).stdout.decode('utf-8')
+    except (OSError, subprocess.CalledProcessError) as exc:
+        return [('git ls-files', f'cannot list the tracked files: {exc}')]
+    scanned = set(files)
+    found = []
+    for path in sorted(p for p in out.split('\0') if p):
+        if path.startswith('Solution/') or (path.startswith('Challenge/')
+                                             and path != 'Challenge/Defs.lean'):
+            found.append((path, 'not checked by the axiom gate (only the modules Solution and '
+                                'Challenge.Defs are)'))
+        elif path not in scanned and not any(path == t or (t.endswith('/') and path.startswith(t))
+                                             for t in TOOLING):
+            found.append((path, 'tracked Lean file outside every checked root'))
+    for path in files:
+        if path.startswith('Solution/') or (path.startswith('Challenge/')
+                                             and path != 'Challenge/Defs.lean'):
+            if (path, 'not checked by the axiom gate (only the modules Solution and '
+                      'Challenge.Defs are)') not in found:
+                found.append((path, 'not checked by the axiom gate (only the modules Solution '
+                                    'and Challenge.Defs are)'))
+    return found
 
 
 def library_files():
     files = ['IUT.lean']
-    for top in ('IUT', 'Challenge'):
+    for top in ('IUT', 'Challenge', 'Solution'):
         for root, dirs, names in os.walk(top):
             dirs.sort()
             files += [norm(os.path.join(root, x)) for x in sorted(names) if x.endswith('.lean')]
@@ -295,8 +420,10 @@ def main(argv):
     if any(a.startswith('-') for a in argv):
         print('usage: source_scan.py [FILE ...]')
         return 2
+    manifests = []
     if argv:
-        lean = [a for a in argv if not a.endswith('.toml')]
+        manifests = [a for a in argv if a.endswith('lake-manifest.json')]
+        lean = [a for a in argv if not a.endswith('.toml') and a not in manifests]
         lake = [a for a in argv if a.endswith('.toml')]
     else:
         if not all(os.path.isfile(f) for f in ('IUT.lean', 'Challenge.lean', 'Solution.lean')):
@@ -312,12 +439,19 @@ def main(argv):
         for line, label in scan_lake(path):
             print(f'{path}:{line}: {label}')
             total += 1
+    for path in manifests:
+        for where, label in manifest_problems(path):
+            print(f'{where}: {label}')
+            total += 1
     if not argv:
-        for path, label in import_problems(lean):
+        extra = import_problems(lean) + tracked_problems(lean) + manifest_problems()
+        if os.path.exists('lakefile.lean'):
+            extra.append(('lakefile.lean', 'a Lean lakefile next to lakefile.toml'))
+        for path, label in extra:
             print(f'{path}: {label}')
             total += 1
     if total:
-        print(f'source scan FAILED: {total} findings in {len(lean) + len(lake)} files')
+        print(f'source scan FAILED: {total} findings in {len(lean) + len(lake) + len(manifests)} files')
         return 1
     print(f'source scan OK: {len(lean) + len(lake)} files')
     return 0

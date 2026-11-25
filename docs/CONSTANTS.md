@@ -28,11 +28,11 @@ hypotheses that encode unformalized inputs. Unless stated, Lean names are in the
 | `2` (metric factor), `√2` (lengths) | 15 | `ℂ ⊗_ℝ ℂ ≅ ℂ ⊕ ℂ` | Prop 1.5 (i) | `Proposition1_5.crt_normSq` |
 | `2^{|I|−1}·|V|^{|I|}` | 15 | number of copies of `ℂ` in `M_I` | Prop 1.5 (iii) | `Proposition1_5.count_iii` |
 | `2^{|I|−1}` (metric factor), `λ^{|I|}` | 15, 16 | metrics on `M_I`; Prop 1.5 (iv) | Thm 1.10 Step (vii) | not formalized |
-| `4/3` | 16 | `n ≤ 4p_n/(3 log p_n)`, `π(η) ≤ 4η/(3 log η)` | Prop 1.6; Thm 1.10 Step (viii) | `Proposition1_6.exists_n0`, `exists_eta_prm` (kernel checked from Mathlib's PNT) |
-| `η_prm` | 16 | threshold of Prop 1.6 | Thm 1.10 statement and Step (viii); Cor 2.2 (`C_K = 40η_prm + 2B_K`) | `exists_eta_prm` gives `η_prm ≥ 2`; the paper only says positive |
+| `4/3` | 16 | `n ≤ 4p_n/(3 log p_n)`, `π(η) ≤ 4η/(3 log η)` | Prop 1.6; Thm 1.10 Step (viii) | `Proposition1_6.proposition1_6` (both displays), with components `exists_n0`, `exists_eta_prm` (kernel checked from Mathlib's PNT) |
+| `η_prm` | 16 | threshold of Prop 1.6 | Thm 1.10 statement and Step (viii); Cor 2.2 (`C_K = 40η_prm + 2B_K`) | `exists_eta_prm` and `proposition1_6` give `η_prm ≥ 2`; the paper says positive, which suffices since Step (viii) divides by `log(η_prm)` only when `1 < e*_mod·l < η_prm` |
 | `n` (tuple length), `β_avg` | 16, 17 | weighted averages | Prop 1.7; Thm 1.10 Step (v) | `Proposition1_7.weighted_averages` |
 | `log(q_v)`, `1` | 21 | weights of `deg_F` at finite and infinite places | Def 1.9 (i) | `degWeight` in `ArithmeticDivisor.lean` |
-| `[F_v : ℚ_{v_ℚ}]` | 22 | denominator of `deg_E` | Def 1.9 (ii); Thm 1.10 Step (v) weights | `localDeg`, `degE` in `Definition1_9.lean` |
+| `[F_v : ℚ_{v_ℚ}]` | 22 | denominator of `deg_E` | Def 1.9 (ii); Thm 1.10 Step (v) weights | `localDeg`, `degE` in `Definition1_9.lean` (`degE` takes a `PlaceSet`: a nonempty finite set of valuations over one place of `ℚ`) |
 | `d_mod = [F_mod : ℚ]`, `e_mod` | 22 | degree and maximal ramification index | Thm 1.10, Cor 2.2 | variables |
 | `d*_mod = 2¹²·3³·5·d_mod`, `e*_mod = 2¹²·3³·5·e_mod` | 22 | scaled degree and ramification | Thm 1.10 Steps (iii), (v), (viii); Rem 1.10.7 (i) | `R4`, `step_viii_constant` (with `e*_mod` as `2^12*3^3*5*e`) |
 | `l ≥ 5`, `l ≠ 5` | 22 | hypotheses on `l` (IUT I Def 3.1 (c) gives `l ≠ 5`) | Thm 1.10 | hypotheses of all step lemmas |
@@ -59,7 +59,7 @@ hypotheses that encode unformalized inputs. Unless stated, Lean names are in the
 | `(l+5)/4`, `(l+1)/24`, `l+5` | 29 | same with `l = 2l*+1` | Steps (v), (vii) | `procession_average_l`, `step_vii_average` |
 | `20/3`, `4(l+5)/(l+1) ≤ 20/3`, `1/(l+1) ≤ 1/l` | 29 | final display of Step (v) | Step (v) | `step_v_final` (kernel checked; needs `l ≥ 5`, nonnegativity) |
 | `log π`, `4` | 29, 30 | archimedean bound `(l+5)/4·log π ≤ (l+1)/4·4` | Step (vii) | `step_vii_archimedean` (existing), `step_vii_average` |
-| `0` | 29 | local bound at nondistinguished places | Step (vi) | `step_vi` |
+| `0` | 29 | local bound at nondistinguished places | Step (vi) | none; the bound is `μ^log((R_I)^∼) = 0` with the inclusion of Prop 1.4 (iv), not formalized |
 | `56` | 30 | `52 + 4` | Step (viii) | `step_viii_raw` |
 | `(l+1)/4·(1/6)·(12/l²) ≥ 1/(2l)` | 30 | absorbs the `log 𝔮` term | Step (viii) | `step_viii_estimate` (existing), `step_viii_raw` |
 | `4/3·(e*_mod·l + η_prm)` | 31 | bound on `l*_mod·log(𝔰^≤)` | Step (viii) | `step_viii_prime_count` (two cases), `step_viii_prime_count_prm` |

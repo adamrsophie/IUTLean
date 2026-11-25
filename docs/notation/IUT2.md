@@ -1,7 +1,7 @@
 # IUT II notation dictionary
 
 Each entry gives the symbol in plain text, its meaning, and the page (PDF page of
-`documentation/ref/Inter-universal Teichmuller Theory II.pdf`, unless marked IUT I or IUT III)
+the author's manuscript of IUT II, unless marked IUT I or IUT III)
 where it is defined or first fixed. "rendered" means the definition was checked on a page
 render. Entries are limited to the pages read for this dictionary.
 
@@ -45,7 +45,8 @@ render. Entries are limited to the pages read for this dictionary.
 | θ(Π), ∞θ(Π) | Étale theta classes up to μ_{2l} and μ | pages 55 to 58 (Cor 1.12; Rem 1.12.2) |
 | θ^{\|t\|}, ∞θ^{\|t\|} | Galois-evaluated theta orbits at label \|t\| | page 71 (Cor 2.5 (ii)) |
 | θ^{\|t\|}_env, θ^{\|t\|}_bs | Mono-theta and base-field versions | pages 81 to 83 (Cor 2.8); pages 84 to 85 (Cor 2.9) |
-| q_v^{j²} | Theta value at label j, up to μ_{2l} | page 72 (Rem 2.5.1 (i), rendered) |
+| qq_v | The q with a double underline: a chosen 2l-th root q_v^{1/2l} of the Tate parameter q_v, up to μ_{2l} | IUT I page 71 (Ex 3.2 (iv), rendered); page 2 (rendered) |
+| qq_v^{j²} | Theta value at label j, up to μ_{2l}; equals q_v^{j²/(2l)} relative to the Tate parameter | page 72 (Rem 2.5.1 (i), rendered) |
 | M^Θ_* | Projective system of mono-theta environments | page 80 (Def 2.7) |
 | Ψ_cns, Ψ^×_cns, Ψ^ss_cns | Constant monoid, its units, its semi-simplification | pages 93 to 94 (Cor 3.5); pages 120 to 121 (Prop 4.1) |
 | ξ | Value-profile: element of ∏_{\|t\|∈F_l^⋇} θ^{\|t\|}_env | page 94 (Cor 3.5 (ii), rendered) |

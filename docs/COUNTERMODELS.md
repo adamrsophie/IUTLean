@@ -67,14 +67,14 @@ File `IUT/Countermodels/HaarNormalization.lean`, namespace `IUT.Countermodels.Ha
 
 | Lean name | Kind | Statement |
 |---|---|---|
-| `IUT.Countermodels.additive_iso_changes_volume` | countermodel | Doubling is an additive automorphism of `ℝ` and doubles the length of `[0, 1]`. |
-| `IUT.Countermodels.log_volume_shift` | positive | `log (c μ) = log c + log μ` for `c, μ > 0`. |
-| `rescaled_haar` | countermodel | For `c > 0`, `c · volume` is an additive Haar measure, differs from `volume` if `c ≠ 1`, and shifts every log-volume by `log c`. |
-| `scaling_law_all_normalizations` | countermodel | Every `c · volume` satisfies `logVol (a • s) = log (abs a) + logVol s`. |
-| `transport_shifts_logVol` | countermodel | Transport of Lebesgue measure along `x ↦ a x` shifts every log-volume by `−log (abs a)`. |
+| `IUT.Countermodels.additive_iso_changes_volume` | countermodel | Doubling is additive on `ℝ`, and `[2 · 0, 2 · 1]` has Lebesgue measure different from `[0, 1]`. (Doubling is an automorphism of the topological group `ℝ`; the theorem states only additivity.) |
+| `IUT.Countermodels.log_volume_shift` | positive | `log (c μ) = log c + log μ` for `c, μ > 0`: the arithmetic of the shift of the log-volume of a set of finite positive measure. |
+| `rescaled_haar` | countermodel | For `c > 0`, `c · volume` is an additive Haar measure, differs from `volume` if `c ≠ 1`, and shifts by `log c` the log-volume of every set `s` with `0 < volume s < ∞`. (For `s = ∅` and `c = 2` both log-volumes are `0`, by the totalization of `logVol`.) |
+| `scaling_law_all_normalizations` | countermodel | For `c > 0`, `a ≠ 0` and `0 < volume s < ∞`, the measure `c · volume` satisfies `logVol (a • s) = log (abs a) + logVol s`. |
+| `transport_shifts_logVol` | countermodel | For `a ≠ 0`, transport of Lebesgue measure along `x ↦ a x` shifts by `−log (abs a)` the log-volume of every set `s` with `0 < volume s < ∞`. |
 | `haar_eq_smul_volume` | positive | Every additive Haar measure on `ℝ` is a scalar multiple of Lebesgue measure. |
 | `haar_eq_volume_of_anchor` | positive | An additive Haar measure giving `[0, 1]` volume `1` is Lebesgue measure. |
-| `transport_preserves_iff` | positive | Transport along `x ↦ a x` preserves Lebesgue measure iff `abs a = 1`. |
+| `transport_preserves_iff` | positive | For `a ≠ 0`, transport along `x ↦ a x` preserves Lebesgue measure iff `abs a = 1`. |
 
 *Abstraction refuted:* if an object (here the locally compact group `ℝ`, standing in for a local field) is reconstructed up to isomorphism, a normalized volume on it is reconstructed too. Haar measure is unique only up to one scalar; the scalar is fixed neither by the group structure nor by the scaling law, only by an anchor.
 
@@ -88,7 +88,7 @@ File `IUT/Countermodels/JointWitness.lean`, namespace `IUT.Countermodels.Joint`;
 |---|---|---|
 | `IUT.Countermodels.separate_witnesses_no_joint` | countermodel | Two predicates on `Bool`, each satisfiable, with no common witness. |
 | `zmod7_separate_not_joint` | countermodel | Among automorphisms of the multiplicative monoid of `ZMod 7`, "fixes `3`" and "sends `2` to `4`" are each satisfiable but not jointly. |
-| `linear_separate_not_joint` | countermodel | Among maps `x ↦ c x`, `c > 0`: "`1 ↦ 1`" and "`θ ↦ q`" are each satisfiable; jointly iff `θ = q`. |
+| `linear_separate_not_joint` | countermodel | For `θ > 0`, `q > 0`, among maps `x ↦ c x`, `c > 0`: "`1 ↦ 1`" and "`θ ↦ q`" are each satisfiable; jointly iff `θ = q`. |
 | `joint_witness_of_product` | positive | If candidates form a product and the conditions constrain different factors, separate witnesses combine. |
 
 *Abstraction refuted:* separately satisfiable compatibility conditions on a transport map are jointly satisfiable. In `zmod7_separate_not_joint` both conditions prescribe a Kummer-type value of one monoid automorphism; they clash because `2 = 3²`.
@@ -102,8 +102,8 @@ File `IUT/Countermodels/CombinedIndeterminacies.lean`, namespace `IUT.Countermod
 | Lean name | Kind | Statement |
 |---|---|---|
 | `IUT.Countermodels.invariant_comp` | positive | A function invariant under `g` and `h` is invariant under `g ∘ h`. |
-| `invariant_closure` | positive | A function invariant under `g` and `h` is invariant under the whole group they generate. |
-| `invariant_set_closure` | positive | A set mapped onto itself by `g` and `h` is mapped onto itself by the generated group. |
+| `invariant_closure` | positive | A function invariant under the permutations `g` and `h` is invariant under the whole group they generate. |
+| `invariant_set_closure` | positive | A set mapped onto itself by the permutations `g` and `h` is mapped onto itself by the generated group. |
 | `IUT.Countermodels.separate_orbits_ne_joint_orbit` | countermodel | On `Fin 3`, a composite image lies outside the union of the separate images. |
 | `separate_finite_joint_infinite` | countermodel | With `S = [0, 1]` and the reflections `x ↦ −x`, `x ↦ 2 − x` (each of order 2), both preserve Lebesgue measure; the union of the images of `S` under each separately has volume at most `3`; under the generated group, infinite volume. |
 
@@ -133,11 +133,11 @@ File `IUT/Countermodels/ReconstructionComparison.lean`, namespace `IUT.Countermo
 | Lean name | Kind | Statement |
 |---|---|---|
 | `invariant_of_iso` | positive | The log-volume of the pilot region of a normalized line is preserved by any measurable bijection carrying measure to measure and pilot to pilot (per-copy reconstruction). |
-| `link_and_reconstruction_no_relation` | countermodel | For any pilot lengths and any `α, β`, there are normalizations and a continuous increasing additive link, carrying pilot onto pilot, with invariants `α` and `β`. |
-| `link_compatible_with_both_orders` | countermodel | For fixed pilot lengths, a link and per-copy reconstruction are compatible with either strict order between the invariants. |
-| `invariant_le_of_volume_compatible` | positive | If the link also carries measure to measure (volume compatibility) and pilot into pilot, the first invariant is at most the second. |
+| `link_and_reconstruction_no_relation` | countermodel | For any positive pilot lengths and any `α, β`, there are normalizations and a continuous increasing additive link, carrying pilot onto pilot, with invariants `α` and `β`. |
+| `link_compatible_with_both_orders` | countermodel | For fixed positive pilot lengths, a link and per-copy reconstruction are compatible with either strict order between the invariants. |
+| `invariant_le_of_volume_compatible` | positive | If the link also carries measure to measure (volume compatibility) and pilot into pilot, the pilot of `T₀` has nonzero measure and the pilot of `T₁` finite measure, then the first invariant is at most the second. |
 
-*The model.* A *normalized line* is `ℝ` with Haar measure `c · volume` and pilot region `[0, a]`; its invariant is the log-volume of the pilot region. A *link* is an automorphism of the additive group `ℝ` carrying pilot onto pilot. *Abstraction refuted:* a link identifying part of the structure, together with per-copy reconstruction, determines a relation between the two invariants. *The named extra compatibility* that restores a comparison is volume compatibility of the link; with inclusion of pilots instead of equality it gives an inequality, the toy counterpart of the upper semi-compatibility (Ind3) of Theorem 3.11 (ii) (page 156).
+*The model.* A *normalized line* is `ℝ` with the measure `c · volume` and pilot region `[0, a]`; its invariant is the log-volume of the pilot region. The intended case is `c > 0`, `a > 0`, where the measure is a Haar measure; the structure `NormalizedLine` does not enforce it (for `c ≤ 0` its measure is the zero measure and the invariant is `0` by totalization), and every countermodel uses positive data. A *link* is an automorphism of the additive group `ℝ` carrying pilot onto pilot. *Abstraction refuted:* a link identifying part of the structure, together with per-copy reconstruction, determines a relation between the two invariants. *The named extra compatibility* that restores a comparison is volume compatibility of the link; with inclusion of pilots instead of equality it gives an inequality, the toy counterpart of the upper semi-compatibility (Ind3) of Theorem 3.11 (ii) (page 156).
 
 *What the model does and does not satisfy.* It has two copies of a structure carrying a real-valued log-volume, a link identifying pilot objects, and internal computability of each log-volume. It has no Hodge theaters, Frobenioids, Kummer theory, log-links, log-Kummer correspondence, tensor packets, multiradial algorithm, indeterminacies, holomorphic hull, or the properties (IPL), (SHE), (APT). In the proof of Corollary 3.12, Steps (xi-b) to (xi-e) (pages 181 to 184) do not compare the two log-volumes through a bare link: they express both, through the multiradial representation and (SHE), relative to the single arithmetic holomorphic structure of the `1`-column. Volume compatibility in the model is the toy counterpart of what those steps are meant to supply. The model shows only that some such compatibility is indispensable; it does not show that the papers fail to supply it. The link is linear, so the model sits inside the hypothesis "(Lin)" of `IUT.Audit.ScholzeStix.Diagram`, which Mochizuki disputes for the situation of the papers.
 

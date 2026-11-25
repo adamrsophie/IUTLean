@@ -3,14 +3,18 @@ import Mathlib
 /-!
 # IUT II: the label sets `|𝔽_l|`, `𝔽_l^⋇` and the exponents `j²` of the theta values
 
-Sources, all read in this session, with every formula below checked against a rendered page:
+Sources, all read for this file, with every formula below checked against a rendered page:
 
 * Mochizuki, *Inter-universal Teichmüller Theory I*, page 3 (rendered): the definitions
   `l^⋇ = (l − 1)/2` and `𝔽_l^⋇ = 𝔽_l^× / {±1}`.
 * *Inter-universal Teichmüller Theory II*, page 3 (rendered): `j ∈ {0, 1, …, l^⋇}` is uniquely
   determined by its image in `|𝔽_l| = 𝔽_l / {±1} = {0} ∪ 𝔽_l^⋇`.
 * IUT II, Remark 2.5.1 (i), page 72 (rendered): the theta value attached to `j ∈ |𝔽_l|` is
-  `q_v^{j²}` with `j ∈ {0, 1, …, l^⋇}` the representative of `j`.
+  `qq_v^{j²}` with `j ∈ {0, 1, …, l^⋇}` the representative of `j`. Here `qq_v` (a `q` with a
+  double underline in the paper) is not the Tate parameter `q_v` of `E_v`: by IUT I, Example
+  3.2 (iv), page 71 (rendered), `qq_v = q_v^{1/2l}`, a chosen `2l`-th root determined up to a
+  `μ_{2l}`-multiple. Relative to the Tate parameter the theta value is `q_v^{j²/(2l)}`. The
+  exponents treated in this file are the `j²` attached to `qq_v`.
 * IUT II, Proposition 4.1 (iv), page 122, and Remark 4.5.4, page 136 (both rendered): the
   Gaussian monoid carries the exponent vector `(…, j² · log(p_v), …)` indexed by `j ∈ 𝔽_l^⋇`,
   with `j` read as a natural number in `{1, …, l^⋇}`.
@@ -31,8 +35,8 @@ It checks elementary facts about the labels and the exponents that these constru
 3. `24 · ∑_{j=1}^{l^⋇} j² = l (l² − 1)` and the `1/l^⋇`-weighted average of the exponents
    `j²` equals `l (l + 1) / 12`. **Neither formula appears in the pages read**; they are
    elementary arithmetic about the exponent vector of pages 122, 136, 145.
-4. Remark 2.6.3: for a finite connected subgraph `Γ′` of the line graph containing `0`, i.e. a
-   vertex set `[−a, b] ⊆ ℤ`, the file computes `|Γ′| = min(max(a,b), l^⋇)` and
+4. Remark 2.6.3: for a finite connected subgraph `Γ′ ≠ {0}` of the line graph containing `0`,
+   i.e. a vertex set `[−a, b] ⊆ ℤ` with `max(a, b) ≥ 1`, the file computes `|Γ′| = min(max(a,b), l^⋇)` and
    `‖Γ′‖ = (n + 1)(2n + 1)/6` with `n = |Γ′|`, so `‖Γ′‖` is a function of `|Γ′|`, strictly
    increasing in it, monotone in `max(a,b)`, and maximal (value `l (l + 1)/12`) exactly when
    `max(a,b) ≥ l^⋇`. The paper calls this "easily verified"; the file verifies it.
@@ -211,7 +215,12 @@ def minSq (S : Finset ℤ) : ℕ :=
 vertex of `Γ′ = [−a, b]`, i.e. the size of the image in `𝔽_l^⋇` of the nonzero vertices. -/
 def gammaCard (l a b : ℕ) : ℕ := ((Icc 1 (lstar l)).filter fun c => (fiberIn l a b c).Nonempty).card
 
-/-- `‖Γ′‖ = |Γ′|⁻¹ · ∑_{c ∈ 𝔽_l^⋇} min_{k ∈ c ∩ Γ′} k²` (IUT II, page 79). -/
+/-- `‖Γ′‖ = |Γ′|⁻¹ · ∑_{c ∈ 𝔽_l^⋇} min_{k ∈ c ∩ Γ′} k²` (IUT II, page 79).
+
+Domain: the paper's formula has a meaning only when `|Γ′| ≥ 1`, that is `Γ′ ≠ {0}`
+(`one_le_gammaCard_iff`). For `a = b = 0` Lean's division by zero makes this function return
+`0`; that value is a convention of the Lean definition, not a value given on page 79. Every
+lemma below that evaluates `gammaNorm` assumes `1 ≤ gammaCard l a b` or `1 ≤ max a b`. -/
 def gammaNorm (l a b : ℕ) : ℚ :=
   (∑ c ∈ Icc 1 (lstar l), (minSq (fiberIn l a b c) : ℚ)) / gammaCard l a b
 

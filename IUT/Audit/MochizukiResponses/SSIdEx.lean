@@ -5,8 +5,8 @@ import Mathlib
 
 Source: S. Mochizuki, *Report on Discussions, Held During the Period March 15 to 20, 2018,
 Concerning Inter-universal Teichmüller Theory (IUTch)*, version dated February 2019, item
-(SSIdEx), pages 17 to 19. The whole report (45 pages) was read; the formulas of (SSIdEx) were
-checked against the rendered pages 17 and 18. (The text extraction drops the slash of the
+(SSIdEx), pages 17 to 19. Read for this file: report pages 17 to 19; the formulas of
+(SSIdEx) were checked against the rendered pages 17 and 18. (The text extraction drops the slash of the
 `≠` in "(φ₁)_ℂ ∘ ι_U ≠ ι_W ∘ φ₂"; the rendered page 18 shows `≠`.)
 
 **Whose argument.** Mochizuki offers (SSIdEx) as an elementary model of the logical structure

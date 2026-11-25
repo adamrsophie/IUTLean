@@ -1,22 +1,82 @@
 {
-  "declarations": {
-    "Challenge.ABC": {
-      "type": "7eb9c843b0fd71b8fd2d1fabbb34bb5e51c5767a961a5fe1323fb9a277b48cde",
-      "value": "e77bed6c646d97495f9ac498ce568e19df3ebd8e1cc6b91bd27a9b0762adb9d9"
-    },
-    "Challenge.ABCFinite": {
-      "type": "7eb9c843b0fd71b8fd2d1fabbb34bb5e51c5767a961a5fe1323fb9a277b48cde",
-      "value": "52e1c4ee435d0a22469bc22e4b1c2f8861353c0fa64e16250bcf626ef6c82009"
-    },
-    "Challenge.ABCLog": {
-      "type": "7eb9c843b0fd71b8fd2d1fabbb34bb5e51c5767a961a5fe1323fb9a277b48cde",
-      "value": "620a37699c810b95bdcc533356e8404aab0c8c309a8aca61bfbb88875be8a4f6"
-    },
-    "Challenge.rad": {
-      "type": "f4e839ff771d39c7a6d34919dae6a171f707805428fae35f438e2ef9b3be2f71",
-      "value": "1cb7d49a814595e6527ea19309a374f34aada05a8c88b457c515a11f4beb92f8"
-    }
+  "challenge_theorems": [
+    "Solution.abc_iff_abcFinite",
+    "Solution.abc_iff_abcLog",
+    "Solution.coprime_iff_pairwise",
+    "Solution.rad_eq_radical",
+    "Solution.scholzeStix_with_squares",
+    "Solution.scholzeStix_without_squares",
+    "Solution.theorem1_10_final_arithmetic"
+  ],
+  "files": {
+    ".github/CODEOWNERS": "758836636dcc29a2cc670073230a18ebedb8978f42a09c83351db56a1f2c815b",
+    ".github/workflows/axiom-gate.yml": "ac9181a313dba0bfd2c9e1b5fb158ea7f54fa7eb4ea1faa3132170e5087d9d55",
+    "AxiomGate.lean": "d816a6a264597547bfc6781962be6e1f8434b46f0bbca3d9cdfe51c5358a9419",
+    "Challenge.lean": "ee1a16be082589cd69dd848271483afda7fa02c46fc858b2146c484db578de92",
+    "Challenge/Defs.lean": "38b9a2aa9fec312a9c1f6a826a14c919539e4d4c5df75f950d9851ffa9327e0b",
+    "GateControls/Clean.lean": "b972a7316d919c1abe840844a8a841ebc082b7bc8e5f9b5c4ace060f04bc8185",
+    "GateControls/EquivalentForm.lean": "71aa304953a4029812110476facb70da30996822f2d1fea9c62ab7284b3a7b64",
+    "GateControls/ExperimentalImport.lean": "3ad806566f9c25a84316535523a158bcca1eb96446958a3cccf12fbf16f96913",
+    "GateControls/ForbiddenAxiom.lean": "f6b04e854d6d781be9554a8e64e528136dec13fd895f897d54c335feb687f40a",
+    "GateControls/GateProbe.lean": "8e17202da459c8bd3e8199834b6bdf162ea1bf1368465f604c7f8247a2e91f66",
+    "GateControls/NativeDecide.lean": "ae1c4d75bbbeec0ee1388c2d50e06d123c593623924b663ffd321ec38529e1f6",
+    "GateControls/RenamedConjecture.lean": "6ffbf54c3b953529898b1c19fa08825ce68d885708d6a438aaf88c1e76b7d16d",
+    "GateControls/Shadowing.lean": "713334705766963d2013848c632f354aa93a03e2457a4f6cce9812ad03f8bdb5",
+    "GateControls/Sorry.lean": "aafd46ea346a2ae72e3b619bab3fb2c0dae7509b7478a8c1ef17effea800a025",
+    "GateControls/SourceScan.expected": "6161bcae8e19b9414a76b9482b9c1ffdd1cded1b04e7c47dd7dc746e889d8a16",
+    "GateControls/SourceScan.lake-manifest.json": "edca2706e94de7fa93b2e67a21829e904834722c706875f8cd80d62ba10103c1",
+    "GateControls/SourceScan.lean": "e05116d22182dd8de569a1106e2208ef7bd3892ec34c24a60e7d9dcb303548d1",
+    "GateControls/SourceScanLakefile.toml": "96fd660dc03f6cb8d42736c9ee30c0dc5dac6604021acf657e57e0fd101643ee",
+    "GateControls/run.sh": "6c6dafc0125ca35c66417947ae45b97c1f2b31f50e01857be17c0e6398735085",
+    "comparator.json": "36dee176090a40421b2f241591d3a919f16e7584e6c826fa6fb8625f1d9e8afc",
+    "lake-manifest.json": "c03046314b6e7eaad6da4cb0fcb4f8dd3e0e7476bd447cba090adcde0100fdda",
+    "lakefile.toml": "eec5c7f863e12d375065d269bca77fad942dec7fd207dd729782f644b5417342",
+    "lean-toolchain": "582a63f8f9c5128067b688778c1051cf1464c3ca9d57b9325025c051c29b774a",
+    "scripts/Controls/Fingerprints.lean": "de5ed635cdc1cfaf760a06aa3038ff8571214fc50d2a29b5731d960668d6fb99",
+    "scripts/Controls/fingerprints.py": "28791fe9ae773e4d36a9390e0f637c6c2bbd1c397abc9a575c80e437ab4d941b",
+    "scripts/Controls/source_scan.py": "fb598af76d0ebdfd2ab91e5ee93d1df116b1605a7c0d07fa58b74589d2f4d323"
   },
-  "source_file": "Challenge/Defs.lean",
-  "source_sha256": "38b9a2aa9fec312a9c1f6a826a14c919539e4d4c5df75f950d9851ffa9327e0b"
+  "modules": {
+    "Challenge": {
+      "Solution.abc_iff_abcFinite": {
+        "type": "66a0e361591a01d2e8c6aad67ae3242d84421f243b1644dad8bfe9e544eb7bad"
+      },
+      "Solution.abc_iff_abcLog": {
+        "type": "df50a05a92ad3e7f83c59d51b68924a9210a969b024021355c24e40249664f89"
+      },
+      "Solution.coprime_iff_pairwise": {
+        "type": "b94ad81f57e40def2c226496b3dbad90dec69496dce751bed5c30ed65e09d0d8"
+      },
+      "Solution.rad_eq_radical": {
+        "type": "62a950bd6ed36d7b84f29657070c45db82ecad77cfbf174c626af3ce339755bd"
+      },
+      "Solution.scholzeStix_with_squares": {
+        "type": "adf0a6c47af0b59207349604f032c750c6d6ca5b682e3fd044f46515d6d34942"
+      },
+      "Solution.scholzeStix_without_squares": {
+        "type": "0d24e7a3cf8046b2407c8d7fa9bee8e3ab1ab8db0fb1d51a0e6f8704750771de"
+      },
+      "Solution.theorem1_10_final_arithmetic": {
+        "type": "601c709939020ffddc1661a09796613256006dc5e3e42ad00ac6dd001bb55141"
+      }
+    },
+    "Challenge.Defs": {
+      "Challenge.ABC": {
+        "type": "7eb9c843b0fd71b8fd2d1fabbb34bb5e51c5767a961a5fe1323fb9a277b48cde",
+        "value": "e77bed6c646d97495f9ac498ce568e19df3ebd8e1cc6b91bd27a9b0762adb9d9"
+      },
+      "Challenge.ABCFinite": {
+        "type": "7eb9c843b0fd71b8fd2d1fabbb34bb5e51c5767a961a5fe1323fb9a277b48cde",
+        "value": "52e1c4ee435d0a22469bc22e4b1c2f8861353c0fa64e16250bcf626ef6c82009"
+      },
+      "Challenge.ABCLog": {
+        "type": "7eb9c843b0fd71b8fd2d1fabbb34bb5e51c5767a961a5fe1323fb9a277b48cde",
+        "value": "620a37699c810b95bdcc533356e8404aab0c8c309a8aca61bfbb88875be8a4f6"
+      },
+      "Challenge.rad": {
+        "type": "f4e839ff771d39c7a6d34919dae6a171f707805428fae35f438e2ef9b3be2f71",
+        "value": "1cb7d49a814595e6527ea19309a374f34aada05a8c88b457c515a11f4beb92f8"
+      }
+    }
+  }
 }

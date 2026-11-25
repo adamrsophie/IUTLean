@@ -2,14 +2,14 @@ import IUT.PaperIV.Theorem1_10.Arithmetic
 import IUT.PaperIV.Proposition1_7
 
 /-!
-# IUT IV, Theorem 1.10, Steps (v), (vi), (vii): weighted averages and procession-normalized bounds
+# IUT IV, Theorem 1.10, Steps (v) and (vii): weighted averages and procession-normalized bounds
 
-Source: Mochizuki, *Inter-universal Teichmüller Theory IV*, proof of Theorem 1.10, Steps (v),
-(vi), (vii), pages 27 to 30 of the April 2020 manuscript, read from the extracted text and from
+Source: Mochizuki, *Inter-universal Teichmüller Theory IV*, proof of Theorem 1.10, Steps (v)
+and (vii), pages 27 to 30 of the April 2020 manuscript, read from the extracted text and from
 the rendered pages; every display formalized here was checked against the renders of pages 28,
 29 and 30.
 
-This file is not a formalization of Steps (v) to (vii). Those steps apply Propositions 1.4 and
+This file is not a formalization of Steps (v) and (vii). Those steps apply Propositions 1.4 and
 1.5 to the tensor packets of log-shells of IUT III, Theorem 3.11, and that application is not
 formalized. Here the local log-volume bounds are real variables, and what is checked is the
 arithmetic the paper performs on them:
@@ -23,8 +23,12 @@ arithmetic the paper performs on them:
 * the "procession-normalized upper bound": averaging over `j ∈ {1, …, l*}` with (E1), (E2)
   (`procession_average`), its rewriting with `l* = (l-1)/2` (`procession_average_l`), and the
   final inequality of Step (v) (`step_v_final`);
-* Step (vi) (the bound `0` averages to `0`) and the averaging of Step (vii)
-  (`step_vii_average`).
+* the averaging of Step (vii) (`step_vii_average`).
+
+Step (vi) (page 29) has no declaration here. Its content is the bound `0` on the log-volume of
+the container `(R_I)^∼` given by the inclusion and the final equality of Proposition 1.4 (iv);
+neither the container nor its log-volume is formalized, and averaging the constant `0` checks
+nothing about them.
 
 Notation: `n` is `l* = (l-1)/2`, a natural number with `l = 2n+1`; `A = log(𝔡^K_{v_ℚ})`,
 `B = log(𝔮_{v_ℚ})`, `C = log(𝔰^ℚ_{v_ℚ})`, `T = l*_mod·log(𝔰^≤_{v_ℚ})`, `L = l*_mod`.
@@ -156,9 +160,6 @@ theorem step_v_final {A B C T l : ℝ} (hl : 5 ≤ l) (hA : 0 ≤ A) (hC : 0 ≤
   have h2 : 0 ≤ C / l := div_nonneg hC hl0.le
   have h3 : 0 ≤ (2 * l - 10) / 3 * T := mul_nonneg (by linarith) hT
   nlinarith
-
-/-- Step (vi): when every local bound is `0`, the procession-normalized bound is `0`. -/
-theorem step_vi (n : ℕ) : 1 / (n : ℝ) * ∑ _j ∈ Icc 1 n, (0 : ℝ) = 0 := by simp
 
 /-- **Step (vii), averaging.** With local bound `(j+1)·log(π)`, the procession-normalized bound
 is `(l*+3)/2·log(π) = (l+5)/4·log(π)` for `l = 2l*+1`; the existing theorem

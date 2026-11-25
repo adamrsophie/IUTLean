@@ -47,6 +47,34 @@ The extracted text of the PDFs loses decorations. The per-paper files restore th
 | `∉`, `≠` | dropped or misread in the extracted text | IUT IV 22, 25, 40, 46; IUT III 174 |
 | underlined `deg` | normalized degree | IUT IV 21 |
 
+## The Tate parameter, its root, the q-pilot, and the indices
+
+The papers use one letter for several related objects; a formalization must keep them apart.
+Checked against the rendered IUT I page 71, IUT II page 72 and IUT IV page 23; the Scholze and
+Stix manuscript, page 3, uses the same normalization.
+
+| Object | Definition | Relation | Where |
+|---|---|---|---|
+| Tate parameter `q_v` (single underline under `v`) | the `q`-parameter of `E_v` over `K_v`, an element of `O^▷` | `q_v = qq_v^{2l}` | IUT I 71 |
+| chosen root `qq_v` (`q_v` with a double underline) | `q_v^{1/2l}`; exists by Definition 3.1 (b), (c); determined only up to a `μ_{2l}`-multiple; it is the value of `Θ_v` (double underline; the reciprocal of an `l`-th root of the theta function, IUT I 70) at `√(−q_v)` | `qq_v^{2l} = q_v` | IUT I 71 |
+| theta value at label `j` | the `μ_{2l}`-orbit of `qq_v^{j²}`, for `j ∈ {0, 1, …, l*}` determined by `j ∈ \|F_l\|` | `qq_v^{j²} = q_v^{j²/2l}` (Tate parameter `q_v`) | IUT II 72 |
+| q-pilot | built from `qq_v`, not from the Tate parameter `q_v` | its absolute log-volume is `\|log(q)\| = (1/2l)·log(𝔮)` | IUT IV 23 |
+| `log(𝔮)` | normalized degree of the effective arithmetic divisor of the Tate parameters at the bad places | no `1/2l` factor | IUT IV 23 |
+| `deg(q_E)`, `deg(q̲_E)` | Scholze and Stix: the arithmetic divisor of the Tate parameters, and of the chosen roots | `deg(q̲_E) = deg(q_E)/(2ℓ)` | SS 2 to 4 |
+
+So a quantity written with `q` must say whether it is the Tate parameter or the chosen root: the
+two differ by the exponent `2l` (by `1/2l` on log-volumes), and the theta values carry the
+exponent `j²` on the root, not on the Tate parameter. The symbol `qq_v` for the double-underlined
+`q` is the one used in `docs/notation/IUT2.md`.
+
+**Packet and procession indices.** The labels are `|F_l| = {0} ⊔ F*_l`, identified with
+`{0, 1, …, l*}` (IUT II 3; IUT III 153 to 154). The procession at label `j` uses the capsule
+index set `S^±_{j+1} = {0, …, j}` of `j + 1` elements (IUT III 120, 153; IUT IV 27), and the
+tensor packet over a label set `A` is `log(^A F_{v_ℚ})` (IUT III 92 to 99). The averaging
+index of the procession-normalized log-volume is written `F*_l` on IUT III pages 173 and 181 and
+`|F_l|` on pages 153, 174 and 183 (ambiguity A1 of `OPEN_PROBLEMS.md`); the two differ by the
+label `0`. The theta exponent `j²` uses the representative `j ∈ {0, …, l*}`.
+
 ## Category-theoretic vocabulary (IUT I §0)
 
 | Symbol | Meaning | Paper and page |
@@ -104,11 +132,12 @@ The extracted text of the PDFs loses decorations. The per-paper files restore th
 | Symbol | Meaning | Paper and page |
 |---|---|---|
 | `F_v`, `C^⊢_v`, `C^Θ_v`, `τ^⊢_v`, `F^⊢_v` | tempered Frobenioid; split Frobenioids and splittings | IUT I 69 to 73, 78, 81 |
-| `Θ_v`, `q_v` | theta function reciprocal; `q_v^{1/2l}` | IUT I 70 to 71; IUT III 112 |
+| `Θ_v` (double underline) | reciprocal of the theta function | IUT I 70 to 71 |
+| `q_v` (single underline under `v`), `qq_v` (`q_v` with a double underline) | the Tate parameter; its chosen `2l`-th root `q_v^{1/2l}`, determined up to a `μ_{2l}`-multiple (see the reconciliation below) | IUT I 71; IUT III 112 |
 | `C^⊩_mod`, `ρ_v` | global realified Frobenioid; normalization of `log(p_v)` | IUT I 84 to 85 |
 | `O^×(G)`, `O^μ(G)`, `O^{×μ}(G)`, `O^▷(G)` | monoids attached to `G` | IUT II 36 to 38, 153 |
 | `θ(Π)`, `θ^{\|t\|}`, `θ^{\|t\|}_env` | étale theta classes and evaluated orbits | IUT II 55 to 58, 71, 81 to 83 |
-| `q_v^{j²}` | theta value at label `j` | IUT II 72; IUT III 173 |
+| `qq_v^{j²}` | theta value at label `j`: the `j²`-th power of the chosen root `qq_v`, that is `q_v^{j²/2l}` with `q_v` the Tate parameter | IUT II 72; IUT III 173 |
 | `Ψ_cns`, `Ψ_ξ`, `Ψ_gau`, `Ψ_env` | constant, Gaussian and theta monoids | IUT II 93 to 95, 120 to 122 |
 | `Ψ_{F_LGP}`, `Ψ^⊥_{F_LGP}`, `Ψ^⊥_{F_lgp}` | LGP-monoids and splitting monoids | IUT III 101 to 105, 112 |
 | `F_MOD`, `F_mod`, `F^R_MOD`, `C^⊩_LGP`, `C^⊩_△` | global Frobenioids | IUT III 106 to 112 |

@@ -52,7 +52,7 @@ theorem coprime_iff_pairwise {a b c : ℕ} (ha : 0 < a) (hb : 0 < b) (h : a + b 
 /-- IUT IV, Theorem 1.10, final portion, as real arithmetic: if the constant `C_Θ` of the
 statement is at least `−1`, then
 `(1/6)·log(𝔮) ≤ (1 + 20·d_mod/l)·(log 𝔡 + log 𝔣) + 20·(e*_mod·l + η_prm)`. -/
-theorem theorem1_10_final_inequality {l d D E Q q : ℝ} (hl : 7 ≤ l) (hd : 1 ≤ d)
+theorem theorem1_10_final_arithmetic {l d D E Q q : ℝ} (hl : 7 ≤ l) (hd : 1 ≤ d)
     (hD : 0 ≤ D) (hE : 0 ≤ E) (hq : 0 < q)
     (hC : -1 ≤ (l + 1) / (4 * q) * ((1 + 12 * d / l) * D + 10 * E
       - 1 / 6 * (1 - 12 / l ^ 2) * Q) - 1) :

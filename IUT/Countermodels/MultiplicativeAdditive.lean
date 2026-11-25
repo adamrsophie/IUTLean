@@ -4,7 +4,7 @@ import Mathlib
 # Countermodels: multiplicative data and additive structure
 
 Source context: Mochizuki, *Inter-universal Teichmüller Theory III*. The passages this file
-bears on were read in this session from the extracted text: Definition 1.1 and
+bears on were read for this file from the extracted text: Definition 1.1 and
 Proposition 1.2 (log-links, log-shells; pages 26 to 35), Theorem 3.11 (i), (ii) (pages 153
 to 157), and Step (i) of the proof of Corollary 3.12 (page 175), where the
 Θ×μ_LGP-link is described as a poly-isomorphism with a "unit portion" and a "value group

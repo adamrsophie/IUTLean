@@ -3,7 +3,7 @@ import Mathlib
 /-!
 # Countermodels: an isomorphism at one level and invariants at another
 
-Source context: Mochizuki, *Inter-universal Teichmüller Theory III*, read in this session from
+Source context: Mochizuki, *Inter-universal Teichmüller Theory III*, read for this file from
 the extracted text: Proposition 1.2 (iii), (v) (compatibility of log-links with log-volumes,
 compactness of log-shells; pages 31 and 32), Proposition 3.9 (i) to (iv) (pages 115 to 117),
 and Step (xii) of the proof of Corollary 3.12 (pages 185 and 186), where the

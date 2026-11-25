@@ -18,9 +18,10 @@ forming the hull is a map `φ : ℙ → ℍ` that "may be characterized uniquely
 * (P2) `P ⊆ φ(P)` for every `P ∈ ℙ`;
 * (P3) `φ(P₁) ⊆ φ(P₂)` whenever `P₁ ⊆ P₂` in `ℙ`.
 
-It then says that, since any intersection of elements of `ℍ` of finite log-volume is again in
-`ℍ`, it "follows formally" from (P1), (P2), (P3) that `φ(P)` is the intersection of all
-`H ∈ ℍ` containing `P`.
+It then says that, since any intersection of elements of `ℍ` which is itself of finite
+log-volume necessarily determines an element of `ℍ` (the qualifier "of finite log-volume"
+applies to the intersection, not to the members intersected), it "follows formally" from
+(P1), (P2), (P3) that `φ(P)` is the intersection of all `H ∈ ℍ` containing `P`.
 
 ## What this file is and is not
 
@@ -28,16 +29,21 @@ It then says that, since any intersection of elements of `ℍ` of finite log-vol
 log-shells and direct product regions are not formalized. It checks the order-theoretic part of
 Remark 3.9.5 (ii) for arbitrary families `𝓗 ⊆ 𝓟` of subsets of an arbitrary type:
 
-* `IsHullMap.eq_sInter`: (P1), (P2), (P3) alone force `φ(P) = ⋂ {H ∈ 𝓗 | P ⊆ H}`. The
-  intersection hypothesis quoted by the paper is not needed for this formula.
+* `IsHullMap.eq_sInter`: (P1), (P2), (P3), together with `ℍ ⊆ ℙ` and `φ(ℙ) ⊆ ℍ` (the two
+  other clauses of `IsHullMap`, both stated on page 127), force
+  `φ(P) = ⋂ {H ∈ 𝓗 | P ⊆ H}`. The intersection hypothesis quoted by the paper is not needed
+  for this formula.
 * `IsHullMap.unique`: hence at most one map satisfies (P1), (P2), (P3); this is the paper's
   "characterized uniquely".
 * `isHullMap_sInter`: if for each `P ∈ 𝓟` the intersection of the members of `𝓗` containing
   `P` lies in `𝓗`, then that intersection defines a map satisfying (P1), (P2), (P3). This is
   the role of the intersection hypothesis: it gives existence, not the formula.
 
-The qualifier "of finite log-volume" in the paper is replaced by the plain hypothesis of
-`isHullMap_sInter`, which is a statement about the given families only.
+The paper's closure claim (an intersection of hulls that has finite log-volume is a hull) is
+replaced by the plain hypothesis `hcl` of `isHullMap_sInter`: for each `P ∈ 𝓟` the
+intersection of the members of `𝓗` containing `P` lies in `𝓗`. That hypothesis is a
+statement about the given families only; no log-volume occurs in this file, and the
+finite-volume condition of the paper is not modeled.
 -/
 
 namespace IUT.PaperIII.Remark3_9_5
@@ -63,7 +69,8 @@ namespace IsHullMap
 
 variable {𝓟 𝓗 : Set (Set X)} {φ : Set X → Set X}
 
-/-- (P1), (P2), (P3) force `φ(P) = ⋂ {H ∈ ℍ | P ⊆ H}`, with no hypothesis on intersections. -/
+/-- The clauses of `IsHullMap` (`ℍ ⊆ ℙ`, `φ(ℙ) ⊆ ℍ`, (P1), (P2), (P3)) force
+`φ(P) = ⋂ {H ∈ ℍ | P ⊆ H}`, with no hypothesis on intersections. -/
 theorem eq_sInter (h : IsHullMap 𝓟 𝓗 φ) {P : Set X} (hP : P ∈ 𝓟) :
     φ P = ⋂₀ {H | H ∈ 𝓗 ∧ P ⊆ H} := by
   apply Set.Subset.antisymm

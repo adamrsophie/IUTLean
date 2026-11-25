@@ -46,9 +46,37 @@ jobs:
       - name: Build
         run: lake build
 
-      # Fingerprints of the trusted definitions of Challenge/Defs.lean.
+      # Challenge.lean is not a default target; the fingerprint helper imports it.
+      - name: Build the challenge statements
+        run: lake build Challenge
+
+      # The trust set of data/challenge_fingerprints.json: elaborated types and values of
+      # Challenge.Defs, elaborated types of the theorems of Challenge.lean and their names
+      # against comparator.json, and the hashes of the challenge, the gate and its controls,
+      # these scripts, the build configuration and this workflow.
       - name: Fingerprint check
         run: python3 -I scripts/Controls/fingerprints.py --check
+
+      # Regenerates everything that needs no PDF (Lean inventory, merge of the curated
+      # records with data/mechanical_index.json, graph, dashboard, documents), fails on an
+      # invalid record, and fails if a generated file differs from the committed one. The PDF
+      # stage is not run here: its outputs data/source_manifest.json,
+      # data/mechanical_index.json, data/dependencies.json and data/references.json are
+      # inputs. The picture docs/dependency_graph.svg is regenerated but not compared, since
+      # its bytes depend on the Graphviz version.
+      - name: Install Graphviz
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y graphviz
+
+      - name: Regenerate data and documents
+        run: scripts/run_all.sh
+
+      - name: Generated files are up to date
+        run: |
+          git diff --exit-code -- data docs ':(exclude)docs/dependency_graph.svg'
+          untracked=$(git ls-files --others --exclude-standard -- data docs)
+          [ -z "$untracked" ] || { echo "untracked generated files: $untracked"; exit 1; }
 
       # Source coverage input: the library files tracked in this checkout. Under CI the gate
       # refuses to run without this list.

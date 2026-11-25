@@ -11,7 +11,7 @@ The checks are run by CI on every push and pull request to `main`
 | `python3 -I scripts/Controls/source_scan.py` | No library file contains constructs the gate cannot see in the compiled environment: `debug.*` options, `set_option` outside an allowed list, new syntax, macros, elaborators or notation, commands that run code at elaboration time, local or scoped instances. Placeholders occur only in `Challenge.lean` and `IUT/Experimental/`. No experimental import outside that folder; the challenge files import only Mathlib and `Challenge.*`; no Lean options in `lakefile.toml`; every library file is imported by `IUT.lean`. | It is a syntactic search over sources with comments and strings blanked. It is untrusted. |
 | `python3 -I scripts/gen_root.py --check` | `IUT.lean` imports exactly the library files outside `IUT/Experimental/`. | Anything about their content. |
 | `lake build` | The default targets `IUT` and `Solution` elaborate and the kernel accepts every declaration. | That the statements mean what the papers say. |
-| `python3 -I scripts/Controls/fingerprints.py --check` | `Challenge/Defs.lean` and the elaborated type and value of each of its constants are unchanged since the last recorded review. | That the definitions are right; that is the hand review. |
+| `python3 -I scripts/Controls/fingerprints.py --check` | The elaborated type and value of each constant of `Challenge/Defs.lean`, the elaborated type of each statement of `Challenge.lean`, the list of names in `comparator.json`, and the hashes of the trust files listed in the script are unchanged since the last recorded approval. | That the definitions and statements are right; that is the human comparison with the source. |
 | `lake env lean AxiomGate.lean` (with `AXIOM_GATE_TRACKED_FILES`) | Every constant of `IUT`, `Challenge.Defs` and `Solution` depends only on `propext`, `Classical.choice`, `Quot.sound` (so no `sorryAx` and no `native_decide` axiom); none is an axiom, `unsafe`, `partial`, `opaque`, `@[implemented_by]` or `@[extern]`; no experimental module is imported; no constant settles a form of the abc conjecture unless named `abcConjecture`; every tracked library file is a module of the build and conversely; no module comes from outside the toolchain, Mathlib and the project. | It cannot see `debug.skipKernelTC` (covered by `lake check`) or custom elaborators (covered by the source scan). It detects conjecture statements only up to definitional equality, not, for example, `True → Challenge.ABC`. |
 | `sh GateControls/run.sh AxiomGate.lean` | The gate accepts a clean control and rejects each control with a known defect (`sorry`, a forbidden axiom, `native_decide`, a renamed conjecture statement, an experimental import), with the expected diagnostic; the coverage check fails on a file the root does not import; the source scan reports every construct in its control. | That the gate catches defects not represented by a control. |
 | `lake comparator` | Every theorem listed in `comparator.json` has in `Solution` exactly the statement of `Challenge`, uses only the allowed axioms, and is accepted by the kernel in a sandbox. | Anything about theorems not listed there. |
@@ -32,6 +32,16 @@ they do not verify mathematics.
 * **The three axioms** `propext`, `Classical.choice`, `Quot.sound`.
 * **`Challenge/Defs.lean`**, reviewed by hand: `rad`, `ABC`, `ABCFinite`, `ABCLog`. A reader
   must check that these say what the abc conjecture says.
+* **The seven statements of `Challenge.lean`** (`abc_iff_abcFinite`, `abc_iff_abcLog`,
+  `rad_eq_radical`, `coprime_iff_pairwise`, `theorem1_10_final_arithmetic`,
+  `scholzeStix_with_squares`, `scholzeStix_without_squares`). `lake comparator` checks that
+  `Solution` proves exactly these statements; it cannot check that the statements are the
+  intended ones. The fingerprint check (`scripts/Controls/fingerprints.py`) records the
+  elaborated types of these statements and the list of names in `comparator.json`, so a
+  change to them is detected; but a change made together with a new record (`--write`) passes,
+  so the record is only as good as the separate approval of its changes. Each of the seven
+  statements, and any change to it, needs a human mathematical comparison with its source,
+  approved separately from the change itself.
 * **The transcription from the papers.** Every Lean statement that formalizes a statement of
   the papers depends on a human reading of the PDF. The table below lists, from the module
   docstrings, which pages were checked against a rendered page; the rest were read in the
@@ -39,9 +49,11 @@ they do not verify mathematics.
 
 | Module or document | Rendered pages checked |
 |---|---|
+| `IUT/PaperI/PolyMorphism.lean` | IUT I 33, 34; IUT II 35 |
 | `IUT/PaperI/InitialThetaData.lean` | IUT I 61 to 63 |
 | `IUT/PaperII/Labels.lean` | IUT I 3; IUT II 3, 72, 79, 80, 122, 136, 145 |
 | `IUT/PaperIII/Corollary312/Numerical.lean` | IUT III 173, 174 |
+| `IUT/PaperIII/Corollary312/Comparison.lean` | IUT III 115 to 117, 127, 173 to 175, 181 to 185 |
 | `IUT/PaperIII/Remark3_9_5/HullOperator.lean` | IUT III 127 (pages 126 to 145 read in the text) |
 | `IUT/Foundations/GrothendieckUniverse.lean` | IUT IV 67, 68 |
 | `IUT/PaperIV/ArithmeticDivisor.lean` | none stated (pages 21, 22 cited) |
@@ -73,6 +85,36 @@ they do not verify mathematics.
 | other modules of `IUT/Countermodels/` | none (text only) |
 | `docs/COR312_ANALYSIS.md` | IUT III 112 to 117, 120, 124, 127, 129, 153 to 158, 173 to 175, 181 to 186, 190, 191 |
 | `docs/PAPER_IV_DERIVATION.md` | IUT IV 3, 10 to 17, 21 to 31, 40 to 48, 54, 55, 67, 68 |
+
+## Source review versus kernel acceptance
+
+Two different things are established, by different means, and neither implies the other.
+
+* **Kernel acceptance** (`lake build`, the axiom gate, `lake comparator`, `lake check`): each
+  Lean declaration is proved as written from the allowed axioms. This is mechanical.
+* **Source review**: a Lean statement says what the cited statement of the papers says, with
+  the same objects, hypotheses, quantifiers and conclusion. This is a human comparison of the
+  Lean type with the rendered page. It is needed for every correspondence between a statement
+  of the papers and a Lean declaration (every `lean_declaration` of `data/curated/`, every
+  docstring that names a statement of the papers, the seven statements of `Challenge.lean`),
+  not only for `Challenge/Defs.lean`. No script performs it. A record that links a Lean lemma
+  checking only one step of a statement is a fragment record (`kind: "fragment"`) and gives the
+  parent statement no formalized or verified status.
+
+## Pins and exclusions
+
+* Toolchain `leanprover/lean4:v4.36.0` (`lean-toolchain`); Mathlib tag v4.36.0, commit
+  `fc4f59e577feb1a4956671bc04ac18aaaf8cd842` (`lakefile.toml`, `lake-manifest.json`).
+* Gates configured in CI, in order: the source scan, the root check, `lake build`, the
+  fingerprint check, the axiom gate, the gate controls, `lake comparator` and `lake check`
+  (`.github/workflows/axiom-gate.yml`). This report describes what each establishes; it does
+  not record the outcome of a particular run. The outcome for a given revision is the CI log of
+  that revision.
+* Excluded from the gate by design: `IUT/Experimental/` (drafts, never imported) and
+  `Challenge.lean` (statements with `sorry`, not a default target, checked only through
+  `lake comparator`). The axiom gate detects statements of the abc conjecture only up to
+  definitional equality. The source scan is syntactic. `lake comparator` and `lake check` run
+  only on Linux.
 
 ## Known limits
 

@@ -34,18 +34,24 @@ included. Checks:
    `f._unsafe_rec`, which is `partial` but harmless when `f` is a safe definition. It is
    exempt only when it has exactly the shape the elaborator produces (see `helperProblems`);
    the complete inventory of exempted helpers is printed.
-3. The conjecture. `Challenge.ABC`, `Challenge.ABCFinite` and `Challenge.ABCLog` are
-   definitions of type `Prop`, and no checked constant has a statement that settles one of
-   them, unless its name ends in `abcConjecture`; such a theorem is printed prominently with
-   its axioms instead. A statement settles a form when it is definitionally equal
-   (`Meta.isDefEq` at default transparency, so reducible and ordinary definitions such as
-   `Not`, `Challenge.ABC` and `Challenge.rad` are unfolded, irreducible ones are not) to one of
-   the forms in `conjectureForms`: each of the three definitions or its negation. Binder names
-   and binder kinds do not matter. Only statements whose head normal form is a `∀` or an `∃`
-   are compared; each comparison runs under its own heartbeat budget, and a comparison that
-   runs out of its budget is an error that names the statement. Not detected: forms that are
-   only propositionally equivalent, for example an extra hypothesis (`True → Challenge.ABC`),
-   a conjunction with the conjecture, or an alias marked `@[irreducible]`.
+3. The conjecture: detection of registered forms only. The registered forms are
+   `Challenge.ABC`, `Challenge.ABCFinite`, `Challenge.ABCLog` and the three statements that
+   the library proves equivalent to `Challenge.ABC`, `IUT.ABC.FormalConjectures.abc`,
+   `IUT.ABC.FormalConjectures.ltConstantMul` and `IUT.ABC.FormalConjectures.qualityVariant`
+   (list `conjectures`). Each must be a definition of type `Prop`. No checked constant may
+   have a statement that settles one of them, unless its name ends in `abcConjecture`; such a
+   theorem is printed prominently with its axioms instead. A statement settles a form when it
+   is definitionally equal (`Meta.isDefEq` at default transparency, so reducible and ordinary
+   definitions such as `Not`, `Challenge.ABC` and `Challenge.rad` are unfolded, irreducible
+   ones are not) to one of the forms in `conjectureForms`: each registered definition or its
+   negation. Binder names and binder kinds do not matter. Only statements whose head normal
+   form is a `∀` or an `∃` are compared; each comparison runs under its own heartbeat budget,
+   and a comparison that runs out of its budget is an error that names the statement. The
+   scope is definitional unfolding only. Not detected: forms that are only propositionally
+   equivalent to a registered form, for example an extra hypothesis (`True → Challenge.ABC`),
+   a conjunction with the conjecture, an equivalence with a true statement, a new
+   formulation that is not registered, or an alias marked `@[irreducible]`. Consequences of
+   the conjecture other than the registered forms are a matter for reading the statements.
 4. Coverage of the library. Every constant stored in a module `IUT` or `IUT.*` of the import
    closure was checked (cross-checked against the environment's own map from constants to
    modules), and every such module other than the umbrella `IUT` stores at least one constant.
@@ -61,6 +67,21 @@ included. Checks:
    `.lake/packages/` of the working directory. Any other module (the challenge module
    `Challenge`, a second library of this package, a path dependency, a module of the project
    named like a dependency) is an error, because checks 2 and 4 would not see it.
+
+6. Shadowing names. No checked constant has a name with a proper suffix that names a
+   constant of a dependency (a module outside the checked ones), unless the name is in
+   `shadowAllowed`. Inside `namespace IUT.X`, a declaration `IUT.X.Real.log` makes every later
+   `Real.log` of that namespace mean the project constant, which changes what a statement says
+   without any construct that the source scan reports. Private names are compared by their
+   user-facing name; internal auxiliary names are skipped.
+7. Foreign instances. No checked instance has a class and argument head symbols that are all
+   declared outside the checked modules (an instance such as `LE ℝ` changes the meaning of
+   every later statement about `≤` on `ℝ`). A bound variable as an argument counts as foreign.
+   An instance whose class or some argument head is a project constant is accepted.
+
+Not detectable at all: a vacuous hypothesis (`h : False`, or hypotheses that cannot hold
+together) makes any conclusion provable, and no mechanical check of the environment can tell
+it from a genuine hypothesis. Hypotheses are a matter for reading the statements.
 
 Not detectable from the environment: a declaration added with `debug.skipKernelTC` (the
 kernel never checked it; `lake check` and `lake comparator` replay the export through the
@@ -136,21 +157,21 @@ def reachableAxioms (env : Environment) (roots : Array Name) (fuel : Nat) :
   return .error s!"traversal fuel {fuel} exhausted"
 
 /-- The definitions whose proof or refutation check 3 looks for. -/
-def conjectures : List Name := [``Challenge.ABC, ``Challenge.ABCFinite, ``Challenge.ABCLog]
+def conjectures : List Name :=
+  [``Challenge.ABC, ``Challenge.ABCFinite, ``Challenge.ABCLog,
+   ``IUT.ABC.FormalConjectures.abc, ``IUT.ABC.FormalConjectures.ltConstantMul,
+   ``IUT.ABC.FormalConjectures.qualityVariant]
 
 /-- The statements that settle a conjecture, each with the conjecture and `true` when it
 proves the conjecture, `false` when it refutes it. -/
 def conjectureForms : TermElabM (Array (Expr × Name × Bool)) := do
-  let forms : Array (Term × Name × Bool) := #[
-    (← `(_root_.Challenge.ABC), ``Challenge.ABC, true),
-    (← `(_root_.Challenge.ABCFinite), ``Challenge.ABCFinite, true),
-    (← `(_root_.Challenge.ABCLog), ``Challenge.ABCLog, true),
-    (← `(¬ _root_.Challenge.ABC), ``Challenge.ABC, false),
-    (← `(¬ _root_.Challenge.ABCFinite), ``Challenge.ABCFinite, false),
-    (← `(¬ _root_.Challenge.ABCLog), ``Challenge.ABCLog, false)]
-  forms.mapM fun (t, c, b) => do
-    let e ← Term.elabTermAndSynthesize t (some (.sort .zero))
-    return (← instantiateMVars e, c, b)
+  let mut forms : Array (Expr × Name × Bool) := #[]
+  for b in [true, false] do
+    for c in conjectures do
+      let t ← if b then `($(mkCIdent c)) else `(¬ $(mkCIdent c))
+      let e ← Term.elabTermAndSynthesize t (some (.sort .zero))
+      forms := forms.push (← instantiateMVars e, c, b)
+  return forms
 
 /-- Whether the statement `ty` is definitionally equal to one of `forms` (see check 3):
 the conjecture, with `true` for a proof and `false` for a refutation. -/
@@ -164,6 +185,45 @@ def settles? (forms : Array (Expr × Name × Bool)) (ty : Expr) : MetaM (Option 
 
 /-- Heartbeat budget (in thousands) of one comparison of check 3. -/
 def settlesBudget : Nat := 20000
+
+/-- Names allowed to have a proper suffix that names a constant of a dependency (check 6).
+Each entry was read: the suffix is a one-component root name of core or Mathlib (`measure`,
+`trans`, `id`), and the project constant is a structure field or a definition or lemma about a
+project structure that is used with its full name or by dot notation. -/
+def shadowAllowed : List Name :=
+  [`IUT.Countermodels.Comparison.NormalizedLine.measure, `IUT.PaperIV.Corollary2_3.BDle.trans,
+   `IUT.PaperI.Capsule.Hom.id]
+
+/-- Whether `n` is a constant of a dependency: stored in an imported module that `pred` does
+not accept. Constants of the current file are not foreign. -/
+def isForeign (env : Environment) (pred : Name → Bool) (n : Name) : Bool :=
+  match env.getModuleIdxFor? n with
+  | some i => !pred env.header.moduleNames[i.toNat]!
+  | none => false
+
+/-- The proper suffixes of a name: `A.B.C` gives `B.C` and `C`. -/
+def properSuffixes (n : Name) : List Name :=
+  let cs := n.components
+  (List.range (cs.length - 1)).map fun k => Name.fromComponents (cs.drop (k + 1))
+
+/-- For check 6: a dependency constant named by a proper suffix of the name of `n`. -/
+def shadowed? (env : Environment) (pred : Name → Bool) (n : Name) : Option Name :=
+  let user := (privateToUserName? n).getD n
+  if n.isInternalDetail || shadowAllowed.contains user then none
+  else (properSuffixes user).find? fun s => env.contains s && isForeign env pred s
+
+/-- For check 7: whether the instance `ci` has a foreign class and only foreign argument
+heads. -/
+def foreignInstance (env : Environment) (pred : Name → Bool) (ci : ConstantInfo) :
+    MetaM Bool := do
+  unless Meta.isInstanceCore env ci.name do return false
+  Meta.forallTelescopeReducing ci.type fun _ body => do
+    let .const c _ := body.getAppFn | return false
+    unless isForeign env pred c do return false
+    for a in body.getAppArgs do
+      if let .const h _ := a.getAppFn then
+        unless isForeign env pred h do return false
+    return true
 
 /-- Imported modules that neither satisfy `pred` nor come from the toolchain or a package
 below `.lake/packages/` of the working directory, decided by the location of their `.olean`
@@ -335,6 +395,21 @@ def run (cfg : Config := {}) : CommandElabM Unit := do
     if isExtern env n then bad := bad.push "has @[extern]"
     unless bad.isEmpty do
       errors := errors.push m!"{n}: {", ".intercalate bad.toList}"
+  -- Check 6: shadowing names.
+  for ci in consts do
+    if let some s := shadowed? env cfg.modulePred ci.name then
+      errors := errors.push m!"{ci.name}: its suffix {s} names a constant of a dependency"
+  -- Check 7: foreign instances.
+  let commandEnv0 ← getEnv
+  let foreignInsts ← liftCoreM do
+    setEnv env
+    let mut out : Array Name := #[]
+    for ci in consts do
+      if ← (foreignInstance env cfg.modulePred ci).run' then out := out.push ci.name
+    return out
+  setEnv commandEnv0
+  for n in foreignInsts do
+    errors := errors.push m!"{n}: instance of a dependency class on dependency arguments only"
   -- Check 1: axioms, by one shared traversal of the whole dependency closure.
   let (seen, visitedCount) ← match reachableAxioms env (consts.map (·.name)) 100000000 with
     | .ok r => pure r

@@ -15652,14 +15652,6 @@
  },
  {
   "cited_in": [
-   "statement"
-  ],
-  "from": "IUT4.Ex3_6",
-  "target_indexed": false,
-  "to": "IUT4.Prop3_16"
- },
- {
-  "cited_in": [
    "proof",
    "statement"
   ],
@@ -15731,30 +15723,6 @@
   "from": "IUT4.Prop1_8",
   "target_indexed": true,
   "to": "IUT4.Cor2_2"
- },
- {
-  "cited_in": [
-   "proof"
-  ],
-  "from": "IUT4.Prop1_8",
-  "target_indexed": true,
-  "to": "IUT4.Prop1_4"
- },
- {
-  "cited_in": [
-   "proof"
-  ],
-  "from": "IUT4.Prop1_8",
-  "target_indexed": false,
-  "to": "IUT4.Prop4_6"
- },
- {
-  "cited_in": [
-   "proof"
-  ],
-  "from": "IUT4.Prop1_8",
-  "target_indexed": false,
-  "to": "IUT4.Prop5_4"
  },
  {
   "cited_in": [
@@ -16555,22 +16523,6 @@
   "from": "IUT4.Rem2_3_5",
   "target_indexed": true,
   "to": "IUT4.Rem2_3_4"
- },
- {
-  "cited_in": [
-   "statement"
-  ],
-  "from": "IUT4.Rem3_1_1",
-  "target_indexed": false,
-  "to": "IUT4.Def2_3"
- },
- {
-  "cited_in": [
-   "statement"
-  ],
-  "from": "IUT4.Rem3_1_1",
-  "target_indexed": false,
-  "to": "IUT4.Def2_9"
  },
  {
   "cited_in": [

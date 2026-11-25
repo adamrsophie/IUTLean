@@ -18,7 +18,9 @@ import IUT.Countermodels.MultiplicativeAdditive
 import IUT.Countermodels.ReconstructionComparison
 import IUT.Foundations.GrothendieckUniverse
 import IUT.PaperI.InitialThetaData
+import IUT.PaperI.PolyMorphism
 import IUT.PaperII.Labels
+import IUT.PaperIII.Corollary312.Comparison
 import IUT.PaperIII.Corollary312.Numerical
 import IUT.PaperIII.Remark3_9_5.HullOperator
 import IUT.PaperIV.ArithmeticDivisor

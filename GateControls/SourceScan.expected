@@ -1,48 +1,60 @@
 SourceScan.lean:1: import of experimental module IUT.Experimental.Scaffold
 SourceScan.lean:2: import of experimental module IUT.Experimental.Other
-SourceScan.lean:15: debug option debug.skipKernelTC
-SourceScan.lean:15: set_option debug.skipKernelTC
-SourceScan.lean:18: set_option pp.all
-SourceScan.lean:20: run_cmd
-SourceScan.lean:22: run_meta
-SourceScan.lean:24: run_elab
-SourceScan.lean:26: #eval
-SourceScan.lean:28: initialize
-SourceScan.lean:30: syntax
-SourceScan.lean:32: declare_syntax_cat
-SourceScan.lean:34: macro
-SourceScan.lean:36: macro_rules
-SourceScan.lean:38: elab
-SourceScan.lean:40: elab_rules
-SourceScan.lean:42: notation
-SourceScan.lean:44: infix
-SourceScan.lean:46: local instance
-SourceScan.lean:48: local instance
-SourceScan.lean:50: attribute that runs code
-SourceScan.lean:53: run_tac
-SourceScan.lean:55: by_elab
-SourceScan.lean:57: simproc
-SourceScan.lean:59: attribute that runs code
-SourceScan.lean:61: notation3
-SourceScan.lean:63: prefix
-SourceScan.lean:65: postfix
-SourceScan.lean:67: infixl
-SourceScan.lean:69: infixr
-SourceScan.lean:71: dsimproc
-SourceScan.lean:73: builtin_initialize
-SourceScan.lean:75: local instance
-SourceScan.lean:78: run_meta
-SourceScan.lean:81: run_elab
-SourceScan.lean:83: run_cmd
-SourceScan.lean:91: sorry
-SourceScan.lean:93: admit
-SourceScan.lean:95: axiom
-SourceScan.lean:97: native_decide
-SourceScan.lean:99: opaque
-SourceScan.lean:101: unsafe
-SourceScan.lean:103: partial
-SourceScan.lean:105: implemented_by
-SourceScan.lean:107: extern
-SourceScanLakefile.toml:4: lakefile option moreLeanArgs
-SourceScanLakefile.toml:6: lakefile option leanOptions
-source scan FAILED: 47 findings in 2 files
+SourceScan.lean:16: debug option debug.skipKernelTC
+SourceScan.lean:16: set_option debug.skipKernelTC
+SourceScan.lean:19: set_option pp.all
+SourceScan.lean:21: run_cmd
+SourceScan.lean:23: run_meta
+SourceScan.lean:25: run_elab
+SourceScan.lean:27: #eval
+SourceScan.lean:29: initialize
+SourceScan.lean:31: syntax
+SourceScan.lean:33: declare_syntax_cat
+SourceScan.lean:35: macro
+SourceScan.lean:37: macro_rules
+SourceScan.lean:39: elab
+SourceScan.lean:41: elab_rules
+SourceScan.lean:43: notation
+SourceScan.lean:45: infix
+SourceScan.lean:47: local instance
+SourceScan.lean:49: local instance
+SourceScan.lean:51: attribute that runs code
+SourceScan.lean:54: run_tac
+SourceScan.lean:56: by_elab
+SourceScan.lean:58: simproc
+SourceScan.lean:60: attribute that runs code
+SourceScan.lean:62: notation3
+SourceScan.lean:64: prefix
+SourceScan.lean:66: postfix
+SourceScan.lean:68: infixl
+SourceScan.lean:70: infixr
+SourceScan.lean:72: dsimproc
+SourceScan.lean:74: builtin_initialize
+SourceScan.lean:76: local instance
+SourceScan.lean:79: run_meta
+SourceScan.lean:82: run_elab
+SourceScan.lean:84: run_cmd
+SourceScan.lean:92: sorry
+SourceScan.lean:94: admit
+SourceScan.lean:96: axiom
+SourceScan.lean:98: native_decide
+SourceScan.lean:100: opaque
+SourceScan.lean:102: unsafe
+SourceScan.lean:104: partial
+SourceScan.lean:106: implemented_by
+SourceScan.lean:108: extern
+SourceScan.lean:110: sorryAx
+SourceScan.lean:112: instance
+SourceScan.lean:114: instance
+SourceScan.lean:118: deriving
+SourceScanLakefile.toml:4: lakefile key name differs from the recorded configuration
+SourceScanLakefile.toml:5: lakefile option moreLeanArgs
+SourceScanLakefile.toml:9: lakefile option leanOptions
+SourceScanLakefile.toml:12: lakefile key require differs from the recorded configuration
+SourceScanLakefile.toml:17: library IUT differs from the recorded configuration
+SourceScanLakefile.toml:24: library Solution differs from the recorded configuration
+SourceScan.lake-manifest.json: package mathlib (https://github.com/someone-else/mathlib4.git at fc4f59e577feb1a4956671bc04ac18aaaf8cd842) is not in the recorded list
+SourceScan.lake-manifest.json: package plausible (https://github.com/leanprover-community/plausible at 0000000000000000000000000000000000000000) is not in the recorded list
+SourceScan.lake-manifest.json: recorded package mathlib (https://github.com/leanprover-community/mathlib4.git at fc4f59e577feb1a4956671bc04ac18aaaf8cd842) is missing
+SourceScan.lake-manifest.json: recorded package plausible (https://github.com/leanprover-community/plausible at 054b228ce0ac61d767c6e71ba73a24728f191b72) is missing
+source scan FAILED: 59 findings in 3 files

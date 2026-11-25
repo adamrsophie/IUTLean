@@ -4,7 +4,7 @@ import Mathlib
 # Countermodel: a link plus per-copy reconstruction does not give a comparison
 
 Source context: Mochizuki, *Inter-universal Teichmüller Theory III*, Corollary 3.12 and its
-proof, pages 173 to 186, read in this session from the extracted text; in particular Steps
+proof, pages 173 to 186, read for this file from the extracted text; in particular Steps
 (xi-a) to (xi-g), pages 181 to 184, and Step (xii), pages 185 and 186. Also Theorem 3.11 (i),
 (ii), pages 153 to 157, and Proposition 3.9, pages 115 to 117 (page 115 also read from the
 rendered page). No formula of the papers is transcribed here.
@@ -30,7 +30,7 @@ determine a relation between the two invariants". The model:
 
 Results:
 
-* `link_and_reconstruction_no_relation`: for any pilot lengths and any two real numbers
+* `link_and_reconstruction_no_relation`: for any positive pilot lengths and any two real numbers
   `α, β`, there are normalizations such that a link exists and the invariants are `α` and `β`.
   So the link together with per-copy reconstruction implies no relation at all between the
   invariants: not `=`, not `≤`, not `≥`.
@@ -63,8 +63,12 @@ namespace IUT.Countermodels.Comparison
 
 open MeasureTheory Set
 
-/-- A normalized line: the additive group `ℝ` with the Haar measure `scale · volume` and the
-pilot region `[0, pilotLength]`. Only data; no property is assumed. -/
+/-- A normalized line: the additive group `ℝ` with the measure `scale · volume` and the
+pilot region `[0, pilotLength]`. Only data; no property is assumed. The intended case is
+`0 < scale` and `0 < pilotLength`: then `measure` is a Haar measure and the pilot region has
+finite positive measure. The structure does not enforce this; for `scale ≤ 0`, `measure` is the
+zero measure (not a Haar measure) and `invariant` takes the value `0` by totalization. Every
+countermodel below produces lines with positive data, and `invariant_eq` assumes it. -/
 structure NormalizedLine where
   /-- The normalization constant `c` of the Haar measure `c · volume`. -/
   scale : ℝ
@@ -73,13 +77,16 @@ structure NormalizedLine where
 
 namespace NormalizedLine
 
-/-- The Haar measure `scale · volume` of a normalized line. -/
+/-- The measure `scale · volume` of a normalized line: a Haar measure when `0 < scale`, the zero
+measure when `scale ≤ 0`. -/
 noncomputable def measure (T : NormalizedLine) : Measure ℝ := ENNReal.ofReal T.scale • volume
 
 /-- The pilot region `[0, pilotLength]`. -/
 def pilot (T : NormalizedLine) : Set ℝ := Icc 0 T.pilotLength
 
-/-- The invariant reconstructed from the line's own data: the log-volume of its pilot region. -/
+/-- The invariant reconstructed from the line's own data: the log-volume of its pilot region.
+Meaningful when the pilot region has finite positive measure, that is, when `scale` and
+`pilotLength` are positive; otherwise it is `0` by totalization. -/
 noncomputable def invariant (T : NormalizedLine) : ℝ := Real.log (T.measure T.pilot).toReal
 
 /-- For positive data, the invariant is `log c + log a`. -/
@@ -144,7 +151,7 @@ theorem link_and_reconstruction_no_relation (a₀ a₁ : ℝ) (h₀ : 0 < a₀) 
 
 /-- The countermodel in the form relevant to an inequality: a link and per-copy reconstruction
 are compatible both with `T₀.invariant < T₁.invariant` and with `T₁.invariant < T₀.invariant`,
-for the same pilot lengths. -/
+for the same positive pilot lengths. -/
 theorem link_compatible_with_both_orders (a₀ a₁ : ℝ) (h₀ : 0 < a₀) (h₁ : 0 < a₁) :
     (∃ c₀ c₁ : ℝ, 0 < c₀ ∧ 0 < c₁ ∧
       (∃ φ : ℝ ≃+ ℝ, Continuous φ ∧ StrictMono φ ∧

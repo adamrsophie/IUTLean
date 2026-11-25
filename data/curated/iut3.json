@@ -26,13 +26,15 @@
       "IUTchII: Def 4.9, Prop 4.4 (i)"
     ],
     "lean_declaration": null,
-    "statement_status": "EXTRACTED",
-    "proof_status": "EXTRACTED",
+    "statement_status": "NOT_EXTRACTED",
+    "proof_status": "NOT_EXTRACTED",
     "obligations": [
       "Formalize F-prime-strips and the full poly-isomorphism.",
       "Formalize the log-shell as a compact submodule of the p_v-adic field and its archimedean analogue."
     ],
-    "ambiguities": []
+    "ambiguities": [
+      "Not counted as extracted: the recorded conclusion ('Definitions only') is a label, not a statement of what is asserted. The content above is kept as a summary of the pages listed in source."
+    ]
   },
   "IUT3.Prop1_2": {
     "source": {
@@ -58,14 +60,16 @@
       "IUTchII: Cor 4.5 (ii), Cor 4.6 (ii)"
     ],
     "lean_declaration": null,
-    "statement_status": "EXTRACTED",
+    "statement_status": "NOT_EXTRACTED",
     "proof_status": "BLOCKED_BY_EXTERNAL_THEOREM",
     "obligations": [
       "Prove compactness of log-shells.",
       "Prove log-volume compatibility of the log-link.",
       "Model the failure of Kummer compatibility (iv) as a precise non-commutativity statement."
     ],
-    "ambiguities": []
+    "ambiguities": [
+      "Not counted as extracted: the recorded conclusion ('Assertions (i) to (x)') is a label, not a statement of what is asserted; only part (x) has a part record. The content above is kept as a summary of the pages listed in source."
+    ]
   },
   "IUT3.Prop1_2.x": {
     "source": {
@@ -145,12 +149,14 @@
       "IUTchII: Remark 4.5.3"
     ],
     "lean_declaration": null,
-    "statement_status": "EXTRACTED",
+    "statement_status": "NOT_EXTRACTED",
     "proof_status": "BLOCKED_BY_EXTERNAL_THEOREM",
     "obligations": [
       "Formalize Hodge theaters (vocabulary not yet in the project)."
     ],
-    "ambiguities": []
+    "ambiguities": [
+      "Not counted as extracted: the recorded conclusion ('Assertions (i) to (iv)') is a label, not a statement of what is asserted; the parts have no part records. The content above is kept as a summary of the pages listed in source."
+    ]
   },
   "IUT3.Def1_4": {
     "source": {
@@ -174,12 +180,14 @@
       "IUTchII: Cor 4.10 (iii)"
     ],
     "lean_declaration": null,
-    "statement_status": "EXTRACTED",
-    "proof_status": "EXTRACTED",
+    "statement_status": "NOT_EXTRACTED",
+    "proof_status": "NOT_EXTRACTED",
     "obligations": [
       "Represent the lattice as a Z×Z-indexed diagram with two kinds of arrows."
     ],
-    "ambiguities": []
+    "ambiguities": [
+      "Not counted as extracted: the recorded conclusion ('Definition') is a label, not a statement of what is asserted. The content above is kept as a summary of the pages listed in source."
+    ]
   },
   "IUT3.Rem1_4_1": {
     "source": {
@@ -200,12 +208,14 @@
       "AbsTopIII: Remark 5.10.2 (iii)"
     ],
     "lean_declaration": null,
-    "statement_status": "EXTRACTED",
-    "proof_status": "EXTRACTED",
+    "statement_status": "NOT_EXTRACTED",
+    "proof_status": "NOT_EXTRACTED",
     "obligations": [
       "State non-commutativity of a square precisely (what composites are compared, at which structural level)."
     ],
-    "ambiguities": []
+    "ambiguities": [
+      "Not counted as extracted: the recorded conclusion ('Interpretive remark') is a label, not a statement of what is asserted. The content above is kept as a summary of the pages listed in source."
+    ]
   },
   "IUT3.Thm1_5": {
     "source": {
@@ -219,7 +229,7 @@
       "a Gaussian log-theta-lattice"
     ],
     "implicit_hypotheses": [],
-    "conclusion": "Parts (i) to (v).",
+    "conclusion": "The conjunction of parts (i) to (v), as recorded in the part records: (i) Full poly-isomorphisms n,m HT^{D-Θ±ellNF} ≅ n,m+1 HT^{D-Θ±ellNF}; (ii) Full poly-isomorphisms along rows; (iii) F^{⊢×μ}_△(n,m D^⊢_△), up to a certain class of isomorphisms, is invariant under both kinds of arrows; (iv) Poly-isomorphisms of log-shell pairs I ⊆ log(−); (v) Isomorphisms of global realified Frobenioid data across the lattice.",
     "definitions_required": [
       "IUT3.Def1_4"
     ],
@@ -246,7 +256,9 @@
       "pages_read": "text; rendered and checked: page 48"
     },
     "content": "Vertical coricity: vertical arrows induce full poly-isomorphisms of the associated D-Θ^{±ell}NF-Hodge theaters, n fixed, m varying.",
-    "explicit_hypotheses": [],
+    "explicit_hypotheses": [
+      "inherits the hypotheses of IUT3.Thm1_5"
+    ],
     "implicit_hypotheses": [],
     "conclusion": "Full poly-isomorphisms n,m HT^{D-Θ±ellNF} ≅ n,m+1 HT^{D-Θ±ellNF}.",
     "definitions_required": [],
@@ -269,7 +281,9 @@
       "pages_read": "text; rendered and checked: page 48"
     },
     "content": "Horizontal coricity: horizontal arrows induce full poly-isomorphisms of the F^{⊢×μ}-prime-strips n,m 𝔉_△^{⊢×μ} → n+1,m 𝔉_△^{⊢×μ}, m fixed.",
-    "explicit_hypotheses": [],
+    "explicit_hypotheses": [
+      "inherits the hypotheses of IUT3.Thm1_5"
+    ],
     "implicit_hypotheses": [],
     "conclusion": "Full poly-isomorphisms along rows.",
     "definitions_required": [],
@@ -319,7 +333,9 @@
       "pages_read": "text; rendered and checked: page 50"
     },
     "content": "Bi-coric mono-analytic log-shells: the poly-isomorphisms of (iii) induce poly-isomorphisms of mono-analytic log-shells for arbitrary (n,m), (n',m'), compatible with Prop 1.2 (viii); natural poly-isomorphisms to the holomorphic log-shell I_{n,m 𝔉_△}.",
-    "explicit_hypotheses": [],
+    "explicit_hypotheses": [
+      "inherits the hypotheses of IUT3.Thm1_5"
+    ],
     "implicit_hypotheses": [],
     "conclusion": "Poly-isomorphisms of log-shell pairs I ⊆ log(−).",
     "definitions_required": [],
@@ -342,7 +358,9 @@
       "pages_read": "text; rendered and checked: page 50"
     },
     "content": "Bi-coric mono-analytic global realified Frobenioids D^⊩(n,m D^⊢_△), with isomorphisms of collections of data compatible with R_{>0}-orbits of local isomorphisms.",
-    "explicit_hypotheses": [],
+    "explicit_hypotheses": [
+      "inherits the hypotheses of IUT3.Thm1_5"
+    ],
     "implicit_hypotheses": [],
     "conclusion": "Isomorphisms of global realified Frobenioid data across the lattice.",
     "definitions_required": [],
@@ -378,13 +396,14 @@
       "AbsTopIII: §I3"
     ],
     "lean_declaration": null,
-    "statement_status": "EXTRACTED",
-    "proof_status": "EXTRACTED",
+    "statement_status": "NOT_EXTRACTED",
+    "proof_status": "NOT_EXTRACTED",
     "obligations": [
       "Give a precise definition of each indeterminacy class as a set of maps or a group action."
     ],
     "ambiguities": [
-      "Pages 52 to 55 (Remarks 1.5.1 to 1.5.3) were not read; Remark 1.5.4 cites Remark 1.5.2 (ii), which is therefore cited but not read."
+      "Pages 52 to 55 (Remarks 1.5.1 to 1.5.3) were not read; Remark 1.5.4 cites Remark 1.5.2 (ii), which is therefore cited but not read.",
+      "Not counted as extracted: the recorded conclusion ('Terminology and interpretation') is a label, not a statement of what is asserted. The content above is kept as a summary of the pages listed in source."
     ]
   },
   "IUT3.Def2_4": {
@@ -406,12 +425,14 @@
       "IUTchI: Def 5.2 (iv)"
     ],
     "lean_declaration": null,
-    "statement_status": "EXTRACTED",
-    "proof_status": "EXTRACTED",
+    "statement_status": "NOT_EXTRACTED",
+    "proof_status": "NOT_EXTRACTED",
     "obligations": [
       "Formalize F^⊩-prime-strips."
     ],
-    "ambiguities": []
+    "ambiguities": [
+      "Not counted as extracted: the recorded conclusion ('Definitions') is a label, not a statement of what is asserted. The content above is kept as a summary of the pages listed in source."
+    ]
   },
   "IUT3.Rem2_4_2": {
     "source": {
@@ -431,23 +452,31 @@
       "IUTchI: Example 3.2 (iv), Example 3.5, Remark 3.5.1"
     ],
     "lean_declaration": null,
-    "statement_status": "EXTRACTED",
-    "proof_status": "EXTRACTED",
+    "statement_status": "NOT_EXTRACTED",
+    "proof_status": "NOT_EXTRACTED",
     "obligations": [
       "Fix the normalization of ord_v and of r_v used later in Cor 3.12."
     ],
-    "ambiguities": []
+    "ambiguities": [
+      "Not counted as extracted: the recorded conclusion ('Definitions and interpretive remarks') is a label, not a statement of what is asserted. The content above is kept as a summary of the pages listed in source."
+    ]
   },
   "IUT3.Prop3_1": {
     "source": {
       "paper": "Inter-universal Teichmuller Theory III",
       "pdf_pages": "pages 92 to 93",
-      "pages_read": "text"
+      "pages_read": "text; rendered and checked: pages 92, 93, 94"
     },
-    "content": "Local holomorphic tensor packets: for a capsule A of F-prime-strips, log(^A F_{v_Q}) = ⊗_{α ∈ A} log(^α F_{v_Q}), with direct sum decompositions into fields and integral structures given by tensor products of rings of integers; Q-spans I^Q.",
-    "explicit_hypotheses": [],
-    "implicit_hypotheses": [],
-    "conclusion": "Construction of tensor packets with ring and integral structures.",
+    "content": "Local holomorphic tensor packets. For an n-capsule {α𝔉}_{α∈A} of F-prime-strips and v | v_Q, log(αF_v) is an inductive limit of topological modules of finite dimension over Q_{v_Q}; the 1-tensor packet is v_Q ↦ log(αF_{v_Q}) = ⊕_{v|v_Q} log(αF_v), and the n-tensor packet is log(AF_{v_Q}) = ⊗_{α∈A} log(αF_{v_Q}) = ⊕_{{v_α}} {⊗_α log(αF_{v_α})}, tensor products of ind-topological modules (page 92). (i) The ind-topological field structures on the log(αF_v) determine an ind-topological ring structure on log(AF_{v_Q}), an inductive limit of direct sums of ind-topological fields; the decompositions are determined by the ring structure and compatible with the action of αΠ_v. (ii) For α ∈ A, v | v_Q: log(A,αF_v) = log(αF_v) ⊗ {⊗_{β∈A∖{α}} log(βF_{v_Q})} ⊆ log(AF_{v_Q}) is a direct summand and an inductive limit of direct sums of ind-topological fields. Tensoring with 1's in the factors β ≠ α gives a natural injective ring homomorphism log(αF_v) → log(A,αF_v) which, for suitable cofinal objects of the inductive systems, induces an isomorphism of an object of the domain onto each direct summand field of the corresponding object of the codomain. Hence the integral structure Ψ̄ = Ψ_{log(αF_v)} ∪ {0} ⊆ log(αF_v) determines integral structures on each direct summand field of log(A,αF_v) and log(AF_{v_Q}) (page 93). Remark 3.1.1 (i) (page 94): log(αF_v) ≅ k̄, Ψ̄ ≅ O_k̄, log(A,αF_v) ≅ ⊗ k̄ ≅ lim ⊕ k̄ ⊇ lim ⊕ O_k̄, so the integral structures are copies of O_k̄ in the copies of k̄.",
+    "explicit_hypotheses": [
+      "initial Θ-data as in IUTchI Def 3.1",
+      "an n-capsule {α𝔉}_{α∈A} of F-prime-strips (IUTchI §0, Def 5.2 (i))",
+      "v ∈ V, v_Q ∈ V_Q with v | v_Q (part (ii) also fixes α ∈ A)"
+    ],
+    "implicit_hypotheses": [
+      "the notation of Def 1.1 (i), (ii), (iii)"
+    ],
+    "conclusion": "(i) log(AF_{v_Q}) carries an ind-topological ring structure, an inductive limit of direct sums of ind-topological fields, with decompositions determined by the ring structure and αΠ_v-compatible; (ii) log(A,αF_v) is a direct summand of the same kind, the map log(αF_v) → log(A,αF_v) is injective and induces isomorphisms onto each direct summand field for cofinal objects, and Ψ̄ determines, through these isomorphisms, an integral structure on each direct summand field.",
     "definitions_required": [
       "capsule",
       "IUT3.Def1_1"
@@ -458,20 +487,27 @@
     "statement_status": "EXTRACTED",
     "proof_status": "EXTRACTED",
     "obligations": [
-      "Formalize topological tensor products of local fields and their decomposition into products of fields."
+      "Formalize topological tensor products of local fields and their decomposition into products of fields.",
+      "Record two lattices and the map between them. Lattice L1 (the one on page 93): the product, over the direct summand fields of a finite object of log(A,αF_v) or log(AF_{v_Q}), of the copy of the ring of integers transported from Ψ̄ by the isomorphism of page 93; this is the normalization (integral closure) in the product of fields. Lattice L2 (not on page 93): the image of the tensor product of the rings of integers of the factors. The map is the inclusion L2 → L1 induced by the inclusions of rings of integers. Assessment, not from the page: L2 can be a proper order in L1, so the two must not be identified. Every later use (log-volume 0 of the integral structures, Prop 3.9 (i)) refers to L1.",
+      "Prove that the integral structure transported to a summand field does not depend on the cofinal object chosen."
     ],
-    "ambiguities": []
+    "ambiguities": [
+      "Assessment: the page does not mention a tensor product of rings of integers; an earlier description of these integral structures as tensor products of rings of integers was not what the page states and has been replaced."
+    ]
   },
   "IUT3.Rem3_1_1": {
     "source": {
       "paper": "Inter-universal Teichmuller Theory III",
       "pdf_pages": "pages 93 to 97",
-      "pages_read": "text; rendered and checked: page 97"
+      "pages_read": "text; rendered and checked: page 97; rendered and checked: pages 93 to 97"
     },
-    "content": "(ii) Normalized weights for the components of the packets. (iii) measure-space formalism and direct product regions S = ∏_v S_v with S_v compact of positive measure. (iv) For direct product regions, (1/N_E)·μ^log_E(S) = Σ_v (1/N_v)·μ^log_v(S_v), N_E = ∏ N_v.",
-    "explicit_hypotheses": [],
+    "content": "(i) Concrete description of Prop 3.1: log(αF_v) ≅ k̄ with k = K_v, Ψ̄ ≅ O_k̄; integral structures are copies of O_k̄ (pages 93 to 94). (ii) Weights: log-volumes on the portion of log(αF_v) for K_v are taken with weight [K_v : (F_mod)_v]^{-1}; for direct sums over v | v_Q the normalized weight is 1/([K_v:(F_mod)_v]·Σ_{w|v_Q}[(F_mod)_w : Q_{v_Q}]); for tensor products over α ∈ A the weight 1/∏_α[K_{v_α}:(F_mod)_{v_α}], normalized to 1/((∏_α[K_{v_α}:(F_mod)_{v_α}])·Σ_{{w_α}}∏_α[(F_mod)_{w_α}:Q_{v_Q}]); all normalized so that multiplication by p_{v_Q} adds or subtracts log(p_{v_Q}) (pages 94 to 95). (iii) Such weighted sums of log-volumes do not in general arise as a positive real multiple of the logarithm of a measure in the usual sense. For a direct product region (a product of compact subsets of positive measure of the direct summands) the weighted sum is computed directly; a direct product pre-region uses relatively compact factors; for arbitrary Borel sets the construction of (iv) applies, with V = ∏_α V_{v_Q}, N_v = ∏_α [K_{v_α}:(F_mod)_{v_α}], M_v the (radial, if archimedean) summand of Prop 3.1; on direct product regions a suitable positive normalization factor times the log of the E-weighted measure gives the weighted sums of (ii) (pages 95 to 96). (iv) For a nonempty finite set V, nonempty finite sets E_v and measure spaces (M_v, μ_v), the E-weighted measure μ_E(S) ∈ R_{≥0} ∪ {+∞} of a Borel set S ⊆ M_V is the measure of S_E = (∏_{e∈E} S) ∩ M_{E*V} in M_{E*V} ≅ M_W; it depends only on N = {N_v = |E_v|}; for S = ∏_v S_v with S_v compact of positive measure, (1/N_E)·μ^log_E(S) = Σ_v (1/N_v)·μ^log_v(S_v), N_E = ∏_v N_v (pages 96 to 97).",
+    "explicit_hypotheses": [
+      "the situation of Prop 3.1",
+      "for (iv): V a nonempty finite set, E_v nonempty finite sets, (M_v, μ_v) nonempty measure spaces in the sense of (iii)"
+    ],
     "implicit_hypotheses": [],
-    "conclusion": "Normalizations and a computation for direct product regions.",
+    "conclusion": "Weighted sums of log-volumes are defined with the weights of (ii); on direct product regions they equal (1/N_E)·log μ_E(S) = Σ_v (1/N_v)·log μ_v(S_v), and the E-weighted measure μ_E extends them to arbitrary Borel sets; they are in general not a positive multiple of the log of an ordinary measure on the original product.",
     "definitions_required": [],
     "results_used": [
       "IUT3.Prop3_1"
@@ -481,7 +517,8 @@
     "statement_status": "EXTRACTED",
     "proof_status": "EXTRACTED",
     "obligations": [
-      "Verify the (iv) identity as a product-measure computation (elementary once the spaces are fixed)."
+      "Verify the (iv) identity as a product-measure computation on M_{E*V} ≅ M_W (elementary once the spaces are fixed).",
+      "Fix the normalization factor of (iii) that relates (1/N_E)·log μ_E to the weighted sums of (ii); the page says only 'a suitable positive real number'."
     ],
     "ambiguities": [
       "The value set of μ_E is R_{≥0} ∪ {+∞}; finiteness for the regions used later is not stated at this point."
@@ -504,21 +541,27 @@
     ],
     "external_dependencies": [],
     "lean_declaration": null,
-    "statement_status": "EXTRACTED",
-    "proof_status": "EXTRACTED",
+    "statement_status": "NOT_EXTRACTED",
+    "proof_status": "NOT_EXTRACTED",
     "obligations": [
       "Formalize the poly-isomorphisms and the integral structures."
     ],
-    "ambiguities": []
+    "ambiguities": [
+      "Not counted as extracted: the recorded conclusion ('Construction and poly-isomorphisms') is a label, not a statement of what is asserted. The content above is kept as a summary of the pages listed in source."
+    ]
   },
   "IUT3.Prop3_3": {
     "source": {
       "paper": "Inter-universal Teichmuller Theory III",
       "pdf_pages": "pages 99 to 100",
-      "pages_read": "text"
+      "pages_read": "text; text, opening sentence: pages 99, 100"
     },
     "content": "Global tensor packets: the copies of (M_mod)_α embed diagonally into the product of local holomorphic packets over v_Q.",
-    "explicit_hypotheses": [],
+    "explicit_hypotheses": [
+      "a Θ^{±ell}NF-Hodge theater †HT relative to the given initial Θ-data (IUTchI Def 6.13 (i))",
+      "an n-capsule {αF}_{α∈A} of F-prime-strips as in Prop 3.1, with A a subset of the index set J of the ΘNF-Hodge theater †HT^{ΘNF}",
+      "for each α ∈ A, a log-link αF → †F_α"
+    ],
     "implicit_hypotheses": [],
     "conclusion": "Global embedding (M_mod)_A → log(^A F_{V_Q}).",
     "definitions_required": [],
@@ -552,21 +595,26 @@
       "IUTchII: Cor 4.6"
     ],
     "lean_declaration": null,
-    "statement_status": "EXTRACTED",
-    "proof_status": "EXTRACTED",
+    "statement_status": "NOT_EXTRACTED",
+    "proof_status": "NOT_EXTRACTED",
     "obligations": [
       "Formalize processions and the index sets S^±_{j+1}."
     ],
-    "ambiguities": []
+    "ambiguities": [
+      "Not counted as extracted: the recorded conclusion ('Construction of LGP-monoids') is a label, not a statement of what is asserted. The content above is kept as a summary of the pages listed in source."
+    ]
   },
   "IUT3.Prop3_5": {
     "source": {
       "paper": "Inter-universal Teichmuller Theory III",
       "pdf_pages": "pages 103 to 106",
-      "pages_read": "text; rendered and checked: page 105"
+      "pages_read": "text; rendered and checked: page 105; text, opening sentence: page 103"
     },
     "content": "(i) Vertically coric LGP-monoids and their Kummer isomorphisms. (ii) Upper semi-compatibility of the log-Kummer correspondence: (a) at nonarchimedean v_Q the mono-analytic integral structure contains the Kummer images of units, also after the m'-th iterate of the log-link; (b) at archimedean v_Q the closed unit ball contains the units and the closed balls of radius π, with a surjection via iterates; (c) at bad v the splitting monoids are mutually compatible up to roots of unity, which via the log-link is 'addition by zero'. Invariance under the column translation symmetry.",
-    "explicit_hypotheses": [],
+    "explicit_hypotheses": [
+      "a collection of distinct Θ^{±ell}NF-Hodge theaters {n,m HT}_{n,m∈Z} relative to the given initial Θ-data, arising from a Gaussian log-theta-lattice (Def 1.4)",
+      "for each n, the D-Θ^{±ell}NF-Hodge theater n,◦HT determined up to isomorphism by vertical coricity (Thm 1.5 (i))"
+    ],
     "implicit_hypotheses": [],
     "conclusion": "Upper semi-compatibility (containments) along each column.",
     "definitions_required": [],
@@ -604,12 +652,14 @@
       "FrdI: Prop 5.3"
     ],
     "lean_declaration": null,
-    "statement_status": "EXTRACTED",
+    "statement_status": "NOT_EXTRACTED",
     "proof_status": "BLOCKED_BY_MISSING_JUSTIFICATION",
     "obligations": [
       "Formalize the global realified Frobenioids and the realification functor."
     ],
-    "ambiguities": []
+    "ambiguities": [
+      "Not counted as extracted: the recorded conclusion ('Constructions') is a label, not a statement of what is asserted. The content above is kept as a summary of the pages listed in source."
+    ]
   },
   "IUT3.Def3_8": {
     "source": {
@@ -629,12 +679,14 @@
       "IUTchII: Cor 4.10 (i), (iii), Def 4.9 (vi), (viii)"
     ],
     "lean_declaration": null,
-    "statement_status": "EXTRACTED",
-    "proof_status": "EXTRACTED",
+    "statement_status": "NOT_EXTRACTED",
+    "proof_status": "NOT_EXTRACTED",
     "obligations": [
       "See part records."
     ],
-    "ambiguities": []
+    "ambiguities": [
+      "Not counted as extracted: the recorded conclusion ('Definitions (i) to (iii)') is a label, not a statement of what is asserted. The content above is kept as a summary of the pages listed in source."
+    ]
   },
   "IUT3.Def3_8.i": {
     "source": {
@@ -653,13 +705,14 @@
     "results_used": [],
     "external_dependencies": [],
     "lean_declaration": null,
-    "statement_status": "EXTRACTED",
-    "proof_status": "EXTRACTED",
+    "statement_status": "NOT_EXTRACTED",
+    "proof_status": "NOT_EXTRACTED",
     "obligations": [
       "Show the object is independent of the choice of generators up to torsion (implicit in 'determined by any collection')."
     ],
     "ambiguities": [
-      "'determined by any collection' asserts independence of the choice; no argument is given at this point."
+      "'determined by any collection' asserts independence of the choice; no argument is given at this point.",
+      "Not counted as extracted: the recorded conclusion ('Definitions') is a label, not a statement of what is asserted. The content above is kept as a summary of the pages listed in source."
     ]
   },
   "IUT3.Def3_8.ii": {
@@ -678,12 +731,14 @@
     "results_used": [],
     "external_dependencies": [],
     "lean_declaration": null,
-    "statement_status": "EXTRACTED",
-    "proof_status": "EXTRACTED",
+    "statement_status": "NOT_EXTRACTED",
+    "proof_status": "NOT_EXTRACTED",
     "obligations": [
       "Formalize F^{⊩▶×μ}-prime-strips and full poly-isomorphisms between them."
     ],
-    "ambiguities": []
+    "ambiguities": [
+      "Not counted as extracted: the recorded conclusion ('Definition') is a label, not a statement of what is asserted. The content above is kept as a summary of the pages listed in source."
+    ]
   },
   "IUT3.Def3_8.iii": {
     "source": {
@@ -702,12 +757,14 @@
     "results_used": [],
     "external_dependencies": [],
     "lean_declaration": null,
-    "statement_status": "EXTRACTED",
-    "proof_status": "EXTRACTED",
+    "statement_status": "NOT_EXTRACTED",
+    "proof_status": "NOT_EXTRACTED",
     "obligations": [
       "Represent the lattice with this dependence of horizontal arrows on the vertical arrow below."
     ],
-    "ambiguities": []
+    "ambiguities": [
+      "Not counted as extracted: the recorded conclusion ('Definition') is a label, not a statement of what is asserted. The content above is kept as a summary of the pages listed in source."
+    ]
   },
   "IUT3.Rem3_8_1": {
     "source": {
@@ -725,23 +782,27 @@
     ],
     "external_dependencies": [],
     "lean_declaration": null,
-    "statement_status": "EXTRACTED",
-    "proof_status": "EXTRACTED",
+    "statement_status": "NOT_EXTRACTED",
+    "proof_status": "NOT_EXTRACTED",
     "obligations": [
       "Check from the definitions that the full poly-isomorphism carries the Θ-pilot object to the q-pilot object."
     ],
-    "ambiguities": []
+    "ambiguities": [
+      "Not counted as extracted: the recorded conclusion ('Remark') is a label, not a statement of what is asserted. The content above is kept as a summary of the pages listed in source."
+    ]
   },
   "IUT3.Prop3_9": {
     "source": {
       "paper": "Inter-universal Teichmuller Theory III",
       "pdf_pages": "pages 115 to 118",
-      "pages_read": "text; rendered and checked: pages 115, 116, 117"
+      "pages_read": "text; rendered and checked: pages 115, 116, 117; rendered and checked: pages 115 to 117"
     },
     "content": "Log-volumes for packets and processions. Proof: 'follow immediately from the definitions'.",
-    "explicit_hypotheses": [],
+    "explicit_hypotheses": [
+      "the situations of Prop 3.2 (i), (ii) (parts (i), (ii)), of Prop 3.7 (i), (ii) (part (iii)), and an LGP-Gaussian log-theta-lattice (part (iv))"
+    ],
     "implicit_hypotheses": [],
-    "conclusion": "Parts (i) to (iv).",
+    "conclusion": "(i) packet-normalized and procession-normalized holomorphic log-volumes with the stated normalizations; (ii) compatible mono-analytic log-volumes, constructible from D^⊢-prime-strips; (iii) a global log-volume on families with zero local log-volume at all but finitely many v_Q, invariant under (M_MOD)_α and permutations of A, equal to the arithmetic degree relative to a suitable normalization; (iv) log-link compatibility of these log-volumes. Details in the part records.",
     "definitions_required": [],
     "results_used": [
       "IUT3.Prop3_1",
@@ -764,12 +825,15 @@
     "source": {
       "paper": "Inter-universal Teichmuller Theory III",
       "pdf_pages": "pages 115 to 116",
-      "pages_read": "text; rendered and checked: pages 115, 116"
+      "pages_read": "text; rendered and checked: pages 115, 116; rendered and checked: pages 95, 96, 97, 102, 115, 116"
     },
     "content": "Packet-normalized log-volumes μ^log_{α,v_Q}, μ^log_{A,v_Q}, μ^log_{A,α,v} : M(I^Q(−)) → R, where M(−) is the set of nonempty compact open subsets (nonarchimedean) or compact closures of nonempty open subsets (archimedean). The local holomorphic integral structures have log-volume 0; multiplying by p_v adds −log(p_v) (nonarchimedean); multiplying by e adds 1 (archimedean). μ^log_{A,v_Q} is invariant under permutations of A. Procession-normalization: average over the capsules of a procession.",
-    "explicit_hypotheses": [],
+    "explicit_hypotheses": [
+      "the situation of Prop 3.2 (i), (ii)",
+      "v ∈ V, v | v_Q, α ∈ A"
+    ],
     "implicit_hypotheses": [],
-    "conclusion": "Existence of normalized log-volume maps with the stated normalizations.",
+    "conclusion": "Log-volumes μ^log_{α,v_Q}, μ^log_{A,v_Q}, μ^log_{A,α,v} : M(I^Q(−)) → R exist, determined by the p_{v_Q}-adic (respectively radial) log-volumes on the direct summand fields and the normalized weights of Rem 3.1.1 (ii) to (iv); the integral structures of Prop 3.1 (ii) have log-volume 0; multiplication by p_v adds −log(p_v) (respectively by e adds 1); μ^log_{A,v_Q} is invariant under permutations of A; on products over the capsules of a procession (as in Prop 3.4 (ii)) the procession-normalized log-volume is the average over the capsules.",
     "definitions_required": [],
     "results_used": [],
     "external_dependencies": [],
@@ -777,12 +841,13 @@
     "statement_status": "EXTRACTED",
     "proof_status": "EXTRACTED",
     "obligations": [
-      "Construct μ^log as the logarithm of a Haar measure normalized so that the integral structure has measure 1.",
-      "Check the scaling rule: multiplication by p_v multiplies Haar measure by the normalized absolute value, so log-volume shifts by −log(p_v) only under a specific weighting; record the weighting used.",
-      "Define the procession-normalized log-volume as an explicit average."
+      "Define the log-volume on each direct summand field as the logarithm of the Haar measure (p_{v_Q}-adic or radial) normalized so that the transported ring of integers has measure 1.",
+      "Define the packet log-volume as the weighted sum over direct summands with the weights of Rem 3.1.1 (ii) on direct product regions, and extend it to other elements of M(−) through the E-weighted measure of Rem 3.1.1 (iv). Do not define it as the logarithm of a single normalized Haar measure on the product: Rem 3.1.1 (iii), page 95, says such weighted sums do not in general arise as a positive multiple of the log of an ordinary measure; on direct product regions page 96 identifies them with a normalized log of μ_E on M_{E*V}, not of a measure on the original product.",
+      "Check the scaling rule against the weights: multiplication by p_v shifts each summand log-volume, and the normalized weights make the total shift −log(p_v).",
+      "Define the procession-normalized log-volume as the average over j ∈ F*_l (stated on pages 173 and 181), factor 1/l*; Prop 3.4 (ii) (page 102) and Rem 3.9.3 (page 120) corroborate the labels j ∈ {1, ..., l*}. Fix how the j = 0 packet of the procession enters."
     ],
     "ambiguities": [
-      "The multiplication-by-p_v rule depends on the normalized weights of Remark 3.1.1 (ii); the exact weighting under which it holds for a tensor packet with several components is stated by reference, not derived on the page."
+      "The extension of the weighted sum from direct product regions to all of M(−) is given only through Rem 3.1.1 (iv) with 'a suitable normalization factor' (page 96); the factor is not displayed."
     ]
   },
   "IUT3.Prop3_9.ii": {
@@ -792,7 +857,10 @@
       "pages_read": "text; rendered and checked: pages 116, 117"
     },
     "content": "Mono-analytic compatibility: applying p_v-adic or radial log-volumes on mono-analytic log-shells, adjusted for the discrepancy between holomorphic and mono-analytic integral structures (Remark 3.9.1), gives log-volumes on M(I^Q(^α D^⊢_{v_Q})) etc. compatible with (i) via the natural poly-isomorphisms of Prop 3.2 (i), constructible by a functorial algorithm from D^⊢-prime-strips; procession-normalized versions compatible likewise; similarly for F^{⊢×μ}.",
-    "explicit_hypotheses": [],
+    "explicit_hypotheses": [
+      "the situation of Prop 3.2 (i), (ii)",
+      "v ∈ V, v | v_Q ∈ V_Q"
+    ],
     "implicit_hypotheses": [],
     "conclusion": "Compatibility of mono-analytic and holomorphic log-volumes under the poly-isomorphisms.",
     "definitions_required": [],
@@ -831,7 +899,8 @@
     "proof_status": "EXTRACTED",
     "obligations": [
       "Prove invariance under multiplication by number field elements (product formula).",
-      "Fix the normalization and prove equality with the degree."
+      "Fix the normalization and prove equality with the degree.",
+      "Record the domain: M(I^Q(AF_{V_Q})) consists of families whose components have log-volume zero for all but finitely many v_Q (page 117); the global log-volume is the finite sum of the nonzero local terms."
     ],
     "ambiguities": [
       "'relative to a suitable normalization' (page 117) is not specified; the sign and scaling of the comparison with the degree are left implicit."
@@ -841,12 +910,14 @@
     "source": {
       "paper": "Inter-universal Teichmuller Theory III",
       "pdf_pages": "page 117",
-      "pages_read": "text; rendered and checked: page 117"
+      "pages_read": "text; rendered and checked: page 117; rendered and checked: page 117"
     },
     "content": "log-link compatibility: (a) the log-volumes of (i) to (iii) determine log-volumes on the I^Q((−)) that appear in the construction of the local and global LGP and lgp monoids and Frobenioids at (n,m), relative to the log-link (n,m−1) → (n,m); (b) at the level of Q-spans of log-shells the log-volumes indexed by (n,m) are compatible with those indexed by (n,m−1) in the sense of Props 1.2 (iii), 1.3 (iii).",
-    "explicit_hypotheses": [],
+    "explicit_hypotheses": [
+      "a collection of distinct Θ^{±ell}NF-Hodge theaters {n,m HT}_{n,m∈Z} relative to the given initial Θ-data, arising from an LGP-Gaussian log-theta-lattice (Def 3.8 (iii))"
+    ],
     "implicit_hypotheses": [],
-    "conclusion": "Log-volumes are compatible along each column.",
+    "conclusion": "For a collection of distinct Θ^{±ell}NF-Hodge theaters from an LGP-Gaussian log-theta-lattice: (a) the log-volumes of (i), (ii), (iii) determine log-volumes on the I^Q((−)) appearing in the local/global LGP-, lgp-monoids and Frobenioids of the F^⊩-prime-strips n,m 𝔉^⊩_LGP, n,m 𝔉^⊩_lgp relative to the log-link n,m−1 HT → n,m HT; (b) at the level of Q-spans of log-shells, the log-volumes indexed by (n,m) are compatible with those indexed by (n,m−1) relative to that log-link.",
     "definitions_required": [],
     "results_used": [
       "IUT3.Prop1_2",
@@ -875,12 +946,14 @@
     "results_used": [],
     "external_dependencies": [],
     "lean_declaration": null,
-    "statement_status": "EXTRACTED",
-    "proof_status": "EXTRACTED",
+    "statement_status": "NOT_EXTRACTED",
+    "proof_status": "NOT_EXTRACTED",
     "obligations": [
       "Fix the archimedean factor of 2 in the normalization of Prop 3.9 (ii)."
     ],
-    "ambiguities": []
+    "ambiguities": [
+      "Not counted as extracted: the recorded conclusion ('Explanatory remark') is a label, not a statement of what is asserted. The content above is kept as a summary of the pages listed in source."
+    ]
   },
   "IUT3.Rem3_9_3": {
     "source": {
@@ -923,13 +996,14 @@
     ],
     "external_dependencies": [],
     "lean_declaration": null,
-    "statement_status": "EXTRACTED",
-    "proof_status": "EXTRACTED",
+    "statement_status": "NOT_EXTRACTED",
+    "proof_status": "NOT_EXTRACTED",
     "obligations": [
       "Prove μ(S) = μ(log S) for the relevant compact S (a change-of-variables statement for the p-adic logarithm on a domain where it is injective and measure preserving)."
     ],
     "ambiguities": [
-      "Value set R ∪ {−∞} appears here (page 124) for log-volumes of Rss, while Cor 3.12 uses R ∪ {+∞}."
+      "Value set R ∪ {−∞} appears here (page 124) for log-volumes of Rss, while Cor 3.12 uses R ∪ {+∞}.",
+      "Not counted as extracted: the recorded conclusion ('Explicit formulation of log-link compatibility of log-volumes') is a label, not a statement of what is asserted. The content above is kept as a summary of the pages listed in source."
     ]
   },
   "IUT3.Rem3_9_5": {
@@ -948,23 +1022,28 @@
     ],
     "external_dependencies": [],
     "lean_declaration": null,
-    "statement_status": "EXTRACTED",
+    "statement_status": "NOT_EXTRACTED",
     "proof_status": "EXTRACTED",
     "obligations": [
       "See part records."
     ],
-    "ambiguities": []
+    "ambiguities": [
+      "Parts (v) and (vi) have no record, so the remark is NOT_EXTRACTED at the parent level; parts (i), (ii), (iii) and (iv), (vii), (viii) to (x) have child records."
+    ]
   },
   "IUT3.Rem3_9_5.i": {
     "source": {
       "paper": "Inter-universal Teichmuller Theory III",
       "pdf_pages": "page 127",
-      "pages_read": "text; rendered and checked: page 127"
+      "pages_read": "text; rendered and checked: page 127; rendered and checked: page 127"
     },
     "content": "For a subset U of I^Q(−) that contains a relatively compact subset of finite log-volume: if U is relatively compact, its holomorphic hull is the smallest subset λ·O (λ with every component nonzero in the direct sum decomposition) containing U; otherwise the hull is all of I^Q(−). 'One verifies immediately that the holomorphic hull is well-defined.'",
-    "explicit_hypotheses": [],
+    "explicit_hypotheses": [
+      "the situation of Prop 3.9 (i)",
+      "a subset U of I^Q(αF_{v_Q}) (respectively I^Q(AF_{v_Q}), I^Q(A,αF_v)) containing a relatively compact subset of finite log-volume (> −∞)"
+    ],
     "implicit_hypotheses": [],
-    "conclusion": "Definition of the holomorphic hull.",
+    "conclusion": "The holomorphic hull of a relatively compact U is the smallest subset λ·O (λ with every component nonzero) containing U; the hull of a U that is not relatively compact is all of I^Q(−); 'one verifies immediately' that the hull is well defined.",
     "definitions_required": [
       "IUT3.Prop3_1",
       "IUT3.Prop3_9.i"
@@ -986,12 +1065,14 @@
     "source": {
       "paper": "Inter-universal Teichmuller Theory III",
       "pdf_pages": "pages 127 to 128",
-      "pages_read": "text; rendered and checked: page 127"
+      "pages_read": "text; rendered and checked: page 127; rendered and checked: page 127"
     },
-    "content": "P = direct product regions, H = hulls (proper subsets), H ⊆ P. Forming the hull gives φ : P → H characterized uniquely by (P1) φ(H) = H, (P2) P ⊆ φ(P), (P3) monotone; since intersections of elements of H of finite log-volume lie in H, φ(P) = ⋂_{H ∈ H, H ⊇ P} H.",
-    "explicit_hypotheses": [],
+    "content": "ℙ = direct product regions in I^Q(−) (Rem 3.1.1 (iii)); ℍ = hulls H ⊊ I^Q(−); ℍ ⊆ ℙ. Forming the hull gives φ : ℙ → ℍ, 'characterized uniquely' by (P1) φ(H) = H for H ∈ ℍ, (P2) P ⊆ φ(P), (P3) P₁ ⊆ P₂ ⇒ φ(P₁) ⊆ φ(P₂). Since 'as is easily verified' any intersection of elements of ℍ which is of finite log-volume (the qualifier applies to the intersection) determines an element of ℍ, it 'follows formally' that φ(P) = ⋂_{ℍ∋H⊇P} H. φ is described as an adjoint of ℍ ⊆ ℙ, a canonical splitting, an integration operation (page 127).",
+    "explicit_hypotheses": [
+      "the situation of Rem 3.9.5 (i)"
+    ],
     "implicit_hypotheses": [],
-    "conclusion": "Uniqueness of φ and the intersection formula.",
+    "conclusion": "φ is the unique map ℙ → ℍ with (P1), (P2), (P3), and φ(P) = ⋂_{ℍ∋H⊇P} H for every P ∈ ℙ.",
     "definitions_required": [],
     "results_used": [
       "IUT3.Rem3_9_5.i"
@@ -1001,11 +1082,16 @@
     "statement_status": "EXTRACTED",
     "proof_status": "EXTRACTED",
     "obligations": [
-      "Done in Lean for arbitrary families of sets, in module IUT.PaperIII.Remark3_9_5.HullOperator: (P1) to (P3) alone imply the intersection formula and uniqueness (IsHullMap.eq_sInter, IsHullMap.unique); the intersection-closure hypothesis gives existence (isHullMap_sInter). This is not a formalization of hulls of tensor packets.",
-      "Remaining: prove the intersection-closure property for actual hulls of finite log-volume."
+      "Prove the closure claim for actual hulls: an intersection of hulls which has finite log-volume is a hull ('as is easily verified', page 127).",
+      "Prove that the hull map of Rem 3.9.5 (i) satisfies (P1), (P2), (P3) and maps ℙ into ℍ ('essentially a tautology', page 127)."
     ],
     "ambiguities": [
-      "Assessment: the order-theoretic check shows the formula follows from (P1) to (P3) without the intersection hypothesis; the hypothesis is needed only for existence. The text presents it as the reason for the formula."
+      "Assessment: the order-theoretic fragments show the formula follows from (P1), (P2), (P3), ℍ ⊆ ℙ and φ(ℙ) ⊆ ℍ without the closure claim; the closure claim is needed only for existence. The text presents it as the reason for the formula."
+    ],
+    "fragments": [
+      "IUT3.Rem3_9_5.ii.frag.eq_sInter",
+      "IUT3.Rem3_9_5.ii.frag.unique",
+      "IUT3.Rem3_9_5.ii.frag.isHullMap_sInter"
     ]
   },
   "IUT3.Rem3_9_5.iii_iv": {
@@ -1015,7 +1101,9 @@
       "pages_read": "text; rendered and checked: page 129"
     },
     "content": "Hull-approximants Φ(P), Ξ(P); in general P ⊆ φ(P) is strict in log-volume. Example: I = Q_p × Q_p, H0 = Z_p × Z_p, H1 = p^{-1}Z_p × pZ_p, P = H0 ∪ ({p^{-1}} × Z_p), H_P = p^{-1}Z_p × Z_p; μ_I(P) = μ_I(H0) = 1 < 2 − p^{-1} = μ_I(H0 ∪ H1).",
-    "explicit_hypotheses": [],
+    "explicit_hypotheses": [
+      "the setting of IUT3.Rem3_9_5.i and IUT3.Rem3_9_5.ii"
+    ],
     "implicit_hypotheses": [],
     "conclusion": "Strictness of the inequality μ^log(P) < μ^log(φ(P)) in examples.",
     "definitions_required": [],
@@ -1092,13 +1180,14 @@
     "results_used": [],
     "external_dependencies": [],
     "lean_declaration": null,
-    "statement_status": "EXTRACTED",
-    "proof_status": "EXTRACTED",
+    "statement_status": "NOT_EXTRACTED",
+    "proof_status": "NOT_EXTRACTED",
     "obligations": [
       "Fix the extended value set used for log-volumes of hulls."
     ],
     "ambiguities": [
-      "Cor 3.12 uses R ∪ {+∞} for −|log(Θ)|; this remark allows −∞ for inf-defined volumes. The two conventions concern different quantities but are not reconciled explicitly."
+      "Cor 3.12 uses R ∪ {+∞} for −|log(Θ)|; this remark allows −∞ for inf-defined volumes. The two conventions concern different quantities but are not reconciled explicitly.",
+      "Not counted as extracted: the recorded conclusion ('Remark') is a label, not a statement of what is asserted. The content above is kept as a summary of the pages listed in source."
     ]
   },
   "IUT3.Prop3_10": {
@@ -1120,12 +1209,14 @@
       "Lang: Algebraic number theory (1970), page 144, proof of Theorem 5"
     ],
     "lean_declaration": null,
-    "statement_status": "EXTRACTED",
-    "proof_status": "EXTRACTED",
+    "statement_status": "NOT_EXTRACTED",
+    "proof_status": "NOT_EXTRACTED",
     "obligations": [
       "Prove (ii) from the cited result of Lang; whether Mathlib contains it was not checked."
     ],
-    "ambiguities": []
+    "ambiguities": [
+      "Not counted as extracted: the recorded conclusion ('Assertions (i) to (iii)') is a label, not a statement of what is asserted; the parts have no part records. The content above is kept as a summary of the pages listed in source."
+    ]
   },
   "IUT3.Rem3_10_1": {
     "source": {
@@ -1143,12 +1234,14 @@
     ],
     "external_dependencies": [],
     "lean_declaration": null,
-    "statement_status": "EXTRACTED",
-    "proof_status": "EXTRACTED",
+    "statement_status": "NOT_EXTRACTED",
+    "proof_status": "NOT_EXTRACTED",
     "obligations": [
       "State the upper semi-compatibility of F_mod as a containment."
     ],
-    "ambiguities": []
+    "ambiguities": [
+      "Not counted as extracted: the recorded conclusion ('Remark') is a label, not a statement of what is asserted. The content above is kept as a summary of the pages listed in source."
+    ]
   },
   "IUT3.Thm3_11": {
     "source": {
@@ -1164,7 +1257,7 @@
     "implicit_hypotheses": [
       "the D-Θ^{±ell}NF-Hodge theater n,◦HT is determined up to isomorphism by vertical coricity (Thm 1.5 (i), Rem 3.8.2)"
     ],
-    "conclusion": "Parts (i) to (iii).",
+    "conclusion": "(i) the data (a), (b), (c), regarded up to (Ind1) and (Ind2), are constructible by an algorithm in the procession, functorial in isomorphisms of processions, and the étale-picture permutation symmetries induce compatible poly-isomorphisms; (ii) Kummer isomorphisms relate these coric data to the data of each n,m HT, mutually compatible along columns for (b) and the MOD part of (c), upper semi-compatible for (a) (Ind3), and compatible with log-volumes; (iii) these constructions are compatible with the horizontal arrows, for (iii)(c), (d) up to (Ind1), (Ind2), (Ind3).",
     "definitions_required": [
       "IUT3.Def3_8",
       "procession",
@@ -1200,7 +1293,9 @@
       "pages_read": "text; rendered and checked: pages 153, 154, 155"
     },
     "content": "Multiradial representation: from the procession Prc(n,◦D^⊢_T) obtained via IUTchI Prop 6.9 (ii), data (a), (b), (c) are constructed; n,◦R^LGP denotes these data regarded up to (Ind1), (Ind2); n,◦R^LGP is constructible by an algorithm in the procession, functorial in isomorphisms of processions; permutation symmetries of the étale-picture induce compatible poly-isomorphisms Prc(n) ≅ Prc(n') and n,◦R ≅ n',◦R, compatible with the bi-coricity poly-isomorphisms n,◦D^⊢_0 ≅ n',◦D^⊢_0.",
-    "explicit_hypotheses": [],
+    "explicit_hypotheses": [
+      "inherits the hypotheses of IUT3.Thm3_11"
+    ],
     "implicit_hypotheses": [],
     "conclusion": "Existence of an algorithm producing n,◦R^LGP, functoriality, and compatibility with the étale-picture symmetries.",
     "definitions_required": [],
@@ -1233,12 +1328,14 @@
     "source": {
       "paper": "Inter-universal Teichmuller Theory III",
       "pdf_pages": "page 153",
-      "pages_read": "text; rendered and checked: page 153"
+      "pages_read": "text; rendered and checked: page 153; rendered and checked: pages 102, 116, 153"
     },
     "content": "For v ∈ V over v_Q ∈ V_Q and j ∈ |F_l|: mono-analytic integral structures I(S^±_{j+1}; n,◦D^⊢_{v_Q}) ⊆ I^Q(S^±_{j+1}; n,◦D^⊢_{v_Q}) and I(S^±_{j+1},j; n,◦D^⊢_v) ⊆ I^Q(...), equipped with the procession-normalized mono-analytic log-volumes of Prop 3.9 (ii).",
-    "explicit_hypotheses": [],
+    "explicit_hypotheses": [
+      "inherits the hypotheses of IUT3.Thm3_11"
+    ],
     "implicit_hypotheses": [],
-    "conclusion": "Construction of local data with log-volumes.",
+    "conclusion": "Construction of local data with log-volumes. The packets are indexed by j ∈ |F_l|; the procession-normalized average runs over the capsules of labels j ∈ F*_l (pages 102, 116).",
     "definitions_required": [],
     "results_used": [
       "IUT3.Prop3_2",
@@ -1260,12 +1357,14 @@
     "source": {
       "paper": "Inter-universal Teichmuller Theory III",
       "pdf_pages": "pages 153 to 154",
-      "pages_read": "text; rendered and checked: pages 153, 154"
+      "pages_read": "text; rendered and checked: pages 153, 154; rendered and checked: pages 153, 154"
     },
     "content": "For v ∈ V^bad: the splitting monoid Ψ^⊥_LGP(n,◦HT)_v of Prop 3.5 (ii)(c), regarded via natural poly-isomorphisms I^Q(S^±_{j+1},j; n,◦D^⊢_v) ≅ I^Q(S^±_{j+1},j F^{⊢×μ}(n,◦D_≻)_v) ≅ I^Q(S^±_{j+1},j F(n,◦D_≻)_v), j ∈ F*_l, as a subset of ∏_{j ∈ F*_l} I^Q(...) with a multiplicative action on that product.",
-    "explicit_hypotheses": [],
+    "explicit_hypotheses": [
+      "inherits the hypotheses of IUT3.Thm3_11"
+    ],
     "implicit_hypotheses": [],
-    "conclusion": "Construction of the splitting monoid acting on the product of packets.",
+    "conclusion": "For v ∈ V^bad, the splitting monoid Ψ^⊥_LGP(n,◦HT)_v of Prop 3.5 (ii)(c) is regarded, via the natural poly-isomorphisms I^Q(S^±_{j+1},j;n,◦D^⊢_v) ≅ ... for j ∈ F*_l, as a subset of ∏_{j∈F*_l} I^Q(S^±_{j+1},j;n,◦D^⊢_v), equipped with a multiplicative action on that product.",
     "definitions_required": [],
     "results_used": [
       "IUT3.Prop3_5",
@@ -1284,12 +1383,14 @@
     "source": {
       "paper": "Inter-universal Teichmuller Theory III",
       "pdf_pages": "page 154",
-      "pages_read": "text; rendered and checked: page 154"
+      "pages_read": "text; rendered and checked: page 154; rendered and checked: page 154"
     },
     "content": "For j ∈ F*_l: the number field M_MOD(n,◦HT)_j = M_mod(n,◦HT)_j ⊆ I^Q(S^±_{j+1}; n,◦D^⊢_{V_Q}) := ∏_{v_Q} I^Q(...), with natural isomorphisms F_MOD ≅ F_mod and F^R_MOD ≅ F^R_mod of global non-realified and realified Frobenioids, whose global degrees may be computed by the log-volumes of (a) (Prop 3.9 (iii)).",
-    "explicit_hypotheses": [],
+    "explicit_hypotheses": [
+      "inherits the hypotheses of IUT3.Thm3_11"
+    ],
     "implicit_hypotheses": [],
-    "conclusion": "Global data with degrees computed by log-volumes.",
+    "conclusion": "For j ∈ F*_l, the number field M_MOD(n,◦HT)_j = M_mod(n,◦HT)_j lies in I^Q(S^±_{j+1};n,◦D^⊢_{V_Q}) = ∏_{v_Q} I^Q(S^±_{j+1};n,◦D^⊢_{v_Q}), with natural isomorphisms F_MOD ≅ F_mod and F^R_MOD ≅ F^R_mod whose global degrees may be computed by the log-volumes of (a) (Prop 3.9 (iii)).",
     "definitions_required": [],
     "results_used": [
       "IUT3.Prop3_9.iii",
@@ -1310,12 +1411,14 @@
     "source": {
       "paper": "Inter-universal Teichmuller Theory III",
       "pdf_pages": "page 154",
-      "pages_read": "text; rendered and checked: page 154"
+      "pages_read": "text; rendered and checked: page 154; rendered and checked: page 154"
     },
     "content": "(Ind1): indeterminacies induced by the automorphisms of the procession of D^⊢-prime-strips Prc(n,◦D^⊢_T).",
-    "explicit_hypotheses": [],
+    "explicit_hypotheses": [
+      "inherits the hypotheses of IUT3.Thm3_11"
+    ],
     "implicit_hypotheses": [],
-    "conclusion": "Definition of an indeterminacy.",
+    "conclusion": "(Ind1) is, by definition, the indeterminacy induced by the automorphisms of the procession of D^⊢-prime-strips Prc(n,◦D^⊢_T).",
     "definitions_required": [],
     "results_used": [],
     "external_dependencies": [],
@@ -1326,19 +1429,22 @@
       "Identify Aut(Prc) explicitly and its action on the data (a), (b), (c)."
     ],
     "ambiguities": [
-      "Whether Ind1 includes only permutations of labels compatible with the procession inclusions or also automorphisms of each D^⊢-prime-strip is not stated on the page."
+      "Whether Ind1 includes only permutations of labels compatible with the procession inclusions or also automorphisms of each D^⊢-prime-strip is not stated on the page.",
+      "Page 154 does not state that the (Ind1) and (Ind2) actions commute; the joint indeterminacy is the action generated by the two, not a direct product, until commutation is proved."
     ]
   },
   "IUT3.Thm3_11.i.Ind2": {
     "source": {
       "paper": "Inter-universal Teichmuller Theory III",
       "pdf_pages": "page 154",
-      "pages_read": "text; rendered and checked: page 154"
+      "pages_read": "text; rendered and checked: page 154; rendered and checked: page 154"
     },
     "content": "(Ind2): for each v_Q ∈ V^non_Q (respectively V^arc_Q), the action of independent copies of Ism (respectively of the order 2 automorphisms whose orbit is the poly-automorphism of Prop 1.2 (vii)) on each direct summand of the j+1 tensor factors defining I^Q(S^±_{j+1}; n,◦D^⊢_{v_Q}); the number of direct summands equals the number of v ∈ V over v_Q.",
-    "explicit_hypotheses": [],
+    "explicit_hypotheses": [
+      "inherits the hypotheses of IUT3.Thm3_11"
+    ],
     "implicit_hypotheses": [],
-    "conclusion": "Definition of an indeterminacy.",
+    "conclusion": "(Ind2) is, by definition, for each v_Q, the indeterminacy induced by independent copies of Ism (v_Q nonarchimedean) or of the order 2 automorphisms of Prop 1.2 (vii) (v_Q archimedean) acting on each direct summand of the j+1 tensor factors of I^Q(S^±_{j+1}; n,◦D^⊢_{v_Q}); the number of direct summands equals the number of v ∈ V over v_Q.",
     "definitions_required": [],
     "results_used": [
       "IUT3.Prop1_2"
@@ -1350,7 +1456,9 @@
     "obligations": [
       "Define the group ∏ Ism acting on the tensor packet and prove it preserves the procession-normalized log-volume."
     ],
-    "ambiguities": []
+    "ambiguities": [
+      "Page 154 does not state that the (Ind1) and (Ind2) actions commute; the joint indeterminacy is the action generated by the two, not a direct product, until commutation is proved."
+    ]
   },
   "IUT3.Thm3_11.ii": {
     "source": {
@@ -1359,7 +1467,9 @@
       "pages_read": "text; rendered and checked: pages 155, 156"
     },
     "content": "log-Kummer correspondence: for n, m ∈ Z, the Kummer isomorphisms of labeled data (Ψ_cns, π_1^{κ-sol} ⟲ M_{∞κ}, M̄_mod) induce isomorphisms between the vertically coric data (a), (b), (c) of (i), not yet subjected to Ind1, Ind2, and the corresponding data from each n,m HT.",
-    "explicit_hypotheses": [],
+    "explicit_hypotheses": [
+      "inherits the hypotheses of IUT3.Thm3_11"
+    ],
     "implicit_hypotheses": [],
     "conclusion": "Isomorphisms (a), (b), (c), their mutual compatibility as m varies, Ind3, and log-volume compatibility.",
     "definitions_required": [],
@@ -1388,12 +1498,14 @@
     "source": {
       "paper": "Inter-universal Teichmuller Theory III",
       "pdf_pages": "page 155",
-      "pages_read": "text; rendered and checked: page 155"
+      "pages_read": "text; rendered and checked: page 155; rendered and checked: pages 155 to 157"
     },
     "content": "For v over v_Q, j ∈ |F_l|: isomorphisms I(S^±_{j+1}; n,m F_{v_Q}) ≅ I(...; n,m F^{⊢×μ}_{v_Q}) ≅ I(...; n,◦D^⊢_{v_Q}), similarly for Q-spans and for the j-indexed versions, all compatible with the respective log-volumes (Prop 3.9 (ii)).",
-    "explicit_hypotheses": [],
+    "explicit_hypotheses": [
+      "inherits the hypotheses of IUT3.Thm3_11"
+    ],
     "implicit_hypotheses": [],
-    "conclusion": "Isomorphisms of local packets compatible with log-volumes.",
+    "conclusion": "For v | v_Q and j ∈ |F_l|, the Kummer isomorphisms induce isomorphisms I(S^±_{j+1};n,m F_{v_Q}) ≅ I(S^±_{j+1};n,m F^{⊢×μ}_{v_Q}) ≅ I(S^±_{j+1};n,◦D^⊢_{v_Q}), and likewise for the Q-spans and for the (S^±_{j+1},j) versions at v, all compatible with the respective log-volumes (Prop 3.9 (ii)).",
     "definitions_required": [],
     "results_used": [
       "IUT3.Prop3_9.ii"
@@ -1411,12 +1523,14 @@
     "source": {
       "paper": "Inter-universal Teichmuller Theory III",
       "pdf_pages": "page 155",
-      "pages_read": "text; rendered and checked: page 155"
+      "pages_read": "text; rendered and checked: page 155; rendered and checked: pages 155 to 157"
     },
     "content": "For v ∈ V^bad: isomorphisms of splitting monoids Ψ^⊥_{F_LGP}(n,m HT)_v ≅ Ψ^⊥_LGP(n,◦HT)_v.",
-    "explicit_hypotheses": [],
+    "explicit_hypotheses": [
+      "inherits the hypotheses of IUT3.Thm3_11"
+    ],
     "implicit_hypotheses": [],
-    "conclusion": "Isomorphisms of splitting monoids.",
+    "conclusion": "For v ∈ V^bad, the Kummer isomorphisms induce isomorphisms of splitting monoids Ψ^⊥_{F_LGP}(n,m HT)_v ≅ Ψ^⊥_LGP(n,◦HT^{D})_v (Prop 3.5 (i), (ii)(c)).",
     "definitions_required": [],
     "results_used": [
       "IUT3.Prop3_5"
@@ -1434,12 +1548,14 @@
     "source": {
       "paper": "Inter-universal Teichmuller Theory III",
       "pdf_pages": "pages 155 to 156",
-      "pages_read": "text; rendered and checked: pages 155, 156"
+      "pages_read": "text; rendered and checked: pages 155, 156; rendered and checked: pages 155 to 157"
     },
     "content": "For j ∈ F*_l: isomorphisms of number fields and of global non-realified and realified Frobenioids (MOD and mod versions), compatible with the natural MOD/mod isomorphisms; the third line induces isomorphisms of C^⊩_LGP and C^⊩_lgp.",
-    "explicit_hypotheses": [],
+    "explicit_hypotheses": [
+      "inherits the hypotheses of IUT3.Thm3_11"
+    ],
     "implicit_hypotheses": [],
-    "conclusion": "Isomorphisms of global data.",
+    "conclusion": "For j ∈ F*_l, the Kummer isomorphisms induce isomorphisms of number fields (M_MOD, M_mod) and of the global non-realified and realified Frobenioids (F_MOD, F_mod), compatible with the natural MOD/mod isomorphisms (Prop 3.10 (i)); the realified ones induce isomorphisms of the global realified Frobenioid portions C^⊩_LGP, C^⊩_lgp.",
     "definitions_required": [],
     "results_used": [
       "IUT3.Prop3_7",
@@ -1458,12 +1574,14 @@
     "source": {
       "paper": "Inter-universal Teichmuller Theory III",
       "pdf_pages": "page 156",
-      "pages_read": "text; rendered and checked: page 156"
+      "pages_read": "text; rendered and checked: page 156; rendered and checked: pages 155 to 157"
     },
     "content": "As m varies, the isomorphisms of (b) and of the first line of (c) are mutually compatible relative to the log-links of the n-th column: the only portions possibly related via log-links are roots of unity, which map to addition by zero. This implies mutual compatibility for the second and third lines of (c) involving MOD, but not those involving mod.",
-    "explicit_hypotheses": [],
+    "explicit_hypotheses": [
+      "inherits the hypotheses of IUT3.Thm3_11"
+    ],
     "implicit_hypotheses": [],
-    "conclusion": "Mutual compatibility along the column for (b) and MOD parts of (c).",
+    "conclusion": "As m varies, the isomorphisms of (b) and of the first line of (c) are mutually compatible relative to the log-links of the n-th column, the only portions related by log-links being roots of unity (addition by zero); this gives mutual compatibility of the MOD isomorphisms of (c), but not of the mod ones (Prop 3.10 (iii), Rem 3.10.1).",
     "definitions_required": [],
     "results_used": [
       "IUT3.Prop3_5",
@@ -1509,12 +1627,14 @@
     "source": {
       "paper": "Inter-universal Teichmuller Theory III",
       "pdf_pages": "pages 156 to 159",
-      "pages_read": "text; rendered and checked: pages 156, 157, 158"
+      "pages_read": "text; rendered and checked: pages 156, 157, 158; rendered and checked: pages 155 to 158"
     },
     "content": "Θ^{×μ}_LGP-link compatibility of the Kummer isomorphisms of (ii) with the horizontal arrows.",
-    "explicit_hypotheses": [],
+    "explicit_hypotheses": [
+      "inherits the hypotheses of IUT3.Thm3_11"
+    ],
     "implicit_hypotheses": [],
-    "conclusion": "Sub-parts (a) to (d).",
+    "conclusion": "(a) relative to the Kummer isomorphism n,m 𝔉^{⊢×μ}_△ ≅ F^{⊢×μ}_△(n,◦D^⊢_△), the coric full poly-isomorphism to n+1 is compatible with the one induced by the horizontal arrows; (b) the same for the env F^{⊢×μ}-prime-strips; (c) the constructions of the theta data n,◦R and of n,◦R ≅ n+1,◦R are compatible with the horizontal arrows (stabilized/equivariant/functorial under arbitrary automorphisms of domain and codomain), and the evaluation maps of (ii)(b) are compatible up to (Ind1), (Ind2), (Ind3); (d) the same for the number field data and (ii)(c).",
     "definitions_required": [],
     "results_used": [],
     "external_dependencies": [
@@ -1533,12 +1653,14 @@
     "source": {
       "paper": "Inter-universal Teichmuller Theory III",
       "pdf_pages": "pages 156 to 157",
-      "pages_read": "text; rendered and checked: pages 156, 157"
+      "pages_read": "text; rendered and checked: pages 156, 157; rendered and checked: pages 155 to 157"
     },
     "content": "Applying the F^{⋊±}_l-symmetry gives a Kummer isomorphism n,m 𝔉^{⊢×μ}_△ ≅ F^{⊢×μ}_△(n,◦D^⊢_△); relative to it, the full poly-isomorphism F^{⊢×μ}_△(n,◦D^⊢_△) ≅ F^{⊢×μ}_△(n+1,◦D^⊢_△) is compatible with the full poly-isomorphism n,m 𝔉^{⊢×μ}_△ ≅ n+1,m 𝔉^{⊢×μ}_△ induced by the horizontal arrows.",
-    "explicit_hypotheses": [],
+    "explicit_hypotheses": [
+      "inherits the hypotheses of IUT3.Thm3_11"
+    ],
     "implicit_hypotheses": [],
-    "conclusion": "Compatibility of full poly-isomorphisms.",
+    "conclusion": "Applying the F^{⋊±}_l-symmetry, the first Kummer isomorphism of (ii) induces a Kummer isomorphism n,m 𝔉^{⊢×μ}_△ ≅ F^{⊢×μ}_△(n,◦D^⊢_△); relative to it, the full poly-isomorphism F^{⊢×μ}_△(n,◦D^⊢_△) ≅ F^{⊢×μ}_△(n+1,◦D^⊢_△) is compatible with the full poly-isomorphism n,m 𝔉^{⊢×μ}_△ ≅ n+1,m 𝔉^{⊢×μ}_△ induced by the horizontal arrows.",
     "definitions_required": [],
     "results_used": [
       "IUT3.Thm1_5.ii",
@@ -1557,12 +1679,14 @@
     "source": {
       "paper": "Inter-universal Teichmuller Theory III",
       "pdf_pages": "page 157",
-      "pages_read": "text; rendered and checked: page 157"
+      "pages_read": "text; rendered and checked: page 157; rendered and checked: pages 155 to 157"
     },
     "content": "The F^⊩-prime-strips n,m 𝔉_env^⊩, 𝔉_env^⊩(n,◦D_>) admit natural isomorphisms of associated F^{⊢×μ}-prime-strips; relative to these and (a), the full poly-isomorphism of env strips is compatible with the horizontal full poly-isomorphism.",
-    "explicit_hypotheses": [],
+    "explicit_hypotheses": [
+      "inherits the hypotheses of IUT3.Thm3_11"
+    ],
     "implicit_hypotheses": [],
-    "conclusion": "Compatibility for env strips.",
+    "conclusion": "The env F^⊩-prime-strips admit natural isomorphisms of associated F^{⊢×μ}-prime-strips (Prop 2.1 (vi)); relative to these and to (a), the env full poly-isomorphism from n to n+1 is compatible with the full poly-isomorphism induced by the horizontal arrows (Cor 2.3 (iii)).",
     "definitions_required": [],
     "results_used": [],
     "external_dependencies": [
@@ -1599,7 +1723,7 @@
     "proof_status": "EXTRACTED",
     "obligations": [
       "Define 'stabilized/equivariant/functorial with respect to arbitrary automorphisms' as a precise equivariance property.",
-      "Prove the evaluation maps commute with the horizontal arrows modulo the action of Ind1 × Ind2 and up to the containments of Ind3."
+      "Prove the evaluation maps commute with the horizontal arrows modulo the action generated by (Ind1) and (Ind2) and up to the containments of (Ind3); page 154 does not state that the (Ind1) and (Ind2) actions commute, so a direct product Ind1 × Ind2 may be used only after commutation is proved."
     ],
     "ambiguities": [
       "'compatible up to the indeterminacies (Ind1), (Ind2), (Ind3)' does not say whether the indeterminacies act jointly or separately, nor whether compatibility means equality of orbits or containment."
@@ -1634,9 +1758,9 @@
     "source": {
       "paper": "Inter-universal Teichmuller Theory III",
       "pdf_pages": "pages 159 to 167",
-      "pages_read": "text"
+      "pages_read": "text; rendered and checked: pages 164, 165"
     },
-    "content": "Interpretation of Thm 3.11: (ii) the q-pilot could be replaced by q^λ; the codomain is coric. (iii) definitions of IPL (input prime-strip link) and SHE (simultaneous holomorphic expressibility); SHE corresponds to a closed loop of the subquotient operations of Rem 3.9.5. (iv) APT and HIS. (v) input/output summary. (vi), (vii) naive alternatives: distinct labels give IPL but not SHE; forced identification gives SHE but not IPL. (viii) why these alternatives do not serve Cor 3.12.",
+    "content": "Interpretation of Thm 3.11: (ii) the q-pilot could be replaced by q^λ; the codomain is coric. (iii) definitions of IPL (input prime-strip link) and SHE (simultaneous holomorphic expressibility); SHE corresponds to a closed loop of the subquotient operations of Rem 3.9.5. (iv) APT and HIS. (v) input/output summary. (vi) the naive tautological algorithm 'λ-th power of q' has SHE at the cost of sacrificing the analogue of IPL (page 164). (vii) distinct labels: IPL holds, while for SHE the diagram reads '??' (it is 'by no means clear' how to establish it); forced identification: SHE holds, while for IPL the diagram reads '??'; considering both assignments simultaneously and consistently makes q well defined only up to q^{λ^n}, n ∈ Z, a trivial multiradial representation {q^{λ^n}}_{n∈Z} that satisfies the formal analogues of both IPL and SHE (pages 164 to 165). (viii) the trivial representation is a toy model for IPL and SHE but useless for the log-volume estimates of Cor 3.12 (page 165).",
     "explicit_hypotheses": [],
     "implicit_hypotheses": [],
     "conclusion": "Definitions of the properties IPL, SHE, APT, HIS used in Cor 3.12 Step (xi).",
@@ -1672,12 +1796,14 @@
     ],
     "external_dependencies": [],
     "lean_declaration": null,
-    "statement_status": "EXTRACTED",
-    "proof_status": "EXTRACTED",
+    "statement_status": "NOT_EXTRACTED",
+    "proof_status": "NOT_EXTRACTED",
     "obligations": [
       "Specify the forgetful functor after which squares commute."
     ],
-    "ambiguities": []
+    "ambiguities": [
+      "Not counted as extracted: the recorded conclusion ('Interpretive remark') is a label, not a statement of what is asserted. The content above is kept as a summary of the pages listed in source."
+    ]
   },
   "IUT3.Rem3_11_4": {
     "source": {
@@ -1695,12 +1821,14 @@
       "FrdII: Def 2.1 (ii)"
     ],
     "lean_declaration": null,
-    "statement_status": "EXTRACTED",
-    "proof_status": "EXTRACTED",
+    "statement_status": "NOT_EXTRACTED",
+    "proof_status": "NOT_EXTRACTED",
     "obligations": [
       "State the invisible indeterminacies as group actions and show they act trivially after evaluation."
     ],
-    "ambiguities": []
+    "ambiguities": [
+      "Not counted as extracted: the recorded conclusion ('Interpretive remark') is a label, not a statement of what is asserted. The content above is kept as a summary of the pages listed in source."
+    ]
   },
   "IUT3.Cor3_12": {
     "source": {
@@ -1708,12 +1836,12 @@
       "pdf_pages": "pages 173 to 186",
       "pages_read": "text; rendered and checked: pages 173, 174, 175, 181, 182, 183, 184, 185, 186"
     },
-    "content": "Log-volume estimates for Θ-pilot objects. In the situation of Thm 3.11, −|log(Θ)| ≥ −|log(q)|, with −|log(Θ)| ∈ R. Proof: an opening reduction and Steps (i) to (xii). Not stated as a Lean Prop. The file IUT/PaperIII/Corollary312/Numerical.lean treats only the numerical layer and is not a formalization of this corollary.",
+    "content": "Log-volume estimates for Θ-pilot objects. In the situation of Thm 3.11, with −|log(Θ)| ∈ R ∪ {+∞} and −|log(q)| ∈ R as defined in the statement (IUT3.Cor3_12.Statement), −|log(Θ)| ∈ R and −|log(Θ)| ≥ −|log(q)|. Proof: an opening reduction and Steps (i) to (xii). Not stated as a Lean Prop. Lean lemmas about the two numbers alone are recorded as fragments of IUT3.Cor3_12.Statement, IUT3.Cor3_12.Reduction and IUT3.Cor3_12.StepXI.f; they do not formalize this corollary.",
     "explicit_hypotheses": [
       "the situation of Thm 3.11"
     ],
     "implicit_hypotheses": [],
-    "conclusion": "−|log(Θ)| ∈ R and −|log(Θ)| ≥ −|log(q)|; equivalently C_Θ ≥ −1 for every real C_Θ with −|log(Θ)| ≤ C_Θ·|log(q)|.",
+    "conclusion": "Two conjuncts: (F) −|log(Θ)| ∈ R, and (I) −|log(Θ)| ≥ −|log(q)|. The 'i.e.' clause of page 174 (C_Θ ≥ −1 for every real C_Θ with −|log(Θ)| ≤ C_Θ·|log(q)|) reformulates (I) only: it holds vacuously when −|log(Θ)| = +∞ (IUT.PaperIII.Corollary312.constantForm_of_top). The statement is therefore (F) ∧ (I), equivalently (F) ∧ (the 'i.e.' clause); finiteness is kept as a separate conjunct in both formulations.",
     "definitions_required": [
       "IUT3.Def3_8.i",
       "IUT3.Rem3_9_5.i",
@@ -1740,7 +1868,8 @@
     "statement_status": "EXTRACTED",
     "proof_status": "BLOCKED_BY_MISSING_JUSTIFICATION",
     "obligations": [
-      "See step records; docs/COR312_ANALYSIS.md."
+      "See the step records and docs/COR312_ANALYSIS.md.",
+      "Prove (F) separately: compactness of the 1,◦U_{j,v_Q} (asserted '[easily verified]' on page 175) and the all-but-finitely-many support condition of the global log-volume (Prop 3.9 (iii), page 117)."
     ],
     "ambiguities": []
   },
@@ -1758,7 +1887,7 @@
       "V^bad ≠ ∅ (IUTchI Def 3.1 (b))",
       "the union of possible images is a subset of the packets on which the hull is defined (Rem 3.9.5 (i) requires a relatively compact subset of finite log-volume)"
     ],
-    "conclusion": "−|log(Θ)| ∈ R and −|log(Θ)| ≥ −|log(q)|.",
+    "conclusion": "(F) −|log(Θ)| ∈ R, and (I) −|log(Θ)| ≥ −|log(q)|; the 'i.e.' clause on page 174 is equivalent to (I) only under (F).",
     "definitions_required": [
       "possible image of a Θ-pilot object",
       "holomorphic hull",
@@ -1775,14 +1904,33 @@
     "statement_status": "INTERPRETATION_AMBIGUOUS",
     "proof_status": "BLOCKED_BY_MISSING_JUSTIFICATION",
     "obligations": [
-      "Define the set of possible images: the orbit of the image under the group generated by Ind1 and Ind2, together with the containments allowed by Ind3.",
+      "Define the set of possible images: the orbit of the image under the action generated by (Ind1) and (Ind2), together with the containments allowed by (Ind3).",
       "Define the hull of the union and its log-volume.",
-      "Prove |log(q)| > 0 from ord_v(q_v) > 0 at bad v and V^bad ≠ ∅."
+      "Prove |log(q)| > 0 from ord_v(q_v) > 0 at bad v and V^bad ≠ ∅.",
+      "Prove finiteness (F) as its own claim: the compactness of each 1,◦U_{j,v_Q} asserted on page 175, and the support condition of Prop 3.9 (iii) (page 117) for the family of hulls.",
+      "The comparison is with the hull of the union of the possible images: a single image whose hull dominates the q-pilot region is a sufficient route, not a necessary one (two singleton images of measure 1/4 each jointly have log-volume log(1/2), while each has log(1/4))."
     ],
     "ambiguities": [
-      "Averaging index: the statement (page 173) and Step (x) (page 181) average over j ∈ F*_l; the sets U are indexed by j ∈ |F_l| (page 174); Step (xi-d) normalizes 'with respect to j ∈ |F_l|' (page 183); Thm 3.11 (i)(a) indexes packets by j ∈ |F_l| (page 153).",
+      "Averaging index: the statement (page 173) and Step (x) (page 181) say explicitly that the average is over j ∈ F*_l, so the factor is 1/l* (not displayed); Prop 3.4 (ii) (page 102) and Rem 3.9.3 (page 120) corroborate the labels j ∈ {1, ..., l*}. Pages 153 and 174 index the packets and the sets U, Ū by j ∈ |F_l|; they state no average. Page 183 speaks of a log-volume 'normalized, with respect to j ∈ |F_l|', with no factor; an average over |F_l| would carry 1/(l*+1). How the j = 0 component of a region indexed over |F_l| enters the average over F*_l (dropped, or identified with the diagonal label ⟨F*_l⟩ through △, pages 174 and 181) is not stated.",
       "The extracted text of page 174 reads 'V^bad (= ∅)'; the rendered page reads '(≠ ∅)'. This is an extraction artifact, not a discrepancy in the paper.",
       "'possible images' and 'subject to the indeterminacies' are not defined as a set by an explicit formula; whether Ind3 enlarges each image to a containing region or acts as a separate indeterminacy is not stated."
+    ],
+    "fragments": [
+      "IUT3.Cor3_12.Statement.frag.constantForm_of_conclusion",
+      "IUT3.Cor3_12.Statement.frag.conclusion_of_constantForm",
+      "IUT3.Cor3_12.Statement.frag.constantForm_of_top",
+      "IUT3.Cor3_12.Statement.frag.conclusion_iff_constantForm",
+      "IUT3.Cor3_12.Statement.frag.logVolume",
+      "IUT3.Cor3_12.Statement.frag.ComparisonSetting",
+      "IUT3.Cor3_12.Statement.frag.Containment",
+      "IUT3.Cor3_12.Statement.frag.LogVolumeComparison",
+      "IUT3.Cor3_12.Statement.frag.conclusion_iff",
+      "IUT3.Cor3_12.Statement.frag.conclusion_of_logVolumeComparison",
+      "IUT3.Cor3_12.Statement.frag.conclusion_of_containment",
+      "IUT3.Cor3_12.Statement.frag.conclusion_of_procContainment",
+      "IUT3.Cor3_12.Statement.frag.example_bridge_hypotheses",
+      "IUT3.Cor3_12.Statement.frag.example_comparison_fails",
+      "IUT3.Cor3_12.Statement.frag.example_union_matters"
     ]
   },
   "IUT3.Cor3_12.Reduction": {
@@ -1792,9 +1940,11 @@
       "pages_read": "text; rendered and checked: pages 174, 175"
     },
     "content": "Since |log(q)| > 0 one may assume −|log(Θ)| < 0 whenever it is real. U = {n,◦U_{j,v_Q}} for j ∈ |F_l|, v_Q ∈ V_Q: unions of possible images in n,◦U^Q_{j,v_Q} = I^Q(S^±_{j+1}; n,◦D^⊢_{v_Q}). Ū = their holomorphic hulls relative to the holomorphic structure labeled n,◦. From the '[easily verified] compactness' of the 1,◦U_{j,v_Q} and the definition of log-volume, −|log(Θ)| is finite, hence negative. One may restrict to possible images that can be interpreted as an F^{⊩▶}-prime-strip.",
-    "explicit_hypotheses": [],
+    "explicit_hypotheses": [
+      "inherits the hypotheses of IUT3.Cor3_12.Statement"
+    ],
     "implicit_hypotheses": [],
-    "conclusion": "Finiteness of −|log(Θ)|; WLOG negativity; restriction of possible images.",
+    "conclusion": "Without loss of generality −|log(Θ)| < 0 whenever −|log(Θ)| ∈ R (a nonnegative value already satisfies (I)); −|log(Θ)| is finite, hence negative, by the compactness of the 1,◦U_{j,v_Q} and the definition of the log-volume; one may restrict to possible images interpretable as an F^{⊩▶}-prime-strip.",
     "definitions_required": [],
     "results_used": [
       "IUT3.Rem2_4_2",
@@ -1807,26 +1957,32 @@
     "statement_status": "EXTRACTED",
     "proof_status": "BLOCKED_BY_MISSING_JUSTIFICATION",
     "obligations": [
-      "The numerical reduction is checked in Lean: IUT.PaperIII.Corollary312.inequality_of_nonneg.",
-      "Prove compactness of each 1,◦U_{j,v_Q} (union over the Ind1 × Ind2 orbit, enlarged by Ind3): requires Ind1, Ind2 finite or compact and Ind3 bounded.",
-      "Prove that compactness implies the hull is a proper λ·O, hence finite log-volume.",
+      "The numerical reduction concerns the inequality conjunct only; finiteness is a separate claim.",
+      "Prove compactness of each 1,◦U_{j,v_Q} (union over the orbit of the action generated by (Ind1) and (Ind2), enlarged by (Ind3)); page 175 calls it '[easily verified]' and gives no argument. Requires the action to factor through a compact or finite group and the (Ind3) enlargements to be bounded. A direct product Ind1 × Ind2 is not assumed: page 154 does not state that the actions commute.",
+      "Prove that compactness implies each local hull is a proper λ·O, hence of finite local log-volume (Rem 3.9.5 (i)).",
+      "Prove the support condition: the local log-volumes of the hulls vanish for all but finitely many v_Q (Prop 3.9 (iii), page 117), so that the global average is a real number; placewise compactness alone does not give this.",
       "Justify that restricting to possible images interpretable as F^{⊩▶}-prime-strips does not change the hull or only shrinks it in a way consistent with the inequality."
     ],
     "ambiguities": [
-      "The WLOG reduction is numerical and verified in Lean (inequality_of_nonneg). The finiteness claim rests on 'easily verified compactness' (page 175), for which no argument is given.",
+      "The WLOG reduction is numerical (fragment IUT3.Cor3_12.Reduction.frag.inequality_of_nonneg). The finiteness claim rests on '[easily verified] compactness' (page 175), for which no argument is given.",
       "The restriction to images interpretable as an F^{⊩▶}-prime-strip shrinks the union; the effect on the hull and hence on −|log(Θ)| is not discussed."
+    ],
+    "fragments": [
+      "IUT3.Cor3_12.Reduction.frag.inequality_of_nonneg"
     ]
   },
   "IUT3.Cor3_12.StepI": {
     "source": {
       "paper": "Inter-universal Teichmuller Theory III",
       "pdf_pages": "page 175",
-      "pages_read": "text; rendered and checked: page 175"
+      "pages_read": "text; rendered and checked: page 175; text: pages 175 to 186"
     },
     "content": "Concentrate on a single Θ^{×μ}_LGP-link (0,0) → (1,0): the full poly-isomorphism 0,0 𝔉_LGP^{⊩▶×μ} ≅ 1,0 𝔉_△^{⊩▶×μ}, split into a unit portion (F^{⊢×μ}) and a value group portion (F^{⊩▶}); the value group portion maps Θ-pilot objects at (0,0) to q-pilot objects at (1,0) (Rem 3.8.1).",
-    "explicit_hypotheses": [],
+    "explicit_hypotheses": [
+      "inherits the hypotheses of IUT3.Cor3_12.Statement"
+    ],
     "implicit_hypotheses": [],
-    "conclusion": "Nature of the justification in the text: argument by definition.",
+    "conclusion": "The proof works with the single Θ^{×μ}_LGP-link (0,0) → (1,0), a full poly-isomorphism of F^{⊩▶×μ}-prime-strips with a unit portion and a value group portion; the value group portion maps Θ-pilot objects at (0,0) to q-pilot objects at (1,0). Justification in the text: argument by definition.",
     "definitions_required": [],
     "results_used": [
       "IUT3.Def3_8.ii",
@@ -1847,12 +2003,14 @@
     "source": {
       "paper": "Inter-universal Teichmuller Theory III",
       "pdf_pages": "pages 175 to 176",
-      "pages_read": "text; rendered and checked: page 175"
+      "pages_read": "text; rendered and checked: page 175; text: pages 175 to 186"
     },
     "content": "Units in 0,0 𝔉^{⊢×μ}_LGP are subject to Aut_{F^{⊢×μ}} indeterminacies (Ind1, Ind2); the cyclotomes in the Kummer theory of the étale theta function and κ-coric functions are insulated from these indeterminacies, by cyclotomic rigidity of mono-theta environments [EtTh] and by IUTchI Example 5.1 (v), Def 5.2 (vi), (viii).",
-    "explicit_hypotheses": [],
+    "explicit_hypotheses": [
+      "inherits the hypotheses of IUT3.Cor3_12.Statement"
+    ],
     "implicit_hypotheses": [],
-    "conclusion": "Nature of the justification in the text: citation.",
+    "conclusion": "The units at (0,0) are subject to the Aut_{F^{⊢×μ}}(−) indeterminacies (Ind1), (Ind2), while the cyclotomes of the Kummer theory of the étale theta function and of κ-coric functions are insulated from them. Justification in the text: citation ([EtTh]; IUTchI Example 5.1 (v), Def 5.2 (vi), (viii)).",
     "definitions_required": [],
     "results_used": [
       "IUT3.Thm3_11.iii"
@@ -1875,12 +2033,14 @@
     "source": {
       "paper": "Inter-universal Teichmuller Theory III",
       "pdf_pages": "page 176",
-      "pages_read": "text"
+      "pages_read": "text; text: pages 175 to 186"
     },
     "content": "Unit and value group portions on the 0-column must be related simultaneously to those on the 1-column; relating them via two different links (0,m) → (1,m) and (0,m') → (1,m'), m' ≠ m, is made practically impossible by the non-commutativity of the lattice (Rem 3.11.3 (i), (ii)). Hence a single Θ^{×μ}_LGP-link.",
-    "explicit_hypotheses": [],
+    "explicit_hypotheses": [
+      "inherits the hypotheses of IUT3.Cor3_12.Statement"
+    ],
     "implicit_hypotheses": [],
-    "conclusion": "Nature of the justification in the text: assertion with interpretive argument.",
+    "conclusion": "Unit and value group portions on the 0-column must be related to those on the 1-column simultaneously, through one Θ^{×μ}_LGP-link; two links at different heights would make this practically impossible. Justification in the text: assertion with interpretive argument.",
     "definitions_required": [],
     "results_used": [
       "IUT3.Rem1_4_1",
@@ -1899,12 +2059,14 @@
     "source": {
       "paper": "Inter-universal Teichmuller Theory III",
       "pdf_pages": "pages 176 to 177",
-      "pages_read": "text"
+      "pages_read": "text; text: pages 175 to 186"
     },
     "content": "To apply bi-coricity of units, one must use units vertically once-shifted, at (n,m−1), relative to the value group structures at (n,m) (Rem 3.11.3 (ii)). The conflict between needing a vertical shift and the impossibility of shifting (Step iii) is resolved by working on the 0-column with structures invariant under vertical shifts, namely vertically coric structures (n,◦), related to Frobenius-like structures by the log-Kummer correspondence of Thm 3.11 (ii), at the cost of the upper semi-compatibility Ind3.",
-    "explicit_hypotheses": [],
+    "explicit_hypotheses": [
+      "inherits the hypotheses of IUT3.Cor3_12.Statement"
+    ],
     "implicit_hypotheses": [],
-    "conclusion": "Nature of the justification in the text: argument by reference.",
+    "conclusion": "The conflict between the vertical shift needed for bi-coricity of units and the impossibility of vertical shifts is resolved by working on the 0-column with vertically coric structures related to Frobenius-like ones by the log-Kummer correspondence, at the cost of (Ind3). Justification in the text: argument by reference.",
     "definitions_required": [],
     "results_used": [
       "IUT3.Thm3_11.ii.Ind3",
@@ -1923,12 +2085,14 @@
     "source": {
       "paper": "Inter-universal Teichmuller Theory III",
       "pdf_pages": "page 177",
-      "pages_read": "text"
+      "pages_read": "text; text: pages 175 to 186"
     },
     "content": "Relate the units of the 0- and 1-columns by the unit portion 0,0 𝔉^{⊢×μ}_LGP ≅ 1,0 𝔉^{⊢×μ}_△ of the link and bi-coricity (Thm 1.5 (iii), (iv)); mono-analytic log-shells serve as multiradial mono-analytic containers for the local units, splitting monoids at V^bad and global Frobenioids indexed by (0,m), related to their (0,◦) versions by the log-Kummer correspondences of Thm 3.11 (ii) (a), (b), (c).",
-    "explicit_hypotheses": [],
+    "explicit_hypotheses": [
+      "inherits the hypotheses of IUT3.Cor3_12.Statement"
+    ],
     "implicit_hypotheses": [],
-    "conclusion": "Nature of the justification in the text: citation.",
+    "conclusion": "The computation begins by relating the units of the 0- and 1-columns through the unit portion of the link and bi-coricity (Thm 1.5 (iii), (iv)), with mono-analytic log-shells as multiradial containers for local units, splitting monoids at V^bad and global Frobenioids, related to their (0,◦) versions by Thm 3.11 (ii) (a), (b), (c). Justification in the text: citation.",
     "definitions_required": [],
     "results_used": [
       "IUT3.Thm1_5.iii",
@@ -1947,12 +2111,14 @@
     "source": {
       "paper": "Inter-universal Teichmuller Theory III",
       "pdf_pages": "pages 177 to 179",
-      "pages_read": "text; rendered and checked: pages 178, 179"
+      "pages_read": "text; rendered and checked: pages 178, 179; text: pages 175 to 186"
     },
     "content": "The log-Kummer correspondences of Thm 3.11 (ii) (b), (c) come from splittings, up to roots of unity, into unit and value group portions via Galois evaluation (Rem 2.2.2 (iii), 2.3.2); the Kummer theory of LGP-monoids depends on IUTchII §3 and on [EtTh] (discrete rigidity, isomorphism class compatibility), and on conjugate synchronization from the F^{⋊±}_l-symmetry, which is compatible with the log-link. Fig. 3.7 compares three approaches to cyclotomic rigidity (mono-theta environments, MLF-Galois pairs, number fields via Q_{>0} ∩ Ẑ^× = {1}); they are said to be mutually compatible '[one verifies immediately]'.",
-    "explicit_hypotheses": [],
+    "explicit_hypotheses": [
+      "inherits the hypotheses of IUT3.Cor3_12.Statement"
+    ],
     "implicit_hypotheses": [],
-    "conclusion": "Nature of the justification in the text: assertion.",
+    "conclusion": "The log-Kummer correspondences of Thm 3.11 (ii) (b), (c) arise from Galois-evaluation splittings; the Kummer theory of LGP-monoids rests on IUTchII §3 and [EtTh]; the three approaches to cyclotomic rigidity of Fig. 3.7 yield the same cyclotomic rigidity isomorphism where more than one applies. Justification in the text: assertion ('[one verifies immediately]') with citations.",
     "definitions_required": [],
     "results_used": [
       "IUT3.Thm3_11.iii.c"
@@ -1977,12 +2143,14 @@
     "source": {
       "paper": "Inter-universal Teichmuller Theory III",
       "pdf_pages": "pages 179 to 180",
-      "pages_read": "text; rendered and checked: pages 179, 180"
+      "pages_read": "text; rendered and checked: pages 179, 180; text: pages 175 to 186"
     },
     "content": "Bi-coricity (Thm 1.5 (iii), (iv)) depends on conjugate synchronization from the F^{⋊±}_l-symmetry, relating data at distinct labels in |F_l| compatibly with vertical coricity and Kummer theory while not identifying distinct labels; it is incompatible with the F^⊛_l-symmetry, so the two symmetries are treated separately; both are compatible with vertical coricity on the 0-column.",
-    "explicit_hypotheses": [],
+    "explicit_hypotheses": [
+      "inherits the hypotheses of IUT3.Cor3_12.Statement"
+    ],
     "implicit_hypotheses": [],
-    "conclusion": "Nature of the justification in the text: citation.",
+    "conclusion": "Bi-coricity depends on conjugate synchronization from the F^{⋊±}_l-symmetry, which relates distinct labels in |F_l| without identifying them and is incompatible with the F^⊛_l-symmetry, so the two symmetries are used separately; both are compatible with vertical coricity on the 0-column. Justification in the text: citation.",
     "definitions_required": [],
     "results_used": [
       "IUT3.Thm1_5.iii",
@@ -2001,12 +2169,14 @@
     "source": {
       "paper": "Inter-universal Teichmuller Theory III",
       "pdf_pages": "page 180",
-      "pages_read": "text; rendered and checked: page 180"
+      "pages_read": "text; rendered and checked: page 180; text: pages 175 to 186"
     },
     "content": "Constructing the F^{⋊±}_l-symmetry uses global ±-synchronizations of local ±-indeterminacies; since local tempered fundamental groups at V^bad do not extend to a global one, these give profinite conjugacy indeterminacies in the vertically coric LGP-monoids, resolved by IUTchI §2.",
-    "explicit_hypotheses": [],
+    "explicit_hypotheses": [
+      "inherits the hypotheses of IUT3.Cor3_12.Statement"
+    ],
     "implicit_hypotheses": [],
-    "conclusion": "Nature of the justification in the text: citation.",
+    "conclusion": "Global ±-synchronizations used to construct the F^{⋊±}_l-symmetry give profinite conjugacy indeterminacies in the vertically coric LGP-monoids, resolved by IUTchI §2. Justification in the text: citation.",
     "definitions_required": [],
     "results_used": [
       "IUT3.Prop3_4"
@@ -2024,12 +2194,14 @@
     "source": {
       "paper": "Inter-universal Teichmuller Theory III",
       "pdf_pages": "page 180",
-      "pages_read": "text; rendered and checked: page 180"
+      "pages_read": "text; rendered and checked: page 180; text: pages 175 to 186"
     },
     "content": "The copies of F_mod (global Frobenioids F_MOD, F_mod and realifications) bridge multiplicative global realified Frobenioids and their additive representations in mono-analytic log-shells; F_MOD is precisely compatible with the log-Kummer correspondence, hence suited to the link; F_mod is only upper semi-compatible (Ind3), hence suited to explicit degree estimates via log-volumes (Rem 3.10.1 (ii), (iii)).",
-    "explicit_hypotheses": [],
+    "explicit_hypotheses": [
+      "inherits the hypotheses of IUT3.Cor3_12.Statement"
+    ],
     "implicit_hypotheses": [],
-    "conclusion": "Nature of the justification in the text: citation.",
+    "conclusion": "The copies of F_mod bridge the multiplicative global realified Frobenioids and their additive representations in log-shells; F_MOD is precisely compatible with the log-Kummer correspondence, F_mod only upper semi-compatible and suited to degree estimates by log-volumes. Justification in the text: citation (Rem 3.10.1 (ii), (iii)).",
     "definitions_required": [],
     "results_used": [
       "IUT3.Prop3_10",
@@ -2051,9 +2223,11 @@
       "pages_read": "text; rendered and checked: page 181"
     },
     "content": "Kummer-detachment gives Ind1 (permutation symmetries of the étale picture), Ind2 (automorphisms of the horizontal arrows) and Ind3 (vertical arrows). The procession-normalized log-volumes (average over j ∈ F*_l) are invariant under Ind1, Ind2 '[one verifies immediately, cf. Prop 3.9 (ii)]' and convert Ind3 into an inequality from above. log-link compatibility (Prop 3.9 (iv)) makes these log-volumes compatible with the arrows of the log-Kummer correspondence. Tensor products identify multiplication by integers, hence its effect on log-volumes, at different labels j ∈ F*_l.",
-    "explicit_hypotheses": [],
+    "explicit_hypotheses": [
+      "inherits the hypotheses of IUT3.Cor3_12.Statement"
+    ],
     "implicit_hypotheses": [],
-    "conclusion": "Nature of the justification in the text: assertion with citation.",
+    "conclusion": "Kummer-detachment relates the Frobenius-like structures at (0,0) to the multiradial representation at the cost of (Ind1), (Ind2), (Ind3); the procession-normalized log-volumes are invariant under (Ind1), (Ind2) and convert (Ind3) into an inequality from above, and are compatible with the arrows of the log-Kummer correspondence. Justification in the text: assertion with citation.",
     "definitions_required": [],
     "results_used": [
       "IUT3.Prop3_9.ii",
@@ -2068,23 +2242,25 @@
     "obligations": [
       "Prove invariance of the averaged log-volume under each element of Ind1 (procession automorphisms) and each element of Ind2 (∏ Ism or ±1 on direct summands).",
       "Prove that Ind3 containments give log-volume upper bounds (monotonicity of measure).",
-      "Prove that invariance holds for the joint action of Ind1 and Ind2 (generated group), not only for each separately."
+      "Prove that invariance holds for the action generated by (Ind1) and (Ind2), not only for each separately; do not assume the two actions commute."
     ],
     "ambiguities": [
       "Ind1 is defined (Thm 3.11 (i)) as automorphisms of the procession; Step (x) describes it as arising from permutation symmetries of the étale picture. The two descriptions are not shown to coincide.",
-      "Average index j ∈ F*_l here (page 181) versus |F_l| in (xi-d) (page 183)."
+      "The average is over j ∈ F*_l here (page 181) and on page 173, stated explicitly, factor 1/l*, corroborated by Prop 3.4 (ii) and Rem 3.9.3 (pages 102, 120); page 183 speaks of a normalization 'with respect to j ∈ |F_l|' without a factor; the treatment of the label 0 component is not stated."
     ]
   },
   "IUT3.Cor3_12.StepXI": {
     "source": {
       "paper": "Inter-universal Teichmuller Theory III",
       "pdf_pages": "pages 181 to 185",
-      "pages_read": "text; rendered and checked: pages 181 to 185"
+      "pages_read": "text; rendered and checked: pages 181 to 185; text: pages 175 to 186"
     },
     "content": "The comparison of the multiradial representation with the q-pilot object, divided into substeps (xi-a) to (xi-h).",
-    "explicit_hypotheses": [],
+    "explicit_hypotheses": [
+      "inherits the hypotheses of IUT3.Cor3_12.Statement"
+    ],
     "implicit_hypotheses": [],
-    "conclusion": "Nature of the justification in the text: see substeps.",
+    "conclusion": "The multiradial algorithm, followed by the holomorphic hull and the log-volume, gives possible log-volumes R_{≤−|log(Θ)|} linked to the pilot-object log-volume −|log(q)| of the input, whence the inclusion −|log(q)| ∈ R_{≤−|log(Θ)|} and the inequality (I). Justification in the text: see substeps (xi-a) to (xi-h).",
     "definitions_required": [],
     "results_used": [
       "IUT3.Thm3_11",
@@ -2104,12 +2280,14 @@
     "source": {
       "paper": "Inter-universal Teichmuller Theory III",
       "pdf_pages": "pages 185 to 186",
-      "pages_read": "text; rendered and checked: pages 185, 186"
+      "pages_read": "text; rendered and checked: pages 185, 186; text: pages 175 to 186"
     },
     "content": "Global realified Frobenioids are needed: the Θ^{×μ}_LGP-link preserves only isomorphism classes of objects of Frobenioids (Rem 3.6.2 (i)); with local Frobenioids one could not tell whether an object at v ∈ V^non corresponds to a submodule of the log-shell or to its p_v^N-multiple, because local objects admit endomorphisms that are not automorphisms, which would make a precise log-volume computation meaningless.",
-    "explicit_hypotheses": [],
+    "explicit_hypotheses": [
+      "inherits the hypotheses of IUT3.Cor3_12.Statement"
+    ],
     "implicit_hypotheses": [],
-    "conclusion": "Nature of the justification in the text: argument.",
+    "conclusion": "Global realified Frobenioids are required: with local Frobenioids alone, objects are known only up to isomorphism class and admit non-invertible endomorphisms, so a submodule could not be distinguished from its p_v^N-multiple and a precise log-volume computation would be meaningless. Justification in the text: argument.",
     "definitions_required": [],
     "results_used": [
       "IUT3.Rem3_6_2",
@@ -2128,12 +2306,14 @@
     "source": {
       "paper": "Inter-universal Teichmuller Theory III",
       "pdf_pages": "page 181",
-      "pages_read": "text; rendered and checked: page 181"
+      "pages_read": "text; rendered and checked: page 181; text: pages 175 to 186"
     },
     "content": "Consider a q-pilot object at (1,0) in terms of holomorphic log-shells at (1,0). The Θ^{×μ}_LGP-link (0,0) → (1,0) may be interpreted as a gluing isomorphism relating the holomorphic structures at (1,0) and (0,0) so that the Θ-pilot object at (0,0) corresponds to the q-pilot object at (1,0).",
-    "explicit_hypotheses": [],
+    "explicit_hypotheses": [
+      "inherits the hypotheses of IUT3.Cor3_12.Statement"
+    ],
     "implicit_hypotheses": [],
-    "conclusion": "Nature of the justification in the text: argument by definition.",
+    "conclusion": "The Θ^{×μ}_LGP-link (0,0) → (1,0) may be interpreted as a gluing isomorphism relating the holomorphic structures at (1,0) and (0,0) so that the Θ-pilot object at (0,0) corresponds to the q-pilot object at (1,0). Justification in the text: argument by definition.",
     "definitions_required": [],
     "results_used": [
       "IUT3.Cor3_12.StepI",
@@ -2185,12 +2365,14 @@
     "source": {
       "paper": "Inter-universal Teichmuller Theory III",
       "pdf_pages": "page 182",
-      "pages_read": "text; rendered and checked: page 182"
+      "pages_read": "text; rendered and checked: page 182; text: pages 175 to 186"
     },
     "content": "Summary: the algorithm yields possibilities in 1,◦U ⊆ 1,◦U^Q linked (IPL) via isomorphisms of F^{⊩▶}-prime-strips to the representation, via the log-Kummer correspondence in the 1-column, of the q-pilot object at (1,0) on 1,◦U^Q, and expressible relative to the holomorphic structure in the 1-column (SHE). Passing to the hull 1,◦Ū ⊇ 1,◦U expresses the output in terms of localizations of arithmetic vector bundles over local rings O_{K_v}, which is necessary for comparability with the q-pilot object (an arithmetic line bundle).",
-    "explicit_hypotheses": [],
+    "explicit_hypotheses": [
+      "inherits the hypotheses of IUT3.Cor3_12.Statement"
+    ],
     "implicit_hypotheses": [],
-    "conclusion": "Nature of the justification in the text: argument.",
+    "conclusion": "The algorithm yields possibilities in 1,◦U ⊆ 1,◦U^Q linked (IPL) to the q-pilot representation and expressible in the 1-column holomorphic structure (SHE); passing to the hull 1,◦Ū expresses them as localizations of arithmetic vector bundles over the O_{K_v}, which is necessary for comparability with the q-pilot object. Justification in the text: argument.",
     "definitions_required": [],
     "results_used": [
       "IUT3.Rem3_9_5.i",
@@ -2209,9 +2391,9 @@
     "source": {
       "paper": "Inter-universal Teichmuller Theory III",
       "pdf_pages": "page 183",
-      "pages_read": "text; rendered and checked: page 183"
+      "pages_read": "text; rendered and checked: page 183; rendered and checked: pages 102, 116, 131, 132, 133, 183"
     },
-    "content": "Taking the determinant (a suitable positive tensor power) of these vector bundle localizations and the suitably normalized (with respect to j ∈ |F_l|) log-volume of 1,◦Ū and of the region representing the q-pilot object yields comparable objects R_{≤−|log(Θ)|} = {λ ∈ R | λ ≤ −|log(Θ)|} and −|log(q)| ∈ R, where −|log(Θ)| is the (negative) log-volume of 1,◦Ū and −|log(q)| the log-volume of the q-pilot region on 1,◦U^Q. Global arithmetic degrees are log-volumes (Prop 3.9 (iii)). The log-Kummer correspondence in the 1-column rectifies the vertical shift between the unit portion of 1,0 𝔉_△^{⊩▶×μ} and the log-shells forming 1,◦U.",
+    "content": "The hull outputs are localizations of arithmetic vector bundles of rank > 1, while the q-pilot object is an arithmetic line bundle. Forming a suitable positive tensor power of the determinant (Rem 3.9.5 (vii), (Ob3), (Ob4)) and applying the log-volume '[suitably normalized, with respect to j ∈ |F_l|]' to the region 1,◦Ū and to the region of the q-pilot object at (1,0) on 1,◦U^Q gives completely comparable objects R_{≤−|log(Θ)|} = {λ ∈ R | λ ≤ −|log(Θ)|} ⊆ R and −|log(q)| ∈ R, where −|log(Θ)| is by definition the (negative) log-volume of 1,◦Ū and −|log(q)| the log-volume of the q-pilot region. Global arithmetic degrees are log-volumes (Prop 3.9 (iii)). The log-Kummer correspondence in the 1-column rectifies the vertical shift between the unit portion of 1,0 𝔉_△^{⊩▶×μ} and the log-shells forming 1,◦U.",
     "explicit_hypotheses": [],
     "implicit_hypotheses": [],
     "conclusion": "Nature of the justification in the text: argument with citation.",
@@ -2226,12 +2408,12 @@
     "statement_status": "INTERPRETATION_AMBIGUOUS",
     "proof_status": "EXTRACTED",
     "obligations": [
-      "Prove that the log-volume of the determinant (tensor power M) of the hull equals M times the normalized log-volume of the hull, so that M cancels.",
+      "Prove, for hulls λ·O (the class for which pages 132 and 133 state it, with details left to the reader), that the degree of det_{⊗M}(H), formed with the weights of Rem 3.1.1 (iv) and tensored with the inverse determinant of the structure sheaf (Ob3-1-2), equals the normalized log-volume of H times an explicit constant, the same constant being used for the q-pilot region.",
       "Prove that the q-pilot region and the hull are measured by the same normalized log-volume (same index set for the average, same weights).",
       "Prove that the log-Kummer correspondence identifies the unit portion at (1,0) with the log-shells at (1,◦) without changing log-volumes."
     ],
     "ambiguities": [
-      "Normalization 'with respect to j ∈ |F_l|' (page 183) versus average over j ∈ F*_l (pages 173, 181).",
+      "Normalization 'with respect to j ∈ |F_l|' (page 183, no factor displayed) versus the average over j ∈ F*_l of pages 173 and 181 (stated explicitly, factor 1/l*); the rule for the j = 0 component is not stated.",
       "The set R_{≤−|log(Θ)|} is introduced as 'possible log-volumes of pilot-object output data'; why every real number below −|log(Θ)| is a possible log-volume, rather than only the log-volumes of actual possible images, is not argued."
     ]
   },
@@ -2239,12 +2421,14 @@
     "source": {
       "paper": "Inter-universal Teichmuller Theory III",
       "pdf_pages": "pages 183 to 184",
-      "pages_read": "text; rendered and checked: pages 183, 184"
+      "pages_read": "text; rendered and checked: pages 183, 184; text: pages 175 to 186"
     },
     "content": "The relationship between the pilot-object log-volume −|log(q)| and the input F^{⊩▶×μ}-prime-strip is the one imposed by the holomorphic structure in the 1-column. SHE amounts precisely to expressibility via operations that are well defined even under the condition that the pilot-object log-volume of the input data (linked via isomorphisms of F^{⊩▶}-prime-strips to the possible outputs) equals −|log(q)|. Hence the algorithm, with hull and log-volume, yields possible log-volumes R_{≤−|log(Θ)|} linked (IPL) to the pilot-object log-volume −|log(q)| of the input data (SHE).",
-    "explicit_hypotheses": [],
+    "explicit_hypotheses": [
+      "inherits the hypotheses of IUT3.Cor3_12.Statement"
+    ],
     "implicit_hypotheses": [],
-    "conclusion": "Nature of the justification in the text: argument by reformulation.",
+    "conclusion": "SHE amounts to expressibility by operations well defined under the condition that the input pilot-object log-volume equals −|log(q)|; hence the algorithm, with hull and log-volume, yields possible log-volumes R_{≤−|log(Θ)|} linked (IPL) to −|log(q)|. Justification in the text: argument by reformulation.",
     "definitions_required": [],
     "results_used": [
       "IUT3.Rem3_11_1"
@@ -2278,12 +2462,16 @@
     "statement_status": "INTERPRETATION_AMBIGUOUS",
     "proof_status": "BLOCKED_BY_MISSING_JUSTIFICATION",
     "obligations": [
-      "Prove the inclusion −|log(q)| ∈ R_{≤−|log(Θ)|} from properties of the construction (this is the whole content; see docs/COR312_ANALYSIS.md).",
-      "The final passage from inclusion to inequality is checked in Lean as Iff.rfl: IUT.PaperIII.Corollary312.stepXIf_inclusion_iff_inequality."
+      "Prove the inclusion −|log(q)| ∈ R_{≤−|log(Θ)|} from properties of the construction (this is the whole content; see docs/COR312_ANALYSIS.md). The comparison is with the hull of the union of possible images; domination by a single image is sufficient, not necessary."
     ],
     "ambiguities": [
       "'perhaps only up to some sort of approximation' (page 184) leaves the sense of 'construction of −|log(q)|' unspecified; the inclusion requires an exact statement.",
-      "Assessment: at the level of real numbers the premise of the last step is the conclusion; any non-circular argument must establish the inclusion at the level of regions or of the algorithm."
+      "Assessment: at the level of real numbers the premise of the last step is the conclusion; any non-circular argument must establish the inclusion at the level of regions or of the algorithm.",
+      "The inclusion is equivalent to the inequality conjunct only; with −|log(Θ)| = +∞ it holds trivially, so finiteness must be proved separately."
+    ],
+    "fragments": [
+      "IUT3.Cor3_12.StepXI.f.frag.stepXIf_inclusion_iff_inequality",
+      "IUT3.Cor3_12.StepXI.f.frag.logVolumeComparison_of_containment"
     ]
   },
   "IUT3.Cor3_12.StepXI.g": {
@@ -2348,7 +2536,9 @@
       "pages_read": "text; rendered and checked: page 186"
     },
     "content": "(i) IUTchIV seeks explicit upper bounds C_Θ. (ii) For λ ∈ Q_{>0}, generalized Θ^{×μ}_LGP-links q^λ ↦ q^{(1², ..., (l*)²)} give a similar theory, and 'one may apply the same arguments' to conclude C_Θ ≥ −λ; this is sharper for λ < 1 but irrelevant to IUTchIV, whose bounds are unaffected by a constant of absolute value ≤ 1. (iii) mono-theta cyclotomic rigidity as a 'canonical profinite volume' associated to the first power.",
-    "explicit_hypotheses": [],
+    "explicit_hypotheses": [
+      "λ ∈ Q_{>0}, and the generalized Θ^{×μ}_LGP-links q^λ ↦ q^{(1², ..., (l*)²)} (part (ii), page 186)"
+    ],
     "implicit_hypotheses": [],
     "conclusion": "C_Θ ≥ −λ for generalized links (asserted).",
     "definitions_required": [],
@@ -2408,12 +2598,14 @@
     ],
     "external_dependencies": [],
     "lean_declaration": null,
-    "statement_status": "EXTRACTED",
-    "proof_status": "EXTRACTED",
+    "statement_status": "NOT_EXTRACTED",
+    "proof_status": "NOT_EXTRACTED",
     "obligations": [
       "None beyond Step (xii)."
     ],
-    "ambiguities": []
+    "ambiguities": [
+      "Not counted as extracted: the recorded conclusion ('Remark') is a label, not a statement of what is asserted. The content above is kept as a summary of the pages listed in source."
+    ]
   },
   "IUT3.Rem3_8_2": {
     "source": {
@@ -2432,13 +2624,14 @@
     ],
     "external_dependencies": [],
     "lean_declaration": null,
-    "statement_status": "EXTRACTED",
+    "statement_status": "NOT_EXTRACTED",
     "proof_status": "BLOCKED_BY_MISSING_JUSTIFICATION",
     "obligations": [
       "Re-prove or transfer Thm 1.5 for LGP-Gaussian lattices."
     ],
     "ambiguities": [
-      "Prop 2.1 and Cor 2.3 (pages 58 onward) were cited but not read for this record."
+      "Prop 2.1 and Cor 2.3 (pages 58 onward) were cited but not read for this record.",
+      "Not counted as extracted: the recorded conclusion ('Asserted generalization') is a label, not a statement of what is asserted. The content above is kept as a summary of the pages listed in source."
     ]
   },
   "IUT3.Rem3_9_6": {
@@ -2457,10 +2650,687 @@
     ],
     "external_dependencies": [],
     "lean_declaration": null,
-    "statement_status": "EXTRACTED",
-    "proof_status": "EXTRACTED",
+    "statement_status": "NOT_EXTRACTED",
+    "proof_status": "NOT_EXTRACTED",
     "obligations": [
       "Prove the product formula compatibility; Mathlib support was not checked."
+    ],
+    "ambiguities": [
+      "Not counted as extracted: the recorded conclusion ('Remark') is a label, not a statement of what is asserted. The content above is kept as a summary of the pages listed in source."
+    ]
+  },
+  "IUT3.Cor3_12.Statement.frag.constantForm_of_conclusion": {
+    "kind": "fragment",
+    "parent": "IUT3.Cor3_12.Statement",
+    "source": {
+      "paper": "Inter-universal Teichmuller Theory III",
+      "pdf_pages": "page 174",
+      "pages_read": "rendered and checked: page 174"
+    },
+    "content": "For given numbers, the conclusion (negLogTheta ≠ ⊤ and −absLogQ ≤ negLogTheta) implies the 'i.e.' form: every real C with negLogTheta ≤ C·absLogQ satisfies −1 ≤ C.",
+    "explicit_hypotheses": [
+      "v : PilotLogVolumes, a structure of two given numbers: negLogTheta : EReal with negLogTheta ≠ ⊥, and absLogQ : ℝ with 0 < absLogQ",
+      "h : Conclusion v"
+    ],
+    "implicit_hypotheses": [],
+    "conclusion": "ConstantForm v",
+    "definitions_required": [],
+    "results_used": [],
+    "external_dependencies": [],
+    "lean_declaration": "IUT.PaperIII.Corollary312.constantForm_of_conclusion",
+    "covers": "the 'i.e.' clause of the statement, page 174",
+    "not_covered": "The construction of −|log(Θ)| and −|log(q)| from initial Θ-data, the hull, the possible images, and every step of the proof.",
+    "statement_status": "STATEMENT_FORMALIZED",
+    "proof_status": "CONDITIONALLY_VERIFIED",
+    "obligations": [
+      "The field 0 < absLogQ stands for '|log(q)| > 0 is easily computed' (page 174), not proved in this project."
+    ],
+    "ambiguities": []
+  },
+  "IUT3.Cor3_12.Statement.frag.conclusion_of_constantForm": {
+    "kind": "fragment",
+    "parent": "IUT3.Cor3_12.Statement",
+    "source": {
+      "paper": "Inter-universal Teichmuller Theory III",
+      "pdf_pages": "page 174",
+      "pages_read": "rendered and checked: page 174"
+    },
+    "content": "For given numbers, if negLogTheta ≠ ⊤ and the 'i.e.' form holds, then the conclusion holds.",
+    "explicit_hypotheses": [
+      "v : PilotLogVolumes, a structure of two given numbers: negLogTheta : EReal with negLogTheta ≠ ⊥, and absLogQ : ℝ with 0 < absLogQ",
+      "hfin : negLogTheta ≠ ⊤",
+      "h : ConstantForm v"
+    ],
+    "implicit_hypotheses": [],
+    "conclusion": "Conclusion v",
+    "definitions_required": [],
+    "results_used": [],
+    "external_dependencies": [],
+    "lean_declaration": "IUT.PaperIII.Corollary312.conclusion_of_constantForm",
+    "covers": "the 'i.e.' clause of the statement, page 174",
+    "not_covered": "The construction of −|log(Θ)| and −|log(q)| from initial Θ-data, the hull, the possible images, and every step of the proof.",
+    "statement_status": "STATEMENT_FORMALIZED",
+    "proof_status": "CONDITIONALLY_VERIFIED",
+    "obligations": [
+      "The field 0 < absLogQ stands for '|log(q)| > 0 is easily computed' (page 174), not proved in this project."
+    ],
+    "ambiguities": []
+  },
+  "IUT3.Cor3_12.Statement.frag.constantForm_of_top": {
+    "kind": "fragment",
+    "parent": "IUT3.Cor3_12.Statement",
+    "source": {
+      "paper": "Inter-universal Teichmuller Theory III",
+      "pdf_pages": "page 174",
+      "pages_read": "rendered and checked: page 174"
+    },
+    "content": "For given numbers, if negLogTheta = +∞ then the 'i.e.' form holds (no real C satisfies its premise); so the 'i.e.' form does not imply finiteness.",
+    "explicit_hypotheses": [
+      "v : PilotLogVolumes, a structure of two given numbers: negLogTheta : EReal with negLogTheta ≠ ⊥, and absLogQ : ℝ with 0 < absLogQ",
+      "h : negLogTheta = ⊤"
+    ],
+    "implicit_hypotheses": [],
+    "conclusion": "ConstantForm v",
+    "definitions_required": [],
+    "results_used": [],
+    "external_dependencies": [],
+    "lean_declaration": "IUT.PaperIII.Corollary312.constantForm_of_top",
+    "covers": "the relation between the 'i.e.' clause and the finiteness conjunct, page 174",
+    "not_covered": "The construction of −|log(Θ)| and −|log(q)| from initial Θ-data, the hull, the possible images, and every step of the proof.",
+    "statement_status": "STATEMENT_FORMALIZED",
+    "proof_status": "CONDITIONALLY_VERIFIED",
+    "obligations": [
+      "The structure field 0 < absLogQ is part of the type, although this lemma does not use it; it stands for '|log(q)| > 0 is easily computed' (page 174)."
+    ],
+    "ambiguities": []
+  },
+  "IUT3.Cor3_12.Statement.frag.conclusion_iff_constantForm": {
+    "kind": "fragment",
+    "parent": "IUT3.Cor3_12.Statement",
+    "source": {
+      "paper": "Inter-universal Teichmuller Theory III",
+      "pdf_pages": "page 174",
+      "pages_read": "rendered and checked: page 174"
+    },
+    "content": "For given numbers with negLogTheta ≠ ⊤, the conclusion and the 'i.e.' form are equivalent.",
+    "explicit_hypotheses": [
+      "v : PilotLogVolumes, a structure of two given numbers: negLogTheta : EReal with negLogTheta ≠ ⊥, and absLogQ : ℝ with 0 < absLogQ",
+      "hfin : negLogTheta ≠ ⊤"
+    ],
+    "implicit_hypotheses": [],
+    "conclusion": "Conclusion v ↔ ConstantForm v",
+    "definitions_required": [],
+    "results_used": [],
+    "external_dependencies": [],
+    "lean_declaration": "IUT.PaperIII.Corollary312.conclusion_iff_constantForm",
+    "covers": "the 'i.e.' clause of the statement, page 174",
+    "not_covered": "The construction of −|log(Θ)| and −|log(q)| from initial Θ-data, the hull, the possible images, and every step of the proof.",
+    "statement_status": "STATEMENT_FORMALIZED",
+    "proof_status": "CONDITIONALLY_VERIFIED",
+    "obligations": [
+      "The field 0 < absLogQ stands for '|log(q)| > 0 is easily computed' (page 174), not proved in this project."
+    ],
+    "ambiguities": []
+  },
+  "IUT3.Cor3_12.Reduction.frag.inequality_of_nonneg": {
+    "kind": "fragment",
+    "parent": "IUT3.Cor3_12.Reduction",
+    "source": {
+      "paper": "Inter-universal Teichmuller Theory III",
+      "pdf_pages": "page 174",
+      "pages_read": "rendered and checked: page 174"
+    },
+    "content": "For given numbers, 0 ≤ negLogTheta implies −absLogQ ≤ negLogTheta.",
+    "explicit_hypotheses": [
+      "v : PilotLogVolumes, a structure of two given numbers: negLogTheta : EReal with negLogTheta ≠ ⊥, and absLogQ : ℝ with 0 < absLogQ",
+      "h : 0 ≤ negLogTheta"
+    ],
+    "implicit_hypotheses": [],
+    "conclusion": "((−absLogQ : ℝ) : EReal) ≤ negLogTheta",
+    "definitions_required": [],
+    "results_used": [],
+    "external_dependencies": [],
+    "lean_declaration": "IUT.PaperIII.Corollary312.inequality_of_nonneg",
+    "covers": "the first sentence of the proof (the reduction to −|log(Θ)| < 0), page 174",
+    "not_covered": "Finiteness of −|log(Θ)| (page 175, compactness), the restriction to images interpretable as F^{⊩▶}-prime-strips, and all objects.",
+    "statement_status": "STATEMENT_FORMALIZED",
+    "proof_status": "CONDITIONALLY_VERIFIED",
+    "obligations": [
+      "The field 0 < absLogQ stands for '|log(q)| > 0 is easily computed' (page 174), not proved in this project."
+    ],
+    "ambiguities": []
+  },
+  "IUT3.Cor3_12.StepXI.f.frag.stepXIf_inclusion_iff_inequality": {
+    "kind": "fragment",
+    "parent": "IUT3.Cor3_12.StepXI.f",
+    "source": {
+      "paper": "Inter-universal Teichmuller Theory III",
+      "pdf_pages": "pages 183, 184",
+      "pages_read": "rendered and checked: pages 183, 184"
+    },
+    "content": "For given numbers, −absLogQ ∈ {λ ∈ ℝ | λ ≤ negLogTheta} if and only if −absLogQ ≤ negLogTheta; proved by Iff.rfl, since the set is defined by that inequality.",
+    "explicit_hypotheses": [
+      "v : PilotLogVolumes, a structure of two given numbers: negLogTheta : EReal with negLogTheta ≠ ⊥, and absLogQ : ℝ with 0 < absLogQ"
+    ],
+    "implicit_hypotheses": [],
+    "conclusion": "-absLogQ ∈ possibleLogVolumes v ↔ ((−absLogQ : ℝ) : EReal) ≤ negLogTheta",
+    "definitions_required": [],
+    "results_used": [],
+    "external_dependencies": [],
+    "lean_declaration": "IUT.PaperIII.Corollary312.stepXIf_inclusion_iff_inequality",
+    "covers": "the last sentence of (xi-f), page 184: the passage from the inclusion to the inequality",
+    "not_covered": "The inclusion itself, which is the whole content of Steps (xi-a) to (xi-f); finiteness.",
+    "statement_status": "STATEMENT_FORMALIZED",
+    "proof_status": "CONDITIONALLY_VERIFIED",
+    "obligations": [
+      "The field 0 < absLogQ stands for '|log(q)| > 0 is easily computed' (page 174), not proved in this project."
+    ],
+    "ambiguities": []
+  },
+  "IUT3.Rem3_9_5.ii.frag.eq_sInter": {
+    "kind": "fragment",
+    "parent": "IUT3.Rem3_9_5.ii",
+    "source": {
+      "paper": "Inter-universal Teichmuller Theory III",
+      "pdf_pages": "page 127",
+      "pages_read": "rendered and checked: page 127"
+    },
+    "content": "For arbitrary families 𝓟, 𝓗 of subsets of a type X and a map φ with 𝓗 ⊆ 𝓟, φ(𝓟) ⊆ 𝓗, (P1), (P2), (P3), one has φ(P) = ⋂{H ∈ 𝓗 | P ⊆ H} for every P ∈ 𝓟.",
+    "explicit_hypotheses": [
+      "h : IsHullMap 𝓟 𝓗 φ, i.e. 𝓗 ⊆ 𝓟; ∀ P ∈ 𝓟, φ P ∈ 𝓗; (P1) ∀ H ∈ 𝓗, φ H = H; (P2) ∀ P ∈ 𝓟, P ⊆ φ P; (P3) monotone on 𝓟",
+      "hP : P ∈ 𝓟"
+    ],
+    "implicit_hypotheses": [],
+    "conclusion": "φ P = ⋂₀ {H | H ∈ 𝓗 ∧ P ⊆ H}",
+    "definitions_required": [],
+    "results_used": [],
+    "external_dependencies": [],
+    "lean_declaration": "IUT.PaperIII.Remark3_9_5.IsHullMap.eq_sInter",
+    "covers": "the display φ(P) = ⋂_{ℍ∋H⊇P} H of Rem 3.9.5 (ii), page 127",
+    "not_covered": "Tensor packets, direct product regions and hulls themselves; that the hull map satisfies the clauses; log-volumes. No hypothesis on intersections is used.",
+    "statement_status": "STATEMENT_FORMALIZED",
+    "proof_status": "KERNEL_VERIFIED",
+    "obligations": [],
+    "ambiguities": []
+  },
+  "IUT3.Rem3_9_5.ii.frag.unique": {
+    "kind": "fragment",
+    "parent": "IUT3.Rem3_9_5.ii",
+    "source": {
+      "paper": "Inter-universal Teichmuller Theory III",
+      "pdf_pages": "page 127",
+      "pages_read": "rendered and checked: page 127"
+    },
+    "content": "For arbitrary families 𝓟, 𝓗, two maps satisfying IsHullMap agree on 𝓟.",
+    "explicit_hypotheses": [
+      "hφ : IsHullMap 𝓟 𝓗 φ",
+      "hψ : IsHullMap 𝓟 𝓗 ψ",
+      "hP : P ∈ 𝓟"
+    ],
+    "implicit_hypotheses": [],
+    "conclusion": "φ P = ψ P",
+    "definitions_required": [],
+    "results_used": [],
+    "external_dependencies": [],
+    "lean_declaration": "IUT.PaperIII.Remark3_9_5.IsHullMap.unique",
+    "covers": "'may be characterized uniquely by the following properties', Rem 3.9.5 (ii), page 127",
+    "not_covered": "Existence of the hull map for actual tensor packets; all non-order-theoretic content.",
+    "statement_status": "STATEMENT_FORMALIZED",
+    "proof_status": "KERNEL_VERIFIED",
+    "obligations": [],
+    "ambiguities": []
+  },
+  "IUT3.Rem3_9_5.ii.frag.isHullMap_sInter": {
+    "kind": "fragment",
+    "parent": "IUT3.Rem3_9_5.ii",
+    "source": {
+      "paper": "Inter-universal Teichmuller Theory III",
+      "pdf_pages": "page 127",
+      "pages_read": "rendered and checked: page 127"
+    },
+    "content": "For arbitrary families with 𝓗 ⊆ 𝓟 such that, for each P ∈ 𝓟, ⋂{H ∈ 𝓗 | P ⊆ H} ∈ 𝓗, the map P ↦ ⋂{H ∈ 𝓗 | P ⊆ H} satisfies IsHullMap.",
+    "explicit_hypotheses": [
+      "hsub : 𝓗 ⊆ 𝓟",
+      "hcl : ∀ P ∈ 𝓟, ⋂₀ {H | H ∈ 𝓗 ∧ P ⊆ H} ∈ 𝓗"
+    ],
+    "implicit_hypotheses": [],
+    "conclusion": "IsHullMap 𝓟 𝓗 (fun P => ⋂₀ {H | H ∈ 𝓗 ∧ P ⊆ H})",
+    "definitions_required": [],
+    "results_used": [],
+    "external_dependencies": [],
+    "lean_declaration": "IUT.PaperIII.Remark3_9_5.isHullMap_sInter",
+    "covers": "the existence part of Rem 3.9.5 (ii), page 127, given the closure claim",
+    "not_covered": "The closure claim itself for actual hulls; the finite log-volume condition, which the paper attaches to the intersection and which is not modeled.",
+    "statement_status": "STATEMENT_FORMALIZED",
+    "proof_status": "CONDITIONALLY_VERIFIED",
+    "obligations": [
+      "hcl stands for the claim of page 127 that an intersection of hulls which has finite log-volume is a hull ('as is easily verified'), not proved for actual hulls in this project."
+    ],
+    "ambiguities": []
+  },
+  "IUT3.Cor3_12.Statement.frag.logVolume": {
+    "kind": "fragment",
+    "parent": "IUT3.Cor3_12.Statement",
+    "source": {
+      "paper": "Inter-universal Teichmuller Theory III",
+      "pdf_pages": "pages 115 to 117, 127, 173 to 175, 181 to 184",
+      "pages_read": "rendered and checked: pages 115 to 117, 127, 173 to 175, 181 to 184; text: page 182"
+    },
+    "content": "logVolume μ S := ENNReal.log (μ S) for a measure μ on a measurable space X and a set S (value −∞ when μ S = 0, +∞ when μ S = ∞), with lemmas: logVolume_mono (S ⊆ T ⇒ logVolume μ S ≤ logVolume μ T); logVolume_eq_bot_iff (= ⊥ ↔ μ S = 0); logVolume_eq_top_iff (= ⊤ ↔ μ S = ⊤); logVolume_finite_iff (≠ ⊥ ∧ ≠ ⊤ ↔ μ S ≠ 0 ∧ μ S ≠ ⊤); logVolume_neg_iff (< 0 ↔ μ S < 1).",
+    "explicit_hypotheses": [
+      "μ : Measure X",
+      "S, T : Set X (and h : S ⊆ T for logVolume_mono)"
+    ],
+    "implicit_hypotheses": [],
+    "conclusion": "Definition and the five stated properties of the log-volume of an arbitrary measure.",
+    "definitions_required": [],
+    "results_used": [],
+    "external_dependencies": [],
+    "lean_declaration": "IUT.PaperIII.Corollary312.logVolume",
+    "covers": "'log-volume' as the natural logarithm of a measure (Prop 3.9 (i), pages 115 to 116; Rem 3.1.1 (iv), page 97, for the convention 'log' of a measure)",
+    "not_covered": "The normalizations of Prop 3.9 (i) (integral structures of log-volume 0, the p_v and e scaling rules) and the weighted sums of Rem 3.1.1; the measure is arbitrary. Also records logVolume_mono, logVolume_eq_bot_iff, logVolume_eq_top_iff, logVolume_finite_iff, logVolume_neg_iff under this one record.",
+    "statement_status": "STATEMENT_FORMALIZED",
+    "proof_status": "NOT_EXTRACTED",
+    "obligations": [],
+    "ambiguities": [],
+    "lemmas": [
+      "IUT.PaperIII.Corollary312.logVolume_mono",
+      "IUT.PaperIII.Corollary312.logVolume_eq_bot_iff",
+      "IUT.PaperIII.Corollary312.logVolume_eq_top_iff",
+      "IUT.PaperIII.Corollary312.logVolume_finite_iff",
+      "IUT.PaperIII.Corollary312.logVolume_neg_iff"
+    ]
+  },
+  "IUT3.Cor3_12.Statement.frag.ComparisonSetting": {
+    "kind": "fragment",
+    "parent": "IUT3.Cor3_12.Statement",
+    "source": {
+      "paper": "Inter-universal Teichmuller Theory III",
+      "pdf_pages": "pages 115 to 117, 127, 173 to 175, 181 to 184",
+      "pages_read": "rendered and checked: pages 115 to 117, 127, 173 to 175, 181 to 184; text: page 182"
+    },
+    "content": "Structure ComparisonSetting X ι: a measure μ on X, families hullDomain (ℙ) and hulls (ℍ) of subsets, a map hull with IsHullMap hullDomain hulls hull ((P1) to (P3) and ℍ ⊆ ℙ, φ(ℙ) ⊆ ℍ), a q-pilot region qPilot, possible images image : ι → Set X, and union_mem : (⋃ i, image i) ∈ hullDomain. Derived: unionImages, hullOfUnion = hull unionImages, thetaLogVolume = logVolume μ hullOfUnion (named −|log(Θ)|), qLogVolume = logVolume μ qPilot (named −|log(q)|), and image_subset_hullOfUnion.",
+    "explicit_hypotheses": [
+      "X : Type with MeasurableSpace",
+      "ι : Type"
+    ],
+    "implicit_hypotheses": [],
+    "conclusion": "A typed record of data; no field relates the q-pilot region to the possible images.",
+    "definitions_required": [],
+    "results_used": [],
+    "external_dependencies": [],
+    "lean_declaration": "IUT.PaperIII.Corollary312.ComparisonSetting",
+    "covers": "the objects named in the statement on pages 173 and 174 (hull of the union of possible images, q-pilot region, log-volume), as abstract inputs. Abstract interface, not the papers' objects: every region, the measure, the hull map and the family of possible images are inputs; nothing is constructed from initial Θ-data, Hodge theaters, the log-theta-lattice or Theorem 3.11.",
+    "not_covered": "Abstract interface, not the papers' objects: every region, the measure, the hull map and the family of possible images are inputs; nothing is constructed from initial Θ-data, Hodge theaters, the log-theta-lattice or Theorem 3.11. The construction of the regions, the measure and the hull from initial Θ-data and Theorem 3.11 (all are inputs). The sum over places v_Q ∈ V_Q and the weights of Rem 3.1.1 (ii) to (iv), with the support condition of Prop 3.9 (iii), page 117. The procession structure (packets as tensor products over j+1 labels); only an equal-weight average over an arbitrary finite index type is typed, and the choice between F*_l (pages 173, 181) and |F_l| is not made. The identification of the two sides through the Θ^{×μ}_LGP-link (Step (xi-a)) and the permutation symmetry 0,◦U ≅ 1,◦U (Step (xi-b), page 181): both regions are placed in one space with one measure by the typing. Tensor packets, determinants and the tensor power det_{⊗M} of Step (xi-d), page 183. The indeterminacies: the family of possible images is arbitrary; its generation by (Ind1), (Ind2), (Ind3), the invariance of log-volume under (Ind1), (Ind2), and the inequality from (Ind3) (Step (x), page 181) are not stated. The interpretation choice that the union of the possible images lies in the domain of the hull map (field union_mem); Rem 3.9.5 (ii), page 127, states (P1) to (P3) on direct product regions.",
+    "statement_status": "STATEMENT_FORMALIZED",
+    "proof_status": "NOT_EXTRACTED",
+    "obligations": [],
+    "ambiguities": [],
+    "scope": "Abstract interface, not the papers' objects: every region, the measure, the hull map and the family of possible images are inputs; nothing is constructed from initial Θ-data, Hodge theaters, the log-theta-lattice or Theorem 3.11."
+  },
+  "IUT3.Cor3_12.Statement.frag.Containment": {
+    "kind": "fragment",
+    "parent": "IUT3.Cor3_12.Statement",
+    "source": {
+      "paper": "Inter-universal Teichmuller Theory III",
+      "pdf_pages": "pages 115 to 117, 127, 173 to 175, 181 to 184",
+      "pages_read": "rendered and checked: pages 115 to 117, 127, 173 to 175, 181 to 184; text: page 182"
+    },
+    "content": "Containment S :≡ S.qPilot ⊆ S.hullOfUnion (region form of the union-level comparison). With containment_iff_forall_hull: Containment ↔ every hull containing all possible images contains the q-pilot region.",
+    "explicit_hypotheses": [
+      "S : ComparisonSetting X ι (an arbitrary setting: measurable space X, index type ι)"
+    ],
+    "implicit_hypotheses": [],
+    "conclusion": "A proposition on a setting; containment_iff_forall_hull is proved from IsHullMap.eq_sInter.",
+    "definitions_required": [],
+    "results_used": [],
+    "external_dependencies": [],
+    "lean_declaration": "IUT.PaperIII.Corollary312.ComparisonSetting.Containment",
+    "covers": "a region-level sufficient condition for the inequality of page 184; not stated by the text (Steps (xi-c), (xi-d), pages 182 and 183, say 'linked/related')",
+    "not_covered": "Whether the paper's regions satisfy it; it is not asserted on pages 182 to 184.",
+    "statement_status": "STATEMENT_FORMALIZED",
+    "proof_status": "NOT_EXTRACTED",
+    "obligations": [],
+    "ambiguities": [],
+    "lemmas": [
+      "IUT.PaperIII.Corollary312.ComparisonSetting.containment_iff_forall_hull"
+    ]
+  },
+  "IUT3.Cor3_12.Statement.frag.LogVolumeComparison": {
+    "kind": "fragment",
+    "parent": "IUT3.Cor3_12.Statement",
+    "source": {
+      "paper": "Inter-universal Teichmuller Theory III",
+      "pdf_pages": "pages 115 to 117, 127, 173 to 175, 181 to 184",
+      "pages_read": "rendered and checked: pages 115 to 117, 127, 173 to 175, 181 to 184; text: page 182"
+    },
+    "content": "LogVolumeComparison S :≡ S.qLogVolume ≤ S.thetaLogVolume, the union-level comparison in numerical form: −|log(q)| ≤ −|log(Θ)|.",
+    "explicit_hypotheses": [
+      "S : ComparisonSetting X ι (an arbitrary setting: measurable space X, index type ι)"
+    ],
+    "implicit_hypotheses": [],
+    "conclusion": "A proposition on a setting (a definition; nothing proved).",
+    "definitions_required": [],
+    "results_used": [],
+    "external_dependencies": [],
+    "lean_declaration": "IUT.PaperIII.Corollary312.ComparisonSetting.LogVolumeComparison",
+    "covers": "the inclusion −|log(q)| ∈ R_{≤−|log(Θ)|} of Step (xi-f), page 184, i.e. the inequality conjunct (I)",
+    "not_covered": "Its derivation (Theorem 3.11, Steps (i) to (xi-e)); finiteness.",
+    "statement_status": "STATEMENT_FORMALIZED",
+    "proof_status": "NOT_EXTRACTED",
+    "obligations": [],
+    "ambiguities": []
+  },
+  "IUT3.Cor3_12.StepXI.f.frag.logVolumeComparison_of_containment": {
+    "kind": "fragment",
+    "parent": "IUT3.Cor3_12.StepXI.f",
+    "source": {
+      "paper": "Inter-universal Teichmuller Theory III",
+      "pdf_pages": "pages 115 to 117, 127, 173 to 175, 181 to 184",
+      "pages_read": "rendered and checked: pages 115 to 117, 127, 173 to 175, 181 to 184; text: page 182"
+    },
+    "content": "For any setting, Containment implies LogVolumeComparison, by monotonicity of log-volume.",
+    "explicit_hypotheses": [
+      "S : ComparisonSetting X ι (an arbitrary setting: measurable space X, index type ι)",
+      "h : S.Containment"
+    ],
+    "implicit_hypotheses": [],
+    "conclusion": "S.LogVolumeComparison",
+    "definitions_required": [],
+    "results_used": [],
+    "external_dependencies": [],
+    "lean_declaration": "IUT.PaperIII.Corollary312.ComparisonSetting.logVolumeComparison_of_containment",
+    "covers": "the passage from a region-level comparison to the numerical one (pages 183, 184), in the abstract",
+    "not_covered": "The containment itself.",
+    "statement_status": "STATEMENT_FORMALIZED",
+    "proof_status": "KERNEL_VERIFIED",
+    "obligations": [],
+    "ambiguities": []
+  },
+  "IUT3.Cor3_12.Statement.frag.conclusion_iff": {
+    "kind": "fragment",
+    "parent": "IUT3.Cor3_12.Statement",
+    "source": {
+      "paper": "Inter-universal Teichmuller Theory III",
+      "pdf_pages": "pages 115 to 117, 127, 173 to 175, 181 to 184",
+      "pages_read": "rendered and checked: pages 115 to 117, 127, 173 to 175, 181 to 184; text: page 182"
+    },
+    "content": "For a setting with 0 < μ qPilot < 1 and μ hullOfUnion ≠ 0, the conclusion of Corollary 3.12 for the numbers toPilotLogVolumes (negLogTheta = thetaLogVolume, absLogQ = −qLogVolume) holds iff μ hullOfUnion ≠ ⊤ and LogVolumeComparison. Uses PilotLogVolumes.ofLogVolumes and PilotLogVolumes.conclusion_ofLogVolumes_iff.",
+    "explicit_hypotheses": [
+      "S : ComparisonSetting X ι (an arbitrary setting: measurable space X, index type ι)",
+      "hq0 : S.μ S.qPilot ≠ 0",
+      "hq1 : S.μ S.qPilot < 1",
+      "hΘ : S.μ S.hullOfUnion ≠ 0"
+    ],
+    "implicit_hypotheses": [],
+    "conclusion": "Conclusion (S.toPilotLogVolumes hq0 hq1 hΘ) ↔ S.μ S.hullOfUnion ≠ ⊤ ∧ S.LogVolumeComparison",
+    "definitions_required": [],
+    "results_used": [],
+    "external_dependencies": [],
+    "lean_declaration": "IUT.PaperIII.Corollary312.ComparisonSetting.conclusion_iff",
+    "covers": "the statement on pages 173 and 174: the conclusion is finiteness together with the numerical comparison",
+    "not_covered": "All objects; this is an unfolding of definitions on an abstract setting.",
+    "statement_status": "STATEMENT_FORMALIZED",
+    "proof_status": "CONDITIONALLY_VERIFIED",
+    "obligations": [
+      "hq0, hq1 stand for '|log(q)| > 0 is easily computed' (page 174) once the log-volume is log μ; not proved for the q-pilot region of the paper."
+    ],
+    "ambiguities": [],
+    "lemmas": [
+      "IUT.PaperIII.Corollary312.PilotLogVolumes.ofLogVolumes",
+      "IUT.PaperIII.Corollary312.PilotLogVolumes.conclusion_ofLogVolumes_iff",
+      "IUT.PaperIII.Corollary312.ComparisonSetting.toPilotLogVolumes"
+    ]
+  },
+  "IUT3.Cor3_12.Statement.frag.conclusion_of_logVolumeComparison": {
+    "kind": "fragment",
+    "parent": "IUT3.Cor3_12.Statement",
+    "source": {
+      "paper": "Inter-universal Teichmuller Theory III",
+      "pdf_pages": "pages 115 to 117, 127, 173 to 175, 181 to 184",
+      "pages_read": "rendered and checked: pages 115 to 117, 127, 173 to 175, 181 to 184; text: page 182"
+    },
+    "content": "For a setting, finiteness of the hull of the union and LogVolumeComparison give the conclusion of Corollary 3.12 for the numbers defined from the setting.",
+    "explicit_hypotheses": [
+      "S : ComparisonSetting X ι (an arbitrary setting: measurable space X, index type ι)",
+      "hq0 : S.μ S.qPilot ≠ 0",
+      "hq1 : S.μ S.qPilot < 1",
+      "hΘ : S.μ S.hullOfUnion ≠ 0",
+      "hfin : S.μ S.hullOfUnion ≠ ⊤",
+      "hcomp : S.LogVolumeComparison"
+    ],
+    "implicit_hypotheses": [],
+    "conclusion": "Conclusion (S.toPilotLogVolumes hq0 hq1 hΘ)",
+    "definitions_required": [],
+    "results_used": [],
+    "external_dependencies": [],
+    "lean_declaration": "IUT.PaperIII.Corollary312.ComparisonSetting.conclusion_of_logVolumeComparison",
+    "covers": "the statement, pages 173 and 174, given its two conjuncts as hypotheses",
+    "not_covered": "Both conjuncts are hypotheses: the lemma proves nothing about the paper's numbers. The construction of the regions, the measure and the hull from initial Θ-data and Theorem 3.11 (all are inputs). The sum over places v_Q ∈ V_Q and the weights of Rem 3.1.1 (ii) to (iv), with the support condition of Prop 3.9 (iii), page 117. The procession structure (packets as tensor products over j+1 labels); only an equal-weight average over an arbitrary finite index type is typed, and the choice between F*_l (pages 173, 181) and |F_l| is not made. The identification of the two sides through the Θ^{×μ}_LGP-link (Step (xi-a)) and the permutation symmetry 0,◦U ≅ 1,◦U (Step (xi-b), page 181): both regions are placed in one space with one measure by the typing. Tensor packets, determinants and the tensor power det_{⊗M} of Step (xi-d), page 183. The indeterminacies: the family of possible images is arbitrary; its generation by (Ind1), (Ind2), (Ind3), the invariance of log-volume under (Ind1), (Ind2), and the inequality from (Ind3) (Step (x), page 181) are not stated. The interpretation choice that the union of the possible images lies in the domain of the hull map (field union_mem); Rem 3.9.5 (ii), page 127, states (P1) to (P3) on direct product regions.",
+    "statement_status": "STATEMENT_FORMALIZED",
+    "proof_status": "CONDITIONALLY_VERIFIED",
+    "obligations": [
+      "hq0, hq1 stand for '|log(q)| > 0 is easily computed' (page 174) once the log-volume is log μ; not proved for the q-pilot region of the paper.",
+      "hfin (finite measure of the hull of the union) stands for the finiteness conjunct, argued on page 175 from '[easily verified] compactness' of the 1,◦U_{j,v_Q}; not proved.",
+      "hcomp (LogVolumeComparison) is the inequality conjunct (I) itself, asserted by Step (xi-f), page 184; not proved.",
+      "The construction of the regions, the measure and the hull from initial Θ-data and Theorem 3.11 (all are inputs).",
+      "The sum over places v_Q ∈ V_Q and the weights of Rem 3.1.1 (ii) to (iv), with the support condition of Prop 3.9 (iii), page 117.",
+      "The procession structure (packets as tensor products over j+1 labels); only an equal-weight average over an arbitrary finite index type is typed, and the choice between F*_l (pages 173, 181) and |F_l| is not made.",
+      "The identification of the two sides through the Θ^{×μ}_LGP-link (Step (xi-a)) and the permutation symmetry 0,◦U ≅ 1,◦U (Step (xi-b), page 181): both regions are placed in one space with one measure by the typing.",
+      "Tensor packets, determinants and the tensor power det_{⊗M} of Step (xi-d), page 183.",
+      "The indeterminacies: the family of possible images is arbitrary; its generation by (Ind1), (Ind2), (Ind3), the invariance of log-volume under (Ind1), (Ind2), and the inequality from (Ind3) (Step (x), page 181) are not stated.",
+      "The interpretation choice that the union of the possible images lies in the domain of the hull map (field union_mem); Rem 3.9.5 (ii), page 127, states (P1) to (P3) on direct product regions."
+    ],
+    "ambiguities": []
+  },
+  "IUT3.Cor3_12.Statement.frag.conclusion_of_containment": {
+    "kind": "fragment",
+    "parent": "IUT3.Cor3_12.Statement",
+    "source": {
+      "paper": "Inter-universal Teichmuller Theory III",
+      "pdf_pages": "pages 115 to 117, 127, 173 to 175, 181 to 184",
+      "pages_read": "rendered and checked: pages 115 to 117, 127, 173 to 175, 181 to 184; text: page 182"
+    },
+    "content": "For a setting with 0 < μ qPilot < 1, finite measure of the hull of the union and Containment, the conclusion of Corollary 3.12 holds for the numbers defined from the setting (positivity of the hull's measure follows from containment).",
+    "explicit_hypotheses": [
+      "S : ComparisonSetting X ι (an arbitrary setting: measurable space X, index type ι)",
+      "hq0 : S.μ S.qPilot ≠ 0",
+      "hq1 : S.μ S.qPilot < 1",
+      "hfin : S.μ S.hullOfUnion ≠ ⊤",
+      "hcont : S.Containment"
+    ],
+    "implicit_hypotheses": [],
+    "conclusion": "Conclusion (S.toPilotLogVolumes hq0 hq1 _)",
+    "definitions_required": [],
+    "results_used": [],
+    "external_dependencies": [],
+    "lean_declaration": "IUT.PaperIII.Corollary312.ComparisonSetting.conclusion_of_containment",
+    "covers": "the statement, pages 173 and 174, from a region-level comparison",
+    "not_covered": "Abstract interface, not the papers' objects: every region, the measure, the hull map and the family of possible images are inputs; nothing is constructed from initial Θ-data, Hodge theaters, the log-theta-lattice or Theorem 3.11. The construction of the regions, the measure and the hull from initial Θ-data and Theorem 3.11 (all are inputs). The sum over places v_Q ∈ V_Q and the weights of Rem 3.1.1 (ii) to (iv), with the support condition of Prop 3.9 (iii), page 117. The procession structure (packets as tensor products over j+1 labels); only an equal-weight average over an arbitrary finite index type is typed, and the choice between F*_l (pages 173, 181) and |F_l| is not made. The identification of the two sides through the Θ^{×μ}_LGP-link (Step (xi-a)) and the permutation symmetry 0,◦U ≅ 1,◦U (Step (xi-b), page 181): both regions are placed in one space with one measure by the typing. Tensor packets, determinants and the tensor power det_{⊗M} of Step (xi-d), page 183. The indeterminacies: the family of possible images is arbitrary; its generation by (Ind1), (Ind2), (Ind3), the invariance of log-volume under (Ind1), (Ind2), and the inequality from (Ind3) (Step (x), page 181) are not stated. The interpretation choice that the union of the possible images lies in the domain of the hull map (field union_mem); Rem 3.9.5 (ii), page 127, states (P1) to (P3) on direct product regions.",
+    "statement_status": "STATEMENT_FORMALIZED",
+    "proof_status": "CONDITIONALLY_VERIFIED",
+    "obligations": [
+      "hcont (Containment: the q-pilot region lies in the hull of the union of the possible images) is the region form of the comparison; in the paper the content of Theorem 3.11 and Steps (i) to (xi); the text asserts only the numerical form (Step (xi-f), page 184); not proved.",
+      "hfin (finite measure of the hull of the union) stands for the finiteness conjunct, argued on page 175 from '[easily verified] compactness' of the 1,◦U_{j,v_Q}; not proved.",
+      "hq0, hq1 stand for '|log(q)| > 0 is easily computed' (page 174) once the log-volume is log μ; not proved for the q-pilot region of the paper.",
+      "The construction of the regions, the measure and the hull from initial Θ-data and Theorem 3.11 (all are inputs).",
+      "The sum over places v_Q ∈ V_Q and the weights of Rem 3.1.1 (ii) to (iv), with the support condition of Prop 3.9 (iii), page 117.",
+      "The procession structure (packets as tensor products over j+1 labels); only an equal-weight average over an arbitrary finite index type is typed, and the choice between F*_l (pages 173, 181) and |F_l| is not made.",
+      "The identification of the two sides through the Θ^{×μ}_LGP-link (Step (xi-a)) and the permutation symmetry 0,◦U ≅ 1,◦U (Step (xi-b), page 181): both regions are placed in one space with one measure by the typing.",
+      "Tensor packets, determinants and the tensor power det_{⊗M} of Step (xi-d), page 183.",
+      "The indeterminacies: the family of possible images is arbitrary; its generation by (Ind1), (Ind2), (Ind3), the invariance of log-volume under (Ind1), (Ind2), and the inequality from (Ind3) (Step (x), page 181) are not stated.",
+      "The interpretation choice that the union of the possible images lies in the domain of the hull map (field union_mem); Rem 3.9.5 (ii), page 127, states (P1) to (P3) on direct product regions."
+    ],
+    "ambiguities": []
+  },
+  "IUT3.Cor3_12.Statement.frag.conclusion_of_procContainment": {
+    "kind": "fragment",
+    "parent": "IUT3.Cor3_12.Statement",
+    "source": {
+      "paper": "Inter-universal Teichmuller Theory III",
+      "pdf_pages": "pages 115 to 117, 127, 173 to 175, 181 to 184",
+      "pages_read": "rendered and checked: pages 115 to 117, 127, 173 to 175, 181 to 184; text: page 182"
+    },
+    "content": "For a finite family (S j)_{j : J} of settings over one index type ι, with average v = (1/|J|)·Σ_j v_j: if each q-pilot component has measure in (0, ∞), the averaged q-side log-volume is negative, each hull component has positive and finite measure, and ProcContainment (Containment for every j), then the conclusion holds for the averaged numbers procPilotLogVolumes. Also records average, average_mono, average_ne_bot, average_ne_top, procThetaLogVolume, procQLogVolume, ProcContainment, ProcLogVolumeComparison, procLogVolumeComparison_of_procContainment.",
+    "explicit_hypotheses": [
+      "J : Type with Fintype",
+      "X : J → Type with MeasurableSpace",
+      "S : ∀ j, ComparisonSetting (X j) ι",
+      "hq : ∀ j, (S j).μ (S j).qPilot ≠ 0 ∧ (S j).μ (S j).qPilot ≠ ⊤",
+      "hneg : procQLogVolume S < 0",
+      "hΘ : ∀ j, (S j).μ (S j).hullOfUnion ≠ 0",
+      "hfin : ∀ j, (S j).μ (S j).hullOfUnion ≠ ⊤",
+      "hcont : ProcContainment S"
+    ],
+    "implicit_hypotheses": [],
+    "conclusion": "Conclusion (procPilotLogVolumes S hq hneg hΘ)",
+    "definitions_required": [],
+    "results_used": [],
+    "external_dependencies": [],
+    "lean_declaration": "IUT.PaperIII.Corollary312.conclusion_of_procContainment",
+    "covers": "the procession-normalization of Prop 3.9 (i), page 116, and the statement, pages 173 and 174, as an equal-weight average over an arbitrary finite label type",
+    "not_covered": "The index set is arbitrary (F*_l versus |F_l| not chosen); no sum over places. The construction of the regions, the measure and the hull from initial Θ-data and Theorem 3.11 (all are inputs). The sum over places v_Q ∈ V_Q and the weights of Rem 3.1.1 (ii) to (iv), with the support condition of Prop 3.9 (iii), page 117. The procession structure (packets as tensor products over j+1 labels); only an equal-weight average over an arbitrary finite index type is typed, and the choice between F*_l (pages 173, 181) and |F_l| is not made. The identification of the two sides through the Θ^{×μ}_LGP-link (Step (xi-a)) and the permutation symmetry 0,◦U ≅ 1,◦U (Step (xi-b), page 181): both regions are placed in one space with one measure by the typing. Tensor packets, determinants and the tensor power det_{⊗M} of Step (xi-d), page 183. The indeterminacies: the family of possible images is arbitrary; its generation by (Ind1), (Ind2), (Ind3), the invariance of log-volume under (Ind1), (Ind2), and the inequality from (Ind3) (Step (x), page 181) are not stated. The interpretation choice that the union of the possible images lies in the domain of the hull map (field union_mem); Rem 3.9.5 (ii), page 127, states (P1) to (P3) on direct product regions.",
+    "statement_status": "STATEMENT_FORMALIZED",
+    "proof_status": "CONDITIONALLY_VERIFIED",
+    "obligations": [
+      "hcont: componentwise containment, the region form of the comparison; not proved (see conclusion_of_containment).",
+      "hfin: finiteness of each hull component, page 175; not proved.",
+      "hq, hneg: |log(q)| > 0 and finiteness of the q side (page 174); not proved.",
+      "The construction of the regions, the measure and the hull from initial Θ-data and Theorem 3.11 (all are inputs).",
+      "The sum over places v_Q ∈ V_Q and the weights of Rem 3.1.1 (ii) to (iv), with the support condition of Prop 3.9 (iii), page 117.",
+      "The procession structure (packets as tensor products over j+1 labels); only an equal-weight average over an arbitrary finite index type is typed, and the choice between F*_l (pages 173, 181) and |F_l| is not made.",
+      "The identification of the two sides through the Θ^{×μ}_LGP-link (Step (xi-a)) and the permutation symmetry 0,◦U ≅ 1,◦U (Step (xi-b), page 181): both regions are placed in one space with one measure by the typing.",
+      "Tensor packets, determinants and the tensor power det_{⊗M} of Step (xi-d), page 183.",
+      "The indeterminacies: the family of possible images is arbitrary; its generation by (Ind1), (Ind2), (Ind3), the invariance of log-volume under (Ind1), (Ind2), and the inequality from (Ind3) (Step (x), page 181) are not stated.",
+      "The interpretation choice that the union of the possible images lies in the domain of the hull map (field union_mem); Rem 3.9.5 (ii), page 127, states (P1) to (P3) on direct product regions."
+    ],
+    "ambiguities": [],
+    "lemmas": [
+      "IUT.PaperIII.Corollary312.average",
+      "IUT.PaperIII.Corollary312.average_mono",
+      "IUT.PaperIII.Corollary312.average_ne_bot",
+      "IUT.PaperIII.Corollary312.average_ne_top",
+      "IUT.PaperIII.Corollary312.procThetaLogVolume",
+      "IUT.PaperIII.Corollary312.procQLogVolume",
+      "IUT.PaperIII.Corollary312.ProcContainment",
+      "IUT.PaperIII.Corollary312.ProcLogVolumeComparison",
+      "IUT.PaperIII.Corollary312.procLogVolumeComparison_of_procContainment",
+      "IUT.PaperIII.Corollary312.procPilotLogVolumes"
+    ]
+  },
+  "IUT3.Cor3_12.Statement.frag.example_bridge_hypotheses": {
+    "kind": "fragment",
+    "parent": "IUT3.Cor3_12.Statement",
+    "source": {
+      "paper": "Inter-universal Teichmuller Theory III",
+      "pdf_pages": "pages 115 to 117, 127, 173 to 175, 181 to 184",
+      "pages_read": "rendered and checked: pages 115 to 117, 127, 173 to 175, 181 to 184; text: page 182"
+    },
+    "content": "On ℝ with Lebesgue measure, interval hull P ↦ [inf P, sup P] on bounded nonempty sets, possible images [0, 1/8] and [3/8, 1/2] (indexed by Bool), and q-pilot region [0, 1/2]: 0 < μ q < 1, the hull of the union [0, 1/2] has finite positive measure, and Containment holds. With example_conclusion: some PilotLogVolumes satisfies Conclusion.",
+    "explicit_hypotheses": [
+      "none (a closed statement about a concrete setting on ℝ)"
+    ],
+    "implicit_hypotheses": [],
+    "conclusion": "All hypotheses of conclusion_of_containment hold in one concrete setting.",
+    "definitions_required": [],
+    "results_used": [],
+    "external_dependencies": [],
+    "lean_declaration": "IUT.PaperIII.Corollary312.IntervalExample.example_bridge_hypotheses",
+    "covers": "nonvacuity of the interface for the statement, pages 173 and 174",
+    "not_covered": "Says nothing about the paper's objects.",
+    "statement_status": "STATEMENT_FORMALIZED",
+    "proof_status": "KERNEL_VERIFIED",
+    "obligations": [],
+    "ambiguities": [],
+    "lemmas": [
+      "IUT.PaperIII.Corollary312.IntervalExample.example_conclusion",
+      "IUT.PaperIII.Corollary312.IntervalExample.isHullMap",
+      "IUT.PaperIII.Corollary312.IntervalExample.setting"
+    ]
+  },
+  "IUT3.Cor3_12.Statement.frag.example_comparison_fails": {
+    "kind": "fragment",
+    "parent": "IUT3.Cor3_12.Statement",
+    "source": {
+      "paper": "Inter-universal Teichmuller Theory III",
+      "pdf_pages": "pages 115 to 117, 127, 173 to 175, 181 to 184",
+      "pages_read": "rendered and checked: pages 115 to 117, 127, 173 to 175, 181 to 184; text: page 182"
+    },
+    "content": "Same setting with q-pilot region [0, 3/4]: all side hypotheses hold, but LogVolumeComparison and Containment fail and the conclusion is false for the numbers so defined.",
+    "explicit_hypotheses": [
+      "none (a closed statement about a concrete setting on ℝ)"
+    ],
+    "implicit_hypotheses": [],
+    "conclusion": "The comparison is an extra condition, not implied by the other hypotheses.",
+    "definitions_required": [],
+    "results_used": [],
+    "external_dependencies": [],
+    "lean_declaration": "IUT.PaperIII.Corollary312.IntervalExample.example_comparison_fails",
+    "covers": "nonvacuity of the interface for the statement, pages 173 and 174",
+    "not_covered": "Says nothing about the paper's objects.",
+    "statement_status": "STATEMENT_FORMALIZED",
+    "proof_status": "KERNEL_VERIFIED",
+    "obligations": [],
+    "ambiguities": []
+  },
+  "IUT3.Cor3_12.Statement.frag.example_union_matters": {
+    "kind": "fragment",
+    "parent": "IUT3.Cor3_12.Statement",
+    "source": {
+      "paper": "Inter-universal Teichmuller Theory III",
+      "pdf_pages": "pages 115 to 117, 127, 173 to 175, 181 to 184",
+      "pages_read": "rendered and checked: pages 115 to 117, 127, 173 to 175, 181 to 184; text: page 182"
+    },
+    "content": "Same setting with q-pilot region [0, 1/2]: no single image's hull contains it, no single image satisfies the numerical comparison with its own hull, the union does not contain it, but the hull of the union does.",
+    "explicit_hypotheses": [
+      "none (a closed statement about a concrete setting on ℝ)"
+    ],
+    "implicit_hypotheses": [],
+    "conclusion": "Domination by a single image is not necessary; the hull of the union matters.",
+    "definitions_required": [],
+    "results_used": [],
+    "external_dependencies": [],
+    "lean_declaration": "IUT.PaperIII.Corollary312.IntervalExample.example_union_matters",
+    "covers": "nonvacuity of the interface for the statement, pages 173 and 174",
+    "not_covered": "Says nothing about the paper's objects.",
+    "statement_status": "STATEMENT_FORMALIZED",
+    "proof_status": "KERNEL_VERIFIED",
+    "obligations": [],
+    "ambiguities": []
+  },
+  "IUT3.Cor3_12.Statement.frag.thm1_10_final_of_cor312": {
+    "kind": "fragment",
+    "parent": "IUT4.Thm1_10.final",
+    "source": {
+      "paper": "Inter-universal Teichmuller Theory III and IV",
+      "pdf_pages": "III pages 173 to 174; IV page 23",
+      "pages_read": "III: rendered and checked: pages 173, 174; IV page 23 not read for this record (the constant is taken from IUT.PaperIV.Theorem1_10.constant, whose docstring cites IV page 23)"
+    },
+    "content": "For v : PilotLogVolumes and reals l, d, D, E, Q with 7 ≤ l, 1 ≤ d, 0 ≤ D, 0 ≤ E: if negLogTheta ≤ constant l d D E Q absLogQ · absLogQ (constant = the C_Θ of IV Thm 1.10) and the conclusion of Cor 3.12 holds, then (1/6)·Q ≤ (1 + 20·d/l)·D + 20·E.",
+    "explicit_hypotheses": [
+      "v : PilotLogVolumes (negLogTheta ≠ ⊥, 0 < absLogQ)",
+      "hl : 7 ≤ l",
+      "hd : 1 ≤ d",
+      "hD : 0 ≤ D",
+      "hE : 0 ≤ E",
+      "hbound : v.negLogTheta ≤ ((constant l d D E Q v.absLogQ * v.absLogQ : ℝ) : EReal)",
+      "hcor : Conclusion v"
+    ],
+    "implicit_hypotheses": [],
+    "conclusion": "1 / 6 * Q ≤ (1 + 20 * d / l) * D + 20 * E",
+    "definitions_required": [],
+    "results_used": [],
+    "external_dependencies": [],
+    "lean_declaration": "IUT.PaperIII.Corollary312.thm1_10_final_of_cor312",
+    "covers": "the passage from Cor 3.12 (III pages 173, 174) and the bound on −|log(Θ)| of IV Thm 1.10 to the final inequality of IV Thm 1.10, at the level of real numbers",
+    "not_covered": "Every object: the bound hbound (first assertion of IV Thm 1.10) and hcor (Cor 3.12) are hypotheses; the specialization of the real variables to the arithmetic quantities of IV is not made.",
+    "statement_status": "STATEMENT_FORMALIZED",
+    "proof_status": "CONDITIONALLY_VERIFIED",
+    "obligations": [
+      "hcor: the conclusion of III Corollary 3.12 (finiteness and the inequality); not proved.",
+      "hbound: the bound −|log(Θ)| ≤ C_Θ·|log(q)| asserted by IV Theorem 1.10; not proved.",
+      "0 < absLogQ: '|log(q)| > 0 is easily computed' (III page 174).",
+      "The parent record IUT4.Thm1_10.final is in data/curated/iut4.json and does not yet list this fragment."
     ],
     "ambiguities": []
   }

@@ -1,5 +1,6 @@
 import IUT
 import Challenge.Defs
+import Solution
 
 /-!
 # Declaration inventory of the built library
@@ -10,17 +11,19 @@ Run after `lake build` with
 
 Without the environment variable the JSON goes to standard output.
 
-For every constant stored in a module `IUT`, `IUT.*` or `Challenge.Defs` of the import
+For every constant stored in a module `IUT`, `IUT.*`, `Challenge.Defs` or `Solution` of the import
 closure it records: the name, the kind (theorem, definition, structure, class, instance,
 inductive, constructor, recursor, axiom, opaque, quotient), the module, whether the name is
 an internal detail (`Name.isInternalDetail`: auxiliary lemmas such as `_proof_1`, matchers,
 equation lemmas), the axioms it depends on (`Lean.collectAxioms`, the traversal behind
 `#print axioms`), and the project constants that its type and its value mention directly
-(`ConstantInfo.getUsedConstantsAsSet`). Internal constants are kept so that a reader can
-contract through them; `scripts/build_graph.py` does that.
+(`ConstantInfo.getUsedConstantsAsSet`), and, in the separate field `external_theorems`, the
+theorems outside the project (Mathlib, core and the other dependencies) that its type and its
+value mention directly, without internal auxiliary names. Internal constants are kept so that
+a reader can contract through them; `scripts/build_graph.py` does that.
 
-Only modules imported by `IUT.lean` are seen. A module that exists on disk but is not
-imported by the root is missing from the output.
+Only modules imported by `IUT.lean`, and the modules `Challenge.Defs` and `Solution`, are
+seen. A module that exists on disk but is not imported by the root is missing from the output.
 
 This file is a reporting script. It is not part of the library and nothing imports it.
 -/
@@ -31,7 +34,7 @@ namespace LeanDeclarations
 
 /-- Whether a module belongs to the project. -/
 def isProjectModule (m : Name) : Bool :=
-  m == `IUT || (`IUT).isPrefixOf m || m == `Challenge.Defs
+  m == `IUT || (`IUT).isPrefixOf m || m == `Challenge.Defs || m == `Solution
 
 /-- A short name for the kind of a constant. -/
 def kindOf (env : Environment) (ci : ConstantInfo) : String :=
@@ -66,14 +69,18 @@ open LeanDeclarations in
   for n in names do
     let some ci := env.find? n | continue
     let axioms ← collectAxioms n
-    let refs := (ci.getUsedConstantsAsSet.toArray.filter fun d => d != n && isProject d)
+    let used := ci.getUsedConstantsAsSet.toArray
+    let refs := used.filter fun d => d != n && isProject d
+    let external := used.filter fun d =>
+      !isProject d && !d.isInternalDetail && (env.find? d matches some (.thmInfo _))
     records := records.push <| Json.mkObj [
       ("name", toJson n.toString),
       ("kind", toJson (kindOf env ci)),
       ("module", toJson ((moduleOf n).getD .anonymous).toString),
       ("internal", toJson n.isInternalDetail),
       ("axioms", toJson ((axioms.map toString).qsort (· < ·))),
-      ("refs", toJson ((refs.map toString).qsort (· < ·)))]
+      ("refs", toJson ((refs.map toString).qsort (· < ·))),
+      ("external_theorems", toJson ((external.map toString).qsort (· < ·)))]
   let modules := (env.header.moduleNames.filter isProjectModule).map toString
   let out := Json.mkObj [
     ("modules", toJson (modules.qsort (· < ·))),

@@ -1,25 +1,39 @@
 #!/usr/bin/env python3
-"""Mechanical statement index for the four IUT papers.
+"""Statement index for the four IUT papers, in two stages.
 
-Usage: python3 scripts/extract_statements.py <dir-with-the-four-PDFs>
+Usage:
+  python3 scripts/extract_statements.py index <dir-with-the-four-PDFs> [--new-sources]
+  python3 scripts/extract_statements.py merge
 
-Reads the PDFs with `pdftotext -layout`, finds every numbered header
-(Definition, Proposition, Lemma, Theorem, Corollary, Example, Remark) and the lettered
-main results of the Introductions (Theorem A, Corollary C), and writes
+Stage `index` needs the PDFs (author's manuscripts, not redistributed here; see
+scripts/README.md for where to download them). It first checks the SHA-256 of each PDF
+against data/source_manifest.json and stops on a difference, unless --new-sources is given
+(then the manifest records the new files). It reads the PDFs with `pdftotext -layout`, finds
+every numbered header (Definition, Proposition, Lemma, Theorem, Corollary, Example, Remark)
+and the lettered main results of the Introductions (Theorem A, Corollary C), and writes
 
   data/source_manifest.json   file name, SHA-256, page count, dates, publication data
-  data/statements.json        one record per statement, curated records merged in
+  data/mechanical_index.json  one mechanical record per statement (no curated data)
   data/dependencies.json      citation edges found in the source text
   data/references.json        bibliography keys and how often each is cited
 
+Stage `merge` needs no PDF. It merges data/curated/*.json over data/mechanical_index.json
+and writes data/statements.json, then checks the records (scripts/records.py) and exits
+nonzero on an invalid record. Continuous integration reruns this stage and compares.
+
 The index is mechanical: it records where a statement is and what its text cites.
-It does not judge mathematical content. Hand-reviewed records live in
-data/curated/*.json and are merged over the mechanical record, so a rerun never loses
-them. No paper text is written to the output apart from statement titles.
+It does not judge mathematical content. No paper text is written to the output apart from
+statement titles.
 
 Status fields. A statement that only the mechanical pass has seen gets
 statement_status and proof_status NOT_EXTRACTED (its location is indexed, its content
 has not been extracted by a reader). Curated records set their own statuses.
+
+Pages. The mechanical span of a statement runs from its header to the next recognized header
+(or section heading), so it can include a page after the end of the statement. When a
+curated record gives its pages in `source` (`pages`, or else `pdf_pages`), `pdf_page` and
+`pdf_page_end` are that reviewed span, and the mechanical span is kept in
+`extraction_window`.
 """
 import hashlib
 import json
@@ -28,6 +42,8 @@ import subprocess
 import sys
 import unicodedata
 from pathlib import Path
+
+import records
 
 ROOT = Path(__file__).resolve().parent.parent
 PAPERS = {  # paper number -> (file name, citation key used by the other papers)
@@ -60,11 +76,6 @@ KINDS = {"Definition": "Def", "Proposition": "Prop", "Lemma": "Lem", "Theorem": 
 PLURALS = {"Definitions": "Definition", "Propositions": "Proposition", "Lemmas": "Lemma",
            "Theorems": "Theorem", "Corollaries": "Corollary", "Examples": "Example",
            "Remarks": "Remark"}
-STATUSES = {"NOT_EXTRACTED", "EXTRACTED", "INTERPRETATION_AMBIGUOUS", "LEAN_STATEMENT_DRAFT",
-            "STATEMENT_FORMALIZED", "STATEMENT_REVIEWED", "PROOF_IN_PROGRESS",
-            "BLOCKED_BY_MATHLIB", "BLOCKED_BY_EXTERNAL_THEOREM",
-            "BLOCKED_BY_MISSING_JUSTIFICATION", "CONDITIONALLY_VERIFIED", "KERNEL_VERIFIED",
-            "INDEPENDENTLY_CHECKED", "COUNTERMODEL_FOUND"}
 KIND_RE = "|".join(KINDS)
 NUM = r"\d+(?:\.\d+){1,2}"
 # A header is a line that starts with "Kind N.M." or "Kind N.M.K." followed by space or end.
@@ -85,6 +96,12 @@ ITEM = rf"(?:{NUM}|[A-Z]\b|\([ivx]+\))"
 PLURAL_CITE = re.compile(rf"(?:\[([A-Za-z0-9]+)\],?\s+)?({'|'.join(PLURALS)}) "
                          rf"({ITEM}(?:(?:,\s*|;\s*|\s+and\s+){ITEM})*)")
 BRACKET = re.compile(r"\[([A-Za-z][A-Za-z0-9-]*)\]")
+# A bibliography key followed only by a locator ("[Silv], Chapter VII, ", "[NerMod], §7.4, ",
+# "[Key], Chapter IV, the proof of "), at the end of the text before a citation: the citation
+# is a numbered result of that work.
+KEY_LOCATOR = re.compile(r"\[([A-Za-z][A-Za-z0-9-]*)\]"
+                         r"(?:,?\s*(?:Chapter|Ch\.|Section|Appendix|Part|§+)\s*[A-Za-z0-9.]+"
+                         r"|,?\s*the proof of|,|\s)*$")
 LIGATURES = {"ﬀ": "ff", "ﬁ": "fi", "ﬂ": "fl", "ﬃ": "ffi", "ﬄ": "ffl"}
 # Text allowed between two citations of one list, as in "[Key], Corollary 4.5, (iv); Remark 4.5.1".
 LIST_GAP = re.compile(r"^(?:,? ?\([ivxlcdm]+\)|,| |;|and|\d+\.\d+(?:\.\d+)?)*$")
@@ -184,6 +201,10 @@ def citations(text, paper, sid):
     hits.sort()
     out, last_key, last_end = [], None, 0
     for start, end, key, kind, numbers in hits:
+        if not key:
+            m = KEY_LOCATOR.search(text, max(0, start - 80), start)
+            if m and m.group(1) not in KEY_TO_PAPER:
+                key = m.group(1)
         # A citation with no key of its own continues the list of the previous one.
         inherited = None
         if not key and last_key and LIST_GAP.match(text[last_end:start]):
@@ -333,11 +354,23 @@ def load_curated():
     return curated, origin
 
 
-def main():
-    if len(sys.argv) != 2:
-        sys.exit(__doc__)
-    pdf_dir = Path(sys.argv[1])
-    curated, origin = load_curated()
+def index(pdf_dir, new_sources):
+    data = ROOT / "data"
+    recorded = {}
+    if (data / "source_manifest.json").exists():
+        recorded = {m["file"]: m["sha256"]
+                    for m in json.loads((data / "source_manifest.json").read_text())}
+    bad = []
+    for name, _ in PAPERS.values():
+        pdf = pdf_dir / name
+        if not pdf.is_file():
+            sys.exit(f"error: {pdf} not found (see scripts/README.md for the download location)")
+        digest = hashlib.sha256(pdf.read_bytes()).hexdigest()
+        if recorded.get(name) != digest:
+            bad.append(f"{name}: SHA-256 {digest}, recorded {recorded.get(name)}")
+    if bad and not new_sources:
+        sys.exit("error: the PDFs differ from data/source_manifest.json (another edition?):\n  "
+                 + "\n  ".join(bad) + "\nrerun with --new-sources to record the new files")
 
     manifest, statements, edge_set, references, pending, rejected = [], [], {}, {}, [], []
     for paper, (name, key) in PAPERS.items():
@@ -364,8 +397,6 @@ def main():
             "publication": PUBLICATION[paper]})
         for record in found:
             record.pop("line")
-            record["statement_status"] = "NOT_EXTRACTED"
-            record["proof_status"] = "NOT_EXTRACTED"
             statements.append(record)
         pending += edges
         for k in sorted(set(bib) | set(cited)):
@@ -381,40 +412,7 @@ def main():
     for record in statements:
         record["external_keys"] = {k: n for k, n in record.get("external_keys", {}).items()
                                    if k in bib_keys}
-
-    # Merge curated records. Ids the mechanical pass does not produce are parts or proof
-    # steps ("IUT3.Cor3_12.StepXI"); they become records whose parent is the id with its
-    # last component dropped. An unknown id with only two components is reported and
-    # skipped: it is either a typo or a header that this script misses (fix the script).
-    by_id = {s["id"]: s for s in statements}
-    warnings = []
-    for sid in sorted(curated, key=lambda s: (s.count("."), s)):
-        record = curated[sid]
-        if sid in by_id:
-            by_id[sid].update(record)
-            by_id[sid]["curated_in"] = origin[sid]
-            continue
-        parts = sid.split(".")
-        if len(parts) < 3:
-            warnings.append(f"{sid} ({origin[sid]}): not in the mechanical index; skipped")
-            continue
-        parent = ".".join(parts[:-1])
-        if parent not in by_id:
-            warnings.append(f"{sid} ({origin[sid]}): parent {parent} is not a known statement")
-        new = {"id": sid, "parent": parent, "paper": int(parts[0][3:]) if parts[0][3:].isdigit()
-               else None, "curated_in": origin[sid], **record}
-        parent_record = by_id.get(parent, {})
-        for field in ("kind", "section", "section_title"):
-            new.setdefault(field, parent_record.get(field))
-        new.setdefault("kind", None)
-        statements.append(new)
-        by_id[sid] = new
-    for record in statements:
-        for field in ("statement_status", "proof_status"):
-            if record.get(field) not in STATUSES:
-                warnings.append(f"{record['id']}: {field} {record.get(field)!r} is not a "
-                                f"status of the brief")
-    known = set(by_id)
+    known = {s["id"] for s in statements}
 
     # A keyless citation inside a list that began with another paper's key is read as a
     # citation of this paper if that statement exists, and of the other paper otherwise.
@@ -426,23 +424,96 @@ def main():
 
     edges = [{"from": s, "to": t, "cited_in": sorted(w), "target_indexed": t in known}
              for (s, t), w in sorted(edge_set.items())]
-    data = ROOT / "data"
-    for name, value in [("source_manifest.json", manifest), ("statements.json", statements),
+    for name, value in [("source_manifest.json", manifest),
+                        ("mechanical_index.json", statements),
                         ("dependencies.json", edges),
                         ("references.json", sorted(references.values(), key=lambda r: r["key"]))]:
-        (data / name).write_text(json.dumps(value, indent=1, ensure_ascii=False,
-                                            sort_keys=True) + "\n")
+        write(name, value)
     dangling = sum(not e["target_indexed"] for e in edges)
-    print(f"{len(statements)} statements ({len(curated)} curated records), {len(edges)} "
-          f"citation edges ({dangling} to targets not in the index), "
-          f"{len(references)} bibliography keys, {len(rejected)} header lines rejected")
+    print(f"{len(statements)} statements, {len(edges)} citation edges ({dangling} to targets "
+          f"not in the index), {len(references)} bibliography keys, {len(rejected)} header "
+          f"lines rejected")
     for m in manifest:
         print(f"  IUT{m['paper']}: {m['numbered_statements']} numbered, "
               f"{m['lettered_results']} lettered, {m['pdf_pages']} pages, "
               f"{m['title_page_date']}, {m['pages_without_printed_number']} pages without "
               f"a printed number")
-    for w in warnings:
-        print("warning: " + w, file=sys.stderr)
+
+
+def write(name, value):
+    (ROOT / "data" / name).write_text(json.dumps(value, indent=1, ensure_ascii=False,
+                                                 sort_keys=True) + "\n")
+
+
+# Fields of a mechanical record; the merge starts from exactly these.
+MECHANICAL = ("id", "paper", "kind", "number", "title", "section", "section_title", "pdf_page",
+              "printed_page", "pdf_page_end", "repeated_header_lines", "lettered",
+              "has_proof_marker", "external_keys")
+
+
+def merge():
+    curated, origin = load_curated()
+    mechanical = json.loads((ROOT / "data" / "mechanical_index.json").read_text())
+    statements = []
+    for m in mechanical:
+        record = {k: m[k] for k in MECHANICAL if k in m}
+        record["statement_status"] = record["proof_status"] = "NOT_EXTRACTED"
+        statements.append(record)
+    by_id = {s["id"]: s for s in statements}
+    indexed = set(by_id)
+    errors = []
+    # Curated records over the mechanical ones; ids the index does not have are parts, proof
+    # steps, fragments or unnumbered section items (see scripts/records.py), parents first.
+    for sid in sorted(curated, key=lambda s: (s.count("."), s)):
+        record = curated[sid]
+        if sid in by_id:
+            target = by_id[sid]
+            target.update(record)
+            target["curated_in"] = origin[sid]
+        else:
+            parent = records.parent_of(sid, record)
+            section = records.SECTION_ITEM.match(sid)
+            if parent is None and not section:
+                errors.append(f"{sid} ({origin[sid]}): not in the mechanical index, and neither "
+                              f"a part, a fragment nor an unnumbered section item")
+                continue
+            target = {"id": sid, "paper": int(sid[3]) if sid[3:4].isdigit() else None,
+                      "curated_in": origin[sid], **record}
+            if parent is not None:
+                target["parent"] = parent
+                for field in ("section", "section_title"):
+                    target.setdefault(field, by_id.get(parent, {}).get(field))
+                target.setdefault("kind", by_id.get(parent, {}).get("kind"))
+            else:
+                target.setdefault("section", int(section.group(2)))
+                target.setdefault("kind", None)
+            statements.append(target)
+            by_id[sid] = target
+        span = records.reviewed_pages(target)
+        if span:
+            if target["id"] in indexed:
+                target["extraction_window"] = {"pdf_page": target["pdf_page"],
+                                               "pdf_page_end": target.get("pdf_page_end")}
+            target["pdf_page"], target["pdf_page_end"] = span
+        elif target.get("source") is not None and target.get("pdf_page") is None:
+            errors.append(f"{sid} ({origin[sid]}): source pages not readable")
+    errors += records.structural_errors(statements)
+    write("statements.json", statements)
+    print(f"{len(statements)} records ({len(mechanical)} indexed, {len(curated)} curated)")
+    for e in errors:
+        print("error: " + e, file=sys.stderr)
+    if errors:
+        sys.exit(f"merge: {len(errors)} invalid records")
+
+
+def main():
+    args = sys.argv[1:]
+    if args[:1] == ["index"] and len(args) in (2, 3) and args[2:] in ([], ["--new-sources"]):
+        index(Path(args[1]), args[2:] == ["--new-sources"])
+    elif args == ["merge"]:
+        merge()
+    else:
+        sys.exit(__doc__)
 
 
 if __name__ == "__main__":

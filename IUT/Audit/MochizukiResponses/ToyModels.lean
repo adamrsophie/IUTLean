@@ -6,7 +6,7 @@ import Mathlib
 Sources:
 * S. Mochizuki, *Report on Discussions, Held During the Period March 15 to 20, 2018,
   Concerning Inter-universal Teichmüller Theory (IUTch)*, version dated February 2019, item
-  (Smm), page 2. The whole report was read; page 2 was checked against the rendered page.
+  (Smm), page 2. Read for this file: report page 2, checked against the rendered page.
 * S. Mochizuki, *Inter-universal Teichmüller Theory III*, May 2020 manuscript, Remark 3.12.2,
   (ii), items (a^toy) to (f^toy), pages 189 to 191. Pages 187 to 195 were read; pages 190 and
   191 were checked against the rendered pages. The report cites these "toy models" in its item

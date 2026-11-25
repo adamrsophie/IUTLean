@@ -1,14 +1,17 @@
 # Failed and abandoned approaches
 
 Approaches that were tried and dropped, or rejected before any code was written, with the
-reason. Only what the repository evidences is listed. Each entry says where the evidence is.
+reason. Only what the repository evidences is listed. Each entry says what statement was
+attempted or considered, under which assumptions, what the outcome was, and where the evidence
+is. A countermodel in `docs/COUNTERMODELS.md` refutes a simplified abstraction only; none
+refutes a statement of the papers.
 
 ## Rejected because the result would be a shell
 
 * **Prime strips, Hodge theaters, Θ-links (IUT I, IUT II).** Interfaces with the paper's
   conclusions as fields could be written, but nothing would constrain them to be the paper's
-  objects. Not formalized, and the first step (poly-morphisms as sets of morphisms) was not
-  started for that reason. Evidence: `docs/PAPER_I_STRUCTURES.md`,
+  objects. Not formalized. Only the elementary first step is now stated, without conclusions as
+  fields: poly-morphisms as sets of morphisms and capsules (`IUT/PaperI/PolyMorphism.lean`). Evidence: `docs/PAPER_I_STRUCTURES.md`,
   `docs/PAPER_II_STRUCTURES.md`.
 * **The log-shell as `ℤ_p`.** For odd `p`, replacing the log-shell of IUT III Definition 1.1
   (page 24) by `ℤ_p` would typecheck but would not be the definition. Rejected. The faithful
@@ -22,10 +25,14 @@ reason. Only what the repository evidences is listed. Each entry says where the 
 
 ## Dropped because a statement was found to be vacuous
 
-* **`blur_ge_square` in `IUT/Audit/ScholzeStix/Diagram.lean`.** An earlier version had the
-  hypothesis `(j : ℝ)^2 * 1 ≤ B` and the conclusion `(j : ℝ)^2 ≤ B`: the hypothesis restated
-  the conclusion. The theorem was removed. The intended content is `blur_bound` and
-  `blur_ge_avgSq` in `IUT/Audit/ScholzeStix/Blurring.lean`.
+* **A lower bound on the blurring factor stated as a conclusion.** Attempted statement: under
+  (Lin), a cycle with the scalar `j²` (or its average `l(l+1)/12`) on one edge that closes up
+  to a factor `B` forces `B ≥ j²` (or `B ≥ l(l+1)/12`). Assumption: the tolerance model, which
+  already says that the product of the scalars is at most `B`. Outcome: the conclusion was the
+  hypothesis restated after evaluating the product. Both forms were withdrawn; what remains is
+  the evaluation itself, stated as an equivalence (`blur_bound`,
+  `consistentUpTo_avgSq_iff` in `IUT/Audit/ScholzeStix/Blurring.lean`), with the averaging
+  identity `avgSq_eq` as the only content beyond the hypothesis.
 
 ## Blocked on definitions or literature
 
@@ -41,7 +48,9 @@ reason. Only what the repository evidences is listed. Each entry says where the 
   place, a coefficient convention at complex places would have to be invented. Not defined;
   only the product formula was formalized. Evidence: `docs/DECISIONS.md`, decision 7.
 * **A Grothendieck universe in `ZFSet`.** Mathlib provides the embedding at the `PSet` level
-  only. The universe results take the existence axiom as the hypothesis `ExistenceAxiom`.
+  only. The universe results take the existence axiom as the hypothesis `ExistenceAxiom`, which
+  is independent of what Lean proves about `ZFSet.{u}`; the conditional results are vacuous in
+  models where it fails.
 * **Morphisms of IUT I Definition 6.13.** Not found on the pages read. Evidence:
   `docs/PAPER_I_STRUCTURES.md`.
 

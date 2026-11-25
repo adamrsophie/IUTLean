@@ -4,7 +4,7 @@ import Mathlib
 # Countermodels: separate witnesses without a common realization
 
 Source context: Mochizuki, *Inter-universal Teichmüller Theory III*, Step (iii) of the proof of
-Corollary 3.12, page 176, read in this session: it is "of crucial importance" to relate the unit
+Corollary 3.12, page 176, read for this file: it is "of crucial importance" to relate the unit
 portion and the value group portion of the Θ×μ_LGP-links simultaneously, via a single link,
 because relating them via different links runs into the non-commutativity of the
 log-theta-lattice. Also Step (i), page 175 (the link as a unit portion and a value group

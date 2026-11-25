@@ -95,8 +95,10 @@ statement. `docs/CRITICAL_PATH.md` is everything reachable from IUT IV Theorem A
 Corollary 2.3 along these edges and the curated ones.
 
 Rationale: a citation is not a logical dependence, but missing a real dependence is worse
-than including a spurious one. The critical path is therefore an upper bound on what
-Corollary 3.12 and abc depend on, and the documents say so.
+than including a spurious one. The critical path is a reading list, not a bound in either
+direction: it includes statements cited only for context, and it misses dependences that the
+text uses without a citation or that the citation parser could not resolve. The documents
+say so.
 
 ## 9. Status vocabulary
 
@@ -125,3 +127,37 @@ documents.
 
 Rationale: the same license as the sibling projects of the same author, and one that keeps
 derived formalizations open.
+
+## 12. Fragment records (amends decision 9)
+
+A Lean lemma that checks one arithmetic or elementary step of a statement of the papers does
+not give the whole statement a formalized or verified status. A record for a statement (or a
+part or proof step of one) may carry a `lean_declaration` and a status among
+`STATEMENT_FORMALIZED`, `STATEMENT_REVIEWED`, `CONDITIONALLY_VERIFIED`, `KERNEL_VERIFIED`,
+`INDEPENDENTLY_CHECKED` only if that declaration states the entire content of the record, with
+the same objects, hypotheses and conclusion. Otherwise its `lean_declaration` is null and its
+status says what is open. Each lemma that checks a piece gets its own record
+`<parent id>.frag.<short name>` with `"kind": "fragment"`, its `parent`, exactly the
+hypotheses and conclusion of the Lean lemma, what of the parent it `covers` and what it does
+`not_covered`; the parent lists its `fragments`. A fragment is `KERNEL_VERIFIED` when the lemma
+has no hypothesis standing for an unproved claim of the papers, and otherwise
+`CONDITIONALLY_VERIFIED` with the assumed claims in `obligations`. The dashboard counts full
+statements and fragments separately.
+
+Rationale: decision 9 checked that a linked declaration exists and uses only the allowed
+axioms, but not that it states the cataloged result. A kernel-checked fragment then made a
+whole statement of the papers look formalized or verified. Separate records keep the evidence
+and its scope together.
+
+## 13. Working instructions for automated assistants stay out of the repository
+
+Working instructions for automated assistants are not tracked. What
+a contributor needs is in tracked documents: the trust policy and writing rules in
+`CONTRIBUTING.md`, the decisions in this file, the trust boundary in
+`docs/VERIFICATION_REPORT.md`, the open obligations in `OPEN_PROBLEMS.md`, and the plan in
+`docs/ROADMAP.md`.
+
+Rationale: the repository must be checkable and continuable from a clean checkout by a person
+who has only the tracked files and a copy of the papers. Every rule that matters for the
+mathematics or for trust is therefore stated in a tracked document, and nothing in the
+repository depends on untracked instructions.

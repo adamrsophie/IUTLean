@@ -4,7 +4,7 @@ import Mathlib
 # Countermodels: canonical reconstruction and a chosen normalization of volume
 
 Source context: Mochizuki, *Inter-universal Teichmüller Theory III*, Proposition 3.9 (i) to (iv),
-pages 115 to 117, read in this session; page 115 was also read from the rendered page. There,
+pages 115 to 117, read for this file; page 115 was also read from the rendered page. There,
 the `p_v`-adic log-volume on a local packet is normalized in two ways at once: the integral
 structure `𝒪` has log-volume `0`, and multiplying a region by `p_v` adds `−log(p_v)`.
 Proposition 3.9 (ii) states that the log-volumes can be constructed by a functorial algorithm
@@ -57,8 +57,10 @@ theorem haar_eq_volume_of_anchor (μ : Measure ℝ) [μ.IsAddHaarMeasure]
 /-! ## The countermodel: every rescaling is again Haar and satisfies the scaling law -/
 
 /-- **Countermodel.** For every `c > 0`, the measure `c · volume` is again an additive Haar
-measure on `ℝ`, it differs from `volume` when `c ≠ 1`, and it shifts every log-volume by
-`log c`. So the property "is a Haar measure on the topological group `ℝ`" determines the
+measure on `ℝ`, it differs from `volume` when `c ≠ 1`, and it shifts by `log c` the
+log-volume of every set `s` of finite positive Lebesgue measure (`volume s ≠ 0`,
+`volume s ≠ ⊤`). The hypothesis is needed: for `s = ∅` and `c = 2` both log-volumes are `0`
+by the totalization of `logVol`. So the property "is a Haar measure on the topological group `ℝ`" determines the
 log-volume only up to an additive constant. -/
 theorem rescaled_haar (c : ℝ) (hc : 0 < c) :
     (ENNReal.ofReal c • volume : Measure ℝ).IsAddHaarMeasure ∧
@@ -77,7 +79,8 @@ theorem rescaled_haar (c : ℝ) (hc : 0 < c) :
     exact Real.log_mul hc.ne' hpos.ne'
 
 /-- **Countermodel.** The scaling law "multiplying a region by `a` adds `log |a|` to its
-log-volume" holds for every rescaled Haar measure `c · volume`, whatever `c > 0` is. This law is
+log-volume" holds for every rescaled Haar measure `c · volume`, whatever `c > 0` is, for every
+`a ≠ 0` and every set `s` of finite positive Lebesgue measure. This law is
 the real analog of the packet-normalization rule "multiplication by `p_v` adds `−log(p_v)`" of
 IUT III, Proposition 3.9 (i), page 115. Together with `rescaled_haar` it shows that the scaling
 law alone does not fix the normalization; only the anchor of `haar_eq_volume_of_anchor` does. -/
@@ -97,8 +100,9 @@ theorem scaling_law_all_normalizations (c : ℝ) (hc : 0 < c) (a : ℝ) (ha : a 
 
 /-! ## Transport of a normalization along an automorphism -/
 
-/-- **Countermodel.** Transporting Lebesgue measure along the automorphism `x ↦ a x` of the
-topological group `ℝ` gives `|a|⁻¹ · volume`, and so shifts every log-volume by `−log |a|`.
+/-- **Countermodel.** For `a ≠ 0`, transporting Lebesgue measure along the automorphism
+`x ↦ a x` of the topological group `ℝ` gives `|a|⁻¹ · volume`, and so shifts by `−log |a|`
+the log-volume of every set of finite positive Lebesgue measure.
 If `ℝ` is reconstructed only up to isomorphism of topological groups, the normalization
 transported from one copy to another depends on the isomorphism used. -/
 theorem transport_shifts_logVol (a : ℝ) (ha : a ≠ 0) (s : Set ℝ) (h0 : volume s ≠ 0)

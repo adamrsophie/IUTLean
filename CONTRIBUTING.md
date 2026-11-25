@@ -30,9 +30,14 @@ Everything in `IUT/` outside `IUT/Experimental/`, and everything in `Solution.le
 * **The experimental directory.** Drafts with `sorry` go in `IUT/Experimental/`. No module
   outside it may import it, `IUT.lean` never lists it, and nothing in it counts as verified.
   See `IUT/Experimental/README.md`.
-* **Trusted definitions.** `Challenge/Defs.lean` imports Mathlib only. A change to it is
-  reviewed by hand against its source and then recorded with
-  `python3 -I scripts/Controls/fingerprints.py --write`.
+* **Trusted definitions and the challenge baseline.** `Challenge/Defs.lean` imports Mathlib
+  only. A change to it is reviewed by hand against its source and then recorded with
+  `python3 -I scripts/Controls/fingerprints.py --write`. The seven statements of
+  `Challenge.lean` and the list of names in `comparator.json` form the challenge baseline: a
+  change to any of them (a statement, a constant, a hypothesis, a name) needs a separate
+  approval, by a reviewer other than the author of the change, after a comparison with the
+  cited source. A matching change in `Solution.lean` passes the comparator, so the comparator
+  alone does not protect the baseline.
 
 ## Every Lean module cites its source
 
@@ -41,7 +46,13 @@ Each module starts with a docstring that gives:
 * the paper, the numbered statement, and the manuscript pages, written "pages 173 to 186";
 * which pages were read, and whether the formulas were checked against rendered pages or only
   against the extracted text (which loses decorations such as `≠`, `∉`, ceilings and floors);
-* every interpretation choice, with the reason for it.
+* every interpretation choice, with the reason for it;
+* the reviewed scope of each declaration: which statement, part or proof step of the papers it
+  states in full, or, for a lemma that checks only a piece, which display or sentence it covers
+  and what it leaves out.
+
+A pull request that adds or changes a Lean statement tied to the papers must cite the source
+page for it; a statement without a page is not accepted.
 
 A countermodel module also says which simplified abstraction it refutes, and that it does not
 refute a statement of the papers unless that is shown.
@@ -56,6 +67,12 @@ generated: do not edit it by hand. Records written by reading the papers live in
 `external_dependencies`, `lean_declaration`, `statement_status`, `proof_status`,
 `obligations` and `ambiguities`.
 
+A record may name a `lean_declaration` and carry a formalized or verified status only if the
+declaration states the entire content of the record. A Lean lemma that checks one arithmetic or
+elementary step gets its own fragment record `<parent id>.frag.<short name>` with
+`"kind": "fragment"`, `parent`, `covers` and `not_covered`, and the parent lists it in
+`fragments` (`docs/DECISIONS.md`, decision 12).
+
 Statement fidelity and proof status are reported separately. The status values are:
 
 | Status | Meaning |
@@ -64,12 +81,12 @@ Statement fidelity and proof status are reported separately. The status values a
 | `EXTRACTED` | read and recorded in the curated data |
 | `INTERPRETATION_AMBIGUOUS` | read; more than one reading is possible, and the record lists them |
 | `LEAN_STATEMENT_DRAFT` | a Lean statement exists but captures only part of the statement, or is not yet reviewed as faithful |
-| `STATEMENT_FORMALIZED` | a faithful Lean statement exists in the library |
+| `STATEMENT_FORMALIZED` | a faithful Lean statement of the whole record exists in the library |
 | `STATEMENT_REVIEWED` | the Lean statement was reviewed against the rendered pages |
 | `PROOF_IN_PROGRESS` | a proof is being written |
 | `BLOCKED_BY_MATHLIB` | needs a definition or theorem that Mathlib lacks |
 | `BLOCKED_BY_EXTERNAL_THEOREM` | needs a result of another paper that is not formalized |
-| `BLOCKED_BY_MISSING_JUSTIFICATION` | the papers give no argument that could be formalized |
+| `BLOCKED_BY_MISSING_JUSTIFICATION` | the text gives an assertion where a formalization needs a derivation; this is not a claim that the result is false |
 | `CONDITIONALLY_VERIFIED` | proved in Lean under hypotheses stated in the record |
 | `KERNEL_VERIFIED` | proved in Lean, with no hypothesis beyond those of the statement, from the allowed axioms only |
 | `INDEPENDENTLY_CHECKED` | kernel verified and also checked independently |
@@ -82,10 +99,12 @@ verified otherwise. The definitions of the dashboard counts are in the docstring
 After editing curated data, regenerate the derived files:
 
 ```sh
-sh scripts/run_all.sh <directory with the four PDFs>
+sh scripts/run_all.sh
 ```
 
-`SKIP_LEAN=1` reuses the existing Lean declaration inventory. See `scripts/README.md`.
+This runs every stage that needs no PDF and fails on an invalid record, a stale build, or a
+missing Graphviz. The stage that reads the four manuscripts is separate
+(`sh scripts/run_all.sh --pdfs <pdf-dir>`). See `scripts/README.md`.
 
 ## Classifying a result
 
@@ -138,7 +157,8 @@ run `python3 -I scripts/gen_root.py` to regenerate it.
 
 CI runs the checks above. A reviewer reads the Lean statement against the cited pages, checks
 the docstring, and checks that the catalog records were updated. A change to
-`Challenge/Defs.lean` needs a separate review of the definition against its source.
+`Challenge/Defs.lean`, to a statement of `Challenge.lean`, or to `comparator.json` needs a
+separate review against its source and a separate approval.
 
 By contributing you agree that your contribution is licensed under the GNU General Public
 License, version 3.

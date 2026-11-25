@@ -9,9 +9,9 @@ it). Read in full; the formulas were checked against the rendered pages 2 and 3.
 
 **Whose argument.** This is the reduction that Scholze and Stix write down to explain why
 Claim 6 (their summary of IUT IV, Theorem 1.10) would imply the uniform Vojta inequality for
-elliptic curves, and hence abc. Neither side disputes this step; Mochizuki's comments on the
-2018-08 version, item (C1), concern only the justification of Remark 5, which is used for the
-final `O(1)`.
+elliptic curves, and hence abc. Neither side disputes this step. Mochizuki's comments on the
+2018-08 version, item (C1), pages 1 and 2, concern the justification of Remark 5 (page 3),
+which Scholze and Stix invoke for the final `O(1)`.
 
 **What this file is not.** It is not a formalization of Claim 6, of IUT IV, Theorem 1.10, of
 the Belyi reduction, of heights, or of Faltings' theorem. Every arithmetic quantity
@@ -38,8 +38,17 @@ which concerns whether Claim 6 is proved.
 2. The final `O(1)` does not need the finiteness statement of Remark 5. Once Vojta's
    inequality holds for `h(P) ≥ H`, the points with `h(P) < H` satisfy
    `h(P) < H ≤ (1 + ε) N + H` because `N ≥ 0`. See `vojta_of_claim6`, which uses no
-   finiteness hypothesis. So the dispute in Mochizuki's comment (C1) on Remark 5 does not
-   affect the validity of this reduction.
+   finiteness hypothesis: the only property of `N = d(P) + n¹_∞(P)` (the different plus
+   conductor term) that it uses is the lower bound `N ≥ 0`. So the dispute in Mochizuki's
+   comment (C1) on Remark 5 does not affect the validity of this reduction.
+3. Remark 5 asserts finiteness of the curves `E/k` "as above" (over the varying fields `k`
+   with `[k : ℚ] ≤ d`) with `h(P) ≤ b`, via Faltings' theorem and finite fibers of the Weil
+   restriction. Comment (C1) argues through the `j`-invariant and finiteness of algebraic
+   numbers of bounded degree and bounded height (Northcott's theorem). That argument controls
+   the moduli values `j(E)`; it does not by itself give finiteness of curves, since infinitely
+   many quadratic twists over `ℚ` share one `j`-invariant. Any claim about curves, or about the
+   fibers of `E/k ↦ R_{k/ℚ}(E)`, needs its own argument using the restrictions "as above". This
+   file needs neither.
 -/
 
 namespace IUT.Audit.ScholzeStix

@@ -72,7 +72,7 @@ Source: Mochizuki, *Inter-universal Teichmüller Theory III*. Each entry gives t
   * Integral structures have log-volume 0.
   * At nonarchimedean places, multiplication by `p_v` adds `−log(p_v)`.
   * At archimedean places, multiplication by e adds 1.
-* **Procession-normalization**: the average over the capsules of a procession. Prop 3.9 (i), page 116 (r).
+* **Procession-normalization**: the average over the capsules of a procession. Prop 3.9 (i), page 116 (r). Cor 3.12 states that the average is over `j ∈ F*_l` (pages 173 and 181 (r)), so the factor is `1/l*`; the capsules of Prop 3.4 (ii) carry the labels `j ∈ {1, ..., l*} = F*_l` (page 102 (r)). Page 183 (r) speaks of a normalization "with respect to j ∈ |F_l|" without a factor.
 * `μ^log_{A,V_Q}`: global log-volume, the sum over v_Q. Prop 3.9 (iii), page 117 (r).
 * `Sub(M)`, `Fn(M)`, `Rss(M)`: pre-ample subsets, finite-valued Borel functions, and the quotient by integration. Rem 3.9.4 (i), page 120 (r).
 * `log(q) = ord_v(q_v)·log(p_v)`. Rem 3.9.4 (iv), page 124 (r).
@@ -86,7 +86,7 @@ Source: Mochizuki, *Inter-universal Teichmüller Theory III*. Each entry gives t
 * **Holomorphic hull**: the smallest `λ·O` containing U, with every component of λ nonzero, for relatively compact U; otherwise the whole `I^Q(−)`. Rem 3.9.5 (i), page 127 (r).
 * `ℙ`, `ℍ`, `φ`: direct product regions, hulls (proper subsets), and the hull map `ℙ → ℍ` with (P1) to (P3). Rem 3.9.5 (ii), page 127 (r).
 * `Φ(P)`, `Ξ(P)`, `H_{Φ(P)}`, `H_{Ξ(P)}`: hull-approximants. Rem 3.9.5 (iii), (iv), pages 128 to 129 (t; page 129 r).
-* `n,◦U`, `n,◦U^Q`, `n,◦Ū`: unions of possible images, their ambient packets, and their hulls, indexed by `j ∈ |F_l|`, `v_Q ∈ V_Q`. Cor 3.12 proof, page 174 (r).
+* `n,◦U`, `n,◦U^Q`, `n,◦Ū`: unions of possible images, their ambient packets, and their hulls, indexed by `j ∈ |F_l|`, `v_Q ∈ V_Q` (an indexing of sets, not the averaging index). Cor 3.12 proof, page 174 (r).
 
 ## Indeterminacies and properties
 

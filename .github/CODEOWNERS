@@ -1,0 +1,17 @@
+# The trust set: the challenge statements and definitions, the comparator configuration, the
+# gate and its controls, the fingerprint record, the build configuration and the workflows.
+# A change to any of these paths needs the approval of the code owner. This takes effect only
+# when branch protection that requires the approval of code owners is enabled in the
+# repository settings.
+/Challenge.lean @adamrsophie
+/Challenge/ @adamrsophie
+/Solution.lean @adamrsophie
+/comparator.json @adamrsophie
+/AxiomGate.lean @adamrsophie
+/GateControls/ @adamrsophie
+/scripts/Controls/ @adamrsophie
+/data/challenge_fingerprints.json @adamrsophie
+/lakefile.toml @adamrsophie
+/lake-manifest.json @adamrsophie
+/lean-toolchain @adamrsophie
+/.github/ @adamrsophie

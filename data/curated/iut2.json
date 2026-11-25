@@ -180,7 +180,7 @@
   "content": "Notation at v in V^bad: tempered groups Pi_v, Pi^+-_v, Pi^cor_v and geometric subgroups, with Delta_v of index l in Delta^+-_v and Delta^+-_v of index 2l in Delta^cor_v; +-label classes of cusps LabCusp^+-(Pi), with an F_l^x action, zero element and +-canonical element; decomposition groups Pi_{v bullet t} for t in LabCusp^+-; a natural F_l^{x+-}-torsor structure and an outer isomorphism Pi_sup/Pi_sub -> F_l^{x+-}.",
   "explicit_hypotheses": [],
   "implicit_hypotheses": [],
-  "conclusion": "Definitions.",
+  "conclusion": "Definition (no proof obligation): fixes the tempered groups at bad v, their geometric subgroups and indices, and the +-label classes of cusps with their F_l actions.",
   "definitions_required": [
    "LabCusp^+- (IUT I Definition 6.1 (iii))"
   ],
@@ -205,7 +205,9 @@
    "pages_read": "69, 70, 71"
   },
   "content": "F_l^{x+-}-symmetric two-torsion translates of cusps: (i) for gamma, gamma' in Delta-hat^+-_v, a cuspidal inertia group I_t conjugated by gamma gamma' lies in the gamma'-conjugate of Pi_v if and only if it lies in the gamma'-conjugate of Pi^+-_v if and only if gamma is in Delta^+-_v; (ii) such an inclusion determines decomposition groups D_t, D_{mu_-}, D_{t,mu_-} (the latter an evaluation section at the mu_- translate of the cusp); (iii) for the bullet-t choice the construction is compatible with conjugation by Pi^cor_v, with Delta^cor/Delta^+- isomorphic to F_l^{x+-}.",
-  "explicit_hypotheses": [],
+  "explicit_hypotheses": [
+   "The notation of Definition 2.3 (v in V^bad); t in LabCusp^+-(Pi_v)"
+  ],
   "implicit_hypotheses": [],
   "conclusion": "Equivalence (a) <=> (b) <=> (c) and functorial construction of decomposition groups.",
   "definitions_required": [],
@@ -225,7 +227,9 @@
    "No Lean vocabulary exists for tempered fundamental groups, mono-theta environments, Frobenioids or Hodge theaters; the statement stays a catalog entry.",
    "Proof of (c) => (a) uses IUT I Corollary 2.5 and Corollary 2.3 (v), (vi) (profinite versus tempered conjugates)."
   ],
-  "ambiguities": []
+  "ambiguities": [
+   "The opening hypothesis sentence was read from the text layer (prose only, no formula transcribed)."
+  ]
  },
  "IUT2.Cor2_5": {
   "source": {
@@ -234,7 +238,9 @@
    "pages_read": "71, 72 (rendered 72)"
   },
   "content": "Group-theoretic theta evaluation: (i) (l . Delta_Theta) restricts isomorphically to the subgraph group Pi_{v black-triangle double-dot} and the quotient to G_v is reconstructible; (ii) restricting the iota-invariant theta classes to the subgraph and then to the evaluation sections D_{t,mu_-} yields mu_{2l}-orbits theta^t and mu-orbits infinity theta^t depending only on |t| in |F_l|; (iii) letting t vary gives a group-theoretic algorithm for the collections {theta^{|t|}}_{|t| in |F_l|}, functorial in Pi_v and compatible with independent Delta-hat^+-_v conjugacy actions.",
-  "explicit_hypotheses": [],
+  "explicit_hypotheses": [
+   "The notation of Corollary 2.4"
+  ],
   "implicit_hypotheses": [],
   "conclusion": "Existence of a functorial group-theoretic theta evaluation algorithm, valued in mu_{2l}-orbits.",
   "definitions_required": [],
@@ -252,18 +258,20 @@
    "No Lean vocabulary exists for tempered fundamental groups, mono-theta environments, Frobenioids or Hodge theaters; the statement stays a catalog entry.",
    "The paper's proof reads: follows immediately from the definitions and the references quoted."
   ],
-  "ambiguities": []
+  "ambiguities": [
+   "The opening hypothesis sentence was read from the text layer (prose only, no formula transcribed)."
+  ]
  },
  "IUT2.Rem2_5_1": {
   "source": {
    "paper": "Inter-universal Teichmuller Theory II (December 2020)",
    "pdf_pages": "72 to 73",
-   "pages_read": "72, 73 (rendered 72)"
+   "pages_read": "72, 73 (both rendered); IUT I page 71 (rendered) for qq_v"
   },
-  "content": "(i) Relative to the standard cyclotomic rigidity and Kummer map, for j in |F_l| the set theta^j consists of exactly the mu_{2l}-orbit of the theta value q_v^{j^2}, with j the element of {0, 1, ..., l*} determined by j. (ii) these values correspond to values of the theta series at points separated by periods from +- sqrt(-1). (iii) the mu_{2l}-indeterminacies for different j are independent, not synchronized.",
+  "content": "(i) Relative to the standard cyclotomic rigidity isomorphism of Proposition 1.3 (ii) and the resulting Kummer map (delta of Corollary 2.5 (ii) taken to be the identity), for j in |F_l| the set theta^j(Pi_v) consists of precisely the mu_{2l}-orbit of the theta value qq_v^{j^2}, where j is the element of {0, 1, ..., l*} determined by j. (ii) The reciprocals of the l-th powers of these theta values (not the theta values themselves) correspond to the values Theta-ddot(+-sqrt(-1) . q_X^{j/2}) of the theta series Theta-ddot of [EtTh] Proposition 1.4, i.e. to values at points separated by periods from +-sqrt(-1); they have the property that Theta-ddot(c)/Theta-ddot(c') is a root of unity for c' obtained from c by an automorphism of Pi_v with c'/c a unit. (iii) The mu_{2l}-multiple indeterminacies for different j in |F_l| are independent, not synchronized; each arises from the action of (Delta^+-_v / Delta_v)^delta, of order 2l.",
   "explicit_hypotheses": [],
   "implicit_hypotheses": [],
-  "conclusion": "theta^j = mu_{2l} . q_v^{j^2} (as orbits) for j = 0, ..., l*.",
+  "conclusion": "theta^j(Pi_v) = mu_{2l} . qq_v^{j^2} (as orbits) for j = 0, ..., l*; the reciprocals of the l-th powers of these values correspond to Theta-ddot(+-sqrt(-1) . q_X^{j/2}); the mu_{2l}-indeterminacies for distinct j are independent.",
   "definitions_required": [
    "l* = (l-1)/2 (IUT I page 3)",
    "|F_l| = F_l/{+-1}"
@@ -275,13 +283,19 @@
    "IUTchI: Example 4.4 (i), Example 3.2 (iv)",
    "EtTh: Proposition 1.4 (ii)"
   ],
-  "lean_declaration": "IUT.PaperII.Labels.labelRep_bijective",
+  "lean_declaration": null,
   "statement_status": "EXTRACTED",
   "proof_status": "BLOCKED_BY_MATHLIB",
   "obligations": [
-   "Only the label bookkeeping (each class in |F_l| has a unique representative in {0, ..., l*}) is formalized; the identification of theta^j with the orbit of q_v^{j^2} is not."
+   "Only the label bookkeeping is formalized, as a fragment; the identification of theta^j with the orbit of qq_v^{j^2} and part (ii) are not."
   ],
-  "ambiguities": []
+  "ambiguities": [
+   "qq_v denotes the q with a double underline of IUT I, Example 3.2 (iv), page 71 (rendered): qq_v = q_v^{1/2l}, a chosen 2l-th root of the Tate parameter q_v, determined up to a mu_{2l}-multiple; relative to q_v the value qq_v^{j^2} is q_v^{j^2/(2l)}.",
+   "q_X in (ii) is the parameter of the theta series in the notation of [EtTh] Proposition 1.4 (page 73, rendered)."
+  ],
+  "fragments": [
+   "IUT2.Rem2_5_1.frag.labelRep_bijective"
+  ]
  },
  "IUT2.Cor2_6": {
   "source": {
@@ -290,7 +304,9 @@
    "pages_read": "76"
   },
   "content": "Splittings defined on subgraphs: (i) the subsets M^x_TM, M^x_TM . theta^iota, M^x_TM . infinity theta^iota on the subgraph group are compatible with those of Proposition 1.4 and Corollary 1.12; (ii) at the zero-labeled evaluation point theta^0 is the mu_{2l}-orbit of the identity, so restriction gives splittings of M^x_TM . infinity theta^iota / M^mu_TM compatible with Corollary 1.12 (ii).",
-  "explicit_hypotheses": [],
+  "explicit_hypotheses": [
+   "The notation of Corollary 2.5 (ii)"
+  ],
   "implicit_hypotheses": [],
   "conclusion": "Constant multiple rigidity splittings survive restriction to the subgraph.",
   "definitions_required": [],
@@ -306,7 +322,9 @@
    "No Lean vocabulary exists for tempered fundamental groups, mono-theta environments, Frobenioids or Hodge theaters; the statement stays a catalog entry.",
    "The paper's proof reads: follows immediately from the definitions and the references quoted."
   ],
-  "ambiguities": []
+  "ambiguities": [
+   "The opening hypothesis sentence was read from the text layer (prose only, no formula transcribed)."
+  ]
  },
  "IUT2.Rem2_6_3": {
   "source": {
@@ -319,7 +337,7 @@
    "Gamma' a finite connected subgraph of Gamma_Y containing the vertex 0"
   ],
   "implicit_hypotheses": [],
-  "conclusion": "Maximizing ||Gamma'|| is achieved by Gamma'_Y-black-triangle (vertices 0, ..., l*), and the values q_v^{j^2} are thereby distinguished.",
+  "conclusion": "Maximizing ||Gamma'|| is achieved by Gamma'_Y-black-triangle (vertices 0, ..., l*), and the values qq_v^{j^2} are thereby distinguished.",
   "definitions_required": [
    "F_l* = F_l^x/{+-1}",
    "natural projection Z -> |F_l|"
@@ -330,14 +348,21 @@
    "IUT2.Rem2_6_2"
   ],
   "external_dependencies": [],
-  "lean_declaration": "IUT.PaperII.Labels.gammaNorm_eq",
+  "lean_declaration": null,
   "statement_status": "INTERPRETATION_AMBIGUOUS",
   "proof_status": "PROOF_IN_PROGRESS",
   "obligations": [
    "Kernel-checked only for the elementary arithmetic: for Gamma' with vertex set [-a, b], |Gamma'| = min(max(a,b), l*) and ||Gamma'|| = (n+1)(2n+1)/6 with n = |Gamma'|, which is strictly increasing in n; hence ||Gamma'|| is monotone in max(a,b), maximal exactly when max(a,b) >= l*, with maximum l(l+1)/12. Infinite Gamma' (part (iii)) is not treated."
   ],
   "ambiguities": [
-   "Page 79 defines |Gamma'| as the size of a subset of F_l*, so |Gamma'| <= l* always. Read literally, item (d) on page 80 then says ||Gamma'|| is a strictly increasing function of |Gamma'| on {1, ..., l*} (the Lean file proves this), which conflicts with 'not strictly increasing' and makes 'constant for |Gamma'| >= l*' vacuous beyond l*. The wording matches exactly if the variable is the radius max(a,b) of Gamma'; the Lean file proves both readings and adopts neither as the definition."
+   "Page 79 defines |Gamma'| as the size of a subset of F_l*, so |Gamma'| <= l* always. Read literally, item (d) on page 80 then says ||Gamma'|| is a strictly increasing function of |Gamma'| on {1, ..., l*} (the Lean file proves this), which conflicts with 'not strictly increasing' and makes 'constant for |Gamma'| >= l*' vacuous beyond l*. The wording matches exactly if the variable is the radius max(a,b) of Gamma'; the Lean file proves both readings and adopts neither as the definition.",
+   "qq_v denotes the q with a double underline of IUT I, Example 3.2 (iv), page 71 (rendered): qq_v = q_v^{1/2l}, a chosen 2l-th root of the Tate parameter q_v, determined up to a mu_{2l}-multiple; relative to q_v the value qq_v^{j^2} is q_v^{j^2/(2l)}.",
+   "Page 79 defines ||Gamma'|| = |Gamma'|^{-1} . (sum); for Gamma' = {0} one has |Gamma'| = 0 and the page gives no value. The Lean function gammaNorm returns 0 there by division by zero; every Lean lemma that evaluates it assumes |Gamma'| >= 1."
+  ],
+  "fragments": [
+   "IUT2.Rem2_6_3.frag.gammaNorm_eq",
+   "IUT2.Rem2_6_3.frag.gammaNormValue_strictMono",
+   "IUT2.Rem2_6_3.frag.gammaNorm_eq_max_iff"
   ]
  },
  "IUT2.Def2_7": {
@@ -349,7 +374,7 @@
   "content": "For a projective system M^Theta_* of mono-theta environments with Pi_X(M^Theta_*) isomorphic to Pi_v: the inverse limit group Pi_{M^Theta_*}, the inverse images over the subgraph group, the subquotients Pi_mu, (l . Delta_Theta), G_v, and the restricted cyclotomic rigidity isomorphism (l . Delta_Theta)(M^Theta_{* subgraph}) -> Pi_mu(M^Theta_{* subgraph}).",
   "explicit_hypotheses": [],
   "implicit_hypotheses": [],
-  "conclusion": "Definitions.",
+  "conclusion": "Definition (no proof obligation): fixes the groups and subquotients attached to a projective system of mono-theta environments.",
   "definitions_required": [],
   "results_used": [
    "IUT2.Prop1_5"
@@ -370,9 +395,12 @@
    "pages_read": "81, 82, 83"
   },
   "content": "Mono-theta-theoretic version of Corollaries 2.5, 2.6: replacing (l . Delta_Theta) by Pi_mu via the cyclotomic rigidity of Definition 2.7, the iota-invariant theta_env subsets restrict to mu_{2l}-, mu-orbits theta^{|t|}_env depending only on |t|, giving an algorithm functorial in M^Theta_*, and zero-labeled splittings compatible with Corollary 1.12 (ii).",
-  "explicit_hypotheses": [],
+  "explicit_hypotheses": [
+   "The notation of Definition 2.7",
+   "The situation of Proposition 2.2 (ii) and Corollary 2.5 (ii), with Pi_X(M^Theta_*) identified with Pi_v"
+  ],
   "implicit_hypotheses": [],
-  "conclusion": "Theta evaluation algorithm functorial in the mono-theta environment.",
+  "conclusion": "Mono-theta-theoretic version of Corollaries 2.5, 2.6: replacing (l . Delta_Theta) by Pi_mu via the cyclotomic rigidity of Definition 2.7, the iota-invariant theta_env subsets restrict to mu_{2l}-, mu-orbits theta^{|t|}_env depending only on |t|, giving an algorithm functorial in M^Theta_*, and zero-labeled splittings compatible with Corollary 1.12 (ii).",
   "definitions_required": [],
   "results_used": [
    "IUT2.Def2_7",
@@ -387,7 +415,9 @@
    "No Lean vocabulary exists for tempered fundamental groups, mono-theta environments, Frobenioids or Hodge theaters; the statement stays a catalog entry.",
    "The paper's proof reads: follows immediately from the definitions and the references quoted."
   ],
-  "ambiguities": []
+  "ambiguities": [
+   "The opening hypothesis sentence was read from the text layer (prose only, no formula transcribed)."
+  ]
  },
  "IUT2.Cor2_9": {
   "source": {
@@ -396,9 +426,11 @@
    "pages_read": "84, 85"
   },
   "content": "Base-field-theoretic version: using the cyclotomic rigidity mu_Zhat(G_v) -> (l . Delta_Theta) from [AbsTopIII] Corollary 1.10 (c), one obtains orbits theta^{|t|}_bs, a functorial algorithm in Pi_v, and zero-labeled splittings compatible with Corollary 1.12 (ii). Remark 2.9.1 (i): unlike Corollary 2.8, these cyclotomes only admit a uniradial formulation.",
-  "explicit_hypotheses": [],
+  "explicit_hypotheses": [
+   "The situation of Proposition 2.2 (ii) and Corollary 2.5 (ii)"
+  ],
   "implicit_hypotheses": [],
-  "conclusion": "Theta evaluation via base-field cyclotomes (uniradial).",
+  "conclusion": "Base-field-theoretic version: using the cyclotomic rigidity mu_Zhat(G_v) -> (l . Delta_Theta) from [AbsTopIII] Corollary 1.10 (c), one obtains orbits theta^{|t|}_bs, a functorial algorithm in Pi_v, and zero-labeled splittings compatible with Corollary 1.12 (ii). Remark 2.9.1 (i): unlike Corollary 2.8, these cyclotomes only admit a uniradial formulation.",
   "definitions_required": [],
   "results_used": [
    "IUT2.Cor2_5",
@@ -415,7 +447,9 @@
    "No Lean vocabulary exists for tempered fundamental groups, mono-theta environments, Frobenioids or Hodge theaters; the statement stays a catalog entry.",
    "The paper's proof reads: follows immediately from the definitions and the references quoted."
   ],
-  "ambiguities": []
+  "ambiguities": [
+   "The opening hypothesis sentence was read from the text layer (prose only, no formula transcribed)."
+  ]
  },
  "IUT2.Cor3_5": {
   "source": {
@@ -424,9 +458,11 @@
    "pages_read": "93, 94, 95, 96 (rendered 94, 95)"
   },
   "content": "Mono-theta-theoretic Gaussian monoids: (i) the outer F_l^{x+-}-action induces symmetrizing isomorphisms between the labeled pairs G_v acting on Psi_cns(M^Theta_*)_t, giving diagonal embeddings indexed by <|F_l|> and <F_l*>; the inner automorphism indeterminacy is independent of |t| (conjugate synchronization). (ii) a value-profile is an element of the product over |t| in F_l* of theta^{|t|}_env, a set of cardinality (2l)^{l*}; the Gaussian monoids are Psi_xi = Psi^x_cns <F_l*> . xi^N and infinity Psi_xi = Psi^x_cns <F_l*> . xi^{Q>=0}; restriction gives isomorphisms Psi_env -> Psi_gau well-defined up to a single inner automorphism; Psi_{2l . xi} is independent of xi. (iii) an isomorphism Psi_cns_0 -> Psi_cns_<F_l*> and splittings up to torsion of the Gaussian monoids.",
-  "explicit_hypotheses": [],
+  "explicit_hypotheses": [
+   "M^Theta_* a projective system of mono-theta environments as in Proposition 3.1"
+  ],
   "implicit_hypotheses": [],
-  "conclusion": "Gaussian monoids and the evaluation isomorphism Psi_env -> Psi_gau with conjugate synchronization.",
+  "conclusion": "Mono-theta-theoretic Gaussian monoids: (i) the outer F_l^{x+-}-action induces symmetrizing isomorphisms between the labeled pairs G_v acting on Psi_cns(M^Theta_*)_t, giving diagonal embeddings indexed by <|F_l|> and <F_l*>; the inner automorphism indeterminacy is independent of |t| (conjugate synchronization). (ii) a value-profile is an element of the product over |t| in F_l* of theta^{|t|}_env, a set of cardinality (2l)^{l*}; the Gaussian monoids are Psi_xi = Psi^x_cns <F_l*> . xi^N and infinity Psi_xi = Psi^x_cns <F_l*> . xi^{Q>=0}; restriction gives isomorphisms Psi_env -> Psi_gau well-defined up to a single inner automorphism; Psi_{2l . xi} is independent of xi. (iii) an isomorphism Psi_cns_0 -> Psi_cns_<F_l*> and splittings up to torsion of the Gaussian monoids.",
   "definitions_required": [],
   "results_used": [
    "IUT2.Prop3_1",
@@ -441,7 +477,8 @@
    "The paper's proof reads: follows immediately from the definitions and the references quoted."
   ],
   "ambiguities": [
-   "The value-profile set has cardinality (2l)^{l*} because each of the l* orbits theta^{|t|}_env has 2l elements and the indeterminacies are independent (Remark 2.5.1 (iii)); the count itself is elementary and is not formalized separately."
+   "The value-profile set has cardinality (2l)^{l*} because each of the l* orbits theta^{|t|}_env has 2l elements and the indeterminacies are independent (Remark 2.5.1 (iii)); the count itself is elementary and is not formalized separately.",
+   "The opening hypothesis sentence was read from the text layer (prose only, no formula transcribed)."
   ]
  },
  "IUT2.Cor3_6": {
@@ -451,7 +488,10 @@
    "pages_read": "99, 100, 101"
   },
   "content": "Frobenioid-theoretic Gaussian monoids for M^Theta_* = M^Theta_*(dagger F_v) with dagger F_v a tempered Frobenioid: (i) Kummer isomorphisms (Psi_{dagger C_v})_t -> Psi_cns(M^Theta_*)_t with a t-independent inner indeterminacy, and symmetrizing isomorphisms; (ii) Frobenioid-theoretic Gaussian monoids Psi_{F_xi}(dagger F_v) and the chain Psi_{dagger F^Theta_v} -> Psi_env -> Psi_gau -> Psi_{F_gau}(dagger F_v); (iii) splittings up to torsion.",
-  "explicit_hypotheses": [],
+  "explicit_hypotheses": [
+   "The situation of Proposition 3.3: dagger M^Theta_* = M^Theta_*(dagger F_v) with dagger F_v a tempered Frobenioid",
+   "The labeling conventions of Corollary 3.5"
+  ],
   "implicit_hypotheses": [],
   "conclusion": "Kummer-compatible chain of isomorphisms from Frobenioid-theoretic theta monoids to Frobenioid-theoretic Gaussian monoids.",
   "definitions_required": [],
@@ -467,7 +507,9 @@
    "No Lean vocabulary exists for tempered fundamental groups, mono-theta environments, Frobenioids or Hodge theaters; the statement stays a catalog entry.",
    "The paper's proof reads: follows immediately from the definitions and the references quoted."
   ],
-  "ambiguities": []
+  "ambiguities": [
+   "The opening hypothesis sentence was read from the text layer (prose only, no formula transcribed)."
+  ]
  },
  "IUT2.Rem3_6_4": {
   "source": {
@@ -478,7 +520,7 @@
   "content": "Explains why objects are known only up to isomorphism: Kummer N-th power morphisms respect multiplication but not addition, hence act as Frobenius-type morphisms between distinct ring structures, forcing the rigidity theory of [EtTh]. Galois evaluation is linear, so the first power of the theta function (and of its values) is the only power that crosses the mono-theta bridge; N-th powers for N > 1 are only defined as (-)^N of the first power, and other powers are not horizontal for the multiradial connection structure.",
   "explicit_hypotheses": [],
   "implicit_hypotheses": [],
-  "conclusion": "Interpretive remark; no theorem.",
+  "conclusion": "Explains why objects are known only up to isomorphism: Kummer N-th power morphisms respect multiplication but not addition, hence act as Frobenius-type morphisms between distinct ring structures, forcing the rigidity theory of [EtTh]. Galois evaluation is linear, so the first power of the theta function (and of its values) is the only power that crosses the mono-theta bridge; N-th powers for N > 1 are only defined as (-)^N of the first power, and other powers are not horizontal for the multiradial connection structure.",
   "definitions_required": [],
   "results_used": [],
   "external_dependencies": [
@@ -499,7 +541,9 @@
    "pages_read": "110, 111, 112"
   },
   "content": "Group-theoretic Gaussian monoids and uniradiality: (i) each isomorphism M^Theta_*(Pi_v) -> M^Theta_*(dagger F_v) induces compatible isomorphisms from group-theoretic to post-anabelian Gaussian monoids and on units; (ii) the algorithms Pi_v -> Psi_gau depend on the cyclotomic rigidity of Corollary 1.11 (b), hence fail to be compatible with automorphisms of the pair G_v acting on Psi_{F_xi}^{x mu} coming from automorphisms of the pair with Psi^x: they only admit a uniradial formulation.",
-  "explicit_hypotheses": [],
+  "explicit_hypotheses": [
+   "The situation of Proposition 3.4: the full poly-isomorphism M^Theta_*(Pi_v) -> M^Theta_*(dagger F_v) of projective systems of mono-theta environments, with dagger F_v a tempered Frobenioid as in Proposition 3.3"
+  ],
   "implicit_hypotheses": [],
   "conclusion": "Gaussian monoid algorithm is uniradial as given.",
   "definitions_required": [],
@@ -518,7 +562,8 @@
    "The paper's proof reads: follows immediately from the definitions and the references quoted."
   ],
   "ambiguities": [
-   "Remark 3.7.1 (page 112): a multiradial version is only obtained in IUT III via log-shells, with additional indeterminacies."
+   "Remark 3.7.1 (page 112): a multiradial version is only obtained in IUT III via log-shells, with additional indeterminacies.",
+   "The opening hypothesis sentence was read from the text layer (prose only, no formula transcribed)."
   ]
  },
  "IUT2.Def3_8": {
@@ -530,7 +575,7 @@
   "content": "Frobenioid interpretations: (i) p_v-adic Frobenioids F_cns(M^Theta_*), F_{dagger C_v} of monoid type Zhat with divisor monoid Q>=0, mono-analytic and labeled versions; (ii) split Frobenioids F_env, F_xi, F_{F_xi} with divisor monoid N and isomorphisms F_{dagger F^Theta_v} -> F_env -> F_xi -> F_{F_xi}; (iii) embeddings F_gau -> product over |t| in F_l* of labeled copies ('Gaussian distributions') and diagonal 'constant distributions'.",
   "explicit_hypotheses": [],
   "implicit_hypotheses": [],
-  "conclusion": "Definitions.",
+  "conclusion": "Definition (no proof obligation): fixes the Frobenioid interpretations of the constant, theta and Gaussian monoids.",
   "definitions_required": [],
   "results_used": [
    "IUT2.Cor3_5",
@@ -569,7 +614,7 @@
    "AbsTopIII: Corollary 1.10 (b), Proposition 5.8 (iii)",
    "IUTchI: Example 3.5 (iii), Definition 3.1 (e), (f)"
   ],
-  "lean_declaration": "IUT.PaperII.Labels.sum_exponents",
+  "lean_declaration": null,
   "statement_status": "EXTRACTED",
   "proof_status": "BLOCKED_BY_MATHLIB",
   "obligations": [
@@ -578,6 +623,9 @@
   ],
   "ambiguities": [
    "Remark 4.1.1 (i), page 122, calls this generalization tautological and largely vacuous."
+  ],
+  "fragments": [
+   "IUT2.Prop4_1.frag.sum_exponents"
   ]
  },
  "IUT2.Prop4_2": {
@@ -587,9 +635,12 @@
    "pages_read": "123, 124, 125"
   },
   "content": "Frobenioid-theoretic version at good nonarchimedean v: unique G_v-equivariant isomorphism Psi_{dagger F_v} -> Psi_cns(dagger Pi_v); a unique Zhat^x-orbit of isomorphisms on units and a unique isomorphism on realified value monoids sending the generator to log(p_v), giving a natural poly-isomorphism of semi-simplifications; symmetrizing isomorphisms; and natural isomorphisms Psi_{dagger F^Theta_v} -> Psi_env -> Psi_gau -> Psi_{F_gau}.",
-  "explicit_hypotheses": [],
+  "explicit_hypotheses": [
+   "The notation of Proposition 4.1",
+   "dagger F_v a p_v-adic Frobenioid appearing in a Theta-Hodge theater dagger HT^Theta (IUT I Definition 3.6), with base category B^temp(dagger Pi_v)^0"
+  ],
   "implicit_hypotheses": [],
-  "conclusion": "Kummer-theoretic chain at good nonarchimedean v.",
+  "conclusion": "Frobenioid-theoretic version at good nonarchimedean v: unique G_v-equivariant isomorphism Psi_{dagger F_v} -> Psi_cns(dagger Pi_v); a unique Zhat^x-orbit of isomorphisms on units and a unique isomorphism on realified value monoids sending the generator to log(p_v), giving a natural poly-isomorphism of semi-simplifications; symmetrizing isomorphisms; and natural isomorphisms Psi_{dagger F^Theta_v} -> Psi_env -> Psi_gau -> Psi_{F_gau}.",
   "definitions_required": [],
   "results_used": [
    "IUT2.Prop4_1"
@@ -604,7 +655,9 @@
    "No Lean vocabulary exists for tempered fundamental groups, mono-theta environments, Frobenioids or Hodge theaters; the statement stays a catalog entry.",
    "The paper's proof reads: follows immediately from the definitions and the references quoted."
   ],
-  "ambiguities": []
+  "ambiguities": [
+   "The opening hypothesis sentence was read from the text layer (prose only, no formula transcribed)."
+  ]
  },
  "IUT2.Prop4_3": {
   "source": {
@@ -617,7 +670,7 @@
    "v in V^arc"
   ],
   "implicit_hypotheses": [],
-  "conclusion": "Functorial construction from the Aut-holomorphic space U_v.",
+  "conclusion": "At archimedean v: constant monoid Psi_cns(U_v) = A^triangleright (nonzero elements of absolute value <= 1 of the complex archimedean field), R>=0(D_v) with log(p_v), symmetrizing isomorphisms from Gal(U^cor/U^+-) = F_l^{x+-} on cusps, theta and Gaussian monoids defined as at good nonarchimedean v with the same exponent vector (..., j^2 . log(p_v), ...), and the formal evaluation isomorphism.",
   "definitions_required": [],
   "results_used": [],
   "external_dependencies": [
@@ -640,9 +693,12 @@
    "pages_read": "129, 130, 131"
   },
   "content": "Frobenioid-theoretic version at archimedean v: the Kummer structure determines a unique isomorphism Psi_{dagger F_v} -> Psi_cns(dagger U_v); a unique {+-1}-orbit of isomorphisms on units and a unique isomorphism on realified value monoids sending the element determined by p_v = e to log(p_v); symmetrizing isomorphisms; natural isomorphisms Psi_{dagger F^Theta_v} -> Psi_env -> Psi_gau -> Psi_{F_gau}.",
-  "explicit_hypotheses": [],
+  "explicit_hypotheses": [
+   "The notation of Proposition 4.3",
+   "dagger F_v = (dagger C_v, dagger D_v, dagger kappa_v) the data at archimedean v of a Theta-Hodge theater dagger HT^Theta (IUT I Definition 3.6, Example 3.4 (i))"
+  ],
   "implicit_hypotheses": [],
-  "conclusion": "Kummer-theoretic chain at archimedean v.",
+  "conclusion": "Frobenioid-theoretic version at archimedean v: the Kummer structure determines a unique isomorphism Psi_{dagger F_v} -> Psi_cns(dagger U_v); a unique {+-1}-orbit of isomorphisms on units and a unique isomorphism on realified value monoids sending the element determined by p_v = e to log(p_v); symmetrizing isomorphisms; natural isomorphisms Psi_{dagger F^Theta_v} -> Psi_env -> Psi_gau -> Psi_{F_gau}.",
   "definitions_required": [],
   "results_used": [
    "IUT2.Prop4_3"
@@ -655,7 +711,9 @@
    "No Lean vocabulary exists for tempered fundamental groups, mono-theta environments, Frobenioids or Hodge theaters; the statement stays a catalog entry.",
    "The paper's proof reads: follows immediately from the definitions and the references quoted."
   ],
-  "ambiguities": []
+  "ambiguities": [
+   "The opening hypothesis sentence was read from the text layer (prose only, no formula transcribed)."
+  ]
  },
  "IUT2.Cor4_5": {
   "source": {
@@ -664,9 +722,12 @@
    "pages_read": "131, 132, 133, 134"
   },
   "content": "Group-theoretic monoids for a D-Theta^{+-ell}-Hodge theater: (i) constant monoids Psi_cns(D) (up to Pi_v-conjugacy at nonarchimedean v); (ii) semi-simplifications with splittings and distinguished elements, and a global realified Frobenioid D^{||-}(D^{|-}) with Prime -> V and local isomorphisms rho; (iii) global F_l^{x+-}-symmetrizing isomorphisms, via the bijection zeta: LabCusp^+- -> T, compatible with the F_l^{x+-}-symmetry of the D-Theta^ell-bridge; (iv) local theta and Gaussian monoids with evaluation isomorphisms; (v) global realified theta and Gaussian Frobenioids D_env, D_gau (the latter a subcategory of the product over j in F_l* with vector of ratios (..., j^2 ., ...)) and a global formal evaluation isomorphism D_env -> D_gau.",
-  "explicit_hypotheses": [],
+  "explicit_hypotheses": [
+   "dagger HT^{D-Theta+-ell} a D-Theta^{+-ell}-Hodge theater relative to the given initial Theta-data (IUT I Definition 6.4 (iii))",
+   "double-dagger D a D-prime-strip"
+  ],
   "implicit_hypotheses": [],
-  "conclusion": "Global group-theoretic construction of theta and Gaussian Frobenioids.",
+  "conclusion": "Group-theoretic monoids for a D-Theta^{+-ell}-Hodge theater: (i) constant monoids Psi_cns(D) (up to Pi_v-conjugacy at nonarchimedean v); (ii) semi-simplifications with splittings and distinguished elements, and a global realified Frobenioid D^{||-}(D^{|-}) with Prime -> V and local isomorphisms rho; (iii) global F_l^{x+-}-symmetrizing isomorphisms, via the bijection zeta: LabCusp^+- -> T, compatible with the F_l^{x+-}-symmetry of the D-Theta^ell-bridge; (iv) local theta and Gaussian monoids with evaluation isomorphisms; (v) global realified theta and Gaussian Frobenioids D_env, D_gau (the latter a subcategory of the product over j in F_l* with vector of ratios (..., j^2 ., ...)) and a global formal evaluation isomorphism D_env -> D_gau.",
   "definitions_required": [],
   "results_used": [
    "IUT2.Cor3_5",
@@ -683,7 +744,9 @@
    "No Lean vocabulary exists for tempered fundamental groups, mono-theta environments, Frobenioids or Hodge theaters; the statement stays a catalog entry.",
    "The paper's proof reads: follows immediately from the definitions and the references quoted."
   ],
-  "ambiguities": []
+  "ambiguities": [
+   "The opening hypothesis sentence was read from the text layer (prose only, no formula transcribed)."
+  ]
  },
  "IUT2.Rem4_5_4": {
   "source": {
@@ -694,17 +757,17 @@
   "content": "D_gau is a weighted diagonal: its divisor (respectively rational function) monoid consists of (1^2 . phi, 2^2 . phi, ..., j^2 . phi, ...) (respectively with beta) for phi (beta) in the corresponding monoid of D^{||-}(D^{|-}).",
   "explicit_hypotheses": [],
   "implicit_hypotheses": [],
-  "conclusion": "Description of the weights j^2.",
+  "conclusion": "D_gau is a weighted diagonal: its divisor monoid consists of the tuples (1^2 . phi, 2^2 . phi, ..., j^2 . phi, ...) and its rational function monoid of (beta^{1^2}, ..., beta^{j^2}, ...) in multiplicative notation, for phi, beta in the corresponding monoids of D^{||-}(D^{|-}).",
   "definitions_required": [],
   "results_used": [
    "IUT2.Cor4_5"
   ],
   "external_dependencies": [],
-  "lean_declaration": "IUT.PaperII.Labels.sum_exponents",
+  "lean_declaration": null,
   "statement_status": "EXTRACTED",
   "proof_status": "NOT_EXTRACTED",
   "obligations": [
-   "Lean contains only the sum and the average (weight 1/l*, Remark 4.7.3 (iii), page 145) of the weights j^2, j = 1, ..., l*; this is elementary arithmetic not stated in the paper."
+   "No Lean declaration states this remark. The sum of the weights j^2 is computed in the fragment IUT2.Prop4_1.frag.sum_exponents, which is elementary arithmetic not stated in the paper."
   ],
   "ambiguities": []
  },
@@ -715,9 +778,11 @@
    "pages_read": "137, 138, 139"
   },
   "content": "Frobenioid-theoretic monoids for a Theta^{+-ell}-Hodge theater: (i) Kummer isomorphisms Psi_cns(F) -> Psi_cns(D); (ii) semi-simplifications and a unique isomorphism C^{||-} -> D^{||-}(D^{|-}) compatible with Prime bijections and local isomorphisms; (iii) Kummer isomorphisms with t-independent conjugacy indeterminacy and F_l^{x+-}-symmetrizing isomorphisms; (iv) local theta and Gaussian monoids from a Theta-bridge glued via IUT I Proposition 6.7, with evaluation isomorphisms Psi_{F_env} -> Psi_env -> Psi_gau -> Psi_{F_gau}; (v) global realified Frobenioids C_env, C_gau and evaluation isomorphisms.",
-  "explicit_hypotheses": [],
+  "explicit_hypotheses": [
+   "dagger HT^{Theta+-ell} a Theta^{+-ell}-Hodge theater relative to the given initial Theta-data (IUT I Definition 6.11)"
+  ],
   "implicit_hypotheses": [],
-  "conclusion": "Frobenioid-theoretic global construction.",
+  "conclusion": "Frobenioid-theoretic monoids for a Theta^{+-ell}-Hodge theater: (i) Kummer isomorphisms Psi_cns(F) -> Psi_cns(D); (ii) semi-simplifications and a unique isomorphism C^{||-} -> D^{||-}(D^{|-}) compatible with Prime bijections and local isomorphisms; (iii) Kummer isomorphisms with t-independent conjugacy indeterminacy and F_l^{x+-}-symmetrizing isomorphisms; (iv) local theta and Gaussian monoids from a Theta-bridge glued via IUT I Proposition 6.7, with evaluation isomorphisms Psi_{F_env} -> Psi_env -> Psi_gau -> Psi_{F_gau}; (v) global realified Frobenioids C_env, C_gau and evaluation isomorphisms.",
   "definitions_required": [],
   "results_used": [
    "IUT2.Cor4_5",
@@ -735,7 +800,9 @@
    "No Lean vocabulary exists for tempered fundamental groups, mono-theta environments, Frobenioids or Hodge theaters; the statement stays a catalog entry.",
    "The paper's proof reads: follows immediately from the definitions and the references quoted."
   ],
-  "ambiguities": []
+  "ambiguities": [
+   "The opening hypothesis sentence was read from the text layer (prose only, no formula transcribed)."
+  ]
  },
  "IUT2.Rem4_7_3": {
   "source": {
@@ -746,17 +813,20 @@
   "content": "F_l^{x+-} versus F_l*-symmetry: F_l approximates Z; F_l^{x+-} corresponds to addition, involves the zero label and units, and is applied for conjugate synchronization (uniradial, but coric after mono-analyticization); F_l* corresponds to multiplication, separates the zero label, describes the Gaussian monoids as functions of j in F_l*, and is multiradial. Volumes at each j in F_l* are given weight 1/l* so that the diagonal constant distribution has weight 1.",
   "explicit_hypotheses": [],
   "implicit_hypotheses": [],
-  "conclusion": "Interpretive remark.",
+  "conclusion": "F_l^{x+-}-symmetry (additive, with the zero label, used for conjugate synchronization) and F_l*-symmetry (multiplicative, separating the zero label, used for the Gaussian monoids as functions of j) play different roles; the volume at each j in F_l* gets weight 1/l*, so the diagonal constant distribution has total weight 1.",
   "definitions_required": [],
   "results_used": [],
   "external_dependencies": [],
-  "lean_declaration": "IUT.PaperII.Labels.average_exponents",
+  "lean_declaration": null,
   "statement_status": "EXTRACTED",
   "proof_status": "NOT_EXTRACTED",
   "obligations": [
-   "Only the weighted average (1/l*) . sum of j^2 is computed in Lean; the paper does not state its value."
+   "The weighted average (1/l*) . sum j^2 is computed in a fragment; the paper does not state its value."
   ],
-  "ambiguities": []
+  "ambiguities": [],
+  "fragments": [
+   "IUT2.Rem4_7_3.frag.average_exponents"
+  ]
  },
  "IUT2.Cor4_7": {
   "source": {
@@ -765,9 +835,11 @@
    "pages_read": "140, 141, 142"
   },
   "content": "Group-theoretic monoids for a D-Theta NF-Hodge theater glued via IUT I Proposition 6.7: (i) non-realified global structures (monoid, field, pseudo-monoid, Frobenioids F_mod, realification functor) up to conjugacy indeterminacies; (ii) F_l*-symmetrizing isomorphisms between data labeled by j in LabCusp, with independent conjugacy indeterminacies for distinct j plus one j-independent indeterminacy; diagonal objects only in a formal sense; (iii) localization functors and realified global structures compatible with the symmetrizing isomorphisms.",
-  "explicit_hypotheses": [],
+  "explicit_hypotheses": [
+   "dagger HT^{D-Theta NF} a D-Theta NF-Hodge theater (IUT I Definition 4.6 (iii)) glued to the D-Theta^{+-ell}-Hodge theater of Corollary 4.5 via IUT I Proposition 6.7"
+  ],
   "implicit_hypotheses": [],
-  "conclusion": "Global constructions with F_l*-symmetry (no conjugate synchronization; Remark 4.7.2).",
+  "conclusion": "Group-theoretic monoids for a D-Theta NF-Hodge theater glued via IUT I Proposition 6.7: (i) non-realified global structures (monoid, field, pseudo-monoid, Frobenioids F_mod, realification functor) up to conjugacy indeterminacies; (ii) F_l*-symmetrizing isomorphisms between data labeled by j in LabCusp, with independent conjugacy indeterminacies for distinct j plus one j-independent indeterminacy; diagonal objects only in a formal sense; (iii) localization functors and realified global structures compatible with the symmetrizing isomorphisms.",
   "definitions_required": [],
   "results_used": [],
   "external_dependencies": [
@@ -780,7 +852,9 @@
    "No Lean vocabulary exists for tempered fundamental groups, mono-theta environments, Frobenioids or Hodge theaters; the statement stays a catalog entry.",
    "The paper's proof reads: follows immediately from the definitions and the references quoted."
   ],
-  "ambiguities": []
+  "ambiguities": [
+   "The opening hypothesis sentence was read from the text layer (prose only, no formula transcribed)."
+  ]
  },
  "IUT2.Cor4_8": {
   "source": {
@@ -789,9 +863,11 @@
    "pages_read": "149, 150, 151"
   },
   "content": "Frobenioid-theoretic version for a Theta NF-Hodge theater: (i) Kummer isomorphisms of pseudo-monoids and induced isomorphisms of Frobenioids F^circledast -> F^circledast(D), F_mod, realified versions; (ii) labeled isomorphisms and F_l*-symmetrizing isomorphisms with the same conjugacy indeterminacy pattern as Corollary 4.7; (iii) localization functors and a natural isomorphism C_j -> (F_mod)^R_j.",
-  "explicit_hypotheses": [],
+  "explicit_hypotheses": [
+   "dagger HT^{Theta NF} a Theta NF-Hodge theater (opening sentence on page 149; the rest of the setting is not transcribed here)"
+  ],
   "implicit_hypotheses": [],
-  "conclusion": "Frobenioid-theoretic global structures with F_l*-symmetry.",
+  "conclusion": "Frobenioid-theoretic version for a Theta NF-Hodge theater: (i) Kummer isomorphisms of pseudo-monoids and induced isomorphisms of Frobenioids F^circledast -> F^circledast(D), F_mod, realified versions; (ii) labeled isomorphisms and F_l*-symmetrizing isomorphisms with the same conjugacy indeterminacy pattern as Corollary 4.7; (iii) localization functors and a natural isomorphism C_j -> (F_mod)^R_j.",
   "definitions_required": [],
   "results_used": [
    "IUT2.Cor4_7",
@@ -807,7 +883,9 @@
    "No Lean vocabulary exists for tempered fundamental groups, mono-theta environments, Frobenioids or Hodge theaters; the statement stays a catalog entry.",
    "The paper's proof reads: follows immediately from the definitions and the references quoted."
   ],
-  "ambiguities": []
+  "ambiguities": [
+   "The opening hypothesis sentence was read from the text layer (prose only, no formula transcribed)."
+  ]
  },
  "IUT2.Def4_9": {
   "source": {
@@ -818,7 +896,7 @@
   "content": "(i) For a Frobenioid over the finite etale site of an MLF or CAF: monoids O^triangleright(A), mu_N(A), O^mu(A), O^x(A), O^{x mu_N}(A), O^{x mu}(A); a x-Kummer structure is a Zhat^x-orbit of isomorphisms O^x(G) -> O^x(A), a x mu-Kummer structure an Ism-orbit of isomorphisms O^{x mu}(G) -> O^{x mu}(A); x-Kummer structures are unique (Remark 1.11.1 (b)); a x mu-Kummer structure is equivalent to the lattices I_H. (ii) to (iv) at bad and good nonarchimedean w: build O^{black-triangle x mu}(A) = O^black-triangle(A) x O^{x mu}(A), a model split Frobenioid with x mu-Kummer structure, F^{black-triangle x mu}_w. (v) at archimedean w: inductive system of quotients by N-torsion with Kummer structure up to the nontrivial automorphism of the unit circle. (vi) the collections F^{black-triangle x mu}, F^x, F^{x mu} (isometry subcategories). (vii) F^{|-square}-prime-strips for |-square in {|-x, |-x mu, |-black-triangle x mu} (rendered page 158); morphisms are collections of isomorphisms. (viii) F^{||- black-triangle x mu}-prime-strip: data (C^{||-}, Prime -> V, F^{black-triangle x mu}, rho) as in IUT I Definition 5.2 (iv); the generators at bad v with the rho determine the pilot object (negative arithmetic degree).",
   "explicit_hypotheses": [],
   "implicit_hypotheses": [],
-  "conclusion": "Definitions of x- and x mu-Kummer structures and the prime-strips that the modified links act on.",
+  "conclusion": "Definition (no proof obligation): fixes the x- and x mu-Kummer structures and the prime-strips on which the modified Theta-links act.",
   "definitions_required": [],
   "results_used": [
    "IUT2.Rem1_11_1"
@@ -850,7 +928,7 @@
    "Theta^{+-ell}NF-Hodge theaters dagger HT, ddagger HT"
   ],
   "implicit_hypotheses": [],
-  "conclusion": "Definition and basic properties of the Theta^{x mu}- and Theta^{x mu}_gau-links.",
+  "conclusion": "Frobenius-pictures. (i) constant prime-strip dagger F^{||-}_triangle with natural identification with dagger F^{||-}_mod (IUT I Definition 3.6 (c)), via the assignment '0, succ -> >' of Remark 3.8.2 (ii). (ii) theta and Gaussian prime-strips dagger F^{||-}_env, dagger F^{||-}_gau, identification dagger F^{||-}_env -> dagger F^{||-}_tht, and an evaluation isomorphism F_env -> F_gau. (iii) functoriality gives maps Isom_{F^{||-}}(F_env, ddagger F_triangle) -> Isom_{F^{||- black-triangle x mu}}(F^{x mu}_env, ddagger F^{x mu}_triangle), and the same with gau, between nonempty sets; the Theta^{x mu}-link is the full poly-isomorphism dagger F^{||- black-triangle x mu}_env -> ddagger F^{||- black-triangle x mu}_triangle and the Theta^{x mu}_gau-link the full poly-isomorphism dagger F^{||- black-triangle x mu}_gau -> ddagger F^{||- black-triangle x mu}_triangle. (iv) natural isomorphisms F^{|- x mu}_triangle -> F^{|- x mu}_env -> F^{|- x mu}_gau; composing with the links gives the full poly-isomorphism dagger F^{|- x mu}_triangle -> ddagger F^{|- x mu}_triangle (an invariant of both links), inducing the full poly-isomorphism of D^{|-}-prime-strips (the D-Theta^{+-ell}NF-link). (v) the induced isomorphism of global realified data (D^{||-}, Prime, rho) is compatible with the R>0-orbits of the isomorphisms from (C^{||-}_triangle, Prime, rho). (vi) chains indexed by Z form an oriented graph with translation symmetry but no arbitrary permutation symmetries.",
   "definitions_required": [],
   "results_used": [
    "IUT2.Cor4_6",
@@ -877,12 +955,12 @@
   "source": {
    "paper": "Inter-universal Teichmuller Theory II (December 2020)",
    "pdf_pages": "162 to 163",
-   "pages_read": "162, 163 (rendered 163)"
+   "pages_read": "162, 163 (rendered 162 to 163)"
   },
-  "content": "(i) coricity of F^{|- x mu} amounts to coricity of D^{|-} plus coricity of units modulo torsion; (ii) the value group portion is by no means preserved, it acts like a Frobenius morphism or a Teichmuller deformation; (iii) restricting the value group portion q_v -> {q_v^{j^2}}_{1<=j<=l*} to j = 1 gives a correspondence identifiable with the identity, but restriction to proper subsets of |F_l| is in general incompatible with the symmetries.",
+  "content": "(i) coricity of F^{|- x mu} amounts to coricity of D^{|-} plus coricity of units modulo torsion; (ii) the value group portion is by no means preserved, it acts like a Frobenius morphism or a Teichmuller deformation; (iii) restricting the value group portion qq_v -> {qq_v^{j^2}}_{1<=j<=l*} to j = 1 gives a correspondence identifiable with the identity, but restriction to proper subsets of |F_l| is in general incompatible with the symmetries.",
   "explicit_hypotheses": [],
   "implicit_hypotheses": [],
-  "conclusion": "Interpretive remark.",
+  "conclusion": "(i) coricity of F^{|- x mu} amounts to coricity of D^{|-} plus coricity of units modulo torsion; (ii) the value group portion is by no means preserved, it acts like a Frobenius morphism or a Teichmuller deformation; (iii) restricting the value group portion qq_v -> {qq_v^{j^2}}_{1<=j<=l*} to j = 1 gives a correspondence identifiable with the identity, but restriction to proper subsets of |F_l| is in general incompatible with the symmetries.",
   "definitions_required": [],
   "results_used": [
    "IUT2.Cor4_10"
@@ -894,7 +972,9 @@
   "obligations": [
    "Nothing to formalize."
   ],
-  "ambiguities": []
+  "ambiguities": [
+   "qq_v denotes the q with a double underline of IUT I, Example 3.2 (iv), page 71 (rendered): qq_v = q_v^{1/2l}, a chosen 2l-th root of the Tate parameter q_v, determined up to a mu_{2l}-multiple; relative to q_v the value qq_v^{j^2} is q_v^{j^2/(2l)}. Checked on page 162 to 163 (rendered)."
+  ]
  },
  "IUT2.Cor4_11": {
   "source": {
@@ -903,9 +983,11 @@
    "pages_read": "163, 164"
   },
   "content": "Etale-pictures: the induced D-Theta^{+-ell}NF-links form a chain of full poly-isomorphisms of D^{|-}_triangle, a mono-analytic core; spokes give an etale-picture admitting arbitrary permutation symmetries; compatible with IUT I Corollaries 4.12, 6.10.",
-  "explicit_hypotheses": [],
+  "explicit_hypotheses": [
+   "The situation of Corollary 4.10 (vi) (page 163, rendered)"
+  ],
   "implicit_hypotheses": [],
-  "conclusion": "Etale-picture with permutation symmetries.",
+  "conclusion": "Etale-pictures: the induced D-Theta^{+-ell}NF-links form a chain of full poly-isomorphisms of D^{|-}_triangle, a mono-analytic core; spokes give an etale-picture admitting arbitrary permutation symmetries; compatible with IUT I Corollaries 4.12, 6.10.",
   "definitions_required": [],
   "results_used": [
    "IUT2.Cor4_10"
@@ -926,12 +1008,12 @@
   "source": {
    "paper": "Inter-universal Teichmuller Theory II (December 2020)",
    "pdf_pages": "164 to 165",
-   "pages_read": "164, 165"
+   "pages_read": "164, 165 (rendered 164 to 165)"
   },
-  "content": "The Theta^{x mu}_gau-link is roughly a transformation q -> q^{(1^2, ..., (l*)^2)}; the Frobenius-picture is an infinite iteration, the etale-picture a commutativity of these exponents, compared with cartesian versus polar coordinates for the Gaussian integral.",
+  "content": "The Theta^{x mu}_gau-link is roughly a transformation qq -> qq^{(1^2, ..., (l*)^2)} (qq the q with a double underline); the Frobenius-picture is an infinite iteration, the etale-picture a commutativity of these exponents, compared with cartesian versus polar coordinates for the Gaussian integral.",
   "explicit_hypotheses": [],
   "implicit_hypotheses": [],
-  "conclusion": "Heuristic description; the definition is the full poly-isomorphism of Corollary 4.10 (iii).",
+  "conclusion": "The Theta^{x mu}_gau-link is roughly a transformation qq -> qq^{(1^2, ..., (l*)^2)} (qq the q with a double underline); the Frobenius-picture is an infinite iteration, the etale-picture a commutativity of these exponents, compared with cartesian versus polar coordinates for the Gaussian integral.",
   "definitions_required": [],
   "results_used": [],
   "external_dependencies": [],
@@ -941,18 +1023,24 @@
   "obligations": [
    "Nothing to formalize."
   ],
-  "ambiguities": []
+  "ambiguities": [
+   "qq_v denotes the q with a double underline of IUT I, Example 3.2 (iv), page 71 (rendered): qq_v = q_v^{1/2l}, a chosen 2l-th root of the Tate parameter q_v, determined up to a mu_{2l}-multiple; relative to q_v the value qq_v^{j^2} is q_v^{j^2/(2l)}. Checked on page 164 to 165 (rendered)."
+  ]
  },
  "IUT2.Ex1_8": {
   "source": {
    "paper": "Inter-universal Teichmuller Theory II (December 2020)",
-   "pdf_pages": "36 to 39",
-   "pages_read": "36, 37, 38, 39"
+   "pdf_pages": "35 to 41",
+   "pages_read": "35, 36, 37, 38, 39, 40, 41 (all rendered)"
   },
-  "content": "Radial environments for MLF-Galois TM-pairs: (ii) a poly-isomorphism alpha from (Pi acting on M_TM(Pi)) to (G acting on O^triangleright(G)) restricted to Pi; (iii) a Gamma-orbit of unit isomorphisms, Gamma in Zhat^x; (iv) Ism(G), the compact group of G-isometries of O^{x mu}(G), and closed subgroups Gamma^{x mu} of Ism (examples: Ism, Im(Zhat^x)); (v) the data alpha_{mu,x mu} from the full poly-isomorphism Pi/Delta -> G and the trivial homomorphism M^mu_TM(Pi) -> O^{x mu}(G).",
-  "explicit_hypotheses": [],
+  "content": "Concrete multiradial environments, each defined by radial data, coric data and a radial algorithm whose radial functor is full and essentially surjective. (i) Radial data (Pi, G, alpha): Pi isomorphic to the tempered group Pi^tp of X_k (double underline), G isomorphic to G_k, alpha the full poly-isomorphism Pi/Delta -> G of topological groups; coric data a topological group isomorphic to G_k; radial algorithm (Pi, G, alpha) -> G (compare IUT I Fig. 3.2, Fig. 1.2). (ii) Using the algorithms (*_TM) Pi -> (Pi acting on M_TM(Pi)) and (*_triangleright) G -> (G acting on O^triangleright(G)) and the tautological isomorphism (*_TM triangleright), radial data (Pi on M_TM(Pi), G on O^triangleright(G), alpha_triangleright) with alpha_triangleright the induced poly-isomorphism of MLF-Galois TM-pairs; radial algorithm to (G on O^triangleright(G)). (iii) For a closed subgroup Gamma of Zhat^x, the unit versions (*_x) with M^x_TM(Pi), O^x(G) and alpha_x the Gamma-orbit of the poly-isomorphism induced by alpha_triangleright; isomorphisms of coric data are Gamma-multiples. (iv) Torsion versions (*_mu) and quotients M^{x mu} = M^x/M^mu, O^{x mu} = O^x/O^mu (*_{x mu}); cyclotomic and co-cyclotomic versions of (iii); Ism(G), the compact group of G-isometries of O^{x mu}(G); closed subgroups Gamma^{x mu} of Ism(-) preserved by isomorphisms G_1 -> G_2 may replace Gamma (examples: Ism itself, and the image of Zhat^x -> Z_p^x in Ism). (v) Radial data (Pi on M^mu_TM(Pi), G on O^{x mu}(G), alpha_{mu, x mu}), with alpha_{mu, x mu} the poly-morphism determined by the full poly-isomorphism Pi/Delta -> G and the trivial homomorphism M^mu_TM(Pi) -> O^{x mu}(G); isomorphisms are Gamma^{x mu}-multiples; radial algorithm to (G on O^{x mu}(G)). (vi) Replacing M^mu_TM(Pi) by Pi_mu(M^Theta_*(Pi)) tensor Q/Z gives an exterior-cyclotomic version of (v). (vii) Groupification algorithms (*_gp) and their profinite completions (*_gp-hat), with a Gamma-action and a poly-isomorphism alpha_gp-hat compatible with alpha_x. (viii) Radial data (Pi on M_TM(Pi), G on O^gp-hat(G), alpha_{triangleright, x mu}), a diagram of poly-morphisms through the groupifications and O^x(G) onto O^{x mu}(G); coric data as in (v) with Gamma^{x mu} = Im(Gamma); radial algorithm to (G on O^{x mu}(G)). (ix) The log-shell I(G) in O^{x mu}(G) (p^{-1} times the image of the G-invariants of O^x(G)); replacing G on O^{x mu}(G) by (G on O^{x mu}(G), I(G)) in (v), (vi), (viii) gives log-shell versions.",
+  "explicit_hypotheses": [
+   "k an MLF; Pi^tp of X_k (double underline) and G_k as in the setting of Section 1 of IUT II",
+   "(iii): Gamma a closed subgroup of Zhat^x",
+   "(iv), (v): Gamma^{x mu} a closed subgroup of Ism(-) preserved by arbitrary isomorphisms of topological groups"
+  ],
   "implicit_hypotheses": [],
-  "conclusion": "Definitions of the environments used in Corollaries 1.10 to 1.12.",
+  "conclusion": "Each of (i), (ii), (iii), (iv) (cyclotomic and co-cyclotomic versions), (v), (vi), (viii), (ix) defines radial data, coric data and a radial algorithm whose radial functor is full and essentially surjective, hence a multiradial environment; (vii) defines the groupification algorithms and the poly-isomorphism alpha_gp-hat used in (viii).",
   "definitions_required": [],
   "results_used": [],
   "external_dependencies": [],
@@ -962,7 +1050,9 @@
   "obligations": [
    "No Lean vocabulary exists for tempered fundamental groups, mono-theta environments, Frobenioids or Hodge theaters; the statement stays a catalog entry."
   ],
-  "ambiguities": []
+  "ambiguities": [
+   "The decorations (hats, double underlines, bold mu) were read from the rendered pages 35 to 41 and are written in plain text here."
+  ]
  },
  "IUT2.Rem1_10_2": {
   "source": {
@@ -973,7 +1063,7 @@
   "content": "The multiradiality of Corollary 1.10 is a consequence of the triviality of the homomorphism from Pi_mu tensor Q/Z to O^{x mu}(G).",
   "explicit_hypotheses": [],
   "implicit_hypotheses": [],
-  "conclusion": "Interpretive remark.",
+  "conclusion": "The multiradiality of Corollary 1.10 is a consequence of the triviality of the homomorphism from Pi_mu tensor Q/Z to O^{x mu}(G).",
   "definitions_required": [],
   "results_used": [
    "IUT2.Cor1_10"
@@ -996,7 +1086,7 @@
   "content": "The surjection H^1(G, mu_Zhat(G)) -> Zhat is coric; transported via the base-field cyclotomic rigidity it becomes uniradial, or multiradial only up to a Zhat^x-indeterminacy.",
   "explicit_hypotheses": [],
   "implicit_hypotheses": [],
-  "conclusion": "Interpretive remark.",
+  "conclusion": "The surjection H^1(G, mu_Zhat(G)) -> Zhat is coric; transported via the base-field cyclotomic rigidity it becomes uniradial, or multiradial only up to a Zhat^x-indeterminacy.",
   "definitions_required": [],
   "results_used": [
    "IUT2.Cor1_11"
@@ -1013,13 +1103,13 @@
  "IUT2.Rem1_12_2": {
   "source": {
    "paper": "Inter-universal Teichmuller Theory II (December 2020)",
-   "pdf_pages": "58",
+   "pdf_pages": "58 to 60",
    "pages_read": "58"
   },
-  "content": "(i) The essential content of Corollary 1.12 is the construction of theta(Pi) up to a mu_{2l}-indeterminacy (not up to O_k^x), using that the 2l-torsion of O_k^x is characteristic.",
+  "content": "Only part (i) was read; see IUT2.Rem1_12_2.i.",
   "explicit_hypotheses": [],
   "implicit_hypotheses": [],
-  "conclusion": "Interpretive remark.",
+  "conclusion": "Not extracted: only part (i) was read.",
   "definitions_required": [],
   "results_used": [
    "IUT2.Cor1_12"
@@ -1028,12 +1118,15 @@
    "EtTh: Theorem 1.10 (i)"
   ],
   "lean_declaration": null,
-  "statement_status": "EXTRACTED",
+  "statement_status": "NOT_EXTRACTED",
   "proof_status": "NOT_EXTRACTED",
   "obligations": [
    "Nothing to formalize."
   ],
-  "ambiguities": []
+  "ambiguities": [],
+  "parts": [
+   "IUT2.Rem1_12_2.i"
+  ]
  },
  "IUT2.Rem3_5_2": {
   "source": {
@@ -1059,13 +1152,13 @@
  "IUT2.Rem3_6_2": {
   "source": {
    "paper": "Inter-universal Teichmuller Theory II (December 2020)",
-   "pdf_pages": "101 to 103",
-   "pages_read": "101, 102, 103 (part (iii) only)"
+   "pdf_pages": "101 to 104",
+   "pages_read": "101, 102, 103, 104 (all rendered); IUT I page 71 (rendered) for qq_v"
   },
-  "content": "(iii) Composing the Theta-link q -> Theta_v with Galois evaluation gives q -> {q^{j^2}}_{1<=j<=l*}, described as a 'homotopy' between the identity (j = 1) and q -> q^{(l*)^2}.",
+  "content": "On the diagram in the third display of Corollary 3.6 (ii), summarized as Fig. 3.1 (Frobenioid-theoretic theta monoids => group-theoretic theta monoids via Kummer, Galois evaluation down to group-theoretic Gaussian monoids, and 'forget' back to Frobenioid-theoretic Gaussian monoids). (i) The three portions correspond to Kummer, Galois evaluation and forgetting; forgetting yields post-anabelian monoids; the composite of Kummer and evaluation is a comparison isomorphism between Frobenius-like and etale-like structures, as in classical Hodge-Arakelov theory where the comparison isomorphism comes from evaluating theta functions and their derivatives at torsion points. (ii) Etale-like structures (etale or tempered fundamental groups) are invariant under non-ring/scheme-theoretic filters such as the Theta-link and the log-wall and are rigid via anabelian algorithms; Frobenius-like structures (abstract monoids) are not so rigidified, which allows such filters to be constructed; the two play complementary roles with respect to binding to conventional scheme theory (Fig. 3.2), and Kummer theory relates them within a Hodge theater. (iii) Composing the Theta-link qq_v -> Theta_v with the arrows of Fig. 3.1 gives the correspondence qq_v -> {qq_v^{j^2}}_{1<=j<=l*}, a 'modified Theta-link', viewed as an abstract combinatorial Frobenius lifting, a homotopy between the identity qq_v -> qq_v and qq_v -> qq_v^{(l*)^2}; the exponents {j^2} are highly distinguished (Remark 2.6.3). (iv) Grothendieck Conjecture-type results in anabelian geometry are comparison isomorphisms between polynomial-function-theoretic and group-theoretic collections of morphisms, obtained by combining considerations particular to the situation with Galois evaluation via Kummer theory of polynomial functions or differential forms at rational points.",
   "explicit_hypotheses": [],
   "implicit_hypotheses": [],
-  "conclusion": "Interpretive remark; only part (iii) extracted.",
+  "conclusion": "Interpretation of the diagram of Corollary 3.6 (ii): Kummer, Galois evaluation and forgetting as in Fig. 3.1; the complementary roles of etale-like and Frobenius-like structures; the modified Theta-link qq_v -> {qq_v^{j^2}}_{1<=j<=l*} as a homotopy between the identity and qq_v -> qq_v^{(l*)^2}; Grothendieck Conjecture-type results as comparison isomorphisms.",
   "definitions_required": [],
   "results_used": [
    "IUT2.Cor3_6"
@@ -1075,9 +1168,11 @@
   "statement_status": "EXTRACTED",
   "proof_status": "NOT_EXTRACTED",
   "obligations": [
-   "Nothing to formalize."
+   "Interpretive; no mathematical claim beyond Corollary 3.6 and the cited results. The objects (Theta-link, Gaussian monoids) have no Lean vocabulary."
   ],
-  "ambiguities": []
+  "ambiguities": [
+   "qq_v denotes the q with a double underline of IUT I, Example 3.2 (iv), page 71 (rendered): qq_v = q_v^{1/2l}, a chosen 2l-th root of the Tate parameter q_v, determined up to a mu_{2l}-multiple; relative to q_v the value qq_v^{j^2} is q_v^{j^2/(2l)}."
+  ]
  },
  "IUT2.Rem3_7_1": {
   "source": {
@@ -1088,7 +1183,7 @@
   "content": "A multiradial version of the Gaussian monoid algorithm is obtained only in IUT III, via log-shells, at the cost of additional indeterminacies.",
   "explicit_hypotheses": [],
   "implicit_hypotheses": [],
-  "conclusion": "Interpretive remark.",
+  "conclusion": "A multiradial version of the Gaussian monoid algorithm is obtained only in IUT III, via log-shells, at the cost of additional indeterminacies.",
   "definitions_required": [],
   "results_used": [
    "IUT2.Cor3_7"
@@ -1105,13 +1200,13 @@
  "IUT2.Rem3_8_2": {
   "source": {
    "paper": "Inter-universal Teichmuller Theory II (December 2020)",
-   "pdf_pages": "116",
+   "pdf_pages": "116 to 117",
    "pages_read": "116"
   },
-  "content": "(ii) Passing from the D-Theta^{+-ell}-Hodge theater to the D-Theta NF-Hodge theater via IUT I Proposition 6.7 removes the label 0 and identifies it with F_l*, the assignment '0, succ -> >'; this matches the isomorphism Psi_cns_0 -> Psi_cns_<F_l*> of Corollary 3.5 (iii).",
+  "content": "Only part (ii) was read; see IUT2.Rem3_8_2.ii.",
   "explicit_hypotheses": [],
   "implicit_hypotheses": [],
-  "conclusion": "Interpretive remark used in Corollary 4.10 (i).",
+  "conclusion": "Not extracted: only part (ii) was read.",
   "definitions_required": [],
   "results_used": [
    "IUT2.Cor3_5"
@@ -1120,12 +1215,15 @@
    "IUTchI: Proposition 6.7"
   ],
   "lean_declaration": null,
-  "statement_status": "EXTRACTED",
+  "statement_status": "NOT_EXTRACTED",
   "proof_status": "NOT_EXTRACTED",
   "obligations": [
    "Nothing to formalize."
   ],
-  "ambiguities": []
+  "ambiguities": [],
+  "parts": [
+   "IUT2.Rem3_8_2.ii"
+  ]
  },
  "IUT2.Rem4_10_1": {
   "source": {
@@ -1136,7 +1234,7 @@
   "content": "The prime-strips F_env, F_gau are only well defined up to automorphisms at bad v of the split Frobenioids that induce the identity on the associated F^{|- x}-prime-strip; this indeterminacy is absorbed by the full poly-isomorphisms of Corollary 4.10 (iii).",
   "explicit_hypotheses": [],
   "implicit_hypotheses": [],
-  "conclusion": "Interpretive remark.",
+  "conclusion": "The prime-strips F_env, F_gau are only well defined up to automorphisms at bad v of the split Frobenioids that induce the identity on the associated F^{|- x}-prime-strip; this indeterminacy is absorbed by the full poly-isomorphisms of Corollary 4.10 (iii).",
   "definitions_required": [],
   "results_used": [
    "IUT2.Cor4_10"
@@ -1154,12 +1252,12 @@
   "source": {
    "paper": "Inter-universal Teichmuller Theory II (December 2020)",
    "pdf_pages": "162",
-   "pages_read": "162"
+   "pages_read": "162 (rendered 162)"
   },
-  "content": "(i) The Theta^{x mu}_gau-link is the composite of the Theta^{x mu}-link with Galois evaluation. (ii) At bad v the Theta^{x mu}-link relates split theta monoids with constant monoid submonoids split by q_v; these splittings do not arise from Galois evaluation.",
+  "content": "(i) The Theta^{x mu}_gau-link is the composite of the Theta^{x mu}-link with Galois evaluation. (ii) At bad v the Theta^{x mu}-link relates split theta monoids with constant monoid submonoids split by qq_v; these splittings do not arise from Galois evaluation.",
   "explicit_hypotheses": [],
   "implicit_hypotheses": [],
-  "conclusion": "Interpretive remark.",
+  "conclusion": "(i) The Theta^{x mu}_gau-link is the composite of the Theta^{x mu}-link with Galois evaluation. (ii) At bad v the Theta^{x mu}-link relates split theta monoids with constant monoid submonoids split by qq_v; these splittings do not arise from Galois evaluation.",
   "definitions_required": [],
   "results_used": [
    "IUT2.Cor4_10"
@@ -1171,6 +1269,219 @@
   "obligations": [
    "Nothing to formalize."
   ],
+  "ambiguities": [
+   "qq_v denotes the q with a double underline of IUT I, Example 3.2 (iv), page 71 (rendered): qq_v = q_v^{1/2l}, a chosen 2l-th root of the Tate parameter q_v, determined up to a mu_{2l}-multiple; relative to q_v the value qq_v^{j^2} is q_v^{j^2/(2l)}. Checked on page 162 (rendered)."
+  ]
+ },
+ "IUT2.Rem2_5_1.frag.labelRep_bijective": {
+  "kind": "fragment",
+  "parent": "IUT2.Rem2_5_1",
+  "source": {
+   "paper": "Inter-universal Teichmuller Theory II (December 2020)",
+   "pdf_pages": "72",
+   "pages_read": "72 (rendered)"
+  },
+  "content": "For odd l, the map {0, 1, ..., l*} -> |F_l| = ZMod l / (x ~ +-x) sending j to its class is a bijection.",
+  "explicit_hypotheses": [
+   "l a natural number",
+   "l odd"
+  ],
+  "implicit_hypotheses": [],
+  "conclusion": "Function.Bijective (labelRep l).",
+  "definitions_required": [],
+  "results_used": [],
+  "external_dependencies": [],
+  "lean_declaration": "IUT.PaperII.Labels.labelRep_bijective",
+  "covers": "The phrase 'the element of {0, 1, ..., l*} determined by the given element j in |F_l|', page 72 (and page 3)",
+  "not_covered": "Everything about theta values, Kummer maps, cyclotomic rigidity, and parts (ii), (iii).",
+  "statement_status": "STATEMENT_FORMALIZED",
+  "proof_status": "KERNEL_VERIFIED",
+  "obligations": [],
   "ambiguities": []
+ },
+ "IUT2.Rem2_6_3.frag.gammaNorm_eq": {
+  "kind": "fragment",
+  "parent": "IUT2.Rem2_6_3",
+  "source": {
+   "paper": "Inter-universal Teichmuller Theory II (December 2020)",
+   "pdf_pages": "79 to 80",
+   "pages_read": "79 to 80 (rendered)"
+  },
+  "content": "For Gamma' = [-a, b] with |Gamma'| >= 1: ||Gamma'|| = (|Gamma'| + 1)(2|Gamma'| + 1)/6.",
+  "explicit_hypotheses": [
+   "l a natural number, l odd",
+   "a, b natural numbers (Gamma' has vertex set [-a, b])",
+   "1 <= gammaCard l a b"
+  ],
+  "implicit_hypotheses": [],
+  "conclusion": "gammaNorm l a b = gammaNormValue (gammaCard l a b).",
+  "definitions_required": [],
+  "results_used": [],
+  "external_dependencies": [],
+  "lean_declaration": "IUT.PaperII.Labels.gammaNorm_eq",
+  "covers": "The definition of ||Gamma'|| on page 79 and the first part of (d), page 80, that ||Gamma'|| is a function of |Gamma'|",
+  "not_covered": "Infinite Gamma' (part (iii)); the choice between the literal and the radius reading of (d); the conclusion about which Gamma' is distinguished.",
+  "statement_status": "STATEMENT_FORMALIZED",
+  "proof_status": "KERNEL_VERIFIED",
+  "obligations": [],
+  "ambiguities": []
+ },
+ "IUT2.Rem2_6_3.frag.gammaNormValue_strictMono": {
+  "kind": "fragment",
+  "parent": "IUT2.Rem2_6_3",
+  "source": {
+   "paper": "Inter-universal Teichmuller Theory II (December 2020)",
+   "pdf_pages": "80",
+   "pages_read": "80 (rendered)"
+  },
+  "content": "n -> (n + 1)(2n + 1)/6 is strictly increasing on the natural numbers.",
+  "explicit_hypotheses": [],
+  "implicit_hypotheses": [],
+  "conclusion": "StrictMono gammaNormValue.",
+  "definitions_required": [],
+  "results_used": [],
+  "external_dependencies": [],
+  "lean_declaration": "IUT.PaperII.Labels.gammaNormValue_strictMono",
+  "covers": "The monotonicity in item (d), page 80, under the literal reading in |Gamma'|",
+  "not_covered": "The phrase 'not strictly increasing', which matches only the radius reading.",
+  "statement_status": "STATEMENT_FORMALIZED",
+  "proof_status": "KERNEL_VERIFIED",
+  "obligations": [],
+  "ambiguities": []
+ },
+ "IUT2.Rem2_6_3.frag.gammaNorm_eq_max_iff": {
+  "kind": "fragment",
+  "parent": "IUT2.Rem2_6_3",
+  "source": {
+   "paper": "Inter-universal Teichmuller Theory II (December 2020)",
+   "pdf_pages": "80",
+   "pages_read": "80 (rendered)"
+  },
+  "content": "For Gamma' = [-a, b] with max(a, b) >= 1 and odd l >= 3: ||Gamma'|| = l(l + 1)/12 if and only if max(a, b) >= l*.",
+  "explicit_hypotheses": [
+   "l a natural number, l odd",
+   "a, b natural numbers (Gamma' has vertex set [-a, b])",
+   "3 <= l",
+   "1 <= max a b"
+  ],
+  "implicit_hypotheses": [],
+  "conclusion": "gammaNorm l a b = l (l + 1)/12 <-> lstar l <= max a b.",
+  "definitions_required": [],
+  "results_used": [],
+  "external_dependencies": [],
+  "lean_declaration": "IUT.PaperII.Labels.gammaNorm_eq_max_iff",
+  "covers": "The maximum and the constancy for large Gamma' in item (d), page 80, under the radius reading",
+  "not_covered": "The literal reading in |Gamma'|; infinite Gamma'.",
+  "statement_status": "STATEMENT_FORMALIZED",
+  "proof_status": "KERNEL_VERIFIED",
+  "obligations": [],
+  "ambiguities": []
+ },
+ "IUT2.Prop4_1.frag.sum_exponents": {
+  "kind": "fragment",
+  "parent": "IUT2.Prop4_1",
+  "source": {
+   "paper": "Inter-universal Teichmuller Theory II (December 2020)",
+   "pdf_pages": "122",
+   "pages_read": "122 (rendered)"
+  },
+  "content": "For odd l: 24 . sum_{j=1}^{l*} j^2 = l (l^2 - 1).",
+  "explicit_hypotheses": [
+   "l a natural number, l odd"
+  ],
+  "implicit_hypotheses": [],
+  "conclusion": "24 * sum_{j in Icc 1 (lstar l)} j^2 = l * (l^2 - 1).",
+  "definitions_required": [],
+  "results_used": [],
+  "external_dependencies": [],
+  "lean_declaration": "IUT.PaperII.Labels.sum_exponents",
+  "covers": "The exponent vector (..., j^2 . log(p_v), ...), j = 1, ..., l*, of the Gaussian monoid in (iv), page 122; the identity itself is not stated in the paper",
+  "not_covered": "All of the construction of the monoids and the evaluation isomorphism; the identity is elementary arithmetic about the exponents.",
+  "statement_status": "STATEMENT_FORMALIZED",
+  "proof_status": "KERNEL_VERIFIED",
+  "obligations": [],
+  "ambiguities": []
+ },
+ "IUT2.Rem4_7_3.frag.average_exponents": {
+  "kind": "fragment",
+  "parent": "IUT2.Rem4_7_3",
+  "source": {
+   "paper": "Inter-universal Teichmuller Theory II (December 2020)",
+   "pdf_pages": "145",
+   "pages_read": "145 (rendered)"
+  },
+  "content": "For odd l >= 3: (sum_{j=1}^{l*} j^2)/l* = l(l + 1)/12.",
+  "explicit_hypotheses": [
+   "l a natural number, l odd",
+   "3 <= l"
+  ],
+  "implicit_hypotheses": [],
+  "conclusion": "(sum_{j in Icc 1 (lstar l)} (j : Q)^2) / lstar l = l (l + 1)/12.",
+  "definitions_required": [],
+  "results_used": [],
+  "external_dependencies": [],
+  "lean_declaration": "IUT.PaperII.Labels.average_exponents",
+  "covers": "The weight 1/l* at each j in F_l* of (iii), page 145, applied to the exponents j^2; the value is not stated in the paper",
+  "not_covered": "All interpretive content of the remark.",
+  "statement_status": "STATEMENT_FORMALIZED",
+  "proof_status": "KERNEL_VERIFIED",
+  "obligations": [],
+  "ambiguities": []
+ },
+ "IUT2.Rem1_12_2.i": {
+  "source": {
+   "paper": "Inter-universal Teichmuller Theory II (December 2020)",
+   "pdf_pages": "58",
+   "pages_read": "58"
+  },
+  "content": "(i) The essential content of Corollary 1.12 is the construction of theta(Pi) up to a mu_{2l}-indeterminacy (not up to O_k^x), using that the 2l-torsion of O_k^x is characteristic.",
+  "explicit_hypotheses": [],
+  "implicit_hypotheses": [],
+  "conclusion": "The essential content of Corollary 1.12 is the construction of theta(Pi) up to a mu_{2l}-indeterminacy (not up to O_k^x), using that the 2l-torsion of O_k^x is characteristic.",
+  "definitions_required": [],
+  "results_used": [
+   "IUT2.Cor1_12"
+  ],
+  "external_dependencies": [
+   "EtTh: Theorem 1.10 (i)"
+  ],
+  "lean_declaration": null,
+  "statement_status": "EXTRACTED",
+  "proof_status": "NOT_EXTRACTED",
+  "obligations": [
+   "Nothing to formalize."
+  ],
+  "ambiguities": [
+   "The remark has further parts beyond this one (the remark spans pages 58 to 60); only this part was read."
+  ],
+  "parent": "IUT2.Rem1_12_2"
+ },
+ "IUT2.Rem3_8_2.ii": {
+  "source": {
+   "paper": "Inter-universal Teichmuller Theory II (December 2020)",
+   "pdf_pages": "116",
+   "pages_read": "116"
+  },
+  "content": "(ii) Passing from the D-Theta^{+-ell}-Hodge theater to the D-Theta NF-Hodge theater via IUT I Proposition 6.7 removes the label 0 and identifies it with F_l*, the assignment '0, succ -> >'; this matches the isomorphism Psi_cns_0 -> Psi_cns_<F_l*> of Corollary 3.5 (iii).",
+  "explicit_hypotheses": [],
+  "implicit_hypotheses": [],
+  "conclusion": "Passing from the D-Theta^{+-ell}-Hodge theater to the D-Theta NF-Hodge theater via IUT I Proposition 6.7 removes the label 0 and identifies it with F_l*, the assignment '0, succ -> >'; this matches the isomorphism Psi_cns_0 -> Psi_cns_<F_l*> of Corollary 3.5 (iii).",
+  "definitions_required": [],
+  "results_used": [
+   "IUT2.Cor3_5"
+  ],
+  "external_dependencies": [
+   "IUTchI: Proposition 6.7"
+  ],
+  "lean_declaration": null,
+  "statement_status": "EXTRACTED",
+  "proof_status": "NOT_EXTRACTED",
+  "obligations": [
+   "Nothing to formalize."
+  ],
+  "ambiguities": [
+   "The remark has further parts beyond this one (the remark spans pages 116 to 117); only this part was read."
+  ],
+  "parent": "IUT2.Rem3_8_2"
  }
 }

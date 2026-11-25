@@ -19,7 +19,8 @@ whose every term exists in Mathlib with its intended meaning, and proves a few s
 ## What is stated here
 
 * `SqrtNegOneMem F`: the clause `√−1 ∈ F` of condition (a).
-* `IsAuxiliaryPrime l`: the clause "`l` is a prime number `≥ 5`" of condition (c).
+* `AuxiliaryPrimeFirstClause l`: only the first clause "`l` is a prime number `≥ 5`" of
+  condition (c), not the whole condition.
 * `TorsionRational W n`: every `n`-torsion point of `E_F` over an algebraic closure is
   `F`-rational. With `n = 6` this is the clause "the `2 · 3`-torsion points of `E_F` are
   rational over `F`" of condition (b).
@@ -86,16 +87,19 @@ theorem not_sqrtNegOneMem_rat : ¬ SqrtNegOneMem ℚ := by
 
 /-! ### Condition (c), first clause -/
 
-/-- Definition 3.1 (c), first clause, page 62: `l` is a prime number with `l ≥ 5`. -/
-def IsAuxiliaryPrime (l : ℕ) : Prop :=
+/-- Definition 3.1 (c), first clause only, page 62: `l` is a prime number with `l ≥ 5`.
+Condition (c) also requires that the image of `G_F → GL₂(𝔽_l)` contain `SL₂(𝔽_l)` and that
+`l` be prime to the residue characteristics of `𝕍^bad_mod` and to the orders of the
+`q`-parameters at the places of `𝕍(F)^bad`; this predicate does not state those clauses. -/
+def AuxiliaryPrimeFirstClause (l : ℕ) : Prop :=
   l.Prime ∧ 5 ≤ l
 
 /-- The clause of condition (c) is satisfiable: `5` is a prime `≥ 5`. -/
-theorem isAuxiliaryPrime_five : IsAuxiliaryPrime 5 :=
+theorem auxiliaryPrimeFirstClause_five : AuxiliaryPrimeFirstClause 5 :=
   ⟨by norm_num, le_rfl⟩
 
 /-- A prime `l ≥ 5` is prime to `6`, as the hypotheses of §1 (page 37) require of `l`. -/
-theorem IsAuxiliaryPrime.coprime_six {l : ℕ} (h : IsAuxiliaryPrime l) : Nat.Coprime l 6 := by
+theorem AuxiliaryPrimeFirstClause.coprime_six {l : ℕ} (h : AuxiliaryPrimeFirstClause l) : Nat.Coprime l 6 := by
   have h5 := h.2
   have h2 : Nat.Coprime l 2 := (Nat.coprime_primes h.1 Nat.prime_two).mpr (by omega)
   have h3 : Nat.Coprime l 3 := (Nat.coprime_primes h.1 Nat.prime_three).mpr (by omega)
@@ -195,7 +199,17 @@ This is not initial Θ-data. Missing, relative to Definition 3.1:
 * (d) the orbicurve `C_K` of type `(1, l-tors)±` with `K`-core `C_F ×_F K`, and `X_K`;
 * (e) the section `V ⊆ 𝕍(K)` of `𝕍(K) → 𝕍_mod` and the type `(1, ℤ/lℤ)±` condition at
   `v ∈ V^bad`;
-* (f) the cusp `ε` and its normalization at `v ∈ V^bad`. -/
+* (f) the cusp `ε` and its normalization at `v ∈ V^bad`.
+
+**Open obligation: no inhabitant is exhibited.** This file does not construct any
+`(F, W, l, k, S)` satisfying these conditions, so it does not show that the conjunction is
+consistent. A witness needs at least: a number field `F` containing a primitive fourth root of
+unity and the whole `6`-torsion of `E_F` (hence, by the Weil pairing, also a primitive cube root
+of unity, so `F ⊇ ℚ(ζ₁₂)`; for example `F = k(E[6], √−1)` for a curve over a number field `k`);
+semistable reduction of `E_F` at every finite place, checked on minimal models; a nonempty set
+`S` of odd places of `k` at which `E_F` has multiplicative reduction above `S`; `F/k` Galois of
+degree prime to `l`; and a prime `l ≥ 5` prime to the residue characteristics in `S`. None of
+these has been verified for a specific curve. -/
 structure PartialInitialThetaConditions (W : WeierstrassCurve F) [W.IsElliptic] (l : ℕ)
     (S : Set (HeightOneSpectrum (𝓞 k))) : Prop where
   /-- (a): `√−1 ∈ F`. -/
@@ -211,7 +225,7 @@ structure PartialInitialThetaConditions (W : WeierstrassCurve F) [W.IsElliptic] 
   /-- (b): `F/k` is Galois of degree prime to `l`. -/
   galois : GaloisOfDegreePrimeTo k F l
   /-- (c): `l` is a prime `≥ 5`. -/
-  prime : IsAuxiliaryPrime l
+  prime : AuxiliaryPrimeFirstClause l
   /-- (c): `l` is prime to the residue characteristics of the elements of `S`. -/
   primeToBad : PrimeToBadResidueChars l S
 

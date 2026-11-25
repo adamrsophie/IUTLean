@@ -15,7 +15,8 @@
 # prints its intended diagnostic line. Any other status (a crash or a signal), a panic, or a
 # missing diagnostic fails the runner. Also runs the gate on the library with a tracked file
 # list that names a file the root does not import (must fail and name it), and the source scan
-# on its control GateControls/SourceScan.lean (every construct reported, nothing else).
+# on its controls GateControls/SourceScan.lean, GateControls/SourceScanLakefile.toml and
+# GateControls/SourceScan.lake-manifest.json (every construct reported, nothing else).
 
 set -u
 
@@ -102,6 +103,13 @@ check RenamedConjecture 1 11 \
   'GateControls.viaLog: states Challenge.ABCLog but is not named abcConjecture' \
   'GateControls.refuted: states the negation of Challenge.ABCFinite but is not named abcConjecture' \
   '!!! RESOLUTION: GateControls.abcConjecture proves Challenge.ABC; axioms:'
+check EquivalentForm 1 8 \
+  'GateControls.qualityBound: states IUT.ABC.FormalConjectures.qualityVariant but is not named abcConjecture' \
+  'GateControls.finiteTriples: states IUT.ABC.FormalConjectures.abc but is not named abcConjecture' \
+  'GateControls.noConstant: states the negation of IUT.ABC.FormalConjectures.ltConstantMul but is not named abcConjecture'
+check Shadowing 1 2 \
+  'GateControls.Real.log: its suffix Real.log names a constant of a dependency' \
+  'GateControls.fakeLE: instance of a dependency class on dependency arguments only'
 PROBE=1 check ExperimentalImport 1 1 \
   'module IUT.Experimental.GateProbe is experimental and must not be in the import closure'
 
@@ -121,6 +129,7 @@ report "source coverage with an extra tracked file (exit $status)" "$ok" "$log"
 # The source scan must report each construct of its control and nothing else.
 log="$tmp/scan.log"
 python3 -I scripts/Controls/source_scan.py "$dir/SourceScan.lean" "$dir/SourceScanLakefile.toml" \
+  "$dir/SourceScan.lake-manifest.json" \
   > "$log" 2>&1
 status=$?
 ok=1

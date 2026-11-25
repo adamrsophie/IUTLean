@@ -4,9 +4,12 @@ import Mathlib
 # Mochizuki's example (LVEx): indeterminacies make log-volumes relate non-linearly
 
 Sources: S. Mochizuki, *Report on Discussions, Held During the Period March 15 to 20, 2018,
-Concerning Inter-universal Teichmüller Theory*, version dated February 2019, item (LVEx), pages 24 and 25;
-and *Comments on the Manuscript (2018-08 Version) by Scholze–Stix*, September 2018, item
-(C14). The passage (LVEx) and the comments were read; the report was not read in full.
+Concerning Inter-universal Teichmüller Theory (IUTch)*, version dated February 2019, items
+(MlLV) and (LVEx), pages 24 to 26; and *Comments on the Manuscript (2018-08 Version) by
+Scholze–Stix*, September 2018, item (C14), page 4. Read for this file: report pages 24 to 26
+and comments page 4, in the extracted text. The displayed areas and inequalities of (LVEx) were
+checked against the rendered pages 24 and 25 for the companion file
+`IUT.Audit.MochizukiResponses.LVExMeasure`.
 
 In `V = ℝ²` with the reflection `σ(x, y) = (−x, y)`, the example takes the region
 
@@ -14,7 +17,8 @@ In `V = ℝ²` with the reflection `σ(x, y) = (−x, y)`, the example takes the
 
 and its symmetrization `S_{a,b} = R_{a,b} ∪ σ(R_{a,b})`, for `a, b > 0`. The report states
 that their areas are `4a + 2b` and `4a + 4b`. This file takes those two areas as given (they
-are not derived here from Lebesgue measure) and checks the claim made about them: the
+are derived from Lebesgue measure in `IUT.Audit.MochizukiResponses.LVExMeasure`) and checks
+the claim made about them: the
 log-volumes `log(4a + 2b)` and `log(4a + 4b)` are not related by a fixed linear map.
 
 In the analogy of the report, `R` corresponds to the Θ-pilot in the Θ-holomorphic structure

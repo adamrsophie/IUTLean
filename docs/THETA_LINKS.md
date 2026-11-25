@@ -4,12 +4,15 @@ This file compares the five theta-link variants and the induced D-link. Every ce
 page it comes from. "Not stated" means the pages read say nothing on the point. "Not read"
 means the relevant pages were not read for this file.
 
-Pages read for this file: IUT I pages 3, 33, 82 to 86, 88, 89 (renders of 3, 88, 89 viewed; page 87 not read); IUT II
+Pages read for this file: IUT I pages 3, 33, 71, 82 to 86, 88, 89 (renders of 3, 71, 85, 88, 89 viewed; page 87 not read); IUT II
 pages 1 to 20, 36 to 39, 46 to 49, 55 to 58, 67 to 73, 76, 78 to 85, 93 to 96, 99 to 103,
 105 to 108, 110 to 116, 120 to 173 (renders of 3, 16, 17, 47, 49, 72, 79, 80, 94, 122, 145,
-158, 159, 160, 163 viewed); IUT III pages 109 to 114 (renders of 112, 113 viewed).
+158, 159, 160, 162 to 165 viewed); IUT III pages 109 to 114 (renders of 112, 113 viewed).
 
-Notation in plain text: `HT` is a Θ±ellNF-Hodge theater; `†` and `‡` mark the domain and
+Notation in plain text: `qq_v` is the `q` with a double underline of IUT I, Example 3.2 (iv),
+page 71 (rendered): `qq_v = q_v^{1/2l}`, a chosen `2l`-th root of the Tate parameter `q_v` of
+`E_v`, determined up to a `μ_{2l}`-multiple. The theta-link formulas below use `qq_v`, not `q_v`.
+`HT` is a Θ±ellNF-Hodge theater; `†` and `‡` mark the domain and
 codomain theaters. `F^⊩` is an F^⊩-prime-strip; `F^{⊩▶×μ}` is an F^{⊩▶×μ}-prime-strip;
 `F^{⊢×μ}` is an F^{⊢×μ}-prime-strip; `D^⊢` is a D^⊢-prime-strip.
 
@@ -23,7 +26,7 @@ poly-isomorphisms; none is a function or a functor in the ordinary sense.
 |---|---|---|
 | Source object | †F^⊩_tht: the F^⊩-prime-strip of theta data, (C^⊩_tht, Prime ⥲ V, {F^{⊢Θ}_v}, {ρ^Θ_v}) | IUT I pages 85, 88 |
 | Target object | ‡F^⊩_mod: the F^⊩-prime-strip (C^⊩_mod, Prime ⥲ V, {F^⊢_v}, {ρ_v}) | IUT I pages 85, 88 |
-| Structure of source | Global realified Frobenioid plus local Frobenioids carrying the theta values; at bad v, ρ^Θ_v sends log_mod(p_v)·log(Θ) to a multiple of log_Φ(Θ_v)/log_Φ(q_v) | IUT I page 85 |
+| Structure of source | Global realified Frobenioid plus local Frobenioids carrying the theta values; at bad v, ρ^Θ_v sends log_mod(p_v)·log(Θ) to a multiple of log_Φ(Θ_v)/log_Φ(qq_v) | IUT I page 85 (rendered) |
 | Structure of target | Global realified Frobenioid of the number field plus local Frobenioids F^⊢_v | IUT I page 85 |
 | Definition | The full poly-isomorphism †F^⊩_tht ⥲ ‡F^⊩_mod between collections of data; the set is nonempty | IUT I page 88 |
 | Preserves | D^⊢-prime-strips: †D^⊢ ⥲ ‡D^⊢ (Cor 3.7 (ii)); units O^× at each v: O^×_{†C^⊢_v} ⥲ O^×_{‡C^⊢_v} (Cor 3.7 (iii)) | IUT I pages 88 to 89 |
@@ -64,7 +67,7 @@ poly-isomorphisms; none is a function or a functor in the ordinary sense.
 | Definition | The full poly-isomorphism †F^{⊩▶×μ}_gau ⥲ ‡F^{⊩▶×μ}_△ | IUT II page 160 |
 | Relation to Θ^{×μ} | Composite of the Θ^{×μ}-link with the Galois evaluation isomorphism †F^⊩_env ⥲ †F^⊩_gau (Remark 4.10.2 (i)) | IUT II pages 159, 161 |
 | Preserves | Same as Θ^{×μ}: F^{⊢×μ} and D^⊢ (Cor 4.10 (iv)) | IUT II page 160 |
-| Forgets | Value group portion; heuristically q_v ↦ {q_v^{j²}}_{1≤j≤l^⋇} (Remark 4.10.3 (iii), Remark 4.11.1) | IUT II pages 162 to 165 |
+| Forgets | Value group portion; heuristically qq_v ↦ {qq_v^{j²}}_{1≤j≤l^⋇} (Remark 4.10.3 (iii), Remark 4.11.1) | IUT II pages 162 to 165 (rendered) |
 | Type | Full poly-isomorphism | IUT II page 160 |
 | Invertible | As a set of isomorphisms, yes; Frobenius-picture as in Cor 4.10 (vi) | IUT II pages 160 to 161 |
 | Multiplicative structure | Not stated as a property of the link; same inference as for Θ^{×μ} | IUT II pages 159 to 160 |
@@ -79,7 +82,7 @@ poly-isomorphisms; none is a function or a functor in the ordinary sense.
 | Source object | †F^{⊩▶×μ}_LGP, from †F^⊩_LGP, built from †F^⊩_gau with log-shell (LGP) monoids; tautological isomorphism †F^⊩_gau ⥲ †F^⊩_LGP (IUT III Prop 3.7 (iii)) | IUT III pages 109 to 113 |
 | Target object | *F^{⊩▶×μ}_△ for a further Hodge theater *HT | IUT III page 113 |
 | Structure of source | Global realified LGP-Frobenioid; Θ-pilot object determined by generators up to torsion of Ψ^⊥_{F_LGP} at bad v | IUT III pages 110 to 112 |
-| Structure of target | As in IUT II Cor 4.10 (i); q-pilot object determined by q_v | IUT III page 112 |
+| Structure of target | As in IUT II Cor 4.10 (i); q-pilot object determined by qq_v | IUT III page 112 (rendered) |
 | Definition | Full poly-isomorphism †F^{⊩▶×μ}_LGP ⥲ *F^{⊩▶×μ}_△, relative to a log-link ‡HT → †HT | IUT III page 113 |
 | Preserves | Not stated in Def 3.8 itself; Remark 3.8.1 says the link sends Θ-pilot objects to q-pilot objects | IUT III pages 113 to 114 |
 | Forgets | Not stated in the pages read | IUT III pages 112 to 114 |

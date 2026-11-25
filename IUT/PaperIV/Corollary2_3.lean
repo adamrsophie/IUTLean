@@ -16,13 +16,17 @@ This file is not a formalization of Corollary 2.3. The proof of the corollary ha
    `X = ℙ¹`, `D = {0, 1, ∞}` and a compactly bounded `K_V` as in Corollary 2.2. That reduction
    is an external theorem and is not formalized here.
 2. On `K_V ∩ U_X(ℚ̄)^{≤d}`, the inequality follows from Corollary 2.2 (i), (ii) (condition (C2))
-   and (iii). This file checks that step: given the equality of bounded discrepancy classes of
-   (i), the bound (C2) outside a finite exceptional set, `ε_E ≤ ε` there, and
-   `log-diff_X + log-cond_D ≥ 0`, the inequality of bounded discrepancy classes holds on the
-   whole set (`cor2_3_on_KV`).
+   and (iii). This file checks only the logical form of that step, as an abstract lemma about
+   real functions on an arbitrary set `S` (`cor2_3_on_KV`): an equality of bounded discrepancy
+   classes, a bound outside a finite exceptional set, a bound on a further function outside
+   that set and a nonnegativity condition give an inequality of bounded discrepancy classes on
+   all of `S`.
 
-The heights, log-differents and log-conductors are arbitrary real functions on an arbitrary
-type here; no property of them beyond the stated hypotheses is used.
+Nothing here refers to curves, divisors, points of bounded degree, heights, log-differents or
+log-conductors: these are arbitrary real functions on an arbitrary type, and the lemma holds for
+every `S`, including `S = ∅`. It says nothing about `K_V` unless the hypotheses are established
+for the actual functions, which requires Corollary 2.2 and is not done here. Corollary 2.3 itself
+is not stated in Lean.
 -/
 
 namespace IUT.PaperIV.Corollary2_3
@@ -60,9 +64,12 @@ theorem BDle_of_finite_exceptions {S : Set α} (Exc : Finset α) {f g : α → �
     linarith [le_abs_self (f x - g x)]
   · linarith [h x hx hxE]
 
-/-- **The step of the proof of Corollary 2.3 on `K_V ∩ U_X(ℚ̄)^{≤d}`.** Let `S` be the set of
-points, `ht` the height `ht_{ω_X(D)}`, `H` the function `log(𝔮^∀)`, `Λ` the function
-`log-diff_X + log-cond_D`, and `εE` the invariant `ε_E` of Corollary 2.2 (ii). Assume:
+/-- **Abstract form of the step of the proof of Corollary 2.3 on `K_V ∩ U_X(ℚ̄)^{≤d}`**
+(page 55). This is a lemma about arbitrary real functions on an arbitrary set `S`; it holds for
+every `S`, so it carries information about `K_V` only once its hypotheses are proved for the
+actual functions. In the intended application `S` is the set of points, `ht` the height
+`ht_{ω_X(D)}`, `H` the function `log(𝔮^∀)`, `Λ` the function `log-diff_X + log-cond_D`, and `εE`
+the invariant `ε_E` of Corollary 2.2 (ii). Assume:
 
 * (Corollary 2.2 (i)) `ht ≈ (1/6)·H` on `S`;
 * (Corollary 2.2 (ii), (C2)) `(1/6)·H(x) ≤ (1 + ε_E(x))·Λ(x) + C_K` for `x ∈ S` outside a
