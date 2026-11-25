@@ -22,9 +22,9 @@ Formulas used below were checked against rendered pages: SS pages 2, 3, 4, 8, 9,
 
 ## Part 1. The reduction to Claim 6 and Vojta's inequality (Section 1)
 
-**SS-1 (page 2, Conjecture 3).** The uniform Vojta inequality for hyperbolic curves: for `ε > 0`, `d ≥ 1`, all `P ∈ X(k̄)` with `[κ(P) : ℚ] ≤ d` satisfy `h_{ω(D)}(P) < (1 + ε)(d(P) + n¹_D(P)) + O_{ε,d,X}(1)` (1.1). Proposition: a standard conjecture, quoted. IUT counterpart: IUT IV, Corollary 2.2 and 2.3 (not read in this task).
+**SS-1 (page 2, Conjecture 3).** The uniform Vojta inequality for hyperbolic curves: for `ε > 0`, `d ≥ 1`, all `P ∈ X(k̄)` with `[κ(P) : ℚ] ≤ d` satisfy `h_{ω(D)}(P) < (1 + ε)(d(P) + n¹_D(P)) + O_{ε,d,X}(1)` (1.1). Proposition: a standard conjecture, quoted. IUT counterpart: IUT IV, Corollary 2.2 and 2.3 (not read for this document).
 
-**SS-2 (page 2, Section 1.2).** Reduction via Belyi maps and [GenEll] to elliptic curves `E/k` with (1) bounded local data at 2 and ∞, (2) split semistable reduction, so that `h(P) = (1/6) deg(q_E) + O(h(P)^{1/2} + 1)` (1.2), (3) a prime `ℓ = ℓ(P)` with `h(P)^{1/2} ≤ ℓ ≤ h(P)^{1/2}(c₁ + c₂ log h(P))` (1.3), surjective mod `ℓ` representation, nonsplit local extensions. Hypotheses: the cited results of [GenEll] and [Belyi]; an exceptional sparse set is "omitted". IUT counterpart: IUT IV, Theorem 1.10 and its proof (not read in this task). Not disputed by either side.
+**SS-2 (page 2, Section 1.2).** Reduction via Belyi maps and [GenEll] to elliptic curves `E/k` with (1) bounded local data at 2 and ∞, (2) split semistable reduction, so that `h(P) = (1/6) deg(q_E) + O(h(P)^{1/2} + 1)` (1.2), (3) a prime `ℓ = ℓ(P)` with `h(P)^{1/2} ≤ ℓ ≤ h(P)^{1/2}(c₁ + c₂ log h(P))` (1.3), surjective mod `ℓ` representation, nonsplit local extensions. Hypotheses: the cited results of [GenEll] and [Belyi]; an exceptional sparse set is "omitted". IUT counterpart: IUT IV, Theorem 1.10 and its proof (not read for this document). Not disputed by either side.
 
 **SS-3 (page 3, Remark 5).** For fixed `d` and `b` there are finitely many such `E/k` with `h(P) ≤ b`; proof via Faltings' theorem on the Weil restriction. Disputed only in its justification (M: Cmt2018-08 (C1)).
 
@@ -91,7 +91,7 @@ Columns: **Def** = do the two sides use equivalent definitions; **Kind** = disag
 | Objection | Response | Def | Kind | Resolving hypothesis | Established? | Obligation |
 |---|---|---|---|---|---|---|
 | SS-5, SS-3 (Remark 5) | Cmt-08 (C1) | yes | neither: same conclusion, method disputed | none needed (`N ≥ 0` suffices) | not needed | OB-RED (done here, real analysis only) |
-| SS-S4 (Hodge theater ≃ curve) | Cmt-08 (C3), Cmt-05 (C3), (T3) | no: SS ignore `ℓ`, `V` | Stmt | The equivalence with `ℓ`, `V` included | not checked in this task | OB-HT |
+| SS-S4 (Hodge theater ≃ curve) | Cmt-08 (C3), Cmt-05 (C3), (T3) | no: SS ignore `ℓ`, `V` | Stmt | The equivalence with `ℓ`, `V` included | not checked for this document | OB-HT |
 | SS-S5 (log-link as endofunctor) | Cmt-05 (C6), (LbLp), (Lblog) | no | Stmt (invariance of Θ-link under identifying log-link ends) | Invariance (Q3) or its negation | asserted by M (Rpt §14 to §15), not proved in a checked form | OB-LOG |
 | SS-S6, footnote 8 (poly-isomorphisms) | (SSInd), (PMQut), (PMEss), Cmt-05 (C7) | no | Stmt | Theorem 3.11 with (Ind1), (Ind2) removed is false or trivial | IUT III Theorem 3.11 (i) introduces them; necessity asserted, not proved as a statement | OB-IND |
 | SS-S9, footnote 10 (abstract vs concrete) | Cmt-05 (C16), Cmt-08 (C12), (LbLV) | no: M identifies "concrete realizations" with hol. structures | Interp | A precise definition of the "relevant Kummer isomorphisms" and of `−|log(Θ)|` as a function of initial Θ-data | defined in IUT III Corollary 3.12 statement, page 173 to 174, in terms not yet formalized | OB-DEF |
@@ -99,7 +99,7 @@ Columns: **Def** = do the two sides use equivalent definitions; **Kind** = disag
 | SS-13 (consistent identification of copies of ℝ) | Cmt-05 (C17) (N1) to (N5), (C18) | no | Interp of Step (xi) | Step (xi) compares regions inside one container with one log-volume; no cycle | asserted (Cmt-05 (C17)); Step (xi-d) page 183 describes one container `1,◦U^Q` | OB-XI-CONTAINER |
 | SS-14 (monodromy `j²`) | (AD), (IUAD), (LbEx1), (Smm) | partly: both accept (AD) | Interp: is the loop formed? | Distinct labels for hol. structures (Γ_seg vs Γ_loop) | (IUAD) says no dispute about (AD) | OB-XI-CONTAINER |
 | SS-15 ((1.6), not (1.5)) | (SSAD)/(SSADFs), Cmt-08 (C14) (Lin), (MlLV) | no | Stmt | Whether log-volume of the hull relates non-linearly to the Θ-pilot's | (Ind3) inequality: IUT III Theorem 3.11 (ii), Proposition 3.9; not checked here | OB-XI-F |
-| SS-16 (blurring `O(ℓ²)`) | (MlLV), (LVEx), (DsInd) | no | Stmt about size of indeterminacies | Quantitative bound on the effect of (Ind1, 2, 3) on log-volume | IUT IV Proposition 1.2 and Theorem 1.10 (not read in this task) | OB-IND-SIZE |
+| SS-16 (blurring `O(ℓ²)`) | (MlLV), (LVEx), (DsInd) | no | Stmt about size of indeterminacies | Quantitative bound on the effect of (Ind1, 2, 3) on log-volume | IUT IV Proposition 1.2 and Theorem 1.10 (not read for this document) | OB-IND-SIZE |
 | SS excuses (2) to (4) | Cmt-05 (C2) to (C4), (T7), (T8) | n/a | about the discussion, not mathematics | none | n/a | none |
 
 ## What the Lean files in `IUT/Audit/ScholzeStix/` prove

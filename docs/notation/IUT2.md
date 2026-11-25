@@ -3,7 +3,7 @@
 Each entry gives the symbol in plain text, its meaning, and the page (PDF page of
 `documentation/ref/Inter-universal Teichmuller Theory II.pdf`, unless marked IUT I or IUT III)
 where it is defined or first fixed. "rendered" means the definition was checked on a page
-render. Entries are limited to pages read in this session.
+render. Entries are limited to the pages read for this dictionary.
 
 ## Labels and arithmetic
 

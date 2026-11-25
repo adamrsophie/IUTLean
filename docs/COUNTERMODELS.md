@@ -6,7 +6,7 @@ Machine-readable index: `data/countermodels.json` (one record per listed theorem
 
 ## Classification
 
-Section 12 of the project brief distinguishes seven kinds of result: failure of proof search, missing library theorem, gap in the formalization, insufficient set of hypotheses, counterexample to an intermediate claim, counterexample to the faithfully formalized original statement, demonstrated contradiction. The project's working rules list "counterexample to a simplified abstraction" in place of "counterexample to an intermediate claim".
+The project distinguishes seven kinds of result: failure of proof search, missing library theorem, gap in the formalization, insufficient set of hypotheses, counterexample to a simplified abstraction (in some project documents called a counterexample to an intermediate claim), counterexample to the faithfully formalized original statement, demonstrated contradiction.
 
 Every countermodel here is a **counterexample to a simplified abstraction**: it shows that the hypotheses of an abstract principle are insufficient for its conclusion. None is a counterexample to an intermediate claim of the papers, to a faithfully formalized statement of the papers, or a demonstrated contradiction: the abstractions are not statements found in the passages read, and the hypotheses of the papers are much richer than those the models satisfy.
 

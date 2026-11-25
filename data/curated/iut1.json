@@ -153,7 +153,7 @@
       "Semi-graphs of anabelioids and tempered groups are not in Mathlib."
     ],
     "ambiguities": [
-      "Read at the level of statements, as the task specifies; proofs not checked."
+      "Read at the level of statements only; proofs not checked."
     ]
   },
   "IUT1.Prop2_2": {
@@ -181,7 +181,7 @@
       "Semi-graphs of anabelioids and tempered groups are not in Mathlib."
     ],
     "ambiguities": [
-      "Read at the level of statements, as the task specifies; proofs not checked."
+      "Read at the level of statements only; proofs not checked."
     ]
   },
   "IUT1.Cor2_3": {
@@ -209,7 +209,7 @@
       "Semi-graphs of anabelioids and tempered groups are not in Mathlib."
     ],
     "ambiguities": [
-      "Read at the level of statements, as the task specifies; proofs not checked."
+      "Read at the level of statements only; proofs not checked."
     ]
   },
   "IUT1.Prop2_4": {
@@ -237,7 +237,7 @@
       "Semi-graphs of anabelioids and tempered groups are not in Mathlib."
     ],
     "ambiguities": [
-      "Read at the level of statements, as the task specifies; proofs not checked."
+      "Read at the level of statements only; proofs not checked."
     ]
   },
   "IUT1.Cor2_5": {
@@ -265,7 +265,7 @@
       "Semi-graphs of anabelioids and tempered groups are not in Mathlib."
     ],
     "ambiguities": [
-      "Read at the level of statements, as the task specifies; proofs not checked."
+      "Read at the level of statements only; proofs not checked."
     ]
   },
   "IUT1.Thm2_6": {
@@ -667,7 +667,7 @@
     "proof_status": "NOT_EXTRACTED",
     "obligations": [],
     "ambiguities": [
-      "Depends on IUT IV Proposition 1.8 (iv), not read in this session."
+      "Depends on IUT IV Proposition 1.8 (iv), not read for this record."
     ]
   },
   "IUT1.Rem3_1_6": {
@@ -1650,7 +1650,7 @@
     "proof_status": "NOT_EXTRACTED",
     "obligations": [],
     "ambiguities": [
-      "The task names \"Proposition 5.6\"; the paper's statement with that number is Corollary 5.6. There is no Proposition 5.6 in §5."
+      "A planning list of this project named \"Proposition 5.6\"; the paper's statement with that number is Corollary 5.6. There is no Proposition 5.6 in §5."
     ]
   },
   "IUT1.Def6_1": {

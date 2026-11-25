@@ -81,7 +81,7 @@
    "equivalent_definitions": false,
    "disagreement": "statement: whether the stated functor is an equivalence (choices of l and V ignored)",
    "resolving_hypothesis": "State the equivalence relative to fixed l and V",
-   "established": "not checked in this task",
+   "established": "not checked for this map",
    "obligation": "OB-HT",
    "lean": [],
    "layer_note": "Columns other than objection and response are the assessment of this project."
@@ -131,7 +131,7 @@
    "equivalent_definitions": false,
    "disagreement": "statement: whether Theorem 3.11 applies to the id-version",
    "resolving_hypothesis": "(ThetaCR) as an explicit hypothesis of Theorem 3.11",
-   "established": "asserted in Rpt sections 9 and 10; not isolated as a hypothesis in the statement of Theorem 3.11 as read for this task",
+   "established": "asserted in Rpt sections 9 and 10; not isolated as a hypothesis in the statement of Theorem 3.11 as read for this map",
    "obligation": "OB-311-HYP",
    "lean": [
     "IUT.Audit.MochizukiResponses.SSIdEx.not_iso_of_ne_one",
@@ -193,7 +193,7 @@
    "equivalent_definitions": false,
    "disagreement": "statement about the size and form of the effect of the indeterminacies",
    "resolving_hypothesis": "A quantitative bound on the effect of (Ind1), (Ind2), (Ind3) on log-volumes, compared with l(l+1)/12",
-   "established": "IUT IV Proposition 1.2 and Theorem 1.10 contain the estimates; not read in this task",
+   "established": "IUT IV Proposition 1.2 and Theorem 1.10 contain the estimates; not read for this map",
    "obligation": "OB-IND-SIZE",
    "lean": [
     "IUT.Audit.ScholzeStix.blur_ge_avgSq",
@@ -217,7 +217,7 @@
   }
  ],
  "existing_file_findings": [
-  "IUT/Audit/ScholzeStix/Diagram.lean: blur_ge_square has hypothesis (j:R)^2 * 1 <= B and conclusion (j:R)^2 <= B, so the hypothesis restates the conclusion (brief, hard rule 3). The intended statement is IUT.Audit.ScholzeStix.blur_bound.",
+  "IUT/Audit/ScholzeStix/Diagram.lean: blur_ge_square has hypothesis (j:R)^2 * 1 <= B and conclusion (j:R)^2 <= B, so the hypothesis restates the conclusion (a hypothesis that restates the conclusion is not allowed by the trust policy). The intended statement is IUT.Audit.ScholzeStix.blur_bound.",
   "IUT/Audit/MochizukiResponses/LVEx.lean: cites the report as dated September 2018; the copy in the repository is dated February 2019 (item (LVEx), pages 24 to 26)."
  ]
 }

@@ -1,6 +1,6 @@
 # Mathlib gap analysis for the IUT prerequisites
 
-This document lists, for every prerequisite area of section 5 of the project brief, what the installed Mathlib (tag v4.36.0, Lean 4.36.0) provides, what is missing, and how each part is classified. The same content is in `data/prerequisites.json`.
+This document lists, for every prerequisite area that the four papers draw on, what the installed Mathlib (tag v4.36.0, Lean 4.36.0) provides, what is missing, and how each part is classified. The same content is in `data/prerequisites.json`.
 
 Method. Every Mathlib declaration named below was checked by `#check` against the installed library, and the file given is the module in which Lean reports it is declared. File paths are relative to `.lake/packages/mathlib/Mathlib/`. Absence claims come from text searches of the Mathlib sources and are stated with the search used; a failed search is not a proof of absence. Material in other Lean libraries is reported from their README files or file names only; it was not built.
 
@@ -470,7 +470,7 @@ Bibliography keys: [AbsTopIII].
 
 Needed first by: IUT3.Def1_1, IUT3.Prop3_9, IUT4.Prop1_2.
 
-Mathlib v4.36.0 defines NormedSpace.log for any topological Q-algebra, hence for Q_p, with only its algebraic properties at 1. The log-shell was therefore not formalized in this round. IUT3.Prop3_9 and IUT4.Prop1_2 are cited from their titles (Log-volume for Packets and Processions; Differents and Logarithms).
+Mathlib v4.36.0 defines NormedSpace.log for any topological Q-algebra, hence for Q_p, with only its algebraic properties at 1. The log-shell was therefore not formalized. IUT3.Prop3_9 and IUT4.Prop1_2 are cited from their titles (Log-volume for Packets and Processions; Differents and Logarithms).
 
 ### Arithmetic divisors
 
@@ -710,7 +710,7 @@ A coarse planning order: most items in a layer use items of earlier layers. It i
 5. Diophantine geometry; Set-theoretic foundations and universe management; Hodge-Arakelov theory.
 6. Szpiro-type and Vojta-type inequalities.
 
-## Verified prerequisites added in this round
+## Verified prerequisites
 
 * `IUT.Prerequisites.posRat_inter_zhatUnits` in `IUT/Prerequisites/PositiveRationalsZhatUnits.lean`: `{q : ℚ | 0 < q ∧ ∃ u : Zhatˣ, Zhat.toFiniteAdeles ↑u = (algebraMap ℚ (FiniteAdeleRing ℤ ℚ)) q} = {1}`. Source: IUT I, Example 5.1 (v), page 127 (rendered); IUT III, Remark 3.12.1 (iii), pages 186 and 187 (rendered).
 * `IUT.Prerequisites.eq_one_of_forall_valuation_eq_one` in `IUT/Prerequisites/PositiveRationalsZhatUnits.lean`: `∀ {q : ℚ}, 0 < q → (∀ (v : HeightOneSpectrum ℤ), (valuation ℚ v) q = 1) → q = 1`. Source: as above.

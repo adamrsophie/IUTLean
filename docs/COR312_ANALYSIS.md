@@ -18,7 +18,7 @@ The kind of justification the text gives is recorded as one of the following:
 * **citation**: a reference to another result.
 * **assertion**: a claim with no derivation, such as "one verifies immediately" or "follows formally".
 
-**Gap categories.** Gaps are classified with the seven categories of section 12 of the project brief:
+**Gap categories.** Gaps are classified with the following seven categories:
 
 1. failure of proof search;
 2. missing library theorem;
@@ -74,7 +74,7 @@ The symbols below are a minimal formal vocabulary chosen for this document. They
 
 That file builds with `lake env lean IUT/PaperIII/Corollary312/Numerical.lean`, and no error was found in it. It does not construct either number.
 
-## The thirteen questions of section 8.4
+## Thirteen questions about the passage from Theorem 3.11 to Corollary 3.12
 
 ### 1. Are the q-pilot and Θ-pilot objects comparable?
 
@@ -464,7 +464,7 @@ These are propositions that a formalization would have to prove, or adopt as nam
 **C6. Number-level membership.**
 
 * In symbols: `−|log(q)| ∈ R_{≤−|log(Θ)|}`.
-* Verdict: a restatement of the conclusion, by `Iff.rfl` in `Numerical.lean`. Adopting C6 as a hypothesis would be a vacuity trick in the sense of the project rules.
+* Verdict: a restatement of the conclusion, by `Iff.rfl` in `Numerical.lean`. Adopting C6 as a hypothesis would be a vacuity trick in the sense of the trust policy in `CONTRIBUTING.md`.
 
 **C7. Finiteness.**
 

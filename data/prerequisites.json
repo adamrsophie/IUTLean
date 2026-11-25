@@ -1237,7 +1237,7 @@
     "IUT3.Prop3_9",
     "IUT4.Prop1_2"
    ],
-   "notes": "Mathlib v4.36.0 defines NormedSpace.log for any topological Q-algebra, hence for Q_p, with only its algebraic properties at 1. The log-shell was therefore not formalized in this round. IUT3.Prop3_9 and IUT4.Prop1_2 are cited from their titles (Log-volume for Packets and Processions; Differents and Logarithms)."
+   "notes": "Mathlib v4.36.0 defines NormedSpace.log for any topological Q-algebra, hence for Q_p, with only its algebraic properties at 1. The log-shell was therefore not formalized. IUT3.Prop3_9 and IUT4.Prop1_2 are cited from their titles (Log-volume for Packets and Processions; Differents and Logarithms)."
   },
   {
    "id": "arithmetic_divisors",

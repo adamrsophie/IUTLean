@@ -1,6 +1,6 @@
 {
-  "description": "Countermodels, positive statements and lemmas of the falsification program (section 12 of the project brief), one record per listed theorem; helper definitions are omitted. None of these refutes a statement of the IUT papers; every countermodel refutes a simplified abstraction.",
-  "classification_scale_note": "Section 12 of the project brief distinguishes seven kinds of result; its fifth item reads 'counterexample to an intermediate claim', while the shared working rules list 'counterexample to a simplified abstraction' in that place. Records here use the label 'counterexample to a simplified abstraction'; none is a counterexample to an intermediate claim of the papers, to a faithfully formalized statement of the papers, or a demonstrated contradiction.",
+  "description": "Countermodels, positive statements and lemmas of the falsification program, one record per listed theorem; helper definitions are omitted. None of these refutes a statement of the IUT papers; every countermodel refutes a simplified abstraction.",
+  "classification_scale_note": "The project distinguishes seven kinds of result; the fifth is 'counterexample to a simplified abstraction', in some project documents called 'counterexample to an intermediate claim'. Records here use the label 'counterexample to a simplified abstraction'; none is a counterexample to an intermediate claim of the papers, to a faithfully formalized statement of the papers, or a demonstrated contradiction.",
   "priority_questions": {
     "1": "Whether multiplicative data determines additive structure.",
     "2": "Whether an isomorphism at one structural level preserves arithmetic invariants at another.",
