@@ -1,1236 +1,586 @@
 [
  {
-  "key": "ABKP",
-  "entry": "J. Amorós, F. Bogomolov, L. Katzarkov, T. Pantev, Symplectic Lefshetz fibra-",
   "cited_in": {
    "IUT4": 1
-  }
+  },
+  "entry": "J. Amorós, F. Bogomolov, L. Katzarkov, T. Pantev, Symplectic Lefshetz fibration with arbitrary fundamental groups, J. Differential Geom. 54 (2000), pp. 489-545.",
+  "key": "ABKP"
  },
  {
-  "key": "AbsAnab",
-  "entry": "S. Mochizuki, The Absolute Anabelian Geometry of Hyperbolic Curves, Galois",
   "cited_in": {
    "IUT1": 13,
    "IUT2": 11,
    "IUT3": 1
-  }
+  },
+  "entry": "S. Mochizuki, The Absolute Anabelian Geometry of Hyperbolic Curves, Galois Theory and Modular Forms, Kluwer Academic Publishers (2004), pp. 77-122.",
+  "key": "AbsAnab"
  },
  {
-  "key": "AbsSect",
-  "entry": "S. Mochizuki, Galois Sections in Absolute Anabelian Geometry, Nagoya Math.",
   "cited_in": {
    "IUT2": 2
-  }
+  },
+  "entry": "S. Mochizuki, Galois Sections in Absolute Anabelian Geometry, Nagoya Math. J. 179 (2005), pp. 17-45.",
+  "key": "AbsSect"
  },
  {
-  "key": "AbsTopI",
-  "entry": "S. Mochizuki, Topics in Absolute Anabelian Geometry I: Generalities, J. Math.",
   "cited_in": {
    "IUT1": 28,
    "IUT2": 4,
    "IUT4": 2
-  }
+  },
+  "entry": "S. Mochizuki, Topics in Absolute Anabelian Geometry I: Generalities, J. Math. Sci. Univ. Tokyo 19 (2012), pp. 139-242.",
+  "key": "AbsTopI"
  },
  {
-  "key": "AbsTopII",
-  "entry": "S. Mochizuki, Topics in Absolute Anabelian Geometry II: Decomposition Groups",
   "cited_in": {
    "IUT1": 17,
    "IUT2": 7,
    "IUT4": 3
-  }
+  },
+  "entry": "S. Mochizuki, Topics in Absolute Anabelian Geometry II: Decomposition Groups and Endomorphisms, J. Math. Sci. Univ. Tokyo 20 (2013), pp. 171-269.",
+  "key": "AbsTopII"
  },
  {
-  "key": "AbsTopIII",
-  "entry": "S. Mochizuki, Topics in Absolute Anabelian Geometry III: Global Reconstruc-",
   "cited_in": {
    "IUT1": 198,
    "IUT2": 91,
    "IUT3": 99,
    "IUT4": 18
-  }
+  },
+  "entry": "S. Mochizuki, Topics in Absolute Anabelian Geometry III: Global Reconstruction Algorithms, J. Math. Sci. Univ. Tokyo 22 (2015), pp. 939-1156.",
+  "key": "AbsTopIII"
  },
  {
-  "key": "Arak",
-  "entry": "C. Soulé, D. Abramovich, J.-F. Burnol, J. Kramer, Lectures on Arakelov Geom-",
   "cited_in": {
    "IUT4": 1
-  }
+  },
+  "entry": "C. Soulé, D. Abramovich, J.-F. Burnol, J. Kramer, Lectures on Arakelov Geometry, Cambridge studies in advanced mathematics 33, Cambridge University Press (1994).",
+  "key": "Arak"
  },
  {
-  "key": "Asada",
-  "entry": "M. Asada, The faithfulness of the monodromy representations associated with",
   "cited_in": {
    "IUT1": 1
-  }
+  },
+  "entry": "M. Asada, The faithfulness of the monodromy representations associated with certain families of algebraic curves, J. Pure Appl. Algebra 159 (2001), pp. 123-147.",
+  "key": "Asada"
  },
  {
-  "key": "BogIUT",
-  "entry": "S. Mochizuki, Bogomolov’s proof of the geometric version of the Szpiro Con-",
   "cited_in": {
    "IUT4": 3
-  }
+  },
+  "entry": "S. Mochizuki, Bogomolov’s proof of the geometric version of the Szpiro Conjecture from the point of view of inter-universal Teichmüller theory, Res. Math. Sci. 3 (2016), 3:6.",
+  "key": "BogIUT"
  },
  {
-  "key": "CanLift",
-  "entry": "S. Mochizuki, The Absolute Anabelian Geometry of Canonical Curves, Kazuya",
   "cited_in": {
    "IUT1": 7,
    "IUT2": 14,
    "IUT4": 1
-  }
+  },
+  "entry": "S. Mochizuki, The Absolute Anabelian Geometry of Canonical Curves, Kazuya Kato’s fiftieth birthday, Doc. Math. 2003, Extra Vol., pp. 609-640.",
+  "key": "CanLift"
  },
  {
-  "key": "CbTpII",
-  "entry": "Y. Hoshi, S. Mochizuki, Topics Surrounding the Combinatorial Anabelian Ge-",
   "cited_in": {
    "IUT1": 1
-  }
+  },
+  "entry": "Y. Hoshi, S. Mochizuki, Topics Surrounding the Combinatorial Anabelian Geometry of Hyperbolic Curves II: Tripods and Combinatorial Cuspidalization, RIMS Preprint 1762 (November 2012).",
+  "key": "CbTpII"
  },
  {
-  "key": "CombCusp",
-  "entry": "S. Mochizuki, On the Combinatorial Cuspidalization of Hyperbolic Curves,",
   "cited_in": {
    "IUT1": 1
-  }
+  },
+  "entry": "S. Mochizuki, On the Combinatorial Cuspidalization of Hyperbolic Curves, Osaka J. Math. 47 (2010), pp. 651-715.",
+  "key": "CombCusp"
  },
  {
-  "key": "CombGC",
-  "entry": "S. Mochizuki, A combinatorial version of the Grothendieck conjecture, Tohoku",
   "cited_in": {
    "IUT1": 18,
    "IUT2": 3
-  }
+  },
+  "entry": "S. Mochizuki, A combinatorial version of the Grothendieck conjecture, Tohoku Math. J. 59 (2007), pp. 455-479.",
+  "key": "CombGC"
  },
  {
-  "key": "Config",
-  "entry": "S. Mochizuki, A. Tamagawa, The algebraic and anabelian geometry of config-",
   "cited_in": {
    "IUT1": 4
-  }
+  },
+  "entry": "S. Mochizuki, A. Tamagawa, The algebraic and anabelian geometry of configuration spaces, Hokkaido Math. J. 37 (2008), pp. 75-131.",
+  "key": "Config"
  },
  {
-  "key": "Cusp",
-  "entry": "S. Mochizuki, Absolute anabelian cuspidalizations of proper hyperbolic curves,",
   "cited_in": {
    "IUT1": 7,
    "IUT2": 1,
    "IUT4": 2
-  }
+  },
+  "entry": "S. Mochizuki, Absolute anabelian cuspidalizations of proper hyperbolic curves, J. Math. Kyoto Univ. 47 (2007), pp. 451-539.",
+  "key": "Cusp"
  },
  {
-  "key": "D-",
-  "entry": null,
-  "cited_in": {
-   "IUT1": 15,
-   "IUT2": 4
-  }
- },
- {
-  "key": "DmMn",
-  "entry": "H. Dym and H. P. McKean, Fourier Series and Integrals, Academic Press",
   "cited_in": {
    "IUT4": 1
-  }
+  },
+  "entry": "H. Dym and H. P. McKean, Fourier Series and Integrals, Academic Press (1972).",
+  "key": "DmMn"
  },
  {
-  "key": "Drk",
-  "entry": "F. R. Drake, Set Theory: an Introduction to Large Cardinals, Studies in Logic",
   "cited_in": {
    "IUT4": 4
-  }
+  },
+  "entry": "F. R. Drake, Set Theory: an Introduction to Large Cardinals, Studies in Logic and the Foundations of Mathematics 76, North-Holland (1974).",
+  "key": "Drk"
  },
  {
-  "key": "Edw",
-  "entry": "H. M. Edwards, Riemann’s Zeta Function, Academic Press (1974).",
   "cited_in": {
    "IUT4": 1
-  }
+  },
+  "entry": "H. M. Edwards, Riemann’s Zeta Function, Academic Press (1974).",
+  "key": "Edw"
  },
  {
-  "key": "EtTh",
-  "entry": "S. Mochizuki, The Étale Theta Function and its Frobenioid-theoretic Manifes-",
   "cited_in": {
    "IUT1": 151,
    "IUT2": 167,
    "IUT3": 48,
    "IUT4": 14
-  }
+  },
+  "entry": "S. Mochizuki, The Étale Theta Function and its Frobenioid-theoretic Manifestations, Publ. Res. Inst. Math. Sci. 45 (2009), pp. 227-349.",
+  "key": "EtTh"
  },
  {
-  "key": "FK",
-  "entry": "E. Freitag and R. Kiehl, Étale Cohomology and the Weil Conjecture, Springer",
   "cited_in": {
    "IUT4": 1
-  }
+  },
+  "entry": "E. Freitag and R. Kiehl, Étale Cohomology and the Weil Conjecture, Springer Verlag (1988).",
+  "key": "FK"
  },
  {
-  "key": "FRS",
-  "entry": "B. Fine, G. Rosenberger, and M. Stille, Conjugacy pinched and cyclically",
   "cited_in": {
    "IUT1": 1
-  }
+  },
+  "entry": "B. Fine, G. Rosenberger, and M. Stille, Conjugacy pinched and cyclically pinched one-relator groups, Rev. Mat. Univ. Complut. Madrid 10 (1997), pp. 207-227.",
+  "key": "FRS"
  },
  {
-  "key": "Falt",
-  "entry": "G. Faltings, Endlichkeitssätze für Abelschen Varietäten über Zahlkörpern, In-",
   "cited_in": {
    "IUT1": 2,
    "IUT4": 16
-  }
+  },
+  "entry": "G. Faltings, Endlichkeitssätze für Abelschen Varietäten über Zahlkörpern, Invent. Math. 73 (1983), pp. 349-366.",
+  "key": "Falt"
  },
  {
-  "key": "Ffmn",
-  "entry": "S. Feferman, Set-theoretical Foundations of Category Theory, Reports of the",
   "cited_in": {
    "IUT4": 1
-  }
+  },
+  "entry": "S. Feferman, Set-theoretical Foundations of Category Theory, Reports of the Midwest Category Seminar III, Lecture Notes in Mathematics 106, Springer-Verlag (1969), pp. 201-247.",
+  "key": "Ffmn"
  },
  {
-  "key": "Finot",
-  "entry": "L. R. A. Finotti, Minimal degree liftings of hyperelliptic curves, J. Math. Sci.",
   "cited_in": {
    "IUT4": 2
-  }
+  },
+  "entry": "L. R. A. Finotti, Minimal degree liftings of hyperelliptic curves, J. Math. Sci. Univ. Tokyo 11 (2004), pp. 1-47.",
+  "key": "Finot"
  },
  {
-  "key": "FrdI",
-  "entry": "S. Mochizuki, The Geometry of Frobenioids I: The General Theory, Kyushu J.",
   "cited_in": {
    "IUT1": 97,
    "IUT2": 20,
    "IUT3": 22,
    "IUT4": 5
-  }
+  },
+  "entry": "S. Mochizuki, The Geometry of Frobenioids I: The General Theory, Kyushu J. Math. 62 (2008), pp. 293-400.",
+  "key": "FrdI"
  },
  {
-  "key": "FrdII",
-  "entry": "S. Mochizuki, The Geometry of Frobenioids II: Poly-Frobenioids, Kyushu J.",
   "cited_in": {
    "IUT1": 40,
    "IUT2": 13,
    "IUT3": 5
-  }
+  },
+  "entry": "S. Mochizuki, The Geometry of Frobenioids II: Poly-Frobenioids, Kyushu J. Math. 62 (2008), pp. 401-460.",
+  "key": "FrdII"
  },
  {
-  "key": "Frobenioid-theoretic",
-  "entry": null,
-  "cited_in": {
-   "IUT3": 1
-  }
- },
- {
-  "key": "G-linear",
-  "entry": null,
-  "cited_in": {
-   "IUT2": 2
-  }
- },
- {
-  "key": "Galois",
-  "entry": null,
-  "cited_in": {
-   "IUT1": 1
-  }
- },
- {
-  "key": "GenEll",
-  "entry": "S. Mochizuki, Arithmetic Elliptic Curves in General Position, Math. J. Okayama",
   "cited_in": {
    "IUT1": 5,
    "IUT4": 64
-  }
+  },
+  "entry": "S. Mochizuki, Arithmetic Elliptic Curves in General Position, Math. J. Okayama Univ. 52 (2010), pp. 1-28.",
+  "key": "GenEll"
  },
  {
-  "key": "GeoAnbd",
-  "entry": "S. Mochizuki, The Geometry of Anabelioids, Publ. Res. Inst. Math. Sci. 40",
   "cited_in": {
    "IUT1": 2,
    "IUT4": 2
-  }
+  },
+  "entry": "S. Mochizuki, The Geometry of Anabelioids, Publ. Res. Inst. Math. Sci. 40 (2004), pp. 819-881.",
+  "key": "GeoAnbd"
  },
  {
-  "key": "GlSol",
-  "entry": "S. Mochizuki, Global Solvably Closed Anabelian Geometry, Math. J. Okayama",
   "cited_in": {
    "IUT1": 2
-  }
+  },
+  "entry": "S. Mochizuki, Global Solvably Closed Anabelian Geometry, Math. J. Okayama Univ. 48 (2006), pp. 57-71.",
+  "key": "GlSol"
  },
  {
-  "key": "Groth",
-  "entry": "A. Grothendieck, letter to G. Faltings (June 1983) in Lochak, L. Schneps, Geo-",
   "cited_in": {
    "IUT1": 1
-  }
+  },
+  "entry": "A. Grothendieck, letter to G. Faltings (June 1983) in Lochak, L. Schneps, Geometric Galois Actions; 1. Around Grothendieck’s Esquisse d’un Programme, London Math. Soc. Lect. Note Ser. 242, Cambridge Univ. Press (1997).",
+  "key": "Groth"
  },
  {
-  "key": "HASurI",
-  "entry": "S. Mochizuki, A Survey of the Hodge-Arakelov Theory of Elliptic Curves I,",
   "cited_in": {
    "IUT1": 10,
    "IUT2": 14,
    "IUT4": 12
-  }
+  },
+  "entry": "S. Mochizuki, A Survey of the Hodge-Arakelov Theory of Elliptic Curves I, Arithmetic Fundamental Groups and Noncommutative Algebra, Proceedings of Symposia in Pure Mathematics 70, American Mathematical Society (2002), pp. 533-569.",
+  "key": "HASurI"
  },
  {
-  "key": "HASurII",
-  "entry": "S. Mochizuki, A Survey of the Hodge-Arakelov Theory of Elliptic Curves II,",
   "cited_in": {
    "IUT1": 6,
    "IUT2": 8,
    "IUT4": 8
-  }
+  },
+  "entry": "S. Mochizuki, A Survey of the Hodge-Arakelov Theory of Elliptic Curves II, Algebraic Geometry 2000, Azumino, Adv. Stud. Pure Math. 36, Math. Soc. Japan (2002), pp. 81-114.",
+  "key": "HASurII"
  },
  {
-  "key": "Harts",
-  "entry": "R. Hartshorne, Algebraic Geometry, Graduate Texts in Mathematics 52, Springer-",
   "cited_in": {
    "IUT4": 1
-  }
+  },
+  "entry": "R. Hartshorne, Algebraic Geometry, Graduate Texts in Mathematics 52, Springer-Verlag (1977).",
+  "key": "Harts"
  },
  {
-  "key": "IUTchI",
-  "entry": "S. Mochizuki, Inter-universal Teichmüller Theory I: Construction of Hodge",
   "cited_in": {
    "IUT2": 375,
    "IUT3": 192,
    "IUT4": 35
-  }
+  },
+  "entry": "S. Mochizuki, Inter-universal Teichmüller Theory I: Construction of Hodge Theaters, RIMS Preprint 1756 (August 2012), to appear in Publ. Res. Inst. Math. Sci.",
+  "key": "IUTchI"
  },
  {
-  "key": "IUTchII",
-  "entry": "S. Mochizuki, Inter-universal Teichmüller Theory II: Hodge-Arakelov-theoretic",
   "cited_in": {
    "IUT1": 44,
    "IUT3": 365,
    "IUT4": 22
-  }
+  },
+  "entry": "S. Mochizuki, Inter-universal Teichmüller Theory II: Hodge-Arakelov-theoretic Evaluation, RIMS Preprint 1757 (August 2012), to appear in Publ. Res. Inst. Math. Sci.",
+  "key": "IUTchII"
  },
  {
-  "key": "IUTchIII",
-  "entry": "S. Mochizuki, Inter-universal Teichmüller Theory III: Canonical Splittings of",
   "cited_in": {
    "IUT1": 38,
    "IUT2": 56,
    "IUT4": 86
-  }
+  },
+  "entry": "S. Mochizuki, Inter-universal Teichmüller Theory III: Canonical Splittings of the Log-theta-lattice, RIMS Preprint 1758 (August 2012), to appear in Publ. Res. Inst. Math. Sci.",
+  "key": "IUTchIII"
  },
  {
-  "key": "IUTchIV",
-  "entry": "S. Mochizuki, Inter-universal Teichmüller Theory IV: Log-volume Computa-",
   "cited_in": {
    "IUT1": 13,
    "IUT2": 4,
    "IUT3": 17
-  }
+  },
+  "entry": "S. Mochizuki, Inter-universal Teichmüller Theory IV: Log-volume Computations and Set-theoretic Foundations, RIMS Preprint 1759 (August 2012), to appear in Publ. Res. Inst. Math. Sci.",
+  "key": "IUTchIV"
  },
  {
-  "key": "Ih",
-  "entry": "Y. Ihara, Comparison of some quotients of fundamental groups of algebraic",
   "cited_in": {
    "IUT4": 1
-  }
+  },
+  "entry": "Y. Ihara, Comparison of some quotients of fundamental groups of algebraic curves over p-adic fields, Galois-Teichmüller Theory and Arithmetic Geometry, Adv. Stud. Pure Math. 63, Math. Soc. Japan (2012), pp. 221-250.",
+  "key": "Ih"
  },
  {
-  "key": "InpTch",
-  "entry": "S. Mochizuki, An Introduction to p-adic Teichmüller Theory, Cohomologies",
   "cited_in": {
    "IUT4": 3
-  }
+  },
+  "entry": "S. Mochizuki, An Introduction to p-adic Teichmüller Theory, Cohomologies p-adiques et applications arithmétiques I, Astérisque 278 (2002), pp. 1-49.",
+  "key": "InpTch"
  },
  {
-  "key": "JP",
-  "entry": "K. Joshi and C. Pauly, Hitchin-Mochizuki morphism, Opers and Frobenius-",
   "cited_in": {
    "IUT1": 1
-  }
+  },
+  "entry": "K. Joshi and C. Pauly, Hitchin-Mochizuki morphism, Opers and Frobeniusdestabilized vector bundles over curves, Adv. Math. 274 (2015), pp. 39-75.",
+  "key": "JP"
  },
  {
-  "key": "Kim",
-  "entry": "M. Kim, The motivic fundamental group of P1 \\ {0, 1, ∞} and the theorem of",
   "cited_in": {
    "IUT1": 1
-  }
+  },
+  "entry": "M. Kim, The motivic fundamental group of P1 \\ {0, 1, ∞} and the theorem of Siegel, Invent. Math. 161 (2005), pp. 629-656.",
+  "key": "Kim"
  },
  {
-  "key": "Kobayashi",
-  "entry": null,
-  "cited_in": {
-   "IUT4": 2
-  }
- },
- {
-  "key": "Kobl",
-  "entry": "N. Koblitz, p-adic Numbers, p-adic Analysis, and Zeta-Functions, Graduate",
   "cited_in": {
    "IUT4": 1
-  }
+  },
+  "entry": "N. Koblitz, p-adic Numbers, p-adic Analysis, and Zeta-Functions, Graduate Texts in Mathematics 58, Springer-Verlag (1984).",
+  "key": "Kobl"
  },
  {
-  "key": "LGP-Gaussian",
-  "entry": null,
-  "cited_in": {
-   "IUT3": 7
-  }
- },
- {
-  "key": "Lang",
-  "entry": "S. Lang, Algebraic number theory, Addison-Wesley Publishing Co. (1970).",
   "cited_in": {
    "IUT1": 1,
    "IUT3": 3
-  }
+  },
+  "entry": "S. Lang, Algebraic number theory, Addison-Wesley Publishing Co. (1970).",
+  "key": "Lang"
  },
  {
-  "key": "Lang1",
-  "entry": "S. Lang, Algebraic number theory, Second Edition, Graduate Texts in Mathe-",
   "cited_in": {
    "IUT4": 17
-  }
+  },
+  "entry": "S. Lang, Algebraic number theory, Second Edition, Graduate Texts in Mathematics 110, Springer-Verlag (1986).",
+  "key": "Lang1"
  },
  {
-  "key": "Lang2",
-  "entry": "S. Lang, Introduction to complex hyperbolic spaces, Springer-Verlag (1987).",
   "cited_in": {
    "IUT4": 1
-  }
+  },
+  "entry": "S. Lang, Introduction to complex hyperbolic spaces, Springer-Verlag (1987).",
+  "key": "Lang2"
  },
  {
-  "key": "Lehto",
-  "entry": "O. Lehto, Univalent Functions and Teichmüller Spaces, Graduate Texts in",
   "cited_in": {
    "IUT1": 1,
    "IUT2": 1
-  }
+  },
+  "entry": "O. Lehto, Univalent Functions and Teichmüller Spaces, Graduate Texts in Mathematics 109, Springer-Verlag (1987).",
+  "key": "Lehto"
  },
  {
-  "key": "MNT",
-  "entry": "S. Mochizuki, H. Nakamura, A. Tamagawa, The Grothendieck conjecture on",
   "cited_in": {
    "IUT1": 2
-  }
+  },
+  "entry": "S. Mochizuki, H. Nakamura, A. Tamagawa, The Grothendieck conjecture on the fundamental groups of algebraic curves, Sugaku Expositions 14 (2001), pp. 31-53.",
+  "key": "MNT"
  },
  {
-  "key": "McLn",
-  "entry": "S. MacLane, One Universe as a Foundation for Category Theory, Reports of the",
   "cited_in": {
    "IUT4": 2
-  }
+  },
+  "entry": "S. MacLane, One Universe as a Foundation for Category Theory, Reports of the Midwest Category Seminar III, Lecture Notes in Mathematics 106, Springer-Verlag (1969).",
+  "key": "McLn"
  },
  {
-  "key": "Milne",
-  "entry": "J. S. Milne, Abelian Varieties in Arithmetic Geometry, edited by G. Cornell",
   "cited_in": {
    "IUT4": 4
-  }
+  },
+  "entry": "J. S. Milne, Abelian Varieties in Arithmetic Geometry, edited by G. Cornell and J. H. Silverman, Springer-Verlag (1986), pp. 103-150.",
+  "key": "Milne"
  },
  {
-  "key": "MnLg",
-  "entry": "S. Mochizuki, Monomorphisms in Categories of Log Schemes, Kodai Math. J.",
   "cited_in": {
    "IUT4": 3
-  }
+  },
+  "entry": "S. Mochizuki, Monomorphisms in Categories of Log Schemes, Kodai Math. J. 38 (2015), pp. 365-429.",
+  "key": "MnLg"
  },
  {
-  "key": "Mss",
-  "entry": "D. W. Masser, Note on a conjecture of Szpiro in Astérisque 183 (1990), pp.",
   "cited_in": {
    "IUT4": 8
-  }
+  },
+  "entry": "D. W. Masser, Note on a conjecture of Szpiro in Astérisque 183 (1990), pp. 19-23.",
+  "key": "Mss"
  },
  {
-  "key": "NS",
-  "entry": "N. Nikolov and D. Segal, Finite index subgroups in profinite groups, C. R.",
   "cited_in": {
    "IUT1": 1
-  }
+  },
+  "entry": "N. Nikolov and D. Segal, Finite index subgroups in profinite groups, C. R. Math. Acad. Sci. Paris 337 (2003), pp. 303-308.",
+  "key": "NS"
  },
  {
-  "key": "NSW",
-  "entry": "J. Neukirch, A. Schmidt, K. Wingberg, Cohomology of number fields, Grundlehren",
   "cited_in": {
    "IUT1": 5,
    "IUT2": 1
-  }
+  },
+  "entry": "J. Neukirch, A. Schmidt, K. Wingberg, Cohomology of number fields, Grundlehren der Mathematischen Wissenschaften 323, Springer-Verlag (2000).",
+  "key": "NSW"
  },
  {
-  "key": "NerMod",
-  "entry": "S. Bosch, W. Lütkebohmert, M. Raynaud, Néron Models, Ergebnisse der Math-",
   "cited_in": {
    "IUT4": 2
-  }
+  },
+  "entry": "S. Bosch, W. Lütkebohmert, M. Raynaud, Néron Models, Ergebnisse der Mathematik und ihrer Grenzgebiete 21, Springer-Verlag (1990).",
+  "key": "NerMod"
  },
  {
-  "key": "NodNon",
-  "entry": "Y. Hoshi, S. Mochizuki, On the Combinatorial Anabelian Geometry of Nodally",
   "cited_in": {
    "IUT1": 7
-  }
+  },
+  "entry": "Y. Hoshi, S. Mochizuki, On the Combinatorial Anabelian Geometry of Nodally Nondegenerate Outer Representations, Hiroshima Math. J. 41 (2011), pp. 275-342.",
+  "key": "NodNon"
  },
  {
-  "key": "Pano",
-  "entry": "S. Mochizuki, A Panoramic Overview of Inter-universal Teichmüller Theory,",
   "cited_in": {
    "IUT4": 1
-  }
+  },
+  "entry": "S. Mochizuki, A Panoramic Overview of Inter-universal Teichmüller Theory, Algebraic number theory and related topics 2012, RIMS Kōkyūroku Bessatsu B51, Res. Inst. Math. Sci. (RIMS), Kyoto (2014), pp. 301-345.",
+  "key": "Pano"
  },
  {
-  "key": "Par",
-  "entry": "A. N. Parshin, Finiteness theorems and hyperbolic manifolds, The Grothen-",
   "cited_in": {
    "IUT4": 1
-  }
+  },
+  "entry": "A. N. Parshin, Finiteness theorems and hyperbolic manifolds, The Grothendieck Festschrift, Vol. III, Progress in Mathematics 88, Birkhäuser (1990).",
+  "key": "Par"
  },
  {
-  "key": "PrfGC",
-  "entry": "S. Mochizuki, The Profinite Grothendieck Conjecture for Closed Hyperbolic",
   "cited_in": {
    "IUT1": 1
-  }
+  },
+  "entry": "S. Mochizuki, The Profinite Grothendieck Conjecture for Closed Hyperbolic Curves over Number Fields, J. Math. Sci. Univ. Tokyo 3 (1996), pp. 571-627.",
+  "key": "PrfGC"
  },
  {
-  "key": "QuCnf",
-  "entry": "S. Mochizuki, Conformal and quasiconformal categorical representation of hy-",
   "cited_in": {
    "IUT1": 1,
    "IUT3": 1
-  }
+  },
+  "entry": "S. Mochizuki, Conformal and quasiconformal categorical representation of hyperbolic Riemann surfaces, Hiroshima Math. J. 36 (2006), pp. 405-441.",
+  "key": "QuCnf"
  },
  {
-  "key": "R-",
-  "entry": null,
-  "cited_in": {
-   "IUT4": 2
-  }
- },
- {
-  "key": "RZ",
-  "entry": "Ribes and Zaleskii, Profinite Groups, Ergebnisse der Mathematik und ihrer",
   "cited_in": {
    "IUT1": 3
-  }
+  },
+  "entry": "Ribes and Zaleskii, Profinite Groups, Ergebnisse der Mathematik und ihrer Grenzgebiete 3, Springer-Verlag (2000).",
+  "key": "RZ"
  },
  {
-  "key": "Royden",
-  "entry": "H. L. Royden, Real Analysis, Second Edition, The Macmillan Publishing Co.",
   "cited_in": {
    "IUT3": 3
-  }
+  },
+  "entry": "H. L. Royden, Real Analysis, Second Edition, The Macmillan Publishing Co. (1968).",
+  "key": "Royden"
  },
  {
-  "key": "S-valued",
-  "entry": null,
-  "cited_in": {
-   "IUT4": 1
-  }
- },
- {
-  "key": "SemiAnbd",
-  "entry": "S. Mochizuki, Semi-graphs of Anabelioids, Publ. Res. Inst. Math. Sci. 42",
   "cited_in": {
    "IUT1": 88,
    "IUT2": 9,
    "IUT3": 1,
    "IUT4": 2
-  }
+  },
+  "entry": "S. Mochizuki, Semi-graphs of Anabelioids, Publ. Res. Inst. Math. Sci. 42 (2006), pp. 221-322.",
+  "key": "SemiAnbd"
  },
  {
-  "key": "Silv",
-  "entry": "J. H. Silverman, The Arithmetic of Elliptic Curves, Graduate Texts in Math-",
   "cited_in": {
    "IUT4": 2
-  }
+  },
+  "entry": "J. H. Silverman, The Arithmetic of Elliptic Curves, Graduate Texts in Mathematics 106, Springer-Verlag (1986).",
+  "key": "Silv"
  },
  {
-  "key": "Stb1",
-  "entry": "P. F. Stebe, A residual property of certain groups, Proc. Amer. Math. Soc. 26",
   "cited_in": {
    "IUT1": 4
-  }
+  },
+  "entry": "P. F. Stebe, A residual property of certain groups, Proc. Amer. Math. Soc. 26 (1970), pp. 37-42.",
+  "key": "Stb1"
  },
  {
-  "key": "Stb2",
-  "entry": "P. F. Stebe, Conjugacy separability of certain Fuchsian groups, Trans. Amer.",
   "cited_in": {
    "IUT1": 1
-  }
+  },
+  "entry": "P. F. Stebe, Conjugacy separability of certain Fuchsian groups, Trans. Amer. Math. Soc. 163 (1972), pp. 173-188.",
+  "key": "Stb2"
  },
  {
-  "key": "Stl",
-  "entry": "J. Stillwell, Classical topology and combinatorial group theory. Second edition,",
   "cited_in": {
    "IUT1": 1
-  }
+  },
+  "entry": "J. Stillwell, Classical topology and combinatorial group theory. Second edition, Graduate Texts in Mathematics 72, Springer-Verlag (1993).",
+  "key": "Stl"
  },
  {
-  "key": "Szp",
-  "entry": "L. Szpiro, Degrés, intersections, hauteurs in Astérisque 127 (1985), pp. 11-28.",
   "cited_in": {
    "IUT2": 1
-  }
+  },
+  "entry": "L. Szpiro, Degrés, intersections, hauteurs in Astérisque 127 (1985), pp. 11-28.",
+  "key": "Szp"
  },
  {
-  "key": "Tama1",
-  "entry": "A. Tamagawa, The Grothendieck Conjecture for Affine Curves, Compositio",
   "cited_in": {
    "IUT1": 6
-  }
+  },
+  "entry": "A. Tamagawa, The Grothendieck Conjecture for Affine Curves, Compositio Math. 109 (1997), pp. 135-194.",
+  "key": "Tama1"
  },
  {
-  "key": "Tama2",
-  "entry": "A. Tamagawa, Resolution of nonsingularities of families of curves, Publ. Res.",
   "cited_in": {
    "IUT1": 3
-  }
+  },
+  "entry": "A. Tamagawa, Resolution of nonsingularities of families of curves, Publ. Res. Inst. Math. Sci. 40 (2004), pp. 1291-1336.",
+  "key": "Tama2"
  },
  {
-  "key": "Vjt",
-  "entry": "P. Vojta, Diophantine approximations and value distribution theory, Lecture",
   "cited_in": {
    "IUT4": 1
-  }
+  },
+  "entry": "P. Vojta, Diophantine approximations and value distribution theory, Lecture Notes in Mathematics 1239, Springer-Verlag (1987).",
+  "key": "Vjt"
  },
  {
-  "key": "Wiles",
-  "entry": "A. Wiles, Modular elliptic curves and Fermat’s last theorem, Ann. of Math.",
   "cited_in": {
    "IUT1": 2
-  }
+  },
+  "entry": "A. Wiles, Modular elliptic curves and Fermat’s last theorem, Ann. of Math. 141 (1995), pp. 443-551.",
+  "key": "Wiles"
  },
  {
-  "key": "Zh",
-  "entry": "S. Zhang, Geometry of algebraic points, First International Congress of Chi-",
   "cited_in": {
    "IUT4": 1
-  }
+  },
+  "entry": "S. Zhang, Geometry of algebraic points, First International Congress of Chinese Mathematicians (Beijing, 1998), AMS/IP Stud. Adv. Math. 20 (2001), pp. 185-198.",
+  "key": "Zh"
  },
  {
-  "key": "abelian",
-  "entry": null,
-  "cited_in": {
-   "IUT1": 1
-  }
- },
- {
-  "key": "absolute",
-  "entry": null,
-  "cited_in": {
-   "IUT4": 4
-  }
- },
- {
-  "key": "abstract",
-  "entry": null,
-  "cited_in": {
-   "IUT1": 1
-  }
- },
- {
-  "key": "abstractly",
-  "entry": null,
-  "cited_in": {
-   "IUT1": 1
-  }
- },
- {
-  "key": "additive",
-  "entry": null,
-  "cited_in": {
-   "IUT3": 6
-  }
- },
- {
-  "key": "arbitrary",
-  "entry": null,
-  "cited_in": {
-   "IUT1": 1
-  }
- },
- {
-  "key": "arithmetic",
-  "entry": null,
-  "cited_in": {
-   "IUT2": 3,
-   "IUT3": 1
-  }
- },
- {
-  "key": "bi-continuous",
-  "entry": null,
-  "cited_in": {
-   "IUT4": 1
-  }
- },
- {
-  "key": "bounded",
-  "entry": null,
-  "cited_in": {
-   "IUT3": 1
-  }
- },
- {
-  "key": "c",
-  "entry": null,
-  "cited_in": {
-   "IUT1": 3
-  }
- },
- {
-  "key": "center-free",
-  "entry": null,
-  "cited_in": {
-   "IUT1": 1
-  }
- },
- {
-  "key": "commutative",
-  "entry": null,
-  "cited_in": {
-   "IUT1": 2
-  }
- },
- {
-  "key": "compatible",
-  "entry": null,
-  "cited_in": {
-   "IUT3": 1
-  }
- },
- {
-  "key": "composite",
-  "entry": null,
-  "cited_in": {
-   "IUT1": 2,
-   "IUT2": 1
-  }
- },
- {
-  "key": "connected",
-  "entry": null,
-  "cited_in": {
-   "IUT1": 2
-  }
- },
- {
-  "key": "continuous",
-  "entry": null,
-  "cited_in": {
-   "IUT1": 1,
-   "IUT2": 1
-  }
- },
- {
-  "key": "covariant",
-  "entry": null,
-  "cited_in": {
-   "IUT4": 2
-  }
- },
- {
-  "key": "discrete",
-  "entry": null,
-  "cited_in": {
-   "IUT1": 1
-  }
- },
- {
-  "key": "elementary",
-  "entry": null,
-  "cited_in": {
-   "IUT2": 1
-  }
- },
- {
-  "key": "essentially",
-  "entry": null,
-  "cited_in": {
-   "IUT1": 1,
-   "IUT2": 1
-  }
- },
- {
-  "key": "evident",
-  "entry": null,
-  "cited_in": {
-   "IUT2": 1
-  }
- },
- {
-  "key": "finite",
-  "entry": null,
-  "cited_in": {
-   "IUT3": 1
-  }
- },
- {
-  "key": "fixed",
-  "entry": null,
-  "cited_in": {
-   "IUT1": 1
-  }
- },
- {
-  "key": "formal",
-  "entry": null,
-  "cited_in": {
-   "IUT2": 1
-  }
- },
- {
-  "key": "four",
-  "entry": null,
-  "cited_in": {
-   "IUT3": 1
-  }
- },
- {
-  "key": "full",
-  "entry": null,
-  "cited_in": {
-   "IUT1": 2,
-   "IUT3": 2
-  }
- },
- {
-  "key": "germ",
-  "entry": null,
-  "cited_in": {
-   "IUT3": 1
-  }
- },
- {
-  "key": "global",
-  "entry": null,
-  "cited_in": {
-   "IUT3": 2
-  }
- },
- {
-  "key": "globally",
-  "entry": null,
-  "cited_in": {
-   "IUT1": 1
-  }
- },
- {
-  "key": "good",
-  "entry": null,
-  "cited_in": {
-   "IUT2": 1
-  }
- },
- {
-  "key": "group",
-  "entry": null,
-  "cited_in": {
-   "IUT3": 1
-  }
- },
- {
-  "key": "implicitly",
-  "entry": null,
-  "cited_in": {
-   "IUT2": 1
-  }
- },
- {
-  "key": "ind-topological",
-  "entry": null,
-  "cited_in": {
-   "IUT2": 2
-  }
- },
- {
-  "key": "iso",
-  "entry": null,
-  "cited_in": {
-   "IUT1": 12
-  }
- },
- {
-  "key": "l",
-  "entry": null,
-  "cited_in": {
-   "IUT1": 3,
-   "IUT4": 4
-  }
- },
- {
-  "key": "labeled",
-  "entry": null,
-  "cited_in": {
-   "IUT3": 3
-  }
- },
- {
-  "key": "larger",
-  "entry": null,
-  "cited_in": {
-   "IUT4": 1
-  }
- },
- {
-  "key": "lgp-Gaussian",
-  "entry": null,
-  "cited_in": {
-   "IUT3": 1
-  }
- },
- {
-  "key": "local",
-  "entry": null,
-  "cited_in": {
-   "IUT2": 1,
-   "IUT3": 9
-  }
- },
- {
-  "key": "log-",
-  "entry": null,
-  "cited_in": {
-   "IUT3": 2
-  }
- },
- {
-  "key": "logarithmic",
-  "entry": null,
-  "cited_in": {
-   "IUT4": 2
-  }
- },
- {
-  "key": "model",
-  "entry": null,
-  "cited_in": {
-   "IUT3": 1
-  }
- },
- {
-  "key": "mono-analytic",
-  "entry": null,
-  "cited_in": {
-   "IUT2": 2
-  }
- },
- {
-  "key": "mono-theta",
-  "entry": null,
-  "cited_in": {
-   "IUT2": 1
-  }
- },
- {
-  "key": "multiplicative",
-  "entry": null,
-  "cited_in": {
-   "IUT3": 3
-  }
- },
- {
-  "key": "multiplicatively",
-  "entry": null,
-  "cited_in": {
-   "IUT3": 1
-  }
- },
- {
-  "key": "n",
-  "entry": null,
-  "cited_in": {
-   "IUT4": 4
-  }
- },
- {
-  "key": "n-",
-  "entry": null,
-  "cited_in": {
-   "IUT3": 3
-  }
- },
- {
-  "key": "natural",
-  "entry": null,
-  "cited_in": {
-   "IUT3": 2
-  }
- },
- {
-  "key": "necessarily",
-  "entry": null,
-  "cited_in": {
-   "IUT1": 1
-  }
- },
- {
-  "key": "negative",
-  "entry": null,
-  "cited_in": {
-   "IUT2": 1
-  }
- },
- {
-  "key": "non-realified",
-  "entry": null,
-  "cited_in": {
-   "IUT1": 3,
-   "IUT3": 1
-  }
- },
- {
-  "key": "nonarchimedean",
-  "entry": null,
-  "cited_in": {
-   "IUT1": 2
-  }
- },
- {
-  "key": "noncritical",
-  "entry": null,
-  "cited_in": {
-   "IUT4": 3
-  }
- },
- {
-  "key": "nontrivial",
-  "entry": null,
-  "cited_in": {
-   "IUT1": 1
-  }
- },
- {
-  "key": "nonzero",
-  "entry": null,
-  "cited_in": {
-   "IUT4": 1
-  }
- },
- {
-  "key": "normalized",
-  "entry": null,
-  "cited_in": {
-   "IUT3": 2,
-   "IUT4": 4
-  }
- },
- {
-  "key": "number",
-  "entry": null,
-  "cited_in": {
-   "IUT3": 3
-  }
- },
- {
-  "key": "once-punctured",
-  "entry": null,
-  "cited_in": {
-   "IUT1": 5,
-   "IUT3": 1
-  }
- },
- {
-  "key": "orbi",
-  "entry": null,
-  "cited_in": {
-   "IUT1": 2,
-   "IUT2": 1
-  }
- },
- {
-  "key": "ordered",
-  "entry": null,
-  "cited_in": {
-   "IUT1": 2
-  }
- },
- {
-  "key": "outer",
-  "entry": null,
-  "cited_in": {
-   "IUT1": 2
-  }
- },
- {
-  "key": "pGC",
-  "entry": "S. Mochizuki, The Local Pro-p Anabelian Geometry of Curves, Invent. Math.",
   "cited_in": {
    "IUT1": 3,
    "IUT2": 2,
    "IUT4": 2
-  }
+  },
+  "entry": "S. Mochizuki, The Local Pro-p Anabelian Geometry of Curves, Invent. Math. 138 (1999), pp. 319-423.",
+  "key": "pGC"
  },
  {
-  "key": "pOrd",
-  "entry": "S. Mochizuki, A Theory of Ordinary p-adic Curves, Publ. Res. Inst. Math. Sci.",
   "cited_in": {
    "IUT1": 14,
    "IUT2": 1,
    "IUT3": 4,
    "IUT4": 13
-  }
+  },
+  "entry": "S. Mochizuki, A Theory of Ordinary p-adic Curves, Publ. Res. Inst. Math. Sci. 32 (1996), pp. 957-1151.",
+  "key": "pOrd"
  },
  {
-  "key": "pTeich",
-  "entry": "S. Mochizuki, Foundations of p-adic Teichmüller Theory, AMS/IP Studies",
   "cited_in": {
    "IUT1": 14,
    "IUT2": 4,
    "IUT3": 3,
    "IUT4": 6
-  }
+  },
+  "entry": "S. Mochizuki, Foundations of p-adic Teichmüller Theory, AMS/IP Studies in Advanced Mathematics 11, American Mathematical Society/International Press (1999).",
+  "key": "pTeich"
  },
  {
-  "key": "pointed",
-  "entry": null,
-  "cited_in": {
-   "IUT3": 2
-  }
- },
- {
-  "key": "poly-",
-  "entry": null,
-  "cited_in": {
-   "IUT3": 20
-  }
- },
- {
-  "key": "positive",
-  "entry": null,
-  "cited_in": {
-   "IUT1": 2
-  }
- },
- {
-  "key": "possible",
-  "entry": null,
-  "cited_in": {
-   "IUT3": 1
-  }
- },
- {
-  "key": "pre-",
-  "entry": null,
-  "cited_in": {
-   "IUT3": 1
-  }
- },
- {
-  "key": "profinite",
-  "entry": null,
-  "cited_in": {
-   "IUT1": 1
-  }
- },
- {
-  "key": "pseudo-",
-  "entry": null,
-  "cited_in": {
-   "IUT3": 5
-  }
- },
- {
-  "key": "quasi-",
-  "entry": null,
-  "cited_in": {
-   "IUT1": 1
-  }
- },
- {
-  "key": "reduced",
-  "entry": null,
-  "cited_in": {
-   "IUT4": 1
-  }
- },
- {
-  "key": "relevant",
-  "entry": null,
-  "cited_in": {
-   "IUT3": 3,
-   "IUT4": 1
-  }
- },
- {
-  "key": "small",
-  "entry": null,
-  "cited_in": {
-   "IUT4": 7
-  }
- },
- {
-  "key": "square",
-  "entry": null,
-  "cited_in": {
-   "IUT3": 1
-  }
- },
- {
-  "key": "tautological",
-  "entry": null,
-  "cited_in": {
-   "IUT2": 1
-  }
- },
- {
-  "key": "tempered",
-  "entry": null,
-  "cited_in": {
-   "IUT1": 1
-  }
- },
- {
-  "key": "truncated",
-  "entry": null,
-  "cited_in": {
-   "IUT3": 4
-  }
- },
- {
-  "key": "typically",
-  "entry": null,
-  "cited_in": {
-   "IUT4": 1
-  }
- },
- {
-  "key": "undetermined",
-  "entry": null,
-  "cited_in": {
-   "IUT3": 1
-  }
- },
- {
-  "key": "unique",
-  "entry": null,
-  "cited_in": {
-   "IUT1": 1
-  }
- },
- {
-  "key": "unspecified",
-  "entry": null,
-  "cited_in": {
-   "IUT4": 1
-  }
- },
- {
-  "key": "v",
-  "entry": null,
-  "cited_in": {
-   "IUT1": 7
-  }
- },
- {
-  "key": "vFr",
-  "entry": "M. van Frankenhuijsen, About the ABC conjecture and an alternative, Number",
   "cited_in": {
    "IUT4": 12
-  }
- },
- {
-  "key": "x",
-  "entry": null,
-  "cited_in": {
-   "IUT4": 4
-  }
+  },
+  "entry": "M. van Frankenhuijsen, About the ABC conjecture and an alternative, Number theory, analysis and geometry, Springer-Verlag (2012), pp. 169-180.",
+  "key": "vFr"
  }
 ]

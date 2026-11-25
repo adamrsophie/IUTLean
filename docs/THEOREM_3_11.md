@@ -1,0 +1,168 @@
+# IUT III, Theorem 3.11: the claims, separated
+
+Source: Mochizuki, *Inter-universal Teichmüller Theory III*, Theorem 3.11, pages 153 to 159. All of pages 153 to 158 were checked against rendered images. The proof, on page 159 (text), consists of one sentence saying that the assertions follow immediately from the definitions and the references quoted. Remarks 3.11.1 to 3.11.4 (pages 159 to 173) were read in text; page 173 was also rendered.
+
+Theorem 3.11 is not stated in Lean. Its vocabulary is not formalized in this project: Hodge theaters, processions, tensor packets, Kummer isomorphisms, and the indeterminacies. Per-part records are in `data/curated/iut3.json` under `IUT3.Thm3_11.*`.
+
+Each claim below is tagged with one or more of these types:
+
+* **E**: existence of a representation or construction.
+* **C**: compatibility of two maps or structures.
+* **I**: independence from choices.
+* **V**: invariance under indeterminacies.
+* **N**: preservation of numerical quantities (log-volumes, degrees).
+* **S**: simultaneous validity of several properties.
+
+## Hypotheses
+
+* Initial Θ-data `(F̄/F, X_F, l, C_K, V, V^bad_mod, ε)` as in IUTchI Definition 3.1 (page 153).
+* A collection of distinct Θ^{±ell}NF-Hodge theaters `{n,m HT}_{n,m∈Z}`, thought of as arising from an LGP-Gaussian log-theta-lattice (Definition 3.8 (iii)).
+* For each n, the D-Θ^{±ell}NF-Hodge theater `n,◦HT^{D-Θ±ellNF}` is the one determined up to isomorphism by the `n,m HT`, using vertical coricity (Thm 1.5 (i), Rem 3.8.2). This is an implicit hypothesis: the generalization of Thm 1.5 from the Gaussian to the LGP-Gaussian lattice is asserted in Rem 3.8.2 as immediate ("formally").
+
+## Part (i): multiradial representation (pages 153 to 155)
+
+**(i.0) The procession.** Type E.
+
+* The procession of D^⊢-prime-strips `Prc(n,◦D^⊢_T)` is obtained by applying the natural functor of IUTchI Proposition 6.9 (ii).
+* Its shape is a chain of inclusions of capsules `{0} ⊆ {0, 1} ⊆ ... ⊆ {0, 1, ..., l*}`.
+
+**(i.a) Local packets.** Type E and N.
+
+* For v over v_Q and `j ∈ |F_l|`, the data are the mono-analytic integral structures `I(S^±_{j+1}; n,◦D^⊢_{v_Q}) ⊆ I^Q(...)` and `I(S^±_{j+1},j; n,◦D^⊢_v) ⊆ I^Q(...)`.
+* They are equipped with the procession-normalized mono-analytic log-volumes of Prop 3.9 (ii).
+* Obligation: construct these from D^⊢-prime-strips alone, and define the log-volume as an average over the capsules.
+
+**(i.b) Splitting monoids.** Type E.
+
+* For v ∈ V^bad, the data is the splitting monoid `Ψ^⊥_LGP(n,◦HT)_v`.
+* It is regarded, via natural poly-isomorphisms of packets, as a subset of `∏_{j∈F*_l} I^Q(S^±_{j+1},j; n,◦D^⊢_v)`, with a multiplicative action on that product.
+* Obligation: show the subset and the action are well defined relative to the poly-isomorphisms, i.e. independent of the isomorphism chosen in each poly-isomorphism. That independence is type I. It is implicit in the statement.
+
+**(i.c) Number fields and global Frobenioids.** Types E, C and N.
+
+* For `j ∈ F*_l`, the number field `M_MOD(n,◦HT)_j = M_mod(n,◦HT)_j` sits inside `∏_{v_Q} I^Q(S^±_{j+1}; n,◦D^⊢_{v_Q})`.
+* Natural isomorphisms `F_MOD ≅ F_mod` and `F^R_MOD ≅ F^R_mod` (type C).
+* Global degrees may be computed by the log-volumes of (a), via Prop 3.9 (iii) (type N). That proposition says this holds "relative to a suitable normalization" (page 117), which is unspecified.
+
+**(i.d) The indeterminacies.** Definitions.
+
+* **(Ind1)** is induced by the automorphisms of the procession `Prc(n,◦D^⊢_T)`.
+* **(Ind2)** is defined per v_Q:
+  * for v_Q nonarchimedean, it is induced by independent copies of Ism acting on each direct summand of the j+1 tensor factors;
+  * for v_Q archimedean, by independent copies of the order 2 automorphisms of Prop 1.2 (vii);
+  * the number of direct summands equals the number of v over v_Q.
+* `n,◦R^LGP` denotes the data (a), (b), (c) regarded up to (Ind1) and (Ind2).
+
+**(i.e) Algorithmic construction.** Types E and I.
+
+* `n,◦R^LGP` may be constructed via an algorithm in the procession that is functorial with respect to isomorphisms of processions.
+* Functoriality is the independence claim: the output depends only on the isomorphism class of the procession, up to the stated indeterminacies.
+
+**(i.f) Permutation symmetries.** Type C.
+
+* For n, n' ∈ Z, the étale-picture permutation symmetries induce compatible poly-isomorphisms `Prc(n,◦D^⊢_T) ≅ Prc(n',◦D^⊢_T)` and `n,◦R^LGP ≅ n',◦R^LGP` (page 154).
+* These are compatible with the bi-coricity poly-isomorphisms `n,◦D^⊢_0 ≅ n',◦D^⊢_0` of Thm 1.5 (iii) (page 155).
+
+**Invariance (type V).** Part (i) contains no invariance assertion for log-volumes. The invariance of procession-normalized log-volumes under Ind1 and Ind2 is asserted later, in Cor 3.12 Step (x) (page 181), citing Prop 3.9 (ii).
+
+## Part (ii): log-Kummer correspondence (pages 155 to 156)
+
+**(ii.0) Kummer isomorphisms.** Type E.
+
+* For n, m ∈ Z, the Kummer isomorphisms of labeled data (`Ψ_cns`, the κ-sol fundamental group acting on `M_{∞κ}`, and `M̄_mod`) induce isomorphisms between:
+  * the vertically coric data (a), (b), (c) of (i), not yet subjected to Ind1 and Ind2;
+  * the corresponding data arising from each `n,m HT`.
+
+**(ii.a) Local packets.** Types E and N.
+
+* The isomorphisms of local mono-analytic tensor packets and their Q-spans pass through the F^{⊢×μ} versions.
+* All of them are compatible with the respective log-volumes (Prop 3.9 (ii)).
+
+**(ii.b) Splitting monoids.** Type E: isomorphisms of splitting monoids at V^bad.
+
+**(ii.c) Global data.** Types E and C.
+
+* Isomorphisms of number fields and of non-realified and realified global Frobenioids, MOD and mod.
+* They are compatible with the MOD/mod identifications.
+* They induce isomorphisms of `C^⊩_LGP` and `C^⊩_lgp`.
+
+**(ii.d) Mutual compatibility along the column.** Types C and S.
+
+* As m varies, the isomorphisms of (b) and of the first line of (c) are mutually compatible relative to the log-links of the n-th column.
+* The only portions that log-links can relate are roots of unity, which go to "addition by zero" (Prop 3.5 (ii)(c), Prop 3.10 (ii)).
+* This implies compatibility of the MOD lines of (c), but **not** the mod lines (Prop 3.10 (iii), Rem 3.10.1).
+
+**(ii.e) (Ind3).** Type C, in a weakened form.
+
+* As m varies, the isomorphisms of (a) are only upper semi-compatible relative to the log-links: natural inclusions at nonarchimedean v_Q, natural surjections at archimedean v_Q (Prop 3.5 (ii)(a), (b)).
+* This is a containment property, which the text calls an indeterminacy.
+
+**(ii.f) Log-volumes along the column.** Type N.
+
+* As m varies, the isomorphisms of (a) are "precisely" compatible with log-volumes relative to the log-links (Prop 3.9 (iv)).
+* Obligation: reconcile this with (ii.e). The containments concern different sets, while the log-volume compatibility concerns corresponding sets under the logarithm (Rem 3.9.4 (iii)).
+
+## Part (iii): Θ^{×μ}_LGP-link compatibility (pages 156 to 159)
+
+**(iii.a) Kummer isomorphism of F^{⊢×μ}-prime-strips.** Type C.
+
+* Applying the F^{⋊±}_l-symmetry, the first Kummer isomorphism of (ii) induces a Kummer isomorphism `n,m 𝔉^{⊢×μ}_△ ≅ F^{⊢×μ}_△(n,◦D^⊢_△)`.
+* Relative to it, the full poly-isomorphism `F^{⊢×μ}_△(n,◦D^⊢_△) ≅ F^{⊢×μ}_△(n+1,◦D^⊢_△)` is compatible with the full poly-isomorphism `n,m 𝔉^{⊢×μ}_△ ≅ n+1,m 𝔉^{⊢×μ}_△` induced by the horizontal arrows (Thm 1.5 (ii)).
+
+**(iii.b) The env versions.** Type C.
+
+* The F^⊩-prime-strips `n,m 𝔉^⊩_env` and `𝔉^⊩_env(n,◦D_>)` admit natural isomorphisms of their F^{⊢×μ}-prime-strips.
+* Relative to these and (a), the env full poly-isomorphism is compatible with the horizontal one.
+
+**(iii.c) Theta data.** Types C, V and I.
+
+* The data `n,◦R` of Cor 2.3 (ii) is related to the mono-theta environment data of `n,m HT` at V^bad by Kummer isomorphisms and by poly-isomorphisms of projective systems of mono-theta environments.
+* The algorithmic construction of these, and of `n,◦R ≅ n+1,◦R` induced by any permutation symmetry of the étale picture, is compatible with the horizontal arrows. "Compatible" here means "stabilized/equivariant/functorial with respect to arbitrary automorphisms" of the domain and codomain of the horizontal arrows. This is type I/V: independence from the choice of automorphism.
+* The evaluation maps implicit in (ii)(b) are compatible with the horizontal arrows "up to the indeterminacies (Ind1), (Ind2), (Ind3)" (page 158). This is type V.
+* Unspecified: whether the indeterminacies act jointly, and whether "compatible up to" means equality of orbits or containment.
+
+**(iii.d) Number field data.** Types C, V and I.
+
+* This part is the same as (iii.c), for:
+  * the Kummer isomorphisms of the κ-coric data;
+  * the gluing of IUTchII Cor 4.6 (iv);
+  * the poly-isomorphisms of the data `{π_1^{κ-sol} ⟲ M_{∞κ}} → M_{∞κv} ⊆ M_{∞κ×v}` induced by permutation symmetries (page 158).
+
+## Simultaneous validity (type S)
+
+**What the statement asserts.** Theorem 3.11 asserts (i), (ii) and (iii) together for the same lattice. It does not state as a separate claim that:
+
+* the multiradial representation (i);
+* the log-Kummer correspondence on a column (ii);
+* the compatibility with horizontal arrows (iii)
+
+can all be used at once along a single horizontal arrow together with a vertical shift.
+
+**Where that is discussed.**
+
+* Remark 3.11.1 (iii) to (v), read in text, introduces the properties IPL, SHE, APT and HIS for that purpose.
+* Cor 3.12 Step (xi-b) (pages 181 to 182) treats the algorithm as satisfying IPL and SHE.
+
+**Assessment.**
+
+* The joint validity of IPL and SHE is what Cor 3.12 uses.
+* Within Theorem 3.11 it corresponds to (iii.c) and (iii.d) holding up to Ind1, Ind2 and Ind3 simultaneously with (ii).
+* Remark 3.11.1 (vii) describes naive alternatives where each holds without the other, so the simultaneity is not automatic.
+
+## Summary of obligations by type
+
+* **E:** construct the procession, packets, splitting monoid actions, number field embeddings, and Kummer isomorphisms. This needs IUTchI and IUTchII vocabulary.
+* **C:** prove that each stated pair of poly-isomorphisms agrees, after conjugation by Kummer isomorphisms, as sets of isomorphisms.
+* **I:** formalize "algorithm" as a functor from a groupoid of processions, and prove functoriality.
+* **V:** define G (Ind1 × Ind2) and the Ind3 relation as explicit actions and relations; prove compatibility up to them.
+* **N:** prove log-volume preservation for every isomorphism in each poly-isomorphism (Ism-invariance), and the column compatibility via the p-adic logarithm.
+* **S:** state IPL and SHE as properties of the algorithm and prove them jointly.
+
+## Ambiguities, with pages
+
+* **Pages 153, 154 and 155.** Indices: (i)(a) uses `j ∈ |F_l|`; (i)(b), (i)(c) and (ii)(c) use `j ∈ F*_l`.
+* **Page 154.** Ind1 is defined as automorphisms of the procession. Whether it includes automorphisms of the individual D^⊢-prime-strips, or only permutations of capsule labels, is not stated.
+* **Page 154 (and page 117).** (i)(c) inherits "relative to a suitable normalization" from Prop 3.9 (iii).
+* **Page 156.** (Ind3) is described as an indeterminacy but is defined by containments; the set of maps it ranges over is not given.
+* **Page 158.** "compatible ... up to the indeterminacies (Ind1), (Ind2), (Ind3)" does not specify joint or separate action.
+* **Page 159.** The proof is the single sentence "follow immediately from the definitions and the references quoted".

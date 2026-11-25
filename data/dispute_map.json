@@ -1,0 +1,223 @@
+{
+ "description": "Mapping objection (Scholze and Stix) to response (Mochizuki) to formal proof obligation for IUT III, Corollary 3.12. Layers: objection text is what Scholze and Stix say; response text is what Mochizuki says; all other fields are the assessment of this project. No winner is declared.",
+ "sources": [
+  {
+   "id": "SS2018",
+   "file": "ScholzeStix2018.pdf",
+   "title": "P. Scholze, J. Stix, Why abc is still a conjecture",
+   "date": "July 16, 2018",
+   "pages": 10,
+   "pages_read": "1 to 10",
+   "sha256": "4ec276246a2a92d2e211a0dae5afd073b5eae7e2b37e9bbabe3cb82c7e0b34a0",
+   "note": "Matches the version Mochizuki calls SS2018-08. The May 2018 version SS2018-05 was not available."
+  },
+  {
+   "id": "Rpt",
+   "file": "Rpt2018.pdf",
+   "title": "S. Mochizuki, Report on Discussions, Held During the Period March 15 to 20, 2018, Concerning IUTch",
+   "date": "February 2019",
+   "pages": 45,
+   "pages_read": "1 to 45",
+   "sha256": "582e3f60e9461c127617844d92440dd60720ee9291da3a693270bcf195221882"
+  },
+  {
+   "id": "Cmt-05",
+   "file": "Cmt2018-05.pdf",
+   "title": "S. Mochizuki, Comments on the Manuscript by Scholze-Stix Concerning IUTch",
+   "date": "July 2018",
+   "pages": 8,
+   "pages_read": "1 to 8",
+   "sha256": "d71c38308322bdb403b11c6f450f8f67797600c5c9ac7c28505c8d1c43c1f53b",
+   "note": "Answers SS2018-05; its footnote and remark numbers follow that version."
+  },
+  {
+   "id": "Cmt-08",
+   "file": "Cmt2018-08.pdf",
+   "title": "S. Mochizuki, Comments on the Manuscript (2018-08 Version) by Scholze-Stix Concerning IUTch",
+   "date": "September 2018",
+   "pages": 5,
+   "pages_read": "1 to 5",
+   "sha256": "2fbd8deb2ca54c728191970bd5a06b81fe12bb68e656a8c684ad6bda86d83e6d"
+  },
+  {
+   "id": "IUT3",
+   "file": "documentation/ref/Inter-universal Teichmuller Theory III.pdf",
+   "date": "May 2020",
+   "pages_read": "173, 174, 180 to 195",
+   "note": "Scholze and Stix quote an earlier version of Step (xi) whose wording does not occur in this version."
+  }
+ ],
+ "obligations": {
+  "OB-RED": "Real analysis from Claim 6, (1.2), (1.3) to Vojta's inequality with O(1). Done: IUT.Audit.ScholzeStix.vojta_of_claim6 (needs N >= 0; no finiteness statement).",
+  "OB-HT": "Precise statement of the category of Theta^{+-ell}NF-Hodge theaters (with l and V) and of its relation to the curve X.",
+  "OB-LOG": "Definition of the log-link with distinguished domain and codomain, and the (non)invariance of the Theta-link under identifying them (Mochizuki's question (Q3)).",
+  "OB-IND": "Lean definitions of (Ind1), (Ind2), (Ind3) and of full poly-isomorphisms, and a proof or refutation that Theorem 3.11 needs them.",
+  "OB-DEF": "Lean definition of -|log(Theta)| and -|log(q)| from initial Theta-data (procession-normalized mono-analytic log-volume of the holomorphic hull of possible images), IUT III pages 173 to 174.",
+  "OB-311-HYP": "Exact hypotheses of IUT III, Theorem 3.11, in particular whether the value group and unit group portions of the Theta-link domain must come from one ring structure ((ThetaCR)); decides whether the id-version (SSId) is admissible.",
+  "OB-XI-CONTAINER": "Step (xi-b) to (xi-d): that the output possibilities and the q-pilot representation lie in one container 1,o U^Q with one log-volume, so that no cycle of identifications of copies of R must commute.",
+  "OB-XI-F": "Step (xi-e), (xi-f): that -|log(q)| lies in R_{<= -|log(Theta)|}, i.e. that the multiradial construction constitutes (up to indeterminacies) a construction of the input pilot log-volume. The formal last step is IUT.Audit.MochizukiResponses.ToyModels.stepXIf_formal; the membership itself is unformalized.",
+  "OB-IND-SIZE": "Quantitative effect of (Ind1), (Ind2), (Ind3) on log-volumes (IUT IV, Proposition 1.2 and Theorem 1.10), to compare with the factor l(l+1)/12 of IUT.Audit.ScholzeStix.avgSq_eq."
+ },
+ "pairs": [
+  {
+   "id": "D1",
+   "objection": "SS-5, SS-3: reduction to Vojta via Claim 6, (1.2), (1.3), finiteness via Faltings (SS pages 2 to 3)",
+   "response": "Cmt-08 (C1), pages 1 to 2: finiteness is elementary; discriminant bound missing",
+   "equivalent_definitions": true,
+   "disagreement": "method of proof of Remark 5 only; both accept the statement",
+   "resolving_hypothesis": "None needed: N = d(P) + n(P) >= 0 makes Remark 5 superfluous for the O(1)",
+   "established": "not needed",
+   "obligation": "OB-RED",
+   "lean": [
+    "IUT.Audit.ScholzeStix.display_after_claim6_abs",
+    "IUT.Audit.ScholzeStix.vojta_of_claim6"
+   ],
+   "layer_note": "Columns other than objection and response are the assessment of this project."
+  },
+  {
+   "id": "D2",
+   "objection": "SS-S4: choosing a Hodge theater is equivalent to choosing a curve isomorphic to X (SS page 6)",
+   "response": "Cmt-08 (C3), page 2; Cmt-05 (C3); Rpt (T3)",
+   "equivalent_definitions": false,
+   "disagreement": "statement: whether the stated functor is an equivalence (choices of l and V ignored)",
+   "resolving_hypothesis": "State the equivalence relative to fixed l and V",
+   "established": "not checked in this task",
+   "obligation": "OB-HT",
+   "lean": [],
+   "layer_note": "Columns other than objection and response are the assessment of this project."
+  },
+  {
+   "id": "D3",
+   "objection": "SS-S5: log-link as an endofunctor naturally equivalent to the identity (SS pages 6 to 7)",
+   "response": "Cmt-05 (C6), (Q3), page 3; Rpt (LbLp), (Lblog), (LbEx1), pages 28 to 35",
+   "equivalent_definitions": false,
+   "disagreement": "statement: invariance of the Theta-link under identifying domain and codomain of the log-link",
+   "resolving_hypothesis": "A proof or refutation of (Q3)",
+   "established": "asserted by Mochizuki (Rpt section 15), not proved as a numbered statement in IUT I to IV",
+   "obligation": "OB-LOG",
+   "lean": [],
+   "layer_note": "Columns other than objection and response are the assessment of this project."
+  },
+  {
+   "id": "D4",
+   "objection": "SS-S6, footnote 8: full poly-isomorphisms replaceable by one isomorphism; obvious isomorphisms cause no problem (SS page 7)",
+   "response": "Rpt (SSInd) page 9, (PMQut), (PMEss) pages 27; Cmt-05 (C7) page 4",
+   "equivalent_definitions": false,
+   "disagreement": "statement: whether Theorem 3.11 survives removal of (Ind1), (Ind2) nontrivially",
+   "resolving_hypothesis": "Theorem 3.11 with (Ind1), (Ind2) removed is false or trivial",
+   "established": "asserted; IUT III Theorem 3.11 (i) introduces the indeterminacies but does not state their necessity as a theorem",
+   "obligation": "OB-IND",
+   "lean": [],
+   "layer_note": "Columns other than objection and response are the assessment of this project."
+  },
+  {
+   "id": "D5",
+   "objection": "SS-S9, footnote 10: Mochizuki does not properly distinguish abstract and concrete pilot objects (SS page 8)",
+   "response": "Cmt-05 (C16) pages 5 to 6; Cmt-08 (C12) page 3; Rpt (LbLV) pages 23 to 24",
+   "equivalent_definitions": false,
+   "disagreement": "interpretation: Mochizuki identifies the concrete realizations with the arithmetic holomorphic structures",
+   "resolving_hypothesis": "A formal definition of the two pilot log-volumes from initial Theta-data",
+   "established": "defined in prose in the statement of IUT III Corollary 3.12, pages 173 to 174",
+   "obligation": "OB-DEF",
+   "lean": [
+    "IUT.PaperIII.Corollary312.PilotLogVolumes"
+   ],
+   "layer_note": "Columns other than objection and response are the assessment of this project."
+  },
+  {
+   "id": "D6",
+   "objection": "SS-S10, SS-S11, footnote 12: canonical (identity) choice of Theta-link; Theorem 3.11 becomes trivial (SS page 9)",
+   "response": "Rpt (SSId), (SSId1), (SSId2), (ThetaCR-dagger), (SSIdFs) pages 15 to 16; (SSIdEx), (ModEll), (HstMod) pages 17 to 20; Cmt-05 (C15); Cmt-08 (C13)",
+   "equivalent_definitions": false,
+   "disagreement": "statement: whether Theorem 3.11 applies to the id-version",
+   "resolving_hypothesis": "(ThetaCR) as an explicit hypothesis of Theorem 3.11",
+   "established": "asserted in Rpt sections 9 and 10; not isolated as a hypothesis in the statement of Theorem 3.11 as read for this task",
+   "obligation": "OB-311-HYP",
+   "lean": [
+    "IUT.Audit.MochizukiResponses.SSIdEx.not_iso_of_ne_one",
+    "IUT.Audit.MochizukiResponses.SSIdEx.dilatation"
+   ],
+   "layer_note": "Columns other than objection and response are the assessment of this project."
+  },
+  {
+   "id": "D7",
+   "objection": "SS-13: all copies of R must be consistently identified; the hexagon must commute (SS pages 9 to 10)",
+   "response": "Cmt-05 (C17) (N1) to (N5), (C18), pages 6 to 7",
+   "equivalent_definitions": false,
+   "disagreement": "interpretation of Step (xi): Mochizuki says no loop occurs, only one container with one log-volume",
+   "resolving_hypothesis": "The output possibilities and the q-pilot representation lie in a single container with a single log-volume function",
+   "established": "asserted in Step (xi-d), IUT III page 183; depends on Theorem 3.11 and Remark 3.9.5",
+   "obligation": "OB-XI-CONTAINER",
+   "lean": [
+    "IUT.Audit.ScholzeStix.Consistent",
+    "IUT.Audit.ScholzeStix.consistent_canonical"
+   ],
+   "layer_note": "Columns other than objection and response are the assessment of this project."
+  },
+  {
+   "id": "D8",
+   "objection": "SS-14: inserting j^2 gives monodromy j^2 (SS page 10)",
+   "response": "Rpt (AD), (IUAD) page 22, (LbEx1) page 28, (Smm) page 2",
+   "equivalent_definitions": false,
+   "disagreement": "both accept (AD) inside one ring structure; they disagree whether Step (xi) forms the loop",
+   "resolving_hypothesis": "Distinct labels for the holomorphic structures on the two sides of the Theta-link, with the comparison made only through Theorem 3.11",
+   "established": "IUT III Step (xi-a) and Remark 3.12.2 (c-itw) assert it",
+   "obligation": "OB-XI-CONTAINER",
+   "lean": [
+    "IUT.Audit.ScholzeStix.not_consistent_square",
+    "IUT.Audit.MochizukiResponses.ToyModels.smm_contradiction"
+   ],
+   "layer_note": "Columns other than objection and response are the assessment of this project."
+  },
+  {
+   "id": "D9",
+   "objection": "SS-9, SS-15: with consistent identifications, (1.5) must be replaced by (1.6), giving 0 <= d(P) (SS pages 4, 10)",
+   "response": "Rpt (SSAD), (SSADFs) page 23, (MlLV) page 24; Cmt-08 (C14) (Lin) page 4; IUT III Remark 3.12.2 toy models pages 189 to 191",
+   "equivalent_definitions": false,
+   "disagreement": "statement: whether the log-volume of the holomorphic hull relates to the Theta-pilot's linearly (hypothesis (Lin))",
+   "resolving_hypothesis": "(Lin) for the relevant pair of log-volumes, or its failure in the specific form needed by Step (xi-f)",
+   "established": "neither established in a checked form; (Ind3) upper bound: IUT III Theorem 3.11 (ii), Proposition 3.9, not verified here",
+   "obligation": "OB-XI-F",
+   "lean": [
+    "IUT.Audit.ScholzeStix.consequence_with_squares",
+    "IUT.Audit.ScholzeStix.consequence_without_squares",
+    "IUT.Audit.ScholzeStix.withSquares_eq_withoutSquares_scaled",
+    "IUT.Audit.MochizukiResponses.ToyModels.toy_bound"
+   ],
+   "layer_note": "Columns other than objection and response are the assessment of this project."
+  },
+  {
+   "id": "D10",
+   "objection": "SS-16: blurring must be by a factor of at least O(l^2), making the inequality useless (SS page 10)",
+   "response": "Rpt (MlLV), (LVEx) pages 24 to 26, (DsInd) page 41; Cmt-08 (C14)",
+   "equivalent_definitions": false,
+   "disagreement": "statement about the size and form of the effect of the indeterminacies",
+   "resolving_hypothesis": "A quantitative bound on the effect of (Ind1), (Ind2), (Ind3) on log-volumes, compared with l(l+1)/12",
+   "established": "IUT IV Proposition 1.2 and Theorem 1.10 contain the estimates; not read in this task",
+   "obligation": "OB-IND-SIZE",
+   "lean": [
+    "IUT.Audit.ScholzeStix.blur_ge_avgSq",
+    "IUT.Audit.MochizukiResponses.LVEx.not_linear",
+    "IUT.Audit.MochizukiResponses.LVExMeasure.volume_R",
+    "IUT.Audit.MochizukiResponses.LVExMeasure.logVolS_gt_lambda"
+   ],
+   "layer_note": "Columns other than objection and response are the assessment of this project."
+  },
+  {
+   "id": "D11",
+   "objection": "SS section 2.1 excuses (2) to (4) (SS pages 4 to 5)",
+   "response": "Cmt-05 (C2) to (C4); Rpt (T7), (T8)",
+   "equivalent_definitions": null,
+   "disagreement": "about the discussions, not a mathematical statement",
+   "resolving_hypothesis": null,
+   "established": "not applicable",
+   "obligation": null,
+   "lean": [],
+   "layer_note": "Columns other than objection and response are the assessment of this project."
+  }
+ ],
+ "existing_file_findings": [
+  "IUT/Audit/ScholzeStix/Diagram.lean: blur_ge_square has hypothesis (j:R)^2 * 1 <= B and conclusion (j:R)^2 <= B, so the hypothesis restates the conclusion (brief, hard rule 3). The intended statement is IUT.Audit.ScholzeStix.blur_bound.",
+  "IUT/Audit/MochizukiResponses/LVEx.lean: cites the report as dated September 2018; the copy in the repository is dated February 2019 (item (LVEx), pages 24 to 26)."
+ ]
+}

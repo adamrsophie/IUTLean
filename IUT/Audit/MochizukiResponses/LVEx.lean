@@ -3,8 +3,8 @@ import Mathlib
 /-!
 # Mochizuki's example (LVEx): indeterminacies make log-volumes relate non-linearly
 
-Sources: S. Mochizuki, *Report on Discussions, Held During the Period March 15 – 20, 2018,
-Concerning Inter-universal Teichmüller Theory*, September 2018, item (LVEx), pages 24 and 25;
+Sources: S. Mochizuki, *Report on Discussions, Held During the Period March 15 to 20, 2018,
+Concerning Inter-universal Teichmüller Theory*, version dated February 2019, item (LVEx), pages 24 and 25;
 and *Comments on the Manuscript (2018-08 Version) by Scholze–Stix*, September 2018, item
 (C14). The passage (LVEx) and the comments were read; the report was not read in full.
 

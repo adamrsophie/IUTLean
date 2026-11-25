@@ -1,0 +1,1176 @@
+{
+ "IUT2.ThmA": {
+  "source": {
+   "paper": "Inter-universal Teichmuller Theory II (December 2020)",
+   "pdf_pages": "15 to 17",
+   "pages_read": "15, 16, 17 (rendered 16, 17)"
+  },
+  "content": "Abbreviated version of Corollary 4.10: for two Theta^{+-ell}NF-Hodge theaters it constructs the constant prime-strip F_triangle, the theta and Gaussian prime-strips F_env, F_gau with an evaluation isomorphism, the Theta^{x mu}- and Theta^{x mu}_gau-links as full poly-isomorphisms of F^{||- black-triangle x mu}-prime-strips, the coric F^{|- x mu}- and D^{|-}-prime-strips, and the Frobenius-pictures indexed by Z.",
+  "explicit_hypotheses": [
+   "initial Theta-data as in IUT I Definition 3.1",
+   "two Theta^{+-ell}NF-Hodge theaters relative to that data"
+  ],
+  "implicit_hypotheses": [],
+  "conclusion": "Same conclusions as Corollary 4.10 (i) to (iv) and (vi); the Introduction version omits Corollary 4.10 (v).",
+  "definitions_required": [
+   "F^{||-}-prime-strip",
+   "F^{||- black-triangle x mu}-prime-strip",
+   "full poly-isomorphism (IUT I section 0)"
+  ],
+  "results_used": [
+   "IUT2.Cor4_10",
+   "IUT2.Cor4_6"
+  ],
+  "external_dependencies": [
+   "IUTchI: Definition 3.1, Definition 6.13, Theorem A"
+  ],
+  "lean_declaration": null,
+  "statement_status": "EXTRACTED",
+  "proof_status": "BLOCKED_BY_MATHLIB",
+  "obligations": [
+   "No Lean vocabulary exists for tempered fundamental groups, mono-theta environments, Frobenioids or Hodge theaters; the statement stays a catalog entry.",
+   "Proof is by reference to Corollary 4.10 (page 15 states Theorems A, B are abbreviated versions of Corollaries 4.10, 4.11)."
+  ],
+  "ambiguities": [
+   "The Introduction (pages 2 to 19) states only Theorems A and B; it contains no Corollary C."
+  ]
+ },
+ "IUT2.ThmB": {
+  "source": {
+   "paper": "Inter-universal Teichmuller Theory II (December 2020)",
+   "pdf_pages": "18",
+   "pages_read": "18"
+  },
+  "content": "Abbreviated version of Corollary 4.11: the D-Theta^{+-ell}NF-links induced by either chain of Theorem A form a chain of full poly-isomorphisms of D^{|-}-prime-strips, so D^{|-}_triangle is a constant invariant (mono-analytic core); regarding each Hodge theater as a spoke gives an etale-picture admitting arbitrary permutation symmetries of the spokes.",
+  "explicit_hypotheses": [
+   "the situation of Theorem A (v)"
+  ],
+  "implicit_hypotheses": [],
+  "conclusion": "(i) constant invariant (-)D^{|-}_triangle; (ii) etale-picture with arbitrary permutation symmetries; (iii) compatibility with IUT I Theorem A (iii).",
+  "definitions_required": [],
+  "results_used": [
+   "IUT2.Cor4_11",
+   "IUT2.ThmA"
+  ],
+  "external_dependencies": [
+   "IUTchI: Theorem A (iii)"
+  ],
+  "lean_declaration": null,
+  "statement_status": "EXTRACTED",
+  "proof_status": "BLOCKED_BY_MATHLIB",
+  "obligations": [
+   "No Lean vocabulary exists for tempered fundamental groups, mono-theta environments, Frobenioids or Hodge theaters; the statement stays a catalog entry."
+  ],
+  "ambiguities": []
+ },
+ "IUT2.Cor1_10": {
+  "source": {
+   "paper": "Inter-universal Teichmuller Theory II (December 2020)",
+   "pdf_pages": "46 to 47",
+   "pages_read": "46, 47 (rendered 47)"
+  },
+  "content": "For the exterior-cyclotomic multiradial environment of Example 1.8 (v), (vi), the cyclotomic rigidity isomorphism (*^{mono-Theta}_Pi): (l . Delta_Theta)(Pi) -> Pi_mu(M^Theta_*(Pi)), obtained from the mono-theta environment functorially attached to Pi, together with Pi and the two modules, defines a functor R -> F arising from a functorial algorithm in Pi; the natural functor Psi_R: R -> R^dagger is multiradially defined.",
+  "explicit_hypotheses": [
+   "(R, C, Phi) the radial environment (Pi acting on Pi_mu(M^Theta_*(Pi)) tensor Q/Z, G acting on O^{x mu}(G), alpha_{mu,x mu}) -> (G acting on O^{x mu}(G)) of Example 1.8 (v), (vi)"
+  ],
+  "implicit_hypotheses": [
+   "Pi isomorphic to the tempered fundamental group of X_k as in Section 1 setup, page 20"
+  ],
+  "conclusion": "Psi_R is multiradially defined.",
+  "definitions_required": [
+   "mono-theta environment ([EtTh] Definition 2.13)",
+   "multiradially defined (Example 1.9)",
+   "Ism, Gamma^{x mu} (Example 1.8 (iv), page 39)"
+  ],
+  "results_used": [
+   "IUT2.Prop1_2",
+   "IUT2.Prop1_4",
+   "IUT2.Prop1_5"
+  ],
+  "external_dependencies": [
+   "EtTh: Definition 2.13, Corollaries 2.18, 2.19"
+  ],
+  "lean_declaration": null,
+  "statement_status": "EXTRACTED",
+  "proof_status": "BLOCKED_BY_MATHLIB",
+  "obligations": [
+   "No Lean vocabulary exists for tempered fundamental groups, mono-theta environments, Frobenioids or Hodge theaters; the statement stays a catalog entry.",
+   "The paper's proof reads: follows immediately from the definitions and the references quoted."
+  ],
+  "ambiguities": [
+   "Remark 1.10.2 (page 47) attributes the multiradiality to the triviality of the homomorphism from the cyclotome Pi_mu tensor Q/Z to O^{x mu}(G); this is the stated mechanism, not a separate claim."
+  ]
+ },
+ "IUT2.Cor1_11": {
+  "source": {
+   "paper": "Inter-universal Teichmuller Theory II (December 2020)",
+   "pdf_pages": "49",
+   "pages_read": "49 (rendered); Remarks 1.11.5 on page 55"
+  },
+  "content": "For the environment of Example 1.8 (viii), (a) the Gamma-orbit of the cyclotomic rigidity isomorphism mu_Zhat(G) -> mu_Zhat(O^x(G)) from local class field theory style algorithm ([AbsTopIII] Remark 3.2.1) and (b) the Aut(G)-orbit of isomorphisms mu_Zhat(G) -> (l . Delta_Theta)(Pi) obtained from the full poly-isomorphism alpha: Pi/Delta -> G, together with the modules, define a multiradially defined functor.",
+  "explicit_hypotheses": [
+   "Gamma a closed subgroup of Zhat^x",
+   "environment of Example 1.8 (viii)"
+  ],
+  "implicit_hypotheses": [],
+  "conclusion": "Psi_R is multiradially defined, but only with the Gamma-orbit and Aut(G)-orbit indeterminacies.",
+  "definitions_required": [
+   "MLF-Galois TM-pair",
+   "Aut(G) cyclotomic character ([AbsAnab] Proposition 1.2.1 (vi))"
+  ],
+  "results_used": [
+   "IUT2.Prop1_3"
+  ],
+  "external_dependencies": [
+   "AbsTopIII: Remark 3.2.1, Corollary 1.10 (c)",
+   "AbsAnab: Proposition 1.2.1 (vi)"
+  ],
+  "lean_declaration": null,
+  "statement_status": "EXTRACTED",
+  "proof_status": "BLOCKED_BY_MATHLIB",
+  "obligations": [
+   "No Lean vocabulary exists for tempered fundamental groups, mono-theta environments, Frobenioids or Hodge theaters; the statement stays a catalog entry.",
+   "The paper's proof reads: follows immediately from the definitions and the references quoted."
+  ],
+  "ambiguities": [
+   "Remark 1.11.5 (ii), page 55: the induced surjections to Zhat are uniradial, or multiradial only up to a Zhat^x-indeterminacy."
+  ]
+ },
+ "IUT2.Cor1_12": {
+  "source": {
+   "paper": "Inter-universal Teichmuller Theory II (December 2020)",
+   "pdf_pages": "55 to 58",
+   "pages_read": "55, 56, 57, 58 (rendered 57)"
+  },
+  "content": "Multiradial constant multiple rigidity. With Gamma^{x mu} = Ism: (i) a functorial group-theoretic algorithm assigns to Pi the collection of pointed inversion automorphisms (iota, D); (ii) restriction to D gives splittings (dagger mu theta)(Pi) of M^{x mu}_TM(Pi) times (infinity theta(Pi)^iota / M^mu_TM(Pi)), the inverse image of the torsion being infinity theta(Pi)^iota, compatibly with the cyclotomic rigidity of Corollary 1.10; (iii) the data (mono-theta systems, the subsets dagger x theta, the splittings dagger mu theta, and the diagram from Pi_mu to O^{x mu}(G) through the trivial homomorphism) defines a multiradially defined functor.",
+  "explicit_hypotheses": [
+   "Gamma^{x mu} = Ism",
+   "environment of Example 1.8 (v), (vi)"
+  ],
+  "implicit_hypotheses": [],
+  "conclusion": "Psi_R: R -> R^dagger is multiradially defined.",
+  "definitions_required": [
+   "M^{x}_TM, M^{mu}_TM, M^{x mu}_TM = M^x/M^mu",
+   "infinity theta(Pi) (Proposition 1.4)",
+   "pointed inversion automorphism (Remark 1.4.1)"
+  ],
+  "results_used": [
+   "IUT2.Cor1_10",
+   "IUT2.Prop1_4",
+   "IUT2.Prop1_5"
+  ],
+  "external_dependencies": [
+   "EtTh: Proposition 1.5, Theorems 1.6, 1.10"
+  ],
+  "lean_declaration": null,
+  "statement_status": "EXTRACTED",
+  "proof_status": "BLOCKED_BY_MATHLIB",
+  "obligations": [
+   "No Lean vocabulary exists for tempered fundamental groups, mono-theta environments, Frobenioids or Hodge theaters; the statement stays a catalog entry.",
+   "The paper's proof of (iii) rests on the characteristic nature of the torsion submodules; Remark 1.12.2 (i), page 58, says the essential content is constructing theta(Pi) up to a mu_{2l}-indeterminacy via [EtTh] Theorem 1.10 (i)."
+  ],
+  "ambiguities": []
+ },
+ "IUT2.Def2_3": {
+  "source": {
+   "paper": "Inter-universal Teichmuller Theory II (December 2020)",
+   "pdf_pages": "67 to 69",
+   "pages_read": "67, 68, 69"
+  },
+  "content": "Notation at v in V^bad: tempered groups Pi_v, Pi^+-_v, Pi^cor_v and geometric subgroups, with Delta_v of index l in Delta^+-_v and Delta^+-_v of index 2l in Delta^cor_v; +-label classes of cusps LabCusp^+-(Pi), with an F_l^x action, zero element and +-canonical element; decomposition groups Pi_{v bullet t} for t in LabCusp^+-; a natural F_l^{x+-}-torsor structure and an outer isomorphism Pi_sup/Pi_sub -> F_l^{x+-}.",
+  "explicit_hypotheses": [],
+  "implicit_hypotheses": [],
+  "conclusion": "Definitions.",
+  "definitions_required": [
+   "LabCusp^+- (IUT I Definition 6.1 (iii))"
+  ],
+  "results_used": [],
+  "external_dependencies": [
+   "EtTh: Propositions 2.2, 2.4",
+   "CombGC: Propositions 1.2, 1.5",
+   "AbsTopI: Lemma 4.5, Proposition 4.10"
+  ],
+  "lean_declaration": null,
+  "statement_status": "EXTRACTED",
+  "proof_status": "NOT_EXTRACTED",
+  "obligations": [
+   "No Lean vocabulary exists for tempered fundamental groups, mono-theta environments, Frobenioids or Hodge theaters; the statement stays a catalog entry."
+  ],
+  "ambiguities": []
+ },
+ "IUT2.Cor2_4": {
+  "source": {
+   "paper": "Inter-universal Teichmuller Theory II (December 2020)",
+   "pdf_pages": "69 to 71",
+   "pages_read": "69, 70, 71"
+  },
+  "content": "F_l^{x+-}-symmetric two-torsion translates of cusps: (i) for gamma, gamma' in Delta-hat^+-_v, a cuspidal inertia group I_t conjugated by gamma gamma' lies in the gamma'-conjugate of Pi_v if and only if it lies in the gamma'-conjugate of Pi^+-_v if and only if gamma is in Delta^+-_v; (ii) such an inclusion determines decomposition groups D_t, D_{mu_-}, D_{t,mu_-} (the latter an evaluation section at the mu_- translate of the cusp); (iii) for the bullet-t choice the construction is compatible with conjugation by Pi^cor_v, with Delta^cor/Delta^+- isomorphic to F_l^{x+-}.",
+  "explicit_hypotheses": [],
+  "implicit_hypotheses": [],
+  "conclusion": "Equivalence (a) <=> (b) <=> (c) and functorial construction of decomposition groups.",
+  "definitions_required": [],
+  "results_used": [
+   "IUT2.Def2_3",
+   "IUT1.Cor2_5",
+   "IUT1.Cor2_3"
+  ],
+  "external_dependencies": [
+   "SemiAnbd: Theorem 6.8 (iii), Corollary 3.11",
+   "CombGC: Proposition 1.2 (ii)"
+  ],
+  "lean_declaration": null,
+  "statement_status": "EXTRACTED",
+  "proof_status": "BLOCKED_BY_MATHLIB",
+  "obligations": [
+   "No Lean vocabulary exists for tempered fundamental groups, mono-theta environments, Frobenioids or Hodge theaters; the statement stays a catalog entry.",
+   "Proof of (c) => (a) uses IUT I Corollary 2.5 and Corollary 2.3 (v), (vi) (profinite versus tempered conjugates)."
+  ],
+  "ambiguities": []
+ },
+ "IUT2.Cor2_5": {
+  "source": {
+   "paper": "Inter-universal Teichmuller Theory II (December 2020)",
+   "pdf_pages": "71 to 72",
+   "pages_read": "71, 72 (rendered 72)"
+  },
+  "content": "Group-theoretic theta evaluation: (i) (l . Delta_Theta) restricts isomorphically to the subgraph group Pi_{v black-triangle double-dot} and the quotient to G_v is reconstructible; (ii) restricting the iota-invariant theta classes to the subgraph and then to the evaluation sections D_{t,mu_-} yields mu_{2l}-orbits theta^t and mu-orbits infinity theta^t depending only on |t| in |F_l|; (iii) letting t vary gives a group-theoretic algorithm for the collections {theta^{|t|}}_{|t| in |F_l|}, functorial in Pi_v and compatible with independent Delta-hat^+-_v conjugacy actions.",
+  "explicit_hypotheses": [],
+  "implicit_hypotheses": [],
+  "conclusion": "Existence of a functorial group-theoretic theta evaluation algorithm, valued in mu_{2l}-orbits.",
+  "definitions_required": [],
+  "results_used": [
+   "IUT2.Cor2_4",
+   "IUT2.Prop2_2"
+  ],
+  "external_dependencies": [
+   "AbsAnab: Lemma 1.3.8"
+  ],
+  "lean_declaration": null,
+  "statement_status": "EXTRACTED",
+  "proof_status": "BLOCKED_BY_MATHLIB",
+  "obligations": [
+   "No Lean vocabulary exists for tempered fundamental groups, mono-theta environments, Frobenioids or Hodge theaters; the statement stays a catalog entry.",
+   "The paper's proof reads: follows immediately from the definitions and the references quoted."
+  ],
+  "ambiguities": []
+ },
+ "IUT2.Rem2_5_1": {
+  "source": {
+   "paper": "Inter-universal Teichmuller Theory II (December 2020)",
+   "pdf_pages": "72 to 73",
+   "pages_read": "72, 73 (rendered 72)"
+  },
+  "content": "(i) Relative to the standard cyclotomic rigidity and Kummer map, for j in |F_l| the set theta^j consists of exactly the mu_{2l}-orbit of the theta value q_v^{j^2}, with j the element of {0, 1, ..., l*} determined by j. (ii) these values correspond to values of the theta series at points separated by periods from +- sqrt(-1). (iii) the mu_{2l}-indeterminacies for different j are independent, not synchronized.",
+  "explicit_hypotheses": [],
+  "implicit_hypotheses": [],
+  "conclusion": "theta^j = mu_{2l} . q_v^{j^2} (as orbits) for j = 0, ..., l*.",
+  "definitions_required": [
+   "l* = (l-1)/2 (IUT I page 3)",
+   "|F_l| = F_l/{+-1}"
+  ],
+  "results_used": [
+   "IUT2.Cor2_5"
+  ],
+  "external_dependencies": [
+   "IUTchI: Example 4.4 (i), Example 3.2 (iv)",
+   "EtTh: Proposition 1.4 (ii)"
+  ],
+  "lean_declaration": "IUT.PaperII.Labels.labelRep_bijective",
+  "statement_status": "EXTRACTED",
+  "proof_status": "BLOCKED_BY_MATHLIB",
+  "obligations": [
+   "Only the label bookkeeping (each class in |F_l| has a unique representative in {0, ..., l*}) is formalized; the identification of theta^j with the orbit of q_v^{j^2} is not."
+  ],
+  "ambiguities": []
+ },
+ "IUT2.Cor2_6": {
+  "source": {
+   "paper": "Inter-universal Teichmuller Theory II (December 2020)",
+   "pdf_pages": "76",
+   "pages_read": "76"
+  },
+  "content": "Splittings defined on subgraphs: (i) the subsets M^x_TM, M^x_TM . theta^iota, M^x_TM . infinity theta^iota on the subgraph group are compatible with those of Proposition 1.4 and Corollary 1.12; (ii) at the zero-labeled evaluation point theta^0 is the mu_{2l}-orbit of the identity, so restriction gives splittings of M^x_TM . infinity theta^iota / M^mu_TM compatible with Corollary 1.12 (ii).",
+  "explicit_hypotheses": [],
+  "implicit_hypotheses": [],
+  "conclusion": "Constant multiple rigidity splittings survive restriction to the subgraph.",
+  "definitions_required": [],
+  "results_used": [
+   "IUT2.Cor2_5",
+   "IUT2.Cor1_12"
+  ],
+  "external_dependencies": [],
+  "lean_declaration": null,
+  "statement_status": "EXTRACTED",
+  "proof_status": "BLOCKED_BY_MATHLIB",
+  "obligations": [
+   "No Lean vocabulary exists for tempered fundamental groups, mono-theta environments, Frobenioids or Hodge theaters; the statement stays a catalog entry.",
+   "The paper's proof reads: follows immediately from the definitions and the references quoted."
+  ],
+  "ambiguities": []
+ },
+ "IUT2.Rem2_6_3": {
+  "source": {
+   "paper": "Inter-universal Teichmuller Theory II (December 2020)",
+   "pdf_pages": "79 to 80",
+   "pages_read": "79, 80 (both rendered)"
+  },
+  "content": "For a subgraph Gamma' of the line graph Gamma_Y (vertices Z), single-basepoint and splitting considerations force Gamma' connected and containing 0. For finite Gamma' define ||Gamma'|| = |Gamma'|^{-1} . sum over j in F_l* of min over integers j in (fiber of j) intersect Gamma' of j^2, where |Gamma'| is the cardinality of the image in F_l* of the nonzero vertices and the min over the empty set is 0. Claim (d): as a function of |Gamma'| this is a monotone increasing but not strictly increasing positive rational function that attains its maximum at |Gamma'| = l* and is constant for |Gamma'| >= l*.",
+  "explicit_hypotheses": [
+   "Gamma' a finite connected subgraph of Gamma_Y containing the vertex 0"
+  ],
+  "implicit_hypotheses": [],
+  "conclusion": "Maximizing ||Gamma'|| is achieved by Gamma'_Y-black-triangle (vertices 0, ..., l*), and the values q_v^{j^2} are thereby distinguished.",
+  "definitions_required": [
+   "F_l* = F_l^x/{+-1}",
+   "natural projection Z -> |F_l|"
+  ],
+  "results_used": [
+   "IUT2.Rem2_5_1",
+   "IUT2.Rem2_6_1",
+   "IUT2.Rem2_6_2"
+  ],
+  "external_dependencies": [],
+  "lean_declaration": "IUT.PaperII.Labels.gammaNorm_eq",
+  "statement_status": "INTERPRETATION_AMBIGUOUS",
+  "proof_status": "PROOF_IN_PROGRESS",
+  "obligations": [
+   "Kernel-checked only for the elementary arithmetic: for Gamma' with vertex set [-a, b], |Gamma'| = min(max(a,b), l*) and ||Gamma'|| = (n+1)(2n+1)/6 with n = |Gamma'|, which is strictly increasing in n; hence ||Gamma'|| is monotone in max(a,b), maximal exactly when max(a,b) >= l*, with maximum l(l+1)/12. Infinite Gamma' (part (iii)) is not treated."
+  ],
+  "ambiguities": [
+   "Page 79 defines |Gamma'| as the size of a subset of F_l*, so |Gamma'| <= l* always. Read literally, item (d) on page 80 then says ||Gamma'|| is a strictly increasing function of |Gamma'| on {1, ..., l*} (the Lean file proves this), which conflicts with 'not strictly increasing' and makes 'constant for |Gamma'| >= l*' vacuous beyond l*. The wording matches exactly if the variable is the radius max(a,b) of Gamma'; the Lean file proves both readings and adopts neither as the definition."
+  ]
+ },
+ "IUT2.Def2_7": {
+  "source": {
+   "paper": "Inter-universal Teichmuller Theory II (December 2020)",
+   "pdf_pages": "80 to 81",
+   "pages_read": "80, 81"
+  },
+  "content": "For a projective system M^Theta_* of mono-theta environments with Pi_X(M^Theta_*) isomorphic to Pi_v: the inverse limit group Pi_{M^Theta_*}, the inverse images over the subgraph group, the subquotients Pi_mu, (l . Delta_Theta), G_v, and the restricted cyclotomic rigidity isomorphism (l . Delta_Theta)(M^Theta_{* subgraph}) -> Pi_mu(M^Theta_{* subgraph}).",
+  "explicit_hypotheses": [],
+  "implicit_hypotheses": [],
+  "conclusion": "Definitions.",
+  "definitions_required": [],
+  "results_used": [
+   "IUT2.Prop1_5"
+  ],
+  "external_dependencies": [],
+  "lean_declaration": null,
+  "statement_status": "EXTRACTED",
+  "proof_status": "NOT_EXTRACTED",
+  "obligations": [
+   "No Lean vocabulary exists for tempered fundamental groups, mono-theta environments, Frobenioids or Hodge theaters; the statement stays a catalog entry."
+  ],
+  "ambiguities": []
+ },
+ "IUT2.Cor2_8": {
+  "source": {
+   "paper": "Inter-universal Teichmuller Theory II (December 2020)",
+   "pdf_pages": "81 to 83",
+   "pages_read": "81, 82, 83"
+  },
+  "content": "Mono-theta-theoretic version of Corollaries 2.5, 2.6: replacing (l . Delta_Theta) by Pi_mu via the cyclotomic rigidity of Definition 2.7, the iota-invariant theta_env subsets restrict to mu_{2l}-, mu-orbits theta^{|t|}_env depending only on |t|, giving an algorithm functorial in M^Theta_*, and zero-labeled splittings compatible with Corollary 1.12 (ii).",
+  "explicit_hypotheses": [],
+  "implicit_hypotheses": [],
+  "conclusion": "Theta evaluation algorithm functorial in the mono-theta environment.",
+  "definitions_required": [],
+  "results_used": [
+   "IUT2.Def2_7",
+   "IUT2.Cor2_5",
+   "IUT2.Cor2_6"
+  ],
+  "external_dependencies": [],
+  "lean_declaration": null,
+  "statement_status": "EXTRACTED",
+  "proof_status": "BLOCKED_BY_MATHLIB",
+  "obligations": [
+   "No Lean vocabulary exists for tempered fundamental groups, mono-theta environments, Frobenioids or Hodge theaters; the statement stays a catalog entry.",
+   "The paper's proof reads: follows immediately from the definitions and the references quoted."
+  ],
+  "ambiguities": []
+ },
+ "IUT2.Cor2_9": {
+  "source": {
+   "paper": "Inter-universal Teichmuller Theory II (December 2020)",
+   "pdf_pages": "84 to 85",
+   "pages_read": "84, 85"
+  },
+  "content": "Base-field-theoretic version: using the cyclotomic rigidity mu_Zhat(G_v) -> (l . Delta_Theta) from [AbsTopIII] Corollary 1.10 (c), one obtains orbits theta^{|t|}_bs, a functorial algorithm in Pi_v, and zero-labeled splittings compatible with Corollary 1.12 (ii). Remark 2.9.1 (i): unlike Corollary 2.8, these cyclotomes only admit a uniradial formulation.",
+  "explicit_hypotheses": [],
+  "implicit_hypotheses": [],
+  "conclusion": "Theta evaluation via base-field cyclotomes (uniradial).",
+  "definitions_required": [],
+  "results_used": [
+   "IUT2.Cor2_5",
+   "IUT2.Cor2_6",
+   "IUT2.Cor1_11"
+  ],
+  "external_dependencies": [
+   "AbsTopIII: Corollary 1.10 (c)"
+  ],
+  "lean_declaration": null,
+  "statement_status": "EXTRACTED",
+  "proof_status": "BLOCKED_BY_MATHLIB",
+  "obligations": [
+   "No Lean vocabulary exists for tempered fundamental groups, mono-theta environments, Frobenioids or Hodge theaters; the statement stays a catalog entry.",
+   "The paper's proof reads: follows immediately from the definitions and the references quoted."
+  ],
+  "ambiguities": []
+ },
+ "IUT2.Cor3_5": {
+  "source": {
+   "paper": "Inter-universal Teichmuller Theory II (December 2020)",
+   "pdf_pages": "93 to 96",
+   "pages_read": "93, 94, 95, 96 (rendered 94, 95)"
+  },
+  "content": "Mono-theta-theoretic Gaussian monoids: (i) the outer F_l^{x+-}-action induces symmetrizing isomorphisms between the labeled pairs G_v acting on Psi_cns(M^Theta_*)_t, giving diagonal embeddings indexed by <|F_l|> and <F_l*>; the inner automorphism indeterminacy is independent of |t| (conjugate synchronization). (ii) a value-profile is an element of the product over |t| in F_l* of theta^{|t|}_env, a set of cardinality (2l)^{l*}; the Gaussian monoids are Psi_xi = Psi^x_cns <F_l*> . xi^N and infinity Psi_xi = Psi^x_cns <F_l*> . xi^{Q>=0}; restriction gives isomorphisms Psi_env -> Psi_gau well-defined up to a single inner automorphism; Psi_{2l . xi} is independent of xi. (iii) an isomorphism Psi_cns_0 -> Psi_cns_<F_l*> and splittings up to torsion of the Gaussian monoids.",
+  "explicit_hypotheses": [],
+  "implicit_hypotheses": [],
+  "conclusion": "Gaussian monoids and the evaluation isomorphism Psi_env -> Psi_gau with conjugate synchronization.",
+  "definitions_required": [],
+  "results_used": [
+   "IUT2.Prop3_1",
+   "IUT2.Cor2_8"
+  ],
+  "external_dependencies": [],
+  "lean_declaration": null,
+  "statement_status": "EXTRACTED",
+  "proof_status": "BLOCKED_BY_MATHLIB",
+  "obligations": [
+   "No Lean vocabulary exists for tempered fundamental groups, mono-theta environments, Frobenioids or Hodge theaters; the statement stays a catalog entry.",
+   "The paper's proof reads: follows immediately from the definitions and the references quoted."
+  ],
+  "ambiguities": [
+   "The value-profile set has cardinality (2l)^{l*} because each of the l* orbits theta^{|t|}_env has 2l elements and the indeterminacies are independent (Remark 2.5.1 (iii)); the count itself is elementary and is not formalized separately."
+  ]
+ },
+ "IUT2.Cor3_6": {
+  "source": {
+   "paper": "Inter-universal Teichmuller Theory II (December 2020)",
+   "pdf_pages": "99 to 101",
+   "pages_read": "99, 100, 101"
+  },
+  "content": "Frobenioid-theoretic Gaussian monoids for M^Theta_* = M^Theta_*(dagger F_v) with dagger F_v a tempered Frobenioid: (i) Kummer isomorphisms (Psi_{dagger C_v})_t -> Psi_cns(M^Theta_*)_t with a t-independent inner indeterminacy, and symmetrizing isomorphisms; (ii) Frobenioid-theoretic Gaussian monoids Psi_{F_xi}(dagger F_v) and the chain Psi_{dagger F^Theta_v} -> Psi_env -> Psi_gau -> Psi_{F_gau}(dagger F_v); (iii) splittings up to torsion.",
+  "explicit_hypotheses": [],
+  "implicit_hypotheses": [],
+  "conclusion": "Kummer-compatible chain of isomorphisms from Frobenioid-theoretic theta monoids to Frobenioid-theoretic Gaussian monoids.",
+  "definitions_required": [],
+  "results_used": [
+   "IUT2.Prop3_3",
+   "IUT2.Cor3_5"
+  ],
+  "external_dependencies": [],
+  "lean_declaration": null,
+  "statement_status": "EXTRACTED",
+  "proof_status": "BLOCKED_BY_MATHLIB",
+  "obligations": [
+   "No Lean vocabulary exists for tempered fundamental groups, mono-theta environments, Frobenioids or Hodge theaters; the statement stays a catalog entry.",
+   "The paper's proof reads: follows immediately from the definitions and the references quoted."
+  ],
+  "ambiguities": []
+ },
+ "IUT2.Rem3_6_4": {
+  "source": {
+   "paper": "Inter-universal Teichmuller Theory II (December 2020)",
+   "pdf_pages": "105 to 108",
+   "pages_read": "105, 106, 107, 108"
+  },
+  "content": "Explains why objects are known only up to isomorphism: Kummer N-th power morphisms respect multiplication but not addition, hence act as Frobenius-type morphisms between distinct ring structures, forcing the rigidity theory of [EtTh]. Galois evaluation is linear, so the first power of the theta function (and of its values) is the only power that crosses the mono-theta bridge; N-th powers for N > 1 are only defined as (-)^N of the first power, and other powers are not horizontal for the multiradial connection structure.",
+  "explicit_hypotheses": [],
+  "implicit_hypotheses": [],
+  "conclusion": "Interpretive remark; no theorem.",
+  "definitions_required": [],
+  "results_used": [],
+  "external_dependencies": [
+   "EtTh: Remarks 5.12.1, 5.12.2"
+  ],
+  "lean_declaration": null,
+  "statement_status": "EXTRACTED",
+  "proof_status": "NOT_EXTRACTED",
+  "obligations": [
+   "Non-mathematical-claim content; nothing to formalize."
+  ],
+  "ambiguities": []
+ },
+ "IUT2.Cor3_7": {
+  "source": {
+   "paper": "Inter-universal Teichmuller Theory II (December 2020)",
+   "pdf_pages": "110 to 112",
+   "pages_read": "110, 111, 112"
+  },
+  "content": "Group-theoretic Gaussian monoids and uniradiality: (i) each isomorphism M^Theta_*(Pi_v) -> M^Theta_*(dagger F_v) induces compatible isomorphisms from group-theoretic to post-anabelian Gaussian monoids and on units; (ii) the algorithms Pi_v -> Psi_gau depend on the cyclotomic rigidity of Corollary 1.11 (b), hence fail to be compatible with automorphisms of the pair G_v acting on Psi_{F_xi}^{x mu} coming from automorphisms of the pair with Psi^x: they only admit a uniradial formulation.",
+  "explicit_hypotheses": [],
+  "implicit_hypotheses": [],
+  "conclusion": "Gaussian monoid algorithm is uniradial as given.",
+  "definitions_required": [],
+  "results_used": [
+   "IUT2.Prop3_4",
+   "IUT2.Cor3_5",
+   "IUT2.Cor3_6",
+   "IUT2.Cor1_11"
+  ],
+  "external_dependencies": [],
+  "lean_declaration": null,
+  "statement_status": "EXTRACTED",
+  "proof_status": "BLOCKED_BY_MATHLIB",
+  "obligations": [
+   "No Lean vocabulary exists for tempered fundamental groups, mono-theta environments, Frobenioids or Hodge theaters; the statement stays a catalog entry.",
+   "The paper's proof reads: follows immediately from the definitions and the references quoted."
+  ],
+  "ambiguities": [
+   "Remark 3.7.1 (page 112): a multiradial version is only obtained in IUT III via log-shells, with additional indeterminacies."
+  ]
+ },
+ "IUT2.Def3_8": {
+  "source": {
+   "paper": "Inter-universal Teichmuller Theory II (December 2020)",
+   "pdf_pages": "112 to 115",
+   "pages_read": "112, 113, 114, 115"
+  },
+  "content": "Frobenioid interpretations: (i) p_v-adic Frobenioids F_cns(M^Theta_*), F_{dagger C_v} of monoid type Zhat with divisor monoid Q>=0, mono-analytic and labeled versions; (ii) split Frobenioids F_env, F_xi, F_{F_xi} with divisor monoid N and isomorphisms F_{dagger F^Theta_v} -> F_env -> F_xi -> F_{F_xi}; (iii) embeddings F_gau -> product over |t| in F_l* of labeled copies ('Gaussian distributions') and diagonal 'constant distributions'.",
+  "explicit_hypotheses": [],
+  "implicit_hypotheses": [],
+  "conclusion": "Definitions.",
+  "definitions_required": [],
+  "results_used": [
+   "IUT2.Cor3_5",
+   "IUT2.Cor3_6"
+  ],
+  "external_dependencies": [
+   "FrdII: Example 1.1 (ii)",
+   "FrdI: Theorem 5.1"
+  ],
+  "lean_declaration": null,
+  "statement_status": "EXTRACTED",
+  "proof_status": "NOT_EXTRACTED",
+  "obligations": [
+   "No Lean vocabulary exists for tempered fundamental groups, mono-theta environments, Frobenioids or Hodge theaters; the statement stays a catalog entry."
+  ],
+  "ambiguities": []
+ },
+ "IUT2.Prop4_1": {
+  "source": {
+   "paper": "Inter-universal Teichmuller Theory II (December 2020)",
+   "pdf_pages": "120 to 122",
+   "pages_read": "120, 121, 122 (rendered 122)"
+  },
+  "content": "At v in V^good nonarchimedean: (i) constant monoid Psi_cns(G_v) (isomorphic to O^triangleright_{F_v}) by a functorial group-theoretic algorithm; (ii) R>=0(G_v) with distinguished element log^{G_v}(p_v) and semi-simplification Psi^ss_cns = Psi^x_cns x R>=0; (iii) F_l^{x+-}-symmetrizing isomorphisms and diagonal submonoids; (iv) theta monoid Psi_env = Psi^x_cns x {R>=0 . log(p_v) . log(Theta)} (formal symbol) and Gaussian monoid Psi_gau = Psi^x_cns <F_l*> x {R>=0 . (..., j^2 . log(p_v), ...)} inside the product over j in F_l*, with j read as a natural number in {1, ..., l*}, and the formal evaluation isomorphism log(p_v) . log(Theta) -> (..., j^2 . log(p_v), ...).",
+  "explicit_hypotheses": [
+   "v in V^good intersect V^non"
+  ],
+  "implicit_hypotheses": [],
+  "conclusion": "Functorial group-theoretic construction of theta and Gaussian monoids and the formal evaluation isomorphism at good nonarchimedean v.",
+  "definitions_required": [],
+  "results_used": [
+   "IUT2.Prop3_1",
+   "IUT2.Cor3_5"
+  ],
+  "external_dependencies": [
+   "AbsTopIII: Corollary 1.10 (b), Proposition 5.8 (iii)",
+   "IUTchI: Example 3.5 (iii), Definition 3.1 (e), (f)"
+  ],
+  "lean_declaration": "IUT.PaperII.Labels.sum_exponents",
+  "statement_status": "EXTRACTED",
+  "proof_status": "BLOCKED_BY_MATHLIB",
+  "obligations": [
+   "No Lean vocabulary exists for tempered fundamental groups, mono-theta environments, Frobenioids or Hodge theaters; the statement stays a catalog entry. Only the exponent vector (j^2) for j = 1, ..., l* is treated in Lean, as elementary arithmetic (its sum), which the paper does not state.",
+   "The paper's proof reads: follows immediately from the definitions and the references quoted."
+  ],
+  "ambiguities": [
+   "Remark 4.1.1 (i), page 122, calls this generalization tautological and largely vacuous."
+  ]
+ },
+ "IUT2.Prop4_2": {
+  "source": {
+   "paper": "Inter-universal Teichmuller Theory II (December 2020)",
+   "pdf_pages": "123 to 125",
+   "pages_read": "123, 124, 125"
+  },
+  "content": "Frobenioid-theoretic version at good nonarchimedean v: unique G_v-equivariant isomorphism Psi_{dagger F_v} -> Psi_cns(dagger Pi_v); a unique Zhat^x-orbit of isomorphisms on units and a unique isomorphism on realified value monoids sending the generator to log(p_v), giving a natural poly-isomorphism of semi-simplifications; symmetrizing isomorphisms; and natural isomorphisms Psi_{dagger F^Theta_v} -> Psi_env -> Psi_gau -> Psi_{F_gau}.",
+  "explicit_hypotheses": [],
+  "implicit_hypotheses": [],
+  "conclusion": "Kummer-theoretic chain at good nonarchimedean v.",
+  "definitions_required": [],
+  "results_used": [
+   "IUT2.Prop4_1"
+  ],
+  "external_dependencies": [
+   "AbsTopIII: Propositions 3.2 (iv), 3.3 (ii)"
+  ],
+  "lean_declaration": null,
+  "statement_status": "EXTRACTED",
+  "proof_status": "BLOCKED_BY_MATHLIB",
+  "obligations": [
+   "No Lean vocabulary exists for tempered fundamental groups, mono-theta environments, Frobenioids or Hodge theaters; the statement stays a catalog entry.",
+   "The paper's proof reads: follows immediately from the definitions and the references quoted."
+  ],
+  "ambiguities": []
+ },
+ "IUT2.Prop4_3": {
+  "source": {
+   "paper": "Inter-universal Teichmuller Theory II (December 2020)",
+   "pdf_pages": "127 to 129",
+   "pages_read": "127, 128, 129"
+  },
+  "content": "At archimedean v: constant monoid Psi_cns(U_v) = A^triangleright (nonzero elements of absolute value <= 1 of the complex archimedean field), R>=0(D_v) with log(p_v), symmetrizing isomorphisms from Gal(U^cor/U^+-) = F_l^{x+-} on cusps, theta and Gaussian monoids defined as at good nonarchimedean v with the same exponent vector (..., j^2 . log(p_v), ...), and the formal evaluation isomorphism.",
+  "explicit_hypotheses": [
+   "v in V^arc"
+  ],
+  "implicit_hypotheses": [],
+  "conclusion": "Functorial construction from the Aut-holomorphic space U_v.",
+  "definitions_required": [],
+  "results_used": [],
+  "external_dependencies": [
+   "IUTchI: Example 3.4",
+   "AbsTopIII: Definition 4.1, Corollary 2.7"
+  ],
+  "lean_declaration": null,
+  "statement_status": "EXTRACTED",
+  "proof_status": "BLOCKED_BY_MATHLIB",
+  "obligations": [
+   "No Lean vocabulary exists for tempered fundamental groups, mono-theta environments, Frobenioids or Hodge theaters; the statement stays a catalog entry.",
+   "The paper's proof reads: follows immediately from the definitions and the references quoted."
+  ],
+  "ambiguities": []
+ },
+ "IUT2.Prop4_4": {
+  "source": {
+   "paper": "Inter-universal Teichmuller Theory II (December 2020)",
+   "pdf_pages": "129 to 131",
+   "pages_read": "129, 130, 131"
+  },
+  "content": "Frobenioid-theoretic version at archimedean v: the Kummer structure determines a unique isomorphism Psi_{dagger F_v} -> Psi_cns(dagger U_v); a unique {+-1}-orbit of isomorphisms on units and a unique isomorphism on realified value monoids sending the element determined by p_v = e to log(p_v); symmetrizing isomorphisms; natural isomorphisms Psi_{dagger F^Theta_v} -> Psi_env -> Psi_gau -> Psi_{F_gau}.",
+  "explicit_hypotheses": [],
+  "implicit_hypotheses": [],
+  "conclusion": "Kummer-theoretic chain at archimedean v.",
+  "definitions_required": [],
+  "results_used": [
+   "IUT2.Prop4_3"
+  ],
+  "external_dependencies": [],
+  "lean_declaration": null,
+  "statement_status": "EXTRACTED",
+  "proof_status": "BLOCKED_BY_MATHLIB",
+  "obligations": [
+   "No Lean vocabulary exists for tempered fundamental groups, mono-theta environments, Frobenioids or Hodge theaters; the statement stays a catalog entry.",
+   "The paper's proof reads: follows immediately from the definitions and the references quoted."
+  ],
+  "ambiguities": []
+ },
+ "IUT2.Cor4_5": {
+  "source": {
+   "paper": "Inter-universal Teichmuller Theory II (December 2020)",
+   "pdf_pages": "131 to 134",
+   "pages_read": "131, 132, 133, 134"
+  },
+  "content": "Group-theoretic monoids for a D-Theta^{+-ell}-Hodge theater: (i) constant monoids Psi_cns(D) (up to Pi_v-conjugacy at nonarchimedean v); (ii) semi-simplifications with splittings and distinguished elements, and a global realified Frobenioid D^{||-}(D^{|-}) with Prime -> V and local isomorphisms rho; (iii) global F_l^{x+-}-symmetrizing isomorphisms, via the bijection zeta: LabCusp^+- -> T, compatible with the F_l^{x+-}-symmetry of the D-Theta^ell-bridge; (iv) local theta and Gaussian monoids with evaluation isomorphisms; (v) global realified theta and Gaussian Frobenioids D_env, D_gau (the latter a subcategory of the product over j in F_l* with vector of ratios (..., j^2 ., ...)) and a global formal evaluation isomorphism D_env -> D_gau.",
+  "explicit_hypotheses": [],
+  "implicit_hypotheses": [],
+  "conclusion": "Global group-theoretic construction of theta and Gaussian Frobenioids.",
+  "definitions_required": [],
+  "results_used": [
+   "IUT2.Cor3_5",
+   "IUT2.Prop4_1",
+   "IUT2.Prop4_3"
+  ],
+  "external_dependencies": [
+   "IUTchI: Definition 6.4, Proposition 6.5, Proposition 6.8 (i), Example 3.5"
+  ],
+  "lean_declaration": null,
+  "statement_status": "EXTRACTED",
+  "proof_status": "BLOCKED_BY_MATHLIB",
+  "obligations": [
+   "No Lean vocabulary exists for tempered fundamental groups, mono-theta environments, Frobenioids or Hodge theaters; the statement stays a catalog entry.",
+   "The paper's proof reads: follows immediately from the definitions and the references quoted."
+  ],
+  "ambiguities": []
+ },
+ "IUT2.Rem4_5_4": {
+  "source": {
+   "paper": "Inter-universal Teichmuller Theory II (December 2020)",
+   "pdf_pages": "136",
+   "pages_read": "136 (rendered)"
+  },
+  "content": "D_gau is a weighted diagonal: its divisor (respectively rational function) monoid consists of (1^2 . phi, 2^2 . phi, ..., j^2 . phi, ...) (respectively with beta) for phi (beta) in the corresponding monoid of D^{||-}(D^{|-}).",
+  "explicit_hypotheses": [],
+  "implicit_hypotheses": [],
+  "conclusion": "Description of the weights j^2.",
+  "definitions_required": [],
+  "results_used": [
+   "IUT2.Cor4_5"
+  ],
+  "external_dependencies": [],
+  "lean_declaration": "IUT.PaperII.Labels.sum_exponents",
+  "statement_status": "EXTRACTED",
+  "proof_status": "NOT_EXTRACTED",
+  "obligations": [
+   "Lean contains only the sum and the average (weight 1/l*, Remark 4.7.3 (iii), page 145) of the weights j^2, j = 1, ..., l*; this is elementary arithmetic not stated in the paper."
+  ],
+  "ambiguities": []
+ },
+ "IUT2.Cor4_6": {
+  "source": {
+   "paper": "Inter-universal Teichmuller Theory II (December 2020)",
+   "pdf_pages": "137 to 139",
+   "pages_read": "137, 138, 139"
+  },
+  "content": "Frobenioid-theoretic monoids for a Theta^{+-ell}-Hodge theater: (i) Kummer isomorphisms Psi_cns(F) -> Psi_cns(D); (ii) semi-simplifications and a unique isomorphism C^{||-} -> D^{||-}(D^{|-}) compatible with Prime bijections and local isomorphisms; (iii) Kummer isomorphisms with t-independent conjugacy indeterminacy and F_l^{x+-}-symmetrizing isomorphisms; (iv) local theta and Gaussian monoids from a Theta-bridge glued via IUT I Proposition 6.7, with evaluation isomorphisms Psi_{F_env} -> Psi_env -> Psi_gau -> Psi_{F_gau}; (v) global realified Frobenioids C_env, C_gau and evaluation isomorphisms.",
+  "explicit_hypotheses": [],
+  "implicit_hypotheses": [],
+  "conclusion": "Frobenioid-theoretic global construction.",
+  "definitions_required": [],
+  "results_used": [
+   "IUT2.Cor4_5",
+   "IUT2.Cor3_6",
+   "IUT2.Prop4_2",
+   "IUT2.Prop4_4"
+  ],
+  "external_dependencies": [
+   "IUTchI: Definition 6.11, Proposition 6.7, Remark 5.2.1"
+  ],
+  "lean_declaration": null,
+  "statement_status": "EXTRACTED",
+  "proof_status": "BLOCKED_BY_MATHLIB",
+  "obligations": [
+   "No Lean vocabulary exists for tempered fundamental groups, mono-theta environments, Frobenioids or Hodge theaters; the statement stays a catalog entry.",
+   "The paper's proof reads: follows immediately from the definitions and the references quoted."
+  ],
+  "ambiguities": []
+ },
+ "IUT2.Rem4_7_3": {
+  "source": {
+   "paper": "Inter-universal Teichmuller Theory II (December 2020)",
+   "pdf_pages": "143 to 145",
+   "pages_read": "143, 144, 145 (rendered 145)"
+  },
+  "content": "F_l^{x+-} versus F_l*-symmetry: F_l approximates Z; F_l^{x+-} corresponds to addition, involves the zero label and units, and is applied for conjugate synchronization (uniradial, but coric after mono-analyticization); F_l* corresponds to multiplication, separates the zero label, describes the Gaussian monoids as functions of j in F_l*, and is multiradial. Volumes at each j in F_l* are given weight 1/l* so that the diagonal constant distribution has weight 1.",
+  "explicit_hypotheses": [],
+  "implicit_hypotheses": [],
+  "conclusion": "Interpretive remark.",
+  "definitions_required": [],
+  "results_used": [],
+  "external_dependencies": [],
+  "lean_declaration": "IUT.PaperII.Labels.average_exponents",
+  "statement_status": "EXTRACTED",
+  "proof_status": "NOT_EXTRACTED",
+  "obligations": [
+   "Only the weighted average (1/l*) . sum of j^2 is computed in Lean; the paper does not state its value."
+  ],
+  "ambiguities": []
+ },
+ "IUT2.Cor4_7": {
+  "source": {
+   "paper": "Inter-universal Teichmuller Theory II (December 2020)",
+   "pdf_pages": "140 to 142",
+   "pages_read": "140, 141, 142"
+  },
+  "content": "Group-theoretic monoids for a D-Theta NF-Hodge theater glued via IUT I Proposition 6.7: (i) non-realified global structures (monoid, field, pseudo-monoid, Frobenioids F_mod, realification functor) up to conjugacy indeterminacies; (ii) F_l*-symmetrizing isomorphisms between data labeled by j in LabCusp, with independent conjugacy indeterminacies for distinct j plus one j-independent indeterminacy; diagonal objects only in a formal sense; (iii) localization functors and realified global structures compatible with the symmetrizing isomorphisms.",
+  "explicit_hypotheses": [],
+  "implicit_hypotheses": [],
+  "conclusion": "Global constructions with F_l*-symmetry (no conjugate synchronization; Remark 4.7.2).",
+  "definitions_required": [],
+  "results_used": [],
+  "external_dependencies": [
+   "IUTchI: Example 5.1, Example 5.4, Proposition 4.7, Proposition 4.9"
+  ],
+  "lean_declaration": null,
+  "statement_status": "EXTRACTED",
+  "proof_status": "BLOCKED_BY_MATHLIB",
+  "obligations": [
+   "No Lean vocabulary exists for tempered fundamental groups, mono-theta environments, Frobenioids or Hodge theaters; the statement stays a catalog entry.",
+   "The paper's proof reads: follows immediately from the definitions and the references quoted."
+  ],
+  "ambiguities": []
+ },
+ "IUT2.Cor4_8": {
+  "source": {
+   "paper": "Inter-universal Teichmuller Theory II (December 2020)",
+   "pdf_pages": "149 to 151",
+   "pages_read": "149, 150, 151"
+  },
+  "content": "Frobenioid-theoretic version for a Theta NF-Hodge theater: (i) Kummer isomorphisms of pseudo-monoids and induced isomorphisms of Frobenioids F^circledast -> F^circledast(D), F_mod, realified versions; (ii) labeled isomorphisms and F_l*-symmetrizing isomorphisms with the same conjugacy indeterminacy pattern as Corollary 4.7; (iii) localization functors and a natural isomorphism C_j -> (F_mod)^R_j.",
+  "explicit_hypotheses": [],
+  "implicit_hypotheses": [],
+  "conclusion": "Frobenioid-theoretic global structures with F_l*-symmetry.",
+  "definitions_required": [],
+  "results_used": [
+   "IUT2.Cor4_7",
+   "IUT2.Cor4_6"
+  ],
+  "external_dependencies": [
+   "IUTchI: Example 5.1, Example 5.4, Corollary 5.6"
+  ],
+  "lean_declaration": null,
+  "statement_status": "EXTRACTED",
+  "proof_status": "BLOCKED_BY_MATHLIB",
+  "obligations": [
+   "No Lean vocabulary exists for tempered fundamental groups, mono-theta environments, Frobenioids or Hodge theaters; the statement stays a catalog entry.",
+   "The paper's proof reads: follows immediately from the definitions and the references quoted."
+  ],
+  "ambiguities": []
+ },
+ "IUT2.Def4_9": {
+  "source": {
+   "paper": "Inter-universal Teichmuller Theory II (December 2020)",
+   "pdf_pages": "153 to 158",
+   "pages_read": "153, 154, 155, 156, 157, 158 (rendered 158)"
+  },
+  "content": "(i) For a Frobenioid over the finite etale site of an MLF or CAF: monoids O^triangleright(A), mu_N(A), O^mu(A), O^x(A), O^{x mu_N}(A), O^{x mu}(A); a x-Kummer structure is a Zhat^x-orbit of isomorphisms O^x(G) -> O^x(A), a x mu-Kummer structure an Ism-orbit of isomorphisms O^{x mu}(G) -> O^{x mu}(A); x-Kummer structures are unique (Remark 1.11.1 (b)); a x mu-Kummer structure is equivalent to the lattices I_H. (ii) to (iv) at bad and good nonarchimedean w: build O^{black-triangle x mu}(A) = O^black-triangle(A) x O^{x mu}(A), a model split Frobenioid with x mu-Kummer structure, F^{black-triangle x mu}_w. (v) at archimedean w: inductive system of quotients by N-torsion with Kummer structure up to the nontrivial automorphism of the unit circle. (vi) the collections F^{black-triangle x mu}, F^x, F^{x mu} (isometry subcategories). (vii) F^{|-square}-prime-strips for |-square in {|-x, |-x mu, |-black-triangle x mu} (rendered page 158); morphisms are collections of isomorphisms. (viii) F^{||- black-triangle x mu}-prime-strip: data (C^{||-}, Prime -> V, F^{black-triangle x mu}, rho) as in IUT I Definition 5.2 (iv); the generators at bad v with the rho determine the pilot object (negative arithmetic degree).",
+  "explicit_hypotheses": [],
+  "implicit_hypotheses": [],
+  "conclusion": "Definitions of x- and x mu-Kummer structures and the prime-strips that the modified links act on.",
+  "definitions_required": [],
+  "results_used": [
+   "IUT2.Rem1_11_1"
+  ],
+  "external_dependencies": [
+   "FrdI: Proposition 2.2, Theorem 5.1, Theorem 5.2, Example 6.3, Theorem 6.4",
+   "FrdII: Definition 2.1, Example 3.3",
+   "IUTchI: Definition 5.2"
+  ],
+  "lean_declaration": null,
+  "statement_status": "EXTRACTED",
+  "proof_status": "NOT_EXTRACTED",
+  "obligations": [
+   "No Lean vocabulary exists for tempered fundamental groups, mono-theta environments, Frobenioids or Hodge theaters; the statement stays a catalog entry."
+  ],
+  "ambiguities": [
+   "Rendered page 158 confirms 'v in V^bad (not equal to the empty set)' in (viii); the text layer drops the negation."
+  ]
+ },
+ "IUT2.Cor4_10": {
+  "source": {
+   "paper": "Inter-universal Teichmuller Theory II (December 2020)",
+   "pdf_pages": "158 to 161",
+   "pages_read": "158, 159, 160, 161 (rendered 159, 160)"
+  },
+  "content": "Frobenius-pictures. (i) constant prime-strip dagger F^{||-}_triangle with natural identification with dagger F^{||-}_mod (IUT I Definition 3.6 (c)), via the assignment '0, succ -> >' of Remark 3.8.2 (ii). (ii) theta and Gaussian prime-strips dagger F^{||-}_env, dagger F^{||-}_gau, identification dagger F^{||-}_env -> dagger F^{||-}_tht, and an evaluation isomorphism F_env -> F_gau. (iii) functoriality gives maps Isom_{F^{||-}}(F_env, ddagger F_triangle) -> Isom_{F^{||- black-triangle x mu}}(F^{x mu}_env, ddagger F^{x mu}_triangle), and the same with gau, between nonempty sets; the Theta^{x mu}-link is the full poly-isomorphism dagger F^{||- black-triangle x mu}_env -> ddagger F^{||- black-triangle x mu}_triangle and the Theta^{x mu}_gau-link the full poly-isomorphism dagger F^{||- black-triangle x mu}_gau -> ddagger F^{||- black-triangle x mu}_triangle. (iv) natural isomorphisms F^{|- x mu}_triangle -> F^{|- x mu}_env -> F^{|- x mu}_gau; composing with the links gives the full poly-isomorphism dagger F^{|- x mu}_triangle -> ddagger F^{|- x mu}_triangle (an invariant of both links), inducing the full poly-isomorphism of D^{|-}-prime-strips (the D-Theta^{+-ell}NF-link). (v) the induced isomorphism of global realified data (D^{||-}, Prime, rho) is compatible with the R>0-orbits of the isomorphisms from (C^{||-}_triangle, Prime, rho). (vi) chains indexed by Z form an oriented graph with translation symmetry but no arbitrary permutation symmetries.",
+  "explicit_hypotheses": [
+   "initial Theta-data",
+   "Theta^{+-ell}NF-Hodge theaters dagger HT, ddagger HT"
+  ],
+  "implicit_hypotheses": [],
+  "conclusion": "Definition and basic properties of the Theta^{x mu}- and Theta^{x mu}_gau-links.",
+  "definitions_required": [],
+  "results_used": [
+   "IUT2.Cor4_6",
+   "IUT2.Def4_9",
+   "IUT2.Rem3_8_2"
+  ],
+  "external_dependencies": [
+   "IUTchI: Corollary 3.7 (i), Definition 3.6 (c), Definition 6.13, Remark 5.2.1, Corollary 3.8",
+   "FrdI: Example 6.3, Theorem 6.4"
+  ],
+  "lean_declaration": null,
+  "statement_status": "EXTRACTED",
+  "proof_status": "BLOCKED_BY_MATHLIB",
+  "obligations": [
+   "No Lean vocabulary exists for tempered fundamental groups, mono-theta environments, Frobenioids or Hodge theaters; the statement stays a catalog entry.",
+   "The paper's proof reads: follows immediately from the definitions and the references quoted."
+  ],
+  "ambiguities": [
+   "Remark 4.10.1 (pages 161 to 162): F_env, F_gau are only defined up to automorphisms of the split Frobenioids at bad v inducing the identity on the F^{|- x}-prime-strip; these are absorbed in the full poly-isomorphisms.",
+   "Remark 4.10.3 (ii), page 162: the value group portion is not preserved by the links."
+  ]
+ },
+ "IUT2.Rem4_10_3": {
+  "source": {
+   "paper": "Inter-universal Teichmuller Theory II (December 2020)",
+   "pdf_pages": "162 to 163",
+   "pages_read": "162, 163 (rendered 163)"
+  },
+  "content": "(i) coricity of F^{|- x mu} amounts to coricity of D^{|-} plus coricity of units modulo torsion; (ii) the value group portion is by no means preserved, it acts like a Frobenius morphism or a Teichmuller deformation; (iii) restricting the value group portion q_v -> {q_v^{j^2}}_{1<=j<=l*} to j = 1 gives a correspondence identifiable with the identity, but restriction to proper subsets of |F_l| is in general incompatible with the symmetries.",
+  "explicit_hypotheses": [],
+  "implicit_hypotheses": [],
+  "conclusion": "Interpretive remark.",
+  "definitions_required": [],
+  "results_used": [
+   "IUT2.Cor4_10"
+  ],
+  "external_dependencies": [],
+  "lean_declaration": null,
+  "statement_status": "EXTRACTED",
+  "proof_status": "NOT_EXTRACTED",
+  "obligations": [
+   "Nothing to formalize."
+  ],
+  "ambiguities": []
+ },
+ "IUT2.Cor4_11": {
+  "source": {
+   "paper": "Inter-universal Teichmuller Theory II (December 2020)",
+   "pdf_pages": "163 to 164",
+   "pages_read": "163, 164"
+  },
+  "content": "Etale-pictures: the induced D-Theta^{+-ell}NF-links form a chain of full poly-isomorphisms of D^{|-}_triangle, a mono-analytic core; spokes give an etale-picture admitting arbitrary permutation symmetries; compatible with IUT I Corollaries 4.12, 6.10.",
+  "explicit_hypotheses": [],
+  "implicit_hypotheses": [],
+  "conclusion": "Etale-picture with permutation symmetries.",
+  "definitions_required": [],
+  "results_used": [
+   "IUT2.Cor4_10"
+  ],
+  "external_dependencies": [
+   "IUTchI: Corollaries 4.12, 6.10, Remark 3.9.1"
+  ],
+  "lean_declaration": null,
+  "statement_status": "EXTRACTED",
+  "proof_status": "BLOCKED_BY_MATHLIB",
+  "obligations": [
+   "No Lean vocabulary exists for tempered fundamental groups, mono-theta environments, Frobenioids or Hodge theaters; the statement stays a catalog entry.",
+   "The paper's proof reads: follows immediately from the definitions and the references quoted."
+  ],
+  "ambiguities": []
+ },
+ "IUT2.Rem4_11_1": {
+  "source": {
+   "paper": "Inter-universal Teichmuller Theory II (December 2020)",
+   "pdf_pages": "164 to 165",
+   "pages_read": "164, 165"
+  },
+  "content": "The Theta^{x mu}_gau-link is roughly a transformation q -> q^{(1^2, ..., (l*)^2)}; the Frobenius-picture is an infinite iteration, the etale-picture a commutativity of these exponents, compared with cartesian versus polar coordinates for the Gaussian integral.",
+  "explicit_hypotheses": [],
+  "implicit_hypotheses": [],
+  "conclusion": "Heuristic description; the definition is the full poly-isomorphism of Corollary 4.10 (iii).",
+  "definitions_required": [],
+  "results_used": [],
+  "external_dependencies": [],
+  "lean_declaration": null,
+  "statement_status": "EXTRACTED",
+  "proof_status": "NOT_EXTRACTED",
+  "obligations": [
+   "Nothing to formalize."
+  ],
+  "ambiguities": []
+ },
+ "IUT2.Ex1_8": {
+  "source": {
+   "paper": "Inter-universal Teichmuller Theory II (December 2020)",
+   "pdf_pages": "36 to 39",
+   "pages_read": "36, 37, 38, 39"
+  },
+  "content": "Radial environments for MLF-Galois TM-pairs: (ii) a poly-isomorphism alpha from (Pi acting on M_TM(Pi)) to (G acting on O^triangleright(G)) restricted to Pi; (iii) a Gamma-orbit of unit isomorphisms, Gamma in Zhat^x; (iv) Ism(G), the compact group of G-isometries of O^{x mu}(G), and closed subgroups Gamma^{x mu} of Ism (examples: Ism, Im(Zhat^x)); (v) the data alpha_{mu,x mu} from the full poly-isomorphism Pi/Delta -> G and the trivial homomorphism M^mu_TM(Pi) -> O^{x mu}(G).",
+  "explicit_hypotheses": [],
+  "implicit_hypotheses": [],
+  "conclusion": "Definitions of the environments used in Corollaries 1.10 to 1.12.",
+  "definitions_required": [],
+  "results_used": [],
+  "external_dependencies": [],
+  "lean_declaration": null,
+  "statement_status": "EXTRACTED",
+  "proof_status": "NOT_EXTRACTED",
+  "obligations": [
+   "No Lean vocabulary exists for tempered fundamental groups, mono-theta environments, Frobenioids or Hodge theaters; the statement stays a catalog entry."
+  ],
+  "ambiguities": []
+ },
+ "IUT2.Rem1_10_2": {
+  "source": {
+   "paper": "Inter-universal Teichmuller Theory II (December 2020)",
+   "pdf_pages": "47",
+   "pages_read": "47"
+  },
+  "content": "The multiradiality of Corollary 1.10 is a consequence of the triviality of the homomorphism from Pi_mu tensor Q/Z to O^{x mu}(G).",
+  "explicit_hypotheses": [],
+  "implicit_hypotheses": [],
+  "conclusion": "Interpretive remark.",
+  "definitions_required": [],
+  "results_used": [
+   "IUT2.Cor1_10"
+  ],
+  "external_dependencies": [],
+  "lean_declaration": null,
+  "statement_status": "EXTRACTED",
+  "proof_status": "NOT_EXTRACTED",
+  "obligations": [
+   "Nothing to formalize."
+  ],
+  "ambiguities": []
+ },
+ "IUT2.Rem1_11_5": {
+  "source": {
+   "paper": "Inter-universal Teichmuller Theory II (December 2020)",
+   "pdf_pages": "55",
+   "pages_read": "55"
+  },
+  "content": "The surjection H^1(G, mu_Zhat(G)) -> Zhat is coric; transported via the base-field cyclotomic rigidity it becomes uniradial, or multiradial only up to a Zhat^x-indeterminacy.",
+  "explicit_hypotheses": [],
+  "implicit_hypotheses": [],
+  "conclusion": "Interpretive remark.",
+  "definitions_required": [],
+  "results_used": [
+   "IUT2.Cor1_11"
+  ],
+  "external_dependencies": [],
+  "lean_declaration": null,
+  "statement_status": "EXTRACTED",
+  "proof_status": "NOT_EXTRACTED",
+  "obligations": [
+   "Nothing to formalize."
+  ],
+  "ambiguities": []
+ },
+ "IUT2.Rem1_12_2": {
+  "source": {
+   "paper": "Inter-universal Teichmuller Theory II (December 2020)",
+   "pdf_pages": "58",
+   "pages_read": "58"
+  },
+  "content": "(i) The essential content of Corollary 1.12 is the construction of theta(Pi) up to a mu_{2l}-indeterminacy (not up to O_k^x), using that the 2l-torsion of O_k^x is characteristic.",
+  "explicit_hypotheses": [],
+  "implicit_hypotheses": [],
+  "conclusion": "Interpretive remark.",
+  "definitions_required": [],
+  "results_used": [
+   "IUT2.Cor1_12"
+  ],
+  "external_dependencies": [
+   "EtTh: Theorem 1.10 (i)"
+  ],
+  "lean_declaration": null,
+  "statement_status": "EXTRACTED",
+  "proof_status": "NOT_EXTRACTED",
+  "obligations": [
+   "Nothing to formalize."
+  ],
+  "ambiguities": []
+ },
+ "IUT2.Rem3_5_2": {
+  "source": {
+   "paper": "Inter-universal Teichmuller Theory II (December 2020)",
+   "pdf_pages": "96 to 99",
+   "pages_read": "96, 99; pages 97 to 98 not read"
+  },
+  "content": "Not extracted: pages 97 to 98 were not read.",
+  "explicit_hypotheses": [],
+  "implicit_hypotheses": [],
+  "conclusion": "Not extracted.",
+  "definitions_required": [],
+  "results_used": [],
+  "external_dependencies": [],
+  "lean_declaration": null,
+  "statement_status": "NOT_EXTRACTED",
+  "proof_status": "NOT_EXTRACTED",
+  "obligations": [
+   "Read pages 97 to 98 before extracting."
+  ],
+  "ambiguities": []
+ },
+ "IUT2.Rem3_6_2": {
+  "source": {
+   "paper": "Inter-universal Teichmuller Theory II (December 2020)",
+   "pdf_pages": "101 to 103",
+   "pages_read": "101, 102, 103 (part (iii) only)"
+  },
+  "content": "(iii) Composing the Theta-link q -> Theta_v with Galois evaluation gives q -> {q^{j^2}}_{1<=j<=l*}, described as a 'homotopy' between the identity (j = 1) and q -> q^{(l*)^2}.",
+  "explicit_hypotheses": [],
+  "implicit_hypotheses": [],
+  "conclusion": "Interpretive remark; only part (iii) extracted.",
+  "definitions_required": [],
+  "results_used": [
+   "IUT2.Cor3_6"
+  ],
+  "external_dependencies": [],
+  "lean_declaration": null,
+  "statement_status": "EXTRACTED",
+  "proof_status": "NOT_EXTRACTED",
+  "obligations": [
+   "Nothing to formalize."
+  ],
+  "ambiguities": []
+ },
+ "IUT2.Rem3_7_1": {
+  "source": {
+   "paper": "Inter-universal Teichmuller Theory II (December 2020)",
+   "pdf_pages": "112",
+   "pages_read": "112"
+  },
+  "content": "A multiradial version of the Gaussian monoid algorithm is obtained only in IUT III, via log-shells, at the cost of additional indeterminacies.",
+  "explicit_hypotheses": [],
+  "implicit_hypotheses": [],
+  "conclusion": "Interpretive remark.",
+  "definitions_required": [],
+  "results_used": [
+   "IUT2.Cor3_7"
+  ],
+  "external_dependencies": [],
+  "lean_declaration": null,
+  "statement_status": "EXTRACTED",
+  "proof_status": "NOT_EXTRACTED",
+  "obligations": [
+   "Nothing to formalize."
+  ],
+  "ambiguities": []
+ },
+ "IUT2.Rem3_8_2": {
+  "source": {
+   "paper": "Inter-universal Teichmuller Theory II (December 2020)",
+   "pdf_pages": "116",
+   "pages_read": "116"
+  },
+  "content": "(ii) Passing from the D-Theta^{+-ell}-Hodge theater to the D-Theta NF-Hodge theater via IUT I Proposition 6.7 removes the label 0 and identifies it with F_l*, the assignment '0, succ -> >'; this matches the isomorphism Psi_cns_0 -> Psi_cns_<F_l*> of Corollary 3.5 (iii).",
+  "explicit_hypotheses": [],
+  "implicit_hypotheses": [],
+  "conclusion": "Interpretive remark used in Corollary 4.10 (i).",
+  "definitions_required": [],
+  "results_used": [
+   "IUT2.Cor3_5"
+  ],
+  "external_dependencies": [
+   "IUTchI: Proposition 6.7"
+  ],
+  "lean_declaration": null,
+  "statement_status": "EXTRACTED",
+  "proof_status": "NOT_EXTRACTED",
+  "obligations": [
+   "Nothing to formalize."
+  ],
+  "ambiguities": []
+ },
+ "IUT2.Rem4_10_1": {
+  "source": {
+   "paper": "Inter-universal Teichmuller Theory II (December 2020)",
+   "pdf_pages": "161 to 162",
+   "pages_read": "161, 162"
+  },
+  "content": "The prime-strips F_env, F_gau are only well defined up to automorphisms at bad v of the split Frobenioids that induce the identity on the associated F^{|- x}-prime-strip; this indeterminacy is absorbed by the full poly-isomorphisms of Corollary 4.10 (iii).",
+  "explicit_hypotheses": [],
+  "implicit_hypotheses": [],
+  "conclusion": "Interpretive remark.",
+  "definitions_required": [],
+  "results_used": [
+   "IUT2.Cor4_10"
+  ],
+  "external_dependencies": [],
+  "lean_declaration": null,
+  "statement_status": "EXTRACTED",
+  "proof_status": "NOT_EXTRACTED",
+  "obligations": [
+   "Nothing to formalize."
+  ],
+  "ambiguities": []
+ },
+ "IUT2.Rem4_10_2": {
+  "source": {
+   "paper": "Inter-universal Teichmuller Theory II (December 2020)",
+   "pdf_pages": "162",
+   "pages_read": "162"
+  },
+  "content": "(i) The Theta^{x mu}_gau-link is the composite of the Theta^{x mu}-link with Galois evaluation. (ii) At bad v the Theta^{x mu}-link relates split theta monoids with constant monoid submonoids split by q_v; these splittings do not arise from Galois evaluation.",
+  "explicit_hypotheses": [],
+  "implicit_hypotheses": [],
+  "conclusion": "Interpretive remark.",
+  "definitions_required": [],
+  "results_used": [
+   "IUT2.Cor4_10"
+  ],
+  "external_dependencies": [],
+  "lean_declaration": null,
+  "statement_status": "EXTRACTED",
+  "proof_status": "NOT_EXTRACTED",
+  "obligations": [
+   "Nothing to formalize."
+  ],
+  "ambiguities": []
+ }
+}

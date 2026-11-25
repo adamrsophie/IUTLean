@@ -1,0 +1,1922 @@
+{
+ "description": "Prerequisite gap analysis for the four IUT papers against Mathlib tag v4.36.0 (sources in .lake/packages/mathlib/Mathlib). Every Mathlib declaration named here was checked with #check against the installed Mathlib, and its file is the module in which Lean reports it is declared; file paths are relative to the Mathlib source root. Entries for other Lean libraries are reported from their README files or file names and were not built or checked.",
+ "mathlib_version": "v4.36.0",
+ "lean_version": "4.36.0",
+ "classes": {
+  "1": "EXISTS_IN_MATHLIB",
+  "2": "DERIVABLE_FROM_MATHLIB",
+  "3": "NEEDS_SUBSTANTIAL_FORMALIZATION",
+  "4": "EXISTS_IN_OTHER_LEAN_LIBRARY",
+  "5": "NEEDS_ADDITIONAL_LITERATURE",
+  "6": "UNRESOLVED_OR_DISPUTED"
+ },
+ "needed_by_method": "Statement ids in needed_first_by come from pages read in this pass where the notes say so, from statement titles where the notes say so, and otherwise from the mechanical index: the external_keys field of data/statements.json (bibliography keys found in the extracted text of each statement page span), taking the earliest statement per paper. The mechanical index is not a reading of the papers.",
+ "most_cited_outside_references": [
+  {
+   "key": "AbsTopIII",
+   "citations": 406,
+   "cited_in": {
+    "IUT1": 198,
+    "IUT2": 91,
+    "IUT3": 99,
+    "IUT4": 18
+   },
+   "first_citing_statements": [
+    "IUT1.Cor1_2",
+    "IUT2.Prop1_2",
+    "IUT3.Def1_1",
+    "IUT4.Prop1_4"
+   ]
+  },
+  {
+   "key": "EtTh",
+   "citations": 380,
+   "cited_in": {
+    "IUT1": 151,
+    "IUT2": 167,
+    "IUT3": 48,
+    "IUT4": 14
+   },
+   "first_citing_statements": [
+    "IUT1.Cor1_2",
+    "IUT2.Def1_1",
+    "IUT3.Rem2_1_1",
+    "IUT4.Rem1_10_6"
+   ]
+  },
+  {
+   "key": "FrdI",
+   "citations": 144,
+   "cited_in": {
+    "IUT1": 97,
+    "IUT2": 20,
+    "IUT3": 22,
+    "IUT4": 5
+   },
+   "first_citing_statements": [
+    "IUT1.Rem3_1_5",
+    "IUT2.Prop1_2",
+    "IUT3.Rem2_1_1",
+    "IUT4.Rem2_3_3"
+   ]
+  },
+  {
+   "key": "SemiAnbd",
+   "citations": 100,
+   "cited_in": {
+    "IUT1": 88,
+    "IUT2": 9,
+    "IUT3": 1,
+    "IUT4": 2
+   },
+   "first_citing_statements": [
+    "IUT1.ThmB",
+    "IUT2.Rem1_4_1",
+    "IUT3.Rem2_1_2",
+    "IUT4.Rem2_3_3"
+   ]
+  },
+  {
+   "key": "GenEll",
+   "citations": 69,
+   "cited_in": {
+    "IUT1": 5,
+    "IUT4": 64
+   },
+   "first_citing_statements": [
+    "IUT1.Def3_1",
+    "IUT4.ThmA"
+   ]
+  },
+  {
+   "key": "FrdII",
+   "citations": 58,
+   "cited_in": {
+    "IUT1": 40,
+    "IUT2": 13,
+    "IUT3": 5
+   },
+   "first_citing_statements": [
+    "IUT1.Rem2_5_3",
+    "IUT2.Prop1_2",
+    "IUT3.Rem2_4_2"
+   ]
+  },
+  {
+   "key": "HASurI",
+   "citations": 36,
+   "cited_in": {
+    "IUT1": 10,
+    "IUT2": 14,
+    "IUT4": 12
+   },
+   "first_citing_statements": [
+    "IUT1.Rem4_3_1",
+    "IUT2.Rem1_12_5",
+    "IUT4.Rem1_10_1"
+   ]
+  },
+  {
+   "key": "AbsTopI",
+   "citations": 34,
+   "cited_in": {
+    "IUT1": 28,
+    "IUT2": 4,
+    "IUT4": 2
+   },
+   "first_citing_statements": [
+    "IUT1.Cor1_2",
+    "IUT2.Rem1_6_1",
+    "IUT4.Rem2_3_5"
+   ]
+  },
+  {
+   "key": "pOrd",
+   "citations": 32,
+   "cited_in": {
+    "IUT1": 14,
+    "IUT2": 1,
+    "IUT3": 4,
+    "IUT4": 13
+   },
+   "first_citing_statements": [
+    "IUT1.Rem4_3_3",
+    "IUT2.Rem3_6_5",
+    "IUT3.Rem3_12_3",
+    "IUT4.Rem1_10_2"
+   ]
+  },
+  {
+   "key": "AbsTopII",
+   "citations": 27,
+   "cited_in": {
+    "IUT1": 17,
+    "IUT2": 7,
+    "IUT4": 3
+   },
+   "first_citing_statements": [
+    "IUT1.Cor1_2",
+    "IUT2.Rem1_5_2",
+    "IUT4.Rem2_3_5"
+   ]
+  },
+  {
+   "key": "pTeich",
+   "citations": 27,
+   "cited_in": {
+    "IUT1": 14,
+    "IUT2": 4,
+    "IUT3": 3,
+    "IUT4": 6
+   },
+   "first_citing_statements": [
+    "IUT1.Rem4_3_3",
+    "IUT2.Rem1_11_6",
+    "IUT3.Rem3_12_3",
+    "IUT4.Rem1_10_2"
+   ]
+  },
+  {
+   "key": "AbsAnab",
+   "citations": 25,
+   "cited_in": {
+    "IUT1": 13,
+    "IUT2": 11,
+    "IUT3": 1
+   },
+   "first_citing_statements": [
+    "IUT1.Rem1_2_2",
+    "IUT2.Prop1_6",
+    "IUT3.Cor3_12"
+   ]
+  }
+ ],
+ "areas": [
+  {
+   "id": "number_fields_completions",
+   "name": "Algebraic number fields and their completions",
+   "classification": [
+    "EXISTS_IN_MATHLIB",
+    "DERIVABLE_FROM_MATHLIB"
+   ],
+   "mathlib": [
+    {
+     "file": "NumberTheory/NumberField/Basic.lean",
+     "declarations": [
+      "NumberField",
+      "NumberField.RingOfIntegers"
+     ]
+    },
+    {
+     "file": "NumberTheory/NumberField/InfinitePlace/Basic.lean",
+     "declarations": [
+      "NumberField.InfinitePlace",
+      "NumberField.InfinitePlace.mult"
+     ]
+    },
+    {
+     "file": "NumberTheory/NumberField/Completion/InfinitePlace.lean",
+     "declarations": [
+      "NumberField.InfinitePlace.Completion"
+     ]
+    },
+    {
+     "file": "NumberTheory/NumberField/Completion/FinitePlace.lean",
+     "declarations": [
+      "NumberField.FinitePlace",
+      "NumberField.FinitePlace.mk",
+      "NumberField.FinitePlace.equivHeightOneSpectrum"
+     ]
+    },
+    {
+     "file": "RingTheory/DedekindDomain/AdicValuation/Completion.lean",
+     "declarations": [
+      "IsDedekindDomain.HeightOneSpectrum.adicCompletion",
+      "IsDedekindDomain.HeightOneSpectrum.adicCompletionIntegers"
+     ]
+    },
+    {
+     "file": "RingTheory/DedekindDomain/FiniteAdeleRing.lean",
+     "declarations": [
+      "IsDedekindDomain.FiniteAdeleRing",
+      "IsDedekindDomain.FiniteAdeleRing.isUnit_iff"
+     ]
+    },
+    {
+     "file": "NumberTheory/NumberField/AdeleRing.lean",
+     "declarations": [
+      "NumberField.AdeleRing"
+     ]
+    },
+    {
+     "file": "NumberTheory/NumberField/InfiniteAdeleRing.lean",
+     "declarations": [
+      "NumberField.InfiniteAdeleRing"
+     ]
+    },
+    {
+     "file": "NumberTheory/Padics/PadicNumbers.lean",
+     "declarations": [
+      "Padic"
+     ]
+    },
+    {
+     "file": "NumberTheory/Padics/PadicIntegers.lean",
+     "declarations": [
+      "PadicInt"
+     ]
+    },
+    {
+     "file": "NumberTheory/Padics/Complex.lean",
+     "declarations": [
+      "PadicComplex"
+     ]
+    },
+    {
+     "file": "NumberTheory/LocalField/Basic.lean",
+     "declarations": [
+      "IsNonarchimedeanLocalField"
+     ]
+    },
+    {
+     "file": "NumberTheory/NumberField/Discriminant/Defs.lean",
+     "declarations": [
+      "NumberField.discr"
+     ]
+    },
+    {
+     "file": "NumberTheory/NumberField/Units/DirichletTheorem.lean",
+     "declarations": [
+      "NumberField.Units.rank",
+      "NumberField.Units.fundSystem"
+     ]
+    }
+   ],
+   "project": [
+    {
+     "file": "IUT/PaperIV/ArithmeticDivisor.lean",
+     "declarations": [
+      "IUT.PaperIV.Valuations"
+     ]
+    },
+    {
+     "file": "IUT/Prerequisites/PositiveRationalsZhatUnits.lean",
+     "declarations": [
+      "IUT.Prerequisites.Zhat",
+      "IUT.Prerequisites.Zhat.toFiniteAdeles"
+     ]
+    }
+   ],
+   "missing": [
+    {
+     "item": "A uniform interface identifying the completion of a number field at a finite place with a finite extension of Q_p as an instance of IsNonarchimedeanLocalField (not searched exhaustively).",
+     "classification": [
+      "DERIVABLE_FROM_MATHLIB"
+     ]
+    },
+    {
+     "item": "The ring Zhat as a named object; modeled in this project as the product of the adicCompletionIntegers over the primes of Z.",
+     "classification": [
+      "DERIVABLE_FROM_MATHLIB"
+     ]
+    }
+   ],
+   "other_lean_libraries": [],
+   "bibliography_keys": [],
+   "needed_first_by": [
+    "IUT1.Def3_1",
+    "IUT4.Def1_9"
+   ],
+   "notes": "Read: IUT I Definition 3.1 (a), pages 61 and 62 (a number field containing a square root of -1, an algebraic closure, valuation sets); IUT IV Definition 1.9, pages 21 and 22."
+  },
+  {
+   "id": "class_field_theory",
+   "name": "Local and global class field theory",
+   "classification": [
+    "NEEDS_SUBSTANTIAL_FORMALIZATION",
+    "EXISTS_IN_OTHER_LEAN_LIBRARY"
+   ],
+   "mathlib": [
+    {
+     "file": "NumberTheory/LegendreSymbol/QuadraticReciprocity.lean",
+     "declarations": [],
+     "content": "quadratic reciprocity only"
+    },
+    {
+     "file": "RepresentationTheory/Homological/TateCohomology/Basic.lean",
+     "declarations": [],
+     "content": "Tate cohomology of finite groups, an ingredient of cohomological class field theory"
+    }
+   ],
+   "project": [],
+   "missing": [
+    {
+     "item": "Local reciprocity map and existence theorem for p-adic fields.",
+     "classification": [
+      "NEEDS_SUBSTANTIAL_FORMALIZATION",
+      "EXISTS_IN_OTHER_LEAN_LIBRARY"
+     ]
+    },
+    {
+     "item": "Global class field theory (idelic Artin map, reciprocity, existence).",
+     "classification": [
+      "NEEDS_SUBSTANTIAL_FORMALIZATION"
+     ]
+    }
+   ],
+   "other_lean_libraries": [
+    {
+     "location": "documentation/external/lana-deps/local-class-field-theory",
+     "provides": "local reciprocity, the Artin map for p-adic fields and the existence theorem, per its README",
+     "caveat": "Lean 4.32, not built here, cannot be imported"
+    }
+   ],
+   "bibliography_keys": [
+    "NSW"
+   ],
+   "needed_first_by": [],
+   "notes": "A plain text search of the Mathlib sources for \"ClassField\", \"reciprocity\" and \"Artin\" found no class field theory; the two \"ClassField\" hits are references, in module docstrings of TateCohomology/Basic.lean and RingTheory/Valuation/Discrete/Basic.lean, to external class field theory projects. Which IUT statements need class field theory was not determined from the pages read; the mechanical index shows [NSW] only in remarks and one example."
+  },
+  {
+   "id": "galois_theory",
+   "name": "Algebraic closures and Galois theory (finite and infinite)",
+   "classification": [
+    "EXISTS_IN_MATHLIB"
+   ],
+   "mathlib": [
+    {
+     "file": "FieldTheory/Galois/Basic.lean",
+     "declarations": [
+      "IsGalois",
+      "IsGalois.intermediateFieldEquivSubgroup"
+     ]
+    },
+    {
+     "file": "FieldTheory/IsAlgClosed/AlgebraicClosure.lean",
+     "declarations": [
+      "AlgebraicClosure"
+     ]
+    },
+    {
+     "file": "FieldTheory/IsAlgClosed/Basic.lean",
+     "declarations": [
+      "IsAlgClosure"
+     ]
+    },
+    {
+     "file": "FieldTheory/AbsoluteGaloisGroup.lean",
+     "declarations": [
+      "Field.absoluteGaloisGroup",
+      "Field.absoluteGaloisGroupAbelianization"
+     ]
+    },
+    {
+     "file": "FieldTheory/KrullTopology.lean",
+     "declarations": [
+      "krullTopology"
+     ]
+    },
+    {
+     "file": "FieldTheory/Galois/Infinite.lean",
+     "declarations": [
+      "InfiniteGalois.IntermediateFieldEquivClosedSubgroup"
+     ]
+    },
+    {
+     "file": "NumberTheory/Cyclotomic/Basic.lean",
+     "declarations": [
+      "IsCyclotomicExtension"
+     ]
+    },
+    {
+     "file": "RingTheory/RootsOfUnity/Basic.lean",
+     "declarations": [
+      "rootsOfUnity"
+     ]
+    },
+    {
+     "file": "RingTheory/RootsOfUnity/PrimitiveRoots.lean",
+     "declarations": [
+      "IsPrimitiveRoot"
+     ]
+    }
+   ],
+   "project": [],
+   "missing": [
+    {
+     "item": "Decomposition and inertia subgroups of absolute Galois groups of number fields at places, in the form used for prime-strips (not searched exhaustively).",
+     "classification": [
+      "DERIVABLE_FROM_MATHLIB",
+      "NEEDS_SUBSTANTIAL_FORMALIZATION"
+     ]
+    }
+   ],
+   "other_lean_libraries": [],
+   "bibliography_keys": [],
+   "needed_first_by": [
+    "IUT1.Def3_1"
+   ],
+   "notes": "Infinite Galois theory with the Krull topology and the fundamental theorem for closed subgroups exists. IUT I Definition 3.1 (a), (c), pages 61 and 62 (read), uses the absolute Galois group of a number field and the image of its action on l-torsion points in GL_2(F_l)."
+  },
+  {
+   "id": "profinite_groups",
+   "name": "Profinite groups and continuous cohomology",
+   "classification": [
+    "EXISTS_IN_MATHLIB",
+    "NEEDS_SUBSTANTIAL_FORMALIZATION"
+   ],
+   "mathlib": [
+    {
+     "file": "Topology/Algebra/Category/ProfiniteGrp/Basic.lean",
+     "declarations": [
+      "ProfiniteGrp"
+     ]
+    },
+    {
+     "file": "Topology/Algebra/Category/ProfiniteGrp/Completion.lean",
+     "declarations": [
+      "ProfiniteGrp.ProfiniteCompletion.completion"
+     ]
+    },
+    {
+     "file": "RepresentationTheory/Homological/ContCohomology/Basic.lean",
+     "declarations": [
+      "continuousCohomology"
+     ]
+    },
+    {
+     "file": "RepresentationTheory/Homological/GroupCohomology/Basic.lean",
+     "declarations": [
+      "groupCohomology"
+     ]
+    },
+    {
+     "file": "RepresentationTheory/Homological/GroupCohomology/Hilbert90.lean",
+     "declarations": [
+      "groupCohomology.H1ofAutOnUnitsUnique"
+     ]
+    }
+   ],
+   "project": [],
+   "missing": [
+    {
+     "item": "Cyclotomes Hom(Q/Z, M) and cyclotomic rigidity isomorphisms, as in IUT I, Example 5.1 (v), page 127 (read).",
+     "classification": [
+      "NEEDS_SUBSTANTIAL_FORMALIZATION"
+     ]
+    }
+   ],
+   "other_lean_libraries": [],
+   "bibliography_keys": [
+    "AbsTopIII"
+   ],
+   "needed_first_by": [
+    "IUT1.Def3_1",
+    "IUT1.Ex5_1"
+   ],
+   "notes": "IUT I Definition 3.1 (b), page 61 (read), uses profinite etale fundamental groups and the exact sequences of profinite groups 1 to Delta to Pi to G_F to 1."
+  },
+  {
+   "id": "etale_fundamental_groups",
+   "name": "Etale fundamental groups",
+   "classification": [
+    "NEEDS_SUBSTANTIAL_FORMALIZATION",
+    "EXISTS_IN_OTHER_LEAN_LIBRARY"
+   ],
+   "mathlib": [
+    {
+     "file": "CategoryTheory/Galois/Basic.lean",
+     "declarations": [
+      "CategoryTheory.PreGaloisCategory",
+      "CategoryTheory.GaloisCategory",
+      "CategoryTheory.PreGaloisCategory.FiberFunctor"
+     ]
+    },
+    {
+     "file": "CategoryTheory/Galois/IsFundamentalgroup.lean",
+     "declarations": [
+      "CategoryTheory.PreGaloisCategory.IsFundamentalGroup"
+     ]
+    },
+    {
+     "file": "AlgebraicGeometry/Morphisms/Etale.lean",
+     "declarations": [
+      "AlgebraicGeometry.Etale"
+     ]
+    },
+    {
+     "file": "AlgebraicGeometry/Sites/Etale.lean",
+     "declarations": [
+      "AlgebraicGeometry.Scheme.etaleTopology"
+     ]
+    }
+   ],
+   "project": [],
+   "missing": [
+    {
+     "item": "The etale fundamental group of a connected scheme (finite etale covers form a Galois category).",
+     "classification": [
+      "NEEDS_SUBSTANTIAL_FORMALIZATION",
+      "EXISTS_IN_OTHER_LEAN_LIBRARY"
+     ]
+    },
+    {
+     "item": "Arithmetic fundamental groups of hyperbolic orbicurves over number fields and local fields, with the outer Galois action.",
+     "classification": [
+      "NEEDS_SUBSTANTIAL_FORMALIZATION"
+     ]
+    }
+   ],
+   "other_lean_libraries": [
+    {
+     "location": "documentation/external/lana-deps/pi1",
+     "provides": "etale fundamental group of a connected scheme via Galois categories, per its README",
+     "caveat": "Lean 4.32, not built here, cannot be imported"
+    }
+   ],
+   "bibliography_keys": [
+    "AbsTopI",
+    "AbsTopII",
+    "AbsTopIII"
+   ],
+   "needed_first_by": [
+    "IUT1.Def3_1"
+   ],
+   "notes": "Mathlib has the abstract Galois category framework but no etale fundamental group of a scheme was found by name search. IUT I Definition 3.1 (b), page 61 (read), uses the etale fundamental groups of the curve, of the orbicurve, and of their geometric base changes."
+  },
+  {
+   "id": "tempered_fundamental_groups",
+   "name": "Tempered fundamental groups",
+   "classification": [
+    "NEEDS_SUBSTANTIAL_FORMALIZATION",
+    "EXISTS_IN_OTHER_LEAN_LIBRARY",
+    "NEEDS_ADDITIONAL_LITERATURE"
+   ],
+   "mathlib": [],
+   "project": [],
+   "missing": [
+    {
+     "item": "Andre's tempered fundamental group of a p-adic hyperbolic curve and its relation to semi-graphs of anabelioids.",
+     "classification": [
+      "NEEDS_SUBSTANTIAL_FORMALIZATION",
+      "EXISTS_IN_OTHER_LEAN_LIBRARY",
+      "NEEDS_ADDITIONAL_LITERATURE"
+     ]
+    }
+   ],
+   "other_lean_libraries": [
+    {
+     "location": "documentation/external/lana-deps/tempered-fundamental-groups",
+     "provides": "tempered fundamental groups over integral models, per its README (algebraic models instead of rigid or Berkovich geometry)",
+     "caveat": "Lean 4.32, not built here, cannot be imported; agreement with the definition used in [SemiAnbd] and [EtTh] not checked"
+    }
+   ],
+   "bibliography_keys": [
+    "SemiAnbd",
+    "EtTh"
+   ],
+   "needed_first_by": [
+    "IUT1.ThmB",
+    "IUT2.Rem1_4_1"
+   ],
+   "notes": "A search for \"tempered\" in the Mathlib sources finds only tempered distributions. The needed_by entries are from the mechanical index."
+  },
+  {
+   "id": "schemes_stacks_orbicurves",
+   "name": "Algebraic and arithmetic geometry: schemes, stacks, orbicurves",
+   "classification": [
+    "EXISTS_IN_MATHLIB",
+    "NEEDS_SUBSTANTIAL_FORMALIZATION",
+    "EXISTS_IN_OTHER_LEAN_LIBRARY"
+   ],
+   "mathlib": [
+    {
+     "file": "AlgebraicGeometry/Scheme.lean",
+     "declarations": [
+      "AlgebraicGeometry.Scheme",
+      "AlgebraicGeometry.Scheme.Hom"
+     ]
+    },
+    {
+     "file": "AlgebraicGeometry/Morphisms/Smooth.lean",
+     "declarations": [
+      "AlgebraicGeometry.SmoothOfRelativeDimension"
+     ]
+    },
+    {
+     "file": "CategoryTheory/Sites/Descent/DescentData.lean",
+     "declarations": [
+      "CategoryTheory.Pseudofunctor.IsStackFor"
+     ]
+    }
+   ],
+   "project": [],
+   "missing": [
+    {
+     "item": "Algebraic stacks, Deligne-Mumford stacks, and one-dimensional orbifolds (orbicurves) over a field; stack-theoretic quotients by finite group actions.",
+     "classification": [
+      "NEEDS_SUBSTANTIAL_FORMALIZATION"
+     ]
+    },
+    {
+     "item": "Moduli stack of elliptic curves and its coarse space.",
+     "classification": [
+      "NEEDS_SUBSTANTIAL_FORMALIZATION"
+     ]
+    }
+   ],
+   "other_lean_libraries": [
+    {
+     "location": "documentation/external/lana-deps/orbicurve-cores",
+     "provides": "cores of once-punctured elliptic curves, [CanLift] Proposition 2.7, per its README",
+     "caveat": "Lean 4.32, not built here, cannot be imported"
+    },
+    {
+     "location": "documentation/external/lana-deps/curves-jacobian",
+     "provides": "smooth proper curves as schemes, Jacobians, per its README",
+     "caveat": "Lean 4.32, not built here, cannot be imported"
+    }
+   ],
+   "bibliography_keys": [
+    "CanLift",
+    "AbsTopIII",
+    "EtTh"
+   ],
+   "needed_first_by": [
+    "IUT1.Def3_1"
+   ],
+   "notes": "Mathlib has schemes and a categorical notion of stack for a pseudofunctor; no algebraic stacks or orbicurves were found. IUT I Definition 3.1 (b), (d), pages 61 and 62 (read), forms a hyperbolic orbicurve as a stack-theoretic quotient by the involution -1, and uses hyperbolic orbicurves of type (1, l-tors) with a K-core ([EtTh] Definition 2.1, [CanLift] Remark 2.1.1)."
+  },
+  {
+   "id": "hyperbolic_curves",
+   "name": "Hyperbolic curves",
+   "classification": [
+    "NEEDS_SUBSTANTIAL_FORMALIZATION",
+    "EXISTS_IN_OTHER_LEAN_LIBRARY"
+   ],
+   "mathlib": [],
+   "project": [],
+   "missing": [
+    {
+     "item": "Smooth proper curves, genus, hyperbolicity 2g-2+r>0, stable reduction, and their arithmetic fundamental groups.",
+     "classification": [
+      "NEEDS_SUBSTANTIAL_FORMALIZATION",
+      "EXISTS_IN_OTHER_LEAN_LIBRARY"
+     ]
+    }
+   ],
+   "other_lean_libraries": [
+    {
+     "location": "documentation/external/lana-deps/curves-jacobian",
+     "provides": "smooth proper curves, per its README",
+     "caveat": "Lean 4.32, not built here, cannot be imported"
+    },
+    {
+     "location": "documentation/external/lana-deps/belyi",
+     "provides": "Belyi's theorem, per its README",
+     "caveat": "Lean 4.32, not built here, cannot be imported"
+    }
+   ],
+   "bibliography_keys": [
+    "AbsAnab",
+    "AbsTopIII"
+   ],
+   "needed_first_by": [
+    "IUT1.Def3_1"
+   ],
+   "notes": "A plain text search for \"hyperbolic curve\" and declaration name searches for \"genus\" and \"IsCurve\" in Mathlib found nothing relevant. IUT I Definition 3.1 (b), page 61 (read), takes a once-punctured elliptic curve, a hyperbolic curve of type (1,1), with stable reduction at all nonarchimedean valuations."
+  },
+  {
+   "id": "anabelian_geometry",
+   "name": "Grothendieck's anabelian geometry, absolute and mono-anabelian reconstruction, category-theoretic reconstruction",
+   "classification": [
+    "NEEDS_SUBSTANTIAL_FORMALIZATION",
+    "NEEDS_ADDITIONAL_LITERATURE"
+   ],
+   "mathlib": [],
+   "project": [],
+   "missing": [
+    {
+     "item": "Anabelian reconstruction theorems of [AbsTopI], [AbsTopII], [AbsTopIII], [AbsAnab], [CombGC], [SemiAnbd].",
+     "classification": [
+      "NEEDS_SUBSTANTIAL_FORMALIZATION",
+      "NEEDS_ADDITIONAL_LITERATURE"
+     ]
+    },
+    {
+     "item": "Mono-anabelian reconstruction algorithms (for example [AbsTopIII], Theorem 1.9, cited on IUT I page 127, read).",
+     "classification": [
+      "NEEDS_SUBSTANTIAL_FORMALIZATION",
+      "NEEDS_ADDITIONAL_LITERATURE"
+     ]
+    }
+   ],
+   "other_lean_libraries": [
+    {
+     "location": "documentation/external/lana-iut (Iut/Anabelian, Iut/Reconstruction)",
+     "provides": "anabelian objects and reconstruction material, per its README",
+     "caveat": "Lean 4.32, not built here, cannot be imported"
+    }
+   ],
+   "bibliography_keys": [
+    "AbsTopIII",
+    "AbsTopI",
+    "AbsTopII",
+    "AbsAnab",
+    "CombGC",
+    "SemiAnbd"
+   ],
+   "needed_first_by": [
+    "IUT1.Cor1_2",
+    "IUT2.Prop1_2",
+    "IUT3.Def1_1",
+    "IUT4.Prop1_4"
+   ],
+   "notes": "[AbsTopIII] is the most cited outside reference (406 citations counting all four papers). The needed_by entries are from the mechanical index."
+  },
+  {
+   "id": "frobenioids",
+   "name": "Frobenioids",
+   "classification": [
+    "NEEDS_SUBSTANTIAL_FORMALIZATION",
+    "NEEDS_ADDITIONAL_LITERATURE"
+   ],
+   "mathlib": [],
+   "project": [],
+   "missing": [
+    {
+     "item": "The general theory of Frobenioids [FrdI] and poly-Frobenioids [FrdII].",
+     "classification": [
+      "NEEDS_SUBSTANTIAL_FORMALIZATION",
+      "NEEDS_ADDITIONAL_LITERATURE"
+     ]
+    }
+   ],
+   "other_lean_libraries": [
+    {
+     "location": "documentation/external/lana-iut (Iut/Frobenioid)",
+     "provides": "Frobenioid material, per its README",
+     "caveat": "Lean 4.32, not built here, cannot be imported"
+    }
+   ],
+   "bibliography_keys": [
+    "FrdI",
+    "FrdII"
+   ],
+   "needed_first_by": [
+    "IUT1.Rem3_1_5",
+    "IUT2.Prop1_2",
+    "IUT3.Rem2_1_1",
+    "IUT4.Rem2_3_3"
+   ],
+   "notes": "No declaration named Frobenioid exists in Mathlib. IUT I page 61 (read) states that Theta-Hodge theaters are formulated via the theory of Frobenioids. The needed_by entries are from the mechanical index."
+  },
+  {
+   "id": "kummer_theory",
+   "name": "Kummer theory",
+   "classification": [
+    "DERIVABLE_FROM_MATHLIB",
+    "NEEDS_SUBSTANTIAL_FORMALIZATION",
+    "EXISTS_IN_OTHER_LEAN_LIBRARY"
+   ],
+   "mathlib": [
+    {
+     "file": "FieldTheory/KummerExtension.lean",
+     "declarations": [
+      "autAdjoinRootXPowSubC"
+     ]
+    },
+    {
+     "file": "RepresentationTheory/Homological/GroupCohomology/Hilbert90.lean",
+     "declarations": [
+      "groupCohomology.H1ofAutOnUnitsUnique"
+     ]
+    }
+   ],
+   "project": [],
+   "missing": [
+    {
+     "item": "The Kummer map from the multiplicative group into H^1(G, mu_n) and its profinite limit (Kummer classes), as in IUT I page 127 (read).",
+     "classification": [
+      "DERIVABLE_FROM_MATHLIB",
+      "NEEDS_SUBSTANTIAL_FORMALIZATION",
+      "EXISTS_IN_OTHER_LEAN_LIBRARY"
+     ]
+    }
+   ],
+   "other_lean_libraries": [
+    {
+     "location": "documentation/external/lana-deps/continuous-kummer-theory",
+     "provides": "continuous Kummer theory for local fields, per its README",
+     "caveat": "Lean 4.32, not built here, cannot be imported"
+    }
+   ],
+   "bibliography_keys": [
+    "AbsTopIII"
+   ],
+   "needed_first_by": [
+    "IUT1.Ex5_1"
+   ],
+   "notes": "Mathlib has cyclic Kummer extensions and Hilbert 90; no declaration with \"Kummer\" in its name was found for the Kummer map."
+  },
+  {
+   "id": "tate_curves",
+   "name": "Tate curves and Tate uniformization",
+   "classification": [
+    "NEEDS_SUBSTANTIAL_FORMALIZATION",
+    "EXISTS_IN_OTHER_LEAN_LIBRARY"
+   ],
+   "mathlib": [
+    {
+     "file": "NumberTheory/ModularForms/JacobiTheta/OneVariable.lean",
+     "declarations": [
+      "jacobiTheta"
+     ]
+    },
+    {
+     "file": "NumberTheory/ModularForms/JacobiTheta/TwoVariable.lean",
+     "declarations": [
+      "jacobiTheta₂"
+     ]
+    }
+   ],
+   "project": [],
+   "missing": [
+    {
+     "item": "The Tate curve over a complete nonarchimedean field and q-uniformization.",
+     "classification": [
+      "NEEDS_SUBSTANTIAL_FORMALIZATION",
+      "EXISTS_IN_OTHER_LEAN_LIBRARY"
+     ]
+    }
+   ],
+   "other_lean_libraries": [
+    {
+     "location": "documentation/external/lana-deps/tate-curves-theta",
+     "provides": "q-uniformization and the formal algebraic theta function, per its README",
+     "caveat": "Lean 4.32, not built here, cannot be imported; the README claims it is sorry-free at its tip, not checked here"
+    }
+   ],
+   "bibliography_keys": [
+    "EtTh"
+   ],
+   "needed_first_by": [
+    "IUT1.Cor1_2",
+    "IUT2.Def1_1"
+   ],
+   "notes": "Only complex analytic Jacobi theta functions exist in Mathlib; a plain text search for \"TateCurve\" and \"Tate curve\" found nothing. The needed_by entries are from the mechanical index."
+  },
+  {
+   "id": "elliptic_curves_level",
+   "name": "Elliptic curves with level structures",
+   "classification": [
+    "EXISTS_IN_MATHLIB",
+    "NEEDS_SUBSTANTIAL_FORMALIZATION",
+    "EXISTS_IN_OTHER_LEAN_LIBRARY"
+   ],
+   "mathlib": [
+    {
+     "file": "AlgebraicGeometry/EllipticCurve/Weierstrass.lean",
+     "declarations": [
+      "WeierstrassCurve",
+      "WeierstrassCurve.j",
+      "WeierstrassCurve.IsElliptic"
+     ]
+    },
+    {
+     "file": "AlgebraicGeometry/EllipticCurve/Affine/Point.lean",
+     "declarations": [
+      "WeierstrassCurve.Affine.Point"
+     ]
+    },
+    {
+     "file": "AlgebraicGeometry/EllipticCurve/DivisionPolynomial/Basic.lean",
+     "declarations": [
+      "WeierstrassCurve.Ψ"
+     ]
+    },
+    {
+     "file": "AlgebraicGeometry/EllipticCurve/Reduction.lean",
+     "declarations": [
+      "WeierstrassCurve.IsIntegral"
+     ]
+    }
+   ],
+   "project": [],
+   "missing": [
+    {
+     "item": "Level structures, the l-torsion as a Galois module, and the fields of definition of torsion points, as in IUT I Definition 3.1 (b), (c) and IUT IV Theorem 1.10.",
+     "classification": [
+      "NEEDS_SUBSTANTIAL_FORMALIZATION",
+      "EXISTS_IN_OTHER_LEAN_LIBRARY"
+     ]
+    },
+    {
+     "item": "Semistable reduction and Neron models, cited in the proof of IUT IV Proposition 1.8 ([NerMod], [Silv]).",
+     "classification": [
+      "NEEDS_SUBSTANTIAL_FORMALIZATION",
+      "NEEDS_ADDITIONAL_LITERATURE"
+     ]
+    }
+   ],
+   "other_lean_libraries": [
+    {
+     "location": "documentation/external/lana-deps/elliptic-curves",
+     "provides": "reduction theory of elliptic curves following Silverman, per its README",
+     "caveat": "Lean 4.32, not built here, cannot be imported; a plain text search finds the word sorry in several files, status not checked"
+    }
+   ],
+   "bibliography_keys": [
+    "GenEll",
+    "Silv",
+    "NerMod"
+   ],
+   "needed_first_by": [
+    "IUT1.Def3_1",
+    "IUT4.Prop1_8",
+    "IUT4.Thm1_10"
+   ],
+   "notes": "Read: IUT I Definition 3.1 (b), (c), pages 61 and 62 (rational 2 and 3 torsion points, l at least 5, image of G_F in GL_2(F_l) containing SL_2(F_l), q-parameters at bad places); IUT IV page 21 (end of the proof of Proposition 1.8, citing [Silv] and [NerMod]) and page 22 (Theorem 1.10: torsion points of order 2, 3 and 5, Legendre form)."
+  },
+  {
+   "id": "etale_theta",
+   "name": "Etale theta functions",
+   "classification": [
+    "NEEDS_SUBSTANTIAL_FORMALIZATION",
+    "NEEDS_ADDITIONAL_LITERATURE"
+   ],
+   "mathlib": [],
+   "project": [],
+   "missing": [
+    {
+     "item": "The etale theta function and mono-theta environments of [EtTh].",
+     "classification": [
+      "NEEDS_SUBSTANTIAL_FORMALIZATION",
+      "NEEDS_ADDITIONAL_LITERATURE"
+     ]
+    }
+   ],
+   "other_lean_libraries": [
+    {
+     "location": "documentation/external/lana-iut (Iut/EtaleTheta)",
+     "provides": "etale theta material, per its README",
+     "caveat": "Lean 4.32, not built here, cannot be imported"
+    }
+   ],
+   "bibliography_keys": [
+    "EtTh"
+   ],
+   "needed_first_by": [
+    "IUT1.Cor1_2",
+    "IUT2.Def1_1",
+    "IUT3.Rem2_1_1",
+    "IUT4.Rem1_10_6"
+   ],
+   "notes": "[EtTh] is cited 380 times across the four papers (bibliography index). The needed_by entries are from the mechanical index."
+  },
+  {
+   "id": "hodge_arakelov",
+   "name": "Hodge-Arakelov theory",
+   "classification": [
+    "NEEDS_ADDITIONAL_LITERATURE"
+   ],
+   "mathlib": [],
+   "project": [],
+   "missing": [
+    {
+     "item": "Hodge-Arakelov theory of elliptic curves ([HASurI], [HASurII]).",
+     "classification": [
+      "NEEDS_ADDITIONAL_LITERATURE"
+     ]
+    }
+   ],
+   "other_lean_libraries": [],
+   "bibliography_keys": [
+    "HASurI",
+    "HASurII"
+   ],
+   "needed_first_by": [
+    "IUT1.Rem4_3_1",
+    "IUT2.Rem1_12_5",
+    "IUT4.Rem1_10_1"
+   ],
+   "notes": "By the mechanical index every statement whose page span cites [HASurI] or [HASurII] is a Remark, which suggests, without having been checked by reading, that this theory serves as motivation rather than as a logical input."
+  },
+  {
+   "id": "valuations_normalized_absolute_values",
+   "name": "Valuations and normalized absolute values",
+   "classification": [
+    "EXISTS_IN_MATHLIB",
+    "DERIVABLE_FROM_MATHLIB"
+   ],
+   "mathlib": [
+    {
+     "file": "RingTheory/Valuation/Basic.lean",
+     "declarations": [
+      "Valuation"
+     ]
+    },
+    {
+     "file": "Topology/Algebra/Valued/ValuationTopology.lean",
+     "declarations": [
+      "Valued"
+     ]
+    },
+    {
+     "file": "Algebra/Order/AbsoluteValue/Basic.lean",
+     "declarations": [
+      "AbsoluteValue"
+     ]
+    },
+    {
+     "file": "Algebra/Order/Ring/Basic.lean",
+     "declarations": [
+      "IsNonarchimedean"
+     ]
+    },
+    {
+     "file": "NumberTheory/Padics/PadicNorm.lean",
+     "declarations": [
+      "padicNorm"
+     ]
+    },
+    {
+     "file": "NumberTheory/Padics/PadicVal/Basic.lean",
+     "declarations": [
+      "padicValRat"
+     ]
+    },
+    {
+     "file": "NumberTheory/Ostrowski.lean",
+     "declarations": [
+      "Rat.AbsoluteValue.equiv_padic_of_bounded"
+     ]
+    },
+    {
+     "file": "RingTheory/DedekindDomain/AdicValuation/Valuation.lean",
+     "declarations": [
+      "IsDedekindDomain.HeightOneSpectrum.valuation",
+      "IsDedekindDomain.HeightOneSpectrum.mem_integers_of_valuation_le_one"
+     ]
+    },
+    {
+     "file": "NumberTheory/NumberField/ProductFormula.lean",
+     "declarations": [
+      "NumberField.prod_abs_eq_one",
+      "NumberField.FinitePlace.prod_eq_inv_abs_norm"
+     ]
+    }
+   ],
+   "project": [
+    {
+     "file": "IUT/Prerequisites/ProductFormula.lean",
+     "declarations": [
+      "IUT.Prerequisites.normAbs",
+      "IUT.Prerequisites.prod_normAbs_eq_one",
+      "IUT.Prerequisites.sum_log_normAbs_eq_zero"
+     ]
+    },
+    {
+     "file": "IUT/Prerequisites/PositiveRationalsZhatUnits.lean",
+     "declarations": [
+      "IUT.Prerequisites.eq_one_of_forall_valuation_eq_one"
+     ]
+    }
+   ],
+   "missing": [],
+   "other_lean_libraries": [],
+   "bibliography_keys": [],
+   "needed_first_by": [
+    "IUT4.Def1_9",
+    "IUT3.Rem3_12_1"
+   ],
+   "notes": "The product formula exists in Mathlib; this project restates it over the valuation set of IUT IV Definition 1.9. IUT III Remark 3.12.1 (iii), pages 186 and 187 (read), refers to the product formula."
+  },
+  {
+   "id": "nonarchimedean_analysis",
+   "name": "Nonarchimedean analysis",
+   "classification": [
+    "EXISTS_IN_MATHLIB",
+    "NEEDS_SUBSTANTIAL_FORMALIZATION"
+   ],
+   "mathlib": [
+    {
+     "file": "Topology/MetricSpace/Ultra/Basic.lean",
+     "declarations": [
+      "IsUltrametricDist"
+     ]
+    },
+    {
+     "file": "NumberTheory/Padics/Hensel.lean",
+     "declarations": [
+      "hensels_lemma"
+     ]
+    },
+    {
+     "file": "NumberTheory/Padics/Complex.lean",
+     "declarations": [
+      "PadicComplex"
+     ]
+    }
+   ],
+   "project": [],
+   "missing": [
+    {
+     "item": "Rigid analytic or Berkovich geometry, used in the literature for the tempered fundamental group and the Tate curve.",
+     "classification": [
+      "NEEDS_SUBSTANTIAL_FORMALIZATION",
+      "NEEDS_ADDITIONAL_LITERATURE"
+     ]
+    }
+   ],
+   "other_lean_libraries": [],
+   "bibliography_keys": [
+    "EtTh",
+    "SemiAnbd"
+   ],
+   "needed_first_by": [],
+   "notes": "Basic ultrametric analysis exists; analytic spaces over nonarchimedean fields were not found."
+  },
+  {
+   "id": "padic_log_exp",
+   "name": "p-adic logarithms and exponentials",
+   "classification": [
+    "DERIVABLE_FROM_MATHLIB",
+    "NEEDS_SUBSTANTIAL_FORMALIZATION",
+    "EXISTS_IN_OTHER_LEAN_LIBRARY"
+   ],
+   "mathlib": [
+    {
+     "file": "Analysis/Normed/Algebra/Logarithm.lean",
+     "declarations": [
+      "NormedSpace.log",
+      "NormedSpace.logSeries"
+     ]
+    },
+    {
+     "file": "Analysis/Normed/Algebra/Exponential.lean",
+     "declarations": [
+      "NormedSpace.exp"
+     ]
+    }
+   ],
+   "project": [],
+   "missing": [
+    {
+     "item": "Convergence of NormedSpace.log on the disc of radius 1 over a complete ultrametric field, the homomorphism property, its extension to all units of a p-adic local field, and its image; these are listed as TODO items in the Mathlib file. Outside the region of convergence NormedSpace.log takes a junk value, so it is not yet the p-adic logarithm of the papers. The p-adic radius of convergence of NormedSpace.exp was not found either.",
+     "classification": [
+      "DERIVABLE_FROM_MATHLIB",
+      "NEEDS_SUBSTANTIAL_FORMALIZATION",
+      "EXISTS_IN_OTHER_LEAN_LIBRARY"
+     ]
+    },
+    {
+     "item": "Log-shells: IUT III Definition 1.1 (page 24, rendered and read) defines the log-shell as (p_v*)^{-1} times the pre-log-shell, the image under the p_v-adic logarithm of the Galois invariant units, with p_v* = p_v for p_v odd and p_v* = p_v^2 for p_v = 2, citing [AbsTopIII], Definition 5.4 (iii).",
+     "classification": [
+      "NEEDS_SUBSTANTIAL_FORMALIZATION"
+     ]
+    }
+   ],
+   "other_lean_libraries": [
+    {
+     "location": "documentation/external/lana-deps/padic-log-volume",
+     "provides": "the p-adic logarithm of a complete discretely valued field of characteristic 0 and normalized Haar log-volume, per its README",
+     "caveat": "Lean 4.32, not built here, cannot be imported"
+    },
+    {
+     "location": "documentation/external/lana-iut (Iut/Concrete/LocalConstruct/LocalLogShell.lean)",
+     "provides": "a log-shell defined as (2p)^{-1} log of the principal units",
+     "caveat": "Lean 4.32, not built here, cannot be imported. By an elementary argument not formalized here this is the same set as on IUT III page 24: log of the units equals log of the principal units, which is a Z_p-module, and 2p differs from p* by a unit when p is odd and equals p* = 4 when p = 2"
+    }
+   ],
+   "bibliography_keys": [
+    "AbsTopIII"
+   ],
+   "needed_first_by": [
+    "IUT3.Def1_1",
+    "IUT3.Prop3_9",
+    "IUT4.Prop1_2"
+   ],
+   "notes": "Mathlib v4.36.0 defines NormedSpace.log for any topological Q-algebra, hence for Q_p, with only its algebraic properties at 1. The log-shell was therefore not formalized in this round. IUT3.Prop3_9 and IUT4.Prop1_2 are cited from their titles (Log-volume for Packets and Processions; Differents and Logarithms)."
+  },
+  {
+   "id": "arithmetic_divisors",
+   "name": "Arithmetic divisors",
+   "classification": [
+    "DERIVABLE_FROM_MATHLIB"
+   ],
+   "mathlib": [
+    {
+     "file": "NumberTheory/RamificationInertia/Basic.lean",
+     "declarations": [
+      "Ideal.sum_ramification_inertia"
+     ]
+    }
+   ],
+   "project": [
+    {
+     "file": "IUT/PaperIV/ArithmeticDivisor.lean",
+     "declarations": [
+      "IUT.PaperIV.ADiv",
+      "IUT.PaperIV.degF",
+      "IUT.PaperIV.normalizedDeg"
+     ]
+    }
+   ],
+   "missing": [
+    {
+     "item": "Pull-back of arithmetic divisors to a finite extension and the identity deg(a|_K) = deg(a) of IUT IV Definition 1.9 (i), which the paper defines \"in the evident fashion\"; the natural proof uses the fundamental identity, which Mathlib has as Ideal.sum_ramification_inertia.",
+     "classification": [
+      "DERIVABLE_FROM_MATHLIB"
+     ]
+    },
+    {
+     "item": "Normalized E-degree of Definition 1.9 (ii).",
+     "classification": [
+      "DERIVABLE_FROM_MATHLIB"
+     ]
+    },
+    {
+     "item": "The arithmetic divisors of the different ideal, of the q-parameters and of the conductor used in IUT IV Theorem 1.10 (pages 22 and 23, read).",
+     "classification": [
+      "DERIVABLE_FROM_MATHLIB",
+      "NEEDS_SUBSTANTIAL_FORMALIZATION"
+     ]
+    }
+   ],
+   "other_lean_libraries": [
+    {
+     "location": "documentation/external/lana-iut (Iut4Sec1/Global/Pullback.lean, Iut4Sec1/Global/ArithmeticDivisor.lean)",
+     "provides": "pull-back of arithmetic divisors (coefficient times ramification index at finite places, times local degree at infinite places) and invariance of the normalized degree, per its module docstring",
+     "caveat": "Lean 4.32, not built here, cannot be imported; this is one choice of the pull-back that the paper leaves to the reader"
+    }
+   ],
+   "bibliography_keys": [
+    "GenEll"
+   ],
+   "needed_first_by": [
+    "IUT4.Def1_9",
+    "IUT4.Thm1_10"
+   ],
+   "notes": "Read: IUT IV pages 21 to 23."
+  },
+  {
+   "id": "arakelov_degrees",
+   "name": "Arakelov degrees",
+   "classification": [
+    "DERIVABLE_FROM_MATHLIB",
+    "NEEDS_SUBSTANTIAL_FORMALIZATION"
+   ],
+   "mathlib": [],
+   "project": [
+    {
+     "file": "IUT/PaperIV/ArithmeticDivisor.lean",
+     "declarations": [
+      "IUT.PaperIV.degF"
+     ]
+    }
+   ],
+   "missing": [
+    {
+     "item": "Arithmetic line bundles on the spectrum of the ring of integers of a number field and their Arakelov degree. Which statements use them was not determined by reading in this pass.",
+     "classification": [
+      "DERIVABLE_FROM_MATHLIB",
+      "NEEDS_SUBSTANTIAL_FORMALIZATION"
+     ]
+    }
+   ],
+   "other_lean_libraries": [
+    {
+     "location": "documentation/external/lana-iut (Iut/Arakelov: FractionalIdeal.lean, LineBundle.lean, Container.lean, ArchScaling.lean, QPilot.lean)",
+     "provides": "Arakelov line bundle material, per its file names and README",
+     "caveat": "Lean 4.32, not built here, cannot be imported"
+    }
+   ],
+   "bibliography_keys": [
+    "Arak"
+   ],
+   "needed_first_by": [
+    "IUT4.Rem1_10_4"
+   ],
+   "notes": "A plain text search for \"Arakelov\" in the Mathlib sources finds nothing. The needed_by entry is from the mechanical index."
+  },
+  {
+   "id": "heights_discriminants",
+   "name": "Heights and discriminants",
+   "classification": [
+    "EXISTS_IN_MATHLIB",
+    "DERIVABLE_FROM_MATHLIB",
+    "NEEDS_SUBSTANTIAL_FORMALIZATION",
+    "EXISTS_IN_OTHER_LEAN_LIBRARY",
+    "NEEDS_ADDITIONAL_LITERATURE"
+   ],
+   "mathlib": [
+    {
+     "file": "NumberTheory/Height/Basic.lean",
+     "declarations": [
+      "Height.AdmissibleAbsValues",
+      "Height.mulHeight₁",
+      "Height.logHeight₁"
+     ]
+    },
+    {
+     "file": "NumberTheory/Height/NumberField.lean",
+     "declarations": [
+      "NumberField.absLogHeight₁"
+     ]
+    },
+    {
+     "file": "NumberTheory/Height/EllipticCurve.lean",
+     "declarations": [
+      "WeierstrassCurve.Affine.Point.naiveHeight"
+     ]
+    },
+    {
+     "file": "NumberTheory/NumberField/Discriminant/Defs.lean",
+     "declarations": [
+      "NumberField.discr"
+     ]
+    },
+    {
+     "file": "NumberTheory/NumberField/Discriminant/Different.lean",
+     "declarations": [
+      "NumberField.absNorm_differentIdeal"
+     ]
+    }
+   ],
+   "project": [],
+   "missing": [
+    {
+     "item": "The normalized degrees log(d), log(q), log(f) of the different, q-parameter and conductor divisors, as in the statement of IUT IV Theorem 1.10, pages 22 and 23 (read); the q-parameters are the local heights of [GenEll], Definition 3.3, per IUT I page 62 (read).",
+     "classification": [
+      "DERIVABLE_FROM_MATHLIB",
+      "NEEDS_SUBSTANTIAL_FORMALIZATION"
+     ]
+    },
+    {
+     "item": "Heights of elliptic curves and of points of hyperbolic curves in the sense of [GenEll] (not read).",
+     "classification": [
+      "NEEDS_SUBSTANTIAL_FORMALIZATION",
+      "EXISTS_IN_OTHER_LEAN_LIBRARY",
+      "NEEDS_ADDITIONAL_LITERATURE"
+     ]
+    }
+   ],
+   "other_lean_libraries": [
+    {
+     "location": "documentation/external/lana-deps/heights",
+     "provides": "Weil heights, the height machine on curves, and conductor and different bounds of [GenEll], per its README",
+     "caveat": "Lean 4.32, not built here, cannot be imported"
+    },
+    {
+     "location": "documentation/external/lana-deps/genl",
+     "provides": "[GenEll] Theorem 2.1 project, per its README",
+     "caveat": "Lean 4.32, not built here, cannot be imported; its README and a text search show a sorry in Challenge.lean"
+    }
+   ],
+   "bibliography_keys": [
+    "GenEll"
+   ],
+   "needed_first_by": [
+    "IUT1.Def3_1",
+    "IUT4.Thm1_10"
+   ],
+   "notes": ""
+  },
+  {
+   "id": "ramification_different",
+   "name": "Ramification theory and the different",
+   "classification": [
+    "EXISTS_IN_MATHLIB",
+    "DERIVABLE_FROM_MATHLIB",
+    "NEEDS_SUBSTANTIAL_FORMALIZATION",
+    "EXISTS_IN_OTHER_LEAN_LIBRARY"
+   ],
+   "mathlib": [
+    {
+     "file": "RingTheory/RamificationInertia/Ramification.lean",
+     "declarations": [
+      "Ideal.ramificationIdx"
+     ]
+    },
+    {
+     "file": "RingTheory/RamificationInertia/Inertia.lean",
+     "declarations": [
+      "Ideal.inertiaDeg"
+     ]
+    },
+    {
+     "file": "NumberTheory/RamificationInertia/Basic.lean",
+     "declarations": [
+      "Ideal.sum_ramification_inertia"
+     ]
+    },
+    {
+     "file": "RingTheory/DedekindDomain/Different.lean",
+     "declarations": [
+      "differentIdeal"
+     ]
+    },
+    {
+     "file": "NumberTheory/NumberField/Discriminant/Different.lean",
+     "declarations": [
+      "NumberField.absNorm_differentIdeal"
+     ]
+    },
+    {
+     "file": "RingTheory/Valuation/RamificationGroup.lean",
+     "declarations": [
+      "ValuationSubring.inertiaSubgroup"
+     ]
+    }
+   ],
+   "project": [],
+   "missing": [
+    {
+     "item": "Higher ramification groups (no declaration with \"RamificationGroup\" or \"lowerNumbering\" found).",
+     "classification": [
+      "NEEDS_SUBSTANTIAL_FORMALIZATION"
+     ]
+    },
+    {
+     "item": "Estimates of the different of local fields and of tensor products of local fields, IUT IV Propositions 1.1 to 1.3 (titles: Multiple Tensor Products and Differents; Differents and Logarithms; Estimates of Differents; not read).",
+     "classification": [
+      "DERIVABLE_FROM_MATHLIB",
+      "NEEDS_SUBSTANTIAL_FORMALIZATION"
+     ]
+    }
+   ],
+   "other_lean_libraries": [
+    {
+     "location": "documentation/external/lana-deps/padic-log-volume",
+     "provides": "trace duality in finite Q_p algebras and their tensor products, ingredients of IUT IV Proposition 1.1, per its README",
+     "caveat": "Lean 4.32, not built here, cannot be imported"
+    },
+    {
+     "location": "documentation/external/lana-iut (Iut/Tower: Different.lean, DifferentBound.lean, Inertia.lean, RamIdx.lean, WildBound.lean)",
+     "provides": "different and ramification bounds in towers, per file names",
+     "caveat": "Lean 4.32, not built here, cannot be imported"
+    }
+   ],
+   "bibliography_keys": [
+    "Kobl"
+   ],
+   "needed_first_by": [
+    "IUT4.Prop1_1",
+    "IUT4.Prop1_2",
+    "IUT4.Prop1_3",
+    "IUT4.Thm1_10"
+   ],
+   "notes": "IUT IV Theorem 1.10, pages 22 and 23 (read), uses the arithmetic divisor of the different ideal of a number field over Q."
+  },
+  {
+   "id": "haar_measures",
+   "name": "Haar measures and log-volumes",
+   "classification": [
+    "EXISTS_IN_MATHLIB",
+    "DERIVABLE_FROM_MATHLIB",
+    "NEEDS_SUBSTANTIAL_FORMALIZATION"
+   ],
+   "mathlib": [
+    {
+     "file": "MeasureTheory/Measure/Haar/Basic.lean",
+     "declarations": [
+      "MeasureTheory.Measure.haarMeasure",
+      "MeasureTheory.Measure.haar"
+     ]
+    },
+    {
+     "file": "MeasureTheory/Group/Measure.lean",
+     "declarations": [
+      "MeasureTheory.Measure.IsAddHaarMeasure"
+     ]
+    },
+    {
+     "file": "MeasureTheory/Measure/Haar/Unique.lean",
+     "declarations": [
+      "MeasureTheory.Measure.haarScalarFactor"
+     ]
+    }
+   ],
+   "project": [],
+   "missing": [
+    {
+     "item": "Normalized Haar measure on a p-adic local field (ring of integers of volume 1) and the scaling rule vol(aS) = |a| vol(S).",
+     "classification": [
+      "DERIVABLE_FROM_MATHLIB"
+     ]
+    },
+    {
+     "item": "Log-volumes of packets and processions and of tensor packets of log-shells, IUT III Proposition 3.9 and IUT IV Proposition 1.4 (titles only, not read).",
+     "classification": [
+      "NEEDS_SUBSTANTIAL_FORMALIZATION"
+     ]
+    }
+   ],
+   "other_lean_libraries": [
+    {
+     "location": "documentation/external/lana-deps/padic-log-volume",
+     "provides": "normalized Haar log-volume, per its README",
+     "caveat": "Lean 4.32, not built here, cannot be imported"
+    },
+    {
+     "location": "documentation/external/lana-iut (Iut/Concrete/LocalConstruct/Haar.lean, Volume.lean)",
+     "provides": "Haar log-volume constructions, per file names",
+     "caveat": "Lean 4.32, not built here, cannot be imported"
+    }
+   ],
+   "bibliography_keys": [
+    "AbsTopIII"
+   ],
+   "needed_first_by": [
+    "IUT3.Prop3_9",
+    "IUT4.Prop1_4"
+   ],
+   "notes": ""
+  },
+  {
+   "id": "tensor_products_local_fields",
+   "name": "Tensor products of local fields",
+   "classification": [
+    "DERIVABLE_FROM_MATHLIB",
+    "NEEDS_SUBSTANTIAL_FORMALIZATION"
+   ],
+   "mathlib": [
+    {
+     "file": "LinearAlgebra/TensorProduct/Defs.lean",
+     "declarations": [
+      "TensorProduct"
+     ]
+    },
+    {
+     "file": "RingTheory/TensorProduct/Basic.lean",
+     "declarations": [
+      "Algebra.TensorProduct.includeLeft"
+     ]
+    }
+   ],
+   "project": [],
+   "missing": [
+    {
+     "item": "Decomposition of a tensor product of finite extensions of Q_p into a product of fields, integral structures, and differents (IUT IV Proposition 1.1; IUT III Propositions 3.1 and 3.2 on tensor packets; titles only, not read).",
+     "classification": [
+      "DERIVABLE_FROM_MATHLIB",
+      "NEEDS_SUBSTANTIAL_FORMALIZATION"
+     ]
+    }
+   ],
+   "other_lean_libraries": [
+    {
+     "location": "documentation/external/lana-deps/padic-log-volume",
+     "provides": "trace duality for tensor products of finite Q_p algebras, per its README",
+     "caveat": "Lean 4.32, not built here, cannot be imported"
+    },
+    {
+     "location": "documentation/external/lana-iut (Iut/Concrete/LocalConstruct/TensorIntegral.lean, PacketDifferent.lean, LocalDifferent.lean)",
+     "provides": "integral structures and differents of tensor packets, per file names",
+     "caveat": "Lean 4.32, not built here, cannot be imported"
+    }
+   ],
+   "bibliography_keys": [],
+   "needed_first_by": [
+    "IUT3.Prop3_1",
+    "IUT3.Prop3_2",
+    "IUT4.Prop1_1"
+   ],
+   "notes": ""
+  },
+  {
+   "id": "diophantine_geometry",
+   "name": "Diophantine geometry",
+   "classification": [
+    "NEEDS_SUBSTANTIAL_FORMALIZATION",
+    "EXISTS_IN_OTHER_LEAN_LIBRARY",
+    "NEEDS_ADDITIONAL_LITERATURE"
+   ],
+   "mathlib": [
+    {
+     "file": "NumberTheory/FLT/MasonStothers.lean",
+     "declarations": [
+      "Polynomial.abc"
+     ]
+    },
+    {
+     "file": "NumberTheory/SiegelsLemma.lean",
+     "declarations": [
+      "Int.Matrix.exists_ne_zero_int_vec_norm_le"
+     ]
+    }
+   ],
+   "project": [
+    {
+     "file": "IUT/Applications/ABC.lean",
+     "declarations": []
+    }
+   ],
+   "missing": [
+    {
+     "item": "The equivalence of [GenEll] Theorem 2.1 between bounded-degree Vojta or abc type statements for hyperbolic curves and a restricted abc statement for the tripod, as described in the README of the genl library; its use in IUT IV Corollaries 2.2 and 2.3 was not read.",
+     "classification": [
+      "NEEDS_SUBSTANTIAL_FORMALIZATION",
+      "EXISTS_IN_OTHER_LEAN_LIBRARY",
+      "NEEDS_ADDITIONAL_LITERATURE"
+     ]
+    },
+    {
+     "item": "Faltings' theorem and related results cited in remarks ([Falt]).",
+     "classification": [
+      "NEEDS_ADDITIONAL_LITERATURE"
+     ]
+    }
+   ],
+   "other_lean_libraries": [
+    {
+     "location": "documentation/external/lana-deps/genl",
+     "provides": "[GenEll] project, per its README",
+     "caveat": "Lean 4.32, not built here, cannot be imported"
+    }
+   ],
+   "bibliography_keys": [
+    "GenEll",
+    "Falt",
+    "vFr"
+   ],
+   "needed_first_by": [
+    "IUT4.Cor2_2",
+    "IUT4.Cor2_3"
+   ],
+   "notes": "The function field abc (Mason-Stothers) and Siegel lemma exist in Mathlib. IUT4.Cor2_2 and IUT4.Cor2_3 are cited from their titles (Construction of Suitable Initial Theta-Data; Diophantine Inequalities)."
+  },
+  {
+   "id": "szpiro_vojta",
+   "name": "Szpiro-type and Vojta-type inequalities",
+   "classification": [
+    "UNRESOLVED_OR_DISPUTED"
+   ],
+   "mathlib": [],
+   "project": [],
+   "missing": [
+    {
+     "item": "Szpiro and Vojta type inequalities over number fields: open conjectures in general. IUT IV Corollary 2.3 (title: Diophantine Inequalities; not read in this pass) is where the papers state Diophantine inequalities as consequences of the theory. Whether that derivation is valid is the disputed point; nothing here takes a position.",
+     "classification": [
+      "UNRESOLVED_OR_DISPUTED"
+     ]
+    },
+    {
+     "item": "Function field (geometric) Szpiro inequality via Bogomolov ([BogIUT]), cited in remarks.",
+     "classification": [
+      "NEEDS_ADDITIONAL_LITERATURE"
+     ]
+    }
+   ],
+   "other_lean_libraries": [],
+   "bibliography_keys": [
+    "GenEll",
+    "BogIUT"
+   ],
+   "needed_first_by": [
+    "IUT4.Cor2_3"
+   ],
+   "notes": "These are targets of the papers, not prerequisites; they must never enter the library as assumptions of unconditional results."
+  },
+  {
+   "id": "universes",
+   "name": "Set-theoretic foundations and universe management",
+   "classification": [
+    "EXISTS_IN_MATHLIB",
+    "DERIVABLE_FROM_MATHLIB",
+    "NEEDS_SUBSTANTIAL_FORMALIZATION",
+    "NEEDS_ADDITIONAL_LITERATURE"
+   ],
+   "mathlib": [
+    {
+     "file": "SetTheory/ZFC/Basic.lean",
+     "declarations": [
+      "ZFSet",
+      "ZFSet.omega",
+      "ZFSet.powerset",
+      "ZFSet.sUnion",
+      "ZFSet.IsFunc",
+      "ZFSet.mem_wf",
+      "ZFSet.range"
+     ]
+    },
+    {
+     "file": "SetTheory/ZFC/VonNeumann.lean",
+     "declarations": [
+      "ZFSet.vonNeumann"
+     ]
+    },
+    {
+     "file": "SetTheory/Cardinal/Regular.lean",
+     "declarations": [
+      "Cardinal.IsInaccessible"
+     ]
+    },
+    {
+     "file": "Logic/Small/Defs.lean",
+     "declarations": [
+      "Small"
+     ]
+    },
+    {
+     "file": "Basic/UnivLE.lean",
+     "declarations": [
+      "UnivLE"
+     ]
+    }
+   ],
+   "project": [
+    {
+     "file": "IUT/Foundations/GrothendieckUniverse.lean",
+     "declarations": [
+      "IUT.Foundations.IsGrothendieckUniverse",
+      "IUT.Foundations.ExistenceAxiom",
+      "IUT.Foundations.exists_universe_forall_mem",
+      "IUT.Foundations.exists_ascending_chain",
+      "IUT.Foundations.not_exists_descending_mem_chain"
+     ]
+    }
+   ],
+   "missing": [
+    {
+     "item": "The existence axiom (dagger G): every set lies in a Grothendieck universe. Not a theorem of ZFC; the paper assumes it (IUT IV page 67) and leaves the existence of ZFCG-models aside, citing Feferman (page 68).",
+     "classification": [
+      "NEEDS_ADDITIONAL_LITERATURE"
+     ]
+    },
+    {
+     "item": "No Grothendieck universe on ZFSet is exhibited (for example the image of ZFSet.{u} inside ZFSet.{u+1}); Mathlib has the embedding only at the PSet level (PSet.embed).",
+     "classification": [
+      "DERIVABLE_FROM_MATHLIB"
+     ]
+    },
+    {
+     "item": "Species, set-theoretic formulas, and absoluteness of formulas between universes (IUT IV Definition 3.1 and page 68); needs a formal syntax for set-theoretic formulas.",
+     "classification": [
+      "NEEDS_SUBSTANTIAL_FORMALIZATION",
+      "NEEDS_ADDITIONAL_LITERATURE"
+     ]
+    }
+   ],
+   "other_lean_libraries": [],
+   "bibliography_keys": [
+    "McLn",
+    "Drk",
+    "Ffmn"
+   ],
+   "needed_first_by": [
+    "IUT4.Def3_1"
+   ],
+   "notes": "Read: IUT IV pages 67 and 68. A search for \"GrothendieckUniverse\" in Mathlib declaration names found nothing."
+  }
+ ],
+ "dependency_order": [
+  [
+   "valuations_normalized_absolute_values",
+   "number_fields_completions",
+   "galois_theory",
+   "profinite_groups"
+  ],
+  [
+   "padic_log_exp",
+   "haar_measures",
+   "tensor_products_local_fields",
+   "ramification_different",
+   "arithmetic_divisors",
+   "arakelov_degrees",
+   "kummer_theory",
+   "class_field_theory"
+  ],
+  [
+   "schemes_stacks_orbicurves",
+   "hyperbolic_curves",
+   "elliptic_curves_level",
+   "tate_curves",
+   "etale_fundamental_groups",
+   "nonarchimedean_analysis"
+  ],
+  [
+   "tempered_fundamental_groups",
+   "anabelian_geometry",
+   "frobenioids",
+   "etale_theta",
+   "heights_discriminants"
+  ],
+  [
+   "diophantine_geometry",
+   "universes",
+   "hodge_arakelov"
+  ],
+  [
+   "szpiro_vojta"
+  ]
+ ],
+ "lean_results": [
+  {
+   "name": "IUT.Prerequisites.posRat_inter_zhatUnits",
+   "file": "IUT/Prerequisites/PositiveRationalsZhatUnits.lean",
+   "statement": "{q : ℚ | 0 < q ∧ ∃ u : Zhatˣ, Zhat.toFiniteAdeles ↑u = (algebraMap ℚ (FiniteAdeleRing ℤ ℚ)) q} = {1}",
+   "source": "IUT I, Example 5.1 (v), page 127 (rendered); IUT III, Remark 3.12.1 (iii), pages 186 and 187 (rendered)"
+  },
+  {
+   "name": "IUT.Prerequisites.eq_one_of_forall_valuation_eq_one",
+   "file": "IUT/Prerequisites/PositiveRationalsZhatUnits.lean",
+   "statement": "∀ {q : ℚ}, 0 < q → (∀ (v : HeightOneSpectrum ℤ), (valuation ℚ v) q = 1) → q = 1",
+   "source": "as above"
+  },
+  {
+   "name": "IUT.Prerequisites.prod_normAbs_eq_one",
+   "file": "IUT/Prerequisites/ProductFormula.lean",
+   "statement": "∀ {F : Type*} [Field F] [NumberField F] {x : F}, x ≠ 0 → ∏ᶠ (v : Valuations F), normAbs v x = 1",
+   "source": "IUT IV, Definition 1.9, pages 21 and 22 (rendered); Mathlib NumberField.prod_abs_eq_one"
+  },
+  {
+   "name": "IUT.Prerequisites.sum_log_normAbs_eq_zero",
+   "file": "IUT/Prerequisites/ProductFormula.lean",
+   "statement": "∀ {F : Type*} [Field F] [NumberField F] {x : F}, x ≠ 0 → ∑ᶠ (v : Valuations F), Real.log (normAbs v x) = 0",
+   "source": "as above"
+  },
+  {
+   "name": "IUT.Foundations.exists_universe_forall_mem",
+   "file": "IUT/Foundations/GrothendieckUniverse.lean",
+   "statement": "ExistenceAxiom → ∀ {I : Type*} [Small.{u} I] (V : I → ZFSet.{u}), ∃ W, IsGrothendieckUniverse W ∧ ∀ (i : I), V i ∈ W",
+   "source": "IUT IV, page 67 (rendered)"
+  },
+  {
+   "name": "IUT.Foundations.exists_ascending_chain",
+   "file": "IUT/Foundations/GrothendieckUniverse.lean",
+   "statement": "ExistenceAxiom → ∃ V : ℕ → ZFSet.{u}, (∀ n, IsGrothendieckUniverse (V n)) ∧ (∀ n, V n ∈ V (n + 1)) ∧ ∃ W, IsGrothendieckUniverse W ∧ ∀ n, V n ∈ W",
+   "source": "IUT IV, page 67 (rendered)"
+  },
+  {
+   "name": "IUT.Foundations.not_exists_descending_mem_chain",
+   "file": "IUT/Foundations/GrothendieckUniverse.lean",
+   "statement": "¬∃ V : ℕ → ZFSet.{u}, ∀ (n : ℕ), V (n + 1) ∈ V n",
+   "source": "IUT IV, page 68 (rendered)"
+  }
+ ],
+ "infeasible_candidates": [
+  {
+   "candidate": "Log-shell of Q_p",
+   "reason": "Mathlib v4.36.0 defines NormedSpace.log, but without convergence on the disc, the homomorphism property, or the extension to all units (open TODO items in Analysis/Normed/Algebra/Logarithm.lean). Defining the log-shell faithfully (IUT III Definition 1.1, page 24) needs these. Replacing the log-shell by Z_p for p odd would be a shell and was not done."
+  },
+  {
+   "candidate": "Pull-back invariance deg(a|_K) = deg(a) of IUT IV Definition 1.9 (i)",
+   "reason": "The paper defines the pull-back only \"in the evident fashion\"; choosing the pull-back so that the identity holds would make it nearly definitional. Deferred until the convention is fixed from [GenEll], section 1, which was not read."
+  },
+  {
+   "candidate": "Degree zero of principal arithmetic divisors",
+   "reason": "Not defined on the pages read (IUT IV pages 21 to 23); with the archimedean weight 1 of Definition 1.9 (i) the coefficient convention at complex places would have to be chosen. Only the product formula itself was formalized."
+  },
+  {
+   "candidate": "Existence of a Grothendieck universe in ZFSet.{u+1}",
+   "reason": "Mathlib has the embedding only at the PSet level (PSet.embed); building it for ZFSet and checking axioms (i) to (v) is a separate task."
+  }
+ ],
+ "external_repository": {
+  "location": "documentation/external/lana-iut",
+  "toolchain": "leanprover/lean4:v4.32.0 with Mathlib v4.32.0",
+  "summary": "Read only. Its README states a proof of an implication from a variant of IUT III Corollary 3.12 to the abc conjecture, with the variant itself not proved. It depends on fifteen further Lean libraries, cloned under documentation/external/lana-deps. None of this can be imported here because of the toolchain difference; statements and definitions would have to be ported and rechecked."
+ }
+}

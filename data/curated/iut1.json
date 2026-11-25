@@ -1,0 +1,1886 @@
+{
+  "IUT1.ThmA": {
+    "source": {
+      "paper": "Inter-universal Teichmuller Theory I",
+      "pdf_pages": "13 to 15",
+      "pages_read": "13 to 15 (text only); 14 (text and rendered image)"
+    },
+    "content": "Construction of Θ^{±ell}NF-Hodge theaters from initial Θ-data, with an F_l^{⋊±}-symmetry on the additive side and an F_l^*-symmetry on the multiplicative side; the Θ-link from the Θ-pilot data of one theater to the q-pilot data of another, which induces a full poly-isomorphism of the unit portions; Frobenius-pictures and étale-pictures.",
+    "explicit_hypotheses": [
+      "A fixed collection of initial Θ-data (Definition 3.1)."
+    ],
+    "implicit_hypotheses": [],
+    "conclusion": "Summary statement of Corollaries 3.7 to 3.9, 4.12, 6.10, 6.12 and Definition 6.13 in introductory form.",
+    "definitions_required": [
+      "IUT1.Def3_1",
+      "IUT1.Def6_13",
+      "IUT1.Cor3_7"
+    ],
+    "results_used": [
+      "IUT1.Cor3_7",
+      "IUT1.Cor3_8",
+      "IUT1.Cor3_9",
+      "IUT1.Cor6_10",
+      "IUT1.Cor6_12"
+    ],
+    "external_dependencies": [
+      "[FrdI] Frobenioids",
+      "[AbsTopIII] mono-anabelian reconstruction",
+      "[EtTh] étale theta function"
+    ],
+    "lean_declaration": null,
+    "statement_status": "BLOCKED_BY_MATHLIB",
+    "proof_status": "NOT_EXTRACTED",
+    "obligations": [
+      "Every term needs a definition: Frobenioids, D-prime-strips, Hodge theaters, poly-isomorphisms."
+    ],
+    "ambiguities": [
+      "Introductory summary; the precise content is in the corollaries of §§3 to 6."
+    ]
+  },
+  "IUT1.ThmB": {
+    "source": {
+      "paper": "Inter-universal Teichmuller Theory I",
+      "pdf_pages": "15 to 16",
+      "pages_read": "15 to 16 (text only)"
+    },
+    "content": "For a hyperbolic curve over a mixed characteristic local field with stable reduction, profinite conjugates of tempered decomposition and inertia groups that land in the tempered group are tempered conjugates.",
+    "explicit_hypotheses": [
+      "X a hyperbolic curve over an MLF k with stable model; Π^tp_X tempered fundamental group; Π_X its profinite completion."
+    ],
+    "implicit_hypotheses": [],
+    "conclusion": "Same content as Corollary 2.5 with Σ = Primes.",
+    "definitions_required": [
+      "tempered fundamental group",
+      "decomposition group",
+      "inertia group"
+    ],
+    "results_used": [
+      "IUT1.Cor2_5"
+    ],
+    "external_dependencies": [
+      "[SemiAnbd] tempered groups and semi-graphs of anabelioids"
+    ],
+    "lean_declaration": null,
+    "statement_status": "BLOCKED_BY_MATHLIB",
+    "proof_status": "NOT_EXTRACTED",
+    "obligations": [
+      "Tempered fundamental groups are not in Mathlib."
+    ],
+    "ambiguities": []
+  },
+  "IUT1.Def1_1": {
+    "source": {
+      "paper": "Inter-universal Teichmuller Theory I",
+      "pdf_pages": "38 to 39",
+      "pages_read": "37 to 40 (text only)"
+    },
+    "content": "Hyperbolic orbicurves of type (1, l-tors with arrow) and (1, l-tors with arrow)±: coverings of a once-punctured elliptic curve X over k, with l ≥ 5 prime to 6 and k-rational l-torsion quotient data.",
+    "explicit_hypotheses": [
+      "k of characteristic zero; l ≥ 5 prime; X once-punctured elliptic curve over k; assumption (∗) that G_k acts trivially on Δ_X^ab ⊗ Z/lZ in the relevant setting."
+    ],
+    "implicit_hypotheses": [],
+    "conclusion": "Definition: no proof obligation.",
+    "definitions_required": [
+      "hyperbolic orbicurve [Cusp] §0",
+      "[EtTh] Definition 2.1"
+    ],
+    "results_used": [],
+    "external_dependencies": [
+      "[EtTh] Definition 2.1",
+      "[Cusp] §0"
+    ],
+    "lean_declaration": null,
+    "statement_status": "BLOCKED_BY_MATHLIB",
+    "proof_status": "NOT_EXTRACTED",
+    "obligations": [
+      "Orbicurves (stacks) are not in Mathlib."
+    ],
+    "ambiguities": [
+      "The arrow decoration is lost in the extracted text; read from the statement text only, pages 38 and 39 not rendered."
+    ]
+  },
+  "IUT1.Cor1_2": {
+    "source": {
+      "paper": "Inter-universal Teichmuller Theory I",
+      "pdf_pages": "39 to 40",
+      "pages_read": "39 to 40 (text only)"
+    },
+    "content": "For k an NF or MLF, a functorial group-theoretic algorithm reconstructs Π_X, Π_{C with arrow}, Π_C from Π_{X with arrow}.",
+    "explicit_hypotheses": [],
+    "implicit_hypotheses": [],
+    "conclusion": "Group-theoretic reconstruction of related fundamental groups.",
+    "definitions_required": [
+      "IUT1.Def1_1"
+    ],
+    "results_used": [],
+    "external_dependencies": [
+      "[AbsTopIII]",
+      "[EtTh]"
+    ],
+    "lean_declaration": null,
+    "statement_status": "BLOCKED_BY_MATHLIB",
+    "proof_status": "NOT_EXTRACTED",
+    "obligations": [
+      "Étale fundamental groups of orbicurves; notion of group-theoretic algorithm."
+    ],
+    "ambiguities": [
+      "\"Algorithm\" is informal; no formal model of computation is specified."
+    ]
+  },
+  "IUT1.Prop2_1": {
+    "source": {
+      "paper": "Inter-universal Teichmuller Theory I",
+      "pdf_pages": "45",
+      "pages_read": "45 to 52 (text only; statements only)"
+    },
+    "content": "Profinite conjugates of nontrivial compact subgroups: if Λ ⊆ Π^tp_G is a nontrivial compact subgroup and γ ∈ Π_G with γΛγ^{-1} ⊆ Π^tp_G, then γ ∈ Π^tp_G.",
+    "explicit_hypotheses": [],
+    "implicit_hypotheses": [],
+    "conclusion": "Profinite conjugates of nontrivial compact subgroups: if Λ ⊆ Π^tp_G is a nontrivial compact subgroup and γ ∈ Π_G with γΛγ^{-1} ⊆ Π^tp_G, then γ ∈ Π^tp_G.",
+    "definitions_required": [
+      "semi-graph of anabelioids",
+      "tempered fundamental group"
+    ],
+    "results_used": [],
+    "external_dependencies": [
+      "[SemiAnbd] §§2 to 3, Theorem 3.7"
+    ],
+    "lean_declaration": null,
+    "statement_status": "BLOCKED_BY_MATHLIB",
+    "proof_status": "NOT_EXTRACTED",
+    "obligations": [
+      "Semi-graphs of anabelioids and tempered groups are not in Mathlib."
+    ],
+    "ambiguities": [
+      "Read at the level of statements, as the task specifies; proofs not checked."
+    ]
+  },
+  "IUT1.Prop2_2": {
+    "source": {
+      "paper": "Inter-universal Teichmuller Theory I",
+      "pdf_pages": "45 to 46",
+      "pages_read": "45 to 52 (text only; statements only)"
+    },
+    "content": "Commensurators of tempered subgroups attached to sub-semi-graphs in the profinite completion.",
+    "explicit_hypotheses": [],
+    "implicit_hypotheses": [],
+    "conclusion": "Commensurators of tempered subgroups attached to sub-semi-graphs in the profinite completion.",
+    "definitions_required": [
+      "semi-graph of anabelioids",
+      "tempered fundamental group"
+    ],
+    "results_used": [],
+    "external_dependencies": [
+      "[SemiAnbd] §§2 to 3, Theorem 3.7"
+    ],
+    "lean_declaration": null,
+    "statement_status": "BLOCKED_BY_MATHLIB",
+    "proof_status": "NOT_EXTRACTED",
+    "obligations": [
+      "Semi-graphs of anabelioids and tempered groups are not in Mathlib."
+    ],
+    "ambiguities": [
+      "Read at the level of statements, as the task specifies; proofs not checked."
+    ]
+  },
+  "IUT1.Cor2_3": {
+    "source": {
+      "paper": "Inter-universal Teichmuller Theory I",
+      "pdf_pages": "47 to 50",
+      "pages_read": "45 to 52 (text only; statements only)"
+    },
+    "content": "Subgroups attached to sub-semi-graphs; parts (i) to (vi) on conjugates and commensurators.",
+    "explicit_hypotheses": [],
+    "implicit_hypotheses": [],
+    "conclusion": "Subgroups attached to sub-semi-graphs; parts (i) to (vi) on conjugates and commensurators.",
+    "definitions_required": [
+      "semi-graph of anabelioids",
+      "tempered fundamental group"
+    ],
+    "results_used": [],
+    "external_dependencies": [
+      "[SemiAnbd] §§2 to 3, Theorem 3.7"
+    ],
+    "lean_declaration": null,
+    "statement_status": "BLOCKED_BY_MATHLIB",
+    "proof_status": "NOT_EXTRACTED",
+    "obligations": [
+      "Semi-graphs of anabelioids and tempered groups are not in Mathlib."
+    ],
+    "ambiguities": [
+      "Read at the level of statements, as the task specifies; proofs not checked."
+    ]
+  },
+  "IUT1.Prop2_4": {
+    "source": {
+      "paper": "Inter-universal Teichmuller Theory I",
+      "pdf_pages": "50 to 51",
+      "pages_read": "45 to 52 (text only; statements only)"
+    },
+    "content": "Arithmetic compact subgroups; Π^tp_X is commensurably terminal in Π_X.",
+    "explicit_hypotheses": [],
+    "implicit_hypotheses": [],
+    "conclusion": "Arithmetic compact subgroups; Π^tp_X is commensurably terminal in Π_X.",
+    "definitions_required": [
+      "semi-graph of anabelioids",
+      "tempered fundamental group"
+    ],
+    "results_used": [],
+    "external_dependencies": [
+      "[SemiAnbd] §§2 to 3, Theorem 3.7"
+    ],
+    "lean_declaration": null,
+    "statement_status": "BLOCKED_BY_MATHLIB",
+    "proof_status": "NOT_EXTRACTED",
+    "obligations": [
+      "Semi-graphs of anabelioids and tempered groups are not in Mathlib."
+    ],
+    "ambiguities": [
+      "Read at the level of statements, as the task specifies; proofs not checked."
+    ]
+  },
+  "IUT1.Cor2_5": {
+    "source": {
+      "paper": "Inter-universal Teichmuller Theory I",
+      "pdf_pages": "51 to 52",
+      "pages_read": "45 to 52 (text only; statements only)"
+    },
+    "content": "Profinite conjugates of tempered decomposition and inertia groups (the content of Theorem B).",
+    "explicit_hypotheses": [],
+    "implicit_hypotheses": [],
+    "conclusion": "Profinite conjugates of tempered decomposition and inertia groups (the content of Theorem B).",
+    "definitions_required": [
+      "semi-graph of anabelioids",
+      "tempered fundamental group"
+    ],
+    "results_used": [],
+    "external_dependencies": [
+      "[SemiAnbd] §§2 to 3, Theorem 3.7"
+    ],
+    "lean_declaration": null,
+    "statement_status": "BLOCKED_BY_MATHLIB",
+    "proof_status": "NOT_EXTRACTED",
+    "obligations": [
+      "Semi-graphs of anabelioids and tempered groups are not in Mathlib."
+    ],
+    "ambiguities": [
+      "Read at the level of statements, as the task specifies; proofs not checked."
+    ]
+  },
+  "IUT1.Thm2_6": {
+    "source": {
+      "paper": "Inter-universal Teichmuller Theory I",
+      "pdf_pages": "56 to 57",
+      "pages_read": "56 to 57 (text only)"
+    },
+    "content": "Let F contain a finite index subgroup G that is free of finite rank or an orientable surface group of genus ≥ 2, and H ⊆ F an infinite subgroup. If γ in the profinite completion satisfies γHγ^{-1} ⊆ F, then with H_G = H ∩ G one has γ ∈ F · N(closure of H_G); if H_G is nonabelian then γ ∈ F.",
+    "explicit_hypotheses": [
+      "G ⊆ F of finite index, G free of finite rank or orientable surface group of genus ≥ 2",
+      "H ⊆ F infinite",
+      "γ ∈ F̂ with γHγ^{-1} ⊆ F"
+    ],
+    "implicit_hypotheses": [
+      "F residually finite, cited from [Config] Proposition 7.1 (ii)."
+    ],
+    "conclusion": "γ ∈ F · N_{F̂}(H̄_G), and γ ∈ F when H_G is nonabelian.",
+    "definitions_required": [
+      "profinite completion",
+      "normalizer"
+    ],
+    "results_used": [
+      "IUT1.Lem2_7"
+    ],
+    "external_dependencies": [
+      "[Config] Proposition 7.1 (ii)"
+    ],
+    "lean_declaration": null,
+    "statement_status": "EXTRACTED",
+    "proof_status": "NOT_EXTRACTED",
+    "obligations": [
+      "Statable in Lean: Mathlib has free groups and profinite completion of groups in some form; surface groups would need a definition. Not attempted."
+    ],
+    "ambiguities": [
+      "The bars over H_G and the meaning of N_F̂ are lost in the extracted text; page 56 not rendered. The reading of the normalizer as taken in F̂ of the closure of H_G is from the text only."
+    ]
+  },
+  "IUT1.Lem2_7": {
+    "source": {
+      "paper": "Inter-universal Teichmuller Theory I",
+      "pdf_pages": "57 to 59",
+      "pages_read": "57 to 59 (text only; statements only)"
+    },
+    "content": "Well-known properties of free groups and orientable surface groups, parts (i) to (vii); for instance (i) any subgroup of G generated by two elements is free.",
+    "explicit_hypotheses": [
+      "G as in Theorem 2.6."
+    ],
+    "implicit_hypotheses": [],
+    "conclusion": "Parts (i) to (vii).",
+    "definitions_required": [],
+    "results_used": [],
+    "external_dependencies": [],
+    "lean_declaration": null,
+    "statement_status": "EXTRACTED",
+    "proof_status": "NOT_EXTRACTED",
+    "obligations": [
+      "Several parts are classical facts whose Mathlib coverage was not checked."
+    ],
+    "ambiguities": []
+  },
+  "IUT1.Cor2_8": {
+    "source": {
+      "paper": "Inter-universal Teichmuller Theory I",
+      "pdf_pages": "59",
+      "pages_read": "59 (text only)"
+    },
+    "content": "Analogue of Theorem B for hyperbolic curves over the complex numbers, discrete versus profinite fundamental groups.",
+    "explicit_hypotheses": [],
+    "implicit_hypotheses": [],
+    "conclusion": "Discrete conjugacy statement.",
+    "definitions_required": [],
+    "results_used": [
+      "IUT1.Thm2_6"
+    ],
+    "external_dependencies": [],
+    "lean_declaration": null,
+    "statement_status": "EXTRACTED",
+    "proof_status": "NOT_EXTRACTED",
+    "obligations": [
+      "Topological fundamental groups of Riemann surfaces."
+    ],
+    "ambiguities": []
+  },
+  "IUT1.Def3_1": {
+    "source": {
+      "paper": "Inter-universal Teichmuller Theory I",
+      "pdf_pages": "61 to 63",
+      "pages_read": "61 to 63 (text and rendered image)"
+    },
+    "content": "Initial Θ-data: a tuple (F̄/F, X_F, l, C_K, V, V^bad_mod, ε) subject to conditions (a) to (f).",
+    "explicit_hypotheses": [],
+    "implicit_hypotheses": [],
+    "conclusion": "Definition: no proof obligation.",
+    "definitions_required": [
+      "IUT1.Def3_1.a",
+      "IUT1.Def3_1.b",
+      "IUT1.Def3_1.c",
+      "IUT1.Def3_1.d",
+      "IUT1.Def3_1.e",
+      "IUT1.Def3_1.f"
+    ],
+    "results_used": [],
+    "external_dependencies": [
+      "[AbsTopIII] Definition 5.1 (ii)",
+      "[EtTh] Definitions 2.1, 2.3, 2.5, Proposition 2.2",
+      "[GenEll] Definition 3.3",
+      "[CanLift] Remark 2.1.1",
+      "[SemiAnbd]"
+    ],
+    "lean_declaration": "IUT.PaperI.PartialInitialThetaConditions",
+    "statement_status": "LEAN_STATEMENT_DRAFT",
+    "proof_status": "NOT_EXTRACTED",
+    "obligations": [
+      "Only clauses of (a), (b), (c) are stated in Lean; see the condition records.",
+      "Existence of initial Θ-data is asserted in IUT IV Corollary 2.2 (pages 41 and 42), not in IUT I."
+    ],
+    "ambiguities": [
+      "Remark 3.1.3 (page 65): the data is determined up to insignificant choices by (F̄/F, X_F, C_K, V, V^bad_mod); the choice of V is described as insignificant."
+    ]
+  },
+  "IUT1.Def3_1.a": {
+    "source": {
+      "paper": "Inter-universal Teichmuller Theory I",
+      "pdf_pages": "61",
+      "pages_read": "61 (text and rendered image)"
+    },
+    "content": "F is a number field containing √−1, F̄ an algebraic closure, G_F = Gal(F̄/F).",
+    "explicit_hypotheses": [],
+    "implicit_hypotheses": [],
+    "conclusion": "Definition: no proof obligation.",
+    "definitions_required": [
+      "number field",
+      "algebraic closure",
+      "absolute Galois group"
+    ],
+    "results_used": [],
+    "external_dependencies": [],
+    "lean_declaration": "IUT.PaperI.SqrtNegOneMem",
+    "statement_status": "STATEMENT_FORMALIZED",
+    "proof_status": "NOT_EXTRACTED",
+    "obligations": [
+      "F̄ is fixed as AlgebraicClosure F in the Lean file."
+    ],
+    "ambiguities": []
+  },
+  "IUT1.Def3_1.b": {
+    "source": {
+      "paper": "Inter-universal Teichmuller Theory I",
+      "pdf_pages": "61 to 62",
+      "pages_read": "61 to 62 (text and rendered image)"
+    },
+    "content": "X_F once-punctured elliptic curve over F with stable reduction at all nonarchimedean places; E_F its compactification; C_F the stack quotient by −1; F_mod the field of moduli of X_F; F_sol the maximal solvable extension of F_mod in F̄; V_mod = 𝕍(F_mod); V^bad_mod ⊆ V^non_mod a nonempty set of odd residue characteristic over which X_F has bad (multiplicative) reduction; V^good_mod its complement; fundamental groups Π_{X_F} ⊆ Π_{C_F}, Δ_X ⊆ Δ_C. Also F/F_mod is Galois of degree prime to l and the 2·3-torsion points of E_F are F-rational.",
+    "explicit_hypotheses": [],
+    "implicit_hypotheses": [],
+    "conclusion": "Definition: no proof obligation.",
+    "definitions_required": [
+      "once-punctured elliptic curve",
+      "stable reduction",
+      "stack quotient",
+      "field of moduli",
+      "étale fundamental group",
+      "multiplicative reduction"
+    ],
+    "results_used": [],
+    "external_dependencies": [
+      "[AbsTopIII] Definition 5.1 (ii) (field of moduli)",
+      "[SemiAnbd] §0 (hyperbolic curve)",
+      "[Cusp] §0 (hyperbolic orbicurve)"
+    ],
+    "lean_declaration": "IUT.PaperI.SemistableAtFinitePlaces",
+    "statement_status": "LEAN_STATEMENT_DRAFT",
+    "proof_status": "NOT_EXTRACTED",
+    "obligations": [
+      "Further Lean predicates for the clauses of (b): IUT.PaperI.TorsionRational, IUT.PaperI.BadSetOddNonempty, IUT.PaperI.MultiplicativeOverBadSet, IUT.PaperI.GaloisOfDegreePrimeTo.",
+      "Field of moduli F_mod is not defined in Lean; the clauses mentioning it are stated relative to an arbitrary number field k.",
+      "C_F, Π_{X_F}, Π_{C_F}, Δ_X, Δ_C not statable.",
+      "Stable reduction is read as semistable reduction of E_F; this reading is recorded, not proved equivalent."
+    ],
+    "ambiguities": [
+      "\"Stable reduction\" of the punctured curve X_F is identified with semistable reduction of E_F; page 61 does not spell this out.",
+      "\"Bad\" is glossed on page 61 as multiplicative; the Lean statement uses multiplicative reduction of a minimal model."
+    ]
+  },
+  "IUT1.Def3_1.c": {
+    "source": {
+      "paper": "Inter-universal Teichmuller Theory I",
+      "pdf_pages": "62",
+      "pages_read": "62 (text and rendered image)"
+    },
+    "content": "l ≥ 5 is a prime such that the image of the outer Galois action G_F → GL2(F_l) on the l-torsion of E_F contains SL2(F_l); K ⊆ F̄ is the finite Galois extension cut out by the kernel; l is prime to the residue characteristics of V^bad_mod and to the orders of the q-parameters of E_F at the places of 𝕍(F)^bad.",
+    "explicit_hypotheses": [],
+    "implicit_hypotheses": [],
+    "conclusion": "Definition: no proof obligation.",
+    "definitions_required": [
+      "mod l Galois representation",
+      "q-parameter (Tate curve)"
+    ],
+    "results_used": [],
+    "external_dependencies": [
+      "[GenEll] Definition 3.3 (orders of q-parameters, local heights)"
+    ],
+    "lean_declaration": "IUT.PaperI.IsAuxiliaryPrime",
+    "statement_status": "LEAN_STATEMENT_DRAFT",
+    "proof_status": "NOT_EXTRACTED",
+    "obligations": [
+      "Further Lean predicate: IUT.PaperI.PrimeToBadResidueChars.",
+      "SL2 image condition needs E[l](F̄) ≅ (Z/lZ)^2, absent from Mathlib.",
+      "q-parameter orders need the Tate uniformization; absent from Mathlib (an expression via the valuation of j could be used but is an interpretation not made here)."
+    ],
+    "ambiguities": []
+  },
+  "IUT1.Def3_1.d": {
+    "source": {
+      "paper": "Inter-universal Teichmuller Theory I",
+      "pdf_pages": "62",
+      "pages_read": "62 (text and rendered image)"
+    },
+    "content": "C_K is a hyperbolic orbicurve of type (1, l-tors)± over K whose K-core is C_F ×_F K; this determines X_K and cartesian diagrams relating X_K, C_K, X_F, C_F, and inclusions Δ_{X} ⊆ Δ_C of the corresponding geometric fundamental groups.",
+    "explicit_hypotheses": [],
+    "implicit_hypotheses": [],
+    "conclusion": "Definition: no proof obligation.",
+    "definitions_required": [
+      "(1, l-tors)± type [EtTh] Definition 2.1",
+      "K-core [CanLift] Remark 2.1.1"
+    ],
+    "results_used": [],
+    "external_dependencies": [
+      "[EtTh] Definition 2.1, Proposition 2.2, Definition 2.3",
+      "[CanLift] Remark 2.1.1"
+    ],
+    "lean_declaration": null,
+    "statement_status": "BLOCKED_BY_MATHLIB",
+    "proof_status": "NOT_EXTRACTED",
+    "obligations": [
+      "Orbicurves, cores, and étale fundamental groups."
+    ],
+    "ambiguities": []
+  },
+  "IUT1.Def3_1.e": {
+    "source": {
+      "paper": "Inter-universal Teichmuller Theory I",
+      "pdf_pages": "62 to 63",
+      "pages_read": "62 to 63 (text and rendered image)"
+    },
+    "content": "V ⊆ 𝕍(K) is a subset such that V → V_mod is a bijection (a section of 𝕍(K) → V_mod); V^bad, V^good are the preimages. At v ∈ V^bad the base change C_v is of type (1, Z/lZ)± with models X_v, C_v (double underlines), and Π_v is the tempered fundamental group of the corresponding curve.",
+    "explicit_hypotheses": [],
+    "implicit_hypotheses": [],
+    "conclusion": "Definition: no proof obligation.",
+    "definitions_required": [
+      "(1, Z/lZ)± type [EtTh] Definition 2.5 (i)",
+      "tempered fundamental group"
+    ],
+    "results_used": [],
+    "external_dependencies": [
+      "[EtTh] Definition 2.5 (i)",
+      "[SemiAnbd] §3"
+    ],
+    "lean_declaration": null,
+    "statement_status": "BLOCKED_BY_MATHLIB",
+    "proof_status": "NOT_EXTRACTED",
+    "obligations": [
+      "The section V is statable once K is constructed; K is not constructed in Lean.",
+      "Types and tempered groups not in Mathlib."
+    ],
+    "ambiguities": [
+      "Remark 3.1.3 says the choice of V is insignificant; this is not a hypothesis of the definition."
+    ]
+  },
+  "IUT1.Def3_1.f": {
+    "source": {
+      "paper": "Inter-universal Teichmuller Theory I",
+      "pdf_pages": "63",
+      "pages_read": "63 (text and rendered image)"
+    },
+    "content": "ε is a nonzero cusp of C_K arising from a nonzero element of the quotient Q of [EtTh] Definition 2.1; at v ∈ V^bad ε_v is required to arise from the generator ±1 of Ẑ via the Tate uniformization; ε determines orbicurves with arrow decorations and the groups Π_v at good v.",
+    "explicit_hypotheses": [],
+    "implicit_hypotheses": [],
+    "conclusion": "Definition: no proof obligation.",
+    "definitions_required": [
+      "cusp",
+      "[EtTh] Definition 2.1 quotient Q"
+    ],
+    "results_used": [],
+    "external_dependencies": [
+      "[EtTh] Definition 2.1"
+    ],
+    "lean_declaration": null,
+    "statement_status": "BLOCKED_BY_MATHLIB",
+    "proof_status": "NOT_EXTRACTED",
+    "obligations": [
+      "Cusps of orbicurves and the Tate uniformization."
+    ],
+    "ambiguities": []
+  },
+  "IUT1.Rem3_1_1": {
+    "source": {
+      "paper": "Inter-universal Teichmuller Theory I",
+      "pdf_pages": "63 to 64",
+      "pages_read": "63 to 64 (text only)"
+    },
+    "content": "Clarifies that Π_v at bad v is a tempered group and the profinite groups are its completions.",
+    "explicit_hypotheses": [],
+    "implicit_hypotheses": [],
+    "conclusion": "Clarifies that Π_v at bad v is a tempered group and the profinite groups are its completions.",
+    "definitions_required": [],
+    "results_used": [
+      "IUT1.Def3_1"
+    ],
+    "external_dependencies": [],
+    "lean_declaration": null,
+    "statement_status": "EXTRACTED",
+    "proof_status": "NOT_EXTRACTED",
+    "obligations": [],
+    "ambiguities": []
+  },
+  "IUT1.Rem3_1_2": {
+    "source": {
+      "paper": "Inter-universal Teichmuller Theory I",
+      "pdf_pages": "64 to 65",
+      "pages_read": "64 to 65 (text only)"
+    },
+    "content": "Relates the Θ-approach to the reconstruction of [AbsTopIII] Theorem 1.9; discusses the size of l.",
+    "explicit_hypotheses": [],
+    "implicit_hypotheses": [],
+    "conclusion": "Relates the Θ-approach to the reconstruction of [AbsTopIII] Theorem 1.9; discusses the size of l.",
+    "definitions_required": [],
+    "results_used": [
+      "IUT1.Def3_1"
+    ],
+    "external_dependencies": [],
+    "lean_declaration": null,
+    "statement_status": "EXTRACTED",
+    "proof_status": "NOT_EXTRACTED",
+    "obligations": [],
+    "ambiguities": []
+  },
+  "IUT1.Rem3_1_3": {
+    "source": {
+      "paper": "Inter-universal Teichmuller Theory I",
+      "pdf_pages": "65",
+      "pages_read": "65 (text only)"
+    },
+    "content": "The initial Θ-data is essentially determined by (F̄/F, X_F, C_K, V, V^bad_mod); the choice of V is insignificant.",
+    "explicit_hypotheses": [],
+    "implicit_hypotheses": [],
+    "conclusion": "The initial Θ-data is essentially determined by (F̄/F, X_F, C_K, V, V^bad_mod); the choice of V is insignificant.",
+    "definitions_required": [],
+    "results_used": [
+      "IUT1.Def3_1"
+    ],
+    "external_dependencies": [],
+    "lean_declaration": null,
+    "statement_status": "EXTRACTED",
+    "proof_status": "NOT_EXTRACTED",
+    "obligations": [],
+    "ambiguities": []
+  },
+  "IUT1.Rem3_1_4": {
+    "source": {
+      "paper": "Inter-universal Teichmuller Theory I",
+      "pdf_pages": "65",
+      "pages_read": "65 (text only)"
+    },
+    "content": "Stable models over the rings of integers and their relation to the reduction conditions.",
+    "explicit_hypotheses": [],
+    "implicit_hypotheses": [],
+    "conclusion": "Stable models over the rings of integers and their relation to the reduction conditions.",
+    "definitions_required": [],
+    "results_used": [
+      "IUT1.Def3_1"
+    ],
+    "external_dependencies": [],
+    "lean_declaration": null,
+    "statement_status": "EXTRACTED",
+    "proof_status": "NOT_EXTRACTED",
+    "obligations": [],
+    "ambiguities": []
+  },
+  "IUT1.Rem3_1_5": {
+    "source": {
+      "paper": "Inter-universal Teichmuller Theory I",
+      "pdf_pages": "65 to 66",
+      "pages_read": "65 to 66 (text only)"
+    },
+    "content": "K is Galois over F_mod (citing IUT IV Proposition 1.8 (iv)); the stack S_mod = Spec(O_K)//Gal(K/F_mod).",
+    "explicit_hypotheses": [],
+    "implicit_hypotheses": [],
+    "conclusion": "K is Galois over F_mod (citing IUT IV Proposition 1.8 (iv)); the stack S_mod = Spec(O_K)//Gal(K/F_mod).",
+    "definitions_required": [],
+    "results_used": [
+      "IUT1.Def3_1"
+    ],
+    "external_dependencies": [
+      "IUT IV Proposition 1.8 (iv)"
+    ],
+    "lean_declaration": null,
+    "statement_status": "EXTRACTED",
+    "proof_status": "NOT_EXTRACTED",
+    "obligations": [],
+    "ambiguities": [
+      "Depends on IUT IV Proposition 1.8 (iv), not read in this session."
+    ]
+  },
+  "IUT1.Rem3_1_6": {
+    "source": {
+      "paper": "Inter-universal Teichmuller Theory I",
+      "pdf_pages": "66",
+      "pages_read": "66 (text only)"
+    },
+    "content": "Notes an error in [EtTh] whose correction requires l odd.",
+    "explicit_hypotheses": [],
+    "implicit_hypotheses": [],
+    "conclusion": "Notes an error in [EtTh] whose correction requires l odd.",
+    "definitions_required": [],
+    "results_used": [
+      "IUT1.Def3_1"
+    ],
+    "external_dependencies": [
+      "[EtTh]"
+    ],
+    "lean_declaration": null,
+    "statement_status": "EXTRACTED",
+    "proof_status": "NOT_EXTRACTED",
+    "obligations": [],
+    "ambiguities": [
+      "Records a correction to [EtTh]; the correction itself was not checked against [EtTh]."
+    ]
+  },
+  "IUT1.Rem3_1_7": {
+    "source": {
+      "paper": "Inter-universal Teichmuller Theory I",
+      "pdf_pages": "66 to 69",
+      "pages_read": "66 to 69 (text only)"
+    },
+    "content": "A model C_{F_mod} over F_mod and κ-coric rational functions.",
+    "explicit_hypotheses": [],
+    "implicit_hypotheses": [],
+    "conclusion": "A model C_{F_mod} over F_mod and κ-coric rational functions.",
+    "definitions_required": [],
+    "results_used": [
+      "IUT1.Def3_1"
+    ],
+    "external_dependencies": [],
+    "lean_declaration": null,
+    "statement_status": "EXTRACTED",
+    "proof_status": "NOT_EXTRACTED",
+    "obligations": [],
+    "ambiguities": []
+  },
+  "IUT1.Ex3_2": {
+    "source": {
+      "paper": "Inter-universal Teichmuller Theory I",
+      "pdf_pages": "69 to 73",
+      "pages_read": "69 to 73 (text only); 70, 71, 72 (text and rendered image)"
+    },
+    "content": "Bad nonarchimedean v: the tempered Frobenioid F_v over the base D_v (category of connected tempered coverings of X_v); D^⊢_v = B(K_v)^0 as a full subcategory; the reciprocal theta function Θ_v normalized at √−1, defined up to 2l-th roots of unity; q_v = q_v^{1/2l}; split Frobenioids C^⊢_v and C^Θ_v with characteristic splittings; F^⊢_v and an isomorphism with the Θ-version.",
+    "explicit_hypotheses": [],
+    "implicit_hypotheses": [],
+    "conclusion": "Construction of the local model data at bad v.",
+    "definitions_required": [
+      "tempered Frobenioid [EtTh] §5",
+      "split Frobenioid [FrdII]",
+      "Frobenius-trivial object [FrdI] Definition 1.2"
+    ],
+    "results_used": [],
+    "external_dependencies": [
+      "[EtTh] §5, Proposition 5.1, Theorem 5.7, Example 3.9",
+      "[FrdI] Corollaries 4.10, 4.11",
+      "[FrdII] Example 1.3, Theorem 1.2"
+    ],
+    "lean_declaration": null,
+    "statement_status": "BLOCKED_BY_MATHLIB",
+    "proof_status": "NOT_EXTRACTED",
+    "obligations": [
+      "Frobenioids and tempered coverings."
+    ],
+    "ambiguities": [
+      "Remark 3.2.4 (pages 75 to 77) records an oversight in [EtTh] concerning the tempered Frobenioid and fixes a reading; this record follows that remark."
+    ]
+  },
+  "IUT1.Ex3_3": {
+    "source": {
+      "paper": "Inter-universal Teichmuller Theory I",
+      "pdf_pages": "77 to 79",
+      "pages_read": "77 to 79 (text only); 78 (text and rendered image)"
+    },
+    "content": "Good nonarchimedean v: D_v is the category of finite étale coverings of the arrow-decorated curve over K_v; D^⊢_v ⊆ D_v; p_v-adic Frobenioids C^⊢_v ⊆ C_v from the monoids ord(O^▷_L)^pf and ord(Z^▷_{p_v}); characteristic splitting τ^⊢_v from p_v; the monoid with formal symbol log(p_v)·log(Θ) giving C^Θ_v.",
+    "explicit_hypotheses": [],
+    "implicit_hypotheses": [],
+    "conclusion": "Construction of the local model data at good nonarchimedean v.",
+    "definitions_required": [],
+    "results_used": [],
+    "external_dependencies": [
+      "[FrdII] Example 1.1, Theorem 1.2 (v)",
+      "[FrdI] Proposition 2.2"
+    ],
+    "lean_declaration": null,
+    "statement_status": "BLOCKED_BY_MATHLIB",
+    "proof_status": "NOT_EXTRACTED",
+    "obligations": [
+      "Frobenioids."
+    ],
+    "ambiguities": []
+  },
+  "IUT1.Ex3_4": {
+    "source": {
+      "paper": "Inter-universal Teichmuller Theory I",
+      "pdf_pages": "80 to 82",
+      "pages_read": "80 to 82 (text only); 81 (text and rendered image)"
+    },
+    "content": "Archimedean v: F_v = (C_v, D_v, κ_v) with D_v an Aut-holomorphic orbispace and κ_v a Kummer structure; the category TM^⊢ of split topological monoids; τ^⊢_v; D^⊢_v; F^⊢_v as an ordered triple; the formal symbol log(p_v)·log(Θ) and a split Frobenioid C^Θ_v.",
+    "explicit_hypotheses": [],
+    "implicit_hypotheses": [],
+    "conclusion": "Construction of the local model data at archimedean v.",
+    "definitions_required": [],
+    "results_used": [],
+    "external_dependencies": [
+      "[AbsTopIII] Definition 5.6 (i), §2 (Aut-holomorphic spaces)"
+    ],
+    "lean_declaration": null,
+    "statement_status": "BLOCKED_BY_MATHLIB",
+    "proof_status": "NOT_EXTRACTED",
+    "obligations": [
+      "Aut-holomorphic orbispaces and TM^⊢."
+    ],
+    "ambiguities": []
+  },
+  "IUT1.Ex3_5": {
+    "source": {
+      "paper": "Inter-universal Teichmuller Theory I",
+      "pdf_pages": "84 to 86",
+      "pages_read": "84 to 86 (text and rendered image)"
+    },
+    "content": "Global realified Frobenioid C^⊩_mod with Prime(C^⊩_mod) ≅ V; isomorphisms ρ_v sending log^⊩_mod(p_v) to log_Φ(p_v)/[K_v:(F_mod)_v], and at bad v the variant with log_Φ(Θ_v)/log_Φ(q_v); collections F^⊩_mod ≅ F^⊩_tht; F^⊩_D; the weights e_v at nonarchimedean v and 2π at archimedean v.",
+    "explicit_hypotheses": [],
+    "implicit_hypotheses": [],
+    "conclusion": "Construction of the global q-pilot and Θ-pilot data.",
+    "definitions_required": [
+      "realified Frobenioid [FrdI] Theorem 6.4",
+      "Prime(C) [FrdI] Theorem 6.4 (iii)"
+    ],
+    "results_used": [],
+    "external_dependencies": [
+      "[FrdI] Theorem 6.4",
+      "[FrdI] Corollary 5.4"
+    ],
+    "lean_declaration": null,
+    "statement_status": "BLOCKED_BY_MATHLIB",
+    "proof_status": "NOT_EXTRACTED",
+    "obligations": [
+      "Global realified Frobenioids."
+    ],
+    "ambiguities": [
+      "The two normalizations (Θ versus q) differ only through the formal symbol log_Φ(Θ_v)/log_Φ(q_v) at bad v; their compatibility is a definitional matter in Example 3.5."
+    ]
+  },
+  "IUT1.Def3_6": {
+    "source": {
+      "paper": "Inter-universal Teichmuller Theory I",
+      "pdf_pages": "87 to 88",
+      "pages_read": "87 to 88 (text only); 87, 88 (text and rendered image)"
+    },
+    "content": "A Θ-Hodge theater HT^Θ = ({F_v}_{v∈V}, F^⊩_mod): (a) at nonarchimedean v a category equivalent to the model F_v; (b) at archimedean v a triple (C_v, D_v, κ_v) isomorphic to the model; (c) F^⊩_mod a collection (C^⊩_mod, Prime(C^⊩_mod) ≅ V, {F^⊢_v}, {ρ_v}) isomorphic to the model of Example 3.5.",
+    "explicit_hypotheses": [],
+    "implicit_hypotheses": [],
+    "conclusion": "Definition: no proof obligation.",
+    "definitions_required": [
+      "IUT1.Ex3_2",
+      "IUT1.Ex3_3",
+      "IUT1.Ex3_4",
+      "IUT1.Ex3_5"
+    ],
+    "results_used": [],
+    "external_dependencies": [
+      "[FrdI] Corollary 4.11 (iv), Theorem 6.4"
+    ],
+    "lean_declaration": null,
+    "statement_status": "BLOCKED_BY_MATHLIB",
+    "proof_status": "NOT_EXTRACTED",
+    "obligations": [
+      "Defined as data isomorphic to a fixed model; the model needs Frobenioids."
+    ],
+    "ambiguities": [
+      "Remark 3.6.2 (page 88) leaves the notion of isomorphism of Θ-Hodge theaters to the reader as evident."
+    ]
+  },
+  "IUT1.Cor3_7": {
+    "source": {
+      "paper": "Inter-universal Teichmuller Theory I",
+      "pdf_pages": "88 to 89",
+      "pages_read": "88 to 89 (text and rendered image)"
+    },
+    "content": "(i) The full poly-isomorphism †F^⊩_tht ⥲ ‡F^⊩_mod is nonempty; it is called the Θ-link. (ii) It induces composite full poly-isomorphisms †D^⊢_v ⥲ ‡D^⊢_v. (iii) It induces composite full poly-isomorphisms of unit groups O^× at each v.",
+    "explicit_hypotheses": [
+      "Two Θ-Hodge theaters relative to the same initial Θ-data."
+    ],
+    "implicit_hypotheses": [],
+    "conclusion": "Nonemptiness of the full poly-isomorphism and the induced poly-isomorphisms on D^⊢ and O^×.",
+    "definitions_required": [],
+    "results_used": [
+      "IUT1.Def3_6",
+      "IUT1.Ex3_5"
+    ],
+    "external_dependencies": [],
+    "lean_declaration": null,
+    "statement_status": "BLOCKED_BY_MATHLIB",
+    "proof_status": "BLOCKED_BY_MATHLIB",
+    "obligations": [
+      "Proof: \"follows immediately from the definitions\"; nonemptiness rests on both collections being isomorphic to the same model."
+    ],
+    "ambiguities": [
+      "Remark 3.7.1: no particular isomorphism in the Θ-link is distinguished."
+    ]
+  },
+  "IUT1.Cor3_8": {
+    "source": {
+      "paper": "Inter-universal Teichmuller Theory I",
+      "pdf_pages": "89 to 90",
+      "pages_read": "89 to 90 (text only)"
+    },
+    "content": "Frobenius-picture: an infinite chain of Θ-Hodge theaters linked by Θ-links, and the properties of the resulting diagram.",
+    "explicit_hypotheses": [],
+    "implicit_hypotheses": [],
+    "conclusion": "Frobenius-picture.",
+    "definitions_required": [],
+    "results_used": [
+      "IUT1.Cor3_7"
+    ],
+    "external_dependencies": [],
+    "lean_declaration": null,
+    "statement_status": "BLOCKED_BY_MATHLIB",
+    "proof_status": "NOT_EXTRACTED",
+    "obligations": [],
+    "ambiguities": []
+  },
+  "IUT1.Cor3_9": {
+    "source": {
+      "paper": "Inter-universal Teichmuller Theory I",
+      "pdf_pages": "91 to 92",
+      "pages_read": "91 to 92 (text only)"
+    },
+    "content": "Étale-picture: the D-prime-strips of the Θ-Hodge theaters in the Frobenius-picture, with the symmetries permuting them.",
+    "explicit_hypotheses": [],
+    "implicit_hypotheses": [],
+    "conclusion": "Étale-picture.",
+    "definitions_required": [],
+    "results_used": [
+      "IUT1.Cor3_7",
+      "IUT1.Cor3_8"
+    ],
+    "external_dependencies": [],
+    "lean_declaration": null,
+    "statement_status": "BLOCKED_BY_MATHLIB",
+    "proof_status": "NOT_EXTRACTED",
+    "obligations": [],
+    "ambiguities": []
+  },
+  "IUT1.Rem3_2_1": {
+    "source": {
+      "paper": "Inter-universal Teichmuller Theory I",
+      "pdf_pages": "73 to 74",
+      "pages_read": "73 to 74 (text only)"
+    },
+    "content": "\"Reconstructed category-theoretically\" in [FrdI], [FrdII], [EtTh] means preserved by equivalences, a bi-anabelian notion; the remark says the techniques give mono-anabelian algorithms as well.",
+    "explicit_hypotheses": [],
+    "implicit_hypotheses": [],
+    "conclusion": "\"Reconstructed category-theoretically\" in [FrdI], [FrdII], [EtTh] means preserved by equivalences, a bi-anabelian notion; the remark says the techniques give mono-anabelian algorithms as well.",
+    "definitions_required": [],
+    "results_used": [],
+    "external_dependencies": [],
+    "lean_declaration": null,
+    "statement_status": "EXTRACTED",
+    "proof_status": "NOT_EXTRACTED",
+    "obligations": [],
+    "ambiguities": [
+      "The mono-anabelian upgrade is asserted, not proved, on these pages."
+    ]
+  },
+  "IUT1.Rem3_2_2": {
+    "source": {
+      "paper": "Inter-universal Teichmuller Theory I",
+      "pdf_pages": "74",
+      "pages_read": "74 (text only)"
+    },
+    "content": "The divisor monoid at bad v is not absolutely primitive but some positive multiple is.",
+    "explicit_hypotheses": [],
+    "implicit_hypotheses": [],
+    "conclusion": "The divisor monoid at bad v is not absolutely primitive but some positive multiple is.",
+    "definitions_required": [],
+    "results_used": [],
+    "external_dependencies": [],
+    "lean_declaration": null,
+    "statement_status": "EXTRACTED",
+    "proof_status": "NOT_EXTRACTED",
+    "obligations": [],
+    "ambiguities": []
+  },
+  "IUT1.Rem3_2_3": {
+    "source": {
+      "paper": "Inter-universal Teichmuller Theory I",
+      "pdf_pages": "74 to 75",
+      "pages_read": "74 to 75 (text only)"
+    },
+    "content": "Automorphisms of the covering Ÿ_v act on the Θ-version of the base and on the associated monoid, and the theta function changes by the corresponding conjugate.",
+    "explicit_hypotheses": [],
+    "implicit_hypotheses": [],
+    "conclusion": "Automorphisms of the covering Ÿ_v act on the Θ-version of the base and on the associated monoid, and the theta function changes by the corresponding conjugate.",
+    "definitions_required": [],
+    "results_used": [],
+    "external_dependencies": [],
+    "lean_declaration": null,
+    "statement_status": "EXTRACTED",
+    "proof_status": "NOT_EXTRACTED",
+    "obligations": [],
+    "ambiguities": []
+  },
+  "IUT1.Rem3_2_4": {
+    "source": {
+      "paper": "Inter-universal Teichmuller Theory I",
+      "pdf_pages": "75 to 77",
+      "pages_read": "75 to 77 (text only)"
+    },
+    "content": "Corrects minor oversights in the tempered Frobenioid discussion of [EtTh] §§3 to 4 concerning the universal combinatorial covering of the stable log curve.",
+    "explicit_hypotheses": [],
+    "implicit_hypotheses": [],
+    "conclusion": "Corrects minor oversights in the tempered Frobenioid discussion of [EtTh] §§3 to 4 concerning the universal combinatorial covering of the stable log curve.",
+    "definitions_required": [],
+    "results_used": [],
+    "external_dependencies": [],
+    "lean_declaration": null,
+    "statement_status": "EXTRACTED",
+    "proof_status": "NOT_EXTRACTED",
+    "obligations": [],
+    "ambiguities": [
+      "Records corrections to [EtTh]; not checked against [EtTh]."
+    ]
+  },
+  "IUT1.Rem3_3_1": {
+    "source": {
+      "paper": "Inter-universal Teichmuller Theory I",
+      "pdf_pages": "79",
+      "pages_read": "79 (text only)"
+    },
+    "content": "The same reading of \"reconstructed category-theoretically\" applies to the good nonarchimedean Frobenioids.",
+    "explicit_hypotheses": [],
+    "implicit_hypotheses": [],
+    "conclusion": "The same reading of \"reconstructed category-theoretically\" applies to the good nonarchimedean Frobenioids.",
+    "definitions_required": [],
+    "results_used": [],
+    "external_dependencies": [],
+    "lean_declaration": null,
+    "statement_status": "EXTRACTED",
+    "proof_status": "NOT_EXTRACTED",
+    "obligations": [],
+    "ambiguities": []
+  },
+  "IUT1.Rem3_3_2": {
+    "source": {
+      "paper": "Inter-universal Teichmuller Theory I",
+      "pdf_pages": "79 to 80",
+      "pages_read": "79 to 80 (text only)"
+    },
+    "content": "The p_v-adic Frobenioids carry essentially the same data as MLF-Galois TM-pairs of strictly Belyi type, respectively of mono-analytic type, of [AbsTopIII] Definition 3.1 (ii).",
+    "explicit_hypotheses": [],
+    "implicit_hypotheses": [],
+    "conclusion": "The p_v-adic Frobenioids carry essentially the same data as MLF-Galois TM-pairs of strictly Belyi type, respectively of mono-analytic type, of [AbsTopIII] Definition 3.1 (ii).",
+    "definitions_required": [],
+    "results_used": [],
+    "external_dependencies": [],
+    "lean_declaration": null,
+    "statement_status": "EXTRACTED",
+    "proof_status": "NOT_EXTRACTED",
+    "obligations": [],
+    "ambiguities": []
+  },
+  "IUT1.Rem3_4_1": {
+    "source": {
+      "paper": "Inter-universal Teichmuller Theory I",
+      "pdf_pages": "82",
+      "pages_read": "82 (text only)"
+    },
+    "content": "The same reading applies to \"algorithmically reconstructed\" at archimedean v.",
+    "explicit_hypotheses": [],
+    "implicit_hypotheses": [],
+    "conclusion": "The same reading applies to \"algorithmically reconstructed\" at archimedean v.",
+    "definitions_required": [],
+    "results_used": [],
+    "external_dependencies": [],
+    "lean_declaration": null,
+    "statement_status": "EXTRACTED",
+    "proof_status": "NOT_EXTRACTED",
+    "obligations": [],
+    "ambiguities": []
+  },
+  "IUT1.Rem3_4_2": {
+    "source": {
+      "paper": "Inter-universal Teichmuller Theory I",
+      "pdf_pages": "82 to 83",
+      "pages_read": "82 to 83 (text only)"
+    },
+    "content": "The Kummer structure κ_v is equivalent to an Aut-holomorphic structure on the groupification of O^▷(C_v) with a co-holomorphicization.",
+    "explicit_hypotheses": [],
+    "implicit_hypotheses": [],
+    "conclusion": "The Kummer structure κ_v is equivalent to an Aut-holomorphic structure on the groupification of O^▷(C_v) with a co-holomorphicization.",
+    "definitions_required": [],
+    "results_used": [],
+    "external_dependencies": [],
+    "lean_declaration": null,
+    "statement_status": "EXTRACTED",
+    "proof_status": "NOT_EXTRACTED",
+    "obligations": [],
+    "ambiguities": []
+  },
+  "IUT1.Rem3_4_3": {
+    "source": {
+      "paper": "Inter-universal Teichmuller Theory I",
+      "pdf_pages": "83 to 84",
+      "pages_read": "83 to 84 (text only)"
+    },
+    "content": "Units, torsion, and the Aut-holomorphic space E_v of the compactified curve at archimedean v, relating Example 3.4 to [AbsTopIII] Corollary 2.7.",
+    "explicit_hypotheses": [],
+    "implicit_hypotheses": [],
+    "conclusion": "Units, torsion, and the Aut-holomorphic space E_v of the compactified curve at archimedean v, relating Example 3.4 to [AbsTopIII] Corollary 2.7.",
+    "definitions_required": [],
+    "results_used": [],
+    "external_dependencies": [],
+    "lean_declaration": null,
+    "statement_status": "EXTRACTED",
+    "proof_status": "NOT_EXTRACTED",
+    "obligations": [],
+    "ambiguities": []
+  },
+  "IUT1.Rem3_5_1": {
+    "source": {
+      "paper": "Inter-universal Teichmuller Theory I",
+      "pdf_pages": "86 to 87",
+      "pages_read": "86 to 87 (text only)"
+    },
+    "content": "The formal symbol log(Θ) identifies the quotients log_Φ(Θ_v)/log_Φ(q_v) over v ∈ V^bad; the global Frobenioids act as exchange devices between local divisor monoids.",
+    "explicit_hypotheses": [],
+    "implicit_hypotheses": [],
+    "conclusion": "The formal symbol log(Θ) identifies the quotients log_Φ(Θ_v)/log_Φ(q_v) over v ∈ V^bad; the global Frobenioids act as exchange devices between local divisor monoids.",
+    "definitions_required": [],
+    "results_used": [],
+    "external_dependencies": [],
+    "lean_declaration": null,
+    "statement_status": "EXTRACTED",
+    "proof_status": "NOT_EXTRACTED",
+    "obligations": [],
+    "ambiguities": []
+  },
+  "IUT1.Rem3_5_2": {
+    "source": {
+      "paper": "Inter-universal Teichmuller Theory I",
+      "pdf_pages": "87",
+      "pages_read": "87 (text only)"
+    },
+    "content": "Convention: isomorphisms of collections of data satisfy evident compatibilities, not stated explicitly; categories are taken up to the relevant equivalences.",
+    "explicit_hypotheses": [],
+    "implicit_hypotheses": [],
+    "conclusion": "Convention: isomorphisms of collections of data satisfy evident compatibilities, not stated explicitly; categories are taken up to the relevant equivalences.",
+    "definitions_required": [],
+    "results_used": [],
+    "external_dependencies": [],
+    "lean_declaration": null,
+    "statement_status": "EXTRACTED",
+    "proof_status": "NOT_EXTRACTED",
+    "obligations": [],
+    "ambiguities": [
+      "Every later definition of morphisms relies on this unstated convention."
+    ]
+  },
+  "IUT1.Rem3_6_1": {
+    "source": {
+      "paper": "Inter-universal Teichmuller Theory I",
+      "pdf_pages": "88",
+      "pages_read": "88 (text only)"
+    },
+    "content": "Notational convention: labels other than † are applied to all derived objects.",
+    "explicit_hypotheses": [],
+    "implicit_hypotheses": [],
+    "conclusion": "Notational convention: labels other than † are applied to all derived objects.",
+    "definitions_required": [],
+    "results_used": [
+      "IUT1.Def3_6"
+    ],
+    "external_dependencies": [],
+    "lean_declaration": null,
+    "statement_status": "EXTRACTED",
+    "proof_status": "NOT_EXTRACTED",
+    "obligations": [],
+    "ambiguities": []
+  },
+  "IUT1.Rem3_6_2": {
+    "source": {
+      "paper": "Inter-universal Teichmuller Theory I",
+      "pdf_pages": "88",
+      "pages_read": "88 (text only)"
+    },
+    "content": "There is an evident notion of isomorphism of Θ-Hodge theaters; the details are left to the reader.",
+    "explicit_hypotheses": [],
+    "implicit_hypotheses": [],
+    "conclusion": "There is an evident notion of isomorphism of Θ-Hodge theaters; the details are left to the reader.",
+    "definitions_required": [],
+    "results_used": [
+      "IUT1.Def3_6"
+    ],
+    "external_dependencies": [],
+    "lean_declaration": null,
+    "statement_status": "EXTRACTED",
+    "proof_status": "NOT_EXTRACTED",
+    "obligations": [],
+    "ambiguities": [
+      "The notion of isomorphism of Θ-Hodge theaters is not written out; a formalization must choose it."
+    ]
+  },
+  "IUT1.Rem3_7_1": {
+    "source": {
+      "paper": "Inter-universal Teichmuller Theory I",
+      "pdf_pages": "89",
+      "pages_read": "89 (text only)"
+    },
+    "content": "There are many isomorphisms in the Θ-link and none is distinguished, unlike the natural isomorphism F^⊩_mod ⥲ F^⊩_tht within one theater.",
+    "explicit_hypotheses": [],
+    "implicit_hypotheses": [],
+    "conclusion": "There are many isomorphisms in the Θ-link and none is distinguished, unlike the natural isomorphism F^⊩_mod ⥲ F^⊩_tht within one theater.",
+    "definitions_required": [],
+    "results_used": [
+      "IUT1.Def3_6"
+    ],
+    "external_dependencies": [],
+    "lean_declaration": null,
+    "statement_status": "EXTRACTED",
+    "proof_status": "NOT_EXTRACTED",
+    "obligations": [],
+    "ambiguities": []
+  },
+  "IUT1.Rem3_8_1": {
+    "source": {
+      "paper": "Inter-universal Teichmuller Theory I",
+      "pdf_pages": "90 to 91",
+      "pages_read": "90 to 91 (text only)"
+    },
+    "content": "The Frobenius-picture is characterized by the Θ-link sending Θ_v of one theater to q_v of the next, at bad v.",
+    "explicit_hypotheses": [],
+    "implicit_hypotheses": [],
+    "conclusion": "The Frobenius-picture is characterized by the Θ-link sending Θ_v of one theater to q_v of the next, at bad v.",
+    "definitions_required": [],
+    "results_used": [
+      "IUT1.Def3_6"
+    ],
+    "external_dependencies": [],
+    "lean_declaration": null,
+    "statement_status": "EXTRACTED",
+    "proof_status": "NOT_EXTRACTED",
+    "obligations": [],
+    "ambiguities": []
+  },
+  "IUT1.Rem3_9_1": {
+    "source": {
+      "paper": "Inter-universal Teichmuller Theory I",
+      "pdf_pages": "92 to 93",
+      "pages_read": "92 to 93 (text only)"
+    },
+    "content": "The D^⊢-prime-strips form a core in the sense of [AbsTopIII] Definition 3.5, the mono-analytic core; ⊢ abbreviates mono-analytic.",
+    "explicit_hypotheses": [],
+    "implicit_hypotheses": [],
+    "conclusion": "The D^⊢-prime-strips form a core in the sense of [AbsTopIII] Definition 3.5, the mono-analytic core; ⊢ abbreviates mono-analytic.",
+    "definitions_required": [],
+    "results_used": [
+      "IUT1.Def3_6"
+    ],
+    "external_dependencies": [],
+    "lean_declaration": null,
+    "statement_status": "EXTRACTED",
+    "proof_status": "NOT_EXTRACTED",
+    "obligations": [],
+    "ambiguities": []
+  },
+  "IUT1.Rem3_9_2": {
+    "source": {
+      "paper": "Inter-universal Teichmuller Theory I",
+      "pdf_pages": "93",
+      "pages_read": "93 (text only)"
+    },
+    "content": "The étale-picture persists in later papers, while the local units O^× cease to be invariant once log-links are added in [IUTchIII].",
+    "explicit_hypotheses": [],
+    "implicit_hypotheses": [],
+    "conclusion": "The étale-picture persists in later papers, while the local units O^× cease to be invariant once log-links are added in [IUTchIII].",
+    "definitions_required": [],
+    "results_used": [
+      "IUT1.Def3_6"
+    ],
+    "external_dependencies": [],
+    "lean_declaration": null,
+    "statement_status": "EXTRACTED",
+    "proof_status": "NOT_EXTRACTED",
+    "obligations": [],
+    "ambiguities": []
+  },
+  "IUT1.Rem3_9_3": {
+    "source": {
+      "paper": "Inter-universal Teichmuller Theory I",
+      "pdf_pages": "93 to 94",
+      "pages_read": "93 to 94 (text only)"
+    },
+    "content": "Heuristic comparison of the mono-analytic core with an underlying real-analytic surface and of the Frobenius-picture with a Teichmüller geodesic.",
+    "explicit_hypotheses": [],
+    "implicit_hypotheses": [],
+    "conclusion": "Heuristic comparison of the mono-analytic core with an underlying real-analytic surface and of the Frobenius-picture with a Teichmüller geodesic.",
+    "definitions_required": [],
+    "results_used": [
+      "IUT1.Def3_6"
+    ],
+    "external_dependencies": [],
+    "lean_declaration": null,
+    "statement_status": "EXTRACTED",
+    "proof_status": "NOT_EXTRACTED",
+    "obligations": [],
+    "ambiguities": [
+      "Heuristic; no mathematical claim to extract."
+    ]
+  },
+  "IUT1.Rem3_9_4": {
+    "source": {
+      "paper": "Inter-universal Teichmuller Theory I",
+      "pdf_pages": "94 to 95",
+      "pages_read": "94 to 95 (text only)"
+    },
+    "content": "The assignment Θ_v ↦ q_v of the Θ-link is distinguished from an evaluation map of the theta function at torsion points within one Hodge theater.",
+    "explicit_hypotheses": [],
+    "implicit_hypotheses": [],
+    "conclusion": "The assignment Θ_v ↦ q_v of the Θ-link is distinguished from an evaluation map of the theta function at torsion points within one Hodge theater.",
+    "definitions_required": [],
+    "results_used": [
+      "IUT1.Def3_6"
+    ],
+    "external_dependencies": [],
+    "lean_declaration": null,
+    "statement_status": "EXTRACTED",
+    "proof_status": "NOT_EXTRACTED",
+    "obligations": [],
+    "ambiguities": []
+  },
+  "IUT1.Def4_1": {
+    "source": {
+      "paper": "Inter-universal Teichmuller Theory I",
+      "pdf_pages": "95 to 98",
+      "pages_read": "95 to 98 (text only); 95, 96, 97 (text and rendered image)"
+    },
+    "content": "D-prime-strips {D_v}_{v∈V}: at nonarchimedean v a category equivalent to the model D_v, at archimedean v an Aut-holomorphic orbispace isomorphic to the model; D^⊢-prime-strips; morphisms are collections of morphisms; mono-analyticization; LabCusp(D_v) with its F_l^*-torsor structure (F_l^* = F_l^×/{±1}, l^* = (l−1)/2) and canonical element; D^⊚ = B(C_K)^0, 𝕍(D^⊚), and poly-morphisms from D-prime-strips to D^⊚.",
+    "explicit_hypotheses": [],
+    "implicit_hypotheses": [],
+    "conclusion": "Definition: no proof obligation.",
+    "definitions_required": [
+      "IUT1.Ex3_2",
+      "IUT1.Ex3_3",
+      "IUT1.Ex3_4"
+    ],
+    "results_used": [],
+    "external_dependencies": [
+      "[AbsTopIII]",
+      "[SemiAnbd]"
+    ],
+    "lean_declaration": null,
+    "statement_status": "BLOCKED_BY_MATHLIB",
+    "proof_status": "NOT_EXTRACTED",
+    "obligations": [
+      "Categories of tempered coverings and Aut-holomorphic orbispaces."
+    ],
+    "ambiguities": []
+  },
+  "IUT1.Prop4_2": {
+    "source": {
+      "paper": "Inter-universal Teichmuller Theory I",
+      "pdf_pages": "98",
+      "pages_read": "98 (text only)"
+    },
+    "content": "LabCusp of a D-prime-strip is naturally an F_l^*-torsor, identified with F_l^* via the canonical element; compatible over all v.",
+    "explicit_hypotheses": [],
+    "implicit_hypotheses": [],
+    "conclusion": "Natural bijections LabCusp(D) ≅ F_l^*.",
+    "definitions_required": [],
+    "results_used": [
+      "IUT1.Def4_1"
+    ],
+    "external_dependencies": [],
+    "lean_declaration": null,
+    "statement_status": "BLOCKED_BY_MATHLIB",
+    "proof_status": "NOT_EXTRACTED",
+    "obligations": [],
+    "ambiguities": []
+  },
+  "IUT1.Ex4_3": {
+    "source": {
+      "paper": "Inter-universal Teichmuller Theory I",
+      "pdf_pages": "98 to 101",
+      "pages_read": "98 to 101 (text only); 99 (text and rendered image)"
+    },
+    "content": "Model base-NF-bridge: the outer homomorphism Aut(D^⊚) → GL2(F_l)/{±1}; the semi-unipotent and Borel subgroups Aut_ε(C_K) ⊆ Aut(C_K); V^±un ⊆ V^Bor ⊆ 𝕍(K); Aut(C_K)/Aut_ε(C_K) ≅ F_l^*; poly-morphisms φ^NF_v and the model NF-bridge φ^NF : D_J → D^⊚.",
+    "explicit_hypotheses": [],
+    "implicit_hypotheses": [],
+    "conclusion": "Construction.",
+    "definitions_required": [],
+    "results_used": [],
+    "external_dependencies": [
+      "[AbsTopIII] Theorem 1.9",
+      "[EtTh] Definition 2.1"
+    ],
+    "lean_declaration": null,
+    "statement_status": "BLOCKED_BY_MATHLIB",
+    "proof_status": "NOT_EXTRACTED",
+    "obligations": [],
+    "ambiguities": []
+  },
+  "IUT1.Ex4_4": {
+    "source": {
+      "paper": "Inter-universal Teichmuller Theory I",
+      "pdf_pages": "105 to 107",
+      "pages_read": "105 to 107 (text only)"
+    },
+    "content": "Model base-Θ-bridge: evaluation sections at bad v, the D-prime-strip D_>, and the model φ^Θ : D_J → D_>.",
+    "explicit_hypotheses": [],
+    "implicit_hypotheses": [],
+    "conclusion": "Construction.",
+    "definitions_required": [],
+    "results_used": [
+      "IUT1.Def4_1"
+    ],
+    "external_dependencies": [],
+    "lean_declaration": null,
+    "statement_status": "BLOCKED_BY_MATHLIB",
+    "proof_status": "NOT_EXTRACTED",
+    "obligations": [],
+    "ambiguities": []
+  },
+  "IUT1.Ex4_5": {
+    "source": {
+      "paper": "Inter-universal Teichmuller Theory I",
+      "pdf_pages": "107 to 108",
+      "pages_read": "107 to 108 (text only)"
+    },
+    "content": "Transport of label classes of cusps: for j ∈ F_l^*, the arrows φ^NF_j, φ^Θ_j induce an isomorphism of F_l^*-torsors φ^LC_j : LabCusp(D^⊚) ⥲ LabCusp(D_>), with φ^LC_j obtained from φ^LC_1 by the action of j; the class [ε] is the unique η with evaluation giving φ^LC_j ↦ j.",
+    "explicit_hypotheses": [],
+    "implicit_hypotheses": [],
+    "conclusion": "Construction and characterization of [ε].",
+    "definitions_required": [],
+    "results_used": [
+      "IUT1.Ex4_3",
+      "IUT1.Ex4_4",
+      "IUT1.Prop4_2",
+      "IUT1.Cor2_5"
+    ],
+    "external_dependencies": [],
+    "lean_declaration": null,
+    "statement_status": "BLOCKED_BY_MATHLIB",
+    "proof_status": "NOT_EXTRACTED",
+    "obligations": [],
+    "ambiguities": []
+  },
+  "IUT1.Def4_6": {
+    "source": {
+      "paper": "Inter-universal Teichmuller Theory I",
+      "pdf_pages": "111 to 112",
+      "pages_read": "111 to 112 (text only); 111 (text and rendered image)"
+    },
+    "content": "(i) D-NF-bridge: a poly-morphism D_J → D^⊚ from a capsule of D-prime-strips, isomorphic to the model by conjugation; morphisms are pairs (capsule-full poly-isomorphism, Aut_ε-orbit of isomorphisms) compatible with the arrows. (ii) D-Θ-bridge: a poly-morphism D_J → D_>, isomorphic to the model; morphisms are pairs (capsule-full poly-isomorphism, full poly-isomorphism). (iii) D-ΘNF-Hodge theater: a D-NF-bridge and a D-Θ-bridge sharing the capsule D_J, jointly isomorphic to the model; morphisms are compatible pairs inducing the same bijection of index sets.",
+    "explicit_hypotheses": [],
+    "implicit_hypotheses": [],
+    "conclusion": "Definition: no proof obligation.",
+    "definitions_required": [
+      "IUT1.Def4_1",
+      "IUT1.Ex4_3",
+      "IUT1.Ex4_4"
+    ],
+    "results_used": [],
+    "external_dependencies": [],
+    "lean_declaration": null,
+    "statement_status": "BLOCKED_BY_MATHLIB",
+    "proof_status": "NOT_EXTRACTED",
+    "obligations": [],
+    "ambiguities": [
+      "Composition of morphisms is described as evident."
+    ]
+  },
+  "IUT1.Prop4_7": {
+    "source": {
+      "paper": "Inter-universal Teichmuller Theory I",
+      "pdf_pages": "112 to 113",
+      "pages_read": "112 to 113 (text only)"
+    },
+    "content": "For a D-ΘNF-Hodge theater: (i) the D-Θ-bridge determines a bijection χ : J ⥲ F_l^*; (ii) restriction via the j-th parts of the bridges gives isomorphisms of F_l^*-torsors φ^LC_j, obtained from φ^LC_1 by the action of χ(j); (iii) there is a unique [ε] ∈ LabCusp(D^⊚) with φ^LC_j([ε]) ↦ χ(j), giving ζ : LabCusp(D^⊚) ⥲ J.",
+    "explicit_hypotheses": [],
+    "implicit_hypotheses": [],
+    "conclusion": "Labels on the capsule and the element [ε].",
+    "definitions_required": [],
+    "results_used": [
+      "IUT1.Ex4_5",
+      "IUT1.Def4_6"
+    ],
+    "external_dependencies": [],
+    "lean_declaration": null,
+    "statement_status": "BLOCKED_BY_MATHLIB",
+    "proof_status": "NOT_EXTRACTED",
+    "obligations": [],
+    "ambiguities": []
+  },
+  "IUT1.Prop4_8": {
+    "source": {
+      "paper": "Inter-universal Teichmuller Theory I",
+      "pdf_pages": "115",
+      "pages_read": "115 (text only)"
+    },
+    "content": "(i) Isomorphisms between two D-NF-bridges form an F_l^*-torsor. (ii) Isomorphisms between two D-Θ-bridges, or two D-ΘNF-Hodge theaters, form a set of cardinality one. (iii) Gluings of a D-NF-bridge and a D-Θ-bridge into a D-ΘNF-Hodge theater form an F_l^*-torsor. (iv) A functorial algorithm constructs, up to F_l^*-indeterminacy, a D-ΘNF-Hodge theater from a D-NF-bridge.",
+    "explicit_hypotheses": [],
+    "implicit_hypotheses": [],
+    "conclusion": "Torsor and rigidity statements.",
+    "definitions_required": [],
+    "results_used": [
+      "IUT1.Def4_6",
+      "IUT1.Prop4_7"
+    ],
+    "external_dependencies": [],
+    "lean_declaration": null,
+    "statement_status": "BLOCKED_BY_MATHLIB",
+    "proof_status": "NOT_EXTRACTED",
+    "obligations": [
+      "A formal proof needs the model objects; the torsor statements are combinatorial once the automorphism groups of the models are known."
+    ],
+    "ambiguities": []
+  },
+  "IUT1.Ex5_1": {
+    "source": {
+      "paper": "Inter-universal Teichmuller Theory I",
+      "pdf_pages": "123 to 131",
+      "pages_read": "123 to 126 (text only, parts)"
+    },
+    "content": "Global Frobenioids F^⊛ and F^⊚ over D^⊛ and D^⊚, κ-coric functions, and the realification.",
+    "explicit_hypotheses": [],
+    "implicit_hypotheses": [],
+    "conclusion": "Construction.",
+    "definitions_required": [],
+    "results_used": [],
+    "external_dependencies": [
+      "[FrdI]",
+      "[AbsTopIII]"
+    ],
+    "lean_declaration": null,
+    "statement_status": "NOT_EXTRACTED",
+    "proof_status": "NOT_EXTRACTED",
+    "obligations": [],
+    "ambiguities": [
+      "Only parts of pages 123 to 131 were read; the record is an orientation summary, not an extraction."
+    ]
+  },
+  "IUT1.Def5_2": {
+    "source": {
+      "paper": "Inter-universal Teichmuller Theory I",
+      "pdf_pages": "134 to 143",
+      "pages_read": "134 to 143 (text only); 134 (text and rendered image)"
+    },
+    "content": "F-prime-strips {F_v}: at nonarchimedean v a Frobenioid equivalent to the model, at archimedean v a triple with Kummer structure; F^⊢-prime-strips; morphisms are collections of isomorphisms; F^⊩-prime-strips (C^⊩, Prime(C^⊩) ⥲ V, F^⊢, {ρ_v}); parts (v) to (viii) on ∞κ-coric and κ-coric structures, including the Kummer structure cyclotomic isomorphism at archimedean v.",
+    "explicit_hypotheses": [],
+    "implicit_hypotheses": [],
+    "conclusion": "Definition: no proof obligation.",
+    "definitions_required": [
+      "IUT1.Def4_1",
+      "IUT1.Ex3_2",
+      "IUT1.Ex3_3",
+      "IUT1.Ex3_4",
+      "IUT1.Ex3_5"
+    ],
+    "results_used": [],
+    "external_dependencies": [
+      "[FrdI]",
+      "[FrdII]",
+      "[AbsTopIII] Corollary 2.7"
+    ],
+    "lean_declaration": null,
+    "statement_status": "BLOCKED_BY_MATHLIB",
+    "proof_status": "NOT_EXTRACTED",
+    "obligations": [],
+    "ambiguities": []
+  },
+  "IUT1.Cor5_3": {
+    "source": {
+      "paper": "Inter-universal Teichmuller Theory I",
+      "pdf_pages": "143 to 145",
+      "pages_read": "143 to 145 (text only); 144 (text and rendered image)"
+    },
+    "content": "(i) Isom of the global Frobenioids to Isom of their bases is bijective. (ii) Isom of F-prime-strips to Isom of the associated D-prime-strips is bijective. (iii) For F^⊢-prime-strips the map is surjective. (iv) Aut(F_v) → Aut(D_v) is bijective at bad v.",
+    "explicit_hypotheses": [],
+    "implicit_hypotheses": [],
+    "conclusion": "Reconstruction of Frobenioid data from base data.",
+    "definitions_required": [],
+    "results_used": [
+      "IUT1.Def5_2"
+    ],
+    "external_dependencies": [
+      "[FrdI]",
+      "[EtTh]",
+      "[AbsTopIII]"
+    ],
+    "lean_declaration": null,
+    "statement_status": "BLOCKED_BY_MATHLIB",
+    "proof_status": "NOT_EXTRACTED",
+    "obligations": [],
+    "ambiguities": []
+  },
+  "IUT1.Ex5_4": {
+    "source": {
+      "paper": "Inter-universal Teichmuller Theory I",
+      "pdf_pages": "147 to 151",
+      "pages_read": "146 to 151 (text only)"
+    },
+    "content": "Model Θ- and NF-bridges: the F-prime-strip †F_> tautologically associated to a Θ-Hodge theater; capsules F_J; ψ^Θ lying over φ^Θ (Remark 5.3.1); δ-valuations and the localized F-prime-strip F^⊚|_δ, well defined up to isomorphism; poly-morphisms to F^⊚; the unique ψ^NF over φ^NF (Corollary 5.3 (ii)); restriction functors and pivotal distributions.",
+    "explicit_hypotheses": [],
+    "implicit_hypotheses": [],
+    "conclusion": "Construction.",
+    "definitions_required": [],
+    "results_used": [
+      "IUT1.Cor5_3",
+      "IUT1.Ex4_5"
+    ],
+    "external_dependencies": [
+      "[SemiAnbd] Theorem 6.6",
+      "[AbsTopIII] Corollaries 2.8, 2.9"
+    ],
+    "lean_declaration": null,
+    "statement_status": "BLOCKED_BY_MATHLIB",
+    "proof_status": "NOT_EXTRACTED",
+    "obligations": [],
+    "ambiguities": [
+      "F^⊚|_δ is only defined up to isomorphism (page 148), so poly-morphisms into F^⊚ are defined as full poly-isomorphisms to some such localization."
+    ]
+  },
+  "IUT1.Def5_5": {
+    "source": {
+      "paper": "Inter-universal Teichmuller Theory I",
+      "pdf_pages": "151 to 153",
+      "pages_read": "151 to 153 (text only)"
+    },
+    "content": "(i) NF-bridge: (F_J, F^⊚, F^⊛, the restriction arrow, ψ^NF) where ψ^NF lifts a D-NF-bridge. (ii) Θ-bridge: (F_J, F_>, HT^Θ, ψ^Θ) with F_> tautologically associated to the Θ-Hodge theater and ψ^Θ determined by a D-Θ-bridge. (iii) ΘNF-Hodge theater: an NF-bridge and a Θ-bridge with a common capsule, lifting a D-ΘNF-Hodge theater. Morphisms are compatible collections of poly-isomorphisms.",
+    "explicit_hypotheses": [],
+    "implicit_hypotheses": [],
+    "conclusion": "Definition: no proof obligation.",
+    "definitions_required": [
+      "IUT1.Def4_6",
+      "IUT1.Def5_2",
+      "IUT1.Def3_6",
+      "IUT1.Ex5_4"
+    ],
+    "results_used": [],
+    "external_dependencies": [],
+    "lean_declaration": null,
+    "statement_status": "BLOCKED_BY_MATHLIB",
+    "proof_status": "NOT_EXTRACTED",
+    "obligations": [],
+    "ambiguities": [
+      "Morphisms of Θ-bridges use isomorphisms of Θ-Hodge theaters (Remark 3.6.2), whose definition is left to the reader."
+    ]
+  },
+  "IUT1.Cor5_6": {
+    "source": {
+      "paper": "Inter-universal Teichmuller Theory I",
+      "pdf_pages": "153 to 154",
+      "pages_read": "153 to 154 (text only)"
+    },
+    "content": "(i) Isomorphisms of Θ-Hodge theaters biject with isomorphisms of the associated D-prime-strips. (ii) Isomorphisms of NF-bridges, Θ-bridges, ΘNF-Hodge theaters biject with those of the associated D-objects. (iii) Gluings of an NF-bridge and a Θ-bridge form an F_l^*-torsor.",
+    "explicit_hypotheses": [],
+    "implicit_hypotheses": [],
+    "conclusion": "Bijections on isomorphism sets and torsor of gluings.",
+    "definitions_required": [],
+    "results_used": [
+      "IUT1.Cor5_3",
+      "IUT1.Prop4_8"
+    ],
+    "external_dependencies": [],
+    "lean_declaration": null,
+    "statement_status": "BLOCKED_BY_MATHLIB",
+    "proof_status": "NOT_EXTRACTED",
+    "obligations": [],
+    "ambiguities": [
+      "The task names \"Proposition 5.6\"; the paper's statement with that number is Corollary 5.6. There is no Proposition 5.6 in §5."
+    ]
+  },
+  "IUT1.Def6_1": {
+    "source": {
+      "paper": "Inter-universal Teichmuller Theory I",
+      "pdf_pages": "155 to 159",
+      "pages_read": "155 to 159 (text only); 155, 158 (text and rendered image)"
+    },
+    "content": "F_l^{⋊±} = F_l ⋊ {±1}; F_l^±-groups and F_l^±-torsors with Aut_+ and Aut_±; positive and α-signed +-full poly-isomorphisms of D-prime-strips; LabCusp^± as an F_l^±-torsor; D^{⊚±} = B(X_K)^0 with Aut_± ⊇ Aut_csp and the isomorphism Aut_±(D^{⊚±})/Aut_csp ⥲ F_l^{⋊±}, depending on ε; V^± ⊆ 𝕍(K).",
+    "explicit_hypotheses": [],
+    "implicit_hypotheses": [],
+    "conclusion": "Definition: no proof obligation.",
+    "definitions_required": [
+      "IUT1.Def4_1",
+      "IUT1.Ex4_3"
+    ],
+    "results_used": [],
+    "external_dependencies": [
+      "[AbsTopIII] Theorem 1.9",
+      "[AbsTopI] Lemma 4.5",
+      "[EtTh] Definition 2.1"
+    ],
+    "lean_declaration": null,
+    "statement_status": "BLOCKED_BY_MATHLIB",
+    "proof_status": "NOT_EXTRACTED",
+    "obligations": [],
+    "ambiguities": [
+      "The ⋊ in F_l^{⋊±} is lost in the extracted text and was read from renders."
+    ]
+  },
+  "IUT1.Ex6_2": {
+    "source": {
+      "paper": "Inter-universal Teichmuller Theory I",
+      "pdf_pages": "159 to 160",
+      "pages_read": "159 to 160 (text only)"
+    },
+    "content": "Model base-Θ^±-bridge: copies D_t, t ∈ F_l, of the tautological D-prime-strip, positive +-full poly-isomorphisms to D_≻, the capsule D_±, the poly-automorphism −1_{F_l} of order two, and α-signed poly-automorphisms for α ∈ {±1}^V.",
+    "explicit_hypotheses": [],
+    "implicit_hypotheses": [],
+    "conclusion": "Construction.",
+    "definitions_required": [],
+    "results_used": [
+      "IUT1.Def6_1"
+    ],
+    "external_dependencies": [],
+    "lean_declaration": null,
+    "statement_status": "BLOCKED_BY_MATHLIB",
+    "proof_status": "NOT_EXTRACTED",
+    "obligations": [],
+    "ambiguities": []
+  },
+  "IUT1.Ex6_3": {
+    "source": {
+      "paper": "Inter-universal Teichmuller Theory I",
+      "pdf_pages": "160 to 162",
+      "pages_read": "160 to 162 (text only)"
+    },
+    "content": "Model base-Θ^ell-bridge: fix LabCusp^±(D^{⊚±}) ≅ F_l; poly-morphisms φ^{Θell}_t : D_t → D^{⊚±} built from β ∘ φ ∘ α with α ∈ Aut_+(D_v), β ∈ Aut_csp(D^{⊚±}); equivariant poly-action of F_l^{⋊±}.",
+    "explicit_hypotheses": [],
+    "implicit_hypotheses": [],
+    "conclusion": "Construction.",
+    "definitions_required": [],
+    "results_used": [
+      "IUT1.Def6_1",
+      "IUT1.Ex6_2"
+    ],
+    "external_dependencies": [],
+    "lean_declaration": null,
+    "statement_status": "BLOCKED_BY_MATHLIB",
+    "proof_status": "NOT_EXTRACTED",
+    "obligations": [],
+    "ambiguities": []
+  },
+  "IUT1.Def6_4": {
+    "source": {
+      "paper": "Inter-universal Teichmuller Theory I",
+      "pdf_pages": "162 to 163",
+      "pages_read": "162 to 163 (text only)"
+    },
+    "content": "l^± = (l+1)/2. (i) D-Θ^±-bridge: a poly-morphism D_T → D_≻ with T an F_l^±-group, isomorphic to the model; the capsules D_{|T|} and D_{T^*}; morphisms are capsule-+-full poly-isomorphisms over F_l^±-group isomorphisms and +-full poly-isomorphisms. (ii) D-Θ^ell-bridge: D_T → D^{⊚±} with T an F_l^±-torsor; morphisms use Aut_csp-orbits. (iii) D-Θ^{±ell}-Hodge theater: a D-Θ^±-bridge and a D-Θ^ell-bridge on one capsule, isomorphic to the model.",
+    "explicit_hypotheses": [],
+    "implicit_hypotheses": [],
+    "conclusion": "Definition: no proof obligation.",
+    "definitions_required": [
+      "IUT1.Def6_1",
+      "IUT1.Ex6_2",
+      "IUT1.Ex6_3"
+    ],
+    "results_used": [],
+    "external_dependencies": [],
+    "lean_declaration": null,
+    "statement_status": "BLOCKED_BY_MATHLIB",
+    "proof_status": "NOT_EXTRACTED",
+    "obligations": [],
+    "ambiguities": []
+  },
+  "IUT1.Prop6_6": {
+    "source": {
+      "paper": "Inter-universal Teichmuller Theory I",
+      "pdf_pages": "165 to 166",
+      "pages_read": "165 to 166 (text only); 165, 166 (text and rendered image)"
+    },
+    "content": "(i) Isomorphisms of D-Θ^±-bridges form a torsor over {±1} × ∏_{v∈V}{±1}. (ii) Isomorphisms of D-Θ^ell-bridges form an F_l^{⋊±}-torsor. (iii) Isomorphisms of D-Θ^{±ell}-Hodge theaters form a {±1}-torsor. (iv) Gluings form a torsor over F_l^{⋊±} × ∏_{v∈V}{±1}. (v) A functorial algorithm constructs a D-Θ^{±ell}-Hodge theater from a D-Θ^ell-bridge, up to the indeterminacy of (iv).",
+    "explicit_hypotheses": [],
+    "implicit_hypotheses": [],
+    "conclusion": "Torsor statements.",
+    "definitions_required": [],
+    "results_used": [
+      "IUT1.Def6_4"
+    ],
+    "external_dependencies": [],
+    "lean_declaration": null,
+    "statement_status": "BLOCKED_BY_MATHLIB",
+    "proof_status": "NOT_EXTRACTED",
+    "obligations": [],
+    "ambiguities": []
+  },
+  "IUT1.Prop6_7": {
+    "source": {
+      "paper": "Inter-universal Teichmuller Theory I",
+      "pdf_pages": "167",
+      "pages_read": "167 (text only)"
+    },
+    "content": "From a D-Θ^±-bridge, by passing to D_{T^*}, identifying D_≻ with D_0, and replacing +-full poly-morphisms by full ones at good v and by those of Example 4.4 at bad v, a functorial algorithm produces a D-Θ-bridge D_{T^*} → D_>, well defined up to unique isomorphism.",
+    "explicit_hypotheses": [],
+    "implicit_hypotheses": [],
+    "conclusion": "Construction of a D-Θ-bridge from a D-Θ^±-bridge.",
+    "definitions_required": [],
+    "results_used": [
+      "IUT1.Def6_4",
+      "IUT1.Ex4_4"
+    ],
+    "external_dependencies": [],
+    "lean_declaration": null,
+    "statement_status": "BLOCKED_BY_MATHLIB",
+    "proof_status": "NOT_EXTRACTED",
+    "obligations": [
+      "Proof: \"follows immediately from the definitions\"."
+    ],
+    "ambiguities": []
+  },
+  "IUT1.Cor6_10": {
+    "source": {
+      "paper": "Inter-universal Teichmuller Theory I",
+      "pdf_pages": "170 to 172",
+      "pages_read": "170 to 172 (text only); 170 (text and rendered image)"
+    },
+    "content": "The D-Θ^{±ell}-link between D-Θ^{±ell}-Hodge theaters is the full poly-isomorphism of the mono-analytic D^⊢-prime-strips D^⊢_>; the resulting étale-picture with its symmetries.",
+    "explicit_hypotheses": [],
+    "implicit_hypotheses": [],
+    "conclusion": "Étale-picture of D-Θ^{±ell}-Hodge theaters.",
+    "definitions_required": [],
+    "results_used": [
+      "IUT1.Prop6_6"
+    ],
+    "external_dependencies": [],
+    "lean_declaration": null,
+    "statement_status": "BLOCKED_BY_MATHLIB",
+    "proof_status": "NOT_EXTRACTED",
+    "obligations": [],
+    "ambiguities": []
+  },
+  "IUT1.Def6_11": {
+    "source": {
+      "paper": "Inter-universal Teichmuller Theory I",
+      "pdf_pages": "172 to 173",
+      "pages_read": "172 to 173 (text only); 173 (text and rendered image)"
+    },
+    "content": "(i) Θ^±-bridge: a poly-morphism F_T → F_≻ of F-prime-strips lifting a D-Θ^±-bridge (Corollary 5.3 (ii)); capsules F_{|T|}, F_{T^*}. (ii) Θ^ell-bridge: F_T → D^{⊚±}, which is by definition a D-Θ^ell-bridge on the associated capsule of D-prime-strips. (iii) Θ^{±ell}-Hodge theater: a Θ^±-bridge and a Θ^ell-bridge whose associated D-data form a D-Θ^{±ell}-Hodge theater; morphisms induce the same poly-isomorphism of capsules.",
+    "explicit_hypotheses": [],
+    "implicit_hypotheses": [],
+    "conclusion": "Definition: no proof obligation.",
+    "definitions_required": [
+      "IUT1.Def6_4",
+      "IUT1.Def5_2",
+      "IUT1.Cor5_3"
+    ],
+    "results_used": [],
+    "external_dependencies": [],
+    "lean_declaration": null,
+    "statement_status": "BLOCKED_BY_MATHLIB",
+    "proof_status": "NOT_EXTRACTED",
+    "obligations": [],
+    "ambiguities": []
+  },
+  "IUT1.Cor6_12": {
+    "source": {
+      "paper": "Inter-universal Teichmuller Theory I",
+      "pdf_pages": "173 to 174",
+      "pages_read": "173 to 174 (text only); 173 (text and rendered image)"
+    },
+    "content": "(i) Isomorphisms of Θ^±-bridges, Θ^ell-bridges, Θ^{±ell}-Hodge theaters biject with those of the associated D-objects. (ii) Gluings of a Θ^±-bridge and a Θ^ell-bridge form a torsor over F_l^{⋊±} × ∏_{v∈V}{±1}.",
+    "explicit_hypotheses": [],
+    "implicit_hypotheses": [],
+    "conclusion": "Bijections and torsor of gluings.",
+    "definitions_required": [],
+    "results_used": [
+      "IUT1.Prop6_6",
+      "IUT1.Cor5_3"
+    ],
+    "external_dependencies": [],
+    "lean_declaration": null,
+    "statement_status": "BLOCKED_BY_MATHLIB",
+    "proof_status": "NOT_EXTRACTED",
+    "obligations": [],
+    "ambiguities": []
+  },
+  "IUT1.Def6_13": {
+    "source": {
+      "paper": "Inter-universal Teichmuller Theory I",
+      "pdf_pages": "182 to 184",
+      "pages_read": "180 to 184 (text only); 182 (text and rendered image)"
+    },
+    "content": "(i) A Θ^{±ell}NF-Hodge theater is a triple: a Θ^{±ell}-Hodge theater, a ΘNF-Hodge theater, and the necessarily unique gluing isomorphism between them (Remark 6.12.2). The D-version is defined in the same way.",
+    "explicit_hypotheses": [],
+    "implicit_hypotheses": [],
+    "conclusion": "Definition: no proof obligation.",
+    "definitions_required": [
+      "IUT1.Def6_11",
+      "IUT1.Def5_5",
+      "IUT1.Prop6_7"
+    ],
+    "results_used": [],
+    "external_dependencies": [],
+    "lean_declaration": null,
+    "statement_status": "BLOCKED_BY_MATHLIB",
+    "proof_status": "NOT_EXTRACTED",
+    "obligations": [],
+    "ambiguities": [
+      "Uniqueness of the gluing is asserted in Remark 6.12.2 via Proposition 6.7; it is a claim, recorded as such."
+    ]
+  }
+}

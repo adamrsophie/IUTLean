@@ -1,0 +1,48 @@
+SourceScan.lean:1: import of experimental module IUT.Experimental.Scaffold
+SourceScan.lean:2: import of experimental module IUT.Experimental.Other
+SourceScan.lean:15: debug option debug.skipKernelTC
+SourceScan.lean:15: set_option debug.skipKernelTC
+SourceScan.lean:18: set_option pp.all
+SourceScan.lean:20: run_cmd
+SourceScan.lean:22: run_meta
+SourceScan.lean:24: run_elab
+SourceScan.lean:26: #eval
+SourceScan.lean:28: initialize
+SourceScan.lean:30: syntax
+SourceScan.lean:32: declare_syntax_cat
+SourceScan.lean:34: macro
+SourceScan.lean:36: macro_rules
+SourceScan.lean:38: elab
+SourceScan.lean:40: elab_rules
+SourceScan.lean:42: notation
+SourceScan.lean:44: infix
+SourceScan.lean:46: local instance
+SourceScan.lean:48: local instance
+SourceScan.lean:50: attribute that runs code
+SourceScan.lean:53: run_tac
+SourceScan.lean:55: by_elab
+SourceScan.lean:57: simproc
+SourceScan.lean:59: attribute that runs code
+SourceScan.lean:61: notation3
+SourceScan.lean:63: prefix
+SourceScan.lean:65: postfix
+SourceScan.lean:67: infixl
+SourceScan.lean:69: infixr
+SourceScan.lean:71: dsimproc
+SourceScan.lean:73: builtin_initialize
+SourceScan.lean:75: local instance
+SourceScan.lean:78: run_meta
+SourceScan.lean:81: run_elab
+SourceScan.lean:83: run_cmd
+SourceScan.lean:91: sorry
+SourceScan.lean:93: admit
+SourceScan.lean:95: axiom
+SourceScan.lean:97: native_decide
+SourceScan.lean:99: opaque
+SourceScan.lean:101: unsafe
+SourceScan.lean:103: partial
+SourceScan.lean:105: implemented_by
+SourceScan.lean:107: extern
+SourceScanLakefile.toml:4: lakefile option moreLeanArgs
+SourceScanLakefile.toml:6: lakefile option leanOptions
+source scan FAILED: 47 findings in 2 files

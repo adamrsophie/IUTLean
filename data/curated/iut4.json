@@ -1,0 +1,1484 @@
+{
+ "IUT4.ThmA": {
+  "source": {
+   "paper": "Inter-universal Teichmuller Theory IV",
+   "pdf_pages": "page 3",
+   "pages_read": "text and render of page 3"
+  },
+  "content": "Diophantine inequality for hyperbolic curves: the height of omega_X(D) is bounded, up to a bounded discrepancy, by (1 + epsilon) times the sum of the log-different and the log-conductor on points of bounded degree.",
+  "explicit_hypotheses": [
+   "X a smooth, proper, geometrically connected curve over a number field",
+   "D a reduced divisor, U_X = X minus D hyperbolic (deg omega_X(D) > 0)",
+   "d a positive integer, epsilon a positive real"
+  ],
+  "implicit_hypotheses": [
+   "heights, log-differents, log-conductors in the sense of [GenEll], Definitions 1.2 and 1.5",
+   "the relation <~ in the corrected sense of Remark 2.3.1 (ii)"
+  ],
+  "conclusion": "ht_{omega_X(D)} <~ (1 + epsilon)(log-diff_X + log-cond_D) on U_X(Qbar)^{<= d}.",
+  "definitions_required": [
+   "BD-class",
+   "ht_{omega_X(D)}",
+   "log-diff_X",
+   "log-cond_D",
+   "U_X(Qbar)^{<= d}"
+  ],
+  "results_used": [
+   "IUT4.Cor2_3"
+  ],
+  "external_dependencies": [
+   "GenEll: Theorem 2.1",
+   "IUTchIII: Corollary 3.12"
+  ],
+  "lean_declaration": null,
+  "statement_status": "EXTRACTED",
+  "proof_status": "BLOCKED_BY_EXTERNAL_THEOREM",
+  "obligations": [
+   "Theorem A is Corollary 2.3; see that record.",
+   "The specialization to the abc inequality (X = P^1, D = {0, 1, infinity}, d = 1) is described in docs/PAPER_IV_DERIVATION.md and is not formalized."
+  ],
+  "ambiguities": [],
+  "cor3_12_dependency": "conditional"
+ },
+ "IUT4.Prop1_1": {
+  "source": {
+   "paper": "Inter-universal Teichmuller Theory IV",
+   "pdf_pages": "pages 9 to 10",
+   "pages_read": "text of pages 9 and 10; render of page 10"
+  },
+  "content": "Multiple tensor products of rings of integers of finite extensions of Q_p and their normalizations: the normalization (R_I)^~ lies between R_I and p^{-d_I} R_I, with d_I the sum of the orders of the differents.",
+  "explicit_hypotheses": [],
+  "implicit_hypotheses": [],
+  "conclusion": "Inclusions relating R_I, (R_I)^~ and p^{-d_I}(R_I)^~.",
+  "definitions_required": [
+   "d_i (order of the different)",
+   "R_I = tensor product of the R_i over Z_p"
+  ],
+  "results_used": [],
+  "external_dependencies": [],
+  "lean_declaration": null,
+  "statement_status": "EXTRACTED",
+  "proof_status": "EXTRACTED",
+  "obligations": [
+   "Not formalized: needs tensor products of p-adic rings of integers and their normalizations, which Mathlib does not provide in this form."
+  ],
+  "ambiguities": [],
+  "cor3_12_dependency": "independent"
+ },
+ "IUT4.Prop1_2": {
+  "source": {
+   "paper": "Inter-universal Teichmuller Theory IV",
+   "pdf_pages": "pages 10 to 11",
+   "pages_read": "text of pages 10 and 11; renders of pages 10 and 11"
+  },
+  "content": "Defines a_i = (1/e_i) ceil(e_i/(p-2)) (p > 2), a_i = 2 (p = 2), b_i = floor(log(p e_i/(p-1))/log p) − 1/e_i, and bounds p-adic logarithms of unit groups and automorphisms of their tensor products by powers of p.",
+  "explicit_hypotheses": [
+   "p prime, k_i finite over Q_p with ramification index e_i",
+   "phi an automorphism preserving log_p(R_I^x)"
+  ],
+  "implicit_hypotheses": [],
+  "conclusion": "(i) p^{a_i} R_i in log_p(R_i^x) in p^{-b_i} R_i; (ii) to (iv) inclusions for phi.",
+  "definitions_required": [
+   "a_i",
+   "b_i",
+   "log_p",
+   "(R_I)^~"
+  ],
+  "results_used": [
+   "IUT4.Prop1_1"
+  ],
+  "external_dependencies": [
+   "Kobl: p. 81 (p-adic logarithm and exponential)"
+  ],
+  "lean_declaration": "IUT.PaperIV.Proposition1_2.a_b_of_le",
+  "statement_status": "EXTRACTED",
+  "proof_status": "EXTRACTED",
+  "obligations": [
+   "The inclusions (i) to (iv) need p-adic logarithm theory; not formalized.",
+   "Elementary facts about a_i, b_i are kernel checked: see IUT4.Prop1_2.elementary."
+  ],
+  "ambiguities": [
+   "The text extraction drops the ceiling in a_i and the floor in b_i; the render of page 10 shows both."
+  ],
+  "cor3_12_dependency": "independent"
+ },
+ "IUT4.Prop1_2.elementary": {
+  "source": {
+   "paper": "Inter-universal Teichmuller Theory IV",
+   "pdf_pages": "pages 10 to 11, 13 to 14",
+   "pages_read": "renders of pages 10, 11, 13, 14"
+  },
+  "content": "Elementary properties of a_i and b_i used in Propositions 1.2 and 1.4.",
+  "explicit_hypotheses": [
+   "p >= 2 (primality not needed)",
+   "e_i >= 1"
+  ],
+  "implicit_hypotheses": [],
+  "conclusion": "a_i = 1/e_i = -b_i if p > 2 and e_i <= p-2; a_i > 1/(p-1); p^{b_i+1/e_i}/e_i > 1/(p-1); a_i − 1/e_i <= 4/p <= 2/log p; (b_i + 1/e_i) log p <= log(2 e_i) <= 1 + log e_i; d_i + a_i >= 1 (p > 2), >= 2 (p = 2).",
+  "definitions_required": [],
+  "results_used": [],
+  "external_dependencies": [],
+  "lean_declaration": "IUT.PaperIV.Proposition1_2.a_sub_le",
+  "statement_status": "STATEMENT_FORMALIZED",
+  "proof_status": "KERNEL_VERIFIED",
+  "obligations": [
+   "Other declarations: a_b_of_le, a_b_of_e_one, a_gt, rpow_b_gt, iii_floor, four_div_le, b_add_le, a_ge_inv, d_add_a_ge (namespace IUT.PaperIV.Proposition1_2)."
+  ],
+  "ambiguities": [],
+  "cor3_12_dependency": "independent"
+ },
+ "IUT4.Prop1_3": {
+  "source": {
+   "paper": "Inter-universal Teichmuller Theory IV",
+   "pdf_pages": "pages 11 to 13",
+   "pages_read": "text of pages 11 to 13; renders of pages 11, 12, 13"
+  },
+  "content": "Estimates of differents: d_i >= d_0 + (e_{i/0} − 1)/e_i, with equality if tame; and d_i <= d_0 + n_i + 1/e_0 when k_i is Galois over a tame extension of k_0.",
+  "explicit_hypotheses": [],
+  "implicit_hypotheses": [],
+  "conclusion": "(i) lower bound; (ii) upper bound on d_i.",
+  "definitions_required": [
+   "d_i",
+   "d_0",
+   "e_{i/0}",
+   "n_i"
+  ],
+  "results_used": [],
+  "external_dependencies": [],
+  "lean_declaration": "IUT.PaperIV.Proposition1_3.ii_step",
+  "statement_status": "EXTRACTED",
+  "proof_status": "EXTRACTED",
+  "obligations": [
+   "Local field inputs (Eisenstein and Kummer polynomials, differents) not formalized.",
+   "Arithmetic of the proof kernel checked: i_min, ii_base, ii_step, ii_of_forall_eps."
+  ],
+  "ambiguities": [],
+  "cor3_12_dependency": "independent"
+ },
+ "IUT4.Rem1_3_1": {
+  "source": {
+   "paper": "Inter-universal Teichmuller Theory IV",
+   "pdf_pages": "page 13",
+   "pages_read": "text"
+  },
+  "content": "Similar estimates appear in [Ih], Lemma A.",
+  "explicit_hypotheses": [],
+  "implicit_hypotheses": [],
+  "conclusion": "Remark.",
+  "definitions_required": [],
+  "results_used": [],
+  "external_dependencies": [
+   "Ih: Lemma A"
+  ],
+  "lean_declaration": null,
+  "statement_status": "EXTRACTED",
+  "proof_status": "EXTRACTED",
+  "obligations": [],
+  "ambiguities": [],
+  "cor3_12_dependency": "independent"
+ },
+ "IUT4.Prop1_4": {
+  "source": {
+   "paper": "Inter-universal Teichmuller Theory IV",
+   "pdf_pages": "pages 13 to 14",
+   "pages_read": "text of pages 13 and 14; renders of pages 13 and 14"
+  },
+  "content": "Normalized log-volume estimates for p-adic tensor packets: normalization of mu^log, the value of mu^log(log_p(R_i^x)), and upper bounds for the log-volumes of the regions containing phi(p^lambda (R_I)^~).",
+  "explicit_hypotheses": [],
+  "implicit_hypotheses": [],
+  "conclusion": "(i) normalization; (ii) mu^log(log_p(R_i^x)) = -(1/e_i + m_i/(e_i f_i)) log p; (iii) two upper bounds and d_I + a_I >= |I| (p > 2), >= 2|I| (p = 2); (iv) the case e_i = 1.",
+  "definitions_required": [],
+  "results_used": [
+   "IUT4.Prop1_1",
+   "IUT4.Prop1_2",
+   "IUT4.Prop1_3"
+  ],
+  "external_dependencies": [
+   "AbsTopIII: Propositions 5.7 and 5.8"
+  ],
+  "lean_declaration": "IUT.PaperIV.Proposition1_4.iii_first",
+  "statement_status": "EXTRACTED",
+  "proof_status": "CONDITIONALLY_VERIFIED",
+  "obligations": [
+   "mu^log is not formalized; its normalization, additivity over tensor factors and mu^log(R_I) <= 0 are hypotheses of iii_first and iii_second.",
+   "Kernel checked: ii_identity, ii_le, iii_first, iii_second, a_add_b_le, dI_add_aI_ge."
+  ],
+  "ambiguities": [
+   "The first display of (iii) writes p^{lambda − d_I − a_I}; the render shows a floor, which accounts for the +1."
+  ],
+  "cor3_12_dependency": "independent"
+ },
+ "IUT4.Prop1_5": {
+  "source": {
+   "paper": "Inter-universal Teichmuller Theory IV",
+   "pdf_pages": "pages 14 to 16",
+   "pages_read": "text of pages 14 to 16; render of page 15"
+  },
+  "content": "Archimedean metric estimates: C tensor_R C = C + C is compatible with metrics up to a factor 2; primitive automorphisms preserve decompositions; M_I splits into 2^{|I|-1}|V|^{|I|} copies of C with metric factor 2^{|I|-1}; tensor products of vectors of length lambda lie in lambda^{|I|} B_I.",
+  "explicit_hypotheses": [],
+  "implicit_hypotheses": [],
+  "conclusion": "(i) to (iv).",
+  "definitions_required": [],
+  "results_used": [],
+  "external_dependencies": [
+   "IUTchIII: Proposition 3.1, Remark 3.9.1"
+  ],
+  "lean_declaration": "IUT.PaperIV.Proposition1_5.crt_normSq",
+  "statement_status": "EXTRACTED",
+  "proof_status": "EXTRACTED",
+  "obligations": [
+   "Kernel checked: (i) in coordinates (crt_pure, crt_normSq) and the count of (iii) (count_iii). Tensor product metrics, (ii), the metric factor of (iii) and (iv) are not formalized."
+  ],
+  "ambiguities": [],
+  "cor3_12_dependency": "independent"
+ },
+ "IUT4.Prop1_6": {
+  "source": {
+   "paper": "Inter-universal Teichmuller Theory IV",
+   "pdf_pages": "page 16",
+   "pages_read": "text and render of page 16"
+  },
+  "content": "Consequence of the prime number theorem: n <= 4 p_n / (3 log p_n) for n large, and pi(eta) <= 4 eta/(3 log eta) for eta >= eta_prm.",
+  "explicit_hypotheses": [],
+  "implicit_hypotheses": [],
+  "conclusion": "Existence of n_0 and of eta_prm.",
+  "definitions_required": [],
+  "results_used": [],
+  "external_dependencies": [
+   "DmMn: section 3.10 (prime number theorem)"
+  ],
+  "lean_declaration": "IUT.PaperIV.Proposition1_6.exists_eta_prm",
+  "statement_status": "STATEMENT_FORMALIZED",
+  "proof_status": "KERNEL_VERIFIED",
+  "obligations": [
+   "Proved from Mathlib's Nat.isEquivalent_primeCounting; also exists_n0 and counting_of_nth (the second display follows formally from the first)."
+  ],
+  "ambiguities": [
+   "The paper says eta_prm is positive; Step (viii) of Theorem 1.10 divides by log(eta_prm), so eta_prm > 1 is needed. The Lean statement gives eta_prm >= 2."
+  ],
+  "cor3_12_dependency": "independent"
+ },
+ "IUT4.Prop1_7": {
+  "source": {
+   "paper": "Inter-universal Teichmuller Theory IV",
+   "pdf_pages": "pages 16 to 17",
+   "pages_read": "text and renders of pages 16 and 17"
+  },
+  "content": "Weighted averages: for positive weights lambda_e and values beta_e on a finite set E, the lambda-weighted average over E^n of beta_{e-vector} equals that of n beta_{e_i}, and both equal n beta_avg.",
+  "explicit_hypotheses": [
+   "E nonempty finite",
+   "n >= 1",
+   "lambda_e > 0"
+  ],
+  "implicit_hypotheses": [],
+  "conclusion": "The displayed identities.",
+  "definitions_required": [],
+  "results_used": [],
+  "external_dependencies": [],
+  "lean_declaration": "IUT.PaperIV.Proposition1_7.weighted_averages",
+  "statement_status": "STATEMENT_FORMALIZED",
+  "proof_status": "KERNEL_VERIFIED",
+  "obligations": [],
+  "ambiguities": [],
+  "cor3_12_dependency": "independent"
+ },
+ "IUT4.Rem1_7_1": {
+  "source": {
+   "paper": "Inter-universal Teichmuller Theory IV",
+   "pdf_pages": "pages 17 to 18",
+   "pages_read": "text"
+  },
+  "content": "When Proposition 1.7 is applied in Theorem 1.10 with normalized log-volumes, the normalized weights of IUT III Remark 3.1.1 (ii) are replaced by weights adapted to normalized log-volumes, so that the averaging weights become the local degrees [(F_mod)_v : Q_{v_Q}].",
+  "explicit_hypotheses": [],
+  "implicit_hypotheses": [],
+  "conclusion": "Remark.",
+  "definitions_required": [],
+  "results_used": [
+   "IUT4.Prop1_7"
+  ],
+  "external_dependencies": [
+   "IUTchIII: Remark 3.1.1 (ii), Proposition 3.9 (i)"
+  ],
+  "lean_declaration": null,
+  "statement_status": "EXTRACTED",
+  "proof_status": "EXTRACTED",
+  "obligations": [],
+  "ambiguities": [],
+  "cor3_12_dependency": "setup_only"
+ },
+ "IUT4.Prop1_8": {
+  "source": {
+   "paper": "Inter-universal Teichmuller Theory IV",
+   "pdf_pages": "pages 18 to 21",
+   "pages_read": "text of pages 18 to 21; render of page 21"
+  },
+  "content": "Torsion points of elliptic curves: fields of definition of 2-, 3-, 5-torsion, the Legendre form, semistable reduction over small extensions, Neron models.",
+  "explicit_hypotheses": [],
+  "implicit_hypotheses": [],
+  "conclusion": "(i) to (vii).",
+  "definitions_required": [],
+  "results_used": [],
+  "external_dependencies": [
+   "Silv: Chapter VII, Proposition 5.4",
+   "NerMod: section 7.4"
+  ],
+  "lean_declaration": null,
+  "statement_status": "EXTRACTED",
+  "proof_status": "BLOCKED_BY_MATHLIB",
+  "obligations": [
+   "Needs elliptic curves over local fields, torsion fields and Neron models."
+  ],
+  "ambiguities": [],
+  "cor3_12_dependency": "independent"
+ },
+ "IUT4.Def1_9": {
+  "source": {
+   "paper": "Inter-universal Teichmuller Theory IV",
+   "pdf_pages": "pages 21 to 22",
+   "pages_read": "text and renders of pages 21 and 22 (magnified crop of the display of (ii))"
+  },
+  "content": "(i) arithmetic divisors, deg_F with weights log(q_v) and 1, normalized degree; (ii) for a set E of valuations over one v_Q, deg_E(a) = deg(a_E)/sum_{v in E}[F_v : Q_{v_Q}], invariant under passing to finite extensions.",
+  "explicit_hypotheses": [],
+  "implicit_hypotheses": [],
+  "conclusion": "Definitions.",
+  "definitions_required": [
+   "ADiv_R(F)",
+   "deg_F",
+   "normalized deg",
+   "deg_E"
+  ],
+  "results_used": [],
+  "external_dependencies": [],
+  "lean_declaration": "IUT.PaperIV.degE",
+  "statement_status": "STATEMENT_FORMALIZED",
+  "proof_status": "EXTRACTED",
+  "obligations": [
+   "(i) is IUT/PaperIV/ArithmeticDivisor.lean; (ii) is IUT/PaperIV/Definition1_9.lean.",
+   "The invariance deg_{E|K}(a|_K) = deg_E(a) is not formalized (needs pullback of arithmetic divisors); only the scaling fact degE_ratio_invariant is checked."
+  ],
+  "ambiguities": [
+   "The numerator of (ii) is not underlined in the render, so it is the unnormalized deg_F. Only this reading makes the stated invariance hold. The Lean definition uses deg_F; a reading with the normalized degree differs by the factor 1/[K:F]."
+  ],
+  "cor3_12_dependency": "independent"
+ },
+ "IUT4.Thm1_10": {
+  "source": {
+   "paper": "Inter-universal Teichmuller Theory IV",
+   "pdf_pages": "pages 22 to 31",
+   "pages_read": "text and renders of pages 22 to 31"
+  },
+  "content": "Log-volume estimates for Theta-pilot objects: for initial Theta-data with l >= 5, the constant C_Theta of IUT III Corollary 3.12 may be taken to be the explicit expression (l+1)/(4|log q|) {(1 + 12 d_mod/l)(log d + log f) + 10(e*_mod l + eta_prm) − (1/6)(1 − 12/l^2) log q} − 1; and then, by C_Theta >= -1, (1/6) log q <= (1 + 20 d_mod/l)(log d + log f) + 20(e*_mod l + eta_prm).",
+  "explicit_hypotheses": [
+   "initial Theta-data as in IUTchI Definition 3.1",
+   "the conditions on F, F_tpd, K stated in Theorem 1.10"
+  ],
+  "implicit_hypotheses": [
+   "l is a prime >= 5 (IUTchI Definition 3.1) and l != 5 (noted on page 22 from IUTchI Definition 3.1 (c), since the 5-torsion is rational over F); hence l >= 7, which the final estimate uses"
+  ],
+  "conclusion": "The bound on C_Theta, and the final inequality.",
+  "definitions_required": [],
+  "results_used": [
+   "IUT4.Prop1_3",
+   "IUT4.Prop1_4",
+   "IUT4.Prop1_5",
+   "IUT4.Prop1_6",
+   "IUT4.Prop1_7",
+   "IUT4.Prop1_8",
+   "IUT4.Def1_9"
+  ],
+  "external_dependencies": [
+   "IUTchIII: Theorem 3.11, Corollary 3.12",
+   "IUTchI: Definition 3.1"
+  ],
+  "lean_declaration": "IUT.PaperIV.Theorem1_10.step_viii_constant",
+  "statement_status": "EXTRACTED",
+  "proof_status": "BLOCKED_BY_EXTERNAL_THEOREM",
+  "obligations": [
+   "The arithmetic of every step is kernel checked relative to hypotheses that encode the local and global facts; see the step records.",
+   "The local inputs (Propositions 1.1 to 1.5, 1.8) and IUT III Theorem 3.11 are not formalized."
+  ],
+  "ambiguities": [],
+  "cor3_12_dependency": "conditional"
+ },
+ "IUT4.Thm1_10.StepI": {
+  "source": {
+   "paper": "Inter-universal Teichmuller Theory IV",
+   "pdf_pages": "pages 23 to 24",
+   "pages_read": "text and renders of pages 23 and 24"
+  },
+  "content": "Elementary facts: (E1), (E2) sums; (E3) |GL_2(F_p)| = p(p+1)(p-1)^2; (E4) the values at 2, 3, 5; (E5) [F_mod(sqrt -1) : F_mod] <= 2; (E6) bounds on log 2, log 3, log pi, log 5.",
+  "explicit_hypotheses": [],
+  "implicit_hypotheses": [],
+  "conclusion": "(E1) to (E6).",
+  "definitions_required": [],
+  "results_used": [],
+  "external_dependencies": [],
+  "lean_declaration": "IUT.PaperIV.Theorem1_10.card_GL2",
+  "statement_status": "STATEMENT_FORMALIZED",
+  "proof_status": "KERNEL_VERIFIED",
+  "obligations": [
+   "(E1), (E2): existing E1, E2 in Arithmetic.lean; (E3): card_GL2; (E4): E4, E4_product; (E6): E6. (E5) is field theory and not formalized."
+  ],
+  "ambiguities": [],
+  "cor3_12_dependency": "independent"
+ },
+ "IUT4.Thm1_10.StepII": {
+  "source": {
+   "paper": "Inter-universal Teichmuller Theory IV",
+   "pdf_pages": "page 24",
+   "pages_read": "text and render of page 24"
+  },
+  "content": "Bounds on differents and conductors: log d^F + log f^F <= log d^{F_tpd} + log f^{F_tpd} + 21, and (1 + 4/l) log d^K <= (1 + 4/l)(log d^{F_tpd} + log f^{F_tpd}) + 2 log l + 46.",
+  "explicit_hypotheses": [],
+  "implicit_hypotheses": [],
+  "conclusion": "The displays of Step (ii).",
+  "definitions_required": [],
+  "results_used": [
+   "IUT4.Prop1_3",
+   "IUT4.Thm1_10.StepI"
+  ],
+  "external_dependencies": [],
+  "lean_declaration": "IUT.PaperIV.Theorem1_10.step_ii_final",
+  "statement_status": "STATEMENT_FORMALIZED",
+  "proof_status": "CONDITIONALLY_VERIFIED",
+  "obligations": [
+   "Hypotheses: the inequalities obtained from Proposition 1.3 and the Galois group embeddings (not formalized)."
+  ],
+  "ambiguities": [],
+  "cor3_12_dependency": "independent"
+ },
+ "IUT4.Thm1_10.StepIII": {
+  "source": {
+   "paper": "Inter-universal Teichmuller Theory IV",
+   "pdf_pages": "pages 24 to 26",
+   "pages_read": "text and renders of pages 24, 25, 26"
+  },
+  "content": "Distinguished valuations, conditions (D0) to (D7), ramification bounds (R1) to (R4), the divisors s^Q and s^<=, and the bound (1 + 4/l) log d^K + (4/l) log s^Q <= (1 + 12 d_mod/l)(log d^{F_tpd} + log f^{F_tpd}) + 2 log l + 52.",
+  "explicit_hypotheses": [],
+  "implicit_hypotheses": [],
+  "conclusion": "Final display of Step (iii) and (R4).",
+  "definitions_required": [],
+  "results_used": [
+   "IUT4.Prop1_3",
+   "IUT4.Thm1_10.StepII"
+  ],
+  "external_dependencies": [],
+  "lean_declaration": "IUT.PaperIV.Theorem1_10.step_iii_final",
+  "statement_status": "STATEMENT_FORMALIZED",
+  "proof_status": "CONDITIONALLY_VERIFIED",
+  "obligations": [
+   "Hypotheses: (R1) to (R3) and log s^Q <= 2 d_mod D + log(2 3 5 l).",
+   "Also kernel checked: R4, step_iii_p_eq_l, step_iii_sQ."
+  ],
+  "ambiguities": [
+   "The extracted text drops the symbol not-in in 'p_{v_Q} not in {2, 3, 5, l}'; the render shows it.",
+   "The step from (4/l) D to (4 d_mod/l) D needs D >= 0, which holds but is not stated."
+  ],
+  "cor3_12_dependency": "independent"
+ },
+ "IUT4.Thm1_10.StepIV": {
+  "source": {
+   "paper": "Inter-universal Teichmuller Theory IV",
+   "pdf_pages": "pages 26 to 27",
+   "pages_read": "text of pages 26 and 27"
+  },
+  "content": "Recalls the multiradial representation of IUT III Theorem 3.11 and explains that C_Theta is obtained from upper bounds for procession-normalized log-volumes of the holomorphic hulls of tensor packets of log-shells.",
+  "explicit_hypotheses": [],
+  "implicit_hypotheses": [],
+  "conclusion": "Reduction to local log-volume bounds.",
+  "definitions_required": [],
+  "results_used": [],
+  "external_dependencies": [
+   "IUTchIII: Theorem 3.11, Corollary 3.12, Proposition 3.9"
+  ],
+  "lean_declaration": null,
+  "statement_status": "EXTRACTED",
+  "proof_status": "BLOCKED_BY_EXTERNAL_THEOREM",
+  "obligations": [
+   "Depends on the construction of IUT III; not formalized."
+  ],
+  "ambiguities": [],
+  "cor3_12_dependency": "setup_only"
+ },
+ "IUT4.Thm1_10.StepV": {
+  "source": {
+   "paper": "Inter-universal Teichmuller Theory IV",
+   "pdf_pages": "pages 27 to 29",
+   "pages_read": "text and renders of pages 28 and 29"
+  },
+  "content": "Distinguished nonarchimedean v_Q (in the sense of Step (iii)): local bounds from Proposition 1.4 (iii) and (R4), weighted averages by Proposition 1.7, averaging over j = 1..l* with (E1), (E2), and the procession-normalized bound (l+1)/4 {(1+4/l) log d^K − (1/6) log q + (4/l) log s^Q + (20/3) l*_mod log s^<=}.",
+  "explicit_hypotheses": [],
+  "implicit_hypotheses": [],
+  "conclusion": "The final display of Step (v).",
+  "definitions_required": [],
+  "results_used": [
+   "IUT4.Prop1_4",
+   "IUT4.Prop1_7",
+   "IUT4.Thm1_10.StepIII",
+   "IUT4.Thm1_10.StepI"
+  ],
+  "external_dependencies": [],
+  "lean_declaration": "IUT.PaperIV.Theorem1_10.step_v_final",
+  "statement_status": "STATEMENT_FORMALIZED",
+  "proof_status": "CONDITIONALLY_VERIFIED",
+  "obligations": [
+   "Also kernel checked: sum_Istar_le, weighted_average_normalized, betaAvg_affine, step_v_weighted, procession_sum, procession_average, procession_average_l.",
+   "The local log-volume bounds themselves are hypotheses."
+  ],
+  "ambiguities": [
+   "step_v_final needs log d^K_{v_Q}, log s^Q_{v_Q} and l*_mod log s^<=_{v_Q} to be nonnegative (true by definition) and l >= 5; the key estimate is 4(l+5)/(l+1) <= 20/3."
+  ],
+  "cor3_12_dependency": "setup_only"
+ },
+ "IUT4.Thm1_10.StepVI": {
+  "source": {
+   "paper": "Inter-universal Teichmuller Theory IV",
+   "pdf_pages": "page 29",
+   "pages_read": "text and render of page 29"
+  },
+  "content": "Nonarchimedean v_Q that are not distinguished: Proposition 1.4 (iv) gives the local bound 0.",
+  "explicit_hypotheses": [],
+  "implicit_hypotheses": [],
+  "conclusion": "Bound 0.",
+  "definitions_required": [],
+  "results_used": [],
+  "external_dependencies": [],
+  "lean_declaration": "IUT.PaperIV.Theorem1_10.step_vi",
+  "statement_status": "STATEMENT_FORMALIZED",
+  "proof_status": "CONDITIONALLY_VERIFIED",
+  "obligations": [
+   "Only the trivial averaging is formalized; the local input is Proposition 1.4 (iv)."
+  ],
+  "ambiguities": [],
+  "cor3_12_dependency": "setup_only"
+ },
+ "IUT4.Thm1_10.StepVII": {
+  "source": {
+   "paper": "Inter-universal Teichmuller Theory IV",
+   "pdf_pages": "pages 29 to 30",
+   "pages_read": "text and renders of pages 29 and 30"
+  },
+  "content": "Archimedean place: Proposition 1.5 gives local bound (j+1) log pi; averaging gives (l+5)/4 log pi <= (l+1)/4 * 4.",
+  "explicit_hypotheses": [],
+  "implicit_hypotheses": [],
+  "conclusion": "Archimedean bound.",
+  "definitions_required": [],
+  "results_used": [
+   "IUT4.Prop1_5"
+  ],
+  "external_dependencies": [],
+  "lean_declaration": "IUT.PaperIV.Theorem1_10.step_vii_average",
+  "statement_status": "STATEMENT_FORMALIZED",
+  "proof_status": "CONDITIONALLY_VERIFIED",
+  "obligations": [
+   "The final estimate is step_vii_archimedean in Arithmetic.lean."
+  ],
+  "ambiguities": [],
+  "cor3_12_dependency": "setup_only"
+ },
+ "IUT4.Thm1_10.StepVIII": {
+  "source": {
+   "paper": "Inter-universal Teichmuller Theory IV",
+   "pdf_pages": "pages 30 to 31",
+   "pages_read": "text and renders of pages 30 and 31"
+  },
+  "content": "Sum of the local bounds, the final display of Step (iii), the estimate (l+1)/4 (1/6)(12/l^2) >= 1/(2l), the prime count l*_mod log s^<= <= (4/3)(e*_mod l + eta_prm) from Proposition 1.6, absorption of 2 log l + 56, giving the stated C_Theta.",
+  "explicit_hypotheses": [],
+  "implicit_hypotheses": [],
+  "conclusion": "C_Theta may be taken to be the expression of Theorem 1.10.",
+  "definitions_required": [],
+  "results_used": [
+   "IUT4.Prop1_6",
+   "IUT4.Thm1_10.StepV",
+   "IUT4.Thm1_10.StepVI",
+   "IUT4.Thm1_10.StepVII"
+  ],
+  "external_dependencies": [],
+  "lean_declaration": "IUT.PaperIV.Theorem1_10.step_viii_constant",
+  "statement_status": "STATEMENT_FORMALIZED",
+  "proof_status": "CONDITIONALLY_VERIFIED",
+  "obligations": [
+   "Also kernel checked: step_viii_sum, step_viii_raw, step_viii_prime_count, step_viii_prime_count_prm (with the eta_prm of Proposition 1.6, unconditional).",
+   "Hypotheses: the summed local bounds and log s^<= <= pi(e*_mod l)."
+  ],
+  "ambiguities": [
+   "The second case of the prime count needs log(eta_prm) > 0; see IUT4.Prop1_6."
+  ],
+  "cor3_12_dependency": "setup_only"
+ },
+ "IUT4.Thm1_10.final": {
+  "source": {
+   "paper": "Inter-universal Teichmuller Theory IV",
+   "pdf_pages": "page 31",
+   "pages_read": "text and render of page 31"
+  },
+  "content": "From IUT III Corollary 3.12 (C_Theta >= -1), Step (ii), and (1 − 12/l^2)^{-1} <= 2, (1 − 12/l^2)^{-1}(1 + 12 d_mod/l) <= 1 + 20 d_mod/l for l >= 7 (see IUT4.Thm1_10), d_mod >= 1: (1/6) log q <= (1 + 20 d_mod/l)(log d + log f) + 20(e*_mod l + eta_prm).",
+  "explicit_hypotheses": [],
+  "implicit_hypotheses": [],
+  "conclusion": "Final inequality of Theorem 1.10.",
+  "definitions_required": [],
+  "results_used": [
+   "IUT4.Thm1_10.StepVIII"
+  ],
+  "external_dependencies": [
+   "IUTchIII: Corollary 3.12"
+  ],
+  "lean_declaration": "IUT.PaperIV.Theorem1_10.final_inequality",
+  "statement_status": "STATEMENT_FORMALIZED",
+  "proof_status": "CONDITIONALLY_VERIFIED",
+  "obligations": [
+   "The hypothesis -1 <= constant is IUT III Corollary 3.12 combined with Step (viii)."
+  ],
+  "ambiguities": [],
+  "cor3_12_dependency": "conditional"
+ },
+ "IUT4.Rem1_10_1": {
+  "source": {
+   "paper": "Inter-universal Teichmuller Theory IV",
+   "pdf_pages": "pages 31 to 32",
+   "pages_read": "text"
+  },
+  "content": "The leading term of the bound, computed via (E1), (E2), parallels the leading term in scheme-theoretic Hodge-Arakelov theory ([HASurI] Theorem A).",
+  "explicit_hypotheses": [],
+  "implicit_hypotheses": [],
+  "conclusion": "Remark.",
+  "definitions_required": [],
+  "results_used": [
+   "IUT4.Thm1_10"
+  ],
+  "external_dependencies": [
+   "HASurI: Theorem A"
+  ],
+  "lean_declaration": null,
+  "statement_status": "EXTRACTED",
+  "proof_status": "EXTRACTED",
+  "obligations": [],
+  "ambiguities": [],
+  "cor3_12_dependency": "setup_only"
+ },
+ "IUT4.Rem1_10_2": {
+  "source": {
+   "paper": "Inter-universal Teichmuller Theory IV",
+   "pdf_pages": "page 32",
+   "pages_read": "text"
+  },
+  "content": "The computation is a kind of derivative in the F_l direction, compared with the arithmetic Kodaira-Spencer morphism of [HASurII].",
+  "explicit_hypotheses": [],
+  "implicit_hypotheses": [],
+  "conclusion": "Remark.",
+  "definitions_required": [],
+  "results_used": [
+   "IUT4.Thm1_10"
+  ],
+  "external_dependencies": [
+   "HASurII: Corollary 3.6"
+  ],
+  "lean_declaration": null,
+  "statement_status": "EXTRACTED",
+  "proof_status": "EXTRACTED",
+  "obligations": [],
+  "ambiguities": [],
+  "cor3_12_dependency": "setup_only"
+ },
+ "IUT4.Rem1_10_3": {
+  "source": {
+   "paper": "Inter-universal Teichmuller Theory IV",
+   "pdf_pages": "pages 32 to 33",
+   "pages_read": "text"
+  },
+  "content": "The terms involving l are a consequence of working over the field of l-torsion points K, both globally and in the prime-strips.",
+  "explicit_hypotheses": [],
+  "implicit_hypotheses": [],
+  "conclusion": "Remark.",
+  "definitions_required": [],
+  "results_used": [
+   "IUT4.Thm1_10"
+  ],
+  "external_dependencies": [],
+  "lean_declaration": null,
+  "statement_status": "EXTRACTED",
+  "proof_status": "EXTRACTED",
+  "obligations": [],
+  "ambiguities": [],
+  "cor3_12_dependency": "setup_only"
+ },
+ "IUT4.Rem1_10_4": {
+  "source": {
+   "paper": "Inter-universal Teichmuller Theory IV",
+   "pdf_pages": "pages 33 to 34",
+   "pages_read": "text"
+  },
+  "content": "The log-volume fluctuations computed in Theorem 1.10 may be viewed as a kind of inter-universal analytic torsion.",
+  "explicit_hypotheses": [],
+  "implicit_hypotheses": [],
+  "conclusion": "Remark.",
+  "definitions_required": [],
+  "results_used": [
+   "IUT4.Thm1_10"
+  ],
+  "external_dependencies": [],
+  "lean_declaration": null,
+  "statement_status": "EXTRACTED",
+  "proof_status": "EXTRACTED",
+  "obligations": [],
+  "ambiguities": [],
+  "cor3_12_dependency": "setup_only"
+ },
+ "IUT4.Rem1_10_5": {
+  "source": {
+   "paper": "Inter-universal Teichmuller Theory IV",
+   "pdf_pages": "pages 34 to 36",
+   "pages_read": "text"
+  },
+  "content": "Computational aspects: the constants of Theorem 1.10 are essentially explicit and no exceptional set is excluded; comparison with the asymptotics of abc examples (e.g. [Mss]).",
+  "explicit_hypotheses": [],
+  "implicit_hypotheses": [],
+  "conclusion": "Remark.",
+  "definitions_required": [],
+  "results_used": [
+   "IUT4.Thm1_10"
+  ],
+  "external_dependencies": [
+   "Mss"
+  ],
+  "lean_declaration": null,
+  "statement_status": "EXTRACTED",
+  "proof_status": "EXTRACTED",
+  "obligations": [],
+  "ambiguities": [],
+  "cor3_12_dependency": "setup_only"
+ },
+ "IUT4.Rem1_10_6": {
+  "source": {
+   "paper": "Inter-universal Teichmuller Theory IV",
+   "pdf_pages": "pages 36 to 38",
+   "pages_read": "text"
+  },
+  "content": "The bound on (1/6) log q concerns only q-parameters at valuations in V_mod^bad, all of odd residue characteristic; consequences for examples with large powers of 2.",
+  "explicit_hypotheses": [],
+  "implicit_hypotheses": [],
+  "conclusion": "Remark.",
+  "definitions_required": [],
+  "results_used": [
+   "IUT4.Thm1_10"
+  ],
+  "external_dependencies": [
+   "IUTchI: Definition 3.1 (b)",
+   "Mss"
+  ],
+  "lean_declaration": null,
+  "statement_status": "EXTRACTED",
+  "proof_status": "EXTRACTED",
+  "obligations": [],
+  "ambiguities": [],
+  "cor3_12_dependency": "setup_only"
+ },
+ "IUT4.Rem1_10_7": {
+  "source": {
+   "paper": "Inter-universal Teichmuller Theory IV",
+   "pdf_pages": "pages 38 to 40",
+   "pages_read": "text"
+  },
+  "content": "(i) Since e*_mod <= d*_mod, e*_mod may be replaced by d*_mod in the final displays of Theorem 1.10. (ii) d_mod cannot be replaced by e_mod within the framework, because of tensor products of copies of F_mod over Q.",
+  "explicit_hypotheses": [],
+  "implicit_hypotheses": [],
+  "conclusion": "Remark.",
+  "definitions_required": [],
+  "results_used": [
+   "IUT4.Thm1_10"
+  ],
+  "external_dependencies": [
+   "IUTchIII: Theorem 3.11, Proposition 3.2"
+  ],
+  "lean_declaration": null,
+  "statement_status": "EXTRACTED",
+  "proof_status": "EXTRACTED",
+  "obligations": [
+   "(i) is used in Corollary 2.2 (apply_theorem_1_10 takes E <= d*_mod l + eta_prm as a hypothesis)."
+  ],
+  "ambiguities": [],
+  "cor3_12_dependency": "independent"
+ },
+ "IUT4.Prop2_1": {
+  "source": {
+   "paper": "Inter-universal Teichmuller Theory IV",
+   "pdf_pages": "pages 40 to 41",
+   "pages_read": "text of pages 40 and 41; render of page 40"
+  },
+  "content": "(i) log x <= x for x >= 1. (ii) There is xi_prm >= 5 with (2/3)x <= theta(x) <= (4/3)x for x >= xi_prm; for a finite set A of primes there is a prime p not in A with p <= 2(theta_A + xi_prm).",
+  "explicit_hypotheses": [],
+  "implicit_hypotheses": [],
+  "conclusion": "(i), (ii).",
+  "definitions_required": [],
+  "results_used": [],
+  "external_dependencies": [
+   "Edw: p. 76",
+   "GenEll: Lemma 4.1, Remark 4.1.1"
+  ],
+  "lean_declaration": "IUT.PaperIV.Proposition2_1.exists_prime_not_mem",
+  "statement_status": "STATEMENT_FORMALIZED",
+  "proof_status": "KERNEL_VERIFIED",
+  "obligations": [
+   "Proved from Mathlib's Chebyshev.tendsto_theta_div_atTop; also log_le_self, exists_xi_prm, exists_prime_not_mem_of."
+  ],
+  "ambiguities": [
+   "The extracted text reads 'p in A'; the render shows 'p not in A'."
+  ],
+  "cor3_12_dependency": "independent"
+ },
+ "IUT4.Cor2_2": {
+  "source": {
+   "paper": "Inter-universal Teichmuller Theory IV",
+   "pdf_pages": "pages 41 to 48",
+   "pages_read": "text of pages 41 to 48; renders of pages 42 to 48"
+  },
+  "content": "Construction of initial Theta-data from a point of a compactly bounded subset K_V of the lambda-line satisfying (*_{j-inv}), with (C1) and (C2), and the uniform bound on exceptional sets.",
+  "explicit_hypotheses": [],
+  "implicit_hypotheses": [],
+  "conclusion": "(i), (ii) with (C1), (C2), (iii).",
+  "definitions_required": [],
+  "results_used": [
+   "IUT4.Prop2_1",
+   "IUT4.Thm1_10",
+   "IUT4.Rem1_10_7",
+   "IUT4.Prop1_8"
+  ],
+  "external_dependencies": [
+   "GenEll: Definition 1.2, Example 1.3, Proposition 1.4, Lemma 3.1, Proposition 3.4, Lemma 3.5, Lemma 3.7, Definition 3.3",
+   "CanLift: Proposition 2.7",
+   "IUTchI: Definition 3.1"
+  ],
+  "lean_declaration": null,
+  "statement_status": "EXTRACTED",
+  "proof_status": "BLOCKED_BY_EXTERNAL_THEOREM",
+  "obligations": [
+   "The arithmetic of the proof is kernel checked in IUT/PaperIV/Corollary2_2/Arithmetic.lean; see the part and step records."
+  ],
+  "ambiguities": [],
+  "cor3_12_dependency": "conditional"
+ },
+ "IUT4.Cor2_2.i": {
+  "source": {
+   "paper": "Inter-universal Teichmuller Theory IV",
+   "pdf_pages": "pages 41 to 43",
+   "pages_read": "text and renders of pages 42 and 43"
+  },
+  "content": "(1/6) log q^{not 2} ~ (1/6) log q^forall ~ (1/6) ht_infinity ~ ht_{omega_X(D)} on K_V.",
+  "explicit_hypotheses": [],
+  "implicit_hypotheses": [],
+  "conclusion": "Equality of BD-classes.",
+  "definitions_required": [],
+  "results_used": [],
+  "external_dependencies": [
+   "GenEll: Proposition 1.4 (i), (iii), Lemma 3.7, discussion before Proposition 3.4"
+  ],
+  "lean_declaration": null,
+  "statement_status": "EXTRACTED",
+  "proof_status": "BLOCKED_BY_EXTERNAL_THEOREM",
+  "obligations": [
+   "Heights on the moduli of elliptic curves are not formalized."
+  ],
+  "ambiguities": [],
+  "cor3_12_dependency": "independent"
+ },
+ "IUT4.Cor2_2.ii.C1": {
+  "source": {
+   "paper": "Inter-universal Teichmuller Theory IV",
+   "pdf_pages": "pages 42 to 45",
+   "pages_read": "text and renders of pages 42, 44, 45"
+  },
+  "content": "(C1): h^{1/2} <= l <= 10 delta h^{1/2} log(2 delta h), h = log q^forall.",
+  "explicit_hypotheses": [],
+  "implicit_hypotheses": [],
+  "conclusion": "Choice of l.",
+  "definitions_required": [],
+  "results_used": [
+   "IUT4.Prop2_1"
+  ],
+  "external_dependencies": [],
+  "lean_declaration": "IUT.PaperIV.Corollary2_2.P1_upper",
+  "statement_status": "STATEMENT_FORMALIZED",
+  "proof_status": "CONDITIONALLY_VERIFIED",
+  "obligations": [
+   "Kernel checked: thetaA_chain, S1_bound, P1_upper, P1_lower, P1_l_ge_seven, P1_bound.",
+   "Hypothesis: theta_A <= 2h^{1/2} + delta h^{1/2} + 2 delta h^{1/2} log(2 delta h), whose derivation from the local heights is not formalized."
+  ],
+  "ambiguities": [
+   "(P1) gives l >= 5; the final part of Theorem 1.10 needs l >= 7. The statement of Theorem 1.10 (page 22) notes l != 5 from IUTchI Definition 3.1 (c); independently, 5 <= h^{1/2} < l with l prime gives l >= 7 (P1_l_ge_seven)."
+  ],
+  "cor3_12_dependency": "independent"
+ },
+ "IUT4.Cor2_2.ii.C2": {
+  "source": {
+   "paper": "Inter-universal Teichmuller Theory IV",
+   "pdf_pages": "pages 42 to 48",
+   "pages_read": "text and renders of pages 42, 46, 47, 48"
+  },
+  "content": "(C2): (1/6) log q <= (1/6) log q^{not 2} <= (1/6) log q^forall <= (1 + epsilon_E)(log-diff_X(x_E) + log-cond_D(x_E)) + C_K, with epsilon_E = (60 delta)^2 log(2 delta h)/h^{1/2}.",
+  "explicit_hypotheses": [],
+  "implicit_hypotheses": [],
+  "conclusion": "Inequality (C2).",
+  "definitions_required": [],
+  "results_used": [
+   "IUT4.Thm1_10.final",
+   "IUT4.Cor2_2.i"
+  ],
+  "external_dependencies": [],
+  "lean_declaration": "IUT.PaperIV.Corollary2_2.final_step",
+  "statement_status": "STATEMENT_FORMALIZED",
+  "proof_status": "CONDITIONALLY_VERIFIED",
+  "obligations": [
+   "Kernel checked: apply_theorem_1_10, q_not2_step, fifteen_delta_step, assembly, epsE_ge, final_step, C2_of_final, sqrt_mul_log_l."
+  ],
+  "ambiguities": [],
+  "cor3_12_dependency": "conditional"
+ },
+ "IUT4.Cor2_2.iii": {
+  "source": {
+   "paper": "Inter-universal Teichmuller Theory IV",
+   "pdf_pages": "pages 42 to 47",
+   "pages_read": "text and renders of pages 42, 43, 47"
+  },
+  "content": "H_unif may be chosen so that, outside a finite set Exc_{epsilon,d}, epsilon_E <= epsilon, and log q^forall <= H_unif epsilon^{-3} epsilon_d^{-3} d^{4+epsilon_d} + H_K on Exc.",
+  "explicit_hypotheses": [],
+  "implicit_hypotheses": [],
+  "conclusion": "Uniform bound.",
+  "definitions_required": [],
+  "results_used": [],
+  "external_dependencies": [],
+  "lean_declaration": "IUT.PaperIV.Corollary2_2.h_lt_of_eps_lt_epsE",
+  "statement_status": "STATEMENT_FORMALIZED",
+  "proof_status": "KERNEL_VERIFIED",
+  "obligations": [
+   "The real-power estimate (h_lt_of_eps_lt_epsE) and the constant H_unif = 16^3 (60 2^12 3^3 5)^5 (h_bound_Hunif) are kernel checked; the finiteness of j-invariants of bounded height ([GenEll] Proposition 1.4 (iv)) is not."
+  ],
+  "ambiguities": [
+   "Graded conditional because (iii) controls the exceptional sets of (ii), whose (C2) is conditional; the arithmetic step (h large implies epsilon_E <= epsilon) is independent."
+  ],
+  "cor3_12_dependency": "conditional"
+ },
+ "IUT4.Cor2_2.ProofP1": {
+  "source": {
+   "paper": "Inter-universal Teichmuller Theory IV",
+   "pdf_pages": "pages 44 to 45",
+   "pages_read": "text and render of page 45"
+  },
+  "content": "(P1) to (P3): after enlarging Exc_d so that h^{1/2} >= xi_prm, the bound theta_A <= 2h^{1/2} + delta h^{1/2} + 2 delta h^{1/2} log(2 delta h) <= -xi_prm + 5 delta h^{1/2} log(2 delta h) and Proposition 2.1 give a prime l with (P1) (5 <=) h^{1/2} <= l <= 10 delta h^{1/2} log(2 delta h) (<= 20 delta^2 h^2).",
+  "explicit_hypotheses": [],
+  "implicit_hypotheses": [],
+  "conclusion": "(P1).",
+  "definitions_required": [],
+  "results_used": [
+   "IUT4.Prop2_1",
+   "IUT4.Thm1_10.StepI"
+  ],
+  "external_dependencies": [],
+  "lean_declaration": "IUT.PaperIV.Corollary2_2.P1_upper",
+  "statement_status": "STATEMENT_FORMALIZED",
+  "proof_status": "CONDITIONALLY_VERIFIED",
+  "obligations": [
+   "Kernel checked: thetaA_chain, S1_bound, P1_upper, P1_lower, P1_l_ge_seven, P1_bound.",
+   "The choice of A (primes dividing nonzero h_v and small primes) and the bound on theta_A from the local heights are hypotheses."
+  ],
+  "ambiguities": [],
+  "cor3_12_dependency": "independent"
+ },
+ "IUT4.Cor2_2.ProofP2": {
+  "source": {
+   "paper": "Inter-universal Teichmuller Theory IV",
+   "pdf_pages": "page 45",
+   "pages_read": "text and render of page 45"
+  },
+  "content": "(P2): l does not divide any nonzero h_v for nonarchimedean v.",
+  "explicit_hypotheses": [],
+  "implicit_hypotheses": [],
+  "conclusion": "(P2).",
+  "definitions_required": [],
+  "results_used": [
+   "IUT4.Prop2_1"
+  ],
+  "external_dependencies": [],
+  "lean_declaration": null,
+  "statement_status": "EXTRACTED",
+  "proof_status": "EXTRACTED",
+  "obligations": [
+   "Follows from the choice l not in A; the local heights h_v are not formalized."
+  ],
+  "ambiguities": [],
+  "cor3_12_dependency": "independent"
+ },
+ "IUT4.Cor2_2.ProofP3": {
+  "source": {
+   "paper": "Inter-universal Teichmuller Theory IV",
+   "pdf_pages": "pages 45 and 47",
+   "pages_read": "text and renders of pages 45 and 47"
+  },
+  "content": "(P3): if l = p_v for some nonarchimedean v, then h_v < h^{1/2}. Used on page 47 to get (1/6) log q^{not 2} − (1/6) log q <= (1/6) h^{1/2} log l <= h^{1/2} log(2 delta h).",
+  "explicit_hypotheses": [],
+  "implicit_hypotheses": [],
+  "conclusion": "(P3) and its use.",
+  "definitions_required": [],
+  "results_used": [],
+  "external_dependencies": [],
+  "lean_declaration": "IUT.PaperIV.Corollary2_2.q_not2_step",
+  "statement_status": "STATEMENT_FORMALIZED",
+  "proof_status": "CONDITIONALLY_VERIFIED",
+  "obligations": [
+   "(P3) itself follows from l > h^{1/2}; the use on page 47 is q_not2_step, with the (P3) consequence as hypothesis."
+  ],
+  "ambiguities": [],
+  "cor3_12_dependency": "independent"
+ },
+ "IUT4.Cor2_2.ProofP4": {
+  "source": {
+   "paper": "Inter-universal Teichmuller Theory IV",
+   "pdf_pages": "page 45",
+   "pages_read": "text and render of page 45"
+  },
+  "content": "(P4): an l-cyclic subgroup scheme would give (l-2)/24 log q^forall <= 2 log l + T_K, hence a bound on log q^forall.",
+  "explicit_hypotheses": [],
+  "implicit_hypotheses": [],
+  "conclusion": "log q^forall bounded.",
+  "definitions_required": [],
+  "results_used": [],
+  "external_dependencies": [
+   "GenEll: Lemma 3.5, Proposition 3.4"
+  ],
+  "lean_declaration": "IUT.PaperIV.Corollary2_2.P4_bound",
+  "statement_status": "STATEMENT_FORMALIZED",
+  "proof_status": "CONDITIONALLY_VERIFIED",
+  "obligations": [
+   "Kernel checked bound: log q^forall <= 48 (1 + T_K)."
+  ],
+  "ambiguities": [],
+  "cor3_12_dependency": "independent"
+ },
+ "IUT4.Cor2_2.ProofP5": {
+  "source": {
+   "paper": "Inter-universal Teichmuller Theory IV",
+   "pdf_pages": "pages 45 to 46",
+   "pages_read": "text and renders of pages 45 and 46"
+  },
+  "content": "(P5): after enlarging Exc_d, the set V^bad_mod of nonarchimedean valuations of F_mod not dividing 2l with bad multiplicative reduction is nonempty. Otherwise h <~ log q^{not 2} <= h^{1/2} log l <= 16 delta^{1/4} h^{3/4}, so h is bounded.",
+  "explicit_hypotheses": [],
+  "implicit_hypotheses": [],
+  "conclusion": "V^bad_mod nonempty.",
+  "definitions_required": [],
+  "results_used": [],
+  "external_dependencies": [],
+  "lean_declaration": "IUT.PaperIV.Corollary2_2.P5_bound",
+  "statement_status": "STATEMENT_FORMALIZED",
+  "proof_status": "CONDITIONALLY_VERIFIED",
+  "obligations": [
+   "Kernel checked: sqrt_mul_log_l, sqrt_mul_log_l_steps, P5_bound."
+  ],
+  "ambiguities": [
+   "The extracted text loses the symbol != in 'V^bad_mod != empty'."
+  ],
+  "cor3_12_dependency": "independent"
+ },
+ "IUT4.Cor2_2.ProofP6": {
+  "source": {
+   "paper": "Inter-universal Teichmuller Theory IV",
+   "pdf_pages": "page 46",
+   "pages_read": "text and render of page 46"
+  },
+  "content": "(P6): the image of Gal(Qbar/F) in GL_2(F_l) contains SL_2(F_l); from (P2), (P4), (P5) and [GenEll] Lemma 3.1 (iii).",
+  "explicit_hypotheses": [],
+  "implicit_hypotheses": [],
+  "conclusion": "(P6).",
+  "definitions_required": [],
+  "results_used": [],
+  "external_dependencies": [
+   "GenEll: Lemma 3.1 (iii), Theorem 3.8"
+  ],
+  "lean_declaration": null,
+  "statement_status": "EXTRACTED",
+  "proof_status": "BLOCKED_BY_EXTERNAL_THEOREM",
+  "obligations": [
+   "Galois representations on torsion points are not formalized."
+  ],
+  "ambiguities": [],
+  "cor3_12_dependency": "independent"
+ },
+ "IUT4.Cor2_2.ProofP7": {
+  "source": {
+   "paper": "Inter-universal Teichmuller Theory IV",
+   "pdf_pages": "page 46",
+   "pages_read": "text and render of page 46"
+  },
+  "content": "(P7): with F_mod = Q, F, X_F, l and V^bad_mod as above, there are data C_K, V, epsilon satisfying IUTchI Definition 3.1 (a) to (f), and the initial Theta-data satisfy the conditions of Theorem 1.10.",
+  "explicit_hypotheses": [],
+  "implicit_hypotheses": [],
+  "conclusion": "(P7).",
+  "definitions_required": [],
+  "results_used": [
+   "IUT4.Cor2_2.ProofP1",
+   "IUT4.Cor2_2.ProofP6"
+  ],
+  "external_dependencies": [
+   "IUTchI: Definition 3.1"
+  ],
+  "lean_declaration": null,
+  "statement_status": "EXTRACTED",
+  "proof_status": "BLOCKED_BY_EXTERNAL_THEOREM",
+  "obligations": [
+   "Initial Theta-data are not formalized."
+  ],
+  "ambiguities": [],
+  "cor3_12_dependency": "independent"
+ },
+ "IUT4.Cor2_2.ProofApply": {
+  "source": {
+   "paper": "Inter-universal Teichmuller Theory IV",
+   "pdf_pages": "pages 46 to 47",
+   "pages_read": "text and renders of pages 46 and 47"
+  },
+  "content": "Application of Theorem 1.10 with Remark 1.10.7 (i): (1/6) log q <= (1 + delta h^{-1/2})(log d + log f) + 200 delta^2 h^{1/2} log(2 delta h) + 20 eta_prm, using (P1) and 20 d_mod <= d*_mod <= delta.",
+  "explicit_hypotheses": [],
+  "implicit_hypotheses": [],
+  "conclusion": "Bound on (1/6) log q.",
+  "definitions_required": [],
+  "results_used": [
+   "IUT4.Thm1_10.final",
+   "IUT4.Rem1_10_7",
+   "IUT4.Cor2_2.ProofP7"
+  ],
+  "external_dependencies": [],
+  "lean_declaration": "IUT.PaperIV.Corollary2_2.apply_theorem_1_10",
+  "statement_status": "STATEMENT_FORMALIZED",
+  "proof_status": "CONDITIONALLY_VERIFIED",
+  "obligations": [
+   "Hypothesis: the final inequality of Theorem 1.10 for these data."
+  ],
+  "ambiguities": [],
+  "cor3_12_dependency": "conditional"
+ },
+ "IUT4.Cor2_2.ProofAssembly": {
+  "source": {
+   "paper": "Inter-universal Teichmuller Theory IV",
+   "pdf_pages": "pages 47 to 48",
+   "pages_read": "text and renders of pages 47 and 48"
+  },
+  "content": "Assembly: combine the bound of ProofApply, the (P3) step and the bounded discrepancy B_K to get (1/6) h <= (1 + epsilon_E)(log-diff + log-cond) + C_K with C_K = 40 eta_prm + 2 B_K; then the real-power estimate for epsilon_E and the final step for 0 < epsilon <= 1.",
+  "explicit_hypotheses": [],
+  "implicit_hypotheses": [],
+  "conclusion": "(C2) and the bound of (iii).",
+  "definitions_required": [],
+  "results_used": [
+   "IUT4.Cor2_2.ProofApply",
+   "IUT4.Cor2_2.ProofP3",
+   "IUT4.Cor2_2.i"
+  ],
+  "external_dependencies": [],
+  "lean_declaration": "IUT.PaperIV.Corollary2_2.assembly",
+  "statement_status": "STATEMENT_FORMALIZED",
+  "proof_status": "CONDITIONALLY_VERIFIED",
+  "obligations": [
+   "Kernel checked: fifteen_delta_step, assembly, epsE_ge, eps_star_estimates, h_lt_of_eps_lt_epsE, final_step, C2_of_final."
+  ],
+  "ambiguities": [],
+  "cor3_12_dependency": "conditional"
+ },
+ "IUT4.Rem2_2_1": {
+  "source": {
+   "paper": "Inter-universal Teichmuller Theory IV",
+   "pdf_pages": "pages 48 to 50",
+   "pages_read": "text"
+  },
+  "content": "Asymptotic behavior of the bound of Corollary 2.2 (ii) over Q: (1/6) h <= delta + O(delta^{1/2} log delta)-type terms, and heuristics on weights and on the size of l.",
+  "explicit_hypotheses": [],
+  "implicit_hypotheses": [],
+  "conclusion": "Remark.",
+  "definitions_required": [],
+  "results_used": [
+   "IUT4.Cor2_2"
+  ],
+  "external_dependencies": [],
+  "lean_declaration": null,
+  "statement_status": "EXTRACTED",
+  "proof_status": "EXTRACTED",
+  "obligations": [],
+  "ambiguities": [],
+  "cor3_12_dependency": "independent"
+ },
+ "IUT4.Rem2_2_2": {
+  "source": {
+   "paper": "Inter-universal Teichmuller Theory IV",
+   "pdf_pages": "pages 50 to 51",
+   "pages_read": "text"
+  },
+  "content": "The role of the Gaussian integral in the theory, compared with zeta functions and L-functions.",
+  "explicit_hypotheses": [],
+  "implicit_hypotheses": [],
+  "conclusion": "Remark.",
+  "definitions_required": [],
+  "results_used": [
+   "IUT4.Cor2_2"
+  ],
+  "external_dependencies": [
+   "IUTchII: Introduction, Remark 1.12.5"
+  ],
+  "lean_declaration": null,
+  "statement_status": "EXTRACTED",
+  "proof_status": "EXTRACTED",
+  "obligations": [],
+  "ambiguities": [],
+  "cor3_12_dependency": "independent"
+ },
+ "IUT4.Rem2_2_3": {
+  "source": {
+   "paper": "Inter-universal Teichmuller Theory IV",
+   "pdf_pages": "pages 51 to 52",
+   "pages_read": "text"
+  },
+  "content": "For unbounded d, (C2) with (iii) is a weak version of a uniform abc conjecture, restricted to K_V and with exceptional bounds depending on d.",
+  "explicit_hypotheses": [],
+  "implicit_hypotheses": [],
+  "conclusion": "Remark.",
+  "definitions_required": [],
+  "results_used": [
+   "IUT4.Cor2_2"
+  ],
+  "external_dependencies": [],
+  "lean_declaration": null,
+  "statement_status": "EXTRACTED",
+  "proof_status": "EXTRACTED",
+  "obligations": [],
+  "ambiguities": [],
+  "cor3_12_dependency": "conditional"
+ },
+ "IUT4.Rem2_2_4": {
+  "source": {
+   "paper": "Inter-universal Teichmuller Theory IV",
+   "pdf_pages": "pages 52 to 54",
+   "pages_read": "text"
+  },
+  "content": "Analogy with p-adic Teichmueller theory: canonical Frobenius liftings, discrete versus continuous theory as l grows.",
+  "explicit_hypotheses": [],
+  "implicit_hypotheses": [],
+  "conclusion": "Remark.",
+  "definitions_required": [],
+  "results_used": [
+   "IUT4.Cor2_2"
+  ],
+  "external_dependencies": [
+   "pOrd",
+   "pTeich",
+   "InpTch"
+  ],
+  "lean_declaration": null,
+  "statement_status": "EXTRACTED",
+  "proof_status": "EXTRACTED",
+  "obligations": [],
+  "ambiguities": [],
+  "cor3_12_dependency": "independent"
+ },
+ "IUT4.Cor2_3": {
+  "source": {
+   "paper": "Inter-universal Teichmuller Theory IV",
+   "pdf_pages": "pages 54 to 55",
+   "pages_read": "text and renders of pages 54 and 55"
+  },
+  "content": "Diophantine inequalities: same statement as Theorem A. Proof: equivalent to [GenEll] Theorem 2.1 (i); by that theorem it suffices to prove (ii) of it, i.e. the inequality on K_V for the lambda-line, which follows from Corollary 2.2 (i), (ii), (iii) and d_mod <= d.",
+  "explicit_hypotheses": [],
+  "implicit_hypotheses": [],
+  "conclusion": "ht_{omega_X(D)} <~ (1+epsilon)(log-diff_X + log-cond_D) on U_X(Qbar)^{<= d}.",
+  "definitions_required": [],
+  "results_used": [
+   "IUT4.Cor2_2",
+   "IUT4.Cor2_2.i",
+   "IUT4.Cor2_2.ii.C2",
+   "IUT4.Cor2_2.iii"
+  ],
+  "external_dependencies": [
+   "GenEll: Theorem 2.1 ((ii) implies (i))"
+  ],
+  "lean_declaration": "IUT.PaperIV.Corollary2_3.cor2_3_on_KV",
+  "statement_status": "STATEMENT_FORMALIZED",
+  "proof_status": "BLOCKED_BY_EXTERNAL_THEOREM",
+  "obligations": [
+   "Kernel checked: the step on K_V (cor2_3_on_KV) and monotonicity in epsilon (BDle_mono_eps), relative to Corollary 2.2 as hypotheses.",
+   "[GenEll] Theorem 2.1 (Belyi maps) is external and not formalized."
+  ],
+  "ambiguities": [
+   "Corollary 2.2 (iii) assumes epsilon <= 1; for epsilon > 1 the statement follows from epsilon = 1 since log-diff + log-cond >= 0 (BDle_mono_eps)."
+  ],
+  "cor3_12_dependency": "conditional"
+ },
+ "IUT4.Rem2_3_1": {
+  "source": {
+   "paper": "Inter-universal Teichmuller Theory IV",
+   "pdf_pages": "pages 55 to 56",
+   "pages_read": "text"
+  },
+  "content": "Corrections to [GenEll]: (ii) the meanings of <~ and >~ in Definition 1.2 (ii) are swapped (alpha <~ beta means alpha − beta <= C); (v) the final BD equality in the proof of Theorem 2.1 should be an inequality with a factor 2; (vi) the meaning of a compactly bounded subset of U(Qbar).",
+  "explicit_hypotheses": [],
+  "implicit_hypotheses": [],
+  "conclusion": "Remark.",
+  "definitions_required": [],
+  "results_used": [
+   "IUT4.Cor2_3"
+  ],
+  "external_dependencies": [
+   "GenEll: Definition 1.2, Corollary 4.4, Theorem 2.1, Example 1.3"
+  ],
+  "lean_declaration": "IUT.PaperIV.Corollary2_3.BDle",
+  "statement_status": "STATEMENT_FORMALIZED",
+  "proof_status": "EXTRACTED",
+  "obligations": [
+   "The corrected relation is the definition BDle in Corollary2_3.lean."
+  ],
+  "ambiguities": [],
+  "cor3_12_dependency": "independent"
+ },
+ "IUT4.Rem2_3_2": {
+  "source": {
+   "paper": "Inter-universal Teichmuller Theory IV",
+   "pdf_pages": "pages 56 to 57",
+   "pages_read": "text"
+  },
+  "content": "(i) Stronger estimates are possible; (ii) the constant 1 in Corollary 2.3 cannot be improved (examples of [Mss]).",
+  "explicit_hypotheses": [],
+  "implicit_hypotheses": [],
+  "conclusion": "Remark.",
+  "definitions_required": [],
+  "results_used": [
+   "IUT4.Cor2_3"
+  ],
+  "external_dependencies": [
+   "Mss"
+  ],
+  "lean_declaration": null,
+  "statement_status": "EXTRACTED",
+  "proof_status": "EXTRACTED",
+  "obligations": [],
+  "ambiguities": [],
+  "cor3_12_dependency": "conditional"
+ },
+ "IUT4.Rem2_3_3": {
+  "source": {
+   "paper": "Inter-universal Teichmuller Theory IV",
+   "pdf_pages": "pages 57 to 63",
+   "pages_read": "text"
+  },
+  "content": "Corollary 2.3 as an effective Mordell conjecture; comparison of the ingredients with Faltings' proof.",
+  "explicit_hypotheses": [],
+  "implicit_hypotheses": [],
+  "conclusion": "Remark.",
+  "definitions_required": [],
+  "results_used": [
+   "IUT4.Cor2_3"
+  ],
+  "external_dependencies": [
+   "Falt"
+  ],
+  "lean_declaration": null,
+  "statement_status": "EXTRACTED",
+  "proof_status": "EXTRACTED",
+  "obligations": [],
+  "ambiguities": [],
+  "cor3_12_dependency": "independent"
+ },
+ "IUT4.Rem2_3_4": {
+  "source": {
+   "paper": "Inter-universal Teichmuller Theory IV",
+   "pdf_pages": "page 63",
+   "pages_read": "text"
+  },
+  "content": "Analogy with Bogomolov's proof of the geometric Szpiro conjecture.",
+  "explicit_hypotheses": [],
+  "implicit_hypotheses": [],
+  "conclusion": "Remark.",
+  "definitions_required": [],
+  "results_used": [
+   "IUT4.Cor2_3"
+  ],
+  "external_dependencies": [
+   "ABKP",
+   "Zh"
+  ],
+  "lean_declaration": null,
+  "statement_status": "EXTRACTED",
+  "proof_status": "EXTRACTED",
+  "obligations": [],
+  "ambiguities": [],
+  "cor3_12_dependency": "independent"
+ },
+ "IUT4.Rem2_3_5": {
+  "source": {
+   "paper": "Inter-universal Teichmuller Theory IV",
+   "pdf_pages": "pages 63 to 67",
+   "pages_read": "text"
+  },
+  "content": "Question whether the ideas give a proof of Mordell over number fields without Belyi maps; comparison with Parshin.",
+  "explicit_hypotheses": [],
+  "implicit_hypotheses": [],
+  "conclusion": "Remark.",
+  "definitions_required": [],
+  "results_used": [
+   "IUT4.Cor2_3"
+  ],
+  "external_dependencies": [
+   "Par"
+  ],
+  "lean_declaration": null,
+  "statement_status": "EXTRACTED",
+  "proof_status": "EXTRACTED",
+  "obligations": [],
+  "ambiguities": [],
+  "cor3_12_dependency": "independent"
+ },
+ "IUT4.Def3_1": {
+  "source": {
+   "paper": "Inter-universal Teichmuller Theory IV",
+   "pdf_pages": "pages 68 to 70",
+   "pages_read": "text of pages 67 to 70; renders of pages 67 and 68"
+  },
+  "content": "Species: a 0-species is a collection of conditions on a set expressible in ZFC; a 1-species is a 0-species of morphisms together with composition; a species is a 0-species and a 1-species defining a category in every ZFC-model; specimens, i-smallness, species-isomorphisms, the category determined by a species, model-free use.",
+  "explicit_hypotheses": [],
+  "implicit_hypotheses": [],
+  "conclusion": "Definitions.",
+  "definitions_required": [
+   "ZFC-model",
+   "Grothendieck universe",
+   "ZFCG-model"
+  ],
+  "results_used": [],
+  "external_dependencies": [
+   "Ffmn (Feferman)"
+  ],
+  "lean_declaration": null,
+  "statement_status": "EXTRACTED",
+  "proof_status": "EXTRACTED",
+  "obligations": [
+   "Statement level only; species are not formalized."
+  ],
+  "ambiguities": [],
+  "cor3_12_dependency": "independent"
+ },
+ "IUT4.Def3_3": {
+  "source": {
+   "paper": "Inter-universal Teichmuller Theory IV",
+   "pdf_pages": "pages 72 to 74",
+   "pages_read": "text of pages 72 to 74"
+  },
+  "content": "Mutations: a mutation is a pair of species with a construction algorithm sending specimens of one to specimens of the other; morphisms of mutations, mutation-equivalences, mutation-histories, covariant and contravariant observables, and cores.",
+  "explicit_hypotheses": [],
+  "implicit_hypotheses": [],
+  "conclusion": "Definitions.",
+  "definitions_required": [
+   "IUT4.Def3_1"
+  ],
+  "results_used": [],
+  "external_dependencies": [],
+  "lean_declaration": null,
+  "statement_status": "EXTRACTED",
+  "proof_status": "EXTRACTED",
+  "obligations": [
+   "Statement level only; mutations are not formalized."
+  ],
+  "ambiguities": [],
+  "cor3_12_dependency": "independent"
+ }
+}

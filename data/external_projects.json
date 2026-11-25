@@ -1,0 +1,378 @@
+{
+  "retrieved": "2026-11-25",
+  "method": "code read and grepped at the listed commits; no external project was built; external axiom claims not re-checked by our kernel",
+  "primary_pages_read": {
+    "paper": "IUT III",
+    "pages": "153 to 159, 173 to 174",
+    "rendered_pages_checked": [
+      153,
+      154,
+      156,
+      173,
+      174
+    ]
+  },
+  "projects": [
+    {
+      "id": "lana-iut",
+      "url": "https://github.com/lana-agents/iut",
+      "commit": "b4a9966ffe09b5019b57e05b2497972b22799e4a",
+      "date": "2026-11-22",
+      "license": "Apache-2.0",
+      "lean": "v4.32.0",
+      "mathlib": {
+        "tag": "v4.32.0",
+        "rev": "81a5d257c8e410db227a6665ed08f64fea08e997"
+      },
+      "size": {
+        "lean_files": 768,
+        "lines": 233697
+      },
+      "provenance": "formalization.yaml: produced with automated (machine-generated) assistance; review status agent-reviewed; not reviewed by a human",
+      "claims": "conditional implication Cor312VariantHolds -> ClassicalABC; does not verify IUT; does not prove abc",
+      "main_theorem": {
+        "name": "Iut.classicalABC_of_variant",
+        "file": "Iut/MainTheorem.lean",
+        "line": 36,
+        "hypotheses": [
+          "h312 : Iut.Cor312VariantHolds"
+        ],
+        "claimed_axioms": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ]
+      },
+      "cor_3_12": {
+        "lean": "Iut.Corollary312Variant",
+        "file": "Iut/Cor312/Statement.lean",
+        "line": 89,
+        "statement": "X.qPilot.lhs ≤ X.rhsData.rhs",
+        "hypothesis_def": {
+          "name": "Iut.Cor312VariantHolds",
+          "file": "Iut/Concrete/ThetaRegion.lean",
+          "line": 375,
+          "body": "∀ D : InitialThetaData.{0}, Corollary312Variant (concreteVariantData D)"
+        },
+        "classification": "variant of the original; concrete statement about defined objects, not about abstract parameters",
+        "differences": [
+          "Θ-side region defined directly from D, not via Hodge theaters, Kummer isomorphisms or the multiradial algorithm",
+          "(Ind2) enlarged to all lattice automorphisms of factor log-shells (Ism in the paper)",
+          "(Ind1) read as label j only (IUT IV reading); literal reading Cor312LiteralHolds is implied by the variant",
+          "(Ind3) modeled as theta value acting on log-shells",
+          "finiteness of −|log Θ| built into the type",
+          "|log q| normalized as (1/2ℓ) log q from IUT IV"
+        ],
+        "hypothesis_restates_conclusion": false,
+        "notes": "h312 carries all content IUT III is meant to supply; its truth is unknown; if false the main theorem is vacuous"
+      },
+      "thm_3_11": {
+        "lean": "Iut.LogLink.Thm311",
+        "file": "Iut/LogLink/Thm311.lean",
+        "line": 141,
+        "proved_in_model": "Iut.LogLink.thm311_model (line 190)",
+        "classification": "statement about the repository's model (log-theta-lattice with unit-induced Kummer data), not the paper's Theorem 3.11"
+      },
+      "trust_inventory": {
+        "axiom_decls": 0,
+        "sorry": [
+          "Comparator/Challenge.lean:76 (comparator placeholder)"
+        ],
+        "admit": 0,
+        "opaque_decls": 0,
+        "unsafe": 0,
+        "native_decide": 0,
+        "implemented_by": 0,
+        "extern": 0,
+        "run_cmd_or_eval": "5, all in scripts/",
+        "custom_syntax": [
+          "tactic macro circ_ring, Iut/Frobenioid/Angular/Category.lean:50"
+        ],
+        "prop_structures": 18,
+        "named_hypothesis_defs": "about 24; all but Cor312VariantHolds discharged for the main theorem; Iut.Tripod.CyclicGraphBoundHyp unused and unproved",
+        "same_name_not_same_statement": [
+          "Corollary312Variant",
+          "Thm311",
+          "Thm311LGP",
+          "Thm311iii",
+          "Iut.Theorem110Invariants.theorem110 (conditional, factor 3/2 for Prop. 1.6)"
+        ]
+      },
+      "dependencies": [
+        {
+          "name": "tempered-fundamental-groups",
+          "url": "https://github.com/lana-agents/tempered-fundamental-groups",
+          "rev": "c8e4b854d136b16fe8811bd5affad384b895f371",
+          "lean_files": 1049,
+          "lines": 297454,
+          "findings": "no axiom or sorry declarations",
+          "license_file": true
+        },
+        {
+          "name": "oka",
+          "url": "https://github.com/lana-agents/oka",
+          "rev": "7f2a6241f6db0693605838b5513b5fbafec14783",
+          "lean_files": 831,
+          "lines": 250299,
+          "findings": "no axiom declarations (word occurs in prose); one #eval inside a docstring; tactic macros",
+          "license_file": true
+        },
+        {
+          "name": "formal-schemes",
+          "url": "https://github.com/lana-agents/formal-schemes",
+          "rev": "e58ecf04554f14c8d1cc2753136f9d785525df5a",
+          "lean_files": 652,
+          "lines": 182967,
+          "findings": "clean; run_cmd only in scripts/",
+          "license_file": true
+        },
+        {
+          "name": "curves-jacobian",
+          "url": "https://github.com/lana-agents/curves-jacobian",
+          "rev": "cb06131f27cee48bd78d8776f67228f36eef6222",
+          "lean_files": 592,
+          "lines": 174901,
+          "findings": "clean",
+          "license_file": true
+        },
+        {
+          "name": "elliptic-curves",
+          "url": "https://github.com/lana-agents/elliptic-curves",
+          "rev": "e70086a9c442dcfe76152fa03777091c50985d43",
+          "lean_files": 483,
+          "lines": 161481,
+          "findings": "clean; keyword hits are prose",
+          "license_file": true
+        },
+        {
+          "name": "belyi",
+          "url": "https://github.com/lana-agents/belyi",
+          "rev": "7206d7839b5bb76a08343a2436384ba85e046e0e",
+          "lean_files": 157,
+          "lines": 30978,
+          "findings": "clean",
+          "license_file": true
+        },
+        {
+          "name": "orbicurve-cores",
+          "url": "https://github.com/lana-agents/orbicurve-cores",
+          "rev": "d08559e6c9eba410a1ed102e7f4cc8abfddcbbbc",
+          "lean_files": 135,
+          "lines": 30900,
+          "findings": "clean",
+          "license_file": true
+        },
+        {
+          "name": "local-class-field-theory",
+          "url": "https://github.com/lana-agents/local-class-field-theory",
+          "rev": "a6655a871f92138e486362f08f7df48204f3e985",
+          "lean_files": 122,
+          "lines": 32347,
+          "findings": "clean; tactic macro",
+          "license_file": true
+        },
+        {
+          "name": "pi1",
+          "url": "https://github.com/lana-agents/pi1",
+          "rev": "ed24c6c773ab38ef87583d0b706519d3b4c9a4c7",
+          "lean_files": 115,
+          "lines": 30054,
+          "findings": "clean; tactic macro",
+          "license_file": true
+        },
+        {
+          "name": "tate-curves-theta",
+          "url": "https://github.com/lana-agents/tate-curves-theta",
+          "rev": "d1fba94861c886b671f4137ab35e24b7474c9e00",
+          "lean_files": 79,
+          "lines": 22657,
+          "findings": "clean; sorry hits are prose",
+          "license_file": true
+        },
+        {
+          "name": "heights",
+          "url": "https://github.com/lana-agents/heights",
+          "rev": "f4379dbccc8cdc4faa894a236d5581a6a635c5b5",
+          "lean_files": 68,
+          "lines": 19095,
+          "findings": "6 sorry, all in Comparator/Challenge.lean",
+          "license_file": true
+        },
+        {
+          "name": "weil-curves",
+          "url": "https://github.com/lana-agents/weil-curves",
+          "rev": "1cadab4e0a16f6a315a18e52369fbf45048ec503",
+          "lean_files": 50,
+          "lines": 11716,
+          "findings": "clean",
+          "license_file": true
+        },
+        {
+          "name": "continuous-kummer-theory",
+          "url": "https://github.com/lana-agents/continuous-kummer-theory",
+          "rev": "1d5194fcc63ddeb7a8cdb6c98d59452503db60fa",
+          "lean_files": 39,
+          "lines": 8969,
+          "findings": "clean",
+          "license_file": true
+        },
+        {
+          "name": "genl",
+          "url": "https://github.com/lana-agents/genl",
+          "rev": "179e26f6f7becc379b32ea526aaf7fb8ae81441a",
+          "lean_files": 12,
+          "lines": 2143,
+          "findings": "1 sorry in Challenge.lean only",
+          "license_file": true
+        },
+        {
+          "name": "padic-log-volume",
+          "url": "https://github.com/lana-agents/padic-log-volume",
+          "rev": "9a190da26368465ccf92561bc283fe710ae730f0",
+          "lean_files": 3,
+          "lines": 808,
+          "findings": "clean",
+          "license_file": true
+        }
+      ],
+      "reusable": [
+        "Iut/Tower (Serre different bound, ramification in towers)",
+        "Iut/Torsion (division polynomials, E[n])",
+        "Iut/Implication/ChebyshevExplicit.lean",
+        "Iut/NumberTheory (six exponentials, log primes independence)",
+        "Iut/Abc/FormalConjectures.lean",
+        "Iut/Concrete/LocalConstruct (tensor packet log-volumes)",
+        "Iut/Cor312/ThetaData (one reading of IUT I Def. 3.1, to be compared)"
+      ]
+    },
+    {
+      "id": "lana-project-genl",
+      "url": "https://github.com/LANA-Project/genl",
+      "commit": "6e9a6543b46a2a02fd7fe7ec8ab203d878f32859",
+      "date": "2026-07-19",
+      "license": null,
+      "license_note": "no LICENSE file; GitHub reports none",
+      "lean": "v4.32.0",
+      "mathlib": {
+        "tag": "v4.32.0",
+        "rev": "81a5d257c8e410db227a6665ed08f64fea08e997"
+      },
+      "size": {
+        "lean_files": 16,
+        "lines": 1335
+      },
+      "claims": "[GenEll] Theorem 2.1 (ii) implies (i) relative to abstract Genl.HeightTheory and Genl.HeightTheory.ProofPackage",
+      "trust_inventory": {
+        "axiom_decls": 0,
+        "sorry": [
+          "Challenge.lean:27 (comparator placeholder)"
+        ],
+        "bundled_hypotheses": [
+          "Genl.HeightTheory (Genl/GeneralPosition/HeightTheory.lean:57): abstract parameters",
+          "ProofPackage (Genl/GeneralPosition/ProofPackage.lean:158): fields covering, belyi carry the arithmetic-geometric inputs"
+        ]
+      }
+    },
+    {
+      "id": "lana-project-iut4-sec1",
+      "url": "https://github.com/LANA-Project/iut4-sec1",
+      "commit": "a7551d2f575b7e462cf9e82c587d9c6308e7b15c",
+      "date": "2026-07-20",
+      "license": "Apache-2.0",
+      "lean": "v4.32.0",
+      "mathlib": {
+        "tag": "v4.32.0",
+        "rev": "81a5d257c8e410db227a6665ed08f64fea08e997"
+      },
+      "size": {
+        "lean_files": 26,
+        "lines": 2526
+      },
+      "claims": "elementary parts of IUT IV Section 1: Prop. 1.4(iii) error bound, Prop. 1.7 weighted average, (E1)/(E2), Def. 1.9(i)",
+      "trust_inventory": {
+        "axiom_decls": 0,
+        "sorry": "10, all in Comparator/Challenge.lean"
+      },
+      "notes": "merged into lana-agents/iut as Iut4Sec1; overlaps IUT/PaperIV/ArithmeticDivisor.lean"
+    },
+    {
+      "id": "formal-conjectures",
+      "url": "https://github.com/google-deepmind/formal-conjectures",
+      "commit": "9097e2f90e66d2f6244209cb1c07f7120d17ec53",
+      "date": "2026-11-24",
+      "license": "Apache-2.0",
+      "lean": "v4.33.1",
+      "mathlib": {
+        "tag": "v4.33.1",
+        "rev": "0df444a360eaa60ab8c11dca51a86af692955474"
+      },
+      "size": {
+        "lean_files": 2199
+      },
+      "claims": "statements of open problems; abc stated in FormalConjectures/Wikipedia/ABC.lean with sorry",
+      "abc_file_identical_at": "1646ca16afd6cc7a693d3bdc9f066c4d3cc01a89",
+      "trust_inventory": {
+        "sorry": 5510,
+        "native_decide": 107,
+        "axiom_decls": [
+          "FormalConjecturesTest/Util/Linters/StubLinter.lean:39 (linter test)"
+        ],
+        "ForMathlib_sorry": 0
+      },
+      "comparison": {
+        "file": "IUT/Applications/ABCFormalConjectures.lean",
+        "results": {
+          "IUT.ABC.FormalConjectures.abc_iff_ABC": "exact equivalence",
+          "IUT.ABC.FormalConjectures.ltConstantMul_iff_ABC": "exact equivalence",
+          "IUT.ABC.FormalConjectures.qualityVariant_iff_ABC": "exact equivalence; quality set equals finiteness set for each ε since rad(abc) ≥ 2"
+        },
+        "axioms": [
+          "propext",
+          "Classical.choice",
+          "Quot.sound"
+        ]
+      }
+    },
+    {
+      "id": "mochizuki-2026-formalization",
+      "title": "On the formalization of IUT: a preliminary progress report [joint work in progress with Y. Hoshi, G. Yamashita, Y. Yang, ...]",
+      "author": "Shinichi Mochizuki",
+      "date": "April 2026 (server date 2026-04-07)",
+      "url": "https://www.kurims.kyoto-u.ac.jp/~motizuki/Formalization%20of%20IUT%20(2026-04).pdf",
+      "sha256": "9a32b2485b5875574d7470256d3414b88ee6ac3ed8a39a82ea7332e25072ee9c",
+      "pages": 14,
+      "read": "in full",
+      "venue": "Workshop on AI and Theorem Provers in Mathematics, online, 8 to 10 April 2026, https://aitpm.github.io/",
+      "contents": "slides; five-stage plan, project in early skeletal portion of Stage 1 (Thm 3.11 => Cor 3.12); describes unpublished skeletal Lean code for '3.11.5 => 3.12' (3.11.5 = 3.11 + Rmk. 3.9.5, not in the papers) as the fourth of four commuting triangles (BPS, dsc, hull+det, SHE; properties IPL, APT); no code shown; code stated not yet suitable for public release",
+      "code_published": false,
+      "related": [
+        {
+          "title": "Report on the current situation surrounding IUT",
+          "date": "October 2025",
+          "url": "https://www.kurims.kyoto-u.ac.jp/~motizuki/IUT-report-2025-10.pdf",
+          "read": "contents and §3.2 (pages 26 to 30)"
+        },
+        {
+          "title": "Project LANA interim report on IUT theory",
+          "date": "2026-07-16",
+          "url": "https://ncatlab.org/nlab/files/LANAProject-Report-July2026.pdf",
+          "read": "abstract and table of contents only"
+        }
+      ],
+      "search_log": {
+        "pages": [
+          "papers-english.html",
+          "top-english.html",
+          "news-english.html",
+          "research-english.html",
+          "thoughts-english.html",
+          "Japanese counterparts"
+        ],
+        "queries": [
+          "Mochizuki 2026 Lean formalization IUT Corollary 3.12",
+          "\"Formalization of IUT\" Mochizuki preliminary progress report Hoshi Yamashita Lean"
+        ]
+      }
+    }
+  ]
+}

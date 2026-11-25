@@ -1,6 +1,9 @@
 name = "IUT"
 version = "0.1.0"
-defaultTargets = ["IUT"]
+# `lake build` builds these two libraries, and `lake check` builds, exports and replays
+# exactly them. Neither may contain `sorry`. The challenge file `Challenge.lean` is not
+# among them (see the library `Challenge` below).
+defaultTargets = ["IUT", "Solution"]
 
 [[require]]
 name = "mathlib"
@@ -11,6 +14,29 @@ rev = "fc4f59e577feb1a4956671bc04ac18aaaf8cd842" # tag v4.36.0
 [[lean_lib]]
 name = "IUT"
 
-# Trusted definitions, reviewed by hand. Depends on Mathlib only.
+# The challenge of `lake comparator` (see comparator.json). Its root module is
+# `Challenge.lean`, which states the headline theorems with `sorry` on purpose; the trusted
+# definitions are its submodule `Challenge.Defs` (Mathlib only, reviewed by hand).
+#
+# Choice: one library, not a separate library for `Challenge.lean`. Lake assigns a module to
+# a library by root prefix, so a second library with root `Challenge` would claim
+# `Challenge.Defs` as well. The library is not a default target, so `lake build` and
+# `lake check` never compile `Challenge.lean`; they compile `Challenge.Defs` only because
+# `IUT` imports it. The axiom gate imports `Challenge.Defs` and never the module `Challenge`,
+# which its foreign module check would reject. `lake build Challenge`, which the comparator
+# runs, compiles the root module and reports its `sorry` as a warning.
 [[lean_lib]]
 name = "Challenge"
+
+# The solution of `lake comparator`: `Solution.lean` restates the headline theorems of
+# `Challenge.lean` under the same names and proves them from the library. It is a default
+# target, and the axiom gate checks its constants.
+[[lean_lib]]
+name = "Solution"
+
+# Scaffold modules with placeholders (see IUT/Experimental/README.md). Not a default target,
+# and no library module may import them. `lake build IUTExperimental` builds them.
+[[lean_lib]]
+name = "IUTExperimental"
+roots = []
+globs = ["IUT.Experimental.+"]

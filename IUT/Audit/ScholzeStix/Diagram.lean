@@ -58,10 +58,4 @@ theorem not_consistent_square {j : ℕ} (hj : 2 ≤ j) (n : ℕ) :
   simp only at h1
   nlinarith
 
-/-- "Blurring" version. Suppose the cycle is only required to close up to a multiplicative
-factor in `[1/B, B]`. Then a single edge with scalar `j²` forces `B ≥ j²`. Scholze and Stix:
-"the blurring must be by a factor of at least `O(ℓ²)`". -/
-theorem blur_ge_square {j : ℕ} {B : ℝ} (h : (j : ℝ) ^ 2 * 1 ≤ B) : (j : ℝ) ^ 2 ≤ B := by
-  simpa using h
-
 end IUT.Audit.ScholzeStix

@@ -1,0 +1,1086 @@
+{
+  "description": "Countermodels, positive statements and lemmas of the falsification program (section 12 of the project brief), one record per listed theorem; helper definitions are omitted. None of these refutes a statement of the IUT papers; every countermodel refutes a simplified abstraction.",
+  "classification_scale_note": "Section 12 of the project brief distinguishes seven kinds of result; its fifth item reads 'counterexample to an intermediate claim', while the shared working rules list 'counterexample to a simplified abstraction' in that place. Records here use the label 'counterexample to a simplified abstraction'; none is a counterexample to an intermediate claim of the papers, to a faithfully formalized statement of the papers, or a demonstrated contradiction.",
+  "priority_questions": {
+    "1": "Whether multiplicative data determines additive structure.",
+    "2": "Whether an isomorphism at one structural level preserves arithmetic invariants at another.",
+    "3": "Whether canonical reconstruction implies preservation of a chosen normalization.",
+    "4": "Whether independent existential witnesses admit a common compatible realization.",
+    "5": "Whether invariance under individual indeterminacies implies invariance under their combined action.",
+    "6": "Whether hull formation and transport commute.",
+    "7": "Whether the necessary comparison can be derived from the claimed reconstruction theorem."
+  },
+  "entries": [
+    {
+      "lean_name": "IUT.Countermodels.mul_iso_not_additive",
+      "file": "IUT/Countermodels/Basic.lean",
+      "kind": "countermodel",
+      "priority_question": {
+        "number": 1,
+        "text": "Whether multiplicative data determines additive structure."
+      },
+      "classification": {
+        "label": "counterexample to a simplified abstraction",
+        "note": "The hypotheses of the abstraction stated in principle_refuted are shown insufficient for its conclusion. Not a counterexample to an intermediate claim of the papers, not a counterexample to a faithfully formalized statement of the papers, not a demonstrated contradiction."
+      },
+      "statement": "Cubing on ZMod 5 is a bijection preserving 0, 1 and multiplication but not addition.",
+      "principle_refuted": "A bijection preserving the multiplicative monoid of a field preserves addition.",
+      "principle_established": null,
+      "hypotheses_satisfied": [
+        "finite field ZMod 5",
+        "bijective",
+        "f 0 = 0, f 1 = 1",
+        "multiplicative"
+      ],
+      "full_hypotheses_of_original_claim": "No. The hypotheses are those of a simplified abstraction, not the full hypotheses of any statement of the IUT papers.",
+      "bears_on": [
+        {
+          "paper": "IUT III",
+          "location": "Corollary 3.12, proof, Step (i): unit portion and value group portion of the link",
+          "pages": "175"
+        }
+      ]
+    },
+    {
+      "lean_name": "IUT.Countermodels.separate_witnesses_no_joint",
+      "file": "IUT/Countermodels/Basic.lean",
+      "kind": "countermodel",
+      "priority_question": {
+        "number": 4,
+        "text": "Whether independent existential witnesses admit a common compatible realization."
+      },
+      "classification": {
+        "label": "counterexample to a simplified abstraction",
+        "note": "The hypotheses of the abstraction stated in principle_refuted are shown insufficient for its conclusion. Not a counterexample to an intermediate claim of the papers, not a counterexample to a faithfully formalized statement of the papers, not a demonstrated contradiction."
+      },
+      "statement": "Two predicates on Bool, each with a witness, with no common witness.",
+      "principle_refuted": "Separate witnesses for P and for Q give a witness for P and Q.",
+      "principle_established": null,
+      "hypotheses_satisfied": [
+        "each condition satisfiable"
+      ],
+      "full_hypotheses_of_original_claim": "No. The hypotheses are those of a simplified abstraction, not the full hypotheses of any statement of the IUT papers.",
+      "bears_on": [
+        {
+          "paper": "IUT III",
+          "location": "Theorem 3.11 (simultaneous compatibilities)",
+          "pages": "153 to 157"
+        }
+      ]
+    },
+    {
+      "lean_name": "IUT.Countermodels.invariant_comp",
+      "file": "IUT/Countermodels/Basic.lean",
+      "kind": "positive",
+      "priority_question": {
+        "number": 5,
+        "text": "Whether invariance under individual indeterminacies implies invariance under their combined action."
+      },
+      "classification": {
+        "label": "positive statement: a valid principle of the same flavor, proved in Lean"
+      },
+      "statement": "A function invariant under g and under h is invariant under g composed with h.",
+      "principle_refuted": null,
+      "principle_established": "For a single-valued quantity, invariance under each indeterminacy gives invariance under their composite.",
+      "hypotheses_satisfied": [
+        "F invariant under g",
+        "F invariant under h"
+      ],
+      "full_hypotheses_of_original_claim": "Not applicable: this is a proved positive statement or lemma, not a countermodel.",
+      "bears_on": [
+        {
+          "paper": "IUT III",
+          "location": "Corollary 3.12, proof, Step (x): log-volumes invariant under (Ind1), (Ind2)",
+          "pages": "181"
+        }
+      ]
+    },
+    {
+      "lean_name": "IUT.Countermodels.separate_orbits_ne_joint_orbit",
+      "file": "IUT/Countermodels/Basic.lean",
+      "kind": "countermodel",
+      "priority_question": {
+        "number": 5,
+        "text": "Whether invariance under individual indeterminacies implies invariance under their combined action."
+      },
+      "classification": {
+        "label": "counterexample to a simplified abstraction",
+        "note": "The hypotheses of the abstraction stated in principle_refuted are shown insufficient for its conclusion. Not a counterexample to an intermediate claim of the papers, not a counterexample to a faithfully formalized statement of the papers, not a demonstrated contradiction."
+      },
+      "statement": "On Fin 3 with the transpositions (0 1) and (1 2), the composite image of 0 is outside the union of the separate images.",
+      "principle_refuted": "The union of images under each transformation separately contains the images under their composites.",
+      "principle_established": null,
+      "hypotheses_satisfied": [
+        "two permutations of a finite set"
+      ],
+      "full_hypotheses_of_original_claim": "No. The hypotheses are those of a simplified abstraction, not the full hypotheses of any statement of the IUT papers.",
+      "bears_on": [
+        {
+          "paper": "IUT III",
+          "location": "Corollary 3.12, statement: union of possible images subject to (Ind1), (Ind2), (Ind3)",
+          "pages": "173 to 174"
+        }
+      ]
+    },
+    {
+      "lean_name": "IUT.Countermodels.hull_transport_not_commute",
+      "file": "IUT/Countermodels/Basic.lean",
+      "kind": "countermodel",
+      "priority_question": {
+        "number": 6,
+        "text": "Whether hull formation and transport commute."
+      },
+      "classification": {
+        "label": "counterexample to a simplified abstraction",
+        "note": "The hypotheses of the abstraction stated in principle_refuted are shown insufficient for its conclusion. Not a counterexample to an intermediate claim of the papers, not a counterexample to a faithfully formalized statement of the papers, not a demonstrated contradiction."
+      },
+      "statement": "On Fin 3, the interval hull of the image under the transposition (1 2) of {0, 2} differs from the image of the hull.",
+      "principle_refuted": "Forming a hull commutes with transport along a bijection.",
+      "principle_established": null,
+      "hypotheses_satisfied": [
+        "order hull on Fin 3",
+        "bijective transport"
+      ],
+      "full_hypotheses_of_original_claim": "No. The hypotheses are those of a simplified abstraction, not the full hypotheses of any statement of the IUT papers.",
+      "bears_on": [
+        {
+          "paper": "IUT III",
+          "location": "Corollary 3.12, statement and Step (xi-c): holomorphic hull relative to the structure labeled 1, o",
+          "pages": "173 to 174, 182"
+        }
+      ]
+    },
+    {
+      "lean_name": "IUT.Countermodels.additive_iso_changes_volume",
+      "file": "IUT/Countermodels/Basic.lean",
+      "kind": "countermodel",
+      "priority_question": {
+        "number": 3,
+        "text": "Whether canonical reconstruction implies preservation of a chosen normalization."
+      },
+      "classification": {
+        "label": "counterexample to a simplified abstraction",
+        "note": "The hypotheses of the abstraction stated in principle_refuted are shown insufficient for its conclusion. Not a counterexample to an intermediate claim of the papers, not a counterexample to a faithfully formalized statement of the papers, not a demonstrated contradiction."
+      },
+      "statement": "Doubling is an automorphism of the additive group of R and doubles the length of [0, 1].",
+      "principle_refuted": "An automorphism of a locally compact group preserves a chosen normalization of Haar measure.",
+      "principle_established": null,
+      "hypotheses_satisfied": [
+        "additive automorphism of R"
+      ],
+      "full_hypotheses_of_original_claim": "No. The hypotheses are those of a simplified abstraction, not the full hypotheses of any statement of the IUT papers.",
+      "bears_on": [
+        {
+          "paper": "IUT III",
+          "location": "Proposition 3.9 (i): packet-normalized log-volumes",
+          "pages": "115 to 116"
+        }
+      ]
+    },
+    {
+      "lean_name": "IUT.Countermodels.log_volume_shift",
+      "file": "IUT/Countermodels/Basic.lean",
+      "kind": "positive",
+      "priority_question": {
+        "number": 3,
+        "text": "Whether canonical reconstruction implies preservation of a chosen normalization."
+      },
+      "classification": {
+        "label": "positive statement: a valid principle of the same flavor, proved in Lean"
+      },
+      "statement": "For c, m > 0, log(c m) = log c + log m.",
+      "principle_refuted": null,
+      "principle_established": "Rescaling a measure by c > 0 shifts every log-volume by log c.",
+      "hypotheses_satisfied": [
+        "c > 0",
+        "m > 0"
+      ],
+      "full_hypotheses_of_original_claim": "Not applicable: this is a proved positive statement or lemma, not a countermodel.",
+      "bears_on": [
+        {
+          "paper": "IUT III",
+          "location": "Proposition 3.9 (i): packet-normalized log-volumes",
+          "pages": "115 to 116"
+        }
+      ]
+    },
+    {
+      "lean_name": "IUT.Countermodels.MulAdd.inv_comm_ringEquiv",
+      "file": "IUT/Countermodels/MultiplicativeAdditive.lean",
+      "kind": "positive",
+      "priority_question": {
+        "number": 1,
+        "text": "Whether multiplicative data determines additive structure."
+      },
+      "classification": {
+        "label": "positive statement: a valid principle of the same flavor, proved in Lean"
+      },
+      "statement": "Inversion commutes with every ring automorphism of every field.",
+      "principle_refuted": null,
+      "principle_established": "Equivariance under field automorphisms holds for inversion, so it cannot separate inversion from additive maps.",
+      "hypotheses_satisfied": [
+        "K a field",
+        "sigma a ring automorphism of K"
+      ],
+      "full_hypotheses_of_original_claim": "Not applicable: this is a proved positive statement or lemma, not a countermodel.",
+      "bears_on": [
+        {
+          "paper": "IUT III",
+          "location": "Remark 3.8.3 (Galois action on units needed for Kummer theory)",
+          "pages": "115"
+        }
+      ]
+    },
+    {
+      "lean_name": "IUT.Countermodels.MulAdd.inv_not_ringHom",
+      "file": "IUT/Countermodels/MultiplicativeAdditive.lean",
+      "kind": "lemma",
+      "priority_question": {
+        "number": 1,
+        "text": "Whether multiplicative data determines additive structure."
+      },
+      "classification": {
+        "label": "lemma: an ingredient of a countermodel, proved in Lean"
+      },
+      "statement": "If 2 and 3 are nonzero in K, no ring endomorphism of K agrees with inversion on nonzero elements.",
+      "principle_refuted": null,
+      "principle_established": "Inversion is not induced by a ring map in characteristic other than 2 and 3.",
+      "hypotheses_satisfied": [
+        "K a field",
+        "2 /= 0",
+        "3 /= 0"
+      ],
+      "full_hypotheses_of_original_claim": "Not applicable: this is a proved positive statement or lemma, not a countermodel.",
+      "bears_on": [
+        {
+          "paper": "IUT III",
+          "location": "Corollary 3.12, proof, Step (i)",
+          "pages": "175"
+        }
+      ]
+    },
+    {
+      "lean_name": "IUT.Countermodels.MulAdd.padic_inv_countermodel",
+      "file": "IUT/Countermodels/MultiplicativeAdditive.lean",
+      "kind": "countermodel",
+      "priority_question": {
+        "number": 1,
+        "text": "Whether multiplicative data determines additive structure."
+      },
+      "classification": {
+        "label": "counterexample to a simplified abstraction",
+        "note": "The hypotheses of the abstraction stated in principle_refuted are shown insufficient for its conclusion. Not a counterexample to an intermediate claim of the papers, not a counterexample to a faithfully formalized statement of the papers, not a demonstrated contradiction."
+      },
+      "statement": "On Q_p, inversion is a multiplicative bijection fixing 0 and 1, commuting with all field automorphisms, continuous on Q_p^x, preserving the units, not norm preserving, and induced by no ring map.",
+      "principle_refuted": "A bijection of a local field that preserves the multiplicative monoid, the topology on nonzero elements, the unit group and the action of field automorphisms is a field automorphism (or at least additive).",
+      "principle_established": null,
+      "hypotheses_satisfied": [
+        "local field Q_p",
+        "bijective",
+        "f 0 = 0, f 1 = 1",
+        "multiplicative",
+        "commutes with every ring automorphism",
+        "continuous on Q_p^x",
+        "maps units to units"
+      ],
+      "full_hypotheses_of_original_claim": "No. The hypotheses are those of a simplified abstraction, not the full hypotheses of any statement of the IUT papers.",
+      "bears_on": [
+        {
+          "paper": "IUT III",
+          "location": "Corollary 3.12, proof, Step (i): unit portion and value group portion",
+          "pages": "175"
+        },
+        {
+          "paper": "IUT III",
+          "location": "Remark 1.1.1 (i): log-shells constructed from units only",
+          "pages": "28"
+        }
+      ]
+    },
+    {
+      "lean_name": "IUT.Countermodels.MulAdd.padicInt_units_inv_not_ringHom",
+      "file": "IUT/Countermodels/MultiplicativeAdditive.lean",
+      "kind": "countermodel",
+      "priority_question": {
+        "number": 1,
+        "text": "Whether multiplicative data determines additive structure."
+      },
+      "classification": {
+        "label": "counterexample to a simplified abstraction",
+        "note": "The hypotheses of the abstraction stated in principle_refuted are shown insufficient for its conclusion. Not a counterexample to an intermediate claim of the papers, not a counterexample to a faithfully formalized statement of the papers, not a demonstrated contradiction."
+      },
+      "statement": "Inversion, a group automorphism of Z_p^x, agrees on units with no ring endomorphism of Z_p.",
+      "principle_refuted": "Every automorphism of the unit group of the ring of integers of a local field is induced by a ring map.",
+      "principle_established": null,
+      "hypotheses_satisfied": [
+        "unit group Z_p^x of Z_p",
+        "group automorphism (inversion)"
+      ],
+      "full_hypotheses_of_original_claim": "No. The hypotheses are those of a simplified abstraction, not the full hypotheses of any statement of the IUT papers.",
+      "bears_on": [
+        {
+          "paper": "IUT III",
+          "location": "Remark 1.1.1 (i): log-shells constructed from units only",
+          "pages": "28"
+        },
+        {
+          "paper": "IUT III",
+          "location": "Corollary 3.12, proof, Step (i)",
+          "pages": "175"
+        }
+      ]
+    },
+    {
+      "lean_name": "IUT.Countermodels.MulAdd.squareValue_countermodel",
+      "file": "IUT/Countermodels/MultiplicativeAdditive.lean",
+      "kind": "countermodel",
+      "priority_question": {
+        "number": 1,
+        "text": "Whether multiplicative data determines additive structure."
+      },
+      "classification": {
+        "label": "counterexample to a simplified abstraction",
+        "note": "The hypotheses of the abstraction stated in principle_refuted are shown insufficient for its conclusion. Not a counterexample to an intermediate claim of the papers, not a counterexample to a faithfully formalized statement of the papers, not a demonstrated contradiction."
+      },
+      "statement": "On Q_p, x maps to x p^{v(x)} is multiplicative, injective, the identity on units, doubles valuations, and is not additive.",
+      "principle_refuted": "A multiplicative map that is the identity on the unit portion and acts on the value group portion by a homomorphism is additive.",
+      "principle_established": null,
+      "hypotheses_satisfied": [
+        "local field Q_p",
+        "f 0 = 0, f 1 = 1",
+        "multiplicative",
+        "injective",
+        "identity on elements of norm 1",
+        "acts on valuations by multiplication by 2"
+      ],
+      "full_hypotheses_of_original_claim": "No. The hypotheses are those of a simplified abstraction, not the full hypotheses of any statement of the IUT papers.",
+      "bears_on": [
+        {
+          "paper": "IUT III",
+          "location": "Corollary 3.12, proof, Step (i): unit portion and value group portion of the link",
+          "pages": "175"
+        }
+      ]
+    },
+    {
+      "lean_name": "IUT.Countermodels.MulAdd.real_cube_countermodel",
+      "file": "IUT/Countermodels/MultiplicativeAdditive.lean",
+      "kind": "countermodel",
+      "priority_question": {
+        "number": 1,
+        "text": "Whether multiplicative data determines additive structure."
+      },
+      "classification": {
+        "label": "counterexample to a simplified abstraction",
+        "note": "The hypotheses of the abstraction stated in principle_refuted are shown insufficient for its conclusion. Not a counterexample to an intermediate claim of the papers, not a counterexample to a faithfully formalized statement of the papers, not a demonstrated contradiction."
+      },
+      "statement": "Cubing on R is strictly increasing, continuous, bijective, multiplicative, fixes 0 and 1, and is induced by no ring map.",
+      "principle_refuted": "A multiplicative bijection of R that respects the order and the topology is a field automorphism.",
+      "principle_established": null,
+      "hypotheses_satisfied": [
+        "field R",
+        "strictly monotone",
+        "continuous",
+        "bijective",
+        "f 0 = 0, f 1 = 1",
+        "multiplicative"
+      ],
+      "full_hypotheses_of_original_claim": "No. The hypotheses are those of a simplified abstraction, not the full hypotheses of any statement of the IUT papers.",
+      "bears_on": [
+        {
+          "paper": "IUT III",
+          "location": "Proposition 1.2 (ii): compatibility with ring structures stated as a separate property",
+          "pages": "31"
+        }
+      ]
+    },
+    {
+      "lean_name": "IUT.Countermodels.MulAdd.additive_of_mul_of_translate",
+      "file": "IUT/Countermodels/MultiplicativeAdditive.lean",
+      "kind": "positive",
+      "priority_question": {
+        "number": 1,
+        "text": "Whether multiplicative data determines additive structure."
+      },
+      "classification": {
+        "label": "positive statement: a valid principle of the same flavor, proved in Lean"
+      },
+      "statement": "On any field, a multiplicative map with f 0 = 0 commuting with x maps to x + 1 is additive.",
+      "principle_refuted": null,
+      "principle_established": "Multiplicative data plus compatibility with the single translation by 1 determines additivity.",
+      "hypotheses_satisfied": [
+        "K a field",
+        "multiplicative",
+        "f 0 = 0",
+        "f (x + 1) = f x + 1"
+      ],
+      "full_hypotheses_of_original_claim": "Not applicable: this is a proved positive statement or lemma, not a countermodel.",
+      "bears_on": [
+        {
+          "paper": "IUT III",
+          "location": "Corollary 3.12, proof, Step (ix): ring structure of F_mod as a translation apparatus between multiplicative and additive structures",
+          "pages": "180"
+        }
+      ]
+    },
+    {
+      "lean_name": "IUT.Countermodels.Level.mulP_countermodel",
+      "file": "IUT/Countermodels/LevelMismatch.lean",
+      "kind": "countermodel",
+      "priority_question": {
+        "number": 2,
+        "text": "Whether an isomorphism at one structural level preserves arithmetic invariants at another."
+      },
+      "classification": {
+        "label": "counterexample to a simplified abstraction",
+        "note": "The hypotheses of the abstraction stated in principle_refuted are shown insufficient for its conclusion. Not a counterexample to an intermediate claim of the papers, not a counterexample to a faithfully formalized statement of the papers, not a demonstrated contradiction."
+      },
+      "statement": "Multiplication by p is a homeomorphic automorphism of the additive group Q_p that multiplies norms by 1/p and sends 1 into the maximal ideal.",
+      "principle_refuted": "An automorphism of the additive topological group of a local field preserves its norm or its integral structure.",
+      "principle_established": null,
+      "hypotheses_satisfied": [
+        "Q_p",
+        "additive automorphism",
+        "continuous with continuous inverse"
+      ],
+      "full_hypotheses_of_original_claim": "No. The hypotheses are those of a simplified abstraction, not the full hypotheses of any statement of the IUT papers.",
+      "bears_on": [
+        {
+          "paper": "IUT III",
+          "location": "Corollary 3.12, proof, Step (xii): open submodule versus its p^N multiple",
+          "pages": "185 to 186"
+        }
+      ]
+    },
+    {
+      "lean_name": "IUT.Countermodels.Level.no_ringEquiv_valuation_two_three",
+      "file": "IUT/Countermodels/LevelMismatch.lean",
+      "kind": "countermodel",
+      "priority_question": {
+        "number": 2,
+        "text": "Whether an isomorphism at one structural level preserves arithmetic invariants at another."
+      },
+      "classification": {
+        "label": "counterexample to a simplified abstraction",
+        "note": "The hypotheses of the abstraction stated in principle_refuted are shown insufficient for its conclusion. Not a counterexample to an intermediate claim of the papers, not a counterexample to a faithfully formalized statement of the papers, not a demonstrated contradiction."
+      },
+      "statement": "No ring automorphism of Q carries the 3-adic valuation to the 2-adic valuation.",
+      "principle_refuted": "Valued fields with isomorphic underlying fields and isomorphic value groups are isomorphic as valued fields.",
+      "principle_established": null,
+      "hypotheses_satisfied": [
+        "same underlying field Q",
+        "value groups both Z"
+      ],
+      "full_hypotheses_of_original_claim": "No. The hypotheses are those of a simplified abstraction, not the full hypotheses of any statement of the IUT papers.",
+      "bears_on": [
+        {
+          "paper": "IUT III",
+          "location": "Proposition 3.9 (i), (iii): log-volumes normalized by integral structures",
+          "pages": "115 to 117"
+        }
+      ]
+    },
+    {
+      "lean_name": "IUT.Countermodels.Level.conj_unbounded",
+      "file": "IUT/Countermodels/LevelMismatch.lean",
+      "kind": "countermodel",
+      "priority_question": {
+        "number": 2,
+        "text": "Whether an isomorphism at one structural level preserves arithmetic invariants at another."
+      },
+      "classification": {
+        "label": "counterexample to a simplified abstraction",
+        "note": "The hypotheses of the abstraction stated in principle_refuted are shown insufficient for its conclusion. Not a counterexample to an intermediate claim of the papers, not a counterexample to a faithfully formalized statement of the papers, not a demonstrated contradiction."
+      },
+      "statement": "Conjugation on Z[sqrt 2] is a ring automorphism that is unbounded on elements whose real embedding has absolute value at most 1.",
+      "principle_refuted": "A ring automorphism respects the archimedean absolute value induced by an embedding.",
+      "principle_established": null,
+      "hypotheses_satisfied": [
+        "ring endomorphism of Z[sqrt 2] that is an involution, hence an automorphism",
+        "fixed real embedding"
+      ],
+      "full_hypotheses_of_original_claim": "No. The hypotheses are those of a simplified abstraction, not the full hypotheses of any statement of the IUT papers.",
+      "bears_on": [
+        {
+          "paper": "IUT III",
+          "location": "Proposition 1.2 (iii): compatibility of log-links with archimedean log-volumes",
+          "pages": "31"
+        }
+      ]
+    },
+    {
+      "lean_name": "IUT.Countermodels.Level.real_ringEquiv_isometry",
+      "file": "IUT/Countermodels/LevelMismatch.lean",
+      "kind": "positive",
+      "priority_question": {
+        "number": 2,
+        "text": "Whether an isomorphism at one structural level preserves arithmetic invariants at another."
+      },
+      "classification": {
+        "label": "positive statement: a valid principle of the same flavor, proved in Lean"
+      },
+      "statement": "Every ring automorphism of R preserves the absolute value.",
+      "principle_refuted": null,
+      "principle_established": "For R, the field structure alone determines the archimedean structure.",
+      "hypotheses_satisfied": [
+        "sigma a ring automorphism of R"
+      ],
+      "full_hypotheses_of_original_claim": "Not applicable: this is a proved positive statement or lemma, not a countermodel.",
+      "bears_on": [
+        {
+          "paper": "IUT III",
+          "location": "Proposition 1.2 (iii)",
+          "pages": "31"
+        }
+      ]
+    },
+    {
+      "lean_name": "IUT.Countermodels.Haar.haar_eq_smul_volume",
+      "file": "IUT/Countermodels/HaarNormalization.lean",
+      "kind": "positive",
+      "priority_question": {
+        "number": 3,
+        "text": "Whether canonical reconstruction implies preservation of a chosen normalization."
+      },
+      "classification": {
+        "label": "positive statement: a valid principle of the same flavor, proved in Lean"
+      },
+      "statement": "Every additive Haar measure on R is a scalar multiple of Lebesgue measure.",
+      "principle_refuted": null,
+      "principle_established": "Haar measure is canonical up to one real scalar.",
+      "hypotheses_satisfied": [
+        "mu an additive Haar measure on R"
+      ],
+      "full_hypotheses_of_original_claim": "Not applicable: this is a proved positive statement or lemma, not a countermodel.",
+      "bears_on": [
+        {
+          "paper": "IUT III",
+          "location": "Proposition 3.9 (i), (ii)",
+          "pages": "115 to 117"
+        }
+      ]
+    },
+    {
+      "lean_name": "IUT.Countermodels.Haar.haar_eq_volume_of_anchor",
+      "file": "IUT/Countermodels/HaarNormalization.lean",
+      "kind": "positive",
+      "priority_question": {
+        "number": 3,
+        "text": "Whether canonical reconstruction implies preservation of a chosen normalization."
+      },
+      "classification": {
+        "label": "positive statement: a valid principle of the same flavor, proved in Lean"
+      },
+      "statement": "An additive Haar measure on R giving [0, 1] volume 1 is Lebesgue measure.",
+      "principle_refuted": null,
+      "principle_established": "An anchor (volume of a reference set) fixes the normalization.",
+      "hypotheses_satisfied": [
+        "mu an additive Haar measure on R",
+        "mu [0, 1] = 1"
+      ],
+      "full_hypotheses_of_original_claim": "Not applicable: this is a proved positive statement or lemma, not a countermodel.",
+      "bears_on": [
+        {
+          "paper": "IUT III",
+          "location": "Proposition 3.9 (i): the log-volume of the integral structure is zero",
+          "pages": "115"
+        }
+      ]
+    },
+    {
+      "lean_name": "IUT.Countermodels.Haar.rescaled_haar",
+      "file": "IUT/Countermodels/HaarNormalization.lean",
+      "kind": "countermodel",
+      "priority_question": {
+        "number": 3,
+        "text": "Whether canonical reconstruction implies preservation of a chosen normalization."
+      },
+      "classification": {
+        "label": "counterexample to a simplified abstraction",
+        "note": "The hypotheses of the abstraction stated in principle_refuted are shown insufficient for its conclusion. Not a counterexample to an intermediate claim of the papers, not a counterexample to a faithfully formalized statement of the papers, not a demonstrated contradiction."
+      },
+      "statement": "For c > 0, c volume is an additive Haar measure, differs from volume if c /= 1, and shifts every log-volume by log c.",
+      "principle_refuted": "The structure of locally compact group determines the log-volume.",
+      "principle_established": null,
+      "hypotheses_satisfied": [
+        "c volume is an additive Haar measure",
+        "invariant under translations"
+      ],
+      "full_hypotheses_of_original_claim": "No. The hypotheses are those of a simplified abstraction, not the full hypotheses of any statement of the IUT papers.",
+      "bears_on": [
+        {
+          "paper": "IUT III",
+          "location": "Proposition 3.9 (i), (ii)",
+          "pages": "115 to 117"
+        }
+      ]
+    },
+    {
+      "lean_name": "IUT.Countermodels.Haar.scaling_law_all_normalizations",
+      "file": "IUT/Countermodels/HaarNormalization.lean",
+      "kind": "countermodel",
+      "priority_question": {
+        "number": 3,
+        "text": "Whether canonical reconstruction implies preservation of a chosen normalization."
+      },
+      "classification": {
+        "label": "counterexample to a simplified abstraction",
+        "note": "The hypotheses of the abstraction stated in principle_refuted are shown insufficient for its conclusion. Not a counterexample to an intermediate claim of the papers, not a counterexample to a faithfully formalized statement of the papers, not a demonstrated contradiction."
+      },
+      "statement": "For every c > 0, the log-volume of c volume satisfies logVol(a s) = log|a| + logVol(s).",
+      "principle_refuted": "The scaling law (multiplying a region by a shifts its log-volume by a fixed amount) fixes the normalization.",
+      "principle_established": null,
+      "hypotheses_satisfied": [
+        "Haar measure c volume",
+        "scaling law"
+      ],
+      "full_hypotheses_of_original_claim": "No. The hypotheses are those of a simplified abstraction, not the full hypotheses of any statement of the IUT papers.",
+      "bears_on": [
+        {
+          "paper": "IUT III",
+          "location": "Proposition 3.9 (i): multiplication by p_v adds -log(p_v) (packet-normalization)",
+          "pages": "115"
+        }
+      ]
+    },
+    {
+      "lean_name": "IUT.Countermodels.Haar.transport_shifts_logVol",
+      "file": "IUT/Countermodels/HaarNormalization.lean",
+      "kind": "countermodel",
+      "priority_question": {
+        "number": 3,
+        "text": "Whether canonical reconstruction implies preservation of a chosen normalization."
+      },
+      "classification": {
+        "label": "counterexample to a simplified abstraction",
+        "note": "The hypotheses of the abstraction stated in principle_refuted are shown insufficient for its conclusion. Not a counterexample to an intermediate claim of the papers, not a counterexample to a faithfully formalized statement of the papers, not a demonstrated contradiction."
+      },
+      "statement": "Transporting Lebesgue measure along x maps to a x shifts every log-volume by -log|a|.",
+      "principle_refuted": "A normalization transported along an isomorphism of topological groups does not depend on the isomorphism.",
+      "principle_established": null,
+      "hypotheses_satisfied": [
+        "automorphism of the topological group R",
+        "Lebesgue measure on the source"
+      ],
+      "full_hypotheses_of_original_claim": "No. The hypotheses are those of a simplified abstraction, not the full hypotheses of any statement of the IUT papers.",
+      "bears_on": [
+        {
+          "paper": "IUT III",
+          "location": "Theorem 3.11 (ii) (a): isomorphisms compatible with log-volumes",
+          "pages": "155"
+        },
+        {
+          "paper": "IUT III",
+          "location": "Proposition 3.9 (ii)",
+          "pages": "116"
+        }
+      ]
+    },
+    {
+      "lean_name": "IUT.Countermodels.Haar.transport_preserves_iff",
+      "file": "IUT/Countermodels/HaarNormalization.lean",
+      "kind": "positive",
+      "priority_question": {
+        "number": 3,
+        "text": "Whether canonical reconstruction implies preservation of a chosen normalization."
+      },
+      "classification": {
+        "label": "positive statement: a valid principle of the same flavor, proved in Lean"
+      },
+      "statement": "Transport along x maps to a x preserves Lebesgue measure iff |a| = 1.",
+      "principle_refuted": null,
+      "principle_established": "Exactly the isomorphisms respecting the anchor carry the normalization.",
+      "hypotheses_satisfied": [
+        "a /= 0"
+      ],
+      "full_hypotheses_of_original_claim": "Not applicable: this is a proved positive statement or lemma, not a countermodel.",
+      "bears_on": [
+        {
+          "paper": "IUT III",
+          "location": "Theorem 3.11 (ii) (a)",
+          "pages": "155"
+        }
+      ]
+    },
+    {
+      "lean_name": "IUT.Countermodels.Joint.zmod7_separate_not_joint",
+      "file": "IUT/Countermodels/JointWitness.lean",
+      "kind": "countermodel",
+      "priority_question": {
+        "number": 4,
+        "text": "Whether independent existential witnesses admit a common compatible realization."
+      },
+      "classification": {
+        "label": "counterexample to a simplified abstraction",
+        "note": "The hypotheses of the abstraction stated in principle_refuted are shown insufficient for its conclusion. Not a counterexample to an intermediate claim of the papers, not a counterexample to a faithfully formalized statement of the papers, not a demonstrated contradiction."
+      },
+      "statement": "Automorphisms of the multiplicative monoid of ZMod 7: fixing 3 is satisfiable, sending 2 to 4 is satisfiable, both together are not.",
+      "principle_refuted": "Compatibility conditions on a transport map that are separately satisfiable are jointly satisfiable.",
+      "principle_established": null,
+      "hypotheses_satisfied": [
+        "transport maps are automorphisms of the multiplicative monoid of the field ZMod 7",
+        "each condition prescribes the value at one element",
+        "each condition has a witness"
+      ],
+      "full_hypotheses_of_original_claim": "No. The hypotheses are those of a simplified abstraction, not the full hypotheses of any statement of the IUT papers.",
+      "bears_on": [
+        {
+          "paper": "IUT III",
+          "location": "Corollary 3.12, proof, Step (iii): unit and value group portions must be related via a single link",
+          "pages": "176"
+        }
+      ]
+    },
+    {
+      "lean_name": "IUT.Countermodels.Joint.linear_separate_not_joint",
+      "file": "IUT/Countermodels/JointWitness.lean",
+      "kind": "countermodel",
+      "priority_question": {
+        "number": 4,
+        "text": "Whether independent existential witnesses admit a common compatible realization."
+      },
+      "classification": {
+        "label": "counterexample to a simplified abstraction",
+        "note": "The hypotheses of the abstraction stated in principle_refuted are shown insufficient for its conclusion. Not a counterexample to an intermediate claim of the papers, not a counterexample to a faithfully formalized statement of the papers, not a demonstrated contradiction."
+      },
+      "statement": "Among maps x maps to c x with c > 0, 1 maps to 1 and theta maps to q are each satisfiable, jointly iff theta = q.",
+      "principle_refuted": "A transport respecting a normalization and a transport matching pilot values combine into one transport.",
+      "principle_established": null,
+      "hypotheses_satisfied": [
+        "ordered linear transports of R",
+        "theta > 0, q > 0"
+      ],
+      "full_hypotheses_of_original_claim": "No. The hypotheses are those of a simplified abstraction, not the full hypotheses of any statement of the IUT papers.",
+      "bears_on": [
+        {
+          "paper": "IUT III",
+          "location": "Corollary 3.12, proof, Steps (xi-a) to (xi-f)",
+          "pages": "181 to 184"
+        }
+      ]
+    },
+    {
+      "lean_name": "IUT.Countermodels.Joint.joint_witness_of_product",
+      "file": "IUT/Countermodels/JointWitness.lean",
+      "kind": "positive",
+      "priority_question": {
+        "number": 4,
+        "text": "Whether independent existential witnesses admit a common compatible realization."
+      },
+      "classification": {
+        "label": "positive statement: a valid principle of the same flavor, proved in Lean"
+      },
+      "statement": "If candidates form a product A x B and the conditions constrain different factors, separate witnesses give a joint one.",
+      "principle_refuted": null,
+      "principle_established": "Independent conditions on independent portions combine.",
+      "hypotheses_satisfied": [
+        "candidates form a product",
+        "P depends on the first factor only",
+        "Q on the second only"
+      ],
+      "full_hypotheses_of_original_claim": "Not applicable: this is a proved positive statement or lemma, not a countermodel.",
+      "bears_on": [
+        {
+          "paper": "IUT III",
+          "location": "Corollary 3.12, proof, Step (i): link as unit portion and value group portion",
+          "pages": "175"
+        }
+      ]
+    },
+    {
+      "lean_name": "IUT.Countermodels.Indet.invariant_set_closure",
+      "file": "IUT/Countermodels/CombinedIndeterminacies.lean",
+      "kind": "positive",
+      "priority_question": {
+        "number": 5,
+        "text": "Whether invariance under individual indeterminacies implies invariance under their combined action."
+      },
+      "classification": {
+        "label": "positive statement: a valid principle of the same flavor, proved in Lean"
+      },
+      "statement": "A set mapped onto itself by g and by h is mapped onto itself by every element of the group they generate.",
+      "principle_refuted": null,
+      "principle_established": "Stability under generators gives stability under the generated group.",
+      "hypotheses_satisfied": [
+        "g T = T",
+        "h T = T"
+      ],
+      "full_hypotheses_of_original_claim": "Not applicable: this is a proved positive statement or lemma, not a countermodel.",
+      "bears_on": [
+        {
+          "paper": "IUT III",
+          "location": "Theorem 3.11 (i): (Ind1), (Ind2)",
+          "pages": "154"
+        }
+      ]
+    },
+    {
+      "lean_name": "IUT.Countermodels.Indet.invariant_closure",
+      "file": "IUT/Countermodels/CombinedIndeterminacies.lean",
+      "kind": "positive",
+      "priority_question": {
+        "number": 5,
+        "text": "Whether invariance under individual indeterminacies implies invariance under their combined action."
+      },
+      "classification": {
+        "label": "positive statement: a valid principle of the same flavor, proved in Lean"
+      },
+      "statement": "A function invariant under g and under h is invariant under the group they generate.",
+      "principle_refuted": null,
+      "principle_established": "For single-valued quantities, invariance under each indeterminacy gives invariance under the combined action.",
+      "hypotheses_satisfied": [
+        "F invariant under g",
+        "F invariant under h"
+      ],
+      "full_hypotheses_of_original_claim": "Not applicable: this is a proved positive statement or lemma, not a countermodel.",
+      "bears_on": [
+        {
+          "paper": "IUT III",
+          "location": "Corollary 3.12, proof, Step (x): invariance of log-volumes under (Ind1), (Ind2)",
+          "pages": "181"
+        }
+      ]
+    },
+    {
+      "lean_name": "IUT.Countermodels.Indet.separate_finite_joint_infinite",
+      "file": "IUT/Countermodels/CombinedIndeterminacies.lean",
+      "kind": "countermodel",
+      "priority_question": {
+        "number": 5,
+        "text": "Whether invariance under individual indeterminacies implies invariance under their combined action."
+      },
+      "classification": {
+        "label": "counterexample to a simplified abstraction",
+        "note": "The hypotheses of the abstraction stated in principle_refuted are shown insufficient for its conclusion. Not a counterexample to an intermediate claim of the papers, not a counterexample to a faithfully formalized statement of the papers, not a demonstrated contradiction."
+      },
+      "statement": "With S = [0, 1] and the reflections x maps to −x and x maps to 2 − x, the union of images under each separately has volume at most 3, under the generated group infinite volume.",
+      "principle_refuted": "A bound on the union of possible images under each indeterminacy separately bounds the union under their combined action.",
+      "principle_established": null,
+      "hypotheses_satisfied": [
+        "each indeterminacy an involution of R preserving Lebesgue measure",
+        "S compact of volume 1"
+      ],
+      "full_hypotheses_of_original_claim": "No. The hypotheses are those of a simplified abstraction, not the full hypotheses of any statement of the IUT papers.",
+      "bears_on": [
+        {
+          "paper": "IUT III",
+          "location": "Corollary 3.12, statement: union of possible images subject to (Ind1), (Ind2), (Ind3)",
+          "pages": "173 to 174"
+        },
+        {
+          "paper": "IUT III",
+          "location": "Theorem 3.11 (i), (ii)",
+          "pages": "153 to 157"
+        }
+      ]
+    },
+    {
+      "lean_name": "IUT.Countermodels.Hull.halfConj_countermodel",
+      "file": "IUT/Countermodels/HullTransport.lean",
+      "kind": "countermodel",
+      "priority_question": {
+        "number": 6,
+        "text": "Whether hull formation and transport commute."
+      },
+      "classification": {
+        "label": "counterexample to a simplified abstraction",
+        "note": "The hypotheses of the abstraction stated in principle_refuted are shown insufficient for its conclusion. Not a counterexample to an intermediate claim of the papers, not a counterexample to a faithfully formalized statement of the papers, not a demonstrated contradiction."
+      },
+      "statement": "The R-linear map (z, w) maps to (z, conj w) on C^2 does not commute with taking the C-span of {(1, 1)}.",
+      "principle_refuted": "A hull relative to a complex (holomorphic) structure commutes with transport along a map preserving only the real (mono-analytic) structure.",
+      "principle_established": null,
+      "hypotheses_satisfied": [
+        "transport bijective",
+        "transport additive",
+        "transport R-linear",
+        "hull = C-linear span (Mathlib Submodule.span)"
+      ],
+      "full_hypotheses_of_original_claim": "No. The hypotheses are those of a simplified abstraction, not the full hypotheses of any statement of the IUT papers.",
+      "bears_on": [
+        {
+          "paper": "IUT III",
+          "location": "Corollary 3.12, Steps (xi-c), (xi-d): holomorphic hull relative to the structure labeled 1, o",
+          "pages": "182 to 183"
+        }
+      ]
+    },
+    {
+      "lean_name": "IUT.Countermodels.Hull.shear_countermodel",
+      "file": "IUT/Countermodels/HullTransport.lean",
+      "kind": "countermodel",
+      "priority_question": {
+        "number": 6,
+        "text": "Whether hull formation and transport commute."
+      },
+      "classification": {
+        "label": "counterexample to a simplified abstraction",
+        "note": "The hypotheses of the abstraction stated in principle_refuted are shown insufficient for its conclusion. Not a counterexample to an intermediate claim of the papers, not a counterexample to a faithfully formalized statement of the papers, not a demonstrated contradiction."
+      },
+      "statement": "The Z-linear shear a + b i maps to (a + b) + b i of Z[i] does not commute with taking the Z[i]-submodule generated by 1 + i.",
+      "principle_refuted": "An integral hull (O-submodule generated by a set) commutes with transport along a map preserving only the additive group.",
+      "principle_established": null,
+      "hypotheses_satisfied": [
+        "transport additive and bijective",
+        "hull = Z[i]-span (Mathlib Submodule.span)"
+      ],
+      "full_hypotheses_of_original_claim": "No. The hypotheses are those of a simplified abstraction, not the full hypotheses of any statement of the IUT papers.",
+      "bears_on": [
+        {
+          "paper": "IUT III",
+          "location": "Corollary 3.12, Step (xi-c): expression over the rings O_{K_v}",
+          "pages": "182"
+        }
+      ]
+    },
+    {
+      "lean_name": "IUT.Countermodels.Hull.hull_transport_semilinear",
+      "file": "IUT/Countermodels/HullTransport.lean",
+      "kind": "positive",
+      "priority_question": {
+        "number": 6,
+        "text": "Whether hull formation and transport commute."
+      },
+      "classification": {
+        "label": "positive statement: a valid principle of the same flavor, proved in Lean"
+      },
+      "statement": "For a semilinear map f over a surjective ring map, the image of the span of s is the span of the image of s.",
+      "principle_refuted": null,
+      "principle_established": "Hulls commute with transport along maps preserving the structure the hull uses.",
+      "hypotheses_satisfied": [
+        "f sigma-semilinear",
+        "sigma surjective"
+      ],
+      "full_hypotheses_of_original_claim": "Not applicable: this is a proved positive statement or lemma, not a countermodel.",
+      "bears_on": [
+        {
+          "paper": "IUT III",
+          "location": "Corollary 3.12, Steps (xi-c), (xi-d)",
+          "pages": "182 to 183"
+        }
+      ]
+    },
+    {
+      "lean_name": "IUT.Countermodels.Comparison.invariant_of_iso",
+      "file": "IUT/Countermodels/ReconstructionComparison.lean",
+      "kind": "positive",
+      "priority_question": {
+        "number": 7,
+        "text": "Whether the necessary comparison can be derived from the claimed reconstruction theorem."
+      },
+      "classification": {
+        "label": "positive statement: a valid principle of the same flavor, proved in Lean"
+      },
+      "statement": "The log-volume of the pilot region of a normalized line is preserved by measurable bijections carrying measure to measure and pilot to pilot.",
+      "principle_refuted": null,
+      "principle_established": "Per-copy reconstruction: the invariant is determined by the full structure of the copy.",
+      "hypotheses_satisfied": [
+        "e measurable bijection",
+        "e carries measure to measure",
+        "e carries pilot onto pilot"
+      ],
+      "full_hypotheses_of_original_claim": "Not applicable: this is a proved positive statement or lemma, not a countermodel.",
+      "bears_on": [
+        {
+          "paper": "IUT III",
+          "location": "Theorem 3.11 (i): functorial algorithm",
+          "pages": "154"
+        },
+        {
+          "paper": "IUT III",
+          "location": "Proposition 3.9 (ii)",
+          "pages": "116"
+        }
+      ]
+    },
+    {
+      "lean_name": "IUT.Countermodels.Comparison.link_and_reconstruction_no_relation",
+      "file": "IUT/Countermodels/ReconstructionComparison.lean",
+      "kind": "countermodel",
+      "priority_question": {
+        "number": 7,
+        "text": "Whether the necessary comparison can be derived from the claimed reconstruction theorem."
+      },
+      "classification": {
+        "label": "counterexample to a simplified abstraction",
+        "note": "The hypotheses of the abstraction stated in principle_refuted are shown insufficient for its conclusion. Not a counterexample to an intermediate claim of the papers, not a counterexample to a faithfully formalized statement of the papers, not a demonstrated contradiction."
+      },
+      "statement": "For any pilot lengths and any reals alpha, beta, there are normalizations and a continuous increasing additive link carrying pilot onto pilot with invariants alpha and beta.",
+      "principle_refuted": "A link identifying part of the structure (additive group and pilot object) together with per-copy reconstruction of a log-volume determines a relation between the two log-volumes.",
+      "principle_established": null,
+      "hypotheses_satisfied": [
+        "two normalized lines with positive normalization and pilot length",
+        "link: additive automorphism of R, continuous, strictly increasing, pilot onto pilot",
+        "per-copy reconstruction (invariant_of_iso)"
+      ],
+      "full_hypotheses_of_original_claim": "No. This is a model of an abstraction. It satisfies: two copies each with an internally computed log-volume; a link identifying the pilot objects. It does not satisfy or model: Hodge theaters, Kummer theory, log-links, the multiradial representation, (Ind1) to (Ind3), the holomorphic hull, or (IPL), (SHE), (APT), through which Steps (xi-b) to (xi-e) express both log-volumes relative to the 1-column. The link is linear, so the model lies inside the disputed hypothesis (Lin).",
+      "bears_on": [
+        {
+          "paper": "IUT III",
+          "location": "Corollary 3.12, proof, Steps (xi-a) to (xi-g)",
+          "pages": "181 to 184"
+        }
+      ]
+    },
+    {
+      "lean_name": "IUT.Countermodels.Comparison.link_compatible_with_both_orders",
+      "file": "IUT/Countermodels/ReconstructionComparison.lean",
+      "kind": "countermodel",
+      "priority_question": {
+        "number": 7,
+        "text": "Whether the necessary comparison can be derived from the claimed reconstruction theorem."
+      },
+      "classification": {
+        "label": "counterexample to a simplified abstraction",
+        "note": "The hypotheses of the abstraction stated in principle_refuted are shown insufficient for its conclusion. Not a counterexample to an intermediate claim of the papers, not a counterexample to a faithfully formalized statement of the papers, not a demonstrated contradiction."
+      },
+      "statement": "For fixed pilot lengths, links and reconstruction are compatible both with invariant 0 < invariant 1 and with the reverse.",
+      "principle_refuted": "A link plus per-copy reconstruction forces an inequality between the invariants.",
+      "principle_established": null,
+      "hypotheses_satisfied": [
+        "same as link_and_reconstruction_no_relation"
+      ],
+      "full_hypotheses_of_original_claim": "No. Same model and same limitations as link_and_reconstruction_no_relation.",
+      "bears_on": [
+        {
+          "paper": "IUT III",
+          "location": "Corollary 3.12, statement and Step (xi-f)",
+          "pages": "174, 184"
+        }
+      ]
+    },
+    {
+      "lean_name": "IUT.Countermodels.Comparison.invariant_le_of_volume_compatible",
+      "file": "IUT/Countermodels/ReconstructionComparison.lean",
+      "kind": "positive",
+      "priority_question": {
+        "number": 7,
+        "text": "Whether the necessary comparison can be derived from the claimed reconstruction theorem."
+      },
+      "classification": {
+        "label": "positive statement: a valid principle of the same flavor, proved in Lean"
+      },
+      "statement": "If a link carries measure to measure and the first pilot into the second, the first invariant is at most the second.",
+      "principle_refuted": null,
+      "principle_established": "A named extra compatibility (volume compatibility of the link) gives the comparison.",
+      "hypotheses_satisfied": [
+        "e measurable bijection",
+        "e carries measure 0 to measure 1",
+        "e(pilot 0) contained in pilot 1",
+        "positive and finite measures"
+      ],
+      "full_hypotheses_of_original_claim": "Not applicable: this is a proved positive statement or lemma, not a countermodel.",
+      "bears_on": [
+        {
+          "paper": "IUT III",
+          "location": "Theorem 3.11 (ii): (Ind3) upper semi-compatibility",
+          "pages": "156"
+        },
+        {
+          "paper": "IUT III",
+          "location": "Corollary 3.12, Step (xi-f)",
+          "pages": "184"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,22 @@
+{
+  "declarations": {
+    "Challenge.ABC": {
+      "type": "7eb9c843b0fd71b8fd2d1fabbb34bb5e51c5767a961a5fe1323fb9a277b48cde",
+      "value": "e77bed6c646d97495f9ac498ce568e19df3ebd8e1cc6b91bd27a9b0762adb9d9"
+    },
+    "Challenge.ABCFinite": {
+      "type": "7eb9c843b0fd71b8fd2d1fabbb34bb5e51c5767a961a5fe1323fb9a277b48cde",
+      "value": "52e1c4ee435d0a22469bc22e4b1c2f8861353c0fa64e16250bcf626ef6c82009"
+    },
+    "Challenge.ABCLog": {
+      "type": "7eb9c843b0fd71b8fd2d1fabbb34bb5e51c5767a961a5fe1323fb9a277b48cde",
+      "value": "620a37699c810b95bdcc533356e8404aab0c8c309a8aca61bfbb88875be8a4f6"
+    },
+    "Challenge.rad": {
+      "type": "f4e839ff771d39c7a6d34919dae6a171f707805428fae35f438e2ef9b3be2f71",
+      "value": "1cb7d49a814595e6527ea19309a374f34aada05a8c88b457c515a11f4beb92f8"
+    }
+  },
+  "source_file": "Challenge/Defs.lean",
+  "source_sha256": "38b9a2aa9fec312a9c1f6a826a14c919539e4d4c5df75f950d9851ffa9327e0b"
+}
