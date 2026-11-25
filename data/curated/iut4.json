@@ -35,10 +35,64 @@
   "proof_status": "BLOCKED_BY_EXTERNAL_THEOREM",
   "obligations": [
    "Theorem A is Corollary 2.3; see that record.",
-   "The specialization to the abc inequality (X = P^1, D = {0, 1, infinity}, d = 1) is described in docs/PAPER_IV_DERIVATION.md and is not formalized."
+   "The specialization to the abc inequality (X = P^1, D = {0, 1, infinity}, d = 1) is described in docs/PAPER_IV_DERIVATION.md. At the level of statements it is formalized in IUT4.ThmA.frag.equiv_abc: the special case for rational points is equivalent to Challenge.ABC. Not formalized: Theorem A itself, the identification of the height attached to omega_X(D) with Mathlib's logarithmic height, and the direction (ii) implies (i) of [GenEll] Theorem 2.1 that the passage from the proof in IUT IV to this special case uses.",
+   "Page 3 asserts that the Vojta conjecture for hyperbolic curves, the ABC conjecture and the Szpiro conjecture for elliptic curves all follow as special cases of Theorem A, referring to [Vjt]; these derivations are not given in the paper."
   ],
-  "ambiguities": [],
-  "cor3_12_dependency": "conditional"
+  "ambiguities": [
+   "Page 3 and page 54: the statements of Theorem A and Corollary 2.3 agree word for word (checked against both renders), except that Theorem A points to the notation of [GenEll] as recalled before Corollary 2.2."
+  ],
+  "cor3_12_dependency": "conditional",
+  "fragments": [
+   "IUT4.ThmA.frag.equiv_abc"
+  ]
+ },
+ "IUT4.ThmA.frag.equiv_abc": {
+  "kind": "fragment",
+  "parent": "IUT4.ThmA",
+  "source": {
+   "paper": "Inter-universal Teichmuller Theory IV",
+   "pdf_pages": "page 3",
+   "pages_read": "rendered IUT IV pages 3, 40, 54, 55; GenEll pages 11 to 13"
+  },
+  "content": "VojtaLineMinusThreePointsRational is equivalent to Challenge.ABC; also the triple computations (height of a/c is log c, conductor is rad(abc)), the converse construction of a triple from x not in {0, 1}, invariance under bounded change of height, nonvacuity and the values at 1/2 and 8/9; invariance of ratConductor under x -> 1 - x and x -> 1/x, the bound log 2 on the change of height under x -> 1 - x, and the equivalence of VojtaLineMinusThreePointsRational with its restriction to 0 < x < 1 (same constant).",
+  "explicit_hypotheses": [],
+  "implicit_hypotheses": [],
+  "conclusion": "VojtaLineMinusThreePointsRational <-> Challenge.ABC.",
+  "definitions_required": [
+   "IUT4.Cor2_3.frag.rational_points_P1_minus_three"
+  ],
+  "results_used": [],
+  "external_dependencies": [],
+  "lean_declaration": "IUT.ABCSpecialization.vojta_iff_ABC",
+  "lemmas": [
+   "IUT.ABCSpecialization.abcLog_of_vojta",
+   "IUT.ABCSpecialization.vojta_of_abcLog",
+   "IUT.ABCSpecialization.exists_triple_of_ne",
+   "IUT.ABCSpecialization.logHeight₁_of_triple",
+   "IUT.ABCSpecialization.ratConductor_of_triple",
+   "IUT.ABCSpecialization.num_den_of_triple",
+   "IUT.ABCSpecialization.num_sub_one_eq_num_sub_den",
+   "IUT.ABCSpecialization.rad_mul_mul_eq_prod_union",
+   "IUT.ABCSpecialization.rationalPointBoundFor_iff_of_bounded",
+   "IUT.ABCSpecialization.vojta_iff_rationalPointBoundFor",
+   "IUT.ABCSpecialization.exists_rat_ne_zero_ne_one",
+   "IUT.ABCSpecialization.logHeight₁_one_half",
+   "IUT.ABCSpecialization.ratConductor_one_half",
+   "IUT.ABCSpecialization.logHeight₁_eight_ninths",
+   "IUT.ABCSpecialization.ratConductor_eight_ninths",
+   "IUT.ABCSpecialization.vojta_iff_unitInterval",
+   "IUT.ABCSpecialization.ratConductor_one_sub",
+   "IUT.ABCSpecialization.ratConductor_inv",
+   "IUT.ABCSpecialization.abs_logHeight₁_one_sub_sub_le",
+   "IUT.ABCSpecialization.num_one_sub_eq_den_sub_num",
+   "IUT.ABCSpecialization.den_one_sub_eq_den"
+  ],
+  "covers": "Page 3: the sentence that the ABC Conjecture follows as a special case of Theorem A, for the rational-point specialization.",
+  "not_covered": "Theorem A itself and its proof; the general equivalence with Vojta's conjecture for hyperbolic curves (IUT IV page 40, via GenEll Theorem 2.1, page 11), whose proof of (ii) implies (i) passes through points of degree d' = d deg(Y/X) > 1 and a noncritical Belyi map.",
+  "statement_status": "STATEMENT_FORMALIZED",
+  "proof_status": "KERNEL_VERIFIED",
+  "obligations": [],
+  "ambiguities": []
  },
  "IUT4.Prop1_1": {
   "source": {
@@ -106,7 +160,7 @@
   "statement_status": "EXTRACTED",
   "proof_status": "BLOCKED_BY_MATHLIB",
   "obligations": [
-   "The inclusions (i) to (iv) need the p-adic logarithm on unit groups and tensor products of rings of integers; not formalized.",
+   "The inclusions (i) to (iv) need the p-adic logarithm on unit groups and tensor products of rings of integers; not formalized in general. For k_i = Q_p (e_i = 1, R_i = Z_p) the logarithm on Z_p^x and the image log(Z_p^x) = p Z_p (p odd) or 4 Z_2 (p = 2), which gives (i) in that case, are proved in the fragments IUT4.Prop1_2.frag.log_series_def, IUT4.Prop1_2.frag.log_series_norm, IUT4.Prop1_2.frag.log_hom and IUT4.Prop1_2.frag.i_Qp; finite extensions of Q_p, tensor products and (ii) to (iv) are open.",
    "Elementary facts about a_i, b_i used in the proof are checked in the fragments listed in `fragments`."
   ],
   "ambiguities": [
@@ -118,7 +172,11 @@
    "IUT4.Prop1_2.frag.a_b_of_e_one",
    "IUT4.Prop1_2.frag.a_gt",
    "IUT4.Prop1_2.frag.rpow_b_gt",
-   "IUT4.Prop1_2.frag.iii_floor"
+   "IUT4.Prop1_2.frag.iii_floor",
+   "IUT4.Prop1_2.frag.log_series_def",
+   "IUT4.Prop1_2.frag.log_series_norm",
+   "IUT4.Prop1_2.frag.log_hom",
+   "IUT4.Prop1_2.frag.i_Qp"
   ]
  },
  "IUT4.Prop1_2.frag.a_b_of_le": {
@@ -256,6 +314,139 @@
   "ambiguities": [],
   "cor3_12_dependency": "independent"
  },
+ "IUT4.Prop1_2.frag.log_series_def": {
+  "kind": "fragment",
+  "parent": "IUT4.Prop1_2",
+  "source": {
+   "paper": "Inter-universal Teichmuller Theory IV",
+   "pdf_pages": "pages 10 to 11",
+   "pages_read": "rendered and checked: pages 9, 10, 11"
+  },
+  "content": "Definition of the p-adic logarithm on the open unit disc of Q_p: log(1 + x) = sum over n >= 1 of (-1)^(n+1) x^n / n (as a tsum; a junk value where the series does not converge), together with the logarithm of a unit u of Z_p defined as (p - 1)^(-1) log(u^(p-1)).",
+  "explicit_hypotheses": [
+   "p a prime",
+   "x in Q_p"
+  ],
+  "implicit_hypotheses": [],
+  "conclusion": "padicLogOnePlus p x and padicLogUnit p u are defined.",
+  "definitions_required": [],
+  "results_used": [],
+  "external_dependencies": [],
+  "lean_declaration": "IUT.Prerequisites.PadicLog.padicLogOnePlus",
+  "covers": "Page 10: the notation log_p(-) for the p-adic logarithm, for the base field Q_p.",
+  "not_covered": "Finite extensions k_i of Q_p and tensor products; all of the inclusions (i) to (iv).",
+  "statement_status": "STATEMENT_FORMALIZED",
+  "proof_status": "NOT_EXTRACTED",
+  "obligations": [],
+  "ambiguities": [
+   "The pages read do not fix the extension of log_p from 1 + p Z_p to Z_p^x; (p - 1)^(-1) log(u^(p-1)) is used."
+  ],
+  "scope": "base field Q_p only; finite extensions of Q_p are not treated",
+  "lemmas": [
+   "IUT.Prerequisites.PadicLog.padicLogSeries",
+   "IUT.Prerequisites.PadicLog.padicLogUnit"
+  ],
+  "cor3_12_dependency": "independent"
+ },
+ "IUT4.Prop1_2.frag.log_series_norm": {
+  "kind": "fragment",
+  "parent": "IUT4.Prop1_2",
+  "source": {
+   "paper": "Inter-universal Teichmuller Theory IV",
+   "pdf_pages": "pages 10 to 11",
+   "pages_read": "rendered and checked: pages 9, 10, 11"
+  },
+  "content": "For a prime p and x in Q_p with |x| <= 1/p* (p* = p for odd p, 4 for p = 2): |log(1 + x)| = |x|. Supporting lemmas: the series converges for |x| < 1, log(1 + 0) = 0, and padicLogOnePlus p x = NormedSpace.log (1 + x) for all x.",
+  "explicit_hypotheses": [
+   "p a prime",
+   "x in Q_p with |x| <= 1/p*"
+  ],
+  "implicit_hypotheses": [],
+  "conclusion": "|padicLogOnePlus p x| = |x|.",
+  "definitions_required": [],
+  "results_used": [],
+  "external_dependencies": [],
+  "lean_declaration": "IUT.Prerequisites.PadicLog.padicLogOnePlus_norm_eq",
+  "covers": "Page 11, proof of (i): the appeal to the well-known theory of the p-adic logarithm ([Kobl], p. 81), in the case k_i = Q_p.",
+  "not_covered": "Finite extensions of Q_p; the inclusions themselves (see the fragment i_Qp).",
+  "statement_status": "STATEMENT_FORMALIZED",
+  "proof_status": "KERNEL_VERIFIED",
+  "obligations": [],
+  "ambiguities": [],
+  "scope": "base field Q_p only; finite extensions of Q_p are not treated",
+  "lemmas": [
+   "IUT.Prerequisites.PadicLog.padicLogSeries_summable",
+   "IUT.Prerequisites.PadicLog.padicLogOnePlus_zero",
+   "IUT.Prerequisites.PadicLog.padicLogOnePlus_eq_normedSpace_log"
+  ],
+  "cor3_12_dependency": "independent"
+ },
+ "IUT4.Prop1_2.frag.log_hom": {
+  "kind": "fragment",
+  "parent": "IUT4.Prop1_2",
+  "source": {
+   "paper": "Inter-universal Teichmuller Theory IV",
+   "pdf_pages": "pages 10 to 11",
+   "pages_read": "rendered and checked: pages 9, 10, 11"
+  },
+  "content": "Homomorphism property of the p-adic logarithm series on the open unit disc of Q_p: for |x| < 1 and |y| < 1, log(1 + (x + y + xy)) = log(1 + x) + log(1 + y). The derived lemma padicLogUnit_mul states that log on Z_p^x is a homomorphism.",
+  "explicit_hypotheses": [
+   "p a prime",
+   "x, y in Q_p with |x| < 1 and |y| < 1"
+  ],
+  "implicit_hypotheses": [],
+  "conclusion": "padicLogOnePlus p (x + y + x * y) = padicLogOnePlus p x + padicLogOnePlus p y.",
+  "definitions_required": [],
+  "results_used": [],
+  "external_dependencies": [],
+  "lean_declaration": "IUT.Prerequisites.PadicLog.padicLogOnePlus_add_add_mul",
+  "covers": "Page 10: the display defining log_p(R_E^x) as the tensor product over Z_p of the log_p(R_i^x), which treats log_p(R_i^x) as a Z_p-module, for k_i = Q_p.",
+  "not_covered": "Finite extensions of Q_p; the inclusions of (i) to (iv).",
+  "statement_status": "STATEMENT_FORMALIZED",
+  "proof_status": "KERNEL_VERIFIED",
+  "obligations": [],
+  "ambiguities": [],
+  "scope": "base field Q_p only; finite extensions of Q_p are not treated",
+  "lemmas": [
+   "IUT.Prerequisites.PadicLog.padicLogUnit_mul"
+  ],
+  "cor3_12_dependency": "independent"
+ },
+ "IUT4.Prop1_2.frag.i_Qp": {
+  "kind": "fragment",
+  "parent": "IUT4.Prop1_2",
+  "source": {
+   "paper": "Inter-universal Teichmuller Theory IV",
+   "pdf_pages": "pages 10 to 11",
+   "pages_read": "rendered and checked: pages 9, 10, 11"
+  },
+  "content": "Proposition 1.2 (i) for k_i = Q_p (e_i = 1, R_i = Z_p), with log on Z_p^x taken as (p - 1)^(-1) log(u^(p-1)): log(Z_p^x) is the closed ball of radius 1/p* in Q_p (p* = p for odd p, 4 for p = 2). Corollaries in the lemmas: for p != 2 it is the closed ball of radius 1/p, that is p Z_p (a = 1, b = -1, with equalities as the paper asserts for p > 2 and e_i <= p - 2); for p = 2, the closed ball of radius 1/4 is contained in it and it is contained in the closed unit ball, that is 4 Z_2 in log(Z_2^x) in Z_2 (a = 2, b = 0).",
+  "explicit_hypotheses": [
+   "p a prime"
+  ],
+  "implicit_hypotheses": [],
+  "conclusion": "range (u in Z_p^x mapsto padicLogUnit p u) = {z in Q_p : |z| <= 1/p*}.",
+  "definitions_required": [],
+  "results_used": [],
+  "external_dependencies": [],
+  "lean_declaration": "IUT.Prerequisites.PadicLog.padicLogUnit_range",
+  "covers": "Page 10, display (i): p^(a_i) R_i in log_p(R_i^x) in p^(-b_i) R_i, with equalities for p > 2 and e_i <= p - 2, in the case k_i = Q_p (e_i = 1).",
+  "not_covered": "Ramified or nontrivial finite extensions k_i; assertions (ii) to (iv). For p = 2 the Lean result is sharper than the paper's inclusions (it proves log(Z_2^x) = 4 Z_2).",
+  "statement_status": "STATEMENT_FORMALIZED",
+  "proof_status": "KERNEL_VERIFIED",
+  "obligations": [],
+  "ambiguities": [
+   "The pages read do not fix the extension of log_p from 1 + p Z_p to Z_p^x; (p - 1)^(-1) log(u^(p-1)) is used and recorded in the module docstring."
+  ],
+  "scope": "base field Q_p only; finite extensions of Q_p are not treated",
+  "lemmas": [
+   "IUT.Prerequisites.PadicLog.padicLogUnit_range_of_ne_two",
+   "IUT.Prerequisites.PadicLog.padicLogUnit_range_two_bounds",
+   "IUT.Prerequisites.PadicLog.padicLogUnit_one_add",
+   "IUT.Prerequisites.PadicLog.padicLogOnePlus_surjOn"
+  ],
+  "cor3_12_dependency": "independent"
+ },
  "IUT4.Prop1_3": {
   "source": {
    "paper": "Inter-universal Teichmuller Theory IV",
@@ -281,7 +472,7 @@
   "statement_status": "EXTRACTED",
   "proof_status": "BLOCKED_BY_MATHLIB",
   "obligations": [
-   "The local field inputs (Eisenstein and Kummer polynomials, differents, ramification in towers) are not formalized.",
+   "The local field inputs (Eisenstein and Kummer polynomials, the exact exponent of the different in the tame case, ramification in towers for (ii)) are not formalized. The lower bound of (i) is proved, for rings of integers of finite extensions of Q_p and for every prime over p (that there is only one such prime is not proved), in the fragments IUT4.Prop1_3.frag.i_differentOrder_ge, IUT4.Prop1_3.frag.i_differentOrder_ge_tower and IUT4.Prop1_3.frag.i_padic_differentOrder_ge; the equality in the tame case and (ii) are open.",
    "Arithmetic steps of the proof are checked in the fragments listed in `fragments`."
   ],
   "ambiguities": [],
@@ -290,7 +481,11 @@
    "IUT4.Prop1_3.frag.i_min",
    "IUT4.Prop1_3.frag.ii_base",
    "IUT4.Prop1_3.frag.ii_step",
-   "IUT4.Prop1_3.frag.ii_of_forall_eps"
+   "IUT4.Prop1_3.frag.ii_of_forall_eps",
+   "IUT4.Prop1_3.frag.differentOrder",
+   "IUT4.Prop1_3.frag.i_differentOrder_ge",
+   "IUT4.Prop1_3.frag.i_differentOrder_ge_tower",
+   "IUT4.Prop1_3.frag.i_padic_differentOrder_ge"
   ]
  },
  "IUT4.Prop1_3.frag.i_min": {
@@ -412,28 +607,157 @@
   "ambiguities": [],
   "cor3_12_dependency": "independent"
  },
+ "IUT4.Prop1_3.frag.differentOrder": {
+  "kind": "fragment",
+  "parent": "IUT4.Prop1_3",
+  "source": {
+   "paper": "Inter-universal Teichmuller Theory IV",
+   "pdf_pages": "pages 9 to 12",
+   "pages_read": "rendered pages 9 to 12"
+  },
+  "content": "Definition: for an extension B/A of Dedekind domains and a prime P of B, differentOrder A B P is the multiplicity of P in Mathlib's differentIdeal A B (differentExponent A B P) divided by the ramification index of P over A, as a real number. With A = Z_p this is the order ord (normalized by ord(p) = 1) of a generator of the different localized at P.",
+  "explicit_hypotheses": [
+   "A a domain, integrally closed; B a Dedekind domain torsion free over A; P an ideal of B"
+  ],
+  "implicit_hypotheses": [],
+  "conclusion": "The real number differentExponent A B P / P.ramificationIdx A.",
+  "definitions_required": [],
+  "results_used": [],
+  "external_dependencies": [],
+  "lean_declaration": "IUT.PaperIV.LocalFields.differentOrder",
+  "covers": "Page 9: the definition of d_i as ord of a generator of the different of R_i over Z_p, with ord(p) = 1.",
+  "not_covered": "The identification with the paper's d_i uses that R_i has a single prime over p (R_i local); this is not proved, so all results are stated for every prime P over p.",
+  "statement_status": "STATEMENT_FORMALIZED",
+  "proof_status": "NOT_EXTRACTED",
+  "obligations": [],
+  "ambiguities": [],
+  "cor3_12_dependency": "independent",
+  "lemmas": [
+   "IUT.PaperIV.LocalFields.differentExponent"
+  ],
+  "scope": "general Dedekind domains; specialized to Z_p by IUT.PaperIV.LocalFields.padic_differentOrder_ge"
+ },
+ "IUT4.Prop1_3.frag.i_differentOrder_ge": {
+  "kind": "fragment",
+  "parent": "IUT4.Prop1_3",
+  "source": {
+   "paper": "Inter-universal Teichmuller Theory IV",
+   "pdf_pages": "pages 9 to 12",
+   "pages_read": "rendered pages 9 to 12"
+  },
+  "content": "For B the integral closure of a Dedekind domain A in a finite separable extension of Frac(A), and P a prime of B over a nonzero maximal ideal p of A, with e the ramification index of P over p: (e - 1)/e <= differentOrder A B P.",
+  "explicit_hypotheses": [
+   "A a Dedekind domain with fraction field K; L a finite separable extension of K; B the integral closure of A in L, a Dedekind domain torsion free over A",
+   "p a nonzero maximal ideal of A; P a prime ideal of B lying over p"
+  ],
+  "implicit_hypotheses": [],
+  "conclusion": "((e : R) - 1)/e <= differentOrder A B P.",
+  "definitions_required": [],
+  "results_used": [],
+  "external_dependencies": [],
+  "lean_declaration": "IUT.PaperIV.LocalFields.differentOrder_ge",
+  "covers": "Page 11, Proposition 1.3 (i) in the case k_0 = Q_p (d_0 = 0, e_0 = 1): d_i >= (e_i - 1)/e_i.",
+  "not_covered": "The equality in the tamely ramified case (page 12); general k_0 is in the fragment IUT4.Prop1_3.frag.i_differentOrder_ge_tower.",
+  "statement_status": "STATEMENT_FORMALIZED",
+  "proof_status": "KERNEL_VERIFIED",
+  "obligations": [],
+  "ambiguities": [],
+  "cor3_12_dependency": "independent",
+  "lemmas": [
+   "IUT.PaperIV.LocalFields.ramificationIdx_sub_one_le_differentExponent",
+   "IUT.PaperIV.LocalFields.differentIdeal_ne_bot_of_isIntegralClosure",
+   "IUT.PaperIV.LocalFields.ramificationIdx_pos_of_liesOver"
+  ],
+  "scope": "general Dedekind domains"
+ },
+ "IUT4.Prop1_3.frag.i_differentOrder_ge_tower": {
+  "kind": "fragment",
+  "parent": "IUT4.Prop1_3",
+  "source": {
+   "paper": "Inter-universal Teichmuller Theory IV",
+   "pdf_pages": "pages 9 to 12",
+   "pages_read": "rendered pages 9 to 12"
+  },
+  "content": "For a tower A in B in C of Dedekind domains, B and C the integral closures of A in finite separable extensions L_0 in M of K = Frac(A) (C also the integral closure of B in M, M/L_0 finite separable), and primes P of C over P_0 of B over a nonzero maximal ideal p of A: differentOrder A B P_0 + (e_{P/P_0} - 1)/e_{P/p} <= differentOrder A C P.",
+  "explicit_hypotheses": [
+   "the tower A, B, C with fraction fields K, L_0, M as described, with all scalar tower compatibilities",
+   "p a nonzero maximal ideal of A; P_0 a prime of B over p; P a prime of C over P_0"
+  ],
+  "implicit_hypotheses": [],
+  "conclusion": "d_0 + (e_{i/0} - 1)/e_i <= d_i with d_i = differentOrder A C P, d_0 = differentOrder A B P_0, e_{i/0} = ramification index of P over B, e_i = ramification index of P over A.",
+  "definitions_required": [],
+  "results_used": [],
+  "external_dependencies": [],
+  "lean_declaration": "IUT.PaperIV.LocalFields.differentOrder_ge_tower",
+  "covers": "Pages 11 and 12, the inequality of Proposition 1.3 (i): d_i >= d_0 + (e_{i/0} - 1)/(e_{i/0} e_0) = d_0 + (e_{i/0} - 1)/e_i.",
+  "not_covered": "The equality when k_i is tamely ramified over k_0 (Mathlib lacks the exact different exponent in the tame case); Proposition 1.3 (ii).",
+  "statement_status": "STATEMENT_FORMALIZED",
+  "proof_status": "KERNEL_VERIFIED",
+  "obligations": [],
+  "ambiguities": [],
+  "cor3_12_dependency": "independent",
+  "lemmas": [
+   "IUT.PaperIV.LocalFields.differentExponent_tower",
+   "IUT.PaperIV.LocalFields.differentIdeal_tower_eq"
+  ],
+  "scope": "general Dedekind domains"
+ },
+ "IUT4.Prop1_3.frag.i_padic_differentOrder_ge": {
+  "kind": "fragment",
+  "parent": "IUT4.Prop1_3",
+  "source": {
+   "paper": "Inter-universal Teichmuller Theory IV",
+   "pdf_pages": "pages 9 to 12",
+   "pages_read": "rendered pages 9 to 12"
+  },
+  "content": "For a prime p, a finite extension L of Q_p and a prime P of integralClosure Z_p L over the maximal ideal of Z_p, with e its ramification index: (e - 1)/e <= differentOrder Z_p (integralClosure Z_p L) P.",
+  "explicit_hypotheses": [
+   "p prime",
+   "L a field, finite dimensional over Q_p, with compatible Z_p-algebra structure",
+   "P a prime of integralClosure Z_p L lying over the maximal ideal of Z_p"
+  ],
+  "implicit_hypotheses": [],
+  "conclusion": "((e : R) - 1)/e <= differentOrder.",
+  "definitions_required": [],
+  "results_used": [],
+  "external_dependencies": [],
+  "lean_declaration": "IUT.PaperIV.LocalFields.padic_differentOrder_ge",
+  "covers": "Page 11, Proposition 1.3 (i) with k_0 = Q_p for the paper's objects R_i = O_{k_i}.",
+  "not_covered": "Tame equality; general k_0 for p-adic fields (covered for general Dedekind domains by IUT4.Prop1_3.frag.i_differentOrder_ge_tower).",
+  "statement_status": "STATEMENT_FORMALIZED",
+  "proof_status": "KERNEL_VERIFIED",
+  "obligations": [],
+  "ambiguities": [],
+  "cor3_12_dependency": "independent",
+  "lemmas": [
+   "IUT.PaperIV.LocalFields.isDedekindDomain_ringOfIntegers_padic",
+   "IUT.PaperIV.LocalFields.isTorsionFree_ringOfIntegers_padic"
+  ]
+ },
  "IUT4.Rem1_3_1": {
   "source": {
    "paper": "Inter-universal Teichmuller Theory IV",
    "pdf_pages": "page 13",
-   "pages_read": "text"
+   "pages_read": "render of page 13"
   },
-  "content": "Similar estimates appear in [Ih], Lemma A.",
+  "content": "Points out that estimates similar to those of Proposition 1.3 (estimates of differents) appear in [Ih], Lemma A.",
   "explicit_hypotheses": [],
   "implicit_hypotheses": [],
-  "conclusion": "Remark.",
+  "conclusion": "A bibliographic comparison: [Ih], Lemma A contains estimates similar to those of Proposition 1.3. No mathematical assertion beyond the citation.",
   "definitions_required": [],
-  "results_used": [],
+  "results_used": [
+   "IUT4.Prop1_3"
+  ],
   "external_dependencies": [
    "Ih: Lemma A"
   ],
   "lean_declaration": null,
-  "statement_status": "NOT_EXTRACTED",
+  "statement_status": "EXTRACTED",
   "proof_status": "EXTRACTED",
-  "obligations": [],
-  "ambiguities": [
-   "The pages of this remark were read only from the extracted text, not from a render; its hypotheses and conclusion are not extracted."
+  "obligations": [
+   "Nothing to prove; a pointer to the literature."
   ],
+  "ambiguities": [],
   "cor3_12_dependency": "independent"
  },
  "IUT4.Prop1_4": {
@@ -480,7 +804,9 @@
    "IUT4.Prop1_4.frag.a_add_b_le",
    "IUT4.Prop1_4.frag.iii_second",
    "IUT4.Prop1_4.frag.d_add_a_ge",
-   "IUT4.Prop1_4.frag.dI_add_aI_ge"
+   "IUT4.Prop1_4.frag.dI_add_aI_ge",
+   "IUT4.Prop1_4.frag.iii_padic_differentOrder_add_a_ge",
+   "IUT4.Prop1_4.frag.iii_padic_dI_add_aI_ge"
   ]
  },
  "IUT4.Prop1_4.frag.ii_identity": {
@@ -742,11 +1068,12 @@
   "external_dependencies": [],
   "lean_declaration": "IUT.PaperIV.Proposition1_2.d_add_a_ge",
   "covers": "Page 14: 'd_i + a_i >= 1 for all i' when p > 2, and the case p = 2.",
-  "not_covered": "The bound d_i >= (e_i - 1)/e_i itself, which the paper takes from Proposition 1.3 (i) with k_0 = Q_p; without it the conclusion fails (p = 5, e = 2, d = 0 gives d + a = 1/2).",
+  "not_covered": "The bound d_i >= (e_i - 1)/e_i itself, which the paper takes from Proposition 1.3 (i) with k_0 = Q_p; without it the conclusion fails (p = 5, e = 2, d = 0 gives d + a = 1/2). For the rings of integers of finite extensions of Q_p it is proved separately (IUT4.Prop1_3.frag.i_padic_differentOrder_ge) and combined with this lemma in IUT4.Prop1_4.frag.iii_padic_differentOrder_add_a_ge.",
   "statement_status": "STATEMENT_FORMALIZED",
   "proof_status": "CONDITIONALLY_VERIFIED",
   "obligations": [
-   "Assumed claim of the paper (a hypothesis of the lemma): d_i >= (e_i - 1)/e_i (Proposition 1.3 (i)) for p > 2; d_i >= 0 for p = 2"
+   "Assumed claim of the paper (a hypothesis of the lemma): d_i >= (e_i - 1)/e_i (Proposition 1.3 (i)) for p > 2; d_i >= 0 for p = 2",
+   "The lemma keeps this hypothesis on arbitrary reals. For d_i the different order of the ring of integers of a finite extension of Q_p at a prime over p, the bound is proved in IUT4.Prop1_3.frag.i_padic_differentOrder_ge and the hypothesis is discharged in IUT4.Prop1_4.frag.iii_padic_differentOrder_add_a_ge."
   ],
   "ambiguities": [],
   "cor3_12_dependency": "independent"
@@ -774,12 +1101,69 @@
   "external_dependencies": [],
   "lean_declaration": "IUT.PaperIV.Proposition1_4.dI_add_aI_ge",
   "covers": "Page 13, last sentence of (iii) ('d_I + a_I >= |I| if p > 2; d_I + a_I >= 2|I| if p = 2'), with the proof on page 14.",
-  "not_covered": "The lower bound d_i >= (e_i - 1)/e_i, which comes from Proposition 1.3 (i).",
+  "not_covered": "The lower bound d_i >= (e_i - 1)/e_i, which comes from Proposition 1.3 (i). For the rings of integers of finite extensions of Q_p it is proved separately (IUT4.Prop1_3.frag.i_padic_differentOrder_ge) and combined with this lemma in IUT4.Prop1_4.frag.iii_padic_dI_add_aI_ge.",
   "statement_status": "STATEMENT_FORMALIZED",
   "proof_status": "CONDITIONALLY_VERIFIED",
   "obligations": [
-   "Assumed claim of the paper (a hypothesis of the lemma): d_i >= (e_i - 1)/e_i (Proposition 1.3 (i)) for p > 2; d_i >= 0 for p = 2"
+   "Assumed claim of the paper (a hypothesis of the lemma): d_i >= (e_i - 1)/e_i (Proposition 1.3 (i)) for p > 2; d_i >= 0 for p = 2",
+   "The lemma keeps this hypothesis on arbitrary reals. For d_i the different order of the ring of integers of a finite extension of Q_p at a prime over p, the bound is proved in IUT4.Prop1_3.frag.i_padic_differentOrder_ge and the hypothesis is discharged in IUT4.Prop1_4.frag.iii_padic_dI_add_aI_ge."
   ],
+  "ambiguities": [],
+  "cor3_12_dependency": "independent"
+ },
+ "IUT4.Prop1_4.frag.iii_padic_differentOrder_add_a_ge": {
+  "kind": "fragment",
+  "parent": "IUT4.Prop1_4",
+  "source": {
+   "paper": "Inter-universal Teichmuller Theory IV",
+   "pdf_pages": "pages 9 to 14",
+   "pages_read": "rendered pages 9 to 14"
+  },
+  "content": "For a finite extension L of Q_p and a prime P of its ring of integers over p, with e the ramification index and d = differentOrder: if p > 2 then 1 <= d + a(p, e); if p = 2 then 2 <= d + a(p, e), where a is Proposition1_2.a.",
+  "explicit_hypotheses": [
+   "p prime",
+   "L a field, finite dimensional over Q_p, with compatible Z_p-algebra structure",
+   "P a prime of integralClosure Z_p L over the maximal ideal of Z_p"
+  ],
+  "implicit_hypotheses": [],
+  "conclusion": "(2 < p -> 1 <= d + a p e) and (p = 2 -> 2 <= d + a p e).",
+  "definitions_required": [],
+  "results_used": [],
+  "external_dependencies": [],
+  "lean_declaration": "IUT.PaperIV.LocalFields.padic_differentOrder_add_a_ge",
+  "covers": "Page 14, proof of Proposition 1.4 (iii): 'd_i + a_i >= 1 for all i' (p > 2) and the case p = 2, with the input d_i >= (e_i - 1)/e_i of Proposition 1.3 (i) proved.",
+  "not_covered": "The log-volume inequalities of (iii).",
+  "statement_status": "STATEMENT_FORMALIZED",
+  "proof_status": "KERNEL_VERIFIED",
+  "obligations": [],
+  "ambiguities": [],
+  "cor3_12_dependency": "independent"
+ },
+ "IUT4.Prop1_4.frag.iii_padic_dI_add_aI_ge": {
+  "kind": "fragment",
+  "parent": "IUT4.Prop1_4",
+  "source": {
+   "paper": "Inter-universal Teichmuller Theory IV",
+   "pdf_pages": "pages 9 to 14",
+   "pages_read": "rendered pages 9 to 14"
+  },
+  "content": "For a finite set I and, for i in I, finite extensions k_i of Q_p with primes P_i of their rings of integers over p: |I| <= sum d_i + sum a(p, e_i) if p > 2, and 2|I| <= sum d_i + sum a(p, e_i) if p = 2, with d_i = differentOrder and e_i the ramification index of P_i.",
+  "explicit_hypotheses": [
+   "p prime",
+   "I a finite set",
+   "for each i, k_i a field finite dimensional over Q_p with compatible Z_p-algebra structure, and P_i a prime of integralClosure Z_p k_i over the maximal ideal of Z_p"
+  ],
+  "implicit_hypotheses": [],
+  "conclusion": "(2 < p -> |I| <= d_I + a_I) and (p = 2 -> 2|I| <= d_I + a_I).",
+  "definitions_required": [],
+  "results_used": [],
+  "external_dependencies": [],
+  "lean_declaration": "IUT.PaperIV.LocalFields.padic_dI_add_aI_ge",
+  "covers": "Page 13, last sentence of Proposition 1.4 (iii) ('d_I + a_I >= |I| if p > 2; d_I + a_I >= 2|I| if p = 2'), proof on page 14.",
+  "not_covered": "The inclusions and log-volume inequalities of (iii).",
+  "statement_status": "STATEMENT_FORMALIZED",
+  "proof_status": "KERNEL_VERIFIED",
+  "obligations": [],
   "ambiguities": [],
   "cor3_12_dependency": "independent"
  },
@@ -787,7 +1171,7 @@
   "source": {
    "paper": "Inter-universal Teichmuller Theory IV",
    "pdf_pages": "pages 14 to 16",
-   "pages_read": "text of pages 14 to 16; renders of pages 15 and 16"
+   "pages_read": "renders of pages 14, 15 and 16"
   },
   "content": "Archimedean metric estimates: C tensor_R C = C + C is compatible with metrics up to a factor 2; primitive automorphisms preserve decompositions; M_I splits into 2^{|I|-1}|V|^{|I|} copies of C with metric factor 2^{|I|-1}; tensor products of vectors of length lambda lie in lambda^{|I|} B_I.",
   "explicit_hypotheses": [
@@ -795,7 +1179,9 @@
    "(iii), (iv): I, V nonempty finite sets; M = direct sum of copies C_v (v in V); M_I = tensor product over R of copies M_i of M; B_I the product of unit balls",
    "(iv): lambda > 0 and m_i in M_i whose components have length lambda"
   ],
-  "implicit_hypotheses": [],
+  "implicit_hypotheses": [
+   "(i): the isomorphism C tensor_R C -> C + C is any isomorphism of topological rings (one arising from the Chinese remainder theorem); the primitive automorphisms form a group of order 8"
+  ],
   "conclusion": "(i) C tensor_R C = C + C is compatible with the metrics up to a factor 2; (ii) the decomposition is preserved by primitive automorphisms; (iii) M_I is a direct sum of 2^{|I|-1}|V|^{|I|} copies of C, with direct sum metric 2^{|I|-1} times the tensor metric, and B_I is preserved; (iv) the tensor product of the m_i lies in lambda^{|I|} B_I.",
   "definitions_required": [],
   "results_used": [],
@@ -808,7 +1194,9 @@
   "obligations": [
    "Tensor product metrics, the primitive automorphisms of (ii), the metric factor and integral structure of (iii) and the inclusion of (iv) are not formalized."
   ],
-  "ambiguities": [],
+  "ambiguities": [
+   "Page 15, (i): 'compatible up to a factor of 2' refers to the metric (the square of the length); the bracket says lengths differ by a factor sqrt(2). The fragment crt_normSq checks the squared-norm form."
+  ],
   "cor3_12_dependency": "independent",
   "fragments": [
    "IUT4.Prop1_5.frag.crt_pure",
@@ -953,25 +1341,39 @@
   "source": {
    "paper": "Inter-universal Teichmuller Theory IV",
    "pdf_pages": "pages 17 to 18",
-   "pages_read": "text"
+   "pages_read": "renders of pages 17 and 18"
   },
-  "content": "When Proposition 1.7 is applied in Theorem 1.10 with normalized log-volumes, the normalized weights of IUT III Remark 3.1.1 (ii) are replaced by weights adapted to normalized log-volumes, so that the averaging weights become the local degrees [(F_mod)_v : Q_{v_Q}].",
-  "explicit_hypotheses": [],
-  "implicit_hypotheses": [],
-  "conclusion": "Remark.",
-  "definitions_required": [],
+  "content": "When Proposition 1.7 is used in Theorem 1.10 for packet-normalized log-volumes, the computation uses the normalized log-volumes of Proposition 1.4 (i) instead of the non-normalized log-volumes for which the weights of IUT III Remark 3.1.1 (ii) were computed. Hence the weights [K_v : (F_mod)_v]^{-1} must be replaced by [K_v : Q_{v_Q}] [K_v : (F_mod)_v]^{-1} = [(F_mod)_v : Q_{v_Q}], and the normalized weights by prod_{alpha in A} [(F_mod)_{v_alpha} : Q_{v_Q}] divided by the sum over all collections {w_alpha}_{alpha in A} (not necessarily distinct) of elements of V_mod over v_Q of prod_{alpha in A} [(F_mod)_{w_alpha} : Q_{v_Q}]. These are the weights lambda_{Pi e dagger} / sum_{e in E^n} lambda_{Pi e} of Proposition 1.7 with E the places of V (equivalently V_mod) over a fixed v_Q, n = |A| with A = {alpha_1, ..., alpha_n}, lambda_e = [(F_mod)_v : Q_{v_Q}] > 0 for e corresponding to v, and beta_e a normalized log-volume of a compact open subset of K_v.",
+  "explicit_hypotheses": [
+   "the notation of IUT III Remark 3.1.1 (ii) and Proposition 3.9 (i): V, V_mod, F_mod, K, v_Q in V_Q, a finite index set A",
+   "normalized log-volumes as in Proposition 1.4 (i)"
+  ],
+  "implicit_hypotheses": [
+   "the bijection V -> V_mod (underline v to v) restricted to places over a fixed v_Q"
+  ],
+  "conclusion": "The dictionary for applying Proposition 1.7: E = places over v_Q, n = |A|, lambda_e = [(F_mod)_v : Q_{v_Q}], beta_e = a normalized log-volume on K_v; the appropriate normalized weights are lambda_{Pi e dagger} / sum_{e in E^n} lambda_{Pi e}.",
+  "definitions_required": [
+   "packet-normalized log-volume",
+   "normalized weights (IUTchIII Remark 3.1.1 (ii))",
+   "normalized log-volume (Proposition 1.4 (i))"
+  ],
   "results_used": [
-   "IUT4.Prop1_7"
+   "IUT4.Prop1_7",
+   "IUT4.Prop1_4"
   ],
   "external_dependencies": [
-   "IUTchIII: Remark 3.1.1 (ii), Proposition 3.9 (i)"
+   "IUTchIII: Remark 3.1.1 (ii), Proposition 3.9 (i)",
+   "AbsTopIII: Proposition 5.8 (iii), (vi)",
+   "IUTchI: Example 3.5 (iii)"
   ],
   "lean_declaration": null,
-  "statement_status": "NOT_EXTRACTED",
+  "statement_status": "EXTRACTED",
   "proof_status": "EXTRACTED",
-  "obligations": [],
+  "obligations": [
+   "A change of normalization stated without proof; the identity [K_v : Q_{v_Q}] [K_v : (F_mod)_v]^{-1} = [(F_mod)_v : Q_{v_Q}] is the tower law for degrees."
+  ],
   "ambiguities": [
-   "The pages of this remark were read only from the extracted text, not from a render; its hypotheses and conclusion are not extracted."
+   "Page 18: the sum in the denominator is over collections of not necessarily distinct places w_alpha over v_Q, while the alpha_i in A are distinct; the remark does not restate how the elements of A relate to the index set of IUT III Remark 3.1.1 (ii)."
   ],
   "cor3_12_dependency": "setup_only"
  },
@@ -1431,7 +1833,7 @@
    "l >= 5"
   ],
   "implicit_hypotheses": [],
-  "conclusion": "log(d^{F_tpd}) + log(f^{F_tpd}) <= log(d^F) + log(f^F) <= log(d^{F_tpd}) + log(f^{F_tpd}) + 21; log(d^K) <= log(d^{F_tpd}) + log(f^{F_tpd}) + 2 log l + 21; (1 + 4/l) log(d^K) <= (1 + 4/l)(log(d^{F_tpd}) + log(f^{F_tpd})) + 2 log l + 46.",
+  "conclusion": "Page 24, displays of Step (ii), in order: (1) log(d^{F_tpd}) + log(f^{F_tpd}) <= log(d^F) + log(f^F) [Proposition 1.3 (i)]; (2) log(d^F) + log(f^F) <= log(d^{F_tpd}) + log(f^{F_tpd}) + log(2^11 3^3 5^2) <= log(d^{F_tpd}) + log(f^{F_tpd}) + 21 [Proposition 1.3 (i) at primes not dividing 2 3 5, where F/F_tpd is tame; Proposition 1.3 (ii) with (E3) to (E6) and Gal(F/F_tpd) -> GL_2(F_3) x GL_2(F_5) x Z/2Z at primes dividing 2 3 5]; (3) log(d^K) <= log(d^K) + log(f^K) <= log(d^F) + log(f^F) + 2 log(l) <= log(d^{F_tpd}) + log(f^{F_tpd}) + 2 log(l) + 21 [K/F tame away from l, Gal(K/F) -> GL_2(F_l), Proposition 1.3 (i), (ii)]; (4) (1 + 4/l) log(d^K) <= (1 + 4/l)(log(d^{F_tpd}) + log(f^{F_tpd})) + 2 log(l) + 46, using log(l)/l <= 1/2 and 1 + 4/l <= 2 for l >= 5.",
   "definitions_required": [],
   "results_used": [
    "IUT4.Prop1_3",
@@ -1628,10 +2030,11 @@
   "content": "Distinguished valuations, conditions (D0) to (D7), ramification bounds (R1) to (R4), the divisors s^Q and s^<=, and the bound (1 + 4/l) log d^K + (4/l) log s^Q <= (1 + 12 d_mod/l)(log d^{F_tpd} + log f^{F_tpd}) + 2 log l + 52.",
   "explicit_hypotheses": [
    "the situation of Theorem 1.10; F_box an intermediate field F_tpd in F_box in K Galois over F_mod",
-   "l >= 5, d_mod >= 1"
+   "l >= 5, d_mod >= 1",
+   "definitions of page 25: V(F_box)^dst (nonarchimedean v extending to a valuation of K ramified over Q); V_mod^dst, V_Q^dst the images of V(F_tpd)^dst; s_ADiv^{F_*} = sum over v in V(F_*)^dst of e_v v for F_* in {F_mod, Q}; s^<=_ADiv = sum over w_Q in V(Q)^dst of (iota_{w_Q}/log(p_{w_Q})) w_Q with iota = 1 if p_{w_Q} <= e*_mod l and 0 otherwise"
   ],
   "implicit_hypotheses": [],
-  "conclusion": "(R4): if e_v >= p_v - 1 then p_v <= e*_mod l and log(e_v) <= -3 + 4 log(e*_mod l); (1/p) log(s_{v_Q}^{F_mod}) <= 1/2 when p_{v_Q} = l; log(s^Q) <= 2 d_mod D + 5 + log l; (4/l) log(s^Q) <= (8 d_mod/l) D + 6; (1 + 4/l) log(d^K) + (4/l) log(s^Q) <= (1 + 12 d_mod/l) D + 2 log l + 52, with D = log(d^{F_tpd}) + log(f^{F_tpd}).",
+  "conclusion": "Pages 25 and 26, displays of Step (iii): (R1) log(e_v) <= log(2^11 3^3 5 e_mod l^4) if v divides l; (R2) log(e_v) <= log(2^11 3^3 5 e_mod l) if v divides 2 3 5 or lies in Supp(q_ADiv^{F_box}); (R3) log(e_v) <= log(2^11 3^3 5 e_mod) if v does not divide 2 3 5 l and is not in Supp(q_ADiv^{F_box}); (R4) if e_v >= p_v - 1 > p_v - 2, then p_v <= 2^12 3^3 5 e_mod l = e*_mod l and log(e_v) <= -3 + 4 log(e*_mod l). Then (1/p_{v_Q}) log(s_{v_Q}^{F_mod}) <= (1/p_{v_Q}) log(p_{v_Q}) for every v_Q, hence <= 1/2 when p_{v_Q} = l (>= 5); log(s_{v_Q}^{F_mod}) <= 2 (log(d_{v_Q}^{F_tpd}) + log(f_{v_Q}^{F_tpd})), hence (1/p_{v_Q}) log(s_{v_Q}^{F_mod}) <= (2/p_{v_Q})(log(d_{v_Q}^{F_tpd}) + log(f_{v_Q}^{F_tpd})) for p_{v_Q} not in {2, 3, 5, l}; log(s^Q) <= 2 d_mod (log(d^{F_tpd}) + log(f^{F_tpd})) + log(2 3 5 l) <= 2 d_mod (log(d^{F_tpd}) + log(f^{F_tpd})) + 5 + log(l); (4/l) log(s^Q) <= (8 d_mod/l)(log(d^{F_tpd}) + log(f^{F_tpd})) + 6; and finally (1 + 4/l) log(d^K) + (4/l) log(s^Q) <= (1 + 12 d_mod/l)(log(d^{F_tpd}) + log(f^{F_tpd})) + 2 log(l) + 52, using d_mod >= 1.",
   "definitions_required": [],
   "results_used": [
    "IUT4.Prop1_3",
@@ -1807,26 +2210,41 @@
   "source": {
    "paper": "Inter-universal Teichmuller Theory IV",
    "pdf_pages": "pages 26 to 27",
-   "pages_read": "text of pages 26 and 27"
+   "pages_read": "renders of pages 26 and 27"
   },
-  "content": "Recalls the multiradial representation of IUT III Theorem 3.11 and explains that C_Theta is obtained from upper bounds for procession-normalized log-volumes of the holomorphic hulls of tensor packets of log-shells.",
+  "content": "To estimate C_Theta one must bound from above the procession-normalized mono-analytic log-volume of the holomorphic hull of the union of possible images of a Theta-pilot object, relative to the Kummer isomorphisms, in the multiradial representation of IUT III Theorem 3.11 (i), subject to the indeterminacies (Ind1), (Ind2), (Ind3). This is done at each v_Q in V_Q: for each j in {1, ..., l*} one bounds the component in I^Q(S^pm_{j+1}; n,o D^|-_{v_Q}) and then averages over j. Since S^pm_{j+1} = {0, 1, ..., j} and that object is a tensor product of j+1 copies of the direct sum of the Q-spans of the log-shells at the elements of V(F_mod)_{v_Q}, one bounds, for each collection {v_i}_{i in S^pm_{j+1}} of (not necessarily distinct) elements of V(F_mod)_{v_Q}, the component for the tensor product of the Q-spans of the corresponding log-shells, and then takes the weighted average over all such collections as in Remark 1.7.1.",
   "explicit_hypotheses": [
-   "the situation of Theorem 1.10 and of IUTchIII Theorem 3.11"
+   "the situation of Theorem 1.10 and of IUTchIII Theorem 3.11 and Corollary 3.12",
+   "j in {1, ..., l*}, regarded also as an element of F_l^*; S^pm_{j+1} = {0, 1, ..., j} (IUTchI Proposition 6.9 (i); IUTchIII Proposition 3.4 (ii))"
   ],
-  "implicit_hypotheses": [],
-  "conclusion": "Reduction to local log-volume bounds.",
-  "definitions_required": [],
-  "results_used": [],
+  "implicit_hypotheses": [
+   "the log-volume to be bounded is additive over v_Q in V_Q and its procession normalization is the average over j"
+  ],
+  "conclusion": "Reduction of the bound for C_Theta to local upper bounds: for each v_Q and each j, an upper bound for the log-volume component attached to each collection {v_i}_{i in S^pm_{j+1}} of elements of V(F_mod)_{v_Q}, followed by a weighted average over collections (Remark 1.7.1) and an average over j in {1, ..., l*}. No inequality is displayed in this step.",
+  "definitions_required": [
+   "procession-normalized mono-analytic log-volume",
+   "holomorphic hull",
+   "Theta-pilot object",
+   "log-shell",
+   "I^Q(S^pm_{j+1}; n,o D^|-_{v_Q})"
+  ],
+  "results_used": [
+   "IUT4.Rem1_7_1",
+   "IUT4.Prop1_7"
+  ],
   "external_dependencies": [
-   "IUTchIII: Theorem 3.11, Corollary 3.12, Proposition 3.9"
+   "IUTchIII: Theorem 3.11 (i), (ii), Corollary 3.12, Proposition 3.2, Proposition 3.4 (ii)",
+   "IUTchI: Proposition 6.9 (i)"
   ],
   "lean_declaration": null,
   "statement_status": "EXTRACTED",
   "proof_status": "BLOCKED_BY_EXTERNAL_THEOREM",
   "obligations": [
-   "Depends on the construction of IUT III; not formalized."
+   "Depends on the construction of IUT III Theorem 3.11 and Proposition 3.2 (the tensor packets of log-shells); not formalized."
   ],
-  "ambiguities": [],
+  "ambiguities": [
+   "Page 26: the step describes what must be bounded but leaves to IUT III Corollary 3.12 the precise sense in which C_Theta is determined by the upper bound of the log-volume; the relation C_Theta |log(q)| = (sum of local procession-normalized upper bounds) - (1/(2l)) log(q) only appears implicitly in the first display of Step (viii) (page 30)."
+  ],
   "cor3_12_dependency": "setup_only"
  },
  "IUT4.Thm1_10.StepV": {
@@ -1841,7 +2259,7 @@
    "l >= 5"
   ],
   "implicit_hypotheses": [],
-  "conclusion": "The procession-normalized upper bound at v_Q: (l+5)/4 log(d^K_{v_Q}) - (l+1)/24 log(q_{v_Q}) + log(s^Q_{v_Q}) + (l+5) l*_mod log(s^<=_{v_Q}) <= (l+1)/4 {(1 + 4/l) log(d^K_{v_Q}) - (1/6) log(q_{v_Q}) + (4/l) log(s^Q_{v_Q}) + (20/3) l*_mod log(s^<=_{v_Q})}.",
+  "conclusion": "Pages 27 to 29, displays of Step (v): applying Proposition 1.4 (iii) with I = S^pm_{j+1}, I* = {i : e_{v_i} > p_{v_Q} - 2}, k_i = K_{v_i}, i dagger = j, lambda = 0 if v_j good and lambda = ord(q_{v_j}^{j^2}) if v_j bad, the local upper bound is (-lambda + d_I + 1) log(p) + sum_{i in I*} {3 + log(e_i)}; it is (-lambda + d_I + 1) log(p) if e_{v_i} <= p_{v_Q} - 2 for all i, and by (R4) may be taken to be (-lambda + d_I + 1) log(p) + 4(j+1) l*_mod in general, with l*_mod = log(e*_mod l). After symmetrizing in i dagger this is beta_e of Proposition 1.7 with E = V(F_mod)_{v_Q}, n = j+1, lambda_e = [(F_mod)_v : Q_{v_Q}], beta_e = log(d_v^K) - (j^2/(2l(j+1))) log(q_v) + (1/(j+1)) log(p_{v_Q}) + 4 iota_{v_Q} l*_mod. Weighted average upper bound: (j+1) log(d_{v_Q}^K) - (j^2/(2l)) log(q_{v_Q}) + log(s_{v_Q}^Q) + 4(j+1) l*_mod log(s_{v_Q}^<=). Averaging over j in {1, ..., l* = (l-1)/2} with (E1), (E2), the procession-normalized upper bound: ((l*+3)/2) log(d_{v_Q}^K) - ((2l*+1)(l*+1)/(12l)) log(q_{v_Q}) + log(s_{v_Q}^Q) + 2(l*+3) l*_mod log(s_{v_Q}^<=) = ((l+5)/4) log(d_{v_Q}^K) - ((l+1)/24) log(q_{v_Q}) + log(s_{v_Q}^Q) + (l+5) l*_mod log(s_{v_Q}^<=) <= ((l+1)/4) {(1 + 4/l) log(d_{v_Q}^K) - (1/6) log(q_{v_Q}) + (4/l) log(s_{v_Q}^Q) + (20/3) l*_mod log(s_{v_Q}^<=)}, using 1/(l+1) <= 1/l and 4(l+5)/(l+1) <= 20/3 for l >= 5.",
   "definitions_required": [],
   "results_used": [
    "IUT4.Prop1_4",
@@ -2222,7 +2640,7 @@
    "l >= 5, e_mod >= 1"
   ],
   "implicit_hypotheses": [],
-  "conclusion": "C_Theta |log(q)| is at most (l+1)/4 {(1 + 12 d_mod/l)(log d + log f) + 2 log l + 56 - (1/6)(1 - 12/l^2) log q + (20/3) l*_mod log s^<=} - (1/(2l)) log q; l*_mod log(s^<=) <= (4/3)(e*_mod l + eta_prm); hence the value of C_Theta displayed in Theorem 1.10 is an upper bound.",
+  "conclusion": "Pages 30 and 31, displays of Step (viii): summing the local procession-normalized upper bounds of Steps (v), (vi), (vii) over v_Q and applying the final display of Step (iii), C_Theta |log(q)| = C_Theta (1/(2l)) log(q-frak) is at most ((l+1)/4) {(1 + 12 d_mod/l)(log(d^{F_tpd}) + log(f^{F_tpd})) + 2 log(l) + 56 - (1/6)(1 - 12/l^2) log(q-frak) + (20/3) l*_mod log(s^<=)} - (1/(2l)) log(q-frak), using ((l+1)/4)(1/6)(12/l^2) >= 1/(2l) (l >= 1). Prime count via Proposition 1.6: if e*_mod l >= eta_prm, l*_mod log(s^<=) <= log(e*_mod l) sum_{p <= e*_mod l} 1 <= (4/3) log(e*_mod l) (e*_mod l)/log(e*_mod l) = (4/3) e*_mod l; if e*_mod l < eta_prm, l*_mod log(s^<=) <= log(e*_mod l) sum_{p <= e*_mod l} 1 <= (4/3) log(eta_prm) eta_prm/log(eta_prm) = (4/3) eta_prm; so in all cases l*_mod log(s^<=) <= (4/3)(e*_mod l + eta_prm). Absorption: (1/3)(4/3)(e*_mod l + eta_prm) >= (1/3)(4/3) e*_mod l >= 2 2 2^12 3 5 l >= 2 log(l) + 56, using e_mod >= 1, 2^12 3 5 >= 56, l >= 5 >= 1, l >= log(l). Hence C_Theta <= ((l+1)/(4 |log(q)|)) {(1 + 12 d_mod/l)(log(d^{F_tpd}) + log(f^{F_tpd})) + 10 (e*_mod l + eta_prm) - (1/6)(1 - 12/l^2) log(q-frak)} - 1, using ((20+1)/3)(4/3) = 7 4/3 <= 10.",
   "definitions_required": [],
   "results_used": [
    "IUT4.Prop1_6",
@@ -2536,7 +2954,7 @@
    "l >= 7, d_mod >= 1"
   ],
   "implicit_hypotheses": [],
-  "conclusion": "(1/6) log(q-frak) <= (1 + 20 d_mod/l)(log d^{F_tpd} + log f^{F_tpd}) + 20(e*_mod l + eta_prm) <= (1 + 20 d_mod/l)(log d^F + log f^F) + 20(e*_mod l + eta_prm).",
+  "conclusion": "Page 31: from C_Theta >= -1 (IUTchIII Corollary 3.12), the first display of Step (ii) and (1 - 12/l^2)^{-1} <= 2, (1 - 12/l^2)^{-1} (1 + 12 d_mod/l) <= 1 + 20 d_mod/l (l >= 7, d_mod >= 1): (1/6) log(q-frak) <= (1 + 20 d_mod/l)(log(d^{F_tpd}) + log(f^{F_tpd})) + 20 (e*_mod l + eta_prm) <= (1 + 20 d_mod/l)(log(d^F) + log(f^F)) + 20 (e*_mod l + eta_prm).",
   "definitions_required": [],
   "results_used": [
    "IUT4.Thm1_10.StepVIII",
@@ -2559,7 +2977,7 @@
    "IUT4.Thm1_10.final.frag.final_estimate_two",
    "IUT4.Thm1_10.final.frag.final_inequality",
    "IUT4.Thm1_10.final.frag.final_inequality_F",
-   "IUT3.Cor3_12.Statement.frag.thm1_10_final_of_cor312"
+   "IUT4.Thm1_10.final.frag.of_cor312"
   ]
  },
  "IUT4.Thm1_10.final.frag.final_estimate_one": {
@@ -2680,29 +3098,71 @@
   "ambiguities": [],
   "cor3_12_dependency": "conditional"
  },
+ "IUT4.Thm1_10.final.frag.of_cor312": {
+  "kind": "fragment",
+  "parent": "IUT4.Thm1_10.final",
+  "source": {
+   "paper": "Inter-universal Teichmuller Theory III and IV",
+   "pdf_pages": "IUT III pages 173 to 174; IUT IV page 23",
+   "pages_read": "III: rendered and checked: pages 173, 174; IV page 23 not read for this record (the constant is taken from IUT.PaperIV.Theorem1_10.constant, whose docstring cites IV page 23)"
+  },
+  "content": "For v : PilotLogVolumes and reals l, d, D, E, Q with 7 ≤ l, 1 ≤ d, 0 ≤ D, 0 ≤ E: if negLogTheta ≤ constant l d D E Q absLogQ · absLogQ (constant = the C_Θ of IV Thm 1.10) and the conclusion of Cor 3.12 holds, then (1/6)·Q ≤ (1 + 20·d/l)·D + 20·E.",
+  "explicit_hypotheses": [
+   "v : PilotLogVolumes (negLogTheta ≠ ⊥, 0 < absLogQ)",
+   "hl : 7 ≤ l",
+   "hd : 1 ≤ d",
+   "hD : 0 ≤ D",
+   "hE : 0 ≤ E",
+   "hbound : v.negLogTheta ≤ ((constant l d D E Q v.absLogQ * v.absLogQ : ℝ) : EReal)",
+   "hcor : Conclusion v"
+  ],
+  "implicit_hypotheses": [],
+  "conclusion": "1 / 6 * Q ≤ (1 + 20 * d / l) * D + 20 * E",
+  "definitions_required": [],
+  "results_used": [],
+  "external_dependencies": [],
+  "lean_declaration": "IUT.PaperIII.Corollary312.thm1_10_final_of_cor312",
+  "covers": "the passage from Cor 3.12 (III pages 173, 174) and the bound on −|log(Θ)| of IV Thm 1.10 to the final inequality of IV Thm 1.10, at the level of real numbers",
+  "not_covered": "Every object: the bound hbound (first assertion of IV Thm 1.10) and hcor (Cor 3.12) are hypotheses; the specialization of the real variables to the arithmetic quantities of IV is not made.",
+  "statement_status": "STATEMENT_FORMALIZED",
+  "proof_status": "CONDITIONALLY_VERIFIED",
+  "obligations": [
+   "hcor: the conclusion of III Corollary 3.12 (finiteness and the inequality); not proved.",
+   "hbound: the bound −|log(Θ)| ≤ C_Θ·|log(q)| asserted by IV Theorem 1.10; not proved.",
+   "0 < absLogQ: '|log(q)| > 0 is easily computed' (III page 174)."
+  ],
+  "ambiguities": []
+ },
  "IUT4.Rem1_10_1": {
   "source": {
    "paper": "Inter-universal Teichmuller Theory IV",
    "pdf_pages": "pages 31 to 32",
-   "pages_read": "text"
+   "pages_read": "renders of pages 31 and 32"
   },
-  "content": "The leading term of the bound, computed via (E1), (E2), parallels the leading term in scheme-theoretic Hodge-Arakelov theory ([HASurI] Theorem A).",
-  "explicit_hypotheses": [],
+  "content": "A motivation of the series was to build a framework in which an analogue of the scheme-theoretic Hodge-Arakelov theory of [HASurI], [HASurII] avoids the obstructions to diophantine applications met there. The computation of the leading term ((l*+3)/2) log(d_{v_Q}^K) - ((2l*+1)(l*+1)/(12l)) log(q_{v_Q}) in the final display of Step (v) of the proof of Theorem 1.10, via (E1), (E2), is described as essentially identical to the computation of the leading term in the proof of [HASurI], Theorem A; the author states the computations were essentially known around 2000 and the problem was to construct a framework in which to perform them, comparing this with the Weil conjectures before Weil cohomology and with computations motivated by physics.",
+  "explicit_hypotheses": [
+   "the notation of Theorem 1.10 and of Step (v) of its proof"
+  ],
   "implicit_hypotheses": [],
-  "conclusion": "Remark.",
+  "conclusion": "An informal comparison: the leading term ((l*+3)/2) log(d_{v_Q}^K) - ((2l*+1)(l*+1)/(12l)) log(q_{v_Q}) of Step (v) arises from (E1), (E2) as in the proof of [HASurI], Theorem A. No mathematical assertion is made that needs proof.",
   "definitions_required": [],
   "results_used": [
-   "IUT4.Thm1_10"
+   "IUT4.Thm1_10",
+   "IUT4.Thm1_10.StepV",
+   "IUT4.Thm1_10.StepI"
   ],
   "external_dependencies": [
-   "HASurI: Theorem A"
+   "HASurI: Theorem A, sections 1.1 and 1.5.1",
+   "HASurII: Remark 3.7"
   ],
   "lean_declaration": null,
-  "statement_status": "NOT_EXTRACTED",
+  "statement_status": "EXTRACTED",
   "proof_status": "EXTRACTED",
-  "obligations": [],
+  "obligations": [
+   "Nothing to prove; a heuristic and historical remark."
+  ],
   "ambiguities": [
-   "The pages of this remark were read only from the extracted text, not from a render; its hypotheses and conclusion are not extracted."
+   "Page 31: 'essentially identical' is not made precise; the corresponding computation of [HASurI] is not reproduced."
   ],
   "cor3_12_dependency": "setup_only"
  },
@@ -2710,99 +3170,138 @@
   "source": {
    "paper": "Inter-universal Teichmuller Theory IV",
    "pdf_pages": "page 32",
-   "pages_read": "text"
+   "pages_read": "render of page 32"
   },
-  "content": "The computation is a kind of derivative in the F_l direction, compared with the arithmetic Kodaira-Spencer morphism of [HASurII].",
-  "explicit_hypotheses": [],
+  "content": "The computation of Theorem 1.10 is viewed as a derivative in the F_l^* direction, corresponding under the analogy with p-adic Teichmueller theory ([pOrd], [pTeich]) to the derivative of the canonical Frobenius lifting. In [HASurII], Corollary 3.6, a portion of the arithmetic Kodaira-Spencer morphism coincides with the geometric one; in terms of the action of GL_2(F_l) on l-torsion this portion is given by the unipotent matrices, whereas the F_l^*-symmetries of the present papers correspond to the toral (diagonal) matrices. For large l, GL_2(F_l) is a good approximation of GL_2(Z) or GL_2(R), where toral subgroups correspond to isotropy subgroups (isomorphic to S^1) of points of the upper half-plane, a group-theoretic representation of tangent vectors.",
+  "explicit_hypotheses": [
+   "the notation of Theorem 1.10"
+  ],
   "implicit_hypotheses": [],
-  "conclusion": "Remark.",
+  "conclusion": "An analogy: the computation of Theorem 1.10 is a derivative in the F_l^*-direction; F_l^*-symmetries correspond to toral matrices of GL_2(F_l), in contrast with the unipotent matrices relevant to the arithmetic Kodaira-Spencer morphism of [HASurII]. No assertion needing proof.",
   "definitions_required": [],
   "results_used": [
    "IUT4.Thm1_10"
   ],
   "external_dependencies": [
-   "HASurII: Corollary 3.6"
+   "HASurII: Corollary 3.6, section 3",
+   "IUTchIII: Remark 3.12.4 (iii)",
+   "IUTchI: Example 4.3 (i), Remark 6.12.3 (i), (iii)",
+   "pOrd",
+   "pTeich"
   ],
   "lean_declaration": null,
-  "statement_status": "NOT_EXTRACTED",
+  "statement_status": "EXTRACTED",
   "proof_status": "EXTRACTED",
-  "obligations": [],
-  "ambiguities": [
-   "The pages of this remark were read only from the extracted text, not from a render; its hypotheses and conclusion are not extracted."
+  "obligations": [
+   "Nothing to prove; a heuristic remark."
   ],
+  "ambiguities": [],
   "cor3_12_dependency": "setup_only"
  },
  "IUT4.Rem1_10_3": {
   "source": {
    "paper": "Inter-universal Teichmuller Theory IV",
    "pdf_pages": "pages 32 to 33",
-   "pages_read": "text"
+   "pages_read": "renders of pages 32 and 33"
   },
-  "content": "The terms involving l are a consequence of working over the field of l-torsion points K, both globally and in the prime-strips.",
-  "explicit_hypotheses": [],
+  "content": "The terms involving l in the final display of Theorem 1.10 are presented as an inevitable consequence of the role of l-torsion points. It is said to be crucial to work over the field of rationality K of the l-torsion points (not over F) both for the global portions of the Theta NF- and Theta^{pm ell}-Hodge theaters and for their local portions (prime-strips), which are needed to glue these into a Theta^{pm ell} NF-Hodge theater; allowing any Galois indeterminacy on l-torsion points, even at v in V^good intersect V^non, would invalidate the manipulations of IUT I, sections 4 and 6.",
+  "explicit_hypotheses": [
+   "the notation of Theorem 1.10; K = F(E_F[l])"
+  ],
   "implicit_hypotheses": [],
-  "conclusion": "Remark.",
-  "definitions_required": [],
+  "conclusion": "An explanatory claim: working over K, including at the prime-strips at good nonarchimedean places, is necessary for the gluing of IUT I (Propositions 4.7, 6.5), and this produces the terms in l of Theorem 1.10. Stated without proof.",
+  "definitions_required": [
+   "Theta NF-Hodge theater",
+   "Theta^{pm ell}-Hodge theater",
+   "prime-strip"
+  ],
   "results_used": [
    "IUT4.Thm1_10"
   ],
-  "external_dependencies": [],
-  "lean_declaration": null,
-  "statement_status": "NOT_EXTRACTED",
-  "proof_status": "EXTRACTED",
-  "obligations": [],
-  "ambiguities": [
-   "The pages of this remark were read only from the extracted text, not from a render; its hypotheses and conclusion are not extracted."
+  "external_dependencies": [
+   "IUTchI: Remark 6.12.2, Propositions 4.7, 6.5, sections 4 and 6",
+   "IUTchII"
   ],
+  "lean_declaration": null,
+  "statement_status": "EXTRACTED",
+  "proof_status": "EXTRACTED",
+  "obligations": [
+   "The claim that Galois indeterminacy at the l-torsion points would invalidate IUT I, sections 4 and 6, is asserted, not derived here."
+  ],
+  "ambiguities": [],
   "cor3_12_dependency": "setup_only"
  },
  "IUT4.Rem1_10_4": {
   "source": {
    "paper": "Inter-universal Teichmuller Theory IV",
    "pdf_pages": "pages 33 to 34",
-   "pages_read": "text"
+   "pages_read": "renders of pages 33 and 34"
   },
-  "content": "The log-volume fluctuations computed in Theorem 1.10 may be viewed as a kind of inter-universal analytic torsion.",
-  "explicit_hypotheses": [],
+  "content": "The fluctuations of log-volume from the multiradial representation of IUT III Theorem 3.11 (i), computed in Theorem 1.10, are called inter-universal analytic torsion, analytic torsion being read as a metrized measure of the deviation of holomorphic functions from real analytic ones. Three cases: (a) in classical Arakelov theory, analytic torsion is the logarithm of a normalized determinant of a Laplacian, depending on the Kaehler metric and hence on the holomorphic moduli ([Arak]); (b) in scheme-theoretic Hodge-Arakelov theory, the comparison isomorphism of [HASurI] Theorem A and its Gaussian poles measure a discrepancy of integral structures near infinity, an analytic torsion at the divisor at infinity; (c) in IUT, the fluctuations come from comparing an alien arithmetic holomorphic structure with the multiradial representation, the object compared being values of the theta function. The terms involving the different d^K are called differential poles, and the prime number theorem (the Riemann zeta function) plays the role of normalized determinants.",
+  "explicit_hypotheses": [
+   "the notation of Theorem 1.10 and IUTchIII Theorem 3.11"
+  ],
   "implicit_hypotheses": [],
-  "conclusion": "Remark.",
+  "conclusion": "A terminological analogy: the log-volume fluctuations of Theorem 1.10 are a sort of inter-universal analytic torsion; the different terms are differential poles. No assertion needing proof.",
   "definitions_required": [],
   "results_used": [
-   "IUT4.Thm1_10"
+   "IUT4.Thm1_10",
+   "IUT4.Prop1_6"
   ],
-  "external_dependencies": [],
+  "external_dependencies": [
+   "Arak: Chapters V, VI",
+   "HASurI: Theorem A, sections 1.1, 1.2, 1.3.2, 1.3.4",
+   "HASurII",
+   "IUTchIII: Theorem 3.11 (i), Remark 3.11.1, Remark 3.12.3 (ii)"
+  ],
   "lean_declaration": null,
-  "statement_status": "NOT_EXTRACTED",
+  "statement_status": "EXTRACTED",
   "proof_status": "EXTRACTED",
-  "obligations": [],
-  "ambiguities": [
-   "The pages of this remark were read only from the extracted text, not from a render; its hypotheses and conclusion are not extracted."
+  "obligations": [
+   "Nothing to prove; a heuristic remark."
   ],
+  "ambiguities": [],
   "cor3_12_dependency": "setup_only"
  },
  "IUT4.Rem1_10_5": {
   "source": {
    "paper": "Inter-universal Teichmuller Theory IV",
    "pdf_pages": "pages 34 to 36",
-   "pages_read": "text"
+   "pages_read": "renders of pages 34, 35 and 36"
   },
-  "content": "Computational aspects: the constants of Theorem 1.10 are essentially explicit and no exceptional set is excluded; comparison with the asymptotics of abc examples (e.g. [Mss]).",
-  "explicit_hypotheses": [],
-  "implicit_hypotheses": [],
-  "conclusion": "Remark.",
-  "definitions_required": [],
+  "content": "Computational aspects. (i) Unlike Corollaries 2.2 (ii) and 2.3, the inequalities of Theorem 1.10 have essentially explicit constants and exclude no non-explicit finite set of exceptional elliptic curves, so they suit explicit diophantine computations (for instance Fermat equations), which are not carried out. (ii) Asymptotics: for F_tpd = Q (d_mod = 1) and delta = log(d^{F_tpd}) + log(f^{F_tpd}) = log(f^{F_tpd}), the first bound of the final display of Theorem 1.10 has the form delta + * delta/l + * l + * with fixed positive constants *; the leading term is delta, and the epsilon terms * delta/l + * l are always >= * delta^{1/2} however l is chosen (take l ~ delta^alpha). This is compared with examples of abc sums of Masser and others ([Mss], [vFr] section 2, Equation (6)) whose left side exceeds delta + * delta^{1/2}/log(delta), and with an expectation of van Frankenhuijsen. The paper obtains epsilon terms of order * delta^{1/2} log(delta) under the assumption that the abc sums are compactly bounded away from infinity at 2 and at the archimedean prime (Corollary 2.2 (ii), Remark 2.2.1). (iii) The * l part of the epsilon terms comes from log(s^<=) in Step (viii), which roughly counts prime factors of abc that are <= e*_mod l, related to omega(abc) of [vFr] section 3 and reminiscent of Baker's refinements; examples of [vFr] section 3 Remark 1 with large omega(abc) fit the lower bound of (ii), while sums 2^n = p + q r (p, q, r primes) have omega(abc) <= 4 and left side about half the leading term.",
+  "explicit_hypotheses": [
+   "for (ii): F_tpd = Q, so d_mod = 1; delta = log(f^{F_tpd})"
+  ],
+  "implicit_hypotheses": [
+   "the constants * in (ii) are fixed positive reals, independent of the initial Theta-data"
+  ],
+  "conclusion": "(i) The bounds of Theorem 1.10 are effective in form; (ii) with F_tpd = Q the bound has the shape delta + * delta/l + * l + *, whose epsilon terms are >= * delta^{1/2} for every choice of l, consistent with known abc examples; the paper's own bounds on epsilon terms are of order * delta^{1/2} log(delta) under compact boundedness at 2 and infinity; (iii) the * l term comes from log(s^<=) of Step (viii).",
+  "definitions_required": [
+   "abc sum",
+   "omega(abc)",
+   "compactly bounded subset"
+  ],
   "results_used": [
-   "IUT4.Thm1_10"
+   "IUT4.Thm1_10",
+   "IUT4.Thm1_10.StepVIII",
+   "IUT4.Cor2_2",
+   "IUT4.Cor2_3",
+   "IUT4.Rem2_2_1"
   ],
   "external_dependencies": [
-   "Mss"
+   "Mss: the Proposition",
+   "vFr: section 2, Equation (6); section 3, Remark 1"
   ],
   "lean_declaration": null,
-  "statement_status": "NOT_EXTRACTED",
+  "statement_status": "EXTRACTED",
   "proof_status": "EXTRACTED",
-  "obligations": [],
+  "obligations": [
+   "The lower bound >= * delta^{1/2} for the epsilon terms is sketched (compare delta^alpha with delta^{1-alpha}), not proved; the asymptotic claims about the cited examples are taken from [vFr] and [Mss]."
+  ],
   "ambiguities": [
-   "The pages of this remark were read only from the extracted text, not from a render; its hypotheses and conclusion are not extracted."
+   "Page 34: in (ii) delta is defined as log(d^{F_tpd}) + log(f^{F_tpd}) = log(f^{F_tpd}); with F_tpd = Q this uses that the different of Q is trivial.",
+   "Page 35: 'no matter how skillfully one chooses l' is a statement about the shape of the bound for an optimally chosen l, not about the actual size of the left side."
   ],
   "cor3_12_dependency": "setup_only"
  },
@@ -2810,54 +3309,80 @@
   "source": {
    "paper": "Inter-universal Teichmuller Theory IV",
    "pdf_pages": "pages 36 to 38",
-   "pages_read": "text"
+   "pages_read": "renders of pages 36, 37 and 38"
   },
-  "content": "The bound on (1/6) log q concerns only q-parameters at valuations in V_mod^bad, all of odd residue characteristic; consequences for examples with large powers of 2.",
-  "explicit_hypotheses": [],
+  "content": "(i) The bound on (1/6) log(q) of Theorem 1.10 concerns only the q-parameters at nonarchimedean places of V_mod^bad, all of odd residue characteristic (IUT I Definition 3.1 (b)); for the [Mss] examples it is not clear how to control the power of 2, but A. Venkatesh pointed out that those examples can be modified to give similar asymptotics without contributions at 2. (ii) Why places of even residue characteristic with bad multiplicative reduction are excluded from V_mod^bad: the theory depends on the etale theta function of [EtTh], which fails at primes over 2, through the simultaneous multiradiality of (1) constant multiple rigidity and (2) cyclotomic rigidity. Evaluating the theta series at the 2-torsion point in the irreducible component labeled zero gives a special value that is a unit for odd p but a nonzero non-unit for p = 2, so the integral structure (a) determined by that value coincides with the integral structure (b) given by the pole at the origin for odd p but not for p = 2; multiradiality of (1) needs (a), and working simultaneously with (b) violates the multiradiality of (2). (iii) It is not clear to the author how far (b) is needed; if (b) plays an essential role as well as (a), the theory is fundamentally incompatible with including even residue characteristic bad places in V_mod^bad. (iv) Classical theta functions and p-adic Teichmueller theory also behave differently or exclude the prime 2.",
+  "explicit_hypotheses": [
+   "the notation of Theorem 1.10 and IUTchI Definition 3.1"
+  ],
   "implicit_hypotheses": [],
-  "conclusion": "Remark.",
-  "definitions_required": [],
+  "conclusion": "Explanatory: the bound of Theorem 1.10 says nothing about q-parameters at places over 2; the exclusion of such places is attributed to the failure at p = 2 of the coincidence of the two integral structures (a), (b) on the theta function, and the author states that it is unclear whether (b) is necessary.",
+  "definitions_required": [
+   "V_mod^bad",
+   "etale theta function",
+   "constant multiple rigidity",
+   "cyclotomic rigidity",
+   "multiradiality"
+  ],
   "results_used": [
-   "IUT4.Thm1_10"
+   "IUT4.Thm1_10",
+   "IUT4.Rem1_10_5"
   ],
   "external_dependencies": [
    "IUTchI: Definition 3.1 (b)",
-   "Mss"
+   "Mss: the Proposition and its proof, page 22",
+   "EtTh: Proposition 1.4, Theorem 1.10 (iii), Definition 2.5, Corollary 2.18",
+   "IUTchII: Corollaries 1.12, 2.4 (ii), (iii), 2.6, Remarks 1.11.4 (i), 1.11.5, 1.12.2 (i) to (vi), 2.5.1 (ii)",
+   "pOrd",
+   "pTeich"
   ],
   "lean_declaration": null,
-  "statement_status": "NOT_EXTRACTED",
+  "statement_status": "EXTRACTED",
   "proof_status": "EXTRACTED",
-  "obligations": [],
+  "obligations": [
+   "The unit versus non-unit computation of the special value at p = 2 is said to be easy but is not given; the incompatibility of the nontrivial denominator with multiradiality is asserted with references to IUT II."
+  ],
   "ambiguities": [
-   "The pages of this remark were read only from the extracted text, not from a render; its hypotheses and conclusion are not extracted."
+   "Page 38, (iii): the author explicitly leaves open whether the integral structure (b) is necessary; the remark records an uncertainty of the source about its own framework at the prime 2."
   ],
   "cor3_12_dependency": "setup_only"
  },
  "IUT4.Rem1_10_7": {
   "source": {
    "paper": "Inter-universal Teichmuller Theory IV",
-   "pdf_pages": "pages 38 to 40",
-   "pages_read": "text"
+   "pdf_pages": "pages 38 to 39",
+   "pages_read": "renders of pages 38, 39 and 40 (the remark ends on page 39; Section 2 begins on page 40)"
   },
-  "content": "(i) Since e*_mod <= d*_mod, e*_mod may be replaced by d*_mod in the final displays of Theorem 1.10. (ii) d_mod cannot be replaced by e_mod within the framework, because of tensor products of copies of F_mod over Q.",
-  "explicit_hypotheses": [],
-  "implicit_hypotheses": [],
-  "conclusion": "Remark.",
-  "definitions_required": [],
+  "content": "(i) Since e*_mod <= d*_mod, one may replace e*_mod by d*_mod in the final two displays of the statement of Theorem 1.10. (ii) Within the framework of the series one cannot replace d_mod by e_mod in those displays: the multiradial representation of IUT III Theorem 3.11 (i) uses tensor products over Q of copies of F_mod labeled by j in F_l^* (IUT III Proposition 3.3), whose F_mod-linear structures cannot be identified for distinct labels since the tensor packets may depend only on the additive structure of the mono-analytic log-shells. Localizing at p therefore forces tensor products of localizations of F_mod at distinct primes over p; if one of them lies under a prime of K ramified over Q (condition (D5)), Step (v) produces a log(p) term in log(s^Q) from rounding up non-integral powers of p (Proposition 1.4 (iii)), since only integral powers of p make sense in the multiradial representation.",
+  "explicit_hypotheses": [
+   "the statement of Theorem 1.10; e*_mod <= d*_mod (since e_mod <= d_mod)"
+  ],
+  "implicit_hypotheses": [
+   "the final inequality is monotone in e*_mod, the coefficient 20 l being positive"
+  ],
+  "conclusion": "(i) The final two displays of Theorem 1.10 remain true with d*_mod in place of e*_mod. (ii) Within the framework of the series, d_mod cannot be replaced by e_mod (an explanatory claim, not a theorem).",
+  "definitions_required": [
+   "d*_mod, e*_mod (Theorem 1.10)"
+  ],
   "results_used": [
-   "IUT4.Thm1_10"
+   "IUT4.Thm1_10",
+   "IUT4.Thm1_10.StepIII",
+   "IUT4.Thm1_10.StepV",
+   "IUT4.Prop1_4"
   ],
   "external_dependencies": [
-   "IUTchIII: Theorem 3.11, Proposition 3.2"
+   "IUTchIII: Theorem 3.11 (i), Proposition 3.3"
   ],
   "lean_declaration": null,
-  "statement_status": "NOT_EXTRACTED",
+  "statement_status": "EXTRACTED",
   "proof_status": "EXTRACTED",
   "obligations": [
-   "(i) is used in Corollary 2.2 (apply_theorem_1_10 takes E <= d*_mod l + eta_prm as a hypothesis)."
+   "(i) follows from e*_mod <= d*_mod and monotonicity; not formalized as a separate lemma.",
+   "(ii) is an informal explanation of why the method gives d_mod, not a proof that e_mod is impossible."
   ],
   "ambiguities": [
-   "The pages of this remark were read only from the extracted text, not from a render; its hypotheses and conclusion are not extracted."
+   "Page 39: 'is lies under' is a misprint (one of the two verbs is superfluous).",
+   "Page 39: the remark speaks of a log(p) term appearing in log(s^Q); the Step (v) display places log(p_{v_Q}) inside beta_e and log(s^Q_{v_Q}) in the weighted average, consistent with this reading."
   ],
   "cor3_12_dependency": "independent"
  },
@@ -2938,7 +3463,7 @@
    "K_V a compactly bounded subset of U_X(Qbar) (in the sense of Remark 2.3.1 (vi)) whose support contains the prime 2, satisfying (*_{j-inv})"
   ],
   "implicit_hypotheses": [],
-  "conclusion": "Equality of BD-classes.",
+  "conclusion": "Page 41: (1/6) log(q^{not 2}_(-)) ~ (1/6) log(q^forall_(-)) ~ (1/6) ht_infinity ~ ht_{omega_X(D)} as bounded discrepancy classes of functions on K_V (here ~ is equality of BD-classes, [GenEll] Definition 1.2 (ii) with Remark 2.3.1 (ii)). Proof (page 43): log(q^{not 2}) ~ log(q^forall) on K_V by (*_{j-inv}); log(q^forall) ~ ht_infinity on K_V since the support of K_V contains the archimedean prime (cf. the final paragraph of the proof of [GenEll] Lemma 3.7); (1/6) ht_infinity ~ ht_{omega_X(D)} since the pull-back of the divisor at infinity has degree 6 and omega_X(D) has degree 1 ([GenEll] Proposition 1.4 (i), (iii)).",
   "definitions_required": [],
   "results_used": [],
   "external_dependencies": [
@@ -2959,7 +3484,7 @@
    "pdf_pages": "pages 41 to 43",
    "pages_read": "renders of pages 41, 42 and 43"
   },
-  "content": "There are H_unif > 0 independent of K_V and C_K, H_K > 0 depending only on K_V such that: for every positive integer d and real 0 < eps_d <= 1, with delta = 2^12 3^3 5 d, there is a finite set Exc_d in U_X(Qbar)^{<=d}, depending only on K_V, d, eps_d and containing all points of elliptic curves with automorphisms of order > 2, with log(q^forall) <= H_unif eps_d^{-3} d^{4+eps_d} + H_K on Exc_d, such that every elliptic curve E_F over a number field F in Qbar whose moduli point lifts to x_E in U_X(F) intersect U_X(Qbar)^{<=d} with x_E in K_V, x_E not in Exc_d, F_mod its minimal field of definition, F_tpd = F_mod(E_{F_mod}[2]), (3 5)-torsion rational over F and F = F_mod(sqrt(-1), E_{F_mod}[2 3 5]), arises (with F_mod) from initial Theta-data as in Theorem 1.10 satisfying (C1) and (C2); moreover log-diff_X(x_E) = log(d^{F_tpd}) and log(f^{F_tpd}) <= log-cond_D(x_E) <= log(f^{F_tpd}) + log(2l).",
+  "content": "There are H_unif > 0 independent of K_V, and C_K > 0, H_K > 0 depending only on the choice of K_V, such that: for every positive integer d and real 0 < eps_d <= 1, with delta = 2^12 3^3 5 d, there is a finite set Exc_d in U_X(Qbar)^{<=d}, depending only on K_V, d, eps_d and containing all points of elliptic curves with automorphisms of order > 2, with log(q^forall) <= H_unif eps_d^{-3} d^{4+eps_d} + H_K on Exc_d, such that every elliptic curve E_F over a number field F in Qbar whose moduli point lifts to x_E in U_X(F) intersect U_X(Qbar)^{<=d} with x_E in K_V, x_E not in Exc_d, F_mod its minimal field of definition, F_tpd = F_mod(E_{F_mod}[2]), (3 5)-torsion rational over F and F = F_mod(sqrt(-1), E_{F_mod}[2 3 5]), arises (with F_mod) from initial Theta-data as in Theorem 1.10 satisfying (C1) and (C2); moreover log-diff_X(x_E) = log(d^{F_tpd}) and log(f^{F_tpd}) <= log-cond_D(x_E) <= log(f^{F_tpd}) + log(2l).",
   "explicit_hypotheses": [
    "X = P^1 over Q, D = {0, 1, infinity}, regarded as the lambda-line of the Legendre form",
    "K_V a compactly bounded subset of U_X(Qbar) (in the sense of Remark 2.3.1 (vi)) whose support contains the prime 2, satisfying (*_{j-inv})",
@@ -3220,14 +3745,14 @@
    "pdf_pages": "pages 44 to 45",
    "pages_read": "renders of pages 44 and 45"
   },
-  "content": "After enlarging Exc_d so that h^{1/2} >= xi_prm >= 5, let A be the finite set of primes that (S1) are <= h^{1/2}, (S2) divide a nonzero h_v, or (S3) equal p_v for some v with h_v >= h^{1/2}. Then theta_A <= 2h^{1/2} + delta h^{1/2} + 2 delta h^{1/2} log(2 delta h) <= 4 delta h^{1/2} log(2 delta h) <= -xi_prm + 5 delta h^{1/2} log(2 delta h), and Proposition 2.1 gives a prime l not in A with (P1) (5 <=) h^{1/2} <= l <= 10 delta h^{1/2} log(2 delta h) (<= 20 delta^2 h^2), (P2) and (P3).",
+  "content": "Proof of (ii), first part (pages 43 to 45). If the once-punctured elliptic curve of E_F has no F-core, there are only four possible j-invariants ([CanLift] Proposition 2.7); putting these into Exc_d, E_F admits an F-core and has no automorphisms of order > 2. Set h = log(q^forall) = (1/[F:Q]) sum_{v in V(F)^non} h_v f_v log(p_v), with h_v = 0 at good reduction and h_v >= 1 the local height ([GenEll] Definition 3.3) at bad multiplicative reduction. Since h^{1/2} < xi_prm leaves finitely many j-invariants (by (i) and [GenEll] Proposition 1.4 (iv)), after enlarging Exc_d (with h <= H_unif on it) one may assume h^{1/2} >= xi_prm >= 5. Using [F:Q] <= delta ((E3), (E4), (E5)): delta h^{1/2} >= [F:Q] h^{1/2} = sum_v h^{-1/2} h_v f_v log(p_v) >= sum_v h^{-1/2} h_v log(p_v) >= sum_{h_v >= h^{1/2}} h^{-1/2} h_v log(p_v) >= sum_{h_v >= h^{1/2}} log(p_v); and 2 delta h^{1/2} log(2 delta h) >= 2 [F:Q] h^{1/2} log(2 [F:Q] h) >= sum_{h_v != 0} 2 h^{-1/2} log(2 h_v f_v log(p_v)) h_v f_v log(p_v) >= sum_{h_v != 0} h^{-1/2} log(h_v) h_v >= sum_{h_v >= h^{1/2}} h^{-1/2} log(h_v) h_v >= sum_{h_v >= h^{1/2}} log(h_v), using 2 log(p_v) >= 2 log 2 = log 4 >= 1. With A the finite set of primes p that (S1) are <= h^{1/2}, (S2) divide a nonzero h_v, or (S3) equal p_v for some v with h_v >= h^{1/2}: theta_A <= 2 h^{1/2} + delta h^{1/2} + 2 delta h^{1/2} log(2 delta h) <= 4 delta h^{1/2} log(2 delta h) <= -xi_prm + 5 delta h^{1/2} log(2 delta h), using delta >= 2 and log(2 delta h) >= log 4 >= 1. Proposition 2.1 (i), (ii) then gives a prime l not in A with (P1), (P2), (P3).",
   "explicit_hypotheses": [
    "the situation of Corollary 2.2 (ii); h = log(q^forall) = (1/[F:Q]) sum_v h_v f_v log p_v",
    "h^{1/2} >= xi_prm >= 5 after enlarging Exc_d",
    "[F : Q] <= delta (from (E3), (E4), (E5))"
   ],
   "implicit_hypotheses": [],
-  "conclusion": "There is a prime l not in A with h^{1/2} <= l <= 10 delta h^{1/2} log(2 delta h) <= 20 delta^2 h^2.",
+  "conclusion": "(P1) (5 <=) h^{1/2} <= l <= 10 delta h^{1/2} log(2 delta h) (<= 20 delta^2 h^2), which is (C1); l is a prime not in A.",
   "definitions_required": [],
   "results_used": [
    "IUT4.Prop2_1",
@@ -3551,7 +4076,7 @@
    "pdf_pages": "pages 45 to 46",
    "pages_read": "renders of pages 45 and 46"
   },
-  "content": "(P5): after enlarging Exc_d, the set V^bad_mod of nonarchimedean valuations of F_mod not dividing 2l with bad multiplicative reduction is nonempty. Otherwise h <~ log q^{not 2} <= h^{1/2} log l <= 16 delta^{1/4} h^{3/4}, so h is bounded.",
+  "content": "(P5): after enlarging Exc_d (with h <= H_unif d + H_K on it), the set V^bad_mod of nonarchimedean valuations of F_mod that do not divide 2l and at which E_F has bad multiplicative reduction is nonempty. First, from (P1) and Proposition 2.1 (i) (page 45): h^{1/2} log(l) <= h^{1/2} log(20 delta^2 h^2) <= 2 h^{1/2} log(5 delta h) <= 8 h^{1/2} log(2 delta^{1/4} h^{1/4}) <= 8 h^{1/2} 2 delta^{1/4} h^{1/4} = 16 delta^{1/4} h^{3/4}, using 20 <= 5^2 and 5 <= 2^4. If V^bad_mod were empty, then by (P3), (i) and this computation (page 46): h ~ log(q^{not 2}) <= h^{1/2} log(l) <= 16 delta^{1/4} h^{3/4}, so h^{1/4} and h are bounded and the j-invariant takes finitely many values (by (i), [GenEll] Proposition 1.4 (iv)).",
   "explicit_hypotheses": [
    "the situation of (P1) to (P4)",
    "V^bad_mod the nonarchimedean valuations of F_mod not dividing 2l at which E_F has bad multiplicative reduction"
@@ -3705,7 +4230,7 @@
    "pdf_pages": "page 46",
    "pages_read": "render of page 46"
   },
-  "content": "(P7): it follows formally from (P1), (P2), (P5) and (P6) that, taking Fbar = Qbar (the algebraic closure), F the number field of the discussion, X_F the once-punctured elliptic curve associated to E_F, l the prime of (P1) and V^bad_mod the set of (P5), there exist data C_K, V, eps satisfying all conditions (a) to (f) of IUTchI Definition 3.1, and the resulting initial Theta-data (Fbar/F, X_F, l, C_K, V, V^bad_mod, eps) satisfy the conditions of Theorem 1.10. The existence of V and eps rests essentially on (P6). F_mod remains the minimal field of definition of the moduli point, whose degree d_mod can be as large as d; it is not Q.",
+  "content": "(P7): it follows formally from (P1), (P2), (P5) and (P6) that, taking Fbar = Qbar (the algebraic closure), F the number field of the discussion, X_F the once-punctured elliptic curve associated to E_F, l the prime of (P1) and V^bad_mod the set of (P5), there exist data C_K, V, eps satisfying all conditions (a) to (f) of IUTchI Definition 3.1, and the resulting initial Theta-data (Fbar/F, X_F, l, C_K, V, V^bad_mod, eps) satisfy the conditions of Theorem 1.10. The existence of V and eps rests essentially on (P6). F_mod remains the minimal field of definition of the moduli point, whose degree d_mod can be as large as d; it need not equal Q.",
   "explicit_hypotheses": [
    "(P1), (P2), (P5), (P6)",
    "Fbar = Qbar; F, E_F, F_mod as in Corollary 2.2 (ii)"
@@ -3806,7 +4331,7 @@
    "pdf_pages": "pages 47 to 48",
    "pages_read": "renders of pages 47 and 48"
   },
-  "content": "Assembly: combine the bound of ProofApply, the (P3) step and the bounded discrepancy B_K to get (1/6) h <= (1 + epsilon_E)(log-diff + log-cond) + C_K with C_K = 40 eta_prm + 2 B_K; then the real-power estimate for epsilon_E and the final step for 0 < epsilon <= 1.",
+  "content": "Pages 47 and 48. From (P3) and the computation before (P5): (1/6) log(q^{not 2}) - (1/6) log(q) <= (1/6) h^{1/2} log(l) <= (1/3) h^{1/2} log(5 delta h) <= h^{1/2} log(2 delta h), using 1 <= h and 5 <= 2^3. With B_K a bound for (1/6) log(q^forall) - (1/6) log(q^{not 2}) (assertion (i)) and C_K = 40 eta_prm + 2 B_K: (1/6) h = (1/6) log(q^forall) <= (1 + delta h^{-1/2})(log(d^{F_tpd}) + log(f^{F_tpd})) + (15 delta)^2 h^{1/2} log(2 delta h) + (1/2) C_K <= (1 + delta h^{-1/2})(log(d^{F_tpd}) + log(f^{F_tpd})) + (1/6) h (2/5) (60 delta)^2 h^{-1/2} log(2 delta h) + (1/2) C_K, using 6 5 <= 2 4^2. Set eps_E = (60 delta)^2 h^{-1/2} log(2 delta h) (>= 5 delta h^{-1/2}) and eps*_d = eps_d/16 (< 1/2 <= 1). If 1 < eps_E, then 1 < eps_E = (eps*_d)^{-1} (60 delta)^2 h^{-1/2} log(2^{eps*_d} delta^{eps*_d} h^{eps*_d}) <= (eps*_d)^{-1} (60 delta)^{2 + eps*_d} h^{-(1/2 - eps*_d)} <= {(eps*_d)^{-3} (60 delta)^{4 + eps_d} h^{-1}}^{(1/2 - eps*_d)}, using Proposition 2.1 (i), 1/(1/2 - eps*_d) = 16/(8 - eps_d) <= 3, (2 + eps*_d)/(1/2 - eps*_d) = (32 + eps_d)/(8 - eps_d) <= 4 + eps_d <= 5, 0 < eps*_d <= 1, 60 delta >= 2 delta >= 1, h >= 1; this bounds h, so after enlarging Exc_d (h <= H_unif eps_d^{-3} d^{4 + eps_d} + H_K on it) one may assume eps_E <= 1. Then (page 48) (1/6) h <= (1 - (2/5) eps_E)^{-1} (1 + (1/5) eps_E)(log(d^{F_tpd}) + log(f^{F_tpd})) + (1 - (2/5) eps_E)^{-1} (1/2) C_K <= (1 + eps_E)(log(d^{F_tpd}) + log(f^{F_tpd})) + C_K, using (1 + eps_E/5)/(1 - (2/5) eps_E) <= 1 + eps_E and 1 - (2/5) eps_E >= 1/2 for 0 < eps_E <= 1. With log-diff_X(x_E) = log(d^{F_tpd}) and log(f^{F_tpd}) <= log-cond_D(x_E) <= log(f^{F_tpd}) + log(2l) (Proposition 1.8 (vi)), (C1) and (C2) hold. Assertion (iii) follows by the same argument with 1 < eps_E replaced by eps < eps_E.",
   "explicit_hypotheses": [
    "the bound of ProofApply",
    "(P3) and the computation preceding (P5)",
@@ -3814,7 +4339,7 @@
    "eps_E = (60 delta)^2 h^{-1/2} log(2 delta h), 0 < eps_E <= 1 outside Exc_d"
   ],
   "implicit_hypotheses": [],
-  "conclusion": "(1/6) h <= (1 + eps_E)(log d^{F_tpd} + log f^{F_tpd}) + C_K with C_K = 40 eta_prm + 2 B_K.",
+  "conclusion": "(1/6) h <= (1 + eps_E)(log(d^{F_tpd}) + log(f^{F_tpd})) + C_K with C_K = 40 eta_prm + 2 B_K and eps_E = (60 delta)^2 h^{-1/2} log(2 delta h) <= 1 outside Exc_d; hence (C1), (C2) of (ii), and (iii).",
   "definitions_required": [],
   "results_used": [
    "IUT4.Cor2_2.ProofApply",
@@ -4000,23 +4525,42 @@
   "source": {
    "paper": "Inter-universal Teichmuller Theory IV",
    "pdf_pages": "pages 48 to 50",
-   "pages_read": "text"
+   "pages_read": "renders of pages 48, 49 and 50"
   },
-  "content": "Asymptotic behavior of the bound of Corollary 2.2 (ii) over Q: (1/6) h <= delta + O(delta^{1/2} log delta)-type terms, and heuristics on weights and on the size of l.",
-  "explicit_hypotheses": [],
-  "implicit_hypotheses": [],
-  "conclusion": "Remark.",
-  "definitions_required": [],
-  "results_used": [
-   "IUT4.Cor2_2"
+  "content": "(i) Asymptotics of the bound of Corollary 2.2 (ii) for F_tpd = Q (d_mod = 1), with h = log(q^forall) and delta = log-diff_X(x_E) + log-cond_D(x_E) = log-cond_D(x_E) (a notation different from the delta of Corollary 2.2 (ii)): since 1 < log 3 <= delta and 1 < log 3 <= h, the bound has the form (1/6) h <= delta + * delta^{1/2} log(delta) with a fixed positive *; h/delta is bounded below by definition and above by this bound. The epsilon term delta^{1/2} log(delta) is compared with interpretations of the Riemann hypothesis via weights (a height has the weight of one Tate twist, s = 1, so s = 1/2 corresponds to h^{1/2}, delta^{1/2}); the delta^{1/2} arises as a balance between the archimedean decrease delta/l and the nonarchimedean increase l of the epsilon terms (Steps (v), (viii); the b_i of Proposition 1.4 (iii); the radius of convergence of the p-adic logarithm in Proposition 1.2), likened to the functional equation of zeta. (ii) [vFr] section 2 conjectures limsup log((1/6) h - delta)/log(h) = 1/2; for abc sums in a fixed compactly bounded K_V the bounds of (i) imply limsup <= 1/2, while [vFr] shows limsup >= 1/2 for arbitrary abc sums; whether >= 1/2 holds inside a single K_V is unclear to the author. (iii) Hope for an inter-universal Mellin transform relating the theory to the Riemann zeta function. (iv) Function field analogy: the theory resembles the derivative of a Frobenius lifting, while the function field Riemann hypothesis uses the graph of Frobenius; perhaps an integral of the theory bears on the Riemann hypothesis for number fields. (v) Summary: the Riemann hypothesis inequality might be a restriction (ABC inequality)|_{canonical number} of an ABC inequality to a canonical number, an abstraction of sequences of abc sums, perhaps an average over all addition operations or an arithmetic measure analogous to the one giving the Mellin transform.",
+  "explicit_hypotheses": [
+   "for (i), (ii): the situation of Corollary 2.2 (ii) with F_tpd = Q (d_mod = 1); h = log(q^forall), delta = log-cond_D(x_E)"
   ],
-  "external_dependencies": [],
+  "implicit_hypotheses": [
+   "* in (i) is a fixed positive real number, independent of x_E"
+  ],
+  "conclusion": "(i) Under F_tpd = Q, Corollary 2.2 (ii) yields (1/6) h <= delta + * delta^{1/2} log(delta) on K_V outside the exceptional set; (ii) consequently limsup log((1/6) h - delta)/log(h) <= 1/2 for abc sums in a fixed K_V; (iii) to (v) are speculative analogies with the Riemann zeta function and the Riemann hypothesis, not assertions.",
+  "definitions_required": [
+   "compactly bounded subset",
+   "abc sum"
+  ],
+  "results_used": [
+   "IUT4.Cor2_2",
+   "IUT4.Cor2_2.ii.C2",
+   "IUT4.Rem1_10_5",
+   "IUT4.Thm1_10",
+   "IUT4.Prop1_2",
+   "IUT4.Prop1_4"
+  ],
+  "external_dependencies": [
+   "vFr: section 2",
+   "IUTchI: section I4",
+   "IUTchIII: Remark 3.12.4"
+  ],
   "lean_declaration": null,
-  "statement_status": "NOT_EXTRACTED",
+  "statement_status": "EXTRACTED",
   "proof_status": "EXTRACTED",
-  "obligations": [],
+  "obligations": [
+   "The passage from (C2), with eps_E of order h^{-1/2} log(h), to the form delta + * delta^{1/2} log(delta) in (i) is stated without detail; it needs h and delta comparable, which (i) obtains from the bound itself."
+  ],
   "ambiguities": [
-   "The pages of this remark were read only from the extracted text, not from a render; its hypotheses and conclusion are not extracted."
+   "Page 48: delta in this remark is log-cond_D(x_E) (log-diff_X vanishes when F_tpd = Q), not the delta = 2^12 3^3 5 d of Corollary 2.2 (ii); the remark warns of this.",
+   "Page 49, (ii): the claim limsup <= 1/2 is for abc sums in a single compactly bounded subset K_V; the remark does not state whether it holds for arbitrary abc sums."
   ],
   "cor3_12_dependency": "independent"
  },
@@ -4024,25 +4568,32 @@
   "source": {
    "paper": "Inter-universal Teichmuller Theory IV",
    "pdf_pages": "pages 50 to 51",
-   "pages_read": "text"
+   "pages_read": "renders of pages 50 and 51"
   },
-  "content": "The role of the Gaussian integral in the theory, compared with zeta functions and L-functions.",
+  "content": "On weights: the Gaussian integral int_{-infinity}^{infinity} e^{-x^2} dx = sqrt(pi) is viewed as a fundamental integral representation of a Tate semi-twist, while integral values of zeta and L-functions correspond to integral Tate twists, integral powers of 2 pi i (or of pi), the integral of d theta over S^1 equal to 2 pi, and G_m. Scheme-theoretic Hodge-Arakelov theory is a scheme-theoretic representation of a Tate semi-twist. (a) The Gaussian integral, (b) scheme-theoretic Hodge-Arakelov theory, (c) inter-universal Teichmueller theory and (d) the Riemann hypothesis are called phenomena of weight 1/2, the first three reflecting it in an exponential of a quadratic form, reminiscent of (1) Griffiths semi-transversality of the crystalline theta object, (2) the quadratic commutator of the theta group used in [EtTh], and (3) the quadratic nature of the epsilon term * delta/l + * l of Remark 1.10.5 (ii).",
   "explicit_hypotheses": [],
   "implicit_hypotheses": [],
-  "conclusion": "Remark.",
+  "conclusion": "A heuristic grouping of (a) to (d) as phenomena of weight 1/2; the only mathematical fact stated is the Gaussian integral value sqrt(pi) and the integral 2 pi of d theta over S^1.",
   "definitions_required": [],
   "results_used": [
-   "IUT4.Cor2_2"
+   "IUT4.Rem2_2_1",
+   "IUT4.Rem1_10_1",
+   "IUT4.Rem1_10_5"
   ],
   "external_dependencies": [
-   "IUTchII: Introduction, Remark 1.12.5"
+   "IUTchII: Introduction, Remark 1.12.5 (i), Remark 1.7.1, section 1",
+   "HASurII: Theorems 2.8, 2.10",
+   "EtTh",
+   "IUTchIII: Remark 2.1.1"
   ],
   "lean_declaration": null,
-  "statement_status": "NOT_EXTRACTED",
+  "statement_status": "EXTRACTED",
   "proof_status": "EXTRACTED",
-  "obligations": [],
+  "obligations": [
+   "Nothing to prove; a heuristic remark."
+  ],
   "ambiguities": [
-   "The pages of this remark were read only from the extracted text, not from a render; its hypotheses and conclusion are not extracted."
+   "Page 51: 'fundamental scheme-theoretic represention' is a misprint for 'representation'."
   ],
   "cor3_12_dependency": "independent"
  },
@@ -4050,52 +4601,69 @@
   "source": {
    "paper": "Inter-universal Teichmuller Theory IV",
    "pdf_pages": "pages 51 to 52",
-   "pages_read": "text"
+   "pages_read": "renders of pages 51 and 52"
   },
-  "content": "For unbounded d, (C2) with (iii) is a weak version of a uniform abc conjecture, restricted to K_V and with exceptional bounds depending on d.",
-  "explicit_hypotheses": [],
+  "content": "Remark 2.2.1 concerns Corollary 2.2 (ii) for elliptic curves over Q. If d is an arbitrary (unbounded) positive integer, the inequalities (C2), with Corollary 2.2 (iii), may be regarded as a weak version of the uniform ABC conjecture: weak because they are restricted to points of the compactly bounded subset K_V, and the bounds for log(q^forall) (essentially the height) on Exc_d and Exc_{eps,d} depend on d (cf. Remark 2.3.2 (i)).",
+  "explicit_hypotheses": [
+   "the situation of Corollary 2.2 (ii), (iii), with d an arbitrary positive integer"
+  ],
   "implicit_hypotheses": [],
-  "conclusion": "Remark.",
-  "definitions_required": [],
+  "conclusion": "Interpretation: (C2) with (iii) is a uniform abc type inequality restricted to K_V, with exceptional height bounds H_unif eps^{-3} eps_d^{-3} d^{4 + eps_d} + H_K depending on d.",
+  "definitions_required": [
+   "uniform ABC conjecture"
+  ],
   "results_used": [
-   "IUT4.Cor2_2"
+   "IUT4.Cor2_2.ii.C2",
+   "IUT4.Cor2_2.iii",
+   "IUT4.Rem2_2_1",
+   "IUT4.Rem2_3_2"
   ],
   "external_dependencies": [],
   "lean_declaration": null,
-  "statement_status": "NOT_EXTRACTED",
+  "statement_status": "EXTRACTED",
   "proof_status": "EXTRACTED",
-  "obligations": [],
-  "ambiguities": [
-   "The pages of this remark were read only from the extracted text, not from a render; its hypotheses and conclusion are not extracted."
+  "obligations": [
+   "Nothing to prove; the uniform ABC conjecture is named but not stated."
   ],
+  "ambiguities": [],
   "cor3_12_dependency": "conditional"
  },
  "IUT4.Rem2_2_4": {
   "source": {
    "paper": "Inter-universal Teichmuller Theory IV",
    "pdf_pages": "pages 52 to 54",
-   "pages_read": "text"
+   "pages_read": "renders of pages 52, 53 and 54"
   },
-  "content": "Analogy with p-adic Teichmueller theory: canonical Frobenius liftings, discrete versus continuous theory as l grows.",
+  "content": "Analogy with p-adic Teichmueller theory ([pOrd], [pTeich], [InpTch]). (i) The log-theta-lattice is compared with the canonical Frobenius lifting on the ordinary locus of a canonical curve over a perfect field; [pOrd] also treats the universal case over the moduli stack of hyperbolic curves with nilpotent ordinary indigenous bundles, smooth of dimension 3g - 3 + r over F_p and far from perfect. The gap between IUT and a canonical number (Remark 2.2.1 (v)) is likened to the gap between canonical curves and the non-perfect moduli stack: canonical number corresponds to modular Frobenius liftings. (ii) Non-perfectness reflects the failure of Frobenius to be an isomorphism; Frobenius corresponds to the log-link, and the * l term of Theorem 1.10 arises from the prime number theorem summing log-volumes of log-shells, which measure distortions of integral structures; l, of the order of the square root of the height by (C1), is a rough numerical representation of the moduli; these observations are said to support the view of (i). (iii) Modular Frobenius liftings live on a p-adic formal stack, not on the algebraic moduli stack; this gap is likened to the gap between compactly bounded subsets K_V (sufficiently general position, a global arithmetic ordinariness) and M_ell(Qbar), bridged in Corollary 2.3 by [GenEll] Theorem 2.1, an arithmetic analytic continuation by Belyi maps, and compared with the open immersion of [InpTch] section 2.6. (iv) The limit l -> infinity is the passage from the discrete approximation by l-torsion points to the full continuous theory, compared with Bernoulli numbers and the passage from f(x) -> f(x+1) - f(x) to d/dx, f(x+1) being e^{d/dx} f.",
   "explicit_hypotheses": [],
   "implicit_hypotheses": [],
-  "conclusion": "Remark.",
+  "conclusion": "A heuristic analogy: canonical number corresponds to modular Frobenius liftings; compactly bounded subsets correspond to ordinary loci; Corollary 2.3 via Belyi maps corresponds to analytic continuation; l -> infinity corresponds to the passage from difference to derivative operators. No assertion needing proof.",
   "definitions_required": [],
   "results_used": [
-   "IUT4.Cor2_2"
+   "IUT4.Rem2_2_1",
+   "IUT4.Rem2_2_3",
+   "IUT4.Thm1_10",
+   "IUT4.Prop1_6",
+   "IUT4.Cor2_2.ii.C1",
+   "IUT4.Cor2_3"
   ],
   "external_dependencies": [
    "pOrd",
    "pTeich",
-   "InpTch"
+   "InpTch: section 2.6",
+   "IUTchIII: Remark 1.4.1 (iii), Remark 3.12.4",
+   "GenEll: Theorem 2.1, Introduction",
+   "AbsTopIII",
+   "IUTchI: section 5, Remark 5.1.4, Remark 6.12.3 (i)",
+   "HASurI: section 1.3.4"
   ],
   "lean_declaration": null,
-  "statement_status": "NOT_EXTRACTED",
+  "statement_status": "EXTRACTED",
   "proof_status": "EXTRACTED",
-  "obligations": [],
-  "ambiguities": [
-   "The pages of this remark were read only from the extracted text, not from a render; its hypotheses and conclusion are not extracted."
+  "obligations": [
+   "Nothing to prove; a heuristic remark."
   ],
+  "ambiguities": [],
   "cor3_12_dependency": "independent"
  },
  "IUT4.Cor2_3": {
@@ -4126,8 +4694,8 @@
   "statement_status": "EXTRACTED",
   "proof_status": "BLOCKED_BY_EXTERNAL_THEOREM",
   "obligations": [
-   "Corollary 2.3 is not stated in Lean: heights, log-differents, log-conductors, curves and points of bounded degree are not formalized.",
-   "[GenEll] Theorem 2.1 (the reduction to the lambda-line) is external and not formalized.",
+   "Corollary 2.3 is not stated in Lean: heights, log-differents, log-conductors, curves and points of bounded degree are not formalized. Only its special case X = P^1_Q, D = {0, 1, infinity}, d = 1 is stated (IUT4.Cor2_3.frag.rational_points_P1_minus_three), with Mathlib's logarithmic height in place of the height attached to omega_X(D) (their agreement up to a bounded function is not formalized).",
+   "[GenEll] Theorem 2.1 (the reduction to the lambda-line) is external and not formalized. The proof derives its form (ii), on compactly bounded subsets; the special case of IUT4.Cor2_3.frag.rational_points_P1_minus_three is an instance of its form (i), so reaching it needs the direction (ii) implies (i), whose proof uses points of bounded degree over number fields and a noncritical Belyi map.",
    "The fragments check only the logical form of the last step on K_V, as abstract lemmas on real functions on an arbitrary set."
   ],
   "ambiguities": [
@@ -4137,7 +4705,8 @@
   "fragments": [
    "IUT4.Cor2_3.frag.cor2_3_on_KV",
    "IUT4.Cor2_3.frag.BDle_mono_eps",
-   "IUT4.Cor2_3.frag.BDle_of_finite_exceptions"
+   "IUT4.Cor2_3.frag.BDle_of_finite_exceptions",
+   "IUT4.Cor2_3.frag.rational_points_P1_minus_three"
   ]
  },
  "IUT4.Cor2_3.frag.cor2_3_on_KV": {
@@ -4229,6 +4798,45 @@
   "ambiguities": [],
   "cor3_12_dependency": "conditional"
  },
+ "IUT4.Cor2_3.frag.rational_points_P1_minus_three": {
+  "kind": "fragment",
+  "parent": "IUT4.Cor2_3",
+  "source": {
+   "paper": "Inter-universal Teichmuller Theory IV",
+   "pdf_pages": "pages 40 and 54 to 55",
+   "pages_read": "rendered IUT IV pages 3, 40 to 43, 54 to 56; GenEll pages 3 to 13 and its comments, pages 1 and 2"
+  },
+  "content": "Definition of the special case of the conclusion of Corollary 2.3 for X = P^1_Q, D = {0, 1, infinity} and rational points: for every eps > 0 there is C with logHeight1 x <= (1 + eps) log(ratConductor x) + C for all rational x not in {0, 1}; ratConductor x is the product of the primes dividing num x, num (x - 1) or den x.",
+  "explicit_hypotheses": [],
+  "implicit_hypotheses": [],
+  "conclusion": "A proposition (definition); not proved.",
+  "definitions_required": [
+   "Height.logHeight₁ on ℚ",
+   "ratConductor"
+  ],
+  "results_used": [],
+  "external_dependencies": [
+   "GenEll: Definition 1.2 (ii) with correction (2) (page 5): direction of the relation of bounded discrepancy; read",
+   "GenEll: page 4 and Proposition 1.4 (iii), Remark 1.4.1 (pages 6 and 8): normalized height and its bounded discrepancy class; read",
+   "GenEll: Definition 1.5 (iii) (page 8): log-different, 0 at rational points; read",
+   "GenEll: Definition 1.5 (iv) with correction (12), Remark 1.5.1 (pages 8 and 9): log-conductor as the normalized degree of the reduced pullback of D, supported at finite primes; read"
+  ],
+  "lean_declaration": "IUT.ABCSpecialization.VojtaLineMinusThreePointsRational",
+  "lemmas": [
+   "IUT.ABCSpecialization.ratConductor",
+   "IUT.ABCSpecialization.RationalPointBoundFor",
+   "IUT.ABCSpecialization.VojtaLineMinusThreePointsUnitInterval"
+  ],
+  "covers": "Page 54, display of Corollary 2.3, for one curve (X = P^1_Q, D = {0, 1, infinity}) and d = 1 (rational points). The log-different is 0 (GenEll Definition 1.5 (iii), page 8); log(ratConductor x) is exactly the log-conductor for the model P^1_Z with D the closure of the sections 0, 1, infinity (GenEll Definition 1.5 (iv), page 8), and any other model changes it by a bounded function (Remark 1.5.1, pages 8 and 9). The same statement restricted to 0 < x < 1 is VojtaLineMinusThreePointsUnitInterval.",
+  "not_covered": "Number fields of degree d > 1, compactly bounded subsets, general hyperbolic curves, the proof. The identification of the height attached to O(1) on P^1 (GenEll page 4, with a metrized model) with log max(|num x|, den x) up to a bounded function is a standard computation that GenEll does not contain and that is not formalized; the statement uses Mathlib's logarithmic height.",
+  "statement_status": "STATEMENT_FORMALIZED",
+  "proof_status": "NOT_EXTRACTED",
+  "obligations": [],
+  "ambiguities": [
+   "The height ht_{omega_X(D)} is defined in GenEll (page 4) through an arithmetic line bundle on a model over Z; its value at a rational point a/c as log max(|a|, |c|) up to a bounded function is not stated in GenEll and is taken as the standard computation (for the Fubini-Study metric used on GenEll page 7 the value is (1/2) log(a^2 + c^2)).",
+   "The log-conductor depends on the model over Z; ratConductor is exact for P^1_Z with the three sections 0, 1, infinity, a pullback computation not quoted from GenEll. Other models differ at finitely many primes (GenEll Remark 1.5.1)."
+  ]
+ },
  "IUT4.Rem2_3_1": {
   "source": {
    "paper": "Inter-universal Teichmuller Theory IV",
@@ -4290,25 +4898,36 @@
   "source": {
    "paper": "Inter-universal Teichmuller Theory IV",
    "pdf_pages": "pages 56 to 57",
-   "pages_read": "text"
+   "pages_read": "renders of pages 56 and 57"
   },
-  "content": "(i) Stronger estimates are possible; (ii) the constant 1 in Corollary 2.3 cannot be improved (examples of [Mss]).",
-  "explicit_hypotheses": [],
+  "content": "(i) Stronger versions of the estimates of Theorem 1.10 and Corollaries 2.2, 2.3 can be obtained with more care, but are not pursued. (ii) The constant 1 in the display of Corollary 2.3 cannot be improved (examples of [Mss]; Remark 1.10.5 (ii), (iii)). This is related to the breakdown of the theory if the first power of the etale theta function is replaced by an N-th power, N >= 2 (Step (xi) of the proof of IUT III Corollary 3.12; IUT III Remark 3.12.1 (ii)), which corresponds to replacing each Tate curve at V^bad by the Tate curve with N-th power q-parameter, an isogeny as in [GenEll] Lemma 3.5; the proof of that lemma shows the global height is essentially unchanged, up to a small discrepancy, under such isogenies, an invariance that is also essential in [Falt].",
+  "explicit_hypotheses": [
+   "the statement of Corollary 2.3"
+  ],
   "implicit_hypotheses": [],
-  "conclusion": "Remark.",
+  "conclusion": "(i) Stronger estimates are possible but not given. (ii) The factor 1 multiplying (log-diff_X + log-cond_D) in Corollary 2.3 cannot be replaced by a smaller constant, by the examples of [Mss]; the remark links this to the failure of the theory for N-th powers of the etale theta function and to invariance of heights under isogeny.",
   "definitions_required": [],
   "results_used": [
-   "IUT4.Cor2_3"
+   "IUT4.Cor2_3",
+   "IUT4.Thm1_10",
+   "IUT4.Cor2_2",
+   "IUT4.Rem1_10_5",
+   "IUT3.Cor3_12"
   ],
   "external_dependencies": [
-   "Mss"
+   "Mss",
+   "GenEll: Lemma 3.5",
+   "IUTchIII: Corollary 3.12 (proof, Step (xi)), Remark 3.12.1 (ii)",
+   "Falt"
   ],
   "lean_declaration": null,
-  "statement_status": "NOT_EXTRACTED",
+  "statement_status": "EXTRACTED",
   "proof_status": "EXTRACTED",
-  "obligations": [],
+  "obligations": [
+   "(ii), the optimality of the constant 1, rests on the examples of [Mss], which are not reproduced; (i) is unsubstantiated by design."
+  ],
   "ambiguities": [
-   "The pages of this remark were read only from the extracted text, not from a render; its hypotheses and conclusion are not extracted."
+   "Page 56: 'the constant 1' is read as the coefficient of (log-diff_X + log-cond_D) in (1 + eps)(log-diff_X + log-cond_D); the remark does not restate the inequality."
   ],
   "cor3_12_dependency": "conditional"
  },
@@ -4316,25 +4935,46 @@
   "source": {
    "paper": "Inter-universal Teichmuller Theory IV",
    "pdf_pages": "pages 57 to 63",
-   "pages_read": "text"
+   "pages_read": "renders of pages 57 to 63"
   },
-  "content": "Corollary 2.3 as an effective Mordell conjecture; comparison of the ingredients with Faltings' proof.",
+  "content": "Corollary 2.3 is an effective version of the Mordell conjecture; the remark compares the ingredients of its proof (in effect, of the whole series) with those of [Falt] (discussions with I. Fesenko, summer 2015). (i) A rough list for [Falt]: (a) geometry of numbers, heights, Hermite-Minkowski; (b) global class field theory, dissected following [Lang1] (Weber's approach) into (b-1) local class field theory, (b-2) global density of primes (universal norm index inequality), (b-3) geometry of numbers giving the unit theorem, (b-4) global reciprocity (existence of a conductor for the Artin symbol), (b-5) Kummer theory; (c) p-adic Hodge-Tate decompositions; (d) finite flat group schemes; (e) isogenies and Tate modules; (f) polarizations; (g) logarithmic geometry of toroidal compactifications. (ii) Each is matched with an aspect of IUT: (a), (b-3) with nonzero global integers being roots of unity and with arithmetic degrees and global realified Frobenioids; (b-1) with p-adic absolute anabelian geometry; (b-2) with the prime number theorem (Propositions 1.6, 2.1 (ii)); (b-4) with Q_{>0} intersect Zhat^x = {1} in cyclotomic rigidity; (b-5) with Kummer theory; (c) with [pGC]; (d) with ramification computations for log-shells (Propositions 1.1 to 1.4); (e), (f) with finite etale coverings, Belyi maps, and commutators of theta groups; (g) with combinatorial anabelian geometry. (iii) Summary: aspects of [Falt] are distant abelian, arithmetically holomorphic ancestors of the anabelian, multiradial, mono-analytic theory of IUT; under arithmetic holomorphic structure a Frobenius morphism on a number field (multiplying arithmetic degrees by a factor > 1) cannot exist, while IUT asserts that one can be constructed canonically after dismantling that structure. (iv) The difference is mirrored by global density of primes versus the prime number theorem, which treats primes one by one. (v) Global reciprocity relates local units and local value groups at distinct primes, incompatible with the splittings used in IUT (prime-strips). (vi) Kummer-theoretic isomorphisms are strongly covariantly functorial, while reciprocity maps are not and are ill-suited to evaluating special functions at special points; the price in IUT is the nontrivial cyclotomic rigidity algorithms; local class field theory gives only uniradial algorithms. (vii) Comparison with Kronecker's Jugendtraum and Hilbert's twelfth problem and [Pano]; the author suggests the ideas of IUT resemble late nineteenth and early twentieth century mathematics, and that the course of later mathematics was one possible choice among many.",
   "explicit_hypotheses": [],
   "implicit_hypotheses": [],
-  "conclusion": "Remark.",
+  "conclusion": "An informal comparison of the ingredients of [Falt] with those of IUT, organized as (i) to (vii); its one substantive claim, that Corollary 2.3 is an effective version of the Mordell conjecture, is stated without argument, and the author disclaims completeness or rigor of the list.",
   "definitions_required": [],
   "results_used": [
-   "IUT4.Cor2_3"
+   "IUT4.Cor2_3",
+   "IUT4.Prop1_6",
+   "IUT4.Prop2_1",
+   "IUT4.Prop1_1",
+   "IUT4.Prop1_2",
+   "IUT4.Prop1_3",
+   "IUT4.Prop1_4",
+   "IUT4.Rem2_3_2"
   ],
   "external_dependencies": [
-   "Falt"
+   "Falt",
+   "Lang1: Chapters V, VIII, IX, X, XI",
+   "AbsTopIII: Corollary 1.10 (i)",
+   "IUTchIII: Proposition 3.10, Remarks 2.3.2, 2.3.3, 3.12.1 (iii), 3.12.2, Figs. 2.1, 3.7",
+   "IUTchI: Example 5.1 (v), section 2, Fig. I1.2",
+   "IUTchII: Proposition 1.3 (ii)",
+   "pGC",
+   "EtTh",
+   "SemiAnbd",
+   "GenEll: Lemma 3.5",
+   "FrdI: section I3",
+   "Cusp",
+   "Pano: sections 3, 4"
   ],
   "lean_declaration": null,
-  "statement_status": "NOT_EXTRACTED",
+  "statement_status": "EXTRACTED",
   "proof_status": "EXTRACTED",
-  "obligations": [],
+  "obligations": [
+   "The sense in which Corollary 2.3 is an effective Mordell conjecture (via [GenEll] and Belyi maps) is not explained here; the remainder is a heuristic comparison with nothing to prove."
+  ],
   "ambiguities": [
-   "The pages of this remark were read only from the extracted text, not from a render; its hypotheses and conclusion are not extracted."
+   "Page 57: 'attibuted' is a misprint for 'attributed'; page 59: 'may regarded' lacks 'be'; page 60: 'aggregrations' is a misprint."
   ],
   "cor3_12_dependency": "independent"
  },
@@ -4342,54 +4982,111 @@
   "source": {
    "paper": "Inter-universal Teichmuller Theory IV",
    "pdf_pages": "page 63",
-   "pages_read": "text"
+   "pages_read": "render of page 63"
   },
-  "content": "Analogy with Bogomolov's proof of the geometric Szpiro conjecture.",
+  "content": "Aspects of IUT are said to be substantially reminiscent of, and arithmetic analogues of, the theory around Bogomolov's proof of the geometric Szpiro conjecture ([ABKP], [Zh]), which may serve as an elementary guide or blueprint for IUT; the connection was brought to the author's attention by I. Fesenko (December 2014 to January 2015) and is treated in [BogIUT].",
   "explicit_hypotheses": [],
   "implicit_hypotheses": [],
-  "conclusion": "Remark.",
+  "conclusion": "A heuristic analogy between IUT and Bogomolov's proof of the geometric Szpiro conjecture, deferred to [BogIUT]. No assertion needing proof.",
   "definitions_required": [],
   "results_used": [
    "IUT4.Cor2_3"
   ],
   "external_dependencies": [
    "ABKP",
-   "Zh"
+   "Zh",
+   "BogIUT"
   ],
   "lean_declaration": null,
-  "statement_status": "NOT_EXTRACTED",
+  "statement_status": "EXTRACTED",
   "proof_status": "EXTRACTED",
-  "obligations": [],
-  "ambiguities": [
-   "The pages of this remark were read only from the extracted text, not from a render; its hypotheses and conclusion are not extracted."
+  "obligations": [
+   "Nothing to prove; a heuristic remark."
   ],
+  "ambiguities": [],
   "cor3_12_dependency": "independent"
  },
  "IUT4.Rem2_3_5": {
   "source": {
    "paper": "Inter-universal Teichmuller Theory IV",
-   "pdf_pages": "pages 63 to 67",
-   "pages_read": "text"
+   "pdf_pages": "pages 63 to 66",
+   "pages_read": "renders of pages 63 to 67 (the remark ends on page 66; Section 3 begins on page 67)"
   },
-  "content": "Question whether the ideas give a proof of Mordell over number fields without Belyi maps; comparison with Parshin.",
+  "content": "[Par] proves the Mordell conjecture over complex function fields by metric estimates of displacements under the fundamental group of the base. Question (F. Voloch, September 2015): can part of IUT give a proof of Mordell over number fields without Belyi maps, as used in Corollary 2.3 via [GenEll] Theorem 2.1? The author's answer, as far as he can see, is no. (i) Starting from the Schwarz lemma and Kobayashi distance ([Lang2] Chapter I): (PB1) Parshin's proof uses the holomorphic (Kobayashi, Schwarz-theoretic) geometry of a two-dimensional complete hyperbolic manifold, Bogomolov's the real analytic symplectic geometry of the upper half-plane acting on a universal cover of S^1; this gap parallels the arithmetically holomorphic [Falt] versus the arithmetically quasi-conformal IUT (Remark 2.3.3 (iii)), so expecting a new Mordell proof from IUT is called unnatural. (ii) (PB2) Parshin uses many holomorphic maps from the disc D, Bogomolov a fixed copy of D; (PB3) Parshin's method gives rough finiteness for any genus >= 2, Bogomolov's explicit inequalities for elliptic curves; (PB4) Bogomolov's estimates depend on unipotent elements or commutators, Parshin's are uniform in small elements. (iii) The Schwarz-theoretic geometry of D has a natural analogue in IUT via categories of localizations ([GeoAnbd], [AbsTopI], [AbsTopII]), culminating in Belyi cuspidalizations: Belyi maps play the role of arithmetic analytic continuation. Hence any search in IUT for a Mordell proof or an analogue of Parshin's proof appears to lead to some application of Belyi maps.",
   "explicit_hypotheses": [],
   "implicit_hypotheses": [],
-  "conclusion": "Remark.",
-  "definitions_required": [],
+  "conclusion": "A negative heuristic answer: within IUT, a proof of the Mordell conjecture over number fields avoiding Belyi maps does not appear possible to the author; supported by the contrasts (PB1) to (PB4) and the role of Belyi maps as arithmetic analytic continuation. Not a theorem.",
+  "definitions_required": [
+   "Kobayashi distance",
+   "Belyi map",
+   "Belyi cuspidalization",
+   "categories of localizations"
+  ],
   "results_used": [
-   "IUT4.Cor2_3"
+   "IUT4.Cor2_3",
+   "IUT4.Rem2_3_3",
+   "IUT4.Rem2_3_4",
+   "IUT4.Rem2_2_4"
   ],
   "external_dependencies": [
-   "Par"
+   "Par",
+   "Lang2: Chapter I, sections 1, 2",
+   "BogIUT",
+   "GenEll: Theorem 2.1",
+   "GeoAnbd: section 2, Introduction",
+   "AbsTopI: section 4",
+   "AbsTopII: section 3",
+   "AbsTopIII: section 1",
+   "IUTchI: Remark 5.1.4",
+   "Falt"
   ],
   "lean_declaration": null,
-  "statement_status": "NOT_EXTRACTED",
+  "statement_status": "EXTRACTED",
   "proof_status": "EXTRACTED",
-  "obligations": [],
+  "obligations": [
+   "Nothing to prove; the answer 'no' is the author's assessment, explicitly qualified 'as far as the author can see'."
+  ],
   "ambiguities": [
-   "The pages of this remark were read only from the extracted text, not from a render; its hypotheses and conclusion are not extracted."
+   "Page 65: 'applied to obtained' is a misprint for 'applied to obtain'."
   ],
   "cor3_12_dependency": "independent"
+ },
+ "IUT4.Sec3.Universes": {
+  "source": {
+   "paper": "Inter-universal Teichmuller Theory IV",
+   "pdf_pages": "pages 67 to 68",
+   "pages_read": "renders of pages 67 and 68"
+  },
+  "content": "Setting of Section 3: ZFC-models (models of the nine Zermelo-Fraenkel axioms and choice); a Grothendieck universe V is a set that is transitive, contains N, and is closed under power sets, unions of members, and images of surjections from members onto subsets of V; a V-set is an element of V. The ZFC-models used are typically those of universes inside an ambient ZFC-model satisfying the existence axiom (dagger^G): every set lies in some universe (a ZFCG-model). Consequence proved on page 67: for any set-indexed family of universes V_i there is a universe V with V_i in V for all i (apply (dagger^G) to the set {V_i} and use transitivity), so infinite ascending chains V_0 in V_1 in ... in V exist, while the axiom of foundation forbids infinite descending chains. Every set-theoretic formula used is assumed absolute: its validity for sets in a universe V is the same relative to V and to any universe W with V in W.",
+  "explicit_hypotheses": [
+   "an ambient ZFC-model satisfying the existence axiom (dagger^G)"
+  ],
+  "implicit_hypotheses": [],
+  "conclusion": "Definitions of ZFC-model, universe, V-set, ZFCG-model; the proposition that any set-indexed family of universes is contained (as elements) in one universe, hence infinite ascending chains of universes exist; the absoluteness convention for set-theoretic formulas.",
+  "definitions_required": [
+   "ZFC-model",
+   "Grothendieck universe",
+   "ZFCG-model",
+   "absolute set-theoretic formula"
+  ],
+  "results_used": [],
+  "external_dependencies": [
+   "Drk: Chapter 1, sections 2 and 3; Chapter 3, Definition 4.2",
+   "McLn: pages 193 and 194",
+   "Ffmn"
+  ],
+  "lean_declaration": null,
+  "statement_status": "EXTRACTED",
+  "proof_status": "EXTRACTED",
+  "obligations": [
+   "The existence of ZFCG-models is not discussed; the paper defers to [Ffmn] and states that precise statements lie beyond its scope (page 68).",
+   "The absoluteness of every set-theoretic formula used is an assumption of the section, not verified for any particular formula."
+  ],
+  "ambiguities": [
+   "Page 68: the absoluteness proviso is imposed globally on 'every set-theoretic formula that appears'; which formulas of Sections 1 to 2 or of IUT I to III are meant to satisfy it is not specified."
+  ],
+  "cor3_12_dependency": "independent",
+  "kind": "convention"
  },
  "IUT4.Def3_1": {
   "source": {
@@ -4422,6 +5119,320 @@
   "ambiguities": [],
   "cor3_12_dependency": "independent"
  },
+ "IUT4.Def3_1.i": {
+  "source": {
+   "paper": "Inter-universal Teichmuller Theory IV",
+   "pdf_pages": "page 68",
+   "pages_read": "render of page 68"
+  },
+  "content": "A 0-species S_0 is a collection of conditions given by a set-theoretic formula Phi_0(E) in an ordered collection E = (E_1, ..., E_{n_0}) of indeterminate sets, n_0 >= 1 (a collection of species-data). A 0-specimen is a specific n_0-tuple E of sets in some specific ZFC-model satisfying Phi_0(E), written E in S_0. S_0 is 0-small if in every ZFC-model its 0-specimens form a set.",
+  "explicit_hypotheses": [
+   "Phi_0 a set-theoretic formula (absolute in the sense of page 68)",
+   "n_0 >= 1"
+  ],
+  "implicit_hypotheses": [],
+  "conclusion": "Definitions of 0-species, collection of species-data, 0-specimen, 0-small.",
+  "definitions_required": [
+   "IUT4.Sec3.Universes",
+   "set-theoretic formula",
+   "ZFC-model"
+  ],
+  "results_used": [],
+  "external_dependencies": [],
+  "lean_declaration": null,
+  "statement_status": "EXTRACTED",
+  "proof_status": "NOT_EXTRACTED",
+  "obligations": [
+   "A definition: nothing to prove. Species are not formalized."
+  ],
+  "ambiguities": [
+   "Page 68: a 0-specimen lives in 'some specific ZFC-model'; the definition does not fix how specimens in different ZFC-models are compared except through model-free specimens of (iii)."
+  ],
+  "cor3_12_dependency": "independent"
+ },
+ "IUT4.Def3_1.ii": {
+  "source": {
+   "paper": "Inter-universal Teichmuller Theory IV",
+   "pdf_pages": "pages 68 to 69",
+   "pages_read": "renders of pages 68 and 69"
+  },
+  "content": "A 1-species S_1 acting on a 0-species S_0 is a pair of set-theoretic formulas: (a) Phi_1(E, E', F) in two collections of species-data E, E' for S_0 and an n_1-tuple F of indeterminate sets (written F : E -> E'); a 1-specimen is a triple (E, E', F) in a ZFC-model satisfying Phi_1, with domain E and codomain E'; (b) Phi_{1o1}(E, E', E'', F, F', F'') defining F'' as a composite of F with F'. Required in every ZFC-model: (c) any two composable 1-specimens have a unique composite; (d) composition is associative; (e) every 0-specimen E has a (necessarily unique) identity 1-specimen id_E that is a two-sided unit for composition. S_1 is 1-small if in every ZFC-model the 1-specimens E -> E' between two given 0-specimens form a set.",
+  "explicit_hypotheses": [
+   "S_0 a 0-species",
+   "Phi_1, Phi_{1o1} set-theoretic formulas",
+   "n_1 >= 1"
+  ],
+  "implicit_hypotheses": [],
+  "conclusion": "Definitions of 1-species acting on S_0, 1-specimen, domain, codomain, composite (with existence, uniqueness, associativity, identities required in each ZFC-model), 1-small.",
+  "definitions_required": [
+   "IUT4.Sec3.Universes",
+   "set-theoretic formula",
+   "ZFC-model",
+   "IUT4.Def3_1.i"
+  ],
+  "results_used": [],
+  "external_dependencies": [],
+  "lean_declaration": null,
+  "statement_status": "EXTRACTED",
+  "proof_status": "NOT_EXTRACTED",
+  "obligations": [
+   "A definition: nothing to prove. Species are not formalized."
+  ],
+  "ambiguities": [
+   "Page 69: the identity 1-specimen is said to be necessarily unique; this follows from (e) in the usual way."
+  ],
+  "cor3_12_dependency": "independent"
+ },
+ "IUT4.Def3_1.iii": {
+  "source": {
+   "paper": "Inter-universal Teichmuller Theory IV",
+   "pdf_pages": "page 69",
+   "pages_read": "render of page 69"
+  },
+  "content": "A species S = (S_0, S_1) is a 0-species with a 1-species acting on it. i-specimens of S are i-specimens of S_i; 0-specimens are species-objects and 1-specimens species-morphisms; S is i-small if S_i is. A species-morphism F : E -> E' is a species-isomorphism if there is F' : E' -> E with both composites identities (E, E' are then species-isomorphic); a species-automorphism has equal domain and codomain. A model-free i-specimen is one given by a set-theoretic formula that determines the same i-specimen relative to the ZFC-models of V_1 and V_2 whenever V_1 in V_2 are universes of some ZFC-model.",
+  "explicit_hypotheses": [
+   "S_0 a 0-species and S_1 a 1-species acting on it"
+  ],
+  "implicit_hypotheses": [],
+  "conclusion": "Definitions of species, species-object, species-morphism, i-small, species-isomorphism, species-isomorphic, species-automorphism, model-free specimen; the observation that composites of species-isomorphisms are species-isomorphisms (stated as immediate).",
+  "definitions_required": [
+   "IUT4.Sec3.Universes",
+   "set-theoretic formula",
+   "ZFC-model",
+   "IUT4.Def3_1.i",
+   "IUT4.Def3_1.ii"
+  ],
+  "results_used": [],
+  "external_dependencies": [],
+  "lean_declaration": null,
+  "statement_status": "EXTRACTED",
+  "proof_status": "NOT_EXTRACTED",
+  "obligations": [
+   "A definition: nothing to prove, except the stated observation on composites of species-isomorphisms. Species are not formalized."
+  ],
+  "ambiguities": [],
+  "cor3_12_dependency": "independent"
+ },
+ "IUT4.Def3_1.iv": {
+  "source": {
+   "paper": "Inter-universal Teichmuller Theory IV",
+   "pdf_pages": "page 70",
+   "pages_read": "render of page 70"
+  },
+  "content": "The category determined by a species S in a ZFC-model has the species-objects of S in that model as objects and its species-morphisms as arrows; the paper notes that this description does determine a category.",
+  "explicit_hypotheses": [
+   "S a species; a fixed ZFC-model"
+  ],
+  "implicit_hypotheses": [],
+  "conclusion": "Definition of the category determined by S in a ZFC-model, with the assertion (immediate from (ii) (c), (d), (e)) that it is a category.",
+  "definitions_required": [
+   "IUT4.Sec3.Universes",
+   "set-theoretic formula",
+   "ZFC-model",
+   "IUT4.Def3_1.i",
+   "IUT4.Def3_1.ii",
+   "IUT4.Def3_1.iii"
+  ],
+  "results_used": [],
+  "external_dependencies": [],
+  "lean_declaration": null,
+  "statement_status": "EXTRACTED",
+  "proof_status": "NOT_EXTRACTED",
+  "obligations": [
+   "A definition: nothing to prove, except that the data form a category, which follows from (ii) (c), (d), (e). Species are not formalized."
+  ],
+  "ambiguities": [],
+  "cor3_12_dependency": "independent"
+ },
+ "IUT4.Rem3_1_1": {
+  "source": {
+   "paper": "Inter-universal Teichmuller Theory IV",
+   "pdf_pages": "page 70",
+   "pages_read": "render of page 70"
+  },
+  "content": "Familiar descriptions of N (for instance [Drk] Chapter 2, Definitions 2.3, 2.9), Z, Q, Q_p or R yield species whose only species-morphisms are identities and which have a unique species-object in each ZFC-model. These differ from, for instance, the species of monoids isomorphic to N with monoid isomorphisms, which has many species-objects in any ZFC-model, all species-isomorphic. The set-theoretic formula defining the former species N may be used to define a model-free species-object N of the latter species.",
+  "explicit_hypotheses": [
+   "the descriptions of N, Z, Q, Q_p, R as set-theoretic formulas"
+  ],
+  "implicit_hypotheses": [],
+  "conclusion": "The species N, Z, Q, Q_p, R (with identity morphisms only) have exactly one species-object per ZFC-model; the species of monoids isomorphic to N has many species-objects, all species-isomorphic; the description of N gives a model-free species-object of the latter. Stated without proof.",
+  "definitions_required": [
+   "IUT4.Def3_1.iii"
+  ],
+  "results_used": [
+   "IUT4.Def3_1"
+  ],
+  "external_dependencies": [
+   "Drk: Chapter 2, Definitions 2.3, 2.9"
+  ],
+  "lean_declaration": null,
+  "statement_status": "EXTRACTED",
+  "proof_status": "EXTRACTED",
+  "obligations": [
+   "Uniqueness of the species-object in each ZFC-model and model-freeness of the description of N are asserted, not checked."
+  ],
+  "ambiguities": [],
+  "cor3_12_dependency": "independent"
+ },
+ "IUT4.Rem3_1_2": {
+  "source": {
+   "paper": "Inter-universal Teichmuller Theory IV",
+   "pdf_pages": "pages 70 to 71",
+   "pages_read": "renders of pages 70 and 71"
+  },
+  "content": "(i) The essence of a species lies in its set-theoretic formulas (programs, software, a deterministic algorithm in a term suggested by Minhyong Kim), not in the sets occurring in particular ZFC-models. (ii) Analogy (from discussions with F. Kato): a fixed model of set theory is to the species-theoretic approach as varieties are to schemes, and as groups of specific matrices are to abstract groups; the category of a species in a ZFC-model is a specific representation of an abstract species. (iii) Identifying programs with the same output leads to an indeterminacy up to internal modifications of programs, with intractable problems beyond the scope of the paper.",
+  "explicit_hypotheses": [],
+  "implicit_hypotheses": [],
+  "conclusion": "Heuristic explanation of the notion of species; no assertion needing proof.",
+  "definitions_required": [],
+  "results_used": [
+   "IUT4.Def3_1"
+  ],
+  "external_dependencies": [],
+  "lean_declaration": null,
+  "statement_status": "EXTRACTED",
+  "proof_status": "EXTRACTED",
+  "obligations": [
+   "Nothing to prove; an explanatory remark."
+  ],
+  "ambiguities": [],
+  "cor3_12_dependency": "independent"
+ },
+ "IUT4.Rem3_1_3": {
+  "source": {
+   "paper": "Inter-universal Teichmuller Theory IV",
+   "pdf_pages": "page 71",
+   "pages_read": "render of page 71"
+  },
+  "content": "(i) The set-theoretic formulas of a species are usually not written out; they are those of the conventional descriptions of the objects, and one must check these are well defined and do not depend on arbitrary choices not describable by set-theoretic formulas. (ii) Data given by set-theoretic formulas carry a canonicality not shared by objects constructed using the axiom of choice in a particular ZFC-model; species thus let one measure the deviation of non-canonical objects from a canonical norm.",
+  "explicit_hypotheses": [],
+  "implicit_hypotheses": [],
+  "conclusion": "A convention: the formulas are the conventional ones, subject to a well-definedness and choice-independence check by the reader; and a heuristic on canonicality.",
+  "definitions_required": [],
+  "results_used": [
+   "IUT4.Def3_1"
+  ],
+  "external_dependencies": [],
+  "lean_declaration": null,
+  "statement_status": "EXTRACTED",
+  "proof_status": "EXTRACTED",
+  "obligations": [
+   "The check that conventional descriptions are well defined and choice-free is delegated to the reader; it is not carried out for the species used in IUT."
+  ],
+  "ambiguities": [
+   "Page 71: no criterion is given for when a construction counts as depending on 'arbitrary choices that are not describable via well-defined set-theoretic formulas'."
+  ],
+  "cor3_12_dependency": "independent"
+ },
+ "IUT4.Rem3_1_4": {
+  "source": {
+   "paper": "Inter-universal Teichmuller Theory IV",
+   "pdf_pages": "page 71",
+   "pages_read": "render of page 71"
+  },
+  "content": "Since a species is given by set-theoretic formulas, the notion it defines is unaffected by extensions of the universe, such as the ascending chain V_0 in V_1 in ... in V of page 67. This is the sense of the term inter-universal: inter-universal geometry relates geometries occurring in distinct universes.",
+  "explicit_hypotheses": [
+   "set-theoretic formulas absolute in the sense of page 68"
+  ],
+  "implicit_hypotheses": [],
+  "conclusion": "A species is immune to extensions of the universe; this explains the term 'inter-universal'. The immunity rests on the absoluteness convention of page 68.",
+  "definitions_required": [
+   "IUT4.Sec3.Universes"
+  ],
+  "results_used": [
+   "IUT4.Def3_1"
+  ],
+  "external_dependencies": [],
+  "lean_declaration": null,
+  "statement_status": "EXTRACTED",
+  "proof_status": "EXTRACTED",
+  "obligations": [
+   "The immunity is a consequence of the absoluteness assumption of page 68, not proved independently."
+  ],
+  "ambiguities": [],
+  "cor3_12_dependency": "independent"
+ },
+ "IUT4.Rem3_1_5": {
+  "source": {
+   "paper": "Inter-universal Teichmuller Theory IV",
+   "pdf_pages": "page 71",
+   "pages_read": "render of page 71"
+  },
+  "content": "Remarks 3.1.2, 3.1.3, 3.1.4 apply equally to mutations, morphisms of mutations, mutation-histories, observables and cores (Definition 3.3).",
+  "explicit_hypotheses": [],
+  "implicit_hypotheses": [],
+  "conclusion": "The remarks on set-theoretic formulas extend to the notions of Definition 3.3.",
+  "definitions_required": [],
+  "results_used": [
+   "IUT4.Rem3_1_2",
+   "IUT4.Rem3_1_3",
+   "IUT4.Rem3_1_4",
+   "IUT4.Def3_3"
+  ],
+  "external_dependencies": [],
+  "lean_declaration": null,
+  "statement_status": "EXTRACTED",
+  "proof_status": "EXTRACTED",
+  "obligations": [
+   "Nothing to prove."
+  ],
+  "ambiguities": [],
+  "cor3_12_dependency": "independent"
+ },
+ "IUT4.Ex3_2": {
+  "source": {
+   "paper": "Inter-universal Teichmuller Theory IV",
+   "pdf_pages": "page 72",
+   "pages_read": "render of page 72"
+  },
+  "content": "Small categories, with isomorphism classes of covariant functors as morphisms, form a species: a category as a set of arrows with composition relations satisfying properties; a functor as the graph of its map on arrows; an isomorphism class of functors as a collection of such graphs. Dictionaries: 0-species with the notion of category, 1-species with the notion of isomorphism class of functors; 0-specimen with a particular small category, 1-specimen with a particular isomorphism class of functors.",
+  "explicit_hypotheses": [
+   "small categories; covariant functors considered up to isomorphism"
+  ],
+  "implicit_hypotheses": [],
+  "conclusion": "The notions of small category and isomorphism class of functors form a species, and species-isomorphisms between its species-objects correspond to isomorphism classes of equivalences of categories (stated as easily verified).",
+  "definitions_required": [
+   "IUT4.Def3_1.iii"
+  ],
+  "results_used": [
+   "IUT4.Def3_1"
+  ],
+  "external_dependencies": [],
+  "lean_declaration": null,
+  "statement_status": "EXTRACTED",
+  "proof_status": "EXTRACTED",
+  "obligations": [
+   "The set-theoretic formulas are not written out; that composition of isomorphism classes of functors is well defined and that species-isomorphisms are exactly isomorphism classes of equivalences is asserted as easily verified."
+  ],
+  "ambiguities": [
+   "Page 72: the sentence speaks of 'species-isomorphisms between 0-species'; it is read as species-isomorphisms between species-objects (0-specimens), i.e. between categories."
+  ],
+  "cor3_12_dependency": "independent"
+ },
+ "IUT4.Rem3_2_1": {
+  "source": {
+   "paper": "Inter-universal Teichmuller Theory IV",
+   "pdf_pages": "page 72",
+   "pages_read": "render of page 72"
+  },
+  "content": "In Example 3.2 one could define 2-species and 2-specimens using isomorphisms of functors and take functors (not isomorphism classes) as the 1-species, and more generally n-species for n >= 1; this is not done because it would add unnecessary complexity, so functors are taken up to isomorphism.",
+  "explicit_hypotheses": [],
+  "implicit_hypotheses": [],
+  "conclusion": "A design choice: species are truncated at level 1, with functors up to isomorphism; higher n-species are possible but not used.",
+  "definitions_required": [],
+  "results_used": [
+   "IUT4.Ex3_2"
+  ],
+  "external_dependencies": [],
+  "lean_declaration": null,
+  "statement_status": "EXTRACTED",
+  "proof_status": "EXTRACTED",
+  "obligations": [
+   "Nothing to prove."
+  ],
+  "ambiguities": [],
+  "cor3_12_dependency": "independent"
+ },
  "IUT4.Def3_3": {
   "source": {
    "paper": "Inter-universal Teichmuller Theory IV",
@@ -4450,6 +5461,430 @@
    "A definition: nothing to prove, except the observation in (iii). Mutations are not formalized."
   ],
   "ambiguities": [],
+  "cor3_12_dependency": "independent"
+ },
+ "IUT4.Def3_3.i": {
+  "source": {
+   "paper": "Inter-universal Teichmuller Theory IV",
+   "pdf_pages": "pages 72 to 73",
+   "pages_read": "renders of pages 72 and 73"
+  },
+  "content": "A mutation M : S ~> S' between species is a pair of set-theoretic formulas: (a) Psi_0(E, E') in species-data for S_0 and S'_0, such that for each E in S_0 in a ZFC-model there is a unique E' in S'_0 with Psi_0(E, E'), written M(E); (b) Psi_1(E, E', F, F') such that for each species-morphism F : E -> E' of S there is a unique F' : M(E) -> M(E') of S' with Psi_1, written M(F); F -> M(F) must respect composites and identities. In a fixed ZFC-model, M determines a functor between the categories determined by S and S'. Composition and identity mutations are evident.",
+  "explicit_hypotheses": [
+   "S = (S_0, S_1), S' = (S'_0, S'_1) species"
+  ],
+  "implicit_hypotheses": [],
+  "conclusion": "Definition of mutation, with the consequence that in each ZFC-model a mutation gives a functor; composition and identity mutations.",
+  "definitions_required": [
+   "IUT4.Def3_1.iii"
+  ],
+  "results_used": [],
+  "external_dependencies": [],
+  "lean_declaration": null,
+  "statement_status": "EXTRACTED",
+  "proof_status": "NOT_EXTRACTED",
+  "obligations": [
+   "A definition; that M is a functor in each ZFC-model is immediate. Mutations are not formalized."
+  ],
+  "ambiguities": [],
+  "cor3_12_dependency": "independent"
+ },
+ "IUT4.Def3_3.ii": {
+  "source": {
+   "paper": "Inter-universal Teichmuller Theory IV",
+   "pdf_pages": "page 73",
+   "pages_read": "render of page 73"
+  },
+  "content": "A morphism of mutations Z : M -> M' (M, M' : S ~> S') is a set-theoretic formula Xi(E, F') such that for each species-object E of S there is a unique F' : M(E) -> M'(E) of S' with Xi, written Z(E), and for every species-morphism F : E_1 -> E_2 of S, M'(F) o Z(E_1) = Z(E_2) o M(F). In a fixed ZFC-model this is a natural transformation. Composition and identities are evident. Z is an isomorphism of mutations if every Z(E) is a species-isomorphism; equivalently (verified immediately) Z has a two-sided inverse morphism of mutations.",
+  "explicit_hypotheses": [
+   "M, M' : S ~> S' mutations"
+  ],
+  "implicit_hypotheses": [],
+  "conclusion": "Definitions of morphism of mutations, its composition and identities, isomorphism of mutations, with the assertion that Z is an isomorphism iff it has an inverse morphism of mutations.",
+  "definitions_required": [
+   "IUT4.Def3_1.iii",
+   "IUT4.Def3_3.i"
+  ],
+  "results_used": [],
+  "external_dependencies": [],
+  "lean_declaration": null,
+  "statement_status": "EXTRACTED",
+  "proof_status": "EXTRACTED",
+  "obligations": [
+   "The equivalence 'isomorphism of mutations iff invertible' is stated as immediate; not formalized."
+  ],
+  "ambiguities": [],
+  "cor3_12_dependency": "independent"
+ },
+ "IUT4.Def3_3.iii": {
+  "source": {
+   "paper": "Inter-universal Teichmuller Theory IV",
+   "pdf_pages": "pages 73 to 74",
+   "pages_read": "renders of pages 73 and 74"
+  },
+  "content": "A mutation M : S ~> S' is a mutation-equivalence if there is M' : S' ~> S with isomorphisms of mutations M o M' -> id and M' o M -> id; M, M' are then mutation-quasi-inverses. If S and S' are 1-small, a mutation-equivalence induces, for any two species-objects of S, a bijection between the species-morphisms (respectively species-isomorphisms) between them and those between their images in S'.",
+  "explicit_hypotheses": [
+   "M : S ~> S' a mutation; for the bijection, S and S' 1-small"
+  ],
+  "implicit_hypotheses": [],
+  "conclusion": "Definition of mutation-equivalence and mutation-quasi-inverse; the observation that for 1-small species a mutation-equivalence is fully faithful on species-morphisms and on species-isomorphisms.",
+  "definitions_required": [
+   "IUT4.Def3_1.iii",
+   "IUT4.Def3_3.i",
+   "IUT4.Def3_3.ii"
+  ],
+  "results_used": [],
+  "external_dependencies": [],
+  "lean_declaration": null,
+  "statement_status": "EXTRACTED",
+  "proof_status": "EXTRACTED",
+  "obligations": [
+   "The bijection for 1-small species is stated without proof (it is the usual full faithfulness of an equivalence); not formalized."
+  ],
+  "ambiguities": [
+   "Page 74: the bijection is asserted for 1-small species; the paper does not say whether 1-smallness is needed for the bijection itself or only for the morphisms to form sets."
+  ],
+  "cor3_12_dependency": "independent"
+ },
+ "IUT4.Def3_3.iv": {
+  "source": {
+   "paper": "Inter-universal Teichmuller Theory IV",
+   "pdf_pages": "page 74",
+   "pages_read": "render of page 74"
+  },
+  "content": "An oriented graph is a graph Gamma (its underlying graph) with a total order on the two-element set of branches of each edge ([AbsTopIII] section 0). A mutation-history H = (Gamma, S*, M*) indexed by an oriented graph assigns a species S^v to each vertex v and a mutation M^e : S^{v_1} ~> S^{v_2} to each edge e from v_1 to v_2; it is a species-theoretic version of a diagram of categories ([AbsTopIII] Definition 3.5 (i)).",
+  "explicit_hypotheses": [
+   "Gamma an oriented graph"
+  ],
+  "implicit_hypotheses": [],
+  "conclusion": "Definitions of oriented graph and mutation-history.",
+  "definitions_required": [
+   "IUT4.Def3_1.iii",
+   "IUT4.Def3_3.i"
+  ],
+  "results_used": [],
+  "external_dependencies": [
+   "AbsTopIII: section 0, Definition 3.5 (i)"
+  ],
+  "lean_declaration": null,
+  "statement_status": "EXTRACTED",
+  "proof_status": "NOT_EXTRACTED",
+  "obligations": [
+   "A definition: nothing to prove."
+  ],
+  "ambiguities": [],
+  "cor3_12_dependency": "independent"
+ },
+ "IUT4.Def3_3.v": {
+  "source": {
+   "paper": "Inter-universal Teichmuller Theory IV",
+   "pdf_pages": "page 74",
+   "pages_read": "render of page 74"
+  },
+  "content": "For a mutation-history H with simply connected underlying graph and a species S', a covariant (respectively contravariant) S'-valued observable V of H consists of observation mutations V^v : S^v ~> S' for each vertex and, for each edge e from v_1 to v_2, a morphism of mutations V^e : V^{v_1} -> V^{v_2} o M^e (respectively V^e : V^{v_2} o M^e -> V^{v_1}). A covariant observable all of whose V^e are isomorphisms of mutations is a core; being a core is called coricity. These are simplified species-theoretic versions of the observables and cores of [AbsTopIII] Definition 3.5 (iii).",
+  "explicit_hypotheses": [
+   "H = (Gamma, S*, M*) a mutation-history whose underlying graph is simply connected",
+   "S' a species"
+  ],
+  "implicit_hypotheses": [],
+  "conclusion": "Definitions of covariant and contravariant observables, cores, coricity.",
+  "definitions_required": [
+   "IUT4.Def3_1.iii",
+   "IUT4.Def3_3.i",
+   "IUT4.Def3_3.ii",
+   "IUT4.Def3_3.iv"
+  ],
+  "results_used": [],
+  "external_dependencies": [
+   "AbsTopIII: Definition 3.5 (iii)"
+  ],
+  "lean_declaration": null,
+  "statement_status": "EXTRACTED",
+  "proof_status": "NOT_EXTRACTED",
+  "obligations": [
+   "A definition: nothing to prove."
+  ],
+  "ambiguities": [
+   "Page 74: the definition assumes the underlying graph simply connected 'for simplicity'; observables on graphs with loops are not defined.",
+   "Page 74: in the covariant case the morphism V^e runs V^{v_1} -> V^{v_2} o M^e, so a core identifies V^{v_1} with V^{v_2} o M^e up to isomorphism along every edge."
+  ],
+  "cor3_12_dependency": "independent"
+ },
+ "IUT4.Rem3_3_1": {
+  "source": {
+   "paper": "Inter-universal Teichmuller Theory IV",
+   "pdf_pages": "pages 74 to 76",
+   "pages_read": "renders of pages 74, 75 and 76"
+  },
+  "content": "(i) The axiom of foundation forbids membership loops a in b in c in ... in a, yet one often wishes to identify objects at higher and lower levels of the membership structure; sets and bijections allow this, and species extend it: species-isomorphisms between species-objects at different levels simulate membership loops without violating foundation, typically identifying output species-objects with input species-objects of a mutation-history ... ~> S ~> S' ~> S'' ~> ... ~> S ~> .... (ii) The simpler the species, the easier to build loops; hence categories (Example 3.2) are preferred to schemes, a principal motivation for the geometry of categories and absolute anabelian geometry ([MnLg], [SemiAnbd], [Cusp], [FrdI]), for instance reconstruction of the underlying scheme in [MnLg] via Definition 1.1 (iv), and slim exponentiation in the Appendix to [FrdI]. (iii) It is also of interest to consider the portions left unaltered by the mutations, hence cores; cores allow one to describe, by non-coric observables, the altered portions in terms of the unaltered ones (cf. Remark 3.6.1 (ii)).",
+  "explicit_hypotheses": [],
+  "implicit_hypotheses": [],
+  "conclusion": "Heuristic motivation of species, mutation-histories and cores; no assertion needing proof.",
+  "definitions_required": [],
+  "results_used": [
+   "IUT4.Def3_3",
+   "IUT4.Ex3_2",
+   "IUT4.Rem3_6_1"
+  ],
+  "external_dependencies": [
+   "MnLg: Definition 1.1 (iv), Introduction",
+   "SemiAnbd: Introduction",
+   "Cusp: Introduction",
+   "FrdI: Introduction, Appendix"
+  ],
+  "lean_declaration": null,
+  "statement_status": "EXTRACTED",
+  "proof_status": "EXTRACTED",
+  "obligations": [
+   "Nothing to prove; an explanatory remark."
+  ],
+  "ambiguities": [],
+  "cor3_12_dependency": "independent"
+ },
+ "IUT4.Rem3_3_2": {
+  "source": {
+   "paper": "Inter-universal Teichmuller Theory IV",
+   "pdf_pages": "page 76",
+   "pages_read": "render of page 76"
+  },
+  "content": "A naive original motivation: local systems on a scheme need not be valued in modules over a finite ring; one may take local systems of schemes (the Galois mantle of [pTeich]) or of more general collections of objects, then local systems on their fibers, and so on, leading to systems of nested local systems. This underlies successive iteration of a mutation-history; viewing such iterates as an abstraction of nested local systems, a core is an object invariant under the operations producing them.",
+  "explicit_hypotheses": [],
+  "implicit_hypotheses": [],
+  "conclusion": "Heuristic motivation of iterated mutation-histories and cores; no assertion needing proof.",
+  "definitions_required": [],
+  "results_used": [
+   "IUT4.Def3_3"
+  ],
+  "external_dependencies": [
+   "pTeich"
+  ],
+  "lean_declaration": null,
+  "statement_status": "EXTRACTED",
+  "proof_status": "EXTRACTED",
+  "obligations": [
+   "Nothing to prove; an explanatory remark."
+  ],
+  "ambiguities": [
+   "Page 76: 'successive iteration of a given mutation-history' is used but not defined in Definition 3.3."
+  ],
+  "cor3_12_dependency": "independent"
+ },
+ "IUT4.Ex3_4": {
+  "source": {
+   "paper": "Inter-universal Teichmuller Theory IV",
+   "pdf_pages": "pages 76 to 77",
+   "pages_read": "renders of pages 76 and 77"
+  },
+  "content": "(i) Topological spaces with continuous maps form a species S^top; universal coverings Xt -> X of pathwise connected spaces with compatible pairs of continuous maps considered up to deck transformations of the target covering form a species S^{u-top}, whose species-morphisms are, set-theoretically, collections of continuous maps differing by deck transformations. (ii) Groups with outer homomorphisms (homomorphisms up to inner automorphisms of the codomain) form a species S^gp, whose species-morphisms are collections of homomorphisms differing by inner automorphisms. (iii) The assignment (Xt -> X) -> Aut(Xt/X) (the deck transformation group) is a mutation S^{u-top} ~> S^gp: the fundamental group is a mutation.",
+  "explicit_hypotheses": [
+   "(i): pathwise connected topological spaces with universal coverings",
+   "(ii): groups and outer homomorphisms"
+  ],
+  "implicit_hypotheses": [],
+  "conclusion": "(i) S^top and S^{u-top} are species; (ii) S^gp is a species; (iii) Xt -> X maps to Aut(Xt/X) is a mutation S^{u-top} ~> S^gp. All stated as easily verified, with the set-theoretic formulas left to the reader.",
+  "definitions_required": [
+   "IUT4.Def3_1.iii",
+   "IUT4.Def3_3.i"
+  ],
+  "results_used": [
+   "IUT4.Def3_1",
+   "IUT4.Def3_3"
+  ],
+  "external_dependencies": [],
+  "lean_declaration": null,
+  "statement_status": "EXTRACTED",
+  "proof_status": "EXTRACTED",
+  "obligations": [
+   "The set-theoretic formulas and the verification that (iii) respects composites and identities (an outer homomorphism of deck groups for each morphism of coverings up to deck transformations) are left to the reader."
+  ],
+  "ambiguities": [],
+  "cor3_12_dependency": "independent"
+ },
+ "IUT4.Ex3_5": {
+  "source": {
+   "paper": "Inter-universal Teichmuller Theory IV",
+   "pdf_pages": "pages 77 to 78",
+   "pages_read": "renders of pages 77 and 78"
+  },
+  "content": "(i) For a class S of connected normal schemes closed under isomorphism, with a set E_S describable by a set-theoretic formula containing a representative of every isomorphism class, universal pro-finite etale coverings of schemes in S with isomorphisms up to deck transformations form a species S^S. (ii) Likewise, for a class G of topological groups closed under isomorphism with such a set E_G, the groups of G with bicontinuous outer isomorphisms form a species S^G. (iii) For suitable G, deck transformation groups give a mutation Pi : S^S ~> S^G; the schemes of S may be called [absolute] anabelian if one specifies a mutation A : S^G ~> S^S that is a mutation-quasi-inverse of Pi. The existence of the bijections (full faithfulness) of Definition 3.3 (iii) is essentially the usual definition of anabelian; the species-theoretic approach formulates the algorithmic approach of [AbsTopI]. (iv) One must specify which species one works with: a profinite group merely as a profinite group differs substantially from the same group equipped with data from its construction as an etale fundamental group; this issue was a motivation for the theory of species.",
+  "explicit_hypotheses": [
+   "(i): S a class of connected normal schemes closed under isomorphism, with a set E_S given by a set-theoretic formula meeting every isomorphism class",
+   "(ii): G a class of topological groups closed under isomorphism, with a set E_G given by a set-theoretic formula meeting every isomorphism class",
+   "(iii): G chosen appropriately"
+  ],
+  "implicit_hypotheses": [],
+  "conclusion": "(i) S^S and (ii) S^G are species; (iii) Pi : S^S ~> S^G is a mutation, and 'anabelian' is defined by the specification of a mutation-quasi-inverse A of Pi; (iv) a heuristic on specifying species.",
+  "definitions_required": [
+   "IUT4.Def3_1.iii",
+   "IUT4.Def3_3.i",
+   "IUT4.Def3_3.iii",
+   "universal pro-finite etale covering"
+  ],
+  "results_used": [
+   "IUT4.Ex3_4",
+   "IUT4.Def3_3",
+   "IUT4.Rem3_3_1"
+  ],
+  "external_dependencies": [
+   "AbsTopI: Introduction"
+  ],
+  "lean_declaration": null,
+  "statement_status": "EXTRACTED",
+  "proof_status": "EXTRACTED",
+  "obligations": [
+   "(i) to (iii) are stated as easily verified; the 'appropriate choice of G' in (iii) is not specified.",
+   "No anabelian result is proved here; (iii) is a definition."
+  ],
+  "ambiguities": [
+   "Page 77, (iii): 'an appropriate choice of G' is left unspecified; it must at least contain the deck groups of the coverings in S."
+  ],
+  "cor3_12_dependency": "independent"
+ },
+ "IUT4.Ex3_6": {
+  "source": {
+   "paper": "Inter-universal Teichmuller Theory IV",
+   "pdf_pages": "pages 78 to 80",
+   "pages_read": "renders of pages 78, 79 and 80"
+  },
+  "content": "(i) For a prime p and a reduced scheme S over F_p, S^(p) has the topological space of S and structure sheaf O_S^p; the inclusion gives Phi_S : S -> S^(p), and p-th powers give a natural isomorphism alpha_S : S^(p) -> S with alpha_S o Phi_S the Frobenius of S. S^{p-sch} is the species of reduced quasi-compact schemes over F_p with quasi-compact morphisms. The small etale site S_et has as objects etale morphisms of finite presentation T -> S equipped with a finite open cover {U_i} of S and factorizations T|_{U_i} in A^{N_i}_{U_i} -> U_i exhibiting finitely presented subschemes (every such T admits these data), and S-morphisms as arrows. S -> S_et is contravariantly functorial and given by set-theoretic formulas, giving the etale site mutation M^et : S^{p-sch} ~> S^cat (S^cat: categories with isomorphism classes of contravariant functors). The perfection S^pf (inverse limit of iterated Frobenius) with beta_S : S^pf -> S gives the perfection mutation M^pf : S^{p-sch} ~> S^{p-sch}. (ii) The Frobenius mutation F^{p-sch} : S -> S^(p) defines the Frobenius mutation-history ... ~> S^{p-sch} ~> S^{p-sch} ~> ...; invariance of the etale site under Frobenius ([FK] Chapter I, Proposition 3.16) says M^et exhibits S^cat as a core; M^pf also gives a core; Phi_S is a covariant observable with identity observation mutations, non-coric since Phi_S is not in general an isomorphism; beta_S is a morphism of mutations M^pf -> id relating it to the coric observable of M^pf. (iii) For torsion-free abelian monoids S^mon, M -> M^(p) = p M is the monoid-Frobenius mutation F^mon, with monoid-Frobenius mutation-history and a non-coric contravariant observable given by the inclusions M^(p) -> M; the p-perfection M^pf (inductive limit of multiplication by p) gives a core M^{pf-mon}, and M -> M^pf is a morphism of mutations id -> M^{pf-mon} relating the two.",
+  "explicit_hypotheses": [
+   "(i): p a prime; S a reduced scheme over F_p; for the species S^{p-sch}, reduced quasi-compact schemes over F_p and quasi-compact morphisms",
+   "(iii): S^mon the species of torsion-free abelian monoids and monoid morphisms"
+  ],
+  "implicit_hypotheses": [],
+  "conclusion": "(i) Definitions of S^(p), Phi_S, alpha_S, S_et and the mutations M^et, M^pf; (ii) by [FK] Chapter I, Proposition 3.16, M^et is a core of the Frobenius mutation-history, M^pf is a core, Phi_S is a non-coric covariant observable related to M^pf by beta_S; (iii) the monoid analogue, with a non-coric contravariant observable and the core M^{pf-mon}.",
+  "definitions_required": [
+   "IUT4.Def3_3.i",
+   "IUT4.Def3_3.ii",
+   "IUT4.Def3_3.iv",
+   "IUT4.Def3_3.v",
+   "IUT4.Ex3_2",
+   "small etale site",
+   "perfection"
+  ],
+  "results_used": [
+   "IUT4.Def3_3",
+   "IUT4.Ex3_2"
+  ],
+  "external_dependencies": [
+   "FK: Chapter I, Proposition 3.16"
+  ],
+  "lean_declaration": null,
+  "statement_status": "EXTRACTED",
+  "proof_status": "EXTRACTED",
+  "obligations": [
+   "That S -> S_et and S -> S^pf are given by set-theoretic formulas and are functorial is asserted; the coricity of M^et rests on [FK] Chapter I, Proposition 3.16, and the coricity of M^pf and M^{pf-mon} on the evident identifications S^pf = (S^(p))^pf, which are not written out.",
+   "(iii) for log schemes is left to the reader."
+  ],
+  "ambiguities": [
+   "Page 79: the core of (ii) requires the observation mutations along the Frobenius mutation-history to be related by isomorphisms of mutations M^et -> M^et o F^{p-sch}; the paper does not specify the direction or the isomorphism (the comparison S_et with (S^(p))_et via Phi_S).",
+   "Page 79: the Frobenius mutation-history is indexed by an infinite chain, whose underlying graph is simply connected as Definition 3.3 (v) requires.",
+   "Page 80: 'an non-coric observable' is a misprint for 'a non-coric observable'."
+  ],
+  "cor3_12_dependency": "independent"
+ },
+ "IUT4.Rem3_6_1": {
+  "source": {
+   "paper": "Inter-universal Teichmuller Theory IV",
+   "pdf_pages": "pages 80 to 81",
+   "pages_read": "renders of pages 80 and 81"
+  },
+  "content": "(i) Example 3.6 gives a species-theoretic interpretation, via coric versus non-coric observables, of the difference between etale-type and Frobenius-type structures ([FrdI] section I4); the mutation-histories and cores of Example 3.6 (ii), (iii) are the motivating examples for the vertical lines (log-links) and horizontal lines (Theta-links of various kinds) of the log-theta-lattice ([IUTchIII] Definitions 1.4, 3.8), and for observables and cores in [AbsTopIII] Definition 3.5 (iii). (ii) Example 3.6 illustrates describing non-coric data in terms of coric data (beta_S, M -> M^pf); in the log-theta-lattice this appears in the vertically coric log-shells receiving the log-Kummer correspondences ([IUTchIII] Theorem 3.11 (ii)) and in the multiradial representations of [IUTchIII] Theorem 3.11 (i), which describe the arithmetic holomorphic structure on one vertical line relative to an alien one on another.",
+  "explicit_hypotheses": [],
+  "implicit_hypotheses": [],
+  "conclusion": "Heuristic: Example 3.6 motivates the vertical and horizontal lines of the log-theta-lattice and the description of non-coric data by coric data in IUT III Theorem 3.11; no assertion needing proof.",
+  "definitions_required": [],
+  "results_used": [
+   "IUT4.Ex3_6",
+   "IUT4.Rem3_3_1"
+  ],
+  "external_dependencies": [
+   "FrdI: section I4",
+   "IUTchIII: Definitions 1.4, 3.8, Theorem 3.11 (i), (ii), Remarks 3.11.1, 3.12.2 (ii)",
+   "AbsTopIII: Definition 3.5 (iii)"
+  ],
+  "lean_declaration": null,
+  "statement_status": "EXTRACTED",
+  "proof_status": "EXTRACTED",
+  "obligations": [
+   "Nothing to prove; an explanatory remark."
+  ],
+  "ambiguities": [],
+  "cor3_12_dependency": "independent"
+ },
+ "IUT4.Rem3_6_2": {
+  "source": {
+   "paper": "Inter-universal Teichmuller Theory IV",
+   "pdf_pages": "pages 81 to 82",
+   "pages_read": "renders of pages 81 and 82"
+  },
+  "content": "(i) Coric descriptions of non-coric data must use set-theoretic formulas: descriptions using arbitrary choices depending on a model of set theory do not allow one to calculate, within one universe, operations performed in an alien universe, as happens for the arrows of the log-theta-lattice, where distinct universes arise from distinct scheme-theoretic basepoints of ring theories not related by ring homomorphisms; this need led to inter-universal Teichmueller theory. The algorithmic approach (as opposed to a fully faithful, Grothendieck conjecture style approach, Example 3.5 (iii)) is essential, since only specific algorithms reveal relations between components, e.g. the cyclotomic rigidity isomorphisms behind Theta^{x mu}_LGP-link compatibility ([IUTchIII] Theorem 3.11 (iii) (c), (d)). (ii) The algorithmic approach of the series ([FrdI], [EtTh], [AbsTopIII]) was conceived in the spirit of species; the formulas are left implicit and the reader must check that conventional descriptions are well defined and choice-free. (iii) Cataloguing the possibilities arising from choices leads to sets of very large cardinality built by set-theoretic exponentiation (E -> 2^E), reminiscent of the growth of denominators when integrating an arbitrary connection in p-adic crystalline theory, as opposed to canonical connections and canonical liftings ([pOrd], [pTeich]), which may be liftings of minimal complexity ([Finot]).",
+  "explicit_hypotheses": [],
+  "implicit_hypotheses": [],
+  "conclusion": "Heuristic: set-theoretic formulas and specific algorithms are needed to compare constructions across universes; the reader must check that the series' conventional descriptions are choice-free. No assertion needing proof.",
+  "definitions_required": [],
+  "results_used": [
+   "IUT4.Rem3_6_1",
+   "IUT4.Rem3_1_3",
+   "IUT4.Rem3_1_4",
+   "IUT4.Ex3_5",
+   "IUT4.Rem3_6_3"
+  ],
+  "external_dependencies": [
+   "IUTchIII: Theorem 3.11 (iii) (c), (d), Remarks 2.2.1, 2.3.2",
+   "FrdI",
+   "EtTh",
+   "AbsTopIII",
+   "pOrd",
+   "pTeich",
+   "Finot"
+  ],
+  "lean_declaration": null,
+  "statement_status": "EXTRACTED",
+  "proof_status": "EXTRACTED",
+  "obligations": [
+   "Page 82, (ii): the verification that the conventional descriptions used throughout IUT are well defined and independent of arbitrary choices is explicitly left to the reader; this is an open obligation for any formalization of IUT I to III."
+  ],
+  "ambiguities": [],
+  "cor3_12_dependency": "independent"
+ },
+ "IUT4.Rem3_6_3": {
+  "source": {
+   "paper": "Inter-universal Teichmuller Theory IV",
+   "pdf_pages": "pages 82 to 84",
+   "pages_read": "renders of pages 82, 83 and 84"
+  },
+  "content": "(i) The fundamental reason for inter-universality ([IUTchIII] Remarks 1.2.4, 1.4.2): etale fundamental groups (Galois groups) are automorphism groups of rings, which is incompatible with the vertical and horizontal arrows of the log-theta-lattice, as these do not arise from ring homomorphisms. Hence for v in V^non the only natural correspondence describable by set-theoretic formulas between the isomorphs of G_v on either side of a vertical or horizontal arrow is an indeterminate isomorphism of topological groups, and for Delta_v = Ker(Pi_v -> G_v) across a vertical (not horizontal) arrow an indeterminate isomorphism equipped with an outer action of G_v. (ii) For v in V^bad: (V1) across a vertical arrow the full arithmetic fundamental groups Pi_v are identified up to isomorphism; (H1) across a horizontal arrow only the G_v are identified and the Delta_v are distinguished. Reasons: (V2) constructing the log-link (the p_v-adic logarithm power series) needs the local ring structures, reconstructible only from the full Pi_v; (H2) constructing the Theta^{x mu}_gau, Theta^{x mu}_LGP, Theta^{x mu}_lgp-links, i.e. q -> {q^{j^2}}_{j = 1, ..., l*}, needs an isomorphism between objects depending on the labels j (built from Delta_v) and a label-free object q, possible only if the Delta_v on the two sides are kept distinct. The simultaneous realization of label-dependent and label-free objects in (H2) is likened to the vertical bicoricity of [IUTchIII] Theorem 1.5.",
+  "explicit_hypotheses": [
+   "the notation of IUTchI Definition 3.1 (e), (f); v in V^non (for (i)) or v in V^bad (for (ii))"
+  ],
+  "implicit_hypotheses": [],
+  "conclusion": "Explanatory claims: (i) across arrows of the log-theta-lattice only indeterminate isomorphisms of G_v (and of Delta_v with outer action, across vertical arrows) are describable by set-theoretic formulas; (ii) (V1)/(V2) and (H1)/(H2) explain why vertical arrows identify Pi_v and horizontal arrows only G_v. Stated as consequences of the constructions of IUT I to III, not proved here.",
+  "definitions_required": [
+   "log-theta-lattice",
+   "log-link",
+   "Theta^{x mu}_gau-link",
+   "G_v, Pi_v, Delta_v"
+  ],
+  "results_used": [
+   "IUT4.Rem3_6_2"
+  ],
+  "external_dependencies": [
+   "IUTchI: Definition 3.1 (e), (f)",
+   "IUTchII: Remark 4.11.1",
+   "IUTchIII: Remarks 1.2.4, 1.4.1 (i), 1.4.2, 1.5.1 (i), (ii), 2.1.1 (ii), Definition 1.1 (i), (ii), Theorem 1.5, Corollary 3.12 (proof, Step (vii))",
+   "AbsTopIII: section I3"
+  ],
+  "lean_declaration": null,
+  "statement_status": "EXTRACTED",
+  "proof_status": "EXTRACTED",
+  "obligations": [
+   "The claims that the indeterminate isomorphisms are the only natural correspondences describable by set-theoretic formulas, and the necessity statements in (V2) and (H2), are asserted with references to IUT III; no proof is given here and none is formalized."
+  ],
+  "ambiguities": [
+   "Page 83: 'may described' (twice) is a misprint for 'may be described'.",
+   "Page 83: 'the only natural correspondence' is not given a precise meaning; whether it is a uniqueness theorem or an informal assessment is not specified. This concerns the much-discussed identifications across Theta-links in IUT III."
+  ],
   "cor3_12_dependency": "independent"
  }
 }

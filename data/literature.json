@@ -1,0 +1,5270 @@
+{
+ "counts": {
+  "arxiv_records_retrieved": 1412,
+  "owner_supplied": 1,
+  "read_as": {
+   "abstract only": 115,
+   "full text from PDF": 30,
+   "full text from TeX": 32,
+   "not available": 1,
+   "partial": 36
+  },
+  "records_in_this_file": 214,
+  "relevance_scores_after_reading": {
+   "0": 25,
+   "1": 43,
+   "2": 24,
+   "3": 7
+  },
+  "screening": {
+   "exclude": 1199,
+   "include": 201,
+   "maybe": 12
+  },
+  "selected_for_full_text_reading": 98
+ },
+ "description": "Literature survey of the project: one record per paper read in full and per paper included at screening of an arXiv search retrieved on 2026-11-25. Relevance scores (0 to 3) are those given after reading for this project; descriptions are neutral and report claims as claims. See docs/LITERATURE.md.",
+ "papers": [
+  {
+   "arxiv_categories": [
+    "math.NT",
+    "math.CV"
+   ],
+   "arxiv_id": "0805.1729",
+   "authors": [
+    "Machiel van Frankenhuijsen"
+   ],
+   "description": "Not read beyond the abstract. Summary of the abstract: abc theorem for meromorphic functions with archimedean radical term.",
+   "id": "0805.1729",
+   "read_as": "abstract only",
+   "relevance_score": null,
+   "screening": {
+    "category": "abc_math",
+    "decision": "include",
+    "priority": 3
+   },
+   "theme": "abc_vojta",
+   "title": "The ABC Theorem for Meromorphic Functions",
+   "year": 2008
+  },
+  {
+   "arxiv_categories": [
+    "math.NT"
+   ],
+   "arxiv_id": "0808.0418",
+   "authors": [
+    "Anirban Mukhopadhyay",
+    "M. Ram Murty",
+    "Kotyada Srinivas"
+   ],
+   "description": "Not read beyond the abstract. Summary of the abstract: Conditional application of abc to squarefree discriminants of trinomials.",
+   "id": "0808.0418",
+   "read_as": "abstract only",
+   "relevance_score": null,
+   "screening": {
+    "category": "abc_math",
+    "decision": "include",
+    "priority": 3
+   },
+   "theme": "abc_vojta",
+   "title": "Counting squarefree discriminants of trinomials under abc",
+   "year": 2008
+  },
+  {
+   "arxiv_categories": [
+    "math.AG",
+    "math.NT"
+   ],
+   "arxiv_id": "0811.3153",
+   "authors": [
+    "Carlo Gasbarri"
+   ],
+   "description": "Not read beyond the abstract. Summary of the abstract: Survey of strong abc over function fields.",
+   "id": "0811.3153",
+   "read_as": "abstract only",
+   "relevance_score": null,
+   "screening": {
+    "category": "abc_math",
+    "decision": "include",
+    "priority": 3
+   },
+   "theme": "abc_vojta",
+   "title": "The strong ABC conjecture over function fields (after McQuillan and Yamanoi)",
+   "year": 2008
+  },
+  {
+   "arxiv_categories": [
+    "math.AG"
+   ],
+   "arxiv_id": "0811.3169",
+   "authors": [
+    "Emmanuel Lepage"
+   ],
+   "description": "The tempered fundamental group of a Mumford curve determines the metric graph of its stable model; computes tempered groups of abelian varieties and Tate curves.",
+   "id": "0811.3169",
+   "primary_source": "TeX",
+   "read_as": "partial: TeX introduction, Sections 1 and 2.1, Lemma 4.2 with proof, and all statements; later proofs not read",
+   "relevance_score": 1,
+   "screening": {
+    "category": "prereq",
+    "decision": "include",
+    "priority": 2
+   },
+   "theme": "prerequisites",
+   "title": "Tempered fundamental group and metric graph of a Mumford curve",
+   "year": 2008
+  },
+  {
+   "arxiv_categories": [
+    "math.AG"
+   ],
+   "arxiv_id": "0903.2349",
+   "authors": [
+    "Emmanuel Lepage"
+   ],
+   "description": "Higher-dimensional sequel: tempered fundamental groups of pluristable log schemes and cospecialization for polystable fibrations.",
+   "id": "0903.2349",
+   "primary_source": "TeX",
+   "read_as": "partial: Introduction; Theorems 3.2, 3.3, 4.5, 4.6 with proof of 3.2 and opening of 4.5; Sections 1 and 2 not opened beyond headers",
+   "relevance_score": 0,
+   "screening": {
+    "category": "prereq",
+    "decision": "include",
+    "priority": 3
+   },
+   "theme": "prerequisites",
+   "title": "Coverings in p-adic analytic geometry and log coverings II: Cospecialization of the p'-tempered fundamental group in higher dimensions",
+   "year": 2009
+  },
+  {
+   "arxiv_categories": [
+    "math.NT"
+   ],
+   "arxiv_id": "0904.1935",
+   "authors": [
+    "Constantin M. Petridi"
+   ],
+   "description": "Not read beyond the abstract. Summary of the abstract: Counts c=a+b satisfying an abc-type radical inequality; asymptotic for the number of such equations.",
+   "id": "0904.1935",
+   "read_as": "abstract only",
+   "relevance_score": null,
+   "screening": {
+    "category": "abc_math",
+    "decision": "include",
+    "priority": 3
+   },
+   "theme": "abc_vojta",
+   "title": "The number of equations c=a+b satisfying the abc-conjecture",
+   "year": 2009
+  },
+  {
+   "arxiv_categories": [
+    "math.NT"
+   ],
+   "arxiv_id": "0905.1869",
+   "authors": [
+    "D. R. Heath-Brown"
+   ],
+   "description": "Not read beyond the abstract. Summary of the abstract: Conditional consequence of abc for cubic Weyl sums.",
+   "id": "0905.1869",
+   "read_as": "abstract only",
+   "relevance_score": null,
+   "screening": {
+    "category": "abc_math",
+    "decision": "include",
+    "priority": 3
+   },
+   "theme": "abc_vojta",
+   "title": "Bounds for the Cubic Weyl Sum",
+   "year": 2009
+  },
+  {
+   "arxiv_categories": [
+    "math.NT",
+    "math.AG"
+   ],
+   "arxiv_id": "0908.3895",
+   "authors": [
+    "Joseph H. Silverman"
+   ],
+   "description": "Proves a lower bound for the canonical height on elliptic curves in terms of a depleted Szpiro ratio, so that a prime-depleted Szpiro conjecture implies Lang's height conjecture.",
+   "id": "0908.3895",
+   "primary_source": "TeX",
+   "read_as": "full text from TeX",
+   "relevance_score": 1,
+   "screening": {
+    "category": "abc_math",
+    "decision": "include",
+    "priority": 3
+   },
+   "theme": "abc_vojta",
+   "title": "Lang's Height Conjecture and Szpiro's Conjecture",
+   "year": 2009
+  },
+  {
+   "arxiv_categories": [
+    "math.AG"
+   ],
+   "arxiv_id": "0909.2805",
+   "authors": [
+    "Emmanuel Lepage"
+   ],
+   "description": "Defines tempered fundamental groups of Berkovich spaces relative to a set of primes and constructs cospecialization maps for families of semistable curves.",
+   "id": "0909.2805",
+   "primary_source": "TeX",
+   "read_as": "partial: Introduction; Section 3 through Theorem 3.2 and Theorem 3.6 with proof opening; Sections 1 and 2 statement headers only",
+   "relevance_score": 1,
+   "screening": {
+    "category": "prereq",
+    "decision": "include",
+    "priority": 2
+   },
+   "theme": "prerequisites",
+   "title": "Coverings in p-adic analytic geometry and log coverings I: Cospecialization of the (p')-tempered fundamental group for a family of curves",
+   "year": 2009
+  },
+  {
+   "arxiv_categories": [
+    "math.NT"
+   ],
+   "arxiv_id": "0911.4147",
+   "authors": [
+    "Jeffrey C. Lagarias",
+    "K. Soundararajan"
+   ],
+   "description": "Not read beyond the abstract. Summary of the abstract: Smooth solutions of A+B+C=0; finiteness under abc for small smoothness exponent.",
+   "id": "0911.4147",
+   "read_as": "abstract only",
+   "relevance_score": null,
+   "screening": {
+    "category": "abc_math",
+    "decision": "include",
+    "priority": 3
+   },
+   "theme": "abc_vojta",
+   "title": "Smooth solutions to the abc equation: the xyz Conjecture",
+   "year": 2009
+  },
+  {
+   "arxiv_categories": [
+    "math.AG"
+   ],
+   "arxiv_id": "0912.3602",
+   "authors": [
+    "Kirti Joshi",
+    "Christian Pauly"
+   ],
+   "description": "Generalizes Mochizuki's finiteness of nilpotent indigenous bundles to opers in characteristic p; unrelated to IUT.",
+   "id": "0912.3602",
+   "primary_source": "PDF",
+   "read_as": "full text from PDF",
+   "relevance_score": 0,
+   "screening": {
+    "category": "prereq",
+    "decision": "maybe",
+    "priority": 3
+   },
+   "theme": "prerequisites",
+   "title": "Hitchin-Mochizuki morphism, Opers and Frobenius-destabilized vector bundles over curves",
+   "year": 2009
+  },
+  {
+   "arxiv_categories": [
+    "math.AG"
+   ],
+   "arxiv_id": "1004.2150",
+   "authors": [
+    "Emmanuel Lepage"
+   ],
+   "description": "Thesis on tempered fundamental groups of Berkovich spaces, with anabelian results: the tempered group of a Mumford curve determines the metric graph of its stable reduction.",
+   "id": "1004.2150",
+   "primary_source": "PDF",
+   "project_links": [
+    "P-ANAB",
+    "IUT/PaperI/Temperoid.lean"
+   ],
+   "read_as": "partial: Introduction, Section 1.2, Chapter 3 statements and proof outlines",
+   "relevance_score": 2,
+   "screening": {
+    "category": "prereq",
+    "decision": "include",
+    "priority": 2
+   },
+   "statements_of_interest": [
+    "Definition 1.2.1: tempered covers and the tempered fundamental group as automorphisms of a fiber functor.",
+    "Theorem 1.2.5: recalls Mochizuki (Semi-graphs of anabelioids, Corollary 3.11) on recovering semi-graphs of anabelioids.",
+    "Theorem 3.3.1: for punctured Tate curves over finite extensions of Q_p, isomorphic tempered groups force |q_1| = |q_2|.",
+    "Theorem 3.4.6 and Corollary 3.4.7: for Mumford curves the induced graph isomorphism preserves edge lengths; the thesis states this fails for the (p')-tempered variant."
+   ],
+   "theme": "prerequisites",
+   "title": "Géométrie anabélienne tempérée",
+   "year": 2010
+  },
+  {
+   "arxiv_categories": [
+    "math.NT"
+   ],
+   "arxiv_id": "1102.4582",
+   "authors": [
+    "Larry Rolen"
+   ],
+   "description": "Not read beyond the abstract. Summary of the abstract: Serre exceptional prime bound improved assuming Frey-Szpiro.",
+   "id": "1102.4582",
+   "read_as": "abstract only",
+   "relevance_score": null,
+   "screening": {
+    "category": "abc_math",
+    "decision": "include",
+    "priority": 3
+   },
+   "theme": "abc_vojta",
+   "title": "An Improved Bound Towards a Conjecture of Serre on Surjective Galois Representations",
+   "year": 2011
+  },
+  {
+   "arxiv_categories": [
+    "math.NT"
+   ],
+   "arxiv_id": "1104.2635",
+   "authors": [
+    "Daniel M. Kane"
+   ],
+   "description": "Not read beyond the abstract. Summary of the abstract: Counts abc solutions with restricted radical sizes; states an equivalent form of abc.",
+   "id": "1104.2635",
+   "read_as": "abstract only",
+   "relevance_score": null,
+   "screening": {
+    "category": "abc_math",
+    "decision": "include",
+    "priority": 3
+   },
+   "theme": "abc_vojta",
+   "title": "On the Number of ABC Solutions with Restricted Radical Sizes",
+   "year": 2011
+  },
+  {
+   "arxiv_categories": [
+    "math.NT"
+   ],
+   "arxiv_id": "1109.3226",
+   "authors": [
+    "Clayton Petsche"
+   ],
+   "description": "Not read beyond the abstract. Summary of the abstract: Szpiro-type conjecture for rational maps whose special case implies semistable Szpiro.",
+   "id": "1109.3226",
+   "read_as": "abstract only",
+   "relevance_score": null,
+   "screening": {
+    "category": "abc_math",
+    "decision": "include",
+    "priority": 3
+   },
+   "theme": "abc_vojta",
+   "title": "Critically separable rational maps in families",
+   "year": 2011
+  },
+  {
+   "arxiv_categories": [
+    "math.NT"
+   ],
+   "arxiv_id": "1109.4762",
+   "authors": [
+    "Constantine M. Petridi"
+   ],
+   "description": "Not read beyond the abstract. Summary of the abstract: Counts equations c^n = a + b satisfying the strong abc conjecture.",
+   "id": "1109.4762",
+   "read_as": "abstract only",
+   "relevance_score": null,
+   "screening": {
+    "category": "abc_math",
+    "decision": "include",
+    "priority": 3
+   },
+   "theme": "abc_vojta",
+   "title": "The number of abc-equations c^n=a+b stisfying the strong abc-conjecture",
+   "year": 2011
+  },
+  {
+   "arxiv_categories": [
+    "math.AG"
+   ],
+   "arxiv_id": "1111.5342",
+   "authors": [
+    "Emmanuel Lepage"
+   ],
+   "description": "Not read beyond the abstract. Summary of the abstract: Tempered fundamental groups of Mumford curves and punctured Tate curves.",
+   "id": "1111.5342",
+   "read_as": "abstract only",
+   "relevance_score": null,
+   "screening": {
+    "category": "prereq",
+    "decision": "include",
+    "priority": 3
+   },
+   "theme": "prerequisites",
+   "title": "Resolution of non-singularities for Mumford curves",
+   "year": 2011
+  },
+  {
+   "arxiv_categories": [
+    "math.NT"
+   ],
+   "arxiv_id": "1112.2461",
+   "authors": [
+    "Shanta Laishram",
+    "T. N. Shorey"
+   ],
+   "description": "Not read beyond the abstract. Summary of the abstract: Baker's explicit abc conjecture and its applications.",
+   "id": "1112.2461",
+   "read_as": "abstract only",
+   "relevance_score": null,
+   "screening": {
+    "category": "abc_math",
+    "decision": "include",
+    "priority": 3
+   },
+   "theme": "abc_vojta",
+   "title": "Baker's Explicit abc-Conjecture and applications",
+   "year": 2011
+  },
+  {
+   "arxiv_categories": [
+    "math.NT"
+   ],
+   "arxiv_id": "1203.3865",
+   "authors": [
+    "Vincent Bosser",
+    "Andrea Surroca"
+   ],
+   "description": "Not read beyond the abstract. Summary of the abstract: Elliptic Baker method yielding abc-type inequalities over number fields.",
+   "id": "1203.3865",
+   "read_as": "abstract only",
+   "relevance_score": null,
+   "screening": {
+    "category": "abc_math",
+    "decision": "include",
+    "priority": 3
+   },
+   "theme": "abc_vojta",
+   "title": "Elliptic logarithms, diophantine approximation and the Birch and Swinnerton-Dyer conjecture",
+   "year": 2012
+  },
+  {
+   "arxiv_categories": [
+    "math.NT"
+   ],
+   "arxiv_id": "1206.3715",
+   "authors": [
+    "Mohammad Sadek"
+   ],
+   "claim_status": "Claims Szpiro's conjecture for a restricted family of elliptic curves over Q (abstract only; not read).",
+   "description": "Not read beyond the abstract. Summary of the abstract: Proves Szpiro's conjecture for elliptic curves over Q with conductor p^a q^b and a rational N-torsion point.",
+   "id": "1206.3715",
+   "read_as": "abstract only",
+   "relevance_score": null,
+   "screening": {
+    "category": "abc_math",
+    "decision": "include",
+    "priority": 3
+   },
+   "theme": "abc_vojta",
+   "title": "On elliptic curves whose conductor is a product of two prime powers",
+   "year": 2012
+  },
+  {
+   "arxiv_categories": [
+    "math.NT"
+   ],
+   "arxiv_id": "1208.2989",
+   "authors": [
+    "Chad Gratton",
+    "Khoa Nguyen",
+    "Thomas J. Tucker"
+   ],
+   "description": "Not read beyond the abstract. Summary of the abstract: Consequence of abc over number fields: primitive prime divisors in dynamical sequences.",
+   "id": "1208.2989",
+   "read_as": "abstract only",
+   "relevance_score": null,
+   "screening": {
+    "category": "abc_math",
+    "decision": "include",
+    "priority": 3
+   },
+   "theme": "abc_vojta",
+   "title": "ABC implies primitive prime divisors in arithmetic dynamic",
+   "year": 2012
+  },
+  {
+   "arxiv_categories": [
+    "math.NT"
+   ],
+   "arxiv_id": "1210.6543",
+   "authors": [
+    "Ulf Kühn",
+    "J. Steffen Müller"
+   ],
+   "description": "Not read beyond the abstract. Summary of the abstract: Height inequality on elliptic curves from Mochizuki's uniform abc variant over number fields.",
+   "id": "1210.6543",
+   "read_as": "abstract only",
+   "relevance_score": null,
+   "screening": {
+    "category": "abc_math",
+    "decision": "include",
+    "priority": 3
+   },
+   "theme": "abc_vojta",
+   "title": "A height inequality for rational points on elliptic curves implied by the abc-conjecture",
+   "year": 2012
+  },
+  {
+   "arxiv_categories": [
+    "math.AG"
+   ],
+   "arxiv_id": "1211.0451",
+   "authors": [
+    "Huajun Lu"
+   ],
+   "claim_status": "Withdrawn on arXiv; not read.",
+   "description": "On uniform bounds of base change conductors and a link with the generalized Szpiro conjecture; not available: the arXiv page obtained for this identifier states that the paper is withdrawn.",
+   "id": "1211.0451",
+   "primary_source": null,
+   "read_as": "not available",
+   "relevance_score": 0,
+   "screening": {
+    "category": "abc_math",
+    "decision": "include",
+    "priority": 3
+   },
+   "theme": "abc_vojta",
+   "title": "Uniform bounds of base change conductors and link with the generalized Szpiro conjecture",
+   "year": 2012
+  },
+  {
+   "arxiv_categories": [
+    "math.NT"
+   ],
+   "arxiv_id": "1212.4280",
+   "authors": [
+    "Constantin M. Petridi"
+   ],
+   "description": "Not read beyond the abstract. Summary of the abstract: Finiteness of abc-equation classes by radical via Mahler.",
+   "id": "1212.4280",
+   "read_as": "abstract only",
+   "relevance_score": null,
+   "screening": {
+    "category": "abc_math",
+    "decision": "include",
+    "priority": 3
+   },
+   "theme": "abc_vojta",
+   "title": "Finiteness properties of abc-equations c = a+b",
+   "year": 2012
+  },
+  {
+   "arxiv_categories": [
+    "math.AG",
+    "math.NT"
+   ],
+   "arxiv_id": "1301.4429",
+   "authors": [
+    "Niels Borne",
+    "Michel Emsalem",
+    "Jakob Stix"
+   ],
+   "description": "Not read beyond the abstract. Summary of the abstract: Lifting Galois sections to Mochizuki's cuspidalization quotient pi_1^cc.",
+   "id": "1301.4429",
+   "read_as": "abstract only",
+   "relevance_score": null,
+   "screening": {
+    "category": "prereq",
+    "decision": "include",
+    "priority": 3
+   },
+   "theme": "prerequisites",
+   "title": "Lifting Galois sections along torsors",
+   "year": 2013
+  },
+  {
+   "arxiv_categories": [
+    "math.LO",
+    "cs.LO"
+   ],
+   "arxiv_id": "1302.1207",
+   "authors": [
+    "Álvaro Pelayo",
+    "Vladimir Voevodsky",
+    "Michael A. Warren"
+   ],
+   "description": "A preliminary constructive formalization of the p-adic integers and numbers in Coq within univalent foundations.",
+   "id": "1302.1207",
+   "primary_source": "TeX",
+   "read_as": "partial: Sections 1 to 7 in full from TeX; the Coq code appendix only skimmed",
+   "relevance_score": 0,
+   "screening": {
+    "category": "formal",
+    "decision": "include",
+    "priority": 3
+   },
+   "theme": "formalization",
+   "title": "A preliminary univalent formalization of the p-adic numbers",
+   "year": 2013
+  },
+  {
+   "arxiv_categories": [
+    "cs.CC"
+   ],
+   "arxiv_id": "1304.5429",
+   "authors": [
+    "Kousha Etessami",
+    "Alistair Stewart",
+    "Mihalis Yannakakis"
+   ],
+   "description": "Not read beyond the abstract. Summary of the abstract: Refined Baker abc implies polynomial-time comparison of succinct integers.",
+   "id": "1304.5429",
+   "read_as": "abstract only",
+   "relevance_score": null,
+   "screening": {
+    "category": "abc_math",
+    "decision": "include",
+    "priority": 3
+   },
+   "theme": "abc_vojta",
+   "title": "A note on the complexity of comparing succinctly represented integers, with an application to maximum probability parsing",
+   "year": 2013
+  },
+  {
+   "arxiv_categories": [
+    "math.RA",
+    "math.QA"
+   ],
+   "arxiv_id": "1304.6532",
+   "authors": [
+    "Lieven Le Bruyn"
+   ],
+   "description": "Not read beyond the abstract. Summary of the abstract: Lecture notes on Smirnov's F1-geometry approach to abc and Borger lambda-rings.",
+   "id": "1304.6532",
+   "read_as": "abstract only",
+   "relevance_score": null,
+   "screening": {
+    "category": "alt_approach",
+    "decision": "include",
+    "priority": 3
+   },
+   "theme": "abc_vojta",
+   "title": "Absolute geometry and the Habiro topology",
+   "year": 2013
+  },
+  {
+   "arxiv_categories": [
+    "math.AG",
+    "math.NT"
+   ],
+   "arxiv_id": "1311.4359",
+   "authors": [
+    "Kirti Joshi"
+   ],
+   "description": "Reduces the degree of the dormant oper locus in characteristic p to a Quot scheme degree and conjectures a formula; unrelated to IUT.",
+   "id": "1311.4359",
+   "primary_source": "TeX",
+   "read_as": "partial: all except the closing residue computations, read in part",
+   "relevance_score": 0,
+   "screening": {
+    "category": "prereq",
+    "decision": "include",
+    "priority": 3
+   },
+   "theme": "prerequisites",
+   "title": "The degree of the dormant operatic locus",
+   "year": 2013
+  },
+  {
+   "arxiv_categories": [
+    "math.GM"
+   ],
+   "arxiv_id": "1407.7289",
+   "authors": [
+    "JinHua Fei"
+   ],
+   "claim_status": "Claims a conditional negation of abc (abstract only; not read).",
+   "description": "Not read beyond the abstract. The abstract claims a conditional negation of abc.",
+   "id": "1407.7289",
+   "read_as": "abstract only",
+   "relevance_score": null,
+   "screening": {
+    "category": "abc_math",
+    "decision": "include",
+    "priority": 3
+   },
+   "theme": "abc_vojta",
+   "title": "Conditional Negation of The abc Conjecture",
+   "year": 2014
+  },
+  {
+   "arxiv_categories": [
+    "math.NT"
+   ],
+   "arxiv_id": "1409.2974",
+   "authors": [
+    "Greg Martin",
+    "Winnie Miao"
+   ],
+   "description": "Not read beyond the abstract. Summary of the abstract: Survey of abc triples, heuristics, refinements, and progress; numerical and theoretical background.",
+   "id": "1409.2974",
+   "read_as": "abstract only",
+   "relevance_score": null,
+   "screening": {
+    "category": "abc_math",
+    "decision": "include",
+    "priority": 3
+   },
+   "theme": "abc_vojta",
+   "title": "abc triples",
+   "year": 2014
+  },
+  {
+   "arxiv_categories": [
+    "math.NT",
+    "math.AG"
+   ],
+   "arxiv_id": "1409.4909",
+   "authors": [
+    "Alexander Ivanov"
+   ],
+   "description": "Not read beyond the abstract. Summary of the abstract: Reconstructing decomposition subgroups of arithmetic curves group-theoretically; related to reconstruction steps in mono-anabelian geometry.",
+   "id": "1409.4909",
+   "read_as": "abstract only",
+   "relevance_score": null,
+   "screening": {
+    "category": "prereq",
+    "decision": "include",
+    "priority": 3
+   },
+   "theme": "prerequisites",
+   "title": "Reconstructing decomposition subgroups in arithmetic fundamental groups using regulators",
+   "year": 2014
+  },
+  {
+   "arxiv_categories": [
+    "math.NT",
+    "math.AG"
+   ],
+   "arxiv_id": "1409.6706",
+   "authors": [
+    "Arne Smeets"
+   ],
+   "description": "Not read beyond the abstract. Summary of the abstract: Uses abc conditionally to build a simply connected Brauer-Manin counterexample.",
+   "id": "1409.6706",
+   "read_as": "abstract only",
+   "relevance_score": null,
+   "screening": {
+    "category": "abc_math",
+    "decision": "include",
+    "priority": 3
+   },
+   "theme": "abc_vojta",
+   "title": "Insufficiency of the étale Brauer-Manin obstruction: towards a simply connected example",
+   "year": 2014
+  },
+  {
+   "arxiv_categories": [
+    "math.AG",
+    "math.NT"
+   ],
+   "arxiv_id": "1411.1191",
+   "authors": [
+    "Yasuhiro Wakabayashi"
+   ],
+   "description": "Not read beyond the abstract. Summary of the abstract: Explicit count of dormant indigenous bundles, an object of Mochizuki's p-adic Teichmuller theory.",
+   "id": "1411.1191",
+   "read_as": "abstract only",
+   "relevance_score": null,
+   "screening": {
+    "category": "prereq",
+    "decision": "include",
+    "priority": 3
+   },
+   "theme": "prerequisites",
+   "title": "An explicit formula for the generic number of dormant indigenous bundles",
+   "year": 2014
+  },
+  {
+   "arxiv_categories": [
+    "math.NT"
+   ],
+   "arxiv_id": "1505.06500",
+   "authors": [
+    "Amir Akbary",
+    "Soroosh Yazdani"
+   ],
+   "description": "Not read beyond the abstract. Summary of the abstract: Conditional abc bounds on greatest prime factor of divisibility sequences.",
+   "id": "1505.06500",
+   "read_as": "abstract only",
+   "relevance_score": null,
+   "screening": {
+    "category": "abc_math",
+    "decision": "include",
+    "priority": 3
+   },
+   "theme": "abc_vojta",
+   "title": "On the greatest prime factor of some divisibility sequences",
+   "year": 2015
+  },
+  {
+   "arxiv_categories": [
+    "math.NT"
+   ],
+   "arxiv_id": "1506.01956",
+   "authors": [
+    "Arash Rastegar"
+   ],
+   "description": "Programmatic note proposing a Galois action on a profinite mapping class group as an arithmetic Teichmüller space; no content on abc or IUT.",
+   "id": "1506.01956",
+   "primary_source": "TeX",
+   "read_as": "full text from TeX",
+   "relevance_score": 0,
+   "screening": {
+    "category": "alt_approach",
+    "decision": "maybe",
+    "priority": 3
+   },
+   "theme": "abc_vojta",
+   "title": "Arithmetic Teichmuller Theory",
+   "year": 2015
+  },
+  {
+   "arxiv_categories": [
+    "math.NT"
+   ],
+   "arxiv_id": "1508.05277",
+   "authors": [
+    "Kristian Strommen"
+   ],
+   "description": "Not read beyond the abstract. Summary of the abstract: Recovers p-adic valuation of a local field from small Galois quotients.",
+   "id": "1508.05277",
+   "read_as": "abstract only",
+   "relevance_score": null,
+   "screening": {
+    "category": "prereq",
+    "decision": "include",
+    "priority": 3
+   },
+   "theme": "prerequisites",
+   "title": "Canonical Valuations and the Birational Section Conjecture",
+   "year": 2015
+  },
+  {
+   "arxiv_categories": [
+    "math.NT"
+   ],
+   "arxiv_id": "1510.08807",
+   "authors": [
+    "Patrick Ingram"
+   ],
+   "description": "Not read beyond the abstract. Summary of the abstract: Absolute canonical height lower bound proved assuming abc for generic families.",
+   "id": "1510.08807",
+   "read_as": "abstract only",
+   "relevance_score": null,
+   "screening": {
+    "category": "abc_math",
+    "decision": "include",
+    "priority": 3
+   },
+   "theme": "abc_vojta",
+   "title": "Canonical heights and preperiodic points for weighted homogeneous families of polynomials",
+   "year": 2015
+  },
+  {
+   "arxiv_categories": [
+    "math.NT"
+   ],
+   "arxiv_id": "1511.01210",
+   "authors": [
+    "George Grell",
+    "Wayne Peng"
+   ],
+   "description": "Not read beyond the abstract. Summary of the abstract: abc for number fields implies infinitely many non-Fibonacci-Wieferich primes.",
+   "id": "1511.01210",
+   "read_as": "abstract only",
+   "relevance_score": null,
+   "screening": {
+    "category": "abc_math",
+    "decision": "include",
+    "priority": 3
+   },
+   "theme": "abc_vojta",
+   "title": "Wall's Conjecture and the ABC Conjecutre",
+   "year": 2015
+  },
+  {
+   "arxiv_categories": [
+    "math.NT"
+   ],
+   "arxiv_id": "1511.05645",
+   "authors": [
+    "Wayne Peng"
+   ],
+   "description": "Not read beyond the abstract. Summary of the abstract: abc over number fields implies non-Fibonacci-Wieferich primes.",
+   "id": "1511.05645",
+   "read_as": "abstract only",
+   "relevance_score": null,
+   "screening": {
+    "category": "abc_math",
+    "decision": "include",
+    "priority": 3
+   },
+   "theme": "abc_vojta",
+   "title": "ABC Implies There are Infinitely Many non-Fibonacci-Wieferich Primes: An Application of ABC Conjecture over Number Fields",
+   "year": 2015
+  },
+  {
+   "arxiv_categories": [
+    "math.NT"
+   ],
+   "arxiv_id": "1601.03572",
+   "authors": [
+    "Vesselin Dimitrov"
+   ],
+   "claim_status": "Conditional on IUT IV Theorem 1.10; an outline of effectivity.",
+   "description": "Outlines an effective form of the reduction from abc on compactly bounded sets to full abc ([GenEll] Theorem 2.1), so that IUT IV Theorem 1.10, if correct, would give an effective abc; the author presents it as an outline.",
+   "id": "1601.03572",
+   "primary_source": "TeX",
+   "project_links": [
+    "IUT4.Thm1_10",
+    "IUT4.Cor2_3",
+    "IUT/PaperIV/Corollary2_3.lean",
+    "IUT/Applications/ABCSpecialization.lean"
+   ],
+   "read_as": "full text from TeX",
+   "relevance_score": 2,
+   "screening": {
+    "category": "iut_core",
+    "decision": "include",
+    "priority": 1
+   },
+   "statements_of_interest": [
+    "Theorem 1.1 (page 3): a height bound h(P) <= (1 + eps)(cond(P) + d(P)) + A(d, eps) on a compactly bounded set for points of degree at most d implies a bound for all points outside {0, 1, infinity} of degree at most d, with computable constants.",
+    "Section 5 (pages 9 to 11): the proof uses Belyi maps on Fermat curves with n = 6 ceil(1/eps), pigeonhole over many maps with disjoint critical images, and a Liouville separation bound.",
+    "Page 2: the restriction to compactly bounded sets comes from residue characteristic 2 (IUT IV Remark 1.10.6 (ii))."
+   ],
+   "theme": "explicit",
+   "title": "Effectivity in Mochizuki's work on the abc-conjecture",
+   "year": 2016
+  },
+  {
+   "arxiv_categories": [
+    "math.NT",
+    "math.AG"
+   ],
+   "arxiv_id": "1601.03825",
+   "authors": [
+    "Yu Yasufuku"
+   ],
+   "claim_status": "Unconditional proof of Vojta's conjecture for some blowups of the plane.",
+   "description": "Proves Vojta's conjecture for certain iterated blowups of the projective plane, shows that abc implies it for related blowups, and that those cases imply only an S-unit case of abc.",
+   "id": "1601.03825",
+   "primary_source": "PDF",
+   "read_as": "full text from PDF",
+   "relevance_score": 1,
+   "screening": {
+    "category": "abc_math",
+    "decision": "include",
+    "priority": 3
+   },
+   "theme": "abc_vojta",
+   "title": "Vojta's Conjecture on Multiple Blowups of P^2 and the abc conjecture",
+   "year": 2016
+  },
+  {
+   "arxiv_categories": [
+    "math.LO"
+   ],
+   "arxiv_id": "1602.03580",
+   "authors": [
+    "Petr Glivický",
+    "Vítězslav Kala"
+   ],
+   "description": "Not read beyond the abstract. Summary of the abstract: Under abc, Catalan and FLT provable in weak exponential arithmetic; logical consequence of abc.",
+   "id": "1602.03580",
+   "read_as": "abstract only",
+   "relevance_score": null,
+   "screening": {
+    "category": "abc_math",
+    "decision": "include",
+    "priority": 3
+   },
+   "theme": "abc_vojta",
+   "title": "Fermat's Last Theorem and Catalan's Conjecture in Weak Exponential Arithmetics",
+   "year": 2016
+  },
+  {
+   "arxiv_categories": [
+    "math.NT"
+   ],
+   "arxiv_id": "1605.04376",
+   "authors": [
+    "Andrew Bridy",
+    "Thomas Tucker"
+   ],
+   "description": "Not read beyond the abstract. Summary of the abstract: abc implies a Zsigmondy principle for ramification in iterated preimage fields.",
+   "id": "1605.04376",
+   "read_as": "abstract only",
+   "relevance_score": null,
+   "screening": {
+    "category": "abc_math",
+    "decision": "include",
+    "priority": 3
+   },
+   "theme": "abc_vojta",
+   "title": "ABC implies a Zsigmondy principle for ramification",
+   "year": 2016
+  },
+  {
+   "arxiv_categories": [
+    "math.NT"
+   ],
+   "arxiv_id": "1605.06079",
+   "authors": [
+    "Rafael von Känel",
+    "Benjamin Matschke"
+   ],
+   "description": "Not read beyond the abstract. Summary of the abstract: Solves S-unit equations via modularity; data used to test Baker's explicit abc conjecture.",
+   "id": "1605.06079",
+   "read_as": "abstract only",
+   "relevance_score": null,
+   "screening": {
+    "category": "abc_math",
+    "decision": "include",
+    "priority": 3
+   },
+   "theme": "abc_vojta",
+   "title": "Solving S-unit, Mordell, Thue, Thue-Mahler and generalized Ramanujan-Nagell equations via Shimura-Taniyama conjecture",
+   "year": 2016
+  },
+  {
+   "arxiv_categories": [
+    "math.NT",
+    "math.AG"
+   ],
+   "arxiv_id": "1608.05912",
+   "authors": [
+    "James Borger",
+    "Lance Gurney"
+   ],
+   "description": "Not read beyond the abstract. Summary of the abstract: Canonical lifts for families of ordinary elliptic curves.",
+   "id": "1608.05912",
+   "read_as": "abstract only",
+   "relevance_score": null,
+   "screening": {
+    "category": "prereq",
+    "decision": "include",
+    "priority": 3
+   },
+   "theme": "prerequisites",
+   "title": "Canonical lifts of families of elliptic curves",
+   "year": 2016
+  },
+  {
+   "arxiv_categories": [
+    "math.NT"
+   ],
+   "arxiv_id": "1610.00488",
+   "authors": [
+    "Srinivas Kotyada",
+    "Subramani Muthukrishnan"
+   ],
+   "description": "Not read beyond the abstract. Summary of the abstract: abc for number fields implies infinitely many non-Wieferich primes for units.",
+   "id": "1610.00488",
+   "read_as": "abstract only",
+   "relevance_score": null,
+   "screening": {
+    "category": "abc_math",
+    "decision": "include",
+    "priority": 3
+   },
+   "theme": "abc_vojta",
+   "title": "Non-Wieferich primes in number fields and ABC conjecture",
+   "year": 2016
+  },
+  {
+   "arxiv_categories": [
+    "math.NT"
+   ],
+   "arxiv_id": "1611.01192",
+   "authors": [
+    "David Cushing",
+    "James Eldred Pascoe"
+   ],
+   "description": "Not read beyond the abstract. Summary of the abstract: Introductory account of the abc conjecture and its applications to powerful numbers.",
+   "id": "1611.01192",
+   "read_as": "abstract only",
+   "relevance_score": null,
+   "screening": {
+    "category": "abc_math",
+    "decision": "include",
+    "priority": 3
+   },
+   "theme": "abc_vojta",
+   "title": "Powerful numbers and the ABC-conjecture",
+   "year": 2016
+  },
+  {
+   "arxiv_categories": [
+    "math.NT"
+   ],
+   "arxiv_id": "1612.05438",
+   "authors": [
+    "Tarlok N. Shorey",
+    "Rob Tijdeman"
+   ],
+   "description": "Not read beyond the abstract. Summary of the abstract: Survey of consecutive-integer results under abc; explicit abc implies Erdos-Woods.",
+   "id": "1612.05438",
+   "read_as": "abstract only",
+   "relevance_score": null,
+   "screening": {
+    "category": "abc_math",
+    "decision": "include",
+    "priority": 3
+   },
+   "theme": "abc_vojta",
+   "title": "Arithmetic properties of blocks of consecutive integers",
+   "year": 2016
+  },
+  {
+   "arxiv_categories": [
+    "math.NT"
+   ],
+   "arxiv_id": "1705.09251",
+   "authors": [
+    "Hector Pasten"
+   ],
+   "claim_status": "Unconditional polynomial bounds of a weaker shape than abc.",
+   "description": "Shimura curve methods give unconditional polynomial bounds for the number of divisors of abc in terms of rad(abc) and for the Faltings height of elliptic curves in terms of the conductor.",
+   "id": "1705.09251",
+   "primary_source": "TeX",
+   "project_links": [
+    "Challenge.ABC",
+    "IUT/ABC/Variants.lean"
+   ],
+   "read_as": "partial: Sections 1, 3, 7.4 to 7.5, 15 and 16 in full; other sections through the statements quoted in the introduction",
+   "relevance_score": 2,
+   "screening": {
+    "category": "alt_approach",
+    "decision": "include",
+    "priority": 2
+   },
+   "statements_of_interest": [
+    "Theorems 1.10 and 1.11 (Theorem 16.7): unconditionally d(abc) < K_eps rad(abc)^(8/3 + eps) and prod_{p | abc} v_p(abc) < K_eps rad(abc)^(8/3 + eps).",
+    "Theorem 7.5: h(E) < (1/48 + eps) N log N and log|Delta_E| < (1/4 + eps) N log N for large N.",
+    "Section 3: the Frey curve y^2 = x(x − a)(x + b) has Delta = 2^s (abc)^2 and N = 2^t rad(abc) with -8 <= s <= 4 and -1 <= t <= 7.",
+    "Conjectures 1.1 and 1.2: the 'some kappa' forms of Szpiro and abc."
+   ],
+   "theme": "abc_vojta",
+   "title": "Shimura curves and the abc conjecture",
+   "year": 2017
+  },
+  {
+   "arxiv_categories": [
+    "math.AG",
+    "math.NT"
+   ],
+   "arxiv_id": "1706.05782",
+   "authors": [
+    "Hilaf Hasson",
+    "Andrew Obus"
+   ],
+   "description": "Not read beyond the abstract. Summary of the abstract: abc implies Bilu-Luca weak diversity conjecture.",
+   "id": "1706.05782",
+   "read_as": "abstract only",
+   "relevance_score": null,
+   "screening": {
+    "category": "abc_math",
+    "decision": "include",
+    "priority": 3
+   },
+   "theme": "abc_vojta",
+   "title": "The abc Conjecture implies the Weak Diversity Conjecture",
+   "year": 2017
+  },
+  {
+   "arxiv_categories": [
+    "math.AG",
+    "math.NT"
+   ],
+   "arxiv_id": "1707.01158",
+   "authors": [
+    "Jeroen Sijsling"
+   ],
+   "description": "Explicit canonical models over Q of the four arithmetic (1; infinity) curves, which the paper states IUT I Definition 3.1 excludes; they are elliptic curves with explicit j-invariants.",
+   "id": "1707.01158",
+   "primary_source": "TeX",
+   "project_links": [
+    "IUT1.Def3_1",
+    "IUT/PaperI/InitialThetaData.lean"
+   ],
+   "read_as": "full text from TeX",
+   "relevance_score": 2,
+   "screening": {
+    "category": "prereq",
+    "decision": "include",
+    "priority": 2
+   },
+   "statements_of_interest": [
+    "Introduction (page 2): the author states that these curves are excluded in IUT I Definition 3.1 (d).",
+    "Table 4 (page 11): Weierstrass models with LMFDB labels 20.a1, 24.a3, 32.a4, 36.a3 and j-invariants 2^14 31^3/5^3, 2^2 73^3/3^4, 1728, 0."
+   ],
+   "theme": "prerequisites",
+   "title": "Canonical models of arithmetic (1; ∞) curves",
+   "year": 2017
+  },
+  {
+   "arxiv_categories": [
+    "math.NT"
+   ],
+   "arxiv_id": "1708.00620",
+   "authors": [
+    "Natalia da Silva",
+    "Serban Raianu",
+    "Hector Salgado"
+   ],
+   "claim_status": "Claims abc on sets built from harmonic numbers and special primes (abstract only; not read).",
+   "description": "Not read beyond the abstract. Summary of the abstract: abc conjecture verified on sets built from harmonic numbers and special primes.",
+   "id": "1708.00620",
+   "read_as": "abstract only",
+   "relevance_score": null,
+   "screening": {
+    "category": "abc_math",
+    "decision": "include",
+    "priority": 3
+   },
+   "theme": "abc_vojta",
+   "title": "Differences of Harmonic Numbers and the abc-Conjecture",
+   "year": 2017
+  },
+  {
+   "arxiv_categories": [
+    "math.NT"
+   ],
+   "arxiv_id": "1711.01507",
+   "authors": [
+    "Nicole Looper"
+   ],
+   "description": "Not read beyond the abstract. Summary of the abstract: abc implies uniform dynamical Zsigmondy bounds.",
+   "id": "1711.01507",
+   "read_as": "abstract only",
+   "relevance_score": null,
+   "screening": {
+    "category": "abc_math",
+    "decision": "include",
+    "priority": 3
+   },
+   "theme": "abc_vojta",
+   "title": "The abc-Conjecture implies uniform bounds on dynamical Zsigmondy sets",
+   "year": 2017
+  },
+  {
+   "arxiv_categories": [
+    "math.AG",
+    "math.NT"
+   ],
+   "arxiv_id": "1712.09487",
+   "authors": [
+    "Taylor Dupuy",
+    "Eric Katz",
+    "Joseph Rabinoff",
+    "David Zureick-Brown"
+   ],
+   "description": "Defines total p-differentials on schemes over Z/p^2 interpolating Frobenius-semilinear differentials and Buium p-derivations; no link to Szpiro or abc in the text.",
+   "id": "1712.09487",
+   "primary_source": "TeX",
+   "read_as": "full text from TeX",
+   "relevance_score": 0,
+   "screening": {
+    "category": "alt_approach",
+    "decision": "maybe",
+    "priority": 3
+   },
+   "theme": "prerequisites",
+   "title": "Total p-differentials on schemes over Z/p^2",
+   "year": 2017
+  },
+  {
+   "arxiv_categories": [
+    "math.NT"
+   ],
+   "arxiv_id": "1802.02770",
+   "authors": [
+    "Constantin M. Petridi"
+   ],
+   "claim_status": "Claims abc for certain sets of integers (abstract only; not read).",
+   "description": "Not read beyond the abstract. The abstract claims abc for certain sets of integers via radical generating function.",
+   "id": "1802.02770",
+   "read_as": "abstract only",
+   "relevance_score": null,
+   "screening": {
+    "category": "abc_math",
+    "decision": "include",
+    "priority": 3
+   },
+   "theme": "abc_vojta",
+   "title": "The Extended Generating Function of the Radical of n and the abc-Conjecture",
+   "year": 2018
+  },
+  {
+   "arxiv_categories": [
+    "math.NT",
+    "math.AG",
+    "math.LO"
+   ],
+   "arxiv_id": "1804.00228",
+   "authors": [
+    "Taylor Dupuy",
+    "David Zureick-Brown"
+   ],
+   "description": "Shows that Deligne-Illusie classes satisfy a modified form of Faltings' axiom for arithmetic Kodaira-Spencer classes.",
+   "id": "1804.00228",
+   "primary_source": "PDF",
+   "read_as": "full text from PDF",
+   "relevance_score": 0,
+   "screening": {
+    "category": "alt_approach",
+    "decision": "include",
+    "priority": 3
+   },
+   "theme": "prerequisites",
+   "title": "Deligne-Illusie Classes as Arithmetic Kodaira-Spencer Classes",
+   "year": 2018
+  },
+  {
+   "arxiv_categories": [
+    "math.NT"
+   ],
+   "arxiv_id": "1804.06053",
+   "authors": [
+    "Jamie Juul",
+    "Holly Krieger",
+    "Nicole Looper",
+    "Michelle Manes",
+    "Bianca Thompson",
+    "Laura Walton"
+   ],
+   "description": "Not read beyond the abstract. Summary of the abstract: Jones arboreal conjecture proved assuming abc and Vojta.",
+   "id": "1804.06053",
+   "read_as": "abstract only",
+   "relevance_score": null,
+   "screening": {
+    "category": "abc_math",
+    "decision": "include",
+    "priority": 3
+   },
+   "theme": "abc_vojta",
+   "title": "Arboreal representations for rational maps with few critical points",
+   "year": 2018
+  },
+  {
+   "arxiv_categories": [
+    "math.NT"
+   ],
+   "arxiv_id": "1809.03328",
+   "authors": [
+    "Anupam Saxena"
+   ],
+   "claim_status": "Claims finiteness of exceptional triples of a special prime form (abstract only; not read).",
+   "description": "Not read beyond the abstract. Summary of the abstract: Finiteness of abc exceptional triples of special prime form.",
+   "id": "1809.03328",
+   "read_as": "abstract only",
+   "relevance_score": null,
+   "screening": {
+    "category": "abc_math",
+    "decision": "include",
+    "priority": 3
+   },
+   "theme": "abc_vojta",
+   "title": "ABC Conjecture: ABC = 2^m p^n q^r with Fermat or Mersenne Primes",
+   "year": 2018
+  },
+  {
+   "arxiv_categories": [
+    "math.NT"
+   ],
+   "arxiv_id": "1812.11239",
+   "authors": [
+    "Nithin Kavi",
+    "Xinyi Zhang",
+    "Viraj Jayam",
+    "Ajit Kadaveru"
+   ],
+   "description": "Not read beyond the abstract. Summary of the abstract: Radical bounds of multiperfect numbers with applications under abc.",
+   "id": "1812.11239",
+   "read_as": "abstract only",
+   "relevance_score": null,
+   "screening": {
+    "category": "abc_math",
+    "decision": "include",
+    "priority": 3
+   },
+   "theme": "abc_vojta",
+   "title": "On the Radical of Multiperfect Numbers and Applications",
+   "year": 2018
+  },
+  {
+   "arxiv_categories": [
+    "math.NT"
+   ],
+   "arxiv_id": "1902.03734",
+   "authors": [
+    "S. Subburam",
+    "J. Tanti"
+   ],
+   "description": "Not read beyond the abstract. Summary of the abstract: Finiteness for f(x)=g(y) assuming abc.",
+   "id": "1902.03734",
+   "read_as": "abstract only",
+   "relevance_score": null,
+   "screening": {
+    "category": "abc_math",
+    "decision": "include",
+    "priority": 3
+   },
+   "theme": "abc_vojta",
+   "title": "On the Diophantine equations f (x) = g(y)",
+   "year": 2019
+  },
+  {
+   "arxiv_categories": [
+    "math.NT"
+   ],
+   "arxiv_id": "1903.11271",
+   "authors": [
+    "Christian Maire",
+    "Marine Rougnant"
+   ],
+   "description": "Not read beyond the abstract. Summary of the abstract: Generalized abc implies p-rationality of number fields for many primes.",
+   "id": "1903.11271",
+   "read_as": "abstract only",
+   "relevance_score": null,
+   "screening": {
+    "category": "abc_math",
+    "decision": "include",
+    "priority": 3
+   },
+   "theme": "abc_vojta",
+   "title": "A note on p-rational fields and the abc-conjecture",
+   "year": 2019
+  },
+  {
+   "arxiv_categories": [
+    "math.AG",
+    "math.NT"
+   ],
+   "arxiv_id": "1904.03126",
+   "authors": [
+    "Sylvain Gaulhiac"
+   ],
+   "description": "Tempered fundamental groups determine the analytic skeleton of anabelian Berkovich curves, adapting Mochizuki's semi-graphs of anabelioids.",
+   "id": "1904.03126",
+   "primary_source": "TeX",
+   "read_as": "partial: Introduction; Section 1 passages found by search; Section 3 main theorems with proof openings; Section 2 not opened",
+   "relevance_score": 1,
+   "screening": {
+    "category": "prereq",
+    "decision": "include",
+    "priority": 2
+   },
+   "theme": "prerequisites",
+   "title": "Reconstruction anabélienne du squelette des courbes analytiques",
+   "year": 2019
+  },
+  {
+   "arxiv_categories": [
+    "math.AG",
+    "math.NT",
+    "math.SG"
+   ],
+   "arxiv_id": "1905.03368",
+   "authors": [
+    "Yasuhiro Wakabayashi"
+   ],
+   "description": "Compares two symplectic structures on p-adic moduli of indigenous bundles over the ordinary locus of p-adic Teichmüller theory.",
+   "id": "1905.03368",
+   "primary_source": "PDF",
+   "read_as": "partial: abstract, Introduction, statement of Theorem 1.7.1",
+   "relevance_score": 0,
+   "screening": {
+    "category": "prereq",
+    "decision": "include",
+    "priority": 3
+   },
+   "theme": "prerequisites",
+   "title": "Symplectic geometry of p-adic Teichmüller uniformization for ordinary nilpotent indigenous bundles",
+   "year": 2019
+  },
+  {
+   "arxiv_categories": [
+    "math.AG",
+    "math.NT"
+   ],
+   "arxiv_id": "1906.06840",
+   "authors": [
+    "Kirti Joshi"
+   ],
+   "description": "Constructs a universal one-dimensional formal group law with an action of a commutative monoid, recovering ring structures with a fixed multiplicative monoid and untilts of perfectoid rings.",
+   "id": "1906.06840",
+   "primary_source": "PDF",
+   "read_as": "full text from PDF",
+   "relevance_score": 0,
+   "screening": {
+    "category": "alt_approach",
+    "decision": "include",
+    "priority": 2
+   },
+   "theme": "joshi",
+   "title": "Algebraization of Mochizuki's anabelian variation of ring structures, perfectoid geometry and formal groups",
+   "year": 2019
+  },
+  {
+   "arxiv_categories": [
+    "math.NT"
+   ],
+   "arxiv_id": "1908.04938",
+   "authors": [
+    "Alexander J. Barrios"
+   ],
+   "description": "Not read beyond the abstract. Summary of the abstract: Constructive proof of infinitely many good Frey curves for the modified Szpiro conjecture, equivalent to abc.",
+   "id": "1908.04938",
+   "read_as": "abstract only",
+   "relevance_score": null,
+   "screening": {
+    "category": "abc_math",
+    "decision": "include",
+    "priority": 3
+   },
+   "theme": "abc_vojta",
+   "title": "A Constructive Proof of Masser's Theorem",
+   "year": 2019
+  },
+  {
+   "arxiv_categories": [
+    "math.NT",
+    "math.AG"
+   ],
+   "arxiv_id": "1909.08829",
+   "authors": [
+    "Mohamed Saidi",
+    "Akio Tamagawa"
+   ],
+   "description": "An m-step solvable Neukirch-Uchida theorem; local invariants are recovered by explicit formulas from abelianized decomposition groups.",
+   "id": "1909.08829",
+   "primary_source": "PDF",
+   "project_links": [
+    "P-ANAB"
+   ],
+   "read_as": "partial: introduction to Lemma 1.11 from PDF text and all statements from TeX; later proofs not read",
+   "relevance_score": 2,
+   "screening": {
+    "category": "prereq",
+    "decision": "include",
+    "priority": 3
+   },
+   "statements_of_interest": [
+    "Theorem 1: an isomorphism of maximal 3-step solvable quotients of absolute Galois groups of number fields implies the fields are isomorphic.",
+    "Theorem 2: an isomorphism of (m + 3)-step quotients induces an isomorphism of the m-step solvable extensions, unique for m >= 2.",
+    "Proposition 1.1 (ii) to (iv): p, the local degree and the residue degree from the abelianized decomposition group."
+   ],
+   "theme": "prerequisites",
+   "title": "The m-step solvable anabelian geometry of number fields",
+   "year": 2019
+  },
+  {
+   "arxiv_categories": [
+    "cs.LO"
+   ],
+   "arxiv_id": "1909.11342",
+   "authors": [
+    "Robert Y. Lewis"
+   ],
+   "description": "Lean 3 construction of the p-adic numbers and a proof of Hensel's lemma; the corresponding material is now in Mathlib.",
+   "id": "1909.11342",
+   "primary_source": "TeX",
+   "read_as": "full text from TeX",
+   "relevance_score": 1,
+   "screening": {
+    "category": "formal",
+    "decision": "include",
+    "priority": 2
+   },
+   "theme": "formalization",
+   "title": "A formal proof of Hensel's lemma over the p-adic integers",
+   "year": 2019
+  },
+  {
+   "arxiv_categories": [
+    "cs.LO",
+    "math.AG",
+    "math.NT"
+   ],
+   "arxiv_id": "1910.12320",
+   "authors": [
+    "Kevin Buzzard",
+    "Johan Commelin",
+    "Patrick Massot"
+   ],
+   "description": "Lean 3 definition of perfectoid spaces over mathlib; the authors record where their definitions differ from the literature.",
+   "id": "1910.12320",
+   "primary_source": "PDF",
+   "read_as": "full text from PDF",
+   "relevance_score": 1,
+   "screening": {
+    "category": "formal",
+    "decision": "include",
+    "priority": 2
+   },
+   "theme": "formalization",
+   "title": "Formalising perfectoid spaces",
+   "year": 2019
+  },
+  {
+   "arxiv_categories": [
+    "math.NT"
+   ],
+   "arxiv_id": "1911.07215",
+   "authors": [
+    "Christian Táfula"
+   ],
+   "description": "Not read beyond the abstract. Summary of the abstract: Uniform abc for number fields implies Siegel-zero free regions via heights of singular moduli.",
+   "id": "1911.07215",
+   "read_as": "abstract only",
+   "relevance_score": null,
+   "screening": {
+    "category": "abc_math",
+    "decision": "include",
+    "priority": 3
+   },
+   "theme": "abc_vojta",
+   "title": "On Landau-Siegel zeros and heights of singular moduli",
+   "year": 2019
+  },
+  {
+   "arxiv_categories": [
+    "math.AG",
+    "math.NT"
+   ],
+   "arxiv_id": "2003.01890",
+   "authors": [
+    "Kirti Joshi"
+   ],
+   "description": "Defines anabelomorphy and amphoric quantities for p-adic fields, states that discriminants and conductors are not amphoric while log-shells are, and reads the indeterminacy (Ind1) as anabelomorphy.",
+   "id": "2003.01890",
+   "primary_source": "TeX",
+   "read_as": "partial: introduction, Sections 2 to 4, cohomology, log-shell, conductor and Kodaira theorems, Ind1 appendix",
+   "relevance_score": 1,
+   "screening": {
+    "category": "alt_approach",
+    "decision": "include",
+    "priority": 2
+   },
+   "theme": "joshi",
+   "title": "On Mochizuki's idea of Anabelomorphy and its applications",
+   "year": 2020
+  },
+  {
+   "arxiv_categories": [
+    "math.NT",
+    "math.AG"
+   ],
+   "arxiv_id": "2004.13108",
+   "authors": [
+    "Taylor Dupuy",
+    "Anton Hilado"
+   ],
+   "claim_status": "Szpiro-type inequalities stated as conditional on Corollary 3.12 and on Claim 5.0.1.",
+   "description": "Restates IUT III Corollary 3.12 as an averaged inequality between the degree of the q-pilot and log hull radii, isolates its hypotheses, and derives probabilistic, baby and explicit Szpiro inequalities, all stated as conditional on Corollary 3.12.",
+   "id": "2004.13108",
+   "primary_source": "TeX",
+   "project_links": [
+    "IUT3.Cor3_12",
+    "T-CMP",
+    "OB-DEF",
+    "OB-IND",
+    "IUT/PaperIII/Corollary312/Comparison.lean"
+   ],
+   "read_as": "full text from TeX",
+   "relevance_score": 3,
+   "screening": {
+    "category": "iut_core",
+    "decision": "include",
+    "priority": 1
+   },
+   "statements_of_interest": [
+    "Theorem 7.5.1 (page 23): -deg(P_q) <= sum over p of E^2_p(ln R_v), with R_v the radius of the smallest disc containing the multiradial region and explicit probability weights.",
+    "Claim 5.0.1 (page 18): an archimedean radius ln R = (j + 1) ln pi, used as an assumption.",
+    "Definition 1.0.1 (page 2): initial theta data from the field of moduli with F = F_0(sqrt(-1), E_0[30]).",
+    "Section 6.2 (page 19): a stand-in Aut(L:I) for (Ind1) and (Ind2).",
+    "Theorem 8.2.1 (page 31): an explicit Szpiro inequality with stated constants; Theorems 1.0.3 and 7.12.1 give related forms.",
+    "Remark 3.8.3 (page 14): the authors state that the map alpha needed for the contradiction of Scholze and Stix is not specified in IUT."
+   ],
+   "theme": "explicit",
+   "title": "Probabilistic Szpiro, Baby Szpiro, and Explicit Szpiro from Mochizuki's Corollary 3.12",
+   "year": 2020
+  },
+  {
+   "arxiv_categories": [
+    "math.NT",
+    "math.AG",
+    "math.LO"
+   ],
+   "arxiv_id": "2004.13228",
+   "authors": [
+    "Taylor Dupuy",
+    "Anton Hilado"
+   ],
+   "description": "Gives a restatement of the hypotheses of IUT III Corollary 3.12 (pre theta data and initial theta data) in standard terms, an algorithm producing them from elliptic curve databases, and the worked example 11a1 with l = 13.",
+   "id": "2004.13228",
+   "primary_source": "TeX",
+   "project_links": [
+    "IUT1.Def3_1",
+    "IUT3.Cor3_12",
+    "H6",
+    "IUT/PaperI/InitialThetaData.lean"
+   ],
+   "read_as": "full text from TeX",
+   "relevance_score": 3,
+   "screening": {
+    "category": "iut_core",
+    "decision": "include",
+    "priority": 1
+   },
+   "statements_of_interest": [
+    "Inequality 1.0.1 (page 1): the compact form -deg(P_q) <= -deg_lgp(P_hull(U_Theta)); the paper does not treat the construction of the right side.",
+    "Definition 2.4.1 (page 6): pre theta data (F, l, E, S) by five clauses.",
+    "Definition 2.8.1 (page 11): initial theta data; Remark 2.9.3 states equivalence with the version of IUT I.",
+    "Remark 2.4.2 (page 7): IUT I Definition 3.1 gives 6-torsion; the authors impose 30-torsion because IUT IV uses it.",
+    "Example: curve 11a1 with l = 13, S = {11}."
+   ],
+   "theme": "iut_core",
+   "title": "The Statement of Mochizuki's Corollary 3.12: Initial Theta Data",
+   "year": 2020
+  },
+  {
+   "arxiv_categories": [
+    "math.NT"
+   ],
+   "arxiv_id": "2005.07321",
+   "authors": [
+    "P. A. CrowdMath"
+   ],
+   "description": "Not read beyond the abstract. Summary of the abstract: abc applications to powerful numbers.",
+   "id": "2005.07321",
+   "read_as": "abstract only",
+   "relevance_score": null,
+   "screening": {
+    "category": "abc_math",
+    "decision": "include",
+    "priority": 3
+   },
+   "theme": "abc_vojta",
+   "title": "Applications of the abc conjecture to powerful numbers",
+   "year": 2020
+  },
+  {
+   "arxiv_categories": [
+    "math.AG",
+    "math.NT"
+   ],
+   "arxiv_id": "2008.01228",
+   "authors": [
+    "Kirti Joshi"
+   ],
+   "description": "Shows that strictly anabelomorphic p-adic fields give Fargues-Fontaine curves with isomorphic étale fundamental groups that are not isomorphic schemes; one sentence relates this to (Ind1).",
+   "id": "2008.01228",
+   "primary_source": "TeX",
+   "read_as": "full text from TeX",
+   "relevance_score": 0,
+   "screening": {
+    "category": "alt_approach",
+    "decision": "maybe",
+    "priority": 2
+   },
+   "theme": "joshi",
+   "title": "The Absolute Grothendieck Conjecture is false for Fargues-Fontaine Curves",
+   "year": 2020
+  },
+  {
+   "arxiv_categories": [
+    "math.NT"
+   ],
+   "arxiv_id": "2009.04052",
+   "authors": [
+    "Jon Grantham",
+    "Hester Graves"
+   ],
+   "description": "Not read beyond the abstract. Summary of the abstract: abc with epsilon 1/6 implies finitely many s-Cullen repunits.",
+   "id": "2009.04052",
+   "read_as": "abstract only",
+   "relevance_score": null,
+   "screening": {
+    "category": "abc_math",
+    "decision": "include",
+    "priority": 3
+   },
+   "theme": "abc_vojta",
+   "title": "The abc Conjecture Implies That Only Finitely Many s-Cullen Numbers Are Repunits",
+   "year": 2020
+  },
+  {
+   "arxiv_categories": [
+    "math.GM"
+   ],
+   "arxiv_id": "2009.11972",
+   "authors": [
+    "Nikos Bagis"
+   ],
+   "description": "Not read beyond the abstract. Summary of the abstract: Representations of integers as sums of three cubes, with a relation to abc stated in the paper.",
+   "id": "2009.11972",
+   "read_as": "abstract only",
+   "relevance_score": null,
+   "screening": {
+    "category": "abc_math",
+    "decision": "include",
+    "priority": 3
+   },
+   "theme": "abc_vojta",
+   "title": "On the numbers that are sums of three cubes",
+   "year": 2020
+  },
+  {
+   "arxiv_categories": [
+    "cs.LO",
+    "math.NT"
+   ],
+   "arxiv_id": "2010.02595",
+   "authors": [
+    "Johan Commelin",
+    "Robert Y. Lewis"
+   ],
+   "description": "Lean 3 formalization of Witt vectors, now in Mathlib.",
+   "id": "2010.02595",
+   "primary_source": "TeX",
+   "read_as": "full text from TeX",
+   "relevance_score": 0,
+   "screening": {
+    "category": "formal",
+    "decision": "include",
+    "priority": 3
+   },
+   "theme": "formalization",
+   "title": "Formalizing the Ring of Witt Vectors",
+   "year": 2020
+  },
+  {
+   "arxiv_categories": [
+    "math.AG",
+    "math.NT"
+   ],
+   "arxiv_id": "2010.05748",
+   "authors": [
+    "Kirti Joshi"
+   ],
+   "description": "Earlier version of parts of Constructions I: isomorphic tempered fundamental groups over untilts, labeled by points of the Fargues-Fontaine curve.",
+   "id": "2010.05748",
+   "primary_source": "TeX",
+   "read_as": "full text from TeX",
+   "relevance_score": 1,
+   "screening": {
+    "category": "prereq",
+    "decision": "include",
+    "priority": 2
+   },
+   "theme": "joshi",
+   "title": "Untilts of fundamental groups: construction of labeled isomorphs of fundamental groups",
+   "year": 2020
+  },
+  {
+   "arxiv_categories": [
+    "math.NT"
+   ],
+   "arxiv_id": "2010.09493",
+   "authors": [
+    "Machiel van Frankenhuijsen"
+   ],
+   "description": "Proves Ellenberg's congruence abc reduction and Mochizuki's restricted (general position) abc reduction over number fields, via Fermat curves and noncritical Belyi maps, with explicit elementary lemmas.",
+   "id": "2010.09493",
+   "primary_source": "PDF",
+   "project_links": [
+    "IUT4.Cor2_2",
+    "IUT4.Cor2_3",
+    "IUT/PaperIV/Corollary2_3.lean",
+    "IUT/Applications/ABCSpecialization.lean"
+   ],
+   "read_as": "full text from PDF",
+   "relevance_score": 3,
+   "screening": {
+    "category": "prereq",
+    "decision": "include",
+    "priority": 2
+   },
+   "statements_of_interest": [
+    "Theorem 7.6: a restricted abc bound with o(h) error for points outside compact neighborhoods of {0, 1, infinity} at a fixed finite set of places implies abc over every number field; it specializes [GenEll] Theorem 2.1 to D = {0, 1, infinity}.",
+    "Remark 7.2: for Mochizuki's argument the excluded places are the archimedean place and the place 2.",
+    "Lemmas 2.3 and 2.4: bounds for the height and radical of (a^n : 1 − a^n : 1).",
+    "Theorem 4.5: Ellenberg's theorem over number fields with explicit constants."
+   ],
+   "theme": "abc_vojta",
+   "title": "Two Restricted ABC Conjectures",
+   "year": 2020
+  },
+  {
+   "arxiv_categories": [
+    "math.NT"
+   ],
+   "arxiv_id": "2101.05274",
+   "authors": [
+    "K. Anitha",
+    "I. Mumtaj Fathima",
+    "A R Vijayalakshmi"
+   ],
+   "description": "Not read beyond the abstract. Summary of the abstract: abc over Q(sqrt2) implies balancing non-Wieferich primes.",
+   "id": "2101.05274",
+   "read_as": "abstract only",
+   "relevance_score": null,
+   "screening": {
+    "category": "abc_math",
+    "decision": "include",
+    "priority": 3
+   },
+   "theme": "abc_vojta",
+   "title": "A note on balancing sequences and application to cryptography",
+   "year": 2021
+  },
+  {
+   "arxiv_categories": [
+    "math.AG",
+    "math.MG",
+    "math.NT"
+   ],
+   "arxiv_id": "2101.06648",
+   "authors": [
+    "Sylvain Gaulhiac"
+   ],
+   "description": "Partial tempered anabelian results for Berkovich annuli: tempered groups determine annulus length up to a bounded factor.",
+   "id": "2101.06648",
+   "primary_source": "TeX",
+   "read_as": "partial: Introduction; Section 1 definitions and Section 2 statements found by search; Sections 3 and 4 not opened",
+   "relevance_score": 0,
+   "screening": {
+    "category": "prereq",
+    "decision": "include",
+    "priority": 3
+   },
+   "theme": "prerequisites",
+   "title": "Towards tempered anabelian behaviour of Berkovich annuli",
+   "year": 2021
+  },
+  {
+   "arxiv_categories": [
+    "math.NT"
+   ],
+   "arxiv_id": "2103.09814",
+   "authors": [
+    "Benjamin Matschke",
+    "Abhijit S. Mudigonda"
+   ],
+   "description": "Not read beyond the abstract. Summary of the abstract: Sharp count of quadratic fields with everywhere good reduction curves assuming abc.",
+   "id": "2103.09814",
+   "read_as": "abstract only",
+   "relevance_score": null,
+   "screening": {
+    "category": "abc_math",
+    "decision": "include",
+    "priority": 3
+   },
+   "theme": "abc_vojta",
+   "title": "Quadratic Fields Admitting Elliptic Curves with Rational j-Invariant and Good Reduction Everywhere",
+   "year": 2021
+  },
+  {
+   "arxiv_categories": [
+    "math.NT"
+   ],
+   "arxiv_id": "2104.10817",
+   "authors": [
+    "Alexander J. Barrios"
+   ],
+   "description": "Sharp lower bounds for the modified Szpiro ratio of elliptic curves with prescribed torsion, using parameterized families and computer verification.",
+   "id": "2104.10817",
+   "primary_source": "TeX",
+   "read_as": "full text from TeX",
+   "relevance_score": 0,
+   "screening": {
+    "category": "abc_math",
+    "decision": "include",
+    "priority": 3
+   },
+   "theme": "abc_vojta",
+   "title": "Lower bounds for the modified Szpiro ratio",
+   "year": 2021
+  },
+  {
+   "arxiv_categories": [
+    "math.AG",
+    "math.NT"
+   ],
+   "arxiv_id": "2106.11452",
+   "authors": [
+    "Kirti Joshi"
+   ],
+   "description": "Defines a category of arithmetic holomorphic structures from untilts of perfectoid fields whose tempered fundamental groups are all isomorphic, and presents it as a precise form of the Key Principle of IUT.",
+   "id": "2106.11452",
+   "primary_source": "TeX",
+   "read_as": "partial: introduction, Sections 3 to 5, statements of Section 7, Section 9",
+   "relevance_score": 1,
+   "screening": {
+    "category": "alt_approach",
+    "decision": "include",
+    "priority": 1
+   },
+   "theme": "joshi",
+   "title": "Construction of Arithmetic Teichmuller Spaces I",
+   "year": 2021
+  },
+  {
+   "arxiv_categories": [
+    "math.NT"
+   ],
+   "arxiv_id": "2106.16165",
+   "authors": [
+    "Hector Pasten"
+   ],
+   "description": "Not read beyond the abstract. Summary of the abstract: Arithmetic derivatives via geometry of numbers; small derivatives are equivalent to abc.",
+   "id": "2106.16165",
+   "read_as": "abstract only",
+   "relevance_score": null,
+   "screening": {
+    "category": "abc_math",
+    "decision": "include",
+    "priority": 3
+   },
+   "theme": "abc_vojta",
+   "title": "Arithmetic derivatives through geometry of numbers",
+   "year": 2021
+  },
+  {
+   "arxiv_categories": [
+    "math.NT",
+    "math.AG"
+   ],
+   "arxiv_id": "2108.04411",
+   "authors": [
+    "Brett Nasserden",
+    "Stanley Yao Xiao"
+   ],
+   "description": "Not read beyond the abstract. Summary of the abstract: Heights on stacky curves; a generalized Vojta conjecture for stacky curves shown equivalent to abc.",
+   "id": "2108.04411",
+   "read_as": "abstract only",
+   "relevance_score": null,
+   "screening": {
+    "category": "abc_math",
+    "decision": "include",
+    "priority": 3
+   },
+   "theme": "abc_vojta",
+   "title": "Heights and quantitative arithmetic on stacky curves",
+   "year": 2021
+  },
+  {
+   "arxiv_categories": [
+    "math.NT"
+   ],
+   "arxiv_id": "2108.08580",
+   "authors": [
+    "Preda Mihăilescu",
+    "Michael T. Rassias"
+   ],
+   "description": "Proves max(|x|, |y|, |z|) >= p^((5/2)^(p-1)) for solutions of the second case of Fermat's Last Theorem with p >= 257, as input for an explicit abc inequality based on IUT IV Theorem A that the authors announce; no abc statement is proved.",
+   "id": "2108.08580",
+   "primary_source": "TeX",
+   "read_as": "full text from TeX",
+   "relevance_score": 1,
+   "screening": {
+    "category": "abc_math",
+    "decision": "include",
+    "priority": 1
+   },
+   "theme": "explicit",
+   "title": "Double exponential lower bounds for possible solutions in the Second Case of the Fermat Last Theorem",
+   "year": 2021
+  },
+  {
+   "arxiv_categories": [
+    "math.GM"
+   ],
+   "arxiv_id": "2109.10226",
+   "authors": [
+    "Zenon B. Batang"
+   ],
+   "description": "Not read beyond the abstract. Summary of the abstract: Patterns of squarefree factors and infinite families of abc hits.",
+   "id": "2109.10226",
+   "read_as": "abstract only",
+   "relevance_score": null,
+   "screening": {
+    "category": "abc_math",
+    "decision": "include",
+    "priority": 3
+   },
+   "theme": "abc_vojta",
+   "title": "Squarefree integers and the abc conjecture",
+   "year": 2021
+  },
+  {
+   "arxiv_categories": [
+    "math.AG",
+    "math.NT"
+   ],
+   "arxiv_id": "2111.04890",
+   "authors": [
+    "Kirti Joshi"
+   ],
+   "claim_status": "Local analog; the author states it is not a proof of Corollary 3.12.",
+   "description": "A local analog of IUT III Corollary 3.12 on a Fargues-Fontaine curve: a lower bound for a set of tuples with v_{K_j}(p) = j^2 v_{K_1}(p); the author states it is not a proof of Corollary 3.12 and claims no Diophantine consequence.",
+   "id": "2111.04890",
+   "primary_source": "TeX",
+   "project_links": [
+    "IUT3.Cor3_12"
+   ],
+   "read_as": "full text from TeX",
+   "relevance_score": 1,
+   "screening": {
+    "category": "alt_approach",
+    "decision": "include",
+    "priority": 1
+   },
+   "theme": "joshi",
+   "title": "Construction of Arithmetic Teichmuller spaces II: Towards Diophantine Estimates",
+   "year": 2021
+  },
+  {
+   "arxiv_categories": [
+    "math.AG",
+    "math.NT"
+   ],
+   "arxiv_id": "2111.06771",
+   "authors": [
+    "Kirti Joshi"
+   ],
+   "description": "Expository comparison of the author's perfectoid and Berkovich approach with IUT; matches one indeterminacy of the author's theory with (Ind1) to (Ind3) and frames Corollary 3.12 as a supremum over a Teichmüller-type set; claims no Diophantine inequality.",
+   "id": "2111.06771",
+   "primary_source": "PDF",
+   "read_as": "full text from PDF",
+   "relevance_score": 1,
+   "screening": {
+    "category": "alt_approach",
+    "decision": "include",
+    "priority": 2
+   },
+   "theme": "joshi",
+   "title": "Comments on Arithmetic Teichmuller Spaces",
+   "year": 2021
+  },
+  {
+   "arxiv_categories": [
+    "math.NT"
+   ],
+   "arxiv_id": "2111.07791",
+   "authors": [
+    "Andrew Scoones"
+   ],
+   "claim_status": "Claims an improved unconditional exponential abc bound over number fields (abstract only; not read).",
+   "description": "Not read beyond the abstract. Summary of the abstract: Improves Gyory's unconditional exponential abc bound over number fields via Stewart-Yu method.",
+   "id": "2111.07791",
+   "read_as": "abstract only",
+   "relevance_score": null,
+   "screening": {
+    "category": "abc_math",
+    "decision": "include",
+    "priority": 3
+   },
+   "theme": "abc_vojta",
+   "title": "On the abc Conjecture in Algebraic Number Fields",
+   "year": 2021
+  },
+  {
+   "arxiv_categories": [
+    "math.NT"
+   ],
+   "arxiv_id": "2111.07794",
+   "authors": [
+    "David Broadhurst"
+   ],
+   "description": "Not read beyond the abstract. Summary of the abstract: Frey curves from good abc triples give record Tate-Shafarevich orders and Goldfeld-Szpiro ratios.",
+   "id": "2111.07794",
+   "read_as": "abstract only",
+   "relevance_score": null,
+   "screening": {
+    "category": "abc_math",
+    "decision": "include",
+    "priority": 3
+   },
+   "theme": "abc_vojta",
+   "title": "Large Tate-Shafarevich orders from good abc triples",
+   "year": 2021
+  },
+  {
+   "arxiv_categories": [
+    "math.CT"
+   ],
+   "arxiv_id": "2201.11273",
+   "authors": [
+    "Yasuhiro Wakabayashi"
+   ],
+   "description": "Shows that a connected small category is determined up to equivalence and opposite by its category of structure species.",
+   "id": "2201.11273",
+   "primary_source": "PDF",
+   "read_as": "partial: Introduction, Sections 2.1 and 2.2, remarks on anabelian geometry",
+   "relevance_score": 0,
+   "screening": {
+    "category": "prereq",
+    "decision": "maybe",
+    "priority": 3
+   },
+   "theme": "prerequisites",
+   "title": "On the category of structure species",
+   "year": 2022
+  },
+  {
+   "arxiv_categories": [
+    "math.NT"
+   ],
+   "arxiv_id": "2202.11934",
+   "authors": [
+    "P. K. Bhoi",
+    "S. S. Rout",
+    "G. K. Panda"
+   ],
+   "description": "Not read beyond the abstract. Summary of the abstract: Finiteness of solutions to U_n+U_m=x^q proved assuming abc.",
+   "id": "2202.11934",
+   "read_as": "abstract only",
+   "relevance_score": null,
+   "screening": {
+    "category": "abc_math",
+    "decision": "include",
+    "priority": 3
+   },
+   "theme": "abc_vojta",
+   "title": "On the resolution of the Diophantine equation U_n + U_m = x^q",
+   "year": 2022
+  },
+  {
+   "arxiv_categories": [
+    "cs.LO",
+    "math.NT"
+   ],
+   "arxiv_id": "2203.16344",
+   "authors": [
+    "María Inés de Frutos-Fernández"
+   ],
+   "description": "Lean 3 formalization of adic completions of Dedekind domains, adeles and ideles of global fields, and the class group as an idele quotient.",
+   "id": "2203.16344",
+   "primary_source": "TeX",
+   "read_as": "full text from TeX",
+   "relevance_score": 1,
+   "screening": {
+    "category": "formal",
+    "decision": "include",
+    "priority": 2
+   },
+   "theme": "formalization",
+   "title": "Formalizing the Ring of Adèles of a Global Field",
+   "year": 2022
+  },
+  {
+   "arxiv_categories": [
+    "math.NT"
+   ],
+   "arxiv_id": "2205.07841",
+   "authors": [
+    "Hector Pasten"
+   ],
+   "claim_status": "Unconditional subexponential bounds; a 1 + eps truncated Vojta inequality conditional on Lang and Waldschmidt.",
+   "description": "Proves an unconditional truncated Vojta-type bound with a subexponential loss, a subexponential abc bound when a < c^(1 − eta), and a 1 + eps truncated Vojta inequality conditional on the Lang and Waldschmidt conjecture.",
+   "id": "2205.07841",
+   "primary_source": "TeX",
+   "project_links": [
+    "Challenge.ABC",
+    "IUT/Applications/ABCSpecialization.lean"
+   ],
+   "read_as": "full text from TeX",
+   "relevance_score": 2,
+   "screening": {
+    "category": "abc_math",
+    "decision": "include",
+    "priority": 3
+   },
+   "statements_of_interest": [
+    "Theorem 1.1: an unconditional effective bound for -log|alpha − x|_v for x = b/c in terms of rad(bc).",
+    "Corollary 1.3: if a < c^(1 − eta) then c < exp(eta^(-1) kappa_eps R^((1 + eps) log*_3 R/log*_2 R)) with R = rad(abc).",
+    "Inequality (1.3): abc restated as h(x) < (1 + eps) N^(1)([0] + [1] + [infinity], x) + O(1) on the projective line.",
+    "Theorem 1.9: conditional on Lang and Waldschmidt, a 1 + eps truncated Vojta inequality."
+   ],
+   "theme": "abc_vojta",
+   "title": "On the arithmetic case of Vojta's conjecture with truncated counting functions",
+   "year": 2022
+  },
+  {
+   "arxiv_categories": [
+    "math.NT",
+    "math.AG",
+    "math.DS"
+   ],
+   "arxiv_id": "2206.09725",
+   "authors": [
+    "Robin Zhang"
+   ],
+   "description": "Not read beyond the abstract. Summary of the abstract: Survey of Vojta's abcd generalization of abc and Szpiro with dynamical consequences.",
+   "id": "2206.09725",
+   "read_as": "abstract only",
+   "relevance_score": null,
+   "screening": {
+    "category": "abc_math",
+    "decision": "include",
+    "priority": 3
+   },
+   "theme": "abc_vojta",
+   "title": "The abcd conjecture, uniform boundedness, and dynamical systems",
+   "year": 2022
+  },
+  {
+   "arxiv_categories": [
+    "math.NT",
+    "math.AG"
+   ],
+   "arxiv_id": "2208.11259",
+   "authors": [
+    "Takahiro Murotani"
+   ],
+   "description": "Not read beyond the abstract. Summary of the abstract: Geometricity of homomorphisms of absolute Galois groups of mixed-characteristic CDVFs.",
+   "id": "2208.11259",
+   "read_as": "abstract only",
+   "relevance_score": null,
+   "screening": {
+    "category": "prereq",
+    "decision": "include",
+    "priority": 3
+   },
+   "theme": "prerequisites",
+   "title": "Geometric properties of homomorphisms between the absolute Galois groups of mixed-characteristic complete discrete valuation fields with perfect residue fields",
+   "year": 2022
+  },
+  {
+   "arxiv_categories": [
+    "math.NT"
+   ],
+   "arxiv_id": "2208.14354",
+   "authors": [
+    "Philipp Sibbertsen",
+    "Timm Lampert",
+    "Karsten Müller",
+    "Michael Taktikos"
+   ],
+   "claim_status": "Claims a weakened non-effective abc in special cases from Roth's theorem (abstract only; not read).",
+   "description": "Not read beyond the abstract. Summary of the abstract: Roth's theorem implies a weakened non-effective abc in special cases via continued fractions.",
+   "id": "2208.14354",
+   "read_as": "abstract only",
+   "relevance_score": null,
+   "screening": {
+    "category": "abc_math",
+    "decision": "include",
+    "priority": 3
+   },
+   "theme": "abc_vojta",
+   "title": "Roth's Theorem implies a Weakened Version of the ABC Conjecture for Special Cases",
+   "year": 2022
+  },
+  {
+   "arxiv_categories": [
+    "math.AG",
+    "math.NT"
+   ],
+   "arxiv_id": "2210.11635",
+   "authors": [
+    "Kirti Joshi"
+   ],
+   "description": "Defines arithmetic holomorphic structures as an untilt together with a geometric base point, giving labeled isomorphs of tempered fundamental groups, and argues against Remark 9 of Scholze and Stix.",
+   "id": "2210.11635",
+   "primary_source": "TeX",
+   "read_as": "full text from TeX",
+   "relevance_score": 1,
+   "screening": {
+    "category": "iut_dispute",
+    "decision": "include",
+    "priority": 1
+   },
+   "theme": "joshi",
+   "title": "Untilts of fundamental groups: construction of labeled isomorphs of fundamental groups: Arithmetic Holomorphic Structures",
+   "year": 2022
+  },
+  {
+   "arxiv_categories": [
+    "math.HO"
+   ],
+   "arxiv_id": "2210.16488",
+   "authors": [
+    "Andrew Aberdein"
+   ],
+   "description": "Philosophical analysis arguing that IUT meets criteria for a mathematical revolution and that the dispute over Corollary 3.12 is a deep disagreement; it states (page 19) that formalization cannot arbitrate a dispute that must be settled before formalization begins.",
+   "id": "2210.16488",
+   "primary_source": "TeX",
+   "read_as": "partial: §3 and §5 in full; §4 keyword excerpts only; §1 and §2 not read",
+   "relevance_score": 1,
+   "screening": {
+    "category": "iut_dispute",
+    "decision": "include",
+    "priority": 2
+   },
+   "theme": "dispute",
+   "title": "Deep Disagreement in Mathematics",
+   "year": 2022
+  },
+  {
+   "arxiv_categories": [
+    "math.NT"
+   ],
+   "arxiv_id": "2301.01376",
+   "authors": [
+    "Elise Alvarez-Salazar",
+    "Alexander J. Barrios",
+    "Calvin Henaku",
+    "Summer Soller"
+   ],
+   "description": "Not read beyond the abstract. Summary of the abstract: Structure of abc triples (1,c-1,c); general results recovering known infinite families.",
+   "id": "2301.01376",
+   "read_as": "abstract only",
+   "relevance_score": null,
+   "screening": {
+    "category": "abc_math",
+    "decision": "include",
+    "priority": 3
+   },
+   "theme": "abc_vojta",
+   "title": "On abc triples of the form (1,c-1,c)",
+   "year": 2023
+  },
+  {
+   "arxiv_categories": [
+    "math.NT",
+    "cs.DM"
+   ],
+   "arxiv_id": "2301.11056",
+   "authors": [
+    "Curtis Bright"
+   ],
+   "description": "Proves unconditionally that infinitely many abc triples satisfy c > rad(abc) exp(6.563 sqrt(log c)/log log c), a lower bound on how sharp abc can be.",
+   "id": "2301.11056",
+   "primary_source": "TeX",
+   "read_as": "full text from TeX",
+   "relevance_score": 1,
+   "screening": {
+    "category": "abc_math",
+    "decision": "include",
+    "priority": 2
+   },
+   "theme": "abc_vojta",
+   "title": "A New Lower Bound in the abc Conjecture",
+   "year": 2023
+  },
+  {
+   "arxiv_categories": [
+    "math.NT"
+   ],
+   "arxiv_id": "2302.03113",
+   "authors": [
+    "Prajeet Bajpai",
+    "Michael A. Bennett",
+    "Tsz Ho Chan"
+   ],
+   "description": "Not read beyond the abstract. Summary of the abstract: Arithmetic progressions in k-full numbers with constraints under abc.",
+   "id": "2302.03113",
+   "read_as": "abstract only",
+   "relevance_score": null,
+   "screening": {
+    "category": "abc_math",
+    "decision": "include",
+    "priority": 3
+   },
+   "theme": "abc_vojta",
+   "title": "Arithmetic Progressions in Squarefull Numbers",
+   "year": 2023
+  },
+  {
+   "arxiv_categories": [
+    "cs.LO",
+    "math.AC",
+    "math.AG",
+    "math.NT"
+   ],
+   "arxiv_id": "2302.10640",
+   "authors": [
+    "David Kurniadi Angdinata",
+    "Junyan Xu"
+   ],
+   "description": "Lean 3 proof of the group law on Weierstrass curves in any characteristic through the class group of the coordinate ring, with discriminant and change of variables formulas.",
+   "id": "2302.10640",
+   "primary_source": "PDF",
+   "project_links": [
+    "P-HT",
+    "IUT/PaperI/InitialThetaData.lean"
+   ],
+   "read_as": "full text from PDF",
+   "relevance_score": 2,
+   "screening": {
+    "category": "formal",
+    "decision": "include",
+    "priority": 2
+   },
+   "statements_of_interest": [
+    "Section 2 (pages 3 to 4): b2, b4, b6, b8 and the discriminant over a commutative ring; scaling by u^(-12) under change of variables.",
+    "Section 3 (pages 10 to 14): the points embed into the class group of the coordinate ring (Lemma 17), giving commutativity and associativity.",
+    "Section 4.4 (page 17): planned division polynomials, Tate modules and reduction maps."
+   ],
+   "theme": "formalization",
+   "title": "An Elementary Formal Proof of the Group Law on Weierstrass Elliptic Curves in any Characteristic",
+   "year": 2023
+  },
+  {
+   "arxiv_categories": [
+    "math.NT",
+    "cs.LO"
+   ],
+   "arxiv_id": "2302.14491",
+   "authors": [
+    "Ashvni Narayanan"
+   ],
+   "description": "Lean 3 construction of a p-adic L-function as an integral with respect to a Bernoulli measure.",
+   "id": "2302.14491",
+   "primary_source": "TeX",
+   "read_as": "full text from TeX",
+   "relevance_score": 0,
+   "screening": {
+    "category": "formal",
+    "decision": "include",
+    "priority": 3
+   },
+   "theme": "formalization",
+   "title": "Formalization of p-adic L-functions in Lean 3",
+   "year": 2023
+  },
+  {
+   "arxiv_categories": [
+    "math.AG",
+    "math.NT"
+   ],
+   "arxiv_id": "2303.01662",
+   "authors": [
+    "Kirti Joshi"
+   ],
+   "claim_status": "Claims a local prototype of Corollary 3.12 for the author's own locus; the author states it is not exactly Corollary 3.12.",
+   "description": "Claims a one-prime inequality for a theta-values locus built by the author on a Fargues-Fontaine curve; the author states that this locus is not the set of IUT III and that the inequality is not exactly Corollary 3.12.",
+   "id": "2303.01662",
+   "primary_source": "TeX",
+   "project_links": [
+    "IUT3.Cor3_12",
+    "T-CMP"
+   ],
+   "read_as": "partial: main text Sections 1 to 9 in full; appendix Section 10 statements read, proofs in part",
+   "relevance_score": 2,
+   "screening": {
+    "category": "iut_core",
+    "decision": "include",
+    "priority": 1
+   },
+   "statements_of_interest": [
+    "Theorem 9.2.1 (page 27): for sufficiently large odd l, the size of the author's theta locus is at least |q^{1/2l}|^{l*}, proved by exhibiting one point of the locus.",
+    "Theorem 6.9.1 (page 17): valuation scaling v_{K_j}(p) = j^2 v_{K_1}(p) for points of the Primitive Ansatz (Definition 6.2.3, page 15).",
+    "Section 9 (page 29): the author states that the locus differs from the set of IUT III and defers the adelic version to Part III.",
+    "Elementary input of the proof: (1/12)(1 + 1/l*) < (1/4)(1 − 1/l) for odd l at least 5, with equality at l = 3."
+   ],
+   "theme": "joshi",
+   "title": "Construction of Arithmetic Teichmuller spaces II: Proof of a local prototype of Mochizuki's Corollary 3.12",
+   "year": 2023
+  },
+  {
+   "arxiv_categories": [
+    "math.NT",
+    "math.AG"
+   ],
+   "arxiv_id": "2304.13913",
+   "authors": [
+    "Takahiro Murotani"
+   ],
+   "description": "Anabelian results for hyperbolic curves over infinite algebraic extensions of finite fields, and Kummer-faithfulness criteria for such fields.",
+   "id": "2304.13913",
+   "primary_source": "PDF",
+   "read_as": "full text from PDF",
+   "relevance_score": 0,
+   "screening": {
+    "category": "prereq",
+    "decision": "maybe",
+    "priority": 3
+   },
+   "theme": "prerequisites",
+   "title": "Anabelian properties of infinite algebraic extensions of finite fields",
+   "year": 2023
+  },
+  {
+   "arxiv_categories": [
+    "cs.LO",
+    "math.NT"
+   ],
+   "arxiv_id": "2305.08955",
+   "authors": [
+    "Alex J. Best",
+    "Christopher Birkbeck",
+    "Riccardo Brasca",
+    "Eric Rodriguez Boidi"
+   ],
+   "description": "Not read beyond the abstract. Summary of the abstract: Lean formalization of FLT for regular primes.",
+   "id": "2305.08955",
+   "read_as": "abstract only",
+   "relevance_score": null,
+   "screening": {
+    "category": "formal",
+    "decision": "include",
+    "priority": 3
+   },
+   "theme": "formalization",
+   "title": "Fermat's Last Theorem for regular primes",
+   "year": 2023
+  },
+  {
+   "arxiv_categories": [
+    "math.AG",
+    "math.NT"
+   ],
+   "arxiv_id": "2305.10398",
+   "authors": [
+    "Kirti Joshi"
+   ],
+   "description": "Defines arithmeticoids of a number field as points of a product of Fargues-Fontaine curves over all places, with Galois, Frobenius and multiplicative group actions, a period map to product formula hyperplanes, and arithmeticoid dependent heights.",
+   "id": "2305.10398",
+   "primary_source": "TeX",
+   "project_links": [
+    "IUT/Prerequisites/ProductFormula.lean",
+    "OB-XI-CONTAINER"
+   ],
+   "read_as": "partial: introduction, Sections 3, 4, 5.1 to 5.10, one statement of Section 6, Section 8, Theorem 10.18.1; TeX source used",
+   "relevance_score": 2,
+   "screening": {
+    "category": "alt_approach",
+    "decision": "include",
+    "priority": 1
+   },
+   "statements_of_interest": [
+    "Definition 5.1.1 (page 29): an arithmeticoid is a choice, at every place, of an untilt of the tilt of the completed algebraic closure.",
+    "Theorem 5.10.1 (page 37): a non-constant period map from arithmeticoids to hyperplanes sum alpha_v z_v = 0; the author relates it to Section 2.2 of Scholze and Stix.",
+    "Theorem 4.4.1 (page 26): an element of the multiplicative group acts trivially if and only if it is a root of unity (Kronecker).",
+    "Definition 8.2.1 and Proposition 8.3.1: heights depending on the arithmeticoid."
+   ],
+   "theme": "joshi",
+   "title": "Construction of Arithmetic Teichmuller Spaces II½: Deformations of Number Fields",
+   "year": 2023
+  },
+  {
+   "arxiv_categories": [
+    "math.GM"
+   ],
+   "arxiv_id": "2306.02448",
+   "authors": [
+    "Mikael Sarkisyan"
+   ],
+   "claim_status": "Claims a proof of Corollary 3.12; the arXiv abstract page seen when the PDF was obtained was titled as withdrawn.",
+   "description": "Claims another proof of IUT III Corollary 3.12 based on the Erdős and Kac theorem, together with applications to physics; listed on arXiv in math.GM.",
+   "id": "2306.02448",
+   "primary_source": "PDF",
+   "project_links": [
+    "IUT3.Cor3_12"
+   ],
+   "read_as": "full text from PDF",
+   "relevance_score": 0,
+   "screening": {
+    "category": "iut_core",
+    "decision": "include",
+    "priority": 1
+   },
+   "theme": "iut_core",
+   "title": "Something about Inter-universal Teichmuller Theory",
+   "year": 2023
+  },
+  {
+   "arxiv_categories": [
+    "math.AG",
+    "math.NT"
+   ],
+   "arxiv_id": "2306.07058",
+   "authors": [
+    "Emmanuel Lepage"
+   ],
+   "description": "Proves the absolute anabelian conjecture for p-adic hyperbolic curves satisfying resolution of non-singularities, including Mumford curves.",
+   "id": "2306.07058",
+   "primary_source": "PDF",
+   "read_as": "full text from PDF",
+   "relevance_score": 1,
+   "screening": {
+    "category": "prereq",
+    "decision": "include",
+    "priority": 2
+   },
+   "theme": "prerequisites",
+   "title": "Resolution of non-singularities and the absolute anabelian conjecture",
+   "year": 2023
+  },
+  {
+   "arxiv_categories": [
+    "math.NT"
+   ],
+   "arxiv_id": "2306.15284",
+   "authors": [
+    "Olivier Rozier"
+   ],
+   "description": "Not read beyond the abstract. Summary of the abstract: Collatz sequences bounds via abc and construction of large abc-hits.",
+   "id": "2306.15284",
+   "read_as": "abstract only",
+   "relevance_score": null,
+   "screening": {
+    "category": "abc_math",
+    "decision": "include",
+    "priority": 3
+   },
+   "theme": "abc_vojta",
+   "title": "Are the Collatz and abc conjectures related?",
+   "year": 2023
+  },
+  {
+   "arxiv_categories": [
+    "math.NT",
+    "math.AG"
+   ],
+   "arxiv_id": "2306.16637",
+   "authors": [
+    "Manoel Jarra"
+   ],
+   "description": "Reinterprets Smirnov's F_1 approach to abc through congruence spaces of monoid schemes; proves no abc inequality.",
+   "id": "2306.16637",
+   "primary_source": "PDF",
+   "read_as": "full text from PDF",
+   "relevance_score": 1,
+   "screening": {
+    "category": "alt_approach",
+    "decision": "include",
+    "priority": 2
+   },
+   "theme": "abc_vojta",
+   "title": "On Smirnov's approach to the abc conjecture",
+   "year": 2023
+  },
+  {
+   "arxiv_categories": [
+    "cs.LO",
+    "math.NT"
+   ],
+   "arxiv_id": "2306.17234",
+   "authors": [
+    "María Inés de Frutos-Fernández"
+   ],
+   "description": "Lean 3 formalization of spectral norms, unique extension of nonarchimedean norms, the algebraic closure of Q_p and C_p.",
+   "id": "2306.17234",
+   "primary_source": "PDF",
+   "read_as": "full text from PDF",
+   "relevance_score": 1,
+   "screening": {
+    "category": "formal",
+    "decision": "include",
+    "priority": 2
+   },
+   "theme": "formalization",
+   "title": "Formalizing Norm Extensions and Applications to Number Theory",
+   "year": 2023
+  },
+  {
+   "arxiv_categories": [
+    "math.NT"
+   ],
+   "arxiv_id": "2307.07834",
+   "authors": [
+    "Alberto Corato",
+    "Mohamed Saïdi"
+   ],
+   "description": "A conditional m-step solvable Hom-form of birational anabelian geometry for number fields, unconditional for K = Q.",
+   "id": "2307.07834",
+   "primary_source": "TeX",
+   "read_as": "partial: front matter, Introduction, Definitions 1.4 and 3.1, Proposition 1.6, Sections 4 (from Theorem 4.10) to 7; rest of Sections 1 to 3 headers only",
+   "relevance_score": 0,
+   "screening": {
+    "category": "prereq",
+    "decision": "include",
+    "priority": 3
+   },
+   "theme": "prerequisites",
+   "title": "The m-step Solvable Hom-Form of Birational Anabelian Geometry for Number Fields",
+   "year": 2023
+  },
+  {
+   "arxiv_categories": [
+    "math.NT"
+   ],
+   "arxiv_id": "2308.07114",
+   "authors": [
+    "Hector Pasten"
+   ],
+   "claim_status": "Unconditional Szpiro-type bound for a restricted family.",
+   "description": "Proves unconditionally a polynomial Szpiro-type bound for elliptic curves whose j-invariant has small denominator.",
+   "id": "2308.07114",
+   "primary_source": "PDF",
+   "read_as": "full text from PDF",
+   "relevance_score": 1,
+   "screening": {
+    "category": "abc_math",
+    "decision": "include",
+    "priority": 2
+   },
+   "theme": "abc_vojta",
+   "title": "Szpiro's conjecture when the denominator of the j-invariant is small",
+   "year": 2023
+  },
+  {
+   "arxiv_categories": [
+    "cs.LO",
+    "math.NT"
+   ],
+   "arxiv_id": "2310.01998",
+   "authors": [
+    "María Inés de Frutos-Fernández",
+    "Filippo Alberto Edoardo Nuccio Mortarino Majno Di Capriglio"
+   ],
+   "description": "Lean 3 formalization of discrete valuations, complete discrete valuation rings, unique extension of valuations, and local fields of equal and mixed characteristic.",
+   "id": "2310.01998",
+   "primary_source": "PDF",
+   "project_links": [
+    "IUT3.Prop3_9",
+    "IUT/PaperIV/LocalFields/Padic.lean"
+   ],
+   "read_as": "full text from PDF",
+   "relevance_score": 2,
+   "screening": {
+    "category": "formal",
+    "decision": "include",
+    "priority": 2
+   },
+   "statements_of_interest": [
+    "Section 2 (pages 5 to 6): discrete valuations and the unit ball as a DVR.",
+    "Theorem 2.9 (page 8): a complete discrete valuation extends uniquely to finite extensions.",
+    "Section 3 (page 9): local fields as complete, discretely valued, with finite residue field.",
+    "Section 3.2 (pages 10 to 11): mixed characteristic local fields as finite extensions of Q_p."
+   ],
+   "theme": "formalization",
+   "title": "A Formalization of Complete Discrete Valuation Rings and Local Fields",
+   "year": 2023
+  },
+  {
+   "arxiv_categories": [
+    "math.NT"
+   ],
+   "arxiv_id": "2312.03566",
+   "authors": [
+    "Hector Pasten"
+   ],
+   "claim_status": "Unconditional subexponential bounds (weaker than abc).",
+   "description": "Combines linear forms in logarithms with Shimura curve bounds to prove a lower bound for the largest prime factor of n^2 + 1 and subexponential abc bounds under a <= c^(1 − eta).",
+   "id": "2312.03566",
+   "primary_source": "TeX",
+   "read_as": "full text from TeX",
+   "relevance_score": 1,
+   "screening": {
+    "category": "alt_approach",
+    "decision": "include",
+    "priority": 2
+   },
+   "theme": "abc_vojta",
+   "title": "The largest prime factor of n^2+1 and improvements on subexponential ABC",
+   "year": 2023
+  },
+  {
+   "arxiv_categories": [
+    "math.AG",
+    "math.NT"
+   ],
+   "arxiv_id": "2401.13508",
+   "authors": [
+    "Kirti Joshi"
+   ],
+   "claim_status": "Claims a proof of Corollary 3.12 for the author's theta sets; the text records disagreement with Scholze and Stix and with Mochizuki.",
+   "description": "Claims a proof of IUT III Corollary 3.12 for elliptic curves with initial theta data, using theta value sets built on adelic Fargues-Fontaine curves, together with a dictionary between IUT and the author's constructions; Diophantine consequences are deferred to Part IV.",
+   "id": "2401.13508",
+   "primary_source": "TeX",
+   "project_links": [
+    "IUT3.Cor3_12",
+    "IUT3.Prop3_9",
+    "IUT3.Rem3_9_5",
+    "T-CMP",
+    "T-HULL",
+    "P-LOG",
+    "IUT/Prerequisites/PadicLog.lean"
+   ],
+   "read_as": "partial: introduction, Sections 3, 4, 7 (main theorem and corollaries), the gluing and indeterminacy parts of 8, Section 9 from the construction of the theta sets to the end, Theorem 12.18.1; TeX source used",
+   "relevance_score": 2,
+   "screening": {
+    "category": "iut_dispute",
+    "decision": "include",
+    "priority": 1
+   },
+   "statements_of_interest": [
+    "Theorem 4.2.2.1 (pages 32 to 33): stability properties of the adelic ansatz and the scaling |.|_{K_j} = |.|_{K_1}^{j^2} at odd split multiplicative primes.",
+    "Theorem 7.3.1 (page 55): the author's version of Corollary 3.12 for the theta values locus in the ring B_{L'}, with lower bound prod_w |q_w^{1/2l}|^{l*}.",
+    "Theorem 9.9.1 (page 119) and Theorem 9.11.1 (page 127): for l >> 0, lower bounds for the sizes and weighted Haar volumes of the two theta sets, with hulls identified with convex closures (Proposition 9.10.8.1, page 126).",
+    "Corollary 9.11.1.1 (page 128): the paper's log-volume form of Corollary 3.12, stated in the conventions of IUT III.",
+    "Lemma 9.8.2.7: |log(1 + x)| = |x| for small nonzero x in a p-adic field; a volume lemma Vol(alpha + lambda O_E) = |lambda|_E for normalized Haar measure."
+   ],
+   "theme": "joshi",
+   "title": "Construction of Arithmetic Teichmuller Spaces III: A `Rosetta Stone' and a proof of Mochizuki's Corollary 3.12",
+   "year": 2024
+  },
+  {
+   "arxiv_categories": [
+    "math.AG",
+    "math.NT"
+   ],
+   "arxiv_id": "2403.10430",
+   "authors": [
+    "Kirti Joshi"
+   ],
+   "claim_status": "Claims a proof of abc; preprint marked by the author as a preliminary version for comments.",
+   "description": "Claims the abc conjecture by following the order of IUT IV with the author's arithmetic Teichmüller spaces, taking the Corollary 3.12 step from Part III (arXiv:2401.13508) and the local bounds from IUT IV Theorem 1.10.",
+   "id": "2403.10430",
+   "primary_source": "TeX",
+   "project_links": [
+    "IUT4.Thm1_10",
+    "IUT4.Cor2_2",
+    "IUT4.Cor2_3",
+    "IUT4.ThmA",
+    "T-ABC",
+    "IUT/Applications/ABCSpecialization.lean"
+   ],
+   "read_as": "partial: Sections 1 to 3, 4.1 to 4.4, statement of 4.6.1, 5, 6, 7 read; parts of Section 4.5 not read",
+   "relevance_score": 3,
+   "screening": {
+    "category": "iut_dispute",
+    "decision": "include",
+    "priority": 1
+   },
+   "statements_of_interest": [
+    "Section 1.4: the stated correspondence: IUT IV Corollary 2.2 with Theorem 5.7.1, IUT III Corollary 3.12 with Corollary 9.11.1.1 of arXiv:2401.13508, IUT IV Theorem 1.10 with Theorem 6.1.1, IUT IV Corollary 2.3 with Theorem 7.1.1.",
+    "Theorem 5.7.1 (page 53): existence of initial theta data with an auxiliary prime l in an explicit window, with delta = 2^12 3^3 5 d_mod.",
+    "Theorem 6.1.1 (page 57): (1/6) log q <= (1 + 20 d_mod/l)(log d + log f) + 20(e*_mod l + 60); Remark 6.1.2 calls it IUT IV Theorem 1.10 with eta_prm = 60.",
+    "Theorem 6.10.1 (pages 66 to 67): a lower bound computed at the arithmeticoid phi(y_0), attributed to IUT III Corollary 3.12 via Corollary 9.11.1.1 of arXiv:2401.13508, and an upper bound computed at y_0, joined by an equality of log-volumes of hulls that the proof calls a tautology resting on the choice of 'the same global normalization'.",
+    "Theorem 7.1.1 (page 72): Vojta's height inequality on the line minus three points for points of bounded degree, by reduction to compactly bounded subsets; Theorem 7.2.1 (page 75): abc and Szpiro over Q.",
+    "Section 1.6, item 6 (page 21): the author states that the expected relation between the two theta sets of Part III 'is not presently established'.",
+    "Sections 6.3 to 6.9: the author marks wild ramification constants that differ from those of IUT IV (33 against 21; 4 log l + 80 against 2 log l + 52)."
+   ],
+   "theme": "joshi",
+   "title": "Construction of Arithmetic Teichmuller Spaces IV: Proof of the abc-conjecture",
+   "year": 2024
+  },
+  {
+   "arxiv_categories": [
+    "cs.CC",
+    "cs.DS",
+    "math.AG",
+    "math.RT"
+   ],
+   "arxiv_id": "2405.15368",
+   "authors": [
+    "Peter Bürgisser",
+    "Mahmut Levent Doğan",
+    "Visu Makam",
+    "Michael Walter",
+    "Avi Wigderson"
+   ],
+   "description": "Not read beyond the abstract. Summary of the abstract: Robust torus orbit problems polynomial time iff a version of abc holds.",
+   "id": "2405.15368",
+   "read_as": "abstract only",
+   "relevance_score": null,
+   "screening": {
+    "category": "abc_math",
+    "decision": "include",
+    "priority": 3
+   },
+   "theme": "abc_vojta",
+   "title": "Complexity of Robust Orbit Problems for Torus Actions and the abc-conjecture",
+   "year": 2024
+  },
+  {
+   "arxiv_categories": [
+    "math.NT",
+    "math.AG"
+   ],
+   "arxiv_id": "2405.16950",
+   "authors": [
+    "Seung-Hyeon Hyeon"
+   ],
+   "description": "A mixed-characteristic local field is determined by the filtered maximal metabelian quotient of its Galois group, and functorially by a filtered finite-step quotient; local invariants are recovered from the abelianization.",
+   "id": "2405.16950",
+   "primary_source": "PDF",
+   "project_links": [
+    "P-ANAB",
+    "IUT/Prerequisites/PositiveRationalsZhatUnits.lean"
+   ],
+   "read_as": "partial: Sections 1 and 3 in full, Section 6 Theorem 6.2 with proof, statements of Sections 2, 4, 5 and Appendix A",
+   "relevance_score": 2,
+   "screening": {
+    "category": "prereq",
+    "decision": "include",
+    "priority": 3
+   },
+   "statements_of_interest": [
+    "Theorem 1.4 (6.2): an isomorphism of filtered metabelian quotients implies the fields are isomorphic.",
+    "Theorem 1.5 (6.3): a filtered isomorphism of G^{m+3} induces conjugation by a field isomorphism on G^{m+1}.",
+    "Proposition 3.1: explicit formulas for p, a, d, e, f in terms of the abstract group G^ab_K.",
+    "Theorem 1.1: recalls Mochizuki's filtered local Grothendieck conjecture; the filtration cannot be dropped."
+   ],
+   "theme": "prerequisites",
+   "title": "The m-step solvable anabelian geometry of mixed-characteristic local fields",
+   "year": 2024
+  },
+  {
+   "arxiv_categories": [
+    "math.NT"
+   ],
+   "arxiv_id": "2406.05083",
+   "authors": [
+    "Hector Pasten",
+    "Rocío Sepúlveda-Manzo"
+   ],
+   "claim_status": "Unconditional subexponential bounds (weaker than abc).",
+   "description": "Proves an unconditional subexponential abc bound in terms of rad(bc) only, via linear forms in logarithms, and deduces an unconditional subexponential bound for the abcd conjecture under a size condition.",
+   "id": "2406.05083",
+   "primary_source": "TeX",
+   "project_links": [
+    "IUT/ABC/Variants.lean"
+   ],
+   "read_as": "full text from TeX",
+   "relevance_score": 2,
+   "screening": {
+    "category": "abc_math",
+    "decision": "include",
+    "priority": 2
+   },
+   "statements_of_interest": [
+    "Theorem 2.2 (page 3): log(c/a)/log*_2 c <= exp(kappa (log*_3 rad(bc)/log*_2 rad(bc)) log rad(bc)) for coprime a + b = c.",
+    "Theorem 1.3 (page 2): a bound for log c under a <= c/exp((log c)^tau log*_2 c).",
+    "Theorem 1.6 (page 3): the abcd consequence for pairwise coprime x_1 + x_2 + x_3 + x_4 = 0.",
+    "Section 3: the step from Theorem 1.3 to Theorem 1.6 is elementary."
+   ],
+   "theme": "abc_vojta",
+   "title": "On the abc and the abcd conjectures",
+   "year": 2024
+  },
+  {
+   "arxiv_categories": [
+    "math.NT"
+   ],
+   "arxiv_id": "2406.10014",
+   "authors": [
+    "Tsz Ho Chan"
+   ],
+   "description": "Not read beyond the abstract. Summary of the abstract: Powered numbers in short intervals, conditional on abc.",
+   "id": "2406.10014",
+   "read_as": "abstract only",
+   "relevance_score": null,
+   "screening": {
+    "category": "abc_math",
+    "decision": "include",
+    "priority": 3
+   },
+   "theme": "abc_vojta",
+   "title": "Powered numbers in short intervals II",
+   "year": 2024
+  },
+  {
+   "arxiv_categories": [
+    "math.NT"
+   ],
+   "arxiv_id": "2407.17820",
+   "authors": [
+    "Jesse Elliott"
+   ],
+   "description": "Not read beyond the abstract. Summary of the abstract: Monograph stating abc as a degree-one statement for a function.",
+   "id": "2407.17820",
+   "read_as": "abstract only",
+   "relevance_score": null,
+   "screening": {
+    "category": "abc_math",
+    "decision": "include",
+    "priority": 3
+   },
+   "theme": "abc_vojta",
+   "title": "Analytic Number Theory and Algebraic Asymptotic Analysis",
+   "year": 2024
+  },
+  {
+   "arxiv_categories": [
+    "math.NT",
+    "math.CV"
+   ],
+   "arxiv_id": "2407.18406",
+   "authors": [
+    "Pei-Chu Hu",
+    "Bao Qin Li"
+   ],
+   "claim_status": "Claims a special case of abc from a refined Roth theorem (abstract only; not read).",
+   "description": "Not read beyond the abstract. Summary of the abstract: Refined Roth theorem proving a special case of abc.",
+   "id": "2407.18406",
+   "read_as": "abstract only",
+   "relevance_score": null,
+   "screening": {
+    "category": "abc_math",
+    "decision": "include",
+    "priority": 3
+   },
+   "theme": "abc_vojta",
+   "title": "A form of refined Roth's theorem and its application to the abc-conjecture",
+   "year": 2024
+  },
+  {
+   "arxiv_categories": [
+    "math.NT",
+    "math.DS"
+   ],
+   "arxiv_id": "2408.14657",
+   "authors": [
+    "John R. Doyle",
+    "Wade Hindes"
+   ],
+   "description": "Not read beyond the abstract. Summary of the abstract: Uniform boundedness for unicritical polynomials over abc-fields.",
+   "id": "2408.14657",
+   "read_as": "abstract only",
+   "relevance_score": null,
+   "screening": {
+    "category": "abc_math",
+    "decision": "include",
+    "priority": 3
+   },
+   "theme": "abc_vojta",
+   "title": "Unicritical polynomials over abc-fields: from uniform boundedness to dynamical Galois groups",
+   "year": 2024
+  },
+  {
+   "arxiv_categories": [
+    "cs.LO",
+    "math.RA"
+   ],
+   "arxiv_id": "2408.15180",
+   "authors": [
+    "Jineon Baek",
+    "Seewoo Lee"
+   ],
+   "description": "Lean 4 proof of the Mason-Stothers polynomial abc theorem and corollaries, in Mathlib as Polynomial.abc with UniqueFactorizationMonoid.radical.",
+   "id": "2408.15180",
+   "primary_source": "TeX",
+   "project_links": [
+    "Challenge.ABC",
+    "Challenge.rad",
+    "IUT/ABC/Variants.lean"
+   ],
+   "read_as": "full text from TeX",
+   "relevance_score": 2,
+   "screening": {
+    "category": "formal",
+    "decision": "include",
+    "priority": 2
+   },
+   "statements_of_interest": [
+    "Section 5: Polynomial.abc: for coprime nonzero a, b, c with a + b + c = 0, either all derivatives vanish or each degree is below the degree of rad(abc).",
+    "Section 2: the example (-1, -x^p, (1 + x)^p) shows the derivative alternative is needed in characteristic p.",
+    "Section 4: radical conventions radical 0 = 1 and radical of a unit = 1.",
+    "Section 8: Mason's curve inequality, not formalized because Riemann-Hurwitz is missing."
+   ],
+   "theme": "formalization",
+   "title": "Formalizing Mason-Stothers Theorem and its Corollaries in Lean 4",
+   "year": 2024
+  },
+  {
+   "arxiv_categories": [
+    "math.NT"
+   ],
+   "arxiv_id": "2409.13439",
+   "authors": [
+    "Rupert Hölzl",
+    "Sören Kleine",
+    "Frank Stephan"
+   ],
+   "description": "Not read beyond the abstract. Summary of the abstract: Improved lower bounds for strong n-conjectures generalizing abc; disproves Ramaekers's conjecture for n at least 5.",
+   "id": "2409.13439",
+   "read_as": "abstract only",
+   "relevance_score": null,
+   "screening": {
+    "category": "abc_math",
+    "decision": "include",
+    "priority": 3
+   },
+   "theme": "abc_vojta",
+   "title": "Improved lower bounds for strong n-conjectures",
+   "year": 2024
+  },
+  {
+   "arxiv_categories": [
+    "cs.FL",
+    "cs.LO",
+    "math.NT"
+   ],
+   "arxiv_id": "2410.01466",
+   "authors": [
+    "Alex Best",
+    "Christopher Birkbeck",
+    "Riccardo Brasca",
+    "Eric Rodriguez Boidi",
+    "Ruben van De Velde",
+    "Andrew Yang"
+   ],
+   "description": "Complete Lean 4 formalization of Fermat's Last Theorem for regular primes, with Kummer's lemma proved through Hilbert's Theorems 90 to 94.",
+   "id": "2410.01466",
+   "primary_source": "PDF",
+   "read_as": "full text from PDF",
+   "relevance_score": 1,
+   "screening": {
+    "category": "formal",
+    "decision": "include",
+    "priority": 2
+   },
+   "theme": "formalization",
+   "title": "A complete formalization of Fermat's Last Theorem for regular primes in Lean",
+   "year": 2024
+  },
+  {
+   "arxiv_categories": [
+    "math.AG",
+    "math.NT"
+   ],
+   "arxiv_id": "2410.06643",
+   "authors": [
+    "Finn Bartsch",
+    "Frédéric Campana",
+    "Ariyan Javanpeykar",
+    "Olivier Wittenberg"
+   ],
+   "description": "Not read beyond the abstract. The abstract states that the Weakly Special Conjecture contradicts the orbifold Mordell conjecture and hence abc.",
+   "id": "2410.06643",
+   "read_as": "abstract only",
+   "relevance_score": null,
+   "screening": {
+    "category": "abc_math",
+    "decision": "include",
+    "priority": 3
+   },
+   "theme": "abc_vojta",
+   "title": "The Weakly Special Conjecture contradicts orbifold Mordell, and hence the abc conjecture",
+   "year": 2024
+  },
+  {
+   "arxiv_categories": [
+    "math.NT",
+    "math.CO"
+   ],
+   "arxiv_id": "2410.12234",
+   "authors": [
+    "Christian Bernert",
+    "Tim Browning",
+    "Jared Duker Lichtman",
+    "Joni Teräväinen"
+   ],
+   "description": "Proves an unconditional power-saving bound for the number of abc triples up to X with rad(abc) < c^lambda; counts only, no bound for individual triples.",
+   "id": "2410.12234",
+   "primary_source": "TeX",
+   "read_as": "full text from TeX",
+   "relevance_score": 1,
+   "screening": {
+    "category": "abc_math",
+    "decision": "include",
+    "priority": 2
+   },
+   "theme": "abc_vojta",
+   "title": "Bounds on the exceptional set in the abc conjecture",
+   "year": 2024
+  },
+  {
+   "arxiv_categories": [
+    "math.NT"
+   ],
+   "arxiv_id": "2410.21552",
+   "authors": [
+    "Adam S. Sikora"
+   ],
+   "description": "Not read beyond the abstract. Summary of the abstract: Proposes product generalizations of Fermat-Catalan and Tijdeman-Zagier and a new explicit version of abc.",
+   "id": "2410.21552",
+   "read_as": "abstract only",
+   "relevance_score": null,
+   "screening": {
+    "category": "abc_math",
+    "decision": "include",
+    "priority": 3
+   },
+   "theme": "abc_vojta",
+   "title": "Fermat-Catalan and Tijdeman-Zagier conjectures for products",
+   "year": 2024
+  },
+  {
+   "arxiv_categories": [
+    "math.NT"
+   ],
+   "arxiv_id": "2501.11277",
+   "authors": [
+    "Takahiro Murotani",
+    "Yoshiyasu Ozeki"
+   ],
+   "description": "Not read beyond the abstract. Summary of the abstract: TKND-AVKF fields of Hoshi, Mochizuki and Tsujimura.",
+   "id": "2501.11277",
+   "read_as": "abstract only",
+   "relevance_score": null,
+   "screening": {
+    "category": "prereq",
+    "decision": "include",
+    "priority": 3
+   },
+   "theme": "prerequisites",
+   "title": "Some Kummer extensions over maximal cyclotomic fields, a finiteness theorem of Ribet and TKND-AVKF fields",
+   "year": 2025
+  },
+  {
+   "arxiv_categories": [
+    "math.NT"
+   ],
+   "arxiv_id": "2503.05296",
+   "authors": [
+    "Rupert Hölzl",
+    "Sören Kleine",
+    "Frank Stephan"
+   ],
+   "description": "Not read beyond the abstract. Summary of the abstract: Strong n-conjectures over Gaussian and Hurwitz integers; lim sup of qualities related to abc.",
+   "id": "2503.05296",
+   "read_as": "abstract only",
+   "relevance_score": null,
+   "screening": {
+    "category": "abc_math",
+    "decision": "include",
+    "priority": 3
+   },
+   "theme": "abc_vojta",
+   "title": "Strong n-conjectures over rings of integers",
+   "year": 2025
+  },
+  {
+   "arxiv_categories": [
+    "math.NT"
+   ],
+   "arxiv_id": "2503.14510",
+   "authors": [
+    "Zhong-Peng Zhou"
+   ],
+   "claim_status": "Explicit abc over Q stated as conditional on the mu_6 version of Corollary 3.12; some ranges rely on unpublished computation.",
+   "description": "From the mu_6 version of IUT III Corollary 3.12 with an explicitly defined hull log-volume, derives an explicit abc inequality over Q, an epsilon form, and generalized Fermat bounds, with some ranges covered by computer calculations the author does not publish.",
+   "id": "2503.14510",
+   "primary_source": "TeX",
+   "project_links": [
+    "IUT3.Cor3_12",
+    "T-CMP",
+    "IUT/ABC/Variants.lean",
+    "IUT/PaperIII/Corollary312/Comparison.lean"
+   ],
+   "read_as": "partial: introduction and §§0 to 3 in full; §4.2 (Lemmas 4.2 and 4.3, Theorem 4.4 with its table and proof, Corollaries 4.5 and 4.6) read; the survey §4.1 skimmed",
+   "relevance_score": 3,
+   "screening": {
+    "category": "iut_core",
+    "decision": "include",
+    "priority": 1
+   },
+   "statements_of_interest": [
+    "Definition 1.8 (page 11) with Lemma 1.4 (page 8): -|log(Theta)| defined as averaged log-volumes of holomorphic hulls of p^lambda times tensor log-shells under all Z_p-automorphisms.",
+    "Proposition 1.9 (page 12): the input -(1/2l) log(q) <= -|log(Theta)| for mu_6-initial theta data, taken from the explicit estimates of Mochizuki, Fesenko, Hoshi, Minamide and Porowski.",
+    "Proposition 1.10 (page 12): for F_mod = Q, a bound for (1/6) log(q) with coefficient (l^2 + 5l)/(l^2 + l − 12).",
+    "Proposition 2.7 (page 21): a bound for log N in terms of log rad N for Frey and Hellegouarch curves with l >= 11.",
+    "Theorem 3.2 (page 27): log|abc| <= 3 log rad(abc) + 8 sqrt(log|abc| loglog|abc|) for log|abc| >= 700; Corollary 3.3 (page 29): an epsilon form for eps <= 1/10.",
+    "Theorem 4.4 (pages 36 to 37) and Corollary 4.5: bounds for generalized Fermat equations and a claim of FLT for primes p >= 11."
+   ],
+   "theme": "explicit",
+   "title": "The inter-universal Teichmüller theory and new Diophantine results over the rational numbers. I",
+   "year": 2025
+  },
+  {
+   "arxiv_categories": [
+    "math.NT"
+   ],
+   "arxiv_id": "2504.15971",
+   "authors": [
+    "José Cuevas Barrientos",
+    "Hector Pasten"
+   ],
+   "claim_status": "Unconditional subexponential Szpiro bound in families.",
+   "description": "Proves an unconditional subexponential Szpiro bound for the fibers of an elliptic surface and improved lower bounds for the radical and largest prime factor of some polynomial values.",
+   "id": "2504.15971",
+   "primary_source": "PDF",
+   "read_as": "full text from PDF",
+   "relevance_score": 1,
+   "screening": {
+    "category": "abc_math",
+    "decision": "include",
+    "priority": 2
+   },
+   "theme": "abc_vojta",
+   "title": "On the greatest prime factor of polynomial values and subexponential Szpiro in families",
+   "year": 2025
+  },
+  {
+   "arxiv_categories": [
+    "math.NT"
+   ],
+   "arxiv_id": "2505.06826",
+   "authors": [
+    "Zeming Sun"
+   ],
+   "description": "Introduces pointed virtual curves from Galois sections of configuration spaces and proves absolute anabelian reconstruction in genus 0.",
+   "id": "2505.06826",
+   "primary_source": "TeX",
+   "read_as": "partial: TeX introduction and main theorem statements only",
+   "relevance_score": 0,
+   "screening": {
+    "category": "prereq",
+    "decision": "maybe",
+    "priority": 3
+   },
+   "theme": "prerequisites",
+   "title": "The Absolute Anabelian Geometry of Virtual Curves Arising from Sections of Arithmetic Fundamental Groups of Configuration Spaces",
+   "year": 2025
+  },
+  {
+   "arxiv_categories": [
+    "math.AG",
+    "math.NT"
+   ],
+   "arxiv_id": "2505.10568",
+   "authors": [
+    "Kirti Joshi"
+   ],
+   "claim_status": "Asserts that abc is established by the author's series combined with IUT; contains no proofs.",
+   "description": "A position report without proofs: the author states that Mochizuki's proof is incomplete, that the assertions of Scholze and Stix are incorrect, and that abc follows from the author's series combined with IUT; Table 2 answers each section of Scholze and Stix by a statement number of the series.",
+   "id": "2505.10568",
+   "primary_source": "TeX",
+   "project_links": [
+    "data/dispute_map.json"
+   ],
+   "read_as": "full text from TeX",
+   "relevance_score": 1,
+   "screening": {
+    "category": "iut_dispute",
+    "decision": "include",
+    "priority": 1
+   },
+   "theme": "joshi",
+   "title": "Final Report on the Mochizuki-Scholze-Stix Controversy",
+   "year": 2025
+  },
+  {
+   "arxiv_categories": [
+    "math.NT",
+    "math.AG",
+    "math.CO"
+   ],
+   "arxiv_id": "2505.13991",
+   "authors": [
+    "Jared Duker Lichtman"
+   ],
+   "description": "Not read beyond the abstract. Summary of the abstract: Exposition that almost all triples satisfy abc, with context for the Browning-Lichtman-Teraevaeinen bound.",
+   "id": "2505.13991",
+   "read_as": "abstract only",
+   "relevance_score": null,
+   "screening": {
+    "category": "abc_math",
+    "decision": "include",
+    "priority": 3
+   },
+   "theme": "abc_vojta",
+   "title": "The abc conjecture is true almost always",
+   "year": 2025
+  },
+  {
+   "arxiv_categories": [
+    "cs.CR",
+    "cs.DM"
+   ],
+   "arxiv_id": "2506.10039",
+   "authors": [
+    "Michael A. Idowu"
+   ],
+   "description": "Not read beyond the abstract. Summary of the abstract: Construction of high-quality abc triples.",
+   "id": "2506.10039",
+   "read_as": "abstract only",
+   "relevance_score": null,
+   "screening": {
+    "category": "abc_math",
+    "decision": "include",
+    "priority": 3
+   },
+   "theme": "abc_vojta",
+   "title": "Symbolic Generation and Modular Embedding of High-Quality abc-Triples",
+   "year": 2025
+  },
+  {
+   "arxiv_categories": [
+    "math.NT"
+   ],
+   "arxiv_id": "2506.13364",
+   "authors": [
+    "Christian Bernert"
+   ],
+   "description": "Not read beyond the abstract. Summary of the abstract: Bounds the size of the exceptional set in abc.",
+   "id": "2506.13364",
+   "read_as": "abstract only",
+   "relevance_score": null,
+   "screening": {
+    "category": "abc_math",
+    "decision": "include",
+    "priority": 3
+   },
+   "theme": "abc_vojta",
+   "title": "The exceptional set in the abc conjecture",
+   "year": 2025
+  },
+  {
+   "arxiv_categories": [
+    "math.NT"
+   ],
+   "arxiv_id": "2507.02885",
+   "authors": [
+    "Runbo Li"
+   ],
+   "description": "Not read beyond the abstract. Summary of the abstract: Improved bound on counting abc exceptional triples up to X.",
+   "id": "2507.02885",
+   "read_as": "abstract only",
+   "relevance_score": null,
+   "screening": {
+    "category": "abc_math",
+    "decision": "include",
+    "priority": 3
+   },
+   "theme": "abc_vojta",
+   "title": "On the exceptional set in the abc conjecture",
+   "year": 2025
+  },
+  {
+   "arxiv_categories": [
+    "math.NT"
+   ],
+   "arxiv_id": "2507.09899",
+   "authors": [
+    "Noah Lebowitz-Lockard"
+   ],
+   "description": "Not read beyond the abstract. Summary of the abstract: Consecutive integers with equal radicals bounded using an abc result.",
+   "id": "2507.09899",
+   "read_as": "abstract only",
+   "relevance_score": null,
+   "screening": {
+    "category": "abc_math",
+    "decision": "include",
+    "priority": 3
+   },
+   "theme": "abc_vojta",
+   "title": "On pairs of consecutive sequences with the same radicals",
+   "year": 2025
+  },
+  {
+   "arxiv_categories": [
+    "math.NT",
+    "math.AG"
+   ],
+   "arxiv_id": "2508.01588",
+   "authors": [
+    "Benjamin Collas",
+    "Takahiro Murotani",
+    "Naganori Yamaguchi"
+   ],
+   "description": "Expository survey of anabelian geometry, including local reconstruction through class field theory.",
+   "id": "2508.01588",
+   "primary_source": "PDF",
+   "read_as": "full text from PDF",
+   "relevance_score": 1,
+   "screening": {
+    "category": "prereq",
+    "decision": "include",
+    "priority": 3
+   },
+   "theme": "prerequisites",
+   "title": "Symmetries of spaces and numbers: anabelian geometry",
+   "year": 2025
+  },
+  {
+   "arxiv_categories": [
+    "math.NT"
+   ],
+   "arxiv_id": "2508.17775",
+   "authors": [
+    "Yu Mao"
+   ],
+   "description": "Reconstructs an abelian number field from the maximal 6-step solvable quotient of its absolute Galois group.",
+   "id": "2508.17775",
+   "primary_source": "PDF",
+   "read_as": "full text from PDF",
+   "relevance_score": 1,
+   "screening": {
+    "category": "prereq",
+    "decision": "include",
+    "priority": 3
+   },
+   "theme": "prerequisites",
+   "title": "The 6-step Solvable Mono-anabelian Reconstruction of Abelian Number Fields",
+   "year": 2025
+  },
+  {
+   "arxiv_categories": [
+    "math.NT"
+   ],
+   "arxiv_id": "2509.01105",
+   "authors": [
+    "Dmitry Badziahin"
+   ],
+   "description": "Not read beyond the abstract. Summary of the abstract: Approximation of cubics by rationals described under abc.",
+   "id": "2509.01105",
+   "read_as": "abstract only",
+   "relevance_score": null,
+   "screening": {
+    "category": "abc_math",
+    "decision": "include",
+    "priority": 3
+   },
+   "theme": "abc_vojta",
+   "title": "Distance between cubics and rationals",
+   "year": 2025
+  },
+  {
+   "arxiv_categories": [
+    "math.NT"
+   ],
+   "arxiv_id": "2510.05448",
+   "authors": [
+    "Zhong-Peng Zhou"
+   ],
+   "claim_status": "Conditional on the mu_6 or 2-torsion version of Corollary 3.12; the author states that one analytic step is omitted.",
+   "description": "Extends the method of Part I to initial theta data with 2-torsion in place of 6-torsion, stating that IUT I to IV hold in that setting, and derives generalized Fermat results; the author states that an analytic upper-bound step is omitted.",
+   "id": "2510.05448",
+   "primary_source": "TeX",
+   "project_links": [
+    "IUT1.Def3_1",
+    "IUT4.Prop1_8",
+    "H6",
+    "IUT/PaperI/InitialThetaData.lean"
+   ],
+   "read_as": "partial: abstract, introduction, §§1 to 3 and §5 in full; in §4, Proposition 4.4, Lemmas 4.6 and 4.7, Proposition 4.8 and Corollary 4.9 read, Lemmas 4.2 and 4.3 not read",
+   "relevance_score": 2,
+   "screening": {
+    "category": "iut_core",
+    "decision": "include",
+    "priority": 1
+   },
+   "statements_of_interest": [
+    "Definition 1.1 (page 6): 2-torsion initial theta data.",
+    "Remark 1.1.1 (page 6): the author's claim that 3-torsion rationality is used in IUT I to IV only at IUT I Remark 3.1.5 and at IUT IV Theorem 1.10 and Corollary 2.2 via Proposition 1.8 (iv), (v).",
+    "Proposition 1.13 (page 14): an elementary local-to-global lemma, (1 − b_1) log N <= b_2 under stated conditions.",
+    "Remark 1.13.1 (ii) (page 15): the author states that the analytic step log N <= C_0 is omitted.",
+    "Theorem 5.1 and Corollary 5.2 (page 36): claimed resolution of generalized Fermat signatures with 1/r + 1/s + 1/t <= 1 outside listed families."
+   ],
+   "theme": "explicit",
+   "title": "The inter-universal Teichmüller theory and new Diophantine results over rational numbers. II",
+   "year": 2025
+  },
+  {
+   "arxiv_categories": [
+    "math.NT"
+   ],
+   "arxiv_id": "2510.06993",
+   "authors": [
+    "Viktor Mirjanić",
+    "Daattavya Aggarwal",
+    "Challenger Mishra"
+   ],
+   "description": "Not read beyond the abstract. Summary of the abstract: Weighted average multiplicity generalizing abc quality; boundedness results for integers and polynomials.",
+   "id": "2510.06993",
+   "read_as": "abstract only",
+   "relevance_score": null,
+   "screening": {
+    "category": "abc_math",
+    "decision": "include",
+    "priority": 3
+   },
+   "theme": "abc_vojta",
+   "title": "A remark on weighted average multiplicities in prime factorisation",
+   "year": 2025
+  },
+  {
+   "arxiv_categories": [
+    "math.NT"
+   ],
+   "arxiv_id": "2511.04186",
+   "authors": [
+    "Yoshiyasu Ozeki"
+   ],
+   "description": "Not read beyond the abstract. Summary of the abstract: Studies Mochizuki's Kummer-faithful fields over p-adic fields, a base-field notion for anabelian geometry.",
+   "id": "2511.04186",
+   "read_as": "abstract only",
+   "relevance_score": null,
+   "screening": {
+    "category": "prereq",
+    "decision": "include",
+    "priority": 3
+   },
+   "theme": "prerequisites",
+   "title": "Kummer-faithfulness over p-adic fields",
+   "year": 2025
+  },
+  {
+   "arxiv_categories": [
+    "math.NT"
+   ],
+   "arxiv_id": "2511.05101",
+   "authors": [
+    "Yu Mao",
+    "Xiao Wang"
+   ],
+   "description": "Mono-anabelian reconstruction of number fields with restricted ramification of density one.",
+   "id": "2511.05101",
+   "primary_source": "PDF",
+   "read_as": "full text from PDF",
+   "relevance_score": 1,
+   "screening": {
+    "category": "prereq",
+    "decision": "include",
+    "priority": 3
+   },
+   "theme": "prerequisites",
+   "title": "Mono-anabelian Reconstruction of Number Fields with Restricted Ramification",
+   "year": 2025
+  },
+  {
+   "arxiv_categories": [
+    "math.NT"
+   ],
+   "arxiv_id": "2511.05192",
+   "authors": [
+    "Yu Mao",
+    "Mohamed Saidi"
+   ],
+   "description": "Mono-anabelian reconstruction of a number field from a finite-step solvable quotient of its absolute Galois group, with explicit group-theoretic formulas for local invariants.",
+   "id": "2511.05192",
+   "primary_source": "TeX",
+   "project_links": [
+    "P-ANAB"
+   ],
+   "read_as": "partial: Conventions, Introduction, Sections 2 and 6 in full; Section 3 through Definition 3.5 and Theorem 3.7 with proof; Sections 4 and 5 headers and Theorem 5.7 statement only",
+   "relevance_score": 2,
+   "screening": {
+    "category": "prereq",
+    "decision": "include",
+    "priority": 3
+   },
+   "statements_of_interest": [
+    "Section 2: p, f, d and e from the abelianized decomposition group by explicit counting formulas.",
+    "Section 3: local-global synchronization of cyclotomes.",
+    "Section 6: Hoshi's lemma that the multiplicative monoid with additional data determines the additive structure of a number field.",
+    "Main Theorems 1 and 2: reconstruction from G_K^{m+9} (m >= 3), and a depth 6 version for Q and imaginary quadratic fields."
+   ],
+   "theme": "prerequisites",
+   "title": "The m-step Solvable Mono-anabelian Geometry of Number Fields",
+   "year": 2025
+  },
+  {
+   "arxiv_categories": [
+    "math.NT"
+   ],
+   "arxiv_id": "2511.06725",
+   "authors": [
+    "Ryoji Shimizu",
+    "Naganori Yamaguchi"
+   ],
+   "description": "Proves the relative Grothendieck conjecture for hyperbolic curves over normal bases with an invertible prime.",
+   "id": "2511.06725",
+   "primary_source": "PDF",
+   "read_as": "partial: Introduction, notation, Section 1.1 up to Lemma 1.6",
+   "relevance_score": 0,
+   "screening": {
+    "category": "prereq",
+    "decision": "maybe",
+    "priority": 3
+   },
+   "theme": "prerequisites",
+   "title": "Étale fundamental groups of smooth arithmetic surfaces and the Grothendieck conjecture",
+   "year": 2025
+  },
+  {
+   "arxiv_categories": [
+    "math.NT"
+   ],
+   "arxiv_id": "2512.05095",
+   "authors": [
+    "Yu Nishio"
+   ],
+   "description": "For absolutely abelian 2-adic fields containing sqrt(-1), some automorphisms of the absolute Galois group act on the reconstructed additive group without preserving Q_2, so Aut(k) is not normal in Out(G_k).",
+   "id": "2512.05095",
+   "primary_source": "PDF",
+   "project_links": [
+    "OB-IND",
+    "A4"
+   ],
+   "read_as": "full text from PDF",
+   "relevance_score": 2,
+   "screening": {
+    "category": "prereq",
+    "decision": "include",
+    "priority": 2
+   },
+   "statements_of_interest": [
+    "Theorem 2.5 and Corollary 3.3: for k absolutely abelian with p = 2 and a_k >= 2, some automorphism of G_k does not preserve Q_2 inside k_+, and Aut(k) is not normal in Out(G_k).",
+    "Lemma 2.2 (from Hoshi and Nishio): automorphisms of G_k commute with trace and norm to Q_p.",
+    "Theorem 4.4 and Corollary 4.5: a crystalline two-dimensional 2-adic representation that is not Aut-intrinsically Hodge-Tate."
+   ],
+   "theme": "prerequisites",
+   "title": "On the Outer Automorphism Groups of the Absolute Galois Groups of 2-adic local Fields",
+   "year": 2025
+  },
+  {
+   "arxiv_categories": [
+    "cs.LO",
+    "math.AC"
+   ],
+   "arxiv_id": "2512.05750",
+   "authors": [
+    "Antoine Chambert-Loir",
+    "María Inés de Frutos-Fernández"
+   ],
+   "description": "Lean 4 formalization of polynomial laws and the universal divided power algebra, with one published result used as an axiom.",
+   "id": "2512.05750",
+   "primary_source": "TeX",
+   "read_as": "full text from TeX",
+   "relevance_score": 0,
+   "screening": {
+    "category": "formal",
+    "decision": "include",
+    "priority": 3
+   },
+   "theme": "formalization",
+   "title": "Formalizing Polynomial Laws and the Universal Divided Power Algebra",
+   "year": 2025
+  },
+  {
+   "arxiv_categories": [
+    "math.NT"
+   ],
+   "arxiv_id": "2512.09231",
+   "authors": [
+    "Kaiji Kondo"
+   ],
+   "description": "For p odd and a Galois extension of Q_p of degree > 1, Aut(k) has infinitely many conjugates in Out(G_k), so it is not normal and not functorially reconstructible; also describes the trace kernel.",
+   "id": "2512.09231",
+   "primary_source": "PDF",
+   "project_links": [
+    "IUT3.Def1_1",
+    "P-LOG",
+    "OB-IND",
+    "IUT/Prerequisites/PadicLog.lean"
+   ],
+   "read_as": "partial: Introduction, Section 0, all statements of Sections 1 and 2, proofs of Theorem 1.3 (d = 2), Lemma 1.5, Theorems 2.8, 2.9, 2.19",
+   "relevance_score": 2,
+   "screening": {
+    "category": "prereq",
+    "decision": "include",
+    "priority": 2
+   },
+   "statements_of_interest": [
+    "Section 0: the log-shell of k as (2p)^{-1} log(O_k^x) and the functorial algorithms for groups of MLF-type.",
+    "Theorem I (Theorems 2.9, 2.19): for p odd and k/Q_p Galois of degree > 1, Aut(k) has infinitely many conjugates in Out(G_k); Remark 2.20: Aut(k) is not functorially reconstructible from G_k.",
+    "Lemma 1.2 and Theorem 1.3: outer automorphisms preserve the kernel of the trace.",
+    "Lemma 2.4: a group-theoretic statement about slim profinite groups."
+   ],
+   "theme": "prerequisites",
+   "title": "Anabelian aspects of the outer automorphism groups of the absolute Galois groups of mixed-characteristic local fields",
+   "year": 2025
+  },
+  {
+   "arxiv_categories": [
+    "math.GR",
+    "math.AG"
+   ],
+   "arxiv_id": "2601.07112",
+   "authors": [
+    "Naganori Yamaguchi"
+   ],
+   "description": "Maximal m-step solvable quotients of fundamental groups of curves are torsion-free and center-free.",
+   "id": "2601.07112",
+   "primary_source": "PDF",
+   "read_as": "full text from PDF",
+   "relevance_score": 1,
+   "screening": {
+    "category": "prereq",
+    "decision": "include",
+    "priority": 3
+   },
+   "theme": "prerequisites",
+   "title": "Center-freeness of finite-step solvable groups arising from anabelian geometry",
+   "year": 2026
+  },
+  {
+   "arxiv_categories": [
+    "math.NT"
+   ],
+   "arxiv_id": "2601.11376",
+   "authors": [
+    "Karsten Müller",
+    "Michael Taktikos"
+   ],
+   "description": "Not read beyond the abstract. Summary of the abstract: Effective Roth constants for cubic roots from effective abc.",
+   "id": "2601.11376",
+   "read_as": "abstract only",
+   "relevance_score": null,
+   "screening": {
+    "category": "abc_math",
+    "decision": "include",
+    "priority": 3
+   },
+   "theme": "abc_vojta",
+   "title": "From ABC to Effective Roth and Ridout Constants for Cubic Roots",
+   "year": 2026
+  },
+  {
+   "arxiv_categories": [
+    "math.NT",
+    "cs.LO",
+    "math.FA"
+   ],
+   "arxiv_id": "2601.21734",
+   "authors": [
+    "Yijun Yuan"
+   ],
+   "description": "Lean 4 formalization of spherically complete spaces, a non-Archimedean Hahn-Banach theorem, and the proof that C_p is not spherically complete.",
+   "id": "2601.21734",
+   "primary_source": "TeX",
+   "read_as": "partial: Sections 1, 3, 4, Theorem 6.3 with Definition 6.4 and Proposition 6.6, and Section 7 to Definition 7.7 in full; Sections 2, 5, 6.1 to 6.3 and 7.2 to 7.4 through statements and Lean declarations only",
+   "relevance_score": 1,
+   "screening": {
+    "category": "formal",
+    "decision": "include",
+    "priority": 3
+   },
+   "theme": "formalization",
+   "title": "Formalization of non-Archimedean functional analysis 1: spherically complete spaces",
+   "year": 2026
+  },
+  {
+   "arxiv_categories": [
+    "math.CT",
+    "cs.LO"
+   ],
+   "arxiv_id": "2603.00896",
+   "authors": [
+    "Robin Carlier"
+   ],
+   "description": "Lean 4 construction relating spans of finite sets and symmetric monoidal categories through a coherence theorem.",
+   "id": "2603.00896",
+   "primary_source": "TeX",
+   "read_as": "partial: Sections 1, 2, 3 up to the Pith-Beck-Chevalley definition, and 5; the rest of Section 3 and Section 4 not read",
+   "relevance_score": 0,
+   "screening": {
+    "category": "formal",
+    "decision": "include",
+    "priority": 3
+   },
+   "theme": "formalization",
+   "title": "Unbiasing symmetric monoidal categories in Lean",
+   "year": 2026
+  },
+  {
+   "arxiv_categories": [
+    "math.AG"
+   ],
+   "arxiv_id": "2603.02848",
+   "authors": [
+    "Benjamin Collas"
+   ],
+   "description": "Survey of Galois-Teichmüller theory from the anabelian side; no IUT content.",
+   "id": "2603.02848",
+   "primary_source": "PDF",
+   "read_as": "full text from PDF",
+   "relevance_score": 0,
+   "screening": {
+    "category": "prereq",
+    "decision": "include",
+    "priority": 3
+   },
+   "theme": "prerequisites",
+   "title": "Anabelian perspectives in Galois-Teichmüller theory",
+   "year": 2026
+  },
+  {
+   "arxiv_categories": [
+    "math.NT",
+    "math.AG"
+   ],
+   "arxiv_id": "2603.21074",
+   "authors": [
+    "Yuxiu Lu"
+   ],
+   "description": "Develops p-adic diffeomorphism groups with a Frobenius-limit logarithm and an informal reformulation of IUT through automorphisms of group schemes; the final section gives a heuristic argument doubting the main inequality of Corollary 3.12, which the author states is not fully justified.",
+   "id": "2603.21074",
+   "primary_source": "TeX",
+   "project_links": [
+    "IUT3.Cor3_12"
+   ],
+   "read_as": "partial: introduction, §5.6 and §5.7 in full; §5.3 read with truncated lines; §§2 to 4 and §§5.1, 5.2, 5.4, 5.5 not read beyond headings",
+   "relevance_score": 1,
+   "screening": {
+    "category": "iut_core",
+    "decision": "include",
+    "priority": 1
+   },
+   "theme": "dispute",
+   "title": "An analytic approach to P-adic diffeomorphism group and Teichmüller theory",
+   "year": 2026
+  },
+  {
+   "arxiv_categories": [
+    "math.NT"
+   ],
+   "arxiv_id": "2603.29970",
+   "authors": [
+    "David Kurniadi Angdinata",
+    "Evan Chen",
+    "Chris Cummins",
+    "Ben Eltschig",
+    "Dejan Grubisic",
+    "Leopold Haller",
+    "Letong Hong",
+    "Andranik Kurghinyan",
+    "Kenny Lau",
+    "Hugh Leather",
+    "Seewoo Lee",
+    "Simon Mahns",
+    "Aram H. Markosyan",
+    "Rithikesh Muddana",
+    "Ken Ono",
+    "Manooshree Patel",
+    "Gaurang Pendharkar",
+    "Vedant Rathi",
+    "Alex Schneidman",
+    "Volker Seeker",
+    "Shubho Sengupta",
+    "Ishan Sinha",
+    "Jimmy Xin",
+    "Jujian Zhang"
+   ],
+   "description": "Conditional on abc, the number of primes equal to |tau(n)| up to X is O(X^(13/22)); a Lean proof assumes abc in signed integer form.",
+   "id": "2603.29970",
+   "primary_source": "TeX",
+   "read_as": "full text from TeX",
+   "relevance_score": 1,
+   "screening": {
+    "category": "formal",
+    "decision": "include",
+    "priority": 2
+   },
+   "theme": "formalization",
+   "title": "ABC implies that Ramanujan's tau function misses almost all primes",
+   "year": 2026
+  },
+  {
+   "arxiv_categories": [
+    "math.NT",
+    "math.AG"
+   ],
+   "arxiv_id": "2604.23485",
+   "authors": [
+    "Zeming Sun"
+   ],
+   "description": "Extends absolute anabelian reconstruction for pointed virtual curves to arbitrary genus.",
+   "id": "2604.23485",
+   "primary_source": "PDF",
+   "read_as": "partial: Introduction and start of Section 2",
+   "relevance_score": 1,
+   "screening": {
+    "category": "prereq",
+    "decision": "include",
+    "priority": 3
+   },
+   "theme": "prerequisites",
+   "title": "The Absolute Anabelian Geometry of Virtual Curves of Arbitrary Genus",
+   "year": 2026
+  },
+  {
+   "arxiv_categories": [
+    "math.NT"
+   ],
+   "arxiv_id": "2604.25017",
+   "authors": [
+    "Katalin Gyarmati"
+   ],
+   "description": "Proves with the Mason and Stothers theorem that p^n + q^n = r^n + s^n has no nontrivial coprime polynomial solutions for n >= 16, and states an abc family without proof.",
+   "id": "2604.25017",
+   "primary_source": "PDF",
+   "read_as": "full text from PDF",
+   "relevance_score": 1,
+   "screening": {
+    "category": "abc_math",
+    "decision": "maybe",
+    "priority": 3
+   },
+   "theme": "abc_vojta",
+   "title": "Ramanujan, the taxicab problem for polynomials, and the abc-conjecture",
+   "year": 2026
+  },
+  {
+   "arxiv_categories": [
+    "math.NT"
+   ],
+   "arxiv_id": "2604.25566",
+   "authors": [
+    "Toshiki Matsusaka",
+    "Shin-ichiro Seki"
+   ],
+   "description": "Not read beyond the abstract. Summary of the abstract: Irrationality of an A-logarithm proved under abc.",
+   "id": "2604.25566",
+   "read_as": "abstract only",
+   "relevance_score": null,
+   "screening": {
+    "category": "abc_math",
+    "decision": "include",
+    "priority": 3
+   },
+   "theme": "abc_vojta",
+   "title": "Some results on naive transcendence in the ring of integers modulo infinitely large primes",
+   "year": 2026
+  },
+  {
+   "arxiv_categories": [
+    "math.NT"
+   ],
+   "arxiv_id": "2604.27111",
+   "authors": [
+    "Georgia Harbor-Collins"
+   ],
+   "description": "Gives an O_K-basis and the exact minimal valuation of the image of a Lubin-Tate logarithm on pi-regular extensions; for K = Q_p this sharpens a bound on log(1 + m_L).",
+   "id": "2604.27111",
+   "primary_source": "PDF",
+   "project_links": [
+    "IUT4.Prop1_2",
+    "P-LOG",
+    "IUT/PaperIV/Proposition1_2.lean",
+    "IUT/Prerequisites/PadicLog.lean"
+   ],
+   "read_as": "full text from PDF",
+   "relevance_score": 2,
+   "screening": {
+    "category": "prereq",
+    "decision": "maybe",
+    "priority": 3
+   },
+   "statements_of_interest": [
+    "Theorem 5.6 (1.3): the minimal valuation of the image of the logarithm.",
+    "Theorem 5.2: v_L(log x) = q^l v_L(x) − l v_L(pi) with explicit l.",
+    "Theorem 5.1: an O_K-basis of the image for pi-regular L.",
+    "Introduction: log(1 + p Z_p) = p Z_p for odd p and 4 Z_2 for p = 2."
+   ],
+   "theme": "prerequisites",
+   "title": "An O_K-basis for the image of a Lubin-Tate logarithm on π-regular extensions of K",
+   "year": 2026
+  },
+  {
+   "arxiv_categories": [
+    "cs.AI"
+   ],
+   "arxiv_id": "2605.13171",
+   "authors": [
+    "Moritz Firsching",
+    "Paul Lezeau",
+    "Salvatore Mercuri",
+    "Miklós Z. Horváth",
+    "Yaël Dillies",
+    "Calle Sönne",
+    "Eric Wieser",
+    "Fred Zhang",
+    "Thomas Hubert",
+    "Blaise Agüera y Arcas",
+    "Pushmeet Kohli"
+   ],
+   "description": "A repository of Lean 4 conjecture statements with a measured taxonomy of misformalization fixes, kernel and comparator checking with the standard axioms, and versioned snapshots.",
+   "id": "2605.13171",
+   "primary_source": "PDF",
+   "project_links": [
+    "Challenge.ABC",
+    "IUT/Applications/ABCFormalConjectures.lean",
+    "docs/EXTERNAL_PROJECTS.md"
+   ],
+   "read_as": "full text from PDF",
+   "relevance_score": 3,
+   "screening": {
+    "category": "formal",
+    "decision": "include",
+    "priority": 2
+   },
+   "statements_of_interest": [
+    "Section 3.3 and Appendix A.4 (pages 5, 17 to 18): misformalizations in three levels and six types; misrepresentation and semantic errors dominate the 291 fixes.",
+    "Section 4.1 (pages 7 to 8): solutions may use only propext, Classical.choice and Quot.sound; kernel checks are combined with a comparator against environment modification.",
+    "Section 4.2 (page 9): a post-release check found 14 unfaithful statements among 100 reviewed.",
+    "Section 3.4 (page 6): definitions come with test lemmas; automated proof and disproof attempts mainly reveal misformalizations."
+   ],
+   "theme": "formalization",
+   "title": "Formal Conjectures: An Open and Evolving Benchmark for Verified Discovery in Mathematics",
+   "year": 2026
+  },
+  {
+   "arxiv_categories": [
+    "math.NT"
+   ],
+   "arxiv_id": "2605.25428",
+   "authors": [
+    "Kaiji Kondo"
+   ],
+   "description": "Not read beyond the abstract. Summary of the abstract: Lubin-Tate representations not Aut-intrinsically Hodge-Tate.",
+   "id": "2605.25428",
+   "read_as": "abstract only",
+   "relevance_score": null,
+   "screening": {
+    "category": "prereq",
+    "decision": "include",
+    "priority": 3
+   },
+   "theme": "prerequisites",
+   "title": "Lubin-Tate representations over nontrivial finite Galois extensions of Q_{p} are not Aut-intrinsically Hodge-Tate",
+   "year": 2026
+  },
+  {
+   "arxiv_categories": [
+    "math.GM"
+   ],
+   "arxiv_id": "2606.08416",
+   "authors": [
+    "Akilan Sankaran"
+   ],
+   "description": "Not read beyond the abstract. Summary of the abstract: Variants of abc using alternative quality metrics.",
+   "id": "2606.08416",
+   "read_as": "abstract only",
+   "relevance_score": null,
+   "screening": {
+    "category": "abc_math",
+    "decision": "include",
+    "priority": 3
+   },
+   "theme": "abc_vojta",
+   "title": "Variants on the abc-Conjecture using Alternative Quality Metrics",
+   "year": 2026
+  },
+  {
+   "arxiv_categories": [
+    "math.NT"
+   ],
+   "arxiv_id": "2606.14340",
+   "authors": [
+    "Saša Novaković"
+   ],
+   "description": "Not read beyond the abstract. Summary of the abstract: Bounds on arithmetic progressions in almost perfect powers following Hajdu's abc-conditional results.",
+   "id": "2606.14340",
+   "read_as": "abstract only",
+   "relevance_score": null,
+   "screening": {
+    "category": "abc_math",
+    "decision": "include",
+    "priority": 3
+   },
+   "theme": "abc_vojta",
+   "title": "Almost perfect inhomogeneous powers in arithmetic progression",
+   "year": 2026
+  },
+  {
+   "arxiv_categories": [
+    "math.NT",
+    "math.AG"
+   ],
+   "arxiv_id": "2606.29478",
+   "authors": [
+    "Kirti Joshi"
+   ],
+   "description": "Anabelomorphic p-adic fields have isomorphic Fargues-Scholze stacks of Langlands parameters; a compatible equivalence on the other side is conjectured and proved for split tori. No IUT content.",
+   "id": "2606.29478",
+   "primary_source": "TeX",
+   "read_as": "full text from TeX",
+   "relevance_score": 0,
+   "screening": {
+    "category": "alt_approach",
+    "decision": "include",
+    "priority": 3
+   },
+   "theme": "joshi",
+   "title": "The Categorical Local Langlands Correspondence and Anabelomorphy",
+   "year": 2026
+  },
+  {
+   "arxiv_categories": [
+    "math.NT",
+    "math.CO",
+    "math.LO"
+   ],
+   "arxiv_id": "2607.01544",
+   "authors": [
+    "Kenny Lau",
+    "Seewoo Lee",
+    "Ken Ono"
+   ],
+   "description": "Lean 4 library of q-series over complete non-Archimedean rings: q-Pochhammer symbols, Bailey's lemma, the Jacobi triple product and the Rogers-Ramanujan identities.",
+   "id": "2607.01544",
+   "primary_source": "TeX",
+   "project_links": [
+    "IUT/Prerequisites/ThetaFunction.lean"
+   ],
+   "read_as": "partial: Sections 1, 2, 3.7, 5.1, 5.3, 6, 7, Appendix 8 and the final statements of Section 4 in full; Sections 3.1 to 3.6 through statements and Lean code only; Section 5.2, the Section 4 proof and the Appendix 9 proofs not read",
+   "relevance_score": 2,
+   "screening": {
+    "category": "formal",
+    "decision": "include",
+    "priority": 3
+   },
+   "statements_of_interest": [
+    "Section 2.1 (pages 3 to 5): strongly non-Archimedean rings, in which infinite products converge when the factors tend to 1.",
+    "Theorem 4.1.4 (pages 26 to 27): the Jacobi triple product in a complete Hausdorff strongly non-Archimedean ring.",
+    "Section 5.3 (page 31): statements with tsum and a junk-value inverse.",
+    "Appendix 8.2 (pages 33 to 34): the authors report that an automated system wrote both statement and proof of two identities."
+   ],
+   "theme": "formalization",
+   "title": "Formalized q-series: The Rogers-Ramanujan Identities and Beyond",
+   "year": 2026
+  },
+  {
+   "arxiv_categories": [
+    "math.NT",
+    "math.CO"
+   ],
+   "arxiv_id": "2607.06944",
+   "authors": [
+    "Shanwen Wang",
+    "Yijun Yuan"
+   ],
+   "description": "Not read beyond the abstract. Summary of the abstract: Transcendence of sparse p-adic Hahn series, fully formalized in Lean over Mathlib.",
+   "id": "2607.06944",
+   "read_as": "abstract only",
+   "relevance_score": null,
+   "screening": {
+    "category": "formal",
+    "decision": "include",
+    "priority": 3
+   },
+   "theme": "formalization",
+   "title": "p-adic Hahn series with sparse support",
+   "year": 2026
+  },
+  {
+   "arxiv_categories": [
+    "math.NT"
+   ],
+   "arxiv_id": "2607.07641",
+   "authors": [
+    "Patrick Letendre"
+   ],
+   "description": "Not read beyond the abstract. Summary of the abstract: Proposes a new abc-type conjecture with applications.",
+   "id": "2607.07641",
+   "read_as": "abstract only",
+   "relevance_score": null,
+   "screening": {
+    "category": "abc_math",
+    "decision": "include",
+    "priority": 3
+   },
+   "theme": "abc_vojta",
+   "title": "The abc Conjecture Revisited",
+   "year": 2026
+  },
+  {
+   "arxiv_categories": [
+    "math.NT"
+   ],
+   "arxiv_id": "2607.11648",
+   "authors": [
+    "Ralf Stephan"
+   ],
+   "description": "Proves superlinear subword complexity of a steering word of (3/2)^n with the p-adic Subspace Theorem; the Lean development records the Subspace Theorem once as an external input.",
+   "id": "2607.11648",
+   "primary_source": "TeX",
+   "read_as": "partial: Sections 1 to 5 and acknowledgements; numerical appendix and bibliography not read",
+   "relevance_score": 1,
+   "screening": {
+    "category": "formal",
+    "decision": "maybe",
+    "priority": 3
+   },
+   "theme": "formalization",
+   "title": "Superlinear complexity of the (3/2)^n steering word",
+   "year": 2026
+  },
+  {
+   "arxiv_categories": [
+    "cs.AI",
+    "cs.LG",
+    "cs.LO"
+   ],
+   "arxiv_id": "2607.20503",
+   "authors": [
+    "Lazar Milikic",
+    "Simon Guilloud",
+    "Khanh Nguyen",
+    "Viktor Kuncak"
+   ],
+   "description": "A Lean workflow recording source provenance per declaration, gating statements for faithfulness before proof search, freezing them afterward, and accepting only clean builds under a hygiene scan.",
+   "id": "2607.20503",
+   "primary_source": "PDF",
+   "project_links": [
+    "CONTRIBUTING.md",
+    "scripts/records.py"
+   ],
+   "read_as": "full text from PDF",
+   "relevance_score": 2,
+   "screening": {
+    "category": "formal",
+    "decision": "include",
+    "priority": 3
+   },
+   "statements_of_interest": [
+    "Section 3 (page 3): a provenance set of source spans for each declaration; typing, faithfulness and proof completion are separate checks.",
+    "Section 4.3, Table 1 (page 4): eight faithfulness checks (statement type, quantifiers, variable types, hypotheses, conclusion, encoding bridge, proof notes, hygiene).",
+    "Section 4.1 (page 3): after the gate, repair may not change statements or add axioms.",
+    "Section 5.3 (page 7): statement equivalence lags proof success; a proved declaration can state the wrong claim."
+   ],
+   "theme": "formalization",
+   "title": "LeanFlow: A Case Study in Workflow-Driven Lean Autoformalization",
+   "year": 2026
+  },
+  {
+   "arxiv_categories": [
+    "cs.LO",
+    "math.NT"
+   ],
+   "arxiv_id": "2607.25628",
+   "authors": [
+    "Ibrahim Mian",
+    "Shayaan Siddique"
+   ],
+   "description": "Not read beyond the abstract. Summary of the abstract: Kernel-checked Lean development with a CI-enforced axiom gate and transport to Formal Conjectures.",
+   "id": "2607.25628",
+   "read_as": "abstract only",
+   "relevance_score": null,
+   "screening": {
+    "category": "formal",
+    "decision": "include",
+    "priority": 3
+   },
+   "theme": "formalization",
+   "title": "Kernel-Checked Exclusions for the Erdős-Selfridge Odd Covering Problem: Any Odd Covering of Z Has lcm Exceeding 10000",
+   "year": 2026
+  },
+  {
+   "arxiv_categories": [
+    "math.NT",
+    "math.AG"
+   ],
+   "arxiv_id": "2608.01089",
+   "authors": [
+    "Yoshiaki Yamamura"
+   ],
+   "description": "Shows that mixed-characteristic local fields and sub-p-adic fields are quasi-highly Kummer-faithful without the monodromy weight conjecture.",
+   "id": "2608.01089",
+   "primary_source": "TeX",
+   "read_as": "partial: Introduction, Section 0 notation, Definitions 2.1 and 3.1; Section 1 and proofs of Sections 2 and 3 not opened",
+   "relevance_score": 1,
+   "screening": {
+    "category": "prereq",
+    "decision": "maybe",
+    "priority": 3
+   },
+   "theme": "prerequisites",
+   "title": "Weights in étale cohomology over mixed-characteristic local fields and applications to anabelian geometry",
+   "year": 2026
+  },
+  {
+   "arxiv_categories": [
+    "math.NT",
+    "math.GR"
+   ],
+   "arxiv_id": "2608.01417",
+   "authors": [
+    "Arata Minamide",
+    "Koichiro Sawada",
+    "Shota Tsujimura"
+   ],
+   "description": "Families preserving isomorphisms between closed subgroups of profinite groups, with a Neukirch-Uchida theorem for l-quasi-number fields.",
+   "id": "2608.01417",
+   "primary_source": "PDF",
+   "read_as": "partial: Introduction, Lemma 3.20 with proof, statement of the theorem after it",
+   "relevance_score": 1,
+   "screening": {
+    "category": "prereq",
+    "decision": "include",
+    "priority": 3
+   },
+   "theme": "prerequisites",
+   "title": "Families preserving isomorphisms via techniques in anabelian geometry: with an application to a generalized Neukirch-Uchida theorem",
+   "year": 2026
+  },
+  {
+   "arxiv_categories": [
+    "math.CT",
+    "math.NT"
+   ],
+   "arxiv_id": "2608.13609",
+   "authors": [
+    "R. Laniewski"
+   ],
+   "description": "Not read beyond the abstract. Summary of the abstract: Intensional semantic framework with an intensional Szpiro inequality related to abc.",
+   "id": "2608.13609",
+   "read_as": "abstract only",
+   "relevance_score": null,
+   "screening": {
+    "category": "abc_math",
+    "decision": "include",
+    "priority": 3
+   },
+   "theme": "abc_vojta",
+   "title": "Intensional semantics for comparison problems in arithmetic geometry",
+   "year": 2026
+  },
+  {
+   "arxiv_categories": [
+    "math.GM"
+   ],
+   "arxiv_id": "2608.16764",
+   "authors": [
+    "N. A. Carella"
+   ],
+   "claim_status": "Claims unconditional infinitude of exceptional abc triples for small epsilon (abstract only; not read).",
+   "description": "Not read beyond the abstract. The abstract claims unconditional infinitude of exceptional abc triples for small epsilon.",
+   "id": "2608.16764",
+   "read_as": "abstract only",
+   "relevance_score": null,
+   "screening": {
+    "category": "abc_math",
+    "decision": "include",
+    "priority": 3
+   },
+   "theme": "abc_vojta",
+   "title": "Note on the Exceptional Set in the ABC Conjecture",
+   "year": 2026
+  },
+  {
+   "arxiv_categories": [
+    "math.NT"
+   ],
+   "arxiv_id": "2608.23559",
+   "authors": [
+    "Hector Pasten"
+   ],
+   "description": "Not read beyond the abstract. Summary of the abstract: Effective Thue-Mahler bounds improving Frey height conjecture bounds, a Szpiro strengthening.",
+   "id": "2608.23559",
+   "read_as": "abstract only",
+   "relevance_score": null,
+   "screening": {
+    "category": "abc_math",
+    "decision": "include",
+    "priority": 3
+   },
+   "theme": "abc_vojta",
+   "title": "Power-saving bounds for Thue-Mahler and Mordell equations",
+   "year": 2026
+  },
+  {
+   "arxiv_categories": [
+    "math.GM"
+   ],
+   "arxiv_id": "2609.00039",
+   "authors": [
+    "R. Laniewski"
+   ],
+   "description": "Not read beyond the abstract. Summary of the abstract: Radical defects and Wieferich primes for one parity class of abc triples.",
+   "id": "2609.00039",
+   "read_as": "abstract only",
+   "relevance_score": null,
+   "screening": {
+    "category": "abc_math",
+    "decision": "include",
+    "priority": 3
+   },
+   "theme": "abc_vojta",
+   "title": "Radical defects, Wieferich primes, and the abc conjecture",
+   "year": 2026
+  },
+  {
+   "arxiv_categories": [
+    "math.NT"
+   ],
+   "arxiv_id": "2609.17390",
+   "authors": [
+    "Hector Pasten"
+   ],
+   "claim_status": "Unconditional Szpiro-type bound, far weaker than Szpiro.",
+   "description": "Proves unconditionally and effectively h(E) << N log log N for elliptic curves over Q and h(E) << N for curves semistable outside a fixed set, from Shimura curve congruences.",
+   "id": "2609.17390",
+   "primary_source": "TeX",
+   "read_as": "full text from TeX",
+   "relevance_score": 1,
+   "screening": {
+    "category": "alt_approach",
+    "decision": "include",
+    "priority": 2
+   },
+   "theme": "abc_vojta",
+   "title": "Improved bounds for Szpiro's conjecture",
+   "year": 2026
+  },
+  {
+   "arxiv_categories": [
+    "math.NT"
+   ],
+   "arxiv_id": "2609.19696",
+   "authors": [
+    "Yu Nishio"
+   ],
+   "description": "Not read beyond the abstract. Summary of the abstract: Finite subgroups of Out of absolute Galois groups of p-adic local fields via mono-anabelian geometry.",
+   "id": "2609.19696",
+   "read_as": "abstract only",
+   "relevance_score": null,
+   "screening": {
+    "category": "prereq",
+    "decision": "include",
+    "priority": 3
+   },
+   "theme": "prerequisites",
+   "title": "Finite subgroups of outer automorphism groups of the absolute Galois groups of mixed-characteristic local fields",
+   "year": 2026
+  },
+  {
+   "arxiv_categories": [
+    "math.GM"
+   ],
+   "arxiv_id": "2609.22298",
+   "authors": [
+    "Ibrahim Mian",
+    "Shayaan Siddique"
+   ],
+   "description": "Not read beyond the abstract. Summary of the abstract: Kernel-checked certificates under an axiom gate with independent programs.",
+   "id": "2609.22298",
+   "read_as": "abstract only",
+   "relevance_score": null,
+   "screening": {
+    "category": "formal",
+    "decision": "include",
+    "priority": 3
+   },
+   "theme": "formalization",
+   "title": "Kernel-Checked Frontier Certificates for Erdős Problem 414",
+   "year": 2026
+  },
+  {
+   "arxiv_categories": [
+    "math.NT"
+   ],
+   "arxiv_id": "2609.22364",
+   "authors": [
+    "Liam Baker",
+    "Florian Luca",
+    "Kerry Porrill"
+   ],
+   "description": "Not read beyond the abstract. Summary of the abstract: Proves, assuming a generalized abc, infinitely many primes avoid a Tribonacci p-squared condition.",
+   "id": "2609.22364",
+   "read_as": "abstract only",
+   "relevance_score": null,
+   "screening": {
+    "category": "abc_math",
+    "decision": "include",
+    "priority": 3
+   },
+   "theme": "abc_vojta",
+   "title": "On periods of the Tribonacci sequence modulo primes",
+   "year": 2026
+  },
+  {
+   "arxiv_categories": [
+    "math.GM",
+    "cs.LO"
+   ],
+   "arxiv_id": "2609.25011",
+   "authors": [
+    "Ibrahim Mian",
+    "Shayaan Siddique"
+   ],
+   "description": "Not read beyond the abstract. Summary of the abstract: Kernel-certified Lean check of an abc-adjacent conjecture with explicit axiom footprint and formal-conjectures statement correspondence.",
+   "id": "2609.25011",
+   "read_as": "abstract only",
+   "relevance_score": null,
+   "screening": {
+    "category": "formal",
+    "decision": "include",
+    "priority": 3
+   },
+   "theme": "formalization",
+   "title": "A Kernel-Certified Verification of the Erdős-Mollin-Walsh Conjecture below 10^{14}",
+   "year": 2026
+  },
+  {
+   "arxiv_categories": [
+    "math.NT"
+   ],
+   "arxiv_id": "2609.35252",
+   "authors": [
+    "R. Laniewski",
+    "K. Müller"
+   ],
+   "description": "Not read beyond the abstract. Summary of the abstract: Weak Hall conjecture equivalent to approximation-gain bound; abc-type inequalities with exponent below 6/5 imply it.",
+   "id": "2609.35252",
+   "read_as": "abstract only",
+   "relevance_score": null,
+   "screening": {
+    "category": "abc_math",
+    "decision": "include",
+    "priority": 3
+   },
+   "theme": "abc_vojta",
+   "title": "Weak Hall's conjecture, approximation gains, and continued fractions",
+   "year": 2026
+  },
+  {
+   "arxiv_categories": [
+    "math.NT",
+    "math.AG"
+   ],
+   "arxiv_id": "2609.36300",
+   "authors": [
+    "Nathan Grieve"
+   ],
+   "description": "Equivalences between Vojta-type conjectures with a discriminant term for points of bounded degree, truncated versions, and a transfer to Deligne-Mumford stacks.",
+   "id": "2609.36300",
+   "primary_source": "PDF",
+   "read_as": "full text from PDF",
+   "relevance_score": 1,
+   "screening": {
+    "category": "prereq",
+    "decision": "include",
+    "priority": 2
+   },
+   "theme": "abc_vojta",
+   "title": "On Vojta's harder implication, height inequalities for admissible pairs, points of bounded degree and Deligne-Mumford stacks",
+   "year": 2026
+  },
+  {
+   "arxiv_categories": [
+    "math.NT"
+   ],
+   "arxiv_id": "2610.03212",
+   "authors": [
+    "R. Laniewski",
+    "K. Müller"
+   ],
+   "description": "Introduces elementary coordinates for abc triples (quality X, log mass Y, ratio lambda = Y/X with 2 < lambda < 3), recovers the classical implications between abc and Szpiro for Frey curves, and decomposes quality into gains; all proofs are elementary.",
+   "id": "2610.03212",
+   "primary_source": "TeX",
+   "project_links": [
+    "Challenge.ABC",
+    "IUT/ABC/Variants.lean"
+   ],
+   "read_as": "full text from TeX",
+   "relevance_score": 2,
+   "screening": {
+    "category": "abc_math",
+    "decision": "include",
+    "priority": 2
+   },
+   "statements_of_interest": [
+    "Lemma 2.2 (page 2): 2 log c < log(abc) < 3 log c for a >= 2.",
+    "Lemma 3.3 (page 3): Szpiro for Frey curves is equivalent to lim sup Y <= 3.",
+    "Proposition 3.4 (page 4): abc implies lim sup Y <= 3, which implies lim sup X <= 3/2.",
+    "Proposition 4.2 (page 5): the gain decomposition identities with their bounds.",
+    "Proposition 5.1 (page 6): separate gain bounds give only lim sup X <= 9/2 and lim sup Y <= 27/2."
+   ],
+   "theme": "abc_vojta",
+   "title": "The quality plane of abc-triples and the decomposition into gains",
+   "year": 2026
+  },
+  {
+   "arxiv_categories": [
+    "math.NT"
+   ],
+   "arxiv_id": "2610.17589",
+   "authors": [
+    "Sajad Salami"
+   ],
+   "description": "Not read beyond the abstract. Summary of the abstract: Weighted abc formulation equivalent to abc, weighted Belyi maps, and sharp Hall-type exponents on weighted projective lines.",
+   "id": "2610.17589",
+   "read_as": "abstract only",
+   "relevance_score": null,
+   "screening": {
+    "category": "abc_math",
+    "decision": "include",
+    "priority": 3
+   },
+   "theme": "abc_vojta",
+   "title": "Roth's theorem on weighted projective lines",
+   "year": 2026
+  },
+  {
+   "arxiv_categories": [
+    "math.NT"
+   ],
+   "arxiv_id": "2610.26490",
+   "authors": [
+    "R. Laniewski",
+    "K. Müller"
+   ],
+   "description": "Not read beyond the abstract. Summary of the abstract: Analyzes Pasten's arithmetic derivatives and Wronskian abc-type inequality.",
+   "id": "2610.26490",
+   "read_as": "abstract only",
+   "relevance_score": null,
+   "screening": {
+    "category": "abc_math",
+    "decision": "include",
+    "priority": 3
+   },
+   "theme": "abc_vojta",
+   "title": "Pasten's arithmetic derivatives and the decomposition into gains",
+   "year": 2026
+  },
+  {
+   "arxiv_categories": [
+    "cs.CL"
+   ],
+   "arxiv_id": "2610.35269",
+   "authors": [
+    "Hao Shen",
+    "Ruichen Qiu",
+    "Lihong Zhi",
+    "Xiao-Shan Gao"
+   ],
+   "description": "Defines project-level review of whether Lean statements match manuscript claims, using a statement dependency closure that excludes proof bodies, six review dimensions, and a verbatim quotation check.",
+   "id": "2610.35269",
+   "primary_source": "TeX",
+   "project_links": [
+    "scripts/LeanDeclarations.lean",
+    "scripts/records.py",
+    "CONTRIBUTING.md"
+   ],
+   "read_as": "full text from TeX",
+   "relevance_score": 3,
+   "screening": {
+    "category": "formal",
+    "decision": "include",
+    "priority": 2
+   },
+   "statements_of_interest": [
+    "Section 3.1: the review context is the closure of declarations reached through theorem types, definition bodies and constructors, excluding proofs.",
+    "Section 3.3: six review dimensions: objects and domains, hypotheses, quantifiers, constants and bounds, conclusions, definition semantics; and a deterministic check that quoted evidence occurs verbatim in the sources.",
+    "Section 4.2: a case study in which a main statement omits a dimension condition of the manuscript.",
+    "Section 3.1: agreement with a description establishes fidelity only when that description was checked against the manuscript."
+   ],
+   "theme": "formalization",
+   "title": "MechAlign: Evaluating Semantic Alignment at the Project Level in Mathematical Formalization",
+   "year": 2026
+  },
+  {
+   "arxiv_categories": [
+    "math.AG",
+    "math.NT"
+   ],
+   "arxiv_id": "2611.05217",
+   "authors": [
+    "Christophe Soulé"
+   ],
+   "claim_status": "Claims an unconditional weak abc with exponent 24 + eps; unrefereed preprint of November 2026.",
+   "description": "Claims, by adelic intersection theory following Parshin and Moret-Bailly, a height inequality for genus two curves that the body calls a weak form of Vojta's conjecture, and an unconditional bound c <= A(eps) rad(abc)^(24 + eps) for coprime positive triples (Theorem B).",
+   "id": "2611.05217",
+   "primary_source": "PDF",
+   "project_links": [
+    "Challenge.ABC",
+    "IUT/ABC/Variants.lean"
+   ],
+   "read_as": "full text from PDF",
+   "relevance_score": 2,
+   "screening": {
+    "category": "alt_approach",
+    "decision": "include",
+    "priority": 2
+   },
+   "statements_of_interest": [
+    "Theorem A (page 1), restated as Theorem 2 (page 31): h(P) <= (12 + eps) log|Delta_F|/[F:Q] + beta(eps) for points of a genus two curve over number fields F.",
+    "Theorem B (page 1): for coprime positive a + b = c, c <= A(eps) rad(abc)^(24 + eps); a fixed exponent, which does not imply the conjecture.",
+    "Theorem 1 (Section 6.1, page 22): the core height inequality on a Kodaira fibration, omega_P^2 <= (36 + eps) delta(F) + O(d).",
+    "Theorem 4 (page 34): a uniform weak abc over number fields with coefficients 24 and 30."
+   ],
+   "theme": "abc_vojta",
+   "title": "On the abc conjecture",
+   "year": 2026
+  },
+  {
+   "arxiv_categories": [
+    "math.NT",
+    "math.LO"
+   ],
+   "arxiv_id": "2611.24748",
+   "authors": [
+    "Hector Pasten",
+    "Xavier Vidaux"
+   ],
+   "description": "Not read beyond the abstract. Summary of the abstract: abc over a quadratic field implies a negative answer to Hilbert's tenth problem over that field.",
+   "id": "2611.24748",
+   "read_as": "abstract only",
+   "relevance_score": null,
+   "screening": {
+    "category": "abc_math",
+    "decision": "include",
+    "priority": 3
+   },
+   "theme": "abc_vojta",
+   "title": "On Hilbert's tenth problem for number fields",
+   "year": 2026
+  },
+  {
+   "arxiv_categories": [],
+   "arxiv_id": null,
+   "authors": [
+    "Chunping Zeng"
+   ],
+   "description": "A long working paper on the height-conductor ratio of towers of curves; it has no IUT content, its 'Theorem A' refers to another source and is not IUT IV Theorem A, and it states (Theorem 2.6, page 9; Remark 3.2, page 10) that no pointwise abc or Szpiro bound follows from its tower results.",
+   "id": "Zeng2026-tower",
+   "primary_source": "PDF",
+   "read_as": "partial: abstract, Sections 1 to 3, 4.1, 5.8, 6.1, 6.3, 6.4, 8, 9, 11.7, 12.1, 12.18 to 12.22, references, Theorems 5.10 to 5.12 and 5.17, and every passage on abc, Szpiro, Vojta, Theorem A, Mochizuki or IUT; Sections 5.1 to 5.7, 6.2, 6.5, 6.6, 7, 10, most of 11 and 12.2 to 12.17 skimmed by heading only",
+   "relevance_score": 1,
+   "screening": null,
+   "source_note": "Self-published working paper dated 13 November 2026, supplied to the project as a PDF of 183 pages; not on arXiv. The arXiv-style label printed on it belongs to an unrelated arXiv paper, and its companion papers were not available.",
+   "theme": "abc_vojta",
+   "title": "The Tower Side of the DIC Audit: Semistable towers, the barrier kappa <= 1/3, and the conductor-discriminant constant",
+   "year": 2026
+  },
+  {
+   "arxiv_categories": [
+    "math.NT",
+    "math.AG"
+   ],
+   "arxiv_id": "math/0012157",
+   "authors": [
+    "Ido Efrat"
+   ],
+   "description": "Not read beyond the abstract. Summary of the abstract: Recovering local and global fields from absolute Galois groups via K-theory.",
+   "id": "math/0012157",
+   "read_as": "abstract only",
+   "relevance_score": null,
+   "screening": {
+    "category": "prereq",
+    "decision": "include",
+    "priority": 3
+   },
+   "theme": "prerequisites",
+   "title": "Invitation to higher local fields, Part II, section 7: Recovering higher global and local fields from Galois groups: an algebraic approach",
+   "year": 2000
+  },
+  {
+   "arxiv_categories": [
+    "math.NT"
+   ],
+   "arxiv_id": "math/0203292",
+   "authors": [
+    "Bjorn Poonen"
+   ],
+   "description": "Not read beyond the abstract. Summary of the abstract: Squarefree values of polynomials assuming abc.",
+   "id": "math/0203292",
+   "read_as": "abstract only",
+   "relevance_score": null,
+   "screening": {
+    "category": "abc_math",
+    "decision": "include",
+    "priority": 3
+   },
+   "theme": "abc_vojta",
+   "title": "Squarefree values of multivariable polynomials",
+   "year": 2002
+  },
+  {
+   "arxiv_categories": [
+    "math.AG",
+    "math.NT"
+   ],
+   "arxiv_id": "math/0204002",
+   "authors": [
+    "Bjorn Poonen"
+   ],
+   "description": "Not read beyond the abstract. Summary of the abstract: Bertini over Z proved assuming abc.",
+   "id": "math/0204002",
+   "read_as": "abstract only",
+   "relevance_score": null,
+   "screening": {
+    "category": "abc_math",
+    "decision": "include",
+    "priority": 3
+   },
+   "theme": "abc_vojta",
+   "title": "Bertini theorems over finite fields",
+   "year": 2002
+  },
+  {
+   "arxiv_categories": [
+    "math.NT"
+   ],
+   "arxiv_id": "math/0301050",
+   "authors": [
+    "Constantin M. Petridi"
+   ],
+   "claim_status": "Claims that abc holds for many partitions of c (abstract only; not read).",
+   "description": "Not read beyond the abstract. The abstract claims that abc holds for many partitions of c.",
+   "id": "math/0301050",
+   "read_as": "abstract only",
+   "relevance_score": null,
+   "screening": {
+    "category": "abc_math",
+    "decision": "include",
+    "priority": 3
+   },
+   "theme": "abc_vojta",
+   "title": "The abc-conjecture is true for at least N(c), 1 ≤ N(c) <φ(c)/2, partitions a, b of c",
+   "year": 2003
+  },
+  {
+   "arxiv_categories": [
+    "math.NT"
+   ],
+   "arxiv_id": "math/0307322",
+   "authors": [
+    "Tim Dokchitser"
+   ],
+   "description": "Not read beyond the abstract. Summary of the abstract: LLL algorithm finds good abc and Szpiro examples.",
+   "id": "math/0307322",
+   "read_as": "abstract only",
+   "relevance_score": null,
+   "screening": {
+    "category": "abc_math",
+    "decision": "include",
+    "priority": 3
+   },
+   "theme": "abc_vojta",
+   "title": "LLL & ABC",
+   "year": 2003
+  },
+  {
+   "arxiv_categories": [
+    "math.NT"
+   ],
+   "arxiv_id": "math/0408168",
+   "authors": [
+    "Andrea Surroca"
+   ],
+   "claim_status": "Unconditional exponential abc bound (Theorem 4).",
+   "description": "abc over a number field implies an effective Siegel bound with explicit dependence on S; a uniform Siegel hypothesis implies a weak abc; Theorem 4 is an unconditional exponential abc bound.",
+   "id": "math/0408168",
+   "primary_source": "TeX",
+   "read_as": "full text from TeX",
+   "relevance_score": 1,
+   "screening": {
+    "category": "abc_math",
+    "decision": "include",
+    "priority": 2
+   },
+   "theme": "abc_vojta",
+   "title": "Siegel's theorem and the abc conjecture",
+   "year": 2004
+  },
+  {
+   "arxiv_categories": [
+    "math.GM"
+   ],
+   "arxiv_id": "math/0503179",
+   "authors": [
+    "Dhananjay P. Mehendale"
+   ],
+   "description": "Not read beyond the abstract. Summary of the abstract: Proposes a generalized abc conjecture implying a generalized FLT.",
+   "id": "math/0503179",
+   "read_as": "abstract only",
+   "relevance_score": null,
+   "screening": {
+    "category": "abc_math",
+    "decision": "include",
+    "priority": 3
+   },
+   "theme": "abc_vojta",
+   "title": "On a Possible Generalization of Fermats Last Theorem",
+   "year": 2005
+  },
+  {
+   "arxiv_categories": [
+    "math.NT"
+   ],
+   "arxiv_id": "math/0503401",
+   "authors": [
+    "N. A. Carella"
+   ],
+   "claim_status": "Claims infinitely many probable counterexamples to abc (abstract only; not read).",
+   "description": "Not read beyond the abstract. The abstract claims a construction of infinitely many probable counterexamples to abc over Z.",
+   "id": "math/0503401",
+   "read_as": "abstract only",
+   "relevance_score": null,
+   "screening": {
+    "category": "abc_math",
+    "decision": "include",
+    "priority": 3
+   },
+   "theme": "abc_vojta",
+   "title": "Probable Counterexamples of the ABC Conjecture",
+   "year": 2005
+  },
+  {
+   "arxiv_categories": [
+    "math.NT"
+   ],
+   "arxiv_id": "math/0606221",
+   "authors": [
+    "N. A. Carella"
+   ],
+   "claim_status": "Heuristic arguments claimed to contradict abc (abstract only; not read).",
+   "description": "Not read beyond the abstract. The abstract presents heuristic arguments claimed to contradict abc.",
+   "id": "math/0606221",
+   "read_as": "abstract only",
+   "relevance_score": null,
+   "screening": {
+    "category": "abc_math",
+    "decision": "include",
+    "priority": 3
+   },
+   "theme": "abc_vojta",
+   "title": "Note on the ABC Conjecture",
+   "year": 2006
+  },
+  {
+   "arxiv_categories": [
+    "math.AG",
+    "math.NT"
+   ],
+   "arxiv_id": "math/0701105",
+   "authors": [
+    "Dan Abramovich"
+   ],
+   "description": "Not read beyond the abstract. Summary of the abstract: Lecture notes ending with Vojta's conjectures, Campana's conjectures and their relation to abc.",
+   "id": "math/0701105",
+   "read_as": "abstract only",
+   "relevance_score": null,
+   "screening": {
+    "category": "abc_math",
+    "decision": "include",
+    "priority": 3
+   },
+   "theme": "abc_vojta",
+   "title": "Birational geometry for number theorists",
+   "year": 2007
+  },
+  {
+   "arxiv_categories": [
+    "math.NT",
+    "math.AG"
+   ],
+   "arxiv_id": "math/0703502",
+   "authors": [
+    "Frederic Campana"
+   ],
+   "description": "Not read beyond the abstract. Summary of the abstract: Weak form of Oesterle's function-field abc with explicit coefficient.",
+   "id": "math/0703502",
+   "read_as": "abstract only",
+   "relevance_score": null,
+   "screening": {
+    "category": "abc_math",
+    "decision": "include",
+    "priority": 3
+   },
+   "theme": "abc_vojta",
+   "title": "Sur la conjecture abc, version corps de fonctions d'Oesterle",
+   "year": 2007
+  },
+  {
+   "arxiv_categories": [
+    "math.NT"
+   ],
+   "arxiv_id": "math/9806171",
+   "authors": [
+    "Paul Vojta"
+   ],
+   "description": "Formulates Vojta's conjecture for algebraic points of bounded degree with truncated counting functions, shows that abc is its case of the line minus three points, and proves that the untruncated conjecture implies the truncated one.",
+   "id": "math/9806171",
+   "primary_source": "PDF",
+   "project_links": [
+    "IUT4.Cor2_3",
+    "IUT/Applications/ABCSpecialization.lean",
+    "IUT/ABC/Variants.lean"
+   ],
+   "read_as": "full text from PDF",
+   "relevance_score": 2,
+   "screening": {
+    "category": "abc_math",
+    "decision": "include",
+    "priority": 2
+   },
+   "statements_of_interest": [
+    "Conjecture 2.3 (page 6): N^(1)(D, P) + d_k(P) >= h_{K(D)}(P) − eps h_A(P) − O(1) for points of degree at most r outside a proper closed set.",
+    "Theorem 3.1 (pages 9 to 13): Conjecture 2.1 implies Conjecture 2.3, via Kummer covers.",
+    "Proposition 2.6 (page 8): the exponent 1 cannot be lowered for n >= 4 terms.",
+    "Section 1 (pages 4 to 5): the discriminant term d_k(E) = (1/[E:k]) log|D_E| − log|D_k|."
+   ],
+   "theme": "abc_vojta",
+   "title": "A more general abc conjecture",
+   "year": 1998
+  },
+  {
+   "arxiv_categories": [
+    "math.NT",
+    "math.CV"
+   ],
+   "arxiv_id": "math/9908024",
+   "authors": [
+    "Paul Vojta"
+   ],
+   "description": "Shows that a case of Vojta's conjecture for explicit pairs with a semiabelian action implies abc for eps > 3/n, and proves the function field and Nevanlinna analogues.",
+   "id": "math/9908024",
+   "primary_source": "TeX",
+   "read_as": "full text from TeX",
+   "relevance_score": 1,
+   "screening": {
+    "category": "abc_math",
+    "decision": "include",
+    "priority": 2
+   },
+   "theme": "abc_vojta",
+   "title": "On the abc conjecture and diophantine approximation by rational points",
+   "year": 1999
+  },
+  {
+   "arxiv_categories": [
+    "math.NT"
+   ],
+   "arxiv_id": "math/9909098",
+   "authors": [
+    "Jordan S. Ellenberg"
+   ],
+   "description": "Not read beyond the abstract. Summary of the abstract: Shows abc restricted to triples with N dividing abc implies full abc.",
+   "id": "math/9909098",
+   "read_as": "abstract only",
+   "relevance_score": null,
+   "screening": {
+    "category": "abc_math",
+    "decision": "include",
+    "priority": 3
+   },
+   "theme": "abc_vojta",
+   "title": "Congruence ABC implies ABC",
+   "year": 1999
+  }
+ ],
+ "retrieved": "2026-11-25",
+ "themes": {
+  "abc_vojta": "abc and Vojta",
+  "dispute": "critiques and the dispute",
+  "explicit": "explicit consequences",
+  "formalization": "formalization methodology",
+  "iut_core": "IUT core expositions and reformulations",
+  "joshi": "Joshi series",
+  "prerequisites": "anabelian and local-field prerequisites"
+ }
+}

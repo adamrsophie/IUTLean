@@ -12,23 +12,23 @@ There is no Lean edge from `Challenge.ABC` to IUT IV Theorem A (`IUT4.ThmA`) or 
 
 Missing roots: none.
 
-## Size: 408 of 474 statement records
+## Size: 562 of 629 statement records
 
 | Paper | Corollary | Definition | Example | Lemma | Proposition | Remark | Theorem | part or step | Total |
 |---|---|---|---|---|---|---|---|---|---|
-| IUT1 | 12 | 11 | 11 | 1 | 13 | 54 | 1 | 6 | 109 |
-| IUT2 | 17 | 5 | 4 | 0 | 14 | 72 | 0 | 2 | 114 |
-| IUT3 | 2 | 4 | 1 | 0 | 11 | 46 | 3 | 57 | 124 |
-| IUT4 | 2 | 3 | 4 | 0 | 9 | 18 | 2 | 23 | 61 |
+| IUT1 | 12 | 11 | 11 | 1 | 13 | 54 | 1 | 26 | 129 |
+| IUT2 | 17 | 5 | 4 | 0 | 14 | 72 | 0 | 73 | 185 |
+| IUT3 | 2 | 4 | 1 | 0 | 11 | 46 | 3 | 111 | 178 |
+| IUT4 | 2 | 3 | 4 | 0 | 9 | 18 | 2 | 32 | 70 |
 
 Not on the critical path (no chain of edges from the roots reaches them):
 
-| Paper | Definition | Remark | Theorem | definition | Total |
-|---|---|---|---|---|---|
-| IUT1 | 1 | 17 | 2 | 17 | 37 |
-| IUT2 | 0 | 5 | 2 | 0 | 7 |
-| IUT3 | 0 | 9 | 2 | 0 | 11 |
-| IUT4 | 0 | 11 | 0 | 0 | 11 |
+| Paper | Definition | Remark | Theorem | convention | definition | Total |
+|---|---|---|---|---|---|---|
+| IUT1 | 1 | 17 | 2 | 0 | 17 | 37 |
+| IUT2 | 0 | 5 | 2 | 0 | 0 | 7 |
+| IUT3 | 0 | 9 | 2 | 0 | 0 | 11 |
+| IUT4 | 0 | 11 | 0 | 1 | 0 | 12 |
 
 ## Most cited unresolved statements
 
@@ -42,7 +42,7 @@ BLOCKED_BY_MISSING_JUSTIFICATION: the text gives an assertion where a formalizat
 | `IUT1.Ex3_2` | Example | 35 | 33 | yes | NOT_EXTRACTED |
 | `IUT1.Def5_2` | Definition | 29 | 28 | yes | NOT_EXTRACTED |
 | `IUT2.Cor4_6` | Corollary | 27 | 25 | yes | BLOCKED_BY_MATHLIB |
-| `IUT1.Ex5_1` | Example | 24 | 22 | yes | NOT_EXTRACTED |
+| `IUT1.Ex5_1` | Example | 24 | 22 | yes | BLOCKED_BY_EXTERNAL_THEOREM |
 | `IUT2.Cor4_5` | Corollary | 24 | 23 | yes | BLOCKED_BY_MATHLIB |
 | `IUT1.Ex3_4` | Example | 23 | 22 | yes | NOT_EXTRACTED |
 | `IUT1.Def4_1` | Definition | 22 | 22 | yes | NOT_EXTRACTED |
@@ -56,10 +56,10 @@ BLOCKED_BY_MISSING_JUSTIFICATION: the text gives an assertion where a formalizat
 | `IUT3.Thm3_11` | Theorem | 19 | 16 | yes | BLOCKED_BY_MISSING_JUSTIFICATION |
 | `IUT1.Ex3_3` | Example | 18 | 17 | yes | NOT_EXTRACTED |
 | `IUT3.Thm1_5` | Theorem | 17 | 16 | yes | BLOCKED_BY_EXTERNAL_THEOREM |
-| `IUT1.Rem3_1_2` | Remark | 16 | 15 | yes | NOT_EXTRACTED |
+| `IUT1.Rem3_1_2` | Remark | 16 | 15 | yes | BLOCKED_BY_EXTERNAL_THEOREM |
 | `IUT2.Cor1_11` | Corollary | 16 | 16 | yes | BLOCKED_BY_MATHLIB |
 | `IUT3.Cor3_12` | Corollary | 16 | 15 | yes | BLOCKED_BY_MISSING_JUSTIFICATION |
-| `IUT1.Rem5_2_1` | Remark | 15 | 15 | yes | NOT_EXTRACTED |
+| `IUT1.Rem5_2_1` | Remark | 15 | 15 | yes | BLOCKED_BY_MISSING_JUSTIFICATION |
 | `IUT2.Cor2_5` | Corollary | 15 | 15 | yes | BLOCKED_BY_MATHLIB |
 | `IUT2.Rem3_6_2` | Remark | 15 | 15 | yes | NOT_EXTRACTED |
 | `IUT3.Prop1_2` | Proposition | 15 | 15 | yes | BLOCKED_BY_EXTERNAL_THEOREM |
@@ -67,16 +67,16 @@ BLOCKED_BY_MISSING_JUSTIFICATION: the text gives an assertion where a formalizat
 | `IUT1.Cor3_7` | Corollary | 14 | 13 | yes | BLOCKED_BY_MATHLIB |
 | `IUT1.Ex4_4` | Example | 14 | 13 | yes | NOT_EXTRACTED |
 | `IUT2.Cor4_8` | Corollary | 14 | 14 | yes | BLOCKED_BY_MATHLIB |
-| `IUT2.Prop1_2` | Proposition | 14 | 14 | yes | NOT_EXTRACTED |
-| `IUT2.Prop1_3` | Proposition | 14 | 14 | yes | NOT_EXTRACTED |
-| `IUT2.Prop3_1` | Proposition | 14 | 13 | yes | NOT_EXTRACTED |
+| `IUT2.Prop1_2` | Proposition | 14 | 14 | yes | BLOCKED_BY_EXTERNAL_THEOREM |
+| `IUT2.Prop1_3` | Proposition | 14 | 14 | yes | BLOCKED_BY_EXTERNAL_THEOREM |
+| `IUT2.Prop3_1` | Proposition | 14 | 13 | yes | BLOCKED_BY_MATHLIB |
 | `IUT2.Rem3_5_2` | Remark | 14 | 14 | yes | NOT_EXTRACTED |
-| `IUT3.Prop3_2` | Proposition | 14 | 13 | yes | NOT_EXTRACTED |
+| `IUT3.Prop3_2` | Proposition | 14 | 13 | yes | BLOCKED_BY_EXTERNAL_THEOREM |
 | `IUT1.Cor5_3` | Corollary | 13 | 10 | yes | NOT_EXTRACTED |
 | `IUT1.Def6_1` | Definition | 13 | 13 | yes | NOT_EXTRACTED |
 | `IUT1.Ex3_5` | Example | 13 | 13 | yes | NOT_EXTRACTED |
 | `IUT2.Def4_9` | Definition | 13 | 13 | yes | NOT_EXTRACTED |
-| `IUT2.Rem1_11_3` | Remark | 13 | 13 | yes | NOT_EXTRACTED |
+| `IUT2.Rem1_11_3` | Remark | 13 | 13 | yes | EXTRACTED |
 | `IUT2.Rem1_12_2` | Remark | 13 | 11 | yes | NOT_EXTRACTED |
 
 ## External bibliography keys on the critical path
@@ -147,20 +147,20 @@ Distance is the shortest chain of edges from a root.
 |---|---|---|---|---|---|---|
 | `IUT1.Def1_1` | Definition |  | 38 to 39 | 3 | BLOCKED_BY_MATHLIB | NOT_EXTRACTED |
 | `IUT1.Cor1_2` | Corollary | Characteristic Nature of Coverings | 39 to 40 | 4 | BLOCKED_BY_MATHLIB | NOT_EXTRACTED |
-| `IUT1.Rem1_1_2` | Remark |  | 39 | 3 | NOT_EXTRACTED | NOT_EXTRACTED |
-| `IUT1.Rem1_2_2` | Remark |  | 40 | 4 | NOT_EXTRACTED | NOT_EXTRACTED |
+| `IUT1.Rem1_1_2` | Remark |  | 39 | 3 | EXTRACTED | BLOCKED_BY_MISSING_JUSTIFICATION |
+| `IUT1.Rem1_2_2` | Remark |  | 40 | 4 | EXTRACTED | BLOCKED_BY_MISSING_JUSTIFICATION |
 | `IUT1.Prop2_1` | Proposition | Profinite Conjugates of Nontrivial Compact Subgroups | 45 | 5 | BLOCKED_BY_MATHLIB | NOT_EXTRACTED |
 | `IUT1.Prop2_2` | Proposition | Commensurators of Decomposition Subgroups Associated to Sub-semi-graphs | 45 to 46 | 5 | BLOCKED_BY_MATHLIB | NOT_EXTRACTED |
-| `IUT1.Rem2_2_2` | Remark |  | 46 to 47 | 6 | NOT_EXTRACTED | NOT_EXTRACTED |
-| `IUT1.Cor2_3` | Corollary | Subgroups of Tempered Fundamental Groups Associated to Sub-semi-graphs | 47 to 50 | 4 | NOT_EXTRACTED | NOT_EXTRACTED |
-| `IUT1.Prop2_4` | Proposition | Profinite Conjugates of Nontrivial Arithmetic Compact Subgroups | 50 to 51 | 4 | INTERPRETATION_AMBIGUOUS | NOT_EXTRACTED |
+| `IUT1.Rem2_2_2` | Remark |  | 46 to 47 | 6 | EXTRACTED | BLOCKED_BY_EXTERNAL_THEOREM |
+| `IUT1.Cor2_3` | Corollary | Subgroups of Tempered Fundamental Groups Associated to Sub-semi-graphs | 47 to 50 | 4 | EXTRACTED | BLOCKED_BY_EXTERNAL_THEOREM |
+| `IUT1.Prop2_4` | Proposition | Profinite Conjugates of Nontrivial Arithmetic Compact Subgroups | 50 to 51 | 4 | EXTRACTED | BLOCKED_BY_EXTERNAL_THEOREM |
 | `IUT1.Cor2_5` | Corollary | Profinite Conjugates of Tempered Decomposition and Inertia Groups | 51 to 52 | 4 | BLOCKED_BY_MATHLIB | NOT_EXTRACTED |
-| `IUT1.Rem2_5_1` | Remark |  | 52 | 4 | NOT_EXTRACTED | NOT_EXTRACTED |
-| `IUT1.Rem2_5_2` | Remark |  | 52 | 4 | NOT_EXTRACTED | NOT_EXTRACTED |
-| `IUT1.Rem2_5_3` | Remark |  | 52 to 56 | 3 | NOT_EXTRACTED | NOT_EXTRACTED |
+| `IUT1.Rem2_5_1` | Remark |  | 52 | 4 | EXTRACTED | NOT_EXTRACTED |
+| `IUT1.Rem2_5_2` | Remark |  | 52 | 4 | EXTRACTED | NOT_EXTRACTED |
+| `IUT1.Rem2_5_3` | Remark |  | 52 to 56 | 3 | EXTRACTED | BLOCKED_BY_MISSING_JUSTIFICATION |
 | `IUT1.Thm2_6` | Theorem | Profinite Conjugates of Discrete Subgroups | 56 to 57 | 4 | EXTRACTED | NOT_EXTRACTED |
 | `IUT1.Lem2_7` | Lemma | Well-known Properties of Free Groups and Orientable Surface Groups | 57 to 59 | 4 | EXTRACTED | NOT_EXTRACTED |
-| `IUT1.Rem2_6_1` | Remark |  | 57 | 5 | NOT_EXTRACTED | NOT_EXTRACTED |
+| `IUT1.Rem2_6_1` | Remark |  | 57 | 5 | EXTRACTED | BLOCKED_BY_MISSING_JUSTIFICATION |
 | `IUT1.Cor2_8` | Corollary | Subgroups of Topological Fundamental Groups of Complex Hyperbolic Curves | 59 | 5 | EXTRACTED | NOT_EXTRACTED |
 | `IUT1.Def3_1` | Definition |  | 61 to 63 | 2 | EXTRACTED | NOT_EXTRACTED |
 | `IUT1.Def3_1.a` | Definition |  | 61 | 3 | EXTRACTED | NOT_EXTRACTED |
@@ -169,20 +169,26 @@ Distance is the shortest chain of edges from a root.
 | `IUT1.Def3_1.d` | Definition |  | 62 | 3 | BLOCKED_BY_MATHLIB | NOT_EXTRACTED |
 | `IUT1.Def3_1.e` | Definition |  | 62 to 63 | 3 | BLOCKED_BY_MATHLIB | NOT_EXTRACTED |
 | `IUT1.Def3_1.f` | Definition |  | 63 | 3 | BLOCKED_BY_MATHLIB | NOT_EXTRACTED |
-| `IUT1.Rem3_1_1` | Remark |  | 63 to 64 | 3 | INTERPRETATION_AMBIGUOUS | NOT_EXTRACTED |
-| `IUT1.Rem3_1_2` | Remark |  | 64 to 65 | 3 | NOT_EXTRACTED | NOT_EXTRACTED |
-| `IUT1.Rem3_1_5` | Remark |  | 65 to 66 | 3 | INTERPRETATION_AMBIGUOUS | NOT_EXTRACTED |
-| `IUT1.Rem3_1_7` | Remark |  | 66 to 69 | 3 | NOT_EXTRACTED | NOT_EXTRACTED |
+| `IUT1.Rem3_1_1` | Remark |  | 63 to 64 | 3 | EXTRACTED | BLOCKED_BY_EXTERNAL_THEOREM |
+| `IUT1.Rem3_1_2` | Remark |  | 64 to 65 | 3 | EXTRACTED | BLOCKED_BY_EXTERNAL_THEOREM |
+| `IUT1.Rem3_1_2.i` | Remark |  | 64 | 4 | EXTRACTED | BLOCKED_BY_EXTERNAL_THEOREM |
+| `IUT1.Rem3_1_2.iii` | Remark |  | 64 to 65 | 4 | EXTRACTED | BLOCKED_BY_EXTERNAL_THEOREM |
+| `IUT1.Rem3_1_5` | Remark |  | 65 to 66 | 3 | EXTRACTED | BLOCKED_BY_EXTERNAL_THEOREM |
+| `IUT1.Rem3_1_7` | Remark |  | 66 to 69 | 3 | EXTRACTED | BLOCKED_BY_MISSING_JUSTIFICATION |
+| `IUT1.Rem3_1_7.i` | Remark |  | 66 to 67 | 4 | EXTRACTED | BLOCKED_BY_MISSING_JUSTIFICATION |
+| `IUT1.Rem3_1_7.ii` | Remark |  | 67 to 68 | 4 | EXTRACTED | BLOCKED_BY_MISSING_JUSTIFICATION |
+| `IUT1.Rem3_1_7.iii` | Remark |  | 68 | 4 | EXTRACTED | BLOCKED_BY_MISSING_JUSTIFICATION |
+| `IUT1.Rem3_1_7.iv` | Remark |  | 68 to 69 | 4 | EXTRACTED | BLOCKED_BY_EXTERNAL_THEOREM |
 | `IUT1.Ex3_2` | Example | Frobenioids at Bad Nonarchimedean Primes | 69 to 73 | 3 | BLOCKED_BY_MATHLIB | NOT_EXTRACTED |
 | `IUT1.Rem3_2_1` | Remark |  | 73 to 74 | 4 | EXTRACTED | NOT_EXTRACTED |
 | `IUT1.Rem3_2_2` | Remark |  | 74 | 4 | EXTRACTED | NOT_EXTRACTED |
-| `IUT1.Rem3_2_3` | Remark |  | 74 to 75 | 4 | INTERPRETATION_AMBIGUOUS | NOT_EXTRACTED |
-| `IUT1.Rem3_2_4` | Remark |  | 75 to 77 | 4 | NOT_EXTRACTED | NOT_EXTRACTED |
+| `IUT1.Rem3_2_3` | Remark |  | 74 to 75 | 4 | EXTRACTED | BLOCKED_BY_EXTERNAL_THEOREM |
+| `IUT1.Rem3_2_4` | Remark |  | 75 to 77 | 4 | EXTRACTED | BLOCKED_BY_EXTERNAL_THEOREM |
 | `IUT1.Ex3_3` | Example | Frobenioids at Good Nonarchimedean Primes | 77 to 79 | 3 | BLOCKED_BY_MATHLIB | NOT_EXTRACTED |
 | `IUT1.Rem3_3_2` | Remark |  | 79 to 80 | 3 | EXTRACTED | NOT_EXTRACTED |
 | `IUT1.Ex3_4` | Example | Frobenioids at Archimedean Primes | 80 to 82 | 3 | BLOCKED_BY_MATHLIB | NOT_EXTRACTED |
-| `IUT1.Rem3_4_2` | Remark |  | 82 to 83 | 2 | INTERPRETATION_AMBIGUOUS | NOT_EXTRACTED |
-| `IUT1.Rem3_4_3` | Remark |  | 83 to 84 | 3 | NOT_EXTRACTED | NOT_EXTRACTED |
+| `IUT1.Rem3_4_2` | Remark |  | 82 to 83 | 2 | EXTRACTED | BLOCKED_BY_EXTERNAL_THEOREM |
+| `IUT1.Rem3_4_3` | Remark |  | 83 to 84 | 3 | EXTRACTED | BLOCKED_BY_MISSING_JUSTIFICATION |
 | `IUT1.Ex3_5` | Example | Global Realified Frobenioids | 84 to 86 | 3 | BLOCKED_BY_MATHLIB | NOT_EXTRACTED |
 | `IUT1.Rem3_5_1` | Remark |  | 86 to 87 | 3 | EXTRACTED | NOT_EXTRACTED |
 | `IUT1.Def3_6` | Definition |  | 87 to 88 | 3 | BLOCKED_BY_MATHLIB | NOT_EXTRACTED |
@@ -190,269 +196,408 @@ Distance is the shortest chain of edges from a root.
 | `IUT1.Cor3_7` | Corollary | Θ-Links Between Θ-Hodge Theaters | 88 to 89 | 3 | BLOCKED_BY_MATHLIB | BLOCKED_BY_MATHLIB |
 | `IUT1.Rem3_6_2` | Remark |  | 88 | 5 | EXTRACTED | NOT_EXTRACTED |
 | `IUT1.Cor3_8` | Corollary | Frobenius-pictures of Θ-Hodge Theaters | 89 to 90 | 3 | BLOCKED_BY_MATHLIB | NOT_EXTRACTED |
-| `IUT1.Rem3_7_1` | Remark |  | 89 | 4 | INTERPRETATION_AMBIGUOUS | NOT_EXTRACTED |
+| `IUT1.Rem3_7_1` | Remark |  | 89 | 4 | EXTRACTED | BLOCKED_BY_MISSING_JUSTIFICATION |
 | `IUT1.Rem3_8_1` | Remark |  | 90 to 91 | 3 | EXTRACTED | NOT_EXTRACTED |
 | `IUT1.Cor3_9` | Corollary | Étale-pictures of Θ-Hodge Theaters | 91 to 92 | 3 | BLOCKED_BY_MATHLIB | NOT_EXTRACTED |
-| `IUT1.Rem3_9_1` | Remark |  | 92 to 93 | 4 | INTERPRETATION_AMBIGUOUS | NOT_EXTRACTED |
-| `IUT1.Rem3_9_2` | Remark |  | 93 | 4 | INTERPRETATION_AMBIGUOUS | NOT_EXTRACTED |
-| `IUT1.Rem3_9_3` | Remark |  | 93 to 94 | 3 | NOT_EXTRACTED | NOT_EXTRACTED |
+| `IUT1.Rem3_9_1` | Remark |  | 92 to 93 | 4 | EXTRACTED | BLOCKED_BY_MISSING_JUSTIFICATION |
+| `IUT1.Rem3_9_2` | Remark |  | 93 | 4 | EXTRACTED | NOT_EXTRACTED |
+| `IUT1.Rem3_9_3` | Remark |  | 93 to 94 | 3 | EXTRACTED | NOT_EXTRACTED |
 | `IUT1.Def4_1` | Definition |  | 95 to 98 | 3 | BLOCKED_BY_MATHLIB | NOT_EXTRACTED |
 | `IUT1.Ex4_3` | Example | Model Base-NF-Bridges | 98 to 101 | 3 | BLOCKED_BY_MATHLIB | NOT_EXTRACTED |
-| `IUT1.Prop4_2` | Proposition | The Set of Label Classes of Cusps of a Base-Prime-Strip | 98 | 4 | INTERPRETATION_AMBIGUOUS | NOT_EXTRACTED |
-| `IUT1.Rem4_2_1` | Remark |  | 98 | 4 | NOT_EXTRACTED | NOT_EXTRACTED |
-| `IUT1.Rem4_3_1` | Remark |  | 101 to 102 | 3 | NOT_EXTRACTED | NOT_EXTRACTED |
-| `IUT1.Rem4_3_2` | Remark |  | 102 to 104 | 4 | NOT_EXTRACTED | NOT_EXTRACTED |
-| `IUT1.Rem4_3_3` | Remark |  | 104 to 105 | 4 | NOT_EXTRACTED | NOT_EXTRACTED |
+| `IUT1.Prop4_2` | Proposition | The Set of Label Classes of Cusps of a Base-Prime-Strip | 98 | 4 | EXTRACTED | BLOCKED_BY_MISSING_JUSTIFICATION |
+| `IUT1.Rem4_2_1` | Remark |  | 98 | 4 | EXTRACTED | BLOCKED_BY_EXTERNAL_THEOREM |
+| `IUT1.Rem4_3_1` | Remark |  | 101 to 102 | 3 | EXTRACTED | NOT_EXTRACTED |
+| `IUT1.Rem4_3_2` | Remark |  | 102 to 104 | 4 | EXTRACTED | BLOCKED_BY_EXTERNAL_THEOREM |
+| `IUT1.Rem4_3_3` | Remark |  | 104 to 105 | 4 | EXTRACTED | NOT_EXTRACTED |
 | `IUT1.Ex4_4` | Example | Model Base-Θ-Bridges | 105 to 107 | 3 | BLOCKED_BY_MATHLIB | NOT_EXTRACTED |
-| `IUT1.Ex4_5` | Example |  | 107 to 108 | 3 | INTERPRETATION_AMBIGUOUS | NOT_EXTRACTED |
-| `IUT1.Rem4_5_1` | Remark |  | 108 to 111 | 4 | NOT_EXTRACTED | NOT_EXTRACTED |
+| `IUT1.Ex4_5` | Example |  | 107 to 108 | 3 | EXTRACTED | BLOCKED_BY_MISSING_JUSTIFICATION |
+| `IUT1.Rem4_5_1` | Remark |  | 108 to 111 | 4 | EXTRACTED | BLOCKED_BY_MISSING_JUSTIFICATION |
 | `IUT1.Def4_6` | Definition |  | 111 to 112 | 4 | BLOCKED_BY_MATHLIB | NOT_EXTRACTED |
-| `IUT1.Prop4_7` | Proposition | Transport of Label Classes of Cusps via Base-Bridges | 112 to 113 | 3 | INTERPRETATION_AMBIGUOUS | NOT_EXTRACTED |
-| `IUT1.Rem4_7_1` | Remark |  | 113 | 3 | NOT_EXTRACTED | NOT_EXTRACTED |
-| `IUT1.Rem4_7_2` | Remark |  | 113 to 115 | 3 | NOT_EXTRACTED | NOT_EXTRACTED |
-| `IUT1.Prop4_8` | Proposition | First Properties of Base-NF-Bridges, Base-Θ-Bridges, and Base-ΘNF-Hodge Theaters | 115 | 4 | INTERPRETATION_AMBIGUOUS | NOT_EXTRACTED |
-| `IUT1.Prop4_9` | Proposition | Symmetries arising from Forgetful Functors | 115 to 116 | 3 | NOT_EXTRACTED | NOT_EXTRACTED |
-| `IUT1.Rem4_9_1` | Remark |  | 116 to 117 | 3 | NOT_EXTRACTED | NOT_EXTRACTED |
-| `IUT1.Rem4_9_2` | Remark |  | 117 to 119 | 3 | NOT_EXTRACTED | NOT_EXTRACTED |
-| `IUT1.Rem4_9_3` | Remark |  | 119 | 4 | NOT_EXTRACTED | NOT_EXTRACTED |
-| `IUT1.Prop4_11` | Proposition | Processions of Base-Prime-Strips | 120 to 121 | 3 | NOT_EXTRACTED | NOT_EXTRACTED |
-| `IUT1.Cor4_12` | Corollary | Étale-pictures of Base-ΘNF-Hodge Theaters | 121 to 123 | 4 | NOT_EXTRACTED | NOT_EXTRACTED |
-| `IUT1.Ex5_1` | Example | Global Frobenioids | 123 to 131 | 2 | NOT_EXTRACTED | NOT_EXTRACTED |
-| `IUT1.Rem5_1_2` | Remark |  | 131 | 6 | NOT_EXTRACTED | NOT_EXTRACTED |
-| `IUT1.Rem5_1_4` | Remark |  | 132 | 3 | NOT_EXTRACTED | NOT_EXTRACTED |
-| `IUT1.Rem5_1_5` | Remark |  | 132 to 134 | 3 | NOT_EXTRACTED | NOT_EXTRACTED |
+| `IUT1.Prop4_7` | Proposition | Transport of Label Classes of Cusps via Base-Bridges | 112 to 113 | 3 | EXTRACTED | BLOCKED_BY_MISSING_JUSTIFICATION |
+| `IUT1.Rem4_7_1` | Remark |  | 113 | 3 | EXTRACTED | BLOCKED_BY_MISSING_JUSTIFICATION |
+| `IUT1.Rem4_7_2` | Remark |  | 113 to 115 | 3 | EXTRACTED | NOT_EXTRACTED |
+| `IUT1.Prop4_8` | Proposition | First Properties of Base-NF-Bridges, Base-Θ-Bridges, and Base-ΘNF-Hodge Theaters | 115 | 4 | EXTRACTED | BLOCKED_BY_MISSING_JUSTIFICATION |
+| `IUT1.Prop4_9` | Proposition | Symmetries arising from Forgetful Functors | 115 to 116 | 3 | EXTRACTED | BLOCKED_BY_MISSING_JUSTIFICATION |
+| `IUT1.Rem4_9_1` | Remark |  | 116 to 117 | 3 | EXTRACTED | NOT_EXTRACTED |
+| `IUT1.Rem4_9_2` | Remark |  | 117 to 119 | 3 | EXTRACTED | BLOCKED_BY_MISSING_JUSTIFICATION |
+| `IUT1.Rem4_9_3` | Remark |  | 119 | 4 | EXTRACTED | BLOCKED_BY_MISSING_JUSTIFICATION |
+| `IUT1.Prop4_11` | Proposition | Processions of Base-Prime-Strips | 120 to 121 | 3 | EXTRACTED | BLOCKED_BY_MISSING_JUSTIFICATION |
+| `IUT1.Cor4_12` | Corollary | Étale-pictures of Base-ΘNF-Hodge Theaters | 121 to 123 | 4 | EXTRACTED | BLOCKED_BY_MISSING_JUSTIFICATION |
+| `IUT1.Ex5_1` | Example | Global Frobenioids | 123 to 131 | 2 | EXTRACTED | BLOCKED_BY_EXTERNAL_THEOREM |
+| `IUT1.Ex5_1.i` | Example |  | 123 to 125 | 3 | EXTRACTED | BLOCKED_BY_EXTERNAL_THEOREM |
+| `IUT1.Ex5_1.ii` | Example |  | 125 | 3 | EXTRACTED | BLOCKED_BY_EXTERNAL_THEOREM |
+| `IUT1.Ex5_1.iii` | Example |  | 125 to 126 | 3 | EXTRACTED | BLOCKED_BY_EXTERNAL_THEOREM |
+| `IUT1.Ex5_1.iv` | Example |  | 126 | 3 | EXTRACTED | BLOCKED_BY_EXTERNAL_THEOREM |
+| `IUT1.Ex5_1.v` | Example |  | 127 to 130 | 3 | EXTRACTED | BLOCKED_BY_EXTERNAL_THEOREM |
+| `IUT1.Ex5_1.vi` | Example |  | 130 | 3 | EXTRACTED | BLOCKED_BY_MISSING_JUSTIFICATION |
+| `IUT1.Ex5_1.vii` | Example |  | 130 to 131 | 3 | EXTRACTED | NOT_EXTRACTED |
+| `IUT1.Rem5_1_2` | Remark |  | 131 | 6 | EXTRACTED | NOT_EXTRACTED |
+| `IUT1.Rem5_1_4` | Remark |  | 132 | 3 | EXTRACTED | NOT_EXTRACTED |
+| `IUT1.Rem5_1_5` | Remark |  | 132 to 134 | 3 | EXTRACTED | BLOCKED_BY_EXTERNAL_THEOREM |
 | `IUT1.Def5_2` | Definition |  | 134 to 143 | 2 | BLOCKED_BY_MATHLIB | NOT_EXTRACTED |
 | `IUT1.Cor5_3` | Corollary | Isomorphisms of Global Frobenioids, Frobenioid-Prime-Strips, and Tempered Frobenioids | 143 to 145 | 3 | BLOCKED_BY_MATHLIB | NOT_EXTRACTED |
-| `IUT1.Rem5_2_1` | Remark |  | 143 | 3 | NOT_EXTRACTED | NOT_EXTRACTED |
-| `IUT1.Rem5_2_3` | Remark |  | 143 | 3 | NOT_EXTRACTED | NOT_EXTRACTED |
-| `IUT1.Rem5_3_1` | Remark |  | 145 to 146 | 4 | NOT_EXTRACTED | NOT_EXTRACTED |
-| `IUT1.Rem5_3_3` | Remark |  | 146 to 147 | 4 | NOT_EXTRACTED | NOT_EXTRACTED |
-| `IUT1.Ex5_4` | Example | Model Θ- and NF-Bridges | 147 to 151 | 3 | INTERPRETATION_AMBIGUOUS | NOT_EXTRACTED |
-| `IUT1.Def5_5` | Definition |  | 151 to 153 | 4 | INTERPRETATION_AMBIGUOUS | NOT_EXTRACTED |
-| `IUT1.Rem5_4_1` | Remark |  | 151 | 5 | NOT_EXTRACTED | NOT_EXTRACTED |
-| `IUT1.Rem5_4_2` | Remark |  | 151 | 4 | NOT_EXTRACTED | NOT_EXTRACTED |
-| `IUT1.Cor5_6` | Corollary | Isomorphisms of Θ-Hodge Theaters, NF-Bridges, Θ-Bridges, and ΘNF-Hodge Theaters | 153 to 154 | 4 | INTERPRETATION_AMBIGUOUS | NOT_EXTRACTED |
-| `IUT1.Rem5_6_1` | Remark |  | 154 to 155 | 4 | NOT_EXTRACTED | NOT_EXTRACTED |
+| `IUT1.Rem5_2_1` | Remark |  | 143 | 3 | EXTRACTED | BLOCKED_BY_MISSING_JUSTIFICATION |
+| `IUT1.Rem5_2_3` | Remark |  | 143 | 3 | EXTRACTED | NOT_EXTRACTED |
+| `IUT1.Rem5_3_1` | Remark |  | 145 to 146 | 4 | EXTRACTED | BLOCKED_BY_MISSING_JUSTIFICATION |
+| `IUT1.Rem5_3_3` | Remark |  | 146 | 4 | EXTRACTED | BLOCKED_BY_EXTERNAL_THEOREM |
+| `IUT1.Ex5_4` | Example | Model Θ- and NF-Bridges | 147 to 151 | 3 | EXTRACTED | BLOCKED_BY_EXTERNAL_THEOREM |
+| `IUT1.Ex5_4.i` | Example |  | 147 | 4 | EXTRACTED | NOT_EXTRACTED |
+| `IUT1.Ex5_4.ii` | Example |  | 147 | 4 | EXTRACTED | BLOCKED_BY_MISSING_JUSTIFICATION |
+| `IUT1.Ex5_4.iii` | Example |  | 147 to 148 | 4 | EXTRACTED | BLOCKED_BY_MISSING_JUSTIFICATION |
+| `IUT1.Ex5_4.iv` | Example |  | 148 to 149 | 4 | EXTRACTED | BLOCKED_BY_EXTERNAL_THEOREM |
+| `IUT1.Ex5_4.v` | Example |  | 149 | 4 | EXTRACTED | BLOCKED_BY_MISSING_JUSTIFICATION |
+| `IUT1.Ex5_4.vi` | Example |  | 149 to 150 | 4 | EXTRACTED | BLOCKED_BY_MISSING_JUSTIFICATION |
+| `IUT1.Ex5_4.vii` | Example |  | 150 | 4 | EXTRACTED | NOT_EXTRACTED |
+| `IUT1.Def5_5` | Definition |  | 151 to 153 | 4 | EXTRACTED | NOT_EXTRACTED |
+| `IUT1.Rem5_4_1` | Remark |  | 151 | 5 | EXTRACTED | NOT_EXTRACTED |
+| `IUT1.Rem5_4_2` | Remark |  | 151 | 4 | EXTRACTED | NOT_EXTRACTED |
+| `IUT1.Cor5_6` | Corollary | Isomorphisms of Θ-Hodge Theaters, NF-Bridges, Θ-Bridges, and ΘNF-Hodge Theaters | 153 to 154 | 4 | EXTRACTED | BLOCKED_BY_MISSING_JUSTIFICATION |
+| `IUT1.Rem5_6_1` | Remark |  | 154 to 155 | 4 | EXTRACTED | BLOCKED_BY_MISSING_JUSTIFICATION |
 | `IUT1.Def6_1` | Definition |  | 155 to 159 | 3 | BLOCKED_BY_MATHLIB | NOT_EXTRACTED |
-| `IUT1.Ex6_2` | Example | Model Base-Θ± -Bridges | 159 to 160 | 3 | INTERPRETATION_AMBIGUOUS | NOT_EXTRACTED |
-| `IUT1.Rem6_1_1` | Remark |  | 159 | 4 | NOT_EXTRACTED | NOT_EXTRACTED |
-| `IUT1.Ex6_3` | Example | Model Base-Θell -Bridges | 160 to 162 | 3 | INTERPRETATION_AMBIGUOUS | NOT_EXTRACTED |
-| `IUT1.Def6_4` | Definition |  | 162 to 163 | 4 | INTERPRETATION_AMBIGUOUS | NOT_EXTRACTED |
-| `IUT1.Prop6_5` | Proposition | Transport of ±-Label Classes of Cusps via Base-Bridges | 163 to 165 | 3 | NOT_EXTRACTED | NOT_EXTRACTED |
+| `IUT1.Ex6_2` | Example | Model Base-Θ± -Bridges | 159 to 160 | 3 | EXTRACTED | BLOCKED_BY_MISSING_JUSTIFICATION |
+| `IUT1.Rem6_1_1` | Remark |  | 159 | 4 | EXTRACTED | BLOCKED_BY_MISSING_JUSTIFICATION |
+| `IUT1.Ex6_3` | Example | Model Base-Θell -Bridges | 160 to 162 | 3 | EXTRACTED | BLOCKED_BY_MISSING_JUSTIFICATION |
+| `IUT1.Def6_4` | Definition |  | 162 to 163 | 4 | EXTRACTED | NOT_EXTRACTED |
+| `IUT1.Prop6_5` | Proposition | Transport of ±-Label Classes of Cusps via Base-Bridges | 163 to 165 | 3 | EXTRACTED | BLOCKED_BY_MISSING_JUSTIFICATION |
 | `IUT1.Prop6_6` | Proposition | First Properties of Base-Θ± -Bridges, Base-Θell -Bridges, and Base-Θ±ell -Hodge Theaters | 165 to 166 | 4 | BLOCKED_BY_MATHLIB | NOT_EXTRACTED |
-| `IUT1.Rem6_6_1` | Remark |  | 166 to 167 | 3 | NOT_EXTRACTED | NOT_EXTRACTED |
-| `IUT1.Prop6_7` | Proposition | Base-Θ-Bridges Associated to Base-Θ± -Bridges | 167 | 3 | INTERPRETATION_AMBIGUOUS | NOT_EXTRACTED |
-| `IUT1.Prop6_8` | Proposition | Symmetries arising from Forgetful Functors | 167 to 169 | 3 | NOT_EXTRACTED | NOT_EXTRACTED |
-| `IUT1.Prop6_9` | Proposition | Processions of Base-Prime-Strips | 169 to 170 | 3 | NOT_EXTRACTED | NOT_EXTRACTED |
+| `IUT1.Rem6_6_1` | Remark |  | 166 to 167 | 3 | EXTRACTED | NOT_EXTRACTED |
+| `IUT1.Prop6_7` | Proposition | Base-Θ-Bridges Associated to Base-Θ± -Bridges | 167 | 3 | EXTRACTED | BLOCKED_BY_MISSING_JUSTIFICATION |
+| `IUT1.Prop6_8` | Proposition | Symmetries arising from Forgetful Functors | 167 to 169 | 3 | EXTRACTED | BLOCKED_BY_MISSING_JUSTIFICATION |
+| `IUT1.Prop6_9` | Proposition | Processions of Base-Prime-Strips | 169 to 170 | 3 | EXTRACTED | BLOCKED_BY_MISSING_JUSTIFICATION |
 | `IUT1.Cor6_10` | Corollary | Étale-pictures of Base-Θ±ell -Hodge Theaters | 170 to 172 | 3 | BLOCKED_BY_MATHLIB | NOT_EXTRACTED |
 | `IUT1.Def6_11` | Definition |  | 172 to 173 | 4 | BLOCKED_BY_MATHLIB | NOT_EXTRACTED |
 | `IUT1.Cor6_12` | Corollary | Isomorphisms of Θ± -Bridges, Θell -Bridges, and Θ±ell -Hodge Theaters | 173 to 174 | 4 | BLOCKED_BY_MATHLIB | NOT_EXTRACTED |
-| `IUT1.Rem6_12_1` | Remark |  | 174 | 3 | NOT_EXTRACTED | NOT_EXTRACTED |
-| `IUT1.Rem6_12_2` | Remark |  | 174 to 175 | 4 | NOT_EXTRACTED | NOT_EXTRACTED |
-| `IUT1.Rem6_12_3` | Remark |  | 175 to 177 | 3 | NOT_EXTRACTED | NOT_EXTRACTED |
-| `IUT1.Rem6_12_4` | Remark |  | 177 to 179 | 2 | NOT_EXTRACTED | NOT_EXTRACTED |
-| `IUT1.Rem6_12_5` | Remark |  | 179 to 180 | 3 | NOT_EXTRACTED | NOT_EXTRACTED |
-| `IUT1.Rem6_12_6` | Remark |  | 180 to 182 | 3 | NOT_EXTRACTED | NOT_EXTRACTED |
+| `IUT1.Rem6_12_1` | Remark |  | 174 | 3 | EXTRACTED | BLOCKED_BY_MISSING_JUSTIFICATION |
+| `IUT1.Rem6_12_2` | Remark |  | 174 to 175 | 4 | EXTRACTED | BLOCKED_BY_MISSING_JUSTIFICATION |
+| `IUT1.Rem6_12_3` | Remark |  | 175 to 177 | 3 | EXTRACTED | NOT_EXTRACTED |
+| `IUT1.Rem6_12_4` | Remark |  | 177 to 179 | 2 | EXTRACTED | NOT_EXTRACTED |
+| `IUT1.Rem6_12_5` | Remark |  | 179 to 180 | 3 | EXTRACTED | NOT_EXTRACTED |
+| `IUT1.Rem6_12_6` | Remark |  | 180 to 182 | 3 | EXTRACTED | BLOCKED_BY_MISSING_JUSTIFICATION |
 | `IUT1.Def6_13` | Definition |  | 182 to 184 | 3 | BLOCKED_BY_MATHLIB | NOT_EXTRACTED |
 
 ### IUT II
 
 | Id | Kind | Title | PDF pages | Distance | Statement | Proof |
 |---|---|---|---|---|---|---|
-| `IUT2.Def1_1` | Definition |  | 20 to 21 | 3 | NOT_EXTRACTED | NOT_EXTRACTED |
-| `IUT2.Rem1_1_1` | Remark |  | 21 to 25 | 3 | NOT_EXTRACTED | NOT_EXTRACTED |
-| `IUT2.Prop1_2` | Proposition | Group- and Frobenioid-theoretic Constructions of Mono-theta Environments | 25 to 26 | 4 | NOT_EXTRACTED | NOT_EXTRACTED |
-| `IUT2.Prop1_3` | Proposition | Compatibility of Cyclotomic Rigidity Isomorphisms | 26 to 27 | 3 | NOT_EXTRACTED | NOT_EXTRACTED |
-| `IUT2.Prop1_4` | Proposition | Étale Theta Functions of Standard Type | 27 | 4 | NOT_EXTRACTED | NOT_EXTRACTED |
-| `IUT2.Rem1_4_1` | Remark |  | 27 to 29 | 4 | NOT_EXTRACTED | NOT_EXTRACTED |
-| `IUT2.Prop1_5` | Proposition | Projective Systems of Mono-theta Environments | 29 to 30 | 4 | NOT_EXTRACTED | NOT_EXTRACTED |
-| `IUT2.Rem1_5_1` | Remark |  | 30 | 5 | NOT_EXTRACTED | NOT_EXTRACTED |
-| `IUT2.Rem1_5_2` | Remark |  | 30 to 31 | 3 | NOT_EXTRACTED | NOT_EXTRACTED |
-| `IUT2.Prop1_6` | Proposition | Cores and Cuspidalizations | 31 | 4 | NOT_EXTRACTED | NOT_EXTRACTED |
-| `IUT2.Rem1_6_1` | Remark |  | 31 to 32 | 5 | NOT_EXTRACTED | NOT_EXTRACTED |
-| `IUT2.Ex1_7` | Example | Radial and Coric Data I: Generalities | 32 to 35 | 3 | NOT_EXTRACTED | NOT_EXTRACTED |
+| `IUT2.Def1_1` | Definition |  | 20 to 21 | 3 | EXTRACTED | BLOCKED_BY_EXTERNAL_THEOREM |
+| `IUT2.Rem1_1_1` | Remark |  | 21 to 25 | 3 | EXTRACTED | EXTRACTED |
+| `IUT2.Rem1_1_1.i` | Remark |  | 21 to 22 | 4 | EXTRACTED | BLOCKED_BY_EXTERNAL_THEOREM |
+| `IUT2.Rem1_1_1.ii` | Remark |  | 22 | 4 | EXTRACTED | NOT_EXTRACTED |
+| `IUT2.Rem1_1_1.iii` | Remark |  | 22 to 23 | 4 | EXTRACTED | BLOCKED_BY_EXTERNAL_THEOREM |
+| `IUT2.Rem1_1_1.iv` | Remark |  | 23 to 24 | 4 | EXTRACTED | BLOCKED_BY_MISSING_JUSTIFICATION |
+| `IUT2.Rem1_1_1.v` | Remark |  | 24 to 25 | 4 | EXTRACTED | BLOCKED_BY_MISSING_JUSTIFICATION |
+| `IUT2.Prop1_2` | Proposition | Group- and Frobenioid-theoretic Constructions of Mono-theta Environments | 25 to 26 | 4 | EXTRACTED | BLOCKED_BY_EXTERNAL_THEOREM |
+| `IUT2.Prop1_3` | Proposition | Compatibility of Cyclotomic Rigidity Isomorphisms | 26 to 27 | 3 | EXTRACTED | BLOCKED_BY_EXTERNAL_THEOREM |
+| `IUT2.Prop1_4` | Proposition | Étale Theta Functions of Standard Type | 27 | 4 | EXTRACTED | BLOCKED_BY_EXTERNAL_THEOREM |
+| `IUT2.Rem1_4_1` | Remark |  | 27 to 29 | 4 | EXTRACTED | BLOCKED_BY_EXTERNAL_THEOREM |
+| `IUT2.Prop1_5` | Proposition | Projective Systems of Mono-theta Environments | 29 to 30 | 4 | EXTRACTED | BLOCKED_BY_EXTERNAL_THEOREM |
+| `IUT2.Prop1_5.i` | Proposition |  | 29 | 5 | EXTRACTED | BLOCKED_BY_EXTERNAL_THEOREM |
+| `IUT2.Prop1_5.ii` | Proposition |  | 29 | 5 | EXTRACTED | BLOCKED_BY_EXTERNAL_THEOREM |
+| `IUT2.Prop1_5.iii` | Proposition |  | 29 to 30 | 5 | EXTRACTED | BLOCKED_BY_EXTERNAL_THEOREM |
+| `IUT2.Prop1_5.iv` | Proposition |  | 30 | 5 | EXTRACTED | BLOCKED_BY_EXTERNAL_THEOREM |
+| `IUT2.Rem1_5_1` | Remark |  | 30 | 5 | EXTRACTED | BLOCKED_BY_EXTERNAL_THEOREM |
+| `IUT2.Rem1_5_2` | Remark |  | 30 to 31 | 3 | EXTRACTED | BLOCKED_BY_MISSING_JUSTIFICATION |
+| `IUT2.Prop1_6` | Proposition | Cores and Cuspidalizations | 31 | 4 | EXTRACTED | BLOCKED_BY_EXTERNAL_THEOREM |
+| `IUT2.Prop1_6.i` | Proposition |  | 31 | 5 | EXTRACTED | BLOCKED_BY_EXTERNAL_THEOREM |
+| `IUT2.Prop1_6.ii` | Proposition |  | 31 | 5 | EXTRACTED | BLOCKED_BY_EXTERNAL_THEOREM |
+| `IUT2.Rem1_6_1` | Remark |  | 31 to 32 | 5 | EXTRACTED | BLOCKED_BY_EXTERNAL_THEOREM |
+| `IUT2.Ex1_7` | Example | Radial and Coric Data I: Generalities | 32 to 35 | 3 | EXTRACTED | NOT_EXTRACTED |
+| `IUT2.Ex1_7.i` | Example |  | 32 | 4 | EXTRACTED | NOT_EXTRACTED |
+| `IUT2.Ex1_7.ii` | Example |  | 32 to 33 | 4 | EXTRACTED | BLOCKED_BY_MISSING_JUSTIFICATION |
+| `IUT2.Ex1_7.iii` | Example |  | 34 | 4 | EXTRACTED | BLOCKED_BY_MISSING_JUSTIFICATION |
+| `IUT2.Ex1_7.iv` | Example |  | 34 | 4 | EXTRACTED | NOT_EXTRACTED |
+| `IUT2.Ex1_7.v` | Example |  | 34 to 35 | 4 | EXTRACTED | EXTRACTED |
 | `IUT2.Ex1_8` | Example | Radial and Coric Data II: Concrete Examples | 35 to 41 | 3 | EXTRACTED | NOT_EXTRACTED |
-| `IUT2.Rem1_7_1` | Remark |  | 35 | 3 | NOT_EXTRACTED | NOT_EXTRACTED |
-| `IUT2.Rem1_8_1` | Remark |  | 41 to 42 | 3 | NOT_EXTRACTED | NOT_EXTRACTED |
-| `IUT2.Ex1_9` | Example |  | 42 to 44 | 3 | NOT_EXTRACTED | NOT_EXTRACTED |
-| `IUT2.Rem1_9_1` | Remark |  | 44 to 45 | 4 | NOT_EXTRACTED | NOT_EXTRACTED |
-| `IUT2.Rem1_9_2` | Remark |  | 45 to 46 | 3 | NOT_EXTRACTED | NOT_EXTRACTED |
+| `IUT2.Rem1_7_1` | Remark |  | 35 | 3 | EXTRACTED | EXTRACTED |
+| `IUT2.Rem1_8_1` | Remark |  | 41 to 42 | 3 | EXTRACTED | BLOCKED_BY_EXTERNAL_THEOREM |
+| `IUT2.Ex1_9` | Example |  | 42 to 44 | 3 | EXTRACTED | NOT_EXTRACTED |
+| `IUT2.Ex1_9.i` | Example |  | 42 | 4 | EXTRACTED | NOT_EXTRACTED |
+| `IUT2.Ex1_9.ii` | Example |  | 42 | 4 | EXTRACTED | EXTRACTED |
+| `IUT2.Ex1_9.iii` | Example |  | 42 to 43 | 4 | EXTRACTED | BLOCKED_BY_EXTERNAL_THEOREM |
+| `IUT2.Ex1_9.iv` | Example |  | 43 to 44 | 4 | EXTRACTED | BLOCKED_BY_EXTERNAL_THEOREM |
+| `IUT2.Rem1_9_1` | Remark |  | 44 to 45 | 4 | EXTRACTED | EXTRACTED |
+| `IUT2.Rem1_9_2` | Remark |  | 45 to 46 | 3 | EXTRACTED | EXTRACTED |
 | `IUT2.Cor1_10` | Corollary | Multiradial Mono-theta Cyclotomic Rigidity Isomorphisms | 46 to 47 | 3 | EXTRACTED | BLOCKED_BY_MATHLIB |
 | `IUT2.Rem1_10_2` | Remark |  | 47 | 3 | EXTRACTED | NOT_EXTRACTED |
 | `IUT2.Cor1_11` | Corollary | Multiradial MLF-Galois Pair Cyclotomic Rigidity Isomorphisms with Indeterminacies | 49 | 2 | EXTRACTED | BLOCKED_BY_MATHLIB |
-| `IUT2.Rem1_11_1` | Remark |  | 49 to 50 | 2 | NOT_EXTRACTED | NOT_EXTRACTED |
-| `IUT2.Rem1_11_2` | Remark |  | 50 to 51 | 4 | NOT_EXTRACTED | NOT_EXTRACTED |
-| `IUT2.Rem1_11_3` | Remark |  | 51 to 54 | 2 | NOT_EXTRACTED | NOT_EXTRACTED |
-| `IUT2.Rem1_11_4` | Remark |  | 54 to 55 | 4 | NOT_EXTRACTED | NOT_EXTRACTED |
+| `IUT2.Rem1_11_1` | Remark |  | 49 to 50 | 2 | EXTRACTED | BLOCKED_BY_MISSING_JUSTIFICATION |
+| `IUT2.Rem1_11_2` | Remark |  | 50 to 51 | 4 | EXTRACTED | BLOCKED_BY_MISSING_JUSTIFICATION |
+| `IUT2.Rem1_11_3` | Remark |  | 51 to 54 | 2 | EXTRACTED | EXTRACTED |
+| `IUT2.Rem1_11_3.i` | Remark |  | 51 to 52 | 3 | EXTRACTED | EXTRACTED |
+| `IUT2.Rem1_11_3.ii` | Remark |  | 52 | 3 | EXTRACTED | BLOCKED_BY_MISSING_JUSTIFICATION |
+| `IUT2.Rem1_11_3.iii` | Remark |  | 52 to 53 | 3 | EXTRACTED | EXTRACTED |
+| `IUT2.Rem1_11_3.iv` | Remark |  | 53 | 3 | EXTRACTED | BLOCKED_BY_MISSING_JUSTIFICATION |
+| `IUT2.Rem1_11_3.v` | Remark |  | 53 to 54 | 3 | EXTRACTED | BLOCKED_BY_MISSING_JUSTIFICATION |
+| `IUT2.Rem1_11_4` | Remark |  | 54 | 4 | EXTRACTED | EXTRACTED |
 | `IUT2.Cor1_12` | Corollary | Multiradial Constant Multiple Rigidity | 55 to 58 | 3 | EXTRACTED | BLOCKED_BY_MATHLIB |
 | `IUT2.Rem1_11_5` | Remark |  | 55 | 4 | EXTRACTED | NOT_EXTRACTED |
-| `IUT2.Rem1_11_6` | Remark |  | 55 | 4 | NOT_EXTRACTED | NOT_EXTRACTED |
-| `IUT2.Rem1_12_1` | Remark |  | 58 | 4 | NOT_EXTRACTED | NOT_EXTRACTED |
-| `IUT2.Rem1_12_2` | Remark |  | 58 to 60 | 3 | NOT_EXTRACTED | NOT_EXTRACTED |
+| `IUT2.Rem1_11_6` | Remark |  | 55 | 4 | EXTRACTED | NOT_EXTRACTED |
+| `IUT2.Cor1_12.i` | Corollary |  | 56 to 57 | 4 | EXTRACTED | BLOCKED_BY_MATHLIB |
+| `IUT2.Cor1_12.ii` | Corollary |  | 57 | 4 | EXTRACTED | BLOCKED_BY_MATHLIB |
+| `IUT2.Cor1_12.iii` | Corollary |  | 57 to 58 | 4 | EXTRACTED | BLOCKED_BY_MATHLIB |
+| `IUT2.Rem1_12_1` | Remark |  | 58 | 4 | EXTRACTED | NOT_EXTRACTED |
+| `IUT2.Rem1_12_2` | Remark |  | 58 to 60 | 3 | EXTRACTED | NOT_EXTRACTED |
 | `IUT2.Rem1_12_2.i` | Remark |  | 58 | 4 | EXTRACTED | NOT_EXTRACTED |
-| `IUT2.Rem1_12_3` | Remark |  | 60 | 4 | NOT_EXTRACTED | NOT_EXTRACTED |
-| `IUT2.Rem1_12_4` | Remark |  | 60 to 61 | 3 | NOT_EXTRACTED | NOT_EXTRACTED |
-| `IUT2.Rem1_12_5` | Remark |  | 61 to 64 | 4 | NOT_EXTRACTED | NOT_EXTRACTED |
-| `IUT2.Prop2_1` | Proposition | Review of Certain Tempered Coverings | 64 to 65 | 5 | NOT_EXTRACTED | NOT_EXTRACTED |
-| `IUT2.Rem2_1_1` | Remark |  | 65 to 66 | 4 | NOT_EXTRACTED | NOT_EXTRACTED |
-| `IUT2.Prop2_2` | Proposition | Decomposition Groups Associated to Subgraphs | 66 to 67 | 4 | NOT_EXTRACTED | NOT_EXTRACTED |
+| `IUT2.Rem1_12_2.ii` | Remark |  | 58 to 59 | 4 | EXTRACTED | NOT_EXTRACTED |
+| `IUT2.Rem1_12_2.iii` | Remark |  | 59 | 4 | EXTRACTED | NOT_EXTRACTED |
+| `IUT2.Rem1_12_2.iv` | Remark |  | 59 | 4 | EXTRACTED | NOT_EXTRACTED |
+| `IUT2.Rem1_12_2.v` | Remark |  | 59 | 4 | EXTRACTED | NOT_EXTRACTED |
+| `IUT2.Rem1_12_2.vi` | Remark |  | 59 to 60 | 4 | EXTRACTED | NOT_EXTRACTED |
+| `IUT2.Rem1_12_3` | Remark |  | 60 | 4 | EXTRACTED | NOT_EXTRACTED |
+| `IUT2.Rem1_12_4` | Remark |  | 60 to 61 | 3 | EXTRACTED | BLOCKED_BY_MISSING_JUSTIFICATION |
+| `IUT2.Rem1_12_5` | Remark |  | 61 to 63 | 4 | EXTRACTED | EXTRACTED |
+| `IUT2.Prop2_1` | Proposition | Review of Certain Tempered Coverings | 64 to 65 | 5 | EXTRACTED | BLOCKED_BY_EXTERNAL_THEOREM |
+| `IUT2.Rem2_1_1` | Remark |  | 65 to 66 | 4 | EXTRACTED | NOT_EXTRACTED |
+| `IUT2.Prop2_2` | Proposition | Decomposition Groups Associated to Subgraphs | 66 to 67 | 4 | EXTRACTED | BLOCKED_BY_EXTERNAL_THEOREM |
 | `IUT2.Def2_3` | Definition |  | 67 to 69 | 3 | EXTRACTED | NOT_EXTRACTED |
-| `IUT2.Rem2_2_1` | Remark |  | 67 | 4 | NOT_EXTRACTED | NOT_EXTRACTED |
+| `IUT2.Rem2_2_1` | Remark |  | 67 | 4 | EXTRACTED | NOT_EXTRACTED |
 | `IUT2.Cor2_4` | Corollary | F± l -Symmetric Two-torsion Translates of Cusps | 69 to 71 | 3 | EXTRACTED | BLOCKED_BY_MATHLIB |
-| `IUT2.Rem2_3_1` | Remark |  | 69 | 3 | NOT_EXTRACTED | NOT_EXTRACTED |
+| `IUT2.Cor2_4.i` | Corollary |  | 69 to 70 | 4 | EXTRACTED | BLOCKED_BY_MATHLIB |
+| `IUT2.Rem2_3_1` | Remark |  | 69 | 3 | EXTRACTED | NOT_EXTRACTED |
+| `IUT2.Cor2_4.ii` | Corollary |  | 70 | 4 | EXTRACTED | BLOCKED_BY_EXTERNAL_THEOREM |
+| `IUT2.Cor2_4.iii` | Corollary |  | 70 | 4 | EXTRACTED | BLOCKED_BY_MATHLIB |
 | `IUT2.Cor2_5` | Corollary | Group-theoretic Theta Evaluation | 71 to 72 | 3 | EXTRACTED | BLOCKED_BY_MATHLIB |
-| `IUT2.Rem2_5_1` | Remark |  | 72 to 73 | 4 | EXTRACTED | BLOCKED_BY_MATHLIB |
-| `IUT2.Rem2_5_2` | Remark |  | 73 to 76 | 3 | NOT_EXTRACTED | NOT_EXTRACTED |
+| `IUT2.Cor2_5.i` | Corollary |  | 71 | 4 | EXTRACTED | BLOCKED_BY_MATHLIB |
+| `IUT2.Cor2_5.ii` | Corollary |  | 71 to 72 | 4 | EXTRACTED | BLOCKED_BY_MATHLIB |
+| `IUT2.Cor2_5.iii` | Corollary |  | 72 | 4 | EXTRACTED | BLOCKED_BY_MATHLIB |
+| `IUT2.Rem2_5_1` | Remark |  | 72 to 73 | 3 | EXTRACTED | BLOCKED_BY_MATHLIB |
+| `IUT2.Rem2_5_2` | Remark |  | 73 to 75 | 3 | EXTRACTED | NOT_EXTRACTED |
 | `IUT2.Cor2_6` | Corollary | Splittings Defined on Subgraphs | 76 | 4 | EXTRACTED | BLOCKED_BY_MATHLIB |
-| `IUT2.Rem2_6_1` | Remark |  | 76 to 77 | 3 | NOT_EXTRACTED | NOT_EXTRACTED |
-| `IUT2.Rem2_6_2` | Remark |  | 77 to 79 | 3 | NOT_EXTRACTED | NOT_EXTRACTED |
+| `IUT2.Rem2_6_1` | Remark |  | 76 to 77 | 3 | EXTRACTED | NOT_EXTRACTED |
+| `IUT2.Rem2_6_2` | Remark |  | 77 to 78 | 3 | EXTRACTED | NOT_EXTRACTED |
 | `IUT2.Rem2_6_3` | Remark |  | 79 to 80 | 3 | INTERPRETATION_AMBIGUOUS | PROOF_IN_PROGRESS |
 | `IUT2.Def2_7` | Definition |  | 80 to 81 | 4 | EXTRACTED | NOT_EXTRACTED |
 | `IUT2.Cor2_8` | Corollary | Mono-theta-theoretic Theta Evaluation | 81 to 83 | 3 | EXTRACTED | BLOCKED_BY_MATHLIB |
-| `IUT2.Rem2_8_1` | Remark |  | 83 | 4 | NOT_EXTRACTED | NOT_EXTRACTED |
-| `IUT2.Rem2_8_2` | Remark |  | 83 | 4 | NOT_EXTRACTED | NOT_EXTRACTED |
-| `IUT2.Rem2_8_3` | Remark |  | 83 to 84 | 3 | NOT_EXTRACTED | NOT_EXTRACTED |
+| `IUT2.Cor2_8.i` | Corollary |  | 81 to 82 | 4 | EXTRACTED | BLOCKED_BY_MATHLIB |
+| `IUT2.Cor2_8.ii` | Corollary |  | 82 | 4 | EXTRACTED | BLOCKED_BY_MATHLIB |
+| `IUT2.Cor2_8.iii` | Corollary |  | 82 to 83 | 4 | EXTRACTED | BLOCKED_BY_MATHLIB |
+| `IUT2.Rem2_8_1` | Remark |  | 83 | 4 | EXTRACTED | NOT_EXTRACTED |
+| `IUT2.Rem2_8_2` | Remark |  | 83 | 4 | EXTRACTED | NOT_EXTRACTED |
+| `IUT2.Rem2_8_3` | Remark |  | 83 to 84 | 3 | EXTRACTED | NOT_EXTRACTED |
 | `IUT2.Cor2_9` | Corollary | Theta Evaluation via Base-field-theoretic Cyclotomes | 84 to 85 | 4 | EXTRACTED | BLOCKED_BY_MATHLIB |
-| `IUT2.Rem2_9_1` | Remark |  | 85 to 87 | 4 | NOT_EXTRACTED | NOT_EXTRACTED |
-| `IUT2.Prop3_1` | Proposition | Mono-theta-theoretic Theta Monoids | 87 to 88 | 3 | NOT_EXTRACTED | NOT_EXTRACTED |
-| `IUT2.Ex3_2` | Example | Theta Monoids Constructed from Tempered Frobenioids | 88 to 89 | 3 | NOT_EXTRACTED | NOT_EXTRACTED |
-| `IUT2.Prop3_3` | Proposition | Frobenioid-theoretic Theta Monoids | 89 to 91 | 3 | NOT_EXTRACTED | NOT_EXTRACTED |
-| `IUT2.Prop3_4` | Proposition | Group-theoretic Theta Monoids | 91 to 93 | 3 | NOT_EXTRACTED | NOT_EXTRACTED |
+| `IUT2.Rem2_9_1` | Remark |  | 85 to 86 | 4 | EXTRACTED | NOT_EXTRACTED |
+| `IUT2.Prop3_1` | Proposition | Mono-theta-theoretic Theta Monoids | 87 to 88 | 3 | EXTRACTED | BLOCKED_BY_MATHLIB |
+| `IUT2.Ex3_2` | Example | Theta Monoids Constructed from Tempered Frobenioids | 88 to 89 | 3 | EXTRACTED | NOT_EXTRACTED |
+| `IUT2.Prop3_3` | Proposition | Frobenioid-theoretic Theta Monoids | 89 to 90 | 3 | EXTRACTED | BLOCKED_BY_MATHLIB |
+| `IUT2.Prop3_4` | Proposition | Group-theoretic Theta Monoids | 91 to 93 | 3 | EXTRACTED | BLOCKED_BY_MATHLIB |
 | `IUT2.Cor3_5` | Corollary | Mono-theta-theoretic Gaussian Monoids | 93 to 96 | 2 | EXTRACTED | BLOCKED_BY_MATHLIB |
-| `IUT2.Rem3_4_1` | Remark |  | 93 | 4 | NOT_EXTRACTED | NOT_EXTRACTED |
-| `IUT2.Rem3_5_1` | Remark |  | 96 | 3 | NOT_EXTRACTED | NOT_EXTRACTED |
-| `IUT2.Rem3_5_2` | Remark |  | 96 to 99 | 3 | NOT_EXTRACTED | NOT_EXTRACTED |
+| `IUT2.Rem3_4_1` | Remark |  | 93 | 4 | EXTRACTED | NOT_EXTRACTED |
+| `IUT2.Cor3_5.i` | Corollary |  | 94 | 3 | EXTRACTED | BLOCKED_BY_MATHLIB |
+| `IUT2.Cor3_5.ii` | Corollary |  | 94 to 95 | 3 | EXTRACTED | BLOCKED_BY_MATHLIB |
+| `IUT2.Cor3_5.iii` | Corollary |  | 95 | 3 | EXTRACTED | BLOCKED_BY_MATHLIB |
+| `IUT2.Rem3_5_1` | Remark |  | 96 | 3 | EXTRACTED | NOT_EXTRACTED |
+| `IUT2.Rem3_5_2` | Remark |  | 96 to 99 | 3 | EXTRACTED | NOT_EXTRACTED |
 | `IUT2.Cor3_6` | Corollary | Frobenioid-theoretic Gaussian Monoids | 99 to 101 | 2 | EXTRACTED | BLOCKED_BY_MATHLIB |
-| `IUT2.Rem3_5_3` | Remark |  | 99 | 3 | NOT_EXTRACTED | NOT_EXTRACTED |
-| `IUT2.Rem3_6_1` | Remark |  | 101 | 3 | NOT_EXTRACTED | NOT_EXTRACTED |
+| `IUT2.Cor3_6.i` | Corollary |  | 99 | 3 | EXTRACTED | BLOCKED_BY_MATHLIB |
+| `IUT2.Cor3_6.ii` | Corollary |  | 99 to 100 | 3 | EXTRACTED | BLOCKED_BY_MATHLIB |
+| `IUT2.Rem3_5_3` | Remark |  | 99 | 3 | EXTRACTED | NOT_EXTRACTED |
+| `IUT2.Cor3_6.iii` | Corollary |  | 100 to 101 | 3 | EXTRACTED | BLOCKED_BY_MATHLIB |
+| `IUT2.Rem3_6_1` | Remark |  | 101 | 3 | EXTRACTED | NOT_EXTRACTED |
 | `IUT2.Rem3_6_2` | Remark |  | 101 to 104 | 3 | EXTRACTED | NOT_EXTRACTED |
-| `IUT2.Rem3_6_3` | Remark |  | 104 to 105 | 3 | NOT_EXTRACTED | NOT_EXTRACTED |
+| `IUT2.Rem3_6_3` | Remark |  | 104 to 105 | 3 | EXTRACTED | BLOCKED_BY_MISSING_JUSTIFICATION |
 | `IUT2.Rem3_6_4` | Remark |  | 105 to 108 | 2 | EXTRACTED | NOT_EXTRACTED |
-| `IUT2.Rem3_6_5` | Remark |  | 108 to 110 | 3 | NOT_EXTRACTED | NOT_EXTRACTED |
+| `IUT2.Rem3_6_5` | Remark |  | 108 to 110 | 3 | EXTRACTED | EXTRACTED |
 | `IUT2.Cor3_7` | Corollary | Group-theoretic Gaussian Monoids and Uniradiality | 110 to 112 | 4 | EXTRACTED | BLOCKED_BY_MATHLIB |
 | `IUT2.Def3_8` | Definition |  | 112 to 115 | 4 | EXTRACTED | NOT_EXTRACTED |
 | `IUT2.Rem3_7_1` | Remark |  | 112 | 3 | EXTRACTED | NOT_EXTRACTED |
-| `IUT2.Rem3_8_1` | Remark |  | 115 to 116 | 5 | NOT_EXTRACTED | NOT_EXTRACTED |
-| `IUT2.Rem3_8_2` | Remark |  | 116 to 117 | 3 | NOT_EXTRACTED | NOT_EXTRACTED |
+| `IUT2.Rem3_8_1` | Remark |  | 115 | 5 | EXTRACTED | NOT_EXTRACTED |
+| `IUT2.Rem3_8_2` | Remark |  | 116 | 3 | EXTRACTED | NOT_EXTRACTED |
+| `IUT2.Rem3_8_2.i` | Remark |  | 116 | 4 | EXTRACTED | NOT_EXTRACTED |
 | `IUT2.Rem3_8_2.ii` | Remark |  | 116 | 4 | EXTRACTED | NOT_EXTRACTED |
-| `IUT2.Rem3_8_3` | Remark |  | 117 to 120 | 3 | NOT_EXTRACTED | NOT_EXTRACTED |
+| `IUT2.Rem3_8_3` | Remark |  | 117 to 119 | 3 | EXTRACTED | BLOCKED_BY_MISSING_JUSTIFICATION |
 | `IUT2.Prop4_1` | Proposition | Group-theoretic Gaussian Monoids at Good Nonarchimedean Primes | 120 to 122 | 3 | EXTRACTED | BLOCKED_BY_MATHLIB |
-| `IUT2.Rem4_1_1` | Remark |  | 122 to 123 | 3 | NOT_EXTRACTED | NOT_EXTRACTED |
+| `IUT2.Rem4_1_1` | Remark |  | 122 to 123 | 3 | EXTRACTED | BLOCKED_BY_MISSING_JUSTIFICATION |
 | `IUT2.Prop4_2` | Proposition | Frobenioid-theoretic Gaussian Monoids at Good Nonarchimedean Primes | 123 to 125 | 2 | EXTRACTED | BLOCKED_BY_MATHLIB |
-| `IUT2.Rem4_2_1` | Remark |  | 125 to 127 | 4 | NOT_EXTRACTED | NOT_EXTRACTED |
+| `IUT2.Rem4_2_1` | Remark |  | 125 to 126 | 4 | EXTRACTED | BLOCKED_BY_MISSING_JUSTIFICATION |
 | `IUT2.Prop4_3` | Proposition | Aut-holomorphic-space-theoretic Gaussian Monoids at Archimedean Primes | 127 to 129 | 3 | EXTRACTED | BLOCKED_BY_MATHLIB |
 | `IUT2.Prop4_4` | Proposition | Frobenioid-theoretic Gaussian Monoids at Archimedean Primes | 129 to 131 | 3 | EXTRACTED | BLOCKED_BY_MATHLIB |
-| `IUT2.Rem4_3_1` | Remark |  | 129 | 3 | NOT_EXTRACTED | NOT_EXTRACTED |
+| `IUT2.Rem4_3_1` | Remark |  | 129 | 3 | EXTRACTED | BLOCKED_BY_MISSING_JUSTIFICATION |
 | `IUT2.Cor4_5` | Corollary | Group-theoretic Monoids Associated to Base-Θ±ell -Hodge Theaters | 131 to 134 | 3 | EXTRACTED | BLOCKED_BY_MATHLIB |
-| `IUT2.Rem4_4_1` | Remark |  | 131 | 4 | NOT_EXTRACTED | NOT_EXTRACTED |
-| `IUT2.Rem4_5_1` | Remark |  | 134 to 135 | 4 | NOT_EXTRACTED | NOT_EXTRACTED |
-| `IUT2.Rem4_5_2` | Remark |  | 135 | 3 | NOT_EXTRACTED | NOT_EXTRACTED |
-| `IUT2.Rem4_5_3` | Remark |  | 135 to 136 | 2 | NOT_EXTRACTED | NOT_EXTRACTED |
+| `IUT2.Cor4_5.i` | Corollary |  | 131 | 4 | EXTRACTED | BLOCKED_BY_MATHLIB |
+| `IUT2.Cor4_5.ii` | Corollary |  | 131 to 132 | 4 | EXTRACTED | BLOCKED_BY_MATHLIB |
+| `IUT2.Rem4_4_1` | Remark |  | 131 | 4 | EXTRACTED | NOT_EXTRACTED |
+| `IUT2.Cor4_5.iii` | Corollary |  | 132 to 133 | 4 | EXTRACTED | BLOCKED_BY_MATHLIB |
+| `IUT2.Cor4_5.iv` | Corollary |  | 133 | 4 | EXTRACTED | BLOCKED_BY_MATHLIB |
+| `IUT2.Cor4_5.v` | Corollary |  | 133 to 134 | 4 | EXTRACTED | BLOCKED_BY_MATHLIB |
+| `IUT2.Rem4_5_1` | Remark |  | 134 to 135 | 4 | EXTRACTED | BLOCKED_BY_MISSING_JUSTIFICATION |
+| `IUT2.Rem4_5_2` | Remark |  | 135 | 3 | EXTRACTED | BLOCKED_BY_MISSING_JUSTIFICATION |
+| `IUT2.Rem4_5_3` | Remark |  | 135 to 136 | 2 | EXTRACTED | BLOCKED_BY_MISSING_JUSTIFICATION |
 | `IUT2.Rem4_5_4` | Remark |  | 136 | 4 | EXTRACTED | NOT_EXTRACTED |
 | `IUT2.Cor4_6` | Corollary | Frobenioid-theoretic Monoids Associated to Θ±ell -Hodge Theaters | 137 to 139 | 3 | EXTRACTED | BLOCKED_BY_MATHLIB |
-| `IUT2.Rem4_6_1` | Remark |  | 139 to 140 | 4 | NOT_EXTRACTED | NOT_EXTRACTED |
+| `IUT2.Cor4_6.i` | Corollary |  | 137 | 4 | EXTRACTED | BLOCKED_BY_MATHLIB |
+| `IUT2.Cor4_6.ii` | Corollary |  | 137 to 138 | 4 | EXTRACTED | BLOCKED_BY_MATHLIB |
+| `IUT2.Cor4_6.iii` | Corollary |  | 138 | 4 | EXTRACTED | BLOCKED_BY_MATHLIB |
+| `IUT2.Cor4_6.iv` | Corollary |  | 138 to 139 | 4 | EXTRACTED | BLOCKED_BY_MATHLIB |
+| `IUT2.Cor4_6.v` | Corollary |  | 139 | 4 | EXTRACTED | BLOCKED_BY_MATHLIB |
+| `IUT2.Rem4_6_1` | Remark |  | 139 to 140 | 4 | EXTRACTED | NOT_EXTRACTED |
 | `IUT2.Cor4_7` | Corollary | Group-theoretic Monoids Associated to Base-ΘNF-Hodge Theaters | 140 to 142 | 3 | EXTRACTED | BLOCKED_BY_MATHLIB |
-| `IUT2.Rem4_6_2` | Remark |  | 140 | 3 | NOT_EXTRACTED | NOT_EXTRACTED |
-| `IUT2.Rem4_7_1` | Remark |  | 143 | 4 | NOT_EXTRACTED | NOT_EXTRACTED |
-| `IUT2.Rem4_7_2` | Remark |  | 143 | 3 | NOT_EXTRACTED | NOT_EXTRACTED |
+| `IUT2.Cor4_7.i` | Corollary |  | 140 to 141 | 4 | EXTRACTED | BLOCKED_BY_MATHLIB |
+| `IUT2.Rem4_6_2` | Remark |  | 140 | 3 | EXTRACTED | NOT_EXTRACTED |
+| `IUT2.Cor4_7.ii` | Corollary |  | 141 to 142 | 4 | EXTRACTED | BLOCKED_BY_MATHLIB |
+| `IUT2.Cor4_7.iii` | Corollary |  | 142 | 4 | EXTRACTED | BLOCKED_BY_MATHLIB |
+| `IUT2.Rem4_7_1` | Remark |  | 143 | 4 | EXTRACTED | BLOCKED_BY_MISSING_JUSTIFICATION |
+| `IUT2.Rem4_7_2` | Remark |  | 143 | 3 | EXTRACTED | BLOCKED_BY_MISSING_JUSTIFICATION |
 | `IUT2.Rem4_7_3` | Remark |  | 143 to 145 | 3 | EXTRACTED | NOT_EXTRACTED |
-| `IUT2.Rem4_7_4` | Remark |  | 145 to 147 | 3 | NOT_EXTRACTED | NOT_EXTRACTED |
-| `IUT2.Rem4_7_5` | Remark |  | 147 to 148 | 3 | NOT_EXTRACTED | NOT_EXTRACTED |
-| `IUT2.Rem4_7_6` | Remark |  | 148 to 149 | 2 | NOT_EXTRACTED | NOT_EXTRACTED |
+| `IUT2.Rem4_7_4` | Remark |  | 145 to 147 | 3 | EXTRACTED | BLOCKED_BY_MISSING_JUSTIFICATION |
+| `IUT2.Rem4_7_5` | Remark |  | 147 to 148 | 3 | EXTRACTED | EXTRACTED |
+| `IUT2.Rem4_7_6` | Remark |  | 148 to 149 | 2 | EXTRACTED | BLOCKED_BY_MISSING_JUSTIFICATION |
 | `IUT2.Cor4_8` | Corollary | Frobenioid-theoretic Monoids Associated to ΘNF-Hodge Theaters | 149 to 151 | 3 | EXTRACTED | BLOCKED_BY_MATHLIB |
-| `IUT2.Rem4_8_1` | Remark |  | 151 to 153 | 4 | NOT_EXTRACTED | NOT_EXTRACTED |
+| `IUT2.Rem4_8_1` | Remark |  | 151 to 152 | 4 | EXTRACTED | BLOCKED_BY_MISSING_JUSTIFICATION |
 | `IUT2.Def4_9` | Definition |  | 153 to 158 | 3 | EXTRACTED | NOT_EXTRACTED |
-| `IUT2.Rem4_8_2` | Remark |  | 153 | 3 | NOT_EXTRACTED | NOT_EXTRACTED |
-| `IUT2.Rem4_8_3` | Remark |  | 153 | 4 | NOT_EXTRACTED | NOT_EXTRACTED |
+| `IUT2.Rem4_8_2` | Remark |  | 153 | 3 | EXTRACTED | NOT_EXTRACTED |
+| `IUT2.Rem4_8_3` | Remark |  | 153 | 4 | EXTRACTED | NOT_EXTRACTED |
 | `IUT2.Cor4_10` | Corollary | Frobenius-pictures of Θ±ell NF-Hodge Theaters | 158 to 161 | 2 | EXTRACTED | BLOCKED_BY_MATHLIB |
+| `IUT2.Cor4_10.i` | Corollary |  | 158 to 159 | 3 | EXTRACTED | BLOCKED_BY_MATHLIB |
+| `IUT2.Cor4_10.ii` | Corollary |  | 159 | 3 | EXTRACTED | BLOCKED_BY_MATHLIB |
+| `IUT2.Cor4_10.iii` | Corollary |  | 159 to 160 | 3 | EXTRACTED | BLOCKED_BY_MATHLIB |
+| `IUT2.Cor4_10.iv` | Corollary |  | 160 | 3 | EXTRACTED | BLOCKED_BY_MATHLIB |
+| `IUT2.Cor4_10.v` | Corollary |  | 160 to 161 | 3 | EXTRACTED | BLOCKED_BY_MATHLIB |
+| `IUT2.Cor4_10.vi` | Corollary |  | 161 | 3 | EXTRACTED | BLOCKED_BY_MATHLIB |
 | `IUT2.Rem4_10_1` | Remark |  | 161 to 162 | 3 | EXTRACTED | NOT_EXTRACTED |
 | `IUT2.Rem4_10_3` | Remark |  | 162 to 163 | 3 | EXTRACTED | NOT_EXTRACTED |
 | `IUT2.Cor4_11` | Corollary | Étale-pictures of Base-Θ±ell NF-Hodge Theaters | 163 to 164 | 3 | EXTRACTED | BLOCKED_BY_MATHLIB |
 | `IUT2.Rem4_11_1` | Remark |  | 164 to 165 | 3 | EXTRACTED | NOT_EXTRACTED |
-| `IUT2.Rem4_11_2` | Remark |  | 165 to 167 | 2 | NOT_EXTRACTED | NOT_EXTRACTED |
-| `IUT2.Rem4_11_3` | Remark |  | 167 to 168 | 3 | NOT_EXTRACTED | NOT_EXTRACTED |
-| `IUT2.Rem4_11_4` | Remark |  | 168 to 172 | 3 | NOT_EXTRACTED | NOT_EXTRACTED |
-| `IUT2.Rem4_11_5` | Remark |  | 172 to 173 | 4 | NOT_EXTRACTED | NOT_EXTRACTED |
+| `IUT2.Rem4_11_2` | Remark |  | 165 to 167 | 2 | EXTRACTED | EXTRACTED |
+| `IUT2.Rem4_11_3` | Remark |  | 167 to 168 | 3 | EXTRACTED | BLOCKED_BY_MISSING_JUSTIFICATION |
+| `IUT2.Rem4_11_4` | Remark |  | 168 to 172 | 3 | EXTRACTED | EXTRACTED |
+| `IUT2.Rem4_11_4.i` | Remark |  | 168 | 4 | EXTRACTED | EXTRACTED |
+| `IUT2.Rem4_11_4.ii` | Remark |  | 168 to 169 | 4 | EXTRACTED | EXTRACTED |
+| `IUT2.Rem4_11_4.iii` | Remark |  | 169 to 172 | 4 | EXTRACTED | EXTRACTED |
+| `IUT2.Rem4_11_5` | Remark |  | 172 | 4 | EXTRACTED | BLOCKED_BY_MISSING_JUSTIFICATION |
 
 ### IUT III
 
 | Id | Kind | Title | PDF pages | Distance | Statement | Proof |
 |---|---|---|---|---|---|---|
-| `IUT3.Def1_1` | Definition |  | 23 to 28 | 3 | NOT_EXTRACTED | NOT_EXTRACTED |
-| `IUT3.Rem1_1_1` | Remark |  | 28 to 29 | 3 | NOT_EXTRACTED | NOT_EXTRACTED |
-| `IUT3.Prop1_2` | Proposition | log-links Between F-prime-strips | 30 to 35 | 3 | NOT_EXTRACTED | BLOCKED_BY_EXTERNAL_THEOREM |
+| `IUT3.Def1_1` | Definition |  | 23 to 28 | 3 | EXTRACTED | BLOCKED_BY_EXTERNAL_THEOREM |
+| `IUT3.Def1_1.i` | Definition |  | 23 to 25 | 4 | EXTRACTED | NOT_EXTRACTED |
+| `IUT3.Def1_1.ii` | Definition |  | 25 to 26 | 4 | EXTRACTED | NOT_EXTRACTED |
+| `IUT3.Def1_1.iii` | Definition |  | 26 to 27 | 3 | EXTRACTED | NOT_EXTRACTED |
+| `IUT3.Def1_1.iv` | Definition |  | 27 | 4 | EXTRACTED | EXTRACTED |
+| `IUT3.Def1_1.v` | Definition |  | 27 to 28 | 4 | EXTRACTED | BLOCKED_BY_EXTERNAL_THEOREM |
+| `IUT3.Def1_1.vi` | Definition |  | 28 | 4 | EXTRACTED | NOT_EXTRACTED |
+| `IUT3.Rem1_1_1` | Remark |  | 28 to 29 | 3 | EXTRACTED | BLOCKED_BY_MISSING_JUSTIFICATION |
+| `IUT3.Prop1_2` | Proposition | log-links Between F-prime-strips | 30 to 35 | 3 | EXTRACTED | BLOCKED_BY_EXTERNAL_THEOREM |
+| `IUT3.Prop1_2.i` | Proposition |  | 31 | 4 | EXTRACTED | EXTRACTED |
+| `IUT3.Prop1_2.ii` | Proposition |  | 31 | 4 | EXTRACTED | EXTRACTED |
+| `IUT3.Prop1_2.iii` | Proposition |  | 31 | 3 | EXTRACTED | BLOCKED_BY_EXTERNAL_THEOREM |
+| `IUT3.Prop1_2.iv` | Proposition |  | 31 | 4 | EXTRACTED | BLOCKED_BY_EXTERNAL_THEOREM |
+| `IUT3.Prop1_2.v` | Proposition |  | 31 to 32 | 4 | EXTRACTED | BLOCKED_BY_EXTERNAL_THEOREM |
+| `IUT3.Prop1_2.vi` | Proposition |  | 32 | 4 | EXTRACTED | BLOCKED_BY_EXTERNAL_THEOREM |
+| `IUT3.Prop1_2.vii` | Proposition |  | 32 to 33 | 4 | EXTRACTED | BLOCKED_BY_EXTERNAL_THEOREM |
+| `IUT3.Prop1_2.viii` | Proposition |  | 33 | 4 | EXTRACTED | EXTRACTED |
+| `IUT3.Prop1_2.ix` | Proposition |  | 34 | 4 | EXTRACTED | BLOCKED_BY_EXTERNAL_THEOREM |
 | `IUT3.Prop1_2.x` | Proposition |  | 34 | 3 | EXTRACTED | EXTRACTED |
-| `IUT3.Rem1_2_1` | Remark |  | 35 | 4 | NOT_EXTRACTED | NOT_EXTRACTED |
+| `IUT3.Rem1_2_1` | Remark |  | 35 | 4 | EXTRACTED | EXTRACTED |
 | `IUT3.Rem1_2_2` | Remark |  | 35 to 39 | 2 | INTERPRETATION_AMBIGUOUS | EXTRACTED |
-| `IUT3.Rem1_2_3` | Remark |  | 39 | 3 | NOT_EXTRACTED | NOT_EXTRACTED |
-| `IUT3.Rem1_2_4` | Remark |  | 39 to 41 | 3 | NOT_EXTRACTED | NOT_EXTRACTED |
-| `IUT3.Prop1_3` | Proposition | log-links Between Θ±ell NF-Hodge Theaters | 41 to 43 | 3 | NOT_EXTRACTED | BLOCKED_BY_EXTERNAL_THEOREM |
-| `IUT3.Rem1_3_2` | Remark |  | 43 to 44 | 2 | NOT_EXTRACTED | NOT_EXTRACTED |
-| `IUT3.Def1_4` | Definition |  | 45 to 46 | 3 | NOT_EXTRACTED | NOT_EXTRACTED |
-| `IUT3.Rem1_4_1` | Remark |  | 46 to 47 | 3 | NOT_EXTRACTED | NOT_EXTRACTED |
-| `IUT3.Rem1_4_2` | Remark |  | 47 to 48 | 3 | NOT_EXTRACTED | NOT_EXTRACTED |
+| `IUT3.Rem1_2_3` | Remark |  | 39 | 3 | EXTRACTED | BLOCKED_BY_EXTERNAL_THEOREM |
+| `IUT3.Rem1_2_4` | Remark |  | 39 to 41 | 3 | INTERPRETATION_AMBIGUOUS | BLOCKED_BY_EXTERNAL_THEOREM |
+| `IUT3.Prop1_3` | Proposition | log-links Between Θ±ell NF-Hodge Theaters | 41 to 43 | 3 | EXTRACTED | BLOCKED_BY_EXTERNAL_THEOREM |
+| `IUT3.Prop1_3.i` | Proposition |  | 42 | 3 | EXTRACTED | BLOCKED_BY_EXTERNAL_THEOREM |
+| `IUT3.Prop1_3.ii` | Proposition |  | 42 | 4 | EXTRACTED | EXTRACTED |
+| `IUT3.Prop1_3.iii` | Proposition |  | 42 | 3 | EXTRACTED | BLOCKED_BY_EXTERNAL_THEOREM |
+| `IUT3.Prop1_3.iv` | Proposition |  | 43 | 3 | EXTRACTED | EXTRACTED |
+| `IUT3.Rem1_3_2` | Remark |  | 43 to 44 | 2 | EXTRACTED | BLOCKED_BY_MISSING_JUSTIFICATION |
+| `IUT3.Def1_4` | Definition |  | 45 to 46 | 3 | EXTRACTED | NOT_EXTRACTED |
+| `IUT3.Rem1_4_1` | Remark |  | 46 to 47 | 3 | INTERPRETATION_AMBIGUOUS | BLOCKED_BY_MISSING_JUSTIFICATION |
+| `IUT3.Rem1_4_2` | Remark |  | 47 to 48 | 3 | EXTRACTED | EXTRACTED |
 | `IUT3.Thm1_5` | Theorem | Bi-cores of the Log-theta-lattice | 48 to 51 | 2 | EXTRACTED | BLOCKED_BY_EXTERNAL_THEOREM |
 | `IUT3.Thm1_5.i` | Theorem |  | 48 | 3 | EXTRACTED | EXTRACTED |
 | `IUT3.Thm1_5.ii` | Theorem |  | 48 | 3 | EXTRACTED | EXTRACTED |
 | `IUT3.Thm1_5.iii` | Theorem |  | 48 to 50 | 3 | INTERPRETATION_AMBIGUOUS | EXTRACTED |
 | `IUT3.Thm1_5.iv` | Theorem |  | 50 | 3 | EXTRACTED | EXTRACTED |
 | `IUT3.Thm1_5.v` | Theorem |  | 50 to 51 | 3 | EXTRACTED | EXTRACTED |
-| `IUT3.Rem1_5_1` | Remark |  | 51 to 52 | 2 | NOT_EXTRACTED | NOT_EXTRACTED |
-| `IUT3.Rem1_5_2` | Remark |  | 52 to 54 | 2 | NOT_EXTRACTED | NOT_EXTRACTED |
-| `IUT3.Rem1_5_3` | Remark |  | 54 to 56 | 3 | NOT_EXTRACTED | NOT_EXTRACTED |
-| `IUT3.Rem1_5_4` | Remark |  | 56 to 57 | 2 | NOT_EXTRACTED | NOT_EXTRACTED |
-| `IUT3.Prop2_1` | Proposition | Vertical Coricity and Kummer Theory of Theta Monoids | 58 to 61 | 3 | NOT_EXTRACTED | NOT_EXTRACTED |
-| `IUT3.Rem2_1_1` | Remark |  | 61 to 64 | 2 | NOT_EXTRACTED | NOT_EXTRACTED |
-| `IUT3.Thm2_2` | Theorem | Kummer-compatible Multiradiality of Theta Monoids | 65 to 67 | 3 | NOT_EXTRACTED | NOT_EXTRACTED |
-| `IUT3.Rem2_2_1` | Remark |  | 67 to 69 | 3 | NOT_EXTRACTED | NOT_EXTRACTED |
-| `IUT3.Rem2_2_2` | Remark |  | 69 to 72 | 2 | NOT_EXTRACTED | NOT_EXTRACTED |
-| `IUT3.Cor2_3` | Corollary | Étale-picture of Multiradial Theta Monoids | 72 to 75 | 2 | NOT_EXTRACTED | NOT_EXTRACTED |
-| `IUT3.Rem2_3_2` | Remark |  | 75 to 76 | 2 | NOT_EXTRACTED | NOT_EXTRACTED |
-| `IUT3.Rem2_3_3` | Remark |  | 76 to 85 | 2 | NOT_EXTRACTED | NOT_EXTRACTED |
-| `IUT3.Rem2_3_4` | Remark |  | 85 to 87 | 3 | NOT_EXTRACTED | NOT_EXTRACTED |
-| `IUT3.Def2_4` | Definition |  | 87 to 89 | 2 | NOT_EXTRACTED | NOT_EXTRACTED |
-| `IUT3.Rem2_4_2` | Remark |  | 89 to 92 | 2 | NOT_EXTRACTED | NOT_EXTRACTED |
+| `IUT3.Rem1_5_1` | Remark |  | 51 to 52 | 2 | EXTRACTED | EXTRACTED |
+| `IUT3.Rem1_5_2` | Remark |  | 52 to 54 | 2 | EXTRACTED | BLOCKED_BY_EXTERNAL_THEOREM |
+| `IUT3.Rem1_5_3` | Remark |  | 54 to 55 | 3 | EXTRACTED | EXTRACTED |
+| `IUT3.Rem1_5_4` | Remark |  | 56 to 57 | 2 | EXTRACTED | NOT_EXTRACTED |
+| `IUT3.Prop2_1` | Proposition | Vertical Coricity and Kummer Theory of Theta Monoids | 58 to 61 | 3 | EXTRACTED | BLOCKED_BY_EXTERNAL_THEOREM |
+| `IUT3.Prop2_1.i` | Proposition |  | 58 to 59 | 3 | EXTRACTED | BLOCKED_BY_EXTERNAL_THEOREM |
+| `IUT3.Prop2_1.ii` | Proposition |  | 59 | 4 | EXTRACTED | BLOCKED_BY_EXTERNAL_THEOREM |
+| `IUT3.Prop2_1.iii` | Proposition |  | 59 to 60 | 3 | EXTRACTED | BLOCKED_BY_EXTERNAL_THEOREM |
+| `IUT3.Prop2_1.iv` | Proposition |  | 60 | 4 | EXTRACTED | BLOCKED_BY_EXTERNAL_THEOREM |
+| `IUT3.Prop2_1.v` | Proposition |  | 60 | 4 | EXTRACTED | BLOCKED_BY_EXTERNAL_THEOREM |
+| `IUT3.Prop2_1.vi` | Proposition |  | 60 to 61 | 4 | EXTRACTED | BLOCKED_BY_EXTERNAL_THEOREM |
+| `IUT3.Rem2_1_1` | Remark |  | 61 to 63 | 2 | EXTRACTED | BLOCKED_BY_EXTERNAL_THEOREM |
+| `IUT3.Thm2_2` | Theorem | Kummer-compatible Multiradiality of Theta Monoids | 65 to 66 | 3 | EXTRACTED | BLOCKED_BY_EXTERNAL_THEOREM |
+| `IUT3.Thm2_2.i` | Theorem |  | 65 | 4 | EXTRACTED | BLOCKED_BY_EXTERNAL_THEOREM |
+| `IUT3.Thm2_2.ii` | Theorem |  | 65 to 66 | 3 | EXTRACTED | BLOCKED_BY_EXTERNAL_THEOREM |
+| `IUT3.Rem2_2_1` | Remark |  | 67 to 69 | 3 | EXTRACTED | BLOCKED_BY_EXTERNAL_THEOREM |
+| `IUT3.Rem2_2_2` | Remark |  | 69 to 72 | 2 | EXTRACTED | BLOCKED_BY_MISSING_JUSTIFICATION |
+| `IUT3.Cor2_3` | Corollary | Étale-picture of Multiradial Theta Monoids | 72 to 75 | 2 | EXTRACTED | BLOCKED_BY_EXTERNAL_THEOREM |
+| `IUT3.Cor2_3.i` | Corollary |  | 74 | 3 | EXTRACTED | BLOCKED_BY_EXTERNAL_THEOREM |
+| `IUT3.Cor2_3.ii` | Corollary |  | 74 | 3 | EXTRACTED | BLOCKED_BY_EXTERNAL_THEOREM |
+| `IUT3.Cor2_3.iii` | Corollary |  | 75 | 3 | EXTRACTED | BLOCKED_BY_EXTERNAL_THEOREM |
+| `IUT3.Cor2_3.iv` | Corollary |  | 75 | 3 | EXTRACTED | BLOCKED_BY_EXTERNAL_THEOREM |
+| `IUT3.Rem2_3_2` | Remark |  | 75 to 76 | 2 | INTERPRETATION_AMBIGUOUS | BLOCKED_BY_MISSING_JUSTIFICATION |
+| `IUT3.Rem2_3_3` | Remark |  | 76 to 85 | 2 | EXTRACTED | BLOCKED_BY_MISSING_JUSTIFICATION |
+| `IUT3.Rem2_3_4` | Remark |  | 85 to 87 | 3 | EXTRACTED | BLOCKED_BY_EXTERNAL_THEOREM |
+| `IUT3.Def2_4` | Definition |  | 87 to 89 | 2 | EXTRACTED | NOT_EXTRACTED |
+| `IUT3.Rem2_4_2` | Remark |  | 89 to 91 | 2 | EXTRACTED | BLOCKED_BY_MISSING_JUSTIFICATION |
 | `IUT3.Prop3_1` | Proposition | Local Holomorphic Tensor Packets | 92 to 93 | 3 | EXTRACTED | EXTRACTED |
 | `IUT3.Rem3_1_1` | Remark |  | 93 to 97 | 2 | EXTRACTED | EXTRACTED |
-| `IUT3.Prop3_2` | Proposition | Local Mono-analytic Tensor Packets | 97 to 99 | 3 | NOT_EXTRACTED | NOT_EXTRACTED |
-| `IUT3.Rem3_1_2` | Remark |  | 97 | 3 | NOT_EXTRACTED | NOT_EXTRACTED |
+| `IUT3.Prop3_2` | Proposition | Local Mono-analytic Tensor Packets | 97 to 99 | 3 | EXTRACTED | BLOCKED_BY_EXTERNAL_THEOREM |
+| `IUT3.Rem3_1_2` | Remark |  | 97 | 3 | EXTRACTED | EXTRACTED |
+| `IUT3.Prop3_2.i` | Proposition |  | 98 | 4 | EXTRACTED | BLOCKED_BY_EXTERNAL_THEOREM |
+| `IUT3.Prop3_2.ii` | Proposition |  | 98 to 99 | 3 | EXTRACTED | EXTRACTED |
 | `IUT3.Prop3_3` | Proposition | Global Tensor Packets | 99 to 100 | 3 | EXTRACTED | EXTRACTED |
-| `IUT3.Rem3_2_2` | Remark |  | 99 | 5 | NOT_EXTRACTED | NOT_EXTRACTED |
-| `IUT3.Rem3_3_1` | Remark |  | 100 to 101 | 5 | NOT_EXTRACTED | NOT_EXTRACTED |
-| `IUT3.Prop3_4` | Proposition | Local Packet-theoretic Frobenioids | 101 to 103 | 2 | NOT_EXTRACTED | NOT_EXTRACTED |
-| `IUT3.Rem3_3_2` | Remark |  | 101 | 4 | NOT_EXTRACTED | NOT_EXTRACTED |
+| `IUT3.Rem3_2_2` | Remark |  | 99 | 5 | EXTRACTED | EXTRACTED |
+| `IUT3.Rem3_3_1` | Remark |  | 100 | 5 | INTERPRETATION_AMBIGUOUS | BLOCKED_BY_MISSING_JUSTIFICATION |
+| `IUT3.Prop3_4` | Proposition | Local Packet-theoretic Frobenioids | 101 to 103 | 2 | EXTRACTED | BLOCKED_BY_EXTERNAL_THEOREM |
+| `IUT3.Prop3_4.i` | Proposition |  | 101 to 102 | 3 | EXTRACTED | EXTRACTED |
+| `IUT3.Rem3_3_2` | Remark |  | 101 | 4 | EXTRACTED | BLOCKED_BY_EXTERNAL_THEOREM |
+| `IUT3.Prop3_4.ii` | Proposition |  | 102 to 103 | 3 | EXTRACTED | BLOCKED_BY_EXTERNAL_THEOREM |
 | `IUT3.Prop3_5` | Proposition | Kummer Theory and Upper Semi-compatibility for ±ell Vertically Coric Local LGP-Monoids | 103 to 106 | 3 | EXTRACTED | BLOCKED_BY_EXTERNAL_THEOREM |
-| `IUT3.Ex3_6` | Example | Concrete Representations of Global Frobenioids | 106 to 108 | 3 | NOT_EXTRACTED | NOT_EXTRACTED |
-| `IUT3.Rem3_6_1` | Remark |  | 108 | 3 | NOT_EXTRACTED | NOT_EXTRACTED |
-| `IUT3.Rem3_6_2` | Remark |  | 108 to 109 | 2 | NOT_EXTRACTED | NOT_EXTRACTED |
-| `IUT3.Prop3_7` | Proposition | Global Packet-theoretic Frobenioids | 109 to 112 | 3 | NOT_EXTRACTED | BLOCKED_BY_MISSING_JUSTIFICATION |
-| `IUT3.Def3_8` | Definition |  | 112 to 114 | 2 | NOT_EXTRACTED | NOT_EXTRACTED |
-| `IUT3.Def3_8.i` | Definition |  | 112 | 3 | NOT_EXTRACTED | NOT_EXTRACTED |
-| `IUT3.Def3_8.ii` | Definition |  | 112 to 113 | 3 | NOT_EXTRACTED | NOT_EXTRACTED |
-| `IUT3.Def3_8.iii` | Definition |  | 113 to 114 | 3 | NOT_EXTRACTED | NOT_EXTRACTED |
-| `IUT3.Rem3_8_1` | Remark |  | 114 | 2 | NOT_EXTRACTED | NOT_EXTRACTED |
-| `IUT3.Rem3_8_2` | Remark |  | 114 to 115 | 3 | NOT_EXTRACTED | BLOCKED_BY_MISSING_JUSTIFICATION |
+| `IUT3.Ex3_6` | Example | Concrete Representations of Global Frobenioids | 106 to 108 | 3 | EXTRACTED | BLOCKED_BY_MISSING_JUSTIFICATION |
+| `IUT3.Ex3_6.i` | Example |  | 107 | 3 | EXTRACTED | BLOCKED_BY_MISSING_JUSTIFICATION |
+| `IUT3.Ex3_6.ii` | Example |  | 107 to 108 | 3 | EXTRACTED | BLOCKED_BY_MISSING_JUSTIFICATION |
+| `IUT3.Ex3_6.iii` | Example |  | 108 | 4 | EXTRACTED | BLOCKED_BY_MISSING_JUSTIFICATION |
+| `IUT3.Rem3_6_1` | Remark |  | 108 | 3 | INTERPRETATION_AMBIGUOUS | EXTRACTED |
+| `IUT3.Rem3_6_2` | Remark |  | 108 to 109 | 2 | EXTRACTED | BLOCKED_BY_EXTERNAL_THEOREM |
+| `IUT3.Prop3_7` | Proposition | Global Packet-theoretic Frobenioids | 109 to 112 | 3 | EXTRACTED | BLOCKED_BY_MISSING_JUSTIFICATION |
+| `IUT3.Prop3_7.i` | Proposition |  | 109 to 110 | 4 | EXTRACTED | BLOCKED_BY_EXTERNAL_THEOREM |
+| `IUT3.Prop3_7.ii` | Proposition |  | 110 | 4 | EXTRACTED | BLOCKED_BY_MISSING_JUSTIFICATION |
+| `IUT3.Prop3_7.iii` | Proposition |  | 110 to 111 | 4 | EXTRACTED | BLOCKED_BY_EXTERNAL_THEOREM |
+| `IUT3.Prop3_7.iv` | Proposition |  | 111 | 4 | EXTRACTED | BLOCKED_BY_EXTERNAL_THEOREM |
+| `IUT3.Prop3_7.v` | Proposition |  | 111 to 112 | 4 | EXTRACTED | BLOCKED_BY_EXTERNAL_THEOREM |
+| `IUT3.Def3_8` | Definition |  | 112 to 114 | 2 | EXTRACTED | NOT_EXTRACTED |
+| `IUT3.Def3_8.i` | Definition |  | 112 | 3 | EXTRACTED | NOT_EXTRACTED |
+| `IUT3.Def3_8.ii` | Definition |  | 112 to 113 | 3 | EXTRACTED | NOT_EXTRACTED |
+| `IUT3.Def3_8.iii` | Definition |  | 113 to 114 | 3 | EXTRACTED | NOT_EXTRACTED |
+| `IUT3.Rem3_8_1` | Remark |  | 114 | 2 | EXTRACTED | BLOCKED_BY_MISSING_JUSTIFICATION |
+| `IUT3.Rem3_8_2` | Remark |  | 114 to 115 | 3 | EXTRACTED | BLOCKED_BY_MISSING_JUSTIFICATION |
 | `IUT3.Prop3_9` | Proposition | Log-volume for Packets and Processions | 115 to 118 | 2 | EXTRACTED | BLOCKED_BY_MISSING_JUSTIFICATION |
 | `IUT3.Prop3_9.i` | Proposition |  | 115 to 116 | 3 | EXTRACTED | EXTRACTED |
-| `IUT3.Rem3_8_3` | Remark |  | 115 | 3 | NOT_EXTRACTED | NOT_EXTRACTED |
+| `IUT3.Rem3_8_3` | Remark |  | 115 | 3 | EXTRACTED | EXTRACTED |
 | `IUT3.Prop3_9.ii` | Proposition |  | 116 to 117 | 3 | EXTRACTED | EXTRACTED |
 | `IUT3.Prop3_9.iii` | Proposition |  | 117 | 3 | INTERPRETATION_AMBIGUOUS | EXTRACTED |
 | `IUT3.Prop3_9.iv` | Proposition |  | 117 | 3 | EXTRACTED | EXTRACTED |
-| `IUT3.Rem3_9_1` | Remark |  | 118 to 119 | 3 | NOT_EXTRACTED | NOT_EXTRACTED |
-| `IUT3.Rem3_9_2` | Remark |  | 119 | 2 | NOT_EXTRACTED | NOT_EXTRACTED |
+| `IUT3.Rem3_9_1` | Remark |  | 118 to 119 | 3 | INTERPRETATION_AMBIGUOUS | BLOCKED_BY_MISSING_JUSTIFICATION |
+| `IUT3.Rem3_9_2` | Remark |  | 119 | 2 | EXTRACTED | BLOCKED_BY_MISSING_JUSTIFICATION |
 | `IUT3.Rem3_9_3` | Remark |  | 119 to 120 | 2 | INTERPRETATION_AMBIGUOUS | EXTRACTED |
-| `IUT3.Rem3_9_4` | Remark |  | 120 to 126 | 3 | NOT_EXTRACTED | NOT_EXTRACTED |
-| `IUT3.Rem3_9_5` | Remark |  | 126 to 145 | 2 | NOT_EXTRACTED | EXTRACTED |
+| `IUT3.Rem3_9_4` | Remark |  | 120 to 126 | 3 | EXTRACTED | BLOCKED_BY_MISSING_JUSTIFICATION |
+| `IUT3.Rem3_9_4.i` | Remark |  | 120 to 122 | 4 | EXTRACTED | EXTRACTED |
+| `IUT3.Rem3_9_4.ii` | Remark |  | 122 | 4 | EXTRACTED | EXTRACTED |
+| `IUT3.Rem3_9_4.iii` | Remark |  | 122 to 124 | 4 | EXTRACTED | BLOCKED_BY_EXTERNAL_THEOREM |
+| `IUT3.Rem3_9_4.iv` | Remark |  | 124 | 4 | EXTRACTED | BLOCKED_BY_EXTERNAL_THEOREM |
+| `IUT3.Rem3_9_4.v` | Remark |  | 124 to 125 | 4 | EXTRACTED | BLOCKED_BY_MISSING_JUSTIFICATION |
+| `IUT3.Rem3_9_4.vi` | Remark |  | 125 to 126 | 4 | EXTRACTED | BLOCKED_BY_MISSING_JUSTIFICATION |
+| `IUT3.Rem3_9_5` | Remark |  | 126 to 145 | 2 | EXTRACTED | BLOCKED_BY_MISSING_JUSTIFICATION |
 | `IUT3.Rem3_9_5.i` | Remark |  | 127 | 3 | EXTRACTED | BLOCKED_BY_MISSING_JUSTIFICATION |
 | `IUT3.Rem3_9_5.ii` | Remark |  | 127 to 128 | 3 | EXTRACTED | EXTRACTED |
-| `IUT3.Rem3_9_5.iii_iv` | Remark |  | 128 to 129 | 3 | EXTRACTED | EXTRACTED |
-| `IUT3.Rem3_9_5.vii` | Remark |  | 131 to 139 | 3 | INTERPRETATION_AMBIGUOUS | EXTRACTED |
-| `IUT3.Rem3_9_5.viii_x` | Remark |  | 139 to 145 | 3 | INTERPRETATION_AMBIGUOUS | EXTRACTED |
-| `IUT3.Rem3_9_6` | Remark |  | 145 | 2 | NOT_EXTRACTED | NOT_EXTRACTED |
-| `IUT3.Rem3_9_7` | Remark |  | 145 to 147 | 2 | NOT_EXTRACTED | NOT_EXTRACTED |
-| `IUT3.Prop3_10` | Proposition | Global Kummer Theory and Non-interference with ±ell Local Integers | 147 to 149 | 3 | NOT_EXTRACTED | NOT_EXTRACTED |
-| `IUT3.Rem3_10_1` | Remark |  | 149 to 151 | 2 | NOT_EXTRACTED | NOT_EXTRACTED |
-| `IUT3.Rem3_10_2` | Remark |  | 151 to 153 | 3 | NOT_EXTRACTED | NOT_EXTRACTED |
+| `IUT3.Rem3_9_5.iii_iv` | Remark |  | 128 to 129 | 3 | EXTRACTED | BLOCKED_BY_MISSING_JUSTIFICATION |
+| `IUT3.Rem3_9_5.v` | Remark |  | 129 to 130 | 3 | EXTRACTED | EXTRACTED |
+| `IUT3.Rem3_9_5.vi` | Remark |  | 130 | 3 | EXTRACTED | EXTRACTED |
+| `IUT3.Rem3_9_5.vii` | Remark |  | 131 to 139 | 3 | INTERPRETATION_AMBIGUOUS | BLOCKED_BY_MISSING_JUSTIFICATION |
+| `IUT3.Rem3_9_5.viii_x` | Remark |  | 139 to 145 | 3 | INTERPRETATION_AMBIGUOUS | BLOCKED_BY_MISSING_JUSTIFICATION |
+| `IUT3.Rem3_9_6` | Remark |  | 145 | 2 | INTERPRETATION_AMBIGUOUS | BLOCKED_BY_MISSING_JUSTIFICATION |
+| `IUT3.Rem3_9_7` | Remark |  | 145 to 147 | 2 | EXTRACTED | BLOCKED_BY_EXTERNAL_THEOREM |
+| `IUT3.Prop3_10` | Proposition | Global Kummer Theory and Non-interference with ±ell Local Integers | 147 to 149 | 3 | EXTRACTED | BLOCKED_BY_MISSING_JUSTIFICATION |
+| `IUT3.Prop3_10.i` | Proposition |  | 147 to 148 | 3 | EXTRACTED | BLOCKED_BY_EXTERNAL_THEOREM |
+| `IUT3.Prop3_10.ii` | Proposition |  | 148 to 149 | 3 | EXTRACTED | BLOCKED_BY_MISSING_JUSTIFICATION |
+| `IUT3.Prop3_10.iii` | Proposition |  | 149 | 4 | EXTRACTED | BLOCKED_BY_MISSING_JUSTIFICATION |
+| `IUT3.Rem3_10_1` | Remark |  | 149 to 151 | 2 | INTERPRETATION_AMBIGUOUS | BLOCKED_BY_MISSING_JUSTIFICATION |
+| `IUT3.Rem3_10_2` | Remark |  | 151 to 152 | 3 | EXTRACTED | BLOCKED_BY_MISSING_JUSTIFICATION |
 | `IUT3.Thm3_11` | Theorem | Multiradial Algorithms via LGP-Monoids/Frobenioids | 153 to 159 | 2 | EXTRACTED | BLOCKED_BY_MISSING_JUSTIFICATION |
 | `IUT3.Thm3_11.i` | Theorem |  | 153 to 155 | 3 | EXTRACTED | BLOCKED_BY_MISSING_JUSTIFICATION |
 | `IUT3.Thm3_11.i.a` | Theorem |  | 153 | 4 | EXTRACTED | EXTRACTED |
@@ -462,31 +607,31 @@ Distance is the shortest chain of edges from a root.
 | `IUT3.Thm3_11.i.c` | Theorem |  | 154 | 4 | EXTRACTED | EXTRACTED |
 | `IUT3.Thm3_11.ii` | Theorem |  | 155 to 156 | 3 | EXTRACTED | BLOCKED_BY_MISSING_JUSTIFICATION |
 | `IUT3.Thm3_11.ii.a` | Theorem |  | 155 | 4 | EXTRACTED | EXTRACTED |
-| `IUT3.Thm3_11.ii.b` | Theorem |  | 155 | 4 | EXTRACTED | EXTRACTED |
-| `IUT3.Thm3_11.ii.c` | Theorem |  | 155 to 156 | 4 | EXTRACTED | EXTRACTED |
+| `IUT3.Thm3_11.ii.b` | Theorem |  | 155 | 3 | EXTRACTED | EXTRACTED |
+| `IUT3.Thm3_11.ii.c` | Theorem |  | 155 to 156 | 3 | EXTRACTED | EXTRACTED |
 | `IUT3.Thm3_11.ii.Ind3` | Theorem |  | 156 | 3 | INTERPRETATION_AMBIGUOUS | EXTRACTED |
 | `IUT3.Thm3_11.ii.mutual` | Theorem |  | 156 | 4 | EXTRACTED | EXTRACTED |
 | `IUT3.Thm3_11.iii` | Theorem |  | 156 to 159 | 3 | EXTRACTED | BLOCKED_BY_MISSING_JUSTIFICATION |
 | `IUT3.Thm3_11.iii.a` | Theorem |  | 156 to 157 | 4 | EXTRACTED | EXTRACTED |
 | `IUT3.Thm3_11.iii.b` | Theorem |  | 157 | 4 | EXTRACTED | EXTRACTED |
-| `IUT3.Thm3_11.iii.c` | Theorem |  | 157 to 158 | 3 | INTERPRETATION_AMBIGUOUS | EXTRACTED |
-| `IUT3.Thm3_11.iii.d` | Theorem |  | 158 to 159 | 4 | INTERPRETATION_AMBIGUOUS | EXTRACTED |
+| `IUT3.Thm3_11.iii.c` | Theorem |  | 157 to 158 | 4 | INTERPRETATION_AMBIGUOUS | EXTRACTED |
+| `IUT3.Thm3_11.iii.d` | Theorem |  | 158 to 159 | 3 | INTERPRETATION_AMBIGUOUS | EXTRACTED |
 | `IUT3.Rem3_11_1` | Remark |  | 159 to 167 | 2 | INTERPRETATION_AMBIGUOUS | EXTRACTED |
-| `IUT3.Rem3_11_2` | Remark |  | 167 to 169 | 2 | NOT_EXTRACTED | NOT_EXTRACTED |
-| `IUT3.Rem3_11_3` | Remark |  | 169 to 171 | 2 | NOT_EXTRACTED | NOT_EXTRACTED |
-| `IUT3.Rem3_11_4` | Remark |  | 171 to 173 | 3 | NOT_EXTRACTED | NOT_EXTRACTED |
+| `IUT3.Rem3_11_2` | Remark |  | 167 to 169 | 2 | INTERPRETATION_AMBIGUOUS | BLOCKED_BY_MISSING_JUSTIFICATION |
+| `IUT3.Rem3_11_3` | Remark |  | 169 to 171 | 2 | INTERPRETATION_AMBIGUOUS | BLOCKED_BY_MISSING_JUSTIFICATION |
+| `IUT3.Rem3_11_4` | Remark |  | 171 to 173 | 3 | INTERPRETATION_AMBIGUOUS | BLOCKED_BY_MISSING_JUSTIFICATION |
 | `IUT3.Cor3_12` | Corollary | Log-volume Estimates for Θ-Pilot Objects | 173 to 186 | 1 | EXTRACTED | BLOCKED_BY_MISSING_JUSTIFICATION |
 | `IUT3.Cor3_12.Statement` | Corollary |  | 173 to 174 | 2 | INTERPRETATION_AMBIGUOUS | BLOCKED_BY_MISSING_JUSTIFICATION |
 | `IUT3.Cor3_12.Reduction` | Corollary |  | 174 to 175 | 2 | EXTRACTED | BLOCKED_BY_MISSING_JUSTIFICATION |
-| `IUT3.Cor3_12.StepI` | Corollary |  | 175 | 2 | EXTRACTED | EXTRACTED |
-| `IUT3.Cor3_12.StepII` | Corollary |  | 175 to 176 | 2 | EXTRACTED | BLOCKED_BY_EXTERNAL_THEOREM |
-| `IUT3.Cor3_12.StepIII` | Corollary |  | 176 | 2 | EXTRACTED | EXTRACTED |
-| `IUT3.Cor3_12.StepIV` | Corollary |  | 176 to 177 | 2 | EXTRACTED | EXTRACTED |
+| `IUT3.Cor3_12.StepI` | Corollary |  | 175 | 2 | EXTRACTED | BLOCKED_BY_MISSING_JUSTIFICATION |
+| `IUT3.Cor3_12.StepII` | Corollary |  | 175 to 176 | 2 | EXTRACTED | BLOCKED_BY_MISSING_JUSTIFICATION |
+| `IUT3.Cor3_12.StepIII` | Corollary |  | 176 | 2 | EXTRACTED | BLOCKED_BY_MISSING_JUSTIFICATION |
+| `IUT3.Cor3_12.StepIV` | Corollary |  | 176 to 177 | 2 | EXTRACTED | BLOCKED_BY_MISSING_JUSTIFICATION |
 | `IUT3.Cor3_12.StepV` | Corollary |  | 177 | 2 | EXTRACTED | BLOCKED_BY_EXTERNAL_THEOREM |
 | `IUT3.Cor3_12.StepVI` | Corollary |  | 177 to 179 | 2 | EXTRACTED | BLOCKED_BY_MISSING_JUSTIFICATION |
-| `IUT3.Cor3_12.StepVII` | Corollary |  | 179 to 180 | 2 | EXTRACTED | BLOCKED_BY_EXTERNAL_THEOREM |
-| `IUT3.Cor3_12.StepIX` | Corollary |  | 180 | 2 | EXTRACTED | BLOCKED_BY_EXTERNAL_THEOREM |
-| `IUT3.Cor3_12.StepVIII` | Corollary |  | 180 | 2 | EXTRACTED | BLOCKED_BY_EXTERNAL_THEOREM |
+| `IUT3.Cor3_12.StepVII` | Corollary |  | 179 to 180 | 2 | EXTRACTED | BLOCKED_BY_MISSING_JUSTIFICATION |
+| `IUT3.Cor3_12.StepIX` | Corollary |  | 180 | 2 | EXTRACTED | BLOCKED_BY_MISSING_JUSTIFICATION |
+| `IUT3.Cor3_12.StepVIII` | Corollary |  | 180 | 2 | EXTRACTED | BLOCKED_BY_MISSING_JUSTIFICATION |
 | `IUT3.Cor3_12.StepX` | Corollary |  | 180 to 181 | 2 | EXTRACTED | BLOCKED_BY_MISSING_JUSTIFICATION |
 | `IUT3.Cor3_12.StepXI` | Corollary |  | 181 to 185 | 2 | EXTRACTED | EXTRACTED |
 | `IUT3.Cor3_12.StepXI.a` | Corollary |  | 181 | 3 | EXTRACTED | EXTRACTED |
@@ -497,11 +642,11 @@ Distance is the shortest chain of edges from a root.
 | `IUT3.Cor3_12.StepXI.f` | Corollary |  | 184 | 3 | INTERPRETATION_AMBIGUOUS | BLOCKED_BY_MISSING_JUSTIFICATION |
 | `IUT3.Cor3_12.StepXI.g` | Corollary |  | 184 to 185 | 3 | INTERPRETATION_AMBIGUOUS | BLOCKED_BY_MISSING_JUSTIFICATION |
 | `IUT3.Cor3_12.StepXI.h` | Corollary |  | 185 | 3 | INTERPRETATION_AMBIGUOUS | BLOCKED_BY_EXTERNAL_THEOREM |
-| `IUT3.Cor3_12.StepXII` | Corollary |  | 185 to 186 | 2 | EXTRACTED | EXTRACTED |
+| `IUT3.Cor3_12.StepXII` | Corollary |  | 185 to 186 | 2 | EXTRACTED | BLOCKED_BY_MISSING_JUSTIFICATION |
 | `IUT3.Rem3_12_1` | Remark |  | 186 to 187 | 3 | EXTRACTED | BLOCKED_BY_MISSING_JUSTIFICATION |
 | `IUT3.Rem3_12_2` | Remark |  | 187 to 195 | 2 | INTERPRETATION_AMBIGUOUS | EXTRACTED |
-| `IUT3.Rem3_12_3` | Remark |  | 195 to 196 | 5 | NOT_EXTRACTED | NOT_EXTRACTED |
-| `IUT3.Rem3_12_4` | Remark |  | 196 to 199 | 4 | NOT_EXTRACTED | NOT_EXTRACTED |
+| `IUT3.Rem3_12_3` | Remark |  | 195 to 196 | 5 | EXTRACTED | EXTRACTED |
+| `IUT3.Rem3_12_4` | Remark |  | 196 to 198 | 4 | EXTRACTED | EXTRACTED |
 
 ### IUT IV
 
@@ -515,7 +660,7 @@ Distance is the shortest chain of edges from a root.
 | `IUT4.Prop1_5` | Proposition | Archimedean Metric Estimates | 14 to 16 | 3 | EXTRACTED | BLOCKED_BY_MATHLIB |
 | `IUT4.Prop1_6` | Proposition | The Prime Number Theorem | 16 | 3 | STATEMENT_FORMALIZED | KERNEL_VERIFIED |
 | `IUT4.Prop1_7` | Proposition | Weighted Averages | 16 to 17 | 3 | STATEMENT_FORMALIZED | KERNEL_VERIFIED |
-| `IUT4.Rem1_7_1` | Remark |  | 17 to 18 | 3 | NOT_EXTRACTED | EXTRACTED |
+| `IUT4.Rem1_7_1` | Remark |  | 17 to 18 | 3 | EXTRACTED | EXTRACTED |
 | `IUT4.Prop1_8` | Proposition | Torsion Points of Elliptic Curves | 18 to 21 | 2 | EXTRACTED | BLOCKED_BY_MATHLIB |
 | `IUT4.Def1_9` | Definition |  | 21 to 22 | 3 | EXTRACTED | BLOCKED_BY_MATHLIB |
 | `IUT4.Thm1_10` | Theorem | Log-volume Estimates for Θ-Pilot Objects | 22 to 31 | 2 | EXTRACTED | BLOCKED_BY_EXTERNAL_THEOREM |
@@ -527,10 +672,10 @@ Distance is the shortest chain of edges from a root.
 | `IUT4.Thm1_10.StepVI` | Theorem |  | 29 | 3 | EXTRACTED | BLOCKED_BY_EXTERNAL_THEOREM |
 | `IUT4.Thm1_10.StepVII` | Theorem |  | 29 to 30 | 3 | EXTRACTED | BLOCKED_BY_EXTERNAL_THEOREM |
 | `IUT4.Thm1_10.StepVIII` | Theorem |  | 30 to 31 | 3 | EXTRACTED | BLOCKED_BY_EXTERNAL_THEOREM |
-| `IUT4.Rem1_10_1` | Remark |  | 31 to 32 | 4 | NOT_EXTRACTED | EXTRACTED |
+| `IUT4.Rem1_10_1` | Remark |  | 31 to 32 | 4 | EXTRACTED | EXTRACTED |
 | `IUT4.Thm1_10.final` | Theorem |  | 31 | 3 | EXTRACTED | BLOCKED_BY_EXTERNAL_THEOREM |
-| `IUT4.Rem1_10_5` | Remark |  | 34 to 36 | 3 | NOT_EXTRACTED | EXTRACTED |
-| `IUT4.Rem1_10_7` | Remark |  | 38 to 40 | 2 | NOT_EXTRACTED | EXTRACTED |
+| `IUT4.Rem1_10_5` | Remark |  | 34 to 36 | 3 | EXTRACTED | EXTRACTED |
+| `IUT4.Rem1_10_7` | Remark |  | 38 to 39 | 2 | EXTRACTED | EXTRACTED |
 | `IUT4.Prop2_1` | Proposition | Well-known Estimates | 40 | 2 | STATEMENT_FORMALIZED | KERNEL_VERIFIED |
 | `IUT4.Cor2_2` | Corollary | Construction of Suitable Initial Θ-Data | 41 to 48 | 1 | EXTRACTED | BLOCKED_BY_EXTERNAL_THEOREM |
 | `IUT4.Cor2_2.i` | Corollary |  | 41 to 43 | 1 | EXTRACTED | BLOCKED_BY_EXTERNAL_THEOREM |
@@ -547,24 +692,33 @@ Distance is the shortest chain of edges from a root.
 | `IUT4.Cor2_2.ProofP6` | Corollary |  | 46 | 2 | EXTRACTED | BLOCKED_BY_EXTERNAL_THEOREM |
 | `IUT4.Cor2_2.ProofP7` | Corollary |  | 46 | 2 | EXTRACTED | BLOCKED_BY_EXTERNAL_THEOREM |
 | `IUT4.Cor2_2.ProofAssembly` | Corollary |  | 47 to 48 | 2 | EXTRACTED | BLOCKED_BY_EXTERNAL_THEOREM |
-| `IUT4.Rem2_2_1` | Remark |  | 48 to 50 | 4 | NOT_EXTRACTED | EXTRACTED |
-| `IUT4.Rem2_2_2` | Remark |  | 50 to 51 | 5 | NOT_EXTRACTED | EXTRACTED |
+| `IUT4.Rem2_2_1` | Remark |  | 48 to 50 | 4 | EXTRACTED | EXTRACTED |
+| `IUT4.Rem2_2_2` | Remark |  | 50 to 51 | 5 | EXTRACTED | EXTRACTED |
 | `IUT4.Cor2_3` | Corollary | Diophantine Inequalities | 54 to 55 | 0 | EXTRACTED | BLOCKED_BY_EXTERNAL_THEOREM |
 | `IUT4.Rem2_3_1` | Remark |  | 55 to 56 | 1 | EXTRACTED | EXTRACTED |
-| `IUT4.Rem2_3_2` | Remark |  | 56 to 57 | 2 | NOT_EXTRACTED | EXTRACTED |
-| `IUT4.Rem2_3_3` | Remark |  | 57 to 63 | 3 | NOT_EXTRACTED | EXTRACTED |
-| `IUT4.Def3_1` | Definition |  | 68 to 70 | 7 | EXTRACTED | NOT_EXTRACTED |
-| `IUT4.Rem3_1_1` | Remark |  | 70 | 8 | NOT_EXTRACTED | NOT_EXTRACTED |
-| `IUT4.Rem3_1_2` | Remark |  | 70 to 71 | 6 | NOT_EXTRACTED | NOT_EXTRACTED |
-| `IUT4.Rem3_1_3` | Remark |  | 71 | 6 | NOT_EXTRACTED | NOT_EXTRACTED |
-| `IUT4.Rem3_1_4` | Remark |  | 71 | 6 | NOT_EXTRACTED | NOT_EXTRACTED |
-| `IUT4.Rem3_1_5` | Remark |  | 71 to 72 | 6 | NOT_EXTRACTED | NOT_EXTRACTED |
+| `IUT4.Rem2_3_2` | Remark |  | 56 to 57 | 2 | EXTRACTED | EXTRACTED |
+| `IUT4.Rem2_3_3` | Remark |  | 57 to 63 | 3 | EXTRACTED | EXTRACTED |
+| `IUT4.Def3_1` | Definition |  | 68 to 70 | 5 | EXTRACTED | NOT_EXTRACTED |
+| `IUT4.Def3_1.i` | Definition |  | 68 | 6 | EXTRACTED | NOT_EXTRACTED |
+| `IUT4.Def3_1.ii` | Definition |  | 68 to 69 | 6 | EXTRACTED | NOT_EXTRACTED |
+| `IUT4.Def3_1.iii` | Definition |  | 69 | 6 | EXTRACTED | NOT_EXTRACTED |
+| `IUT4.Def3_1.iv` | Definition |  | 70 | 6 | EXTRACTED | NOT_EXTRACTED |
+| `IUT4.Rem3_1_1` | Remark |  | 70 | 6 | EXTRACTED | EXTRACTED |
+| `IUT4.Rem3_1_2` | Remark |  | 70 to 71 | 6 | EXTRACTED | EXTRACTED |
+| `IUT4.Rem3_1_3` | Remark |  | 71 | 6 | EXTRACTED | EXTRACTED |
+| `IUT4.Rem3_1_4` | Remark |  | 71 | 6 | EXTRACTED | EXTRACTED |
+| `IUT4.Rem3_1_5` | Remark |  | 71 | 6 | EXTRACTED | EXTRACTED |
 | `IUT4.Def3_3` | Definition |  | 72 to 74 | 4 | EXTRACTED | NOT_EXTRACTED |
-| `IUT4.Ex3_2` | Example | Categories | 72 | 4 | NOT_EXTRACTED | NOT_EXTRACTED |
-| `IUT4.Rem3_3_1` | Remark |  | 74 to 76 | 3 | NOT_EXTRACTED | NOT_EXTRACTED |
-| `IUT4.Ex3_4` | Example | Topological Spaces and Fundamental Groups | 76 to 77 | 4 | NOT_EXTRACTED | NOT_EXTRACTED |
-| `IUT4.Ex3_5` | Example | Absolute Anabelian Geometry | 77 to 78 | 3 | NOT_EXTRACTED | NOT_EXTRACTED |
-| `IUT4.Ex3_6` | Example | The Étale Site and Frobenius | 78 to 80 | 5 | NOT_EXTRACTED | NOT_EXTRACTED |
-| `IUT4.Rem3_6_1` | Remark |  | 80 to 81 | 4 | NOT_EXTRACTED | NOT_EXTRACTED |
-| `IUT4.Rem3_6_2` | Remark |  | 81 to 82 | 5 | NOT_EXTRACTED | NOT_EXTRACTED |
-| `IUT4.Rem3_6_3` | Remark |  | 82 to 85 | 4 | NOT_EXTRACTED | NOT_EXTRACTED |
+| `IUT4.Def3_3.i` | Definition |  | 72 to 73 | 5 | EXTRACTED | NOT_EXTRACTED |
+| `IUT4.Ex3_2` | Example | Categories | 72 | 4 | EXTRACTED | EXTRACTED |
+| `IUT4.Def3_3.ii` | Definition |  | 73 | 5 | EXTRACTED | EXTRACTED |
+| `IUT4.Def3_3.iii` | Definition |  | 73 to 74 | 5 | EXTRACTED | EXTRACTED |
+| `IUT4.Def3_3.iv` | Definition |  | 74 | 5 | EXTRACTED | NOT_EXTRACTED |
+| `IUT4.Def3_3.v` | Definition |  | 74 | 5 | EXTRACTED | NOT_EXTRACTED |
+| `IUT4.Rem3_3_1` | Remark |  | 74 to 76 | 3 | EXTRACTED | EXTRACTED |
+| `IUT4.Ex3_4` | Example | Topological Spaces and Fundamental Groups | 76 to 77 | 4 | EXTRACTED | EXTRACTED |
+| `IUT4.Ex3_5` | Example | Absolute Anabelian Geometry | 77 to 78 | 3 | EXTRACTED | EXTRACTED |
+| `IUT4.Ex3_6` | Example | The Étale Site and Frobenius | 78 to 80 | 5 | EXTRACTED | EXTRACTED |
+| `IUT4.Rem3_6_1` | Remark |  | 80 to 81 | 4 | EXTRACTED | EXTRACTED |
+| `IUT4.Rem3_6_2` | Remark |  | 81 to 82 | 5 | EXTRACTED | EXTRACTED |
+| `IUT4.Rem3_6_3` | Remark |  | 82 to 84 | 4 | EXTRACTED | EXTRACTED |

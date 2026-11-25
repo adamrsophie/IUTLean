@@ -17,7 +17,8 @@ abstraction stated in Lean; none refutes a statement of the papers. The website 
 ## Status
 
 * **The abc conjecture is not proved here.** `Challenge/Defs.lean` defines it (`Challenge.ABC`)
-  and two equivalent forms; the library proves only that the three forms are equivalent.
+  and two equivalent forms; the library proves only that these forms and further
+  reformulations are equivalent, and elementary facts about abc triples.
 * **IUT III, Corollary 3.12 is not formalized.** Its two log-volumes, `−|log(Θ)|` and
   `−|log(q)|`, are not constructed from initial Θ-data, because Hodge theaters, the
   log-theta-lattice, tensor packets and the multiradial representation are not formalized.
@@ -28,13 +29,19 @@ abstraction stated in Lean; none refutes a statement of the papers. The website 
 **Stopping point.** The work so far stops at a point that does not depend on which revision of
 the papers is used: nothing in the library constructs the objects of IUT I to III. Not done:
 Hodge theaters, prime strips, the Θ-link and the log-link, the log-theta-lattice, log-shells
-and tensor packets with their normalized log-volumes, the indeterminacies (Ind1) to (Ind3),
+(except that of the base field `ℚ_p`, `IUT/Prerequisites/PadicLog.lean`) and tensor packets with
+their normalized log-volumes, the indeterminacies (Ind1) to (Ind3),
 the holomorphic hull of possible images, a Lean statement of Theorem 3.11 or Corollary 3.12,
 the comparison of Corollary 3.12 stated on the papers' objects (only an abstract interface with
-the regions as inputs exists, `IUT/PaperIII/Corollary312/Comparison.lean`), and the specialization of IUT IV
-Theorem A to abc triples. What is done is arithmetic and order-theoretic: numerical
-consequences of stated inequalities, elementary estimates of IUT IV, countermodels to
-simplified abstractions, and models of the arguments in the published discussion. The next
+the regions as inputs exists, `IUT/PaperIII/Corollary312/Comparison.lean`), and the derivation
+from IUT IV Theorem A of the abc statement (a rational-point statement equivalent to
+`Challenge.ABC` is proved in `IUT/Applications/ABCSpecialization.lean`; reaching it from
+Theorem A needs the direction (ii) ⟹ (i) of [GenEll] Theorem 2.1, which is not formalized).
+What is done is mostly arithmetic and order-theoretic: numerical consequences of stated
+inequalities, elementary estimates of IUT IV, countermodels to simplified abstractions, and
+models of the arguments in the published discussion; besides these, a few prerequisites (the
+`p`-adic logarithm of `ℚ_p`, the classical theta series, tempered groups and connected
+temperoids as definitions). The next
 stage is in `docs/ROADMAP.md`.
 
 **Verified scope.** A statement of the papers is counted as formalized or verified only when a
@@ -50,19 +57,21 @@ What is checked in Lean today, by area:
 
 | Area | Main results | Modules |
 |---|---|---|
-| abc statements | `abc_iff_abcFinite`, `abc_iff_abcLog`, `rad_eq_radical`, `coprime_iff_pairwise`; equivalence with the Formal Conjectures statement (`abc_iff_ABC`) | `IUT/Applications/` |
-| IUT IV, §1 and §2 | the local estimates of Propositions 1.2 to 1.7 and 2.1; the arithmetic of Theorem 1.10 (`final_inequality`) and of Corollaries 2.2 and 2.3, conditional on the inequality of Corollary 3.12 where the paper uses it | `IUT/PaperIV/` |
-| IUT III, Corollary 3.12 | the numerical layer only: the reduction at the start of the proof (`inequality_of_nonneg`) and the fact that the last inclusion of Step (xi-f) is the conclusion restated (`stepXIf_inclusion_iff_inequality`) | `IUT/PaperIII/Corollary312/Numerical.lean` |
+| abc statements | `abc_iff_abcFinite`, `abc_iff_abcLog`, `rad_eq_radical`, `coprime_iff_pairwise`; equivalence with the Formal Conjectures statement (`abc_iff_ABC`); signed integer forms and the fixed-exponent family (`IUT/ABC/Variants.lean`); a statement about rational points of `ℙ¹ \ {0, 1, ∞}` proved equivalent to `Challenge.ABC` (`vojta_iff_ABC`), with the normalizations of [GenEll] checked, which is not derived from IUT IV here | `IUT/Applications/`, `IUT/ABC/` |
+| IUT IV, §1 and §2 | Propositions 1.6, 1.7 and 2.1 stated and proved in full; Propositions 1.2 to 1.5 only through checked fragments (elementary and arithmetic steps; on the papers' objects, the bound `(e − 1)/e ≤ 𝔡` of Proposition 1.3 (i) for rings of integers of finite extensions of `ℚ_p`, with the tame equality case open); the arithmetic of Theorem 1.10 (`final_inequality`) and of Corollaries 2.2 and 2.3, conditional on the inequality of Corollary 3.12 where the paper uses it | `IUT/PaperIV/` |
+| IUT III, Corollary 3.12 | the numerical layer only: the reduction at the start of the proof (`inequality_of_nonneg`) and the fact that the last inclusion of Step (xi-f) restates the inequality conjunct only (`stepXIf_inclusion_iff_inequality`); the finiteness conjunct `−|log(Θ)| ∈ ℝ` of page 174 is separate, since every real `−|log(q)|` satisfies the inclusion when `−|log(Θ)| = +∞` | `IUT/PaperIII/Corollary312/Numerical.lean` |
 | IUT III, Remark 3.9.5 | the hull operator from properties (P1) to (P3) | `IUT/PaperIII/Remark3_9_5/HullOperator.lean` |
-| IUT III, Corollary 3.12, last step | an abstract interface: the comparison as a region containment and as a log-volume inequality on given regions, the conditional passage to the numerical layer, and examples; not the papers' objects | `IUT/PaperIII/Corollary312/Comparison.lean` |
-| IUT I and II | poly-morphisms and capsules of IUT I §0; partial conditions of initial Θ-data (`PartialInitialThetaConditions`); the label arithmetic of IUT II | `IUT/PaperI/`, `IUT/PaperII/` |
-| Prerequisites | product formula, `ℚ_{>0} ∩ Ẑ^× = {1}`, Grothendieck universes on `ZFSet` (the two existence results assume `ExistenceAxiom`, which is independent of what Lean proves about `ZFSet` and fails in some models, where they are vacuous) | `IUT/Prerequisites/`, `IUT/Foundations/` |
+| IUT III, Corollary 3.12, last step | an abstract interface with an abstract monotone region log-volume: the comparison with the hull of the union of the possible images, as a log-volume inequality (the numerical form that Step (xi-f) asserts) and as a region containment (a sufficient condition), the passage from containment and a finiteness hypothesis to the numerical layer, and examples; the same interface with a sum over places, an average over the labels `j ∈ 𝔽_l^⋇`, and the possible images as an orbit of the indeterminacies; not the papers' objects | `IUT/PaperIII/Corollary312/` (`Comparison`, `Places`, `LabelAverage`, `Indeterminacy`) |
+| IUT I and II | poly-morphisms and capsules of IUT I §0; tempered groups and connected temperoids of IUT I §0, as definitions; partial conditions of initial Θ-data (`PartialInitialThetaConditions`); the label arithmetic of IUT II | `IUT/PaperI/`, `IUT/PaperII/` |
+| Prerequisites | product formula, `ℚ_{>0} ∩ Ẑ^× = {1}`, the `p`-adic logarithm on `ℤ_p^×` and the log-shell of `ℚ_p` as IUT III page 24 defines it, the classical theta series with its functional equations and its values at `±√−1 · q_X^{j/2}`, Grothendieck universes on `ZFSet` (the two existence results assume `ExistenceAxiom`, which is independent of what Lean proves about `ZFSet` and fails in some models, where they are vacuous) | `IUT/Prerequisites/`, `IUT/Foundations/` |
 | The published discussion | the reduction and averaging arguments of Scholze and Stix; models from Mochizuki's responses | `IUT/Audit/` |
 | Countermodels | simplified abstractions of steps of Corollary 3.12 that fail without an extra hypothesis | `IUT/Countermodels/` |
 
 Statements that are cataloged but not formalized: the constructions of IUT I and II (prime
-strips, Hodge theaters, Θ-links), the log-shells and log-volumes of IUT III, Theorem 3.11,
-Corollary 3.12 itself, and the passage from Theorem A of IUT IV to `Challenge.ABCLog`.
+strips, Hodge theaters, Θ-links), the log-shells (beyond the base field `ℚ_p`) and log-volumes
+of IUT III, Theorem 3.11, Corollary 3.12 itself, and the passage from Theorem A of IUT IV to
+`Challenge.ABCLog` (done at the level of statements up to [GenEll] Theorem 2.1, direction
+(ii) ⟹ (i), see `OPEN_PROBLEMS.md`, T-GENELL).
 
 All counts (statements extracted, full statements formalized, full statements verified
 unconditionally or conditionally, fragments, obligations, ambiguities) are in
@@ -81,6 +90,7 @@ date.
 * [OPEN_PROBLEMS.md](OPEN_PROBLEMS.md): every unresolved obligation, with its source page.
 * [docs/VERIFICATION_REPORT.md](docs/VERIFICATION_REPORT.md): what each check establishes and
   what is trusted.
+* A survey of the arXiv literature, with per-paper records, is in docs/LITERATURE.md and data/literature.json.
 
 ## Build
 
@@ -101,6 +111,7 @@ The trust checks, in the order CI runs them (`.github/workflows/axiom-gate.yml`)
 python3 -I scripts/Controls/source_scan.py          # constructs the gate cannot see
 python3 -I scripts/gen_root.py --check              # IUT.lean imports every library file
 lake build
+lake build Challenge                                # the challenge statements; the fingerprint helper imports them
 python3 -I scripts/Controls/fingerprints.py --check # trusted definitions, challenge statements, trust files
 git ls-files -- IUT.lean IUT > tracked-files.txt
 AXIOM_GATE_TRACKED_FILES=tracked-files.txt lake env lean AxiomGate.lean

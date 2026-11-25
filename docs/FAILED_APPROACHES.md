@@ -15,12 +15,17 @@ refutes a statement of the papers.
   `docs/PAPER_II_STRUCTURES.md`.
 * **The log-shell as `ℤ_p`.** For odd `p`, replacing the log-shell of IUT III Definition 1.1
   (page 24) by `ℤ_p` would typecheck but would not be the definition. Rejected. The faithful
-  version is blocked by the missing properties of `NormedSpace.log` (`OPEN_PROBLEMS.md`,
-  P-LOG). Evidence: `docs/MATHLIB_GAP_ANALYSIS.md`.
+  definition for the base field `ℚ_p` is now in `IUT/Prerequisites/PadicLog.lean`: the
+  log-shell is `(p*)⁻¹ · log(ℤ_p^×)`, with the `p`-adic logarithm proved convergent, a
+  homomorphism and of image `{z | ‖z‖ ≤ 1/p*}`, and its equality with `ℤ_p` is a theorem
+  (`padicLogShell_eq_range_coe`), not a definition. The identification of the Galois-invariant
+  units with `ℤ_p^×` is an interpretation, not formalized. Finite extensions of `ℚ_p` remain
+  open (`OPEN_PROBLEMS.md`, P-LOG).
 * **A Lean `Prop` for Theorem 3.11 or Corollary 3.12.** Rejected; see `docs/DECISIONS.md`,
   decision 4.
-* **Adopting the inclusion of Step (xi-f) as a hypothesis.** It is the conclusion restated
-  (`stepXIf_inclusion_iff_inequality`). Rejected as a vacuity trick. Evidence:
+* **Adopting the inclusion of Step (xi-f) as a hypothesis.** It restates the inequality
+  conjunct of the conclusion (`stepXIf_inclusion_iff_inequality`); the finiteness conjunct of
+  page 174 is separate. Rejected as a vacuity trick. Evidence:
   `docs/COR312_ANALYSIS.md`, condition C6.
 
 ## Dropped because a statement was found to be vacuous
@@ -65,5 +70,11 @@ refutes a statement of the papers.
 ## Not attempted
 
 The following were planned but have no code: the nonvacuity of
-`PartialInitialThetaConditions` (an explicit curve), power maps on `ℤ_p^×`, free and surface
-groups for IUT I §§1 to 2, and the passage from IUT IV Theorem A to `Challenge.ABCLog`.
+`PartialInitialThetaConditions` (an explicit curve), power maps on `ℤ_p^×`, and free and surface
+groups for IUT I §§1 to 2. The passage from IUT IV Theorem A to the abc statement now exists at
+the level of statements: `IUT/Applications/ABCSpecialization.lean` proves that a statement about
+rational points of `ℙ¹ \ {0, 1, ∞}` is equivalent to `Challenge.ABC` (`vojta_iff_ABC`). The
+remaining gap is named there: IUT IV proves the compactly bounded form (ii) of [GenEll]
+Theorem 2.1, and reaching that statement needs the direction (ii) ⟹ (i), whose proof uses points
+of bounded degree over number fields and a noncritical Belyi map; neither is formalized
+(`OPEN_PROBLEMS.md`, T-GENELL).

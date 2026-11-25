@@ -28,8 +28,12 @@ BLOCKED_BY_MISSING_JUSTIFICATION: the text gives an assertion where a formalizat
 | `IUT1.Sec0.CapsuleMorphism` | definition |  | 34 | EXTRACTED | NOT_EXTRACTED |  |  |
 | `IUT1.Sec0.FiniteEtaleCategory` | definition |  | 34 | BLOCKED_BY_MATHLIB | NOT_EXTRACTED |  |  |
 | `IUT1.Sec0.TemperedGroup` | definition |  | 34 | BLOCKED_BY_MATHLIB | NOT_EXTRACTED |  |  |
+| &nbsp;&nbsp;`IUT1.Sec0.TemperedGroup.frag.btemp_category` | fragment |  | 34 | STATEMENT_FORMALIZED | NOT_EXTRACTED | `IUT.PaperI.TemperedSetCategory` |  |
+| &nbsp;&nbsp;`IUT1.Sec0.TemperedGroup.frag.connected_temperoid` | fragment |  | 34 | STATEMENT_FORMALIZED | NOT_EXTRACTED | `IUT.PaperI.IsConnectedTemperoid` |  |
+| &nbsp;&nbsp;`IUT1.Sec0.TemperedGroup.frag.tempered_group` | fragment |  | 34 | STATEMENT_FORMALIZED | NOT_EXTRACTED | `IUT.PaperI.IsTemperedGroup` |  |
 | `IUT1.Sec0.AbstractlyEquivalent` | definition |  | 35 | EXTRACTED | NOT_EXTRACTED |  |  |
 | `IUT1.Sec0.TemperoidMorphism` | definition |  | 35 | BLOCKED_BY_MATHLIB | NOT_EXTRACTED |  |  |
+| &nbsp;&nbsp;`IUT1.Sec0.TemperoidMorphism.frag.morphism_class` | fragment |  | 35 | STATEMENT_FORMALIZED | NOT_EXTRACTED | `IUT.PaperI.TemperoidMorphismClass` |  |
 | `IUT1.Sec0.Valuations` | definition |  | 35 to 36 | EXTRACTED | NOT_EXTRACTED |  |  |
 
 ### Introduction
@@ -45,11 +49,11 @@ BLOCKED_BY_MISSING_JUSTIFICATION: the text gives an assertion where a formalizat
 |---|---|---|---|---|---|---|---|
 | `IUT1.Def1_1` | Definition |  | 38 to 39 | BLOCKED_BY_MATHLIB | NOT_EXTRACTED |  | yes |
 | `IUT1.Cor1_2` | Corollary | Characteristic Nature of Coverings | 39 to 40 | BLOCKED_BY_MATHLIB | NOT_EXTRACTED |  | yes |
-| `IUT1.Rem1_1_1` | Remark |  | 39 | NOT_EXTRACTED | NOT_EXTRACTED |  |  |
-| `IUT1.Rem1_1_2` | Remark |  | 39 | NOT_EXTRACTED | NOT_EXTRACTED |  | yes |
-| `IUT1.Rem1_2_1` | Remark |  | 40 | NOT_EXTRACTED | NOT_EXTRACTED |  |  |
-| `IUT1.Rem1_2_2` | Remark |  | 40 | NOT_EXTRACTED | NOT_EXTRACTED |  | yes |
-| `IUT1.Rem1_2_3` | Remark |  | 40 to 44 | NOT_EXTRACTED | NOT_EXTRACTED |  |  |
+| `IUT1.Rem1_1_1` | Remark |  | 39 | EXTRACTED | NOT_EXTRACTED |  |  |
+| `IUT1.Rem1_1_2` | Remark |  | 39 | EXTRACTED | BLOCKED_BY_MISSING_JUSTIFICATION |  | yes |
+| `IUT1.Rem1_2_1` | Remark |  | 40 | EXTRACTED | BLOCKED_BY_MISSING_JUSTIFICATION |  |  |
+| `IUT1.Rem1_2_2` | Remark |  | 40 | EXTRACTED | BLOCKED_BY_MISSING_JUSTIFICATION |  | yes |
+| `IUT1.Rem1_2_3` | Remark |  | 40 to 44 | EXTRACTED | BLOCKED_BY_MISSING_JUSTIFICATION |  |  |
 
 ### Section 2: Complements on Tempered Coverings
 
@@ -57,20 +61,21 @@ BLOCKED_BY_MISSING_JUSTIFICATION: the text gives an assertion where a formalizat
 |---|---|---|---|---|---|---|---|
 | `IUT1.Prop2_1` | Proposition | Profinite Conjugates of Nontrivial Compact Subgroups | 45 | BLOCKED_BY_MATHLIB | NOT_EXTRACTED |  | yes |
 | `IUT1.Prop2_2` | Proposition | Commensurators of Decomposition Subgroups Associated to Sub-semi-graphs | 45 to 46 | BLOCKED_BY_MATHLIB | NOT_EXTRACTED |  | yes |
-| `IUT1.Rem2_2_1` | Remark |  | 46 | NOT_EXTRACTED | NOT_EXTRACTED |  |  |
-| `IUT1.Rem2_2_2` | Remark |  | 46 to 47 | NOT_EXTRACTED | NOT_EXTRACTED |  | yes |
-| `IUT1.Cor2_3` | Corollary | Subgroups of Tempered Fundamental Groups Associated to Sub-semi-graphs | 47 to 50 | NOT_EXTRACTED | NOT_EXTRACTED |  | yes |
-| `IUT1.Prop2_4` | Proposition | Profinite Conjugates of Nontrivial Arithmetic Compact Subgroups | 50 to 51 | INTERPRETATION_AMBIGUOUS | NOT_EXTRACTED |  | yes |
+| `IUT1.Rem2_2_1` | Remark |  | 46 | EXTRACTED | BLOCKED_BY_MISSING_JUSTIFICATION |  |  |
+| `IUT1.Rem2_2_2` | Remark |  | 46 to 47 | EXTRACTED | BLOCKED_BY_EXTERNAL_THEOREM |  | yes |
+| `IUT1.Cor2_3` | Corollary | Subgroups of Tempered Fundamental Groups Associated to Sub-semi-graphs | 47 to 50 | EXTRACTED | BLOCKED_BY_EXTERNAL_THEOREM |  | yes |
+| `IUT1.Prop2_4` | Proposition | Profinite Conjugates of Nontrivial Arithmetic Compact Subgroups | 50 to 51 | EXTRACTED | BLOCKED_BY_EXTERNAL_THEOREM |  | yes |
 | `IUT1.Cor2_5` | Corollary | Profinite Conjugates of Tempered Decomposition and Inertia Groups | 51 to 52 | BLOCKED_BY_MATHLIB | NOT_EXTRACTED |  | yes |
-| `IUT1.Rem2_4_1` | Remark |  | 51 | NOT_EXTRACTED | NOT_EXTRACTED |  |  |
-| `IUT1.Rem2_5_1` | Remark |  | 52 | NOT_EXTRACTED | NOT_EXTRACTED |  | yes |
-| `IUT1.Rem2_5_2` | Remark |  | 52 | NOT_EXTRACTED | NOT_EXTRACTED |  | yes |
-| `IUT1.Rem2_5_3` | Remark |  | 52 to 56 | NOT_EXTRACTED | NOT_EXTRACTED |  | yes |
+| `IUT1.Rem2_4_1` | Remark |  | 51 | EXTRACTED | NOT_EXTRACTED |  |  |
+| `IUT1.Rem2_5_1` | Remark |  | 52 | EXTRACTED | NOT_EXTRACTED |  | yes |
+| `IUT1.Rem2_5_2` | Remark |  | 52 | EXTRACTED | NOT_EXTRACTED |  | yes |
+| `IUT1.Rem2_5_3` | Remark |  | 52 to 56 | EXTRACTED | BLOCKED_BY_MISSING_JUSTIFICATION |  | yes |
+| &nbsp;&nbsp;`IUT1.Rem2_5_3.frag.galois_countable` | fragment |  | 52 | STATEMENT_FORMALIZED | NOT_EXTRACTED | `IUT.PaperI.IsGaloisCountableTemperedGroup` |  |
 | `IUT1.Thm2_6` | Theorem | Profinite Conjugates of Discrete Subgroups | 56 to 57 | EXTRACTED | NOT_EXTRACTED |  | yes |
 | `IUT1.Lem2_7` | Lemma | Well-known Properties of Free Groups and Orientable Surface Groups | 57 to 59 | EXTRACTED | NOT_EXTRACTED |  | yes |
-| `IUT1.Rem2_6_1` | Remark |  | 57 | NOT_EXTRACTED | NOT_EXTRACTED |  | yes |
+| `IUT1.Rem2_6_1` | Remark |  | 57 | EXTRACTED | BLOCKED_BY_MISSING_JUSTIFICATION |  | yes |
 | `IUT1.Cor2_8` | Corollary | Subgroups of Topological Fundamental Groups of Complex Hyperbolic Curves | 59 | EXTRACTED | NOT_EXTRACTED |  | yes |
-| `IUT1.Rem2_8_1` | Remark |  | 59 to 61 | NOT_EXTRACTED | NOT_EXTRACTED |  |  |
+| `IUT1.Rem2_8_1` | Remark |  | 59 to 61 | EXTRACTED | BLOCKED_BY_MISSING_JUSTIFICATION |  |  |
 
 ### Section 3: Chains of Θ-Hodge Theaters
 
@@ -92,25 +97,31 @@ BLOCKED_BY_MISSING_JUSTIFICATION: the text gives an assertion where a formalizat
 | &nbsp;&nbsp;`IUT1.Def3_1.e` | part |  | 62 to 63 | BLOCKED_BY_MATHLIB | NOT_EXTRACTED |  | yes |
 | &nbsp;&nbsp;`IUT1.Def3_1.f` | part |  | 63 | BLOCKED_BY_MATHLIB | NOT_EXTRACTED |  | yes |
 | &nbsp;&nbsp;`IUT1.Def3_1.frag.partialConditions` | fragment |  | 61 to 63 | STATEMENT_FORMALIZED | NOT_EXTRACTED | `IUT.PaperI.PartialInitialThetaConditions` |  |
-| `IUT1.Rem3_1_1` | Remark |  | 63 to 64 | INTERPRETATION_AMBIGUOUS | NOT_EXTRACTED |  | yes |
-| `IUT1.Rem3_1_2` | Remark |  | 64 to 65 | NOT_EXTRACTED | NOT_EXTRACTED |  | yes |
-| `IUT1.Rem3_1_3` | Remark |  | 65 | INTERPRETATION_AMBIGUOUS | NOT_EXTRACTED |  |  |
-| `IUT1.Rem3_1_4` | Remark |  | 65 | NOT_EXTRACTED | NOT_EXTRACTED |  |  |
-| `IUT1.Rem3_1_5` | Remark |  | 65 to 66 | INTERPRETATION_AMBIGUOUS | NOT_EXTRACTED |  | yes |
+| `IUT1.Rem3_1_1` | Remark |  | 63 to 64 | EXTRACTED | BLOCKED_BY_EXTERNAL_THEOREM |  | yes |
+| `IUT1.Rem3_1_2` | Remark |  | 64 to 65 | EXTRACTED | BLOCKED_BY_EXTERNAL_THEOREM |  | yes |
+| &nbsp;&nbsp;`IUT1.Rem3_1_2.i` | part |  | 64 | EXTRACTED | BLOCKED_BY_EXTERNAL_THEOREM |  | yes |
+| &nbsp;&nbsp;`IUT1.Rem3_1_2.iii` | part |  | 64 to 65 | EXTRACTED | BLOCKED_BY_EXTERNAL_THEOREM |  | yes |
+| `IUT1.Rem3_1_3` | Remark |  | 65 | EXTRACTED | BLOCKED_BY_MISSING_JUSTIFICATION |  |  |
+| `IUT1.Rem3_1_4` | Remark |  | 65 | EXTRACTED | BLOCKED_BY_MISSING_JUSTIFICATION |  |  |
+| `IUT1.Rem3_1_5` | Remark |  | 65 to 66 | EXTRACTED | BLOCKED_BY_EXTERNAL_THEOREM |  | yes |
 | `IUT1.Rem3_1_6` | Remark |  | 66 | EXTRACTED | NOT_EXTRACTED |  |  |
-| `IUT1.Rem3_1_7` | Remark |  | 66 to 69 | NOT_EXTRACTED | NOT_EXTRACTED |  | yes |
+| `IUT1.Rem3_1_7` | Remark |  | 66 to 69 | EXTRACTED | BLOCKED_BY_MISSING_JUSTIFICATION |  | yes |
+| &nbsp;&nbsp;`IUT1.Rem3_1_7.i` | part |  | 66 to 67 | EXTRACTED | BLOCKED_BY_MISSING_JUSTIFICATION |  | yes |
+| &nbsp;&nbsp;`IUT1.Rem3_1_7.ii` | part |  | 67 to 68 | EXTRACTED | BLOCKED_BY_MISSING_JUSTIFICATION |  | yes |
+| &nbsp;&nbsp;`IUT1.Rem3_1_7.iii` | part |  | 68 | EXTRACTED | BLOCKED_BY_MISSING_JUSTIFICATION |  | yes |
+| &nbsp;&nbsp;`IUT1.Rem3_1_7.iv` | part |  | 68 to 69 | EXTRACTED | BLOCKED_BY_EXTERNAL_THEOREM |  | yes |
 | `IUT1.Ex3_2` | Example | Frobenioids at Bad Nonarchimedean Primes | 69 to 73 | BLOCKED_BY_MATHLIB | NOT_EXTRACTED |  | yes |
 | `IUT1.Rem3_2_1` | Remark |  | 73 to 74 | EXTRACTED | NOT_EXTRACTED |  | yes |
 | `IUT1.Rem3_2_2` | Remark |  | 74 | EXTRACTED | NOT_EXTRACTED |  | yes |
-| `IUT1.Rem3_2_3` | Remark |  | 74 to 75 | INTERPRETATION_AMBIGUOUS | NOT_EXTRACTED |  | yes |
-| `IUT1.Rem3_2_4` | Remark |  | 75 to 77 | NOT_EXTRACTED | NOT_EXTRACTED |  | yes |
+| `IUT1.Rem3_2_3` | Remark |  | 74 to 75 | EXTRACTED | BLOCKED_BY_EXTERNAL_THEOREM |  | yes |
+| `IUT1.Rem3_2_4` | Remark |  | 75 to 77 | EXTRACTED | BLOCKED_BY_EXTERNAL_THEOREM |  | yes |
 | `IUT1.Ex3_3` | Example | Frobenioids at Good Nonarchimedean Primes | 77 to 79 | BLOCKED_BY_MATHLIB | NOT_EXTRACTED |  | yes |
 | `IUT1.Rem3_3_1` | Remark |  | 79 | EXTRACTED | NOT_EXTRACTED |  |  |
 | `IUT1.Rem3_3_2` | Remark |  | 79 to 80 | EXTRACTED | NOT_EXTRACTED |  | yes |
 | `IUT1.Ex3_4` | Example | Frobenioids at Archimedean Primes | 80 to 82 | BLOCKED_BY_MATHLIB | NOT_EXTRACTED |  | yes |
 | `IUT1.Rem3_4_1` | Remark |  | 82 | EXTRACTED | NOT_EXTRACTED |  |  |
-| `IUT1.Rem3_4_2` | Remark |  | 82 to 83 | INTERPRETATION_AMBIGUOUS | NOT_EXTRACTED |  | yes |
-| `IUT1.Rem3_4_3` | Remark |  | 83 to 84 | NOT_EXTRACTED | NOT_EXTRACTED |  | yes |
+| `IUT1.Rem3_4_2` | Remark |  | 82 to 83 | EXTRACTED | BLOCKED_BY_EXTERNAL_THEOREM |  | yes |
+| `IUT1.Rem3_4_3` | Remark |  | 83 to 84 | EXTRACTED | BLOCKED_BY_MISSING_JUSTIFICATION |  | yes |
 | `IUT1.Ex3_5` | Example | Global Realified Frobenioids | 84 to 86 | BLOCKED_BY_MATHLIB | NOT_EXTRACTED |  | yes |
 | `IUT1.Rem3_5_1` | Remark |  | 86 to 87 | EXTRACTED | NOT_EXTRACTED |  | yes |
 | `IUT1.Def3_6` | Definition |  | 87 to 88 | BLOCKED_BY_MATHLIB | NOT_EXTRACTED |  | yes |
@@ -119,12 +130,12 @@ BLOCKED_BY_MISSING_JUSTIFICATION: the text gives an assertion where a formalizat
 | `IUT1.Rem3_6_1` | Remark |  | 88 | EXTRACTED | NOT_EXTRACTED |  |  |
 | `IUT1.Rem3_6_2` | Remark |  | 88 | EXTRACTED | NOT_EXTRACTED |  | yes |
 | `IUT1.Cor3_8` | Corollary | Frobenius-pictures of Θ-Hodge Theaters | 89 to 90 | BLOCKED_BY_MATHLIB | NOT_EXTRACTED |  | yes |
-| `IUT1.Rem3_7_1` | Remark |  | 89 | INTERPRETATION_AMBIGUOUS | NOT_EXTRACTED |  | yes |
+| `IUT1.Rem3_7_1` | Remark |  | 89 | EXTRACTED | BLOCKED_BY_MISSING_JUSTIFICATION |  | yes |
 | `IUT1.Rem3_8_1` | Remark |  | 90 to 91 | EXTRACTED | NOT_EXTRACTED |  | yes |
 | `IUT1.Cor3_9` | Corollary | Étale-pictures of Θ-Hodge Theaters | 91 to 92 | BLOCKED_BY_MATHLIB | NOT_EXTRACTED |  | yes |
-| `IUT1.Rem3_9_1` | Remark |  | 92 to 93 | INTERPRETATION_AMBIGUOUS | NOT_EXTRACTED |  | yes |
-| `IUT1.Rem3_9_2` | Remark |  | 93 | INTERPRETATION_AMBIGUOUS | NOT_EXTRACTED |  | yes |
-| `IUT1.Rem3_9_3` | Remark |  | 93 to 94 | NOT_EXTRACTED | NOT_EXTRACTED |  | yes |
+| `IUT1.Rem3_9_1` | Remark |  | 92 to 93 | EXTRACTED | BLOCKED_BY_MISSING_JUSTIFICATION |  | yes |
+| `IUT1.Rem3_9_2` | Remark |  | 93 | EXTRACTED | NOT_EXTRACTED |  | yes |
+| `IUT1.Rem3_9_3` | Remark |  | 93 to 94 | EXTRACTED | NOT_EXTRACTED |  | yes |
 | `IUT1.Rem3_9_4` | Remark |  | 94 to 95 | EXTRACTED | NOT_EXTRACTED |  |  |
 
 ### Section 4: Multiplicative Combinatorial Teichmüller Theory
@@ -133,76 +144,90 @@ BLOCKED_BY_MISSING_JUSTIFICATION: the text gives an assertion where a formalizat
 |---|---|---|---|---|---|---|---|
 | `IUT1.Def4_1` | Definition |  | 95 to 98 | BLOCKED_BY_MATHLIB | NOT_EXTRACTED |  | yes |
 | `IUT1.Ex4_3` | Example | Model Base-NF-Bridges | 98 to 101 | BLOCKED_BY_MATHLIB | NOT_EXTRACTED |  | yes |
-| `IUT1.Prop4_2` | Proposition | The Set of Label Classes of Cusps of a Base-Prime-Strip | 98 | INTERPRETATION_AMBIGUOUS | NOT_EXTRACTED |  | yes |
-| `IUT1.Rem4_2_1` | Remark |  | 98 | NOT_EXTRACTED | NOT_EXTRACTED |  | yes |
-| `IUT1.Rem4_3_1` | Remark |  | 101 to 102 | NOT_EXTRACTED | NOT_EXTRACTED |  | yes |
-| `IUT1.Rem4_3_2` | Remark |  | 102 to 104 | NOT_EXTRACTED | NOT_EXTRACTED |  | yes |
-| `IUT1.Rem4_3_3` | Remark |  | 104 to 105 | NOT_EXTRACTED | NOT_EXTRACTED |  | yes |
+| `IUT1.Prop4_2` | Proposition | The Set of Label Classes of Cusps of a Base-Prime-Strip | 98 | EXTRACTED | BLOCKED_BY_MISSING_JUSTIFICATION |  | yes |
+| `IUT1.Rem4_2_1` | Remark |  | 98 | EXTRACTED | BLOCKED_BY_EXTERNAL_THEOREM |  | yes |
+| `IUT1.Rem4_3_1` | Remark |  | 101 to 102 | EXTRACTED | NOT_EXTRACTED |  | yes |
+| `IUT1.Rem4_3_2` | Remark |  | 102 to 104 | EXTRACTED | BLOCKED_BY_EXTERNAL_THEOREM |  | yes |
+| `IUT1.Rem4_3_3` | Remark |  | 104 to 105 | EXTRACTED | NOT_EXTRACTED |  | yes |
 | `IUT1.Ex4_4` | Example | Model Base-Θ-Bridges | 105 to 107 | BLOCKED_BY_MATHLIB | NOT_EXTRACTED |  | yes |
-| `IUT1.Ex4_5` | Example |  | 107 to 108 | INTERPRETATION_AMBIGUOUS | NOT_EXTRACTED |  | yes |
-| `IUT1.Rem4_5_1` | Remark |  | 108 to 111 | NOT_EXTRACTED | NOT_EXTRACTED |  | yes |
+| `IUT1.Ex4_5` | Example |  | 107 to 108 | EXTRACTED | BLOCKED_BY_MISSING_JUSTIFICATION |  | yes |
+| `IUT1.Rem4_5_1` | Remark |  | 108 to 111 | EXTRACTED | BLOCKED_BY_MISSING_JUSTIFICATION |  | yes |
 | `IUT1.Def4_6` | Definition |  | 111 to 112 | BLOCKED_BY_MATHLIB | NOT_EXTRACTED |  | yes |
-| `IUT1.Prop4_7` | Proposition | Transport of Label Classes of Cusps via Base-Bridges | 112 to 113 | INTERPRETATION_AMBIGUOUS | NOT_EXTRACTED |  | yes |
-| `IUT1.Rem4_7_1` | Remark |  | 113 | NOT_EXTRACTED | NOT_EXTRACTED |  | yes |
-| `IUT1.Rem4_7_2` | Remark |  | 113 to 115 | NOT_EXTRACTED | NOT_EXTRACTED |  | yes |
-| `IUT1.Prop4_8` | Proposition | First Properties of Base-NF-Bridges, Base-Θ-Bridges, and Base-ΘNF-Hodge Theaters | 115 | INTERPRETATION_AMBIGUOUS | NOT_EXTRACTED |  | yes |
-| `IUT1.Prop4_9` | Proposition | Symmetries arising from Forgetful Functors | 115 to 116 | NOT_EXTRACTED | NOT_EXTRACTED |  | yes |
-| `IUT1.Rem4_9_1` | Remark |  | 116 to 117 | NOT_EXTRACTED | NOT_EXTRACTED |  | yes |
-| `IUT1.Rem4_9_2` | Remark |  | 117 to 119 | NOT_EXTRACTED | NOT_EXTRACTED |  | yes |
-| `IUT1.Def4_10` | Definition |  | 119 to 120 | NOT_EXTRACTED | NOT_EXTRACTED |  |  |
-| `IUT1.Rem4_9_3` | Remark |  | 119 | NOT_EXTRACTED | NOT_EXTRACTED |  | yes |
-| `IUT1.Prop4_11` | Proposition | Processions of Base-Prime-Strips | 120 to 121 | NOT_EXTRACTED | NOT_EXTRACTED |  | yes |
-| `IUT1.Cor4_12` | Corollary | Étale-pictures of Base-ΘNF-Hodge Theaters | 121 to 123 | NOT_EXTRACTED | NOT_EXTRACTED |  | yes |
+| `IUT1.Prop4_7` | Proposition | Transport of Label Classes of Cusps via Base-Bridges | 112 to 113 | EXTRACTED | BLOCKED_BY_MISSING_JUSTIFICATION |  | yes |
+| `IUT1.Rem4_7_1` | Remark |  | 113 | EXTRACTED | BLOCKED_BY_MISSING_JUSTIFICATION |  | yes |
+| `IUT1.Rem4_7_2` | Remark |  | 113 to 115 | EXTRACTED | NOT_EXTRACTED |  | yes |
+| `IUT1.Prop4_8` | Proposition | First Properties of Base-NF-Bridges, Base-Θ-Bridges, and Base-ΘNF-Hodge Theaters | 115 | EXTRACTED | BLOCKED_BY_MISSING_JUSTIFICATION |  | yes |
+| `IUT1.Prop4_9` | Proposition | Symmetries arising from Forgetful Functors | 115 to 116 | EXTRACTED | BLOCKED_BY_MISSING_JUSTIFICATION |  | yes |
+| `IUT1.Rem4_9_1` | Remark |  | 116 to 117 | EXTRACTED | NOT_EXTRACTED |  | yes |
+| `IUT1.Rem4_9_2` | Remark |  | 117 to 119 | EXTRACTED | BLOCKED_BY_MISSING_JUSTIFICATION |  | yes |
+| `IUT1.Def4_10` | Definition |  | 119 to 120 | EXTRACTED | NOT_EXTRACTED |  |  |
+| `IUT1.Rem4_9_3` | Remark |  | 119 | EXTRACTED | BLOCKED_BY_MISSING_JUSTIFICATION |  | yes |
+| `IUT1.Prop4_11` | Proposition | Processions of Base-Prime-Strips | 120 to 121 | EXTRACTED | BLOCKED_BY_MISSING_JUSTIFICATION |  | yes |
+| `IUT1.Cor4_12` | Corollary | Étale-pictures of Base-ΘNF-Hodge Theaters | 121 to 123 | EXTRACTED | BLOCKED_BY_MISSING_JUSTIFICATION |  | yes |
 
 ### Section 5: ΘNF-Hodge Theaters
 
 | Id | Kind | Title | PDF pages | Statement | Proof | Lean declaration | Path |
 |---|---|---|---|---|---|---|---|
-| `IUT1.Ex5_1` | Example | Global Frobenioids | 123 to 131 | NOT_EXTRACTED | NOT_EXTRACTED |  | yes |
-| `IUT1.Rem5_1_1` | Remark |  | 131 | NOT_EXTRACTED | NOT_EXTRACTED |  |  |
-| `IUT1.Rem5_1_2` | Remark |  | 131 | NOT_EXTRACTED | NOT_EXTRACTED |  | yes |
-| `IUT1.Rem5_1_3` | Remark |  | 131 to 132 | NOT_EXTRACTED | NOT_EXTRACTED |  |  |
-| `IUT1.Rem5_1_4` | Remark |  | 132 | NOT_EXTRACTED | NOT_EXTRACTED |  | yes |
-| `IUT1.Rem5_1_5` | Remark |  | 132 to 134 | NOT_EXTRACTED | NOT_EXTRACTED |  | yes |
+| `IUT1.Ex5_1` | Example | Global Frobenioids | 123 to 131 | EXTRACTED | BLOCKED_BY_EXTERNAL_THEOREM |  | yes |
+| &nbsp;&nbsp;`IUT1.Ex5_1.i` | part |  | 123 to 125 | EXTRACTED | BLOCKED_BY_EXTERNAL_THEOREM |  | yes |
+| &nbsp;&nbsp;`IUT1.Ex5_1.ii` | part |  | 125 | EXTRACTED | BLOCKED_BY_EXTERNAL_THEOREM |  | yes |
+| &nbsp;&nbsp;`IUT1.Ex5_1.iii` | part |  | 125 to 126 | EXTRACTED | BLOCKED_BY_EXTERNAL_THEOREM |  | yes |
+| &nbsp;&nbsp;`IUT1.Ex5_1.iv` | part |  | 126 | EXTRACTED | BLOCKED_BY_EXTERNAL_THEOREM |  | yes |
+| &nbsp;&nbsp;`IUT1.Ex5_1.v` | part |  | 127 to 130 | EXTRACTED | BLOCKED_BY_EXTERNAL_THEOREM |  | yes |
+| &nbsp;&nbsp;`IUT1.Ex5_1.vi` | part |  | 130 | EXTRACTED | BLOCKED_BY_MISSING_JUSTIFICATION |  | yes |
+| &nbsp;&nbsp;`IUT1.Ex5_1.vii` | part |  | 130 to 131 | EXTRACTED | NOT_EXTRACTED |  | yes |
+| `IUT1.Rem5_1_1` | Remark |  | 131 | EXTRACTED | NOT_EXTRACTED |  |  |
+| `IUT1.Rem5_1_2` | Remark |  | 131 | EXTRACTED | NOT_EXTRACTED |  | yes |
+| `IUT1.Rem5_1_3` | Remark |  | 131 to 132 | EXTRACTED | BLOCKED_BY_MISSING_JUSTIFICATION |  |  |
+| `IUT1.Rem5_1_4` | Remark |  | 132 | EXTRACTED | NOT_EXTRACTED |  | yes |
+| `IUT1.Rem5_1_5` | Remark |  | 132 to 134 | EXTRACTED | BLOCKED_BY_EXTERNAL_THEOREM |  | yes |
 | `IUT1.Def5_2` | Definition |  | 134 to 143 | BLOCKED_BY_MATHLIB | NOT_EXTRACTED |  | yes |
 | `IUT1.Cor5_3` | Corollary | Isomorphisms of Global Frobenioids, Frobenioid-Prime-Strips, and Tempered Frobenioids | 143 to 145 | BLOCKED_BY_MATHLIB | NOT_EXTRACTED |  | yes |
-| `IUT1.Rem5_2_1` | Remark |  | 143 | NOT_EXTRACTED | NOT_EXTRACTED |  | yes |
-| `IUT1.Rem5_2_2` | Remark |  | 143 | NOT_EXTRACTED | NOT_EXTRACTED |  |  |
-| `IUT1.Rem5_2_3` | Remark |  | 143 | NOT_EXTRACTED | NOT_EXTRACTED |  | yes |
-| `IUT1.Rem5_3_1` | Remark |  | 145 to 146 | NOT_EXTRACTED | NOT_EXTRACTED |  | yes |
-| `IUT1.Rem5_3_2` | Remark |  | 146 | NOT_EXTRACTED | NOT_EXTRACTED |  |  |
-| `IUT1.Rem5_3_3` | Remark |  | 146 to 147 | NOT_EXTRACTED | NOT_EXTRACTED |  | yes |
-| `IUT1.Ex5_4` | Example | Model Θ- and NF-Bridges | 147 to 151 | INTERPRETATION_AMBIGUOUS | NOT_EXTRACTED |  | yes |
-| `IUT1.Def5_5` | Definition |  | 151 to 153 | INTERPRETATION_AMBIGUOUS | NOT_EXTRACTED |  | yes |
-| `IUT1.Rem5_4_1` | Remark |  | 151 | NOT_EXTRACTED | NOT_EXTRACTED |  | yes |
-| `IUT1.Rem5_4_2` | Remark |  | 151 | NOT_EXTRACTED | NOT_EXTRACTED |  | yes |
-| `IUT1.Cor5_6` | Corollary | Isomorphisms of Θ-Hodge Theaters, NF-Bridges, Θ-Bridges, and ΘNF-Hodge Theaters | 153 to 154 | INTERPRETATION_AMBIGUOUS | NOT_EXTRACTED |  | yes |
-| `IUT1.Rem5_6_1` | Remark |  | 154 to 155 | NOT_EXTRACTED | NOT_EXTRACTED |  | yes |
+| `IUT1.Rem5_2_1` | Remark |  | 143 | EXTRACTED | BLOCKED_BY_MISSING_JUSTIFICATION |  | yes |
+| `IUT1.Rem5_2_2` | Remark |  | 143 | EXTRACTED | NOT_EXTRACTED |  |  |
+| `IUT1.Rem5_2_3` | Remark |  | 143 | EXTRACTED | NOT_EXTRACTED |  | yes |
+| `IUT1.Rem5_3_1` | Remark |  | 145 to 146 | EXTRACTED | BLOCKED_BY_MISSING_JUSTIFICATION |  | yes |
+| `IUT1.Rem5_3_2` | Remark |  | 146 | EXTRACTED | NOT_EXTRACTED |  |  |
+| `IUT1.Rem5_3_3` | Remark |  | 146 | EXTRACTED | BLOCKED_BY_EXTERNAL_THEOREM |  | yes |
+| `IUT1.Ex5_4` | Example | Model Θ- and NF-Bridges | 147 to 151 | EXTRACTED | BLOCKED_BY_EXTERNAL_THEOREM |  | yes |
+| &nbsp;&nbsp;`IUT1.Ex5_4.i` | part |  | 147 | EXTRACTED | NOT_EXTRACTED |  | yes |
+| &nbsp;&nbsp;`IUT1.Ex5_4.ii` | part |  | 147 | EXTRACTED | BLOCKED_BY_MISSING_JUSTIFICATION |  | yes |
+| &nbsp;&nbsp;`IUT1.Ex5_4.iii` | part |  | 147 to 148 | EXTRACTED | BLOCKED_BY_MISSING_JUSTIFICATION |  | yes |
+| &nbsp;&nbsp;`IUT1.Ex5_4.iv` | part |  | 148 to 149 | EXTRACTED | BLOCKED_BY_EXTERNAL_THEOREM |  | yes |
+| &nbsp;&nbsp;`IUT1.Ex5_4.v` | part |  | 149 | EXTRACTED | BLOCKED_BY_MISSING_JUSTIFICATION |  | yes |
+| &nbsp;&nbsp;`IUT1.Ex5_4.vi` | part |  | 149 to 150 | EXTRACTED | BLOCKED_BY_MISSING_JUSTIFICATION |  | yes |
+| &nbsp;&nbsp;`IUT1.Ex5_4.vii` | part |  | 150 | EXTRACTED | NOT_EXTRACTED |  | yes |
+| `IUT1.Def5_5` | Definition |  | 151 to 153 | EXTRACTED | NOT_EXTRACTED |  | yes |
+| `IUT1.Rem5_4_1` | Remark |  | 151 | EXTRACTED | NOT_EXTRACTED |  | yes |
+| `IUT1.Rem5_4_2` | Remark |  | 151 | EXTRACTED | NOT_EXTRACTED |  | yes |
+| `IUT1.Cor5_6` | Corollary | Isomorphisms of Θ-Hodge Theaters, NF-Bridges, Θ-Bridges, and ΘNF-Hodge Theaters | 153 to 154 | EXTRACTED | BLOCKED_BY_MISSING_JUSTIFICATION |  | yes |
+| `IUT1.Rem5_6_1` | Remark |  | 154 to 155 | EXTRACTED | BLOCKED_BY_MISSING_JUSTIFICATION |  | yes |
 
 ### Section 6: Additive Combinatorial Teichmüller Theory
 
 | Id | Kind | Title | PDF pages | Statement | Proof | Lean declaration | Path |
 |---|---|---|---|---|---|---|---|
 | `IUT1.Def6_1` | Definition |  | 155 to 159 | BLOCKED_BY_MATHLIB | NOT_EXTRACTED |  | yes |
-| `IUT1.Ex6_2` | Example | Model Base-Θ± -Bridges | 159 to 160 | INTERPRETATION_AMBIGUOUS | NOT_EXTRACTED |  | yes |
-| `IUT1.Rem6_1_1` | Remark |  | 159 | NOT_EXTRACTED | NOT_EXTRACTED |  | yes |
-| `IUT1.Ex6_3` | Example | Model Base-Θell -Bridges | 160 to 162 | INTERPRETATION_AMBIGUOUS | NOT_EXTRACTED |  | yes |
-| `IUT1.Def6_4` | Definition |  | 162 to 163 | INTERPRETATION_AMBIGUOUS | NOT_EXTRACTED |  | yes |
-| `IUT1.Prop6_5` | Proposition | Transport of ±-Label Classes of Cusps via Base-Bridges | 163 to 165 | NOT_EXTRACTED | NOT_EXTRACTED |  | yes |
+| `IUT1.Ex6_2` | Example | Model Base-Θ± -Bridges | 159 to 160 | EXTRACTED | BLOCKED_BY_MISSING_JUSTIFICATION |  | yes |
+| `IUT1.Rem6_1_1` | Remark |  | 159 | EXTRACTED | BLOCKED_BY_MISSING_JUSTIFICATION |  | yes |
+| `IUT1.Ex6_3` | Example | Model Base-Θell -Bridges | 160 to 162 | EXTRACTED | BLOCKED_BY_MISSING_JUSTIFICATION |  | yes |
+| `IUT1.Def6_4` | Definition |  | 162 to 163 | EXTRACTED | NOT_EXTRACTED |  | yes |
+| `IUT1.Prop6_5` | Proposition | Transport of ±-Label Classes of Cusps via Base-Bridges | 163 to 165 | EXTRACTED | BLOCKED_BY_MISSING_JUSTIFICATION |  | yes |
 | `IUT1.Prop6_6` | Proposition | First Properties of Base-Θ± -Bridges, Base-Θell -Bridges, and Base-Θ±ell -Hodge Theaters | 165 to 166 | BLOCKED_BY_MATHLIB | NOT_EXTRACTED |  | yes |
-| `IUT1.Rem6_6_1` | Remark |  | 166 to 167 | NOT_EXTRACTED | NOT_EXTRACTED |  | yes |
-| `IUT1.Prop6_7` | Proposition | Base-Θ-Bridges Associated to Base-Θ± -Bridges | 167 | INTERPRETATION_AMBIGUOUS | NOT_EXTRACTED |  | yes |
-| `IUT1.Prop6_8` | Proposition | Symmetries arising from Forgetful Functors | 167 to 169 | NOT_EXTRACTED | NOT_EXTRACTED |  | yes |
-| `IUT1.Prop6_9` | Proposition | Processions of Base-Prime-Strips | 169 to 170 | NOT_EXTRACTED | NOT_EXTRACTED |  | yes |
+| `IUT1.Rem6_6_1` | Remark |  | 166 to 167 | EXTRACTED | NOT_EXTRACTED |  | yes |
+| `IUT1.Prop6_7` | Proposition | Base-Θ-Bridges Associated to Base-Θ± -Bridges | 167 | EXTRACTED | BLOCKED_BY_MISSING_JUSTIFICATION |  | yes |
+| `IUT1.Prop6_8` | Proposition | Symmetries arising from Forgetful Functors | 167 to 169 | EXTRACTED | BLOCKED_BY_MISSING_JUSTIFICATION |  | yes |
+| `IUT1.Prop6_9` | Proposition | Processions of Base-Prime-Strips | 169 to 170 | EXTRACTED | BLOCKED_BY_MISSING_JUSTIFICATION |  | yes |
 | `IUT1.Cor6_10` | Corollary | Étale-pictures of Base-Θ±ell -Hodge Theaters | 170 to 172 | BLOCKED_BY_MATHLIB | NOT_EXTRACTED |  | yes |
 | `IUT1.Def6_11` | Definition |  | 172 to 173 | BLOCKED_BY_MATHLIB | NOT_EXTRACTED |  | yes |
 | `IUT1.Cor6_12` | Corollary | Isomorphisms of Θ± -Bridges, Θell -Bridges, and Θ±ell -Hodge Theaters | 173 to 174 | BLOCKED_BY_MATHLIB | NOT_EXTRACTED |  | yes |
-| `IUT1.Rem6_12_1` | Remark |  | 174 | NOT_EXTRACTED | NOT_EXTRACTED |  | yes |
-| `IUT1.Rem6_12_2` | Remark |  | 174 to 175 | NOT_EXTRACTED | NOT_EXTRACTED |  | yes |
-| `IUT1.Rem6_12_3` | Remark |  | 175 to 177 | NOT_EXTRACTED | NOT_EXTRACTED |  | yes |
-| `IUT1.Rem6_12_4` | Remark |  | 177 to 179 | NOT_EXTRACTED | NOT_EXTRACTED |  | yes |
-| `IUT1.Rem6_12_5` | Remark |  | 179 to 180 | NOT_EXTRACTED | NOT_EXTRACTED |  | yes |
-| `IUT1.Rem6_12_6` | Remark |  | 180 to 182 | NOT_EXTRACTED | NOT_EXTRACTED |  | yes |
+| `IUT1.Rem6_12_1` | Remark |  | 174 | EXTRACTED | BLOCKED_BY_MISSING_JUSTIFICATION |  | yes |
+| `IUT1.Rem6_12_2` | Remark |  | 174 to 175 | EXTRACTED | BLOCKED_BY_MISSING_JUSTIFICATION |  | yes |
+| `IUT1.Rem6_12_3` | Remark |  | 175 to 177 | EXTRACTED | NOT_EXTRACTED |  | yes |
+| `IUT1.Rem6_12_4` | Remark |  | 177 to 179 | EXTRACTED | NOT_EXTRACTED |  | yes |
+| `IUT1.Rem6_12_5` | Remark |  | 179 to 180 | EXTRACTED | NOT_EXTRACTED |  | yes |
+| `IUT1.Rem6_12_6` | Remark |  | 180 to 182 | EXTRACTED | BLOCKED_BY_MISSING_JUSTIFICATION |  | yes |
 | `IUT1.Def6_13` | Definition |  | 182 to 184 | BLOCKED_BY_MATHLIB | NOT_EXTRACTED |  | yes |
 
 ## IUT II
@@ -218,100 +243,154 @@ BLOCKED_BY_MISSING_JUSTIFICATION: the text gives an assertion where a formalizat
 
 | Id | Kind | Title | PDF pages | Statement | Proof | Lean declaration | Path |
 |---|---|---|---|---|---|---|---|
-| `IUT2.Def1_1` | Definition |  | 20 to 21 | NOT_EXTRACTED | NOT_EXTRACTED |  | yes |
-| `IUT2.Rem1_1_1` | Remark |  | 21 to 25 | NOT_EXTRACTED | NOT_EXTRACTED |  | yes |
-| `IUT2.Prop1_2` | Proposition | Group- and Frobenioid-theoretic Constructions of Mono-theta Environments | 25 to 26 | NOT_EXTRACTED | NOT_EXTRACTED |  | yes |
-| `IUT2.Prop1_3` | Proposition | Compatibility of Cyclotomic Rigidity Isomorphisms | 26 to 27 | NOT_EXTRACTED | NOT_EXTRACTED |  | yes |
-| `IUT2.Prop1_4` | Proposition | Étale Theta Functions of Standard Type | 27 | NOT_EXTRACTED | NOT_EXTRACTED |  | yes |
-| `IUT2.Rem1_4_1` | Remark |  | 27 to 29 | NOT_EXTRACTED | NOT_EXTRACTED |  | yes |
-| `IUT2.Prop1_5` | Proposition | Projective Systems of Mono-theta Environments | 29 to 30 | NOT_EXTRACTED | NOT_EXTRACTED |  | yes |
-| `IUT2.Rem1_5_1` | Remark |  | 30 | NOT_EXTRACTED | NOT_EXTRACTED |  | yes |
-| `IUT2.Rem1_5_2` | Remark |  | 30 to 31 | NOT_EXTRACTED | NOT_EXTRACTED |  | yes |
-| `IUT2.Prop1_6` | Proposition | Cores and Cuspidalizations | 31 | NOT_EXTRACTED | NOT_EXTRACTED |  | yes |
-| `IUT2.Rem1_6_1` | Remark |  | 31 to 32 | NOT_EXTRACTED | NOT_EXTRACTED |  | yes |
-| `IUT2.Ex1_7` | Example | Radial and Coric Data I: Generalities | 32 to 35 | NOT_EXTRACTED | NOT_EXTRACTED |  | yes |
+| `IUT2.Def1_1` | Definition |  | 20 to 21 | EXTRACTED | BLOCKED_BY_EXTERNAL_THEOREM |  | yes |
+| `IUT2.Rem1_1_1` | Remark |  | 21 to 25 | EXTRACTED | EXTRACTED |  | yes |
+| &nbsp;&nbsp;`IUT2.Rem1_1_1.i` | part |  | 21 to 22 | EXTRACTED | BLOCKED_BY_EXTERNAL_THEOREM |  | yes |
+| &nbsp;&nbsp;`IUT2.Rem1_1_1.ii` | part |  | 22 | EXTRACTED | NOT_EXTRACTED |  | yes |
+| &nbsp;&nbsp;`IUT2.Rem1_1_1.iii` | part |  | 22 to 23 | EXTRACTED | BLOCKED_BY_EXTERNAL_THEOREM |  | yes |
+| &nbsp;&nbsp;`IUT2.Rem1_1_1.iv` | part |  | 23 to 24 | EXTRACTED | BLOCKED_BY_MISSING_JUSTIFICATION |  | yes |
+| &nbsp;&nbsp;`IUT2.Rem1_1_1.v` | part |  | 24 to 25 | EXTRACTED | BLOCKED_BY_MISSING_JUSTIFICATION |  | yes |
+| `IUT2.Prop1_2` | Proposition | Group- and Frobenioid-theoretic Constructions of Mono-theta Environments | 25 to 26 | EXTRACTED | BLOCKED_BY_EXTERNAL_THEOREM |  | yes |
+| `IUT2.Prop1_3` | Proposition | Compatibility of Cyclotomic Rigidity Isomorphisms | 26 to 27 | EXTRACTED | BLOCKED_BY_EXTERNAL_THEOREM |  | yes |
+| `IUT2.Prop1_4` | Proposition | Étale Theta Functions of Standard Type | 27 | EXTRACTED | BLOCKED_BY_EXTERNAL_THEOREM |  | yes |
+| `IUT2.Rem1_4_1` | Remark |  | 27 to 29 | EXTRACTED | BLOCKED_BY_EXTERNAL_THEOREM |  | yes |
+| `IUT2.Prop1_5` | Proposition | Projective Systems of Mono-theta Environments | 29 to 30 | EXTRACTED | BLOCKED_BY_EXTERNAL_THEOREM |  | yes |
+| &nbsp;&nbsp;`IUT2.Prop1_5.i` | part |  | 29 | EXTRACTED | BLOCKED_BY_EXTERNAL_THEOREM |  | yes |
+| &nbsp;&nbsp;`IUT2.Prop1_5.ii` | part |  | 29 | EXTRACTED | BLOCKED_BY_EXTERNAL_THEOREM |  | yes |
+| &nbsp;&nbsp;`IUT2.Prop1_5.iii` | part |  | 29 to 30 | EXTRACTED | BLOCKED_BY_EXTERNAL_THEOREM |  | yes |
+| &nbsp;&nbsp;`IUT2.Prop1_5.iv` | part |  | 30 | EXTRACTED | BLOCKED_BY_EXTERNAL_THEOREM |  | yes |
+| `IUT2.Rem1_5_1` | Remark |  | 30 | EXTRACTED | BLOCKED_BY_EXTERNAL_THEOREM |  | yes |
+| `IUT2.Rem1_5_2` | Remark |  | 30 to 31 | EXTRACTED | BLOCKED_BY_MISSING_JUSTIFICATION |  | yes |
+| `IUT2.Prop1_6` | Proposition | Cores and Cuspidalizations | 31 | EXTRACTED | BLOCKED_BY_EXTERNAL_THEOREM |  | yes |
+| &nbsp;&nbsp;`IUT2.Prop1_6.i` | part |  | 31 | EXTRACTED | BLOCKED_BY_EXTERNAL_THEOREM |  | yes |
+| &nbsp;&nbsp;`IUT2.Prop1_6.ii` | part |  | 31 | EXTRACTED | BLOCKED_BY_EXTERNAL_THEOREM |  | yes |
+| `IUT2.Rem1_6_1` | Remark |  | 31 to 32 | EXTRACTED | BLOCKED_BY_EXTERNAL_THEOREM |  | yes |
+| `IUT2.Ex1_7` | Example | Radial and Coric Data I: Generalities | 32 to 35 | EXTRACTED | NOT_EXTRACTED |  | yes |
+| &nbsp;&nbsp;`IUT2.Ex1_7.i` | part |  | 32 | EXTRACTED | NOT_EXTRACTED |  | yes |
+| &nbsp;&nbsp;`IUT2.Ex1_7.ii` | part |  | 32 to 33 | EXTRACTED | BLOCKED_BY_MISSING_JUSTIFICATION |  | yes |
+| &nbsp;&nbsp;`IUT2.Ex1_7.iii` | part |  | 34 | EXTRACTED | BLOCKED_BY_MISSING_JUSTIFICATION |  | yes |
+| &nbsp;&nbsp;`IUT2.Ex1_7.iv` | part |  | 34 | EXTRACTED | NOT_EXTRACTED |  | yes |
+| &nbsp;&nbsp;`IUT2.Ex1_7.v` | part |  | 34 to 35 | EXTRACTED | EXTRACTED |  | yes |
 | `IUT2.Ex1_8` | Example | Radial and Coric Data II: Concrete Examples | 35 to 41 | EXTRACTED | NOT_EXTRACTED |  | yes |
-| `IUT2.Rem1_7_1` | Remark |  | 35 | NOT_EXTRACTED | NOT_EXTRACTED |  | yes |
-| `IUT2.Rem1_8_1` | Remark |  | 41 to 42 | NOT_EXTRACTED | NOT_EXTRACTED |  | yes |
-| `IUT2.Ex1_9` | Example |  | 42 to 44 | NOT_EXTRACTED | NOT_EXTRACTED |  | yes |
-| `IUT2.Rem1_9_1` | Remark |  | 44 to 45 | NOT_EXTRACTED | NOT_EXTRACTED |  | yes |
-| `IUT2.Rem1_9_2` | Remark |  | 45 to 46 | NOT_EXTRACTED | NOT_EXTRACTED |  | yes |
+| `IUT2.Rem1_7_1` | Remark |  | 35 | EXTRACTED | EXTRACTED |  | yes |
+| `IUT2.Rem1_8_1` | Remark |  | 41 to 42 | EXTRACTED | BLOCKED_BY_EXTERNAL_THEOREM |  | yes |
+| `IUT2.Ex1_9` | Example |  | 42 to 44 | EXTRACTED | NOT_EXTRACTED |  | yes |
+| &nbsp;&nbsp;`IUT2.Ex1_9.i` | part |  | 42 | EXTRACTED | NOT_EXTRACTED |  | yes |
+| &nbsp;&nbsp;`IUT2.Ex1_9.ii` | part |  | 42 | EXTRACTED | EXTRACTED |  | yes |
+| &nbsp;&nbsp;`IUT2.Ex1_9.iii` | part |  | 42 to 43 | EXTRACTED | BLOCKED_BY_EXTERNAL_THEOREM |  | yes |
+| &nbsp;&nbsp;`IUT2.Ex1_9.iv` | part |  | 43 to 44 | EXTRACTED | BLOCKED_BY_EXTERNAL_THEOREM |  | yes |
+| `IUT2.Rem1_9_1` | Remark |  | 44 to 45 | EXTRACTED | EXTRACTED |  | yes |
+| `IUT2.Rem1_9_2` | Remark |  | 45 to 46 | EXTRACTED | EXTRACTED |  | yes |
 | `IUT2.Cor1_10` | Corollary | Multiradial Mono-theta Cyclotomic Rigidity Isomorphisms | 46 to 47 | EXTRACTED | BLOCKED_BY_MATHLIB |  | yes |
-| `IUT2.Rem1_10_1` | Remark |  | 47 | NOT_EXTRACTED | NOT_EXTRACTED |  |  |
+| `IUT2.Rem1_10_1` | Remark |  | 47 | EXTRACTED | BLOCKED_BY_EXTERNAL_THEOREM |  |  |
 | `IUT2.Rem1_10_2` | Remark |  | 47 | EXTRACTED | NOT_EXTRACTED |  | yes |
-| `IUT2.Rem1_10_3` | Remark |  | 48 to 49 | NOT_EXTRACTED | NOT_EXTRACTED |  |  |
+| `IUT2.Rem1_10_3` | Remark |  | 48 to 49 | EXTRACTED | EXTRACTED |  |  |
 | `IUT2.Cor1_11` | Corollary | Multiradial MLF-Galois Pair Cyclotomic Rigidity Isomorphisms with Indeterminacies | 49 | EXTRACTED | BLOCKED_BY_MATHLIB |  | yes |
-| `IUT2.Rem1_11_1` | Remark |  | 49 to 50 | NOT_EXTRACTED | NOT_EXTRACTED |  | yes |
-| `IUT2.Rem1_11_2` | Remark |  | 50 to 51 | NOT_EXTRACTED | NOT_EXTRACTED |  | yes |
-| `IUT2.Rem1_11_3` | Remark |  | 51 to 54 | NOT_EXTRACTED | NOT_EXTRACTED |  | yes |
-| `IUT2.Rem1_11_4` | Remark |  | 54 to 55 | NOT_EXTRACTED | NOT_EXTRACTED |  | yes |
+| `IUT2.Rem1_11_1` | Remark |  | 49 to 50 | EXTRACTED | BLOCKED_BY_MISSING_JUSTIFICATION |  | yes |
+| `IUT2.Rem1_11_2` | Remark |  | 50 to 51 | EXTRACTED | BLOCKED_BY_MISSING_JUSTIFICATION |  | yes |
+| `IUT2.Rem1_11_3` | Remark |  | 51 to 54 | EXTRACTED | EXTRACTED |  | yes |
+| &nbsp;&nbsp;`IUT2.Rem1_11_3.i` | part |  | 51 to 52 | EXTRACTED | EXTRACTED |  | yes |
+| &nbsp;&nbsp;`IUT2.Rem1_11_3.ii` | part |  | 52 | EXTRACTED | BLOCKED_BY_MISSING_JUSTIFICATION |  | yes |
+| &nbsp;&nbsp;`IUT2.Rem1_11_3.iii` | part |  | 52 to 53 | EXTRACTED | EXTRACTED |  | yes |
+| &nbsp;&nbsp;`IUT2.Rem1_11_3.iv` | part |  | 53 | EXTRACTED | BLOCKED_BY_MISSING_JUSTIFICATION |  | yes |
+| &nbsp;&nbsp;`IUT2.Rem1_11_3.v` | part |  | 53 to 54 | EXTRACTED | BLOCKED_BY_MISSING_JUSTIFICATION |  | yes |
+| `IUT2.Rem1_11_4` | Remark |  | 54 | EXTRACTED | EXTRACTED |  | yes |
 | `IUT2.Cor1_12` | Corollary | Multiradial Constant Multiple Rigidity | 55 to 58 | EXTRACTED | BLOCKED_BY_MATHLIB |  | yes |
+| &nbsp;&nbsp;`IUT2.Cor1_12.i` | part |  | 56 to 57 | EXTRACTED | BLOCKED_BY_MATHLIB |  | yes |
+| &nbsp;&nbsp;`IUT2.Cor1_12.ii` | part |  | 57 | EXTRACTED | BLOCKED_BY_MATHLIB |  | yes |
+| &nbsp;&nbsp;`IUT2.Cor1_12.iii` | part |  | 57 to 58 | EXTRACTED | BLOCKED_BY_MATHLIB |  | yes |
 | `IUT2.Rem1_11_5` | Remark |  | 55 | EXTRACTED | NOT_EXTRACTED |  | yes |
-| `IUT2.Rem1_11_6` | Remark |  | 55 | NOT_EXTRACTED | NOT_EXTRACTED |  | yes |
-| `IUT2.Rem1_12_1` | Remark |  | 58 | NOT_EXTRACTED | NOT_EXTRACTED |  | yes |
-| `IUT2.Rem1_12_2` | Remark |  | 58 to 60 | NOT_EXTRACTED | NOT_EXTRACTED |  | yes |
+| `IUT2.Rem1_11_6` | Remark |  | 55 | EXTRACTED | NOT_EXTRACTED |  | yes |
+| `IUT2.Rem1_12_1` | Remark |  | 58 | EXTRACTED | NOT_EXTRACTED |  | yes |
+| `IUT2.Rem1_12_2` | Remark |  | 58 to 60 | EXTRACTED | NOT_EXTRACTED |  | yes |
 | &nbsp;&nbsp;`IUT2.Rem1_12_2.i` | part |  | 58 | EXTRACTED | NOT_EXTRACTED |  | yes |
-| `IUT2.Rem1_12_3` | Remark |  | 60 | NOT_EXTRACTED | NOT_EXTRACTED |  | yes |
-| `IUT2.Rem1_12_4` | Remark |  | 60 to 61 | NOT_EXTRACTED | NOT_EXTRACTED |  | yes |
-| `IUT2.Rem1_12_5` | Remark |  | 61 to 64 | NOT_EXTRACTED | NOT_EXTRACTED |  | yes |
+| &nbsp;&nbsp;`IUT2.Rem1_12_2.ii` | part |  | 58 to 59 | EXTRACTED | NOT_EXTRACTED |  | yes |
+| &nbsp;&nbsp;`IUT2.Rem1_12_2.iii` | part |  | 59 | EXTRACTED | NOT_EXTRACTED |  | yes |
+| &nbsp;&nbsp;`IUT2.Rem1_12_2.iv` | part |  | 59 | EXTRACTED | NOT_EXTRACTED |  | yes |
+| &nbsp;&nbsp;`IUT2.Rem1_12_2.v` | part |  | 59 | EXTRACTED | NOT_EXTRACTED |  | yes |
+| &nbsp;&nbsp;`IUT2.Rem1_12_2.vi` | part |  | 59 to 60 | EXTRACTED | NOT_EXTRACTED |  | yes |
+| `IUT2.Rem1_12_3` | Remark |  | 60 | EXTRACTED | NOT_EXTRACTED |  | yes |
+| `IUT2.Rem1_12_4` | Remark |  | 60 to 61 | EXTRACTED | BLOCKED_BY_MISSING_JUSTIFICATION |  | yes |
+| `IUT2.Rem1_12_5` | Remark |  | 61 to 63 | EXTRACTED | EXTRACTED |  | yes |
 
 ### Section 2: Galois-theoretic Theta Evaluation
 
 | Id | Kind | Title | PDF pages | Statement | Proof | Lean declaration | Path |
 |---|---|---|---|---|---|---|---|
-| `IUT2.Prop2_1` | Proposition | Review of Certain Tempered Coverings | 64 to 65 | NOT_EXTRACTED | NOT_EXTRACTED |  | yes |
-| `IUT2.Rem2_1_1` | Remark |  | 65 to 66 | NOT_EXTRACTED | NOT_EXTRACTED |  | yes |
-| `IUT2.Prop2_2` | Proposition | Decomposition Groups Associated to Subgraphs | 66 to 67 | NOT_EXTRACTED | NOT_EXTRACTED |  | yes |
+| `IUT2.Prop2_1` | Proposition | Review of Certain Tempered Coverings | 64 to 65 | EXTRACTED | BLOCKED_BY_EXTERNAL_THEOREM |  | yes |
+| `IUT2.Rem2_1_1` | Remark |  | 65 to 66 | EXTRACTED | NOT_EXTRACTED |  | yes |
+| `IUT2.Prop2_2` | Proposition | Decomposition Groups Associated to Subgraphs | 66 to 67 | EXTRACTED | BLOCKED_BY_EXTERNAL_THEOREM |  | yes |
 | `IUT2.Def2_3` | Definition |  | 67 to 69 | EXTRACTED | NOT_EXTRACTED |  | yes |
-| `IUT2.Rem2_2_1` | Remark |  | 67 | NOT_EXTRACTED | NOT_EXTRACTED |  | yes |
+| `IUT2.Rem2_2_1` | Remark |  | 67 | EXTRACTED | NOT_EXTRACTED |  | yes |
 | `IUT2.Cor2_4` | Corollary | F± l -Symmetric Two-torsion Translates of Cusps | 69 to 71 | EXTRACTED | BLOCKED_BY_MATHLIB |  | yes |
-| `IUT2.Rem2_3_1` | Remark |  | 69 | NOT_EXTRACTED | NOT_EXTRACTED |  | yes |
+| &nbsp;&nbsp;`IUT2.Cor2_4.i` | part |  | 69 to 70 | EXTRACTED | BLOCKED_BY_MATHLIB |  | yes |
+| &nbsp;&nbsp;`IUT2.Cor2_4.ii` | part |  | 70 | EXTRACTED | BLOCKED_BY_EXTERNAL_THEOREM |  | yes |
+| &nbsp;&nbsp;`IUT2.Cor2_4.iii` | part |  | 70 | EXTRACTED | BLOCKED_BY_MATHLIB |  | yes |
+| `IUT2.Rem2_3_1` | Remark |  | 69 | EXTRACTED | NOT_EXTRACTED |  | yes |
 | `IUT2.Cor2_5` | Corollary | Group-theoretic Theta Evaluation | 71 to 72 | EXTRACTED | BLOCKED_BY_MATHLIB |  | yes |
-| `IUT2.Rem2_4_1` | Remark |  | 71 | NOT_EXTRACTED | NOT_EXTRACTED |  |  |
+| &nbsp;&nbsp;`IUT2.Cor2_5.i` | part |  | 71 | EXTRACTED | BLOCKED_BY_MATHLIB |  | yes |
+| &nbsp;&nbsp;`IUT2.Cor2_5.ii` | part |  | 71 to 72 | EXTRACTED | BLOCKED_BY_MATHLIB |  | yes |
+| &nbsp;&nbsp;`IUT2.Cor2_5.iii` | part |  | 72 | EXTRACTED | BLOCKED_BY_MATHLIB |  | yes |
+| `IUT2.Rem2_4_1` | Remark |  | 71 | EXTRACTED | NOT_EXTRACTED |  |  |
 | `IUT2.Rem2_5_1` | Remark |  | 72 to 73 | EXTRACTED | BLOCKED_BY_MATHLIB |  | yes |
 | &nbsp;&nbsp;`IUT2.Rem2_5_1.frag.labelRep_bijective` | fragment |  | 72 | STATEMENT_FORMALIZED | KERNEL_VERIFIED | `IUT.PaperII.Labels.labelRep_bijective` |  |
-| `IUT2.Rem2_5_2` | Remark |  | 73 to 76 | NOT_EXTRACTED | NOT_EXTRACTED |  | yes |
+| &nbsp;&nbsp;`IUT2.Rem2_5_1.frag.theta_series_padic_instance` | fragment | (scope: instance over Q_p) | 20 to 73 | STATEMENT_FORMALIZED | KERNEL_VERIFIED | `IUT.Prerequisites.ThetaFunction.padic_five_norm_thetaRatio` |  |
+| &nbsp;&nbsp;`IUT2.Rem2_5_1.frag.theta_series_quasi_periodicity` | fragment | (scope: classical theta series evaluated at points of a complete normed field; not the etale theta function) | 20 to 73 | STATEMENT_FORMALIZED | KERNEL_VERIFIED | `IUT.Prerequisites.ThetaFunction.thetaSeries_zpow_mul` |  |
+| &nbsp;&nbsp;`IUT2.Rem2_5_1.frag.theta_series_zeros` | fragment | (scope: classical theta series evaluated at points of a complete normed field; not the etale theta function) | 20 to 73 | STATEMENT_FORMALIZED | KERNEL_VERIFIED | `IUT.Prerequisites.ThetaFunction.thetaSeries_zpow` |  |
+| &nbsp;&nbsp;`IUT2.Rem2_5_1.frag.theta_value_label_orbit` | fragment | (scope: classical theta series evaluated at points of a complete normed field; not the etale theta function) | 20 to 73 | STATEMENT_FORMALIZED | KERNEL_VERIFIED | `IUT.Prerequisites.ThetaFunction.pow_mul_thetaRatio_sq_eq_one_iff` |  |
+| &nbsp;&nbsp;`IUT2.Rem2_5_1.frag.theta_values_at_sqrt_neg_one` | fragment | (scope: classical theta series evaluated at points of a complete normed field; not the etale theta function) | 20 to 73 | STATEMENT_FORMALIZED | KERNEL_VERIFIED | `IUT.Prerequisites.ThetaFunction.thetaSeries_zpow_mul_of_sq_eq_neg_one` |  |
+| `IUT2.Rem2_5_2` | Remark |  | 73 to 75 | EXTRACTED | NOT_EXTRACTED |  | yes |
 | `IUT2.Cor2_6` | Corollary | Splittings Defined on Subgraphs | 76 | EXTRACTED | BLOCKED_BY_MATHLIB |  | yes |
-| `IUT2.Rem2_6_1` | Remark |  | 76 to 77 | NOT_EXTRACTED | NOT_EXTRACTED |  | yes |
-| `IUT2.Rem2_6_2` | Remark |  | 77 to 79 | NOT_EXTRACTED | NOT_EXTRACTED |  | yes |
+| `IUT2.Rem2_6_1` | Remark |  | 76 to 77 | EXTRACTED | NOT_EXTRACTED |  | yes |
+| `IUT2.Rem2_6_2` | Remark |  | 77 to 78 | EXTRACTED | NOT_EXTRACTED |  | yes |
 | `IUT2.Rem2_6_3` | Remark |  | 79 to 80 | INTERPRETATION_AMBIGUOUS | PROOF_IN_PROGRESS |  | yes |
 | &nbsp;&nbsp;`IUT2.Rem2_6_3.frag.gammaNormValue_strictMono` | fragment |  | 80 | STATEMENT_FORMALIZED | KERNEL_VERIFIED | `IUT.PaperII.Labels.gammaNormValue_strictMono` |  |
 | &nbsp;&nbsp;`IUT2.Rem2_6_3.frag.gammaNorm_eq` | fragment |  | 79 to 80 | STATEMENT_FORMALIZED | KERNEL_VERIFIED | `IUT.PaperII.Labels.gammaNorm_eq` |  |
 | &nbsp;&nbsp;`IUT2.Rem2_6_3.frag.gammaNorm_eq_max_iff` | fragment |  | 80 | STATEMENT_FORMALIZED | KERNEL_VERIFIED | `IUT.PaperII.Labels.gammaNorm_eq_max_iff` |  |
 | `IUT2.Def2_7` | Definition |  | 80 to 81 | EXTRACTED | NOT_EXTRACTED |  | yes |
 | `IUT2.Cor2_8` | Corollary | Mono-theta-theoretic Theta Evaluation | 81 to 83 | EXTRACTED | BLOCKED_BY_MATHLIB |  | yes |
-| `IUT2.Rem2_8_1` | Remark |  | 83 | NOT_EXTRACTED | NOT_EXTRACTED |  | yes |
-| `IUT2.Rem2_8_2` | Remark |  | 83 | NOT_EXTRACTED | NOT_EXTRACTED |  | yes |
-| `IUT2.Rem2_8_3` | Remark |  | 83 to 84 | NOT_EXTRACTED | NOT_EXTRACTED |  | yes |
+| &nbsp;&nbsp;`IUT2.Cor2_8.i` | part |  | 81 to 82 | EXTRACTED | BLOCKED_BY_MATHLIB |  | yes |
+| &nbsp;&nbsp;`IUT2.Cor2_8.ii` | part |  | 82 | EXTRACTED | BLOCKED_BY_MATHLIB |  | yes |
+| &nbsp;&nbsp;`IUT2.Cor2_8.iii` | part |  | 82 to 83 | EXTRACTED | BLOCKED_BY_MATHLIB |  | yes |
+| `IUT2.Rem2_8_1` | Remark |  | 83 | EXTRACTED | NOT_EXTRACTED |  | yes |
+| `IUT2.Rem2_8_2` | Remark |  | 83 | EXTRACTED | NOT_EXTRACTED |  | yes |
+| `IUT2.Rem2_8_3` | Remark |  | 83 to 84 | EXTRACTED | NOT_EXTRACTED |  | yes |
 | `IUT2.Cor2_9` | Corollary | Theta Evaluation via Base-field-theoretic Cyclotomes | 84 to 85 | EXTRACTED | BLOCKED_BY_MATHLIB |  | yes |
-| `IUT2.Rem2_9_1` | Remark |  | 85 to 87 | NOT_EXTRACTED | NOT_EXTRACTED |  | yes |
+| `IUT2.Rem2_9_1` | Remark |  | 85 to 86 | EXTRACTED | NOT_EXTRACTED |  | yes |
 
 ### Section 3: Tempered Gaussian Frobenioids
 
 | Id | Kind | Title | PDF pages | Statement | Proof | Lean declaration | Path |
 |---|---|---|---|---|---|---|---|
-| `IUT2.Prop3_1` | Proposition | Mono-theta-theoretic Theta Monoids | 87 to 88 | NOT_EXTRACTED | NOT_EXTRACTED |  | yes |
-| `IUT2.Ex3_2` | Example | Theta Monoids Constructed from Tempered Frobenioids | 88 to 89 | NOT_EXTRACTED | NOT_EXTRACTED |  | yes |
-| `IUT2.Prop3_3` | Proposition | Frobenioid-theoretic Theta Monoids | 89 to 91 | NOT_EXTRACTED | NOT_EXTRACTED |  | yes |
-| `IUT2.Prop3_4` | Proposition | Group-theoretic Theta Monoids | 91 to 93 | NOT_EXTRACTED | NOT_EXTRACTED |  | yes |
+| `IUT2.Prop3_1` | Proposition | Mono-theta-theoretic Theta Monoids | 87 to 88 | EXTRACTED | BLOCKED_BY_MATHLIB |  | yes |
+| `IUT2.Ex3_2` | Example | Theta Monoids Constructed from Tempered Frobenioids | 88 to 89 | EXTRACTED | NOT_EXTRACTED |  | yes |
+| `IUT2.Prop3_3` | Proposition | Frobenioid-theoretic Theta Monoids | 89 to 90 | EXTRACTED | BLOCKED_BY_MATHLIB |  | yes |
+| `IUT2.Prop3_4` | Proposition | Group-theoretic Theta Monoids | 91 to 93 | EXTRACTED | BLOCKED_BY_MATHLIB |  | yes |
 | `IUT2.Cor3_5` | Corollary | Mono-theta-theoretic Gaussian Monoids | 93 to 96 | EXTRACTED | BLOCKED_BY_MATHLIB |  | yes |
-| `IUT2.Rem3_4_1` | Remark |  | 93 | NOT_EXTRACTED | NOT_EXTRACTED |  | yes |
-| `IUT2.Rem3_5_1` | Remark |  | 96 | NOT_EXTRACTED | NOT_EXTRACTED |  | yes |
-| `IUT2.Rem3_5_2` | Remark |  | 96 to 99 | NOT_EXTRACTED | NOT_EXTRACTED |  | yes |
+| &nbsp;&nbsp;`IUT2.Cor3_5.i` | part |  | 94 | EXTRACTED | BLOCKED_BY_MATHLIB |  | yes |
+| &nbsp;&nbsp;`IUT2.Cor3_5.ii` | part |  | 94 to 95 | EXTRACTED | BLOCKED_BY_MATHLIB |  | yes |
+| &nbsp;&nbsp;`IUT2.Cor3_5.iii` | part |  | 95 | EXTRACTED | BLOCKED_BY_MATHLIB |  | yes |
+| `IUT2.Rem3_4_1` | Remark |  | 93 | EXTRACTED | NOT_EXTRACTED |  | yes |
+| `IUT2.Rem3_5_1` | Remark |  | 96 | EXTRACTED | NOT_EXTRACTED |  | yes |
+| `IUT2.Rem3_5_2` | Remark |  | 96 to 99 | EXTRACTED | NOT_EXTRACTED |  | yes |
 | `IUT2.Cor3_6` | Corollary | Frobenioid-theoretic Gaussian Monoids | 99 to 101 | EXTRACTED | BLOCKED_BY_MATHLIB |  | yes |
-| `IUT2.Rem3_5_3` | Remark |  | 99 | NOT_EXTRACTED | NOT_EXTRACTED |  | yes |
-| `IUT2.Rem3_6_1` | Remark |  | 101 | NOT_EXTRACTED | NOT_EXTRACTED |  | yes |
+| &nbsp;&nbsp;`IUT2.Cor3_6.i` | part |  | 99 | EXTRACTED | BLOCKED_BY_MATHLIB |  | yes |
+| &nbsp;&nbsp;`IUT2.Cor3_6.ii` | part |  | 99 to 100 | EXTRACTED | BLOCKED_BY_MATHLIB |  | yes |
+| &nbsp;&nbsp;`IUT2.Cor3_6.iii` | part |  | 100 to 101 | EXTRACTED | BLOCKED_BY_MATHLIB |  | yes |
+| `IUT2.Rem3_5_3` | Remark |  | 99 | EXTRACTED | NOT_EXTRACTED |  | yes |
+| `IUT2.Rem3_6_1` | Remark |  | 101 | EXTRACTED | NOT_EXTRACTED |  | yes |
 | `IUT2.Rem3_6_2` | Remark |  | 101 to 104 | EXTRACTED | NOT_EXTRACTED |  | yes |
-| `IUT2.Rem3_6_3` | Remark |  | 104 to 105 | NOT_EXTRACTED | NOT_EXTRACTED |  | yes |
+| `IUT2.Rem3_6_3` | Remark |  | 104 to 105 | EXTRACTED | BLOCKED_BY_MISSING_JUSTIFICATION |  | yes |
 | `IUT2.Rem3_6_4` | Remark |  | 105 to 108 | EXTRACTED | NOT_EXTRACTED |  | yes |
-| `IUT2.Rem3_6_5` | Remark |  | 108 to 110 | NOT_EXTRACTED | NOT_EXTRACTED |  | yes |
+| `IUT2.Rem3_6_5` | Remark |  | 108 to 110 | EXTRACTED | EXTRACTED |  | yes |
 | `IUT2.Cor3_7` | Corollary | Group-theoretic Gaussian Monoids and Uniradiality | 110 to 112 | EXTRACTED | BLOCKED_BY_MATHLIB |  | yes |
 | `IUT2.Def3_8` | Definition |  | 112 to 115 | EXTRACTED | NOT_EXTRACTED |  | yes |
 | `IUT2.Rem3_7_1` | Remark |  | 112 | EXTRACTED | NOT_EXTRACTED |  | yes |
-| `IUT2.Rem3_8_1` | Remark |  | 115 to 116 | NOT_EXTRACTED | NOT_EXTRACTED |  | yes |
-| `IUT2.Rem3_8_2` | Remark |  | 116 to 117 | NOT_EXTRACTED | NOT_EXTRACTED |  | yes |
+| `IUT2.Rem3_8_1` | Remark |  | 115 | EXTRACTED | NOT_EXTRACTED |  | yes |
+| `IUT2.Rem3_8_2` | Remark |  | 116 | EXTRACTED | NOT_EXTRACTED |  | yes |
+| &nbsp;&nbsp;`IUT2.Rem3_8_2.i` | part |  | 116 | EXTRACTED | NOT_EXTRACTED |  | yes |
 | &nbsp;&nbsp;`IUT2.Rem3_8_2.ii` | part |  | 116 | EXTRACTED | NOT_EXTRACTED |  | yes |
-| `IUT2.Rem3_8_3` | Remark |  | 117 to 120 | NOT_EXTRACTED | NOT_EXTRACTED |  | yes |
+| `IUT2.Rem3_8_3` | Remark |  | 117 to 119 | EXTRACTED | BLOCKED_BY_MISSING_JUSTIFICATION |  | yes |
 
 ### Section 4: Global Gaussian Frobenioids
 
@@ -319,45 +398,67 @@ BLOCKED_BY_MISSING_JUSTIFICATION: the text gives an assertion where a formalizat
 |---|---|---|---|---|---|---|---|
 | `IUT2.Prop4_1` | Proposition | Group-theoretic Gaussian Monoids at Good Nonarchimedean Primes | 120 to 122 | EXTRACTED | BLOCKED_BY_MATHLIB |  | yes |
 | &nbsp;&nbsp;`IUT2.Prop4_1.frag.sum_exponents` | fragment |  | 122 | STATEMENT_FORMALIZED | KERNEL_VERIFIED | `IUT.PaperII.Labels.sum_exponents` |  |
-| `IUT2.Rem4_1_1` | Remark |  | 122 to 123 | NOT_EXTRACTED | NOT_EXTRACTED |  | yes |
+| `IUT2.Rem4_1_1` | Remark |  | 122 to 123 | EXTRACTED | BLOCKED_BY_MISSING_JUSTIFICATION |  | yes |
 | `IUT2.Prop4_2` | Proposition | Frobenioid-theoretic Gaussian Monoids at Good Nonarchimedean Primes | 123 to 125 | EXTRACTED | BLOCKED_BY_MATHLIB |  | yes |
-| `IUT2.Rem4_2_1` | Remark |  | 125 to 127 | NOT_EXTRACTED | NOT_EXTRACTED |  | yes |
+| `IUT2.Rem4_2_1` | Remark |  | 125 to 126 | EXTRACTED | BLOCKED_BY_MISSING_JUSTIFICATION |  | yes |
 | `IUT2.Prop4_3` | Proposition | Aut-holomorphic-space-theoretic Gaussian Monoids at Archimedean Primes | 127 to 129 | EXTRACTED | BLOCKED_BY_MATHLIB |  | yes |
 | `IUT2.Prop4_4` | Proposition | Frobenioid-theoretic Gaussian Monoids at Archimedean Primes | 129 to 131 | EXTRACTED | BLOCKED_BY_MATHLIB |  | yes |
-| `IUT2.Rem4_3_1` | Remark |  | 129 | NOT_EXTRACTED | NOT_EXTRACTED |  | yes |
+| `IUT2.Rem4_3_1` | Remark |  | 129 | EXTRACTED | BLOCKED_BY_MISSING_JUSTIFICATION |  | yes |
 | `IUT2.Cor4_5` | Corollary | Group-theoretic Monoids Associated to Base-Θ±ell -Hodge Theaters | 131 to 134 | EXTRACTED | BLOCKED_BY_MATHLIB |  | yes |
-| `IUT2.Rem4_4_1` | Remark |  | 131 | NOT_EXTRACTED | NOT_EXTRACTED |  | yes |
-| `IUT2.Rem4_5_1` | Remark |  | 134 to 135 | NOT_EXTRACTED | NOT_EXTRACTED |  | yes |
-| `IUT2.Rem4_5_2` | Remark |  | 135 | NOT_EXTRACTED | NOT_EXTRACTED |  | yes |
-| `IUT2.Rem4_5_3` | Remark |  | 135 to 136 | NOT_EXTRACTED | NOT_EXTRACTED |  | yes |
+| &nbsp;&nbsp;`IUT2.Cor4_5.i` | part |  | 131 | EXTRACTED | BLOCKED_BY_MATHLIB |  | yes |
+| &nbsp;&nbsp;`IUT2.Cor4_5.ii` | part |  | 131 to 132 | EXTRACTED | BLOCKED_BY_MATHLIB |  | yes |
+| &nbsp;&nbsp;`IUT2.Cor4_5.iii` | part |  | 132 to 133 | EXTRACTED | BLOCKED_BY_MATHLIB |  | yes |
+| &nbsp;&nbsp;`IUT2.Cor4_5.iv` | part |  | 133 | EXTRACTED | BLOCKED_BY_MATHLIB |  | yes |
+| &nbsp;&nbsp;`IUT2.Cor4_5.v` | part |  | 133 to 134 | EXTRACTED | BLOCKED_BY_MATHLIB |  | yes |
+| `IUT2.Rem4_4_1` | Remark |  | 131 | EXTRACTED | NOT_EXTRACTED |  | yes |
+| `IUT2.Rem4_5_1` | Remark |  | 134 to 135 | EXTRACTED | BLOCKED_BY_MISSING_JUSTIFICATION |  | yes |
+| `IUT2.Rem4_5_2` | Remark |  | 135 | EXTRACTED | BLOCKED_BY_MISSING_JUSTIFICATION |  | yes |
+| `IUT2.Rem4_5_3` | Remark |  | 135 to 136 | EXTRACTED | BLOCKED_BY_MISSING_JUSTIFICATION |  | yes |
 | `IUT2.Rem4_5_4` | Remark |  | 136 | EXTRACTED | NOT_EXTRACTED |  | yes |
 | `IUT2.Cor4_6` | Corollary | Frobenioid-theoretic Monoids Associated to Θ±ell -Hodge Theaters | 137 to 139 | EXTRACTED | BLOCKED_BY_MATHLIB |  | yes |
-| `IUT2.Rem4_6_1` | Remark |  | 139 to 140 | NOT_EXTRACTED | NOT_EXTRACTED |  | yes |
+| &nbsp;&nbsp;`IUT2.Cor4_6.i` | part |  | 137 | EXTRACTED | BLOCKED_BY_MATHLIB |  | yes |
+| &nbsp;&nbsp;`IUT2.Cor4_6.ii` | part |  | 137 to 138 | EXTRACTED | BLOCKED_BY_MATHLIB |  | yes |
+| &nbsp;&nbsp;`IUT2.Cor4_6.iii` | part |  | 138 | EXTRACTED | BLOCKED_BY_MATHLIB |  | yes |
+| &nbsp;&nbsp;`IUT2.Cor4_6.iv` | part |  | 138 to 139 | EXTRACTED | BLOCKED_BY_MATHLIB |  | yes |
+| &nbsp;&nbsp;`IUT2.Cor4_6.v` | part |  | 139 | EXTRACTED | BLOCKED_BY_MATHLIB |  | yes |
+| `IUT2.Rem4_6_1` | Remark |  | 139 to 140 | EXTRACTED | NOT_EXTRACTED |  | yes |
 | `IUT2.Cor4_7` | Corollary | Group-theoretic Monoids Associated to Base-ΘNF-Hodge Theaters | 140 to 142 | EXTRACTED | BLOCKED_BY_MATHLIB |  | yes |
-| `IUT2.Rem4_6_2` | Remark |  | 140 | NOT_EXTRACTED | NOT_EXTRACTED |  | yes |
-| `IUT2.Rem4_7_1` | Remark |  | 143 | NOT_EXTRACTED | NOT_EXTRACTED |  | yes |
-| `IUT2.Rem4_7_2` | Remark |  | 143 | NOT_EXTRACTED | NOT_EXTRACTED |  | yes |
+| &nbsp;&nbsp;`IUT2.Cor4_7.i` | part |  | 140 to 141 | EXTRACTED | BLOCKED_BY_MATHLIB |  | yes |
+| &nbsp;&nbsp;`IUT2.Cor4_7.ii` | part |  | 141 to 142 | EXTRACTED | BLOCKED_BY_MATHLIB |  | yes |
+| &nbsp;&nbsp;`IUT2.Cor4_7.iii` | part |  | 142 | EXTRACTED | BLOCKED_BY_MATHLIB |  | yes |
+| `IUT2.Rem4_6_2` | Remark |  | 140 | EXTRACTED | NOT_EXTRACTED |  | yes |
+| `IUT2.Rem4_7_1` | Remark |  | 143 | EXTRACTED | BLOCKED_BY_MISSING_JUSTIFICATION |  | yes |
+| `IUT2.Rem4_7_2` | Remark |  | 143 | EXTRACTED | BLOCKED_BY_MISSING_JUSTIFICATION |  | yes |
 | `IUT2.Rem4_7_3` | Remark |  | 143 to 145 | EXTRACTED | NOT_EXTRACTED |  | yes |
 | &nbsp;&nbsp;`IUT2.Rem4_7_3.frag.average_exponents` | fragment |  | 145 | STATEMENT_FORMALIZED | KERNEL_VERIFIED | `IUT.PaperII.Labels.average_exponents` |  |
-| `IUT2.Rem4_7_4` | Remark |  | 145 to 147 | NOT_EXTRACTED | NOT_EXTRACTED |  | yes |
-| `IUT2.Rem4_7_5` | Remark |  | 147 to 148 | NOT_EXTRACTED | NOT_EXTRACTED |  | yes |
-| `IUT2.Rem4_7_6` | Remark |  | 148 to 149 | NOT_EXTRACTED | NOT_EXTRACTED |  | yes |
+| `IUT2.Rem4_7_4` | Remark |  | 145 to 147 | EXTRACTED | BLOCKED_BY_MISSING_JUSTIFICATION |  | yes |
+| `IUT2.Rem4_7_5` | Remark |  | 147 to 148 | EXTRACTED | EXTRACTED |  | yes |
+| `IUT2.Rem4_7_6` | Remark |  | 148 to 149 | EXTRACTED | BLOCKED_BY_MISSING_JUSTIFICATION |  | yes |
 | `IUT2.Cor4_8` | Corollary | Frobenioid-theoretic Monoids Associated to ΘNF-Hodge Theaters | 149 to 151 | EXTRACTED | BLOCKED_BY_MATHLIB |  | yes |
-| `IUT2.Rem4_7_7` | Remark |  | 149 | NOT_EXTRACTED | NOT_EXTRACTED |  |  |
-| `IUT2.Rem4_8_1` | Remark |  | 151 to 153 | NOT_EXTRACTED | NOT_EXTRACTED |  | yes |
+| `IUT2.Rem4_7_7` | Remark |  | 149 | EXTRACTED | NOT_EXTRACTED |  |  |
+| `IUT2.Rem4_8_1` | Remark |  | 151 to 152 | EXTRACTED | BLOCKED_BY_MISSING_JUSTIFICATION |  | yes |
 | `IUT2.Def4_9` | Definition |  | 153 to 158 | EXTRACTED | NOT_EXTRACTED |  | yes |
-| `IUT2.Rem4_8_2` | Remark |  | 153 | NOT_EXTRACTED | NOT_EXTRACTED |  | yes |
-| `IUT2.Rem4_8_3` | Remark |  | 153 | NOT_EXTRACTED | NOT_EXTRACTED |  | yes |
+| `IUT2.Rem4_8_2` | Remark |  | 153 | EXTRACTED | NOT_EXTRACTED |  | yes |
+| `IUT2.Rem4_8_3` | Remark |  | 153 | EXTRACTED | NOT_EXTRACTED |  | yes |
 | `IUT2.Cor4_10` | Corollary | Frobenius-pictures of Θ±ell NF-Hodge Theaters | 158 to 161 | EXTRACTED | BLOCKED_BY_MATHLIB |  | yes |
+| &nbsp;&nbsp;`IUT2.Cor4_10.i` | part |  | 158 to 159 | EXTRACTED | BLOCKED_BY_MATHLIB |  | yes |
+| &nbsp;&nbsp;`IUT2.Cor4_10.ii` | part |  | 159 | EXTRACTED | BLOCKED_BY_MATHLIB |  | yes |
+| &nbsp;&nbsp;`IUT2.Cor4_10.iii` | part |  | 159 to 160 | EXTRACTED | BLOCKED_BY_MATHLIB |  | yes |
+| &nbsp;&nbsp;`IUT2.Cor4_10.iv` | part |  | 160 | EXTRACTED | BLOCKED_BY_MATHLIB |  | yes |
+| &nbsp;&nbsp;`IUT2.Cor4_10.v` | part |  | 160 to 161 | EXTRACTED | BLOCKED_BY_MATHLIB |  | yes |
+| &nbsp;&nbsp;`IUT2.Cor4_10.vi` | part |  | 161 | EXTRACTED | BLOCKED_BY_MATHLIB |  | yes |
 | `IUT2.Rem4_10_1` | Remark |  | 161 to 162 | EXTRACTED | NOT_EXTRACTED |  | yes |
 | `IUT2.Rem4_10_2` | Remark |  | 162 | EXTRACTED | NOT_EXTRACTED |  |  |
 | `IUT2.Rem4_10_3` | Remark |  | 162 to 163 | EXTRACTED | NOT_EXTRACTED |  | yes |
 | `IUT2.Cor4_11` | Corollary | Étale-pictures of Base-Θ±ell NF-Hodge Theaters | 163 to 164 | EXTRACTED | BLOCKED_BY_MATHLIB |  | yes |
 | `IUT2.Rem4_11_1` | Remark |  | 164 to 165 | EXTRACTED | NOT_EXTRACTED |  | yes |
-| `IUT2.Rem4_11_2` | Remark |  | 165 to 167 | NOT_EXTRACTED | NOT_EXTRACTED |  | yes |
-| `IUT2.Rem4_11_3` | Remark |  | 167 to 168 | NOT_EXTRACTED | NOT_EXTRACTED |  | yes |
-| `IUT2.Rem4_11_4` | Remark |  | 168 to 172 | NOT_EXTRACTED | NOT_EXTRACTED |  | yes |
-| `IUT2.Rem4_11_5` | Remark |  | 172 to 173 | NOT_EXTRACTED | NOT_EXTRACTED |  | yes |
+| `IUT2.Rem4_11_2` | Remark |  | 165 to 167 | EXTRACTED | EXTRACTED |  | yes |
+| `IUT2.Rem4_11_3` | Remark |  | 167 to 168 | EXTRACTED | BLOCKED_BY_MISSING_JUSTIFICATION |  | yes |
+| `IUT2.Rem4_11_4` | Remark |  | 168 to 172 | EXTRACTED | EXTRACTED |  | yes |
+| &nbsp;&nbsp;`IUT2.Rem4_11_4.i` | part |  | 168 | EXTRACTED | EXTRACTED |  | yes |
+| &nbsp;&nbsp;`IUT2.Rem4_11_4.ii` | part |  | 168 to 169 | EXTRACTED | EXTRACTED |  | yes |
+| &nbsp;&nbsp;`IUT2.Rem4_11_4.iii` | part |  | 169 to 172 | EXTRACTED | EXTRACTED |  | yes |
+| `IUT2.Rem4_11_5` | Remark |  | 172 | EXTRACTED | BLOCKED_BY_MISSING_JUSTIFICATION |  | yes |
 
 ## IUT III
 
@@ -365,59 +466,92 @@ BLOCKED_BY_MISSING_JUSTIFICATION: the text gives an assertion where a formalizat
 
 | Id | Kind | Title | PDF pages | Statement | Proof | Lean declaration | Path |
 |---|---|---|---|---|---|---|---|
-| `IUT3.ThmA` | Theorem | Multiradial Algorithms for Logarithmic Gaussian Procession Monoids | 19 | NOT_EXTRACTED | NOT_EXTRACTED |  |  |
-| `IUT3.ThmB` | Theorem | Log-volume Estimates for Multiradially Represented Splitting Monoids of Logarithmic Gaussian Procession Monoids | 21 to 22 | NOT_EXTRACTED | NOT_EXTRACTED |  |  |
+| `IUT3.ThmA` | Theorem | Multiradial Algorithms for Logarithmic Gaussian Procession Monoids | 19 to 21 | EXTRACTED | BLOCKED_BY_MISSING_JUSTIFICATION |  |  |
+| `IUT3.ThmB` | Theorem | Log-volume Estimates for Multiradially Represented Splitting Monoids of Logarithmic Gaussian Procession Monoids | 21 to 22 | EXTRACTED | BLOCKED_BY_MISSING_JUSTIFICATION |  |  |
 
 ### Section 1: The Log-theta-lattice
 
 | Id | Kind | Title | PDF pages | Statement | Proof | Lean declaration | Path |
 |---|---|---|---|---|---|---|---|
-| `IUT3.Def1_1` | Definition |  | 23 to 28 | NOT_EXTRACTED | NOT_EXTRACTED |  | yes |
-| `IUT3.Rem1_1_1` | Remark |  | 28 to 29 | NOT_EXTRACTED | NOT_EXTRACTED |  | yes |
-| `IUT3.Rem1_1_2` | Remark |  | 29 to 30 | NOT_EXTRACTED | NOT_EXTRACTED |  |  |
-| `IUT3.Prop1_2` | Proposition | log-links Between F-prime-strips | 30 to 35 | NOT_EXTRACTED | BLOCKED_BY_EXTERNAL_THEOREM |  | yes |
+| `IUT3.Def1_1` | Definition |  | 23 to 28 | EXTRACTED | BLOCKED_BY_EXTERNAL_THEOREM |  | yes |
+| &nbsp;&nbsp;`IUT3.Def1_1.frag.log_shell_Qp` | fragment | (scope: base field Q_p only; finite extensions of Q_p are not treated) | 24 | STATEMENT_FORMALIZED | KERNEL_VERIFIED | `IUT.Prerequisites.PadicLog.padicLogShell_eq_range_coe` |  |
+| &nbsp;&nbsp;`IUT3.Def1_1.i` | part |  | 23 to 25 | EXTRACTED | NOT_EXTRACTED |  | yes |
+| &nbsp;&nbsp;`IUT3.Def1_1.ii` | part |  | 25 to 26 | EXTRACTED | NOT_EXTRACTED |  | yes |
+| &nbsp;&nbsp;`IUT3.Def1_1.iii` | part |  | 26 to 27 | EXTRACTED | NOT_EXTRACTED |  | yes |
+| &nbsp;&nbsp;`IUT3.Def1_1.iv` | part |  | 27 | EXTRACTED | EXTRACTED |  | yes |
+| &nbsp;&nbsp;`IUT3.Def1_1.v` | part |  | 27 to 28 | EXTRACTED | BLOCKED_BY_EXTERNAL_THEOREM |  | yes |
+| &nbsp;&nbsp;`IUT3.Def1_1.vi` | part |  | 28 | EXTRACTED | NOT_EXTRACTED |  | yes |
+| `IUT3.Rem1_1_1` | Remark |  | 28 to 29 | EXTRACTED | BLOCKED_BY_MISSING_JUSTIFICATION |  | yes |
+| `IUT3.Rem1_1_2` | Remark |  | 29 to 30 | EXTRACTED | EXTRACTED |  |  |
+| `IUT3.Prop1_2` | Proposition | log-links Between F-prime-strips | 30 to 35 | EXTRACTED | BLOCKED_BY_EXTERNAL_THEOREM |  | yes |
+| &nbsp;&nbsp;`IUT3.Prop1_2.i` | part |  | 31 | EXTRACTED | EXTRACTED |  | yes |
+| &nbsp;&nbsp;`IUT3.Prop1_2.ii` | part |  | 31 | EXTRACTED | EXTRACTED |  | yes |
+| &nbsp;&nbsp;`IUT3.Prop1_2.iii` | part |  | 31 | EXTRACTED | BLOCKED_BY_EXTERNAL_THEOREM |  | yes |
+| &nbsp;&nbsp;`IUT3.Prop1_2.iv` | part |  | 31 | EXTRACTED | BLOCKED_BY_EXTERNAL_THEOREM |  | yes |
+| &nbsp;&nbsp;`IUT3.Prop1_2.ix` | part |  | 34 | EXTRACTED | BLOCKED_BY_EXTERNAL_THEOREM |  | yes |
+| &nbsp;&nbsp;`IUT3.Prop1_2.v` | part |  | 31 to 32 | EXTRACTED | BLOCKED_BY_EXTERNAL_THEOREM |  | yes |
+| &nbsp;&nbsp;&nbsp;&nbsp;`IUT3.Prop1_2.v.frag.nonarch_Qp` | fragment | (scope: base field Q_p only; finite extensions of Q_p are not treated) | 31 to 32 | STATEMENT_FORMALIZED | KERNEL_VERIFIED | `IUT.Prerequisites.PadicLog.padicInt_subset_padicLogShell` |  |
+| &nbsp;&nbsp;`IUT3.Prop1_2.vi` | part |  | 32 | EXTRACTED | BLOCKED_BY_EXTERNAL_THEOREM |  | yes |
+| &nbsp;&nbsp;`IUT3.Prop1_2.vii` | part |  | 32 to 33 | EXTRACTED | BLOCKED_BY_EXTERNAL_THEOREM |  | yes |
+| &nbsp;&nbsp;`IUT3.Prop1_2.viii` | part |  | 33 | EXTRACTED | EXTRACTED |  | yes |
 | &nbsp;&nbsp;`IUT3.Prop1_2.x` | part |  | 34 | EXTRACTED | EXTRACTED |  | yes |
-| `IUT3.Rem1_2_1` | Remark |  | 35 | NOT_EXTRACTED | NOT_EXTRACTED |  | yes |
+| `IUT3.Rem1_2_1` | Remark |  | 35 | EXTRACTED | EXTRACTED |  | yes |
 | `IUT3.Rem1_2_2` | Remark |  | 35 to 39 | INTERPRETATION_AMBIGUOUS | EXTRACTED |  | yes |
-| `IUT3.Rem1_2_3` | Remark |  | 39 | NOT_EXTRACTED | NOT_EXTRACTED |  | yes |
-| `IUT3.Rem1_2_4` | Remark |  | 39 to 41 | NOT_EXTRACTED | NOT_EXTRACTED |  | yes |
-| `IUT3.Prop1_3` | Proposition | log-links Between Θ±ell NF-Hodge Theaters | 41 to 43 | NOT_EXTRACTED | BLOCKED_BY_EXTERNAL_THEOREM |  | yes |
-| `IUT3.Rem1_2_5` | Remark |  | 41 | NOT_EXTRACTED | NOT_EXTRACTED |  |  |
-| `IUT3.Rem1_3_1` | Remark |  | 43 | NOT_EXTRACTED | NOT_EXTRACTED |  |  |
-| `IUT3.Rem1_3_2` | Remark |  | 43 to 44 | NOT_EXTRACTED | NOT_EXTRACTED |  | yes |
-| `IUT3.Rem1_3_3` | Remark |  | 44 to 45 | NOT_EXTRACTED | NOT_EXTRACTED |  |  |
-| `IUT3.Def1_4` | Definition |  | 45 to 46 | NOT_EXTRACTED | NOT_EXTRACTED |  | yes |
-| `IUT3.Rem1_4_1` | Remark |  | 46 to 47 | NOT_EXTRACTED | NOT_EXTRACTED |  | yes |
-| `IUT3.Rem1_4_2` | Remark |  | 47 to 48 | NOT_EXTRACTED | NOT_EXTRACTED |  | yes |
+| `IUT3.Rem1_2_3` | Remark |  | 39 | EXTRACTED | BLOCKED_BY_EXTERNAL_THEOREM |  | yes |
+| `IUT3.Rem1_2_4` | Remark |  | 39 to 41 | INTERPRETATION_AMBIGUOUS | BLOCKED_BY_EXTERNAL_THEOREM |  | yes |
+| `IUT3.Prop1_3` | Proposition | log-links Between Θ±ell NF-Hodge Theaters | 41 to 43 | EXTRACTED | BLOCKED_BY_EXTERNAL_THEOREM |  | yes |
+| &nbsp;&nbsp;`IUT3.Prop1_3.i` | part |  | 42 | EXTRACTED | BLOCKED_BY_EXTERNAL_THEOREM |  | yes |
+| &nbsp;&nbsp;`IUT3.Prop1_3.ii` | part |  | 42 | EXTRACTED | EXTRACTED |  | yes |
+| &nbsp;&nbsp;`IUT3.Prop1_3.iii` | part |  | 42 | EXTRACTED | BLOCKED_BY_EXTERNAL_THEOREM |  | yes |
+| &nbsp;&nbsp;`IUT3.Prop1_3.iv` | part |  | 43 | EXTRACTED | EXTRACTED |  | yes |
+| `IUT3.Rem1_2_5` | Remark |  | 41 | EXTRACTED | EXTRACTED |  |  |
+| `IUT3.Rem1_3_1` | Remark |  | 43 | EXTRACTED | EXTRACTED |  |  |
+| `IUT3.Rem1_3_2` | Remark |  | 43 to 44 | EXTRACTED | BLOCKED_BY_MISSING_JUSTIFICATION |  | yes |
+| `IUT3.Rem1_3_3` | Remark |  | 44 to 45 | INTERPRETATION_AMBIGUOUS | BLOCKED_BY_MISSING_JUSTIFICATION |  |  |
+| `IUT3.Def1_4` | Definition |  | 45 to 46 | EXTRACTED | NOT_EXTRACTED |  | yes |
+| `IUT3.Rem1_4_1` | Remark |  | 46 to 47 | INTERPRETATION_AMBIGUOUS | BLOCKED_BY_MISSING_JUSTIFICATION |  | yes |
+| `IUT3.Rem1_4_2` | Remark |  | 47 to 48 | EXTRACTED | EXTRACTED |  | yes |
 | `IUT3.Thm1_5` | Theorem | Bi-cores of the Log-theta-lattice | 48 to 51 | EXTRACTED | BLOCKED_BY_EXTERNAL_THEOREM |  | yes |
 | &nbsp;&nbsp;`IUT3.Thm1_5.i` | part |  | 48 | EXTRACTED | EXTRACTED |  | yes |
 | &nbsp;&nbsp;`IUT3.Thm1_5.ii` | part |  | 48 | EXTRACTED | EXTRACTED |  | yes |
 | &nbsp;&nbsp;`IUT3.Thm1_5.iii` | part |  | 48 to 50 | INTERPRETATION_AMBIGUOUS | EXTRACTED |  | yes |
 | &nbsp;&nbsp;`IUT3.Thm1_5.iv` | part |  | 50 | EXTRACTED | EXTRACTED |  | yes |
 | &nbsp;&nbsp;`IUT3.Thm1_5.v` | part |  | 50 to 51 | EXTRACTED | EXTRACTED |  | yes |
-| `IUT3.Rem1_5_1` | Remark |  | 51 to 52 | NOT_EXTRACTED | NOT_EXTRACTED |  | yes |
-| `IUT3.Rem1_5_2` | Remark |  | 52 to 54 | NOT_EXTRACTED | NOT_EXTRACTED |  | yes |
-| `IUT3.Rem1_5_3` | Remark |  | 54 to 56 | NOT_EXTRACTED | NOT_EXTRACTED |  | yes |
-| `IUT3.Rem1_5_4` | Remark |  | 56 to 57 | NOT_EXTRACTED | NOT_EXTRACTED |  | yes |
+| `IUT3.Rem1_5_1` | Remark |  | 51 to 52 | EXTRACTED | EXTRACTED |  | yes |
+| `IUT3.Rem1_5_2` | Remark |  | 52 to 54 | EXTRACTED | BLOCKED_BY_EXTERNAL_THEOREM |  | yes |
+| `IUT3.Rem1_5_3` | Remark |  | 54 to 55 | EXTRACTED | EXTRACTED |  | yes |
+| `IUT3.Rem1_5_4` | Remark |  | 56 to 57 | EXTRACTED | NOT_EXTRACTED |  | yes |
 
 ### Section 2: Multiradial Theta Monoids
 
 | Id | Kind | Title | PDF pages | Statement | Proof | Lean declaration | Path |
 |---|---|---|---|---|---|---|---|
-| `IUT3.Prop2_1` | Proposition | Vertical Coricity and Kummer Theory of Theta Monoids | 58 to 61 | NOT_EXTRACTED | NOT_EXTRACTED |  | yes |
-| `IUT3.Rem2_1_1` | Remark |  | 61 to 64 | NOT_EXTRACTED | NOT_EXTRACTED |  | yes |
-| `IUT3.Rem2_1_2` | Remark |  | 64 to 65 | NOT_EXTRACTED | NOT_EXTRACTED |  |  |
-| `IUT3.Thm2_2` | Theorem | Kummer-compatible Multiradiality of Theta Monoids | 65 to 67 | NOT_EXTRACTED | NOT_EXTRACTED |  | yes |
-| `IUT3.Rem2_2_1` | Remark |  | 67 to 69 | NOT_EXTRACTED | NOT_EXTRACTED |  | yes |
-| `IUT3.Rem2_2_2` | Remark |  | 69 to 72 | NOT_EXTRACTED | NOT_EXTRACTED |  | yes |
-| `IUT3.Cor2_3` | Corollary | Étale-picture of Multiradial Theta Monoids | 72 to 75 | NOT_EXTRACTED | NOT_EXTRACTED |  | yes |
-| `IUT3.Rem2_3_1` | Remark |  | 75 | NOT_EXTRACTED | NOT_EXTRACTED |  |  |
-| `IUT3.Rem2_3_2` | Remark |  | 75 to 76 | NOT_EXTRACTED | NOT_EXTRACTED |  | yes |
-| `IUT3.Rem2_3_3` | Remark |  | 76 to 85 | NOT_EXTRACTED | NOT_EXTRACTED |  | yes |
-| `IUT3.Rem2_3_4` | Remark |  | 85 to 87 | NOT_EXTRACTED | NOT_EXTRACTED |  | yes |
-| `IUT3.Def2_4` | Definition |  | 87 to 89 | NOT_EXTRACTED | NOT_EXTRACTED |  | yes |
-| `IUT3.Rem2_4_1` | Remark |  | 89 | NOT_EXTRACTED | NOT_EXTRACTED |  |  |
-| `IUT3.Rem2_4_2` | Remark |  | 89 to 92 | NOT_EXTRACTED | NOT_EXTRACTED |  | yes |
+| `IUT3.Prop2_1` | Proposition | Vertical Coricity and Kummer Theory of Theta Monoids | 58 to 61 | EXTRACTED | BLOCKED_BY_EXTERNAL_THEOREM |  | yes |
+| &nbsp;&nbsp;`IUT3.Prop2_1.i` | part |  | 58 to 59 | EXTRACTED | BLOCKED_BY_EXTERNAL_THEOREM |  | yes |
+| &nbsp;&nbsp;`IUT3.Prop2_1.ii` | part |  | 59 | EXTRACTED | BLOCKED_BY_EXTERNAL_THEOREM |  | yes |
+| &nbsp;&nbsp;`IUT3.Prop2_1.iii` | part |  | 59 to 60 | EXTRACTED | BLOCKED_BY_EXTERNAL_THEOREM |  | yes |
+| &nbsp;&nbsp;`IUT3.Prop2_1.iv` | part |  | 60 | EXTRACTED | BLOCKED_BY_EXTERNAL_THEOREM |  | yes |
+| &nbsp;&nbsp;`IUT3.Prop2_1.v` | part |  | 60 | EXTRACTED | BLOCKED_BY_EXTERNAL_THEOREM |  | yes |
+| &nbsp;&nbsp;`IUT3.Prop2_1.vi` | part |  | 60 to 61 | EXTRACTED | BLOCKED_BY_EXTERNAL_THEOREM |  | yes |
+| `IUT3.Rem2_1_1` | Remark |  | 61 to 63 | EXTRACTED | BLOCKED_BY_EXTERNAL_THEOREM |  | yes |
+| `IUT3.Rem2_1_2` | Remark |  | 64 to 65 | EXTRACTED | BLOCKED_BY_MISSING_JUSTIFICATION |  |  |
+| `IUT3.Thm2_2` | Theorem | Kummer-compatible Multiradiality of Theta Monoids | 65 to 66 | EXTRACTED | BLOCKED_BY_EXTERNAL_THEOREM |  | yes |
+| &nbsp;&nbsp;`IUT3.Thm2_2.i` | part |  | 65 | EXTRACTED | BLOCKED_BY_EXTERNAL_THEOREM |  | yes |
+| &nbsp;&nbsp;`IUT3.Thm2_2.ii` | part |  | 65 to 66 | EXTRACTED | BLOCKED_BY_EXTERNAL_THEOREM |  | yes |
+| `IUT3.Rem2_2_1` | Remark |  | 67 to 69 | EXTRACTED | BLOCKED_BY_EXTERNAL_THEOREM |  | yes |
+| `IUT3.Rem2_2_2` | Remark |  | 69 to 72 | EXTRACTED | BLOCKED_BY_MISSING_JUSTIFICATION |  | yes |
+| `IUT3.Cor2_3` | Corollary | Étale-picture of Multiradial Theta Monoids | 72 to 75 | EXTRACTED | BLOCKED_BY_EXTERNAL_THEOREM |  | yes |
+| &nbsp;&nbsp;`IUT3.Cor2_3.i` | part |  | 74 | EXTRACTED | BLOCKED_BY_EXTERNAL_THEOREM |  | yes |
+| &nbsp;&nbsp;`IUT3.Cor2_3.ii` | part |  | 74 | EXTRACTED | BLOCKED_BY_EXTERNAL_THEOREM |  | yes |
+| &nbsp;&nbsp;`IUT3.Cor2_3.iii` | part |  | 75 | EXTRACTED | BLOCKED_BY_EXTERNAL_THEOREM |  | yes |
+| &nbsp;&nbsp;`IUT3.Cor2_3.iv` | part |  | 75 | EXTRACTED | BLOCKED_BY_EXTERNAL_THEOREM |  | yes |
+| `IUT3.Rem2_3_1` | Remark |  | 75 | EXTRACTED | EXTRACTED |  |  |
+| `IUT3.Rem2_3_2` | Remark |  | 75 to 76 | INTERPRETATION_AMBIGUOUS | BLOCKED_BY_MISSING_JUSTIFICATION |  | yes |
+| `IUT3.Rem2_3_3` | Remark |  | 76 to 85 | EXTRACTED | BLOCKED_BY_MISSING_JUSTIFICATION |  | yes |
+| `IUT3.Rem2_3_4` | Remark |  | 85 to 87 | EXTRACTED | BLOCKED_BY_EXTERNAL_THEOREM |  | yes |
+| `IUT3.Def2_4` | Definition |  | 87 to 89 | EXTRACTED | NOT_EXTRACTED |  | yes |
+| `IUT3.Rem2_4_1` | Remark |  | 89 | INTERPRETATION_AMBIGUOUS | BLOCKED_BY_MISSING_JUSTIFICATION |  |  |
+| `IUT3.Rem2_4_2` | Remark |  | 89 to 91 | EXTRACTED | BLOCKED_BY_MISSING_JUSTIFICATION |  | yes |
 
 ### Section 3: Multiradial Logarithmic Gaussian Procession Monoids
 
@@ -425,50 +559,75 @@ BLOCKED_BY_MISSING_JUSTIFICATION: the text gives an assertion where a formalizat
 |---|---|---|---|---|---|---|---|
 | `IUT3.Prop3_1` | Proposition | Local Holomorphic Tensor Packets | 92 to 93 | EXTRACTED | EXTRACTED |  | yes |
 | `IUT3.Rem3_1_1` | Remark |  | 93 to 97 | EXTRACTED | EXTRACTED |  | yes |
-| `IUT3.Prop3_2` | Proposition | Local Mono-analytic Tensor Packets | 97 to 99 | NOT_EXTRACTED | NOT_EXTRACTED |  | yes |
-| `IUT3.Rem3_1_2` | Remark |  | 97 | NOT_EXTRACTED | NOT_EXTRACTED |  | yes |
+| `IUT3.Prop3_2` | Proposition | Local Mono-analytic Tensor Packets | 97 to 99 | EXTRACTED | BLOCKED_BY_EXTERNAL_THEOREM |  | yes |
+| &nbsp;&nbsp;`IUT3.Prop3_2.i` | part |  | 98 | EXTRACTED | BLOCKED_BY_EXTERNAL_THEOREM |  | yes |
+| &nbsp;&nbsp;`IUT3.Prop3_2.ii` | part |  | 98 to 99 | EXTRACTED | EXTRACTED |  | yes |
+| `IUT3.Rem3_1_2` | Remark |  | 97 | EXTRACTED | EXTRACTED |  | yes |
 | `IUT3.Prop3_3` | Proposition | Global Tensor Packets | 99 to 100 | EXTRACTED | EXTRACTED |  | yes |
-| `IUT3.Rem3_2_1` | Remark |  | 99 | NOT_EXTRACTED | NOT_EXTRACTED |  |  |
-| `IUT3.Rem3_2_2` | Remark |  | 99 | NOT_EXTRACTED | NOT_EXTRACTED |  | yes |
-| `IUT3.Rem3_3_1` | Remark |  | 100 to 101 | NOT_EXTRACTED | NOT_EXTRACTED |  | yes |
-| `IUT3.Prop3_4` | Proposition | Local Packet-theoretic Frobenioids | 101 to 103 | NOT_EXTRACTED | NOT_EXTRACTED |  | yes |
-| `IUT3.Rem3_3_2` | Remark |  | 101 | NOT_EXTRACTED | NOT_EXTRACTED |  | yes |
-| `IUT3.Rem3_3_3` | Remark |  | 101 | NOT_EXTRACTED | NOT_EXTRACTED |  |  |
+| `IUT3.Rem3_2_1` | Remark |  | 99 | EXTRACTED | EXTRACTED |  |  |
+| `IUT3.Rem3_2_2` | Remark |  | 99 | EXTRACTED | EXTRACTED |  | yes |
+| `IUT3.Rem3_3_1` | Remark |  | 100 | INTERPRETATION_AMBIGUOUS | BLOCKED_BY_MISSING_JUSTIFICATION |  | yes |
+| `IUT3.Prop3_4` | Proposition | Local Packet-theoretic Frobenioids | 101 to 103 | EXTRACTED | BLOCKED_BY_EXTERNAL_THEOREM |  | yes |
+| &nbsp;&nbsp;`IUT3.Prop3_4.i` | part |  | 101 to 102 | EXTRACTED | EXTRACTED |  | yes |
+| &nbsp;&nbsp;`IUT3.Prop3_4.ii` | part |  | 102 to 103 | EXTRACTED | BLOCKED_BY_EXTERNAL_THEOREM |  | yes |
+| `IUT3.Rem3_3_2` | Remark |  | 101 | EXTRACTED | BLOCKED_BY_EXTERNAL_THEOREM |  | yes |
+| `IUT3.Rem3_3_3` | Remark |  | 101 | EXTRACTED | EXTRACTED |  |  |
 | `IUT3.Prop3_5` | Proposition | Kummer Theory and Upper Semi-compatibility for ±ell Vertically Coric Local LGP-Monoids | 103 to 106 | EXTRACTED | BLOCKED_BY_EXTERNAL_THEOREM |  | yes |
-| `IUT3.Ex3_6` | Example | Concrete Representations of Global Frobenioids | 106 to 108 | NOT_EXTRACTED | NOT_EXTRACTED |  | yes |
-| `IUT3.Rem3_6_1` | Remark |  | 108 | NOT_EXTRACTED | NOT_EXTRACTED |  | yes |
-| `IUT3.Rem3_6_2` | Remark |  | 108 to 109 | NOT_EXTRACTED | NOT_EXTRACTED |  | yes |
-| `IUT3.Prop3_7` | Proposition | Global Packet-theoretic Frobenioids | 109 to 112 | NOT_EXTRACTED | BLOCKED_BY_MISSING_JUSTIFICATION |  | yes |
-| `IUT3.Def3_8` | Definition |  | 112 to 114 | NOT_EXTRACTED | NOT_EXTRACTED |  | yes |
-| &nbsp;&nbsp;`IUT3.Def3_8.i` | part |  | 112 | NOT_EXTRACTED | NOT_EXTRACTED |  | yes |
-| &nbsp;&nbsp;`IUT3.Def3_8.ii` | part |  | 112 to 113 | NOT_EXTRACTED | NOT_EXTRACTED |  | yes |
-| &nbsp;&nbsp;`IUT3.Def3_8.iii` | part |  | 113 to 114 | NOT_EXTRACTED | NOT_EXTRACTED |  | yes |
-| `IUT3.Rem3_8_1` | Remark |  | 114 | NOT_EXTRACTED | NOT_EXTRACTED |  | yes |
-| `IUT3.Rem3_8_2` | Remark |  | 114 to 115 | NOT_EXTRACTED | BLOCKED_BY_MISSING_JUSTIFICATION |  | yes |
+| `IUT3.Ex3_6` | Example | Concrete Representations of Global Frobenioids | 106 to 108 | EXTRACTED | BLOCKED_BY_MISSING_JUSTIFICATION |  | yes |
+| &nbsp;&nbsp;`IUT3.Ex3_6.i` | part |  | 107 | EXTRACTED | BLOCKED_BY_MISSING_JUSTIFICATION |  | yes |
+| &nbsp;&nbsp;`IUT3.Ex3_6.ii` | part |  | 107 to 108 | EXTRACTED | BLOCKED_BY_MISSING_JUSTIFICATION |  | yes |
+| &nbsp;&nbsp;`IUT3.Ex3_6.iii` | part |  | 108 | EXTRACTED | BLOCKED_BY_MISSING_JUSTIFICATION |  | yes |
+| `IUT3.Rem3_6_1` | Remark |  | 108 | INTERPRETATION_AMBIGUOUS | EXTRACTED |  | yes |
+| `IUT3.Rem3_6_2` | Remark |  | 108 to 109 | EXTRACTED | BLOCKED_BY_EXTERNAL_THEOREM |  | yes |
+| `IUT3.Prop3_7` | Proposition | Global Packet-theoretic Frobenioids | 109 to 112 | EXTRACTED | BLOCKED_BY_MISSING_JUSTIFICATION |  | yes |
+| &nbsp;&nbsp;`IUT3.Prop3_7.i` | part |  | 109 to 110 | EXTRACTED | BLOCKED_BY_EXTERNAL_THEOREM |  | yes |
+| &nbsp;&nbsp;`IUT3.Prop3_7.ii` | part |  | 110 | EXTRACTED | BLOCKED_BY_MISSING_JUSTIFICATION |  | yes |
+| &nbsp;&nbsp;`IUT3.Prop3_7.iii` | part |  | 110 to 111 | EXTRACTED | BLOCKED_BY_EXTERNAL_THEOREM |  | yes |
+| &nbsp;&nbsp;`IUT3.Prop3_7.iv` | part |  | 111 | EXTRACTED | BLOCKED_BY_EXTERNAL_THEOREM |  | yes |
+| &nbsp;&nbsp;`IUT3.Prop3_7.v` | part |  | 111 to 112 | EXTRACTED | BLOCKED_BY_EXTERNAL_THEOREM |  | yes |
+| `IUT3.Def3_8` | Definition |  | 112 to 114 | EXTRACTED | NOT_EXTRACTED |  | yes |
+| &nbsp;&nbsp;`IUT3.Def3_8.i` | part |  | 112 | EXTRACTED | NOT_EXTRACTED |  | yes |
+| &nbsp;&nbsp;`IUT3.Def3_8.ii` | part |  | 112 to 113 | EXTRACTED | NOT_EXTRACTED |  | yes |
+| &nbsp;&nbsp;`IUT3.Def3_8.iii` | part |  | 113 to 114 | EXTRACTED | NOT_EXTRACTED |  | yes |
+| `IUT3.Rem3_8_1` | Remark |  | 114 | EXTRACTED | BLOCKED_BY_MISSING_JUSTIFICATION |  | yes |
+| `IUT3.Rem3_8_2` | Remark |  | 114 to 115 | EXTRACTED | BLOCKED_BY_MISSING_JUSTIFICATION |  | yes |
 | `IUT3.Prop3_9` | Proposition | Log-volume for Packets and Processions | 115 to 118 | EXTRACTED | BLOCKED_BY_MISSING_JUSTIFICATION |  | yes |
 | &nbsp;&nbsp;`IUT3.Prop3_9.i` | part |  | 115 to 116 | EXTRACTED | EXTRACTED |  | yes |
 | &nbsp;&nbsp;`IUT3.Prop3_9.ii` | part |  | 116 to 117 | EXTRACTED | EXTRACTED |  | yes |
 | &nbsp;&nbsp;`IUT3.Prop3_9.iii` | part |  | 117 | INTERPRETATION_AMBIGUOUS | EXTRACTED |  | yes |
+| &nbsp;&nbsp;&nbsp;&nbsp;`IUT3.Prop3_9.iii.frag.globalLogVolume` | fragment | (scope: abstract interface, not the papers' objects) | 117 | STATEMENT_FORMALIZED | NOT_EXTRACTED | `IUT.PaperIII.Corollary312.globalLogVolume` |  |
+| &nbsp;&nbsp;&nbsp;&nbsp;`IUT3.Prop3_9.iii.frag.globalLogVolume_mono` | fragment | (scope: abstract interface, not the papers' objects) | 117 | STATEMENT_FORMALIZED | KERNEL_VERIFIED | `IUT.PaperIII.Corollary312.globalLogVolume_mono` |  |
 | &nbsp;&nbsp;`IUT3.Prop3_9.iv` | part |  | 117 | EXTRACTED | EXTRACTED |  | yes |
-| `IUT3.Rem3_8_3` | Remark |  | 115 | NOT_EXTRACTED | NOT_EXTRACTED |  | yes |
-| `IUT3.Rem3_9_1` | Remark |  | 118 to 119 | NOT_EXTRACTED | NOT_EXTRACTED |  | yes |
-| `IUT3.Rem3_9_2` | Remark |  | 119 | NOT_EXTRACTED | NOT_EXTRACTED |  | yes |
+| `IUT3.Rem3_8_3` | Remark |  | 115 | EXTRACTED | EXTRACTED |  | yes |
+| `IUT3.Rem3_9_1` | Remark |  | 118 to 119 | INTERPRETATION_AMBIGUOUS | BLOCKED_BY_MISSING_JUSTIFICATION |  | yes |
+| `IUT3.Rem3_9_2` | Remark |  | 119 | EXTRACTED | BLOCKED_BY_MISSING_JUSTIFICATION |  | yes |
 | `IUT3.Rem3_9_3` | Remark |  | 119 to 120 | INTERPRETATION_AMBIGUOUS | EXTRACTED |  | yes |
-| `IUT3.Rem3_9_4` | Remark |  | 120 to 126 | NOT_EXTRACTED | NOT_EXTRACTED |  | yes |
-| `IUT3.Rem3_9_5` | Remark |  | 126 to 145 | NOT_EXTRACTED | EXTRACTED |  | yes |
+| `IUT3.Rem3_9_4` | Remark |  | 120 to 126 | EXTRACTED | BLOCKED_BY_MISSING_JUSTIFICATION |  | yes |
+| &nbsp;&nbsp;`IUT3.Rem3_9_4.i` | part |  | 120 to 122 | EXTRACTED | EXTRACTED |  | yes |
+| &nbsp;&nbsp;`IUT3.Rem3_9_4.ii` | part |  | 122 | EXTRACTED | EXTRACTED |  | yes |
+| &nbsp;&nbsp;`IUT3.Rem3_9_4.iii` | part |  | 122 to 124 | EXTRACTED | BLOCKED_BY_EXTERNAL_THEOREM |  | yes |
+| &nbsp;&nbsp;`IUT3.Rem3_9_4.iv` | part |  | 124 | EXTRACTED | BLOCKED_BY_EXTERNAL_THEOREM |  | yes |
+| &nbsp;&nbsp;`IUT3.Rem3_9_4.v` | part |  | 124 to 125 | EXTRACTED | BLOCKED_BY_MISSING_JUSTIFICATION |  | yes |
+| &nbsp;&nbsp;`IUT3.Rem3_9_4.vi` | part |  | 125 to 126 | EXTRACTED | BLOCKED_BY_MISSING_JUSTIFICATION |  | yes |
+| `IUT3.Rem3_9_5` | Remark |  | 126 to 145 | EXTRACTED | BLOCKED_BY_MISSING_JUSTIFICATION |  | yes |
 | &nbsp;&nbsp;`IUT3.Rem3_9_5.i` | part |  | 127 | EXTRACTED | BLOCKED_BY_MISSING_JUSTIFICATION |  | yes |
 | &nbsp;&nbsp;`IUT3.Rem3_9_5.ii` | part |  | 127 to 128 | EXTRACTED | EXTRACTED |  | yes |
 | &nbsp;&nbsp;&nbsp;&nbsp;`IUT3.Rem3_9_5.ii.frag.eq_sInter` | fragment |  | 127 | STATEMENT_FORMALIZED | KERNEL_VERIFIED | `IUT.PaperIII.Remark3_9_5.IsHullMap.eq_sInter` |  |
 | &nbsp;&nbsp;&nbsp;&nbsp;`IUT3.Rem3_9_5.ii.frag.isHullMap_sInter` | fragment |  | 127 | STATEMENT_FORMALIZED | CONDITIONALLY_VERIFIED | `IUT.PaperIII.Remark3_9_5.isHullMap_sInter` |  |
 | &nbsp;&nbsp;&nbsp;&nbsp;`IUT3.Rem3_9_5.ii.frag.unique` | fragment |  | 127 | STATEMENT_FORMALIZED | KERNEL_VERIFIED | `IUT.PaperIII.Remark3_9_5.IsHullMap.unique` |  |
-| &nbsp;&nbsp;`IUT3.Rem3_9_5.iii_iv` | part |  | 128 to 129 | EXTRACTED | EXTRACTED |  | yes |
-| &nbsp;&nbsp;`IUT3.Rem3_9_5.vii` | part |  | 131 to 139 | INTERPRETATION_AMBIGUOUS | EXTRACTED |  | yes |
-| &nbsp;&nbsp;`IUT3.Rem3_9_5.viii_x` | part |  | 139 to 145 | INTERPRETATION_AMBIGUOUS | EXTRACTED |  | yes |
-| `IUT3.Rem3_9_6` | Remark |  | 145 | NOT_EXTRACTED | NOT_EXTRACTED |  | yes |
-| `IUT3.Rem3_9_7` | Remark |  | 145 to 147 | NOT_EXTRACTED | NOT_EXTRACTED |  | yes |
-| `IUT3.Prop3_10` | Proposition | Global Kummer Theory and Non-interference with ±ell Local Integers | 147 to 149 | NOT_EXTRACTED | NOT_EXTRACTED |  | yes |
-| `IUT3.Rem3_10_1` | Remark |  | 149 to 151 | NOT_EXTRACTED | NOT_EXTRACTED |  | yes |
-| `IUT3.Rem3_10_2` | Remark |  | 151 to 153 | NOT_EXTRACTED | NOT_EXTRACTED |  | yes |
+| &nbsp;&nbsp;`IUT3.Rem3_9_5.iii_iv` | part |  | 128 to 129 | EXTRACTED | BLOCKED_BY_MISSING_JUSTIFICATION |  | yes |
+| &nbsp;&nbsp;`IUT3.Rem3_9_5.v` | part |  | 129 to 130 | EXTRACTED | EXTRACTED |  | yes |
+| &nbsp;&nbsp;`IUT3.Rem3_9_5.vi` | part |  | 130 | EXTRACTED | EXTRACTED |  | yes |
+| &nbsp;&nbsp;`IUT3.Rem3_9_5.vii` | part |  | 131 to 139 | INTERPRETATION_AMBIGUOUS | BLOCKED_BY_MISSING_JUSTIFICATION |  | yes |
+| &nbsp;&nbsp;`IUT3.Rem3_9_5.viii_x` | part |  | 139 to 145 | INTERPRETATION_AMBIGUOUS | BLOCKED_BY_MISSING_JUSTIFICATION |  | yes |
+| `IUT3.Rem3_9_6` | Remark |  | 145 | INTERPRETATION_AMBIGUOUS | BLOCKED_BY_MISSING_JUSTIFICATION |  | yes |
+| `IUT3.Rem3_9_7` | Remark |  | 145 to 147 | EXTRACTED | BLOCKED_BY_EXTERNAL_THEOREM |  | yes |
+| `IUT3.Prop3_10` | Proposition | Global Kummer Theory and Non-interference with ±ell Local Integers | 147 to 149 | EXTRACTED | BLOCKED_BY_MISSING_JUSTIFICATION |  | yes |
+| &nbsp;&nbsp;`IUT3.Prop3_10.i` | part |  | 147 to 148 | EXTRACTED | BLOCKED_BY_EXTERNAL_THEOREM |  | yes |
+| &nbsp;&nbsp;`IUT3.Prop3_10.ii` | part |  | 148 to 149 | EXTRACTED | BLOCKED_BY_MISSING_JUSTIFICATION |  | yes |
+| &nbsp;&nbsp;`IUT3.Prop3_10.iii` | part |  | 149 | EXTRACTED | BLOCKED_BY_MISSING_JUSTIFICATION |  | yes |
+| `IUT3.Rem3_10_1` | Remark |  | 149 to 151 | INTERPRETATION_AMBIGUOUS | BLOCKED_BY_MISSING_JUSTIFICATION |  | yes |
+| `IUT3.Rem3_10_2` | Remark |  | 151 to 152 | EXTRACTED | BLOCKED_BY_MISSING_JUSTIFICATION |  | yes |
 | `IUT3.Thm3_11` | Theorem | Multiradial Algorithms via LGP-Monoids/Frobenioids | 153 to 159 | EXTRACTED | BLOCKED_BY_MISSING_JUSTIFICATION |  | yes |
 | &nbsp;&nbsp;`IUT3.Thm3_11.i` | part |  | 153 to 155 | EXTRACTED | BLOCKED_BY_MISSING_JUSTIFICATION |  | yes |
 | &nbsp;&nbsp;&nbsp;&nbsp;`IUT3.Thm3_11.i.Ind1` | part |  | 154 | EXTRACTED | EXTRACTED |  | yes |
@@ -488,21 +647,25 @@ BLOCKED_BY_MISSING_JUSTIFICATION: the text gives an assertion where a formalizat
 | &nbsp;&nbsp;&nbsp;&nbsp;`IUT3.Thm3_11.iii.c` | part |  | 157 to 158 | INTERPRETATION_AMBIGUOUS | EXTRACTED |  | yes |
 | &nbsp;&nbsp;&nbsp;&nbsp;`IUT3.Thm3_11.iii.d` | part |  | 158 to 159 | INTERPRETATION_AMBIGUOUS | EXTRACTED |  | yes |
 | `IUT3.Rem3_11_1` | Remark |  | 159 to 167 | INTERPRETATION_AMBIGUOUS | EXTRACTED |  | yes |
-| `IUT3.Rem3_11_2` | Remark |  | 167 to 169 | NOT_EXTRACTED | NOT_EXTRACTED |  | yes |
-| `IUT3.Rem3_11_3` | Remark |  | 169 to 171 | NOT_EXTRACTED | NOT_EXTRACTED |  | yes |
-| `IUT3.Rem3_11_4` | Remark |  | 171 to 173 | NOT_EXTRACTED | NOT_EXTRACTED |  | yes |
+| `IUT3.Rem3_11_2` | Remark |  | 167 to 169 | INTERPRETATION_AMBIGUOUS | BLOCKED_BY_MISSING_JUSTIFICATION |  | yes |
+| `IUT3.Rem3_11_3` | Remark |  | 169 to 171 | INTERPRETATION_AMBIGUOUS | BLOCKED_BY_MISSING_JUSTIFICATION |  | yes |
+| `IUT3.Rem3_11_4` | Remark |  | 171 to 173 | INTERPRETATION_AMBIGUOUS | BLOCKED_BY_MISSING_JUSTIFICATION |  | yes |
 | `IUT3.Cor3_12` | Corollary | Log-volume Estimates for Θ-Pilot Objects | 173 to 186 | EXTRACTED | BLOCKED_BY_MISSING_JUSTIFICATION |  | yes |
 | &nbsp;&nbsp;`IUT3.Cor3_12.Reduction` | part |  | 174 to 175 | EXTRACTED | BLOCKED_BY_MISSING_JUSTIFICATION |  | yes |
 | &nbsp;&nbsp;&nbsp;&nbsp;`IUT3.Cor3_12.Reduction.frag.inequality_of_nonneg` | fragment |  | 174 | STATEMENT_FORMALIZED | CONDITIONALLY_VERIFIED | `IUT.PaperIII.Corollary312.inequality_of_nonneg` |  |
 | &nbsp;&nbsp;`IUT3.Cor3_12.Statement` | part |  | 173 to 174 | INTERPRETATION_AMBIGUOUS | BLOCKED_BY_MISSING_JUSTIFICATION |  | yes |
 | &nbsp;&nbsp;&nbsp;&nbsp;`IUT3.Cor3_12.Statement.frag.ComparisonSetting` | fragment | (scope: Abstract interface, not the papers' objects: every region, the measure, the hull map and the family of possible images are inputs; nothing is constructed from initial Θ-data, Hodge theaters, the log-theta-lattice or Theorem 3.11.) | 115 to 184 | STATEMENT_FORMALIZED | NOT_EXTRACTED | `IUT.PaperIII.Corollary312.ComparisonSetting` |  |
 | &nbsp;&nbsp;&nbsp;&nbsp;`IUT3.Cor3_12.Statement.frag.Containment` | fragment |  | 115 to 184 | STATEMENT_FORMALIZED | NOT_EXTRACTED | `IUT.PaperIII.Corollary312.ComparisonSetting.Containment` |  |
+| &nbsp;&nbsp;&nbsp;&nbsp;`IUT3.Cor3_12.Statement.frag.IndeterminacyOrbit` | fragment | (scope: abstract interface, not the papers' objects) | 154 to 181 | STATEMENT_FORMALIZED | NOT_EXTRACTED | `IUT.PaperIII.Corollary312.IndeterminacyOrbit` |  |
 | &nbsp;&nbsp;&nbsp;&nbsp;`IUT3.Cor3_12.Statement.frag.LogVolumeComparison` | fragment |  | 115 to 184 | STATEMENT_FORMALIZED | NOT_EXTRACTED | `IUT.PaperIII.Corollary312.ComparisonSetting.LogVolumeComparison` |  |
+| &nbsp;&nbsp;&nbsp;&nbsp;`IUT3.Cor3_12.Statement.frag.RegionComparison` | fragment | (scope: abstract interface, not the papers' objects) | 95 to 174 | STATEMENT_FORMALIZED | NOT_EXTRACTED | `IUT.PaperIII.Corollary312.RegionComparison` |  |
+| &nbsp;&nbsp;&nbsp;&nbsp;`IUT3.Cor3_12.Statement.frag.RegionComparison_conclusion_of_containment` | fragment | (scope: abstract interface, not the papers' objects) | 173 to 184 | STATEMENT_FORMALIZED | CONDITIONALLY_VERIFIED | `IUT.PaperIII.Corollary312.RegionComparison.conclusion_of_containment` |  |
 | &nbsp;&nbsp;&nbsp;&nbsp;`IUT3.Cor3_12.Statement.frag.conclusion_iff` | fragment |  | 115 to 184 | STATEMENT_FORMALIZED | CONDITIONALLY_VERIFIED | `IUT.PaperIII.Corollary312.ComparisonSetting.conclusion_iff` |  |
 | &nbsp;&nbsp;&nbsp;&nbsp;`IUT3.Cor3_12.Statement.frag.conclusion_iff_constantForm` | fragment |  | 174 | STATEMENT_FORMALIZED | CONDITIONALLY_VERIFIED | `IUT.PaperIII.Corollary312.conclusion_iff_constantForm` |  |
 | &nbsp;&nbsp;&nbsp;&nbsp;`IUT3.Cor3_12.Statement.frag.conclusion_of_constantForm` | fragment |  | 174 | STATEMENT_FORMALIZED | CONDITIONALLY_VERIFIED | `IUT.PaperIII.Corollary312.conclusion_of_constantForm` |  |
 | &nbsp;&nbsp;&nbsp;&nbsp;`IUT3.Cor3_12.Statement.frag.conclusion_of_containment` | fragment |  | 115 to 184 | STATEMENT_FORMALIZED | CONDITIONALLY_VERIFIED | `IUT.PaperIII.Corollary312.ComparisonSetting.conclusion_of_containment` |  |
-| &nbsp;&nbsp;&nbsp;&nbsp;`IUT3.Cor3_12.Statement.frag.conclusion_of_logVolumeComparison` | fragment |  | 115 to 184 | STATEMENT_FORMALIZED | CONDITIONALLY_VERIFIED | `IUT.PaperIII.Corollary312.ComparisonSetting.conclusion_of_logVolumeComparison` |  |
+| &nbsp;&nbsp;&nbsp;&nbsp;`IUT3.Cor3_12.Statement.frag.conclusion_of_labelContainment` | fragment | (scope: abstract interface, not the papers' objects) | 173 to 183 | STATEMENT_FORMALIZED | CONDITIONALLY_VERIFIED | `IUT.PaperIII.Corollary312.conclusion_of_labelContainment` |  |
+| &nbsp;&nbsp;&nbsp;&nbsp;`IUT3.Cor3_12.Statement.frag.conclusion_of_placewiseContainment` | fragment | (scope: abstract interface, not the papers' objects) | 117 to 175 | STATEMENT_FORMALIZED | CONDITIONALLY_VERIFIED | `IUT.PaperIII.Corollary312.conclusion_of_placewiseContainment` |  |
 | &nbsp;&nbsp;&nbsp;&nbsp;`IUT3.Cor3_12.Statement.frag.conclusion_of_procContainment` | fragment |  | 115 to 184 | STATEMENT_FORMALIZED | CONDITIONALLY_VERIFIED | `IUT.PaperIII.Corollary312.conclusion_of_procContainment` |  |
 | &nbsp;&nbsp;&nbsp;&nbsp;`IUT3.Cor3_12.Statement.frag.constantForm_of_conclusion` | fragment |  | 174 | STATEMENT_FORMALIZED | CONDITIONALLY_VERIFIED | `IUT.PaperIII.Corollary312.constantForm_of_conclusion` |  |
 | &nbsp;&nbsp;&nbsp;&nbsp;`IUT3.Cor3_12.Statement.frag.constantForm_of_top` | fragment |  | 174 | STATEMENT_FORMALIZED | CONDITIONALLY_VERIFIED | `IUT.PaperIII.Corollary312.constantForm_of_top` |  |
@@ -510,16 +673,19 @@ BLOCKED_BY_MISSING_JUSTIFICATION: the text gives an assertion where a formalizat
 | &nbsp;&nbsp;&nbsp;&nbsp;`IUT3.Cor3_12.Statement.frag.example_comparison_fails` | fragment |  | 115 to 184 | STATEMENT_FORMALIZED | KERNEL_VERIFIED | `IUT.PaperIII.Corollary312.IntervalExample.example_comparison_fails` |  |
 | &nbsp;&nbsp;&nbsp;&nbsp;`IUT3.Cor3_12.Statement.frag.example_union_matters` | fragment |  | 115 to 184 | STATEMENT_FORMALIZED | KERNEL_VERIFIED | `IUT.PaperIII.Corollary312.IntervalExample.example_union_matters` |  |
 | &nbsp;&nbsp;&nbsp;&nbsp;`IUT3.Cor3_12.Statement.frag.logVolume` | fragment |  | 115 to 184 | STATEMENT_FORMALIZED | NOT_EXTRACTED | `IUT.PaperIII.Corollary312.logVolume` |  |
-| &nbsp;&nbsp;`IUT3.Cor3_12.StepI` | part |  | 175 | EXTRACTED | EXTRACTED |  | yes |
-| &nbsp;&nbsp;`IUT3.Cor3_12.StepII` | part |  | 175 to 176 | EXTRACTED | BLOCKED_BY_EXTERNAL_THEOREM |  | yes |
-| &nbsp;&nbsp;`IUT3.Cor3_12.StepIII` | part |  | 176 | EXTRACTED | EXTRACTED |  | yes |
-| &nbsp;&nbsp;`IUT3.Cor3_12.StepIV` | part |  | 176 to 177 | EXTRACTED | EXTRACTED |  | yes |
-| &nbsp;&nbsp;`IUT3.Cor3_12.StepIX` | part |  | 180 | EXTRACTED | BLOCKED_BY_EXTERNAL_THEOREM |  | yes |
+| &nbsp;&nbsp;&nbsp;&nbsp;`IUT3.Cor3_12.Statement.frag.logVolume_orbitImage_le` | fragment | (scope: abstract interface, not the papers' objects) | 154 to 181 | STATEMENT_FORMALIZED | KERNEL_VERIFIED | `IUT.PaperIII.Corollary312.IndeterminacyOrbit.logVolume_orbitImage_le` |  |
+| &nbsp;&nbsp;`IUT3.Cor3_12.StepI` | part |  | 175 | EXTRACTED | BLOCKED_BY_MISSING_JUSTIFICATION |  | yes |
+| &nbsp;&nbsp;`IUT3.Cor3_12.StepII` | part |  | 175 to 176 | EXTRACTED | BLOCKED_BY_MISSING_JUSTIFICATION |  | yes |
+| &nbsp;&nbsp;`IUT3.Cor3_12.StepIII` | part |  | 176 | EXTRACTED | BLOCKED_BY_MISSING_JUSTIFICATION |  | yes |
+| &nbsp;&nbsp;`IUT3.Cor3_12.StepIV` | part |  | 176 to 177 | EXTRACTED | BLOCKED_BY_MISSING_JUSTIFICATION |  | yes |
+| &nbsp;&nbsp;`IUT3.Cor3_12.StepIX` | part |  | 180 | EXTRACTED | BLOCKED_BY_MISSING_JUSTIFICATION |  | yes |
 | &nbsp;&nbsp;`IUT3.Cor3_12.StepV` | part |  | 177 | EXTRACTED | BLOCKED_BY_EXTERNAL_THEOREM |  | yes |
 | &nbsp;&nbsp;`IUT3.Cor3_12.StepVI` | part |  | 177 to 179 | EXTRACTED | BLOCKED_BY_MISSING_JUSTIFICATION |  | yes |
-| &nbsp;&nbsp;`IUT3.Cor3_12.StepVII` | part |  | 179 to 180 | EXTRACTED | BLOCKED_BY_EXTERNAL_THEOREM |  | yes |
-| &nbsp;&nbsp;`IUT3.Cor3_12.StepVIII` | part |  | 180 | EXTRACTED | BLOCKED_BY_EXTERNAL_THEOREM |  | yes |
+| &nbsp;&nbsp;`IUT3.Cor3_12.StepVII` | part |  | 179 to 180 | EXTRACTED | BLOCKED_BY_MISSING_JUSTIFICATION |  | yes |
+| &nbsp;&nbsp;`IUT3.Cor3_12.StepVIII` | part |  | 180 | EXTRACTED | BLOCKED_BY_MISSING_JUSTIFICATION |  | yes |
 | &nbsp;&nbsp;`IUT3.Cor3_12.StepX` | part |  | 180 to 181 | EXTRACTED | BLOCKED_BY_MISSING_JUSTIFICATION |  | yes |
+| &nbsp;&nbsp;&nbsp;&nbsp;`IUT3.Cor3_12.StepX.frag.logVolume_orbitImage_eq` | fragment | (scope: abstract interface, not the papers' objects) | 181 | STATEMENT_FORMALIZED | CONDITIONALLY_VERIFIED | `IUT.PaperIII.Corollary312.IndeterminacyOrbit.logVolume_orbitImage_eq` |  |
+| &nbsp;&nbsp;&nbsp;&nbsp;`IUT3.Cor3_12.StepX.frag.smul_hull_orbitUnion` | fragment | (scope: abstract interface, not the papers' objects) | 181 | STATEMENT_FORMALIZED | CONDITIONALLY_VERIFIED | `IUT.PaperIII.Corollary312.IndeterminacyOrbit.smul_hull_orbitUnion` |  |
 | &nbsp;&nbsp;`IUT3.Cor3_12.StepXI` | part |  | 181 to 185 | EXTRACTED | EXTRACTED |  | yes |
 | &nbsp;&nbsp;&nbsp;&nbsp;`IUT3.Cor3_12.StepXI.a` | part |  | 181 | EXTRACTED | EXTRACTED |  | yes |
 | &nbsp;&nbsp;&nbsp;&nbsp;`IUT3.Cor3_12.StepXI.b` | part |  | 181 to 182 | INTERPRETATION_AMBIGUOUS | BLOCKED_BY_MISSING_JUSTIFICATION |  | yes |
@@ -527,15 +693,16 @@ BLOCKED_BY_MISSING_JUSTIFICATION: the text gives an assertion where a formalizat
 | &nbsp;&nbsp;&nbsp;&nbsp;`IUT3.Cor3_12.StepXI.d` | part |  | 183 | INTERPRETATION_AMBIGUOUS | EXTRACTED |  | yes |
 | &nbsp;&nbsp;&nbsp;&nbsp;`IUT3.Cor3_12.StepXI.e` | part |  | 183 to 184 | EXTRACTED | BLOCKED_BY_MISSING_JUSTIFICATION |  | yes |
 | &nbsp;&nbsp;&nbsp;&nbsp;`IUT3.Cor3_12.StepXI.f` | part |  | 184 | INTERPRETATION_AMBIGUOUS | BLOCKED_BY_MISSING_JUSTIFICATION |  | yes |
-| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`IUT3.Cor3_12.StepXI.f.frag.logVolumeComparison_of_containment` | fragment |  | 115 to 184 | STATEMENT_FORMALIZED | KERNEL_VERIFIED | `IUT.PaperIII.Corollary312.ComparisonSetting.logVolumeComparison_of_containment` |  |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`IUT3.Cor3_12.StepXI.f.frag.example_global_not_placewise` | fragment | (scope: abstract interface, not the papers' objects) | 174 to 184 | STATEMENT_FORMALIZED | KERNEL_VERIFIED | `IUT.PaperIII.Corollary312.TwoPlaceExample.example_global_not_placewise` |  |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`IUT3.Cor3_12.StepXI.f.frag.logVolumeComparison_of_containment` | fragment |  | 115 to 184 | STATEMENT_FORMALIZED | CONDITIONALLY_VERIFIED | `IUT.PaperIII.Corollary312.ComparisonSetting.logVolumeComparison_of_containment` |  |
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`IUT3.Cor3_12.StepXI.f.frag.stepXIf_inclusion_iff_inequality` | fragment |  | 183 to 184 | STATEMENT_FORMALIZED | CONDITIONALLY_VERIFIED | `IUT.PaperIII.Corollary312.stepXIf_inclusion_iff_inequality` |  |
 | &nbsp;&nbsp;&nbsp;&nbsp;`IUT3.Cor3_12.StepXI.g` | part |  | 184 to 185 | INTERPRETATION_AMBIGUOUS | BLOCKED_BY_MISSING_JUSTIFICATION |  | yes |
 | &nbsp;&nbsp;&nbsp;&nbsp;`IUT3.Cor3_12.StepXI.h` | part |  | 185 | INTERPRETATION_AMBIGUOUS | BLOCKED_BY_EXTERNAL_THEOREM |  | yes |
-| &nbsp;&nbsp;`IUT3.Cor3_12.StepXII` | part |  | 185 to 186 | EXTRACTED | EXTRACTED |  | yes |
+| &nbsp;&nbsp;`IUT3.Cor3_12.StepXII` | part |  | 185 to 186 | EXTRACTED | BLOCKED_BY_MISSING_JUSTIFICATION |  | yes |
 | `IUT3.Rem3_12_1` | Remark |  | 186 to 187 | EXTRACTED | BLOCKED_BY_MISSING_JUSTIFICATION |  | yes |
 | `IUT3.Rem3_12_2` | Remark |  | 187 to 195 | INTERPRETATION_AMBIGUOUS | EXTRACTED |  | yes |
-| `IUT3.Rem3_12_3` | Remark |  | 195 to 196 | NOT_EXTRACTED | NOT_EXTRACTED |  | yes |
-| `IUT3.Rem3_12_4` | Remark |  | 196 to 199 | NOT_EXTRACTED | NOT_EXTRACTED |  | yes |
+| `IUT3.Rem3_12_3` | Remark |  | 195 to 196 | EXTRACTED | EXTRACTED |  | yes |
+| `IUT3.Rem3_12_4` | Remark |  | 196 to 198 | EXTRACTED | EXTRACTED |  | yes |
 
 ## IUT IV
 
@@ -544,6 +711,7 @@ BLOCKED_BY_MISSING_JUSTIFICATION: the text gives an assertion where a formalizat
 | Id | Kind | Title | PDF pages | Statement | Proof | Lean declaration | Path |
 |---|---|---|---|---|---|---|---|
 | `IUT4.ThmA` | Theorem | Diophantine Inequalities | 3 | EXTRACTED | BLOCKED_BY_EXTERNAL_THEOREM |  | yes |
+| &nbsp;&nbsp;`IUT4.ThmA.frag.equiv_abc` | fragment |  | 3 | STATEMENT_FORMALIZED | KERNEL_VERIFIED | `IUT.ABCSpecialization.vojta_iff_ABC` |  |
 
 ### Section 1: Log-volume Estimates
 
@@ -554,10 +722,18 @@ BLOCKED_BY_MISSING_JUSTIFICATION: the text gives an assertion where a formalizat
 | &nbsp;&nbsp;`IUT4.Prop1_2.frag.a_b_of_e_one` | fragment |  | 10 to 11 | STATEMENT_FORMALIZED | KERNEL_VERIFIED | `IUT.PaperIV.Proposition1_2.a_b_of_e_one` |  |
 | &nbsp;&nbsp;`IUT4.Prop1_2.frag.a_b_of_le` | fragment |  | 10 to 11 | STATEMENT_FORMALIZED | KERNEL_VERIFIED | `IUT.PaperIV.Proposition1_2.a_b_of_le` |  |
 | &nbsp;&nbsp;`IUT4.Prop1_2.frag.a_gt` | fragment |  | 10 to 11 | STATEMENT_FORMALIZED | KERNEL_VERIFIED | `IUT.PaperIV.Proposition1_2.a_gt` |  |
+| &nbsp;&nbsp;`IUT4.Prop1_2.frag.i_Qp` | fragment | (scope: base field Q_p only; finite extensions of Q_p are not treated) | 10 to 11 | STATEMENT_FORMALIZED | KERNEL_VERIFIED | `IUT.Prerequisites.PadicLog.padicLogUnit_range` |  |
 | &nbsp;&nbsp;`IUT4.Prop1_2.frag.iii_floor` | fragment |  | 10 to 11 | STATEMENT_FORMALIZED | KERNEL_VERIFIED | `IUT.PaperIV.Proposition1_2.iii_floor` |  |
+| &nbsp;&nbsp;`IUT4.Prop1_2.frag.log_hom` | fragment | (scope: base field Q_p only; finite extensions of Q_p are not treated) | 10 to 11 | STATEMENT_FORMALIZED | KERNEL_VERIFIED | `IUT.Prerequisites.PadicLog.padicLogOnePlus_add_add_mul` |  |
+| &nbsp;&nbsp;`IUT4.Prop1_2.frag.log_series_def` | fragment | (scope: base field Q_p only; finite extensions of Q_p are not treated) | 10 to 11 | STATEMENT_FORMALIZED | NOT_EXTRACTED | `IUT.Prerequisites.PadicLog.padicLogOnePlus` |  |
+| &nbsp;&nbsp;`IUT4.Prop1_2.frag.log_series_norm` | fragment | (scope: base field Q_p only; finite extensions of Q_p are not treated) | 10 to 11 | STATEMENT_FORMALIZED | KERNEL_VERIFIED | `IUT.Prerequisites.PadicLog.padicLogOnePlus_norm_eq` |  |
 | &nbsp;&nbsp;`IUT4.Prop1_2.frag.rpow_b_gt` | fragment |  | 10 to 11 | STATEMENT_FORMALIZED | KERNEL_VERIFIED | `IUT.PaperIV.Proposition1_2.rpow_b_gt` |  |
 | `IUT4.Prop1_3` | Proposition | Estimates of Differents | 11 to 12 | EXTRACTED | BLOCKED_BY_MATHLIB |  | yes |
+| &nbsp;&nbsp;`IUT4.Prop1_3.frag.differentOrder` | fragment | (scope: general Dedekind domains; specialized to Z_p by IUT.PaperIV.LocalFields.padic_differentOrder_ge) | 9 to 12 | STATEMENT_FORMALIZED | NOT_EXTRACTED | `IUT.PaperIV.LocalFields.differentOrder` |  |
+| &nbsp;&nbsp;`IUT4.Prop1_3.frag.i_differentOrder_ge` | fragment | (scope: general Dedekind domains) | 9 to 12 | STATEMENT_FORMALIZED | KERNEL_VERIFIED | `IUT.PaperIV.LocalFields.differentOrder_ge` |  |
+| &nbsp;&nbsp;`IUT4.Prop1_3.frag.i_differentOrder_ge_tower` | fragment | (scope: general Dedekind domains) | 9 to 12 | STATEMENT_FORMALIZED | KERNEL_VERIFIED | `IUT.PaperIV.LocalFields.differentOrder_ge_tower` |  |
 | &nbsp;&nbsp;`IUT4.Prop1_3.frag.i_min` | fragment |  | 11 to 12 | STATEMENT_FORMALIZED | KERNEL_VERIFIED | `IUT.PaperIV.Proposition1_3.i_min` |  |
+| &nbsp;&nbsp;`IUT4.Prop1_3.frag.i_padic_differentOrder_ge` | fragment |  | 9 to 12 | STATEMENT_FORMALIZED | KERNEL_VERIFIED | `IUT.PaperIV.LocalFields.padic_differentOrder_ge` |  |
 | &nbsp;&nbsp;`IUT4.Prop1_3.frag.ii_base` | fragment |  | 11 to 12 | STATEMENT_FORMALIZED | CONDITIONALLY_VERIFIED | `IUT.PaperIV.Proposition1_3.ii_base` |  |
 | &nbsp;&nbsp;`IUT4.Prop1_3.frag.ii_of_forall_eps` | fragment |  | 11 to 12 | STATEMENT_FORMALIZED | KERNEL_VERIFIED | `IUT.PaperIV.Proposition1_3.ii_of_forall_eps` |  |
 | &nbsp;&nbsp;`IUT4.Prop1_3.frag.ii_step` | fragment |  | 11 to 12 | STATEMENT_FORMALIZED | CONDITIONALLY_VERIFIED | `IUT.PaperIV.Proposition1_3.ii_step` |  |
@@ -571,15 +747,17 @@ BLOCKED_BY_MISSING_JUSTIFICATION: the text gives an assertion where a formalizat
 | &nbsp;&nbsp;`IUT4.Prop1_4.frag.ii_identity` | fragment |  | 13 to 14 | STATEMENT_FORMALIZED | KERNEL_VERIFIED | `IUT.PaperIV.Proposition1_4.ii_identity` |  |
 | &nbsp;&nbsp;`IUT4.Prop1_4.frag.ii_le` | fragment |  | 13 to 14 | STATEMENT_FORMALIZED | CONDITIONALLY_VERIFIED | `IUT.PaperIV.Proposition1_4.ii_le` |  |
 | &nbsp;&nbsp;`IUT4.Prop1_4.frag.iii_first` | fragment |  | 13 to 14 | STATEMENT_FORMALIZED | CONDITIONALLY_VERIFIED | `IUT.PaperIV.Proposition1_4.iii_first` |  |
+| &nbsp;&nbsp;`IUT4.Prop1_4.frag.iii_padic_dI_add_aI_ge` | fragment |  | 9 to 14 | STATEMENT_FORMALIZED | KERNEL_VERIFIED | `IUT.PaperIV.LocalFields.padic_dI_add_aI_ge` |  |
+| &nbsp;&nbsp;`IUT4.Prop1_4.frag.iii_padic_differentOrder_add_a_ge` | fragment |  | 9 to 14 | STATEMENT_FORMALIZED | KERNEL_VERIFIED | `IUT.PaperIV.LocalFields.padic_differentOrder_add_a_ge` |  |
 | &nbsp;&nbsp;`IUT4.Prop1_4.frag.iii_second` | fragment |  | 13 to 14 | STATEMENT_FORMALIZED | CONDITIONALLY_VERIFIED | `IUT.PaperIV.Proposition1_4.iii_second` |  |
-| `IUT4.Rem1_3_1` | Remark |  | 13 | NOT_EXTRACTED | EXTRACTED |  |  |
+| `IUT4.Rem1_3_1` | Remark |  | 13 | EXTRACTED | EXTRACTED |  |  |
 | `IUT4.Prop1_5` | Proposition | Archimedean Metric Estimates | 14 to 16 | EXTRACTED | BLOCKED_BY_MATHLIB |  | yes |
 | &nbsp;&nbsp;`IUT4.Prop1_5.frag.count_iii` | fragment |  | 15 to 16 | STATEMENT_FORMALIZED | KERNEL_VERIFIED | `IUT.PaperIV.Proposition1_5.count_iii` |  |
 | &nbsp;&nbsp;`IUT4.Prop1_5.frag.crt_normSq` | fragment |  | 15 to 16 | STATEMENT_FORMALIZED | KERNEL_VERIFIED | `IUT.PaperIV.Proposition1_5.crt_normSq` |  |
 | &nbsp;&nbsp;`IUT4.Prop1_5.frag.crt_pure` | fragment |  | 15 to 16 | STATEMENT_FORMALIZED | KERNEL_VERIFIED | `IUT.PaperIV.Proposition1_5.crt_pure` |  |
 | `IUT4.Prop1_6` | Proposition | The Prime Number Theorem | 16 | STATEMENT_FORMALIZED | KERNEL_VERIFIED | `IUT.PaperIV.Proposition1_6.proposition1_6` | yes |
 | `IUT4.Prop1_7` | Proposition | Weighted Averages | 16 to 17 | STATEMENT_FORMALIZED | KERNEL_VERIFIED | `IUT.PaperIV.Proposition1_7.weighted_averages` | yes |
-| `IUT4.Rem1_7_1` | Remark |  | 17 to 18 | NOT_EXTRACTED | EXTRACTED |  | yes |
+| `IUT4.Rem1_7_1` | Remark |  | 17 to 18 | EXTRACTED | EXTRACTED |  | yes |
 | `IUT4.Prop1_8` | Proposition | Torsion Points of Elliptic Curves | 18 to 21 | EXTRACTED | BLOCKED_BY_MATHLIB |  | yes |
 | `IUT4.Def1_9` | Definition |  | 21 to 22 | EXTRACTED | BLOCKED_BY_MATHLIB |  | yes |
 | &nbsp;&nbsp;`IUT4.Def1_9.frag.degE` | fragment |  | 21 to 22 | STATEMENT_FORMALIZED | NOT_EXTRACTED | `IUT.PaperIV.degE` |  |
@@ -632,19 +810,19 @@ BLOCKED_BY_MISSING_JUSTIFICATION: the text gives an assertion where a formalizat
 | &nbsp;&nbsp;&nbsp;&nbsp;`IUT4.Thm1_10.StepVIII.frag.step_viii_substitute` | fragment |  | 30 to 31 | STATEMENT_FORMALIZED | KERNEL_VERIFIED | `IUT.PaperIV.Theorem1_10.step_viii_substitute` |  |
 | &nbsp;&nbsp;&nbsp;&nbsp;`IUT4.Thm1_10.StepVIII.frag.step_viii_sum` | fragment |  | 30 to 31 | STATEMENT_FORMALIZED | CONDITIONALLY_VERIFIED | `IUT.PaperIV.Theorem1_10.step_viii_sum` |  |
 | &nbsp;&nbsp;`IUT4.Thm1_10.final` | part |  | 31 | EXTRACTED | BLOCKED_BY_EXTERNAL_THEOREM |  | yes |
-| &nbsp;&nbsp;&nbsp;&nbsp;`IUT3.Cor3_12.Statement.frag.thm1_10_final_of_cor312` | fragment |  | 23 to 174 | STATEMENT_FORMALIZED | CONDITIONALLY_VERIFIED | `IUT.PaperIII.Corollary312.thm1_10_final_of_cor312` |  |
 | &nbsp;&nbsp;&nbsp;&nbsp;`IUT4.Thm1_10.final.frag.final_estimate_one` | fragment |  | 31 | STATEMENT_FORMALIZED | KERNEL_VERIFIED | `IUT.PaperIV.Theorem1_10.final_estimate_one` |  |
 | &nbsp;&nbsp;&nbsp;&nbsp;`IUT4.Thm1_10.final.frag.final_estimate_two` | fragment |  | 31 | STATEMENT_FORMALIZED | KERNEL_VERIFIED | `IUT.PaperIV.Theorem1_10.final_estimate_two` |  |
 | &nbsp;&nbsp;&nbsp;&nbsp;`IUT4.Thm1_10.final.frag.final_inequality` | fragment |  | 31 | STATEMENT_FORMALIZED | CONDITIONALLY_VERIFIED | `IUT.PaperIV.Theorem1_10.final_inequality` |  |
 | &nbsp;&nbsp;&nbsp;&nbsp;`IUT4.Thm1_10.final.frag.final_inequality_F` | fragment |  | 31 | STATEMENT_FORMALIZED | CONDITIONALLY_VERIFIED | `IUT.PaperIV.Theorem1_10.final_inequality_F` |  |
+| &nbsp;&nbsp;&nbsp;&nbsp;`IUT4.Thm1_10.final.frag.of_cor312` | fragment |  | 23 to 174 | STATEMENT_FORMALIZED | CONDITIONALLY_VERIFIED | `IUT.PaperIII.Corollary312.thm1_10_final_of_cor312` |  |
 | &nbsp;&nbsp;`IUT4.Thm1_10.frag.constant` | fragment |  | 23 | STATEMENT_FORMALIZED | NOT_EXTRACTED | `IUT.PaperIV.Theorem1_10.constant` |  |
-| `IUT4.Rem1_10_1` | Remark |  | 31 to 32 | NOT_EXTRACTED | EXTRACTED |  | yes |
-| `IUT4.Rem1_10_2` | Remark |  | 32 | NOT_EXTRACTED | EXTRACTED |  |  |
-| `IUT4.Rem1_10_3` | Remark |  | 32 to 33 | NOT_EXTRACTED | EXTRACTED |  |  |
-| `IUT4.Rem1_10_4` | Remark |  | 33 to 34 | NOT_EXTRACTED | EXTRACTED |  |  |
-| `IUT4.Rem1_10_5` | Remark |  | 34 to 36 | NOT_EXTRACTED | EXTRACTED |  | yes |
-| `IUT4.Rem1_10_6` | Remark |  | 36 to 38 | NOT_EXTRACTED | EXTRACTED |  |  |
-| `IUT4.Rem1_10_7` | Remark |  | 38 to 40 | NOT_EXTRACTED | EXTRACTED |  | yes |
+| `IUT4.Rem1_10_1` | Remark |  | 31 to 32 | EXTRACTED | EXTRACTED |  | yes |
+| `IUT4.Rem1_10_2` | Remark |  | 32 | EXTRACTED | EXTRACTED |  |  |
+| `IUT4.Rem1_10_3` | Remark |  | 32 to 33 | EXTRACTED | EXTRACTED |  |  |
+| `IUT4.Rem1_10_4` | Remark |  | 33 to 34 | EXTRACTED | EXTRACTED |  |  |
+| `IUT4.Rem1_10_5` | Remark |  | 34 to 36 | EXTRACTED | EXTRACTED |  | yes |
+| `IUT4.Rem1_10_6` | Remark |  | 36 to 38 | EXTRACTED | EXTRACTED |  |  |
+| `IUT4.Rem1_10_7` | Remark |  | 38 to 39 | EXTRACTED | EXTRACTED |  | yes |
 
 ### Section 2: Diophantine Inequalities
 
@@ -686,40 +864,56 @@ BLOCKED_BY_MISSING_JUSTIFICATION: the text gives an assertion where a formalizat
 | &nbsp;&nbsp;&nbsp;&nbsp;`IUT4.Cor2_2.iii.frag.eps_star_estimates` | fragment |  | 47 | STATEMENT_FORMALIZED | KERNEL_VERIFIED | `IUT.PaperIV.Corollary2_2.eps_star_estimates` |  |
 | &nbsp;&nbsp;&nbsp;&nbsp;`IUT4.Cor2_2.iii.frag.h_bound_Hunif` | fragment |  | 47 | STATEMENT_FORMALIZED | KERNEL_VERIFIED | `IUT.PaperIV.Corollary2_2.h_bound_Hunif` |  |
 | &nbsp;&nbsp;&nbsp;&nbsp;`IUT4.Cor2_2.iii.frag.h_lt_of_eps_lt_epsE` | fragment |  | 47 | STATEMENT_FORMALIZED | KERNEL_VERIFIED | `IUT.PaperIV.Corollary2_2.h_lt_of_eps_lt_epsE` |  |
-| `IUT4.Rem2_2_1` | Remark |  | 48 to 50 | NOT_EXTRACTED | EXTRACTED |  | yes |
-| `IUT4.Rem2_2_2` | Remark |  | 50 to 51 | NOT_EXTRACTED | EXTRACTED |  | yes |
-| `IUT4.Rem2_2_3` | Remark |  | 51 to 52 | NOT_EXTRACTED | EXTRACTED |  |  |
-| `IUT4.Rem2_2_4` | Remark |  | 52 to 54 | NOT_EXTRACTED | EXTRACTED |  |  |
+| `IUT4.Rem2_2_1` | Remark |  | 48 to 50 | EXTRACTED | EXTRACTED |  | yes |
+| `IUT4.Rem2_2_2` | Remark |  | 50 to 51 | EXTRACTED | EXTRACTED |  | yes |
+| `IUT4.Rem2_2_3` | Remark |  | 51 to 52 | EXTRACTED | EXTRACTED |  |  |
+| `IUT4.Rem2_2_4` | Remark |  | 52 to 54 | EXTRACTED | EXTRACTED |  |  |
 | `IUT4.Cor2_3` | Corollary | Diophantine Inequalities | 54 to 55 | EXTRACTED | BLOCKED_BY_EXTERNAL_THEOREM |  | yes |
 | &nbsp;&nbsp;`IUT4.Cor2_3.frag.BDle_mono_eps` | fragment |  | 55 | STATEMENT_FORMALIZED | KERNEL_VERIFIED | `IUT.PaperIV.Corollary2_3.BDle_mono_eps` |  |
 | &nbsp;&nbsp;`IUT4.Cor2_3.frag.BDle_of_finite_exceptions` | fragment |  | 55 | STATEMENT_FORMALIZED | KERNEL_VERIFIED | `IUT.PaperIV.Corollary2_3.BDle_of_finite_exceptions` |  |
 | &nbsp;&nbsp;`IUT4.Cor2_3.frag.cor2_3_on_KV` | fragment |  | 55 | STATEMENT_FORMALIZED | CONDITIONALLY_VERIFIED | `IUT.PaperIV.Corollary2_3.cor2_3_on_KV` |  |
+| &nbsp;&nbsp;`IUT4.Cor2_3.frag.rational_points_P1_minus_three` | fragment |  | 40 to 55 | STATEMENT_FORMALIZED | NOT_EXTRACTED | `IUT.ABCSpecialization.VojtaLineMinusThreePointsRational` |  |
 | `IUT4.Rem2_3_1` | Remark |  | 55 to 56 | EXTRACTED | EXTRACTED |  | yes |
 | &nbsp;&nbsp;`IUT4.Rem2_3_1.frag.BDle` | fragment |  | 55 | STATEMENT_FORMALIZED | NOT_EXTRACTED | `IUT.PaperIV.Corollary2_3.BDle` |  |
-| `IUT4.Rem2_3_2` | Remark |  | 56 to 57 | NOT_EXTRACTED | EXTRACTED |  | yes |
-| `IUT4.Rem2_3_3` | Remark |  | 57 to 63 | NOT_EXTRACTED | EXTRACTED |  | yes |
-| `IUT4.Rem2_3_4` | Remark |  | 63 | NOT_EXTRACTED | EXTRACTED |  |  |
-| `IUT4.Rem2_3_5` | Remark |  | 63 to 67 | NOT_EXTRACTED | EXTRACTED |  |  |
+| `IUT4.Rem2_3_2` | Remark |  | 56 to 57 | EXTRACTED | EXTRACTED |  | yes |
+| `IUT4.Rem2_3_3` | Remark |  | 57 to 63 | EXTRACTED | EXTRACTED |  | yes |
+| `IUT4.Rem2_3_4` | Remark |  | 63 | EXTRACTED | EXTRACTED |  |  |
+| `IUT4.Rem2_3_5` | Remark |  | 63 to 66 | EXTRACTED | EXTRACTED |  |  |
+
+### Section 3: 
+
+| Id | Kind | Title | PDF pages | Statement | Proof | Lean declaration | Path |
+|---|---|---|---|---|---|---|---|
+| `IUT4.Sec3.Universes` | convention |  | 67 to 68 | EXTRACTED | EXTRACTED |  |  |
 
 ### Section 3: Inter-universal Formalism: the Language of Species
 
 | Id | Kind | Title | PDF pages | Statement | Proof | Lean declaration | Path |
 |---|---|---|---|---|---|---|---|
 | `IUT4.Def3_1` | Definition |  | 68 to 70 | EXTRACTED | NOT_EXTRACTED |  | yes |
-| `IUT4.Rem3_1_1` | Remark |  | 70 | NOT_EXTRACTED | NOT_EXTRACTED |  | yes |
-| `IUT4.Rem3_1_2` | Remark |  | 70 to 71 | NOT_EXTRACTED | NOT_EXTRACTED |  | yes |
-| `IUT4.Rem3_1_3` | Remark |  | 71 | NOT_EXTRACTED | NOT_EXTRACTED |  | yes |
-| `IUT4.Rem3_1_4` | Remark |  | 71 | NOT_EXTRACTED | NOT_EXTRACTED |  | yes |
-| `IUT4.Rem3_1_5` | Remark |  | 71 to 72 | NOT_EXTRACTED | NOT_EXTRACTED |  | yes |
+| &nbsp;&nbsp;`IUT4.Def3_1.i` | part |  | 68 | EXTRACTED | NOT_EXTRACTED |  | yes |
+| &nbsp;&nbsp;`IUT4.Def3_1.ii` | part |  | 68 to 69 | EXTRACTED | NOT_EXTRACTED |  | yes |
+| &nbsp;&nbsp;`IUT4.Def3_1.iii` | part |  | 69 | EXTRACTED | NOT_EXTRACTED |  | yes |
+| &nbsp;&nbsp;`IUT4.Def3_1.iv` | part |  | 70 | EXTRACTED | NOT_EXTRACTED |  | yes |
+| `IUT4.Rem3_1_1` | Remark |  | 70 | EXTRACTED | EXTRACTED |  | yes |
+| `IUT4.Rem3_1_2` | Remark |  | 70 to 71 | EXTRACTED | EXTRACTED |  | yes |
+| `IUT4.Rem3_1_3` | Remark |  | 71 | EXTRACTED | EXTRACTED |  | yes |
+| `IUT4.Rem3_1_4` | Remark |  | 71 | EXTRACTED | EXTRACTED |  | yes |
+| `IUT4.Rem3_1_5` | Remark |  | 71 | EXTRACTED | EXTRACTED |  | yes |
 | `IUT4.Def3_3` | Definition |  | 72 to 74 | EXTRACTED | NOT_EXTRACTED |  | yes |
-| `IUT4.Ex3_2` | Example | Categories | 72 | NOT_EXTRACTED | NOT_EXTRACTED |  | yes |
-| `IUT4.Rem3_2_1` | Remark |  | 72 | NOT_EXTRACTED | NOT_EXTRACTED |  |  |
-| `IUT4.Rem3_3_1` | Remark |  | 74 to 76 | NOT_EXTRACTED | NOT_EXTRACTED |  | yes |
-| `IUT4.Ex3_4` | Example | Topological Spaces and Fundamental Groups | 76 to 77 | NOT_EXTRACTED | NOT_EXTRACTED |  | yes |
-| `IUT4.Rem3_3_2` | Remark |  | 76 | NOT_EXTRACTED | NOT_EXTRACTED |  |  |
-| `IUT4.Ex3_5` | Example | Absolute Anabelian Geometry | 77 to 78 | NOT_EXTRACTED | NOT_EXTRACTED |  | yes |
-| `IUT4.Ex3_6` | Example | The Étale Site and Frobenius | 78 to 80 | NOT_EXTRACTED | NOT_EXTRACTED |  | yes |
-| `IUT4.Rem3_6_1` | Remark |  | 80 to 81 | NOT_EXTRACTED | NOT_EXTRACTED |  | yes |
-| `IUT4.Rem3_6_2` | Remark |  | 81 to 82 | NOT_EXTRACTED | NOT_EXTRACTED |  | yes |
-| `IUT4.Rem3_6_3` | Remark |  | 82 to 85 | NOT_EXTRACTED | NOT_EXTRACTED |  | yes |
+| &nbsp;&nbsp;`IUT4.Def3_3.i` | part |  | 72 to 73 | EXTRACTED | NOT_EXTRACTED |  | yes |
+| &nbsp;&nbsp;`IUT4.Def3_3.ii` | part |  | 73 | EXTRACTED | EXTRACTED |  | yes |
+| &nbsp;&nbsp;`IUT4.Def3_3.iii` | part |  | 73 to 74 | EXTRACTED | EXTRACTED |  | yes |
+| &nbsp;&nbsp;`IUT4.Def3_3.iv` | part |  | 74 | EXTRACTED | NOT_EXTRACTED |  | yes |
+| &nbsp;&nbsp;`IUT4.Def3_3.v` | part |  | 74 | EXTRACTED | NOT_EXTRACTED |  | yes |
+| `IUT4.Ex3_2` | Example | Categories | 72 | EXTRACTED | EXTRACTED |  | yes |
+| `IUT4.Rem3_2_1` | Remark |  | 72 | EXTRACTED | EXTRACTED |  |  |
+| `IUT4.Rem3_3_1` | Remark |  | 74 to 76 | EXTRACTED | EXTRACTED |  | yes |
+| `IUT4.Ex3_4` | Example | Topological Spaces and Fundamental Groups | 76 to 77 | EXTRACTED | EXTRACTED |  | yes |
+| `IUT4.Rem3_3_2` | Remark |  | 76 | EXTRACTED | EXTRACTED |  |  |
+| `IUT4.Ex3_5` | Example | Absolute Anabelian Geometry | 77 to 78 | EXTRACTED | EXTRACTED |  | yes |
+| `IUT4.Ex3_6` | Example | The Étale Site and Frobenius | 78 to 80 | EXTRACTED | EXTRACTED |  | yes |
+| `IUT4.Rem3_6_1` | Remark |  | 80 to 81 | EXTRACTED | EXTRACTED |  | yes |
+| `IUT4.Rem3_6_2` | Remark |  | 81 to 82 | EXTRACTED | EXTRACTED |  | yes |
+| `IUT4.Rem3_6_3` | Remark |  | 82 to 84 | EXTRACTED | EXTRACTED |  | yes |
 

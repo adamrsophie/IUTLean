@@ -31,6 +31,7 @@ stage 2 exists. Each step is small and has its own acceptance criterion.
 
 * Entry: stage 1 as it stands; the fragment rule of `docs/DECISIONS.md`, decision 12, applied to
   the curated records.
+* Literature survey of 2026-11-25 (LITERATURE.md): elementary Lean targets and comparison points for `Challenge.ABC` from the survey feed stage 1a.
 * Work, in order:
   1. **Local tensor packet with its normalization.** For one `v_ℚ` and a label set `A`, a type
      for the tensor packet `log(^A F_{v_ℚ})` (IUT III pages 92 to 99), its integral structures

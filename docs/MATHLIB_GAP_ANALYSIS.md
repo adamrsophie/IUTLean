@@ -470,7 +470,7 @@ Bibliography keys: [AbsTopIII].
 
 Needed first by: IUT3.Def1_1, IUT3.Prop3_9, IUT4.Prop1_2.
 
-Mathlib v4.36.0 defines NormedSpace.log for any topological Q-algebra, hence for Q_p, with only its algebraic properties at 1. The log-shell was therefore not formalized. IUT3.Prop3_9 and IUT4.Prop1_2 are cited from their titles (Log-volume for Packets and Processions; Differents and Logarithms).
+Mathlib v4.36.0 defines NormedSpace.log for any topological Q-algebra, hence for Q_p, with only its algebraic properties at 1. The convergence on the open unit disc, the homomorphism property and the extension to the units are proved in this library for Q_p (IUT/Prerequisites/PadicLog.lean), where the log-shell of IUT III Definition 1.1 is defined for Q_p; finite extensions are not treated there. IUT3.Prop3_9 and IUT4.Prop1_2 are the statements that use it (Log-volume for Packets and Processions; Differents and Logarithms).
 
 ### Arithmetic divisors
 
@@ -567,7 +567,7 @@ In Mathlib:
 Missing:
 
 * Higher ramification groups (no declaration with "RamificationGroup" or "lowerNumbering" found). Classes 3.
-* Estimates of the different of local fields and of tensor products of local fields, IUT IV Propositions 1.1 to 1.3 (titles: Multiple Tensor Products and Differents; Differents and Logarithms; Estimates of Differents; not read). Classes 2, 3.
+* Estimates of the different of local fields and of tensor products of local fields, IUT IV Propositions 1.1 to 1.3 (Multiple Tensor Products and Differents; Differents and Logarithms; Estimates of Differents; pages 9 to 13; the inequality of Proposition 1.3 (i) for finite extensions of Q_p is proved in IUT/PaperIV/LocalFields/, the rest is open). Classes 2, 3.
 
 Other Lean libraries:
 
@@ -724,7 +724,7 @@ The universe results use the existence axiom only as an explicit hypothesis `Exi
 
 ## Candidates not formalized, and why
 
-* Log-shell of Q_p: Mathlib v4.36.0 defines NormedSpace.log, but without convergence on the disc, the homomorphism property, or the extension to all units (open TODO items in Analysis/Normed/Algebra/Logarithm.lean). Defining the log-shell faithfully (IUT III Definition 1.1, page 24) needs these. Replacing the log-shell by Z_p for p odd would be a shell and was not done.
+* Log-shell of Q_p: Mathlib v4.36.0 defines NormedSpace.log, but without convergence on the disc, the homomorphism property, or the extension to all units (open TODO items in Analysis/Normed/Algebra/Logarithm.lean). These are proved in this library for Q_p (IUT/Prerequisites/PadicLog.lean), where the log-shell of IUT III Definition 1.1 (page 24) is defined as the image of the units under the logarithm divided by p*, and its equality with Z_p is a theorem. Finite extensions of Q_p remain open.
 * Pull-back invariance deg(a|_K) = deg(a) of IUT IV Definition 1.9 (i): The paper defines the pull-back only "in the evident fashion"; choosing the pull-back so that the identity holds would make it nearly definitional. Deferred until the convention is fixed from [GenEll], section 1, which was not read.
 * Degree zero of principal arithmetic divisors: Not defined on the pages read (IUT IV pages 21 to 23); with the archimedean weight 1 of Definition 1.9 (i) the coefficient convention at complex places would have to be chosen. Only the product formula itself was formalized.
 * Existence of a Grothendieck universe in ZFSet.{u+1}: Mathlib has the embedding only at the PSet level (PSet.embed); building it for ZFSet and checking axioms (i) to (v) is a separate task.
