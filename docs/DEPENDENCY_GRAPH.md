@@ -14,20 +14,20 @@ Citation edges distinguish where the citation occurs: in the statement, in the p
 | cites_in_context | 36 |
 | cites_in_proof | 132 |
 | cites_in_statement | 1996 |
-| depends_on | 1761 |
-| depends_on_external | 843 |
-| formalized_by | 172 |
-| fragment_of | 162 |
-| lean_uses | 2850 |
+| depends_on | 1781 |
+| depends_on_external | 883 |
+| formalized_by | 289 |
+| fragment_of | 275 |
+| lean_uses | 6188 |
 | part_of | 242 |
 
 | Node type | Count |
 |---|---|
-| external_lean_theorem | 137 |
-| external_reference | 57 |
-| fragment | 162 |
-| lean_declaration | 913 |
-| statement | 629 |
+| external_lean_theorem | 233 |
+| external_reference | 60 |
+| fragment | 275 |
+| lean_declaration | 1738 |
+| statement | 656 |
 | unresolved_citation | 35 |
 
 ## Circular citation
@@ -43,7 +43,7 @@ Citation edges distinguish where the citation occurs: in the statement, in the p
 
 ## Independent subtheories
 
-The graph of statement records (citations and curated edges, read without direction) has 22 connected components over 629 records; 21 of them are single statements that cite no indexed statement and are cited by none. The count covers 629 statement records; 162 fragments and 35 unresolved citation targets are left out. Component sizes: 608.
+The graph of statement records (citations and curated edges, read without direction) has 37 connected components over 656 records; 36 of them are single statements that cite no indexed statement and are cited by none. The count covers 656 statement records; 275 fragments and 35 unresolved citation targets are left out. Component sizes: 620.
 
 ## Citations to targets that are not records
 
@@ -106,6 +106,40 @@ Scope "whole statement" means that the record claims the declaration states its 
 
 | Record | Lean declaration | Scope | Parent | Found |
 |---|---|---|---|---|
+| `DH.ITD.Ex2_10.frag.dh_qPilot_11a1` | `IUT.Applications.DupuyHilado.dh_qPilot_11a1` | fragment | `DH.ITD.Ex2_10` | yes |
+| `DH.PS.Def3_8_1.frag.dhQPilotDegreeOfData` | `IUT.Applications.DupuyHilado.dhQPilotDegreeOfData` | fragment | `DH.PS.Def3_8_1` | yes |
+| `DH.PS.Eq3_3.frag.dh_printed_pilot_relation_forces_zero` | `IUT.Applications.DupuyHilado.dh_printed_pilot_relation_forces_zero` | fragment | `DH.PS.Eq3_3` | yes |
+| `DH.PS.Eq7_12.frag.dh_IV_printed_bound_fails` | `IUT.Applications.DupuyHilado.dh_IV_printed_bound_fails` | fragment | `DH.PS.Eq7_12` | yes |
+| `DH.PS.Lem4_2_1.frag.dh_crude_log_estimate` | `IUT.Applications.DupuyHilado.dh_crude_log_estimate` | fragment | `DH.PS.Lem4_2_1` | yes |
+| `DH.PS.Lem7_7_1.frag.dh_label_averages` | `IUT.Applications.DupuyHilado.dh_avg_succ` | fragment | `DH.PS.Lem7_7_1` | yes |
+| `DH.PS.Sec3_8.PilotRelation.frag.dhThetaPilotLgp_eq_mul_qPilot` | `IUT.Applications.DupuyHilado.dhThetaPilotLgp_eq_mul_qPilot` | fragment | `DH.PS.Sec3_8.PilotRelation` | yes |
+| `DH.PS.Sec6_1.Hull.frag.dhHull` | `IUT.Applications.DupuyHilado.dhHull` | fragment | `DH.PS.Sec6_1.Hull` | yes |
+| `DH.PS.Sec6_1.HullContainment.frag.dh_det_one_not_hull_subset` | `IUT.Applications.DupuyHilado.dh_det_one_not_hull_subset` | fragment | `DH.PS.Sec6_1.HullContainment` | yes |
+| `DH.PS.Thm7_12_1.frag.dh_probSzpiro_of_intermediate` | `IUT.Applications.DupuyHilado.dh_probSzpiro_of_intermediate` | fragment | `DH.PS.Thm7_12_1` | yes |
+| `DH.PS.Thm7_13_1.frag.dh_SL2_card_values` | `IUT.Applications.DupuyHilado.dh_SL2_card_values` | fragment | `DH.PS.Thm7_13_1` | yes |
+| `DH.PS.Thm7_13_1.frag.dh_baby_final_step` | `IUT.Applications.DupuyHilado.dh_baby_final_step` | fragment | `DH.PS.Thm7_13_1` | yes |
+| `DH.PS.Thm7_13_1.frag.dh_omega_printed_bound_fails` | `IUT.Applications.DupuyHilado.dh_omega_printed_bound_fails` | fragment | `DH.PS.Thm7_13_1` | yes |
+| `DH.PS.Thm8_2_1.frag.dh_explicit_szpiro_steps` | `IUT.Applications.DupuyHilado.dh_explicit_pre_result` | fragment | `DH.PS.Thm8_2_1` | yes |
+| `EXPL.Cor5_2.frag.numerics` | `IUT.ExplicitEstimates.cor5_2_numerics` | fragment | `EXPL.Cor5_2` | yes |
+| `EXPL.Cor5_8` | `IUT.ExplicitEstimates.Cor5_8Statement` | whole statement |  | yes |
+| `EXPL.Cor5_8.frag.conditional` | `IUT.ExplicitEstimates.cor5_8_of_thm5_3iiRationalClaim_of_lemma5_7Claim` | fragment | `EXPL.Cor5_8` | yes |
+| `EXPL.Cor5_8.frag.numerics` | `IUT.ExplicitEstimates.cor5_8_left_bound` | fragment | `EXPL.Cor5_8` | yes |
+| `EXPL.Lem5_7` | `IUT.ExplicitEstimates.Lemma5_7Claim` | whole statement |  | yes |
+| `EXPL.Lem5_7.frag.claim` | `IUT.ExplicitEstimates.Lemma5_7Claim` | fragment | `EXPL.Lem5_7` | yes |
+| `EXPL.Prop2_1.frag.factorizations` | `IUT.ExplicitEstimates.prop2_1_factorizations` | fragment | `EXPL.Prop2_1` | yes |
+| `EXPL.Prop2_2.frag.proof_algebra` | `IUT.ExplicitEstimates.prop2_2_i_algebra` | fragment | `EXPL.Prop2_2` | yes |
+| `EXPL.Thm5_1.frag.constants` | `IUT.ExplicitEstimates.inv_one_sub_twelve_div_sq_le` | fragment | `EXPL.Thm5_1` | yes |
+| `EXPL.Thm5_1.frag.step_v` | `IUT.ExplicitEstimates.four_mul_add_five_div_le` | fragment | `EXPL.Thm5_1` | yes |
+| `EXPL.Thm5_1.frag.step_viii` | `IUT.ExplicitEstimates.step_viii_absorb_mu6` | fragment | `EXPL.Thm5_1` | yes |
+| `EXPL.Thm5_3.frag.abc_three_halves` | `IUT.ExplicitEstimates.abcWithExponent_three_halves_add_of_thm5_3iiRationalClaim` | fragment | `EXPL.Thm5_3` | yes |
+| `EXPL.Thm5_3.frag.c_bound` | `IUT.ExplicitEstimates.c_le_of_thm5_3iiRationalClaim` | fragment | `EXPL.Thm5_3` | yes |
+| `EXPL.Thm5_3.frag.log_step` | `IUT.ExplicitEstimates.thm5_3_ii_log_step` | fragment | `EXPL.Thm5_3` | yes |
+| `EXPL.Thm5_3.frag.rational_claim` | `IUT.ExplicitEstimates.Thm5_3iiRationalClaim` | fragment | `EXPL.Thm5_3` | yes |
+| `EXPL.Thm5_4` | `IUT.ExplicitEstimates.Thm5_4Claim` | whole statement |  | yes |
+| `EXPL.Thm5_4.frag.abc_three` | `IUT.ExplicitEstimates.abcWithExponent_three_add_of_thm5_4Claim` | fragment | `EXPL.Thm5_4` | yes |
+| `EXPL.Thm5_4.frag.c_bound` | `IUT.ExplicitEstimates.c_le_of_thm5_4Claim` | fragment | `EXPL.Thm5_4` | yes |
+| `EXPL.Thm5_4.frag.claim` | `IUT.ExplicitEstimates.Thm5_4Claim` | fragment | `EXPL.Thm5_4` | yes |
+| `EXPL.Thm5_4.frag.cube_step` | `IUT.ExplicitEstimates.thm5_4_cube_step` | fragment | `EXPL.Thm5_4` | yes |
 | `IUT1.Def3_1.a.frag.sqrtNegOne` | `IUT.PaperI.SqrtNegOneMem` | fragment | `IUT1.Def3_1.a` | yes |
 | `IUT1.Def3_1.b.frag.badSetOddNonempty` | `IUT.PaperI.BadSetOddNonempty` | fragment | `IUT1.Def3_1.b` | yes |
 | `IUT1.Def3_1.b.frag.galoisDegreePrimeTo` | `IUT.PaperI.GaloisOfDegreePrimeTo` | fragment | `IUT1.Def3_1.b` | yes |
@@ -115,6 +149,22 @@ Scope "whole statement" means that the record claims the declaration states its 
 | `IUT1.Def3_1.c.frag.firstClause` | `IUT.PaperI.AuxiliaryPrimeFirstClause` | fragment | `IUT1.Def3_1.c` | yes |
 | `IUT1.Def3_1.c.frag.primeToBadResidueChars` | `IUT.PaperI.PrimeToBadResidueChars` | fragment | `IUT1.Def3_1.c` | yes |
 | `IUT1.Def3_1.frag.partialConditions` | `IUT.PaperI.PartialInitialThetaConditions` | fragment | `IUT1.Def3_1` | yes |
+| `IUT1.Ex3_2.frag.frd_morphism_types` | `IUT.Prerequisites.Frobenioid.IsFrobeniusTrivialObj` | fragment | `IUT1.Ex3_2` | yes |
+| `IUT1.Ex3_3.frag.frd_elementary_frobenioid` | `IUT.Prerequisites.Frobenioid.elemFrobCategory` | fragment | `IUT1.Ex3_3` | yes |
+| `IUT1.Ex3_3.frag.frd_monoid_classes` | `IUT.Prerequisites.Frobenioid.IsDivisorialMonoid` | fragment | `IUT1.Ex3_3` | yes |
+| `IUT1.Ex3_3.frag.frd_monoid_examples` | `IUT.Prerequisites.Frobenioid.isCharacteristicTypeMonoid_of_isIntegralMonoid` | fragment | `IUT1.Ex3_3` | yes |
+| `IUT1.Ex3_3.frag.frd_remark_1_1_1` | `IUT.Prerequisites.Frobenioid.frobDeg_compose` | fragment | `IUT1.Ex3_3` | yes |
+| `IUT1.Ex3_5.frag.frd_partial_frobenioid` | `IUT.Prerequisites.Frobenioid.PartialFrobenioidConditions` | fragment | `IUT1.Ex3_5` | yes |
+| `IUT1.Ex3_5.frag.frd_partial_frobenioid_example` | `IUT.Prerequisites.Frobenioid.natPoint_partialFrobenioidConditions` | fragment | `IUT1.Ex3_5` | yes |
+| `IUT1.Prop2_1.frag.anabelioid_morphism` | `IUT.Prerequisites.AnabelioidMorphism` | fragment | `IUT1.Prop2_1` | yes |
+| `IUT1.Prop2_1.frag.connected_anabelioid` | `IUT.Prerequisites.IsConnectedAnabelioid` | fragment | `IUT1.Prop2_1` | yes |
+| `IUT1.Prop2_1.frag.finite_g_sets` | `IUT.Prerequisites.FiniteGSets` | fragment | `IUT1.Prop2_1` | yes |
+| `IUT1.Prop2_1.frag.semi_graph_of_anabelioids` | `IUT.Prerequisites.SemiGraphOfAnabelioids` | fragment | `IUT1.Prop2_1` | yes |
+| `IUT1.Prop2_2.frag.compactification` | `IUT.Prerequisites.SemiGraph.compactification` | fragment | `IUT1.Prop2_2` | yes |
+| `IUT1.Prop2_2.frag.semi_graph` | `IUT.Prerequisites.SemiGraph` | fragment | `IUT1.Prop2_2` | yes |
+| `IUT1.Prop2_2.frag.semi_graph_examples` | `IUT.Prerequisites.SemiGraph.exampleJoint_isJoint` | fragment | `IUT1.Prop2_2` | yes |
+| `IUT1.Prop2_2.frag.semi_graph_morphism` | `IUT.Prerequisites.SemiGraph.Hom` | fragment | `IUT1.Prop2_2` | yes |
+| `IUT1.Prop2_2.frag.sub_semi_graph` | `IUT.Prerequisites.SemiGraph.subSemiGraph` | fragment | `IUT1.Prop2_2` | yes |
 | `IUT1.Rem2_5_3.frag.galois_countable` | `IUT.PaperI.IsGaloisCountableTemperedGroup` | fragment | `IUT1.Rem2_5_3` | yes |
 | `IUT1.Sec0.Capsule` | `IUT.PaperI.Capsule` | whole statement |  | yes |
 | `IUT1.Sec0.CapsuleFullPolyMorphism` | `IUT.PaperI.Capsule.capsuleFullPolyMorphism` | whole statement |  | yes |
@@ -165,12 +215,27 @@ Scope "whole statement" means that the record claims the declaration states its 
 | `IUT3.Cor3_12.StepXI.f.frag.logVolumeComparison_of_containment` | `IUT.PaperIII.Corollary312.ComparisonSetting.logVolumeComparison_of_containment` | fragment | `IUT3.Cor3_12.StepXI.f` | yes |
 | `IUT3.Cor3_12.StepXI.f.frag.stepXIf_inclusion_iff_inequality` | `IUT.PaperIII.Corollary312.stepXIf_inclusion_iff_inequality` | fragment | `IUT3.Cor3_12.StepXI.f` | yes |
 | `IUT3.Def1_1.frag.log_shell_Qp` | `IUT.Prerequisites.PadicLog.padicLogShell_eq_range_coe` | fragment | `IUT3.Def1_1` | yes |
+| `IUT3.Def1_1.frag.log_shell_model` | `IUT.PaperIV.LocalFields.extLogShell_bounds` | fragment | `IUT3.Def1_1` | yes |
 | `IUT3.Prop1_2.v.frag.nonarch_Qp` | `IUT.Prerequisites.PadicLog.padicInt_subset_padicLogShell` | fragment | `IUT3.Prop1_2.v` | yes |
+| `IUT3.Prop1_2.v.frag.nonarch_model` | `IUT.PaperIV.LocalFields.extLogShell_unitBall_subset` | fragment | `IUT3.Prop1_2.v` | yes |
+| `IUT3.Prop1_2.v.frag.padic_union_examples` | `IUT.PaperIII.Corollary312.padic_iUnion_nonzeroIntegers` | fragment | `IUT3.Prop1_2.v` | yes |
+| `IUT3.Prop3_5.frag.ext_upper_semi` | `IUT.PaperIII.Corollary312.extLogShell_contains_logUnitIterateRegion` | fragment | `IUT3.Prop3_5` | yes |
+| `IUT3.Prop3_5.frag.logUnitIterateRegion` | `IUT.PaperIII.Corollary312.logUnitIterateRegion` | fragment | `IUT3.Prop3_5` | yes |
+| `IUT3.Prop3_5.frag.padic_chain` | `IUT.PaperIII.Corollary312.padic_logUnitIterateRegion_one` | fragment | `IUT3.Prop3_5` | yes |
+| `IUT3.Prop3_5.frag.padic_upper_semi` | `IUT.PaperIII.Corollary312.padicLogShell_contains_logUnitIterateRegion` | fragment | `IUT3.Prop3_5` | yes |
+| `IUT3.Prop3_9.i.frag.packet_normalization` | `IUT.Prerequisites.PadicVolume.padicMuLog_smul` | fragment | `IUT3.Prop3_9.i` | yes |
+| `IUT3.Prop3_9.i.frag.region_interface` | `IUT.Prerequisites.PadicVolume.padicRegionComparison` | fragment | `IUT3.Prop3_9.i` | yes |
 | `IUT3.Prop3_9.iii.frag.globalLogVolume` | `IUT.PaperIII.Corollary312.globalLogVolume` | fragment | `IUT3.Prop3_9.iii` | yes |
 | `IUT3.Prop3_9.iii.frag.globalLogVolume_mono` | `IUT.PaperIII.Corollary312.globalLogVolume_mono` | fragment | `IUT3.Prop3_9.iii` | yes |
+| `IUT3.Rem3_9_5.ii.frag.dhHull_isHullMap` | `IUT.Applications.DupuyHilado.dhHull_isHullMap` | fragment | `IUT3.Rem3_9_5.ii` | yes |
 | `IUT3.Rem3_9_5.ii.frag.eq_sInter` | `IUT.PaperIII.Remark3_9_5.IsHullMap.eq_sInter` | fragment | `IUT3.Rem3_9_5.ii` | yes |
 | `IUT3.Rem3_9_5.ii.frag.isHullMap_sInter` | `IUT.PaperIII.Remark3_9_5.isHullMap_sInter` | fragment | `IUT3.Rem3_9_5.ii` | yes |
 | `IUT3.Rem3_9_5.ii.frag.unique` | `IUT.PaperIII.Remark3_9_5.IsHullMap.unique` | fragment | `IUT3.Rem3_9_5.ii` | yes |
+| `IUT3.Thm3_11.ii.Ind3.frag.VerticalRegionFamily` | `IUT.PaperIII.Corollary312.VerticalRegionFamily` | fragment | `IUT3.Thm3_11.ii.Ind3` | yes |
+| `IUT3.Thm3_11.ii.Ind3.frag.hull_bounds` | `IUT.PaperIII.Corollary312.VerticalRegionFamily.logVol_hull_columnUnion_le_shellContainer` | fragment | `IUT3.Thm3_11.ii.Ind3` | yes |
+| `IUT3.Thm3_11.ii.Ind3.frag.inequality_from_above` | `IUT.PaperIII.Corollary312.IndeterminacyOrbit.logVolume_jointColumnImage_le_shellContainer` | fragment | `IUT3.Thm3_11.ii.Ind3` | yes |
+| `IUT3.Thm3_11.ii.Ind3.frag.interval_examples` | `IUT.PaperIII.Corollary312.VerticalExample.example_gap_union` | fragment | `IUT3.Thm3_11.ii.Ind3` | yes |
+| `IUT3.Thm3_11.ii.Ind3.frag.joint_indeterminacy` | `IUT.PaperIII.Corollary312.IndeterminacyOrbit.logVol_hull_jointColumnUnion_le_shellContainer` | fragment | `IUT3.Thm3_11.ii.Ind3` | yes |
 | `IUT4.Cor2_2.ProofApply.frag.apply_theorem_1_10` | `IUT.PaperIV.Corollary2_2.apply_theorem_1_10` | fragment | `IUT4.Cor2_2.ProofApply` | yes |
 | `IUT4.Cor2_2.ProofAssembly.frag.assembly` | `IUT.PaperIV.Corollary2_2.assembly` | fragment | `IUT4.Cor2_2.ProofAssembly` | yes |
 | `IUT4.Cor2_2.ProofAssembly.frag.epsE_ge` | `IUT.PaperIV.Corollary2_2.epsE_ge` | fragment | `IUT4.Cor2_2.ProofAssembly` | yes |
@@ -187,52 +252,91 @@ Scope "whole statement" means that the record claims the declaration states its 
 | `IUT4.Cor2_2.ProofP5.frag.P5_bound` | `IUT.PaperIV.Corollary2_2.P5_bound` | fragment | `IUT4.Cor2_2.ProofP5` | yes |
 | `IUT4.Cor2_2.ProofP5.frag.sqrt_mul_log_l` | `IUT.PaperIV.Corollary2_2.sqrt_mul_log_l` | fragment | `IUT4.Cor2_2.ProofP5` | yes |
 | `IUT4.Cor2_2.ProofP5.frag.sqrt_mul_log_l_steps` | `IUT.PaperIV.Corollary2_2.sqrt_mul_log_l_steps` | fragment | `IUT4.Cor2_2.ProofP5` | yes |
+| `IUT4.Cor2_2.frag.legendre_j` | `IUT.LegendreFrey.legendreCurve_jInv` | fragment | `IUT4.Cor2_2` | yes |
+| `IUT4.Cor2_2.i.frag.height_j_triple` | `IUT.LegendreFrey.logHeight₁_legendreJ_triple_le` | fragment | `IUT4.Cor2_2.i` | yes |
 | `IUT4.Cor2_2.ii.C2.frag.C2_of_final` | `IUT.PaperIV.Corollary2_2.C2_of_final` | fragment | `IUT4.Cor2_2.ii.C2` | yes |
+| `IUT4.Cor2_2.ii.frag.special_j_values` | `IUT.LegendreFrey.legendreJ_eq_73_iff` | fragment | `IUT4.Cor2_2.ii` | yes |
 | `IUT4.Cor2_2.iii.frag.eps_star_estimates` | `IUT.PaperIV.Corollary2_2.eps_star_estimates` | fragment | `IUT4.Cor2_2.iii` | yes |
 | `IUT4.Cor2_2.iii.frag.h_bound_Hunif` | `IUT.PaperIV.Corollary2_2.h_bound_Hunif` | fragment | `IUT4.Cor2_2.iii` | yes |
 | `IUT4.Cor2_2.iii.frag.h_lt_of_eps_lt_epsE` | `IUT.PaperIV.Corollary2_2.h_lt_of_eps_lt_epsE` | fragment | `IUT4.Cor2_2.iii` | yes |
 | `IUT4.Cor2_3.frag.BDle_mono_eps` | `IUT.PaperIV.Corollary2_3.BDle_mono_eps` | fragment | `IUT4.Cor2_3` | yes |
 | `IUT4.Cor2_3.frag.BDle_of_finite_exceptions` | `IUT.PaperIV.Corollary2_3.BDle_of_finite_exceptions` | fragment | `IUT4.Cor2_3` | yes |
+| `IUT4.Cor2_3.frag.bounded_degree_P1_minus_three` | `IUT.VojtaNumberField.VojtaLineMinusThreePointsBoundedDegree` | fragment | `IUT4.Cor2_3` | yes |
 | `IUT4.Cor2_3.frag.cor2_3_on_KV` | `IUT.PaperIV.Corollary2_3.cor2_3_on_KV` | fragment | `IUT4.Cor2_3` | yes |
+| `IUT4.Cor2_3.frag.frey_curve` | `IUT.LegendreFrey.freyCurve_jInv_eq_legendreJ` | fragment | `IUT4.Cor2_3` | yes |
+| `IUT4.Cor2_3.frag.frey_j_arithmetic` | `IUT.LegendreFrey.legendreJ_triple_prime_dvd_den_iff` | fragment | `IUT4.Cor2_3` | yes |
 | `IUT4.Cor2_3.frag.rational_points_P1_minus_three` | `IUT.ABCSpecialization.VojtaLineMinusThreePointsRational` | fragment | `IUT4.Cor2_3` | yes |
 | `IUT4.Def1_9.frag.degE` | `IUT.PaperIV.degE` | fragment | `IUT4.Def1_9` | yes |
 | `IUT4.Def1_9.frag.degE_arc_eq_normalizedDeg` | `IUT.PaperIV.degE_arc_eq_normalizedDeg` | fragment | `IUT4.Def1_9` | yes |
 | `IUT4.Def1_9.frag.degF` | `IUT.PaperIV.degF` | fragment | `IUT4.Def1_9` | yes |
 | `IUT4.Def1_9.frag.normalizedDeg` | `IUT.PaperIV.normalizedDeg` | fragment | `IUT4.Def1_9` | yes |
+| `IUT4.Prop1_1.frag.packet_integers` | `IUT.Prerequisites.PadicVolume.padicPacketIntegers_subset` | fragment | `IUT4.Prop1_1` | yes |
+| `IUT4.Prop1_1.frag.vb_integral_models` | `IUT.PaperIV.LocalFields.volBridge_padicVolIntegral_iff` | fragment | `IUT4.Prop1_1` | yes |
+| `IUT4.Prop1_1.frag.vb_tensor_decomposition` | `IUT.PaperIV.LocalFields.volBridge_tensor_equiv_pi` | fragment | `IUT4.Prop1_1` | yes |
 | `IUT4.Prop1_2.frag.a_b_of_e_one` | `IUT.PaperIV.Proposition1_2.a_b_of_e_one` | fragment | `IUT4.Prop1_2` | yes |
 | `IUT4.Prop1_2.frag.a_b_of_le` | `IUT.PaperIV.Proposition1_2.a_b_of_le` | fragment | `IUT4.Prop1_2` | yes |
 | `IUT4.Prop1_2.frag.a_gt` | `IUT.PaperIV.Proposition1_2.a_gt` | fragment | `IUT4.Prop1_2` | yes |
+| `IUT4.Prop1_2.frag.bridge_fractional_ideals` | `IUT.PaperIV.LocalFields.padicBridge_closedBall_eq_range_mul` | fragment | `IUT4.Prop1_2` | yes |
+| `IUT4.Prop1_2.frag.bridge_i` | `IUT.PaperIV.LocalFields.padicBridge_extLogUnit_image_bounds` | fragment | `IUT4.Prop1_2` | yes |
+| `IUT4.Prop1_2.frag.bridge_ramification` | `IUT.PaperIV.LocalFields.padicBridge_uniformizer` | fragment | `IUT4.Prop1_2` | yes |
+| `IUT4.Prop1_2.frag.bridge_ring_of_integers` | `IUT.PaperIV.LocalFields.padicBridge_norm_le_one_iff_isIntegral` | fragment | `IUT4.Prop1_2` | yes |
+| `IUT4.Prop1_2.frag.ext_log_def` | `IUT.PaperIV.LocalFields.extLogOnePlus` | fragment | `IUT4.Prop1_2` | yes |
+| `IUT4.Prop1_2.frag.ext_log_hom` | `IUT.PaperIV.LocalFields.extLogOnePlus_add_add_mul` | fragment | `IUT4.Prop1_2` | yes |
+| `IUT4.Prop1_2.frag.ext_log_isometry` | `IUT.PaperIV.LocalFields.extLogOnePlus_norm_eq` | fragment | `IUT4.Prop1_2` | yes |
 | `IUT4.Prop1_2.frag.i_Qp` | `IUT.Prerequisites.PadicLog.padicLogUnit_range` | fragment | `IUT4.Prop1_2` | yes |
+| `IUT4.Prop1_2.frag.i_Qp_consistency` | `IUT.PaperIV.LocalFields.extLogUnit_image_padic_of_ne_two` | fragment | `IUT4.Prop1_2` | yes |
+| `IUT4.Prop1_2.frag.i_equality_model` | `IUT.PaperIV.LocalFields.extLogUnit_image_eq_of_le` | fragment | `IUT4.Prop1_2` | yes |
+| `IUT4.Prop1_2.frag.i_model` | `IUT.PaperIV.LocalFields.extLogUnit_image_bounds` | fragment | `IUT4.Prop1_2` | yes |
 | `IUT4.Prop1_2.frag.iii_floor` | `IUT.PaperIV.Proposition1_2.iii_floor` | fragment | `IUT4.Prop1_2` | yes |
 | `IUT4.Prop1_2.frag.log_hom` | `IUT.Prerequisites.PadicLog.padicLogOnePlus_add_add_mul` | fragment | `IUT4.Prop1_2` | yes |
 | `IUT4.Prop1_2.frag.log_series_def` | `IUT.Prerequisites.PadicLog.padicLogOnePlus` | fragment | `IUT4.Prop1_2` | yes |
 | `IUT4.Prop1_2.frag.log_series_norm` | `IUT.Prerequisites.PadicLog.padicLogOnePlus_norm_eq` | fragment | `IUT4.Prop1_2` | yes |
 | `IUT4.Prop1_2.frag.rpow_b_gt` | `IUT.PaperIV.Proposition1_2.rpow_b_gt` | fragment | `IUT4.Prop1_2` | yes |
+| `IUT4.Prop1_3.frag.bridge_d_with_log` | `IUT.PaperIV.LocalFields.padicBridge_log_bounds_and_differentOrder` | fragment | `IUT4.Prop1_3` | yes |
 | `IUT4.Prop1_3.frag.differentOrder` | `IUT.PaperIV.LocalFields.differentOrder` | fragment | `IUT4.Prop1_3` | yes |
 | `IUT4.Prop1_3.frag.i_differentOrder_ge` | `IUT.PaperIV.LocalFields.differentOrder_ge` | fragment | `IUT4.Prop1_3` | yes |
 | `IUT4.Prop1_3.frag.i_differentOrder_ge_tower` | `IUT.PaperIV.LocalFields.differentOrder_ge_tower` | fragment | `IUT4.Prop1_3` | yes |
+| `IUT4.Prop1_3.frag.i_equality_iff_tame_padic` | `IUT.PaperIV.LocalFields.differentExponent_eq_ramificationIdx_sub_one_iff_padic` | fragment | `IUT4.Prop1_3` | yes |
 | `IUT4.Prop1_3.frag.i_min` | `IUT.PaperIV.Proposition1_3.i_min` | fragment | `IUT4.Prop1_3` | yes |
 | `IUT4.Prop1_3.frag.i_padic_differentOrder_ge` | `IUT.PaperIV.LocalFields.padic_differentOrder_ge` | fragment | `IUT4.Prop1_3` | yes |
+| `IUT4.Prop1_3.frag.i_tame_equality_padic` | `IUT.PaperIV.LocalFields.differentExponent_eq_of_not_dvd_ramificationIdx_padic` | fragment | `IUT4.Prop1_3` | yes |
+| `IUT4.Prop1_3.frag.i_wild_inequality_padic` | `IUT.PaperIV.LocalFields.ramificationIdx_le_differentExponent_of_dvd_padic` | fragment | `IUT4.Prop1_3` | yes |
 | `IUT4.Prop1_3.frag.ii_base` | `IUT.PaperIV.Proposition1_3.ii_base` | fragment | `IUT4.Prop1_3` | yes |
+| `IUT4.Prop1_3.frag.ii_base_padic` | `IUT.PaperIV.LocalFields.differentOrder_le_one_of_not_dvd_ramificationIdx_padic` | fragment | `IUT4.Prop1_3` | yes |
 | `IUT4.Prop1_3.frag.ii_of_forall_eps` | `IUT.PaperIV.Proposition1_3.ii_of_forall_eps` | fragment | `IUT4.Prop1_3` | yes |
 | `IUT4.Prop1_3.frag.ii_step` | `IUT.PaperIV.Proposition1_3.ii_step` | fragment | `IUT4.Prop1_3` | yes |
 | `IUT4.Prop1_4.frag.a_add_b_le` | `IUT.PaperIV.Proposition1_4.a_add_b_le` | fragment | `IUT4.Prop1_4` | yes |
 | `IUT4.Prop1_4.frag.a_sub_le` | `IUT.PaperIV.Proposition1_2.a_sub_le` | fragment | `IUT4.Prop1_4` | yes |
 | `IUT4.Prop1_4.frag.b_add_le` | `IUT.PaperIV.Proposition1_2.b_add_le` | fragment | `IUT4.Prop1_4` | yes |
+| `IUT4.Prop1_4.frag.bridge_d_add_a` | `IUT.PaperIV.LocalFields.padicBridge_log_bounds_and_differentOrder` | fragment | `IUT4.Prop1_4` | yes |
 | `IUT4.Prop1_4.frag.dI_add_aI_ge` | `IUT.PaperIV.Proposition1_4.dI_add_aI_ge` | fragment | `IUT4.Prop1_4` | yes |
 | `IUT4.Prop1_4.frag.d_add_a_ge` | `IUT.PaperIV.Proposition1_2.d_add_a_ge` | fragment | `IUT4.Prop1_4` | yes |
+| `IUT4.Prop1_4.frag.field_smul` | `IUT.Prerequisites.PadicVolume.padicMuLog_ball_uniformizer` | fragment | `IUT4.Prop1_4` | yes |
 | `IUT4.Prop1_4.frag.four_div_le` | `IUT.PaperIV.Proposition1_2.four_div_le` | fragment | `IUT4.Prop1_4` | yes |
+| `IUT4.Prop1_4.frag.i_unitBall` | `IUT.Prerequisites.PadicVolume.padicMuLog_p_smul_unitBall` | fragment | `IUT4.Prop1_4` | yes |
 | `IUT4.Prop1_4.frag.ii_identity` | `IUT.PaperIV.Proposition1_4.ii_identity` | fragment | `IUT4.Prop1_4` | yes |
 | `IUT4.Prop1_4.frag.ii_le` | `IUT.PaperIV.Proposition1_4.ii_le` | fragment | `IUT4.Prop1_4` | yes |
 | `IUT4.Prop1_4.frag.iii_first` | `IUT.PaperIV.Proposition1_4.iii_first` | fragment | `IUT4.Prop1_4` | yes |
 | `IUT4.Prop1_4.frag.iii_padic_dI_add_aI_ge` | `IUT.PaperIV.LocalFields.padic_dI_add_aI_ge` | fragment | `IUT4.Prop1_4` | yes |
 | `IUT4.Prop1_4.frag.iii_padic_differentOrder_add_a_ge` | `IUT.PaperIV.LocalFields.padic_differentOrder_add_a_ge` | fragment | `IUT4.Prop1_4` | yes |
 | `IUT4.Prop1_4.frag.iii_second` | `IUT.PaperIV.Proposition1_4.iii_second` | fragment | `IUT4.Prop1_4` | yes |
+| `IUT4.Prop1_4.frag.logUnit_bounds` | `IUT.Prerequisites.PadicVolume.padicMuLog_logUnit_bounds` | fragment | `IUT4.Prop1_4` | yes |
+| `IUT4.Prop1_4.frag.measure_smul` | `IUT.Prerequisites.PadicVolume.padicVol_measure_smul` | fragment | `IUT4.Prop1_4` | yes |
+| `IUT4.Prop1_4.frag.muLog_def` | `IUT.Prerequisites.PadicVolume.padicMuLog` | fragment | `IUT4.Prop1_4` | yes |
+| `IUT4.Prop1_4.frag.muLog_laws` | `IUT.Prerequisites.PadicVolume.padicMuLog_p_zpow_smul` | fragment | `IUT4.Prop1_4` | yes |
+| `IUT4.Prop1_4.frag.packet` | `IUT.Prerequisites.PadicVolume.padicPacketMuLog_p_zpow_smul` | fragment | `IUT4.Prop1_4` | yes |
+| `IUT4.Prop1_4.frag.padic_base` | `IUT.Prerequisites.PadicVolume.padicVol_padic_p_zpow` | fragment | `IUT4.Prop1_4` | yes |
+| `IUT4.Prop1_4.frag.vb_field_normalization` | `IUT.PaperIV.LocalFields.volBridge_muLog_integralClosure` | fragment | `IUT4.Prop1_4` | yes |
+| `IUT4.Prop1_4.frag.vb_fractional_ideal` | `IUT.PaperIV.LocalFields.volBridge_muLog_fractionalIdeal` | fragment | `IUT4.Prop1_4` | yes |
+| `IUT4.Prop1_4.frag.vb_logunit_bounds` | `IUT.PaperIV.LocalFields.volBridge_muLog_logUnit_bounds` | fragment | `IUT4.Prop1_4` | yes |
+| `IUT4.Prop1_4.frag.vb_logunit_eq_of_le` | `IUT.PaperIV.LocalFields.volBridge_muLog_logUnit_eq_of_le` | fragment | `IUT4.Prop1_4` | yes |
+| `IUT4.Prop1_4.frag.vb_packet_normalization` | `IUT.PaperIV.LocalFields.volBridge_packet_muLog_normalization` | fragment | `IUT4.Prop1_4` | yes |
 | `IUT4.Prop1_5.frag.count_iii` | `IUT.PaperIV.Proposition1_5.count_iii` | fragment | `IUT4.Prop1_5` | yes |
 | `IUT4.Prop1_5.frag.crt_normSq` | `IUT.PaperIV.Proposition1_5.crt_normSq` | fragment | `IUT4.Prop1_5` | yes |
 | `IUT4.Prop1_5.frag.crt_pure` | `IUT.PaperIV.Proposition1_5.crt_pure` | fragment | `IUT4.Prop1_5` | yes |
 | `IUT4.Prop1_6` | `IUT.PaperIV.Proposition1_6.proposition1_6` | whole statement |  | yes |
 | `IUT4.Prop1_7` | `IUT.PaperIV.Proposition1_7.weighted_averages` | whole statement |  | yes |
+| `IUT4.Prop1_8.frag.legendre_curve` | `IUT.LegendreFrey.legendreCurve_isElliptic_iff` | fragment | `IUT4.Prop1_8` | yes |
 | `IUT4.Prop2_1` | `IUT.PaperIV.Proposition2_1.proposition2_1` | whole statement |  | yes |
 | `IUT4.Rem2_3_1.frag.BDle` | `IUT.PaperIV.Corollary2_3.BDle` | fragment | `IUT4.Rem2_3_1` | yes |
 | `IUT4.Thm1_10.StepI.frag.E1` | `IUT.PaperIV.Theorem1_10.E1` | fragment | `IUT4.Thm1_10.StepI` | yes |
@@ -277,9 +381,22 @@ Scope "whole statement" means that the record claims the declaration states its 
 | `IUT4.Thm1_10.final.frag.final_inequality_F` | `IUT.PaperIV.Theorem1_10.final_inequality_F` | fragment | `IUT4.Thm1_10.final` | yes |
 | `IUT4.Thm1_10.final.frag.of_cor312` | `IUT.PaperIII.Corollary312.thm1_10_final_of_cor312` | fragment | `IUT4.Thm1_10.final` | yes |
 | `IUT4.Thm1_10.frag.constant` | `IUT.PaperIV.Theorem1_10.constant` | fragment | `IUT4.Thm1_10` | yes |
+| `IUT4.ThmA.frag.bounded_degree_implies_abc` | `IUT.VojtaNumberField.degreeAtMostOne_iff_ABC` | fragment | `IUT4.ThmA` | yes |
 | `IUT4.ThmA.frag.equiv_abc` | `IUT.ABCSpecialization.vojta_iff_ABC` | fragment | `IUT4.ThmA` | yes |
+| `ZHOU1.Cor3_3` | `IUT.Applications.ZhouExplicit.ZhouCorollary33` | whole statement |  | yes |
+| `ZHOU1.Cor3_3.frag.fixed_exponent` | `IUT.Applications.ZhouExplicit.abcWithExponent_of_zhouCorollary33` | fragment | `ZHOU1.Cor3_3` | yes |
+| `ZHOU1.Cor3_3.frag.from_thm32` | `IUT.Applications.ZhouExplicit.zhouCorollary33_of_theorem32i` | fragment | `ZHOU1.Cor3_3` | yes |
+| `ZHOU1.Cor3_3.frag.statement` | `IUT.Applications.ZhouExplicit.ZhouCorollary33` | fragment | `ZHOU1.Cor3_3` | yes |
+| `ZHOU1.Def1_7.frag.constants` | `IUT.Applications.ZhouExplicit.zhouA` | fragment | `ZHOU1.Def1_7` | yes |
+| `ZHOU1.Lem3_1.frag.ii` | `IUT.Applications.ZhouExplicit.zhou_lemma31_ii` | fragment | `ZHOU1.Lem3_1` | yes |
+| `ZHOU1.Prop1_10.frag.averaging` | `IUT.Applications.ZhouExplicit.zhou_procession_identity` | fragment | `ZHOU1.Prop1_10` | yes |
+| `ZHOU1.Prop1_10.frag.lemma14_bound` | `IUT.Applications.ZhouExplicit.zhouLemma14Bound_le` | fragment | `ZHOU1.Prop1_10` | yes |
+| `ZHOU1.Prop1_10.frag.model_chain` | `IUT.Applications.ZhouExplicit.zhou_prop110_of_model` | fragment | `ZHOU1.Prop1_10` | yes |
+| `ZHOU1.Prop2_7.frag.from_cor113` | `IUT.Applications.ZhouExplicit.zhou_prop27_of_cor113` | fragment | `ZHOU1.Prop2_7` | yes |
+| `ZHOU1.Thm3_2.frag.statement` | `IUT.Applications.ZhouExplicit.ZhouTheorem32i` | fragment | `ZHOU1.Thm3_2` | yes |
+| `ZHOU1.Thm3_2.frag.transfer` | `IUT.Applications.ZhouExplicit.zhouTheorem32i_of_nLevel` | fragment | `ZHOU1.Thm3_2` | yes |
 
 ## Lean declarations
 
-913 declarations (plus 571 internal auxiliary ones) in 57 modules: `Challenge.Defs`, `IUT`, `IUT.ABC.Variants`, `IUT.Applications.ABC`, `IUT.Applications.ABCFormalConjectures`, `IUT.Applications.ABCSpecialization`, `IUT.Audit.MochizukiResponses.LVEx`, `IUT.Audit.MochizukiResponses.LVExMeasure`, `IUT.Audit.MochizukiResponses.SSIdEx`, `IUT.Audit.MochizukiResponses.ToyModels`, `IUT.Audit.ScholzeStix.Blurring`, `IUT.Audit.ScholzeStix.Diagram`, `IUT.Audit.ScholzeStix.Reduction`, `IUT.Audit.ScholzeStix.Section1_3`, `IUT.Countermodels.Basic`, `IUT.Countermodels.CombinedIndeterminacies`, `IUT.Countermodels.HaarNormalization`, `IUT.Countermodels.HullTransport`, `IUT.Countermodels.JointWitness`, `IUT.Countermodels.LevelMismatch`, `IUT.Countermodels.MultiplicativeAdditive`, `IUT.Countermodels.ReconstructionComparison`, `IUT.Foundations.GrothendieckUniverse`, `IUT.PaperI.InitialThetaData`, `IUT.PaperI.PolyMorphism`, `IUT.PaperI.Temperoid`, `IUT.PaperII.Labels`, `IUT.PaperIII.Corollary312.Comparison`, `IUT.PaperIII.Corollary312.Indeterminacy`, `IUT.PaperIII.Corollary312.LabelAverage`, `IUT.PaperIII.Corollary312.Numerical`, `IUT.PaperIII.Corollary312.Places`, `IUT.PaperIII.Remark3_9_5.HullOperator`, `IUT.PaperIV.ArithmeticDivisor`, `IUT.PaperIV.Corollary2_2.Arithmetic`, `IUT.PaperIV.Corollary2_3`, `IUT.PaperIV.Definition1_9`, `IUT.PaperIV.LocalFields.Different`, `IUT.PaperIV.LocalFields.Padic`, `IUT.PaperIV.Proposition1_2`, `IUT.PaperIV.Proposition1_3`, `IUT.PaperIV.Proposition1_4`, `IUT.PaperIV.Proposition1_5`, `IUT.PaperIV.Proposition1_6`, `IUT.PaperIV.Proposition1_7`, `IUT.PaperIV.Proposition2_1`, `IUT.PaperIV.Theorem1_10.Arithmetic`, `IUT.PaperIV.Theorem1_10.ElementaryFacts`, `IUT.PaperIV.Theorem1_10.StepII`, `IUT.PaperIV.Theorem1_10.StepIII`, `IUT.PaperIV.Theorem1_10.StepV`, `IUT.PaperIV.Theorem1_10.StepVIII`, `IUT.Prerequisites.PadicLog`, `IUT.Prerequisites.PositiveRationalsZhatUnits`, `IUT.Prerequisites.ProductFormula`, `IUT.Prerequisites.ThetaFunction`, `Solution`. Direct project references per declaration are in `data/dependency_graph.json` (edge kind `lean_uses`).
+1738 declarations (plus 1145 internal auxiliary ones) in 72 modules: `Challenge.Defs`, `IUT`, `IUT.ABC.Elementary`, `IUT.ABC.Variants`, `IUT.Applications.ABC`, `IUT.Applications.ABCFormalConjectures`, `IUT.Applications.ABCSpecialization`, `IUT.Applications.DupuyHilado`, `IUT.Applications.ExplicitEstimates`, `IUT.Applications.VojtaNumberField`, `IUT.Applications.ZhouExplicit`, `IUT.Audit.MochizukiResponses.LVEx`, `IUT.Audit.MochizukiResponses.LVExMeasure`, `IUT.Audit.MochizukiResponses.SSIdEx`, `IUT.Audit.MochizukiResponses.ToyModels`, `IUT.Audit.ScholzeStix.Blurring`, `IUT.Audit.ScholzeStix.Diagram`, `IUT.Audit.ScholzeStix.Reduction`, `IUT.Audit.ScholzeStix.Section1_3`, `IUT.Countermodels.Basic`, `IUT.Countermodels.CombinedIndeterminacies`, `IUT.Countermodels.HaarNormalization`, `IUT.Countermodels.HullTransport`, `IUT.Countermodels.JointWitness`, `IUT.Countermodels.LevelMismatch`, `IUT.Countermodels.MultiplicativeAdditive`, `IUT.Countermodels.ReconstructionComparison`, `IUT.Foundations.GrothendieckUniverse`, `IUT.PaperI.InitialThetaData`, `IUT.PaperI.PolyMorphism`, `IUT.PaperI.Temperoid`, `IUT.PaperII.Labels`, `IUT.PaperIII.Corollary312.Comparison`, `IUT.PaperIII.Corollary312.Indeterminacy`, `IUT.PaperIII.Corollary312.LabelAverage`, `IUT.PaperIII.Corollary312.Numerical`, `IUT.PaperIII.Corollary312.Places`, `IUT.PaperIII.Corollary312.UpperSemiCompatibility`, `IUT.PaperIII.Remark3_9_5.HullOperator`, `IUT.PaperIV.ArithmeticDivisor`, `IUT.PaperIV.Corollary2_2.Arithmetic`, `IUT.PaperIV.Corollary2_3`, `IUT.PaperIV.Definition1_9`, `IUT.PaperIV.LegendreFrey`, `IUT.PaperIV.LocalFields.Bridge`, `IUT.PaperIV.LocalFields.Different`, `IUT.PaperIV.LocalFields.Logarithm`, `IUT.PaperIV.LocalFields.Padic`, `IUT.PaperIV.LocalFields.Tame`, `IUT.PaperIV.LocalFields.VolumeBridge`, `IUT.PaperIV.Proposition1_2`, `IUT.PaperIV.Proposition1_3`, `IUT.PaperIV.Proposition1_4`, `IUT.PaperIV.Proposition1_5`, `IUT.PaperIV.Proposition1_6`, `IUT.PaperIV.Proposition1_7`, `IUT.PaperIV.Proposition2_1`, `IUT.PaperIV.Theorem1_10.Arithmetic`, `IUT.PaperIV.Theorem1_10.ElementaryFacts`, `IUT.PaperIV.Theorem1_10.StepII`, `IUT.PaperIV.Theorem1_10.StepIII`, `IUT.PaperIV.Theorem1_10.StepV`, `IUT.PaperIV.Theorem1_10.StepVIII`, `IUT.Prerequisites.Anabelioid`, `IUT.Prerequisites.Frobenioid`, `IUT.Prerequisites.PadicLog`, `IUT.Prerequisites.PadicVolume`, `IUT.Prerequisites.PositiveRationalsZhatUnits`, `IUT.Prerequisites.ProductFormula`, `IUT.Prerequisites.SemiGraph`, `IUT.Prerequisites.ThetaFunction`, `Solution`. Direct project references per declaration are in `data/dependency_graph.json` (edge kind `lean_uses`).
 

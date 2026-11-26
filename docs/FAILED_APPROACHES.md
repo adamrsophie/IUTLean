@@ -19,7 +19,10 @@ refutes a statement of the papers.
   log-shell is `(p*)⁻¹ · log(ℤ_p^×)`, with the `p`-adic logarithm proved convergent, a
   homomorphism and of image `{z | ‖z‖ ≤ 1/p*}`, and its equality with `ℤ_p` is a theorem
   (`padicLogShell_eq_range_coe`), not a definition. The identification of the Galois-invariant
-  units with `ℤ_p^×` is an interpretation, not formalized. Finite extensions of `ℚ_p` remain
+  units with `ℤ_p^×` is an interpretation, not formalized. For finite extensions of `ℚ_p` the
+  log-shell is defined in the same way in a normed-field model
+  (`IUT/PaperIV/LocalFields/Logarithm.lean`) and bounded on the ring of integers
+  (`IUT/PaperIV/LocalFields/Bridge.lean`); its compactness and the setting of IUT III remain
   open (`OPEN_PROBLEMS.md`, P-LOG).
 * **A Lean `Prop` for Theorem 3.11 or Corollary 3.12.** Rejected; see `docs/DECISIONS.md`,
   decision 4.

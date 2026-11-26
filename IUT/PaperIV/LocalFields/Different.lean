@@ -50,10 +50,12 @@ and the transitivity of the different (`differentIdeal_eq_differentIdeal_mul_dif
   inequality of Proposition 1.3 (i) with `e_{i/0} = e_{P/P₀}` and `e_i = e_{P/p}`
   (`e_{P/p} = e_{P₀/p}·e_{P/P₀}` by `Ideal.ramificationIdx_tower`).
 
-Not formalized: the equality in the tamely ramified case (Mathlib, at the pinned version, has no
-statement computing the exact exponent of the different in the tame case; only the bound and the
-characterization `P ∣ 𝔇 ↔ P` ramified, `dvd_differentIdeal_iff`, are available), Proposition
-1.3 (ii), and the uniqueness of `P` over `p` for `ℤ_p`.
+Not formalized in this file: the equality in the tamely ramified case (Mathlib, at the pinned
+version, has no statement computing the exact exponent of the different in the tame case; only
+the bound and the characterization `P ∣ 𝔇 ↔ P` ramified, `dvd_differentIdeal_iff`, are
+available), Proposition 1.3 (ii), and the uniqueness of `P` over `p` for `ℤ_p`. For
+`k_0 = ℚ_p` the tame equality is proved in `IUT/PaperIV/LocalFields/Tame.lean` and the
+uniqueness of `P` in `IUT/PaperIV/LocalFields/Bridge.lean`.
 -/
 
 open Ideal nonZeroDivisors

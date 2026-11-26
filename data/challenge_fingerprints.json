@@ -11,7 +11,7 @@
   "files": {
     ".github/CODEOWNERS": "c261a80efc49d875f87c953a7dd55bd4e8bb7a58f23ca3fdc9e4aae8376ec76e",
     ".github/workflows/axiom-gate.yml": "43ccc13a125433c93e3fd2cb8a46db3560f7c7d9ad4dbda7e92bc07f171dfcaf",
-    "AxiomGate.lean": "ef599ac1ba1e927879841d7f0b58a52d6a780f973de2b0a36c89b7b4161189b4",
+    "AxiomGate.lean": "0de423bffd2e6e04fa161a2848dcdab5c469e425322236318bb50b8667c779c7",
     "Challenge.lean": "ee1a16be082589cd69dd848271483afda7fa02c46fc858b2146c484db578de92",
     "Challenge/Defs.lean": "38b9a2aa9fec312a9c1f6a826a14c919539e4d4c5df75f950d9851ffa9327e0b",
     "GateControls/Clean.lean": "b972a7316d919c1abe840844a8a841ebc082b7bc8e5f9b5c4ace060f04bc8185",

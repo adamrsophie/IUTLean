@@ -1,1 +1,2187 @@
-{}
+{
+  "EXPL.Thm5_1": {
+    "kind": "external_statement",
+    "source": {
+      "authors": "S. Mochizuki, I. Fesenko, Y. Hoshi, A. Minamide, W. Porowski",
+      "title": "Explicit estimates in inter-universal Teichmüller theory",
+      "journal": "Kodai Mathematical Journal 45 (2022), no. 2, 175 to 236",
+      "statement": "Theorem 5.1",
+      "pages_in_paper": "pages 33 to 35",
+      "pages_read": "rendered manuscript pages 3 to 8, 21 to 23, 26 to 28, 32 to 57 (page numbers are those of the 58-page manuscript, not of the journal)"
+    },
+    "content": "mu6-version of IUT IV Theorem 1.10: for mu6-initial Theta-data with l >= 10^15 and good reduction outside 2*3*5*l, C_Theta may be taken explicit with 4.08803*e*_mod*l, and (1/6) log q <= (1 + 20 d_mod/l)(log d + log f) + 4.0881 e*_mod l.",
+    "explicit_hypotheses": [
+      "mu6-initial Theta-data (Definition 4.1)",
+      "l >= 10^15",
+      "good reduction at nonarchimedean places not dividing 2*3*5*l",
+      "F = F_mod(sqrt(-1), E[2*3*5])"
+    ],
+    "implicit_hypotheses": [],
+    "conclusion": "(1/6) log q <= (1 + 20 d_mod / l)(log d^{F_tpd} + log f^{F_tpd}) + 4.0881 e*_mod l.",
+    "definitions_required": [],
+    "results_used": [
+      "IUT4.Thm1_10"
+    ],
+    "external_dependencies": [
+      "IUTchIII Corollary 3.12 in its mu6-version (Remark 4.2.6 of the paper)"
+    ],
+    "lean_declaration": null,
+    "statement_status": "EXTRACTED",
+    "proof_status": "NOT_EXTRACTED",
+    "obligations": [
+      "mu6-version of IUT III Corollary 3.12 (C_Theta >= -1)"
+    ],
+    "ambiguities": [],
+    "fragments": [
+      "EXPL.Thm5_1.frag.step_v",
+      "EXPL.Thm5_1.frag.step_viii",
+      "EXPL.Thm5_1.frag.constants"
+    ]
+  },
+  "EXPL.Thm5_1.frag.step_v": {
+    "kind": "fragment",
+    "parent": "EXPL.Thm5_1",
+    "source": {
+      "pages_in_paper": "page 34",
+      "pages_read": "rendered manuscript pages 3 to 8, 21 to 23, 26 to 28, 32 to 57 (page numbers are those of the 58-page manuscript, not of the journal)"
+    },
+    "content": "For l >= 10^15: 4(l+5)/(l+1) <= 4 + 10^-13.",
+    "explicit_hypotheses": [
+      "l >= 10^15"
+    ],
+    "implicit_hypotheses": [],
+    "conclusion": "4(l+5)/(l+1) <= 4 + 10^-13.",
+    "definitions_required": [],
+    "results_used": [],
+    "external_dependencies": [],
+    "lean_declaration": "IUT.ExplicitEstimates.four_mul_add_five_div_le",
+    "covers": "Page 34, first bullet of the proof.",
+    "not_covered": "The rest of Step (v).",
+    "statement_status": "STATEMENT_FORMALIZED",
+    "proof_status": "KERNEL_VERIFIED",
+    "obligations": [],
+    "ambiguities": []
+  },
+  "EXPL.Thm5_1.frag.step_viii": {
+    "kind": "fragment",
+    "parent": "EXPL.Thm5_1",
+    "source": {
+      "pages_in_paper": "pages 34 to 35",
+      "pages_read": "rendered manuscript pages 3 to 8, 21 to 23, 26 to 28, 32 to 57 (page numbers are those of the 58-page manuscript, not of the journal)"
+    },
+    "content": "For l >= 10^15 and e >= 1: 2 log l + 56 <= 10^-5 * 1.022 * (2^12 3^3 5 e) l; and 2^12 3^3 5 e l >= 5*10^20.",
+    "explicit_hypotheses": [
+      "l >= 10^15",
+      "e >= 1"
+    ],
+    "implicit_hypotheses": [],
+    "conclusion": "2 log l + 56 <= 10^-5 * 1.022 * e*_mod * l.",
+    "definitions_required": [],
+    "results_used": [],
+    "external_dependencies": [],
+    "lean_declaration": "IUT.ExplicitEstimates.step_viii_absorb_mu6",
+    "covers": "Pages 34 to 35, second and third bullets of the proof.",
+    "not_covered": "The prime counting step l*_mod log(s) <= 1.022 e*_mod l (Proposition 2.2 (i)).",
+    "statement_status": "STATEMENT_FORMALIZED",
+    "proof_status": "KERNEL_VERIFIED",
+    "obligations": [],
+    "ambiguities": [],
+    "lemmas": [
+      "IUT.ExplicitEstimates.eStar_mul_l_ge_eta_prm"
+    ]
+  },
+  "EXPL.Thm5_1.frag.constants": {
+    "kind": "fragment",
+    "parent": "EXPL.Thm5_1",
+    "source": {
+      "pages_in_paper": "page 35",
+      "pages_read": "rendered manuscript pages 3 to 8, 21 to 23, 26 to 28, 32 to 57 (page numbers are those of the 58-page manuscript, not of the journal)"
+    },
+    "content": "For l >= 10^15: (1 - 12/l^2)^-1 <= 1 + 10^-13; also (4 + 10^-13 + 10^-5) 1.022 <= (4 + 2*10^-5) 1.022 <= 4.08803, 4.08803 (1 + 10^-13) <= 4.0881, 2^12 3^3 5 = 552960.",
+    "explicit_hypotheses": [
+      "l >= 10^15"
+    ],
+    "implicit_hypotheses": [],
+    "conclusion": "(1 - 12/l^2)^-1 <= 1 + 10^-13.",
+    "definitions_required": [],
+    "results_used": [],
+    "external_dependencies": [],
+    "lean_declaration": "IUT.ExplicitEstimates.inv_one_sub_twelve_div_sq_le",
+    "covers": "Page 35, the constant 4.08803 and the final estimate.",
+    "not_covered": "The rest of the final portion of Step (viii).",
+    "statement_status": "STATEMENT_FORMALIZED",
+    "proof_status": "KERNEL_VERIFIED",
+    "obligations": [],
+    "ambiguities": [],
+    "lemmas": [
+      "IUT.ExplicitEstimates.constant_4_08803",
+      "IUT.ExplicitEstimates.constant_4_0881",
+      "IUT.ExplicitEstimates.delta_coefficient"
+    ]
+  },
+  "EXPL.Cor5_2": {
+    "kind": "external_statement",
+    "source": {
+      "authors": "S. Mochizuki, I. Fesenko, Y. Hoshi, A. Minamide, W. Porowski",
+      "title": "Explicit estimates in inter-universal Teichmüller theory",
+      "journal": "Kodai Mathematical Journal 45 (2022), no. 2, 175 to 236",
+      "statement": "Corollary 5.2",
+      "pages_in_paper": "pages 35 to 43",
+      "pages_read": "rendered manuscript pages 3 to 8, 21 to 23, 26 to 28, 32 to 57 (page numbers are those of the 58-page manuscript, not of the journal)"
+    },
+    "content": "Explicit version of IUT IV Corollary 2.2 (ii), (iii) without (CBS1), (CBS2): finite exceptional sets with log q bounded by max{kappa^log, h_d(eps)}, and outside them initial Theta-data with (C1) l <= 1.464 delta (log q)^{1/2} log(1.45 delta log q) and (C2) (1/6) log q <= (1+eps)(log-diff + log-cond).",
+    "explicit_hypotheses": [
+      "kappa in (0,1]",
+      "d >= 1",
+      "0 < eps <= 1"
+    ],
+    "implicit_hypotheses": [],
+    "conclusion": "Existence of the exceptional sets and of mu6-initial Theta-data with (C1), (C2).",
+    "definitions_required": [],
+    "results_used": [
+      "IUT4.Cor2_2",
+      "EXPL.Thm5_1"
+    ],
+    "external_dependencies": [
+      "GenEll Proposition 1.4, Lemmas 3.1, 3.5",
+      "Axler; Rosser and Schoenfeld (via Proposition 2.2)"
+    ],
+    "lean_declaration": null,
+    "statement_status": "EXTRACTED",
+    "proof_status": "NOT_EXTRACTED",
+    "obligations": [
+      "EXPL.Thm5_1"
+    ],
+    "ambiguities": [
+      "Lemma 1.11 and Corollary 1.14 (pages 18 to 20) not read"
+    ],
+    "fragments": [
+      "EXPL.Cor5_2.frag.numerics"
+    ]
+  },
+  "EXPL.Cor5_2.frag.numerics": {
+    "kind": "fragment",
+    "parent": "EXPL.Cor5_2",
+    "source": {
+      "pages_in_paper": "pages 39 to 43",
+      "pages_read": "rendered manuscript pages 3 to 8, 21 to 23, 26 to 28, 32 to 57 (page numbers are those of the 58-page manuscript, not of the journal)"
+    },
+    "content": "Numerical facts: 1.00072(1.4621 + 0.0001) <= 1.464; 1.464*1.45 <= 4; 2^13 3^3 5 <= 10^15; 4.0881*1.464 <= 5.985; 71.82 (2^12 3^3 5)^2 >= 4*10^12; (10^-12 + 1 + 10^-8)(1 - 10^-7) <= 1; and (1 - x)^-1 (1 + y) <= 1 + eps for x, y > 0, 2x + y <= eps <= 1.",
+    "explicit_hypotheses": [],
+    "implicit_hypotheses": [],
+    "conclusion": "The listed inequalities.",
+    "definitions_required": [],
+    "results_used": [],
+    "external_dependencies": [],
+    "lean_declaration": "IUT.ExplicitEstimates.cor5_2_numerics",
+    "covers": "Pages 39, 40, 42, 43: estimates cited in the proof.",
+    "not_covered": "Everything else in the proof of Corollary 5.2.",
+    "statement_status": "STATEMENT_FORMALIZED",
+    "proof_status": "KERNEL_VERIFIED",
+    "obligations": [],
+    "ambiguities": [],
+    "lemmas": [
+      "IUT.ExplicitEstimates.inv_one_sub_mul_one_add_le"
+    ]
+  },
+  "EXPL.Thm5_3": {
+    "kind": "external_statement",
+    "source": {
+      "authors": "S. Mochizuki, I. Fesenko, Y. Hoshi, A. Minamide, W. Porowski",
+      "title": "Explicit estimates in inter-universal Teichmüller theory",
+      "journal": "Kodai Mathematical Journal 45 (2022), no. 2, 175 to 236",
+      "statement": "Theorem 5.3",
+      "pages_in_paper": "pages 43 to 45",
+      "pages_read": "rendered manuscript pages 3 to 8, 21 to 23, 26 to 28, 32 to 57 (page numbers are those of the 58-page manuscript, not of the journal)"
+    },
+    "content": "Effective ABC/Szpiro over mono-complex fields: (i) (1/6) h_non(j) <= max{(1/d)(1+eps) log(Delta rad), h_d(eps)/6}; (ii) H_L(a,b,c) <= 2^{5d/2} max{exp((d/4) h_d(eps)), (Delta rad)^{3(1+eps)/2}}.",
+    "explicit_hypotheses": [
+      "L mono-complex",
+      "a, b, c nonzero, a + b + c = 0",
+      "0 < eps <= 1"
+    ],
+    "implicit_hypotheses": [],
+    "conclusion": "Inequalities (i) and (ii).",
+    "definitions_required": [],
+    "results_used": [
+      "EXPL.Cor5_2"
+    ],
+    "external_dependencies": [],
+    "lean_declaration": null,
+    "statement_status": "EXTRACTED",
+    "proof_status": "NOT_EXTRACTED",
+    "obligations": [
+      "EXPL.Cor5_2"
+    ],
+    "ambiguities": [
+      "Definitions 1.1, 1.2 (pages 9 to 10) not read; H_Q and rad_Q identified for coprime integers"
+    ],
+    "fragments": [
+      "EXPL.Thm5_3.frag.rational_claim",
+      "EXPL.Thm5_3.frag.c_bound",
+      "EXPL.Thm5_3.frag.abc_three_halves",
+      "EXPL.Thm5_3.frag.log_step"
+    ]
+  },
+  "EXPL.Thm5_3.frag.rational_claim": {
+    "kind": "fragment",
+    "parent": "EXPL.Thm5_3",
+    "source": {
+      "pages_in_paper": "pages 43 to 45",
+      "pages_read": "rendered manuscript pages 3 to 8, 21 to 23, 26 to 28, 32 to 57 (page numbers are those of the 58-page manuscript, not of the journal)"
+    },
+    "content": "Definition: for nonzero integers a, b, c with gcd(a,b) = 1 and a + b + c = 0 and 0 < eps <= 1, max(|a|,|b|,|c|) <= 2^{5/2} max{exp(h_1(eps)/4), rad(|abc|)^{3(1+eps)/2}}, h_1(eps) = 3.4*10^30 eps^{-166/81}.",
+    "explicit_hypotheses": [],
+    "implicit_hypotheses": [],
+    "conclusion": "A proposition (definition); not proved, not assumed.",
+    "definitions_required": [],
+    "results_used": [],
+    "external_dependencies": [],
+    "lean_declaration": "IUT.ExplicitEstimates.Thm5_3iiRationalClaim",
+    "covers": "Page 43, Theorem 5.3 (ii), for L = Q (d = 1, Delta = 1) and coprime integer triples.",
+    "not_covered": "Theorem 5.3 (i), general mono-complex L, non-coprime triples, the proof.",
+    "statement_status": "STATEMENT_FORMALIZED",
+    "proof_status": "NOT_EXTRACTED",
+    "obligations": [],
+    "ambiguities": [
+      "H_Q = max(|a|,|b|,|c|) and rad_Q = rad(abc) for coprime integers is an interpretation; Section 0 not read."
+    ],
+    "lemmas": [
+      "IUT.ExplicitEstimates.hOne",
+      "IUT.ExplicitEstimates.hOne_one",
+      "IUT.ExplicitEstimates.two_rpow_five_halves"
+    ]
+  },
+  "EXPL.Thm5_3.frag.c_bound": {
+    "kind": "fragment",
+    "parent": "EXPL.Thm5_3",
+    "source": {
+      "pages_in_paper": "pages 43 to 45",
+      "pages_read": "rendered manuscript pages 3 to 8, 21 to 23, 26 to 28, 32 to 57 (page numbers are those of the 58-page manuscript, not of the journal)"
+    },
+    "content": "Given Thm5_3iiRationalClaim, for positive coprime a + b = c and 0 < eps <= 1: c <= 2^{5/2} max{exp(h_1(eps)/4), rad(abc)^{3(1+eps)/2}}.",
+    "explicit_hypotheses": [
+      "Thm5_3iiRationalClaim (the case L = Q of Theorem 5.3 (ii), restricted to coprime integer triples)",
+      "0 < a, 0 < b, gcd(a,b) = 1, a + b = c",
+      "0 < eps <= 1"
+    ],
+    "implicit_hypotheses": [],
+    "conclusion": "c <= 2^{5/2} max{exp(h_1(eps)/4), rad(abc)^{3(1+eps)/2}}.",
+    "definitions_required": [],
+    "results_used": [],
+    "external_dependencies": [],
+    "lean_declaration": "IUT.ExplicitEstimates.c_le_of_thm5_3iiRationalClaim",
+    "covers": "Page 43, display (ii), applied to (a, b, -c).",
+    "not_covered": "The proof of Theorem 5.3.",
+    "statement_status": "STATEMENT_FORMALIZED",
+    "proof_status": "CONDITIONALLY_VERIFIED",
+    "obligations": [
+      "Thm5_3iiRationalClaim (the case L = Q of Theorem 5.3 (ii), restricted to coprime integer triples)"
+    ],
+    "ambiguities": []
+  },
+  "EXPL.Thm5_3.frag.abc_three_halves": {
+    "kind": "fragment",
+    "parent": "EXPL.Thm5_3",
+    "source": {
+      "pages_in_paper": "pages 43 to 45",
+      "pages_read": "rendered manuscript pages 3 to 8, 21 to 23, 26 to 28, 32 to 57 (page numbers are those of the 58-page manuscript, not of the journal)"
+    },
+    "content": "Thm5_3iiRationalClaim implies, for every eps > 0, IUT.ABC.Variants.ABCWithExponent (3/2 + eps): there is K > 0 with c <= K rad(abc)^{3/2+eps} for positive coprime a + b = c.",
+    "explicit_hypotheses": [
+      "Thm5_3iiRationalClaim (the case L = Q of Theorem 5.3 (ii), restricted to coprime integer triples)"
+    ],
+    "implicit_hypotheses": [],
+    "conclusion": "For all eps > 0, ABCWithExponent (3/2 + eps).",
+    "definitions_required": [],
+    "results_used": [],
+    "external_dependencies": [],
+    "lean_declaration": "IUT.ExplicitEstimates.abcWithExponent_three_halves_add_of_thm5_3iiRationalClaim",
+    "covers": "Page 43, consequence of display (ii) (second line: max <= product).",
+    "not_covered": "No implication to Challenge.ABC (exponent 1 + eps) is claimed.",
+    "statement_status": "STATEMENT_FORMALIZED",
+    "proof_status": "CONDITIONALLY_VERIFIED",
+    "obligations": [
+      "Thm5_3iiRationalClaim (the case L = Q of Theorem 5.3 (ii), restricted to coprime integer triples)"
+    ],
+    "ambiguities": [],
+    "lemmas": [
+      "IUT.ExplicitEstimates.max_le_mul_of_one_le_both"
+    ]
+  },
+  "EXPL.Thm5_3.frag.log_step": {
+    "kind": "fragment",
+    "parent": "EXPL.Thm5_3",
+    "source": {
+      "pages_in_paper": "pages 43 to 45",
+      "pages_read": "rendered manuscript pages 3 to 8, 21 to 23, 26 to 28, 32 to 57 (page numbers are those of the 58-page manuscript, not of the journal)"
+    },
+    "content": "Real arithmetic: d > 0, (2/(3d)) logH - (5/3) log 2 <= X and X <= max{A/d, h/6} imply logH <= max{(d/4) h, (3/2) A} + (5d/2) log 2.",
+    "explicit_hypotheses": [
+      "0 < d",
+      "(2/(3d)) logH - (5/3) log 2 <= X (Claim 5.3C)",
+      "X <= max{A/d, h/6} (Theorem 5.3 (i))"
+    ],
+    "implicit_hypotheses": [],
+    "conclusion": "logH <= max{(d/4) h, (3/2) A} + (5d/2) log 2.",
+    "definitions_required": [],
+    "results_used": [],
+    "external_dependencies": [],
+    "lean_declaration": "IUT.ExplicitEstimates.thm5_3_ii_log_step",
+    "covers": "Page 45, final display of the proof of (ii).",
+    "not_covered": "Claim 5.3C and (i) themselves.",
+    "statement_status": "STATEMENT_FORMALIZED",
+    "proof_status": "KERNEL_VERIFIED",
+    "obligations": [],
+    "ambiguities": []
+  },
+  "EXPL.Thm5_4": {
+    "kind": "external_statement",
+    "source": {
+      "authors": "S. Mochizuki, I. Fesenko, Y. Hoshi, A. Minamide, W. Porowski",
+      "title": "Explicit estimates in inter-universal Teichmüller theory",
+      "journal": "Kodai Mathematical Journal 45 (2022), no. 2, 175 to 236",
+      "statement": "Theorem 5.4",
+      "pages_in_paper": "pages 46 to 48",
+      "pages_read": "rendered manuscript pages 3 to 8, 21 to 23, 26 to 28, 32 to 57 (page numbers are those of the 58-page manuscript, not of the journal)"
+    },
+    "content": "Theorem B: for nonzero coprime integers with a + b + c = 0 and 0 < eps <= 1, |abc| <= 2^4 max{exp(1.7*10^30 eps^{-166/81}), rad(abc)^{3(1+eps)}}.",
+    "explicit_hypotheses": [
+      "a, b, c nonzero coprime integers",
+      "a + b + c = 0",
+      "0 < eps <= 1"
+    ],
+    "implicit_hypotheses": [],
+    "conclusion": "|abc| <= 2^4 max{exp(1.7*10^30 eps^{-166/81}), rad(abc)^{3(1+eps)}}.",
+    "definitions_required": [],
+    "results_used": [
+      "EXPL.Thm5_3"
+    ],
+    "external_dependencies": [],
+    "lean_declaration": "IUT.ExplicitEstimates.Thm5_4Claim",
+    "statement_status": "STATEMENT_FORMALIZED",
+    "proof_status": "EXTERNAL_CLAIM",
+    "obligations": [
+      "EXPL.Thm5_3"
+    ],
+    "ambiguities": [
+      "IUT.ExplicitEstimates.Thm5_4Claim states the first line of the display of Theorem 5.4 (page 47) with coprimality read as gcd(a, b) = 1, which under a + b + c = 0 agrees with every reading; the second line is max(x, y) <= x y for x, y >= 1 (IUT.ExplicitEstimates.max_le_mul_of_one_le_both). It is stated, not proved, and used only as a hypothesis."
+    ],
+    "fragments": [
+      "EXPL.Thm5_4.frag.claim",
+      "EXPL.Thm5_4.frag.c_bound",
+      "EXPL.Thm5_4.frag.abc_three",
+      "EXPL.Thm5_4.frag.cube_step"
+    ]
+  },
+  "EXPL.Thm5_4.frag.claim": {
+    "kind": "fragment",
+    "parent": "EXPL.Thm5_4",
+    "source": {
+      "pages_in_paper": "pages 46 to 48",
+      "pages_read": "rendered manuscript pages 3 to 8, 21 to 23, 26 to 28, 32 to 57 (page numbers are those of the 58-page manuscript, not of the journal)"
+    },
+    "content": "Definition: for nonzero integers a, b, c with gcd(a,b) = 1 and a + b + c = 0 and 0 < eps <= 1, |abc| <= 2^4 max{exp(1.7*10^30 eps^{-166/81}), rad(|abc|)^{3(1+eps)}}.",
+    "explicit_hypotheses": [],
+    "implicit_hypotheses": [],
+    "conclusion": "A proposition (definition); not proved, not assumed.",
+    "definitions_required": [],
+    "results_used": [],
+    "external_dependencies": [],
+    "lean_declaration": "IUT.ExplicitEstimates.Thm5_4Claim",
+    "covers": "Pages 46 to 47, statement of Theorem 5.4 (first line of the display).",
+    "not_covered": "The proof; the second line of the display is max <= product (max_le_mul_of_one_le_both).",
+    "statement_status": "STATEMENT_FORMALIZED",
+    "proof_status": "NOT_EXTRACTED",
+    "obligations": [],
+    "ambiguities": [
+      "'Coprime' for three integers; with a + b + c = 0 all readings agree; formalized as gcd(a,b) = 1."
+    ]
+  },
+  "EXPL.Thm5_4.frag.c_bound": {
+    "kind": "fragment",
+    "parent": "EXPL.Thm5_4",
+    "source": {
+      "pages_in_paper": "pages 46 to 48",
+      "pages_read": "rendered manuscript pages 3 to 8, 21 to 23, 26 to 28, 32 to 57 (page numbers are those of the 58-page manuscript, not of the journal)"
+    },
+    "content": "Given Thm5_4Claim, for positive coprime a + b = c and 0 < eps <= 1: c <= 2^4 max{exp(1.7*10^30 eps^{-166/81}), rad(abc)^{3(1+eps)}}.",
+    "explicit_hypotheses": [
+      "Thm5_4Claim (Theorem 5.4 of the paper)",
+      "0 < a, 0 < b, gcd(a,b) = 1, a + b = c",
+      "0 < eps <= 1"
+    ],
+    "implicit_hypotheses": [],
+    "conclusion": "c <= 2^4 max{exp(1.7*10^30 eps^{-166/81}), rad(abc)^{3(1+eps)}}.",
+    "definitions_required": [],
+    "results_used": [],
+    "external_dependencies": [],
+    "lean_declaration": "IUT.ExplicitEstimates.c_le_of_thm5_4Claim",
+    "covers": "Page 47, display, applied to (a, b, -c) with c <= abc.",
+    "not_covered": "The proof of Theorem 5.4.",
+    "statement_status": "STATEMENT_FORMALIZED",
+    "proof_status": "CONDITIONALLY_VERIFIED",
+    "obligations": [
+      "Thm5_4Claim (Theorem 5.4 of the paper)"
+    ],
+    "ambiguities": []
+  },
+  "EXPL.Thm5_4.frag.abc_three": {
+    "kind": "fragment",
+    "parent": "EXPL.Thm5_4",
+    "source": {
+      "pages_in_paper": "pages 46 to 48",
+      "pages_read": "rendered manuscript pages 3 to 8, 21 to 23, 26 to 28, 32 to 57 (page numbers are those of the 58-page manuscript, not of the journal)"
+    },
+    "content": "Thm5_4Claim implies, for every eps > 0, IUT.ABC.Variants.ABCWithExponent (3 + eps): there is K > 0 with c <= K rad(abc)^{3+eps} for positive coprime a + b = c.",
+    "explicit_hypotheses": [
+      "Thm5_4Claim (Theorem 5.4 of the paper)"
+    ],
+    "implicit_hypotheses": [],
+    "conclusion": "For all eps > 0, ABCWithExponent (3 + eps).",
+    "definitions_required": [],
+    "results_used": [],
+    "external_dependencies": [],
+    "lean_declaration": "IUT.ExplicitEstimates.abcWithExponent_three_add_of_thm5_4Claim",
+    "covers": "Page 47, consequence of the display, with eps' = min(eps/3, 1).",
+    "not_covered": "No implication to Challenge.ABC (exponent 1 + eps) is claimed: exponent 3 + eps is weaker.",
+    "statement_status": "STATEMENT_FORMALIZED",
+    "proof_status": "CONDITIONALLY_VERIFIED",
+    "obligations": [
+      "Thm5_4Claim (Theorem 5.4 of the paper)"
+    ],
+    "ambiguities": []
+  },
+  "EXPL.Thm5_4.frag.cube_step": {
+    "kind": "fragment",
+    "parent": "EXPL.Thm5_4",
+    "source": {
+      "pages_in_paper": "pages 47 to 48",
+      "pages_read": "rendered manuscript pages 3 to 8, 21 to 23, 26 to 28, 32 to 57 (page numbers are those of the 58-page manuscript, not of the journal)"
+    },
+    "content": "Real arithmetic: P, C > 0 and C <= 2^{4/3} M (P/C^2)^{-1/3} imply P C <= 2^4 M^3; also max{exp(x/6), R^{1+eps}}^3 = max{exp(x/2), R^{3(1+eps)}} for R >= 0, and 3 (1/6) 3.4*10^30 = 1.7*10^30.",
+    "explicit_hypotheses": [
+      "0 < P",
+      "0 < C",
+      "C <= 2^{4/3} M (P/C^2)^{-1/3}"
+    ],
+    "implicit_hypotheses": [],
+    "conclusion": "P C <= 2^4 M^3.",
+    "definitions_required": [],
+    "results_used": [],
+    "external_dependencies": [],
+    "lean_declaration": "IUT.ExplicitEstimates.thm5_4_cube_step",
+    "covers": "Page 48, the passage from Claim 5.4A for L = Q to the display of Theorem 5.4.",
+    "not_covered": "Claim 5.4A itself.",
+    "statement_status": "STATEMENT_FORMALIZED",
+    "proof_status": "KERNEL_VERIFIED",
+    "obligations": [],
+    "ambiguities": [],
+    "lemmas": [
+      "IUT.ExplicitEstimates.thm5_4_max_cube",
+      "IUT.ExplicitEstimates.thm5_4_constant"
+    ]
+  },
+  "EXPL.Lem5_7": {
+    "kind": "external_statement",
+    "source": {
+      "authors": "S. Mochizuki, I. Fesenko, Y. Hoshi, A. Minamide, W. Porowski",
+      "title": "Explicit estimates in inter-universal Teichmüller theory",
+      "journal": "Kodai Mathematical Journal 45 (2022), no. 2, 175 to 236",
+      "statement": "Lemma 5.7",
+      "pages_in_paper": "pages 50 to 52",
+      "pages_read": "rendered manuscript pages 3 to 8, 21 to 23, 26 to 28, 32 to 57 (page numbers are those of the 58-page manuscript, not of the journal)"
+    },
+    "content": "For a prime p >= 3 and coprime positive x, y, z with x^p + y^p = z^p, z > (p+1)^p / 2.",
+    "explicit_hypotheses": [
+      "p prime, p >= 3",
+      "x, y, z coprime positive integers",
+      "x^p + y^p = z^p"
+    ],
+    "implicit_hypotheses": [],
+    "conclusion": "z > (p+1)^p / 2.",
+    "definitions_required": [],
+    "results_used": [],
+    "external_dependencies": [],
+    "lean_declaration": "IUT.ExplicitEstimates.Lemma5_7Claim",
+    "statement_status": "STATEMENT_FORMALIZED",
+    "proof_status": "EXTERNAL_CLAIM",
+    "obligations": [],
+    "ambiguities": [
+      "The proof uses Lemmas 5.5 and 5.6 (pages 48 to 50), which have no records here.",
+      "IUT.ExplicitEstimates.Lemma5_7Claim states Lemma 5.7 (page 50) as (p + 1)^p < 2z, equivalent to z > (p + 1)^p / 2, with coprimality read as gcd(x, y) = 1, which under x^p + y^p = z^p agrees with pairwise coprimality. It is stated, not proved, and used only as a hypothesis."
+    ],
+    "fragments": [
+      "EXPL.Lem5_7.frag.claim"
+    ]
+  },
+  "EXPL.Lem5_7.frag.claim": {
+    "kind": "fragment",
+    "parent": "EXPL.Lem5_7",
+    "source": {
+      "pages_in_paper": "pages 50 to 52",
+      "pages_read": "rendered manuscript pages 3 to 8, 21 to 23, 26 to 28, 32 to 57 (page numbers are those of the 58-page manuscript, not of the journal)"
+    },
+    "content": "Definition: for prime p >= 3 and positive x, y, z with gcd(x,y) = 1 and x^p + y^p = z^p, (p+1)^p < 2z.",
+    "explicit_hypotheses": [],
+    "implicit_hypotheses": [],
+    "conclusion": "A proposition (definition); not proved here.",
+    "definitions_required": [],
+    "results_used": [],
+    "external_dependencies": [],
+    "lean_declaration": "IUT.ExplicitEstimates.Lemma5_7Claim",
+    "covers": "Page 50, statement of Lemma 5.7.",
+    "not_covered": "The proof (pages 50 to 52), Lemmas 5.5 and 5.6.",
+    "statement_status": "STATEMENT_FORMALIZED",
+    "proof_status": "NOT_EXTRACTED",
+    "obligations": [],
+    "ambiguities": []
+  },
+  "EXPL.Cor5_8": {
+    "kind": "external_statement",
+    "source": {
+      "authors": "S. Mochizuki, I. Fesenko, Y. Hoshi, A. Minamide, W. Porowski",
+      "title": "Explicit estimates in inter-universal Teichmüller theory",
+      "journal": "Kodai Mathematical Journal 45 (2022), no. 2, 175 to 236",
+      "statement": "Corollary 5.8",
+      "pages_in_paper": "pages 53 to 54",
+      "pages_read": "rendered manuscript pages 3 to 8, 21 to 23, 26 to 28, 32 to 57 (page numbers are those of the 58-page manuscript, not of the journal)"
+    },
+    "content": "Corollary C: for prime p > 1.615*10^14 there is no positive solution of x^p + y^p = z^p.",
+    "explicit_hypotheses": [
+      "p prime",
+      "p > 1.615*10^14"
+    ],
+    "implicit_hypotheses": [],
+    "conclusion": "No positive integers x, y, z with x^p + y^p = z^p.",
+    "definitions_required": [],
+    "results_used": [
+      "EXPL.Thm5_3",
+      "EXPL.Lem5_7"
+    ],
+    "external_dependencies": [],
+    "lean_declaration": "IUT.ExplicitEstimates.Cor5_8Statement",
+    "statement_status": "STATEMENT_FORMALIZED",
+    "proof_status": "EXTERNAL_CLAIM",
+    "obligations": [
+      "EXPL.Thm5_3"
+    ],
+    "ambiguities": [
+      "IUT.ExplicitEstimates.Cor5_8Statement states Corollary 5.8 (page 53) exactly. It is never assumed: it occurs only as the conclusion of the conditional theorem of EXPL.Cor5_8.frag.conditional, whose hypotheses are Thm5_3iiRationalClaim and Lemma5_7Claim."
+    ],
+    "fragments": [
+      "EXPL.Cor5_8.frag.conditional",
+      "EXPL.Cor5_8.frag.numerics"
+    ]
+  },
+  "EXPL.Cor5_8.frag.conditional": {
+    "kind": "fragment",
+    "parent": "EXPL.Cor5_8",
+    "source": {
+      "pages_in_paper": "pages 53 to 54",
+      "pages_read": "rendered manuscript pages 3 to 8, 21 to 23, 26 to 28, 32 to 57 (page numbers are those of the 58-page manuscript, not of the journal)"
+    },
+    "content": "Thm5_3iiRationalClaim and Lemma5_7Claim imply Cor5_8Statement: for every prime p > 1.615*10^14 there are no positive x, y, z with x^p + y^p = z^p. Includes the reduction to coprime triples.",
+    "explicit_hypotheses": [
+      "Thm5_3iiRationalClaim (the case L = Q of Theorem 5.3 (ii), restricted to coprime integer triples)",
+      "Lemma5_7Claim (Lemma 5.7 of the paper, elementary, proved in the paper but not here)"
+    ],
+    "implicit_hypotheses": [],
+    "conclusion": "Cor5_8Statement.",
+    "definitions_required": [],
+    "results_used": [],
+    "external_dependencies": [],
+    "lean_declaration": "IUT.ExplicitEstimates.cor5_8_of_thm5_3iiRationalClaim_of_lemma5_7Claim",
+    "covers": "Pages 53 to 54, the whole proof of Corollary 5.8.",
+    "not_covered": "Theorem 5.3 (ii) and Lemma 5.7 are hypotheses.",
+    "statement_status": "STATEMENT_FORMALIZED",
+    "proof_status": "CONDITIONALLY_VERIFIED",
+    "obligations": [
+      "Thm5_3iiRationalClaim (the case L = Q of Theorem 5.3 (ii), restricted to coprime integer triples)",
+      "Lemma5_7Claim (Lemma 5.7 of the paper, elementary, proved in the paper but not here)"
+    ],
+    "ambiguities": [],
+    "lemmas": [
+      "IUT.ExplicitEstimates.Cor5_8Statement",
+      "IUT.ExplicitEstimates.cor5_8_coprime",
+      "IUT.ExplicitEstimates.cor5_8_contradiction",
+      "IUT.ExplicitEstimates.rad_natAbs_pow_triple"
+    ]
+  },
+  "EXPL.Cor5_8.frag.numerics": {
+    "kind": "fragment",
+    "parent": "EXPL.Cor5_8",
+    "source": {
+      "pages_in_paper": "page 54",
+      "pages_read": "rendered manuscript pages 3 to 8, 21 to 23, 26 to 28, 32 to 57 (page numbers are those of the 58-page manuscript, not of the journal)"
+    },
+    "content": "For x > 1.615*10^14: (x - 9)(-1 + 1.44 x log(x+1)) > 1.227*10^30; also 1/log 2 > 1.44, 5/2 + log_2(e)(1/4)(3.4*10^30) < 1.227*10^30, log x >= 32.7 for x >= 1.615*10^14.",
+    "explicit_hypotheses": [
+      "x > 1.615*10^14"
+    ],
+    "implicit_hypotheses": [],
+    "conclusion": "(x - 9)(-1 + 1.44 x log(x+1)) > 1.227*10^30.",
+    "definitions_required": [],
+    "results_used": [],
+    "external_dependencies": [],
+    "lean_declaration": "IUT.ExplicitEstimates.cor5_8_left_bound",
+    "covers": "Page 54, the numerical inequalities of the proof.",
+    "not_covered": "Monotonicity of the function on x >= 9 (bounded factorwise instead).",
+    "statement_status": "STATEMENT_FORMALIZED",
+    "proof_status": "KERNEL_VERIFIED",
+    "obligations": [],
+    "ambiguities": [],
+    "lemmas": [
+      "IUT.ExplicitEstimates.one_div_log_two_gt_one_point_four_four",
+      "IUT.ExplicitEstimates.cor5_8_right_bound",
+      "IUT.ExplicitEstimates.log_ge_of_ge_threshold"
+    ]
+  },
+  "EXPL.Prop2_1": {
+    "kind": "external_statement",
+    "source": {
+      "authors": "S. Mochizuki, I. Fesenko, Y. Hoshi, A. Minamide, W. Porowski",
+      "title": "Explicit estimates in inter-universal Teichmüller theory",
+      "journal": "Kodai Mathematical Journal 45 (2022), no. 2, 175 to 236",
+      "statement": "Proposition 2.1",
+      "pages_in_paper": "page 21",
+      "pages_read": "rendered manuscript pages 3 to 8, 21 to 23, 26 to 28, 32 to 57 (page numbers are those of the 58-page manuscript, not of the journal)"
+    },
+    "content": "j-invariants of arithmetic elliptic curves: j(E) is one of 2^14 31^3 5^-3, 2^2 73^3 3^-4, 1728, 0.",
+    "explicit_hypotheses": [
+      "E elliptic curve over a field of characteristic zero whose once-punctured curve is arithmetic"
+    ],
+    "implicit_hypotheses": [],
+    "conclusion": "j(E) in the four listed values.",
+    "definitions_required": [],
+    "results_used": [],
+    "external_dependencies": [
+      "Sijsling Table 4",
+      "CanLift Proposition 2.7"
+    ],
+    "lean_declaration": null,
+    "statement_status": "EXTRACTED",
+    "proof_status": "NOT_EXTRACTED",
+    "obligations": [],
+    "ambiguities": [],
+    "fragments": [
+      "EXPL.Prop2_1.frag.factorizations"
+    ]
+  },
+  "EXPL.Prop2_1.frag.factorizations": {
+    "kind": "fragment",
+    "parent": "EXPL.Prop2_1",
+    "source": {
+      "pages_in_paper": "page 21",
+      "pages_read": "rendered manuscript pages 3 to 8, 21 to 23, 26 to 28, 32 to 57 (page numbers are those of the 58-page manuscript, not of the journal)"
+    },
+    "content": "488095744/125 = 2^14 31^3 / 5^3, 1556068/81 = 2^2 73^3 / 3^4, 1728 = 2^6 3^3 in Q.",
+    "explicit_hypotheses": [],
+    "implicit_hypotheses": [],
+    "conclusion": "The three equalities.",
+    "definitions_required": [],
+    "results_used": [],
+    "external_dependencies": [],
+    "lean_declaration": "IUT.ExplicitEstimates.prop2_1_factorizations",
+    "covers": "Page 21, the displayed factorizations.",
+    "not_covered": "The statement about j-invariants.",
+    "statement_status": "STATEMENT_FORMALIZED",
+    "proof_status": "KERNEL_VERIFIED",
+    "obligations": [],
+    "ambiguities": []
+  },
+  "EXPL.Prop2_2": {
+    "kind": "external_statement",
+    "source": {
+      "authors": "S. Mochizuki, I. Fesenko, Y. Hoshi, A. Minamide, W. Porowski",
+      "title": "Explicit estimates in inter-universal Teichmüller theory",
+      "journal": "Kodai Mathematical Journal 45 (2022), no. 2, 175 to 236",
+      "statement": "Proposition 2.2",
+      "pages_in_paper": "pages 21 to 22",
+      "pages_read": "rendered manuscript pages 3 to 8, 21 to 23, 26 to 28, 32 to 57 (page numbers are those of the 58-page manuscript, not of the journal)"
+    },
+    "content": "Effective prime number theorem: pi(x) <= 1.022 x / log x for x >= 5*10^20; |theta(x) - x| <= 0.00071 x for x >= 10^15, and the resulting prime outside a finite set.",
+    "explicit_hypotheses": [
+      "x real, x >= eta_prm (respectively xi_prm)"
+    ],
+    "implicit_hypotheses": [],
+    "conclusion": "The two bounds.",
+    "definitions_required": [],
+    "results_used": [],
+    "external_dependencies": [
+      "Axler, Integers 16 (2016) A22, Corollary 3.4",
+      "Rosser and Schoenfeld, Theorem 7"
+    ],
+    "lean_declaration": null,
+    "statement_status": "EXTRACTED",
+    "proof_status": "NOT_EXTRACTED",
+    "obligations": [],
+    "ambiguities": [],
+    "fragments": [
+      "EXPL.Prop2_2.frag.proof_algebra"
+    ]
+  },
+  "EXPL.Prop2_2.frag.proof_algebra": {
+    "kind": "fragment",
+    "parent": "EXPL.Prop2_2",
+    "source": {
+      "pages_in_paper": "page 22",
+      "pages_read": "rendered manuscript pages 3 to 8, 21 to 23, 26 to 28, 32 to 57 (page numbers are those of the 58-page manuscript, not of the journal)"
+    },
+    "content": "For x > 0 and L >= 47.66: 1.17/L <= 0.0246 and x/(L - 1.0246) <= 1.022 x / L.",
+    "explicit_hypotheses": [
+      "0 < x",
+      "L >= 47.66"
+    ],
+    "implicit_hypotheses": [],
+    "conclusion": "1.17/L <= 0.0246 and x/(L - 1.0246) <= 1.022 x/L.",
+    "definitions_required": [],
+    "results_used": [],
+    "external_dependencies": [],
+    "lean_declaration": "IUT.ExplicitEstimates.prop2_2_i_algebra",
+    "covers": "Page 22, the algebra in the proof of (i).",
+    "not_covered": "log(eta_prm) >= 47.66; Axler's bound; assertion (ii).",
+    "statement_status": "STATEMENT_FORMALIZED",
+    "proof_status": "KERNEL_VERIFIED",
+    "obligations": [],
+    "ambiguities": []
+  },
+  "ZHOU1.Def1_7": {
+    "kind": "external_statement",
+    "parent": null,
+    "source": {
+      "authors": "Zhong-Peng Zhou",
+      "title": "The inter-universal Teichmüller theory and new Diophantine results over the rational numbers. I",
+      "arxiv": "2503.14510",
+      "statement": "Definition 1.7",
+      "pages_in_paper": "page 11",
+      "pages_read": "pages 1 to 38 (whole paper), formulas from the TeX source; no page checked against a rendered image"
+    },
+    "content": "Definition 1.7 (i): for a nonarchimedean place v of residue characteristic p_v with ramification index e_v, a_v = (1/e_v) ceil((e_v+1)/(p_v-1)) and b_v = sup_{n>=0}(n - p_v^n/e_v) (constants of Lemma 1.3).",
+    "explicit_hypotheses": [],
+    "implicit_hypotheses": [],
+    "conclusion": "Definitions of a_v and b_v.",
+    "definitions_required": [],
+    "results_used": [
+      "IUT4.Prop1_2"
+    ],
+    "external_dependencies": [],
+    "lean_declaration": null,
+    "statement_status": "EXTRACTED",
+    "proof_status": "NOT_EXTRACTED",
+    "obligations": [],
+    "ambiguities": [
+      "These constants differ from a_i, b_i of IUT IV Proposition 1.2; they agree (a = -b = 1/e) for e <= p - 2.",
+      "The model (the log-volume of Definition 1.8 and the inequality of Proposition 1.9) is the author's (Zhou's) modification of IUT IV Theorem 1.10 and ExpEst Theorem 5.1, not Mochizuki's text; Definition 1.8 is not formalized, only its numerical shadow."
+    ],
+    "fragments": [
+      "ZHOU1.Def1_7.frag.constants"
+    ]
+  },
+  "ZHOU1.Def1_7.frag.constants": {
+    "kind": "fragment",
+    "parent": "ZHOU1.Def1_7",
+    "source": {
+      "pages_in_paper": "pages 7, 11 and 13",
+      "pages_read": "pages 1 to 38 (whole paper), formulas from the TeX source; no page checked against a rendered image"
+    },
+    "content": "Definitions zhouA, zhouB of a_v, b_v, with: a = 1/e and b = -1/e for 1 <= e <= p - 2; b = 1 - p/e for p - 1 <= e <= p(p - 1); a <= 1/(p-1) + 1/e; a + b = 0 for e <= p - 2; a + b <= 1/(p-1) + 1 - (p-1)/e in the middle range; v_p(2p) <= d + a when d >= 1 - 1/e.",
+    "explicit_hypotheses": [],
+    "implicit_hypotheses": [],
+    "conclusion": "Definitions with kernel-checked elementary properties.",
+    "definitions_required": [],
+    "results_used": [],
+    "external_dependencies": [],
+    "lean_declaration": "IUT.Applications.ZhouExplicit.zhouA",
+    "covers": "Definition 1.7 (i) and the case analysis of a + b in the proof of Proposition 1.10 (page 13), first two cases.",
+    "not_covered": "The case e > p(p - 1) (bound with log(e/(p-1))); Lemma 1.3 itself.",
+    "statement_status": "STATEMENT_FORMALIZED",
+    "proof_status": "NOT_EXTRACTED",
+    "obligations": [],
+    "ambiguities": [
+      "The model (the log-volume of Definition 1.8 and the inequality of Proposition 1.9) is the author's (Zhou's) modification of IUT IV Theorem 1.10 and ExpEst Theorem 5.1, not Mochizuki's text; Definition 1.8 is not formalized, only its numerical shadow."
+    ],
+    "lemmas": [
+      "IUT.Applications.ZhouExplicit.zhouB",
+      "IUT.Applications.ZhouExplicit.zhou_bernoulli",
+      "IUT.Applications.ZhouExplicit.zhouA_eq_inv_of_le",
+      "IUT.Applications.ZhouExplicit.zhouB_eq_neg_inv_of_le",
+      "IUT.Applications.ZhouExplicit.zhouB_eq_of_mid",
+      "IUT.Applications.ZhouExplicit.zhou_ceil_div_le",
+      "IUT.Applications.ZhouExplicit.zhouA_le",
+      "IUT.Applications.ZhouExplicit.zhouA_add_zhouB_of_le",
+      "IUT.Applications.ZhouExplicit.zhouA_add_zhouB_le_of_mid",
+      "IUT.Applications.ZhouExplicit.zhouVp2p",
+      "IUT.Applications.ZhouExplicit.zhouVp2p_le"
+    ]
+  },
+  "ZHOU1.Prop1_10": {
+    "kind": "external_statement",
+    "parent": null,
+    "source": {
+      "authors": "Zhong-Peng Zhou",
+      "title": "The inter-universal Teichmüller theory and new Diophantine results over the rational numbers. I",
+      "arxiv": "2503.14510",
+      "statement": "Proposition 1.10",
+      "pages_in_paper": "pages 12 and 13",
+      "pages_read": "pages 1 to 38 (whole paper), formulas from the TeX source; no page checked against a rendered image"
+    },
+    "content": "Proposition 1.10 (F_mod = Q): (1/6) log q <= ((l^2+5l)/(l^2+l-12)) (log pi + sum_p (d_p + a_p + b_p) log p), followed by explicit bounds of a_p + b_p.",
+    "explicit_hypotheses": [
+      "mu6-initial Theta-data with F_mod = Q",
+      "l >= 5 prime"
+    ],
+    "implicit_hypotheses": [],
+    "conclusion": "(1/6) log q <= ((l^2+5l)/(l^2+l-12)) (log pi + sum_p (d_p + a_p + b_p) log p).",
+    "definitions_required": [],
+    "results_used": [
+      "IUT3.Cor3_12",
+      "IUT4.Thm1_10"
+    ],
+    "external_dependencies": [
+      "Zhou I Proposition 1.9 (assumed as the mu6-version of IUT III Corollary 3.12)",
+      "Zhou I Lemmas 1.4 and 1.5 (log-volumes of holomorphic hulls in tensor products of local fields)"
+    ],
+    "lean_declaration": null,
+    "statement_status": "EXTRACTED",
+    "proof_status": "NOT_EXTRACTED",
+    "obligations": [
+      "Proposition 1.9: -(1/2l) log q <= -|log(Theta)| for Zhou's Definition 1.8",
+      "Lemma 1.4 (1.1) and Lemma 1.5 as upper bounds of the local terms"
+    ],
+    "ambiguities": [
+      "Definition 1.8 (i) sets lambda = (j^2/2l) e v_p(q) while (1.11-eq3) uses (j^2/2l) v_p(q); the Lean statement follows (1.11-eq3).",
+      "The model (the log-volume of Definition 1.8 and the inequality of Proposition 1.9) is the author's (Zhou's) modification of IUT IV Theorem 1.10 and ExpEst Theorem 5.1, not Mochizuki's text; Definition 1.8 is not formalized, only its numerical shadow."
+    ],
+    "fragments": [
+      "ZHOU1.Prop1_10.frag.model_chain",
+      "ZHOU1.Prop1_10.frag.lemma14_bound",
+      "ZHOU1.Prop1_10.frag.averaging"
+    ]
+  },
+  "ZHOU1.Prop1_10.frag.model_chain": {
+    "kind": "fragment",
+    "parent": "ZHOU1.Prop1_10",
+    "source": {
+      "pages_in_paper": "pages 11 to 13",
+      "pages_read": "pages 1 to 38 (whole paper), formulas from the TeX source; no page checked against a rendered image"
+    },
+    "content": "Real arithmetic of one step, with its inputs not constructed. For l = 2m + 1 with m >= 2, a finite set P of primes and real numbers e_p >= 1, d_p in (1/e_p)Z with d_p >= 1 - 1/e_p, v_p with 2l | e_p v_p, and real numbers vol(p, j), volArc(j): if vol(p, j) is at most the expression zhouLemma14Bound, volArc(j) <= (j+1) log pi, and -(1/2l) sum_p v_p log p <= zhouLogVolumeQ (the label average of these numbers), then (1/6) sum_p v_p log p <= ((l^2+5l)/(l^2+l-12)) (log pi + sum_p (d_p + a_p + b_p) log p).",
+    "explicit_hypotheses": [
+      "hloc: vol p j <= zhouLemma14Bound (2m+1) p (e p) (d p) (vq p) j for p in P, 1 <= j <= m",
+      "harc: volArc j <= (j+1) log pi for 1 <= j <= m",
+      "hmodel: -(1/(2(2m+1))) sum_p vq p log p <= zhouLogVolumeQ m P volArc vol",
+      "m >= 2; P a finite set of numbers >= 2; e p >= 1; d p in (1/e p)Z, d p >= 1 - 1/e p; 2(2m+1) divides e p vq p as an integer multiple"
+    ],
+    "implicit_hypotheses": [],
+    "conclusion": "A real inequality in these variables, of the shape of (1.11-eq7) of the proof of Proposition 1.10; no term is constructed from an elliptic curve or from Definition 1.8.",
+    "definitions_required": [],
+    "results_used": [],
+    "external_dependencies": [],
+    "lean_declaration": "IUT.Applications.ZhouExplicit.zhou_prop110_of_model",
+    "covers": "The proof of Proposition 1.10 up to (1.11-eq7), for F_mod = Q, with the sum over places restricted to a finite set P.",
+    "not_covered": "Definition 1.8 itself (hulls, log-volumes), Lemmas 1.4 and 1.5, Proposition 1.9, the primes outside P, the case analysis after (1.11-eq7).",
+    "statement_status": "STATEMENT_FORMALIZED",
+    "proof_status": "CONDITIONALLY_VERIFIED",
+    "obligations": [
+      "hmodel stands for Zhou I Proposition 1.9 in numerical form (the author's version of IUT III Corollary 3.12 for mu6-initial Theta-data); not constructed here",
+      "hloc stands for Zhou I Lemma 1.4 (1.1) at the diagonal tuple; not constructed here",
+      "harc stands for Zhou I Lemma 1.5; not constructed here"
+    ],
+    "ambiguities": [
+      "The model (the log-volume of Definition 1.8 and the inequality of Proposition 1.9) is the author's (Zhou's) modification of IUT IV Theorem 1.10 and ExpEst Theorem 5.1, not Mochizuki's text; Definition 1.8 is not formalized, only its numerical shadow."
+    ],
+    "lemmas": [
+      "IUT.Applications.ZhouExplicit.zhouProcessionAverage",
+      "IUT.Applications.ZhouExplicit.zhouLogVolumeQ",
+      "IUT.Applications.ZhouExplicit.zhouLemma14Bound",
+      "IUT.Applications.ZhouExplicit.zhouProcessionAverage_mono"
+    ]
+  },
+  "ZHOU1.Prop1_10.frag.lemma14_bound": {
+    "kind": "fragment",
+    "parent": "ZHOU1.Prop1_10",
+    "source": {
+      "pages_in_paper": "page 13",
+      "pages_read": "pages 1 to 38 (whole paper), formulas from the TeX source; no page checked against a rendered image"
+    },
+    "content": "If 2l | e v_p(q), d in (1/e)Z and d >= 1 - 1/e, then max(ceil(-(j^2/2l) v_p(q) + j d + (j+1) a), -(j^2/2l) v_p(q) + v_p(2p)(j+1)) + (j+1) b <= -(j^2/2l) v_p(q) + (j+1)(d+a+b), times log p.",
+    "explicit_hypotheses": [
+      "2l | e v_p(q)",
+      "d in (1/e)Z",
+      "d >= 1 - 1/e",
+      "p >= 2, e >= 1, l > 0"
+    ],
+    "implicit_hypotheses": [],
+    "conclusion": "The right side of Lemma 1.4 at (v_p, ..., v_p) is at most (-(j^2/2l) v_p(q) + (j+1)(d+a+b)) log p.",
+    "definitions_required": [],
+    "results_used": [],
+    "external_dependencies": [],
+    "lean_declaration": "IUT.Applications.ZhouExplicit.zhouLemma14Bound_le",
+    "covers": "(1.11-eq4) and (1.11-eq5) of the proof of Proposition 1.10.",
+    "not_covered": "Lemma 1.4.",
+    "statement_status": "STATEMENT_FORMALIZED",
+    "proof_status": "KERNEL_VERIFIED",
+    "obligations": [],
+    "ambiguities": [
+      "The model (the log-volume of Definition 1.8 and the inequality of Proposition 1.9) is the author's (Zhou's) modification of IUT IV Theorem 1.10 and ExpEst Theorem 5.1, not Mochizuki's text; Definition 1.8 is not formalized, only its numerical shadow."
+    ]
+  },
+  "ZHOU1.Prop1_10.frag.averaging": {
+    "kind": "fragment",
+    "parent": "ZHOU1.Prop1_10",
+    "source": {
+      "pages_in_paper": "page 13",
+      "pages_read": "pages 1 to 38 (whole paper), formulas from the TeX source; no page checked against a rendered image"
+    },
+    "content": "Procession average with l = 2m+1: (1/m) sum_{j=1}^m (-(j^2/2l) Q + (j+1) X) = -((l+1)/24) Q + ((l+5)/4) X; and for l >= 5, -(1/2l) Q <= -((l+1)/24) Q + ((l+5)/4) X implies (1/6) Q <= ((l^2+5l)/(l^2+l-12)) X.",
+    "explicit_hypotheses": [
+      "m >= 1 (identity)",
+      "l >= 5 (coefficient step)"
+    ],
+    "implicit_hypotheses": [],
+    "conclusion": "The two displays of the averaging step.",
+    "definitions_required": [],
+    "results_used": [],
+    "external_dependencies": [],
+    "lean_declaration": "IUT.Applications.ZhouExplicit.zhou_procession_identity",
+    "covers": "The averaging and coefficient steps of the proof of Proposition 1.10.",
+    "not_covered": "The local and archimedean terms the averages are applied to (Lemmas 1.4 and 1.5, Proposition 1.9, Definition 1.8) and the case analysis of a_p + b_p after (1.11-eq7).",
+    "statement_status": "STATEMENT_FORMALIZED",
+    "proof_status": "KERNEL_VERIFIED",
+    "obligations": [],
+    "ambiguities": [],
+    "lemmas": [
+      "IUT.Applications.ZhouExplicit.zhou_prop110_coefficient"
+    ]
+  },
+  "ZHOU1.Prop2_7": {
+    "kind": "external_statement",
+    "parent": null,
+    "source": {
+      "authors": "Zhong-Peng Zhou",
+      "title": "The inter-universal Teichmüller theory and new Diophantine results over the rational numbers. I",
+      "arxiv": "2503.14510",
+      "statement": "Proposition 2.7",
+      "pages_in_paper": "page 21",
+      "pages_read": "pages 1 to 38 (whole paper), formulas from the TeX source; no page checked against a rendered image"
+    },
+    "content": "Proposition 2.7: for coprime nonzero a + b = c, l >= 11 prime with l != 13 or 16 | abc, N = |abc|/gcd(16, abc): log N <= (3 + (11l+31)/(l^2+l-12)) log rad N + 3 Vol(R_l) + sum_{p = l or l | v_p(N)} v_p(N) log p.",
+    "explicit_hypotheses": [
+      "a, b, c nonzero coprime, a + b = c",
+      "l >= 11 prime, l != 13 or 16 | abc"
+    ],
+    "implicit_hypotheses": [],
+    "conclusion": "(2-1-eq1).",
+    "definitions_required": [],
+    "results_used": [
+      "IUT3.Cor3_12",
+      "IUT4.Thm1_10"
+    ],
+    "external_dependencies": [
+      "Zhou I Corollary 1.13",
+      "Zhou I Proposition 2.5 and Lemma 2.6 (Frey and Hellegouarch curves, mu6-initial Theta-data)"
+    ],
+    "lean_declaration": null,
+    "statement_status": "EXTRACTED",
+    "proof_status": "NOT_EXTRACTED",
+    "obligations": [
+      "Zhou I Corollary 1.13 for the dataset R_l"
+    ],
+    "ambiguities": [
+      "The model (the log-volume of Definition 1.8 and the inequality of Proposition 1.9) is the author's (Zhou's) modification of IUT IV Theorem 1.10 and ExpEst Theorem 5.1, not Mochizuki's text; Definition 1.8 is not formalized, only its numerical shadow."
+    ],
+    "fragments": [
+      "ZHOU1.Prop2_7.frag.from_cor113"
+    ]
+  },
+  "ZHOU1.Prop2_7.frag.from_cor113": {
+    "kind": "fragment",
+    "parent": "ZHOU1.Prop2_7",
+    "source": {
+      "pages_in_paper": "page 21",
+      "pages_read": "pages 1 to 38 (whole paper), formulas from the TeX source; no page checked against a rendered image"
+    },
+    "content": "Real arithmetic of one step, with its inputs not constructed. For real numbers l >= 5, LN', R, R_l >= 0 and V: if (1/6)(2 LN') <= ((l^2+5l)/(l^2+l-12))((1 - 1/(3l)) R - (1/3)(1 - 1/l) R_l) + V, then LN' <= (3 + (11l+31)/(l^2+l-12)) R + 3 V; with the identity ((l^2+5l)/(l^2+l-12))(1 - 1/(3l)) = 1 + (11l+31)/(3l^2+3l-36).",
+    "explicit_hypotheses": [
+      "hcor: Corollary 1.13 for type (l, N^2, N'^2) with e_0 = 3, in real-number form",
+      "l >= 5",
+      "log rad N_l >= 0"
+    ],
+    "implicit_hypotheses": [],
+    "conclusion": "A real inequality in these variables, of the shape of (2-1-eq1) of Proposition 2.7; LN', R, R_l and V are not constructed from a triple.",
+    "definitions_required": [],
+    "results_used": [],
+    "external_dependencies": [],
+    "lean_declaration": "IUT.Applications.ZhouExplicit.zhou_prop27_of_cor113",
+    "covers": "The step '(2-1-eq1) follows directly from Corollary 1.13' and its coefficient identity.",
+    "not_covered": "Corollary 1.13, Proposition 2.5, Lemma 2.6, the excluded small cases.",
+    "statement_status": "STATEMENT_FORMALIZED",
+    "proof_status": "CONDITIONALLY_VERIFIED",
+    "obligations": [
+      "hcor stands for Zhou I Corollary 1.13 for the dataset of type (l, N^2, N'^2) with e_0 = 3 built from the Frey and Hellegouarch curves of Proposition 2.5 and Lemma 2.6; not constructed here"
+    ],
+    "ambiguities": [
+      "The model (the log-volume of Definition 1.8 and the inequality of Proposition 1.9) is the author's (Zhou's) modification of IUT IV Theorem 1.10 and ExpEst Theorem 5.1, not Mochizuki's text; Definition 1.8 is not formalized, only its numerical shadow."
+    ],
+    "lemmas": [
+      "IUT.Applications.ZhouExplicit.zhou_prop27_coefficient"
+    ]
+  },
+  "ZHOU1.Lem3_1": {
+    "kind": "external_statement",
+    "parent": null,
+    "source": {
+      "authors": "Zhong-Peng Zhou",
+      "title": "The inter-universal Teichmüller theory and new Diophantine results over the rational numbers. I",
+      "arxiv": "2503.14510",
+      "statement": "Lemma 3.1",
+      "pages_in_paper": "page 25",
+      "pages_read": "pages 1 to 38 (whole paper), formulas from the TeX source; no page checked against a rendered image"
+    },
+    "content": "Lemma 3.1 (ii): with h = log N, S a set of n >= 2 primes >= 5, 2 <= k <= n, k(S) > h/log 2, and (3-1-eq1) for each l in S: h <= (3 + a_1) log rad N + a_2 + k h/n.",
+    "explicit_hypotheses": [
+      "N > 0",
+      "S finite set of primes >= 5, n = |S| >= 2",
+      "2 <= k <= n, k(S) > h/log 2",
+      "(3-1-eq1) for each l in S, Vol(l) >= 0"
+    ],
+    "implicit_hypotheses": [],
+    "conclusion": "h <= (3 + a_1) log rad N + a_2 + k h/n.",
+    "definitions_required": [],
+    "results_used": [],
+    "external_dependencies": [],
+    "lean_declaration": null,
+    "statement_status": "EXTRACTED",
+    "proof_status": "NOT_EXTRACTED",
+    "obligations": [],
+    "ambiguities": [],
+    "fragments": [
+      "ZHOU1.Lem3_1.frag.ii"
+    ]
+  },
+  "ZHOU1.Lem3_1.frag.ii": {
+    "kind": "fragment",
+    "parent": "ZHOU1.Lem3_1",
+    "source": {
+      "pages_in_paper": "page 25",
+      "pages_read": "pages 1 to 38 (whole paper), formulas from the TeX source; no page checked against a rendered image"
+    },
+    "content": "Lemma 3.1 (ii), with k(S) > h/log 2 expressed as: every k-element subset T of S has (prod T) log 2 > h. The hypotheses N > 0, primes >= 5, n >= 2, 2 <= k <= n and Vol >= 0 are unused and dropped.",
+    "explicit_hypotheses": [
+      "S nonempty finite set of primes",
+      "every k-subset T of S has log N < (prod T) log 2",
+      "(3-1-eq1) for each l in S"
+    ],
+    "implicit_hypotheses": [],
+    "conclusion": "log N <= (3 + (1/n) sum zhouCoeff l) log rad N + (3/n) sum Vol l + k log N / n.",
+    "definitions_required": [],
+    "results_used": [],
+    "external_dependencies": [],
+    "lean_declaration": "IUT.Applications.ZhouExplicit.zhou_lemma31_ii",
+    "covers": "Lemma 3.1 (i) (counting part) and (ii).",
+    "not_covered": "Lemma 3.1 (iii).",
+    "statement_status": "STATEMENT_FORMALIZED",
+    "proof_status": "KERNEL_VERIFIED",
+    "obligations": [],
+    "ambiguities": [],
+    "lemmas": [
+      "IUT.Applications.ZhouExplicit.zhouCoeff"
+    ]
+  },
+  "ZHOU1.Thm3_2": {
+    "kind": "external_statement",
+    "parent": null,
+    "source": {
+      "authors": "Zhong-Peng Zhou",
+      "title": "The inter-universal Teichmüller theory and new Diophantine results over the rational numbers. I",
+      "arxiv": "2503.14510",
+      "statement": "Theorem 3.2",
+      "pages_in_paper": "pages 27 to 29",
+      "pages_read": "pages 1 to 38 (whole paper), formulas from the TeX source; no page checked against a rendered image"
+    },
+    "content": "Theorem 3.2: for nonzero coprime a + b = c, (i) log|abc| >= 700 implies log|abc| <= 3 log rad(abc) + 8 sqrt(log|abc| log log|abc|); (ii) log|abc| >= 3*10^13 implies the error term 3 sqrt(log|abc| log log|abc|)(1 + 6/sqrt(log log|abc|) + 15/log log|abc|).",
+    "explicit_hypotheses": [
+      "a, b, c nonzero, coprime, a + b = c"
+    ],
+    "implicit_hypotheses": [],
+    "conclusion": "(i) and (ii) as stated.",
+    "definitions_required": [],
+    "results_used": [
+      "IUT3.Cor3_12",
+      "IUT4.Thm1_10",
+      "IUT4.ThmA"
+    ],
+    "external_dependencies": [
+      "Zhou I Propositions 1.9, 2.7, 2.9; Lemmas 2.8, 3.1",
+      "Dusart 1999 and 2018, Rosser and Schoenfeld 1962",
+      "computations in the author's code repository, not in the paper (range 680 <= log N <= e^31; Lemma 2.8 (i) on [2*10^5, 10A])"
+    ],
+    "lean_declaration": null,
+    "statement_status": "EXTRACTED",
+    "proof_status": "NOT_EXTRACTED",
+    "obligations": [
+      "ZhouComputedRange (unpublished computation)",
+      "the analytic estimate (3-2-eq3) for log N >= e^31"
+    ],
+    "ambiguities": [
+      "'coprime' read as gcd(a, b) = 1.",
+      "The model (the log-volume of Definition 1.8 and the inequality of Proposition 1.9) is the author's (Zhou's) modification of IUT IV Theorem 1.10 and ExpEst Theorem 5.1, not Mochizuki's text; Definition 1.8 is not formalized, only its numerical shadow."
+    ],
+    "fragments": [
+      "ZHOU1.Thm3_2.frag.statement",
+      "ZHOU1.Thm3_2.frag.transfer"
+    ]
+  },
+  "ZHOU1.Thm3_2.frag.statement": {
+    "kind": "fragment",
+    "parent": "ZHOU1.Thm3_2",
+    "source": {
+      "pages_in_paper": "page 27",
+      "pages_read": "pages 1 to 38 (whole paper), formulas from the TeX source; no page checked against a rendered image"
+    },
+    "content": "Definitions: ZhouTheorem32i (Theorem 3.2 (i)), ZhouNLevelBound h0 ((3-2-eq4) for log N >= h0, N = |abc|/gcd(16,abc)), ZhouComputedRange ((3-2-eq4) for 680 <= log N <= e^31).",
+    "explicit_hypotheses": [],
+    "implicit_hypotheses": [],
+    "conclusion": "Propositions (definitions); not proved, not assumed. Each is an open statement.",
+    "definitions_required": [],
+    "results_used": [],
+    "external_dependencies": [],
+    "lean_declaration": "IUT.Applications.ZhouExplicit.ZhouTheorem32i",
+    "covers": "Theorem 3.2 (i); the inequality (3-2-eq4) of its proof.",
+    "not_covered": "Theorem 3.2 (ii); the proof.",
+    "statement_status": "STATEMENT_FORMALIZED",
+    "proof_status": "NOT_EXTRACTED",
+    "obligations": [],
+    "ambiguities": [
+      "'coprime' read as gcd(a, b) = 1.",
+      "The model (the log-volume of Definition 1.8 and the inequality of Proposition 1.9) is the author's (Zhou's) modification of IUT IV Theorem 1.10 and ExpEst Theorem 5.1, not Mochizuki's text; Definition 1.8 is not formalized, only its numerical shadow."
+    ],
+    "lemmas": [
+      "IUT.Applications.ZhouExplicit.zhouN",
+      "IUT.Applications.ZhouExplicit.ZhouNLevelBound",
+      "IUT.Applications.ZhouExplicit.ZhouComputedRange"
+    ]
+  },
+  "ZHOU1.Thm3_2.frag.transfer": {
+    "kind": "fragment",
+    "parent": "ZHOU1.Thm3_2",
+    "source": {
+      "pages_in_paper": "pages 28 and 29",
+      "pages_read": "pages 1 to 38 (whole paper), formulas from the TeX source; no page checked against a rendered image"
+    },
+    "content": "ZhouNLevelBound 680 implies ZhouTheorem32i, by log N <= log|abc| <= log N + 4 log 2, rad N <= rad(abc) and monotonicity of sqrt(x log x).",
+    "explicit_hypotheses": [
+      "ZhouNLevelBound 680"
+    ],
+    "implicit_hypotheses": [],
+    "conclusion": "ZhouTheorem32i.",
+    "definitions_required": [],
+    "results_used": [],
+    "external_dependencies": [],
+    "lean_declaration": "IUT.Applications.ZhouExplicit.zhouTheorem32i_of_nLevel",
+    "covers": "The last paragraph of the proof of Theorem 3.2 (i).",
+    "not_covered": "The proof of (3-2-eq4).",
+    "statement_status": "STATEMENT_FORMALIZED",
+    "proof_status": "CONDITIONALLY_VERIFIED",
+    "obligations": [
+      "ZhouNLevelBound 680 ((3-2-eq4) for log N >= 680)"
+    ],
+    "ambiguities": [
+      "The model (the log-volume of Definition 1.8 and the inequality of Proposition 1.9) is the author's (Zhou's) modification of IUT IV Theorem 1.10 and ExpEst Theorem 5.1, not Mochizuki's text; Definition 1.8 is not formalized, only its numerical shadow."
+    ],
+    "lemmas": [
+      "IUT.Applications.ZhouExplicit.zhou_rad_le_of_dvd"
+    ]
+  },
+  "ZHOU1.Cor3_3": {
+    "kind": "external_statement",
+    "parent": null,
+    "source": {
+      "authors": "Zhong-Peng Zhou",
+      "title": "The inter-universal Teichmüller theory and new Diophantine results over the rational numbers. I",
+      "arxiv": "2503.14510",
+      "statement": "Corollary 3.3",
+      "pages_in_paper": "page 29",
+      "pages_read": "pages 1 to 38 (whole paper), formulas from the TeX source; no page checked against a rendered image"
+    },
+    "content": "Corollary 3.3: for 0 < eps <= 1/10 and nonzero coprime a + b = c, |abc| <= max{exp(400 eps^-2 log(1/eps)), rad(abc)^{3+3eps}}.",
+    "explicit_hypotheses": [
+      "0 < eps <= 1/10",
+      "a, b, c nonzero, coprime, a + b = c"
+    ],
+    "implicit_hypotheses": [],
+    "conclusion": "|abc| <= max{exp(400 eps^-2 log(1/eps)), rad(abc)^{3+3eps}}.",
+    "definitions_required": [],
+    "results_used": [
+      "IUT4.ThmA"
+    ],
+    "external_dependencies": [
+      "Zhou I Theorem 3.2 (i)"
+    ],
+    "lean_declaration": "IUT.Applications.ZhouExplicit.ZhouCorollary33",
+    "statement_status": "STATEMENT_FORMALIZED",
+    "proof_status": "EXTERNAL_CLAIM",
+    "obligations": [
+      "Zhou I Theorem 3.2 (i)"
+    ],
+    "ambiguities": [
+      "The model (the log-volume of Definition 1.8 and the inequality of Proposition 1.9) is the author's (Zhou's) modification of IUT IV Theorem 1.10 and ExpEst Theorem 5.1, not Mochizuki's text; Definition 1.8 is not formalized, only its numerical shadow.",
+      "IUT.Applications.ZhouExplicit.ZhouCorollary33 states Corollary 3.3 (page 29) exactly, with coprimality read as gcd(a, b) = 1. It is stated, not proved, and used only as a hypothesis."
+    ],
+    "fragments": [
+      "ZHOU1.Cor3_3.frag.statement",
+      "ZHOU1.Cor3_3.frag.from_thm32",
+      "ZHOU1.Cor3_3.frag.fixed_exponent"
+    ]
+  },
+  "ZHOU1.Cor3_3.frag.statement": {
+    "kind": "fragment",
+    "parent": "ZHOU1.Cor3_3",
+    "source": {
+      "pages_in_paper": "page 29",
+      "pages_read": "pages 1 to 38 (whole paper), formulas from the TeX source; no page checked against a rendered image"
+    },
+    "content": "Definition ZhouCorollary33 (Corollary 3.3).",
+    "explicit_hypotheses": [],
+    "implicit_hypotheses": [],
+    "conclusion": "A proposition (definition); not proved, not assumed. It is an open statement.",
+    "definitions_required": [],
+    "results_used": [],
+    "external_dependencies": [],
+    "lean_declaration": "IUT.Applications.ZhouExplicit.ZhouCorollary33",
+    "covers": "Corollary 3.3.",
+    "not_covered": "The proof of Corollary 3.3 (page 29; its passage from Theorem 3.2 (i) is ZHOU1.Cor3_3.frag.from_thm32). The proposition is stated, neither proved nor assumed; the parent record carries the same declaration.",
+    "statement_status": "STATEMENT_FORMALIZED",
+    "proof_status": "NOT_EXTRACTED",
+    "obligations": [],
+    "ambiguities": [
+      "'coprime' read as gcd(a, b) = 1.",
+      "The model (the log-volume of Definition 1.8 and the inequality of Proposition 1.9) is the author's (Zhou's) modification of IUT IV Theorem 1.10 and ExpEst Theorem 5.1, not Mochizuki's text; Definition 1.8 is not formalized, only its numerical shadow."
+    ],
+    "lemmas": []
+  },
+  "ZHOU1.Cor3_3.frag.from_thm32": {
+    "kind": "fragment",
+    "parent": "ZHOU1.Cor3_3",
+    "source": {
+      "pages_in_paper": "page 29",
+      "pages_read": "pages 1 to 38 (whole paper), formulas from the TeX source; no page checked against a rendered image"
+    },
+    "content": "ZhouTheorem32i implies ZhouCorollary33. The scalar inequality u_0 log h_0 < h_0 (h_0 = 400 x^2 log x, u_0 = 64(1+x)^2, x = 1/eps >= 10) is proved from log 10 > 2.28, log 400 < 6.24, log y <= y/e; then monotonicity of y/log y.",
+    "explicit_hypotheses": [
+      "ZhouTheorem32i"
+    ],
+    "implicit_hypotheses": [],
+    "conclusion": "ZhouCorollary33.",
+    "definitions_required": [],
+    "results_used": [],
+    "external_dependencies": [],
+    "lean_declaration": "IUT.Applications.ZhouExplicit.zhouCorollary33_of_theorem32i",
+    "covers": "The proof of Corollary 3.3.",
+    "not_covered": "Theorem 3.2 (i) itself, which is the hypothesis ZhouTheorem32i; through it the dependence on Zhou I Propositions 1.9, 2.7, 2.9, Lemmas 2.8, 3.1 and the unpublished computation ZhouComputedRange.",
+    "statement_status": "STATEMENT_FORMALIZED",
+    "proof_status": "CONDITIONALLY_VERIFIED",
+    "obligations": [
+      "ZhouTheorem32i (Zhou I Theorem 3.2 (i))"
+    ],
+    "ambiguities": [
+      "The model (the log-volume of Definition 1.8 and the inequality of Proposition 1.9) is the author's (Zhou's) modification of IUT IV Theorem 1.10 and ExpEst Theorem 5.1, not Mochizuki's text; Definition 1.8 is not formalized, only its numerical shadow."
+    ],
+    "lemmas": [
+      "IUT.Applications.ZhouExplicit.zhou_log_ten_gt",
+      "IUT.Applications.ZhouExplicit.zhou_log_four_hundred_lt",
+      "IUT.Applications.ZhouExplicit.zhou_log_le_div_exp_one",
+      "IUT.Applications.ZhouExplicit.zhou_cor33_scalar",
+      "IUT.Applications.ZhouExplicit.zhou_log_mul_le"
+    ]
+  },
+  "ZHOU1.Cor3_3.frag.fixed_exponent": {
+    "kind": "fragment",
+    "parent": "ZHOU1.Cor3_3",
+    "source": {
+      "pages_in_paper": "page 29",
+      "pages_read": "pages 1 to 38 (whole paper), formulas from the TeX source; no page checked against a rendered image"
+    },
+    "content": "ZhouCorollary33 implies IUT.ABC.Variants.ABCWithExponent kappa for every kappa > 3/2 (c <= K rad(abc)^kappa), using abc >= c^2/2. Challenge.ABC does not follow: the exponent stays above 3/2.",
+    "explicit_hypotheses": [
+      "ZhouCorollary33",
+      "kappa > 3/2"
+    ],
+    "implicit_hypotheses": [],
+    "conclusion": "IUT.ABC.Variants.ABCWithExponent kappa.",
+    "definitions_required": [],
+    "results_used": [],
+    "external_dependencies": [],
+    "lean_declaration": "IUT.Applications.ZhouExplicit.abcWithExponent_of_zhouCorollary33",
+    "covers": "The consequence of Corollary 3.3 for the fixed-exponent weak form of abc.",
+    "not_covered": "Any exponent <= 3/2; Challenge.ABC.",
+    "statement_status": "STATEMENT_FORMALIZED",
+    "proof_status": "CONDITIONALLY_VERIFIED",
+    "obligations": [
+      "ZhouCorollary33 (Zhou I Corollary 3.3)"
+    ],
+    "ambiguities": [
+      "IUT.ABC.Variants.ABCWithExponent kappa is open for every kappa > 1 and false for kappa <= 1 (IUT.ABC.Variants.not_abcWithExponent_of_le_one)."
+    ]
+  },
+  "ZHOU2.Rem1_1_1": {
+    "kind": "external_statement",
+    "parent": null,
+    "source": {
+      "authors": "Zhong-Peng Zhou",
+      "title": "The inter-universal Teichmüller theory and new Diophantine results over rational numbers. II",
+      "arxiv": "2510.05448",
+      "statement": "Remark 1.1.1",
+      "pages_in_paper": "page 6",
+      "pages_read": "pages 1 to 24 and 36, formulas from the TeX source; no page checked against a rendered image"
+    },
+    "content": "Remark 1.1.1: the results of IUT I to IV are claimed to hold for 2-torsion initial Theta-data; the 3-torsion condition is said to be used only in IUT I Remark 3.1.5 and IUT IV Theorem 1.10 and Corollary 2.2 (via IUT IV Proposition 1.8 (iv), (v)).",
+    "explicit_hypotheses": [],
+    "implicit_hypotheses": [],
+    "conclusion": "A claim, not a proof.",
+    "definitions_required": [],
+    "results_used": [
+      "IUT3.Cor3_12",
+      "IUT4.Thm1_10"
+    ],
+    "external_dependencies": [],
+    "lean_declaration": null,
+    "statement_status": "EXTRACTED",
+    "proof_status": "NOT_EXTRACTED",
+    "obligations": [],
+    "ambiguities": [
+      "The remark is a claim about where a hypothesis is used; no proof is given."
+    ],
+    "fragments": []
+  },
+  "DH.PS.Sec6_1.Hull": {
+    "kind": "external_statement",
+    "parent": null,
+    "source": {
+      "authors": "Taylor Dupuy, Anton Hilado",
+      "title": "Probabilistic Szpiro, Baby Szpiro, and Explicit Szpiro from Mochizuki's Corollary 3.12",
+      "arxiv": "2004.13108",
+      "statement": "Section 6.1 (definition of the polyradius and the hull)",
+      "pages_in_paper": "pages 18 and 19",
+      "pages_read": "located in the text layer of the arXiv PDF; the statement is not extracted here (see the fragments)"
+    },
+    "content": "Section 6.1 defines, for a compact region of a direct sum of p-adic fields, the polyradius and the hull, with rules for unions and scalings.",
+    "explicit_hypotheses": [],
+    "conclusion": "",
+    "results_used": [],
+    "lean_declaration": null,
+    "statement_status": "NOT_EXTRACTED",
+    "proof_status": "NOT_EXTRACTED",
+    "obligations": [],
+    "ambiguities": [
+      "The formulation is Dupuy and Hilado's reading of Corollary 3.12 (arXiv 2004.13228, Inequality 1.0.1; arXiv 2004.13108, Theorem 7.5.1), not Mochizuki's statement."
+    ],
+    "fragments": [
+      "DH.PS.Sec6_1.Hull.frag.dhHull"
+    ]
+  },
+  "DH.PS.Sec6_1.Hull.frag.dhHull": {
+    "kind": "fragment",
+    "parent": "DH.PS.Sec6_1.Hull",
+    "source": {
+      "pages_in_paper": "pages 18 and 19",
+      "pages_read": "formulation from the TeX source of the arXiv paper, checked against the rendered pages of the arXiv PDF"
+    },
+    "content": "Definitions of the polyradius R_i(Omega) = sup of |x_i| over Omega (in [0, infinity]), the closed polydisc D(0, r) and the hull D(0, R(Omega)) of a region in a finite product of normed groups.",
+    "explicit_hypotheses": [
+      "a family of normed additive groups X i indexed by a type",
+      "a region Omega"
+    ],
+    "implicit_hypotheses": [],
+    "conclusion": "dhPolyRadius, dhPolydisc and dhHull are defined.",
+    "definitions_required": [],
+    "results_used": [],
+    "external_dependencies": [
+      "DuHi20: arXiv 2004.13108",
+      "DuHi20b: arXiv 2004.13228"
+    ],
+    "lean_declaration": "IUT.Applications.DupuyHilado.dhHull",
+    "covers": "Dupuy and Hilado, arXiv 2004.13108, section 6.1 (hulls of regions in a direct sum of p-adic fields).",
+    "not_covered": "Tensor products of local fields and their CRT splitting; the hull of IUT III Remark 3.9.5 (i) on tensor packets of log-shells.",
+    "statement_status": "STATEMENT_FORMALIZED",
+    "proof_status": "NOT_EXTRACTED",
+    "obligations": [],
+    "ambiguities": [
+      "The formulation is Dupuy and Hilado's reading of Corollary 3.12 (arXiv 2004.13228, Inequality 1.0.1; arXiv 2004.13108, Theorem 7.5.1), not Mochizuki's statement."
+    ],
+    "scope": "finite family of normed groups standing for the factors of a tensor product; not the papers' tensor packets",
+    "lemmas": [
+      "IUT.Applications.DupuyHilado.dhPolyRadius",
+      "IUT.Applications.DupuyHilado.dhPolydisc"
+    ]
+  },
+  "DH.PS.Sec6_1.HullContainment": {
+    "kind": "external_statement",
+    "parent": null,
+    "source": {
+      "authors": "Taylor Dupuy, Anton Hilado",
+      "title": "Probabilistic Szpiro, Baby Szpiro, and Explicit Szpiro from Mochizuki's Corollary 3.12",
+      "arxiv": "2004.13108",
+      "statement": "Section 6.1 (sufficient condition for hull containment)",
+      "pages_in_paper": "page 19",
+      "pages_read": "located in the text layer of the arXiv PDF; the statement is not extracted here (see the fragments)"
+    },
+    "content": "Section 6.1, page 19: a sentence giving a sufficient condition, through a linear map T with |det T|_p = 1, for one region to be hull-contained in another.",
+    "explicit_hypotheses": [],
+    "conclusion": "",
+    "results_used": [],
+    "lean_declaration": null,
+    "statement_status": "NOT_EXTRACTED",
+    "proof_status": "NOT_EXTRACTED",
+    "obligations": [],
+    "ambiguities": [
+      "The formulation is Dupuy and Hilado's reading of Corollary 3.12 (arXiv 2004.13228, Inequality 1.0.1; arXiv 2004.13108, Theorem 7.5.1), not Mochizuki's statement."
+    ],
+    "fragments": [
+      "DH.PS.Sec6_1.HullContainment.frag.dh_det_one_not_hull_subset"
+    ]
+  },
+  "DH.PS.Sec6_1.HullContainment.frag.dh_det_one_not_hull_subset": {
+    "kind": "fragment",
+    "parent": "DH.PS.Sec6_1.HullContainment",
+    "source": {
+      "pages_in_paper": "page 19",
+      "pages_read": "formulation from the TeX source of the arXiv paper, checked against the rendered pages of the arXiv PDF"
+    },
+    "content": "Test of the sufficient condition of section 6.1 as printed: on Q_p x Q_p, T = diag(p, p^-1) has |det T|_p = 1 and maps the unit polydisc A onto B = T(A), but hull(A) is not contained in hull(B).",
+    "explicit_hypotheses": [
+      "p a prime"
+    ],
+    "implicit_hypotheses": [],
+    "conclusion": "|det T| = 1, T(A) is contained in B, and hull(A) is not a subset of hull(B).",
+    "definitions_required": [],
+    "results_used": [],
+    "external_dependencies": [
+      "DuHi20: arXiv 2004.13108",
+      "DuHi20b: arXiv 2004.13228"
+    ],
+    "lean_declaration": "IUT.Applications.DupuyHilado.dh_det_one_not_hull_subset",
+    "covers": "Dupuy and Hilado, arXiv 2004.13108, section 6.1, page 19: the sentence 'A is hull-contained in B if there exists some Q_p-linear transformation T with |det(T)|_p = 1 and T(A) contained in B', as printed; the declaration gives A, B and T for which that sentence as printed does not hold.",
+    "not_covered": "Whether any later step relies on the sentence (the justifications of (6.3) to (6.8) do not cite it); any theorem of the paper. Multiplication by a unit of O_L preserves hulls (dhPolyRadius_mul); multiplication by the invertible element (p, p^-1) of L is the example of this record.",
+    "statement_status": "STATEMENT_FORMALIZED",
+    "proof_status": "KERNEL_VERIFIED",
+    "obligations": [],
+    "ambiguities": [
+      "The formulation is Dupuy and Hilado's reading of Corollary 3.12 (arXiv 2004.13228, Inequality 1.0.1; arXiv 2004.13108, Theorem 7.5.1), not Mochizuki's statement.",
+      "'Multiplication by a unit of L' is valid if the unit is a unit of O_L and fails if it is any invertible element of L."
+    ],
+    "scope": "model_test",
+    "lemmas": [
+      "IUT.Applications.DupuyHilado.dhDiagMap",
+      "IUT.Applications.DupuyHilado.dhDiagMap_det_norm"
+    ]
+  },
+  "DH.PS.Lem4_2_1": {
+    "kind": "external_statement",
+    "parent": null,
+    "source": {
+      "authors": "Taylor Dupuy, Anton Hilado",
+      "title": "Probabilistic Szpiro, Baby Szpiro, and Explicit Szpiro from Mochizuki's Corollary 3.12",
+      "arxiv": "2004.13108",
+      "statement": "Lemma 4.2.1",
+      "pages_in_paper": "page 17",
+      "pages_read": "located in the text layer of the arXiv PDF; the statement is not extracted here (see the fragments)"
+    },
+    "content": "Lemma 4.2.1: a crude estimate of the p-adic logarithm; Lemma 4.2.3 (1) on the same page bounds the logarithm of the units of a finite extension.",
+    "explicit_hypotheses": [],
+    "conclusion": "",
+    "results_used": [],
+    "lean_declaration": null,
+    "statement_status": "NOT_EXTRACTED",
+    "proof_status": "NOT_EXTRACTED",
+    "obligations": [],
+    "ambiguities": [
+      "The formulation is Dupuy and Hilado's reading of Corollary 3.12 (arXiv 2004.13228, Inequality 1.0.1; arXiv 2004.13108, Theorem 7.5.1), not Mochizuki's statement."
+    ],
+    "fragments": [
+      "DH.PS.Lem4_2_1.frag.dh_crude_log_estimate"
+    ]
+  },
+  "DH.PS.Lem4_2_1.frag.dh_crude_log_estimate": {
+    "kind": "fragment",
+    "parent": "DH.PS.Lem4_2_1",
+    "source": {
+      "pages_in_paper": "page 17",
+      "pages_read": "formulation from the TeX source of the arXiv paper, checked against the rendered pages of the arXiv PDF"
+    },
+    "content": "For a nonzero a in Q_p with ord_p(a) > 1: |log(1 + a)|_p < c_p / ord_p(a), with c_p = (exp(1) ln p)^-1; and log(Z_p^x) is contained in the disc of radius 1/(ln(p) exp(1)).",
+    "explicit_hypotheses": [
+      "p a prime",
+      "a in Q_p, a nonzero, 1 < Padic.valuation a (for the first statement)"
+    ],
+    "implicit_hypotheses": [],
+    "conclusion": "The two bounds.",
+    "definitions_required": [],
+    "results_used": [],
+    "external_dependencies": [
+      "DuHi20: arXiv 2004.13108",
+      "DuHi20b: arXiv 2004.13228"
+    ],
+    "lean_declaration": "IUT.Applications.DupuyHilado.dh_crude_log_estimate",
+    "covers": "Dupuy and Hilado, arXiv 2004.13108, Lemma 4.2.1 (stated for a in C_p) and Lemma 4.2.3 (1) (stated for finite K over Q_p), both for the base field Q_p.",
+    "not_covered": "Ramified finite extensions K of Q_p (the factor e(K/Q_p)), C_p; Lemma 4.2.3 (2) beyond K = Q_p.",
+    "statement_status": "STATEMENT_FORMALIZED",
+    "proof_status": "KERNEL_VERIFIED",
+    "obligations": [],
+    "ambiguities": [
+      "The formulation is Dupuy and Hilado's reading of Corollary 3.12 (arXiv 2004.13228, Inequality 1.0.1; arXiv 2004.13108, Theorem 7.5.1), not Mochizuki's statement."
+    ],
+    "scope": "base field Q_p only",
+    "lemmas": [
+      "IUT.Applications.DupuyHilado.dh_log_units_subset_disc",
+      "IUT.Applications.DupuyHilado.dh_exp_one_mul_log_lt",
+      "IUT.Applications.DupuyHilado.dh_mul_le_pow"
+    ]
+  },
+  "DH.PS.Def3_8_1": {
+    "kind": "external_statement",
+    "parent": null,
+    "source": {
+      "authors": "Taylor Dupuy, Anton Hilado",
+      "title": "Probabilistic Szpiro, Baby Szpiro, and Explicit Szpiro from Mochizuki's Corollary 3.12",
+      "arxiv": "2004.13108",
+      "statement": "Definitions 3.8.1 and 3.8.2",
+      "pages_in_paper": "pages 13 and 14",
+      "pages_read": "located in the text layer of the arXiv PDF; the statement is not extracted here (see the fragments)"
+    },
+    "content": "Definitions 3.8.1 and 3.8.2: the q-pilot and theta pilot divisors and their normalized degrees (section 3.7).",
+    "explicit_hypotheses": [],
+    "conclusion": "",
+    "results_used": [],
+    "lean_declaration": null,
+    "statement_status": "NOT_EXTRACTED",
+    "proof_status": "NOT_EXTRACTED",
+    "obligations": [],
+    "ambiguities": [
+      "The formulation is Dupuy and Hilado's reading of Corollary 3.12 (arXiv 2004.13228, Inequality 1.0.1; arXiv 2004.13108, Theorem 7.5.1), not Mochizuki's statement."
+    ],
+    "fragments": [
+      "DH.PS.Def3_8_1.frag.dhQPilotDegreeOfData"
+    ]
+  },
+  "DH.PS.Def3_8_1.frag.dhQPilotDegreeOfData": {
+    "kind": "fragment",
+    "parent": "DH.PS.Def3_8_1",
+    "source": {
+      "pages_in_paper": "pages 13 and 14",
+      "pages_read": "formulation from the TeX source of the arXiv paper, checked against the rendered pages of the arXiv PDF"
+    },
+    "content": "Normalized degrees, from given data (a finite set S of places with ord_v(q_v), inertia degree, residue characteristic, d_0 and l), of the q-pilot divisor, of the components P_Theta_j of the theta pilot divisor, and of their label average with weight 1/n for l = 2n + 1.",
+    "explicit_hypotheses": [
+      "a finite set S",
+      "natural-number data ordq, inertia, resChar on S",
+      "d_0, l (or n with l = 2n + 1)"
+    ],
+    "implicit_hypotheses": [],
+    "conclusion": "dhQPilotDegreeOfData, dhThetaPilotDegreeOfData and dhThetaPilotLgpDegreeOfData are defined.",
+    "definitions_required": [],
+    "results_used": [],
+    "external_dependencies": [
+      "DuHi20: arXiv 2004.13108",
+      "DuHi20b: arXiv 2004.13228"
+    ],
+    "lean_declaration": "IUT.Applications.DupuyHilado.dhQPilotDegreeOfData",
+    "covers": "Dupuy and Hilado, arXiv 2004.13108, Definitions 3.8.1 and 3.8.2 and the normalized degree of section 3.7.",
+    "not_covered": "That the data come from Tate parameters of an elliptic curve; Arakelov divisors; the archimedean part.",
+    "statement_status": "STATEMENT_FORMALIZED",
+    "proof_status": "NOT_EXTRACTED",
+    "obligations": [],
+    "ambiguities": [
+      "The formulation is Dupuy and Hilado's reading of Corollary 3.12 (arXiv 2004.13228, Inequality 1.0.1; arXiv 2004.13108, Theorem 7.5.1), not Mochizuki's statement."
+    ],
+    "scope": "numbers given as data; not constructed from an elliptic curve",
+    "lemmas": [
+      "IUT.Applications.DupuyHilado.dhThetaPilotDegreeOfData",
+      "IUT.Applications.DupuyHilado.dhThetaPilotLgpDegreeOfData"
+    ]
+  },
+  "DH.PS.Sec3_8.PilotRelation": {
+    "kind": "external_statement",
+    "parent": null,
+    "source": {
+      "authors": "Taylor Dupuy, Anton Hilado",
+      "title": "Probabilistic Szpiro, Baby Szpiro, and Explicit Szpiro from Mochizuki's Corollary 3.12",
+      "arxiv": "2004.13108",
+      "statement": "Section 3.8 (the computation below display (3.3))",
+      "pages_in_paper": "page 14",
+      "pages_read": "located in the text layer of the arXiv PDF; the statement is not extracted here (see the fragments)"
+    },
+    "content": "Section 3.8, page 14: the computation printed below display (3.3) relating the label-averaged theta pilot degree to the q-pilot degree.",
+    "explicit_hypotheses": [],
+    "conclusion": "",
+    "results_used": [],
+    "lean_declaration": null,
+    "statement_status": "NOT_EXTRACTED",
+    "proof_status": "NOT_EXTRACTED",
+    "obligations": [],
+    "ambiguities": [
+      "The formulation is Dupuy and Hilado's reading of Corollary 3.12 (arXiv 2004.13228, Inequality 1.0.1; arXiv 2004.13108, Theorem 7.5.1), not Mochizuki's statement."
+    ],
+    "fragments": [
+      "DH.PS.Sec3_8.PilotRelation.frag.dhThetaPilotLgp_eq_mul_qPilot"
+    ]
+  },
+  "DH.PS.Sec3_8.PilotRelation.frag.dhThetaPilotLgp_eq_mul_qPilot": {
+    "kind": "fragment",
+    "parent": "DH.PS.Sec3_8.PilotRelation",
+    "source": {
+      "pages_in_paper": "page 14",
+      "pages_read": "formulation from the TeX source of the arXiv paper, checked against the rendered pages of the arXiv PDF"
+    },
+    "content": "For l = 2n + 1 with n >= 1, the label-averaged theta pilot degree equals (l(l+1)/12) times the q-pilot degree.",
+    "explicit_hypotheses": [
+      "1 <= n",
+      "the data of dhQPilotDegreeOfData"
+    ],
+    "implicit_hypotheses": [],
+    "conclusion": "deg_lgp(P_Theta) = (l(l+1)/12) deg(P_q).",
+    "definitions_required": [],
+    "results_used": [],
+    "external_dependencies": [
+      "DuHi20: arXiv 2004.13108",
+      "DuHi20b: arXiv 2004.13228"
+    ],
+    "lean_declaration": "IUT.Applications.DupuyHilado.dhThetaPilotLgp_eq_mul_qPilot",
+    "covers": "Dupuy and Hilado, arXiv 2004.13108, section 3.8, page 14: the derivation printed below display (3.3), the relation used in the proof of Theorem 7.12.1 and in (8.9).",
+    "not_covered": "The identification of the pilot degrees with Mochizuki's pilot objects; Remark 3.8.3.",
+    "statement_status": "STATEMENT_FORMALIZED",
+    "proof_status": "KERNEL_VERIFIED",
+    "obligations": [],
+    "ambiguities": [
+      "The formulation is Dupuy and Hilado's reading of Corollary 3.12 (arXiv 2004.13228, Inequality 1.0.1; arXiv 2004.13108, Theorem 7.5.1), not Mochizuki's statement."
+    ],
+    "scope": "numbers given as data; not constructed from an elliptic curve",
+    "lemmas": [
+      "IUT.Applications.DupuyHilado.dhThetaPilotDegreeOfData_eq",
+      "IUT.Applications.DupuyHilado.dh_sum_sq"
+    ]
+  },
+  "DH.PS.Eq3_3": {
+    "kind": "external_statement",
+    "parent": null,
+    "source": {
+      "authors": "Taylor Dupuy, Anton Hilado",
+      "title": "Probabilistic Szpiro, Baby Szpiro, and Explicit Szpiro from Mochizuki's Corollary 3.12",
+      "arxiv": "2004.13108",
+      "statement": "Display (3.3)",
+      "pages_in_paper": "page 14",
+      "pages_read": "located in the text layer of the arXiv PDF; the statement is not extracted here (see the fragments)"
+    },
+    "content": "Display (3.3), page 14: a relation between the q-pilot degree and the label-averaged theta pilot degree.",
+    "explicit_hypotheses": [],
+    "conclusion": "",
+    "results_used": [],
+    "lean_declaration": null,
+    "statement_status": "NOT_EXTRACTED",
+    "proof_status": "NOT_EXTRACTED",
+    "obligations": [],
+    "ambiguities": [
+      "The formulation is Dupuy and Hilado's reading of Corollary 3.12 (arXiv 2004.13228, Inequality 1.0.1; arXiv 2004.13108, Theorem 7.5.1), not Mochizuki's statement."
+    ],
+    "fragments": [
+      "DH.PS.Eq3_3.frag.dh_printed_pilot_relation_forces_zero"
+    ]
+  },
+  "DH.PS.Eq3_3.frag.dh_printed_pilot_relation_forces_zero": {
+    "kind": "fragment",
+    "parent": "DH.PS.Eq3_3",
+    "source": {
+      "pages_in_paper": "page 14",
+      "pages_read": "formulation from the TeX source of the arXiv paper, checked against the rendered pages of the arXiv PDF"
+    },
+    "content": "Display (3.3) as printed, deg(P_q) = (l(l+1)/12) deg_lgp(P_Theta), together with the derived relation forces deg(P_q) = 0 for l = 2n + 1, n >= 2.",
+    "explicit_hypotheses": [
+      "2 <= n",
+      "the data of dhQPilotDegreeOfData",
+      "the printed relation (3.3) as a hypothesis"
+    ],
+    "implicit_hypotheses": [],
+    "conclusion": "deg(P_q) = 0.",
+    "definitions_required": [],
+    "results_used": [],
+    "external_dependencies": [
+      "DuHi20: arXiv 2004.13108",
+      "DuHi20b: arXiv 2004.13228"
+    ],
+    "lean_declaration": "IUT.Applications.DupuyHilado.dh_printed_pilot_relation_forces_zero",
+    "covers": "Dupuy and Hilado, arXiv 2004.13108, display (3.3) as printed, section 3.8, page 14.",
+    "not_covered": "The relation derived directly below the display has the factor on the other side; it is proved in DH.PS.Sec3_8.PilotRelation.frag.dhThetaPilotLgp_eq_mul_qPilot. The proof of Theorem 7.12.1, (8.9) and Remark 3.8.3 use the derived relation, so this record concerns the display as printed only and no theorem of the paper.",
+    "statement_status": "STATEMENT_FORMALIZED",
+    "proof_status": "KERNEL_VERIFIED",
+    "obligations": [],
+    "ambiguities": [
+      "The formulation is Dupuy and Hilado's reading of Corollary 3.12 (arXiv 2004.13228, Inequality 1.0.1; arXiv 2004.13108, Theorem 7.5.1), not Mochizuki's statement."
+    ],
+    "scope": "model_test",
+    "lemmas": []
+  },
+  "DH.ITD.Ex2_10": {
+    "kind": "external_statement",
+    "parent": null,
+    "source": {
+      "authors": "Taylor Dupuy, Anton Hilado",
+      "title": "The Statement of Mochizuki's Corollary 3.12: Initial Theta Data",
+      "arxiv": "2004.13228",
+      "statement": "Section 2.10 (initial theta data for 11a1)",
+      "pages_in_paper": "pages 12 to 14",
+      "pages_read": "located in the text layer of the arXiv PDF; the statement is not extracted here (see the fragments)"
+    },
+    "content": "Section 2.10: elements of initial theta data for the elliptic curve with Cremona label 11a1.",
+    "explicit_hypotheses": [],
+    "conclusion": "",
+    "results_used": [],
+    "lean_declaration": null,
+    "statement_status": "NOT_EXTRACTED",
+    "proof_status": "NOT_EXTRACTED",
+    "obligations": [],
+    "ambiguities": [
+      "The formulation is Dupuy and Hilado's reading of Corollary 3.12 (arXiv 2004.13228, Inequality 1.0.1; arXiv 2004.13108, Theorem 7.5.1), not Mochizuki's statement."
+    ],
+    "fragments": [
+      "DH.ITD.Ex2_10.frag.dh_qPilot_11a1"
+    ]
+  },
+  "DH.ITD.Ex2_10.frag.dh_qPilot_11a1": {
+    "kind": "fragment",
+    "parent": "DH.ITD.Ex2_10",
+    "source": {
+      "pages_in_paper": "pages 12 to 14",
+      "pages_read": "formulation from the TeX source of the arXiv paper, checked against the rendered pages of the arXiv PDF"
+    },
+    "content": "Numbers of the example 11a1: q-pilot degree 5 ln 11/(2 * 13) for S = {11}, ord q = 5, f = 1, d_0 = 1, l = 13; Delta = (c4^3 - c6^2)/1728 = -11^5 and j = -2^12 31^3/11^5 from c4 = 496, c6 = 20008; and the congruence conditions for l = 13, including that 13 divides no divisor of 276480.",
+    "explicit_hypotheses": [],
+    "implicit_hypotheses": [],
+    "conclusion": "The displayed numerical identities and divisibility facts.",
+    "definitions_required": [],
+    "results_used": [],
+    "external_dependencies": [
+      "DuHi20: arXiv 2004.13108",
+      "DuHi20b: arXiv 2004.13228"
+    ],
+    "lean_declaration": "IUT.Applications.DupuyHilado.dh_qPilot_11a1",
+    "covers": "Dupuy and Hilado, arXiv 2004.13228, section 2.10 (initial theta data for 11a1).",
+    "not_covered": "The surjectivity of the mod 13 representation, the field F = Q(i, E[30]) and its degree (that [F:Q] divides 276480 is the paper's table, not proved), the Tate parameter.",
+    "statement_status": "STATEMENT_FORMALIZED",
+    "proof_status": "KERNEL_VERIFIED",
+    "obligations": [],
+    "ambiguities": [
+      "The formulation is Dupuy and Hilado's reading of Corollary 3.12 (arXiv 2004.13228, Inequality 1.0.1; arXiv 2004.13108, Theorem 7.5.1), not Mochizuki's statement.",
+      "arXiv 2004.13108 cites section 5 of version 1 of arXiv 2004.13228 for initial theta data; that version was not available, and Definition 2.4.1 of version 2 is used in its place."
+    ],
+    "scope": "model_test",
+    "lemmas": [
+      "IUT.Applications.DupuyHilado.dh_invariants_11a1",
+      "IUT.Applications.DupuyHilado.dh_congruence_11a1"
+    ]
+  },
+  "DH.PS.Lem7_7_1": {
+    "kind": "external_statement",
+    "parent": null,
+    "source": {
+      "authors": "Taylor Dupuy, Anton Hilado",
+      "title": "Probabilistic Szpiro, Baby Szpiro, and Explicit Szpiro from Mochizuki's Corollary 3.12",
+      "arxiv": "2004.13108",
+      "statement": "Lemma 7.7.1 and sections 7.7 to 7.9",
+      "pages_in_paper": "pages 25 and 26",
+      "pages_read": "located in the text layer of the arXiv PDF; the statement is not extracted here (see the fragments)"
+    },
+    "content": "Sections 7.7 to 7.9: Lemma 7.7.1 and the computations of II_p, III_p and IV_p, with the bounds (7.8), (7.11) and (7.12).",
+    "explicit_hypotheses": [],
+    "conclusion": "",
+    "results_used": [],
+    "lean_declaration": null,
+    "statement_status": "NOT_EXTRACTED",
+    "proof_status": "NOT_EXTRACTED",
+    "obligations": [],
+    "ambiguities": [
+      "The formulation is Dupuy and Hilado's reading of Corollary 3.12 (arXiv 2004.13228, Inequality 1.0.1; arXiv 2004.13108, Theorem 7.5.1), not Mochizuki's statement."
+    ],
+    "fragments": [
+      "DH.PS.Lem7_7_1.frag.dh_label_averages"
+    ]
+  },
+  "DH.PS.Lem7_7_1.frag.dh_label_averages": {
+    "kind": "fragment",
+    "parent": "DH.PS.Lem7_7_1",
+    "source": {
+      "pages_in_paper": "pages 25 and 26",
+      "pages_read": "formulation from the TeX source of the arXiv paper, checked against the rendered pages of the arXiv PDF"
+    },
+    "content": "Label averages for l = 2n + 1: (1/n) sum of j = (l+1)/4, (1/n) sum of (j+1) = (l+5)/4; Lemma 7.7.1 (1) in the form sum - M <= ((n-1)/n) sum for an upper bound M; the bound (7.11) on III_p; the correct upper bound on IV_p (display (7.12) prints the factor 1 - P^((l+1)/2)), ln(b) (1/n) sum (j+1)(1 - P^(j+1)) <= ((l+5)/4) ln(b)(1 - P^2) for ln b <= 0; ln b_p < 0 for x >= 2 and ln b_p <= -2 for x >= 16.",
+    "explicit_hypotheses": [
+      "1 <= n",
+      "0 <= P <= 1 where used",
+      "ln b <= 0 for the IV bound"
+    ],
+    "implicit_hypotheses": [],
+    "conclusion": "The displayed averages and bounds.",
+    "definitions_required": [],
+    "results_used": [],
+    "external_dependencies": [
+      "DuHi20: arXiv 2004.13108",
+      "DuHi20b: arXiv 2004.13228"
+    ],
+    "lean_declaration": "IUT.Applications.DupuyHilado.dh_avg_succ",
+    "covers": "Dupuy and Hilado, arXiv 2004.13108, sections 7.7 to 7.11 and Lemma 7.7.1 (1).",
+    "not_covered": "Lemma 7.7.1 (2) and the Jensen steps; the probability spaces; the hull radii these averages are applied to.",
+    "statement_status": "STATEMENT_FORMALIZED",
+    "proof_status": "KERNEL_VERIFIED",
+    "obligations": [],
+    "ambiguities": [
+      "The formulation is Dupuy and Hilado's reading of Corollary 3.12 (arXiv 2004.13228, Inequality 1.0.1; arXiv 2004.13108, Theorem 7.5.1), not Mochizuki's statement.",
+      "b_p, printed '1/exp(1) ln(p)', is read as (exp(1) ln p)^-1, the constant c_p of Lemma 4.2.1; then ln b_p < 0 for every prime. Under the parse (ln p)/exp(1), ln b_p < 0 only for p <= 13.",
+      "The range l >= 7 is an inference, not a statement of the papers: the authors state l >= 5 (arXiv 2004.13228, Definition 2.4.1 (5c)); the 30-torsion condition makes the mod 5 representation trivial, so l = 5 cannot satisfy rho_l(G_F) containing SL_2(F_l)."
+    ],
+    "lemmas": [
+      "IUT.Applications.DupuyHilado.dh_avg_id",
+      "IUT.Applications.DupuyHilado.dh_l1_sub_linf_le",
+      "IUT.Applications.DupuyHilado.dh_avg_one_sub_pow_le",
+      "IUT.Applications.DupuyHilado.dh_IV_bound",
+      "IUT.Applications.DupuyHilado.dh_log_bp_neg",
+      "IUT.Applications.DupuyHilado.dh_log_bp_le_neg_two",
+      "IUT.Applications.DupuyHilado.dh_avg_le_of_le",
+      "IUT.Applications.DupuyHilado.dh_card_Icc_one"
+    ]
+  },
+  "DH.PS.Eq7_12": {
+    "kind": "external_statement",
+    "parent": null,
+    "source": {
+      "authors": "Taylor Dupuy, Anton Hilado",
+      "title": "Probabilistic Szpiro, Baby Szpiro, and Explicit Szpiro from Mochizuki's Corollary 3.12",
+      "arxiv": "2004.13108",
+      "statement": "Display (7.12) and the step to the summand of A_{l,V} in the proof of Theorem 7.12.1",
+      "pages_in_paper": "pages 26 to 28",
+      "pages_read": "located in the text layer of the arXiv PDF; the statement is not extracted here (see the fragments)"
+    },
+    "content": "Display (7.12), page 26: an upper bound on IV_p; and the step of the proof of Theorem 7.12.1 (pages 27 and 28) from the four terms to the summand of A_{l,V}.",
+    "explicit_hypotheses": [],
+    "conclusion": "",
+    "results_used": [],
+    "lean_declaration": null,
+    "statement_status": "NOT_EXTRACTED",
+    "proof_status": "NOT_EXTRACTED",
+    "obligations": [],
+    "ambiguities": [
+      "The formulation is Dupuy and Hilado's reading of Corollary 3.12 (arXiv 2004.13228, Inequality 1.0.1; arXiv 2004.13108, Theorem 7.5.1), not Mochizuki's statement."
+    ],
+    "fragments": [
+      "DH.PS.Eq7_12.frag.dh_IV_printed_bound_fails"
+    ]
+  },
+  "DH.PS.Eq7_12.frag.dh_IV_printed_bound_fails": {
+    "kind": "fragment",
+    "parent": "DH.PS.Eq7_12",
+    "source": {
+      "pages_in_paper": "pages 26 to 28",
+      "pages_read": "formulation from the TeX source of the arXiv paper, checked against the rendered pages of the arXiv PDF"
+    },
+    "content": "With l = 7 (n = 3), P_unr = 1/2 and any ln b < 0, ln(b) times the average of (j+1)(1 - P^(j+1)) (the value of IV_p printed in section 7.9) is strictly larger than ((l+5)/4) ln(b)(1 - P^4), and also than ((l+5)/4) ln(b)(1 - P^(7.5)) with the real exponent l + 1/2 exactly as printed; with l = 7, P_unr = 9/10 and ln b <= -2 (every prime p >= 17), (4/(l+5)) times the average of (1 - P^(j+1))(1 + (j+1) ln b) (the printed III_p + IV_p after division) is strictly larger than the summand (1 - P^4)(ln b + 5/(l+4)) of A_{l,V}; at P_unr = 0 the latter bound holds for every l = 2n + 1.",
+    "explicit_hypotheses": [
+      "ln b < 0 (first statement)",
+      "ln b <= -2 (second statement)",
+      "1 <= n (third statement)"
+    ],
+    "implicit_hypotheses": [],
+    "conclusion": "Display (7.12) as printed does not hold at l = 7, P_unr = 1/2 under both readings of the exponent; the step from the four terms to the summand of A_{l,V} in the proof of Theorem 7.12.1 (not a numbered display), as printed, does not hold at l = 7, P_unr = 9/10, p >= 17; that step holds at P_unr = 0. Nothing is claimed about Theorem 7.12.1 or any other theorem of the paper.",
+    "definitions_required": [],
+    "results_used": [],
+    "external_dependencies": [
+      "DuHi20: arXiv 2004.13108",
+      "DuHi20b: arXiv 2004.13228"
+    ],
+    "lean_declaration": "IUT.Applications.DupuyHilado.dh_IV_printed_bound_fails",
+    "covers": "Dupuy and Hilado, arXiv 2004.13108, display (7.12) as printed (section 7.9, page 26), and the step from the four terms to the summand of A_{l,V} in the proof of Theorem 7.12.1 (pages 27 to 28), which is not a numbered display.",
+    "not_covered": "Whether values 0 < P_unr < 1 occur for curves in initial theta data (they need F_0 different from Q; for F_0 = Q, P_unr is 0 or 1); the case P_unr = 1; Theorem 7.12.1 itself.",
+    "statement_status": "STATEMENT_FORMALIZED",
+    "proof_status": "KERNEL_VERIFIED",
+    "obligations": [],
+    "ambiguities": [
+      "The formulation is Dupuy and Hilado's reading of Corollary 3.12 (arXiv 2004.13228, Inequality 1.0.1; arXiv 2004.13108, Theorem 7.5.1), not Mochizuki's statement.",
+      "b_p, printed '1/exp(1) ln(p)', is read as (exp(1) ln p)^-1, the constant c_p of Lemma 4.2.1; then ln b_p < 0 for every prime. Under the parse (ln p)/exp(1), ln b_p < 0 only for p <= 13.",
+      "The range l >= 7 is an inference, not a statement of the papers: the authors state l >= 5 (arXiv 2004.13228, Definition 2.4.1 (5c)); the 30-torsion condition makes the mod 5 representation trivial, so l = 5 cannot satisfy rho_l(G_F) containing SL_2(F_l).",
+      "arXiv 2004.13108 cites section 5 of version 1 of arXiv 2004.13228 for initial theta data; that version was not available, and Definition 2.4.1 of version 2 is used in its place.",
+      "The exponent is printed verbatim as l+1/2 in (7.12), Theorem 1.0.3 and the first display of the proof of Theorem 7.12.1, and as (l+1)/2 in (7.11) and (7.15); the module reads it as (l+1)/2 = n + 1. That display (7.12), as printed, does not hold is proved under both readings (dh_IV_printed_bound_fails, dh_IV_printed_exponent_bound_fails)."
+    ],
+    "scope": "model_test",
+    "lemmas": [
+      "IUT.Applications.DupuyHilado.dh_IV_printed_exponent_bound_fails",
+      "IUT.Applications.DupuyHilado.dh_combined_bound_fails",
+      "IUT.Applications.DupuyHilado.dh_combined_bound_P_zero"
+    ]
+  },
+  "DH.PS.Thm7_12_1": {
+    "kind": "external_statement",
+    "parent": null,
+    "source": {
+      "authors": "Taylor Dupuy, Anton Hilado",
+      "title": "Probabilistic Szpiro, Baby Szpiro, and Explicit Szpiro from Mochizuki's Corollary 3.12",
+      "arxiv": "2004.13108",
+      "statement": "Theorem 7.12.1 (Probabilistic Szpiro)",
+      "pages_in_paper": "pages 27 and 28",
+      "pages_read": "located in the text layer of the arXiv PDF; the statement is not extracted here (see the fragments)"
+    },
+    "content": "Theorem 7.12.1 (Probabilistic Szpiro), stated by the authors under the assumption of Corollary 3.12 and of their Claim 5.0.1, with display (7.15).",
+    "explicit_hypotheses": [],
+    "conclusion": "",
+    "results_used": [],
+    "lean_declaration": null,
+    "statement_status": "NOT_EXTRACTED",
+    "proof_status": "NOT_EXTRACTED",
+    "obligations": [],
+    "ambiguities": [
+      "The formulation is Dupuy and Hilado's reading of Corollary 3.12 (arXiv 2004.13228, Inequality 1.0.1; arXiv 2004.13108, Theorem 7.5.1), not Mochizuki's statement."
+    ],
+    "fragments": [
+      "DH.PS.Thm7_12_1.frag.dh_probSzpiro_of_intermediate"
+    ]
+  },
+  "DH.PS.Thm7_12_1.frag.dh_probSzpiro_of_intermediate": {
+    "kind": "fragment",
+    "parent": "DH.PS.Thm7_12_1",
+    "source": {
+      "pages_in_paper": "pages 27 and 28",
+      "pages_read": "formulation from the TeX source of the arXiv paper, checked against the rendered pages of the arXiv PDF"
+    },
+    "content": "Real arithmetic of one step, with its inputs not constructed. For l = 2n + 1 >= 5, a finite set S of primes, real numbers X, dq, dθ, logDiff >= 0, and functions Punr, logb, loge on primes with 0 <= Punr p <= 1 on S: if dθ = (l(l+1)/12) dq, dq = X/(2l), and the real inequality hinter holds, then (1/(6 + eps_l)) X <= logDiff + sum loge + ln(pi) + sum (1 - Punr^((l+1)/2))(logb + 5/(l+4)), eps_l = 24(l+3)/(l^2+l-12); with the coefficient identity (l(l+1)/12 - 1)(1/2l)(4/(l+5)) = 1/(6 + eps_l).",
+    "explicit_hypotheses": [
+      "2 <= n, l = 2n + 1",
+      "S a finite set of primes; Punr, logb, loge functions on primes",
+      "0 <= Punr p <= 1 on S",
+      "0 <= logDiff",
+      "hθ: dθ = l(l+1)/12 * dq",
+      "hq: dq = X/(2l)",
+      "hinter: the first display of the proof of Theorem 7.12.1 (page 28, unnumbered), with the exponent printed l+1/2 read as (l+1)/2 = n + 1"
+    ],
+    "implicit_hypotheses": [],
+    "conclusion": "A real inequality in these variables, of the shape of display (7.15) of Theorem 7.12.1 as printed (with 5/(l+4)); no term is constructed from an elliptic curve.",
+    "definitions_required": [],
+    "results_used": [],
+    "external_dependencies": [
+      "DuHi20: arXiv 2004.13108",
+      "DuHi20b: arXiv 2004.13228"
+    ],
+    "lean_declaration": "IUT.Applications.DupuyHilado.dh_probSzpiro_of_intermediate",
+    "covers": "Dupuy and Hilado, arXiv 2004.13108, proof of Theorem 7.12.1 (Probabilistic Szpiro): the algebra after the first display.",
+    "not_covered": "Theorem 7.5.1, Lemma 6.3.1, Claim 5.0.1 and the bounds (7.6), (7.8), (7.11), (7.12), (7.14) that produce the intermediate display; display (3.2).",
+    "statement_status": "STATEMENT_FORMALIZED",
+    "proof_status": "CONDITIONALLY_VERIFIED",
+    "obligations": [
+      "hinter stands for the first display of the proof of Theorem 7.12.1 (page 28, unnumbered), which the authors derive from their Theorem 7.5.1 (their form of Corollary 3.12), Lemma 6.3.1, Claim 5.0.1 and the bounds (7.6), (7.8), (7.11), (7.12), (7.14); not constructed here",
+      "hq stands for display (3.2), deg(P_q) = ln|Delta^min_{E/F}|/(2l[F:Q]), from Tate uniformization, Ogg's formula and Lemma 3.6.1; not constructed here",
+      "hθ stands for the pilot relation below display (3.3), proved for pilot degrees computed from data in DH.PS.Sec3_8.PilotRelation.frag.dhThetaPilotLgp_eq_mul_qPilot; not constructed here from an elliptic curve"
+    ],
+    "ambiguities": [
+      "The formulation is Dupuy and Hilado's reading of Corollary 3.12 (arXiv 2004.13228, Inequality 1.0.1; arXiv 2004.13108, Theorem 7.5.1), not Mochizuki's statement.",
+      "hP0, hP1 (0 <= P_unr,p <= 1) and hD (ln Diff >= 0) hold by definition and are not displays of the paper; no hypothesis restates the conclusion.",
+      "The exponent is printed verbatim as l+1/2 in (7.12), Theorem 1.0.3 and the first display of the proof of Theorem 7.12.1, and as (l+1)/2 in (7.11) and (7.15); the module reads it as (l+1)/2 = n + 1. That display (7.12), as printed, does not hold is proved under both readings (dh_IV_printed_bound_fails, dh_IV_printed_exponent_bound_fails).",
+      "arXiv 2004.13108 cites section 5 of version 1 of arXiv 2004.13228 for initial theta data; that version was not available, and Definition 2.4.1 of version 2 is used in its place."
+    ],
+    "lemmas": [
+      "IUT.Applications.DupuyHilado.dh_coeff_six"
+    ]
+  },
+  "DH.PS.Thm7_13_1": {
+    "kind": "external_statement",
+    "parent": null,
+    "source": {
+      "authors": "Taylor Dupuy, Anton Hilado",
+      "title": "Probabilistic Szpiro, Baby Szpiro, and Explicit Szpiro from Mochizuki's Corollary 3.12",
+      "arxiv": "2004.13108",
+      "statement": "Theorem 7.13.1 (Baby Szpiro)",
+      "pages_in_paper": "pages 28 and 29",
+      "pages_read": "located in the text layer of the arXiv PDF; the statement is not extracted here (see the fragments)"
+    },
+    "content": "Theorem 7.13.1 (Baby Szpiro), stated by the authors under the assumption of Corollary 3.12 and of their Claim 5.0.1, with its proof on page 29.",
+    "explicit_hypotheses": [],
+    "conclusion": "",
+    "results_used": [],
+    "lean_declaration": null,
+    "statement_status": "NOT_EXTRACTED",
+    "proof_status": "NOT_EXTRACTED",
+    "obligations": [],
+    "ambiguities": [
+      "The formulation is Dupuy and Hilado's reading of Corollary 3.12 (arXiv 2004.13228, Inequality 1.0.1; arXiv 2004.13108, Theorem 7.5.1), not Mochizuki's statement."
+    ],
+    "fragments": [
+      "DH.PS.Thm7_13_1.frag.dh_baby_final_step",
+      "DH.PS.Thm7_13_1.frag.dh_SL2_card_values",
+      "DH.PS.Thm7_13_1.frag.dh_omega_printed_bound_fails"
+    ]
+  },
+  "DH.PS.Thm7_13_1.frag.dh_baby_final_step": {
+    "kind": "fragment",
+    "parent": "DH.PS.Thm7_13_1",
+    "source": {
+      "pages_in_paper": "page 29",
+      "pages_read": "formulation from the TeX source of the arXiv paper, checked against the rendered pages of the arXiv PDF"
+    },
+    "content": "For D, d >= e^8: ln(Dd) + ln D ln d + ln D <= (ln D + 2)(ln d + 2) <= ln(d^(5/4)) ln(D^(5/4)); e^8 < 6840.",
+    "explicit_hypotheses": [
+      "exp 8 <= D, exp 8 <= d"
+    ],
+    "implicit_hypotheses": [],
+    "conclusion": "The displayed inequalities and numerical facts.",
+    "definitions_required": [],
+    "results_used": [],
+    "external_dependencies": [
+      "DuHi20: arXiv 2004.13108",
+      "DuHi20b: arXiv 2004.13228"
+    ],
+    "lean_declaration": "IUT.Applications.DupuyHilado.dh_baby_final_step",
+    "covers": "Dupuy and Hilado, arXiv 2004.13108, proof of Theorem 7.13.1 (Baby Szpiro), page 29: the last display, which needs only D, d >= e^8.",
+    "not_covered": "The three bounds on ln Diff, sum ln e_p and the ramification term; that [K:Q] and |Disc(K/Q)| exceed e^8; Theorem 7.12.1 itself.",
+    "statement_status": "STATEMENT_FORMALIZED",
+    "proof_status": "KERNEL_VERIFIED",
+    "obligations": [],
+    "ambiguities": [
+      "The formulation is Dupuy and Hilado's reading of Corollary 3.12 (arXiv 2004.13228, Inequality 1.0.1; arXiv 2004.13108, Theorem 7.5.1), not Mochizuki's statement."
+    ],
+    "lemmas": [
+      "IUT.Applications.DupuyHilado.dh_exp_eight_lt"
+    ]
+  },
+  "DH.PS.Thm7_13_1.frag.dh_SL2_card_values": {
+    "kind": "fragment",
+    "parent": "DH.PS.Thm7_13_1",
+    "source": {
+      "pages_in_paper": "page 29",
+      "pages_read": "formulation from the TeX source of the arXiv paper, checked against the rendered pages of the arXiv PDF"
+    },
+    "content": "Arithmetic only: l(l^2 - 1) equals 120, 336, 1320, 2184, 4896, 6840 at l = 5, 7, 11, 13, 17, 19 and is below 6840 for every l <= 18; the formula |SL_2(F_l)| = l(l^2 - 1) is not proved here.",
+    "explicit_hypotheses": [],
+    "implicit_hypotheses": [],
+    "conclusion": "The displayed values and the bound.",
+    "definitions_required": [],
+    "results_used": [],
+    "external_dependencies": [
+      "DuHi20: arXiv 2004.13108",
+      "DuHi20b: arXiv 2004.13228"
+    ],
+    "lean_declaration": "IUT.Applications.DupuyHilado.dh_SL2_card_values",
+    "covers": "Dupuy and Hilado, arXiv 2004.13108, proof of Theorem 7.13.1, page 29: the claim 'D, d >= SL_2(F_l) >= 6840' as printed; its group-order part, read as l(l^2 - 1) >= 6840, does not hold for l = 7, 11, 13, 17 inside the range l >= 7 (including l = 13 of the 11a1 example). This concerns that printed claim only.",
+    "not_covered": "The formula |SL_2(F_l)| = l(l^2 - 1); whether [K:Q] and |Disc(K/Q)| are at least e^8 for every curve (the step needs only that); whether the conclusion depends on the printed claim beyond that, not determined.",
+    "statement_status": "STATEMENT_FORMALIZED",
+    "proof_status": "KERNEL_VERIFIED",
+    "obligations": [],
+    "ambiguities": [
+      "The formulation is Dupuy and Hilado's reading of Corollary 3.12 (arXiv 2004.13228, Inequality 1.0.1; arXiv 2004.13108, Theorem 7.5.1), not Mochizuki's statement.",
+      "The range l >= 7 is an inference, not a statement of the papers: the authors state l >= 5 (arXiv 2004.13228, Definition 2.4.1 (5c)); the 30-torsion condition makes the mod 5 representation trivial, so l = 5 cannot satisfy rho_l(G_F) containing SL_2(F_l)."
+    ],
+    "lemmas": [],
+    "scope": "model_test"
+  },
+  "DH.PS.Thm7_13_1.frag.dh_omega_printed_bound_fails": {
+    "kind": "fragment",
+    "parent": "DH.PS.Thm7_13_1",
+    "source": {
+      "pages_in_paper": "page 29",
+      "pages_read": "formulation from the TeX source of the arXiv paper, checked against the rendered pages of the arXiv PDF"
+    },
+    "content": "The bound omega(N) <= ln N/ln^2 N as printed in the proof of Theorem 7.13.1 does not hold: with ln^2 N = (ln N)^2 for every N >= 3, for both the divisor count and the number of distinct prime factors; with ln^2 N = ln ln N at N = 210.",
+    "explicit_hypotheses": [
+      "3 <= N (first reading)"
+    ],
+    "implicit_hypotheses": [],
+    "conclusion": "ln N/(ln N)^2 < card of divisors and of prime factors of N; ln 210/ln ln 210 < card of prime factors and of divisors of 210.",
+    "definitions_required": [],
+    "results_used": [],
+    "external_dependencies": [
+      "DuHi20: arXiv 2004.13108",
+      "DuHi20b: arXiv 2004.13228"
+    ],
+    "lean_declaration": "IUT.Applications.DupuyHilado.dh_omega_printed_bound_fails",
+    "covers": "Dupuy and Hilado, arXiv 2004.13108, proof of Theorem 7.13.1, page 29: the bound omega(N) <= ln(N)/ln^2(N) as printed, with omega printed as the number of divisors.",
+    "not_covered": "The next step needs only omega(D) <= ln D; for the number of distinct prime factors this holds for D >= 7 (not formalized), for the number of divisors it fails (D = 12). So the conclusion does not rest on the printed bound, as far as the text shows, if omega counts distinct prime factors.",
+    "statement_status": "STATEMENT_FORMALIZED",
+    "proof_status": "KERNEL_VERIFIED",
+    "obligations": [],
+    "ambiguities": [
+      "The formulation is Dupuy and Hilado's reading of Corollary 3.12 (arXiv 2004.13228, Inequality 1.0.1; arXiv 2004.13108, Theorem 7.5.1), not Mochizuki's statement.",
+      "ln^2(N) may mean (ln N)^2 or ln ln N; the printed bound does not hold under either reading."
+    ],
+    "lemmas": [
+      "IUT.Applications.DupuyHilado.dh_omega_loglog_bound_fails"
+    ],
+    "scope": "model_test"
+  },
+  "DH.PS.Thm8_2_1": {
+    "kind": "external_statement",
+    "parent": null,
+    "source": {
+      "authors": "Taylor Dupuy, Anton Hilado",
+      "title": "Probabilistic Szpiro, Baby Szpiro, and Explicit Szpiro from Mochizuki's Corollary 3.12",
+      "arxiv": "2004.13108",
+      "statement": "Theorem 8.2.1 (Explicit Szpiro) and Lemma 8.1.1",
+      "pages_in_paper": "pages 30 to 35",
+      "pages_read": "located in the text layer of the arXiv PDF; the statement is not extracted here (see the fragments)"
+    },
+    "content": "Lemma 8.1.1 (page 30) and Theorem 8.2.1 (Explicit Szpiro, page 31) with its proof (pages 31 to 35), stated by the authors under the assumption of Corollary 3.12 and of their Claim 5.0.1.",
+    "explicit_hypotheses": [],
+    "conclusion": "",
+    "results_used": [],
+    "lean_declaration": null,
+    "statement_status": "NOT_EXTRACTED",
+    "proof_status": "NOT_EXTRACTED",
+    "obligations": [],
+    "ambiguities": [
+      "The formulation is Dupuy and Hilado's reading of Corollary 3.12 (arXiv 2004.13228, Inequality 1.0.1; arXiv 2004.13108, Theorem 7.5.1), not Mochizuki's statement."
+    ],
+    "fragments": [
+      "DH.PS.Thm8_2_1.frag.dh_explicit_szpiro_steps"
+    ]
+  },
+  "DH.PS.Thm8_2_1.frag.dh_explicit_szpiro_steps": {
+    "kind": "fragment",
+    "parent": "DH.PS.Thm8_2_1",
+    "source": {
+      "pages_in_paper": "pages 30 to 35",
+      "pages_read": "formulation from the TeX source of the arXiv paper, checked against the rendered pages of the arXiv PDF"
+    },
+    "content": "Real arithmetic of single steps, with their inputs not constructed. Group-order arithmetic: |GL_2(F_l)| <= l^4, 48 * 480 = 23040, 23040 * 12 = 276480; the coefficient identity with 24 + eps_l, eps_l = 96(l+3)/(l^2+l-12); for real numbers standing for the terms of (8.9) and of the three place estimates, the real inequality of the shape of (8.10), with the +1 of the small places carried and absorbed using ln B >= 1/2; for real numbers B = l^4 d_1 d_0 (d_1 = 276480), [F:Q] and pi(B) satisfying Dusart's bound at x = B, (ln B pi(B) + ln pi)[F:Q] <= d_1^2 (1 + 1.3/ln d_1) d_0^2 l^4 + d_1 ln(pi) d_0; and the exponentiation |Delta| <= exp((24 + eps) C)(|Cond| |Disc|)^(24 + eps) for positive reals.",
+    "explicit_hypotheses": [
+      "5 <= l, 0 < [F:Q], 0 <= pi(B), 1/2 <= ln B (pre-result)",
+      "hred: (8.9) with the pilot relations substituted (page 35); hsmall: the penultimate line of the proof of (8.7), with +1 (page 34); hlarge: the coefficient (l+5)/2 that ends the proof of (8.4) (the printed (8.4) has (l+5)/4), with (8.5); hinf: (8.3)",
+      "1 <= l, 1 <= d_0, 0 <= [F:Q] <= 276480 d_0, B = l^4 276480 d_0 (constant)",
+      "hDusart: display (8.8) at x = B, pi(B) <= (B/ln B)(1 + 1.3/ln B)",
+      "0 < Delta, Cond, Disc and 0 < 24 + eps (exponentiation)"
+    ],
+    "implicit_hypotheses": [],
+    "conclusion": "Real inequalities in these variables, of the shapes of display (8.10), the constant bound of the last display of page 35 and the exponentiation; no term is constructed from an elliptic curve or a number field.",
+    "definitions_required": [],
+    "results_used": [],
+    "external_dependencies": [
+      "DuHi20: arXiv 2004.13108",
+      "DuHi20b: arXiv 2004.13228"
+    ],
+    "lean_declaration": "IUT.Applications.DupuyHilado.dh_explicit_pre_result",
+    "covers": "Dupuy and Hilado, arXiv 2004.13108, Lemma 8.1.1 (group orders) and the final algebra of the proof of Theorem 8.2.1, displays (8.9), (8.10) and the last display of page 35.",
+    "not_covered": "The place estimates themselves (Neron-Ogg-Shafarevich, the different formula, Lemma 8.1.2), Theorem 7.5.1, Claim 5.0.1, the decimal values A_0 and B_0 (ceilings of the two coefficients, checked numerically only). Lemma 4.2.3 is stated in the paper with proofs omitted; the result on ind3 is cited to an unresolved reference.",
+    "statement_status": "STATEMENT_FORMALIZED",
+    "proof_status": "CONDITIONALLY_VERIFIED",
+    "obligations": [
+      "hred stands for display (8.9), which the authors derive from their Theorem 7.5.1 (their form of Corollary 3.12) and Claim 5.0.1 via the estimate (7.4); not constructed here",
+      "hsmall, hlarge, hinf stand for the small, large and infinite place estimates (8.7), (8.4) (with the coefficient (l+5)/2 of its proof) and (8.5), (8.3) of sections 8.3 to 8.5; not constructed here",
+      "hDusart stands for Dusart's bound pi(x) <= (x/ln x)(1 + 1.3/ln x) at x = B (Dusart, Ramanujan J. 45 (2018)), which is not in Mathlib"
+    ],
+    "ambiguities": [
+      "The formulation is Dupuy and Hilado's reading of Corollary 3.12 (arXiv 2004.13228, Inequality 1.0.1; arXiv 2004.13108, Theorem 7.5.1), not Mochizuki's statement.",
+      "Exponentiating (8.10) gives the prefactor exp((24 + eps_l)(A_0 d_0^2 l^4 + B_0 d_0)); display (8.1) prints exp(A_0 d_0^2 l^4 + B_0 d_0). The record concerns the exponentiation step only, not Theorem 8.2.1.",
+      "The printed last line of the proof of (8.7) drops the +1 of the line above it; the hypothesis keeps it.",
+      "The middle expression of the last display on page 35 multiplies ln(pi) by l^4 d_0; the final line A_0 d_0^2 l^4 + B_0 d_0 follows from the form proved here, not from that expression.",
+      "B is also defined as 2 d_0 #GL_2(Z/30l) on page 31; the theorem uses B = l^4 276480 d_0 (Lemma 8.1.1, page 35)."
+    ],
+    "lemmas": [
+      "IUT.Applications.DupuyHilado.dh_GL2_card_le",
+      "IUT.Applications.DupuyHilado.dh_coeff_twentyfour",
+      "IUT.Applications.DupuyHilado.dh_explicit_constant",
+      "IUT.Applications.DupuyHilado.dh_explicit_exp"
+    ]
+  }
+}

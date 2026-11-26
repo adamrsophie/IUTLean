@@ -22,7 +22,9 @@ Pages read for this file: IUT III pages 23, 24, 31 and 32; IUT IV pages 9, 10 an
 checked against rendered images: the same.
 
 This file is a prerequisite for log-shells over `ℚ_p` only. Finite extensions of `ℚ_p`, tensor
-products of rings of integers, and the Frobenioid-theoretic setting of IUT III are not treated.
+products of rings of integers, and the Frobenioid-theoretic setting of IUT III are not treated
+here; the logarithm on a finite extension of `ℚ_p` is in
+`IUT/PaperIV/LocalFields/Logarithm.lean`.
 It does not formalize IUT III Definition 1.1, IUT III Proposition 1.2 or IUT IV Proposition 1.2;
 it proves, for the base field `k = ℚ_p` (so `e = 1`, `R = ℤ_p`), the facts about the logarithm on
 which they rest.

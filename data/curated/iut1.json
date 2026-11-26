@@ -315,10 +315,146 @@
     "statement_status": "BLOCKED_BY_MATHLIB",
     "proof_status": "NOT_EXTRACTED",
     "obligations": [
-      "Semi-graphs of anabelioids and tempered groups are not in Mathlib."
+      "Semi-graphs of anabelioids and tempered groups are not in Mathlib. This library defines semi-graphs, connected anabelioids and semi-graphs of anabelioids (the fragments of this record and of IUT1.Prop2_2); morphisms of semi-graphs of anabelioids, the groups Pi_v, tempered groups in this setting and the statement itself are not formalized."
     ],
     "ambiguities": [
       "Read at the level of statements only; proofs not checked."
+    ],
+    "fragments": [
+      "IUT1.Prop2_1.frag.finite_g_sets",
+      "IUT1.Prop2_1.frag.connected_anabelioid",
+      "IUT1.Prop2_1.frag.anabelioid_morphism",
+      "IUT1.Prop2_1.frag.semi_graph_of_anabelioids"
+    ]
+  },
+  "IUT1.Prop2_1.frag.finite_g_sets": {
+    "kind": "fragment",
+    "parent": "IUT1.Prop2_1",
+    "source": {
+      "paper": "Inter-universal Teichmuller Theory I",
+      "pdf_pages": "pages 44 to 45",
+      "pages_read": "IUT I pages 44 and 45 (rendered images); The Geometry of Anabelioids pages 9 to 11 (rendered images); Semi-graphs of Anabelioids pages 7, 8, 22 and 23 (rendered images); Comments on Semi-graphs of Anabelioids (text layer, all pages; pages 3 and 7 rendered)",
+      "pages_in_paper": "The Geometry of Anabelioids pages 9 to 11; Semi-graphs of Anabelioids pages 7, 8, 22 and 23"
+    },
+    "content": "Definition: B(G), for a profinite group G, is Mathlib's category of finite sets with the discrete topology and continuous G-action. Theorem: B(G) is a Galois category in the sense of Mathlib (proof by Mathlib).",
+    "explicit_hypotheses": [],
+    "implicit_hypotheses": [],
+    "conclusion": "A definition and one theorem, proved.",
+    "definitions_required": [],
+    "results_used": [],
+    "external_dependencies": [
+      "[Mzk4] (The Geometry of Anabelioids) Section 1.1"
+    ],
+    "lean_declaration": "IUT.Prerequisites.FiniteGSets",
+    "lemmas": [
+      "IUT.Prerequisites.finiteGSets_galoisCategory"
+    ],
+    "covers": "The Geometry of Anabelioids page 9, the definition of B(G) and the sentence calling it a Galois category.",
+    "not_covered": "That B(G) is a topos; the choice of a universe V and a V-small category of finite sets (replaced by Lean universes).",
+    "statement_status": "STATEMENT_FORMALIZED",
+    "proof_status": "NOT_EXTRACTED",
+    "obligations": [],
+    "ambiguities": [
+      "The category uses Mathlib's scoped discrete topology on finite types, referred to by its instance name because the namespace is not opened."
+    ]
+  },
+  "IUT1.Prop2_1.frag.connected_anabelioid": {
+    "kind": "fragment",
+    "parent": "IUT1.Prop2_1",
+    "source": {
+      "paper": "Inter-universal Teichmuller Theory I",
+      "pdf_pages": "pages 44 to 45",
+      "pages_read": "IUT I pages 44 and 45 (rendered images); The Geometry of Anabelioids pages 9 to 11 (rendered images); Semi-graphs of Anabelioids pages 7, 8, 22 and 23 (rendered images); Comments on Semi-graphs of Anabelioids (text layer, all pages; pages 3 and 7 rendered)",
+      "pages_in_paper": "The Geometry of Anabelioids pages 9 to 11; Semi-graphs of Anabelioids pages 7, 8, 22 and 23"
+    },
+    "content": "Definition: a category is a connected anabelioid if it is equivalent to B(G) for some profinite group G (with fixed universe levels). Theorems: B(G) is a connected anabelioid; every Galois category in the sense of Mathlib is a connected anabelioid (via Mathlib's equivalence with finite continuous Aut F-sets of a fiber functor F). Definitions: a bundled connected anabelioid; the full subcategory of objects connected in the sense of Mathlib's Galois categories.",
+    "explicit_hypotheses": [],
+    "implicit_hypotheses": [],
+    "conclusion": "Definitions with two theorems, proved.",
+    "definitions_required": [],
+    "results_used": [],
+    "external_dependencies": [
+      "[Mzk4] (The Geometry of Anabelioids) Section 1.1"
+    ],
+    "lean_declaration": "IUT.Prerequisites.IsConnectedAnabelioid",
+    "lemmas": [
+      "IUT.Prerequisites.finiteGSets_isConnectedAnabelioid",
+      "IUT.Prerequisites.isConnectedAnabelioid_of_galoisCategory",
+      "IUT.Prerequisites.ConnectedAnabelioid",
+      "IUT.Prerequisites.finiteGSetsConnectedAnabelioid",
+      "IUT.Prerequisites.connectedObjectSubcategory"
+    ],
+    "covers": "The Geometry of Anabelioids page 9: Definition 1.1.1 and one direction of Remark 1.1.1.1 (a Galois category is a connected anabelioid).",
+    "not_covered": "The converse of Remark 1.1.1.1 (a connected anabelioid is a Galois category; Mathlib has no transport of GaloisCategory along an equivalence); agreement of Mathlib's connected objects with the definition on Semi-graphs of Anabelioids page 7; anabelioids that are not connected; Example 1.1.3.",
+    "statement_status": "STATEMENT_FORMALIZED",
+    "proof_status": "NOT_EXTRACTED",
+    "obligations": [],
+    "ambiguities": [
+      "Universes: the paper fixes one Grothendieck universe; here B(G) for G in universe u uses finite types in universe w and the predicate fixes both levels.",
+      "Connected objects use Mathlib's PreGaloisCategory.IsConnected (not initial, no proper non-initial subobject), not the wording of Semi-graphs of Anabelioids page 7 (not a coproduct of two nonempty objects).",
+      "The same declarations also serve IUT1.Prop2_2 (and, through the notation of IUT I Section 2, Corollary 2.5 and Theorem B, whose pages were not read for these records)."
+    ]
+  },
+  "IUT1.Prop2_1.frag.anabelioid_morphism": {
+    "kind": "fragment",
+    "parent": "IUT1.Prop2_1",
+    "source": {
+      "paper": "Inter-universal Teichmuller Theory I",
+      "pdf_pages": "pages 44 to 45",
+      "pages_read": "IUT I pages 44 and 45 (rendered images); The Geometry of Anabelioids pages 9 to 11 (rendered images); Semi-graphs of Anabelioids pages 7, 8, 22 and 23 (rendered images); Comments on Semi-graphs of Anabelioids (text layer, all pages; pages 3 and 7 rendered)",
+      "pages_in_paper": "The Geometry of Anabelioids pages 9 to 11; Semi-graphs of Anabelioids pages 7, 8, 22 and 23"
+    },
+    "content": "Definitions: a morphism X to Y of connected anabelioids is an exact functor (Mathlib's ExactFunctor: preserving finite limits and finite colimits) from Y to X; it is an isomorphism when that functor is an equivalence; a basepoint is an exact functor to finite sets; the fundamental group of a basepoint is the automorphism group of its functor.",
+    "explicit_hypotheses": [],
+    "implicit_hypotheses": [],
+    "conclusion": "Definitions.",
+    "definitions_required": [],
+    "results_used": [],
+    "external_dependencies": [
+      "[Mzk4] (The Geometry of Anabelioids) Section 1.1"
+    ],
+    "lean_declaration": "IUT.Prerequisites.AnabelioidMorphism",
+    "lemmas": [
+      "IUT.Prerequisites.AnabelioidMorphism.IsIsomorphism",
+      "IUT.Prerequisites.AnabelioidBasepoint",
+      "IUT.Prerequisites.basepointFundamentalGroup"
+    ],
+    "covers": "The Geometry of Anabelioids page 10, Definition 1.1.2 (i) and (ii).",
+    "not_covered": "The 2-categorical structure (Remark 1.1.2.1); recovery of G as Aut of a fundamental functor, uniqueness of fundamental functors up to isomorphism (page 9), independence of the fundamental group of the basepoint (Remark 1.1.2.2), Proposition 1.1.4.",
+    "statement_status": "STATEMENT_FORMALIZED",
+    "proof_status": "NOT_EXTRACTED",
+    "obligations": [],
+    "ambiguities": []
+  },
+  "IUT1.Prop2_1.frag.semi_graph_of_anabelioids": {
+    "kind": "fragment",
+    "parent": "IUT1.Prop2_1",
+    "source": {
+      "paper": "Inter-universal Teichmuller Theory I",
+      "pdf_pages": "pages 44 to 45",
+      "pages_read": "IUT I pages 44 and 45 (rendered images); The Geometry of Anabelioids pages 9 to 11 (rendered images); Semi-graphs of Anabelioids pages 7, 8, 22 and 23 (rendered images); Comments on Semi-graphs of Anabelioids (text layer, all pages; pages 3 and 7 rendered)",
+      "pages_in_paper": "The Geometry of Anabelioids pages 9 to 11; Semi-graphs of Anabelioids pages 7, 8, 22 and 23"
+    },
+    "content": "Definition: a semi-graph of anabelioids over a semi-graph assigns a connected anabelioid to each vertex and each edge and, to each branch b of an edge e abutting to a vertex v, a morphism of anabelioids from the anabelioid of e to that of v, that is, an exact functor from the anabelioid of v to that of e. Example: on any semi-graph, the constant semi-graph of anabelioids with every constituent B(G) and identity branch functors.",
+    "explicit_hypotheses": [],
+    "implicit_hypotheses": [],
+    "conclusion": "A definition and a nonvacuity example.",
+    "definitions_required": [],
+    "results_used": [],
+    "external_dependencies": [
+      "[SemiAnbd] Definition 2.1"
+    ],
+    "lean_declaration": "IUT.Prerequisites.SemiGraphOfAnabelioids",
+    "lemmas": [
+      "IUT.Prerequisites.constantSemiGraphOfAnabelioids"
+    ],
+    "covers": "Semi-graphs of Anabelioids page 22, Definition 2.1 (a) to (c): the object G of the discussion preceding Proposition 2.1 of IUT I (page 44), without the PSC-type condition.",
+    "not_covered": "Morphisms of semi-graphs of anabelioids, injective type, graphs of anabelioids, B of a semi-graph of anabelioids, the groups Pi_G, Pi_v, Pi_b (pages 22 and 23); Remark 2.4.2 and its correction in item (9) of the comments; semi-graphs of anabelioids of pro-Sigma PSC-type. Of Proposition 2.1: tempered and profinite fundamental groups, compact subgroups, the conclusion.",
+    "statement_status": "STATEMENT_FORMALIZED",
+    "proof_status": "NOT_EXTRACTED",
+    "obligations": [],
+    "ambiguities": [
+      "The same declarations also serve IUT1.Prop2_2 (and, through the notation of IUT I Section 2, Corollary 2.5 and Theorem B, whose pages were not read for these records)."
     ]
   },
   "IUT1.Prop2_2": {
@@ -345,11 +481,221 @@
     "statement_status": "BLOCKED_BY_MATHLIB",
     "proof_status": "NOT_EXTRACTED",
     "obligations": [
-      "Semi-graphs of anabelioids and tempered groups are not in Mathlib."
+      "Semi-graphs of anabelioids and tempered groups are not in Mathlib. This library defines semi-graphs, connected anabelioids and semi-graphs of anabelioids (the fragments of this record and of IUT1.Prop2_1); morphisms of semi-graphs of anabelioids, the groups Pi_v, tempered groups in this setting and the statement itself are not formalized."
     ],
     "ambiguities": [
       "Read at the level of statements only; proofs not checked."
+    ],
+    "fragments": [
+      "IUT1.Prop2_2.frag.semi_graph",
+      "IUT1.Prop2_2.frag.semi_graph_morphism",
+      "IUT1.Prop2_2.frag.sub_semi_graph",
+      "IUT1.Prop2_2.frag.compactification",
+      "IUT1.Prop2_2.frag.semi_graph_examples"
     ]
+  },
+  "IUT1.Prop2_2.frag.semi_graph": {
+    "kind": "fragment",
+    "parent": "IUT1.Prop2_2",
+    "source": {
+      "paper": "Inter-universal Teichmuller Theory I",
+      "pdf_pages": "pages 44 to 45",
+      "pages_read": "IUT I pages 44 and 45 (rendered images); Semi-graphs of Anabelioids pages 11 to 14 (rendered images); Comments on Semi-graphs of Anabelioids (text layer, all pages; pages 3 and 7 rendered)",
+      "pages_in_paper": "Semi-graphs of Anabelioids pages 11 to 14"
+    },
+    "content": "Definition: a semi-graph is a type of vertices, a type of edges, a type of branches with a map to edges whose every fiber has exactly two elements, and a coincidence map sending each branch to the vertex it abuts to or to none. Further definitions: an edge abuts to a vertex; verticial cardinality; graphs; finite and countable semi-graphs; components; an edge joins two vertices; closed, open and isolated edges; coverticial edges; locally finite and untangled semi-graphs; the incidence graph and connectedness through it; joints. Lemmas: the branches of an edge form a finite type; verticial cardinality is at most two; in a graph every edge abuts to a vertex.",
+    "explicit_hypotheses": [],
+    "implicit_hypotheses": [],
+    "conclusion": "Definitions with elementary lemmas, all proved.",
+    "definitions_required": [],
+    "results_used": [],
+    "external_dependencies": [
+      "[SemiAnbd] Section 1"
+    ],
+    "lean_declaration": "IUT.Prerequisites.SemiGraph",
+    "lemmas": [
+      "IUT.Prerequisites.SemiGraph.EdgeAbutsTo",
+      "IUT.Prerequisites.SemiGraph.verticialCard",
+      "IUT.Prerequisites.SemiGraph.IsGraph",
+      "IUT.Prerequisites.SemiGraph.IsFiniteSemiGraph",
+      "IUT.Prerequisites.SemiGraph.IsCountableSemiGraph",
+      "IUT.Prerequisites.SemiGraph.SemiGraphComponent",
+      "IUT.Prerequisites.SemiGraph.Joins",
+      "IUT.Prerequisites.SemiGraph.IsClosedEdge",
+      "IUT.Prerequisites.SemiGraph.IsOpenEdge",
+      "IUT.Prerequisites.SemiGraph.IsIsolatedEdge",
+      "IUT.Prerequisites.SemiGraph.AreCoverticial",
+      "IUT.Prerequisites.SemiGraph.IsLocallyFinite",
+      "IUT.Prerequisites.SemiGraph.IsUntangled",
+      "IUT.Prerequisites.SemiGraph.incidenceRel",
+      "IUT.Prerequisites.SemiGraph.incidenceGraph",
+      "IUT.Prerequisites.SemiGraph.IsConnectedSemiGraph",
+      "IUT.Prerequisites.SemiGraph.IsJoint",
+      "IUT.Prerequisites.SemiGraph.finite_branchesOver",
+      "IUT.Prerequisites.SemiGraph.verticialCard_le_two",
+      "IUT.Prerequisites.SemiGraph.IsGraph.exists_edgeAbutsTo"
+    ],
+    "covers": "Semi-graphs of Anabelioids page 11 (definition of a semi-graph, verticial portion and cardinality, graphs, branches, finite and countable, components, joins, abuts to), pages 12 and 13 (closed, open, isolated and coverticial edges; locally finite, untangled, joint). The semi-graph underlying the semi-graph of anabelioids of IUT I page 44.",
+    "not_covered": "The topological space of a semi-graph and the proof that connectedness of the incidence graph is its connectedness; trees; subjoints. Of Proposition 2.2: PSC-type, fundamental groups, decomposition subgroups, commensurable terminality.",
+    "statement_status": "STATEMENT_FORMALIZED",
+    "proof_status": "NOT_EXTRACTED",
+    "obligations": [],
+    "ambiguities": [
+      "An edge of the page is a set of exactly two branches (not at most two); here the branches form one type with a map to edges whose fibers have exactly two elements, a reencoding of the same data.",
+      "The page defines connectedness through the associated topological space, which is not constructed; connectedness is taken as connectedness (with nonemptiness) of the incidence graph of vertices and edges.",
+      "The same declarations also serve IUT1.Prop2_1 (and, through the notation of IUT I Section 2, Corollary 2.5 and Theorem B, whose pages were not read for these records)."
+    ]
+  },
+  "IUT1.Prop2_2.frag.semi_graph_morphism": {
+    "kind": "fragment",
+    "parent": "IUT1.Prop2_2",
+    "source": {
+      "paper": "Inter-universal Teichmuller Theory I",
+      "pdf_pages": "pages 44 to 45",
+      "pages_read": "IUT I pages 44 and 45 (rendered images); Semi-graphs of Anabelioids pages 11 to 14 (rendered images); Comments on Semi-graphs of Anabelioids (text layer, all pages; pages 3 and 7 rendered)",
+      "pages_in_paper": "Semi-graphs of Anabelioids pages 11 to 14"
+    },
+    "content": "Definition: a morphism of semi-graphs consists of maps on vertices, edges and branches, a branch of e going to a branch of the image of e, injective on the branches of each edge, and compatible with the coincidence maps on branches that abut to a vertex; identity and composition; proper morphisms (preserving verticial cardinality), immersions and excisions (injective, respectively bijective, on branches abutting to each vertex), graph-coverings (proper excisions). Lemmas: a morphism is bijective on the branches of each edge; a morphism does not decrease verticial cardinality.",
+    "explicit_hypotheses": [],
+    "implicit_hypotheses": [],
+    "conclusion": "Definitions with two lemmas, all proved.",
+    "definitions_required": [],
+    "results_used": [],
+    "external_dependencies": [
+      "[SemiAnbd] Section 1"
+    ],
+    "lean_declaration": "IUT.Prerequisites.SemiGraph.Hom",
+    "lemmas": [
+      "IUT.Prerequisites.SemiGraph.homIdentity",
+      "IUT.Prerequisites.SemiGraph.homComp",
+      "IUT.Prerequisites.SemiGraph.Hom.branchesOver",
+      "IUT.Prerequisites.SemiGraph.Hom.branchesOver_bijective",
+      "IUT.Prerequisites.SemiGraph.Hom.verticialCard_le",
+      "IUT.Prerequisites.SemiGraph.Hom.IsProper",
+      "IUT.Prerequisites.SemiGraph.Hom.branchesAt",
+      "IUT.Prerequisites.SemiGraph.Hom.IsImmersion",
+      "IUT.Prerequisites.SemiGraph.Hom.IsExcision",
+      "IUT.Prerequisites.SemiGraph.Hom.IsGraphCovering"
+    ],
+    "covers": "Semi-graphs of Anabelioids page 11 (the paragraph defining morphisms, including its last sentence on verticial cardinality) and pages 13 and 14 (immersions, excisions, proper morphisms, graph-coverings).",
+    "not_covered": "Embeddings; finite graph-coverings; Galois graph-coverings and pull-backs (page 14); the statement that graph-coverings of connected semi-graphs are topological coverings; Proposition 1.1 and Theorem 1.2.",
+    "statement_status": "STATEMENT_FORMALIZED",
+    "proof_status": "NOT_EXTRACTED",
+    "obligations": [],
+    "ambiguities": [
+      "The page asks for a bijection from the branches of e to those of its image, equivalently an injection; the structure asks for the injection and the bijection is proved."
+    ]
+  },
+  "IUT1.Prop2_2.frag.sub_semi_graph": {
+    "kind": "fragment",
+    "parent": "IUT1.Prop2_2",
+    "source": {
+      "paper": "Inter-universal Teichmuller Theory I",
+      "pdf_pages": "pages 44 to 45",
+      "pages_read": "IUT I pages 44 and 45 (rendered images); Semi-graphs of Anabelioids pages 11 to 14 (rendered images); Comments on Semi-graphs of Anabelioids (text layer, all pages; pages 3 and 7 rendered)",
+      "pages_in_paper": "Semi-graphs of Anabelioids pages 11 to 14"
+    },
+    "content": "Definition: the sub-semi-graph of a semi-graph with given sets of vertices and edges, whose branches are those lying on the chosen edges and whose coincidence map keeps a vertex when it is chosen and gives none otherwise; its inclusion morphism; the maximal subgraph (all vertices, closed edges only). Lemmas: conditions (b) and (c) of page 12 hold; keeping all vertices does not change verticial cardinality; the maximal subgraph is a graph.",
+    "explicit_hypotheses": [],
+    "implicit_hypotheses": [],
+    "conclusion": "Definitions with lemmas, all proved.",
+    "definitions_required": [],
+    "results_used": [],
+    "external_dependencies": [
+      "[SemiAnbd] Section 1"
+    ],
+    "lean_declaration": "IUT.Prerequisites.SemiGraph.subSemiGraph",
+    "lemmas": [
+      "IUT.Prerequisites.SemiGraph.subSemiGraph_coincidence_of_mem",
+      "IUT.Prerequisites.SemiGraph.subSemiGraph_coincidence_eq_none",
+      "IUT.Prerequisites.SemiGraph.subSemiGraphInclusion",
+      "IUT.Prerequisites.SemiGraph.subSemiGraph_univ_verticialCard",
+      "IUT.Prerequisites.SemiGraph.maximalSubgraph",
+      "IUT.Prerequisites.SemiGraph.maximalSubgraph_isGraph"
+    ],
+    "covers": "Semi-graphs of Anabelioids page 12 (definition of a sub-semi-graph, conditions (a) to (c)) and page 13 (maximal subgraph). These are the connected sub-semi-graph H and the maximal subgraph named on IUT I page 44.",
+    "not_covered": "Embeddings (morphisms inducing an isomorphism onto a sub-semi-graph); that every sub-semi-graph in the sense of the page arises from the construction (conditions (b) and (c) determine its coincidence maps, which is used but not stated as a theorem). Of Proposition 2.2: the semi-graph of anabelioids attached to H, decomposition subgroups, commensurable terminality.",
+    "statement_status": "STATEMENT_FORMALIZED",
+    "proof_status": "NOT_EXTRACTED",
+    "obligations": [],
+    "ambiguities": [
+      "The same declarations also serve IUT1.Prop2_1 (and, through the notation of IUT I Section 2, Corollary 2.5 and Theorem B, whose pages were not read for these records)."
+    ]
+  },
+  "IUT1.Prop2_2.frag.compactification": {
+    "kind": "fragment",
+    "parent": "IUT1.Prop2_2",
+    "source": {
+      "paper": "Inter-universal Teichmuller Theory I",
+      "pdf_pages": "pages 44 to 45",
+      "pages_read": "IUT I pages 44 and 45 (rendered images); Semi-graphs of Anabelioids pages 11 to 14 (rendered images); Comments on Semi-graphs of Anabelioids (text layer, all pages; pages 3 and 7 rendered)",
+      "pages_in_paper": "Semi-graphs of Anabelioids pages 11 to 14"
+    },
+    "content": "Definition: the compactification of a semi-graph, adding one new vertex for each branch abutting to no vertex, to which that branch then abuts; the morphism from a semi-graph to its compactification. Lemmas: in the compactification every branch abuts to a vertex; the compactification is a graph; a branch abuts to an old vertex v in the compactification exactly when it abuts to v in the original semi-graph.",
+    "explicit_hypotheses": [],
+    "implicit_hypotheses": [],
+    "conclusion": "Definitions with lemmas, all proved.",
+    "definitions_required": [],
+    "results_used": [],
+    "external_dependencies": [
+      "[SemiAnbd] Section 1"
+    ],
+    "lean_declaration": "IUT.Prerequisites.SemiGraph.compactification",
+    "lemmas": [
+      "IUT.Prerequisites.SemiGraph.compactificationCoincidence",
+      "IUT.Prerequisites.SemiGraph.compactificationCoincidence_isSome",
+      "IUT.Prerequisites.SemiGraph.compactification_isGraph",
+      "IUT.Prerequisites.SemiGraph.compactification_coincidence_inl_iff",
+      "IUT.Prerequisites.SemiGraph.toCompactification"
+    ],
+    "covers": "Semi-graphs of Anabelioids page 13, the sentences defining the compactification and stating that a semi-graph forms a sub-semi-graph of its compactification.",
+    "not_covered": "The unique extension of morphisms to compactifications and the deformation retraction statement (page 13).",
+    "statement_status": "STATEMENT_FORMALIZED",
+    "proof_status": "NOT_EXTRACTED",
+    "obligations": [],
+    "ambiguities": []
+  },
+  "IUT1.Prop2_2.frag.semi_graph_examples": {
+    "kind": "fragment",
+    "parent": "IUT1.Prop2_2",
+    "source": {
+      "paper": "Inter-universal Teichmuller Theory I",
+      "pdf_pages": "pages 44 to 45",
+      "pages_read": "IUT I pages 44 and 45 (rendered images); Semi-graphs of Anabelioids pages 11 to 14 (rendered images); Comments on Semi-graphs of Anabelioids (text layer, all pages; pages 3 and 7 rendered)",
+      "pages_in_paper": "Semi-graphs of Anabelioids pages 11 to 14"
+    },
+    "content": "Examples: a vertex with an open edge (the edge is open and not isolated, the semi-graph is not a graph, is untangled and connected); a loop (a connected graph with a closed edge, not untangled); two vertices joined by a closed edge (a connected, untangled, locally finite graph whose edge joins the two vertices); a joint (one vertex, two open edges). Helper lemmas on reachability in the incidence graph and the verticial cardinalities of the examples.",
+    "explicit_hypotheses": [],
+    "implicit_hypotheses": [],
+    "conclusion": "Examples with their properties, all proved.",
+    "definitions_required": [],
+    "results_used": [],
+    "external_dependencies": [
+      "[SemiAnbd] Section 1"
+    ],
+    "lean_declaration": "IUT.Prerequisites.SemiGraph.exampleJoint_isJoint",
+    "lemmas": [
+      "IUT.Prerequisites.SemiGraph.connected_of_forall_reachable",
+      "IUT.Prerequisites.SemiGraph.incidenceGraph_adj",
+      "IUT.Prerequisites.SemiGraph.exampleOpenEdge",
+      "IUT.Prerequisites.SemiGraph.exampleLoop",
+      "IUT.Prerequisites.SemiGraph.exampleSegment",
+      "IUT.Prerequisites.SemiGraph.exampleJoint",
+      "IUT.Prerequisites.SemiGraph.exampleOpenEdge_verticialCard",
+      "IUT.Prerequisites.SemiGraph.exampleOpenEdge_properties",
+      "IUT.Prerequisites.SemiGraph.exampleLoop_verticialCard",
+      "IUT.Prerequisites.SemiGraph.exampleLoop_properties",
+      "IUT.Prerequisites.SemiGraph.exampleSegment_verticialCard",
+      "IUT.Prerequisites.SemiGraph.exampleSegment_properties",
+      "IUT.Prerequisites.SemiGraph.exampleJoint_verticialCard"
+    ],
+    "covers": "Nonvacuity of the definitions of Semi-graphs of Anabelioids pages 11 to 13 (semi-graph, graph, open and closed edges, untangled, locally finite, connected, joint).",
+    "not_covered": "No statement of the papers; these are model examples only.",
+    "statement_status": "STATEMENT_FORMALIZED",
+    "proof_status": "NOT_EXTRACTED",
+    "obligations": [],
+    "ambiguities": [],
+    "scope": "model_test"
   },
   "IUT1.Rem2_2_1": {
     "source": {
@@ -1539,10 +1885,88 @@
     "statement_status": "BLOCKED_BY_MATHLIB",
     "proof_status": "NOT_EXTRACTED",
     "obligations": [
-      "Frobenioids and tempered coverings."
+      "Frobenioids and tempered coverings. The Geometry of Frobenioids I is formalized in part (monoids, elementary Frobenioids, Definitions 1.1 and 1.2, and Definition 1.3 without clauses (i) (c) and (iii) (d), with one example); no Frobenioid of IUT I is constructed."
     ],
     "ambiguities": [
       "Remark 3.2.4 (pages 75 to 77) records an oversight in [EtTh] concerning the tempered Frobenioid and fixes a reading; this record follows that remark."
+    ],
+    "fragments": [
+      "IUT1.Ex3_2.frag.frd_morphism_types"
+    ]
+  },
+  "IUT1.Ex3_2.frag.frd_morphism_types": {
+    "kind": "fragment",
+    "parent": "IUT1.Ex3_2",
+    "scope": "prerequisite from The Geometry of Frobenioids I (Definitions 1.1 (iv) and 1.2); not the objects of IUT I",
+    "source": {
+      "paper": "Inter-universal Teichmuller Theory I",
+      "pdf_pages": "pages 69 to 73",
+      "pages_read": "IUT I pages 69 to 73 (text layer: the Frobenioid notions used there, base category, divisor monoid, Frobenioid); The Geometry of Frobenioids I pages 16, 20 to 24 (text and rendered image)",
+      "pages_in_paper": "Frobenioids I pages 16, 20 to 24"
+    },
+    "content": "For a functor P : C -> F_Φ: the pre-Frobenioid hypotheses (Φ a divisorial monoid on D; C, D connected and totally epimorphic); linear, isometric, metrically equivalent, base-isomorphism, base-FSM-morphism, base-isomorphic objects, pull-back morphism, base-equivalent, Div-equivalent, base-identity and Div-identity endomorphisms, O^▷(X) and O^×(X), pre-step, step, primary pre-step, co-angular, LB-invertible, morphism of Frobenius type, prime-Frobenius morphism; Frobenius-ample, Frobenius-trivial and isotropic objects and isotropic hulls. Linear morphisms and pre-steps are closed under composition; identities are isometric pre-steps; base-identity implies Div-identity (Remark 1.2.1). The identity functor of F_Φ as a functor to F_Φ, with Base, Div, deg_Fr given by the components of the triple.",
+    "explicit_hypotheses": [
+      "D, C categories; Φ : Dᵒᵖ ⥤ AddCommMonCat; P : C ⥤ F_Φ"
+    ],
+    "implicit_hypotheses": [],
+    "conclusion": "Predicates on morphisms and objects of C, and the closure facts stated.",
+    "definitions_required": [
+      "IUT1.Ex3_3.frag.frd_elementary_frobenioid"
+    ],
+    "results_used": [],
+    "external_dependencies": [],
+    "lean_declaration": "IUT.Prerequisites.Frobenioid.IsFrobeniusTrivialObj",
+    "lemmas": [
+      "IUT.Prerequisites.Frobenioid.FrobFunctor",
+      "IUT.Prerequisites.Frobenioid.IsPreFrobenioidStructure",
+      "IUT.Prerequisites.Frobenioid.frobObj",
+      "IUT.Prerequisites.Frobenioid.frobImage",
+      "IUT.Prerequisites.Frobenioid.frobBase",
+      "IUT.Prerequisites.Frobenioid.frobDiv",
+      "IUT.Prerequisites.Frobenioid.frobDeg",
+      "IUT.Prerequisites.Frobenioid.IsLinearMor",
+      "IUT.Prerequisites.Frobenioid.IsIsometricMor",
+      "IUT.Prerequisites.Frobenioid.AreMetricallyEquivalent",
+      "IUT.Prerequisites.Frobenioid.IsBaseIsoMor",
+      "IUT.Prerequisites.Frobenioid.IsBaseFSMMor",
+      "IUT.Prerequisites.Frobenioid.AreBaseIsomorphic",
+      "IUT.Prerequisites.Frobenioid.IsPullBackMor",
+      "IUT.Prerequisites.Frobenioid.AreBaseEquivalent",
+      "IUT.Prerequisites.Frobenioid.AreDivEquivalent",
+      "IUT.Prerequisites.Frobenioid.IsBaseIdentityEndo",
+      "IUT.Prerequisites.Frobenioid.IsDivIdentityEndo",
+      "IUT.Prerequisites.Frobenioid.unitTriangleEndos",
+      "IUT.Prerequisites.Frobenioid.unitTimesAutos",
+      "IUT.Prerequisites.Frobenioid.IsPreStep",
+      "IUT.Prerequisites.Frobenioid.IsStepMor",
+      "IUT.Prerequisites.Frobenioid.IsPrimaryPreStep",
+      "IUT.Prerequisites.Frobenioid.IsCoAngular",
+      "IUT.Prerequisites.Frobenioid.IsLBInvertible",
+      "IUT.Prerequisites.Frobenioid.IsFrobeniusTypeMor",
+      "IUT.Prerequisites.Frobenioid.IsPrimeFrobeniusMor",
+      "IUT.Prerequisites.Frobenioid.IsFrobeniusAmpleObj",
+      "IUT.Prerequisites.Frobenioid.IsIsotropicObj",
+      "IUT.Prerequisites.Frobenioid.IsIsotropicHull",
+      "IUT.Prerequisites.Frobenioid.IsLinearMor.compose",
+      "IUT.Prerequisites.Frobenioid.IsPreStep.compose",
+      "IUT.Prerequisites.Frobenioid.isPreStep_identity",
+      "IUT.Prerequisites.Frobenioid.IsBaseIdentityEndo.isDivIdentityEndo",
+      "IUT.Prerequisites.Frobenioid.elemFrobIdentityFunctor",
+      "IUT.Prerequisites.Frobenioid.frobDeg_elemFrobIdentityFunctor",
+      "IUT.Prerequisites.Frobenioid.frobDiv_elemFrobIdentityFunctor",
+      "IUT.Prerequisites.Frobenioid.frobBase_elemFrobIdentityFunctor"
+    ],
+    "covers": "Frobenioids I, Definition 1.1 (iv) (page 20), Definition 1.2 (i) to (iii) (pages 21 and 22), from Definition 1.2 (iv) the Frobenius-ample, Frobenius-trivial and isotropic objects and isotropic hulls (pages 22 and 23), Remark 1.2.1 third implication (page 24). The notion 'Frobenius-trivial object [FrdI] Definition 1.2' listed by the parent.",
+    "not_covered": "The other object types of Definition 1.2 (iv) (Div-Frobenius-trivial, quasi-Frobenius-trivial, metrically trivial, base-trivial, Aut-ample, perfect, group-like, Frobenius-compact, Frobenius-normalized, unit-trivial, Frobenius-isotropic and others), Definition 1.2 (v), the subcategories C^istr, C^lin, C^bs-iso, C^pl-bk, the other implications of Remark 1.2.1; tempered Frobenioids, split Frobenioids and all IUT I data of Example 3.2.",
+    "statement_status": "STATEMENT_FORMALIZED",
+    "proof_status": "NOT_EXTRACTED",
+    "obligations": [
+      "The main declaration is a definition; the theorems listed in lemmas (category laws, closure facts) are kernel-checked with no hypothesis standing for a claim of the papers."
+    ],
+    "ambiguities": [
+      "Connected category (page 16) read as Mathlib IsConnected, which also requires nonemptiness.",
+      "Div-equivalence Φ(φ) = Φ(ψ) read as equality of the morphisms Φ(Base(φ)) and Φ(Base(ψ)).",
+      "The pull-back condition is stated objectwise as a bijection Hom(T, A) -> Hom(T, B) ×_{Hom_D(T_D, B_D)} Hom_D(T_D, A_D)."
     ]
   },
   "IUT1.Ex3_3": {
@@ -1565,8 +1989,218 @@
     "statement_status": "BLOCKED_BY_MATHLIB",
     "proof_status": "NOT_EXTRACTED",
     "obligations": [
-      "Frobenioids."
+      "Frobenioids. The Geometry of Frobenioids I is formalized in part (monoids, elementary Frobenioids, Definitions 1.1 and 1.2, and Definition 1.3 without clauses (i) (c) and (iii) (d), with one example); no Frobenioid of IUT I is constructed."
     ],
+    "ambiguities": [],
+    "fragments": [
+      "IUT1.Ex3_3.frag.frd_monoid_classes",
+      "IUT1.Ex3_3.frag.frd_monoid_examples",
+      "IUT1.Ex3_3.frag.frd_elementary_frobenioid",
+      "IUT1.Ex3_3.frag.frd_remark_1_1_1"
+    ]
+  },
+  "IUT1.Ex3_3.frag.frd_monoid_classes": {
+    "kind": "fragment",
+    "parent": "IUT1.Ex3_3",
+    "scope": "prerequisite from The Geometry of Frobenioids I (Section 0 and Definition 1.1 (i), (ii)); not the objects of IUT I",
+    "source": {
+      "paper": "Inter-universal Teichmuller Theory I",
+      "pdf_pages": "pages 77 to 79",
+      "pages_read": "IUT I pages 77 to 79 (text layer: the Frobenioid notions used there, base category, divisor monoid, Frobenioid); The Geometry of Frobenioids I pages 11, 12, 14, 15, 19 (text and rendered image); comments on the paper, item 30 (page 6, rendered image)",
+      "pages_in_paper": "Frobenioids I pages 11, 12, 14, 15, 19"
+    },
+    "content": "Definitions of classes of commutative monoids and of monoids on a category: sharp, integral, saturated, torsion-free, perfect, the characteristic M/M^± as a quotient monoid, characteristic type, pre-divisorial (integral, saturated, of characteristic type), group-like and divisorial (each under the pre-divisorial hypothesis), the relations a <= b and a ≼ b, irreducible and primary elements, characteristically injective morphisms, non-dilating endomorphisms, fiberwise-surjective arrows, FSM-morphisms, totally epimorphic categories, monoids on a category (conditions (a), (b) of Definition 1.1 (ii)) and divisorial monoids on a category.",
+    "explicit_hypotheses": [
+      "M a commutative monoid written additively; for monoids on a category, D a category and Φ : Dᵒᵖ ⥤ AddCommMonCat"
+    ],
+    "implicit_hypotheses": [],
+    "conclusion": "Predicates (Prop-valued definitions) on M, on morphisms of commutative monoids, on arrows of a category, and on Φ.",
+    "definitions_required": [],
+    "results_used": [],
+    "external_dependencies": [],
+    "lean_declaration": "IUT.Prerequisites.Frobenioid.IsDivisorialMonoid",
+    "lemmas": [
+      "IUT.Prerequisites.Frobenioid.IsSharpMonoid",
+      "IUT.Prerequisites.Frobenioid.IsIntegralMonoid",
+      "IUT.Prerequisites.Frobenioid.IsSaturatedMonoid",
+      "IUT.Prerequisites.Frobenioid.IsTorsionFreeMonoid",
+      "IUT.Prerequisites.Frobenioid.IsPerfectMonoid",
+      "IUT.Prerequisites.Frobenioid.characteristicCon",
+      "IUT.Prerequisites.Frobenioid.MonoidCharacteristic",
+      "IUT.Prerequisites.Frobenioid.IsCharacteristicTypeMonoid",
+      "IUT.Prerequisites.Frobenioid.IsPreDivisorialMonoid",
+      "IUT.Prerequisites.Frobenioid.IsGroupLikeMonoid",
+      "IUT.Prerequisites.Frobenioid.MonoidDivides",
+      "IUT.Prerequisites.Frobenioid.MonoidPrecedes",
+      "IUT.Prerequisites.Frobenioid.IsIrreducibleElem",
+      "IUT.Prerequisites.Frobenioid.IsPrimaryElem",
+      "IUT.Prerequisites.Frobenioid.characteristicMap",
+      "IUT.Prerequisites.Frobenioid.IsCharInjective",
+      "IUT.Prerequisites.Frobenioid.IsNonDilating",
+      "IUT.Prerequisites.Frobenioid.IsFiberwiseSurjective",
+      "IUT.Prerequisites.Frobenioid.IsFSMMorphism",
+      "IUT.Prerequisites.Frobenioid.IsTotallyEpimorphicCat",
+      "IUT.Prerequisites.Frobenioid.IsMonoidOn",
+      "IUT.Prerequisites.Frobenioid.IsDivisorialMonoidOn",
+      "IUT.Prerequisites.Frobenioid.toGroupification",
+      "IUT.Prerequisites.Frobenioid.characteristicMap_mk",
+      "IUT.Prerequisites.Frobenioid.characteristicMap_id"
+    ],
+    "covers": "Frobenioids I, Section 0, monoid conditions of page 11, relations and elements of page 12, FSM-morphisms of page 14, totally epimorphic categories of page 15; Definition 1.1 (i) and (ii), page 19.",
+    "not_covered": "The perfection M^pf as a construction, primes Prime(M), bounded subsets and suprema, monoprime monoids, characteristic, groupification and perfection of a functor Φ; the monoids ord(O^▷_L)^pf and ord(Z^▷_{p_v}) of IUT I Example 3.3 and everything else of that example.",
+    "statement_status": "STATEMENT_FORMALIZED",
+    "proof_status": "NOT_EXTRACTED",
+    "obligations": [
+      "The Lean declarations are definitions; there is no proof to verify."
+    ],
+    "ambiguities": [
+      "Torsion-free read as: n · a = 0 with n >= 1 implies a = 0.",
+      "Characteristic type read as: for a, b in one fiber of M -> M^char there is exactly one invertible u with a + u = b.",
+      "Isomorphism of monoids in Definition 1.1 (ii) (b) read as bijective morphism."
+    ]
+  },
+  "IUT1.Ex3_3.frag.frd_monoid_examples": {
+    "kind": "fragment",
+    "parent": "IUT1.Ex3_3",
+    "scope": "prerequisite from The Geometry of Frobenioids I; not the objects of IUT I",
+    "source": {
+      "paper": "Inter-universal Teichmuller Theory I",
+      "pdf_pages": "pages 77 to 79",
+      "pages_read": "IUT I pages 77 to 79 (text layer: the Frobenioid notions used there, base category, divisor monoid, Frobenioid); The Geometry of Frobenioids I pages 11, 19 (text and rendered image); comments on the paper, item 30 (page 6, rendered image)",
+      "pages_in_paper": "Frobenioids I pages 11, 19"
+    },
+    "content": "Integral monoids are of characteristic type (erratum 30), so pre-divisorial is equivalent to integral and saturated. The additive monoids N, Q>=0 and R>=0 are divisorial; Q>=0 and R>=0 are perfect and N is not; N is torsion-free and ZMod 2 is not; Z is group-like and not sharp; WithTop N is not integral; WithTop Z is not of characteristic type; the constant functor with value N on Discrete PUnit is a divisorial monoid on that category. General criteria: a cancellative monoid is integral; every element of M^gp is a difference of images; a commutative group is saturated; a canonically ordered monoid is sharp; a linearly and canonically ordered cancellative monoid is saturated and divisorial.",
+    "explicit_hypotheses": [
+      "For isCharacteristicTypeMonoid_of_isIntegralMonoid: M a commutative monoid that is integral. The example theorems have no hypotheses."
+    ],
+    "implicit_hypotheses": [],
+    "conclusion": "The stated memberships and non-memberships in the monoid classes.",
+    "definitions_required": [
+      "IUT1.Ex3_3.frag.frd_monoid_classes"
+    ],
+    "results_used": [],
+    "external_dependencies": [],
+    "lean_declaration": "IUT.Prerequisites.Frobenioid.isCharacteristicTypeMonoid_of_isIntegralMonoid",
+    "lemmas": [
+      "IUT.Prerequisites.Frobenioid.isPreDivisorialMonoid_iff",
+      "IUT.Prerequisites.Frobenioid.nat_isDivisorialMonoid",
+      "IUT.Prerequisites.Frobenioid.nnrat_isDivisorialMonoid",
+      "IUT.Prerequisites.Frobenioid.nnreal_isDivisorialMonoid",
+      "IUT.Prerequisites.Frobenioid.nat_not_isPerfectMonoid",
+      "IUT.Prerequisites.Frobenioid.nnrat_isPerfectMonoid",
+      "IUT.Prerequisites.Frobenioid.nnreal_isPerfectMonoid",
+      "IUT.Prerequisites.Frobenioid.nat_isTorsionFreeMonoid",
+      "IUT.Prerequisites.Frobenioid.zmod2_not_isTorsionFreeMonoid",
+      "IUT.Prerequisites.Frobenioid.int_isGroupLikeMonoid",
+      "IUT.Prerequisites.Frobenioid.int_not_isSharpMonoid",
+      "IUT.Prerequisites.Frobenioid.withTopNat_not_isIntegralMonoid",
+      "IUT.Prerequisites.Frobenioid.withTopInt_not_isCharacteristicTypeMonoid",
+      "IUT.Prerequisites.Frobenioid.constNat_isDivisorialMonoidOn",
+      "IUT.Prerequisites.Frobenioid.isIntegralMonoid_of_isCancelAdd",
+      "IUT.Prerequisites.Frobenioid.exists_eq_sub_toGroupification",
+      "IUT.Prerequisites.Frobenioid.isSaturatedMonoid_of_addCommGroup",
+      "IUT.Prerequisites.Frobenioid.isSharpMonoid_of_canonicallyOrderedAdd",
+      "IUT.Prerequisites.Frobenioid.isSaturatedMonoid_of_linearOrder",
+      "IUT.Prerequisites.Frobenioid.isDivisorialMonoid_of_linearOrder"
+    ],
+    "covers": "Comments on Frobenioids I, item 30 (Definition 1.1 (i), page 19); nonvacuity of the monoid classes of page 11 and Definition 1.1 (i), (ii).",
+    "not_covered": "No example of a non-saturated monoid and none of a pre-divisorial monoid that is neither group-like nor sharp is given. No statement of IUT I is addressed.",
+    "statement_status": "STATEMENT_FORMALIZED",
+    "proof_status": "KERNEL_VERIFIED",
+    "obligations": [],
+    "ambiguities": []
+  },
+  "IUT1.Ex3_3.frag.frd_elementary_frobenioid": {
+    "kind": "fragment",
+    "parent": "IUT1.Ex3_3",
+    "scope": "prerequisite from The Geometry of Frobenioids I (Definition 1.1 (iii)); not the objects of IUT I",
+    "source": {
+      "paper": "Inter-universal Teichmuller Theory I",
+      "pdf_pages": "pages 77 to 79",
+      "pages_read": "IUT I pages 77 to 79 (text layer: the Frobenioid notions used there, base category, divisor monoid, Frobenioid); The Geometry of Frobenioids I pages 19 to 21 (text and rendered image)",
+      "pages_in_paper": "Frobenioids I pages 19 to 21"
+    },
+    "content": "The elementary Frobenioid F_Φ of a functor Φ : Dᵒᵖ ⥤ AddCommMonCat: objects of D; morphisms A -> B are triples (φ_D, Z_φ ∈ Φ(A), n_φ ∈ N>=1); composition (ψ_D ∘ φ_D, φ_D^*(Z_ψ) + n_ψ · Z_φ, n_ψ · n_φ); identity (id, 0, 1); left and right identity laws and associativity proved as theorems; the category structure as a plain definition (no instance registered); the projection functor to D; Base, Div and deg_Fr of composites in F_Φ; the monoid F_M on M × N>=1 with (a1, n1)(a2, n2) = (a1 + n1 a2, n1 n2) and the noncommutativity of the standard Frobenioid F_{Z>=0}.",
+    "explicit_hypotheses": [
+      "D a category; Φ : Dᵒᵖ ⥤ AddCommMonCat (conditions (a), (b) of a monoid on D are not needed and not assumed); M a commutative monoid for F_M"
+    ],
+    "implicit_hypotheses": [],
+    "conclusion": "A category structure on the objects of D with the stated morphisms and composition; the category laws hold.",
+    "definitions_required": [
+      "IUT1.Ex3_3.frag.frd_monoid_classes"
+    ],
+    "results_used": [],
+    "external_dependencies": [],
+    "lean_declaration": "IUT.Prerequisites.Frobenioid.elemFrobCategory",
+    "lemmas": [
+      "IUT.Prerequisites.Frobenioid.ElemFrobObj",
+      "IUT.Prerequisites.Frobenioid.ElemFrobHom",
+      "IUT.Prerequisites.Frobenioid.elemBase",
+      "IUT.Prerequisites.Frobenioid.elemDiv",
+      "IUT.Prerequisites.Frobenioid.elemDeg",
+      "IUT.Prerequisites.Frobenioid.elemFrobIdentity",
+      "IUT.Prerequisites.Frobenioid.elemFrobCompose",
+      "IUT.Prerequisites.Frobenioid.elemFrobCompose_identity_left",
+      "IUT.Prerequisites.Frobenioid.elemFrobCompose_identity_right",
+      "IUT.Prerequisites.Frobenioid.elemFrobCompose_assoc",
+      "IUT.Prerequisites.Frobenioid.elemBase_compose",
+      "IUT.Prerequisites.Frobenioid.elemDiv_compose",
+      "IUT.Prerequisites.Frobenioid.elemDeg_compose",
+      "IUT.Prerequisites.Frobenioid.elemFrobProjection",
+      "IUT.Prerequisites.Frobenioid.ElemFrobMonoidCarrier",
+      "IUT.Prerequisites.Frobenioid.elemFrobMul",
+      "IUT.Prerequisites.Frobenioid.elemFrobMul_assoc",
+      "IUT.Prerequisites.Frobenioid.elemFrobMul_unit_left",
+      "IUT.Prerequisites.Frobenioid.elemFrobMul_unit_right",
+      "IUT.Prerequisites.Frobenioid.elemFrobMonoid",
+      "IUT.Prerequisites.Frobenioid.standardFrobenioid_mul_not_comm"
+    ],
+    "covers": "Frobenioids I, Definition 1.1 (iii), page 20, including the composition display and the definition of F_M and F.",
+    "not_covered": "Functoriality of Φ ↦ F_Φ in Φ; the identification of F_M with the endomorphism monoid of the one-object category F_{Φ_M} is only described in a docstring, not proved; the p-adic Frobenioids of IUT I Example 3.3.",
+    "statement_status": "STATEMENT_FORMALIZED",
+    "proof_status": "NOT_EXTRACTED",
+    "obligations": [
+      "The main declaration is a definition; the theorems listed in lemmas (category laws, closure facts) are kernel-checked with no hypothesis standing for a claim of the papers."
+    ],
+    "ambiguities": []
+  },
+  "IUT1.Ex3_3.frag.frd_remark_1_1_1": {
+    "kind": "fragment",
+    "parent": "IUT1.Ex3_3",
+    "scope": "prerequisite from The Geometry of Frobenioids I (Remark 1.1.1); not the objects of IUT I",
+    "source": {
+      "paper": "Inter-universal Teichmuller Theory I",
+      "pdf_pages": "pages 77 to 79",
+      "pages_read": "IUT I pages 77 to 79 (text layer: the Frobenioid notions used there, base category, divisor monoid, Frobenioid); The Geometry of Frobenioids I pages 20 to 21 (text and rendered image)",
+      "pages_in_paper": "Frobenioids I pages 20 to 21"
+    },
+    "content": "For a functor P : C -> F_Φ and composable f : X -> Y, g : Y -> Z of C: Base(g ∘ f) = Base(g) ∘ Base(f), Div(g ∘ f) = Base(f)^*(Div(g)) + deg_Fr(g) · Div(f), deg_Fr(g ∘ f) = deg_Fr(g) · deg_Fr(f); identities have Base the identity, Div zero and degree one; deg_Fr of the n-fold composite of an endomorphism is the n-th power.",
+    "explicit_hypotheses": [
+      "D, C categories; Φ : Dᵒᵖ ⥤ AddCommMonCat; P : C ⥤ F_Φ (with the category structure elemFrobCategory Φ)"
+    ],
+    "implicit_hypotheses": [],
+    "conclusion": "The three composition formulas of Remark 1.1.1 and the identity and power formulas.",
+    "definitions_required": [
+      "IUT1.Ex3_3.frag.frd_elementary_frobenioid"
+    ],
+    "results_used": [],
+    "external_dependencies": [],
+    "lean_declaration": "IUT.Prerequisites.Frobenioid.frobDeg_compose",
+    "lemmas": [
+      "IUT.Prerequisites.Frobenioid.frobBase_compose",
+      "IUT.Prerequisites.Frobenioid.frobDiv_compose",
+      "IUT.Prerequisites.Frobenioid.frobDeg_identity",
+      "IUT.Prerequisites.Frobenioid.frobDiv_identity",
+      "IUT.Prerequisites.Frobenioid.frobBase_identity",
+      "IUT.Prerequisites.Frobenioid.frobDeg_pow",
+      "IUT.Prerequisites.Frobenioid.frobImage_compose",
+      "IUT.Prerequisites.Frobenioid.frobImage_identity"
+    ],
+    "covers": "Frobenioids I, Remark 1.1.1, page 21 (the three displays), stated for every functor to F_Φ, so in particular for pre-Frobenioids.",
+    "not_covered": "No statement of IUT I is addressed.",
+    "statement_status": "STATEMENT_FORMALIZED",
+    "proof_status": "KERNEL_VERIFIED",
+    "obligations": [],
     "ambiguities": []
   },
   "IUT1.Ex3_4": {
@@ -1615,11 +2249,149 @@
     "statement_status": "BLOCKED_BY_MATHLIB",
     "proof_status": "NOT_EXTRACTED",
     "obligations": [
-      "Global realified Frobenioids."
+      "Global realified Frobenioids. The Geometry of Frobenioids I is formalized in part (monoids, elementary Frobenioids, Definitions 1.1 and 1.2, and Definition 1.3 without clauses (i) (c) and (iii) (d), with one example); no Frobenioid of IUT I is constructed."
     ],
     "ambiguities": [
       "The two normalizations (Θ versus q) differ only through the formal symbol log_Φ(Θ_v)/log_Φ(q_v) at bad v; their compatibility is a definitional matter in Example 3.5.",
       "qq_v is the q with a double underline, q_v^{1/2l} (page 71); confirmed in the display of page 85 (rendered)."
+    ],
+    "fragments": [
+      "IUT1.Ex3_5.frag.frd_partial_frobenioid",
+      "IUT1.Ex3_5.frag.frd_partial_frobenioid_example"
+    ]
+  },
+  "IUT1.Ex3_5.frag.frd_partial_frobenioid": {
+    "kind": "fragment",
+    "parent": "IUT1.Ex3_5",
+    "scope": "prerequisite from The Geometry of Frobenioids I (Definition 1.3); not the objects of IUT I",
+    "source": {
+      "paper": "Inter-universal Teichmuller Theory I",
+      "pdf_pages": "pages 84 to 86",
+      "pages_read": "IUT I pages 84 to 86 (text layer: the Frobenioid notions used there, base category, divisor monoid, Frobenioid); The Geometry of Frobenioids I pages 24 to 25 (text and rendered image)",
+      "pages_in_paper": "Frobenioids I pages 24 to 25"
+    },
+    "content": "One definition for each of the clauses (i) (a), (i) (b), (ii), (iii) (a), (iii) (b), (iii) (c), (iv) (a), (iv) (b), (v) (a), (v) (b), (v) (c), (vi), (vii) (a), (vii) (b) of Definition 1.3, for a functor P : C -> F_Φ, and their conjunction with the pre-Frobenioid hypotheses.",
+    "explicit_hypotheses": [
+      "D, C categories; Φ : Dᵒᵖ ⥤ AddCommMonCat; P : C ⥤ F_Φ"
+    ],
+    "implicit_hypotheses": [],
+    "conclusion": "A proposition on P.",
+    "definitions_required": [
+      "IUT1.Ex3_2.frag.frd_morphism_types"
+    ],
+    "results_used": [],
+    "external_dependencies": [],
+    "lean_declaration": "IUT.Prerequisites.Frobenioid.PartialFrobenioidConditions",
+    "lemmas": [
+      "IUT.Prerequisites.Frobenioid.FrobCondIA",
+      "IUT.Prerequisites.Frobenioid.FrobCondIB",
+      "IUT.Prerequisites.Frobenioid.FrobCondII",
+      "IUT.Prerequisites.Frobenioid.FrobCondIIIA",
+      "IUT.Prerequisites.Frobenioid.FrobCondIIIB",
+      "IUT.Prerequisites.Frobenioid.IsInducedUnitBijection",
+      "IUT.Prerequisites.Frobenioid.FrobCondIIIC",
+      "IUT.Prerequisites.Frobenioid.FrobCondIVA",
+      "IUT.Prerequisites.Frobenioid.FrobCondIVB",
+      "IUT.Prerequisites.Frobenioid.FrobCondVA",
+      "IUT.Prerequisites.Frobenioid.HasUniqueTwoFactorization",
+      "IUT.Prerequisites.Frobenioid.FrobCondVB",
+      "IUT.Prerequisites.Frobenioid.FrobCondVC",
+      "IUT.Prerequisites.Frobenioid.FrobCondVI",
+      "IUT.Prerequisites.Frobenioid.FrobCondVIIA",
+      "IUT.Prerequisites.Frobenioid.FrobCondVIIB"
+    ],
+    "covers": "Frobenioids I, Definition 1.3, pages 24 and 25, all clauses except (i) (c) and (iii) (d).",
+    "not_covered": "Definition 1.3 (i) (c) (equivalence (C^pl-bk)_A -> D_{A_D}) and (iii) (d) (equivalences of the categories of co-angular pre-steps under and over A with Order(Φ(A)) and its opposite); hence not the definition of a Frobenioid. Realified Frobenioids, Prime(C) (Theorem 6.4) and all IUT I data of Example 3.5.",
+    "statement_status": "STATEMENT_FORMALIZED",
+    "proof_status": "NOT_EXTRACTED",
+    "obligations": [
+      "The Lean declaration is a definition; there is no proof to verify. An inhabitant is given by IUT1.Ex3_5.frag.frd_partial_frobenioid_example."
+    ],
+    "ambiguities": [
+      "(i) (a) stated as: every object of D is isomorphic to the base of a Frobenius-trivial object.",
+      "(i) (b) stated as α ∘ Base(φ) = Base(ψ) in place of α = Base(ψ) ∘ Base(φ)^{-1}.",
+      "(iii) (c) includes the bracketed uniqueness of the induced bijection, which holds automatically for totally epimorphic C."
+    ]
+  },
+  "IUT1.Ex3_5.frag.frd_partial_frobenioid_example": {
+    "kind": "fragment",
+    "parent": "IUT1.Ex3_5",
+    "scope": "prerequisite from The Geometry of Frobenioids I (Definition 1.3, Proposition 1.5); not the objects of IUT I",
+    "source": {
+      "paper": "Inter-universal Teichmuller Theory I",
+      "pdf_pages": "pages 84 to 86",
+      "pages_read": "IUT I pages 84 to 86 (text layer: the Frobenioid notions used there, base category, divisor monoid, Frobenioid); The Geometry of Frobenioids I pages 20, 24, 25, 27 (text and rendered image)",
+      "pages_in_paper": "Frobenioids I pages 20, 24, 25, 27"
+    },
+    "content": "The elementary Frobenioid F_N over the one-object, one-morphism category Discrete PUnit, with the constant monoid N and the identity functor, satisfies the pre-Frobenioid hypotheses and every clause of Definition 1.3 that is stated (all except (i) (c) and (iii) (d)). In this example a morphism is a pair (Z, n) with Z in N and n in N>=1; the isomorphisms and the pull-back morphisms are exactly (0, 1), the pre-steps are the morphisms with n = 1, the Frobenius-type morphisms those with Z = 0, every morphism is a monomorphism, an epimorphism, co-angular and a base-isomorphism, and every object is isotropic and Frobenius-trivial. This is an instance of Proposition 1.5 (i), whose hypotheses (Φ pre-divisorial, D connected and totally epimorphic) it meets; Φ is sharp, so Φ^char = Φ and the natural functor F_Φ -> F_{Φ^char} is the identity.",
+    "explicit_hypotheses": [
+      "None."
+    ],
+    "implicit_hypotheses": [],
+    "conclusion": "PartialFrobenioidConditions holds for the identity functor of F_N over Discrete PUnit.",
+    "definitions_required": [
+      "IUT1.Ex3_5.frag.frd_partial_frobenioid",
+      "IUT1.Ex3_2.frag.frd_morphism_types",
+      "IUT1.Ex3_3.frag.frd_elementary_frobenioid"
+    ],
+    "results_used": [
+      "IUT1.Ex3_3.frag.frd_monoid_examples"
+    ],
+    "external_dependencies": [],
+    "lean_declaration": "IUT.Prerequisites.Frobenioid.natPoint_partialFrobenioidConditions",
+    "lemmas": [
+      "IUT.Prerequisites.Frobenioid.natPointMonoid",
+      "IUT.Prerequisites.Frobenioid.natPointFrobFunctor",
+      "IUT.Prerequisites.Frobenioid.natPointHom",
+      "IUT.Prerequisites.Frobenioid.natPointDiv",
+      "IUT.Prerequisites.Frobenioid.natPointDeg",
+      "IUT.Prerequisites.Frobenioid.natPoint_eq_iff",
+      "IUT.Prerequisites.Frobenioid.natPointDiv_comp",
+      "IUT.Prerequisites.Frobenioid.natPointDeg_comp",
+      "IUT.Prerequisites.Frobenioid.natPointDiv_hom",
+      "IUT.Prerequisites.Frobenioid.natPointDeg_hom",
+      "IUT.Prerequisites.Frobenioid.natPoint_identity",
+      "IUT.Prerequisites.Frobenioid.natPointDeg_pos",
+      "IUT.Prerequisites.Frobenioid.natPointIso",
+      "IUT.Prerequisites.Frobenioid.natPointIso_hom",
+      "IUT.Prerequisites.Frobenioid.natPointIso_inv",
+      "IUT.Prerequisites.Frobenioid.natPoint_isIso_iff",
+      "IUT.Prerequisites.Frobenioid.natPoint_isBaseIsoMor",
+      "IUT.Prerequisites.Frobenioid.natPoint_isPreStep",
+      "IUT.Prerequisites.Frobenioid.natPoint_isCoAngular",
+      "IUT.Prerequisites.Frobenioid.natPoint_isFrobeniusTypeMor",
+      "IUT.Prerequisites.Frobenioid.natPoint_isIsotropicObj",
+      "IUT.Prerequisites.Frobenioid.natPoint_of_isPullBackMor",
+      "IUT.Prerequisites.Frobenioid.natPoint_isPullBackMor",
+      "IUT.Prerequisites.Frobenioid.natPoint_mono",
+      "IUT.Prerequisites.Frobenioid.natPoint_epi",
+      "IUT.Prerequisites.Frobenioid.natPoint_isPreFrobenioidStructure",
+      "IUT.Prerequisites.Frobenioid.natPoint_isFrobeniusTrivialObj",
+      "IUT.Prerequisites.Frobenioid.natPoint_frobCondIA",
+      "IUT.Prerequisites.Frobenioid.natPoint_frobCondIB",
+      "IUT.Prerequisites.Frobenioid.natPoint_frobCondII",
+      "IUT.Prerequisites.Frobenioid.natPoint_frobCondIIIA",
+      "IUT.Prerequisites.Frobenioid.natPoint_frobCondIIIB",
+      "IUT.Prerequisites.Frobenioid.natPoint_frobCondIIIC",
+      "IUT.Prerequisites.Frobenioid.natPoint_frobCondIVA",
+      "IUT.Prerequisites.Frobenioid.natPoint_frobCondIVB",
+      "IUT.Prerequisites.Frobenioid.natPoint_frobCondVA",
+      "IUT.Prerequisites.Frobenioid.natPoint_twoFactorization",
+      "IUT.Prerequisites.Frobenioid.natPoint_frobCondVB",
+      "IUT.Prerequisites.Frobenioid.natPoint_frobCondVC",
+      "IUT.Prerequisites.Frobenioid.natPoint_frobCondVI",
+      "IUT.Prerequisites.Frobenioid.natPoint_frobCondVIIA",
+      "IUT.Prerequisites.Frobenioid.natPoint_frobCondVIIB"
+    ],
+    "covers": "Frobenioids I, Definition 1.3 (pages 24 and 25): a verified example of every stated clause, jointly; Proposition 1.5 (i) (page 27) for the one example D = Discrete PUnit, Φ = N, restricted to the stated clauses.",
+    "not_covered": "Clauses (i) (c) and (iii) (d) of Definition 1.3 for the example (not stated in Lean); Proposition 1.5 for general D and Φ, its types (Aut-ample, End-ample, and so on) and parts (ii), (iii).",
+    "statement_status": "STATEMENT_FORMALIZED",
+    "proof_status": "KERNEL_VERIFIED",
+    "obligations": [
+      "Axioms: propext, Classical.choice, Quot.sound only."
+    ],
+    "ambiguities": [
+      "The identity functor of F_N stands for the natural functor F_Φ -> F_{Φ^char} of Proposition 1.5, using Φ^char = Φ for the sharp monoid N."
     ]
   },
   "IUT1.Def3_6": {

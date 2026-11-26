@@ -177,5 +177,12 @@ equivalences.
 5. The models of Examples 3.2 to 3.5, 4.3, 4.4, 5.1, 5.4, 6.2, 6.3 from initial Θ-data.
 6. The interface types as essential images, then the torsor statements.
 
-Only step 1 is within reach of current Mathlib. It was not done here because, without
-steps 2 to 5, a Lean structure named after a prime strip or Hodge theater would be a shell.
+Only step 1 is within reach of current Mathlib. Step 1 is done (`IUT/PaperI/PolyMorphism.lean`).
+Steps 2 and 3 are begun only as definitions: tempered groups and connected temperoids (`IUT/PaperI/Temperoid.lean`), and
+semi-graphs, connected anabelioids and semi-graphs of anabelioids
+(`IUT/Prerequisites/SemiGraph.lean`, `IUT/Prerequisites/Anabelioid.lean`); monoids, elementary
+Frobenioids and Definitions 1.1 to 1.3 of [FrdI] without clauses (i) (c) and (iii) (d) of
+Definition 1.3 (`IUT/Prerequisites/Frobenioid.lean`). No Frobenioid of IUT I and no tempered
+fundamental group of a semi-graph of anabelioids is constructed. The structures of this
+document are not formalized because, without steps 2 to 5, a Lean structure named after a
+prime strip or Hodge theater would be a shell.

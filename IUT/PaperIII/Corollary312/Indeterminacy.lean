@@ -69,15 +69,16 @@ against it.
   log-volume of the possible image" is not one number, while the hull of the union still
   bounds all of them.
 
-## (Ind3) is not typed
+## (Ind3) is typed in another file
 
 Page 156 describes (Ind3) by "certain natural inclusions" at nonarchimedean places and "certain
 natural surjections" at archimedean places, and defers the details to Proposition 3.5 (ii)
-(a), (b), which is outside the pages read for this file. A surjection is not a containment of
-regions, and the pages read give no explicit family of enlargements. So (Ind3) is not typed
-here. A typed version would replace `orbitImage` by the upward closure
-`{Y | ∃ a, a • base ⊑ Y}` for an explicit relation `⊑`; that relation is not available from
-the pages read.
+(a), (b), pages 103 to 106, which is outside the pages read for this file. (Ind3) is not typed
+in this file. It is typed in `UpperSemiCompatibility.lean` in one faithful reading of its
+nonarchimedean part: a family of regions along the vertical line, each contained in a
+container (the log-shell, as in Proposition 3.5 (ii) (a)), with the possible image the hull of
+their union. The containment is proved for the iterates of the logarithm on units in one local
+field; the archimedean surjections of Proposition 3.5 (ii) (b) are not modeled.
 
 ## Interpretation choices
 

@@ -35,7 +35,7 @@
   "proof_status": "BLOCKED_BY_EXTERNAL_THEOREM",
   "obligations": [
    "Theorem A is Corollary 2.3; see that record.",
-   "The specialization to the abc inequality (X = P^1, D = {0, 1, infinity}, d = 1) is described in docs/PAPER_IV_DERIVATION.md. At the level of statements it is formalized in IUT4.ThmA.frag.equiv_abc: the special case for rational points is equivalent to Challenge.ABC. Not formalized: Theorem A itself, the identification of the height attached to omega_X(D) with Mathlib's logarithmic height, and the direction (ii) implies (i) of [GenEll] Theorem 2.1 that the passage from the proof in IUT IV to this special case uses.",
+   "The specialization to the abc inequality (X = P^1, D = {0, 1, infinity}, d = 1) is described in docs/PAPER_IV_DERIVATION.md. At the level of statements it is formalized in IUT4.ThmA.frag.equiv_abc: the special case for rational points is equivalent to Challenge.ABC. Not formalized: Theorem A itself, the identification of the height attached to omega_X(D) with Mathlib's logarithmic height, and the direction (ii) implies (i) of [GenEll] Theorem 2.1 that the passage from the proof in IUT IV to this special case uses. The bounded degree statement for P^1 minus {0, 1, infinity} implies Challenge.ABC through its degree one piece (IUT4.ThmA.frag.bounded_degree_implies_abc).",
    "Page 3 asserts that the Vojta conjecture for hyperbolic curves, the ABC conjecture and the Szpiro conjecture for elliptic curves all follow as special cases of Theorem A, referring to [Vjt]; these derivations are not given in the paper."
   ],
   "ambiguities": [
@@ -43,7 +43,8 @@
   ],
   "cor3_12_dependency": "conditional",
   "fragments": [
-   "IUT4.ThmA.frag.equiv_abc"
+   "IUT4.ThmA.frag.equiv_abc",
+   "IUT4.ThmA.frag.bounded_degree_implies_abc"
   ]
  },
  "IUT4.ThmA.frag.equiv_abc": {
@@ -94,6 +95,54 @@
   "obligations": [],
   "ambiguities": []
  },
+ "IUT4.ThmA.frag.bounded_degree_implies_abc": {
+  "kind": "fragment",
+  "parent": "IUT4.ThmA",
+  "source": {
+   "paper": "Inter-universal Teichmuller Theory IV",
+   "pdf_pages": "page 3",
+   "pages_read": "rendered IUT IV pages 3, 40, 54 and 55; GenEll pages 4, 8 and 11 to 13"
+  },
+  "content": "The degree one piece VojtaLineMinusThreePointsDegreeAtMost 1 is equivalent to VojtaLineMinusThreePointsRational, hence to Challenge.ABC; so VojtaLineMinusThreePointsBoundedDegree, and VojtaLineMinusThreePointsDegreeAtMost d for every d >= 1, imply Challenge.ABC (for d = 0 the statement is vacuous). The transport for fields of degree 1 uses the height of a rational number in any number field (heightNF_algebraMap_rat), invariance of the log-conductor and of the discriminant under ring isomorphisms, and the computation of the three functions at rational points (heightNF_rat, logDiffNF_rat, logCondNF_rat).",
+  "explicit_hypotheses": [],
+  "implicit_hypotheses": [],
+  "conclusion": "VojtaLineMinusThreePointsDegreeAtMost 1 <-> Challenge.ABC; VojtaLineMinusThreePointsDegreeAtMost d -> Challenge.ABC for 1 <= d; VojtaLineMinusThreePointsBoundedDegree -> Challenge.ABC.",
+  "definitions_required": [
+   "IUT4.Cor2_3.frag.bounded_degree_P1_minus_three",
+   "IUT4.Cor2_3.frag.rational_points_P1_minus_three"
+  ],
+  "results_used": [
+   "IUT4.ThmA.frag.equiv_abc"
+  ],
+  "external_dependencies": [],
+  "lean_declaration": "IUT.VojtaNumberField.degreeAtMostOne_iff_ABC",
+  "lemmas": [
+   "IUT.VojtaNumberField.abc_of_boundedDegree",
+   "IUT.VojtaNumberField.abc_of_degreeAtMost",
+   "IUT.VojtaNumberField.degreeAtMost_mono",
+   "IUT.VojtaNumberField.degreeAtMostOne_iff_rational",
+   "IUT.VojtaNumberField.rational_of_degreeAtMostOne",
+   "IUT.VojtaNumberField.degreeAtMostOne_of_rational",
+   "IUT.VojtaNumberField.heightNF_algebraMap_rat",
+   "IUT.VojtaNumberField.mulHeight₁_algebraMap_rat",
+   "IUT.VojtaNumberField.logHeight₁_algebraMap_rat",
+   "IUT.VojtaNumberField.heightNF_rat",
+   "IUT.VojtaNumberField.logDiffNF_rat",
+   "IUT.VojtaNumberField.logCondNF_rat",
+   "IUT.VojtaNumberField.meetsBoundaryAt_rat_iff",
+   "IUT.VojtaNumberField.card_quot_eq_natGenerator",
+   "IUT.VojtaNumberField.ratConductor_eq_prod_primeFactors",
+   "IUT.VojtaNumberField.logCondNF_ringEquiv",
+   "IUT.VojtaNumberField.reducesAwayFromBoundary_ringEquiv_iff",
+   "IUT.VojtaNumberField.card_quot_equivOfRingEquiv"
+  ],
+  "covers": "Page 3, the sentence after Theorem A: 'the so-called Vojta Conjecture for hyperbolic curves, the ABC Conjecture, and the Szpiro Conjecture for elliptic curves all follow as special cases of Theorem A', for the ABC Conjecture through the bounded degree statement for P^1 minus {0, 1, infinity} at d = 1.",
+  "not_covered": "Theorem A itself and its proof; the converse (Challenge.ABC does not by this file imply the statement for d > 1); the general equivalence with Vojta's conjecture for hyperbolic curves (IUT IV page 40, GenEll Theorem 2.1, page 11).",
+  "statement_status": "STATEMENT_FORMALIZED",
+  "proof_status": "KERNEL_VERIFIED",
+  "obligations": [],
+  "ambiguities": []
+ },
  "IUT4.Prop1_1": {
   "source": {
    "paper": "Inter-universal Teichmuller Theory IV",
@@ -123,9 +172,113 @@
   "statement_status": "EXTRACTED",
   "proof_status": "EXTRACTED",
   "obligations": [
-   "Not formalized: needs tensor products of p-adic rings of integers and their normalizations, which Mathlib does not provide in this form."
+   "Not formalized: the inclusion p^(d_{I*}) (R_I)~ <= R_I, which needs the different of R_i over Z_p acting on the tensor product. For two factors, K_1 (x) K_2 is proved reduced and a finite product of finite extensions of Q_p (IUT4.Prop1_1.frag.vb_tensor_decomposition), the closed unit ball and integral closure models of R_i agree (IUT4.Prop1_1.frag.vb_integral_models), and R_E <= (R_E)~ is proved with (R_E)~ the integral closure of Z_p in K_1 (x) K_2 (IUT4.Prop1_1.frag.packet_integers). More than two factors, and that this integral closure is the normalization of R_E in its ring of fractions, are open."
   ],
   "ambiguities": [],
+  "cor3_12_dependency": "independent",
+  "fragments": [
+   "IUT4.Prop1_1.frag.vb_tensor_decomposition",
+   "IUT4.Prop1_1.frag.vb_integral_models",
+   "IUT4.Prop1_1.frag.packet_integers"
+  ]
+ },
+ "IUT4.Prop1_1.frag.vb_tensor_decomposition": {
+  "kind": "fragment",
+  "parent": "IUT4.Prop1_1",
+  "source": {
+   "paper": "Inter-universal Teichmuller Theory IV",
+   "pdf_pages": "pages 9 and 13",
+   "pages_read": "rendered and checked: pages 8, 9, 10, 11, 13, 14"
+  },
+  "content": "For finite extensions K1, K2 of Q_p: K1 (x)_{Q_p} K2 is formally unramified over Q_p, reduced, and isomorphic as a Q_p-algebra to a finite product of finite separable field extensions of Q_p.",
+  "explicit_hypotheses": [
+   "p a prime",
+   "K1, K2 fields with finite-dimensional Q_p-algebra structures"
+  ],
+  "implicit_hypotheses": [],
+  "conclusion": "IsReduced (K1 (x) K2); an algebra isomorphism K1 (x) K2 = product of finitely many fields A_i, each finite-dimensional and separable over Q_p.",
+  "definitions_required": [],
+  "results_used": [],
+  "external_dependencies": [],
+  "lean_declaration": "IUT.PaperIV.LocalFields.volBridge_tensor_equiv_pi",
+  "covers": "Page 9: the ambient ring K1 (x) K2 of R_E (the paper's tensor product over Z_p, tensored up to Q_p) is reduced; page 13: tensor products of finite extensions decompose as direct sums of finitely many finite extensions of Q_p. Two factors.",
+  "not_covered": "More than two factors; that the ring of fractions of R_E is K1 (x) K2; the inclusion p^(d_{I*}) (R_I)^~ subset R_I.",
+  "statement_status": "STATEMENT_FORMALIZED",
+  "proof_status": "KERNEL_VERIFIED",
+  "obligations": [],
+  "ambiguities": [
+   "Pages 9 and 13 take tensor products over Z_p; the Q_p form K1 (x)_{Q_p} K2 is used, and the identification with K1 (x)_{Z_p} K2 is not formalized."
+  ],
+  "scope": "two factors K1, K2 (finite extensions of Q_p); (R_E)^~ = padicPacketNormalization (elements of K1 (x) K2 integral over Z_p); mu^log = padicPacketMuLog in Module.finBasis coordinates",
+  "lemmas": [
+   "IUT.PaperIV.LocalFields.volBridge_tensor_isReduced",
+   "IUT.PaperIV.LocalFields.volBridge_tensor_formallyUnramified"
+  ]
+ },
+ "IUT4.Prop1_1.frag.vb_integral_models": {
+  "kind": "fragment",
+  "parent": "IUT4.Prop1_1",
+  "source": {
+   "paper": "Inter-universal Teichmuller Theory IV",
+   "pdf_pages": "page 9",
+   "pages_read": "rendered and checked: pages 8, 9, 10, 11, 13, 14"
+  },
+  "content": "For a finite extension A of Q_p, x is integral over Z_p (padicVolIntegral) iff its spectral norm is at most 1; in a finite product of Q_p-algebras an element is integral over Z_p iff each component is.",
+  "explicit_hypotheses": [
+   "p a prime",
+   "A a field with a finite-dimensional Q_p-algebra structure (first statement)",
+   "a finite family of commutative Q_p-algebras (second statement)"
+  ],
+  "implicit_hypotheses": [],
+  "conclusion": "padicVolIntegral p x <-> spectralNorm x <= 1; padicVolIntegral p x <-> for all i, padicVolIntegral p (x i).",
+  "definitions_required": [],
+  "results_used": [],
+  "external_dependencies": [],
+  "lean_declaration": "IUT.PaperIV.LocalFields.volBridge_padicVolIntegral_iff",
+  "covers": "Page 9: R_i the ring of integers of k_i, and the normalization (-)^~ of R_E; identifies the closed unit ball model and the integral closure model of R_i used by the packet definitions.",
+  "not_covered": "The normalization of R_E in its ring of fractions as such; Proposition 1.1's inclusion.",
+  "statement_status": "STATEMENT_FORMALIZED",
+  "proof_status": "KERNEL_VERIFIED",
+  "obligations": [],
+  "ambiguities": [],
+  "scope": "two factors K1, K2 (finite extensions of Q_p); (R_E)^~ = padicPacketNormalization (elements of K1 (x) K2 integral over Z_p); mu^log = padicPacketMuLog in Module.finBasis coordinates",
+  "lemmas": [
+   "IUT.PaperIV.LocalFields.volBridge_padicVolIntegral_pi"
+  ]
+ },
+ "IUT4.Prop1_1.frag.packet_integers": {
+  "kind": "fragment",
+  "parent": "IUT4.Prop1_1",
+  "source": {
+   "paper": "Inter-universal Teichmuller Theory IV",
+   "pdf_pages": "pages 9 and 14",
+   "pages_read": "rendered and checked: pages 9, 14"
+  },
+  "content": "For two finite extensions K_1, K_2 of Q_p: R_E is defined as the additive span in K_1 tensor K_2 of x tensor y with x, y integral over Z_p, and (R_E)~ as the elements of K_1 tensor K_2 integral over Z_p; R_E is contained in (R_E)~.",
+  "explicit_hypotheses": [
+   "p a prime",
+   "K_1, K_2 fields that are Q_p-algebras"
+  ],
+  "implicit_hypotheses": [],
+  "conclusion": "padicPacketIntegers p K_1 K_2 is a subset of padicPacketNormalization p K_1 K_2.",
+  "definitions_required": [],
+  "results_used": [],
+  "external_dependencies": [],
+  "lean_declaration": "IUT.Prerequisites.PadicVolume.padicPacketIntegers_subset",
+  "covers": "Page 9, Proposition 1.1: the definitions of R_E and of its normalization (R_E)~ and the inclusion R_I <= (R_I)~ of its proof, for two factors; page 14 uses this inclusion as mu^log(R_I) <= mu^log((R_I)~).",
+  "not_covered": "The identification of the integral closure of Z_p in K_1 tensor K_2 with the normalization of R_E in its ring of fractions; compactness and openness of (R_E)~ (proved for two factors in IUT4.Prop1_4.frag.vb_packet_normalization); p^(d_I*) . (R_I)~ <= R_I; more than two factors.",
+  "statement_status": "STATEMENT_FORMALIZED",
+  "proof_status": "KERNEL_VERIFIED",
+  "obligations": [],
+  "ambiguities": [
+   "(R_E)~ is taken as the integral closure of Z_p in K_1 tensor K_2; equality with the normalization of R_E in its ring of fractions is not formalized."
+  ],
+  "lemmas": [
+   "IUT.Prerequisites.PadicVolume.padicPacketIntegers",
+   "IUT.Prerequisites.PadicVolume.padicPacketNormalization",
+   "IUT.Prerequisites.PadicVolume.padicVolIntegral",
+   "IUT.Prerequisites.PadicVolume.padicVolIntegral_map"
+  ],
   "cor3_12_dependency": "independent"
  },
  "IUT4.Prop1_2": {
@@ -160,7 +313,7 @@
   "statement_status": "EXTRACTED",
   "proof_status": "BLOCKED_BY_MATHLIB",
   "obligations": [
-   "The inclusions (i) to (iv) need the p-adic logarithm on unit groups and tensor products of rings of integers; not formalized in general. For k_i = Q_p (e_i = 1, R_i = Z_p) the logarithm on Z_p^x and the image log(Z_p^x) = p Z_p (p odd) or 4 Z_2 (p = 2), which gives (i) in that case, are proved in the fragments IUT4.Prop1_2.frag.log_series_def, IUT4.Prop1_2.frag.log_series_norm, IUT4.Prop1_2.frag.log_hom and IUT4.Prop1_2.frag.i_Qp; finite extensions of Q_p, tensor products and (ii) to (iv) are open.",
+   "The inclusions (ii) to (iv) need the tensor products R_I and Proposition 1.1; not formalized. Assertion (i) is proved for k_i = Q_p (IUT4.Prop1_2.frag.log_series_def, IUT4.Prop1_2.frag.log_series_norm, IUT4.Prop1_2.frag.log_hom, IUT4.Prop1_2.frag.i_Qp), for finite extensions of Q_p in a normed-field model with a hypothesis on e (IUT4.Prop1_2.frag.i_model, IUT4.Prop1_2.frag.i_equality_model), and for every finite extension L of Q_p with R_i = integralClosure Z_p L, e_i = Ideal.ramificationIdx and the spectral norm, with no hypothesis on the norm (IUT4.Prop1_2.frag.bridge_i). No declaration states the whole proposition.",
    "Elementary facts about a_i, b_i used in the proof are checked in the fragments listed in `fragments`."
   ],
   "ambiguities": [
@@ -176,7 +329,17 @@
    "IUT4.Prop1_2.frag.log_series_def",
    "IUT4.Prop1_2.frag.log_series_norm",
    "IUT4.Prop1_2.frag.log_hom",
-   "IUT4.Prop1_2.frag.i_Qp"
+   "IUT4.Prop1_2.frag.i_Qp",
+   "IUT4.Prop1_2.frag.bridge_ring_of_integers",
+   "IUT4.Prop1_2.frag.bridge_ramification",
+   "IUT4.Prop1_2.frag.bridge_fractional_ideals",
+   "IUT4.Prop1_2.frag.bridge_i",
+   "IUT4.Prop1_2.frag.ext_log_def",
+   "IUT4.Prop1_2.frag.ext_log_hom",
+   "IUT4.Prop1_2.frag.ext_log_isometry",
+   "IUT4.Prop1_2.frag.i_model",
+   "IUT4.Prop1_2.frag.i_equality_model",
+   "IUT4.Prop1_2.frag.i_Qp_consistency"
   ]
  },
  "IUT4.Prop1_2.frag.a_b_of_le": {
@@ -447,6 +610,388 @@
   ],
   "cor3_12_dependency": "independent"
  },
+ "IUT4.Prop1_2.frag.bridge_ring_of_integers": {
+  "kind": "fragment",
+  "parent": "IUT4.Prop1_2",
+  "source": {
+   "paper": "Inter-universal Teichmuller Theory IV",
+   "pdf_pages": "pages 9 to 12",
+   "pages_read": "rendered and checked: pages 9, 10, 11, 12"
+  },
+  "content": "For x in a finite extension L of Q_p with its spectral norm: |x| <= 1 iff x is integral over Z_p; hence the closed unit ball equals integralClosure Z_p L as a set, and |x| = 1 iff x is a unit of integralClosure Z_p L, so the unit sphere is the image of its unit group.",
+  "explicit_hypotheses": [
+   "p a prime",
+   "L a field with a finite-dimensional Q_p-algebra structure and a compatible Z_p-algebra structure (IsScalarTower Z_p Q_p L)",
+   "L normed by the spectral norm"
+  ],
+  "implicit_hypotheses": [],
+  "conclusion": "spectral norm of x is at most 1 iff IsIntegral Z_p x; the closed unit ball is integralClosure Z_p L; the unit sphere is the image of (integralClosure Z_p L)^x.",
+  "definitions_required": [],
+  "results_used": [],
+  "external_dependencies": [],
+  "lean_declaration": "IUT.PaperIV.LocalFields.padicBridge_norm_le_one_iff_isIntegral",
+  "covers": "Page 9: R_i is the ring of integers of k_i; page 10: R_i^x in Proposition 1.2 (i). Identifies the closed-ball model of the normed-field fragments with the ring of integers.",
+  "not_covered": "The uniqueness of the norm on k_i (the spectral norm is fixed); tensor products R_I.",
+  "statement_status": "STATEMENT_FORMALIZED",
+  "proof_status": "KERNEL_VERIFIED",
+  "obligations": [],
+  "ambiguities": [],
+  "scope": "finite extension L of Q_p (Field, finite-dimensional Q_p-algebra, compatible Z_p-algebra) with Mathlib's spectral norm spectralNorm Q_p L; R_i = integralClosure Z_p L; e_i = Ideal.ramificationIdx of a prime P over pZ_p (proved unique)",
+  "lemmas": [
+   "IUT.PaperIV.LocalFields.padicBridge_mem_integralClosure_iff",
+   "IUT.PaperIV.LocalFields.padicBridge_integralClosure_eq_unitBall",
+   "IUT.PaperIV.LocalFields.padicBridge_norm_le_one",
+   "IUT.PaperIV.LocalFields.padicBridge_isUnit_iff",
+   "IUT.PaperIV.LocalFields.padicBridge_range_units_eq_unitSphere",
+   "IUT.PaperIV.LocalFields.padicBridge_mem_nonunits_iff"
+  ]
+ },
+ "IUT4.Prop1_2.frag.bridge_ramification": {
+  "kind": "fragment",
+  "parent": "IUT4.Prop1_2",
+  "source": {
+   "paper": "Inter-universal Teichmuller Theory IV",
+   "pdf_pages": "pages 9 to 12",
+   "pages_read": "rendered and checked: pages 9, 10, 11, 12"
+  },
+  "content": "The ring of integers R of L is local with maximal ideal {|x| < 1}, a discrete valuation ring; its maximal ideal lies over pZ_p and is the only prime over pZ_p. For such a prime P with e = P.ramificationIdx Z_p there is an irreducible w of R with P = (w), (p) = (w)^e as ideals, 0 < |w| < 1, |w|^e = 1/p, |x| = |w|^k (k an integer) for every nonzero x of L, and |x| <= |w| when |x| < 1. The image of the norm on L^x is {p^(k/e) : k integer}; |x|^e <= 1/p for |x| < 1, and e is the least natural number with this property.",
+  "explicit_hypotheses": [
+   "p a prime",
+   "L a field with a finite-dimensional Q_p-algebra structure and a compatible Z_p-algebra structure (IsScalarTower Z_p Q_p L)",
+   "L normed by the spectral norm",
+   "P a prime ideal of integralClosure Z_p L lying over the maximal ideal pZ_p"
+  ],
+  "implicit_hypotheses": [],
+  "conclusion": "e = P.ramificationIdx Z_p satisfies the hypothesis hval of the normed-field model and no smaller natural number does; the value group is p^((1/e)Z).",
+  "definitions_required": [],
+  "results_used": [],
+  "external_dependencies": [],
+  "lean_declaration": "IUT.PaperIV.LocalFields.padicBridge_uniformizer",
+  "covers": "Page 10: e_i, the ramification index of k_i over Q_p, and the normalization ord(p) = 1 of page 9 (ord(L^x) = (1/e_i)Z).",
+  "not_covered": "Nothing of the statements of Propositions 1.2 and 1.3 by itself; this is the identification used by the other fragments.",
+  "statement_status": "STATEMENT_FORMALIZED",
+  "proof_status": "KERNEL_VERIFIED",
+  "obligations": [],
+  "ambiguities": [],
+  "scope": "finite extension L of Q_p (Field, finite-dimensional Q_p-algebra, compatible Z_p-algebra) with Mathlib's spectral norm spectralNorm Q_p L; R_i = integralClosure Z_p L; e_i = Ideal.ramificationIdx of a prime P over pZ_p (proved unique)",
+  "lemmas": [
+   "IUT.PaperIV.LocalFields.padicBridge_isLocalRing",
+   "IUT.PaperIV.LocalFields.padicBridge_mem_maximalIdeal_iff",
+   "IUT.PaperIV.LocalFields.padicBridge_isDiscreteValuationRing",
+   "IUT.PaperIV.LocalFields.padicBridge_maximalIdeal_liesOver",
+   "IUT.PaperIV.LocalFields.padicBridge_prime_eq_maximalIdeal",
+   "IUT.PaperIV.LocalFields.padicBridge_mem_prime_iff",
+   "IUT.PaperIV.LocalFields.padicBridge_ramificationIdx_eq",
+   "IUT.PaperIV.LocalFields.padicBridge_hval",
+   "IUT.PaperIV.LocalFields.padicBridge_ramificationIdx_le_of_hval",
+   "IUT.PaperIV.LocalFields.padicBridge_norm_range_units",
+   "IUT.PaperIV.LocalFields.padicBridge_norm_eq_pow_of_ne_zero",
+   "IUT.PaperIV.LocalFields.padicBridge_natCast_p_ne_zero_not_isUnit",
+   "IUT.PaperIV.LocalFields.padicBridge_norm_natCast_p",
+   "IUT.PaperIV.LocalFields.padicBridge_norm_algebraMap_padicInt",
+   "IUT.PaperIV.LocalFields.padicBridge_rpow_of_pow_eq"
+  ]
+ },
+ "IUT4.Prop1_2.frag.bridge_fractional_ideals": {
+  "kind": "fragment",
+  "parent": "IUT4.Prop1_2",
+  "source": {
+   "paper": "Inter-universal Teichmuller Theory IV",
+   "pdf_pages": "pages 9 to 12",
+   "pages_read": "rendered and checked: pages 9, 10, 11, 12"
+  },
+  "content": "For every integer k there is a nonzero y in L with |y| = p^(k/e), e = P.ramificationIdx Z_p; for y nonzero the fractional ideal y R equals the closed ball {|z| <= |y|}; a_i and b_i lie in (1/e_i)Z.",
+  "explicit_hypotheses": [
+   "p a prime",
+   "L a field with a finite-dimensional Q_p-algebra structure and a compatible Z_p-algebra structure (IsScalarTower Z_p Q_p L)",
+   "L normed by the spectral norm",
+   "P a prime ideal of integralClosure Z_p L lying over the maximal ideal pZ_p"
+  ],
+  "implicit_hypotheses": [],
+  "conclusion": "For lambda in (1/e)Z the fractional ideal p^lambda R of page 10 exists and is the closed ball {|z| <= p^(-lambda)}; a and -b lie in (1/e)Z.",
+  "definitions_required": [],
+  "results_used": [],
+  "external_dependencies": [],
+  "lean_declaration": "IUT.PaperIV.LocalFields.padicBridge_closedBall_eq_range_mul",
+  "covers": "Page 10: the definition of p^lambda R_i for lambda in (1/e_i)Z as the fractional ideal generated by an element of ord lambda.",
+  "not_covered": "The inclusions of (i) (fragment bridge_i).",
+  "statement_status": "STATEMENT_FORMALIZED",
+  "proof_status": "KERNEL_VERIFIED",
+  "obligations": [],
+  "ambiguities": [],
+  "scope": "finite extension L of Q_p (Field, finite-dimensional Q_p-algebra, compatible Z_p-algebra) with Mathlib's spectral norm spectralNorm Q_p L; R_i = integralClosure Z_p L; e_i = Ideal.ramificationIdx of a prime P over pZ_p (proved unique)",
+  "lemmas": [
+   "IUT.PaperIV.LocalFields.padicBridge_exists_norm_eq_rpow",
+   "IUT.PaperIV.LocalFields.padicBridge_a_eq_int_div",
+   "IUT.PaperIV.LocalFields.padicBridge_b_eq_int_div"
+  ]
+ },
+ "IUT4.Prop1_2.frag.bridge_i": {
+  "kind": "fragment",
+  "parent": "IUT4.Prop1_2",
+  "source": {
+   "paper": "Inter-universal Teichmuller Theory IV",
+   "pdf_pages": "pages 9 to 12",
+   "pages_read": "rendered and checked: pages 9, 10, 11, 12"
+  },
+  "content": "IUT IV Proposition 1.2 (i) for R = integralClosure Z_p L, R^x its unit group, e = P.ramificationIdx Z_p and log = extLogUnit: p^a R contained in log(R^x) contained in p^(-b) R, both with p^lambda R as closed balls and as fractional ideals y R, z R with |y| = p^(-a), |z| = p^b (which exist); equality log(R^x) = p^(1/e) R when p > 2 and e <= p - 2.",
+  "explicit_hypotheses": [
+   "p a prime",
+   "L a field with a finite-dimensional Q_p-algebra structure and a compatible Z_p-algebra structure (IsScalarTower Z_p Q_p L)",
+   "L normed by the spectral norm",
+   "P a prime ideal of integralClosure Z_p L lying over the maximal ideal pZ_p"
+  ],
+  "implicit_hypotheses": [],
+  "conclusion": "p^a R is contained in log(R^x), which is contained in p^(-b) R; equalities when p > 2, e <= p - 2.",
+  "definitions_required": [],
+  "results_used": [],
+  "external_dependencies": [],
+  "lean_declaration": "IUT.PaperIV.LocalFields.padicBridge_extLogUnit_image_bounds",
+  "covers": "Page 10, display of Proposition 1.2 (i), including the equality clause, with no hypothesis on the norm.",
+  "not_covered": "Proposition 1.2 (ii) to (iv) (tensor products R_I, normalization, phi).",
+  "statement_status": "STATEMENT_FORMALIZED",
+  "proof_status": "KERNEL_VERIFIED",
+  "obligations": [],
+  "ambiguities": [
+   "The extension of log_p from principal units to R_i^x is not fixed by the pages read; extLogUnit (the standard extension) is used, as in the normed-field fragments."
+  ],
+  "scope": "finite extension L of Q_p (Field, finite-dimensional Q_p-algebra, compatible Z_p-algebra) with Mathlib's spectral norm spectralNorm Q_p L; R_i = integralClosure Z_p L; e_i = Ideal.ramificationIdx of a prime P over pZ_p (proved unique)",
+  "lemmas": [
+   "IUT.PaperIV.LocalFields.padicBridge_extLogUnit_image_fractionalIdeal",
+   "IUT.PaperIV.LocalFields.padicBridge_extLogUnit_image_eq_of_le",
+   "IUT.PaperIV.LocalFields.padicBridge_extLogShell_bounds"
+  ]
+ },
+ "IUT4.Prop1_2.frag.ext_log_def": {
+  "kind": "fragment",
+  "parent": "IUT4.Prop1_2",
+  "source": {
+   "paper": "Inter-universal Teichmuller Theory IV",
+   "pdf_pages": "pages 10 to 11",
+   "pages_read": "rendered and checked: pages 9, 10, 11"
+  },
+  "content": "Definitions in a normed field K: the logarithm series log(1 + x) = sum over n >= 1 of (-1)^(n+1) x^n / n (a tsum, a junk value where it does not converge), and the logarithm of units extLogUnit u = N^(-1) log(u^N) with N the least positive exponent such that |u^N - 1| < 1 (junk value 0 if none).",
+  "explicit_hypotheses": [
+   "K a normed field"
+  ],
+  "implicit_hypotheses": [],
+  "conclusion": "extLogOnePlus x and extLogUnit u are defined.",
+  "definitions_required": [],
+  "results_used": [],
+  "external_dependencies": [],
+  "lean_declaration": "IUT.PaperIV.LocalFields.extLogOnePlus",
+  "covers": "Page 10: the notation log_p(-) for the p-adic logarithm, on a finite extension k_i of Q_p in the normed-field model.",
+  "not_covered": "All inclusions of (i) to (iv) (see the other fragments); tensor products R_I.",
+  "statement_status": "STATEMENT_FORMALIZED",
+  "proof_status": "NOT_EXTRACTED",
+  "obligations": [],
+  "ambiguities": [
+   "The pages read do not fix the extension of log_p from principal units to R_i^x; extLogUnit u = N^(-1) log(u^N) for any N > 0 with |u^N - 1| < 1 is used (independent of N)."
+  ],
+  "scope": "normed-field model: K a normed field that is a normed Q_p-algebra (complete, and locally compact where units are used); R = closed unit ball, R^x = unit sphere, p^lambda R = closed ball of radius p^(-lambda); for finite extensions of Q_p with the spectral norm, the closed unit ball is integralClosure Z_p k_i and the least such e is Ideal.ramificationIdx (proved in IUT.PaperIV.LocalFields.Bridge, fragments IUT4.Prop1_2.frag.bridge_ring_of_integers and IUT4.Prop1_2.frag.bridge_ramification)",
+  "lemmas": [
+   "IUT.PaperIV.LocalFields.extLogSeries",
+   "IUT.PaperIV.LocalFields.extLogUnit",
+   "IUT.PaperIV.LocalFields.extLogDouble"
+  ],
+  "cor3_12_dependency": "independent"
+ },
+ "IUT4.Prop1_2.frag.ext_log_hom": {
+  "kind": "fragment",
+  "parent": "IUT4.Prop1_2",
+  "source": {
+   "paper": "Inter-universal Teichmuller Theory IV",
+   "pdf_pages": "pages 10 to 11",
+   "pages_read": "rendered and checked: pages 9, 10, 11"
+  },
+  "content": "For a prime p and a complete normed field K that is a normed Q_p-algebra: the series converges for |x| < 1, equals NormedSpace.log (1 + x), and satisfies log(1 + (x + y + xy)) = log(1 + x) + log(1 + y) for |x|, |y| < 1; hence log((1 + x)^n - 1) = n log(1 + x). The logarithm of units satisfies extLogUnit u = N^(-1) log(u^N) for every N > 0 with |u^N - 1| < 1, extLogUnit(1 + x) = log(1 + x) for |x| < 1, extLogUnit(u^m) = m extLogUnit u and extLogUnit(uv) = extLogUnit u + extLogUnit v when u^N, v^N lie in the open disc around 1; in a locally compact K every u with |u| = 1 has such an N, and the least one is prime to p when |u| <= 1.",
+  "explicit_hypotheses": [
+   "p a prime",
+   "K a normed field and normed Q_p-algebra, complete",
+   "|x| < 1, |y| < 1 (for the homomorphism property)"
+  ],
+  "implicit_hypotheses": [],
+  "conclusion": "extLogOnePlus (x + y + x*y) = extLogOnePlus x + extLogOnePlus y.",
+  "definitions_required": [],
+  "results_used": [],
+  "external_dependencies": [],
+  "lean_declaration": "IUT.PaperIV.LocalFields.extLogOnePlus_add_add_mul",
+  "covers": "Page 11, proof of (i): the appeal to the well-known theory of the p-adic logarithm ([Kobl], p. 81), the homomorphism property and the extension to units, for a finite extension of Q_p in the normed-field model.",
+  "not_covered": "The inclusions themselves (fragment i_model); tensor products and (ii) to (iv).",
+  "statement_status": "STATEMENT_FORMALIZED",
+  "proof_status": "KERNEL_VERIFIED",
+  "obligations": [],
+  "ambiguities": [
+   "The pages read do not fix the extension of log_p from principal units to R_i^x; extLogUnit u = N^(-1) log(u^N) for any N > 0 with |u^N - 1| < 1 is used (independent of N)."
+  ],
+  "scope": "normed-field model: K a normed field that is a normed Q_p-algebra (complete, and locally compact where units are used); R = closed unit ball, R^x = unit sphere, p^lambda R = closed ball of radius p^(-lambda); for finite extensions of Q_p with the spectral norm, the closed unit ball is integralClosure Z_p k_i and the least such e is Ideal.ramificationIdx (proved in IUT.PaperIV.LocalFields.Bridge, fragments IUT4.Prop1_2.frag.bridge_ring_of_integers and IUT4.Prop1_2.frag.bridge_ramification)",
+  "lemmas": [
+   "IUT.PaperIV.LocalFields.extLogSeries_summable",
+   "IUT.PaperIV.LocalFields.extLogOnePlus_eq_normedSpace_log",
+   "IUT.PaperIV.LocalFields.extLogOnePlus_pow_sub_one",
+   "IUT.PaperIV.LocalFields.extLogUnit_eq",
+   "IUT.PaperIV.LocalFields.extLogUnit_one_add",
+   "IUT.PaperIV.LocalFields.extLogUnit_pow",
+   "IUT.PaperIV.LocalFields.extLogUnit_mul",
+   "IUT.PaperIV.LocalFields.extLog_exists_pow_near_one",
+   "IUT.PaperIV.LocalFields.extLog_find_not_dvd",
+   "IUT.PaperIV.LocalFields.extLog_norm_sub_one_lt_of_pow"
+  ],
+  "cor3_12_dependency": "independent"
+ },
+ "IUT4.Prop1_2.frag.ext_log_isometry": {
+  "kind": "fragment",
+  "parent": "IUT4.Prop1_2",
+  "source": {
+   "paper": "Inter-universal Teichmuller Theory IV",
+   "pdf_pages": "pages 10 to 11",
+   "pages_read": "rendered and checked: pages 9, 10, 11"
+  },
+  "content": "For a prime p and a complete normed field K that is a normed Q_p-algebra: |log(1 + x)| = |x| when p |x|^(p-1) < 1, a condition equivalent to |x| < p^(-1/(p-1)); |log(1 + a) - log(1 + b)| = |a - b| on that disc, so x -> log(1 + x) is injective there; at the boundary p |x|^(p-1) = 1 the p-th term has norm |x|; for 0 <= r with p r^(p-1) < 1, x -> log(1 + x) maps the closed ball of radius r onto itself (surjectivity by the contraction mapping principle).",
+  "explicit_hypotheses": [
+   "p a prime",
+   "K a normed field and normed Q_p-algebra, complete",
+   "p |x|^(p-1) < 1"
+  ],
+  "implicit_hypotheses": [],
+  "conclusion": "|extLogOnePlus x| = |x|.",
+  "definitions_required": [],
+  "results_used": [],
+  "external_dependencies": [],
+  "lean_declaration": "IUT.PaperIV.LocalFields.extLogOnePlus_norm_eq",
+  "covers": "Page 11, proof of (i): the properties of the p-adic logarithm on the disc |x| < p^(-1/(p-1)) on which it is an isometric bijection (the role of the exponential in [Kobl], p. 81).",
+  "not_covered": "The exponential series itself; that the isometry fails at the boundary in a suitable ramified field (only the failure of the termwise estimate is shown); the inclusions of (i).",
+  "statement_status": "STATEMENT_FORMALIZED",
+  "proof_status": "KERNEL_VERIFIED",
+  "obligations": [],
+  "ambiguities": [],
+  "scope": "normed-field model: K a normed field that is a normed Q_p-algebra (complete, and locally compact where units are used); R = closed unit ball, R^x = unit sphere, p^lambda R = closed ball of radius p^(-lambda); for finite extensions of Q_p with the spectral norm, the closed unit ball is integralClosure Z_p k_i and the least such e is Ideal.ramificationIdx (proved in IUT.PaperIV.LocalFields.Bridge, fragments IUT4.Prop1_2.frag.bridge_ring_of_integers and IUT4.Prop1_2.frag.bridge_ramification)",
+  "lemmas": [
+   "IUT.PaperIV.LocalFields.extLog_mul_pow_lt_one_iff",
+   "IUT.PaperIV.LocalFields.extLogSeries_norm_eq_of_boundary",
+   "IUT.PaperIV.LocalFields.extLogOnePlus_norm_sub_eq",
+   "IUT.PaperIV.LocalFields.extLogOnePlus_injOn",
+   "IUT.PaperIV.LocalFields.extLogOnePlus_surjOn",
+   "IUT.PaperIV.LocalFields.extLogOnePlus_image_closedBall",
+   "IUT.PaperIV.LocalFields.extLogSeries_norm_le_max"
+  ],
+  "cor3_12_dependency": "independent"
+ },
+ "IUT4.Prop1_2.frag.i_model": {
+  "kind": "fragment",
+  "parent": "IUT4.Prop1_2",
+  "source": {
+   "paper": "Inter-universal Teichmuller Theory IV",
+   "pdf_pages": "pages 10 to 11",
+   "pages_read": "rendered and checked: pages 9, 10, 11"
+  },
+  "content": "For a prime p, a complete, locally compact normed field K that is a normed Q_p-algebra, and a positive integer e such that |x|^e <= 1/p whenever |x| < 1: {z : |z| <= p^(-a)} is contained in extLogUnit({u : |u| = 1}), which is contained in {z : |z| <= p^b}, with a = Proposition1_2.a p e and b = Proposition1_2.b p e. The first inclusion holds for every e >= 1 without the norm condition. The same holds for every finite extension L of Q_p carrying a norm that extends the p-adic norm. In particular this holds for every field L with a finite-dimensional Q_p-algebra structure (the classes of the module IUT.PaperIV.LocalFields.Padic) equipped with Mathlib's spectral norm spectralNorm Q_p L.",
+  "explicit_hypotheses": [
+   "p a prime",
+   "K a normed field and normed Q_p-algebra, complete and proper (locally compact)",
+   "e a natural number with 1 <= e",
+   "for all x in K with |x| < 1, |x|^e <= 1/p"
+  ],
+  "implicit_hypotheses": [],
+  "conclusion": "{z | |z| <= p^(-a p e)} is a subset of extLogUnit '' {u | |u| = 1}, which is a subset of {z | |z| <= p^(b p e)}.",
+  "definitions_required": [],
+  "results_used": [],
+  "external_dependencies": [],
+  "lean_declaration": "IUT.PaperIV.LocalFields.extLogUnit_image_bounds",
+  "covers": "Page 10, Proposition 1.2 (i): the display p^(a_i) R_i is contained in log_p(R_i^x), which is contained in p^(-b_i) R_i; and page 11, the proof of (i) from a_i > 1/(p-1) and p^(b_i + 1/e_i)/e_i > 1/(p-1) (Proposition1_2.a_gt and Proposition1_2.rpow_b_gt are used).",
+  "not_covered": "Assertions (ii) to (iv). The statement is about the normed-field model with the hypothesis hval on e; IUT4.Prop1_2.frag.bridge_i states (i) for R_i = integralClosure Z_p k_i and e_i = Ideal.ramificationIdx with the spectral norm, which removes the hypothesis hval.",
+  "statement_status": "STATEMENT_FORMALIZED",
+  "proof_status": "KERNEL_VERIFIED",
+  "obligations": [],
+  "ambiguities": [
+   "The pages read do not fix the extension of log_p from principal units to R_i^x; extLogUnit u = N^(-1) log(u^N) for any N > 0 with |u^N - 1| < 1 is used (independent of N).",
+   "e is any positive integer with |x|^e <= 1/p for all |x| < 1 (ord >= 1/e on the maximal ideal); the ramification index satisfies this (IUT.PaperIV.LocalFields.padicBridge_hval), and no smaller natural number does (padicBridge_ramificationIdx_le_of_hval)."
+  ],
+  "scope": "normed-field model: K a normed field that is a normed Q_p-algebra (complete, and locally compact where units are used); R = closed unit ball, R^x = unit sphere, p^lambda R = closed ball of radius p^(-lambda); for finite extensions of Q_p with the spectral norm, the closed unit ball is integralClosure Z_p k_i and the least such e is Ideal.ramificationIdx (proved in IUT.PaperIV.LocalFields.Bridge, fragments IUT4.Prop1_2.frag.bridge_ring_of_integers and IUT4.Prop1_2.frag.bridge_ramification)",
+  "lemmas": [
+   "IUT.PaperIV.LocalFields.extLogUnit_image_lower",
+   "IUT.PaperIV.LocalFields.extLogUnit_image_upper",
+   "IUT.PaperIV.LocalFields.extLogUnit_image_bounds_of_finiteDimensional",
+   "IUT.PaperIV.LocalFields.extLog_rpow_neg_a_mem_disc",
+   "IUT.PaperIV.LocalFields.extLog_b_facts",
+   "IUT.PaperIV.LocalFields.extLogSeries_norm_le_upper",
+   "IUT.PaperIV.LocalFields.extLog_val_arith",
+   "IUT.PaperIV.LocalFields.extLogUnit_image_bounds_spectralNorm",
+   "IUT.PaperIV.LocalFields.extLogUnit_lower_and_shell_spectralNorm"
+  ],
+  "cor3_12_dependency": "independent"
+ },
+ "IUT4.Prop1_2.frag.i_equality_model": {
+  "kind": "fragment",
+  "parent": "IUT4.Prop1_2",
+  "source": {
+   "paper": "Inter-universal Teichmuller Theory IV",
+   "pdf_pages": "pages 10 to 11",
+   "pages_read": "rendered and checked: pages 9, 10, 11"
+  },
+  "content": "In the setting of the fragment i_model, if p > 2 and e <= p - 2, then extLogUnit({u : |u| = 1}) = {z : |z| <= p^(-1/e)}; for e = 1 and p > 2 (unramified case, with |x| <= 1/p for |x| < 1) it equals {z : |z| <= 1/p}.",
+  "explicit_hypotheses": [
+   "p a prime with 2 < p",
+   "K a normed field and normed Q_p-algebra, complete and proper",
+   "e a natural number with 1 <= e <= p - 2",
+   "for all x in K with |x| < 1, |x|^e <= 1/p"
+  ],
+  "implicit_hypotheses": [],
+  "conclusion": "extLogUnit '' {u | |u| = 1} = {z | |z| <= p^(-(1/e))}.",
+  "definitions_required": [],
+  "results_used": [],
+  "external_dependencies": [],
+  "lean_declaration": "IUT.PaperIV.LocalFields.extLogUnit_image_eq_of_le",
+  "covers": "Page 10, Proposition 1.2 (i): the equalities when p > 2 and e_i <= p - 2 (with a_i = 1/e_i = -b_i, Proposition1_2.a_b_of_le).",
+  "not_covered": "Assertions (ii) to (iv). As for i_model, the statement is about the normed-field model with the hypothesis hval; IUT4.Prop1_2.frag.bridge_i (lemma padicBridge_extLogUnit_image_eq_of_le) states the equalities for the ring of integers and Ideal.ramificationIdx without it.",
+  "statement_status": "STATEMENT_FORMALIZED",
+  "proof_status": "KERNEL_VERIFIED",
+  "obligations": [],
+  "ambiguities": [
+   "The pages read do not fix the extension of log_p from principal units to R_i^x; extLogUnit u = N^(-1) log(u^N) for any N > 0 with |u^N - 1| < 1 is used (independent of N).",
+   "e is any positive integer with |x|^e <= 1/p for all |x| < 1 (ord >= 1/e on the maximal ideal); the ramification index satisfies this (IUT.PaperIV.LocalFields.padicBridge_hval), and no smaller natural number does (padicBridge_ramificationIdx_le_of_hval)."
+  ],
+  "scope": "normed-field model: K a normed field that is a normed Q_p-algebra (complete, and locally compact where units are used); R = closed unit ball, R^x = unit sphere, p^lambda R = closed ball of radius p^(-lambda); for finite extensions of Q_p with the spectral norm, the closed unit ball is integralClosure Z_p k_i and the least such e is Ideal.ramificationIdx (proved in IUT.PaperIV.LocalFields.Bridge, fragments IUT4.Prop1_2.frag.bridge_ring_of_integers and IUT4.Prop1_2.frag.bridge_ramification)",
+  "lemmas": [
+   "IUT.PaperIV.LocalFields.extLogUnit_image_unramified"
+  ],
+  "cor3_12_dependency": "independent"
+ },
+ "IUT4.Prop1_2.frag.i_Qp_consistency": {
+  "kind": "fragment",
+  "parent": "IUT4.Prop1_2",
+  "source": {
+   "paper": "Inter-universal Teichmuller Theory IV",
+   "pdf_pages": "pages 10 to 11",
+   "pages_read": "rendered and checked: pages 9, 10, 11"
+  },
+  "content": "For K = Q_p: extLogOnePlus agrees with IUT.Prerequisites.PadicLog.padicLogOnePlus, extLogUnit agrees with padicLogUnit on Z_p^x, the open unit disc of Q_p lies in the closed disc of radius 1/p (e = 1), and for odd p the image extLogUnit({u in Q_p : |u| = 1}) equals the range of padicLogUnit on Z_p^x.",
+  "explicit_hypotheses": [
+   "p a prime",
+   "p != 2 (for the image statement)"
+  ],
+  "implicit_hypotheses": [],
+  "conclusion": "extLogUnit '' {u : Q_p | |u| = 1} = Set.range (u : Z_p^x => padicLogUnit p u).",
+  "definitions_required": [],
+  "results_used": [],
+  "external_dependencies": [],
+  "lean_declaration": "IUT.PaperIV.LocalFields.extLogUnit_image_padic_of_ne_two",
+  "covers": "Page 10, Proposition 1.2 (i) for k_i = Q_p, e_i = 1, p > 2 (a_i = 1, b_i = -1): consistency of the general model with the base-field fragment IUT4.Prop1_2.frag.i_Qp.",
+  "not_covered": "p = 2 (covered by IUT4.Prop1_2.frag.i_Qp); finite extensions beyond the model; (ii) to (iv).",
+  "statement_status": "STATEMENT_FORMALIZED",
+  "proof_status": "KERNEL_VERIFIED",
+  "obligations": [],
+  "ambiguities": [
+   "The pages read do not fix the extension of log_p from principal units to R_i^x; extLogUnit u = N^(-1) log(u^N) for any N > 0 with |u^N - 1| < 1 is used (independent of N)."
+  ],
+  "scope": "base field Q_p, as an instance of the normed-field model",
+  "lemmas": [
+   "IUT.PaperIV.LocalFields.extLogOnePlus_padic",
+   "IUT.PaperIV.LocalFields.extLogUnit_padic",
+   "IUT.PaperIV.LocalFields.extLog_padic_disc"
+  ],
+  "cor3_12_dependency": "independent"
+ },
  "IUT4.Prop1_3": {
   "source": {
    "paper": "Inter-universal Teichmuller Theory IV",
@@ -472,7 +1017,7 @@
   "statement_status": "EXTRACTED",
   "proof_status": "BLOCKED_BY_MATHLIB",
   "obligations": [
-   "The local field inputs (Eisenstein and Kummer polynomials, the exact exponent of the different in the tame case, ramification in towers for (ii)) are not formalized. The lower bound of (i) is proved, for rings of integers of finite extensions of Q_p and for every prime over p (that there is only one such prime is not proved), in the fragments IUT4.Prop1_3.frag.i_differentOrder_ge, IUT4.Prop1_3.frag.i_differentOrder_ge_tower and IUT4.Prop1_3.frag.i_padic_differentOrder_ge; the equality in the tame case and (ii) are open.",
+   "Proposition 1.3 over a general base k_0 (the transitivity of the different over R_0, ramification in towers) and (ii) beyond its base case (Galois and Kummer extensions, the bound n_i) are not formalized. For k_0 = Q_p: the lower bound of (i) is proved for rings of integers of finite extensions of Q_p (IUT4.Prop1_3.frag.i_differentOrder_ge, IUT4.Prop1_3.frag.i_differentOrder_ge_tower, IUT4.Prop1_3.frag.i_padic_differentOrder_ge), the prime over p is unique (IUT.PaperIV.LocalFields.padicBridge_prime_eq_maximalIdeal), the equality in the tame case, the strict inequality in the wild case and their equivalence are proved (IUT4.Prop1_3.frag.i_tame_equality_padic, IUT4.Prop1_3.frag.i_wild_inequality_padic, IUT4.Prop1_3.frag.i_equality_iff_tame_padic), and (ii) is proved in its base case k_1 = k_i tame over Q_p (IUT4.Prop1_3.frag.ii_base_padic). These are separate declarations; none states (i) for k_0 = Q_p by itself.",
    "Arithmetic steps of the proof are checked in the fragments listed in `fragments`."
   ],
   "ambiguities": [],
@@ -485,7 +1030,12 @@
    "IUT4.Prop1_3.frag.differentOrder",
    "IUT4.Prop1_3.frag.i_differentOrder_ge",
    "IUT4.Prop1_3.frag.i_differentOrder_ge_tower",
-   "IUT4.Prop1_3.frag.i_padic_differentOrder_ge"
+   "IUT4.Prop1_3.frag.i_padic_differentOrder_ge",
+   "IUT4.Prop1_3.frag.bridge_d_with_log",
+   "IUT4.Prop1_3.frag.i_tame_equality_padic",
+   "IUT4.Prop1_3.frag.i_wild_inequality_padic",
+   "IUT4.Prop1_3.frag.i_equality_iff_tame_padic",
+   "IUT4.Prop1_3.frag.ii_base_padic"
   ]
  },
  "IUT4.Prop1_3.frag.i_min": {
@@ -626,7 +1176,7 @@
   "external_dependencies": [],
   "lean_declaration": "IUT.PaperIV.LocalFields.differentOrder",
   "covers": "Page 9: the definition of d_i as ord of a generator of the different of R_i over Z_p, with ord(p) = 1.",
-  "not_covered": "The identification with the paper's d_i uses that R_i has a single prime over p (R_i local); this is not proved, so all results are stated for every prime P over p.",
+  "not_covered": "The identification with the paper's d_i uses that R_i has a single prime over p (R_i local); for the ring of integers of a finite extension of Q_p this is proved in IUT.PaperIV.LocalFields.Bridge (padicBridge_prime_eq_maximalIdeal); the results of this fragment are stated for every prime P over p.",
   "statement_status": "STATEMENT_FORMALIZED",
   "proof_status": "NOT_EXTRACTED",
   "obligations": [],
@@ -734,6 +1284,177 @@
    "IUT.PaperIV.LocalFields.isTorsionFree_ringOfIntegers_padic"
   ]
  },
+ "IUT4.Prop1_3.frag.bridge_d_with_log": {
+  "kind": "fragment",
+  "parent": "IUT4.Prop1_3",
+  "source": {
+   "paper": "Inter-universal Teichmuller Theory IV",
+   "pdf_pages": "pages 9 to 12",
+   "pages_read": "rendered and checked: pages 9, 10, 11, 12"
+  },
+  "content": "For the unique prime P over p of R = integralClosure Z_p L, with e = P.ramificationIdx Z_p and d = differentOrder Z_p R P: (e - 1)/e <= d, together with the inclusions of Proposition 1.2 (i) for the same e.",
+  "explicit_hypotheses": [
+   "p a prime",
+   "L a field with a finite-dimensional Q_p-algebra structure and a compatible Z_p-algebra structure (IsScalarTower Z_p Q_p L)",
+   "L normed by the spectral norm",
+   "P a prime ideal of integralClosure Z_p L lying over the maximal ideal pZ_p"
+  ],
+  "implicit_hypotheses": [],
+  "conclusion": "(e - 1)/e <= d and p^a R in log(R^x) in p^(-b) R with the same e and P; since P is the only prime over p, d is the paper's d_i.",
+  "definitions_required": [],
+  "results_used": [],
+  "external_dependencies": [],
+  "lean_declaration": "IUT.PaperIV.LocalFields.padicBridge_log_bounds_and_differentOrder",
+  "covers": "Pages 11 and 12: Proposition 1.3 (i) for k_0 = Q_p, now for the paper's unique prime, with the e of Proposition 1.2 (i).",
+  "not_covered": "The tame equality of 1.3 (i), proved separately in IUT4.Prop1_3.frag.i_tame_equality_padic; 1.3 (ii); towers k_0 other than Q_p in this combined form.",
+  "statement_status": "STATEMENT_FORMALIZED",
+  "proof_status": "KERNEL_VERIFIED",
+  "obligations": [],
+  "ambiguities": [],
+  "scope": "finite extension L of Q_p (Field, finite-dimensional Q_p-algebra, compatible Z_p-algebra) with Mathlib's spectral norm spectralNorm Q_p L; R_i = integralClosure Z_p L; e_i = Ideal.ramificationIdx of a prime P over pZ_p (proved unique)",
+  "lemmas": [
+   "IUT.PaperIV.LocalFields.padicBridge_prime_eq_maximalIdeal"
+  ]
+ },
+ "IUT4.Prop1_3.frag.i_tame_equality_padic": {
+  "kind": "fragment",
+  "parent": "IUT4.Prop1_3",
+  "source": {
+   "paper": "Inter-universal Teichmuller Theory IV",
+   "pdf_pages": "pages 9 to 13",
+   "pages_read": "rendered and checked: pages 8, 9, 10, 11, 12, 13"
+  },
+  "content": "For a finite extension L of Q_p and a prime P of its ring of integers over p with ramification index e: if p does not divide e, the exponent of P in the different (differentExponent Z_p R P) equals e - 1; equivalently differentOrder Z_p R P = (e - 1)/e. Proof: pR = P^e; the trace of R/P^n over F_p is n times the trace of R/P (additivity of the trace along 0 -> R/P -> R/P^(n+1) -> R/P^n -> 0); R/P is separable over the finite field F_p, so some trace is nonzero, and since p does not divide e some element of R has a unit trace in Z_p, which forbids P^e from dividing the different.",
+  "explicit_hypotheses": [
+   "p a prime",
+   "L a field with a finite-dimensional Q_p-algebra structure and a compatible Z_p-algebra structure (IsScalarTower Z_p Q_p L)",
+   "P a prime ideal of R = integralClosure Z_p L lying over the maximal ideal pZ_p",
+   "p does not divide P.ramificationIdx Z_p"
+  ],
+  "implicit_hypotheses": [],
+  "conclusion": "differentExponent Z_p R P = P.ramificationIdx Z_p - 1 (natural numbers); differentOrder Z_p R P = ((e : R) - 1)/e.",
+  "definitions_required": [],
+  "results_used": [],
+  "external_dependencies": [],
+  "lean_declaration": "IUT.PaperIV.LocalFields.differentExponent_eq_of_not_dvd_ramificationIdx_padic",
+  "covers": "Pages 11 and 12, Proposition 1.3 (i): the equality d_i = d_0 + (e_{i/0} - 1)/e_i when k_i is tamely ramified over k_0, for k_0 = Q_p.",
+  "not_covered": "Proposition 1.3 (i) over a general base k_0 (needs the transitivity of the different over R_0 and ramification in towers); Proposition 1.3 (ii).",
+  "statement_status": "STATEMENT_FORMALIZED",
+  "proof_status": "KERNEL_VERIFIED",
+  "obligations": [],
+  "ambiguities": [],
+  "cor3_12_dependency": "independent",
+  "lemmas": [
+   "IUT.PaperIV.LocalFields.differentOrder_eq_of_not_dvd_ramificationIdx_padic",
+   "IUT.PaperIV.LocalFields.differentExponent_lt_of_intTrace_notMem_padic",
+   "IUT.PaperIV.LocalFields.intTrace_mk_eq_padic",
+   "IUT.PaperIV.LocalFields.trace_quotient_pow_padic",
+   "IUT.PaperIV.LocalFields.trace_quotient_eq_add_of_mul_exact",
+   "IUT.PaperIV.LocalFields.trace_eq_add_of_exact",
+   "IUT.PaperIV.LocalFields.trace_eq_trace_restrict_add_trace_mapQ",
+   "IUT.PaperIV.LocalFields.quotient_smul_eq_of_le_comap",
+   "IUT.PaperIV.LocalFields.map_maximalIdeal_eq_pow_padic",
+   "IUT.PaperIV.LocalFields.le_comap_pow_padic",
+   "IUT.PaperIV.LocalFields.exists_span_eq_padic",
+   "IUT.PaperIV.LocalFields.moduleFinite_padicIntegers"
+  ],
+  "scope": "k_0 = Q_p (d_0 = 0, e_0 = 1, e_{i/0} = e); L = k_i a finite extension of Q_p; R_i = integralClosure Z_p L (local by IUT.PaperIV.LocalFields.padicBridge_isLocalRing, P unique by padicBridge_prime_eq_maximalIdeal); e = Ideal.ramificationIdx of P over pZ_p; d_i = differentOrder Z_p R_i P"
+ },
+ "IUT4.Prop1_3.frag.i_wild_inequality_padic": {
+  "kind": "fragment",
+  "parent": "IUT4.Prop1_3",
+  "source": {
+   "paper": "Inter-universal Teichmuller Theory IV",
+   "pdf_pages": "pages 9 to 13",
+   "pages_read": "rendered and checked: pages 8, 9, 10, 11, 12, 13"
+  },
+  "content": "For a finite extension L of Q_p and a prime P of its ring of integers over p with ramification index e: if p divides e, then e <= differentExponent Z_p R P; equivalently 1 <= differentOrder Z_p R P, strictly above the bound (e - 1)/e. Proof: every trace from R to Z_p is divisible by p (it is e times a residue trace modulo p), so P^e divides the different.",
+  "explicit_hypotheses": [
+   "p a prime",
+   "L a field with a finite-dimensional Q_p-algebra structure and a compatible Z_p-algebra structure (IsScalarTower Z_p Q_p L)",
+   "P a prime ideal of R = integralClosure Z_p L lying over the maximal ideal pZ_p",
+   "p divides P.ramificationIdx Z_p"
+  ],
+  "implicit_hypotheses": [],
+  "conclusion": "P.ramificationIdx Z_p <= differentExponent Z_p R P; 1 <= differentOrder Z_p R P.",
+  "definitions_required": [],
+  "results_used": [],
+  "external_dependencies": [],
+  "lean_declaration": "IUT.PaperIV.LocalFields.ramificationIdx_le_differentExponent_of_dvd_padic",
+  "covers": "Pages 11 and 12, Proposition 1.3 (i): the inequality is strict when k_i is wildly ramified over k_0 = Q_p (the paper states only the inequality and the tame equality).",
+  "not_covered": "Proposition 1.3 (i) over a general base k_0 (needs the transitivity of the different over R_0 and ramification in towers); Proposition 1.3 (ii).",
+  "statement_status": "STATEMENT_FORMALIZED",
+  "proof_status": "KERNEL_VERIFIED",
+  "obligations": [],
+  "ambiguities": [],
+  "cor3_12_dependency": "independent",
+  "lemmas": [
+   "IUT.PaperIV.LocalFields.one_le_differentOrder_of_dvd_ramificationIdx_padic",
+   "IUT.PaperIV.LocalFields.intTrace_mk_eq_padic"
+  ],
+  "scope": "k_0 = Q_p (d_0 = 0, e_0 = 1, e_{i/0} = e); L = k_i a finite extension of Q_p; R_i = integralClosure Z_p L (local by IUT.PaperIV.LocalFields.padicBridge_isLocalRing, P unique by padicBridge_prime_eq_maximalIdeal); e = Ideal.ramificationIdx of P over pZ_p; d_i = differentOrder Z_p R_i P"
+ },
+ "IUT4.Prop1_3.frag.i_equality_iff_tame_padic": {
+  "kind": "fragment",
+  "parent": "IUT4.Prop1_3",
+  "source": {
+   "paper": "Inter-universal Teichmuller Theory IV",
+   "pdf_pages": "pages 9 to 13",
+   "pages_read": "rendered and checked: pages 8, 9, 10, 11, 12, 13"
+  },
+  "content": "For a finite extension L of Q_p and a prime P of its ring of integers over p with ramification index e: differentExponent Z_p R P = e - 1 if and only if p does not divide e.",
+  "explicit_hypotheses": [
+   "p a prime",
+   "L a field with a finite-dimensional Q_p-algebra structure and a compatible Z_p-algebra structure (IsScalarTower Z_p Q_p L)",
+   "P a prime ideal of R = integralClosure Z_p L lying over the maximal ideal pZ_p"
+  ],
+  "implicit_hypotheses": [],
+  "conclusion": "differentExponent Z_p R P = P.ramificationIdx Z_p - 1 iff not (p divides P.ramificationIdx Z_p).",
+  "definitions_required": [],
+  "results_used": [],
+  "external_dependencies": [],
+  "lean_declaration": "IUT.PaperIV.LocalFields.differentExponent_eq_ramificationIdx_sub_one_iff_padic",
+  "covers": "Pages 11 and 12, Proposition 1.3 (i): the equality case is exactly the tame case, for k_0 = Q_p.",
+  "not_covered": "Proposition 1.3 (i) over a general base k_0 (needs the transitivity of the different over R_0 and ramification in towers); Proposition 1.3 (ii).",
+  "statement_status": "STATEMENT_FORMALIZED",
+  "proof_status": "KERNEL_VERIFIED",
+  "obligations": [],
+  "ambiguities": [],
+  "cor3_12_dependency": "independent",
+  "lemmas": [],
+  "scope": "k_0 = Q_p (d_0 = 0, e_0 = 1, e_{i/0} = e); L = k_i a finite extension of Q_p; R_i = integralClosure Z_p L (local by IUT.PaperIV.LocalFields.padicBridge_isLocalRing, P unique by padicBridge_prime_eq_maximalIdeal); e = Ideal.ramificationIdx of P over pZ_p; d_i = differentOrder Z_p R_i P"
+ },
+ "IUT4.Prop1_3.frag.ii_base_padic": {
+  "kind": "fragment",
+  "parent": "IUT4.Prop1_3",
+  "source": {
+   "paper": "Inter-universal Teichmuller Theory IV",
+   "pdf_pages": "pages 9 to 13",
+   "pages_read": "rendered and checked: pages 8, 9, 10, 11, 12, 13"
+  },
+  "content": "For a finite extension L of Q_p and a prime P of its ring of integers over p whose ramification index is not divisible by p: differentOrder Z_p R P <= 1. Obtained from IUT.PaperIV.Proposition1_3.ii_base with d0 = 0, e0 = 1, its hypothesis discharged by the tame equality.",
+  "explicit_hypotheses": [
+   "p a prime",
+   "L a field with a finite-dimensional Q_p-algebra structure and a compatible Z_p-algebra structure (IsScalarTower Z_p Q_p L)",
+   "P a prime ideal of R = integralClosure Z_p L lying over the maximal ideal pZ_p",
+   "p does not divide P.ramificationIdx Z_p"
+  ],
+  "implicit_hypotheses": [],
+  "conclusion": "differentOrder Z_p R P <= 1.",
+  "definitions_required": [],
+  "results_used": [],
+  "external_dependencies": [],
+  "lean_declaration": "IUT.PaperIV.LocalFields.differentOrder_le_one_of_not_dvd_ramificationIdx_padic",
+  "covers": "Page 12, Proposition 1.3 (ii) in its base case k_0 = Q_p, k_1 = k_i tamely ramified over Q_p (n_i = 0): d_i <= d_0 + n_i + 1/e_0 = 1.",
+  "not_covered": "Proposition 1.3 (ii) with k_i Galois over a tame k_1 different from k_i (n_i > 0), and over a general base k_0.",
+  "statement_status": "STATEMENT_FORMALIZED",
+  "proof_status": "KERNEL_VERIFIED",
+  "obligations": [],
+  "ambiguities": [],
+  "cor3_12_dependency": "independent",
+  "lemmas": [],
+  "scope": "k_0 = Q_p (d_0 = 0, e_0 = 1, e_{i/0} = e); L = k_i a finite extension of Q_p; R_i = integralClosure Z_p L (local by IUT.PaperIV.LocalFields.padicBridge_isLocalRing, P unique by padicBridge_prime_eq_maximalIdeal); e = Ideal.ramificationIdx of P over pZ_p; d_i = differentOrder Z_p R_i P"
+ },
  "IUT4.Rem1_3_1": {
   "source": {
    "paper": "Inter-universal Teichmuller Theory IV",
@@ -787,8 +1508,8 @@
   "statement_status": "EXTRACTED",
   "proof_status": "BLOCKED_BY_EXTERNAL_THEOREM",
   "obligations": [
-   "The log-volume mu^log of [AbsTopIII], Proposition 5.7, its normalization (i), its value (ii) and the inclusions of (iii) and (iv) are not formalized.",
-   "The fragments check the arithmetic of the proof starting from supplied volume bounds; none of them establishes the measure normalization or the containments."
+   "The log-volume of [AbsTopIII], Proposition 5.7, is not read; mu^log is modeled as log(mu(A)/mu(R))/d for a Haar measure mu (IUT4.Prop1_4.frag.muLog_def), an interpretation. With it the normalization (i) is proved for one finite extension of Q_p on its ring of integers (IUT4.Prop1_4.frag.vb_field_normalization) and for tensor packets of two factors on (R_E)~ (IUT4.Prop1_4.frag.vb_packet_normalization); more than two factors are open. The value (ii) is obtained only for p > 2 and e_i <= p - 2 and only when m_i = 0, which is not proved (IUT4.Prop1_4.frag.vb_logunit_eq_of_le); otherwise only bounds are proved (IUT4.Prop1_4.frag.logUnit_bounds, IUT4.Prop1_4.frag.vb_logunit_bounds). The inclusions of (iii) and (iv), which need Proposition 1.1, and the additivity over tensor factors used on page 14 are not formalized.",
+   "The arithmetic fragments check the proof starting from supplied volume bounds; the per-index inequality d_i + a_i >= 1 (2 for p = 2) is proved for actual finite extensions of Q_p (IUT4.Prop1_4.frag.bridge_d_add_a). None of the fragments establishes the containments of (iii) and (iv)."
   ],
   "ambiguities": [
    "The first display of (iii) writes p^{lambda − d_I − a_I}; the render shows a floor, which accounts for the +1."
@@ -806,7 +1527,21 @@
    "IUT4.Prop1_4.frag.d_add_a_ge",
    "IUT4.Prop1_4.frag.dI_add_aI_ge",
    "IUT4.Prop1_4.frag.iii_padic_differentOrder_add_a_ge",
-   "IUT4.Prop1_4.frag.iii_padic_dI_add_aI_ge"
+   "IUT4.Prop1_4.frag.iii_padic_dI_add_aI_ge",
+   "IUT4.Prop1_4.frag.bridge_d_add_a",
+   "IUT4.Prop1_4.frag.measure_smul",
+   "IUT4.Prop1_4.frag.muLog_def",
+   "IUT4.Prop1_4.frag.muLog_laws",
+   "IUT4.Prop1_4.frag.i_unitBall",
+   "IUT4.Prop1_4.frag.field_smul",
+   "IUT4.Prop1_4.frag.logUnit_bounds",
+   "IUT4.Prop1_4.frag.packet",
+   "IUT4.Prop1_4.frag.padic_base",
+   "IUT4.Prop1_4.frag.vb_field_normalization",
+   "IUT4.Prop1_4.frag.vb_fractional_ideal",
+   "IUT4.Prop1_4.frag.vb_logunit_eq_of_le",
+   "IUT4.Prop1_4.frag.vb_packet_normalization",
+   "IUT4.Prop1_4.frag.vb_logunit_bounds"
   ]
  },
  "IUT4.Prop1_4.frag.ii_identity": {
@@ -1167,6 +1902,509 @@
   "ambiguities": [],
   "cor3_12_dependency": "independent"
  },
+ "IUT4.Prop1_4.frag.bridge_d_add_a": {
+  "kind": "fragment",
+  "parent": "IUT4.Prop1_4",
+  "source": {
+   "paper": "Inter-universal Teichmuller Theory IV",
+   "pdf_pages": "pages 9 to 12",
+   "pages_read": "rendered and checked: pages 9, 10, 11, 12"
+  },
+  "content": "For the unique prime P over p of R = integralClosure Z_p L, with e = P.ramificationIdx Z_p and d = differentOrder: d + a_i >= 1 if p > 2 and d + a_i >= 2 if p = 2, stated together with Proposition 1.2 (i) for the same e, so that the a_i of both statements is the same number.",
+  "explicit_hypotheses": [
+   "p a prime",
+   "L a field with a finite-dimensional Q_p-algebra structure and a compatible Z_p-algebra structure (IsScalarTower Z_p Q_p L)",
+   "L normed by the spectral norm",
+   "P a prime ideal of integralClosure Z_p L lying over the maximal ideal pZ_p"
+  ],
+  "implicit_hypotheses": [],
+  "conclusion": "2 < p -> 1 <= d + a(p, e); p = 2 -> 2 <= d + a(p, e); and the log inclusions with the same e.",
+  "definitions_required": [],
+  "results_used": [],
+  "external_dependencies": [],
+  "lean_declaration": "IUT.PaperIV.LocalFields.padicBridge_log_bounds_and_differentOrder",
+  "covers": "Page 14, proof of Proposition 1.4 (iii): the per-index inequality d_i + a_i >= 1 (resp. 2) for an actual local field, with a_i the constant of Proposition 1.2 (i).",
+  "not_covered": "The log-volumes of Proposition 1.4 and the summation chains (only real-number hypotheses elsewhere).",
+  "statement_status": "STATEMENT_FORMALIZED",
+  "proof_status": "KERNEL_VERIFIED",
+  "obligations": [],
+  "ambiguities": [],
+  "scope": "finite extension L of Q_p (Field, finite-dimensional Q_p-algebra, compatible Z_p-algebra) with Mathlib's spectral norm spectralNorm Q_p L; R_i = integralClosure Z_p L; e_i = Ideal.ramificationIdx of a prime P over pZ_p (proved unique)"
+ },
+ "IUT4.Prop1_4.frag.measure_smul": {
+  "kind": "fragment",
+  "parent": "IUT4.Prop1_4",
+  "source": {
+   "paper": "Inter-universal Teichmuller Theory IV",
+   "pdf_pages": "page 13",
+   "pages_read": "rendered and checked: page 13"
+  },
+  "content": "For every additive Haar measure mu on a d-dimensional normed Q_p-vector space V, every nonzero c in Q_p and every set A: mu(c A) = |c|_p^d mu(A).",
+  "explicit_hypotheses": [
+   "p a prime",
+   "V a finite-dimensional normed Q_p-vector space of dimension d with its Borel sigma-algebra",
+   "mu an additive Haar measure on V",
+   "c in Q_p, c nonzero",
+   "A any subset of V"
+  ],
+  "implicit_hypotheses": [],
+  "conclusion": "mu(c . A) = |c|^d . mu(A).",
+  "definitions_required": [],
+  "results_used": [],
+  "external_dependencies": [],
+  "lean_declaration": "IUT.Prerequisites.PadicVolume.padicVol_measure_smul",
+  "covers": "Page 13, Proposition 1.4 (i): the scaling fact behind the normalization mu^log(p . R_i) = -log(p) obtained by dividing by the degree.",
+  "not_covered": "The log-volumes of [AbsTopIII], Proposition 5.7, themselves; scaling by elements of a finite extension not in Q_p (see the fragment field_smul).",
+  "statement_status": "STATEMENT_FORMALIZED",
+  "proof_status": "KERNEL_VERIFIED",
+  "obligations": [],
+  "ambiguities": [],
+  "lemmas": [
+   "IUT.Prerequisites.PadicVolume.padicVolBox_measure_one",
+   "IUT.Prerequisites.PadicVolume.padicVol_distribHaarChar_p",
+   "IUT.Prerequisites.PadicVolume.padicVolBox_smul",
+   "IUT.Prerequisites.PadicVolume.padicVolCoord",
+   "IUT.Prerequisites.PadicVolume.padicVolBox"
+  ],
+  "cor3_12_dependency": "independent"
+ },
+ "IUT4.Prop1_4.frag.muLog_def": {
+  "kind": "fragment",
+  "parent": "IUT4.Prop1_4",
+  "source": {
+   "paper": "Inter-universal Teichmuller Theory IV",
+   "pdf_pages": "page 13",
+   "pages_read": "rendered and checked: page 13"
+  },
+  "content": "Definition of the normalized log-volume mu^log(A) = log(mu(A)/mu(Lambda))/d on a d-dimensional normed Q_p-vector space, normalized at a set Lambda, and its EReal form log((mu A/mu Lambda)^(1/d)).",
+  "explicit_hypotheses": [
+   "p a prime",
+   "V a finite-dimensional normed Q_p-vector space of dimension d with its Borel sigma-algebra",
+   "mu an additive Haar measure on V",
+   "Lambda, A subsets of V"
+  ],
+  "implicit_hypotheses": [],
+  "conclusion": "padicMuLog p mu Lambda A and padicMuLogE p mu Lambda A are defined.",
+  "definitions_required": [],
+  "results_used": [],
+  "external_dependencies": [],
+  "lean_declaration": "IUT.Prerequisites.PadicVolume.padicMuLog",
+  "covers": "Page 13, Proposition 1.4 (i): normalization of the log-volume by dividing by the degree of the extension.",
+  "not_covered": "That this is the normalized log-volume of [AbsTopIII], Proposition 5.7, which was not read; the paper's values only on compact open sets.",
+  "statement_status": "STATEMENT_FORMALIZED",
+  "proof_status": "NOT_EXTRACTED",
+  "obligations": [],
+  "ambiguities": [
+   "The normalization by the two values mu^log(R_i) = 0 and mu^log(p . R_i) = -log(p) determines log(mu(-)/mu(R_i))/d among functions of the form alpha log mu + beta; that the paper's mu^log has this form is an interpretation."
+  ],
+  "lemmas": [
+   "IUT.Prerequisites.PadicVolume.padicMuLogE"
+  ],
+  "cor3_12_dependency": "independent"
+ },
+ "IUT4.Prop1_4.frag.muLog_laws": {
+  "kind": "fragment",
+  "parent": "IUT4.Prop1_4",
+  "source": {
+   "paper": "Inter-universal Teichmuller Theory IV",
+   "pdf_pages": "pages 13 to 14",
+   "pages_read": "rendered and checked: pages 13, 14"
+  },
+  "content": "Laws of the normalized log-volume: mu^log(p^n . A) = mu^log(A) - n log p for n an integer, when A and Lambda have positive finite measure and d > 0; also mu^log(Lambda) = 0, mu^log(c A) = mu^log(A) + log|c|, translation invariance, monotonicity on sets of positive finite measure, independence of the Haar measure and of a continuous linear change of coordinates; the EReal form is monotone and equals the real form on sets of positive finite measure.",
+  "explicit_hypotheses": [
+   "p a prime",
+   "V a finite-dimensional normed Q_p-vector space of dimension d with its Borel sigma-algebra",
+   "mu an additive Haar measure on V",
+   "0 < d",
+   "0 < mu(Lambda) < infinity",
+   "0 < mu(A) < infinity",
+   "n an integer"
+  ],
+  "implicit_hypotheses": [],
+  "conclusion": "padicMuLog p mu Lambda (p^n . A) = padicMuLog p mu Lambda A - n log p.",
+  "definitions_required": [],
+  "results_used": [],
+  "external_dependencies": [],
+  "lean_declaration": "IUT.Prerequisites.PadicVolume.padicMuLog_p_zpow_smul",
+  "covers": "Page 13, Proposition 1.4 (i): mu^log(p . R_i) = -log(p) and the scaling law used in the proof of (iii) on page 14 (mu^log(p^k . M) = mu^log(M) - k log p).",
+  "not_covered": "Additivity over tensor products; the exact values of (ii).",
+  "statement_status": "STATEMENT_FORMALIZED",
+  "proof_status": "KERNEL_VERIFIED",
+  "obligations": [],
+  "ambiguities": [],
+  "lemmas": [
+   "IUT.Prerequisites.PadicVolume.padicMuLog_self",
+   "IUT.Prerequisites.PadicVolume.padicMuLog_smul",
+   "IUT.Prerequisites.PadicVolume.padicMuLog_vadd",
+   "IUT.Prerequisites.PadicVolume.padicMuLog_mono",
+   "IUT.Prerequisites.PadicVolume.padicMuLog_haar_indep",
+   "IUT.Prerequisites.PadicVolume.padicMuLog_image_equiv",
+   "IUT.Prerequisites.PadicVolume.padicMuLogE_mono",
+   "IUT.Prerequisites.PadicVolume.padicMuLogE_eq"
+  ],
+  "cor3_12_dependency": "independent"
+ },
+ "IUT4.Prop1_4.frag.i_unitBall": {
+  "kind": "fragment",
+  "parent": "IUT4.Prop1_4",
+  "source": {
+   "paper": "Inter-universal Teichmuller Theory IV",
+   "pdf_pages": "page 13",
+   "pages_read": "rendered and checked: page 13"
+  },
+  "content": "For a finite extension K of Q_p (normed-field model, R the closed unit ball), the normalized log-volume normalized at R satisfies mu^log(R) = 0 and mu^log(p . R) = -log p.",
+  "explicit_hypotheses": [
+   "p a prime",
+   "K a normed field that is a finite-dimensional normed Q_p-algebra of degree d, with its Borel sigma-algebra",
+   "mu an additive Haar measure on K",
+   "R modeled as the closed unit ball of K"
+  ],
+  "implicit_hypotheses": [],
+  "conclusion": "padicMuLog p mu R R = 0 and padicMuLog p mu R (p . R) = -log p.",
+  "definitions_required": [],
+  "results_used": [],
+  "external_dependencies": [],
+  "lean_declaration": "IUT.Prerequisites.PadicVolume.padicMuLog_p_smul_unitBall",
+  "covers": "Page 13, Proposition 1.4 (i), the two normalizing values mu^log(R_i) = 0, mu^log(p . R_i) = -log(p) for one finite extension.",
+  "not_covered": "The ring of integers itself: IUT4.Prop1_4.frag.vb_field_normalization states the same two values on integralClosure Z_p k_i with the spectral norm, which removes the closed-ball model; the tensor product part of (i); the construction of [AbsTopIII], Proposition 5.7.",
+  "statement_status": "STATEMENT_FORMALIZED",
+  "proof_status": "KERNEL_VERIFIED",
+  "obligations": [],
+  "ambiguities": [],
+  "lemmas": [
+   "IUT.Prerequisites.PadicVolume.padicMuLog_unitBall",
+   "IUT.Prerequisites.PadicVolume.padicVol_unitBall_isOpen_isCompact",
+   "IUT.Prerequisites.PadicVolume.padicVol_unitBall_ne_zero",
+   "IUT.Prerequisites.PadicVolume.padicVol_unitBall_ne_top"
+  ],
+  "scope": "normed-field model of a finite extension",
+  "cor3_12_dependency": "independent"
+ },
+ "IUT4.Prop1_4.frag.field_smul": {
+  "kind": "fragment",
+  "parent": "IUT4.Prop1_4",
+  "source": {
+   "paper": "Inter-universal Teichmuller Theory IV",
+   "pdf_pages": "pages 10 and 13",
+   "pages_read": "rendered and checked: pages 9, 10, 13"
+  },
+  "content": "For x nonzero in K with |x|^m = p^(-n) for some m >= 1 and integer n: mu(x A) = |x|^d mu(A) and mu^log(x A) = mu^log(A) + log|x|; for a uniformizer pi (|pi|^e = 1/p, e >= 1) the ball of radius |pi|^k, that is p^(k/e) . R, has normalized log-volume -(k/e) log p.",
+  "explicit_hypotheses": [
+   "p a prime",
+   "K a normed field that is a finite-dimensional normed Q_p-algebra of degree d, with its Borel sigma-algebra",
+   "mu an additive Haar measure on K",
+   "R modeled as the closed unit ball of K",
+   "x nonzero with |x|^m = p^(-n), m >= 1",
+   "pi with |pi|^e = 1/p, e >= 1 (a standing property of a uniformizer)",
+   "A of positive finite measure where required"
+  ],
+  "implicit_hypotheses": [],
+  "conclusion": "mu^log({|y| <= |pi|^k}) = -(k/e) log p, normalized at R.",
+  "definitions_required": [],
+  "results_used": [],
+  "external_dependencies": [],
+  "lean_declaration": "IUT.Prerequisites.PadicVolume.padicMuLog_ball_uniformizer",
+  "covers": "Page 10 notation p^lambda . R_i for lambda in (1/e_i) Z, with the normalization of page 13: mu^log(p^lambda . R_i) = -lambda log p.",
+  "not_covered": "The scaling law for every x in K^x without the hypothesis on a power of |x|, and the identification of pi and e with a uniformizer and the ramification index, in the normed-field model; for integralClosure Z_p k_i with the spectral norm both are removed by IUT4.Prop1_4.frag.vb_fractional_ideal (volBridge_muLog_uniformizer_zpow) and IUT4.Prop1_4.frag.vb_field_normalization (volBridge_measure_smul).",
+  "statement_status": "STATEMENT_FORMALIZED",
+  "proof_status": "KERNEL_VERIFIED",
+  "obligations": [],
+  "ambiguities": [],
+  "lemmas": [
+   "IUT.Prerequisites.PadicVolume.padicVol_field_measure_smul",
+   "IUT.Prerequisites.PadicVolume.padicMuLog_field_smul",
+   "IUT.Prerequisites.PadicVolume.padicVol_smul_ball",
+   "IUT.Prerequisites.PadicVolume.padicVol_log_uniformizer",
+   "IUT.Prerequisites.PadicVolume.padicVol_rpow_eq_uniformizer"
+  ],
+  "scope": "normed-field model of a finite extension",
+  "cor3_12_dependency": "independent"
+ },
+ "IUT4.Prop1_4.frag.logUnit_bounds": {
+  "kind": "fragment",
+  "parent": "IUT4.Prop1_4",
+  "source": {
+   "paper": "Inter-universal Teichmuller Theory IV",
+   "pdf_pages": "pages 10 to 11, 13 to 14",
+   "pages_read": "rendered and checked: pages 10, 11, 13, 14"
+  },
+  "content": "From the inclusions p^a . R <= log_p(R^x) <= p^(-b) . R of Proposition 1.2 (i) (proved in IUT.PaperIV.LocalFields.Logarithm): -a log p <= mu^log(log_p(R^x)) <= b log p, with a, b the constants of page 10; and for the log-shell I = (p*)^(-1) log_p(R^x): mu^log(I) = mu^log(log_p(R^x)) + log p*, so -a log p + log p* <= mu^log(I) <= b log p + log p*.",
+  "explicit_hypotheses": [
+   "p a prime",
+   "K a normed field that is a finite-dimensional normed Q_p-algebra of degree d, with its Borel sigma-algebra",
+   "mu an additive Haar measure on K",
+   "R modeled as the closed unit ball of K",
+   "e >= 1 with |x|^e <= 1/p for |x| < 1 (hval, standing property of the ramification index)",
+   "pi with |pi|^e = 1/p"
+  ],
+  "implicit_hypotheses": [],
+  "conclusion": "-a log p <= mu^log(log_p(R^x)) <= b log p, and the shifted bounds for the log-shell.",
+  "definitions_required": [],
+  "results_used": [],
+  "external_dependencies": [],
+  "lean_declaration": "IUT.Prerequisites.PadicVolume.padicMuLog_logUnit_bounds",
+  "covers": "Page 13, Proposition 1.4 (ii): the quantity mu^log(log_p(R_i^x)), bounded using Proposition 1.2 (i), pages 10 and 11.",
+  "not_covered": "The exact value -(1/e_i + m_i/(e_i f_i)) log(p) of (ii) and the bound mu^log(log_p(R_i^x)) <= -(1/e_i) log(p) used on page 14; residue fields and the torsion of R_i^x. The statement is about the normed-field model with the hypotheses hval and hπ; IUT4.Prop1_4.frag.vb_logunit_bounds states the same bounds for integralClosure Z_p k_i and Ideal.ramificationIdx without them.",
+  "statement_status": "STATEMENT_FORMALIZED",
+  "proof_status": "KERNEL_VERIFIED",
+  "obligations": [],
+  "ambiguities": [],
+  "lemmas": [
+   "IUT.Prerequisites.PadicVolume.padicMuLog_logShell_bounds",
+   "IUT.Prerequisites.PadicVolume.padicVolAInt",
+   "IUT.Prerequisites.PadicVolume.padicVolBInt",
+   "IUT.Prerequisites.PadicVolume.padicVolAInt_spec",
+   "IUT.Prerequisites.PadicVolume.padicVolBInt_spec"
+  ],
+  "scope": "normed-field model of a finite extension",
+  "cor3_12_dependency": "independent"
+ },
+ "IUT4.Prop1_4.frag.packet": {
+  "kind": "fragment",
+  "parent": "IUT4.Prop1_4",
+  "source": {
+   "paper": "Inter-universal Teichmuller Theory IV",
+   "pdf_pages": "page 13",
+   "pages_read": "rendered and checked: pages 9, 13"
+  },
+  "content": "The packet log-volume on W: log(mu(f A)/mu(f Lambda))/D for the coordinates f of Module.finBasis; any linear coordinates give the same value; mu^log(Lambda) = 0 and mu^log(p^n . A) = mu^log(A) - n log p when the images of Lambda and A have positive finite measure; dim(K_1 tensor K_2) = dim K_1 . dim K_2.",
+  "explicit_hypotheses": [
+   "p a prime",
+   "W a finite-dimensional Q_p-vector space of dimension D > 0 (for example K_1 tensor K_2 over Q_p)",
+   "mu an additive Haar measure on Q_p^D with its Borel sigma-algebra",
+   "0 < mu(f Lambda) < infinity",
+   "0 < mu(f A) < infinity",
+   "n an integer"
+  ],
+  "implicit_hypotheses": [],
+  "conclusion": "padicPacketMuLog p W mu Lambda (p^n . A) = padicPacketMuLog p W mu Lambda A - n log p.",
+  "definitions_required": [],
+  "results_used": [],
+  "external_dependencies": [],
+  "lean_declaration": "IUT.Prerequisites.PadicVolume.padicPacketMuLog_p_zpow_smul",
+  "covers": "Page 13, Proposition 1.4 (i), second part: a log-volume on compact open subsets of tensor products normalized so that mu^log((R_E)~) = 0, mu^log(p . (R_E)~) = -log(p), for Lambda a set of positive finite measure.",
+  "not_covered": "That (R_E)~ is compact open, which IUT4.Prop1_4.frag.vb_packet_normalization proves for two factors; the weighting of the direct summands (a choice); additivity over tensor factors; Propositions 1.1 and 1.2 (ii) to (iv); Proposition 1.4 (iii), (iv).",
+  "statement_status": "STATEMENT_FORMALIZED",
+  "proof_status": "KERNEL_VERIFIED",
+  "obligations": [],
+  "ambiguities": [
+   "Page 13 does not say how the direct summands of the decomposition of the tensor product are weighted; one Haar measure divided by the total dimension D is used (compare IUT III Remark 3.1.1 (iii), page 95)."
+  ],
+  "lemmas": [
+   "IUT.Prerequisites.PadicVolume.padicPacketMuLog",
+   "IUT.Prerequisites.PadicVolume.padicPacketMuLog_coord_indep",
+   "IUT.Prerequisites.PadicVolume.padicPacketMuLog_self",
+   "IUT.Prerequisites.PadicVolume.padicVol_finrank_tensor",
+   "IUT.Prerequisites.PadicVolume.padicVol_image_smul"
+  ],
+  "cor3_12_dependency": "independent"
+ },
+ "IUT4.Prop1_4.frag.padic_base": {
+  "kind": "fragment",
+  "parent": "IUT4.Prop1_4",
+  "source": {
+   "paper": "Inter-universal Teichmuller Theory IV",
+   "pdf_pages": "page 13",
+   "pages_read": "rendered and checked: page 13"
+  },
+  "content": "On Q_p (d = 1) with the Haar measure normalized on Z_p: mu(Z_p) = 1, mu(p^n Z_p) = p^(-n), mu^log(p^n Z_p) = -n log p, and the log-shell of Q_p has normalized log-volume 0. The hypotheses hval and pi of the log-unit bounds hold together for K = Q_p, e = 1, pi = p.",
+  "explicit_hypotheses": [
+   "p a prime",
+   "Q_p with a Borel sigma-algebra",
+   "n an integer"
+  ],
+  "implicit_hypotheses": [],
+  "conclusion": "(addHaarMeasure Z_p)(p^n . Z_p) = p^(-n) as a real number.",
+  "definitions_required": [],
+  "results_used": [],
+  "external_dependencies": [],
+  "lean_declaration": "IUT.Prerequisites.PadicVolume.padicVol_padic_p_zpow",
+  "covers": "Page 13, Proposition 1.4 (i) in the base case k_i = Q_p, and the log-shell of Q_p (IUT III Definition 1.1, computed in IUT.Prerequisites.PadicLog).",
+  "not_covered": "Finite extensions other than Q_p; tensor products.",
+  "statement_status": "STATEMENT_FORMALIZED",
+  "proof_status": "KERNEL_VERIFIED",
+  "obligations": [],
+  "ambiguities": [],
+  "lemmas": [
+   "IUT.Prerequisites.PadicVolume.padicVolZp",
+   "IUT.Prerequisites.PadicVolume.padicVol_padic_unitBall",
+   "IUT.Prerequisites.PadicVolume.padicMuLog_padicLogShell",
+   "IUT.Prerequisites.PadicVolume.padicMuLog_padic_p_zpow",
+   "IUT.Prerequisites.PadicVolume.padicVol_borelSpace",
+   "IUT.Prerequisites.PadicVolume.padicVol_exists_digit",
+   "IUT.Prerequisites.PadicVolume.padicVol_digit_unique",
+   "IUT.Prerequisites.PadicVolume.padicVol_norm_le_one_of_digit",
+   "IUT.Prerequisites.PadicVolume.padicVol_padicLogShell",
+   "IUT.Prerequisites.PadicVolume.padicMuLog_logUnit_bounds_padic"
+  ],
+  "cor3_12_dependency": "independent"
+ },
+ "IUT4.Prop1_4.frag.vb_field_normalization": {
+  "kind": "fragment",
+  "parent": "IUT4.Prop1_4",
+  "source": {
+   "paper": "Inter-universal Teichmuller Theory IV",
+   "pdf_pages": "page 13",
+   "pages_read": "rendered and checked: pages 8, 9, 10, 11, 13, 14"
+  },
+  "content": "For a finite extension L of Q_p with its spectral norm and any additive Haar measure mu: R = integralClosure Z_p L has positive finite measure, mu^log(R) = 0 and mu^log(p R) = -log p; mu(y A) = |y|^d mu(A) for every nonzero y of L (d = [L:Q_p]); mu^log(y A) = mu^log(A) + log|y| for A of positive finite measure.",
+  "explicit_hypotheses": [
+   "p a prime",
+   "L a field with a finite-dimensional Q_p-algebra structure and a compatible Z_p-algebra structure (IsScalarTower Z_p Q_p L)",
+   "L normed by the spectral norm, with the Borel measurable structure",
+   "mu any additive Haar measure on L"
+  ],
+  "implicit_hypotheses": [],
+  "conclusion": "mu(R) is neither 0 nor infinite; mu^log(R) = 0; mu^log(p R) = -log p; scaling of Haar measure and of mu^log by any nonzero y.",
+  "definitions_required": [],
+  "results_used": [],
+  "external_dependencies": [],
+  "lean_declaration": "IUT.PaperIV.LocalFields.volBridge_muLog_integralClosure",
+  "covers": "Page 13, Proposition 1.4 (i), first sentence: mu^log normalized so that mu^log(R_i) = 0 and mu^log(p R_i) = -log(p), on the ring of integers itself, with no norm hypothesis.",
+  "not_covered": "That this mu^log is the normalized log-volume of [AbsTopIII] Proposition 5.7 (an interpretation); the tensor product part of (i) (see vb_packet_normalization); (ii) to (iv). It overlaps IUT4.Prop1_4.frag.i_unitBall, which states the two values on the closed unit ball of any normed-field model of a finite extension.",
+  "statement_status": "STATEMENT_FORMALIZED",
+  "proof_status": "KERNEL_VERIFIED",
+  "obligations": [],
+  "ambiguities": [],
+  "scope": "finite extension L of Q_p with Mathlib's spectral norm; R_i = integralClosure Z_p L; e_i = Ideal.ramificationIdx of the prime P over pZ_p; mu^log = padicMuLog normalized at R",
+  "lemmas": [
+   "IUT.PaperIV.LocalFields.volBridge_measure_smul",
+   "IUT.PaperIV.LocalFields.volBridge_norm_pow_ramificationIdx",
+   "IUT.PaperIV.LocalFields.volBridge_muLog_smul"
+  ]
+ },
+ "IUT4.Prop1_4.frag.vb_fractional_ideal": {
+  "kind": "fragment",
+  "parent": "IUT4.Prop1_4",
+  "source": {
+   "paper": "Inter-universal Teichmuller Theory IV",
+   "pdf_pages": "pages 10 and 14",
+   "pages_read": "rendered and checked: pages 8, 9, 10, 11, 13, 14"
+  },
+  "content": "For lambda = k/e in (1/e)Z with e = P.ramificationIdx Z_p, and any y in L with |y| = p^(-lambda), the fractional ideal y R (the paper's p^lambda R_i) has mu^log(y R) = -lambda log p; for every generator w of P, mu^log(w^k R) = -(k/e) log p.",
+  "explicit_hypotheses": [
+   "p a prime",
+   "L a field with a finite-dimensional Q_p-algebra structure and a compatible Z_p-algebra structure (IsScalarTower Z_p Q_p L)",
+   "L normed by the spectral norm, with the Borel measurable structure",
+   "mu any additive Haar measure on L",
+   "P a prime ideal of integralClosure Z_p L lying over pZ_p",
+   "k an integer; y in L with |y| = p^(-k/e) (the definition of ord(y) = k/e)"
+  ],
+  "implicit_hypotheses": [],
+  "conclusion": "mu^log(p^lambda R) = -lambda log p; mu^log(w^k R) = -(k/e) log p.",
+  "definitions_required": [],
+  "results_used": [],
+  "external_dependencies": [],
+  "lean_declaration": "IUT.PaperIV.LocalFields.volBridge_muLog_fractionalIdeal",
+  "covers": "Page 10: the fractional ideals p^lambda R_i for lambda in (1/e_i)Z; page 14: the scaling of mu^log by p-powers used in the computation proving Proposition 1.4 (iii), on one factor.",
+  "not_covered": "The same rule on tensor products R_I and (R_I)^~ with several factors, and the additivity over factors used on page 14.",
+  "statement_status": "STATEMENT_FORMALIZED",
+  "proof_status": "KERNEL_VERIFIED",
+  "obligations": [],
+  "ambiguities": [],
+  "scope": "finite extension L of Q_p with Mathlib's spectral norm; R_i = integralClosure Z_p L; e_i = Ideal.ramificationIdx of the prime P over pZ_p; mu^log = padicMuLog normalized at R",
+  "lemmas": [
+   "IUT.PaperIV.LocalFields.volBridge_muLog_uniformizer_zpow",
+   "IUT.PaperIV.LocalFields.volBridge_range_mul_eq_smul"
+  ]
+ },
+ "IUT4.Prop1_4.frag.vb_logunit_eq_of_le": {
+  "kind": "fragment",
+  "parent": "IUT4.Prop1_4",
+  "source": {
+   "paper": "Inter-universal Teichmuller Theory IV",
+   "pdf_pages": "pages 10 and 13",
+   "pages_read": "rendered and checked: pages 8, 9, 10, 11, 13, 14"
+  },
+  "content": "If p > 2 and e = P.ramificationIdx Z_p <= p - 2, then mu^log(log_p(R^x)) = -(1/e) log p for R = integralClosure Z_p L.",
+  "explicit_hypotheses": [
+   "p a prime",
+   "L a field with a finite-dimensional Q_p-algebra structure and a compatible Z_p-algebra structure (IsScalarTower Z_p Q_p L)",
+   "L normed by the spectral norm, with the Borel measurable structure",
+   "mu any additive Haar measure on L",
+   "P a prime ideal of integralClosure Z_p L lying over pZ_p",
+   "p > 2",
+   "e <= p - 2"
+  ],
+  "implicit_hypotheses": [],
+  "conclusion": "mu^log(log_p(R^x)) = -(1/e) log p.",
+  "definitions_required": [],
+  "results_used": [],
+  "external_dependencies": [],
+  "lean_declaration": "IUT.PaperIV.LocalFields.volBridge_muLog_logUnit_eq_of_le",
+  "covers": "Proposition 1.4 (ii) (page 13) in the case p > 2, e_i <= p - 2, where its value -(1/e_i + m_i/(e_i f_i)) log p reduces to -(1/e_i) log p provided m_i = 0; derived from the equality case of Proposition 1.2 (i) (page 10).",
+  "not_covered": "That m_i = 0 in this case (no element of order p in R^x) is not proved, and m_i, f_i are not defined in Lean; Proposition 1.4 (ii) in all other cases.",
+  "statement_status": "STATEMENT_FORMALIZED",
+  "proof_status": "KERNEL_VERIFIED",
+  "obligations": [],
+  "ambiguities": [],
+  "scope": "finite extension L of Q_p with Mathlib's spectral norm; R_i = integralClosure Z_p L; e_i = Ideal.ramificationIdx of the prime P over pZ_p; mu^log = padicMuLog normalized at R",
+  "lemmas": []
+ },
+ "IUT4.Prop1_4.frag.vb_packet_normalization": {
+  "kind": "fragment",
+  "parent": "IUT4.Prop1_4",
+  "source": {
+   "paper": "Inter-universal Teichmuller Theory IV",
+   "pdf_pages": "pages 9 and 13",
+   "pages_read": "rendered and checked: pages 8, 9, 10, 11, 13, 14"
+  },
+  "content": "For finite extensions K1, K2 of Q_p, the set (R_E)^~ of elements of K1 (x) K2 integral over Z_p is compact and open in Module.finBasis coordinates; for every additive Haar measure on the coordinate space it has positive finite measure, and the packet log-volume normalized at it satisfies mu^log((R_E)^~) = 0 and mu^log(p (R_E)^~) = -log p.",
+  "explicit_hypotheses": [
+   "p a prime",
+   "K1, K2 fields with finite-dimensional Q_p-algebra structures",
+   "a Borel measurable structure on the coordinate space Q_p^D, D = dim (K1 (x) K2), and an additive Haar measure mu on it"
+  ],
+  "implicit_hypotheses": [],
+  "conclusion": "(R_E)^~ is compact and open in coordinates; mu((R_E)^~) is neither 0 nor infinite; mu^log((R_E)^~) = 0; mu^log(p (R_E)^~) = -log p.",
+  "definitions_required": [],
+  "results_used": [],
+  "external_dependencies": [],
+  "lean_declaration": "IUT.PaperIV.LocalFields.volBridge_packet_muLog_normalization",
+  "covers": "Page 13, Proposition 1.4 (i), second sentence: mu^log defined on compact open subsets of tensor products and normalized so that mu^log((R_E)^~) = 0, mu^log(p (R_E)^~) = -log(p), for E of cardinality two, on the object of page 9.",
+  "not_covered": "Sets E of cardinality other than two; that (R_E)^~ is a finitely generated Z_p-module; the weighting of mu^log over the factors of the decomposition and the additivity used on page 14; Proposition 1.4 (ii) to (iv).",
+  "statement_status": "STATEMENT_FORMALIZED",
+  "proof_status": "KERNEL_VERIFIED",
+  "obligations": [],
+  "ambiguities": [],
+  "scope": "two factors K1, K2 (finite extensions of Q_p); (R_E)^~ = padicPacketNormalization (elements of K1 (x) K2 integral over Z_p); mu^log = padicPacketMuLog in Module.finBasis coordinates",
+  "lemmas": [
+   "IUT.PaperIV.LocalFields.volBridge_packetNormalization_isCompact_isOpen"
+  ]
+ },
+ "IUT4.Prop1_4.frag.vb_logunit_bounds": {
+  "kind": "fragment",
+  "parent": "IUT4.Prop1_4",
+  "source": {
+   "paper": "Inter-universal Teichmuller Theory IV",
+   "pdf_pages": "pages 10, 11, 13 and 14",
+   "pages_read": "rendered and checked: pages 8, 9, 10, 11, 13, 14"
+  },
+  "content": "With R = integralClosure Z_p L, R^x its unit group, e = P.ramificationIdx Z_p and a, b the constants of Proposition 1.2: -a log p <= mu^log(log_p(R^x)) <= b log p; for the log-shell I = (p*)^(-1) log_p(R^x): mu^log(I) = mu^log(log_p(R^x)) + log p* and -a log p + log p* <= mu^log(I) <= b log p + log p*.",
+  "explicit_hypotheses": [
+   "p a prime",
+   "L a field with a finite-dimensional Q_p-algebra structure and a compatible Z_p-algebra structure (IsScalarTower Z_p Q_p L)",
+   "L normed by the spectral norm, with the Borel measurable structure",
+   "mu any additive Haar measure on L",
+   "P a prime ideal of integralClosure Z_p L lying over pZ_p"
+  ],
+  "implicit_hypotheses": [],
+  "conclusion": "The two-sided bounds on mu^log(log_p(R^x)) and on mu^log of the log-shell.",
+  "definitions_required": [],
+  "results_used": [],
+  "external_dependencies": [],
+  "lean_declaration": "IUT.PaperIV.LocalFields.volBridge_muLog_logUnit_bounds",
+  "covers": "Consequence of Proposition 1.2 (i) (page 10) for the log-volumes of Proposition 1.4 (page 13): the inclusions p^(a_i) R_i subset log_p(R_i^x) subset p^(-b_i) R_i turned into bounds on mu^log, on the ring of integers and the ramification index.",
+  "not_covered": "The exact value of Proposition 1.4 (ii), -(1/e_i + m_i/(e_i f_i)) log p; these bounds are weaker. The bound mu^log(log_p(R_i^x)) <= -(1/e_i) log p used on page 14. It overlaps IUT4.Prop1_4.frag.logUnit_bounds, which states the bounds in the normed-field model.",
+  "statement_status": "STATEMENT_FORMALIZED",
+  "proof_status": "KERNEL_VERIFIED",
+  "obligations": [],
+  "ambiguities": [],
+  "scope": "finite extension L of Q_p with Mathlib's spectral norm; R_i = integralClosure Z_p L; e_i = Ideal.ramificationIdx of the prime P over pZ_p; mu^log = padicMuLog normalized at R",
+  "lemmas": [
+   "IUT.PaperIV.LocalFields.volBridge_muLog_logShell_bounds"
+  ]
+ },
  "IUT4.Prop1_5": {
   "source": {
    "paper": "Inter-universal Teichmuller Theory IV",
@@ -1408,10 +2646,51 @@
   "statement_status": "EXTRACTED",
   "proof_status": "BLOCKED_BY_MATHLIB",
   "obligations": [
-   "Needs elliptic curves over local fields, torsion fields and Neron models."
+   "Needs elliptic curves over local fields, torsion fields and Neron models. Only the Legendre curve y^2 = x(x - 1)(x - t) as a Mathlib WeierstrassCurve, its discriminant and the condition for it to be elliptic are formalized (IUT4.Prop1_8.frag.legendre_curve); the descent of (vi) is not."
   ],
   "ambiguities": [],
-  "cor3_12_dependency": "independent"
+  "cor3_12_dependency": "independent",
+  "fragments": [
+   "IUT4.Prop1_8.frag.legendre_curve"
+  ]
+ },
+ "IUT4.Prop1_8.frag.legendre_curve": {
+  "kind": "fragment",
+  "parent": "IUT4.Prop1_8",
+  "source": {
+   "paper": "Inter-universal Teichmuller Theory IV",
+   "pdf_pages": "pages 19 to 21",
+   "pages_read": "rendered pages 18 to 22, 41"
+  },
+  "content": "The Legendre curve y^2 = x(x - 1)(x - t) as a Mathlib WeierstrassCurve (a1 = a3 = a6 = 0, a2 = -(1 + t), a4 = t) over a commutative ring; its discriminant is 16 t^2 (t - 1)^2 and its c4 is 16 (t^2 - t + 1); over a field with 2 != 0 it is elliptic exactly when t != 0 and t != 1.",
+  "explicit_hypotheses": [
+   "R a commutative ring, t in R (discriminant and c4)",
+   "K a field with (2 : K) != 0, t in K (ellipticity)"
+  ],
+  "implicit_hypotheses": [],
+  "conclusion": "Delta = 16 t^2 (t - 1)^2; c4 = 16 (t^2 - t + 1); IsElliptic iff t != 0 and t != 1.",
+  "definitions_required": [
+   "WeierstrassCurve",
+   "WeierstrassCurve.Δ",
+   "WeierstrassCurve.c₄",
+   "WeierstrassCurve.IsElliptic"
+  ],
+  "results_used": [],
+  "external_dependencies": [],
+  "lean_declaration": "IUT.LegendreFrey.legendreCurve_isElliptic_iff",
+  "lemmas": [
+   "IUT.LegendreFrey.legendreCurve",
+   "IUT.LegendreFrey.legendreCurve_disc",
+   "IUT.LegendreFrey.legendreCurve_c4"
+  ],
+  "covers": "The Legendre form of the Weierstrass equation named in Proposition 1.8 (vi) (page 19) and its proof (pages 20 and 21), written as on page 41: the curve itself, its discriminant and the condition for it to be an elliptic curve.",
+  "not_covered": "The descent of an elliptic curve with trivial 2-torsion representation to a curve in Legendre form after a quadratic twist, the semistable reduction over an extension of degree at most 2, and the rest of Proposition 1.8 (i) to (vii).",
+  "statement_status": "STATEMENT_FORMALIZED",
+  "proof_status": "KERNEL_VERIFIED",
+  "obligations": [],
+  "ambiguities": [
+   "The paper does not print the discriminant or c4; they are computed from Mathlib's definitions."
+  ]
  },
  "IUT4.Def1_9": {
   "source": {
@@ -3446,10 +4725,52 @@
   "statement_status": "EXTRACTED",
   "proof_status": "BLOCKED_BY_EXTERNAL_THEOREM",
   "obligations": [
-   "The arithmetic of the proof is kernel checked in IUT/PaperIV/Corollary2_2/Arithmetic.lean; see the part and step records."
+   "The arithmetic of the proof is kernel checked in IUT/PaperIV/Corollary2_2/Arithmetic.lean; see the part and step records.",
+   "The j-function of the lambda-line is formalized as a rational function equal to Mathlib's j-invariant of the Legendre curve (IUT4.Cor2_2.frag.legendre_j); the classifying morphism to the moduli stack is not."
   ],
   "ambiguities": [],
-  "cor3_12_dependency": "conditional"
+  "cor3_12_dependency": "conditional",
+  "fragments": [
+   "IUT4.Cor2_2.frag.legendre_j"
+  ]
+ },
+ "IUT4.Cor2_2.frag.legendre_j": {
+  "kind": "fragment",
+  "parent": "IUT4.Cor2_2",
+  "source": {
+   "paper": "Inter-universal Teichmuller Theory IV",
+   "pdf_pages": "page 41",
+   "pages_read": "rendered pages 41 to 43"
+  },
+  "content": "The j-function of the lambda-line, legendreJ t = 2^8 (t^2 - t + 1)^3 / (t^2 (t - 1)^2), is the Mathlib j-invariant of the Legendre curve whenever that curve is elliptic; legendreJ is invariant under t -> 1 - t and t -> 1/t for every t, and for t != 0 also at (1 - t)^-1, (t - 1)/t and t/(t - 1).",
+  "explicit_hypotheses": [
+   "K a field, t in K",
+   "legendreCurve_jInv: the Legendre curve at t is elliptic (instance argument)",
+   "legendreJ_orbit: t != 0"
+  ],
+  "implicit_hypotheses": [],
+  "conclusion": "(legendreCurve t).j = legendreJ t; legendreJ (1 - t) = legendreJ t; legendreJ t^-1 = legendreJ t; the value is the same on the six points of the orbit.",
+  "definitions_required": [
+   "IUT.LegendreFrey.legendreJ",
+   "WeierstrassCurve.j"
+  ],
+  "results_used": [],
+  "external_dependencies": [],
+  "lean_declaration": "IUT.LegendreFrey.legendreCurve_jInv",
+  "lemmas": [
+   "IUT.LegendreFrey.legendreJ",
+   "IUT.LegendreFrey.legendreJ_one_sub",
+   "IUT.LegendreFrey.legendreJ_inv",
+   "IUT.LegendreFrey.legendreJ_orbit"
+  ],
+  "covers": "The classifying morphism U_X -> (M_ell)_Q of the lambda-line on page 41, composed with the j-invariant (M_ell)_Q -> A^1 used in condition (*_{j-inv}) on page 41, as an explicit rational function of lambda.",
+  "not_covered": "The moduli stack, the classifying morphism as a morphism of stacks, condition (*_{j-inv}) on compactly bounded subsets, and every assertion (i) to (iii) of Corollary 2.2. The S3-symmetry is not used on the pages read; it is recorded here as a property of the j-function only.",
+  "statement_status": "STATEMENT_FORMALIZED",
+  "proof_status": "KERNEL_VERIFIED",
+  "obligations": [],
+  "ambiguities": [
+   "The formula for j(lambda) is not printed in IUT IV; it is derived from Mathlib's definition of WeierstrassCurve.j."
+  ]
  },
  "IUT4.Cor2_2.i": {
   "source": {
@@ -3473,10 +4794,44 @@
   "statement_status": "EXTRACTED",
   "proof_status": "BLOCKED_BY_EXTERNAL_THEOREM",
   "obligations": [
-   "Heights on the moduli of elliptic curves are not formalized."
+   "Heights on the moduli of elliptic curves are not formalized. On the rational points a/c of triples, the comparison 6 h(lambda) - log(64/27) <= h(j(lambda)) <= 6 h(lambda) + 8 log 2 of Weil heights is proved (IUT4.Cor2_2.i.frag.height_j_triple); its identification with ht_infinity and ht_{omega_X(D)} is not."
   ],
   "ambiguities": [],
-  "cor3_12_dependency": "independent"
+  "cor3_12_dependency": "independent",
+  "fragments": [
+   "IUT4.Cor2_2.i.frag.height_j_triple"
+  ]
+ },
+ "IUT4.Cor2_2.i.frag.height_j_triple": {
+  "kind": "fragment",
+  "parent": "IUT4.Cor2_2.i",
+  "source": {
+   "paper": "Inter-universal Teichmuller Theory IV",
+   "pdf_pages": "pages 41 to 43",
+   "pages_read": "rendered pages 41 to 43"
+  },
+  "content": "For positive coprime natural numbers a + b = c and lambda = a/c in Q, with h = Height.logHeight1: 6 h(lambda) - log(64/27) <= h(legendreJ lambda) <= 6 h(lambda) + 8 log 2.",
+  "explicit_hypotheses": [
+   "a, b, c natural numbers, 0 < a, 0 < b, a and b coprime, a + b = c"
+  ],
+  "implicit_hypotheses": [],
+  "conclusion": "6 h(a/c) - log(64/27) <= h(j(a/c)) <= 6 h(a/c) + 8 log 2.",
+  "definitions_required": [
+   "Height.logHeight₁",
+   "IUT.LegendreFrey.legendreJ"
+  ],
+  "results_used": [],
+  "external_dependencies": [],
+  "lean_declaration": "IUT.LegendreFrey.logHeight₁_legendreJ_triple_le",
+  "lemmas": [
+   "IUT.LegendreFrey.le_logHeight₁_legendreJ_triple"
+  ],
+  "covers": "An explicit form, on the rational points a/c of triples, of the degree-6 comparison used on page 43 (proof of (i)) for the equality of bounded discrepancy classes (1/6) ht_infinity ~ ht_{omega_X(D)} displayed in Corollary 2.2 (i), page 41, with the Weil height of j in place of ht_infinity and the Weil height of lambda in place of ht_{omega_X(D)}.",
+  "not_covered": "Points of degree d > 1, points that do not come from triples, the identification of ht_infinity and ht_{omega_X(D)} with these Weil heights, and the q-parameter functions log(q) of Corollary 2.2 (i).",
+  "statement_status": "STATEMENT_FORMALIZED",
+  "proof_status": "KERNEL_VERIFIED",
+  "obligations": [],
+  "ambiguities": []
  },
  "IUT4.Cor2_2.ii": {
   "source": {
@@ -3521,10 +4876,55 @@
   "statement_status": "EXTRACTED",
   "proof_status": "BLOCKED_BY_EXTERNAL_THEOREM",
   "obligations": [
-   "Heights on the moduli of elliptic curves, finiteness of j-invariants of bounded height ([GenEll] Proposition 1.4 (iv)), the existence of initial Theta-data and Theorem 1.10 for them are not formalized; the arithmetic of the proof is checked in the fragments of the proof-step records."
+   "Heights on the moduli of elliptic curves, finiteness of j-invariants of bounded height ([GenEll] Proposition 1.4 (iv)), the existence of initial Theta-data and Theorem 1.10 for them are not formalized; the arithmetic of the proof is checked in the fragments of the proof-step records.",
+   "The four j-values of the exceptional case and the points of the lambda-line over them are computed (IUT4.Cor2_2.ii.frag.special_j_values); that these are the j-invariants of curves without an F-core is cited, not proved."
   ],
   "ambiguities": [],
-  "cor3_12_dependency": "conditional"
+  "cor3_12_dependency": "conditional",
+  "fragments": [
+   "IUT4.Cor2_2.ii.frag.special_j_values"
+  ]
+ },
+ "IUT4.Cor2_2.ii.frag.special_j_values": {
+  "kind": "fragment",
+  "parent": "IUT4.Cor2_2.ii",
+  "source": {
+   "paper": "Inter-universal Teichmuller Theory IV",
+   "pdf_pages": "page 43",
+   "pages_read": "rendered page 43 of IUT IV; rendered page 21 of Explicit estimates in IUT"
+  },
+  "content": "For a field K of characteristic zero and t != 0, 1: legendreJ t = 1728 iff t in {-1, 2, 1/2}; legendreJ t = 2^2 73^3 3^-4 iff t in {9, -8, 9/8, -1/8, 8/9, 1/9}; legendreJ t = 2^14 31^3 5^-3 iff t is a root of t^2 - 125t + 125, t^2 + 123t + 1 or 125t^2 - 125t + 1; legendreJ t = 0 iff t^2 - t + 1 = 0. Over Q no t != 0, 1 has j = 2^14 31^3 5^-3 or j = 0 (no rational square equals 5; t^2 - t + 1 > 0). legendreJ (1/9) = 2^2 73^3 3^-4 and legendreJ (1/2) = 1728.",
+  "explicit_hypotheses": [
+   "K a field of characteristic zero, t in K, t != 0, t != 1 (for the rational statements t in Q)"
+  ],
+  "implicit_hypotheses": [],
+  "conclusion": "The solution sets listed in content.",
+  "definitions_required": [
+   "IUT.LegendreFrey.legendreJ"
+  ],
+  "results_used": [],
+  "external_dependencies": [
+   "Explicit estimates in IUT (Mochizuki, Fesenko, Hoshi, Minamide, Porowski): Proposition 2.1, page 21, the list of the four values (read); CanLift: Proposition 2.7 (not read)"
+  ],
+  "lean_declaration": "IUT.LegendreFrey.legendreJ_eq_73_iff",
+  "lemmas": [
+   "IUT.LegendreFrey.legendreJ_eq_1728_iff",
+   "IUT.LegendreFrey.legendreJ_eq_31_iff",
+   "IUT.LegendreFrey.legendreJ_eq_zero_iff",
+   "IUT.LegendreFrey.rat_sq_ne_five",
+   "IUT.LegendreFrey.legendreJ_ne_31_rat",
+   "IUT.LegendreFrey.legendreJ_ne_zero_rat",
+   "IUT.LegendreFrey.legendreJ_one_ninth",
+   "IUT.LegendreFrey.legendreJ_one_half"
+  ],
+  "covers": "The points of the lambda-line over the four possible j-invariants of a once-punctured elliptic curve without an F-core, which page 43 (proof of (ii)) puts into the exceptional set Exc_d; the four values are those of Explicit estimates, Proposition 2.1, page 21, since IUT IV page 43 says only 'four possibilities' and cites [CanLift], Proposition 2.7.",
+  "not_covered": "That these are the only j-invariants without an F-core ([CanLift], Proposition 2.7), the notion of F-core, and the rest of Corollary 2.2 (ii).",
+  "statement_status": "STATEMENT_FORMALIZED",
+  "proof_status": "KERNEL_VERIFIED",
+  "obligations": [],
+  "ambiguities": [
+   "IUT IV does not list the four values; they are taken from Explicit estimates, Proposition 2.1. Proved here: legendreJ (1/9) = 2^2 73^3 3^-4 (legendreJ_one_ninth) and the six-point solution set of that value (legendreJ_eq_73_iff); so the point 1/9 of the triple 1 + 8 = 9 has this j-value. That this value is the j-invariant of a curve without an F-core (Explicit estimates, Proposition 2.1; [CanLift], Proposition 2.7) and that such points are excluded into Exc_d (IUT IV page 43) are statements of the papers, not proved here."
+  ]
  },
  "IUT4.Cor2_2.ii.C1": {
   "source": {
@@ -4694,7 +6094,7 @@
   "statement_status": "EXTRACTED",
   "proof_status": "BLOCKED_BY_EXTERNAL_THEOREM",
   "obligations": [
-   "Corollary 2.3 is not stated in Lean: heights, log-differents, log-conductors, curves and points of bounded degree are not formalized. Only its special case X = P^1_Q, D = {0, 1, infinity}, d = 1 is stated (IUT4.Cor2_3.frag.rational_points_P1_minus_three), with Mathlib's logarithmic height in place of the height attached to omega_X(D) (their agreement up to a bounded function is not formalized).",
+   "Corollary 2.3 is not stated in Lean for general curves. Its instance X = P^1_Q, D = {0, 1, infinity} at points of every bounded degree is stated as an open proposition, with the height, log-different and log-conductor of [GenEll] Definition 1.5 defined from Mathlib objects (IUT4.Cor2_3.frag.bounded_degree_P1_minus_three); its degree one piece is the rational case IUT4.Cor2_3.frag.rational_points_P1_minus_three. In both, Mathlib's logarithmic height stands for the height attached to omega_X(D) (their agreement up to a bounded function is not formalized). The compactly bounded form, general curves and the proof are open.",
    "[GenEll] Theorem 2.1 (the reduction to the lambda-line) is external and not formalized. The proof derives its form (ii), on compactly bounded subsets; the special case of IUT4.Cor2_3.frag.rational_points_P1_minus_three is an instance of its form (i), so reaching it needs the direction (ii) implies (i), whose proof uses points of bounded degree over number fields and a noncritical Belyi map.",
    "The fragments check only the logical form of the last step on K_V, as abstract lemmas on real functions on an arbitrary set."
   ],
@@ -4706,7 +6106,10 @@
    "IUT4.Cor2_3.frag.cor2_3_on_KV",
    "IUT4.Cor2_3.frag.BDle_mono_eps",
    "IUT4.Cor2_3.frag.BDle_of_finite_exceptions",
-   "IUT4.Cor2_3.frag.rational_points_P1_minus_three"
+   "IUT4.Cor2_3.frag.rational_points_P1_minus_three",
+   "IUT4.Cor2_3.frag.frey_curve",
+   "IUT4.Cor2_3.frag.frey_j_arithmetic",
+   "IUT4.Cor2_3.frag.bounded_degree_P1_minus_three"
   ]
  },
  "IUT4.Cor2_3.frag.cor2_3_on_KV": {
@@ -4828,13 +6231,166 @@
    "IUT.ABCSpecialization.VojtaLineMinusThreePointsUnitInterval"
   ],
   "covers": "Page 54, display of Corollary 2.3, for one curve (X = P^1_Q, D = {0, 1, infinity}) and d = 1 (rational points). The log-different is 0 (GenEll Definition 1.5 (iii), page 8); log(ratConductor x) is exactly the log-conductor for the model P^1_Z with D the closure of the sections 0, 1, infinity (GenEll Definition 1.5 (iv), page 8), and any other model changes it by a bounded function (Remark 1.5.1, pages 8 and 9). The same statement restricted to 0 < x < 1 is VojtaLineMinusThreePointsUnitInterval.",
-  "not_covered": "Number fields of degree d > 1, compactly bounded subsets, general hyperbolic curves, the proof. The identification of the height attached to O(1) on P^1 (GenEll page 4, with a metrized model) with log max(|num x|, den x) up to a bounded function is a standard computation that GenEll does not contain and that is not formalized; the statement uses Mathlib's logarithmic height.",
+  "not_covered": "Number fields of degree d > 1 (the bounded degree statement is stated, not proved, in IUT4.Cor2_3.frag.bounded_degree_P1_minus_three), compactly bounded subsets, general hyperbolic curves, the proof. The identification of the height attached to O(1) on P^1 (GenEll page 4, with a metrized model) with log max(|num x|, den x) up to a bounded function is a standard computation that GenEll does not contain and that is not formalized; the statement uses Mathlib's logarithmic height.",
   "statement_status": "STATEMENT_FORMALIZED",
   "proof_status": "NOT_EXTRACTED",
   "obligations": [],
   "ambiguities": [
    "The height ht_{omega_X(D)} is defined in GenEll (page 4) through an arithmetic line bundle on a model over Z; its value at a rational point a/c as log max(|a|, |c|) up to a bounded function is not stated in GenEll and is taken as the standard computation (for the Fubini-Study metric used on GenEll page 7 the value is (1/2) log(a^2 + c^2)).",
    "The log-conductor depends on the model over Z; ratConductor is exact for P^1_Z with the three sections 0, 1, infinity, a pullback computation not quoted from GenEll. Other models differ at finitely many primes (GenEll Remark 1.5.1)."
+  ]
+ },
+ "IUT4.Cor2_3.frag.frey_curve": {
+  "kind": "fragment",
+  "parent": "IUT4.Cor2_3",
+  "source": {
+   "paper": "Inter-universal Teichmuller Theory IV",
+   "pdf_pages": "pages 54 to 56",
+   "pages_read": "rendered pages 41, 54, 55, 56"
+  },
+  "content": "The Frey curve y^2 = x(x - a)(x + b) as a WeierstrassCurve; Delta = 16 a^2 b^2 (a + b)^2 and c4 = 16 (a^2 + ab + b^2); over a field with 2 != 0 it is elliptic exactly when a, b, a + b are nonzero; its j-invariant is 2^8 (a^2 + ab + b^2)^3 / (a^2 b^2 (a + b)^2) = legendreJ (a/(a + b)) = legendreJ (-b/a); if u^2 = a with u != 0, the change of variables with unit u and r = s = t = 0 carries it to the Legendre curve at -b/a.",
+  "explicit_hypotheses": [
+   "R a commutative ring, a, b in R (discriminant and c4)",
+   "K a field; for ellipticity (2 : K) != 0; for the j-invariant the Frey curve is elliptic (instance argument); for legendreJ_div_add a, b, a + b != 0; for legendreJ_neg_div_eq a != 0; for the twist u != 0 and u^2 = a"
+  ],
+  "implicit_hypotheses": [],
+  "conclusion": "The displayed formulas, the equality of j-invariants with the Legendre curve at a/(a + b) and at -b/a, and the explicit isomorphism over K when a is a square.",
+  "definitions_required": [
+   "IUT.LegendreFrey.freyCurve",
+   "IUT.LegendreFrey.legendreJ"
+  ],
+  "results_used": [],
+  "external_dependencies": [],
+  "lean_declaration": "IUT.LegendreFrey.freyCurve_jInv_eq_legendreJ",
+  "lemmas": [
+   "IUT.LegendreFrey.freyCurve",
+   "IUT.LegendreFrey.freyCurve_disc",
+   "IUT.LegendreFrey.freyCurve_c4",
+   "IUT.LegendreFrey.freyCurve_isElliptic_iff",
+   "IUT.LegendreFrey.freyCurve_jInv",
+   "IUT.LegendreFrey.legendreJ_div_add",
+   "IUT.LegendreFrey.legendreJ_neg_div_eq",
+   "IUT.LegendreFrey.freyCurve_variableChange_legendre"
+  ],
+  "covers": "No page read names a triple or a Frey curve: the display of Corollary 2.3 (page 54) is about arbitrary points of U_X. This fragment checks, for the specialization X = P^1, D = {0, 1, infinity} used in the module IUT.Applications.ABCSpecialization (point a/c of a triple a + b = c), that the Legendre curve at that point of the lambda-line (page 41) and the Frey curve of the triple have the same j-invariant and differ by an explicit quadratic twist.",
+  "not_covered": "IUT IV does not attach a point of the lambda-line to an abc triple on pages 54 to 56 (the proof defers to [GenEll], Theorem 2.1); the normalization lambda = a/c is the one of the module IUT.Applications.ABCSpecialization, not of the paper. Corollary 2.3 itself is not addressed.",
+  "statement_status": "STATEMENT_FORMALIZED",
+  "proof_status": "KERNEL_VERIFIED",
+  "obligations": [],
+  "ambiguities": [
+   "The choice lambda = a/c rather than -b/a is a convention; the two lie in one S3-orbit and give the same j-invariant."
+  ],
+  "scope": "model_test"
+ },
+ "IUT4.Cor2_3.frag.frey_j_arithmetic": {
+  "kind": "fragment",
+  "parent": "IUT4.Cor2_3",
+  "source": {
+   "paper": "Inter-universal Teichmuller Theory IV",
+   "pdf_pages": "pages 54 to 56",
+   "pages_read": "rendered pages 41 to 43, 54, 55, 56"
+  },
+  "content": "For coprime natural numbers a, b with N = a^2 + ab + b^2: N is odd and coprime to ab(a + b). For positive coprime a, b with a + b = c and j = legendreJ (a/c) in Q: j = 2^8 N^3 / (abc)^2; there is k dividing 2^8 with (abc)^2 = den(j) k and |num(j)| k = 2^8 N^3; den(j) divides (abc)^2 and (abc)^2 divides 2^8 den(j); N^3 divides |num(j)| and |num(j)| divides 2^8 N^3; an odd prime divides den(j) exactly when it divides abc. For the integral Frey model over Z, an odd prime divides Delta exactly when it divides ab(a + b), and then it does not divide c4.",
+  "explicit_hypotheses": [
+   "a, b, c natural numbers, 0 < a, 0 < b, a and b coprime, a + b = c (for the Frey model: a, b coprime natural numbers)",
+   "p a prime with p != 2 (prime statements)"
+  ],
+  "implicit_hypotheses": [],
+  "conclusion": "The divisibility and coprimality statements listed in content.",
+  "definitions_required": [
+   "IUT.LegendreFrey.legendreJ",
+   "IUT.LegendreFrey.freyCurve"
+  ],
+  "results_used": [],
+  "external_dependencies": [],
+  "lean_declaration": "IUT.LegendreFrey.legendreJ_triple_prime_dvd_den_iff",
+  "lemmas": [
+   "IUT.LegendreFrey.freyNorm_coprime",
+   "IUT.LegendreFrey.freyNorm_odd",
+   "IUT.LegendreFrey.legendreJ_triple_eq",
+   "IUT.LegendreFrey.legendreJ_triple_num_den",
+   "IUT.LegendreFrey.legendreJ_triple_den_dvd",
+   "IUT.LegendreFrey.legendreJ_triple_sq_dvd",
+   "IUT.LegendreFrey.legendreJ_triple_num",
+   "IUT.LegendreFrey.freyCurve_prime_dvd_disc_iff",
+   "IUT.LegendreFrey.freyCurve_prime_not_dvd_c4"
+  ],
+  "covers": "No page read names a triple or a Frey curve. For the specialization X = P^1, D = {0, 1, infinity} with the point a/c of a triple (module IUT.Applications.ABCSpecialization), this fragment checks the arithmetic of the j-invariant at that point and of the integral Frey model: coprimality, numerator and denominator up to powers of 2, and the odd primes dividing the discriminant.",
+  "not_covered": "Multiplicative reduction itself: Mathlib has HasMultiplicativeReduction over a discrete valuation ring but no minimality criterion, so the Frey model is not proved minimal and its reduction type is not derived. The prime 2 is excluded (the triple 1 + 1 = 2 gives j = 1728). Corollary 2.3 itself is not addressed.",
+  "statement_status": "STATEMENT_FORMALIZED",
+  "proof_status": "KERNEL_VERIFIED",
+  "obligations": [],
+  "ambiguities": [],
+  "scope": "model_test"
+ },
+ "IUT4.Cor2_3.frag.bounded_degree_P1_minus_three": {
+  "kind": "fragment",
+  "parent": "IUT4.Cor2_3",
+  "source": {
+   "paper": "Inter-universal Teichmuller Theory IV",
+   "pdf_pages": "pages 40, 54 and 55",
+   "pages_read": "rendered IUT IV pages 3, 40 to 43 and 54 to 56; GenEll pages 4 to 6, 8, 9 and 11 to 13; GenEll comments, pages 1 and 2"
+  },
+  "content": "Definitions, with Mathlib objects, of the three functions of GenEll Definition 1.5 at a point x in F minus {0, 1} of P^1 over a number field F: heightNF F x = Height.logHeight1 x / [F : Q]; logDiffNF F = log absNorm(different ideal of O_F over Z) / [F : Q] (= log |disc F| / [F : Q]); logCondNF F x = (sum of log #(O_F / p) over the primes p at which x meets {0, 1, infinity}) / [F : Q], where x meets {0, 1, infinity} at p (MeetsBoundaryAt) when there are no a, b in O_F with a, b, a - b not in p and x b = a. The open statement VojtaLineMinusThreePointsBoundedDegree: for every d >= 1 and eps > 0 there is C such that for every number field F : Type and x in F with Q(x) = F, [F : Q] <= d, x not in {0, 1}: heightNF F x <= (1 + eps)(logDiffNF F + logCondNF F x) + C. Its fixed degree pieces are VojtaLineMinusThreePointsDegreeAtMost d.",
+  "explicit_hypotheses": [],
+  "implicit_hypotheses": [],
+  "conclusion": "A proposition (definition); not proved.",
+  "definitions_required": [
+   "Height.logHeight₁ on a number field",
+   "differentIdeal ℤ (𝓞 F) and Ideal.absNorm",
+   "IsDedekindDomain.HeightOneSpectrum (𝓞 F)",
+   "IntermediateField.adjoin ℚ {x}",
+   "IUT.VojtaNumberField.ReducesAwayFromBoundary",
+   "IUT.VojtaNumberField.MeetsBoundaryAt",
+   "IUT.VojtaNumberField.heightNF",
+   "IUT.VojtaNumberField.logDiffNF",
+   "IUT.VojtaNumberField.logCondNF"
+  ],
+  "results_used": [],
+  "external_dependencies": [
+   "GenEll: page 4: arithmetic divisors, deg_F (log q_v at a finite place, 1 at an archimedean place) and the normalized degree (1/[F:Q]) deg_F; read",
+   "GenEll: Definition 1.2 (ii) with correction (2) (page 5), repeated in IUT IV Remark 2.3.1 (ii) (page 55): direction of the relation of bounded discrepancy; read",
+   "GenEll: Example 1.3 (i) (page 5): U_X(Qbar)^{<=d} as the union of U_X(F) over [F:Q] <= d; read",
+   "GenEll: Proposition 1.4 (iii) and Remark 1.4.1 (pages 6 and 8): the height class depends only on the line bundle on X_Q; read",
+   "GenEll: Definition 1.5 (i), (iii), (iv) with correction (12) (page 8): minimal field of definition, log-different from the different ideal, log-conductor as the normalized degree of the reduced pullback of D; read",
+   "GenEll: Remark 1.5.1 (pages 8 and 9): another model changes the log-conductor by a bounded function; read"
+  ],
+  "lean_declaration": "IUT.VojtaNumberField.VojtaLineMinusThreePointsBoundedDegree",
+  "lemmas": [
+   "IUT.VojtaNumberField.VojtaLineMinusThreePointsDegreeAtMost",
+   "IUT.VojtaNumberField.ReducesAwayFromBoundary",
+   "IUT.VojtaNumberField.MeetsBoundaryAt",
+   "IUT.VojtaNumberField.heightNF",
+   "IUT.VojtaNumberField.logDiffNF",
+   "IUT.VojtaNumberField.logCondNF",
+   "IUT.VojtaNumberField.meetsBoundaryAt_iff_valuation",
+   "IUT.VojtaNumberField.logDiffNF_eq",
+   "IUT.VojtaNumberField.heightNF_nonneg",
+   "IUT.VojtaNumberField.logDiffNF_nonneg",
+   "IUT.VojtaNumberField.logCondNF_nonneg",
+   "IUT.VojtaNumberField.logCondNF_one_sub",
+   "IUT.VojtaNumberField.logCondNF_inv",
+   "IUT.VojtaNumberField.heightNF_inv",
+   "IUT.VojtaNumberField.abs_heightNF_one_sub_sub_le",
+   "IUT.VojtaNumberField.adjoin_one_sub_eq_top_iff",
+   "IUT.VojtaNumberField.adjoin_inv_eq_top_iff",
+   "IUT.VojtaNumberField.heightNF_algebraMap_rat",
+   "IUT.VojtaNumberField.logCondNF_ringEquiv",
+   "IUT.VojtaNumberField.heightNF_sixthRoot",
+   "IUT.VojtaNumberField.logDiffNF_cyclotomicThree",
+   "IUT.VojtaNumberField.logCondNF_sixthRoot",
+   "IUT.VojtaNumberField.adjoin_sixthRoot_eq_top",
+   "IUT.VojtaNumberField.exists_point_cyclotomicFieldThree"
+  ],
+  "covers": "Page 54, display of Corollary 2.3 ('the function (1 + eps)(log-diff_X + log-cond_D) - ht_{omega_X(D)} is bounded below by a constant on U_X(Qbar)^{<=d}'), for one curve (X = P^1_Q, D = {0, 1, infinity}) and every d >= 1 and eps > 0: equivalently the instance (P, C) of GenEll Theorem 2.1 (i) (page 11). The log-conductor is defined as the support of the pullback of D for the model P^1_Z with the sections 0, 1, infinity, and is proved to be the set of primes with v(x) != 0 or v(x - 1) != 0 (meetsBoundaryAt_iff_valuation).",
+  "not_covered": "General hyperbolic curves X and divisors D; the compactly bounded form (GenEll Theorem 2.1 (ii), with K_V, support containing Sigma = {2} and the condition (*_{j-inv}) of IUT IV pages 41 and 55), which is not stated because a faithful K_V needs Galois-stable subsets of X(Qbar_v) that are compact domains in X(K) for every finite K/Q_v and conjugation-stable compact domains of U(C); the proof; IUT IV Theorem 1.10, Corollary 2.2 (i), (ii) (C2), (iii), and the passage (ii) implies (i) of GenEll Theorem 2.1 (pages 11 to 13, through a Galois covering of degree raising d to d' = d deg(Y/X) and the noncritical Belyi map). The identification of ht_{omega_P(C)} (GenEll page 4, a metrized model) with the Weil height up to a bounded function is a standard computation not in GenEll and not formalized. Invariance of heightNF under isomorphisms of number fields is not formalized (it is proved for rational points, heightNF_algebraMap_rat).",
+  "statement_status": "STATEMENT_FORMALIZED",
+  "proof_status": "NOT_EXTRACTED",
+  "obligations": [],
+  "ambiguities": [
+   "A point of U_X(Qbar)^{<=d} is represented by a pair (F, x) with F generated by x, so F is the minimal field of definition at which GenEll Definition 1.5 (iii), (iv) evaluate log-diff and log-cond; the statement quantifies over number fields F : Type, and every number field has an isomorphic copy there.",
+   "The height ht_{omega_X(D)} is defined in GenEll (page 4) through an arithmetic line bundle on a model over Z; heightNF is Mathlib's logarithmic Weil height divided by [F : Q], equal to the GenEll height up to a bounded function by a standard computation not stated in GenEll.",
+   "The log-conductor depends on the model over Z; logCondNF is exact for P^1_Z with the three sections 0, 1, infinity. Other models differ at finitely many primes (GenEll Remark 1.5.1)."
   ]
  },
  "IUT4.Rem2_3_1": {

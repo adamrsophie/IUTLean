@@ -61,7 +61,16 @@ EXTERNAL_CLAIM: a statement of another paper, stated in Lean as a proposition an
 | Id | Kind | Title | PDF pages | Statement | Proof | Lean declaration | Path |
 |---|---|---|---|---|---|---|---|
 | `IUT1.Prop2_1` | Proposition | Profinite Conjugates of Nontrivial Compact Subgroups | 45 | BLOCKED_BY_MATHLIB | NOT_EXTRACTED |  | yes |
+| &nbsp;&nbsp;`IUT1.Prop2_1.frag.anabelioid_morphism` | fragment |  | 44 to 45 | STATEMENT_FORMALIZED | NOT_EXTRACTED | `IUT.Prerequisites.AnabelioidMorphism` |  |
+| &nbsp;&nbsp;`IUT1.Prop2_1.frag.connected_anabelioid` | fragment |  | 44 to 45 | STATEMENT_FORMALIZED | NOT_EXTRACTED | `IUT.Prerequisites.IsConnectedAnabelioid` |  |
+| &nbsp;&nbsp;`IUT1.Prop2_1.frag.finite_g_sets` | fragment |  | 44 to 45 | STATEMENT_FORMALIZED | NOT_EXTRACTED | `IUT.Prerequisites.FiniteGSets` |  |
+| &nbsp;&nbsp;`IUT1.Prop2_1.frag.semi_graph_of_anabelioids` | fragment |  | 44 to 45 | STATEMENT_FORMALIZED | NOT_EXTRACTED | `IUT.Prerequisites.SemiGraphOfAnabelioids` |  |
 | `IUT1.Prop2_2` | Proposition | Commensurators of Decomposition Subgroups Associated to Sub-semi-graphs | 45 to 46 | BLOCKED_BY_MATHLIB | NOT_EXTRACTED |  | yes |
+| &nbsp;&nbsp;`IUT1.Prop2_2.frag.compactification` | fragment |  | 44 to 45 | STATEMENT_FORMALIZED | NOT_EXTRACTED | `IUT.Prerequisites.SemiGraph.compactification` |  |
+| &nbsp;&nbsp;`IUT1.Prop2_2.frag.semi_graph` | fragment |  | 44 to 45 | STATEMENT_FORMALIZED | NOT_EXTRACTED | `IUT.Prerequisites.SemiGraph` |  |
+| &nbsp;&nbsp;`IUT1.Prop2_2.frag.semi_graph_examples` | fragment | (scope: model_test) | 44 to 45 | STATEMENT_FORMALIZED | NOT_EXTRACTED | `IUT.Prerequisites.SemiGraph.exampleJoint_isJoint` |  |
+| &nbsp;&nbsp;`IUT1.Prop2_2.frag.semi_graph_morphism` | fragment |  | 44 to 45 | STATEMENT_FORMALIZED | NOT_EXTRACTED | `IUT.Prerequisites.SemiGraph.Hom` |  |
+| &nbsp;&nbsp;`IUT1.Prop2_2.frag.sub_semi_graph` | fragment |  | 44 to 45 | STATEMENT_FORMALIZED | NOT_EXTRACTED | `IUT.Prerequisites.SemiGraph.subSemiGraph` |  |
 | `IUT1.Rem2_2_1` | Remark |  | 46 | EXTRACTED | BLOCKED_BY_MISSING_JUSTIFICATION |  |  |
 | `IUT1.Rem2_2_2` | Remark |  | 46 to 47 | EXTRACTED | BLOCKED_BY_EXTERNAL_THEOREM |  | yes |
 | `IUT1.Cor2_3` | Corollary | Subgroups of Tempered Fundamental Groups Associated to Sub-semi-graphs | 47 to 50 | EXTRACTED | BLOCKED_BY_EXTERNAL_THEOREM |  | yes |
@@ -112,11 +121,16 @@ EXTERNAL_CLAIM: a statement of another paper, stated in Lean as a proposition an
 | &nbsp;&nbsp;`IUT1.Rem3_1_7.iii` | part |  | 68 | EXTRACTED | BLOCKED_BY_MISSING_JUSTIFICATION |  | yes |
 | &nbsp;&nbsp;`IUT1.Rem3_1_7.iv` | part |  | 68 to 69 | EXTRACTED | BLOCKED_BY_EXTERNAL_THEOREM |  | yes |
 | `IUT1.Ex3_2` | Example | Frobenioids at Bad Nonarchimedean Primes | 69 to 73 | BLOCKED_BY_MATHLIB | NOT_EXTRACTED |  | yes |
+| &nbsp;&nbsp;`IUT1.Ex3_2.frag.frd_morphism_types` | fragment | (scope: prerequisite from The Geometry of Frobenioids I (Definitions 1.1 (iv) and 1.2); not the objects of IUT I) | 69 to 73 | STATEMENT_FORMALIZED | NOT_EXTRACTED | `IUT.Prerequisites.Frobenioid.IsFrobeniusTrivialObj` |  |
 | `IUT1.Rem3_2_1` | Remark |  | 73 to 74 | EXTRACTED | NOT_EXTRACTED |  | yes |
 | `IUT1.Rem3_2_2` | Remark |  | 74 | EXTRACTED | NOT_EXTRACTED |  | yes |
 | `IUT1.Rem3_2_3` | Remark |  | 74 to 75 | EXTRACTED | BLOCKED_BY_EXTERNAL_THEOREM |  | yes |
 | `IUT1.Rem3_2_4` | Remark |  | 75 to 77 | EXTRACTED | BLOCKED_BY_EXTERNAL_THEOREM |  | yes |
 | `IUT1.Ex3_3` | Example | Frobenioids at Good Nonarchimedean Primes | 77 to 79 | BLOCKED_BY_MATHLIB | NOT_EXTRACTED |  | yes |
+| &nbsp;&nbsp;`IUT1.Ex3_3.frag.frd_elementary_frobenioid` | fragment | (scope: prerequisite from The Geometry of Frobenioids I (Definition 1.1 (iii)); not the objects of IUT I) | 77 to 79 | STATEMENT_FORMALIZED | NOT_EXTRACTED | `IUT.Prerequisites.Frobenioid.elemFrobCategory` |  |
+| &nbsp;&nbsp;`IUT1.Ex3_3.frag.frd_monoid_classes` | fragment | (scope: prerequisite from The Geometry of Frobenioids I (Section 0 and Definition 1.1 (i), (ii)); not the objects of IUT I) | 77 to 79 | STATEMENT_FORMALIZED | NOT_EXTRACTED | `IUT.Prerequisites.Frobenioid.IsDivisorialMonoid` |  |
+| &nbsp;&nbsp;`IUT1.Ex3_3.frag.frd_monoid_examples` | fragment | (scope: prerequisite from The Geometry of Frobenioids I; not the objects of IUT I) | 77 to 79 | STATEMENT_FORMALIZED | KERNEL_VERIFIED | `IUT.Prerequisites.Frobenioid.isCharacteristicTypeMonoid_of_isIntegralMonoid` |  |
+| &nbsp;&nbsp;`IUT1.Ex3_3.frag.frd_remark_1_1_1` | fragment | (scope: prerequisite from The Geometry of Frobenioids I (Remark 1.1.1); not the objects of IUT I) | 77 to 79 | STATEMENT_FORMALIZED | KERNEL_VERIFIED | `IUT.Prerequisites.Frobenioid.frobDeg_compose` |  |
 | `IUT1.Rem3_3_1` | Remark |  | 79 | EXTRACTED | NOT_EXTRACTED |  |  |
 | `IUT1.Rem3_3_2` | Remark |  | 79 to 80 | EXTRACTED | NOT_EXTRACTED |  | yes |
 | `IUT1.Ex3_4` | Example | Frobenioids at Archimedean Primes | 80 to 82 | BLOCKED_BY_MATHLIB | NOT_EXTRACTED |  | yes |
@@ -124,6 +138,8 @@ EXTERNAL_CLAIM: a statement of another paper, stated in Lean as a proposition an
 | `IUT1.Rem3_4_2` | Remark |  | 82 to 83 | EXTRACTED | BLOCKED_BY_EXTERNAL_THEOREM |  | yes |
 | `IUT1.Rem3_4_3` | Remark |  | 83 to 84 | EXTRACTED | BLOCKED_BY_MISSING_JUSTIFICATION |  | yes |
 | `IUT1.Ex3_5` | Example | Global Realified Frobenioids | 84 to 86 | BLOCKED_BY_MATHLIB | NOT_EXTRACTED |  | yes |
+| &nbsp;&nbsp;`IUT1.Ex3_5.frag.frd_partial_frobenioid` | fragment | (scope: prerequisite from The Geometry of Frobenioids I (Definition 1.3); not the objects of IUT I) | 84 to 86 | STATEMENT_FORMALIZED | NOT_EXTRACTED | `IUT.Prerequisites.Frobenioid.PartialFrobenioidConditions` |  |
+| &nbsp;&nbsp;`IUT1.Ex3_5.frag.frd_partial_frobenioid_example` | fragment | (scope: prerequisite from The Geometry of Frobenioids I (Definition 1.3, Proposition 1.5); not the objects of IUT I) | 84 to 86 | STATEMENT_FORMALIZED | KERNEL_VERIFIED | `IUT.Prerequisites.Frobenioid.natPoint_partialFrobenioidConditions` |  |
 | `IUT1.Rem3_5_1` | Remark |  | 86 to 87 | EXTRACTED | NOT_EXTRACTED |  | yes |
 | `IUT1.Def3_6` | Definition |  | 87 to 88 | BLOCKED_BY_MATHLIB | NOT_EXTRACTED |  | yes |
 | `IUT1.Rem3_5_2` | Remark |  | 87 | EXTRACTED | NOT_EXTRACTED |  | yes |
@@ -476,6 +492,7 @@ EXTERNAL_CLAIM: a statement of another paper, stated in Lean as a proposition an
 |---|---|---|---|---|---|---|---|
 | `IUT3.Def1_1` | Definition |  | 23 to 28 | EXTRACTED | BLOCKED_BY_EXTERNAL_THEOREM |  | yes |
 | &nbsp;&nbsp;`IUT3.Def1_1.frag.log_shell_Qp` | fragment | (scope: base field Q_p only; finite extensions of Q_p are not treated) | 24 | STATEMENT_FORMALIZED | KERNEL_VERIFIED | `IUT.Prerequisites.PadicLog.padicLogShell_eq_range_coe` |  |
+| &nbsp;&nbsp;`IUT3.Def1_1.frag.log_shell_model` | fragment | (scope: normed-field model: K a normed field that is a normed Q_p-algebra (complete, and locally compact where units are used); R = closed unit ball, R^x = unit sphere, p^lambda R = closed ball of radius p^(-lambda); for finite extensions of Q_p with the spectral norm, the closed unit ball is integralClosure Z_p k_i and the least such e is Ideal.ramificationIdx (proved in IUT.PaperIV.LocalFields.Bridge, fragments IUT4.Prop1_2.frag.bridge_ring_of_integers and IUT4.Prop1_2.frag.bridge_ramification)) | 24 | STATEMENT_FORMALIZED | KERNEL_VERIFIED | `IUT.PaperIV.LocalFields.extLogShell_bounds` |  |
 | &nbsp;&nbsp;`IUT3.Def1_1.i` | part |  | 23 to 25 | EXTRACTED | NOT_EXTRACTED |  | yes |
 | &nbsp;&nbsp;`IUT3.Def1_1.ii` | part |  | 25 to 26 | EXTRACTED | NOT_EXTRACTED |  | yes |
 | &nbsp;&nbsp;`IUT3.Def1_1.iii` | part |  | 26 to 27 | EXTRACTED | NOT_EXTRACTED |  | yes |
@@ -492,6 +509,8 @@ EXTERNAL_CLAIM: a statement of another paper, stated in Lean as a proposition an
 | &nbsp;&nbsp;`IUT3.Prop1_2.ix` | part |  | 34 | EXTRACTED | BLOCKED_BY_EXTERNAL_THEOREM |  | yes |
 | &nbsp;&nbsp;`IUT3.Prop1_2.v` | part |  | 31 to 32 | EXTRACTED | BLOCKED_BY_EXTERNAL_THEOREM |  | yes |
 | &nbsp;&nbsp;&nbsp;&nbsp;`IUT3.Prop1_2.v.frag.nonarch_Qp` | fragment | (scope: base field Q_p only; finite extensions of Q_p are not treated) | 31 to 32 | STATEMENT_FORMALIZED | KERNEL_VERIFIED | `IUT.Prerequisites.PadicLog.padicInt_subset_padicLogShell` |  |
+| &nbsp;&nbsp;&nbsp;&nbsp;`IUT3.Prop1_2.v.frag.nonarch_model` | fragment | (scope: normed-field model: K a normed field that is a normed Q_p-algebra (complete, and locally compact where units are used); R = closed unit ball, R^x = unit sphere, p^lambda R = closed ball of radius p^(-lambda); for finite extensions of Q_p with the spectral norm, the closed unit ball is integralClosure Z_p k_i and the least such e is Ideal.ramificationIdx (proved in IUT.PaperIV.LocalFields.Bridge, fragments IUT4.Prop1_2.frag.bridge_ring_of_integers and IUT4.Prop1_2.frag.bridge_ramification)) | 31 to 32 | STATEMENT_FORMALIZED | KERNEL_VERIFIED | `IUT.PaperIV.LocalFields.extLogShell_unitBall_subset` |  |
+| &nbsp;&nbsp;&nbsp;&nbsp;`IUT3.Prop1_2.v.frag.padic_union_examples` | fragment | (scope: model_test) | 31 to 32, 36 to 37 | STATEMENT_FORMALIZED | KERNEL_VERIFIED | `IUT.PaperIII.Corollary312.padic_iUnion_nonzeroIntegers` |  |
 | &nbsp;&nbsp;`IUT3.Prop1_2.vi` | part |  | 32 | EXTRACTED | BLOCKED_BY_EXTERNAL_THEOREM |  | yes |
 | &nbsp;&nbsp;`IUT3.Prop1_2.vii` | part |  | 32 to 33 | EXTRACTED | BLOCKED_BY_EXTERNAL_THEOREM |  | yes |
 | &nbsp;&nbsp;`IUT3.Prop1_2.viii` | part |  | 33 | EXTRACTED | EXTRACTED |  | yes |
@@ -574,6 +593,10 @@ EXTERNAL_CLAIM: a statement of another paper, stated in Lean as a proposition an
 | `IUT3.Rem3_3_2` | Remark |  | 101 | EXTRACTED | BLOCKED_BY_EXTERNAL_THEOREM |  | yes |
 | `IUT3.Rem3_3_3` | Remark |  | 101 | EXTRACTED | EXTRACTED |  |  |
 | `IUT3.Prop3_5` | Proposition | Kummer Theory and Upper Semi-compatibility for ±ell Vertically Coric Local LGP-Monoids | 103 to 106 | EXTRACTED | BLOCKED_BY_EXTERNAL_THEOREM |  | yes |
+| &nbsp;&nbsp;`IUT3.Prop3_5.frag.ext_upper_semi` | fragment | (scope: normed-field model of finite extensions of Q_p, one tensor factor) | 28, 31 to 32, 36 to 37, 104 to 105 | STATEMENT_FORMALIZED | KERNEL_VERIFIED | `IUT.PaperIII.Corollary312.extLogShell_contains_logUnitIterateRegion` |  |
+| &nbsp;&nbsp;`IUT3.Prop3_5.frag.logUnitIterateRegion` | fragment | (scope: one local field; abstract iteration) | 28, 31 to 32, 36 to 37, 104 to 105 | STATEMENT_FORMALIZED | NOT_EXTRACTED | `IUT.PaperIII.Corollary312.logUnitIterateRegion` |  |
+| &nbsp;&nbsp;`IUT3.Prop3_5.frag.padic_chain` | fragment | (scope: model_test) | 28, 31 to 32, 36 to 37, 104 to 105 | STATEMENT_FORMALIZED | KERNEL_VERIFIED | `IUT.PaperIII.Corollary312.padic_logUnitIterateRegion_one` |  |
+| &nbsp;&nbsp;`IUT3.Prop3_5.frag.padic_upper_semi` | fragment | (scope: base field Q_p, one tensor factor) | 28, 31 to 32, 36 to 37, 104 to 105 | STATEMENT_FORMALIZED | KERNEL_VERIFIED | `IUT.PaperIII.Corollary312.padicLogShell_contains_logUnitIterateRegion` |  |
 | `IUT3.Ex3_6` | Example | Concrete Representations of Global Frobenioids | 106 to 108 | EXTRACTED | BLOCKED_BY_MISSING_JUSTIFICATION |  | yes |
 | &nbsp;&nbsp;`IUT3.Ex3_6.i` | part |  | 107 | EXTRACTED | BLOCKED_BY_MISSING_JUSTIFICATION |  | yes |
 | &nbsp;&nbsp;`IUT3.Ex3_6.ii` | part |  | 107 to 108 | EXTRACTED | BLOCKED_BY_MISSING_JUSTIFICATION |  | yes |
@@ -594,6 +617,8 @@ EXTERNAL_CLAIM: a statement of another paper, stated in Lean as a proposition an
 | `IUT3.Rem3_8_2` | Remark |  | 114 to 115 | EXTRACTED | BLOCKED_BY_MISSING_JUSTIFICATION |  | yes |
 | `IUT3.Prop3_9` | Proposition | Log-volume for Packets and Processions | 115 to 118 | EXTRACTED | BLOCKED_BY_MISSING_JUSTIFICATION |  | yes |
 | &nbsp;&nbsp;`IUT3.Prop3_9.i` | part |  | 115 to 116 | EXTRACTED | EXTRACTED |  | yes |
+| &nbsp;&nbsp;&nbsp;&nbsp;`IUT3.Prop3_9.i.frag.packet_normalization` | fragment | (scope: one nonarchimedean summand, abstract vector space) | 115 | STATEMENT_FORMALIZED | KERNEL_VERIFIED | `IUT.Prerequisites.PadicVolume.padicMuLog_smul` |  |
+| &nbsp;&nbsp;&nbsp;&nbsp;`IUT3.Prop3_9.i.frag.region_interface` | fragment | (scope: abstract interface instance, not the papers' objects) | 115 to 116 | STATEMENT_FORMALIZED | NOT_EXTRACTED | `IUT.Prerequisites.PadicVolume.padicRegionComparison` |  |
 | &nbsp;&nbsp;`IUT3.Prop3_9.ii` | part |  | 116 to 117 | EXTRACTED | EXTRACTED |  | yes |
 | &nbsp;&nbsp;`IUT3.Prop3_9.iii` | part |  | 117 | INTERPRETATION_AMBIGUOUS | EXTRACTED |  | yes |
 | &nbsp;&nbsp;&nbsp;&nbsp;`IUT3.Prop3_9.iii.frag.globalLogVolume` | fragment | (scope: abstract interface, not the papers' objects) | 117 | STATEMENT_FORMALIZED | NOT_EXTRACTED | `IUT.PaperIII.Corollary312.globalLogVolume` |  |
@@ -613,6 +638,7 @@ EXTERNAL_CLAIM: a statement of another paper, stated in Lean as a proposition an
 | `IUT3.Rem3_9_5` | Remark |  | 126 to 145 | EXTRACTED | BLOCKED_BY_MISSING_JUSTIFICATION |  | yes |
 | &nbsp;&nbsp;`IUT3.Rem3_9_5.i` | part |  | 127 | EXTRACTED | BLOCKED_BY_MISSING_JUSTIFICATION |  | yes |
 | &nbsp;&nbsp;`IUT3.Rem3_9_5.ii` | part |  | 127 to 128 | EXTRACTED | EXTRACTED |  | yes |
+| &nbsp;&nbsp;&nbsp;&nbsp;`IUT3.Rem3_9_5.ii.frag.dhHull_isHullMap` | fragment | (scope: finite family of normed groups standing for the factors of a tensor product; not the papers' tensor packets) | 127 | STATEMENT_FORMALIZED | KERNEL_VERIFIED | `IUT.Applications.DupuyHilado.dhHull_isHullMap` |  |
 | &nbsp;&nbsp;&nbsp;&nbsp;`IUT3.Rem3_9_5.ii.frag.eq_sInter` | fragment |  | 127 | STATEMENT_FORMALIZED | KERNEL_VERIFIED | `IUT.PaperIII.Remark3_9_5.IsHullMap.eq_sInter` |  |
 | &nbsp;&nbsp;&nbsp;&nbsp;`IUT3.Rem3_9_5.ii.frag.isHullMap_sInter` | fragment |  | 127 | STATEMENT_FORMALIZED | CONDITIONALLY_VERIFIED | `IUT.PaperIII.Remark3_9_5.isHullMap_sInter` |  |
 | &nbsp;&nbsp;&nbsp;&nbsp;`IUT3.Rem3_9_5.ii.frag.unique` | fragment |  | 127 | STATEMENT_FORMALIZED | KERNEL_VERIFIED | `IUT.PaperIII.Remark3_9_5.IsHullMap.unique` |  |
@@ -638,6 +664,11 @@ EXTERNAL_CLAIM: a statement of another paper, stated in Lean as a proposition an
 | &nbsp;&nbsp;&nbsp;&nbsp;`IUT3.Thm3_11.i.c` | part |  | 154 | EXTRACTED | EXTRACTED |  | yes |
 | &nbsp;&nbsp;`IUT3.Thm3_11.ii` | part |  | 155 to 156 | EXTRACTED | BLOCKED_BY_MISSING_JUSTIFICATION |  | yes |
 | &nbsp;&nbsp;&nbsp;&nbsp;`IUT3.Thm3_11.ii.Ind3` | part |  | 156 | INTERPRETATION_AMBIGUOUS | EXTRACTED |  | yes |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`IUT3.Thm3_11.ii.Ind3.frag.VerticalRegionFamily` | fragment | (scope: abstract interface, not the papers' objects) | 154 to 156, 177, 181 | STATEMENT_FORMALIZED | NOT_EXTRACTED | `IUT.PaperIII.Corollary312.VerticalRegionFamily` |  |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`IUT3.Thm3_11.ii.Ind3.frag.hull_bounds` | fragment | (scope: abstract interface, not the papers' objects) | 154 to 156, 177, 181 | STATEMENT_FORMALIZED | KERNEL_VERIFIED | `IUT.PaperIII.Corollary312.VerticalRegionFamily.logVol_hull_columnUnion_le_shellContainer` |  |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`IUT3.Thm3_11.ii.Ind3.frag.inequality_from_above` | fragment | (scope: abstract interface, not the papers' objects) | 154 to 156, 177, 181 | STATEMENT_FORMALIZED | CONDITIONALLY_VERIFIED | `IUT.PaperIII.Corollary312.IndeterminacyOrbit.logVolume_jointColumnImage_le_shellContainer` |  |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`IUT3.Thm3_11.ii.Ind3.frag.interval_examples` | fragment | (scope: model_test) | 154 to 156, 177, 181 | STATEMENT_FORMALIZED | KERNEL_VERIFIED | `IUT.PaperIII.Corollary312.VerticalExample.example_gap_union` |  |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`IUT3.Thm3_11.ii.Ind3.frag.joint_indeterminacy` | fragment | (scope: abstract interface, not the papers' objects) | 154 to 156, 177, 181 | STATEMENT_FORMALIZED | CONDITIONALLY_VERIFIED | `IUT.PaperIII.Corollary312.IndeterminacyOrbit.logVol_hull_jointColumnUnion_le_shellContainer` |  |
 | &nbsp;&nbsp;&nbsp;&nbsp;`IUT3.Thm3_11.ii.a` | part |  | 155 | EXTRACTED | EXTRACTED |  | yes |
 | &nbsp;&nbsp;&nbsp;&nbsp;`IUT3.Thm3_11.ii.b` | part |  | 155 | EXTRACTED | EXTRACTED |  | yes |
 | &nbsp;&nbsp;&nbsp;&nbsp;`IUT3.Thm3_11.ii.c` | part |  | 155 to 156 | EXTRACTED | EXTRACTED |  | yes |
@@ -712,6 +743,7 @@ EXTERNAL_CLAIM: a statement of another paper, stated in Lean as a proposition an
 | Id | Kind | Title | PDF pages | Statement | Proof | Lean declaration | Path |
 |---|---|---|---|---|---|---|---|
 | `IUT4.ThmA` | Theorem | Diophantine Inequalities | 3 | EXTRACTED | BLOCKED_BY_EXTERNAL_THEOREM |  | yes |
+| &nbsp;&nbsp;`IUT4.ThmA.frag.bounded_degree_implies_abc` | fragment |  | 3 | STATEMENT_FORMALIZED | KERNEL_VERIFIED | `IUT.VojtaNumberField.degreeAtMostOne_iff_ABC` |  |
 | &nbsp;&nbsp;`IUT4.ThmA.frag.equiv_abc` | fragment |  | 3 | STATEMENT_FORMALIZED | KERNEL_VERIFIED | `IUT.ABCSpecialization.vojta_iff_ABC` |  |
 
 ### Section 1: Log-volume Estimates
@@ -719,38 +751,70 @@ EXTERNAL_CLAIM: a statement of another paper, stated in Lean as a proposition an
 | Id | Kind | Title | PDF pages | Statement | Proof | Lean declaration | Path |
 |---|---|---|---|---|---|---|---|
 | `IUT4.Prop1_1` | Proposition | Multiple Tensor Products and Differents | 9 to 10 | EXTRACTED | EXTRACTED |  | yes |
+| &nbsp;&nbsp;`IUT4.Prop1_1.frag.packet_integers` | fragment |  | 9, 14 | STATEMENT_FORMALIZED | KERNEL_VERIFIED | `IUT.Prerequisites.PadicVolume.padicPacketIntegers_subset` |  |
+| &nbsp;&nbsp;`IUT4.Prop1_1.frag.vb_integral_models` | fragment | (scope: two factors K1, K2 (finite extensions of Q_p); (R_E)^~ = padicPacketNormalization (elements of K1 (x) K2 integral over Z_p); mu^log = padicPacketMuLog in Module.finBasis coordinates) | 9 | STATEMENT_FORMALIZED | KERNEL_VERIFIED | `IUT.PaperIV.LocalFields.volBridge_padicVolIntegral_iff` |  |
+| &nbsp;&nbsp;`IUT4.Prop1_1.frag.vb_tensor_decomposition` | fragment | (scope: two factors K1, K2 (finite extensions of Q_p); (R_E)^~ = padicPacketNormalization (elements of K1 (x) K2 integral over Z_p); mu^log = padicPacketMuLog in Module.finBasis coordinates) | 9, 13 | STATEMENT_FORMALIZED | KERNEL_VERIFIED | `IUT.PaperIV.LocalFields.volBridge_tensor_equiv_pi` |  |
 | `IUT4.Prop1_2` | Proposition | Differents and Logarithms | 10 to 11 | EXTRACTED | BLOCKED_BY_MATHLIB |  | yes |
 | &nbsp;&nbsp;`IUT4.Prop1_2.frag.a_b_of_e_one` | fragment |  | 10 to 11 | STATEMENT_FORMALIZED | KERNEL_VERIFIED | `IUT.PaperIV.Proposition1_2.a_b_of_e_one` |  |
 | &nbsp;&nbsp;`IUT4.Prop1_2.frag.a_b_of_le` | fragment |  | 10 to 11 | STATEMENT_FORMALIZED | KERNEL_VERIFIED | `IUT.PaperIV.Proposition1_2.a_b_of_le` |  |
 | &nbsp;&nbsp;`IUT4.Prop1_2.frag.a_gt` | fragment |  | 10 to 11 | STATEMENT_FORMALIZED | KERNEL_VERIFIED | `IUT.PaperIV.Proposition1_2.a_gt` |  |
+| &nbsp;&nbsp;`IUT4.Prop1_2.frag.bridge_fractional_ideals` | fragment | (scope: finite extension L of Q_p (Field, finite-dimensional Q_p-algebra, compatible Z_p-algebra) with Mathlib's spectral norm spectralNorm Q_p L; R_i = integralClosure Z_p L; e_i = Ideal.ramificationIdx of a prime P over pZ_p (proved unique)) | 9 to 12 | STATEMENT_FORMALIZED | KERNEL_VERIFIED | `IUT.PaperIV.LocalFields.padicBridge_closedBall_eq_range_mul` |  |
+| &nbsp;&nbsp;`IUT4.Prop1_2.frag.bridge_i` | fragment | (scope: finite extension L of Q_p (Field, finite-dimensional Q_p-algebra, compatible Z_p-algebra) with Mathlib's spectral norm spectralNorm Q_p L; R_i = integralClosure Z_p L; e_i = Ideal.ramificationIdx of a prime P over pZ_p (proved unique)) | 9 to 12 | STATEMENT_FORMALIZED | KERNEL_VERIFIED | `IUT.PaperIV.LocalFields.padicBridge_extLogUnit_image_bounds` |  |
+| &nbsp;&nbsp;`IUT4.Prop1_2.frag.bridge_ramification` | fragment | (scope: finite extension L of Q_p (Field, finite-dimensional Q_p-algebra, compatible Z_p-algebra) with Mathlib's spectral norm spectralNorm Q_p L; R_i = integralClosure Z_p L; e_i = Ideal.ramificationIdx of a prime P over pZ_p (proved unique)) | 9 to 12 | STATEMENT_FORMALIZED | KERNEL_VERIFIED | `IUT.PaperIV.LocalFields.padicBridge_uniformizer` |  |
+| &nbsp;&nbsp;`IUT4.Prop1_2.frag.bridge_ring_of_integers` | fragment | (scope: finite extension L of Q_p (Field, finite-dimensional Q_p-algebra, compatible Z_p-algebra) with Mathlib's spectral norm spectralNorm Q_p L; R_i = integralClosure Z_p L; e_i = Ideal.ramificationIdx of a prime P over pZ_p (proved unique)) | 9 to 12 | STATEMENT_FORMALIZED | KERNEL_VERIFIED | `IUT.PaperIV.LocalFields.padicBridge_norm_le_one_iff_isIntegral` |  |
+| &nbsp;&nbsp;`IUT4.Prop1_2.frag.ext_log_def` | fragment | (scope: normed-field model: K a normed field that is a normed Q_p-algebra (complete, and locally compact where units are used); R = closed unit ball, R^x = unit sphere, p^lambda R = closed ball of radius p^(-lambda); for finite extensions of Q_p with the spectral norm, the closed unit ball is integralClosure Z_p k_i and the least such e is Ideal.ramificationIdx (proved in IUT.PaperIV.LocalFields.Bridge, fragments IUT4.Prop1_2.frag.bridge_ring_of_integers and IUT4.Prop1_2.frag.bridge_ramification)) | 10 to 11 | STATEMENT_FORMALIZED | NOT_EXTRACTED | `IUT.PaperIV.LocalFields.extLogOnePlus` |  |
+| &nbsp;&nbsp;`IUT4.Prop1_2.frag.ext_log_hom` | fragment | (scope: normed-field model: K a normed field that is a normed Q_p-algebra (complete, and locally compact where units are used); R = closed unit ball, R^x = unit sphere, p^lambda R = closed ball of radius p^(-lambda); for finite extensions of Q_p with the spectral norm, the closed unit ball is integralClosure Z_p k_i and the least such e is Ideal.ramificationIdx (proved in IUT.PaperIV.LocalFields.Bridge, fragments IUT4.Prop1_2.frag.bridge_ring_of_integers and IUT4.Prop1_2.frag.bridge_ramification)) | 10 to 11 | STATEMENT_FORMALIZED | KERNEL_VERIFIED | `IUT.PaperIV.LocalFields.extLogOnePlus_add_add_mul` |  |
+| &nbsp;&nbsp;`IUT4.Prop1_2.frag.ext_log_isometry` | fragment | (scope: normed-field model: K a normed field that is a normed Q_p-algebra (complete, and locally compact where units are used); R = closed unit ball, R^x = unit sphere, p^lambda R = closed ball of radius p^(-lambda); for finite extensions of Q_p with the spectral norm, the closed unit ball is integralClosure Z_p k_i and the least such e is Ideal.ramificationIdx (proved in IUT.PaperIV.LocalFields.Bridge, fragments IUT4.Prop1_2.frag.bridge_ring_of_integers and IUT4.Prop1_2.frag.bridge_ramification)) | 10 to 11 | STATEMENT_FORMALIZED | KERNEL_VERIFIED | `IUT.PaperIV.LocalFields.extLogOnePlus_norm_eq` |  |
 | &nbsp;&nbsp;`IUT4.Prop1_2.frag.i_Qp` | fragment | (scope: base field Q_p only; finite extensions of Q_p are not treated) | 10 to 11 | STATEMENT_FORMALIZED | KERNEL_VERIFIED | `IUT.Prerequisites.PadicLog.padicLogUnit_range` |  |
+| &nbsp;&nbsp;`IUT4.Prop1_2.frag.i_Qp_consistency` | fragment | (scope: base field Q_p, as an instance of the normed-field model) | 10 to 11 | STATEMENT_FORMALIZED | KERNEL_VERIFIED | `IUT.PaperIV.LocalFields.extLogUnit_image_padic_of_ne_two` |  |
+| &nbsp;&nbsp;`IUT4.Prop1_2.frag.i_equality_model` | fragment | (scope: normed-field model: K a normed field that is a normed Q_p-algebra (complete, and locally compact where units are used); R = closed unit ball, R^x = unit sphere, p^lambda R = closed ball of radius p^(-lambda); for finite extensions of Q_p with the spectral norm, the closed unit ball is integralClosure Z_p k_i and the least such e is Ideal.ramificationIdx (proved in IUT.PaperIV.LocalFields.Bridge, fragments IUT4.Prop1_2.frag.bridge_ring_of_integers and IUT4.Prop1_2.frag.bridge_ramification)) | 10 to 11 | STATEMENT_FORMALIZED | KERNEL_VERIFIED | `IUT.PaperIV.LocalFields.extLogUnit_image_eq_of_le` |  |
+| &nbsp;&nbsp;`IUT4.Prop1_2.frag.i_model` | fragment | (scope: normed-field model: K a normed field that is a normed Q_p-algebra (complete, and locally compact where units are used); R = closed unit ball, R^x = unit sphere, p^lambda R = closed ball of radius p^(-lambda); for finite extensions of Q_p with the spectral norm, the closed unit ball is integralClosure Z_p k_i and the least such e is Ideal.ramificationIdx (proved in IUT.PaperIV.LocalFields.Bridge, fragments IUT4.Prop1_2.frag.bridge_ring_of_integers and IUT4.Prop1_2.frag.bridge_ramification)) | 10 to 11 | STATEMENT_FORMALIZED | KERNEL_VERIFIED | `IUT.PaperIV.LocalFields.extLogUnit_image_bounds` |  |
 | &nbsp;&nbsp;`IUT4.Prop1_2.frag.iii_floor` | fragment |  | 10 to 11 | STATEMENT_FORMALIZED | KERNEL_VERIFIED | `IUT.PaperIV.Proposition1_2.iii_floor` |  |
 | &nbsp;&nbsp;`IUT4.Prop1_2.frag.log_hom` | fragment | (scope: base field Q_p only; finite extensions of Q_p are not treated) | 10 to 11 | STATEMENT_FORMALIZED | KERNEL_VERIFIED | `IUT.Prerequisites.PadicLog.padicLogOnePlus_add_add_mul` |  |
 | &nbsp;&nbsp;`IUT4.Prop1_2.frag.log_series_def` | fragment | (scope: base field Q_p only; finite extensions of Q_p are not treated) | 10 to 11 | STATEMENT_FORMALIZED | NOT_EXTRACTED | `IUT.Prerequisites.PadicLog.padicLogOnePlus` |  |
 | &nbsp;&nbsp;`IUT4.Prop1_2.frag.log_series_norm` | fragment | (scope: base field Q_p only; finite extensions of Q_p are not treated) | 10 to 11 | STATEMENT_FORMALIZED | KERNEL_VERIFIED | `IUT.Prerequisites.PadicLog.padicLogOnePlus_norm_eq` |  |
 | &nbsp;&nbsp;`IUT4.Prop1_2.frag.rpow_b_gt` | fragment |  | 10 to 11 | STATEMENT_FORMALIZED | KERNEL_VERIFIED | `IUT.PaperIV.Proposition1_2.rpow_b_gt` |  |
 | `IUT4.Prop1_3` | Proposition | Estimates of Differents | 11 to 12 | EXTRACTED | BLOCKED_BY_MATHLIB |  | yes |
+| &nbsp;&nbsp;`IUT4.Prop1_3.frag.bridge_d_with_log` | fragment | (scope: finite extension L of Q_p (Field, finite-dimensional Q_p-algebra, compatible Z_p-algebra) with Mathlib's spectral norm spectralNorm Q_p L; R_i = integralClosure Z_p L; e_i = Ideal.ramificationIdx of a prime P over pZ_p (proved unique)) | 9 to 12 | STATEMENT_FORMALIZED | KERNEL_VERIFIED | `IUT.PaperIV.LocalFields.padicBridge_log_bounds_and_differentOrder` |  |
 | &nbsp;&nbsp;`IUT4.Prop1_3.frag.differentOrder` | fragment | (scope: general Dedekind domains; specialized to Z_p by IUT.PaperIV.LocalFields.padic_differentOrder_ge) | 9 to 12 | STATEMENT_FORMALIZED | NOT_EXTRACTED | `IUT.PaperIV.LocalFields.differentOrder` |  |
 | &nbsp;&nbsp;`IUT4.Prop1_3.frag.i_differentOrder_ge` | fragment | (scope: general Dedekind domains) | 9 to 12 | STATEMENT_FORMALIZED | KERNEL_VERIFIED | `IUT.PaperIV.LocalFields.differentOrder_ge` |  |
 | &nbsp;&nbsp;`IUT4.Prop1_3.frag.i_differentOrder_ge_tower` | fragment | (scope: general Dedekind domains) | 9 to 12 | STATEMENT_FORMALIZED | KERNEL_VERIFIED | `IUT.PaperIV.LocalFields.differentOrder_ge_tower` |  |
+| &nbsp;&nbsp;`IUT4.Prop1_3.frag.i_equality_iff_tame_padic` | fragment | (scope: k_0 = Q_p (d_0 = 0, e_0 = 1, e_{i/0} = e); L = k_i a finite extension of Q_p; R_i = integralClosure Z_p L (local by IUT.PaperIV.LocalFields.padicBridge_isLocalRing, P unique by padicBridge_prime_eq_maximalIdeal); e = Ideal.ramificationIdx of P over pZ_p; d_i = differentOrder Z_p R_i P) | 9 to 13 | STATEMENT_FORMALIZED | KERNEL_VERIFIED | `IUT.PaperIV.LocalFields.differentExponent_eq_ramificationIdx_sub_one_iff_padic` |  |
 | &nbsp;&nbsp;`IUT4.Prop1_3.frag.i_min` | fragment |  | 11 to 12 | STATEMENT_FORMALIZED | KERNEL_VERIFIED | `IUT.PaperIV.Proposition1_3.i_min` |  |
 | &nbsp;&nbsp;`IUT4.Prop1_3.frag.i_padic_differentOrder_ge` | fragment |  | 9 to 12 | STATEMENT_FORMALIZED | KERNEL_VERIFIED | `IUT.PaperIV.LocalFields.padic_differentOrder_ge` |  |
+| &nbsp;&nbsp;`IUT4.Prop1_3.frag.i_tame_equality_padic` | fragment | (scope: k_0 = Q_p (d_0 = 0, e_0 = 1, e_{i/0} = e); L = k_i a finite extension of Q_p; R_i = integralClosure Z_p L (local by IUT.PaperIV.LocalFields.padicBridge_isLocalRing, P unique by padicBridge_prime_eq_maximalIdeal); e = Ideal.ramificationIdx of P over pZ_p; d_i = differentOrder Z_p R_i P) | 9 to 13 | STATEMENT_FORMALIZED | KERNEL_VERIFIED | `IUT.PaperIV.LocalFields.differentExponent_eq_of_not_dvd_ramificationIdx_padic` |  |
+| &nbsp;&nbsp;`IUT4.Prop1_3.frag.i_wild_inequality_padic` | fragment | (scope: k_0 = Q_p (d_0 = 0, e_0 = 1, e_{i/0} = e); L = k_i a finite extension of Q_p; R_i = integralClosure Z_p L (local by IUT.PaperIV.LocalFields.padicBridge_isLocalRing, P unique by padicBridge_prime_eq_maximalIdeal); e = Ideal.ramificationIdx of P over pZ_p; d_i = differentOrder Z_p R_i P) | 9 to 13 | STATEMENT_FORMALIZED | KERNEL_VERIFIED | `IUT.PaperIV.LocalFields.ramificationIdx_le_differentExponent_of_dvd_padic` |  |
 | &nbsp;&nbsp;`IUT4.Prop1_3.frag.ii_base` | fragment |  | 11 to 12 | STATEMENT_FORMALIZED | CONDITIONALLY_VERIFIED | `IUT.PaperIV.Proposition1_3.ii_base` |  |
+| &nbsp;&nbsp;`IUT4.Prop1_3.frag.ii_base_padic` | fragment | (scope: k_0 = Q_p (d_0 = 0, e_0 = 1, e_{i/0} = e); L = k_i a finite extension of Q_p; R_i = integralClosure Z_p L (local by IUT.PaperIV.LocalFields.padicBridge_isLocalRing, P unique by padicBridge_prime_eq_maximalIdeal); e = Ideal.ramificationIdx of P over pZ_p; d_i = differentOrder Z_p R_i P) | 9 to 13 | STATEMENT_FORMALIZED | KERNEL_VERIFIED | `IUT.PaperIV.LocalFields.differentOrder_le_one_of_not_dvd_ramificationIdx_padic` |  |
 | &nbsp;&nbsp;`IUT4.Prop1_3.frag.ii_of_forall_eps` | fragment |  | 11 to 12 | STATEMENT_FORMALIZED | KERNEL_VERIFIED | `IUT.PaperIV.Proposition1_3.ii_of_forall_eps` |  |
 | &nbsp;&nbsp;`IUT4.Prop1_3.frag.ii_step` | fragment |  | 11 to 12 | STATEMENT_FORMALIZED | CONDITIONALLY_VERIFIED | `IUT.PaperIV.Proposition1_3.ii_step` |  |
 | `IUT4.Prop1_4` | Proposition | Nonarchimedean Normalized Log-volume Estimates | 13 to 14 | EXTRACTED | BLOCKED_BY_EXTERNAL_THEOREM |  | yes |
 | &nbsp;&nbsp;`IUT4.Prop1_4.frag.a_add_b_le` | fragment |  | 13 to 14 | STATEMENT_FORMALIZED | KERNEL_VERIFIED | `IUT.PaperIV.Proposition1_4.a_add_b_le` |  |
 | &nbsp;&nbsp;`IUT4.Prop1_4.frag.a_sub_le` | fragment |  | 13 to 14 | STATEMENT_FORMALIZED | KERNEL_VERIFIED | `IUT.PaperIV.Proposition1_2.a_sub_le` |  |
 | &nbsp;&nbsp;`IUT4.Prop1_4.frag.b_add_le` | fragment |  | 13 to 14 | STATEMENT_FORMALIZED | KERNEL_VERIFIED | `IUT.PaperIV.Proposition1_2.b_add_le` |  |
+| &nbsp;&nbsp;`IUT4.Prop1_4.frag.bridge_d_add_a` | fragment | (scope: finite extension L of Q_p (Field, finite-dimensional Q_p-algebra, compatible Z_p-algebra) with Mathlib's spectral norm spectralNorm Q_p L; R_i = integralClosure Z_p L; e_i = Ideal.ramificationIdx of a prime P over pZ_p (proved unique)) | 9 to 12 | STATEMENT_FORMALIZED | KERNEL_VERIFIED | `IUT.PaperIV.LocalFields.padicBridge_log_bounds_and_differentOrder` |  |
 | &nbsp;&nbsp;`IUT4.Prop1_4.frag.dI_add_aI_ge` | fragment |  | 13 to 14 | STATEMENT_FORMALIZED | CONDITIONALLY_VERIFIED | `IUT.PaperIV.Proposition1_4.dI_add_aI_ge` |  |
 | &nbsp;&nbsp;`IUT4.Prop1_4.frag.d_add_a_ge` | fragment |  | 13 to 14 | STATEMENT_FORMALIZED | CONDITIONALLY_VERIFIED | `IUT.PaperIV.Proposition1_2.d_add_a_ge` |  |
+| &nbsp;&nbsp;`IUT4.Prop1_4.frag.field_smul` | fragment | (scope: normed-field model of a finite extension) | 10, 13 | STATEMENT_FORMALIZED | KERNEL_VERIFIED | `IUT.Prerequisites.PadicVolume.padicMuLog_ball_uniformizer` |  |
 | &nbsp;&nbsp;`IUT4.Prop1_4.frag.four_div_le` | fragment |  | 13 to 14 | STATEMENT_FORMALIZED | KERNEL_VERIFIED | `IUT.PaperIV.Proposition1_2.four_div_le` |  |
+| &nbsp;&nbsp;`IUT4.Prop1_4.frag.i_unitBall` | fragment | (scope: normed-field model of a finite extension) | 13 | STATEMENT_FORMALIZED | KERNEL_VERIFIED | `IUT.Prerequisites.PadicVolume.padicMuLog_p_smul_unitBall` |  |
 | &nbsp;&nbsp;`IUT4.Prop1_4.frag.ii_identity` | fragment |  | 13 to 14 | STATEMENT_FORMALIZED | KERNEL_VERIFIED | `IUT.PaperIV.Proposition1_4.ii_identity` |  |
 | &nbsp;&nbsp;`IUT4.Prop1_4.frag.ii_le` | fragment |  | 13 to 14 | STATEMENT_FORMALIZED | CONDITIONALLY_VERIFIED | `IUT.PaperIV.Proposition1_4.ii_le` |  |
 | &nbsp;&nbsp;`IUT4.Prop1_4.frag.iii_first` | fragment |  | 13 to 14 | STATEMENT_FORMALIZED | CONDITIONALLY_VERIFIED | `IUT.PaperIV.Proposition1_4.iii_first` |  |
 | &nbsp;&nbsp;`IUT4.Prop1_4.frag.iii_padic_dI_add_aI_ge` | fragment |  | 9 to 14 | STATEMENT_FORMALIZED | KERNEL_VERIFIED | `IUT.PaperIV.LocalFields.padic_dI_add_aI_ge` |  |
 | &nbsp;&nbsp;`IUT4.Prop1_4.frag.iii_padic_differentOrder_add_a_ge` | fragment |  | 9 to 14 | STATEMENT_FORMALIZED | KERNEL_VERIFIED | `IUT.PaperIV.LocalFields.padic_differentOrder_add_a_ge` |  |
 | &nbsp;&nbsp;`IUT4.Prop1_4.frag.iii_second` | fragment |  | 13 to 14 | STATEMENT_FORMALIZED | CONDITIONALLY_VERIFIED | `IUT.PaperIV.Proposition1_4.iii_second` |  |
+| &nbsp;&nbsp;`IUT4.Prop1_4.frag.logUnit_bounds` | fragment | (scope: normed-field model of a finite extension) | 10 to 11, 13 to 14 | STATEMENT_FORMALIZED | KERNEL_VERIFIED | `IUT.Prerequisites.PadicVolume.padicMuLog_logUnit_bounds` |  |
+| &nbsp;&nbsp;`IUT4.Prop1_4.frag.measure_smul` | fragment |  | 13 | STATEMENT_FORMALIZED | KERNEL_VERIFIED | `IUT.Prerequisites.PadicVolume.padicVol_measure_smul` |  |
+| &nbsp;&nbsp;`IUT4.Prop1_4.frag.muLog_def` | fragment |  | 13 | STATEMENT_FORMALIZED | NOT_EXTRACTED | `IUT.Prerequisites.PadicVolume.padicMuLog` |  |
+| &nbsp;&nbsp;`IUT4.Prop1_4.frag.muLog_laws` | fragment |  | 13 to 14 | STATEMENT_FORMALIZED | KERNEL_VERIFIED | `IUT.Prerequisites.PadicVolume.padicMuLog_p_zpow_smul` |  |
+| &nbsp;&nbsp;`IUT4.Prop1_4.frag.packet` | fragment |  | 13 | STATEMENT_FORMALIZED | KERNEL_VERIFIED | `IUT.Prerequisites.PadicVolume.padicPacketMuLog_p_zpow_smul` |  |
+| &nbsp;&nbsp;`IUT4.Prop1_4.frag.padic_base` | fragment |  | 13 | STATEMENT_FORMALIZED | KERNEL_VERIFIED | `IUT.Prerequisites.PadicVolume.padicVol_padic_p_zpow` |  |
+| &nbsp;&nbsp;`IUT4.Prop1_4.frag.vb_field_normalization` | fragment | (scope: finite extension L of Q_p with Mathlib's spectral norm; R_i = integralClosure Z_p L; e_i = Ideal.ramificationIdx of the prime P over pZ_p; mu^log = padicMuLog normalized at R) | 13 | STATEMENT_FORMALIZED | KERNEL_VERIFIED | `IUT.PaperIV.LocalFields.volBridge_muLog_integralClosure` |  |
+| &nbsp;&nbsp;`IUT4.Prop1_4.frag.vb_fractional_ideal` | fragment | (scope: finite extension L of Q_p with Mathlib's spectral norm; R_i = integralClosure Z_p L; e_i = Ideal.ramificationIdx of the prime P over pZ_p; mu^log = padicMuLog normalized at R) | 10, 14 | STATEMENT_FORMALIZED | KERNEL_VERIFIED | `IUT.PaperIV.LocalFields.volBridge_muLog_fractionalIdeal` |  |
+| &nbsp;&nbsp;`IUT4.Prop1_4.frag.vb_logunit_bounds` | fragment | (scope: finite extension L of Q_p with Mathlib's spectral norm; R_i = integralClosure Z_p L; e_i = Ideal.ramificationIdx of the prime P over pZ_p; mu^log = padicMuLog normalized at R) | 10, 11, 13, 14 | STATEMENT_FORMALIZED | KERNEL_VERIFIED | `IUT.PaperIV.LocalFields.volBridge_muLog_logUnit_bounds` |  |
+| &nbsp;&nbsp;`IUT4.Prop1_4.frag.vb_logunit_eq_of_le` | fragment | (scope: finite extension L of Q_p with Mathlib's spectral norm; R_i = integralClosure Z_p L; e_i = Ideal.ramificationIdx of the prime P over pZ_p; mu^log = padicMuLog normalized at R) | 10, 13 | STATEMENT_FORMALIZED | KERNEL_VERIFIED | `IUT.PaperIV.LocalFields.volBridge_muLog_logUnit_eq_of_le` |  |
+| &nbsp;&nbsp;`IUT4.Prop1_4.frag.vb_packet_normalization` | fragment | (scope: two factors K1, K2 (finite extensions of Q_p); (R_E)^~ = padicPacketNormalization (elements of K1 (x) K2 integral over Z_p); mu^log = padicPacketMuLog in Module.finBasis coordinates) | 9, 13 | STATEMENT_FORMALIZED | KERNEL_VERIFIED | `IUT.PaperIV.LocalFields.volBridge_packet_muLog_normalization` |  |
 | `IUT4.Rem1_3_1` | Remark |  | 13 | EXTRACTED | EXTRACTED |  |  |
 | `IUT4.Prop1_5` | Proposition | Archimedean Metric Estimates | 14 to 16 | EXTRACTED | BLOCKED_BY_MATHLIB |  | yes |
 | &nbsp;&nbsp;`IUT4.Prop1_5.frag.count_iii` | fragment |  | 15 to 16 | STATEMENT_FORMALIZED | KERNEL_VERIFIED | `IUT.PaperIV.Proposition1_5.count_iii` |  |
@@ -760,6 +824,7 @@ EXTERNAL_CLAIM: a statement of another paper, stated in Lean as a proposition an
 | `IUT4.Prop1_7` | Proposition | Weighted Averages | 16 to 17 | STATEMENT_FORMALIZED | KERNEL_VERIFIED | `IUT.PaperIV.Proposition1_7.weighted_averages` | yes |
 | `IUT4.Rem1_7_1` | Remark |  | 17 to 18 | EXTRACTED | EXTRACTED |  | yes |
 | `IUT4.Prop1_8` | Proposition | Torsion Points of Elliptic Curves | 18 to 21 | EXTRACTED | BLOCKED_BY_MATHLIB |  | yes |
+| &nbsp;&nbsp;`IUT4.Prop1_8.frag.legendre_curve` | fragment |  | 19 to 21 | STATEMENT_FORMALIZED | KERNEL_VERIFIED | `IUT.LegendreFrey.legendreCurve_isElliptic_iff` |  |
 | `IUT4.Def1_9` | Definition |  | 21 to 22 | EXTRACTED | BLOCKED_BY_MATHLIB |  | yes |
 | &nbsp;&nbsp;`IUT4.Def1_9.frag.degE` | fragment |  | 21 to 22 | STATEMENT_FORMALIZED | NOT_EXTRACTED | `IUT.PaperIV.degE` |  |
 | &nbsp;&nbsp;`IUT4.Def1_9.frag.degE_arc_eq_normalizedDeg` | fragment |  | 21 to 22 | STATEMENT_FORMALIZED | KERNEL_VERIFIED | `IUT.PaperIV.degE_arc_eq_normalizedDeg` |  |
@@ -856,11 +921,14 @@ EXTERNAL_CLAIM: a statement of another paper, stated in Lean as a proposition an
 | &nbsp;&nbsp;&nbsp;&nbsp;`IUT4.Cor2_2.ProofP5.frag.sqrt_mul_log_l_steps` | fragment |  | 45 | STATEMENT_FORMALIZED | KERNEL_VERIFIED | `IUT.PaperIV.Corollary2_2.sqrt_mul_log_l_steps` |  |
 | &nbsp;&nbsp;`IUT4.Cor2_2.ProofP6` | part |  | 46 | EXTRACTED | BLOCKED_BY_EXTERNAL_THEOREM |  | yes |
 | &nbsp;&nbsp;`IUT4.Cor2_2.ProofP7` | part |  | 46 | EXTRACTED | BLOCKED_BY_EXTERNAL_THEOREM |  | yes |
+| &nbsp;&nbsp;`IUT4.Cor2_2.frag.legendre_j` | fragment |  | 41 | STATEMENT_FORMALIZED | KERNEL_VERIFIED | `IUT.LegendreFrey.legendreCurve_jInv` |  |
 | &nbsp;&nbsp;`IUT4.Cor2_2.i` | part |  | 41 to 43 | EXTRACTED | BLOCKED_BY_EXTERNAL_THEOREM |  | yes |
+| &nbsp;&nbsp;&nbsp;&nbsp;`IUT4.Cor2_2.i.frag.height_j_triple` | fragment |  | 41 to 43 | STATEMENT_FORMALIZED | KERNEL_VERIFIED | `IUT.LegendreFrey.logHeight₁_legendreJ_triple_le` |  |
 | &nbsp;&nbsp;`IUT4.Cor2_2.ii` | part |  | 41 to 43 | EXTRACTED | BLOCKED_BY_EXTERNAL_THEOREM |  | yes |
 | &nbsp;&nbsp;&nbsp;&nbsp;`IUT4.Cor2_2.ii.C1` | part |  | 42 | EXTRACTED | BLOCKED_BY_EXTERNAL_THEOREM |  | yes |
 | &nbsp;&nbsp;&nbsp;&nbsp;`IUT4.Cor2_2.ii.C2` | part |  | 42 to 43 | EXTRACTED | BLOCKED_BY_EXTERNAL_THEOREM |  | yes |
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`IUT4.Cor2_2.ii.C2.frag.C2_of_final` | fragment |  | 43, 48 | STATEMENT_FORMALIZED | CONDITIONALLY_VERIFIED | `IUT.PaperIV.Corollary2_2.C2_of_final` |  |
+| &nbsp;&nbsp;&nbsp;&nbsp;`IUT4.Cor2_2.ii.frag.special_j_values` | fragment |  | 43 | STATEMENT_FORMALIZED | KERNEL_VERIFIED | `IUT.LegendreFrey.legendreJ_eq_73_iff` |  |
 | &nbsp;&nbsp;`IUT4.Cor2_2.iii` | part |  | 43, 47 to 48 | EXTRACTED | BLOCKED_BY_EXTERNAL_THEOREM |  | yes |
 | &nbsp;&nbsp;&nbsp;&nbsp;`IUT4.Cor2_2.iii.frag.eps_star_estimates` | fragment |  | 47 | STATEMENT_FORMALIZED | KERNEL_VERIFIED | `IUT.PaperIV.Corollary2_2.eps_star_estimates` |  |
 | &nbsp;&nbsp;&nbsp;&nbsp;`IUT4.Cor2_2.iii.frag.h_bound_Hunif` | fragment |  | 47 | STATEMENT_FORMALIZED | KERNEL_VERIFIED | `IUT.PaperIV.Corollary2_2.h_bound_Hunif` |  |
@@ -872,7 +940,10 @@ EXTERNAL_CLAIM: a statement of another paper, stated in Lean as a proposition an
 | `IUT4.Cor2_3` | Corollary | Diophantine Inequalities | 54 to 55 | EXTRACTED | BLOCKED_BY_EXTERNAL_THEOREM |  | yes |
 | &nbsp;&nbsp;`IUT4.Cor2_3.frag.BDle_mono_eps` | fragment |  | 55 | STATEMENT_FORMALIZED | KERNEL_VERIFIED | `IUT.PaperIV.Corollary2_3.BDle_mono_eps` |  |
 | &nbsp;&nbsp;`IUT4.Cor2_3.frag.BDle_of_finite_exceptions` | fragment |  | 55 | STATEMENT_FORMALIZED | KERNEL_VERIFIED | `IUT.PaperIV.Corollary2_3.BDle_of_finite_exceptions` |  |
+| &nbsp;&nbsp;`IUT4.Cor2_3.frag.bounded_degree_P1_minus_three` | fragment |  | 40, 54, 55 | STATEMENT_FORMALIZED | NOT_EXTRACTED | `IUT.VojtaNumberField.VojtaLineMinusThreePointsBoundedDegree` |  |
 | &nbsp;&nbsp;`IUT4.Cor2_3.frag.cor2_3_on_KV` | fragment |  | 55 | STATEMENT_FORMALIZED | CONDITIONALLY_VERIFIED | `IUT.PaperIV.Corollary2_3.cor2_3_on_KV` |  |
+| &nbsp;&nbsp;`IUT4.Cor2_3.frag.frey_curve` | fragment | (scope: model_test) | 54 to 56 | STATEMENT_FORMALIZED | KERNEL_VERIFIED | `IUT.LegendreFrey.freyCurve_jInv_eq_legendreJ` |  |
+| &nbsp;&nbsp;`IUT4.Cor2_3.frag.frey_j_arithmetic` | fragment | (scope: model_test) | 54 to 56 | STATEMENT_FORMALIZED | KERNEL_VERIFIED | `IUT.LegendreFrey.legendreJ_triple_prime_dvd_den_iff` |  |
 | &nbsp;&nbsp;`IUT4.Cor2_3.frag.rational_points_P1_minus_three` | fragment |  | 40, 54 to 55 | STATEMENT_FORMALIZED | NOT_EXTRACTED | `IUT.ABCSpecialization.VojtaLineMinusThreePointsRational` |  |
 | `IUT4.Rem2_3_1` | Remark |  | 55 to 56 | EXTRACTED | EXTRACTED |  | yes |
 | &nbsp;&nbsp;`IUT4.Rem2_3_1.frag.BDle` | fragment |  | 55 | STATEMENT_FORMALIZED | NOT_EXTRACTED | `IUT.PaperIV.Corollary2_3.BDle` |  |
@@ -917,4 +988,97 @@ EXTERNAL_CLAIM: a statement of another paper, stated in Lean as a proposition an
 | `IUT4.Rem3_6_1` | Remark |  | 80 to 81 | EXTRACTED | EXTRACTED |  | yes |
 | `IUT4.Rem3_6_2` | Remark |  | 81 to 82 | EXTRACTED | EXTRACTED |  | yes |
 | `IUT4.Rem3_6_3` | Remark |  | 82 to 84 | EXTRACTED | EXTRACTED |  | yes |
+
+## Statements of other papers
+
+Results and claims of papers other than IUT I to IV, with the Lean fragments that check pieces of them. Pages are pages of that paper. Proof status EXTERNAL_CLAIM: stated in Lean as a proposition and only assumed. None of these rows is counted for the four papers.
+
+### `EXPL`: S. Mochizuki, I. Fesenko, Y. Hoshi, A. Minamide, W. Porowski, "Explicit Estimates in Inter-universal Teichmuller Theory"
+
+| Id | Kind | Title | PDF pages | Statement | Proof | Lean declaration | Path |
+|---|---|---|---|---|---|---|---|
+| `EXPL.Cor5_2` | external_statement | Corollary 5.2 | 35 to 43 | EXTRACTED | NOT_EXTRACTED |  |  |
+| &nbsp;&nbsp;`EXPL.Cor5_2.frag.numerics` | fragment |  | 39 to 43 | STATEMENT_FORMALIZED | KERNEL_VERIFIED | `IUT.ExplicitEstimates.cor5_2_numerics` |  |
+| `EXPL.Cor5_8` | external_statement | Corollary 5.8 | 53 to 54 | STATEMENT_FORMALIZED | EXTERNAL_CLAIM | `IUT.ExplicitEstimates.Cor5_8Statement` |  |
+| &nbsp;&nbsp;`EXPL.Cor5_8.frag.conditional` | fragment |  | 53 to 54 | STATEMENT_FORMALIZED | CONDITIONALLY_VERIFIED | `IUT.ExplicitEstimates.cor5_8_of_thm5_3iiRationalClaim_of_lemma5_7Claim` |  |
+| &nbsp;&nbsp;`EXPL.Cor5_8.frag.numerics` | fragment |  | 54 | STATEMENT_FORMALIZED | KERNEL_VERIFIED | `IUT.ExplicitEstimates.cor5_8_left_bound` |  |
+| `EXPL.Lem5_7` | external_statement | Lemma 5.7 | 50 to 52 | STATEMENT_FORMALIZED | EXTERNAL_CLAIM | `IUT.ExplicitEstimates.Lemma5_7Claim` |  |
+| &nbsp;&nbsp;`EXPL.Lem5_7.frag.claim` | fragment |  | 50 to 52 | STATEMENT_FORMALIZED | NOT_EXTRACTED | `IUT.ExplicitEstimates.Lemma5_7Claim` |  |
+| `EXPL.Prop2_1` | external_statement | Proposition 2.1 | 21 | EXTRACTED | NOT_EXTRACTED |  |  |
+| &nbsp;&nbsp;`EXPL.Prop2_1.frag.factorizations` | fragment |  | 21 | STATEMENT_FORMALIZED | KERNEL_VERIFIED | `IUT.ExplicitEstimates.prop2_1_factorizations` |  |
+| `EXPL.Prop2_2` | external_statement | Proposition 2.2 | 21 to 22 | EXTRACTED | NOT_EXTRACTED |  |  |
+| &nbsp;&nbsp;`EXPL.Prop2_2.frag.proof_algebra` | fragment |  | 22 | STATEMENT_FORMALIZED | KERNEL_VERIFIED | `IUT.ExplicitEstimates.prop2_2_i_algebra` |  |
+| `EXPL.Thm5_1` | external_statement | Theorem 5.1 | 33 to 35 | EXTRACTED | NOT_EXTRACTED |  |  |
+| &nbsp;&nbsp;`EXPL.Thm5_1.frag.constants` | fragment |  | 35 | STATEMENT_FORMALIZED | KERNEL_VERIFIED | `IUT.ExplicitEstimates.inv_one_sub_twelve_div_sq_le` |  |
+| &nbsp;&nbsp;`EXPL.Thm5_1.frag.step_v` | fragment |  | 34 | STATEMENT_FORMALIZED | KERNEL_VERIFIED | `IUT.ExplicitEstimates.four_mul_add_five_div_le` |  |
+| &nbsp;&nbsp;`EXPL.Thm5_1.frag.step_viii` | fragment |  | 34 to 35 | STATEMENT_FORMALIZED | KERNEL_VERIFIED | `IUT.ExplicitEstimates.step_viii_absorb_mu6` |  |
+| `EXPL.Thm5_3` | external_statement | Theorem 5.3 | 43 to 45 | EXTRACTED | NOT_EXTRACTED |  |  |
+| &nbsp;&nbsp;`EXPL.Thm5_3.frag.abc_three_halves` | fragment |  | 43 to 45 | STATEMENT_FORMALIZED | CONDITIONALLY_VERIFIED | `IUT.ExplicitEstimates.abcWithExponent_three_halves_add_of_thm5_3iiRationalClaim` |  |
+| &nbsp;&nbsp;`EXPL.Thm5_3.frag.c_bound` | fragment |  | 43 to 45 | STATEMENT_FORMALIZED | CONDITIONALLY_VERIFIED | `IUT.ExplicitEstimates.c_le_of_thm5_3iiRationalClaim` |  |
+| &nbsp;&nbsp;`EXPL.Thm5_3.frag.log_step` | fragment |  | 43 to 45 | STATEMENT_FORMALIZED | KERNEL_VERIFIED | `IUT.ExplicitEstimates.thm5_3_ii_log_step` |  |
+| &nbsp;&nbsp;`EXPL.Thm5_3.frag.rational_claim` | fragment |  | 43 to 45 | STATEMENT_FORMALIZED | NOT_EXTRACTED | `IUT.ExplicitEstimates.Thm5_3iiRationalClaim` |  |
+| `EXPL.Thm5_4` | external_statement | Theorem 5.4 | 46 to 48 | STATEMENT_FORMALIZED | EXTERNAL_CLAIM | `IUT.ExplicitEstimates.Thm5_4Claim` |  |
+| &nbsp;&nbsp;`EXPL.Thm5_4.frag.abc_three` | fragment |  | 46 to 48 | STATEMENT_FORMALIZED | CONDITIONALLY_VERIFIED | `IUT.ExplicitEstimates.abcWithExponent_three_add_of_thm5_4Claim` |  |
+| &nbsp;&nbsp;`EXPL.Thm5_4.frag.c_bound` | fragment |  | 46 to 48 | STATEMENT_FORMALIZED | CONDITIONALLY_VERIFIED | `IUT.ExplicitEstimates.c_le_of_thm5_4Claim` |  |
+| &nbsp;&nbsp;`EXPL.Thm5_4.frag.claim` | fragment |  | 46 to 48 | STATEMENT_FORMALIZED | NOT_EXTRACTED | `IUT.ExplicitEstimates.Thm5_4Claim` |  |
+| &nbsp;&nbsp;`EXPL.Thm5_4.frag.cube_step` | fragment |  | 47 to 48 | STATEMENT_FORMALIZED | KERNEL_VERIFIED | `IUT.ExplicitEstimates.thm5_4_cube_step` |  |
+
+### `ZHOU1`: Z.-P. Zhou, arXiv 2503.14510
+
+| Id | Kind | Title | PDF pages | Statement | Proof | Lean declaration | Path |
+|---|---|---|---|---|---|---|---|
+| `ZHOU1.Cor3_3` | external_statement | Corollary 3.3 | 29 | STATEMENT_FORMALIZED | EXTERNAL_CLAIM | `IUT.Applications.ZhouExplicit.ZhouCorollary33` |  |
+| &nbsp;&nbsp;`ZHOU1.Cor3_3.frag.fixed_exponent` | fragment |  | 29 | STATEMENT_FORMALIZED | CONDITIONALLY_VERIFIED | `IUT.Applications.ZhouExplicit.abcWithExponent_of_zhouCorollary33` |  |
+| &nbsp;&nbsp;`ZHOU1.Cor3_3.frag.from_thm32` | fragment |  | 29 | STATEMENT_FORMALIZED | CONDITIONALLY_VERIFIED | `IUT.Applications.ZhouExplicit.zhouCorollary33_of_theorem32i` |  |
+| &nbsp;&nbsp;`ZHOU1.Cor3_3.frag.statement` | fragment |  | 29 | STATEMENT_FORMALIZED | NOT_EXTRACTED | `IUT.Applications.ZhouExplicit.ZhouCorollary33` |  |
+| `ZHOU1.Def1_7` | external_statement | Definition 1.7 | 11 | EXTRACTED | NOT_EXTRACTED |  |  |
+| &nbsp;&nbsp;`ZHOU1.Def1_7.frag.constants` | fragment |  | 7, 11, 13 | STATEMENT_FORMALIZED | NOT_EXTRACTED | `IUT.Applications.ZhouExplicit.zhouA` |  |
+| `ZHOU1.Lem3_1` | external_statement | Lemma 3.1 | 25 | EXTRACTED | NOT_EXTRACTED |  |  |
+| &nbsp;&nbsp;`ZHOU1.Lem3_1.frag.ii` | fragment |  | 25 | STATEMENT_FORMALIZED | KERNEL_VERIFIED | `IUT.Applications.ZhouExplicit.zhou_lemma31_ii` |  |
+| `ZHOU1.Prop1_10` | external_statement | Proposition 1.10 | 12, 13 | EXTRACTED | NOT_EXTRACTED |  |  |
+| &nbsp;&nbsp;`ZHOU1.Prop1_10.frag.averaging` | fragment |  | 13 | STATEMENT_FORMALIZED | KERNEL_VERIFIED | `IUT.Applications.ZhouExplicit.zhou_procession_identity` |  |
+| &nbsp;&nbsp;`ZHOU1.Prop1_10.frag.lemma14_bound` | fragment |  | 13 | STATEMENT_FORMALIZED | KERNEL_VERIFIED | `IUT.Applications.ZhouExplicit.zhouLemma14Bound_le` |  |
+| &nbsp;&nbsp;`ZHOU1.Prop1_10.frag.model_chain` | fragment |  | 11 to 13 | STATEMENT_FORMALIZED | CONDITIONALLY_VERIFIED | `IUT.Applications.ZhouExplicit.zhou_prop110_of_model` |  |
+| `ZHOU1.Prop2_7` | external_statement | Proposition 2.7 | 21 | EXTRACTED | NOT_EXTRACTED |  |  |
+| &nbsp;&nbsp;`ZHOU1.Prop2_7.frag.from_cor113` | fragment |  | 21 | STATEMENT_FORMALIZED | CONDITIONALLY_VERIFIED | `IUT.Applications.ZhouExplicit.zhou_prop27_of_cor113` |  |
+| `ZHOU1.Thm3_2` | external_statement | Theorem 3.2 | 27 to 29 | EXTRACTED | NOT_EXTRACTED |  |  |
+| &nbsp;&nbsp;`ZHOU1.Thm3_2.frag.statement` | fragment |  | 27 | STATEMENT_FORMALIZED | NOT_EXTRACTED | `IUT.Applications.ZhouExplicit.ZhouTheorem32i` |  |
+| &nbsp;&nbsp;`ZHOU1.Thm3_2.frag.transfer` | fragment |  | 28, 29 | STATEMENT_FORMALIZED | CONDITIONALLY_VERIFIED | `IUT.Applications.ZhouExplicit.zhouTheorem32i_of_nLevel` |  |
+
+### `ZHOU2`: Z.-P. Zhou, arXiv 2510.05448
+
+| Id | Kind | Title | PDF pages | Statement | Proof | Lean declaration | Path |
+|---|---|---|---|---|---|---|---|
+| `ZHOU2.Rem1_1_1` | external_statement | Remark 1.1.1 | 6 | EXTRACTED | NOT_EXTRACTED |  |  |
+
+### `DH`: T. Dupuy, A. Hilado, arXiv 2004.13228 and 2004.13108
+
+| Id | Kind | Title | PDF pages | Statement | Proof | Lean declaration | Path |
+|---|---|---|---|---|---|---|---|
+| `DH.ITD.Ex2_10` | external_statement | Section 2.10 (initial theta data for 11a1) | 12 to 14 | NOT_EXTRACTED | NOT_EXTRACTED |  |  |
+| &nbsp;&nbsp;`DH.ITD.Ex2_10.frag.dh_qPilot_11a1` | fragment |  | 12 to 14 | STATEMENT_FORMALIZED | KERNEL_VERIFIED | `IUT.Applications.DupuyHilado.dh_qPilot_11a1` |  |
+| `DH.PS.Def3_8_1` | external_statement | Definitions 3.8.1 and 3.8.2 | 13, 14 | NOT_EXTRACTED | NOT_EXTRACTED |  |  |
+| &nbsp;&nbsp;`DH.PS.Def3_8_1.frag.dhQPilotDegreeOfData` | fragment |  | 13, 14 | STATEMENT_FORMALIZED | NOT_EXTRACTED | `IUT.Applications.DupuyHilado.dhQPilotDegreeOfData` |  |
+| `DH.PS.Eq3_3` | external_statement | Display (3.3) | 14 | NOT_EXTRACTED | NOT_EXTRACTED |  |  |
+| &nbsp;&nbsp;`DH.PS.Eq3_3.frag.dh_printed_pilot_relation_forces_zero` | fragment |  | 14 | STATEMENT_FORMALIZED | KERNEL_VERIFIED | `IUT.Applications.DupuyHilado.dh_printed_pilot_relation_forces_zero` |  |
+| `DH.PS.Eq7_12` | external_statement | Display (7.12) and the step to the summand of A_{l,V} in the proof of Theorem 7.12.1 | 26 to 28 | NOT_EXTRACTED | NOT_EXTRACTED |  |  |
+| &nbsp;&nbsp;`DH.PS.Eq7_12.frag.dh_IV_printed_bound_fails` | fragment |  | 26 to 28 | STATEMENT_FORMALIZED | KERNEL_VERIFIED | `IUT.Applications.DupuyHilado.dh_IV_printed_bound_fails` |  |
+| `DH.PS.Lem4_2_1` | external_statement | Lemma 4.2.1 | 17 | NOT_EXTRACTED | NOT_EXTRACTED |  |  |
+| &nbsp;&nbsp;`DH.PS.Lem4_2_1.frag.dh_crude_log_estimate` | fragment |  | 17 | STATEMENT_FORMALIZED | KERNEL_VERIFIED | `IUT.Applications.DupuyHilado.dh_crude_log_estimate` |  |
+| `DH.PS.Lem7_7_1` | external_statement | Lemma 7.7.1 and sections 7.7 to 7.9 | 25, 26 | NOT_EXTRACTED | NOT_EXTRACTED |  |  |
+| &nbsp;&nbsp;`DH.PS.Lem7_7_1.frag.dh_label_averages` | fragment |  | 25, 26 | STATEMENT_FORMALIZED | KERNEL_VERIFIED | `IUT.Applications.DupuyHilado.dh_avg_succ` |  |
+| `DH.PS.Sec3_8.PilotRelation` | external_statement | Section 3.8 (the computation below display (3.3)) | 14 | NOT_EXTRACTED | NOT_EXTRACTED |  |  |
+| &nbsp;&nbsp;`DH.PS.Sec3_8.PilotRelation.frag.dhThetaPilotLgp_eq_mul_qPilot` | fragment |  | 14 | STATEMENT_FORMALIZED | KERNEL_VERIFIED | `IUT.Applications.DupuyHilado.dhThetaPilotLgp_eq_mul_qPilot` |  |
+| `DH.PS.Sec6_1.Hull` | external_statement | Section 6.1 (definition of the polyradius and the hull) | 18, 19 | NOT_EXTRACTED | NOT_EXTRACTED |  |  |
+| &nbsp;&nbsp;`DH.PS.Sec6_1.Hull.frag.dhHull` | fragment |  | 18, 19 | STATEMENT_FORMALIZED | NOT_EXTRACTED | `IUT.Applications.DupuyHilado.dhHull` |  |
+| `DH.PS.Sec6_1.HullContainment` | external_statement | Section 6.1 (sufficient condition for hull containment) | 19 | NOT_EXTRACTED | NOT_EXTRACTED |  |  |
+| &nbsp;&nbsp;`DH.PS.Sec6_1.HullContainment.frag.dh_det_one_not_hull_subset` | fragment |  | 19 | STATEMENT_FORMALIZED | KERNEL_VERIFIED | `IUT.Applications.DupuyHilado.dh_det_one_not_hull_subset` |  |
+| `DH.PS.Thm7_12_1` | external_statement | Theorem 7.12.1 (Probabilistic Szpiro) | 27, 28 | NOT_EXTRACTED | NOT_EXTRACTED |  |  |
+| &nbsp;&nbsp;`DH.PS.Thm7_12_1.frag.dh_probSzpiro_of_intermediate` | fragment |  | 27, 28 | STATEMENT_FORMALIZED | CONDITIONALLY_VERIFIED | `IUT.Applications.DupuyHilado.dh_probSzpiro_of_intermediate` |  |
+| `DH.PS.Thm7_13_1` | external_statement | Theorem 7.13.1 (Baby Szpiro) | 28, 29 | NOT_EXTRACTED | NOT_EXTRACTED |  |  |
+| &nbsp;&nbsp;`DH.PS.Thm7_13_1.frag.dh_SL2_card_values` | fragment |  | 29 | STATEMENT_FORMALIZED | KERNEL_VERIFIED | `IUT.Applications.DupuyHilado.dh_SL2_card_values` |  |
+| &nbsp;&nbsp;`DH.PS.Thm7_13_1.frag.dh_baby_final_step` | fragment |  | 29 | STATEMENT_FORMALIZED | KERNEL_VERIFIED | `IUT.Applications.DupuyHilado.dh_baby_final_step` |  |
+| &nbsp;&nbsp;`DH.PS.Thm7_13_1.frag.dh_omega_printed_bound_fails` | fragment |  | 29 | STATEMENT_FORMALIZED | KERNEL_VERIFIED | `IUT.Applications.DupuyHilado.dh_omega_printed_bound_fails` |  |
+| `DH.PS.Thm8_2_1` | external_statement | Theorem 8.2.1 (Explicit Szpiro) and Lemma 8.1.1 | 30 to 35 | NOT_EXTRACTED | NOT_EXTRACTED |  |  |
+| &nbsp;&nbsp;`DH.PS.Thm8_2_1.frag.dh_explicit_szpiro_steps` | fragment |  | 30 to 35 | STATEMENT_FORMALIZED | CONDITIONALLY_VERIFIED | `IUT.Applications.DupuyHilado.dh_explicit_pre_result` |  |
 

@@ -215,9 +215,10 @@ def reachableAxioms (env : Environment) (roots : Array Name) (fuel : Nat) :
 Three plain lists; an entry is the full name of a constant and the module that declares it. A
 new entry needs no change of the logic below. -/
 
-/-- Closed forms: open statements of type `Prop`: the abc conjecture and the statements that the
-library proves equivalent to it. No checked declaration may prove one, or its negation, without
-assuming a registered statement (check 3). -/
+/-- Closed forms: open statements of type `Prop`: the abc conjecture, the statements that the
+library proves equivalent to it, and open statements that imply it
+(`VojtaLineMinusThreePointsBoundedDegree`). No checked declaration may
+prove one, or its negation, without assuming a registered statement (check 3). -/
 def closedForms : List (Name × Name) :=
   [(`Challenge.ABC, `Challenge.Defs), (`Challenge.ABCFinite, `Challenge.Defs),
    (`Challenge.ABCLog, `Challenge.Defs),
@@ -229,7 +230,9 @@ def closedForms : List (Name × Name) :=
    (`IUT.ABCSpecialization.VojtaLineMinusThreePointsRational,
     `IUT.Applications.ABCSpecialization),
    (`IUT.ABCSpecialization.VojtaLineMinusThreePointsUnitInterval,
-    `IUT.Applications.ABCSpecialization)]
+    `IUT.Applications.ABCSpecialization),
+   (`IUT.VojtaNumberField.VojtaLineMinusThreePointsBoundedDegree,
+    `IUT.Applications.VojtaNumberField)]
 
 /-- Open families: constants of type `α₁ → … → αₙ → Prop` some of whose instances are open
 (`ABCWithExponent κ` for `κ > 1`; `RationalPointBoundFor Height.logHeight₁` is the closed
@@ -240,13 +243,26 @@ implications between instances (`abcWithExponent_mono`), whose hypothesis is an 
 proved instance that is not a negation goes in `provedInstances`. -/
 def openFamilies : List (Name × Name) :=
   [(`IUT.ABC.Variants.ABCWithExponent, `IUT.ABC.Variants),
-   (`IUT.ABCSpecialization.RationalPointBoundFor, `IUT.Applications.ABCSpecialization)]
+   (`IUT.ABCSpecialization.RationalPointBoundFor, `IUT.Applications.ABCSpecialization),
+   (`IUT.VojtaNumberField.VojtaLineMinusThreePointsDegreeAtMost,
+    `IUT.Applications.VojtaNumberField)]
 
 /-- Author statements: constants of type `… → Prop` that state results or claims of other
 papers, which the library may assume but never proves outright. Same rule as closed forms,
-negations included; as hypotheses they count as assumed registered statements. Empty: no
-module of the library states such a claim yet. -/
-def authorStatements : List (Name × Name) := []
+negations included; as hypotheses they count as assumed registered statements. -/
+def authorStatements : List (Name × Name) :=
+  [(`IUT.ExplicitEstimates.Thm5_4Claim, `IUT.Applications.ExplicitEstimates),
+   (`IUT.ExplicitEstimates.Thm5_3iiRationalClaim, `IUT.Applications.ExplicitEstimates),
+   (`IUT.ExplicitEstimates.Lemma5_7Claim, `IUT.Applications.ExplicitEstimates),
+   (`IUT.ExplicitEstimates.Cor5_8Statement, `IUT.Applications.ExplicitEstimates),
+   (`IUT.Applications.ZhouExplicit.ZhouTheorem32i, `IUT.Applications.ZhouExplicit),
+   (`IUT.Applications.ZhouExplicit.ZhouCorollary33, `IUT.Applications.ZhouExplicit),
+   (`IUT.Applications.ZhouExplicit.ZhouNLevelBound, `IUT.Applications.ZhouExplicit),
+   (`IUT.Applications.ZhouExplicit.ZhouComputedRange, `IUT.Applications.ZhouExplicit),
+   (`IUT.ABC.Elementary.SouleTheoremBClaim, `IUT.ABC.Elementary),
+   (`IUT.ABC.Elementary.LaniewskiMullerMassBound, `IUT.ABC.Elementary),
+   (`IUT.ABC.Elementary.PastenDivisorBound, `IUT.ABC.Elementary),
+   (`IUT.ABC.Elementary.DivisorCountPowerBound, `IUT.ABC.Elementary)]
 
 /-- Declarations that conclude a registered statement without assuming one and are accepted:
 full name and the hash (`Expr.hash`) of the statement, so that a changed statement under the

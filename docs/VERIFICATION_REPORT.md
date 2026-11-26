@@ -128,20 +128,29 @@ it, and adding one needs no change of the logic.
   equivalent to the abc conjecture: `Challenge.ABC`, `Challenge.ABCFinite`,
   `Challenge.ABCLog`, the three forms of `IUT.ABC.FormalConjectures`,
   `IUT.ABC.Variants.ABCInt`, `IUT.ABC.Variants.ABCIntSum`, and
-  `IUT.ABCSpecialization.VojtaLineMinusThreePointsRational` and `...UnitInterval`. Neither a
-  form nor its negation may be proved outright.
+  `IUT.ABCSpecialization.VojtaLineMinusThreePointsRational` and `...UnitInterval`, and the
+  open statement `IUT.VojtaNumberField.VojtaLineMinusThreePointsBoundedDegree`, which implies
+  it. Neither a form nor its negation may be proved outright.
 * `openFamilies`: constants of type `… → Prop` some of whose instances are open:
   `IUT.ABC.Variants.ABCWithExponent` (open for `κ > 1`) and
-  `IUT.ABCSpecialization.RationalPointBoundFor`. No instance may be proved outright, for any
+  `IUT.ABCSpecialization.RationalPointBoundFor` and
+  `IUT.VojtaNumberField.VojtaLineMinusThreePointsDegreeAtMost` (open for `d ≥ 1`, trivially
+  true for `d = 0`). No instance may be proved outright, for any
   argument; negated instances may (`not_abcWithExponent_of_le_one` refutes `κ ≤ 1`), and so
   may implications whose hypothesis is an instance (`abcWithExponent_mono`).
 * `authorStatements`: statements of results or claims of other papers that the library may
-  assume but never proves. It is empty: no module of the library states such a claim yet.
+  assume but never proves: `Thm5_4Claim`, `Thm5_3iiRationalClaim`, `Lemma5_7Claim` and
+  `Cor5_8Statement` of `IUT.ExplicitEstimates`, and `ZhouTheorem32i`, `ZhouCorollary33`,
+  `ZhouNLevelBound` and `ZhouComputedRange` of `IUT.Applications.ZhouExplicit`, and
+  `SouleTheoremBClaim`, `LaniewskiMullerMassBound`, `PastenDivisorBound` and
+  `DivisorCountPowerBound` of `IUT.ABC.Elementary`. The module
+  `IUT/Applications/DupuyHilado.lean` declares no such statement: its conditional lemmas take
+  inequalities between real numbers as hypotheses.
 
 A further list, `provedInstances`, accepts a declaration that concludes a registered statement
 without assuming one, by full name and the hash of its statement (the gate prints the hash in
-its report); it is empty. A proved instance of a family that is not open, stated other than
-as a negation, goes there.
+its report); it is empty. A proved instance that is not open, such as a future theorem
+`VojtaLineMinusThreePointsDegreeAtMost 0`, goes there.
 
 To register a statement, add one line `(`Full.Name, `Module.Name),` to `closedForms`,
 `openFamilies` or `authorStatements` in the section "Registries of check 3" of

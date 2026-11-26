@@ -122,8 +122,8 @@
     "proof_status": "BLOCKED_BY_EXTERNAL_THEOREM",
     "obligations": [
       "Formalize F-prime-strips, poly-isomorphisms and the full poly-isomorphism.",
-      "Construct the p_v-adic logarithm on the perfection of the units and the induced ind-topological field structure. Only the logarithm on Z_p^x for the base field Q_p is formalized (IUT4.Prop1_2.frag.log_series_def, IUT4.Prop1_2.frag.i_Qp).",
-      "Define the nonarchimedean log-shell and prove it is a compact topological module (the compactness is recalled from AbsTopIII, Definition 3.1 (iv)). Done only for the base field Q_p, with the Galois-invariant units taken to be Z_p^x (an identification not formalized): IUT3.Def1_1.frag.log_shell_Qp defines the log-shell (p*)^(-1) log(Z_p^x) and proves it equal to Z_p, and IUT3.Prop1_2.v.frag.nonarch_Qp proves it compact. Finite extensions of Q_p are open.",
+      "Construct the p_v-adic logarithm on the perfection of the units and the induced ind-topological field structure. The logarithm on Z_p^x is formalized (IUT4.Prop1_2.frag.log_series_def, IUT4.Prop1_2.frag.i_Qp), and on the units of a finite extension of Q_p (IUT4.Prop1_2.frag.ext_log_def, IUT4.Prop1_2.frag.ext_log_hom); the perfection and the ind-topological field structure are not.",
+      "Define the nonarchimedean log-shell and prove it is a compact topological module (the compactness is recalled from AbsTopIII, Definition 3.1 (iv)). Done only for the base field Q_p, with the Galois-invariant units taken to be Z_p^x (an identification not formalized): IUT3.Def1_1.frag.log_shell_Qp defines the log-shell (p*)^(-1) log(Z_p^x) and proves it equal to Z_p, and IUT3.Prop1_2.v.frag.nonarch_Qp proves it compact. For finite extensions of Q_p the log-shell (p*)^(-1) log(R^x) is defined and bounded, p* p^a R <= I <= p* p^(-b) R (IUT3.Def1_1.frag.log_shell_model; on integralClosure Z_p k_i by IUT.PaperIV.LocalFields.padicBridge_extLogShell_bounds); its compactness is open.",
       "Define the archimedean log-shell via the pointed universal covering and the complex logarithm.",
       "Show that the mono-analytic constructions of (iv), (v) depend only on the F^{⊢×μ}-prime-strip."
     ],
@@ -132,7 +132,8 @@
       "The phrase 'object associated to the codomain of any log-link, determined by a portion of the domain' (pages 24 to 27) is interpretive; a formalization must fix which of the two identifications is meant in each later use."
     ],
     "fragments": [
-      "IUT3.Def1_1.frag.log_shell_Qp"
+      "IUT3.Def1_1.frag.log_shell_Qp",
+      "IUT3.Def1_1.frag.log_shell_model"
     ]
   },
   "IUT3.Def1_1.frag.log_shell_Qp": {
@@ -154,7 +155,7 @@
     "external_dependencies": [],
     "lean_declaration": "IUT.Prerequisites.PadicLog.padicLogShell_eq_range_coe",
     "covers": "Page 24: the log-shell as (p_v*)^(-1) times the pre-log-shell, with p_v* = p_v for odd p_v and p_v^2 for p_v = 2, in the case where the local field is Q_p.",
-    "not_covered": "The Frobenioid-theoretic and anabelian setting (F-prime-strips, log-links, Psi monoids, Galois actions); finite extensions K_v of Q_p, which are the cases used in the papers; the archimedean log-shell. The identification of the G_v-invariant units with Z_p^x is an interpretation, not formalized.",
+    "not_covered": "The Frobenioid-theoretic and anabelian setting (F-prime-strips, log-links, Psi monoids, Galois actions); finite extensions K_v of Q_p, which are the cases used in the papers (treated in the normed-field model by IUT3.Def1_1.frag.log_shell_model); the archimedean log-shell. The identification of the G_v-invariant units with Z_p^x is an interpretation, not formalized.",
     "statement_status": "STATEMENT_FORMALIZED",
     "proof_status": "KERNEL_VERIFIED",
     "obligations": [],
@@ -167,6 +168,44 @@
       "IUT.Prerequisites.PadicLog.padicLogShell_eq",
       "IUT.Prerequisites.PadicLog.padicLogShell_eq_two_mul",
       "IUT.Prerequisites.PadicLog.padicLogPStar"
+    ]
+  },
+  "IUT3.Def1_1.frag.log_shell_model": {
+    "kind": "fragment",
+    "parent": "IUT3.Def1_1",
+    "source": {
+      "paper": "Inter-universal Teichmuller Theory III",
+      "pdf_pages": "page 24",
+      "pages_read": "rendered and checked: page 24"
+    },
+    "content": "Definition, for a normed field K: extLogShell p K = (p*)^(-1) extLogUnit({u : |u| = 1}), with p* = p for odd p and 4 for p = 2 (IUT.Prerequisites.PadicLog.padicLogPStar). For a complete, locally compact normed Q_p-algebra K with e as in IUT4.Prop1_2.frag.i_model: {y : |y| <= p* p^(-a)} is contained in extLogShell p K, which is contained in {y : |y| <= p* p^b}.",
+    "explicit_hypotheses": [
+      "p a prime",
+      "K a normed field and normed Q_p-algebra, complete and proper",
+      "e a natural number with 1 <= e",
+      "for all x in K with |x| < 1, |x|^e <= 1/p"
+    ],
+    "implicit_hypotheses": [],
+    "conclusion": "{y | |y| <= p* p^(-a p e)} is a subset of extLogShell p K, which is a subset of {y | |y| <= p* p^(b p e)}.",
+    "definitions_required": [],
+    "results_used": [],
+    "external_dependencies": [],
+    "lean_declaration": "IUT.PaperIV.LocalFields.extLogShell_bounds",
+    "covers": "Page 24: the log-shell as the pre-log-shell (image of the invariant units under the p_v-adic logarithm) multiplied by (p_v^*)^(-1), with p_v^* = p_v for odd p_v and p_v^2 for p_v = 2, for a finite extension of Q_p in the normed-field model; bounded by IUT IV Proposition 1.2 (i).",
+    "not_covered": "The Frobenioid and log-link setting; the identification of the Galois-invariant units with the unit sphere of the model (an interpretation). The unit sphere is the image of the units of integralClosure Z_p k_i for finite extensions with the spectral norm (IUT4.Prop1_2.frag.bridge_ring_of_integers), and IUT4.Prop1_2.frag.bridge_i (lemma padicBridge_extLogShell_bounds) states the bounds on the ring of integers.",
+    "statement_status": "STATEMENT_FORMALIZED",
+    "proof_status": "KERNEL_VERIFIED",
+    "obligations": [],
+    "ambiguities": [
+      "The pages read do not fix the extension of log_p from principal units to R_i^x; extLogUnit u = N^(-1) log(u^N) for any N > 0 with |u^N - 1| < 1 is used (independent of N).",
+      "The G_v-invariant units of page 24 are interpreted as the unit sphere of the normed field K = k_v."
+    ],
+    "scope": "normed-field model: K a normed field that is a normed Q_p-algebra (complete, and locally compact where units are used); R = closed unit ball, R^x = unit sphere, p^lambda R = closed ball of radius p^(-lambda); for finite extensions of Q_p with the spectral norm, the closed unit ball is integralClosure Z_p k_i and the least such e is Ideal.ramificationIdx (proved in IUT.PaperIV.LocalFields.Bridge, fragments IUT4.Prop1_2.frag.bridge_ring_of_integers and IUT4.Prop1_2.frag.bridge_ramification)",
+    "lemmas": [
+      "IUT.PaperIV.LocalFields.extLogShell",
+      "IUT.PaperIV.LocalFields.extLogShell_mem_iff",
+      "IUT.PaperIV.LocalFields.extLog_norm_pStar",
+      "IUT.PaperIV.LocalFields.extLog_inv_pStar_le_rpow_neg_a"
     ]
   },
   "IUT3.Def1_1.i": {
@@ -606,11 +645,13 @@
     "statement_status": "EXTRACTED",
     "proof_status": "BLOCKED_BY_EXTERNAL_THEOREM",
     "obligations": [
-      "Prove compactness of the log-shell and the inclusions (b), (c) at nonarchimedean and archimedean v; the nonarchimedean inclusions depend on the normalizing factor (p_v^*)^{-1} of Definition 1.1 (i). For the base field Q_p at nonarchimedean v (with the Galois-invariant units taken to be Z_p^x, not formalized), compactness and the inclusions (b), (c) are proved in IUT3.Prop1_2.v.frag.nonarch_Qp; finite log-volume, finite extensions of Q_p and archimedean v are open."
+      "Prove compactness of the log-shell and the inclusions (b), (c) at nonarchimedean and archimedean v; the nonarchimedean inclusions depend on the normalizing factor (p_v^*)^{-1} of Definition 1.1 (i). For the base field Q_p at nonarchimedean v (with the Galois-invariant units taken to be Z_p^x, not formalized), compactness and the inclusions (b), (c) are proved in IUT3.Prop1_2.v.frag.nonarch_Qp; for finite extensions of Q_p the inclusions (b), (c) are proved in the normed-field model (IUT3.Prop1_2.v.frag.nonarch_model), whose closed unit ball is the ring of integers (IUT4.Prop1_2.frag.bridge_ring_of_integers). Compactness beyond Q_p, finite log-volume beyond Q_p (computed for Q_p in IUT4.Prop1_4.frag.padic_base) and archimedean v are open."
     ],
     "ambiguities": [],
     "fragments": [
-      "IUT3.Prop1_2.v.frag.nonarch_Qp"
+      "IUT3.Prop1_2.v.frag.nonarch_Qp",
+      "IUT3.Prop1_2.v.frag.nonarch_model",
+      "IUT3.Prop1_2.v.frag.padic_union_examples"
     ]
   },
   "IUT3.Prop1_2.v.frag.nonarch_Qp": {
@@ -632,7 +673,7 @@
     "external_dependencies": [],
     "lean_declaration": "IUT.Prerequisites.PadicLog.padicInt_subset_padicLogShell",
     "covers": "Pages 31 and 32, (v) at v in V^non: (a_non) compactness, (b_non) the log-shell contains the invariants of the integers of the codomain (here Z_p), (c_non) it contains the image of the invariant units (here log(Z_p^x)), for the local field Q_p.",
-    "not_covered": "Finite log-volume in (a_non); the log-link and Frobenioid setting; finite extensions of Q_p; the archimedean properties (a_arc) to (c_arc).",
+    "not_covered": "Finite log-volume in (a_non); the log-link and Frobenioid setting; finite extensions of Q_p (inclusions (b), (c) in IUT3.Prop1_2.v.frag.nonarch_model); the archimedean properties (a_arc) to (c_arc).",
     "statement_status": "STATEMENT_FORMALIZED",
     "proof_status": "KERNEL_VERIFIED",
     "obligations": [],
@@ -644,6 +685,71 @@
       "IUT.Prerequisites.PadicLog.padicLogShell_isCompact",
       "IUT.Prerequisites.PadicLog.padicLogUnit_range_subset_padicLogShell"
     ]
+  },
+  "IUT3.Prop1_2.v.frag.nonarch_model": {
+    "kind": "fragment",
+    "parent": "IUT3.Prop1_2.v",
+    "source": {
+      "paper": "Inter-universal Teichmuller Theory III",
+      "pdf_pages": "pages 31 to 32",
+      "pages_read": "rendered and checked: pages 31, 32"
+    },
+    "content": "For a prime p and a complete normed field K that is a normed Q_p-algebra: the closed unit ball {y : |y| <= 1} is contained in extLogShell p K; if K is also locally compact, extLogUnit({u : |u| = 1}) is contained in extLogShell p K.",
+    "explicit_hypotheses": [
+      "p a prime",
+      "K a normed field and normed Q_p-algebra, complete (and proper for the second inclusion)"
+    ],
+    "implicit_hypotheses": [],
+    "conclusion": "{y | |y| <= 1} is a subset of extLogShell p K; extLogUnit '' {u | |u| = 1} is a subset of extLogShell p K.",
+    "definitions_required": [],
+    "results_used": [],
+    "external_dependencies": [],
+    "lean_declaration": "IUT.PaperIV.LocalFields.extLogShell_unitBall_subset",
+    "covers": "Page 32, (v) at v in V^non: (b_non) the log-shell contains the invariants of the integers (here the closed unit ball), and (c_non) it contains the image of the invariant units (here extLogUnit of the unit sphere), for a finite extension of Q_p in the normed-field model.",
+    "not_covered": "(a_non) compactness and finite log-volume; the log-link and Frobenioid setting; the closed unit ball is the ring of integers for finite extensions with the spectral norm by IUT4.Prop1_2.frag.bridge_ring_of_integers, which is not restated here; the archimedean properties.",
+    "statement_status": "STATEMENT_FORMALIZED",
+    "proof_status": "KERNEL_VERIFIED",
+    "obligations": [],
+    "ambiguities": [
+      "The pages read do not fix the extension of log_p from principal units to R_i^x; extLogUnit u = N^(-1) log(u^N) for any N > 0 with |u^N - 1| < 1 is used (independent of N).",
+      "The invariants of Psi_log(F_v) and of Psi^x are interpreted as the closed unit ball and the unit sphere of K."
+    ],
+    "scope": "normed-field model: K a normed field that is a normed Q_p-algebra (complete, and locally compact where units are used); R = closed unit ball, R^x = unit sphere, p^lambda R = closed ball of radius p^(-lambda); for finite extensions of Q_p with the spectral norm, the closed unit ball is integralClosure Z_p k_i and the least such e is Ideal.ramificationIdx (proved in IUT.PaperIV.LocalFields.Bridge, fragments IUT4.Prop1_2.frag.bridge_ring_of_integers and IUT4.Prop1_2.frag.bridge_ramification)",
+    "lemmas": [
+      "IUT.PaperIV.LocalFields.extLogUnit_image_subset_extLogShell",
+      "IUT.PaperIV.LocalFields.extLogUnit_lower_and_shell_spectralNorm"
+    ]
+  },
+  "IUT3.Prop1_2.v.frag.padic_union_examples": {
+    "kind": "fragment",
+    "parent": "IUT3.Prop1_2.v",
+    "source": {
+      "paper": "Inter-universal Teichmuller Theory III",
+      "pdf_pages": "pages 31 to 32, 36 to 37",
+      "pages_read": "rendered and checked: pages 31, 32, 36, 37, 104, 105"
+    },
+    "content": "Over Q_p: starting from O^▷ = Z_p \\ {0} the union of all iterates equals the log-shell Z_p (every p); starting from the units with p = 2 the union Z_2^× ∪ 4Z_2 is strictly smaller than Z_2 (it misses 2).",
+    "explicit_hypotheses": [
+      "p prime (first statement); p = 2 (second)"
+    ],
+    "implicit_hypotheses": [],
+    "conclusion": "columnUnion = shellContainer for start O^▷; columnUnion ⊂ shellContainer for start the units and p = 2",
+    "definitions_required": [],
+    "results_used": [],
+    "external_dependencies": [],
+    "lean_declaration": "IUT.PaperIII.Corollary312.padic_iUnion_nonzeroIntegers",
+    "covers": "The inclusions O^▷ ⊆ O ⊆ I and log(O^×) ⊆ I of Remark 1.2.2 (i), page 36 ((b_non), (c_non) of Proposition 1.2 (v)), and their iteration, Remark 1.2.2 (iii), page 37, tested on Q_p in both directions.",
+    "not_covered": "Compactness (a_non); archimedean statements; finite extensions.",
+    "statement_status": "STATEMENT_FORMALIZED",
+    "proof_status": "KERNEL_VERIFIED",
+    "obligations": [],
+    "ambiguities": [],
+    "scope": "model_test",
+    "lemmas": [
+      "IUT.PaperIII.Corollary312.padic_two_iUnion_units_ssubset",
+      "IUT.PaperIII.Corollary312.padicNonzeroIntegers"
+    ],
+    "cor3_12_dependency": "independent"
   },
   "IUT3.Prop1_2.vi": {
     "source": {
@@ -3071,10 +3177,144 @@
     "statement_status": "EXTRACTED",
     "proof_status": "BLOCKED_BY_EXTERNAL_THEOREM",
     "obligations": [
-      "State and prove the containments (a), (b) as inclusions of explicit subsets of p-adic and complex fields.",
+      "State and prove the containments (a), (b) as inclusions of explicit subsets of p-adic and complex fields. The containment (a) is proved for one tensor factor with the Kummer maps taken to be identities, over Q_p and over finite extensions of Q_p in the normed-field model (IUT3.Prop3_5.frag.padic_upper_semi, IUT3.Prop3_5.frag.ext_upper_semi); tensor products over |t|, Galois invariants, Kummer isomorphisms and the archimedean surjections of (b) are open.",
       "Prove that roots of unity in the domain map to 0 under the p-adic logarithm (c)."
     ],
-    "ambiguities": []
+    "ambiguities": [],
+    "fragments": [
+      "IUT3.Prop3_5.frag.logUnitIterateRegion",
+      "IUT3.Prop3_5.frag.ext_upper_semi",
+      "IUT3.Prop3_5.frag.padic_upper_semi",
+      "IUT3.Prop3_5.frag.padic_chain"
+    ]
+  },
+  "IUT3.Prop3_5.frag.logUnitIterateRegion": {
+    "kind": "fragment",
+    "parent": "IUT3.Prop3_5",
+    "source": {
+      "paper": "Inter-universal Teichmuller Theory III",
+      "pdf_pages": "pages 28, 31 to 32, 36 to 37, 104 to 105",
+      "pages_read": "rendered and checked: pages 28, 31, 32, 36, 37, 103 to 106"
+    },
+    "content": "Definition: for sets start, units in K and a map log : K -> K, the regions S 0 = start and S (n+1) = log '' (S n ∩ units), the iterates of the log-link defined only on units (Remark 1.1.1 (i), page 28).",
+    "explicit_hypotheses": [],
+    "implicit_hypotheses": [],
+    "conclusion": "logUnitIterateRegion start units log : ℕ → Set K is defined.",
+    "definitions_required": [],
+    "results_used": [],
+    "external_dependencies": [],
+    "lean_declaration": "IUT.PaperIII.Corollary312.logUnitIterateRegion",
+    "covers": "Remark 1.1.1 (i), page 28 (iterates of log-links defined only on units); the m'-th iterates of Proposition 3.5 (ii) (a) (2), pages 104 and 105.",
+    "not_covered": "Tensor products over |t| and Galois invariants in them; Kummer isomorphisms and vertical coricity (every level identified with one field, Kummer maps taken to be identities); part (b) (archimedean closed balls and surjections); part (c) (bad places); invariance under translation symmetries (page 106).",
+    "statement_status": "STATEMENT_FORMALIZED",
+    "proof_status": "NOT_EXTRACTED",
+    "obligations": [],
+    "ambiguities": [],
+    "scope": "one local field; abstract iteration",
+    "lemmas": [
+      "IUT.PaperIII.Corollary312.logUnitIterateRegion_succ_subset",
+      "IUT.PaperIII.Corollary312.logUnitIterateRegion_subset_of"
+    ],
+    "cor3_12_dependency": "independent"
+  },
+  "IUT3.Prop3_5.frag.ext_upper_semi": {
+    "kind": "fragment",
+    "parent": "IUT3.Prop3_5",
+    "source": {
+      "paper": "Inter-universal Teichmuller Theory III",
+      "pdf_pages": "pages 28, 31 to 32, 36 to 37, 104 to 105",
+      "pages_read": "rendered and checked: pages 28, 31, 32, 36, 37, 103 to 106"
+    },
+    "content": "In a complete, locally compact normed field K that is a normed Q_p-algebra, for every start contained in the closed unit ball, every iterate logUnitIterateRegion start (unit sphere) extLogUnit n lies in the log-shell extLogShell p K.",
+    "explicit_hypotheses": [
+      "p prime",
+      "K a normed field with NormedAlgebra ℚ_[p] K, CompleteSpace K, ProperSpace K",
+      "hstart : start ⊆ {x | ‖x‖ ≤ 1}",
+      "n : ℕ"
+    ],
+    "implicit_hypotheses": [],
+    "conclusion": "logUnitIterateRegion start {u | ‖u‖ = 1} extLogUnit n ⊆ extLogShell p K",
+    "definitions_required": [],
+    "results_used": [],
+    "external_dependencies": [],
+    "lean_declaration": "IUT.PaperIII.Corollary312.extLogShell_contains_logUnitIterateRegion",
+    "covers": "Proposition 3.5 (ii) (a), pages 104 and 105, for one tensor factor (j = 0) with identity Kummer maps: the log-shell contains the units (1) and their images under all m'-th iterates of the log-link (2); also Remark 1.2.2 (iii), page 37, with start = O^▷.",
+    "not_covered": "Tensor products over |t| and Galois invariants in them; Kummer isomorphisms and vertical coricity (every level identified with one field, Kummer maps taken to be identities); part (b) (archimedean closed balls and surjections); part (c) (bad places); invariance under translation symmetries (page 106). The statement is about the normed-field model of IUT.PaperIV.LocalFields.Logarithm; its closed unit ball is integralClosure Z_p k_i for finite extensions with the spectral norm (IUT4.Prop1_2.frag.bridge_ring_of_integers), a link not restated here.",
+    "statement_status": "STATEMENT_FORMALIZED",
+    "proof_status": "KERNEL_VERIFIED",
+    "obligations": [],
+    "ambiguities": [],
+    "scope": "normed-field model of finite extensions of Q_p, one tensor factor",
+    "cor3_12_dependency": "independent"
+  },
+  "IUT3.Prop3_5.frag.padic_upper_semi": {
+    "kind": "fragment",
+    "parent": "IUT3.Prop3_5",
+    "source": {
+      "paper": "Inter-universal Teichmuller Theory III",
+      "pdf_pages": "pages 28, 31 to 32, 36 to 37, 104 to 105",
+      "pages_read": "rendered and checked: pages 28, 31, 32, 36, 37, 103 to 106"
+    },
+    "content": "Over Q_p, for every start ⊆ Z_p, every iterate logUnitIterateRegion start (unit sphere) (padicLogUnit p) n lies in padicLogShell p (= Z_p).",
+    "explicit_hypotheses": [
+      "p prime",
+      "hstart : start ⊆ {x : ℚ_[p] | ‖x‖ ≤ 1}",
+      "n : ℕ"
+    ],
+    "implicit_hypotheses": [],
+    "conclusion": "logUnitIterateRegion start {u | ‖u‖ = 1} (padicLogUnit p) n ⊆ padicLogShell p",
+    "definitions_required": [],
+    "results_used": [],
+    "external_dependencies": [],
+    "lean_declaration": "IUT.PaperIII.Corollary312.padicLogShell_contains_logUnitIterateRegion",
+    "covers": "Proposition 3.5 (ii) (a), pages 104 and 105, for the base field Q_p and one tensor factor.",
+    "not_covered": "Tensor products over |t| and Galois invariants in them; Kummer isomorphisms and vertical coricity (every level identified with one field, Kummer maps taken to be identities); part (b) (archimedean closed balls and surjections); part (c) (bad places); invariance under translation symmetries (page 106).",
+    "statement_status": "STATEMENT_FORMALIZED",
+    "proof_status": "KERNEL_VERIFIED",
+    "obligations": [],
+    "ambiguities": [],
+    "scope": "base field Q_p, one tensor factor",
+    "lemmas": [
+      "IUT.PaperIII.Corollary312.padicLogUnit_image_unitSphere",
+      "IUT.PaperIII.Corollary312.padicIterateFamily",
+      "IUT.PaperIII.Corollary312.padicIterateFamily_upperSemiCompatible",
+      "IUT.PaperIII.Corollary312.extIterateFamily",
+      "IUT.PaperIII.Corollary312.extIterateFamily_upperSemiCompatible"
+    ],
+    "cor3_12_dependency": "independent"
+  },
+  "IUT3.Prop3_5.frag.padic_chain": {
+    "kind": "fragment",
+    "parent": "IUT3.Prop3_5",
+    "source": {
+      "paper": "Inter-universal Teichmuller Theory III",
+      "pdf_pages": "pages 28, 31 to 32, 36 to 37, 104 to 105",
+      "pages_read": "rendered and checked: pages 28, 31, 32, 36, 37, 103 to 106"
+    },
+    "content": "Over Q_p, if start contains the units, the first iterate is log(Z_p^×) = {‖z‖ ≤ 1/p*}; it is strictly smaller than the log-shell Z_p; no iterate of positive order meets the units; all iterates of order ≥ 2 are empty.",
+    "explicit_hypotheses": [
+      "p prime",
+      "h : {u | ‖u‖ = 1} ⊆ start (for the first two statements)"
+    ],
+    "implicit_hypotheses": [],
+    "conclusion": "S 1 = {z | ‖z‖ ≤ (p*)⁻¹}; S 1 ⊂ padicLogShell p; S (k+1) ∩ units = ∅; S (k+2) = ∅",
+    "definitions_required": [],
+    "results_used": [],
+    "external_dependencies": [],
+    "lean_declaration": "IUT.PaperIII.Corollary312.padic_logUnitIterateRegion_one",
+    "covers": "The concrete content of the inclusion chain of Proposition 3.5 (ii) (a) over Q_p (pages 104 and 105) and Remark 1.2.2 (i), page 36.",
+    "not_covered": "Tensor products over |t| and Galois invariants in them; Kummer isomorphisms and vertical coricity (every level identified with one field, Kummer maps taken to be identities); part (b) (archimedean closed balls and surjections); part (c) (bad places); invariance under translation symmetries (page 106). Ramified finite extensions, where the chain need not stop, are not computed.",
+    "statement_status": "STATEMENT_FORMALIZED",
+    "proof_status": "KERNEL_VERIFIED",
+    "obligations": [],
+    "ambiguities": [],
+    "scope": "model_test",
+    "lemmas": [
+      "IUT.PaperIII.Corollary312.padic_logUnitIterateRegion_one_ssubset",
+      "IUT.PaperIII.Corollary312.padic_logUnitIterateRegion_succ_inter_unitSphere",
+      "IUT.PaperIII.Corollary312.padic_logUnitIterateRegion_add_two"
+    ],
+    "cor3_12_dependency": "independent"
   },
   "IUT3.Ex3_6": {
     "source": {
@@ -3655,12 +3895,83 @@
       "Define the local log-volume on each direct summand field K_v as the logarithm of Haar measure normalized by μ(O_{K_v}) = 1 (p_{v_Q}-adic; radial at archimedean v_Q), and form the packet log-volume with the normalized weights of Remark 3.1.1 (ii), page 94, namely 1/([K_v : (F_mod)_v]·Σ_{w | v_Q} [(F_mod)_w : Q_{v_Q}]). These weights already contain the division by the local degree: with one place over v_Q, (F_mod)_v = Q_p and K_v quadratic, the plain Haar log-volume of p·O_{K_v} is −2·log(p) and the weight is 1/2, giving −log(p) as page 115 requires. Equivalently, one may divide each local Haar log-volume by its degree (as IUT IV, Proposition 1.4 (i), page 13, does) and then use weights without that factor; doing both divides twice and gives −(1/2)·log(p) in the example. A formalization must use exactly one of the two conventions and check that the total shift under multiplication by p_v is −log(p_v).",
       "Define the packet log-volume as the weighted sum over direct summands with the weights of Rem 3.1.1 (ii) on direct product regions, and extend it to other elements of M(−) through the E-weighted measure of Rem 3.1.1 (iv). Do not define it as the logarithm of a single normalized Haar measure on the product: Rem 3.1.1 (iii), page 95, says such weighted sums do not in general arise as a positive multiple of the log of an ordinary measure; on direct product regions page 96 identifies them with a normalized log of μ_E on M_{E*V}, not of a measure on the original product.",
       "Check the scaling rule against the weights: multiplication by p_v shifts each summand log-volume, and the normalized weights make the total shift −log(p_v).",
-      "Define the procession-normalized log-volume as the average over j ∈ F*_l (stated on pages 173 and 181), factor 1/l*; Prop 3.4 (ii) (page 102) and Rem 3.9.3 (page 120) corroborate the labels j ∈ {1, ..., l*}. Fix how the j = 0 packet of the procession enters."
+      "Define the procession-normalized log-volume as the average over j ∈ F*_l (stated on pages 173 and 181), factor 1/l*; Prop 3.4 (ii) (page 102) and Rem 3.9.3 (page 120) corroborate the labels j ∈ {1, ..., l*}. Fix how the j = 0 packet of the procession enters.",
+      "On one nonarchimedean summand the packet-normalization law (multiplication by p adds -log p; the normalizing set has log-volume 0) is proved for the normalized log-volume of IUT.Prerequisites.PadicVolume (IUT3.Prop3_9.i.frag.packet_normalization); the direct sums, the weights of Remark 3.1.1 and the archimedean case are not."
     ],
     "ambiguities": [
       "The extension of the weighted sum from direct product regions to all of M(−) is given only through Rem 3.1.1 (iv) with 'a suitable normalization factor' (page 96); the factor is not displayed.",
       "Page 115 states the normalization only through its effect (O has log-volume 0, multiplication by p_v adds −log(p_v)); the weights of Remark 3.1.1 (ii), page 94, carry the division by the local degree, so the local log-volume is the plain Haar log-volume with μ(O) = 1. Remark 3.1.1 (iii), page 95, says these weighted sums are in general not a positive multiple of the logarithm of a measure in the usual sense; page 96 identifies them, on direct product regions only, with a normalized logarithm of the E-weighted measure μ_E of Remark 3.1.1 (iv), which lives on M_{E*V} ≅ M_W, not on the original product."
+    ],
+    "fragments": [
+      "IUT3.Prop3_9.i.frag.packet_normalization",
+      "IUT3.Prop3_9.i.frag.region_interface"
     ]
+  },
+  "IUT3.Prop3_9.i.frag.packet_normalization": {
+    "kind": "fragment",
+    "parent": "IUT3.Prop3_9.i",
+    "source": {
+      "paper": "Inter-universal Teichmuller Theory III",
+      "pdf_pages": "page 115",
+      "pages_read": "rendered and checked: page 115"
+    },
+    "content": "On one direct summand (a finite-dimensional normed Q_p-vector space of dimension d > 0), the normalized log-volume normalized at a set Lambda of positive finite measure satisfies mu^log(c . A) = mu^log(A) + log|c| for nonzero c in Q_p and A of positive finite measure; with c = p, multiplication by p adds -log p, and mu^log(Lambda) = 0.",
+    "explicit_hypotheses": [
+      "p a prime",
+      "V a finite-dimensional normed Q_p-vector space of dimension d with its Borel sigma-algebra",
+      "mu an additive Haar measure on V",
+      "0 < d",
+      "0 < mu(Lambda) < infinity",
+      "0 < mu(A) < infinity",
+      "c in Q_p, c nonzero"
+    ],
+    "implicit_hypotheses": [],
+    "conclusion": "padicMuLog p mu Lambda (c . A) = padicMuLog p mu Lambda A + log|c|.",
+    "definitions_required": [],
+    "results_used": [],
+    "external_dependencies": [],
+    "lean_declaration": "IUT.Prerequisites.PadicVolume.padicMuLog_smul",
+    "covers": "Page 115, Proposition 3.9 (i): the packet-normalization, integral structures of log-volume zero and multiplication by p_v adding -log(p_v), on one p_v-adic summand.",
+    "not_covered": "The objects I^Q(F_v), their direct sum decompositions and integral structures of Proposition 3.1; the normalized weights of Remark 3.1.1; the archimedean case; the procession-normalization; (ii) to (iv).",
+    "statement_status": "STATEMENT_FORMALIZED",
+    "proof_status": "KERNEL_VERIFIED",
+    "obligations": [],
+    "ambiguities": [],
+    "lemmas": [
+      "IUT.Prerequisites.PadicVolume.padicMuLog_self"
+    ],
+    "scope": "one nonarchimedean summand, abstract vector space",
+    "cor3_12_dependency": "independent"
+  },
+  "IUT3.Prop3_9.i.frag.region_interface": {
+    "kind": "fragment",
+    "parent": "IUT3.Prop3_9.i",
+    "source": {
+      "paper": "Inter-universal Teichmuller Theory III",
+      "pdf_pages": "pages 115 to 116",
+      "pages_read": "rendered and checked: pages 115, 116"
+    },
+    "content": "The EReal normalized log-volume of a Haar measure on a finite-dimensional normed Q_p-vector space, with given hull data, q-pilot region and possible images, as an instance of the RegionComparison interface of IUT.PaperIII.Corollary312.Comparison.",
+    "explicit_hypotheses": [
+      "p a prime",
+      "V a finite-dimensional normed Q_p-vector space of dimension d with its Borel sigma-algebra",
+      "mu an additive Haar measure on V",
+      "hull data satisfying IsHullMap, a region qPilot, a family image whose union lies in the hull domain"
+    ],
+    "implicit_hypotheses": [],
+    "conclusion": "padicRegionComparison is a RegionComparison with logVol = padicMuLogE p mu Lambda.",
+    "definitions_required": [],
+    "results_used": [],
+    "external_dependencies": [],
+    "lean_declaration": "IUT.Prerequisites.PadicVolume.padicRegionComparison",
+    "covers": "Page 115, Proposition 3.9 (i): a log-volume on nonempty compact open subsets, here supplied to the abstract interface used for Corollary 3.12.",
+    "not_covered": "Any region constructed from Hodge theaters; the comparison itself; the weighting of Remark 3.1.1.",
+    "statement_status": "STATEMENT_FORMALIZED",
+    "proof_status": "NOT_EXTRACTED",
+    "obligations": [],
+    "ambiguities": [],
+    "scope": "abstract interface instance, not the papers' objects",
+    "cor3_12_dependency": "setup_only"
   },
   "IUT3.Prop3_9.ii": {
     "source": {
@@ -4250,7 +4561,7 @@
     "proof_status": "EXTRACTED",
     "obligations": [
       "Prove the closure claim for actual hulls: an intersection of hulls which has finite log-volume is a hull ('as is easily verified', page 127).",
-      "Prove that the hull map of Rem 3.9.5 (i) satisfies (P1), (P2), (P3) and maps ℙ into ℍ ('essentially a tautology', page 127)."
+      "Prove that the hull map of Rem 3.9.5 (i) satisfies (P1), (P2), (P3) and maps ℙ into ℍ ('essentially a tautology', page 127). (Dupuy and Hilado's polydisc hull on a finite product of normed groups satisfies (P1) to (P3), IUT3.Rem3_9_5.ii.frag.dhHull_isHullMap; that is a model, not the hull of (i).)"
     ],
     "ambiguities": [
       "Assessment: the order-theoretic fragments show the formula follows from (P1), (P2), (P3), ℍ ⊆ ℙ and φ(ℙ) ⊆ ℍ without the closure claim; the closure claim is needed only for existence. The text presents it as the reason for the formula."
@@ -4258,7 +4569,8 @@
     "fragments": [
       "IUT3.Rem3_9_5.ii.frag.eq_sInter",
       "IUT3.Rem3_9_5.ii.frag.unique",
-      "IUT3.Rem3_9_5.ii.frag.isHullMap_sInter"
+      "IUT3.Rem3_9_5.ii.frag.isHullMap_sInter",
+      "IUT3.Rem3_9_5.ii.frag.dhHull_isHullMap"
     ]
   },
   "IUT3.Rem3_9_5.iii_iv": {
@@ -5126,11 +5438,193 @@
     "proof_status": "EXTRACTED",
     "obligations": [
       "Express Ind3 as: the image of any admissible region under any composite path lies in a fixed region (inclusion) so that log-volume is bounded above.",
-      "Reconcile 'upper semi-compatible' isomorphisms with 'precisely compatible' log-volumes: the latter must refer to log-volumes of corresponding sets, the former to containment of different sets."
+      "Reconcile 'upper semi-compatible' isomorphisms with 'precisely compatible' log-volumes: the latter must refer to log-volumes of corresponding sets, the former to containment of different sets.",
+      "(Ind3) is typed in one reading of its nonarchimedean part (IUT3.Thm3_11.ii.Ind3.frag.VerticalRegionFamily): regions along the vertical line, each in a container, with the possible image the hull of their union; the containment is proved for the iterates of the logarithm on units in one local field (IUT3.Prop3_5.frag.ext_upper_semi). The archimedean surjections of Proposition 3.5 (ii) (b) are not modeled."
     ],
     "ambiguities": [
       "Ind3 is described as an indeterminacy but defined as a semi-compatibility property; the set of maps it ranges over is not specified."
+    ],
+    "fragments": [
+      "IUT3.Thm3_11.ii.Ind3.frag.VerticalRegionFamily",
+      "IUT3.Thm3_11.ii.Ind3.frag.hull_bounds",
+      "IUT3.Thm3_11.ii.Ind3.frag.joint_indeterminacy",
+      "IUT3.Thm3_11.ii.Ind3.frag.inequality_from_above",
+      "IUT3.Thm3_11.ii.Ind3.frag.interval_examples"
     ]
+  },
+  "IUT3.Thm3_11.ii.Ind3.frag.VerticalRegionFamily": {
+    "kind": "fragment",
+    "parent": "IUT3.Thm3_11.ii.Ind3",
+    "source": {
+      "paper": "Inter-universal Teichmuller Theory III",
+      "pdf_pages": "pages 154 to 156, 177, 181",
+      "pages_read": "rendered and checked: pages 32, 104 to 106, 154 to 156, 158, 177, 180, 181"
+    },
+    "content": "Data: a container and regions indexed by a vertical coordinate ι; UpperSemiCompatible is the proposition that every region lies in the container; columnUnion is the union of the regions.",
+    "explicit_hypotheses": [],
+    "implicit_hypotheses": [],
+    "conclusion": "One faithful reading of the (Ind3) data in the nonarchimedean case.",
+    "definitions_required": [],
+    "results_used": [],
+    "external_dependencies": [],
+    "lean_declaration": "IUT.PaperIII.Corollary312.VerticalRegionFamily",
+    "covers": "(Ind3), page 156: 'upper semi-compatible ... natural inclusions ⊆ at v_Q nonarchimedean'; Step (v), page 177 ('multiradial mono-analytic containers').",
+    "not_covered": "The archimedean surjections of (Ind3); the precise compatibility with log-volumes stated after (Ind3) on page 156; translation symmetry; the choice of this reading over alternatives (upward closures, relations between consecutive m) is an interpretation.",
+    "statement_status": "STATEMENT_FORMALIZED",
+    "proof_status": "NOT_EXTRACTED",
+    "obligations": [],
+    "ambiguities": [
+      "The page leaves the form of (Ind3) open; this is one reading."
+    ],
+    "scope": "abstract interface, not the papers' objects",
+    "lemmas": [
+      "IUT.PaperIII.Corollary312.VerticalRegionFamily.UpperSemiCompatible",
+      "IUT.PaperIII.Corollary312.VerticalRegionFamily.columnUnion",
+      "IUT.PaperIII.Corollary312.VerticalRegionFamily.columnUnion_subset_shellContainer"
+    ],
+    "cor3_12_dependency": "setup_only"
+  },
+  "IUT3.Thm3_11.ii.Ind3.frag.hull_bounds": {
+    "kind": "fragment",
+    "parent": "IUT3.Thm3_11.ii.Ind3",
+    "source": {
+      "paper": "Inter-universal Teichmuller Theory III",
+      "pdf_pages": "pages 154 to 156, 177, 181",
+      "pages_read": "rendered and checked: pages 32, 104 to 106, 154 to 156, 158, 177, 180, 181"
+    },
+    "content": "For a hull map (P1 to P3) and a region log-volume monotone into the hull domain: every region lies in the hull of the union and has at most its log-volume; if the family is upper semi-compatible and the container is a hull, the hull of the union lies in the container and its log-volume is at most the container's.",
+    "explicit_hypotheses": [
+      "isHull : IsHullMap hullDomain hulls hull",
+      "hmono : ∀ S T, S ⊆ T → T ∈ hullDomain → logVol S ≤ logVol T",
+      "hU : columnUnion ∈ hullDomain",
+      "hC : shellContainer ∈ hulls",
+      "h : UpperSemiCompatible"
+    ],
+    "implicit_hypotheses": [],
+    "conclusion": "logVol (hull columnUnion) ≤ logVol shellContainer",
+    "definitions_required": [],
+    "results_used": [],
+    "external_dependencies": [],
+    "lean_declaration": "IUT.PaperIII.Corollary312.VerticalRegionFamily.logVol_hull_columnUnion_le_shellContainer",
+    "covers": "The upper bound by the container implicit in (Ind3), page 156, and Step (x), page 181 ('inequality [from above]').",
+    "not_covered": "Real regions; the archimedean case; the comparison with the q-pilot region.",
+    "statement_status": "STATEMENT_FORMALIZED",
+    "proof_status": "KERNEL_VERIFIED",
+    "obligations": [],
+    "ambiguities": [],
+    "scope": "abstract interface, not the papers' objects",
+    "lemmas": [
+      "IUT.PaperIII.Corollary312.VerticalRegionFamily.columnRegion_subset_hull_columnUnion",
+      "IUT.PaperIII.Corollary312.VerticalRegionFamily.hull_columnUnion_subset_shellContainer",
+      "IUT.PaperIII.Corollary312.VerticalRegionFamily.logVol_columnRegion_le_hull"
+    ],
+    "cor3_12_dependency": "setup_only"
+  },
+  "IUT3.Thm3_11.ii.Ind3.frag.joint_indeterminacy": {
+    "kind": "fragment",
+    "parent": "IUT3.Thm3_11.ii.Ind3",
+    "source": {
+      "paper": "Inter-universal Teichmuller Theory III",
+      "pdf_pages": "pages 154 to 156, 177, 181",
+      "pages_read": "rendered and checked: pages 32, 104 to 106, 154 to 156, 158, 177, 180, 181"
+    },
+    "content": "Joint possible images a • R_m (a in the group generated by ind1, ind2; m a vertical coordinate). Under UpperSemiCompatible their union lies in the orbit union of the container (no stability needed), so logVol of its hull is at most logVol of the hull of that orbit union; if moreover the container is a hull and ContainerStable holds (every element of ind1 and of ind2 maps the container onto itself), logVol of the hull of the union is at most logVol of the container.",
+    "explicit_hypotheses": [
+      "isHull",
+      "hmono",
+      "hJ : jointColumnUnion ∈ hullDomain",
+      "hC : shellContainer ∈ hulls",
+      "hs : ContainerStable",
+      "h : UpperSemiCompatible"
+    ],
+    "implicit_hypotheses": [],
+    "conclusion": "logVol (hull jointColumnUnion) ≤ logVol shellContainer",
+    "definitions_required": [],
+    "results_used": [],
+    "external_dependencies": [],
+    "lean_declaration": "IUT.PaperIII.Corollary312.IndeterminacyOrbit.logVol_hull_jointColumnUnion_le_shellContainer",
+    "covers": "'subject to (Ind1), (Ind2), (Ind3)' (pages 173 and 174 via Indeterminacy.lean); (Ind1), (Ind2), page 154; (Ind3), page 156.",
+    "not_covered": "Stability of the log-shell: asserted for the Ism-orbit (nonarchimedean (Ind2), one factor) by Proposition 1.2 (vi), page 32, not proved; not asserted for (Ind1) on the pages read. Tensor packets; the q-pilot comparison.",
+    "statement_status": "STATEMENT_FORMALIZED",
+    "proof_status": "CONDITIONALLY_VERIFIED",
+    "obligations": [
+      "hs: stability of the container under (Ind1), (Ind2); for (Ind2) compare Proposition 1.2 (vi), page 32; for (Ind1) no assertion found on the pages read."
+    ],
+    "ambiguities": [],
+    "scope": "abstract interface, not the papers' objects",
+    "lemmas": [
+      "IUT.PaperIII.Corollary312.IndeterminacyOrbit.containerOrbit",
+      "IUT.PaperIII.Corollary312.IndeterminacyOrbit.jointColumnImage",
+      "IUT.PaperIII.Corollary312.IndeterminacyOrbit.jointColumnUnion",
+      "IUT.PaperIII.Corollary312.IndeterminacyOrbit.jointColumnUnion_subset_containerOrbit",
+      "IUT.PaperIII.Corollary312.IndeterminacyOrbit.ContainerStable",
+      "IUT.PaperIII.Corollary312.IndeterminacyOrbit.orbitUnion_containerOrbit_eq",
+      "IUT.PaperIII.Corollary312.IndeterminacyOrbit.jointColumnImage_subset_hull",
+      "IUT.PaperIII.Corollary312.IndeterminacyOrbit.logVol_hull_jointColumnUnion_le_hull_containerOrbit"
+    ],
+    "cor3_12_dependency": "setup_only"
+  },
+  "IUT3.Thm3_11.ii.Ind3.frag.inequality_from_above": {
+    "kind": "fragment",
+    "parent": "IUT3.Thm3_11.ii.Ind3",
+    "source": {
+      "paper": "Inter-universal Teichmuller Theory III",
+      "pdf_pages": "pages 154 to 156, 177, 181",
+      "pages_read": "rendered and checked: pages 32, 104 to 106, 154 to 156, 158, 177, 180, 181"
+    },
+    "content": "If every element of ind1 and of ind2 preserves the measure μ and the family is upper semi-compatible, every joint possible image a • R_m has log-volume at most that of the container.",
+    "explicit_hypotheses": [
+      "μ : Measure X",
+      "h1 : ∀ a ∈ ind1, ∀ S, μ (a • S) = μ S",
+      "h2 : ∀ a ∈ ind2, ∀ S, μ (a • S) = μ S",
+      "h : UpperSemiCompatible"
+    ],
+    "implicit_hypotheses": [],
+    "conclusion": "logVolume μ (a • R_m) ≤ logVolume μ shellContainer",
+    "definitions_required": [],
+    "results_used": [],
+    "external_dependencies": [],
+    "lean_declaration": "IUT.PaperIII.Corollary312.IndeterminacyOrbit.logVolume_jointColumnImage_le_shellContainer",
+    "covers": "Step (x), page 181: log-volumes invariant under (Ind1), (Ind2), converting (Ind3) into an inequality 'from above'.",
+    "not_covered": "The invariance hypotheses h1, h2 (asserted on page 181, 'one verifies immediately'); procession normalization; real regions.",
+    "statement_status": "STATEMENT_FORMALIZED",
+    "proof_status": "CONDITIONALLY_VERIFIED",
+    "obligations": [
+      "h1, h2: invariance of log-volumes under (Ind1), (Ind2), asserted in Step (x), page 181; not proved."
+    ],
+    "ambiguities": [],
+    "scope": "abstract interface, not the papers' objects",
+    "cor3_12_dependency": "setup_only"
+  },
+  "IUT3.Thm3_11.ii.Ind3.frag.interval_examples": {
+    "kind": "fragment",
+    "parent": "IUT3.Thm3_11.ii.Ind3",
+    "source": {
+      "paper": "Inter-universal Teichmuller Theory III",
+      "pdf_pages": "pages 154 to 156, 177, 181",
+      "pages_read": "rendered and checked: pages 32, 104 to 106, 154 to 156, 158, 177, 180, 181"
+    },
+    "content": "On ℝ with the interval hull: regions [0,1/8], [3/8,1/2] with container [0,1/2]: the union is strictly smaller than the container while its hull equals the container; with container [0,1] the hull [0,1/2] of the union is strictly smaller than the container.",
+    "explicit_hypotheses": [],
+    "implicit_hypotheses": [],
+    "conclusion": "columnUnion ⊂ container ∧ hull columnUnion = container; and hull columnUnion ⊂ container for the larger container",
+    "definitions_required": [],
+    "results_used": [],
+    "external_dependencies": [],
+    "lean_declaration": "IUT.PaperIII.Corollary312.VerticalExample.example_gap_union",
+    "covers": "Nonvacuity of the typed (Ind3) in both directions.",
+    "not_covered": "Everything of the papers' objects.",
+    "statement_status": "STATEMENT_FORMALIZED",
+    "proof_status": "KERNEL_VERIFIED",
+    "obligations": [],
+    "ambiguities": [],
+    "scope": "model_test",
+    "lemmas": [
+      "IUT.PaperIII.Corollary312.VerticalExample.gapFamily",
+      "IUT.PaperIII.Corollary312.VerticalExample.gapFamily_upperSemiCompatible",
+      "IUT.PaperIII.Corollary312.VerticalExample.example_hull_ssubset"
+    ],
+    "cor3_12_dependency": "setup_only"
   },
   "IUT3.Thm3_11.iii": {
     "source": {
@@ -6845,6 +7339,46 @@
       "hcl stands for the claim of page 127 that an intersection of hulls which has finite log-volume is a hull ('as is easily verified'), not proved for actual hulls in this project."
     ],
     "ambiguities": []
+  },
+  "IUT3.Rem3_9_5.ii.frag.dhHull_isHullMap": {
+    "kind": "fragment",
+    "parent": "IUT3.Rem3_9_5.ii",
+    "source": {
+      "paper": "Inter-universal Teichmuller Theory III",
+      "pdf_pages": "page 127",
+      "pages_read": "IUT III page 127 (text layer), for the clauses (P1) to (P3); the polydisc hull from the TeX source of Dupuy and Hilado, arXiv 2004.13108, section 6.1, checked against its rendered pages",
+      "pages_in_paper": "Dupuy and Hilado, arXiv 2004.13108, pages 18 and 19"
+    },
+    "content": "The polydisc hull satisfies the clauses of IsHullMap with all regions as P and the polydiscs as H: P subset of hull(P), hull(polydisc) = polydisc, monotonicity; with the union and scaling rules of section 6.1.",
+    "explicit_hypotheses": [
+      "a family of normed additive groups X i (normed fields for the scaling rule)"
+    ],
+    "implicit_hypotheses": [],
+    "conclusion": "IsHullMap univ (range dhPolydisc) dhHull; R_j of a union is the supremum of the R_j; R_i(alpha Omega) = |alpha_i| R_i(Omega).",
+    "definitions_required": [],
+    "results_used": [],
+    "external_dependencies": [
+      "DuHi20: arXiv 2004.13108",
+      "DuHi20b: arXiv 2004.13228"
+    ],
+    "lean_declaration": "IUT.Applications.DupuyHilado.dhHull_isHullMap",
+    "covers": "The clauses (P1) to (P3) of IUT III Remark 3.9.5 (ii), page 127, for the polydisc hull of Dupuy and Hilado (arXiv 2004.13108, section 6.1) on a finite product of normed groups, with all regions as the family P and the polydiscs as the family H; and that section's rules for unions and scalings.",
+    "not_covered": "The holomorphic hull of IUT III Remark 3.9.5 (i) on tensor packets of log-shells, which is the hull the parent's obligation concerns; tensor products and their splitting into factors; log-volumes.",
+    "statement_status": "STATEMENT_FORMALIZED",
+    "proof_status": "KERNEL_VERIFIED",
+    "obligations": [],
+    "ambiguities": [
+      "The polydisc hull is the one of Dupuy and Hilado's reading of Corollary 3.12 (arXiv 2004.13108, section 6.1), not the holomorphic hull of IUT III Remark 3.9.5 (i)."
+    ],
+    "scope": "finite family of normed groups standing for the factors of a tensor product; not the papers' tensor packets",
+    "lemmas": [
+      "IUT.Applications.DupuyHilado.dh_subset_hull",
+      "IUT.Applications.DupuyHilado.dhPolyRadius_mono",
+      "IUT.Applications.DupuyHilado.dhPolyRadius_polydisc_le",
+      "IUT.Applications.DupuyHilado.dhHull_polydisc",
+      "IUT.Applications.DupuyHilado.dhPolyRadius_iUnion",
+      "IUT.Applications.DupuyHilado.dhPolyRadius_mul"
+    ]
   },
   "IUT3.Cor3_12.Statement.frag.logVolume": {
     "kind": "fragment",

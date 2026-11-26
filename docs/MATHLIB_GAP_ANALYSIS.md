@@ -470,7 +470,7 @@ Bibliography keys: [AbsTopIII].
 
 Needed first by: IUT3.Def1_1, IUT3.Prop3_9, IUT4.Prop1_2.
 
-Mathlib v4.36.0 defines NormedSpace.log for any topological Q-algebra, hence for Q_p, with only its algebraic properties at 1. The convergence on the open unit disc, the homomorphism property and the extension to the units are proved in this library for Q_p (IUT/Prerequisites/PadicLog.lean), where the log-shell of IUT III Definition 1.1 is defined for Q_p; finite extensions are not treated there. IUT3.Prop3_9 and IUT4.Prop1_2 are the statements that use it (Log-volume for Packets and Processions; Differents and Logarithms).
+Mathlib v4.36.0 defines NormedSpace.log for any topological Q-algebra, hence for Q_p, with only its algebraic properties at 1. The convergence on the open unit disc, the homomorphism property and the extension to the units are proved in this library for Q_p (IUT/Prerequisites/PadicLog.lean), where the log-shell of IUT III Definition 1.1 is defined for Q_p. For finite extensions of Q_p the logarithm on the units and the log-shell are defined in a normed-field model (IUT/PaperIV/LocalFields/Logarithm.lean), and for the ring of integers integralClosure Z_p L with the spectral norm the bounds of IUT IV Proposition 1.2 (i) are proved (IUT/PaperIV/LocalFields/Bridge.lean). IUT3.Prop3_9 and IUT4.Prop1_2 are the statements that use it (Log-volume for Packets and Processions; Differents and Logarithms).
 
 ### Arithmetic divisors
 
@@ -567,7 +567,7 @@ In Mathlib:
 Missing:
 
 * Higher ramification groups (no declaration with "RamificationGroup" or "lowerNumbering" found). Classes 3.
-* Estimates of the different of local fields and of tensor products of local fields, IUT IV Propositions 1.1 to 1.3 (Multiple Tensor Products and Differents; Differents and Logarithms; Estimates of Differents; pages 9 to 13; the inequality of Proposition 1.3 (i) for finite extensions of Q_p is proved in IUT/PaperIV/LocalFields/, the rest is open). Classes 2, 3.
+* Estimates of the different of local fields and of tensor products of local fields, IUT IV Propositions 1.1 to 1.3 (Multiple Tensor Products and Differents; Differents and Logarithms; Estimates of Differents; pages 9 to 13; for finite extensions of Q_p and k_0 = Q_p, Proposition 1.2 (i), the inequality of Proposition 1.3 (i) with equality exactly in the tame case, and the base case of Proposition 1.3 (ii) are proved in IUT/PaperIV/LocalFields/; Proposition 1.1, Proposition 1.2 (ii) to (iv) and Proposition 1.3 over a general base are open). Classes 2, 3.
 
 Other Lean libraries:
 
@@ -592,8 +592,8 @@ In Mathlib:
 
 Missing:
 
-* Normalized Haar measure on a p-adic local field (ring of integers of volume 1) and the scaling rule vol(aS) = |a| vol(S). Classes 2.
-* Log-volumes of packets and processions and of tensor packets of log-shells, IUT III Proposition 3.9 and IUT IV Proposition 1.4 (titles only, not read). Classes 3.
+* Normalized Haar measure on a p-adic local field (ring of integers of volume 1) and the scaling rule vol(aS) = |a| vol(S). In this library: a normalized log-volume on finite-dimensional Q_p-vector spaces (IUT/Prerequisites/PadicVolume.lean) and on rings of integers of finite extensions of Q_p (IUT/PaperIV/LocalFields/VolumeBridge.lean). Classes 2.
+* Log-volumes of packets and processions and of tensor packets of log-shells, IUT III Proposition 3.9 and IUT IV Proposition 1.4 (titles only, not read). IUT IV Proposition 1.4 (i) is proved for one finite extension of Q_p and for tensor packets of two factors in IUT/PaperIV/LocalFields/VolumeBridge.lean; the packets and processions of IUT III are not treated. Classes 3.
 
 Other Lean libraries:
 
@@ -616,7 +616,7 @@ In Mathlib:
 
 Missing:
 
-* Decomposition of a tensor product of finite extensions of Q_p into a product of fields, integral structures, and differents (IUT IV Proposition 1.1; IUT III Propositions 3.1 and 3.2 on tensor packets; titles only, not read). Classes 2, 3.
+* Decomposition of a tensor product of finite extensions of Q_p into a product of fields, integral structures, and differents (IUT IV Proposition 1.1; IUT III Propositions 3.1 and 3.2 on tensor packets; titles only, not read). For two factors, the decomposition of K_1 (x) K_2 into finite extensions of Q_p is proved in IUT/PaperIV/LocalFields/VolumeBridge.lean; differents of tensor products are not treated. Classes 2, 3.
 
 Other Lean libraries:
 
@@ -724,7 +724,7 @@ The universe results use the existence axiom only as an explicit hypothesis `Exi
 
 ## Candidates not formalized, and why
 
-* Log-shell of Q_p: Mathlib v4.36.0 defines NormedSpace.log, but without convergence on the disc, the homomorphism property, or the extension to all units (open TODO items in Analysis/Normed/Algebra/Logarithm.lean). These are proved in this library for Q_p (IUT/Prerequisites/PadicLog.lean), where the log-shell of IUT III Definition 1.1 (page 24) is defined as the image of the units under the logarithm divided by p*, and its equality with Z_p is a theorem. Finite extensions of Q_p remain open.
+* Log-shell of Q_p: Mathlib v4.36.0 defines NormedSpace.log, but without convergence on the disc, the homomorphism property, or the extension to all units (open TODO items in Analysis/Normed/Algebra/Logarithm.lean). These are proved in this library for Q_p (IUT/Prerequisites/PadicLog.lean), where the log-shell of IUT III Definition 1.1 (page 24) is defined as the image of the units under the logarithm divided by p*, and its equality with Z_p is a theorem. For finite extensions of Q_p the log-shell is defined in a normed-field model and bounded on the ring of integers (IUT/PaperIV/LocalFields/Logarithm.lean, IUT/PaperIV/LocalFields/Bridge.lean); its compactness remains open.
 * Pull-back invariance deg(a|_K) = deg(a) of IUT IV Definition 1.9 (i): The paper defines the pull-back only "in the evident fashion"; choosing the pull-back so that the identity holds would make it nearly definitional. Deferred until the convention is fixed from [GenEll], section 1, which was not read.
 * Degree zero of principal arithmetic divisors: Not defined on the pages read (IUT IV pages 21 to 23); with the archimedean weight 1 of Definition 1.9 (i) the coefficient convention at complex places would have to be chosen. Only the product formula itself was formalized.
 * Existence of a Grothendieck universe in ZFSet.{u+1}: Mathlib has the embedding only at the PSet level (PSet.embed); building it for ZFSet and checking axioms (i) to (v) is a separate task.

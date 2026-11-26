@@ -34,9 +34,12 @@ What is proved:
   Proposition 1.4 (iii), `𝔡_I + a_I ≥ |I|` if `p > 2` and `𝔡_I + a_I ≥ 2|I|` if `p = 2`, with
   `𝔡_I = ∑ 𝔡_i` and `a_I = ∑ a_i` (`Proposition1_4.dI_add_aI_ge` with its hypothesis discharged).
 
-Not formalized here: the inclusions of Propositions 1.1 and 1.2 (tensor products of the `R_i`,
-their normalization, `p`-adic logarithms), the tame equality of Proposition 1.3 (i), Proposition
-1.3 (ii), and the log-volumes of Proposition 1.4.
+Not formalized in this file: the inclusions of Propositions 1.1 and 1.2 (tensor products of the
+`R_i`, their normalization, `p`-adic logarithms), the tame equality of Proposition 1.3 (i),
+Proposition 1.3 (ii), and the log-volumes of Proposition 1.4. Other files of this directory
+treat parts of them, each stating what it proves: `Logarithm.lean` and `Bridge.lean`
+(Proposition 1.2 (i)), `Tame.lean` (the tame equality for `k_0 = ℚ_p`) and `VolumeBridge.lean`
+(normalized log-volumes).
 -/
 
 open Ideal
