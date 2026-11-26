@@ -78,7 +78,9 @@ the quotient group and no result of [AbsTopIII] is used.
   is proved for the Haar measure of `L` restricted to `R^×` and `log_p(R^×)`, which is the model of
   `μ^log` used in `VolumeBridge.lean`.
 * Tensor packets: (ii) concerns one field `k_i`; the sums over `i ∈ I` used on page 14 for (iii)
-  are not formalized here.
+  are not formalized here. For two factors, (iv), the second inequality of (iii) and the first
+  inequality of (iii) when every `e_i ≤ p − 2` are proved in `TensorLogShell.lean`, without the
+  additivity over the factors.
 -/
 
 open MeasureTheory Measure IUT.Prerequisites.PadicVolume

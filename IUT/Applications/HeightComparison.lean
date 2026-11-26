@@ -61,17 +61,8 @@ primes and on condition `(*_{j-inv})` at the prime `2`.
 
 * Invariance of `heightNF` under field extension (`heightNF L (algebraMap K L y) = heightNF K y`
   for number fields `K ⊆ L`; [GenEll] page 4 asserts the corresponding invariance of the
-  normalized degree). Not attempted here; no missing Mathlib lemma was identified. Mathlib has
-  the ingredients: at finite places the local relation `|x|_w = |x|_v^{e f}`
-  (`NumberField.FinitePlace.equivHeightOneSpectrum_symm_apply_algebraMap`) and the fundamental
-  identity `Σ e f = rank` over `p.primesOver S` (`Ideal.sum_ramification_inertia_eq_finrank`);
-  at infinite places `NumberField.InfinitePlace.mult_mul_finrank` and
-  `NumberField.InfinitePlace.sum_inertiaDeg_eq_finrank`, which give
-  `Σ_{w | v} mult(w) = [L : K] mult(v)`. What is missing is the glue: regrouping the `finsum`
-  over the finite places of `L` by the prime of `𝓞_K` below, matching these fibers with
-  `p.primesOver (𝓞 L)` and the rank of `𝓞_L` over `𝓞_K` with `[L : K]`, and the completion
-  algebra structures required by `mult_mul_finrank`. Only the case `K = ℚ` is proved
-  (`IUT.VojtaNumberField.heightNF_algebraMap_rat`).
+  normalized degree) is not used here; it is proved in `IUT/Applications/HeightExtension.lean`
+  (`htExt_heightNF_algebraMap`).
 * The comparison of `(1/6) log(𝔮^∀)` and `(1/6) log(𝔮^{†2})` with `(1/6) ht_∞` (page 43). It needs
   the `q`-parameter of an elliptic curve with multiplicative reduction at a nonarchimedean prime
   (Tate's uniformization); Mathlib has no Tate curve and no `q`-parameter, so `log(𝔮^∀)` is not

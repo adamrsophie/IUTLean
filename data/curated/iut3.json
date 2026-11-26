@@ -2727,13 +2727,160 @@
     "statement_status": "EXTRACTED",
     "proof_status": "EXTRACTED",
     "obligations": [
-      "Verify the (iv) identity as a product-measure computation on M_{E*V} ≅ M_W (elementary once the spaces are fixed).",
-      "Fix the normalization factor of (iii) that relates (1/N_E)·log μ_E to the weighted sums of (ii); the page says only 'a suitable positive real number'."
+      "Verify the (iv) identity as a product-measure computation on M_{E*V} ≅ M_W (elementary once the spaces are fixed). Done on direct product regions, with the measure defined on M_W directly (IUT3.Rem3_1_1.frag.wpkt_e_weighted); M_{E*V} and its homeomorphism with M_W are not formalized.",
+      "Fix the normalization factor of (iii) that relates (1/N_E)·log μ_E to the weighted sums of (ii); the page says only 'a suitable positive real number'.",
+      "The normalized weight of (ii) is defined as printed (IUT3.Rem3_1_1.frag.wpkt_weight), with sum_t w_t dim_t = 1 (IUT3.Rem3_1_1.frag.wpkt_weight_dim_sum, a model test); the warning of (iii) is made precise in a model (IUT3.Rem3_1_1.frag.wpkt_warning_model, a model test)."
     ],
     "ambiguities": [
       "The value set of μ_E is R_{≥0} ∪ {+∞}; finiteness for the regions used later is not stated at this point.",
       "Pages 95 to 96: the weighted sums of log-volumes of (ii) are in general not a positive real multiple of the logarithm of a volume or measure in the usual sense; only for direct product (pre-)regions is their computation straightforward, and for these a suitable positive normalization factor times the logarithm of the E-weighted measure μ_E (a measure on M_{E*V} ≅ M_W, not on the original product of the direct summands) gives them."
+    ],
+    "fragments": [
+      "IUT3.Rem3_1_1.frag.wpkt_e_weighted",
+      "IUT3.Rem3_1_1.frag.wpkt_warning_model",
+      "IUT3.Rem3_1_1.frag.wpkt_weight",
+      "IUT3.Rem3_1_1.frag.wpkt_weight_dim_sum"
     ]
+  },
+  "IUT3.Rem3_1_1.frag.wpkt_e_weighted": {
+    "kind": "fragment",
+    "parent": "IUT3.Rem3_1_1",
+    "source": {
+      "paper": "Inter-universal Teichmuller Theory III",
+      "pdf_pages": "pages 96 and 97",
+      "pages_read": "rendered and checked: pages 93 to 97, 115 to 117, 127"
+    },
+    "content": "For a finite V with DecidableEq, nonempty finite sets E_v and sigma-finite measure spaces (M_v, mu_v): the E-weighted measure mu_E(S) is the product measure on M_W = prod_{w in W} M_{pi(w)}, W = Sigma_v prod_{v' != v} E_{v'}, of {m | for all e, (m_{(e_{!=v}, v)})_v in S}; for S = prod_v S_v with 0 < mu_v(S_v) < infinity, (1/N_E) log mu_E(S) = sum_v (1/N_v) log mu_v(S_v), N_v = |E_v|, N_E = prod_v N_v.",
+    "explicit_hypotheses": [
+      "V finite",
+      "E_v nonempty finite",
+      "mu_v sigma-finite",
+      "0 < mu_v(S_v) < infinity"
+    ],
+    "implicit_hypotheses": [],
+    "conclusion": "(1/prod_v N_v) log mu_E(prod S_v) = sum_v (1/N_v) log mu_v(S_v).",
+    "definitions_required": [],
+    "results_used": [],
+    "external_dependencies": [],
+    "lean_declaration": "IUT.PaperIII.Corollary312.wPkt_EMeasure_log",
+    "lean_module": "IUT.PaperIII.Corollary312.WeightedPacket",
+    "covers": "Page 97, the last display of Remark 3.1.1 (iv), and the definitions of E, E_{!=v}, W, S_E on pages 96 and 97.",
+    "not_covered": "M_{E*V} itself and its homeomorphism with M_W are not formalized: the measure is defined on M_W directly; the page's topological hypotheses (locally compact, countable basis, complete Borel measure) are replaced by sigma-finiteness; S Borel is not required. V nonempty is not needed.",
+    "statement_status": "STATEMENT_FORMALIZED",
+    "proof_status": "KERNEL_VERIFIED",
+    "obligations": [],
+    "ambiguities": [],
+    "lemmas": [
+      "IUT.PaperIII.Corollary312.wPktEMeasure",
+      "IUT.PaperIII.Corollary312.wPktENe",
+      "IUT.PaperIII.Corollary312.wPktWIdx",
+      "IUT.PaperIII.Corollary312.wPkt_ESet_pi"
+    ],
+    "cor3_12_dependency": "independent"
+  },
+  "IUT3.Rem3_1_1.frag.wpkt_warning_model": {
+    "kind": "fragment",
+    "parent": "IUT3.Rem3_1_1",
+    "source": {
+      "paper": "Inter-universal Teichmuller Theory III",
+      "pdf_pages": "page 95",
+      "pages_read": "rendered and checked: pages 93 to 97, 115 to 117, 127"
+    },
+    "content": "Model: on R x R with Lebesgue measure on each factor and weights a, b > 0, there are a measure nu on R x R and c > 0 with c log nu(S1 x S2) = a log vol(S1) + b log vol(S2) for all compact S1, S2 of positive measure iff a = b; any such nu and real c force a = c = b.",
+    "explicit_hypotheses": [
+      "a > 0, b > 0"
+    ],
+    "implicit_hypotheses": [],
+    "conclusion": "(exists nu c, 0 < c and the identity on direct product regions) iff a = b.",
+    "definitions_required": [],
+    "results_used": [],
+    "external_dependencies": [],
+    "lean_declaration": "IUT.PaperIII.Corollary312.wPkt_warning_iff",
+    "lean_module": "IUT.PaperIII.Corollary312.WeightedPacket",
+    "covers": "Page 95, Remark 3.1.1 (iii): weighted sums of log-volumes do not in general arise as a positive multiple of the logarithm of a measure.",
+    "not_covered": "A model on R x R, not the papers' summands; it concerns measures on the product itself, while the E-weighted measure of (iv) lives on another space and does give the weighted sum.",
+    "statement_status": "STATEMENT_FORMALIZED",
+    "proof_status": "KERNEL_VERIFIED",
+    "obligations": [],
+    "ambiguities": [],
+    "lemmas": [
+      "IUT.PaperIII.Corollary312.wPkt_warning_forces_equal",
+      "IUT.PaperIII.Corollary312.wPkt_equal_weights_measure",
+      "IUT.PaperIII.Corollary312.wPkt_split_forces",
+      "IUT.PaperIII.Corollary312.wPkt_model_facts"
+    ],
+    "cor3_12_dependency": "independent",
+    "scope": "model_test"
+  },
+  "IUT3.Rem3_1_1.frag.wpkt_weight": {
+    "kind": "fragment",
+    "parent": "IUT3.Rem3_1_1",
+    "source": {
+      "paper": "Inter-universal Teichmuller Theory III",
+      "pdf_pages": "page 94",
+      "pages_read": "rendered and checked: pages 93 to 97, 115 to 117, 127"
+    },
+    "content": "Definition of the normalized weight of a tuple t : A -> V of places over a rational prime: w_t = 1 / ((prod_alpha e(t alpha)) * sum_{w : A -> V} prod_alpha f(w alpha)), with e(v) = [K_v : (F_mod)_v], f(v) = [(F_mod)_v : Q_p] given as natural numbers; the dimension dim_t = prod_alpha e(t alpha) f(t alpha); and the identity sum_{w : A -> V} prod_alpha f(w alpha) = (sum_v f(v))^|A|.",
+    "explicit_hypotheses": [
+      "V, A finite types",
+      "e, f : V -> N"
+    ],
+    "implicit_hypotheses": [],
+    "conclusion": "A definition; the denominator equals (sum_v f v)^|A|.",
+    "definitions_required": [],
+    "results_used": [],
+    "external_dependencies": [],
+    "lean_declaration": "IUT.PaperIII.Corollary312.wPktWeight",
+    "lean_module": "IUT.PaperIII.Corollary312.WeightedPacket",
+    "covers": "Page 94, the third display of Remark 3.1.1 (ii) (the normalized weight for direct sums over all collections {v_alpha}), exactly as printed; the second display (the unnormalized weight 1/prod_alpha [K_{v_alpha} : (F_mod)_{v_alpha}]) is the factor before the sum: the printed numerator is 1, and w_t = (1/prod_alpha e(t alpha)) / sum_w prod_alpha f(w alpha).",
+    "not_covered": "The identification of the places of V over v_Q with those of V_mod is not modeled (one index set V). Archimedean places are covered only as arithmetic.",
+    "statement_status": "STATEMENT_FORMALIZED",
+    "proof_status": "NOT_EXTRACTED",
+    "obligations": [],
+    "ambiguities": [],
+    "lemmas": [
+      "IUT.PaperIII.Corollary312.wPktDenom",
+      "IUT.PaperIII.Corollary312.wPktDim",
+      "IUT.PaperIII.Corollary312.wPktDenom_eq_pow",
+      "IUT.PaperIII.Corollary312.wPktDenom_pos"
+    ],
+    "cor3_12_dependency": "independent"
+  },
+  "IUT3.Rem3_1_1.frag.wpkt_weight_dim_sum": {
+    "kind": "fragment",
+    "parent": "IUT3.Rem3_1_1",
+    "source": {
+      "paper": "Inter-universal Teichmuller Theory III",
+      "pdf_pages": "pages 94 and 95",
+      "pages_read": "rendered and checked: pages 93 to 97, 115 to 117, 127"
+    },
+    "content": "For positive e, f and nonempty V: sum_t w_t * dim_t = 1. The weights themselves sum to (sum_v 1/e(v))^|A| / (sum_v f(v))^|A|, which is 1/2 for one place with e = 2, f = 1.",
+    "explicit_hypotheses": [
+      "V nonempty finite",
+      "A finite",
+      "e v > 0, f v > 0 for all v"
+    ],
+    "implicit_hypotheses": [],
+    "conclusion": "sum_t wPktWeight e f t * wPktDim e f t = 1.",
+    "definitions_required": [],
+    "results_used": [],
+    "external_dependencies": [],
+    "lean_declaration": "IUT.PaperIII.Corollary312.wPkt_weight_dim_sum",
+    "lean_module": "IUT.PaperIII.Corollary312.WeightedPacket",
+    "covers": "Pages 94 and 95: the weights are normalized so that multiplication by p_{v_Q} changes the weighted sum of log-volumes by log(p_{v_Q}), read for unnormalized summand log-volumes (scaling by p subtracts dim_t log p).",
+    "not_covered": "That the summand log-volumes are the unnormalized ones is an interpretation (see the double-division record). The identity gives the printed normalization only under the reading that the weights of page 94 multiply the unnormalized log-volume of each summand (the logarithm of a Haar measure with value 1 on the integral elements), not its log-volume divided by the dimension of the summand. Counted as a model test: the identity sum_t w_t dim_t = 1 is not printed; it is the algebraic content of the sentence of pages 94 and 95 on the effect of multiplication by p_{v_Q}, under the reading that the weights multiply unnormalized summand log-volumes (an inference, as for GENELL.Sec1.ArithmeticDivisor.frag.degF_principal).",
+    "statement_status": "STATEMENT_FORMALIZED",
+    "proof_status": "KERNEL_VERIFIED",
+    "obligations": [],
+    "ambiguities": [
+      "Pages 94, 95 and 115 do not decide whether the weights multiply the unnormalized log-volume of a summand or its log-volume divided by its dimension. Under the unnormalized reading the printed weights give the printed normalization for every choice of degrees; under the other reading the shift is -n (sum_t w_t) log p (IUT3.Prop3_9.i.frag.wpkt_double_division), which differs from -n log p in general, though not when sum_t w_t = 1. The unnormalized reading agrees with page 97, where the weights 1/N_v multiply the logarithm of a measure, and with [AbsTopIII], Proposition 5.7 (i), cited on page 115, where the log-volume of the n-th power of the maximal ideal is -f n log p; these support the reading without settling it. IUT IV, Proposition 1.4 (i), page 13, divides by the degree, in a setting without these weights."
+    ],
+    "lemmas": [
+      "IUT.PaperIII.Corollary312.wPkt_weight_sum",
+      "IUT.PaperIII.Corollary312.wPkt_weight_sum_example"
+    ],
+    "cor3_12_dependency": "independent",
+    "scope": "model_test"
   },
   "IUT3.Rem3_1_2": {
     "source": {
@@ -3892,11 +4039,11 @@
     "statement_status": "EXTRACTED",
     "proof_status": "EXTRACTED",
     "obligations": [
-      "Define the local log-volume on each direct summand field K_v as the logarithm of Haar measure normalized by μ(O_{K_v}) = 1 (p_{v_Q}-adic; radial at archimedean v_Q), and form the packet log-volume with the normalized weights of Remark 3.1.1 (ii), page 94, namely 1/([K_v : (F_mod)_v]·Σ_{w | v_Q} [(F_mod)_w : Q_{v_Q}]). These weights already contain the division by the local degree: with one place over v_Q, (F_mod)_v = Q_p and K_v quadratic, the plain Haar log-volume of p·O_{K_v} is −2·log(p) and the weight is 1/2, giving −log(p) as page 115 requires. Equivalently, one may divide each local Haar log-volume by its degree (as IUT IV, Proposition 1.4 (i), page 13, does) and then use weights without that factor; doing both divides twice and gives −(1/2)·log(p) in the example. A formalization must use exactly one of the two conventions and check that the total shift under multiplication by p_v is −log(p_v).",
-      "Define the packet log-volume as the weighted sum over direct summands with the weights of Rem 3.1.1 (ii) on direct product regions, and extend it to other elements of M(−) through the E-weighted measure of Rem 3.1.1 (iv). Do not define it as the logarithm of a single normalized Haar measure on the product: Rem 3.1.1 (iii), page 95, says such weighted sums do not in general arise as a positive multiple of the log of an ordinary measure; on direct product regions page 96 identifies them with a normalized log of μ_E on M_{E*V}, not of a measure on the original product.",
-      "Check the scaling rule against the weights: multiplication by p_v shifts each summand log-volume, and the normalized weights make the total shift −log(p_v).",
-      "Define the procession-normalized log-volume as the average over j ∈ F*_l (stated on pages 173 and 181), factor 1/l*; Prop 3.4 (ii) (page 102) and Rem 3.9.3 (page 120) corroborate the labels j ∈ {1, ..., l*}. Fix how the j = 0 packet of the procession enters.",
-      "On one nonarchimedean summand the packet-normalization law (multiplication by p adds -log p; the normalizing set has log-volume 0) is proved for the normalized log-volume of IUT.Prerequisites.PadicVolume (IUT3.Prop3_9.i.frag.packet_normalization); the direct sums, the weights of Remark 3.1.1 and the archimedean case are not.",
+      "Define the local log-volume on each direct summand field K_v as the logarithm of Haar measure normalized by μ(O_{K_v}) = 1 (p_{v_Q}-adic; radial at archimedean v_Q), and form the packet log-volume with the normalized weights of Remark 3.1.1 (ii), page 94, namely 1/([K_v : (F_mod)_v]·Σ_{w | v_Q} [(F_mod)_w : Q_{v_Q}]). These weights already contain the division by the local degree: with one place over v_Q, (F_mod)_v = Q_p and K_v quadratic, the plain Haar log-volume of p·O_{K_v} is −2·log(p) and the weight is 1/2, giving −log(p) as page 115 requires. Equivalently, one may divide each local Haar log-volume by its degree (as IUT IV, Proposition 1.4 (i), page 13, does) and then use weights without that factor; doing both divides twice and gives −(1/2)·log(p) in the example. A formalization must use exactly one of the two conventions and check that the total shift under multiplication by p_v is −log(p_v). Done for tensor packets of finite extensions of Q_p on direct product regions with the first convention, weights applied to unnormalized summand log-volumes (IUT3.Prop3_9.i.frag.wpkt_logvol_def, IUT3.Prop3_9.i.frag.wpkt_logvol_tests); the second convention with the same weights gives the double division (IUT3.Prop3_9.i.frag.wpkt_double_division, a model test). Which convention the pages intend is a reading, recorded in the ambiguities of those fragments.",
+      "Define the packet log-volume as the weighted sum over direct summands with the weights of Rem 3.1.1 (ii) on direct product regions, and extend it to other elements of M(−) through the E-weighted measure of Rem 3.1.1 (iv). Do not define it as the logarithm of a single normalized Haar measure on the product: Rem 3.1.1 (iii), page 95, says such weighted sums do not in general arise as a positive multiple of the log of an ordinary measure; on direct product regions page 96 identifies them with a normalized log of μ_E on M_{E*V}, not of a measure on the original product. The weighted sum on direct product regions is defined (IUT3.Prop3_9.i.frag.wpkt_logvol_def) and the E-weighted measure with the display of (iv) is formalized (IUT3.Rem3_1_1.frag.wpkt_e_weighted); the extension to other regions is not.",
+      "Check the scaling rule against the weights: multiplication by p_v shifts each summand log-volume, and the normalized weights make the total shift −log(p_v). Done on direct product regions (IUT3.Prop3_9.i.frag.wpkt_logvol_tests).",
+      "Define the procession-normalized log-volume as the average over j ∈ F*_l (stated on pages 173 and 181), factor 1/l*; Prop 3.4 (ii) (page 102) and Rem 3.9.3 (page 120) corroborate the labels j ∈ {1, ..., l*}. Fix how the j = 0 packet of the procession enters. The average over a finite nonempty set of capsules with given label sets is defined and satisfies both normalizations (IUT3.Prop3_9.i.frag.wpkt_procession, a model test); the capsule sizes and the treatment of j = 0 are not fixed.",
+      "On one nonarchimedean summand the packet-normalization law (multiplication by p adds -log p; the normalizing set has log-volume 0) is proved for the normalized log-volume of IUT.Prerequisites.PadicVolume (IUT3.Prop3_9.i.frag.packet_normalization); the direct sums and the weights of Remark 3.1.1 are treated on direct product regions of tensor packets of finite extensions of Q_p (IUT3.Prop3_9.i.frag.wpkt_logvol_tests); the archimedean case is not.",
       "On an abstract finite product of finite extensions of Q_p the two normalizing properties hold for the unweighted normalized Haar log-volume (IUT3.Prop3_9.i.frag.pk_local_packet_normalization, a model test), which weights a summand by its degree over Q_p and is not the weighted log-volume of Remark 3.1.1."
     ],
     "ambiguities": [
@@ -3906,7 +4053,12 @@
     "fragments": [
       "IUT3.Prop3_9.i.frag.packet_normalization",
       "IUT3.Prop3_9.i.frag.region_interface",
-      "IUT3.Prop3_9.i.frag.pk_local_packet_normalization"
+      "IUT3.Prop3_9.i.frag.pk_local_packet_normalization",
+      "IUT3.Prop3_9.i.frag.wpkt_double_division",
+      "IUT3.Prop3_9.i.frag.wpkt_haar_comparison",
+      "IUT3.Prop3_9.i.frag.wpkt_logvol_def",
+      "IUT3.Prop3_9.i.frag.wpkt_logvol_tests",
+      "IUT3.Prop3_9.i.frag.wpkt_procession"
     ]
   },
   "IUT3.Prop3_9.i.frag.packet_normalization": {
@@ -4004,6 +4156,200 @@
     "scope": "model_test",
     "lemmas": []
   },
+  "IUT3.Prop3_9.i.frag.wpkt_double_division": {
+    "kind": "fragment",
+    "parent": "IUT3.Prop3_9.i",
+    "source": {
+      "paper": "Inter-universal Teichmuller Theory III",
+      "pdf_pages": "pages 94 and 115",
+      "pages_read": "rendered and checked: pages 93 to 97, 115 to 117, 127"
+    },
+    "content": "If the page's weights are applied to log-volumes already divided by the dimension (padicPacketMuLog), multiplication by p^n shifts the weighted sum by -n (sum_t w_t) log p, and sum_t w_t is not 1 in general (1/2 in the example).",
+    "explicit_hypotheses": [
+      "the setting of wpkt_logvol_def",
+      "each X_t of positive finite Haar measure"
+    ],
+    "implicit_hypotheses": [],
+    "conclusion": "sum_t w_t mu^log_t(p^n X_t) = sum_t w_t mu^log_t(X_t) - n log p * sum_t w_t.",
+    "definitions_required": [],
+    "results_used": [],
+    "external_dependencies": [],
+    "lean_declaration": "IUT.PaperIII.Corollary312.wPkt_doubleDivision_zpow_smul",
+    "lean_module": "IUT.PaperIII.Corollary312.WeightedPacket",
+    "covers": "A test of the normalization chosen here against the normalization sentence of page 115.",
+    "not_covered": "Not a statement of the papers; a comparison of two normalizations chosen here.",
+    "statement_status": "STATEMENT_FORMALIZED",
+    "proof_status": "KERNEL_VERIFIED",
+    "obligations": [],
+    "ambiguities": [],
+    "lemmas": [
+      "IUT.PaperIII.Corollary312.wPkt_weight_sum",
+      "IUT.PaperIII.Corollary312.wPkt_weight_sum_example"
+    ],
+    "cor3_12_dependency": "independent",
+    "scope": "model_test"
+  },
+  "IUT3.Prop3_9.i.frag.wpkt_haar_comparison": {
+    "kind": "fragment",
+    "parent": "IUT3.Prop3_9.i",
+    "source": {
+      "paper": "Inter-universal Teichmuller Theory III",
+      "pdf_pages": "pages 94 and 115",
+      "pages_read": "rendered and checked: pages 93 to 97, 115 to 117, 127"
+    },
+    "content": "For a Q_p-algebra isomorphism G from a finite Q_p-algebra W onto prod_t of the summand packets, the dimension-normalized Haar log-volume of W on G^{-1}(prod_t X_t) is sum_t (1/dim W) L_t(X_t) with dim W = (sum_v e f)^|A|. The page's weight is w_t = (1/dim W) prod_alpha (ebar / e(t alpha)), ebar = sum e f / sum f; the weights coincide for all t (with A and V nonempty and positive degrees) iff e is constant, and then the two log-volumes agree on direct product regions; in general they differ by sum_t (w_t - 1/dim W) L_t(X_t); on regions p^{k_t} (R_E)^~_t the coefficients of -log p are sum_t w_t k_t dim_t and sum_t k_t dim_t / dim W, numerically 1/2 versus 1/3 for e = (1,2), f = (1,1), k = (1,0).",
+    "explicit_hypotheses": [
+      "the setting of wpkt_logvol_def",
+      "W a finite commutative Q_p-algebra with Haar measure on its coordinates",
+      "G : W isomorphic as Q_p-algebra to prod_t summand_t (an input)",
+      "each X_t of positive finite Haar measure"
+    ],
+    "implicit_hypotheses": [],
+    "conclusion": "wPkt_haar_region, wPkt_weight_eq_haar_mul, wPkt_weight_eq_haar_iff, wPkt_logVol_sub_haar, wPkt_logVol_eq_haar_of_const, wPkt_scaled_integral, wPkt_coeff_example.",
+    "definitions_required": [],
+    "results_used": [],
+    "external_dependencies": [],
+    "lean_declaration": "IUT.PaperIII.Corollary312.wPkt_weight_eq_haar_iff",
+    "lean_module": "IUT.PaperIII.Corollary312.WeightedPacket",
+    "covers": "Comparison of the weights of page 94 with the dimension normalization of the whole packet (Packets.lean); both pass the tests of page 115.",
+    "not_covered": "The decomposition G (Proposition 3.1 (i)) is an input, not constructed. Not a statement of the papers. The comparison is made in the reading of IUT.PaperIII.Corollary312.WeightedPacket, where the weights of page 94 multiply unnormalized summand log-volumes (see the ambiguities of IUT3.Prop3_9.i.frag.wpkt_logvol_def); the pages do not decide that reading.",
+    "statement_status": "STATEMENT_FORMALIZED",
+    "proof_status": "KERNEL_VERIFIED",
+    "obligations": [],
+    "ambiguities": [],
+    "lemmas": [
+      "IUT.PaperIII.Corollary312.wPkt_muLog_pi_region",
+      "IUT.PaperIII.Corollary312.wPkt_haar_region",
+      "IUT.PaperIII.Corollary312.wPktHaarCoeff",
+      "IUT.PaperIII.Corollary312.wPktMeanDeg",
+      "IUT.PaperIII.Corollary312.wPkt_dim_sum",
+      "IUT.PaperIII.Corollary312.wPkt_weight_eq_haar_mul",
+      "IUT.PaperIII.Corollary312.wPkt_logVol_sub_haar",
+      "IUT.PaperIII.Corollary312.wPkt_logVol_eq_haar_of_const",
+      "IUT.PaperIII.Corollary312.wPkt_scaled_integral",
+      "IUT.PaperIII.Corollary312.wPkt_coeff_example"
+    ],
+    "cor3_12_dependency": "independent",
+    "scope": "model_test"
+  },
+  "IUT3.Prop3_9.i.frag.wpkt_logvol_def": {
+    "kind": "fragment",
+    "parent": "IUT3.Prop3_9.i",
+    "source": {
+      "paper": "Inter-universal Teichmuller Theory III",
+      "pdf_pages": "pages 94, 95 and 115",
+      "pages_read": "rendered and checked: pages 93 to 97, 115 to 117, 127"
+    },
+    "content": "Definitions on real objects: fields F v and K v finite over Q_p with K v finite over F v; e = [K v : F v] (wPktE), f = [F v : Q_p] (wPktF), [K v : Q_p] = e f (tower law); the summand of t is the packet PiTensorProduct over Q_p of the K(t alpha), of dimension dim_t; L_t = dim_t * padicPacketMuLog (unnormalized Haar log-volume, zero on the integral elements); wPktLogVol X = sum_t w_t L_t(X_t) on a direct product region.",
+    "explicit_hypotheses": [
+      "p prime",
+      "V, A finite types",
+      "F v, K v fields, finite over Q_p, K v finite over F v with compatible scalar towers",
+      "additive Haar measures on the coordinate spaces of the summands"
+    ],
+    "implicit_hypotheses": [],
+    "conclusion": "Definitions; finrank of the summand is wPktDim e f t.",
+    "definitions_required": [],
+    "results_used": [],
+    "external_dependencies": [],
+    "lean_declaration": "IUT.PaperIII.Corollary312.wPktLogVol",
+    "lean_module": "IUT.PaperIII.Corollary312.WeightedPacket",
+    "covers": "Page 115, Proposition 3.9 (i): the log-volume determined by the p-adic log-volume on each summand together with the normalized weights of Remark 3.1.1 (ii), (iii), on direct product regions. Checked only under the reading that the weights multiply unnormalized summand log-volumes (see ambiguities).",
+    "not_covered": "The summands are packets of finite extensions, not the inductive limits of Proposition 3.1; the decomposition of the whole packet into the summands is not constructed; only direct product regions; archimedean places not treated. Checked only under the reading that the weights of page 94 multiply the unnormalized log-volume of each summand (the logarithm of a Haar measure with value 1 on the integral elements), not its log-volume divided by the dimension of the summand.",
+    "statement_status": "STATEMENT_FORMALIZED",
+    "proof_status": "NOT_EXTRACTED",
+    "obligations": [],
+    "ambiguities": [
+      "The log-volume on a summand that the weights multiply is read as the unnormalized Haar log-volume; the other reading fails the normalization of page 115 (wPkt_doubleDivision_zpow_smul).",
+      "Pages 94, 95 and 115 do not decide whether the weights multiply the unnormalized log-volume of a summand or its log-volume divided by its dimension. Under the unnormalized reading the printed weights give the printed normalization for every choice of degrees; under the other reading the shift is -n (sum_t w_t) log p (IUT3.Prop3_9.i.frag.wpkt_double_division), which differs from -n log p in general, though not when sum_t w_t = 1. The unnormalized reading agrees with page 97, where the weights 1/N_v multiply the logarithm of a measure, and with [AbsTopIII], Proposition 5.7 (i), cited on page 115, where the log-volume of the n-th power of the maximal ideal is -f n log p; these support the reading without settling it. IUT IV, Proposition 1.4 (i), page 13, divides by the degree, in a setting without these weights."
+    ],
+    "lemmas": [
+      "IUT.PaperIII.Corollary312.wPktSummand",
+      "IUT.PaperIII.Corollary312.wPktSummandLogVol",
+      "IUT.PaperIII.Corollary312.wPktE",
+      "IUT.PaperIII.Corollary312.wPktF",
+      "IUT.PaperIII.Corollary312.wPkt_finrank_tower",
+      "IUT.PaperIII.Corollary312.wPkt_summand_finrank",
+      "IUT.PaperIII.Corollary312.wPktE_pos",
+      "IUT.PaperIII.Corollary312.wPktF_pos"
+    ],
+    "cor3_12_dependency": "independent"
+  },
+  "IUT3.Prop3_9.i.frag.wpkt_logvol_tests": {
+    "kind": "fragment",
+    "parent": "IUT3.Prop3_9.i",
+    "source": {
+      "paper": "Inter-universal Teichmuller Theory III",
+      "pdf_pages": "page 115",
+      "pages_read": "rendered and checked: pages 93 to 97, 115 to 117, 127"
+    },
+    "content": "The integral structure prod_t (R_E)^~_t has weighted log-volume 0; for a direct product region of positive finite measures, multiplying every component by p^n subtracts exactly n log p; in particular prod_t p^n (R_E)^~_t has log-volume -n log p.",
+    "explicit_hypotheses": [
+      "the setting of wpkt_logvol_def",
+      "V nonempty (for the scaling law)",
+      "each X_t of positive finite Haar measure"
+    ],
+    "implicit_hypotheses": [],
+    "conclusion": "wPktLogVol (R_E)^~ = 0; wPktLogVol (p^n X) = wPktLogVol X - n log p.",
+    "definitions_required": [],
+    "results_used": [],
+    "external_dependencies": [],
+    "lean_declaration": "IUT.PaperIII.Corollary312.wPkt_logVol_zpow_smul",
+    "lean_module": "IUT.PaperIII.Corollary312.WeightedPacket",
+    "covers": "Page 115: integral structures of log-volume zero and multiplication by p_v adding -log(p_v) (the packet-normalization), for the weighted log-volume of tensor packets over p. Checked only under the reading that the weights multiply unnormalized summand log-volumes (see ambiguities).",
+    "not_covered": "Archimedean case (page 116); regions that are not direct product regions; permutation invariance in A. Checked only under the reading that the weights of page 94 multiply the unnormalized log-volume of each summand (the logarithm of a Haar measure with value 1 on the integral elements), not its log-volume divided by the dimension of the summand.",
+    "statement_status": "STATEMENT_FORMALIZED",
+    "proof_status": "KERNEL_VERIFIED",
+    "obligations": [],
+    "ambiguities": [
+      "Pages 94, 95 and 115 do not decide whether the weights multiply the unnormalized log-volume of a summand or its log-volume divided by its dimension. Under the unnormalized reading the printed weights give the printed normalization for every choice of degrees; under the other reading the shift is -n (sum_t w_t) log p (IUT3.Prop3_9.i.frag.wpkt_double_division), which differs from -n log p in general, though not when sum_t w_t = 1. The unnormalized reading agrees with page 97, where the weights 1/N_v multiply the logarithm of a measure, and with [AbsTopIII], Proposition 5.7 (i), cited on page 115, where the log-volume of the n-th power of the maximal ideal is -f n log p; these support the reading without settling it. IUT IV, Proposition 1.4 (i), page 13, divides by the degree, in a setting without these weights."
+    ],
+    "lemmas": [
+      "IUT.PaperIII.Corollary312.wPkt_logVol_integral",
+      "IUT.PaperIII.Corollary312.wPkt_logVol_integral_zpow",
+      "IUT.PaperIII.Corollary312.wPkt_summandLogVol_zpow_smul",
+      "IUT.PaperIII.Corollary312.wPkt_summand_integral"
+    ],
+    "cor3_12_dependency": "independent"
+  },
+  "IUT3.Prop3_9.i.frag.wpkt_procession": {
+    "kind": "fragment",
+    "parent": "IUT3.Prop3_9.i",
+    "source": {
+      "paper": "Inter-universal Teichmuller Theory III",
+      "pdf_pages": "page 116",
+      "pages_read": "rendered and checked: pages 93 to 97, 115 to 117, 127"
+    },
+    "content": "Procession-normalization: wPktProcAvg v = (1/|J|) sum_j v_j and wPktProcLogVol = the average over capsules j (label sets L j given) of the packet-normalized log-volumes; it is 0 on the integral structures and decreases by exactly n log p when every component is multiplied by p^n (J, V nonempty).",
+    "explicit_hypotheses": [
+      "J a finite type (nonempty for the scaling law)",
+      "label sets L j finite",
+      "the setting of wpkt_logvol_def for each capsule",
+      "each region of positive finite Haar measure"
+    ],
+    "implicit_hypotheses": [],
+    "conclusion": "wPktProcLogVol (p^n X) = wPktProcLogVol X - n log p; wPktProcLogVol (R_E)^~ = 0.",
+    "definitions_required": [],
+    "results_used": [],
+    "external_dependencies": [],
+    "lean_declaration": "IUT.PaperIII.Corollary312.wPkt_procLogVol_zpow_smul",
+    "lean_module": "IUT.PaperIII.Corollary312.WeightedPacket",
+    "covers": "Page 116, Proposition 3.9 (i): the procession-normalization, the average over the various capsules, with the two normalizing tests.",
+    "not_covered": "The capsule sizes of a procession (Proposition 3.4, not read) are inputs; archimedean case not treated. Counted as a model test: page 116 prints the average over the capsules; that the average satisfies the two normalizations is an inference made here, and the capsules with their label sets are inputs.",
+    "statement_status": "STATEMENT_FORMALIZED",
+    "proof_status": "KERNEL_VERIFIED",
+    "obligations": [],
+    "ambiguities": [],
+    "lemmas": [
+      "IUT.PaperIII.Corollary312.wPktProcAvg",
+      "IUT.PaperIII.Corollary312.wPktProcLogVol",
+      "IUT.PaperIII.Corollary312.wPktProcAvg_const",
+      "IUT.PaperIII.Corollary312.wPktProcAvg_sub",
+      "IUT.PaperIII.Corollary312.wPkt_procLogVol_integral"
+    ],
+    "cor3_12_dependency": "independent",
+    "scope": "model_test"
+  },
   "IUT3.Prop3_9.ii": {
     "source": {
       "paper": "Inter-universal Teichmuller Theory III",
@@ -4028,9 +4374,45 @@
     "proof_status": "EXTRACTED",
     "obligations": [
       "Prove invariance of the log-volume under every isomorphism in the poly-isomorphism (Ism at nonarchimedean v, independent ±1 at archimedean v).",
-      "Make the 'adjusting appropriately' of the discrepancy explicit (Remark 3.9.1 gives a factor of 2 at archimedean places)."
+      "Make the 'adjusting appropriately' of the discrepancy explicit (Remark 3.9.1 gives a factor of 2 at archimedean places).",
+      "Only the averaging step, on free real inputs, is identified with the abstract layer (IUT3.Prop3_9.ii.frag.wpkt_proc_average_layer, a model test)."
     ],
-    "ambiguities": []
+    "ambiguities": [],
+    "fragments": [
+      "IUT3.Prop3_9.ii.frag.wpkt_proc_average_layer"
+    ]
+  },
+  "IUT3.Prop3_9.ii.frag.wpkt_proc_average_layer": {
+    "kind": "fragment",
+    "parent": "IUT3.Prop3_9.ii",
+    "source": {
+      "paper": "Inter-universal Teichmuller Theory III",
+      "pdf_pages": "page 116",
+      "pages_read": "rendered and checked: pages 93 to 97, 115 to 117, 127"
+    },
+    "content": "On real values, equalWeightAverage of Comparison.lean is wPktProcAvg, and labelAverage of LabelAverage.lean over F_l^* (odd l) is wPktProcAvg: the abstract layer's average is the procession average of this file.",
+    "explicit_hypotheses": [
+      "J a finite type",
+      "l odd, for the label version"
+    ],
+    "implicit_hypotheses": [],
+    "conclusion": "((wPktProcAvg v : R) : EReal) = equalWeightAverage (coe o v) = labelAverage l (coe o v).",
+    "definitions_required": [],
+    "results_used": [],
+    "external_dependencies": [],
+    "lean_declaration": "IUT.PaperIII.Corollary312.wPktProcAvg_eq_labelAverage",
+    "lean_module": "IUT.PaperIII.Corollary312.WeightedPacket",
+    "covers": "Page 116, Proposition 3.9 (ii): taking the average of the packet-normalized log-volumes gives the procession-normalized ones; here only the averaging step, identified with the abstract layer.",
+    "not_covered": "Mono-analytic log-shells and the compatibility with (i) through poly-isomorphisms are not formalized; the values averaged are free real inputs in this record. Counted as a model test: an identity between two averages defined in this project, on free real inputs; page 116 prints the averaging, not the identification of the labels with F_l^*.",
+    "statement_status": "STATEMENT_FORMALIZED",
+    "proof_status": "KERNEL_VERIFIED",
+    "obligations": [],
+    "ambiguities": [],
+    "lemmas": [
+      "IUT.PaperIII.Corollary312.wPktProcAvg_eq_equalWeightAverage"
+    ],
+    "cor3_12_dependency": "independent",
+    "scope": "model_test"
   },
   "IUT3.Prop3_9.iii": {
     "source": {
@@ -4565,7 +4947,8 @@
     "obligations": [
       "Prove existence and uniqueness of a smallest λ·O containing a relatively compact U (componentwise this is the smallest scaled ring of integers containing the projection, which exists by discreteness of the value group).",
       "Prove the hull is independent of the choice of λ among those giving the same set.",
-      "On a finite product of finite extensions of Q_p in place of the direct sum of fields of I^Q(-), the smallest set lambda O containing a relatively compact U that contains a subset of positive Haar measure exists and is the hull (IUT3.Rem3_9_5.i.frag.pkt_isLeast_spectral); tensor packets, I^Q(-) itself and the archimedean case are open."
+      "On a finite product of finite extensions of Q_p in place of the direct sum of fields of I^Q(-), the smallest set lambda O containing a relatively compact U that contains a subset of positive Haar measure exists and is the hull (IUT3.Rem3_9_5.i.frag.pkt_isLeast_spectral); tensor packets, I^Q(-) itself and the archimedean case are open.",
+      "On Q_p^2, the log-volume of the hull is not a function of the log-volume of the region (IUT3.Rem3_9_5.i.frag.hull_deg_not_descent, a model test); this concerns the model, not the regions of the proof of Corollary 3.12."
     ],
     "ambiguities": [
       "At archimedean components the ring O is a closed unit ball in C; 'smallest λ·O' then refers to the smallest closed ball, which exists by compactness; the text does not separate the cases."
@@ -4575,7 +4958,12 @@
       "IUT3.Rem3_9_5.i.frag.pkt_hull_def",
       "IUT3.Rem3_9_5.i.frag.pkt_isLeast_spectral",
       "IUT3.Rem3_9_5.i.frag.pkt_union",
-      "IUT3.Rem3_9_5.i.frag.pkt_vs_dhHull"
+      "IUT3.Rem3_9_5.i.frag.pkt_vs_dhHull",
+      "IUT3.Rem3_9_5.i.frag.hull_deg_automorphisms",
+      "IUT3.Rem3_9_5.i.frag.hull_deg_defs",
+      "IUT3.Rem3_9_5.i.frag.hull_deg_monotone",
+      "IUT3.Rem3_9_5.i.frag.hull_deg_not_descent",
+      "IUT3.Rem3_9_5.i.frag.hull_deg_union_principal"
     ]
   },
   "IUT3.Rem3_9_5.i.frag.pkt_excluded_cases": {
@@ -4748,6 +5136,199 @@
     "scope": "model_test",
     "lemmas": [
       "IUT.PaperIII.Corollary312.pktHull_dhHull_padic_test"
+    ]
+  },
+  "IUT3.Rem3_9_5.i.frag.hull_deg_automorphisms": {
+    "kind": "fragment",
+    "parent": "IUT3.Rem3_9_5.i",
+    "source": {
+      "paper": "Inter-universal Teichmuller Theory III",
+      "pdf_pages": "page 127",
+      "pages_read": "rendered and checked: pages 127, 182, 183"
+    },
+    "content": "Every continuous Q_p-linear automorphism h of V with measure(h O) = measure(O) preserves mu^log of every set. Multiplication by a unit g of V with |g_s| = 1 for all s and every permutation of the coordinates of K^I preserve both mu^log and mu^log of hulls. The shear (x, y) -> (x + y, y) of Q_p^2 maps O onto O and preserves mu^log of every set, but for U0 = Z_p x p^-1 Z_p: mu^log(U0) = mu^log(hull U0) = (log p)/2, while the image of U0 has mu^log = (log p)/2, hull p^-1 O and mu^log of the hull = log p.",
+    "explicit_hypotheses": [
+      "p a prime; the measure hypotheses of the model",
+      "for units: |g_s| = 1 for all s; for permutations: all factors equal to one field K"
+    ],
+    "implicit_hypotheses": [],
+    "conclusion": "hullDegRigid (h U) = hullDegRigid U; for units and permutations also hullDegHull preserved; for the shear the stated values, with hullDegHull changed from (log p)/2 to log p.",
+    "definitions_required": [],
+    "results_used": [],
+    "external_dependencies": [],
+    "lean_declaration": "IUT.Countermodels.HullDegree.hullDeg_shear",
+    "lean_module": "IUT.Countermodels.HullDegree",
+    "covers": "Page 127, Remark 3.9.5 (i): the hull is defined relative to the decomposition of the space as a direct sum of fields; the test checks which measure-preserving automorphisms commute with the log-volume of the hull.",
+    "not_covered": "Tensor packets, log-shells, the archimedean places, the averaged log-volume over places and labels of Corollary 3.12, and the regions that arise in its proof (unions of possible images under (Ind1), (Ind2), (Ind3)) are not modeled; the statement says nothing about them. The indeterminacies (Ind1), (Ind2) of the papers are not modeled; the automorphisms here are arbitrary linear maps of the model.",
+    "statement_status": "STATEMENT_FORMALIZED",
+    "proof_status": "KERNEL_VERIFIED",
+    "obligations": [],
+    "ambiguities": [],
+    "scope": "model_test",
+    "lemmas": [
+      "IUT.Countermodels.HullDegree.hullDeg_rigid_image_equiv",
+      "IUT.Countermodels.HullDegree.hullDeg_units",
+      "IUT.Countermodels.HullDegree.hullDeg_perm",
+      "IUT.Countermodels.HullDegree.hullDeg_hull_perm",
+      "IUT.Countermodels.HullDegree.hullDeg_perm_principal",
+      "IUT.Countermodels.HullDegree.hullDeg_hull_image",
+      "IUT.Countermodels.HullDegree.hullDegPermEquiv",
+      "IUT.Countermodels.HullDegree.hullDegShear"
+    ]
+  },
+  "IUT3.Rem3_9_5.i.frag.hull_deg_defs": {
+    "kind": "fragment",
+    "parent": "IUT3.Rem3_9_5.i",
+    "source": {
+      "paper": "Inter-universal Teichmuller Theory III",
+      "pdf_pages": "page 127",
+      "pages_read": "rendered and checked: pages 127, 182, 183"
+    },
+    "content": "Definitions on the model V = prod_s L_s (normed fields that are finite-dimensional normed Q_p-algebras, product of Haar measures): hullDegRigid U = mu^log(U) and hullDegHull U = mu^log(pktHull U), both padicMuLog normalized at O = pktHullIntegers (the normalization of pktHull_muLog_principal); hullDegRegion U: closure U compact and product measure of U nonzero; and three Props: hullDegScalarDescent (some c > 0 with mu^log(hull U) = c mu^log(U) for all regions), hullDegShiftDescent (some c with mu^log(hull U) = mu^log(U) + c for all regions), hullDegDetermined (regions of equal mu^log have hulls of equal mu^log).",
+    "explicit_hypotheses": [
+      "p a prime; I a finite type; L_s normed fields with a normed Q_p-algebra structure and a measurable structure",
+      "mu_s measures on L_s"
+    ],
+    "implicit_hypotheses": [],
+    "conclusion": "Definitions; no conclusion.",
+    "definitions_required": [],
+    "results_used": [],
+    "external_dependencies": [],
+    "lean_declaration": "IUT.Countermodels.HullDegree.hullDegHull",
+    "lean_module": "IUT.Countermodels.HullDegree",
+    "covers": "Page 127, Remark 3.9.5 (i): the hull of a relatively compact region containing a subset of finite log-volume; pages 182 and 183, Steps (xi-c), (xi-d): the log-volume is applied to the hull of the possible output data. The three descent Props are questions formulated for the model; they do not occur on the pages read.",
+    "not_covered": "Tensor packets, log-shells, the archimedean places, the averaged log-volume over places and labels of Corollary 3.12, and the regions that arise in its proof (unions of possible images under (Ind1), (Ind2), (Ind3)) are not modeled; the statement says nothing about them.",
+    "statement_status": "STATEMENT_FORMALIZED",
+    "proof_status": "NOT_EXTRACTED",
+    "obligations": [],
+    "ambiguities": [],
+    "scope": "model_test",
+    "lemmas": [
+      "IUT.Countermodels.HullDegree.hullDegRigid",
+      "IUT.Countermodels.HullDegree.hullDegRegion",
+      "IUT.Countermodels.HullDegree.hullDegScalarDescent",
+      "IUT.Countermodels.HullDegree.hullDegShiftDescent",
+      "IUT.Countermodels.HullDegree.hullDegDetermined"
+    ]
+  },
+  "IUT3.Rem3_9_5.i.frag.hull_deg_monotone": {
+    "kind": "fragment",
+    "parent": "IUT3.Rem3_9_5.i",
+    "source": {
+      "paper": "Inter-universal Teichmuller Theory III",
+      "pdf_pages": "page 127",
+      "pages_read": "rendered and checked: pages 127, 182, 183"
+    },
+    "content": "For every region U of V = prod_s L_s (discretely valued proper factors, Haar measures): mu^log(U) <= mu^log(pktHull U); equality holds iff U and pktHull U have the same product measure, and, for null-measurable U, iff pktHull U minus U is a null set. If U is contained in lambda O and every coordinate bound |lambda_s| is attained on U, then pktHull U = lambda O; in particular pktHull (lambda O) = lambda O. The monotonicity is also stated for finite extensions of Q_p with the spectral norm.",
+    "explicit_hypotheses": [
+      "p a prime; I finite; L_s normed fields, finite-dimensional normed Q_p-algebras, Borel, proper",
+      "mu_s additive Haar measures",
+      "hd: each L_s has discrete value group (pktHullDiscrete)",
+      "U a region (closure compact, product measure nonzero)",
+      "[Nonempty I] and null-measurability of U for the equality criteria"
+    ],
+    "implicit_hypotheses": [],
+    "conclusion": "hullDegRigid U <= hullDegHull U; equality iff measure U = measure (pktHull U), iff measure (pktHull U \\ U) = 0.",
+    "definitions_required": [],
+    "results_used": [],
+    "external_dependencies": [],
+    "lean_declaration": "IUT.Countermodels.HullDegree.hullDeg_rigid_le_hull",
+    "lean_module": "IUT.Countermodels.HullDegree",
+    "covers": "Page 127, Remark 3.9.5 (i): the hull contains the region; here the consequence for log-volumes and the exact equality case are checked.",
+    "not_covered": "Tensor packets, log-shells, the archimedean places, the averaged log-volume over places and labels of Corollary 3.12, and the regions that arise in its proof (unions of possible images under (Ind1), (Ind2), (Ind3)) are not modeled; the statement says nothing about them.",
+    "statement_status": "STATEMENT_FORMALIZED",
+    "proof_status": "KERNEL_VERIFIED",
+    "obligations": [],
+    "ambiguities": [],
+    "scope": "model_test",
+    "lemmas": [
+      "IUT.Countermodels.HullDegree.hullDeg_rigid_eq_hull_iff",
+      "IUT.Countermodels.HullDegree.hullDeg_rigid_eq_hull_iff_sdiff",
+      "IUT.Countermodels.HullDegree.hullDeg_rigid_le_hull_spectral",
+      "IUT.Countermodels.HullDegree.hullDeg_hull_measure_ne_top",
+      "IUT.Countermodels.HullDegree.hullDeg_hull_eq_of_attained",
+      "IUT.Countermodels.HullDegree.hullDeg_hull_principal",
+      "IUT.Countermodels.HullDegree.hullDeg_region_of_subset"
+    ]
+  },
+  "IUT3.Rem3_9_5.i.frag.hull_deg_not_descent": {
+    "kind": "fragment",
+    "parent": "IUT3.Rem3_9_5.i",
+    "source": {
+      "paper": "Inter-universal Teichmuller Theory III",
+      "pdf_pages": "page 127",
+      "pages_read": "rendered and checked: pages 127, 182, 183"
+    },
+    "content": "On Q_p^2 with the product of any Haar measure on Q_p, none of hullDegScalarDescent, hullDegShiftDescent, hullDegDetermined holds. Witnesses with (mu^log, mu^log of hull): O = Z_p^2 (0, 0); pO (-log p, -log p); (1,1) + pO (-log p, 0), hull O; ((1,p) + p^2 O) union ((p,1) + p^2 O) ((log 2)/2 - 2 log p, 0), hull O; pZ_p x p^-1 Z_p (0, 0).",
+    "explicit_hypotheses": [
+      "p a prime",
+      "a measurable structure on Q_p that is Borel",
+      "nu an additive Haar measure on Q_p"
+    ],
+    "implicit_hypotheses": [],
+    "conclusion": "not hullDegScalarDescent, not hullDegShiftDescent, not hullDegDetermined, for the product measure on Fin 2 -> Q_p; and the stated values of the four witnesses.",
+    "definitions_required": [],
+    "results_used": [],
+    "external_dependencies": [],
+    "lean_declaration": "IUT.Countermodels.HullDegree.hullDeg_not_determined",
+    "lean_module": "IUT.Countermodels.HullDegree",
+    "covers": "Pages 182 and 183, Steps (xi-c), (xi-d), where the log-volume is applied to the hull of the region rather than to the region; page 127 for the hull. Tests whether the log-volume of the hull is a function of the log-volume of the region on the model: it is not.",
+    "not_covered": "Tensor packets, log-shells, the archimedean places, the averaged log-volume over places and labels of Corollary 3.12, and the regions that arise in its proof (unions of possible images under (Ind1), (Ind2), (Ind3)) are not modeled; the statement says nothing about them. Whether the regions of the proof behave like the witnesses is not addressed.",
+    "statement_status": "STATEMENT_FORMALIZED",
+    "proof_status": "KERNEL_VERIFIED",
+    "obligations": [],
+    "ambiguities": [],
+    "scope": "model_test",
+    "lemmas": [
+      "IUT.Countermodels.HullDegree.hullDeg_not_scalarDescent",
+      "IUT.Countermodels.HullDegree.hullDeg_not_shiftDescent",
+      "IUT.Countermodels.HullDegree.hullDeg_padic_integers",
+      "IUT.Countermodels.HullDegree.hullDeg_padic_pO",
+      "IUT.Countermodels.HullDegree.hullDeg_padic_shifted",
+      "IUT.Countermodels.HullDegree.hullDeg_padic_twoBalls",
+      "IUT.Countermodels.HullDegree.hullDeg_padic_ratio",
+      "IUT.Countermodels.HullDegree.hullDeg_padic_principal",
+      "IUT.Countermodels.HullDegree.hullDeg_padic_pp"
+    ]
+  },
+  "IUT3.Rem3_9_5.i.frag.hull_deg_union_principal": {
+    "kind": "fragment",
+    "parent": "IUT3.Rem3_9_5.i",
+    "source": {
+      "paper": "Inter-universal Teichmuller Theory III",
+      "pdf_pages": "page 127",
+      "pages_read": "rendered and checked: pages 127, 182, 183"
+    },
+    "content": "For two sets lambda O, lambda' O: the hull of their union is m O with |m_s| = max(|lambda_s|, |lambda'_s|); their intersection is the box of the coordinatewise minima; measure of the union plus measure of the minimum box equals the sum of the two measures. For finite extensions of degrees d_s (spectral norm): mu^log(hull) = (sum_s d_s log max(|lambda_s|, |lambda'_s|)) / sum_s d_s. On Q_p^n: mu^log(union) = log(prod |lambda_s| + prod |lambda'_s| - prod min(|lambda_s|, |lambda'_s|)) / n, against mu^log(hull) = (sum_s log max) / n. On the sets lambda O, mu^log(hull) = mu^log, so equal mu^log gives equal mu^log of hulls.",
+    "explicit_hypotheses": [
+      "p a prime; I finite; L_s normed fields with proper topology (and the measure hypotheses for the measure statements)",
+      "lambda, lambda' in prod_s L_s^x"
+    ],
+    "implicit_hypotheses": [],
+    "conclusion": "pktHull (lambda O union lambda' O) = (max) O; the log-volume formulas above.",
+    "definitions_required": [],
+    "results_used": [],
+    "external_dependencies": [],
+    "lean_declaration": "IUT.Countermodels.HullDegree.hullDeg_hull_union_principal",
+    "lean_module": "IUT.Countermodels.HullDegree",
+    "covers": "Page 127, Remark 3.9.5 (i): the hull as the smallest lambda O, computed for a union of two such sets.",
+    "not_covered": "Tensor packets, log-shells, the archimedean places, the averaged log-volume over places and labels of Corollary 3.12, and the regions that arise in its proof (unions of possible images under (Ind1), (Ind2), (Ind3)) are not modeled; the statement says nothing about them.",
+    "statement_status": "STATEMENT_FORMALIZED",
+    "proof_status": "KERNEL_VERIFIED",
+    "obligations": [],
+    "ambiguities": [],
+    "scope": "model_test",
+    "lemmas": [
+      "IUT.Countermodels.HullDegree.hullDegMax",
+      "IUT.Countermodels.HullDegree.hullDegMin",
+      "IUT.Countermodels.HullDegree.hullDegMax_norm",
+      "IUT.Countermodels.HullDegree.hullDegMin_norm",
+      "IUT.Countermodels.HullDegree.hullDeg_inter_principal",
+      "IUT.Countermodels.HullDegree.hullDeg_measure_union_principal",
+      "IUT.Countermodels.HullDegree.hullDeg_union_principal_spectral",
+      "IUT.Countermodels.HullDegree.hullDeg_padic_union_principal",
+      "IUT.Countermodels.HullDegree.hullDeg_padic_union_principal_hull",
+      "IUT.Countermodels.HullDegree.hullDeg_principal_determined"
     ]
   },
   "IUT3.Rem3_9_5.ii": {

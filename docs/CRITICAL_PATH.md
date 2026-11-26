@@ -12,7 +12,7 @@ There is no Lean edge from `Challenge.ABC` to IUT IV Theorem A (`IUT4.ThmA`) or 
 
 Missing roots: none.
 
-## Size: 562 of 659 statement records
+## Size: 562 of 661 statement records
 
 | Paper | Corollary | Definition | Example | Lemma | Proposition | Remark | Theorem | part or step | Total |
 |---|---|---|---|---|---|---|---|---|---|
@@ -29,7 +29,7 @@ Not on the critical path (no chain of edges from the roots reaches them):
 | IUT2 | 0 | 5 | 2 | 0 | 0 | 0 | 7 |
 | IUT3 | 0 | 9 | 2 | 0 | 0 | 0 | 11 |
 | IUT4 | 0 | 11 | 0 | 1 | 0 | 0 | 12 |
-| IUTNone | 0 | 0 | 0 | 0 | 0 | 30 | 30 |
+| IUTNone | 0 | 0 | 0 | 0 | 0 | 32 | 32 |
 
 ## Most cited unresolved statements
 
@@ -656,8 +656,8 @@ Distance is the shortest chain of edges from a root.
 |---|---|---|---|---|---|---|
 | `IUT4.ThmA` | Theorem | Diophantine Inequalities | 3 | 0 | EXTRACTED | BLOCKED_BY_EXTERNAL_THEOREM |
 | `IUT4.Prop1_1` | Proposition | Multiple Tensor Products and Differents | 9 to 10 | 4 | EXTRACTED | EXTRACTED |
-| `IUT4.Prop1_2` | Proposition | Differents and Logarithms | 10 to 11 | 3 | EXTRACTED | BLOCKED_BY_MATHLIB |
-| `IUT4.Prop1_3` | Proposition | Estimates of Differents | 11 to 12 | 3 | EXTRACTED | BLOCKED_BY_MATHLIB |
+| `IUT4.Prop1_2` | Proposition | Differents and Logarithms | 10 to 11 | 3 | EXTRACTED | EXTRACTED |
+| `IUT4.Prop1_3` | Proposition | Estimates of Differents | 11 to 12 | 3 | EXTRACTED | EXTRACTED |
 | `IUT4.Prop1_4` | Proposition | Nonarchimedean Normalized Log-volume Estimates | 13 to 14 | 3 | EXTRACTED | BLOCKED_BY_EXTERNAL_THEOREM |
 | `IUT4.Prop1_5` | Proposition | Archimedean Metric Estimates | 14 to 16 | 3 | EXTRACTED | BLOCKED_BY_MATHLIB |
 | `IUT4.Prop1_6` | Proposition | The Prime Number Theorem | 16 | 3 | STATEMENT_FORMALIZED | KERNEL_VERIFIED |

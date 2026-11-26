@@ -77,14 +77,16 @@ statements take `K₁` and `K₂` in one universe.
 * That `(R_E)^∼` is a finitely generated `ℤ_p`-module spanning `K₁ ⊗ K₂` (a lattice); only
   compactness and openness are proved, which is what the normalization needs; it is proved for
   any finite number of factors in `Packets.lean` (`packet_normalization_lattice_tensor`).
-* That `R_E` has positive Haar measure, so the step `μ^log(R_I) ≤ μ^log((R_I)^∼) = 0` of page 14
-  is not obtained; the sublattice index formula.
+* That `R_E` has positive Haar measure and the step `μ^log(R_I) ≤ μ^log((R_I)^∼) = 0` of page 14:
+  not here; proved for two factors in `TensorIndex.lean`, with the index formula
+  `tensorIdx_muLog_eq`.
 * That `padicPacketNormalization` is the normalization of `R_E` in its ring of fractions (that the
   total ring of fractions of `R_E` is `K₁ ⊗ K₂`); it is the integral closure of `ℤ_p` there.
+  Proved in `TensorIndex.lean` (`tensorIdx_isFractionRing`).
 * Proposition 1.1, `p ^ (𝔡_{I*}) · (R_I)^∼ ⊆ R_I`, here; it is proved for two factors in
-  `TensorDifferent.lean`. Proposition 1.2 (ii) to (iv) (of (ii), only the first display of its
-  proof is in `TensorDifferent.lean`) and the inequalities of Proposition 1.4 (iii), (iv) remain
-  open.
+  `TensorDifferent.lean`. Proposition 1.2 (ii) to (iv) and Proposition 1.4 (iii), (iv) are
+  proved for two factors in `TensorLogShell.lean`, the first inequality of 1.4 (iii) only when
+  every `e_i ≤ p − 2`.
 * Proposition 1.4 (ii) in general here; it is proved in `UnitVolume.lean`
   (`unitVol_muLog_logUnit_eq`).
 * The weighting of `μ^log` over the factors of the decomposition and the additivity used on

@@ -8,7 +8,8 @@
     "4": "Whether independent existential witnesses admit a common compatible realization.",
     "5": "Whether invariance under individual indeterminacies implies invariance under their combined action.",
     "6": "Whether hull formation and transport commute.",
-    "7": "Whether the necessary comparison can be derived from the claimed reconstruction theorem."
+    "7": "Whether the necessary comparison can be derived from the claimed reconstruction theorem.",
+    "8": "Whether the log-volume of a hull is determined by the log-volume of the region."
   },
   "entries": [
     {
@@ -1092,6 +1093,218 @@
           "paper": "IUT III",
           "location": "Corollary 3.12, Step (xi-f)",
           "pages": "184"
+        }
+      ]
+    },
+    {
+      "lean_name": "IUT.Countermodels.HullDegree.hullDeg_not_scalarDescent",
+      "file": "IUT/Countermodels/HullDegree.lean",
+      "kind": "countermodel",
+      "priority_question": {
+        "number": 8,
+        "text": "Whether the log-volume of a hull is determined by the log-volume of the region."
+      },
+      "classification": {
+        "label": "counterexample to a simplified abstraction",
+        "note": "The hypotheses of the abstraction stated in principle_refuted are shown insufficient for its conclusion. Not a counterexample to an intermediate claim of the papers, not a counterexample to a faithfully formalized statement of the papers, not a demonstrated contradiction."
+      },
+      "statement": "On Q_p squared, no c > 0 has mu^log(hull U) = c mu^log(U) for all regions U (witness (1, 1) + pO).",
+      "principle_refuted": "The log-volume of the hull of a region is a fixed positive multiple of the log-volume of the region.",
+      "principle_established": null,
+      "hypotheses_satisfied": [
+        "Q_p squared, the product of two Haar measures",
+        "mu^log normalized at the integral elements O",
+        "regions: relatively compact, of positive outer measure",
+        "the hull of PacketHull.lean"
+      ],
+      "full_hypotheses_of_original_claim": "Not applicable: the formulations are made in the module, not statements of the papers.",
+      "bears_on": [
+        {
+          "paper": "IUT III",
+          "location": "Remark 3.9.5 (i): the holomorphic hull",
+          "pages": "127"
+        },
+        {
+          "paper": "IUT III",
+          "location": "Corollary 3.12, proof, Steps (xi-c), (xi-d): log-volume of the hull",
+          "pages": "182 to 183"
+        }
+      ]
+    },
+    {
+      "lean_name": "IUT.Countermodels.HullDegree.hullDeg_not_shiftDescent",
+      "file": "IUT/Countermodels/HullDegree.lean",
+      "kind": "countermodel",
+      "priority_question": {
+        "number": 8,
+        "text": "Whether the log-volume of a hull is determined by the log-volume of the region."
+      },
+      "classification": {
+        "label": "counterexample to a simplified abstraction",
+        "note": "The hypotheses of the abstraction stated in principle_refuted are shown insufficient for its conclusion. Not a counterexample to an intermediate claim of the papers, not a counterexample to a faithfully formalized statement of the papers, not a demonstrated contradiction."
+      },
+      "statement": "On Q_p squared, no c has mu^log(hull U) = mu^log(U) + c for all regions U (witnesses O and (1, 1) + pO).",
+      "principle_refuted": "The log-volume of the hull of a region differs from the log-volume of the region by a fixed constant.",
+      "principle_established": null,
+      "hypotheses_satisfied": [
+        "Q_p squared, the product of two Haar measures",
+        "mu^log normalized at the integral elements O",
+        "regions: relatively compact, of positive outer measure",
+        "the hull of PacketHull.lean"
+      ],
+      "full_hypotheses_of_original_claim": "Not applicable: the formulations are made in the module, not statements of the papers.",
+      "bears_on": [
+        {
+          "paper": "IUT III",
+          "location": "Remark 3.9.5 (i): the holomorphic hull",
+          "pages": "127"
+        },
+        {
+          "paper": "IUT III",
+          "location": "Corollary 3.12, proof, Steps (xi-c), (xi-d): log-volume of the hull",
+          "pages": "182 to 183"
+        }
+      ]
+    },
+    {
+      "lean_name": "IUT.Countermodels.HullDegree.hullDeg_not_determined",
+      "file": "IUT/Countermodels/HullDegree.lean",
+      "kind": "countermodel",
+      "priority_question": {
+        "number": 8,
+        "text": "Whether the log-volume of a hull is determined by the log-volume of the region."
+      },
+      "classification": {
+        "label": "counterexample to a simplified abstraction",
+        "note": "The hypotheses of the abstraction stated in principle_refuted are shown insufficient for its conclusion. Not a counterexample to an intermediate claim of the papers, not a counterexample to a faithfully formalized statement of the papers, not a demonstrated contradiction."
+      },
+      "statement": "pO and (1, 1) + pO have the same log-volume -log p; their hulls have log-volumes -log p and 0.",
+      "principle_refuted": "Regions of equal log-volume have hulls of equal log-volume.",
+      "principle_established": null,
+      "hypotheses_satisfied": [
+        "Q_p squared, the product of two Haar measures",
+        "mu^log normalized at the integral elements O",
+        "regions: relatively compact, of positive outer measure",
+        "the hull of PacketHull.lean"
+      ],
+      "full_hypotheses_of_original_claim": "Not applicable: the formulations are made in the module, not statements of the papers.",
+      "bears_on": [
+        {
+          "paper": "IUT III",
+          "location": "Remark 3.9.5 (i): the holomorphic hull",
+          "pages": "127"
+        },
+        {
+          "paper": "IUT III",
+          "location": "Corollary 3.12, proof, Steps (xi-c), (xi-d): log-volume of the hull",
+          "pages": "182 to 183"
+        }
+      ]
+    },
+    {
+      "lean_name": "IUT.Countermodels.HullDegree.hullDeg_shear",
+      "file": "IUT/Countermodels/HullDegree.lean",
+      "kind": "countermodel",
+      "priority_question": {
+        "number": 8,
+        "text": "Whether the log-volume of a hull is determined by the log-volume of the region."
+      },
+      "classification": {
+        "label": "counterexample to a simplified abstraction",
+        "note": "The hypotheses of the abstraction stated in principle_refuted are shown insufficient for its conclusion. Not a counterexample to an intermediate claim of the papers, not a counterexample to a faithfully formalized statement of the papers, not a demonstrated contradiction."
+      },
+      "statement": "The shear (x, y) |-> (x + y, y) of Q_p squared maps O onto O and preserves mu^log of every set, but changes the hull log-volume of Z_p x p^(-1) Z_p from (log p)/2 to log p.",
+      "principle_refuted": "A linear automorphism that preserves the integral elements and every log-volume preserves the log-volume of hulls.",
+      "principle_established": null,
+      "hypotheses_satisfied": [
+        "Q_p squared, the product of two Haar measures",
+        "mu^log normalized at the integral elements O",
+        "regions: relatively compact, of positive outer measure",
+        "the hull of PacketHull.lean"
+      ],
+      "full_hypotheses_of_original_claim": "Not applicable: the formulations are made in the module, not statements of the papers.",
+      "bears_on": [
+        {
+          "paper": "IUT III",
+          "location": "Remark 3.9.5 (i): the holomorphic hull",
+          "pages": "127"
+        },
+        {
+          "paper": "IUT III",
+          "location": "Corollary 3.12, proof, Steps (xi-c), (xi-d): log-volume of the hull",
+          "pages": "182 to 183"
+        }
+      ]
+    },
+    {
+      "lean_name": "IUT.Countermodels.HullDegree.hullDeg_rigid_le_hull",
+      "file": "IUT/Countermodels/HullDegree.lean",
+      "kind": "positive",
+      "priority_question": {
+        "number": 8,
+        "text": "Whether the log-volume of a hull is determined by the log-volume of the region."
+      },
+      "classification": {
+        "label": "positive statement: a valid principle of the same flavor, proved in Lean"
+      },
+      "statement": "mu^log(U) <= mu^log(hull U) for every region U.",
+      "principle_refuted": null,
+      "principle_established": "Forming the hull does not decrease the log-volume.",
+      "hypotheses_satisfied": [
+        "finite product of finite extensions of Q_p",
+        "product of Haar measures",
+        "mu^log normalized at the integral elements O",
+        "U relatively compact of positive outer measure",
+        "each factor discretely valued"
+      ],
+      "full_hypotheses_of_original_claim": "Not applicable: this is a proved positive statement or lemma, not a countermodel.",
+      "bears_on": [
+        {
+          "paper": "IUT III",
+          "location": "Remark 3.9.5 (i): the holomorphic hull",
+          "pages": "127"
+        },
+        {
+          "paper": "IUT III",
+          "location": "Corollary 3.12, proof, Steps (xi-c), (xi-d): log-volume of the hull",
+          "pages": "182 to 183"
+        }
+      ]
+    },
+    {
+      "lean_name": "IUT.Countermodels.HullDegree.hullDeg_rigid_eq_hull_iff_sdiff",
+      "file": "IUT/Countermodels/HullDegree.lean",
+      "kind": "positive",
+      "priority_question": {
+        "number": 8,
+        "text": "Whether the log-volume of a hull is determined by the log-volume of the region."
+      },
+      "classification": {
+        "label": "positive statement: a valid principle of the same flavor, proved in Lean"
+      },
+      "statement": "For a null-measurable region U, mu^log(U) = mu^log(hull U) exactly when hull U minus U is a null set.",
+      "principle_refuted": null,
+      "principle_established": "The log-volume of the hull equals that of the region exactly when the region has full measure in its hull.",
+      "hypotheses_satisfied": [
+        "finite product of finite extensions of Q_p",
+        "product of Haar measures",
+        "mu^log normalized at the integral elements O",
+        "U relatively compact of positive outer measure",
+        "each factor discretely valued",
+        "at least one factor",
+        "U null-measurable"
+      ],
+      "full_hypotheses_of_original_claim": "Not applicable: this is a proved positive statement or lemma, not a countermodel.",
+      "bears_on": [
+        {
+          "paper": "IUT III",
+          "location": "Remark 3.9.5 (i): the holomorphic hull",
+          "pages": "127"
+        },
+        {
+          "paper": "IUT III",
+          "location": "Corollary 3.12, proof, Steps (xi-c), (xi-d): log-volume of the hull",
+          "pages": "182 to 183"
         }
       ]
     }

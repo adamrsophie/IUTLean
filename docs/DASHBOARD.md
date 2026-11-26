@@ -17,14 +17,14 @@ A statement counts as formalized only when one Lean declaration states its entir
 | Statement records formalized in full | 10 |
 | Statement records proved in full, unconditionally | 3 |
 | Statement records proved in full, conditionally (named hypotheses) | 0 |
-| Fragments checked in Lean, unconditionally | 150 |
+| Fragments checked in Lean, unconditionally | 168 |
 | Fragments checked in Lean, conditionally | 53 |
-| Model tests (fragments that test a model or an example, not a step of the papers; scope model_test) | 33 |
-| Records (statements and fragments) whose declaration is a definition, structure or other non-theorem typed in Lean (never counted as proved) | 61 |
-| Parents with at least one checked fragment (not counted as formalized) | 42 |
-| Obligation entries (items of the obligations lists, open claims and notes alike) | 949 |
-| Records with at least one obligation entry | 650 |
-| Statement records with an ambiguity (status INTERPRETATION_AMBIGUOUS or a nonempty ambiguities list) | 346 |
+| Model tests (fragments that test a model or an example, not a step of the papers; scope model_test) | 53 |
+| Records (statements and fragments) whose declaration is a definition, structure or other non-theorem typed in Lean (never counted as proved) | 65 |
+| Parents with at least one checked fragment (not counted as formalized) | 43 |
+| Obligation entries (items of the obligations lists, open claims and notes alike) | 951 |
+| Records with at least one obligation entry | 649 |
+| Statement records with an ambiguity (status INTERPRETATION_AMBIGUOUS or a nonempty ambiguities list) | 347 |
 | Statement records with proof status BLOCKED_BY_EXTERNAL_THEOREM | 122 |
 | External bibliography keys cited by critical-path statements | 51 |
 | Records with status COUNTERMODEL_FOUND | 0 |
@@ -38,9 +38,9 @@ Entries of `data/countermodels.json`, by the kind that each entry gives itself. 
 
 | Kind | Entries |
 |---|---|
-| Countermodels (of a simplified abstraction unless the entry says otherwise) | 22 |
+| Countermodels (of a simplified abstraction unless the entry says otherwise) | 26 |
 | Lemmas | 1 |
-| Positive results | 14 |
+| Positive results | 16 |
 
 ## Fragments
 
@@ -127,8 +127,23 @@ Each row is one Lean lemma that checks a piece of the parent named. The parent k
 | `IUT3.Prop3_9.i.frag.packet_normalization` | `IUT3.Prop3_9.i` | `IUT.Prerequisites.PadicVolume.padicMuLog_smul` | theorem | KERNEL_VERIFIED |  |
 | `IUT3.Prop3_9.i.frag.pk_local_packet_normalization` | `IUT3.Prop3_9.i` | `IUT.PaperIV.LocalFields.packet_muLog_normalization` | theorem | KERNEL_VERIFIED | model test |
 | `IUT3.Prop3_9.i.frag.region_interface` | `IUT3.Prop3_9.i` | `IUT.Prerequisites.PadicVolume.padicRegionComparison` | definition | NOT_EXTRACTED |  |
+| `IUT3.Prop3_9.i.frag.wpkt_double_division` | `IUT3.Prop3_9.i` | `IUT.PaperIII.Corollary312.wPkt_doubleDivision_zpow_smul` | theorem | KERNEL_VERIFIED | model test |
+| `IUT3.Prop3_9.i.frag.wpkt_haar_comparison` | `IUT3.Prop3_9.i` | `IUT.PaperIII.Corollary312.wPkt_weight_eq_haar_iff` | theorem | KERNEL_VERIFIED | model test |
+| `IUT3.Prop3_9.i.frag.wpkt_logvol_def` | `IUT3.Prop3_9.i` | `IUT.PaperIII.Corollary312.wPktLogVol` | definition | NOT_EXTRACTED |  |
+| `IUT3.Prop3_9.i.frag.wpkt_logvol_tests` | `IUT3.Prop3_9.i` | `IUT.PaperIII.Corollary312.wPkt_logVol_zpow_smul` | theorem | KERNEL_VERIFIED |  |
+| `IUT3.Prop3_9.i.frag.wpkt_procession` | `IUT3.Prop3_9.i` | `IUT.PaperIII.Corollary312.wPkt_procLogVol_zpow_smul` | theorem | KERNEL_VERIFIED | model test |
+| `IUT3.Prop3_9.ii.frag.wpkt_proc_average_layer` | `IUT3.Prop3_9.ii` | `IUT.PaperIII.Corollary312.wPktProcAvg_eq_labelAverage` | theorem | KERNEL_VERIFIED | model test |
 | `IUT3.Prop3_9.iii.frag.globalLogVolume_mono` | `IUT3.Prop3_9.iii` | `IUT.PaperIII.Corollary312.globalLogVolume_mono` | theorem | KERNEL_VERIFIED |  |
 | `IUT3.Prop3_9.iii.frag.globalLogVolume` | `IUT3.Prop3_9.iii` | `IUT.PaperIII.Corollary312.globalLogVolume` | definition | NOT_EXTRACTED |  |
+| `IUT3.Rem3_1_1.frag.wpkt_e_weighted` | `IUT3.Rem3_1_1` | `IUT.PaperIII.Corollary312.wPkt_EMeasure_log` | theorem | KERNEL_VERIFIED |  |
+| `IUT3.Rem3_1_1.frag.wpkt_warning_model` | `IUT3.Rem3_1_1` | `IUT.PaperIII.Corollary312.wPkt_warning_iff` | theorem | KERNEL_VERIFIED | model test |
+| `IUT3.Rem3_1_1.frag.wpkt_weight_dim_sum` | `IUT3.Rem3_1_1` | `IUT.PaperIII.Corollary312.wPkt_weight_dim_sum` | theorem | KERNEL_VERIFIED | model test |
+| `IUT3.Rem3_1_1.frag.wpkt_weight` | `IUT3.Rem3_1_1` | `IUT.PaperIII.Corollary312.wPktWeight` | definition | NOT_EXTRACTED |  |
+| `IUT3.Rem3_9_5.i.frag.hull_deg_automorphisms` | `IUT3.Rem3_9_5.i` | `IUT.Countermodels.HullDegree.hullDeg_shear` | theorem | KERNEL_VERIFIED | model test |
+| `IUT3.Rem3_9_5.i.frag.hull_deg_defs` | `IUT3.Rem3_9_5.i` | `IUT.Countermodels.HullDegree.hullDegHull` | definition | NOT_EXTRACTED | model test |
+| `IUT3.Rem3_9_5.i.frag.hull_deg_monotone` | `IUT3.Rem3_9_5.i` | `IUT.Countermodels.HullDegree.hullDeg_rigid_le_hull` | theorem | KERNEL_VERIFIED | model test |
+| `IUT3.Rem3_9_5.i.frag.hull_deg_not_descent` | `IUT3.Rem3_9_5.i` | `IUT.Countermodels.HullDegree.hullDeg_not_determined` | theorem | KERNEL_VERIFIED | model test |
+| `IUT3.Rem3_9_5.i.frag.hull_deg_union_principal` | `IUT3.Rem3_9_5.i` | `IUT.Countermodels.HullDegree.hullDeg_hull_union_principal` | theorem | KERNEL_VERIFIED | model test |
 | `IUT3.Rem3_9_5.i.frag.pkt_excluded_cases` | `IUT3.Rem3_9_5.i` | `IUT.PaperIII.Corollary312.pktHull_of_not_isBounded` | theorem | KERNEL_VERIFIED |  |
 | `IUT3.Rem3_9_5.i.frag.pkt_hull_def` | `IUT3.Rem3_9_5.i` | `IUT.PaperIII.Corollary312.pktHull` | definition | NOT_EXTRACTED |  |
 | `IUT3.Rem3_9_5.i.frag.pkt_isLeast_spectral` | `IUT3.Rem3_9_5.i` | `IUT.PaperIII.Corollary312.pktHull_isLeast_spectral` | theorem | KERNEL_VERIFIED |  |
@@ -205,6 +220,11 @@ Each row is one Lean lemma that checks a piece of the parent named. The parent k
 | `IUT4.Prop1_1.frag.td_different_ideal` | `IUT4.Prop1_1` | `IUT.PaperIV.LocalFields.tensorDiff_mul_mem_packetIntegers` | theorem | KERNEL_VERIFIED |  |
 | `IUT4.Prop1_1.frag.td_generator` | `IUT4.Prop1_1` | `IUT.PaperIV.LocalFields.tensorDiff_generator_mul_mem_packetIntegers` | theorem | KERNEL_VERIFIED |  |
 | `IUT4.Prop1_1.frag.td_order` | `IUT4.Prop1_1` | `IUT.PaperIV.LocalFields.tensorDiff_order_mul_mem_packetIntegers` | theorem | KERNEL_VERIFIED |  |
+| `IUT4.Prop1_1.frag.ti_example` | `IUT4.Prop1_1` | `IUT.PaperIV.LocalFields.tensorIdxEx_ne` | theorem | KERNEL_VERIFIED | model test |
+| `IUT4.Prop1_1.frag.ti_normalization` | `IUT4.Prop1_1` | `IUT.PaperIV.LocalFields.tensorIdx_isFractionRing` | theorem | KERNEL_VERIFIED | model test |
+| `IUT4.Prop1_1.frag.ti_pow_smul_left` | `IUT4.Prop1_1` | `IUT.PaperIV.LocalFields.tensorIdx_ceil_smul_mem_left` | theorem | KERNEL_VERIFIED | model test |
+| `IUT4.Prop1_1.frag.ti_pow_smul` | `IUT4.Prop1_1` | `IUT.PaperIV.LocalFields.tensorIdx_ceil_smul_mem` | theorem | KERNEL_VERIFIED | model test |
+| `IUT4.Prop1_1.frag.ti_unramified` | `IUT4.Prop1_1` | `IUT.PaperIV.LocalFields.tensorIdx_eq_of_ramificationIdx_eq_one` | theorem | KERNEL_VERIFIED | model test |
 | `IUT4.Prop1_1.frag.vb_integral_models` | `IUT4.Prop1_1` | `IUT.PaperIV.LocalFields.volBridge_padicVolIntegral_iff` | theorem | KERNEL_VERIFIED |  |
 | `IUT4.Prop1_1.frag.vb_tensor_decomposition` | `IUT4.Prop1_1` | `IUT.PaperIV.LocalFields.volBridge_tensor_equiv_pi` | theorem | KERNEL_VERIFIED |  |
 | `IUT4.Prop1_2.frag.a_b_of_e_one` | `IUT4.Prop1_2` | `IUT.PaperIV.Proposition1_2.a_b_of_e_one` | theorem | KERNEL_VERIFIED |  |
@@ -227,8 +247,20 @@ Each row is one Lean lemma that checks a piece of the parent named. The parent k
 | `IUT4.Prop1_2.frag.log_series_norm` | `IUT4.Prop1_2` | `IUT.Prerequisites.PadicLog.padicLogOnePlus_norm_eq` | theorem | KERNEL_VERIFIED |  |
 | `IUT4.Prop1_2.frag.rpow_b_gt` | `IUT4.Prop1_2` | `IUT.PaperIV.Proposition1_2.rpow_b_gt` | theorem | KERNEL_VERIFIED |  |
 | `IUT4.Prop1_2.frag.td_log_span` | `IUT4.Prop1_2` | `IUT.PaperIV.LocalFields.tensorDiff_mul_mem_logUnit_span` | theorem | KERNEL_VERIFIED |  |
+| `IUT4.Prop1_2.frag.tls_first_display` | `IUT4.Prop1_2` | `IUT.PaperIV.LocalFields.tensorLog_shift_subset_integers` | theorem | KERNEL_VERIFIED |  |
+| `IUT4.Prop1_2.frag.tls_ii_zero` | `IUT4.Prop1_2` | `IUT.PaperIV.LocalFields.tensorLog_prop1_2_ii_zero` | theorem | KERNEL_VERIFIED |  |
+| `IUT4.Prop1_2.frag.tls_ii` | `IUT4.Prop1_2` | `IUT.PaperIV.LocalFields.tensorLog_prop1_2_ii` | theorem | KERNEL_VERIFIED |  |
+| `IUT4.Prop1_2.frag.tls_iii_zero` | `IUT4.Prop1_2` | `IUT.PaperIV.LocalFields.tensorLog_prop1_2_iii_zero` | theorem | KERNEL_VERIFIED |  |
+| `IUT4.Prop1_2.frag.tls_iii` | `IUT4.Prop1_2` | `IUT.PaperIV.LocalFields.tensorLog_prop1_2_iii` | theorem | KERNEL_VERIFIED |  |
+| `IUT4.Prop1_2.frag.tls_iv` | `IUT4.Prop1_2` | `IUT.PaperIV.LocalFields.tensorLog_prop1_2_iv` | theorem | KERNEL_VERIFIED |  |
+| `IUT4.Prop1_2.frag.tls_lattice` | `IUT4.Prop1_2` | `IUT.PaperIV.LocalFields.tensorLogLattice` | definition | NOT_EXTRACTED |  |
+| `IUT4.Prop1_2.frag.tls_lower_inclusion` | `IUT4.Prop1_2` | `IUT.PaperIV.LocalFields.tensorLog_shift_subset_lattice` | theorem | KERNEL_VERIFIED |  |
+| `IUT4.Prop1_2.frag.tls_padic_nonvacuity` | `IUT4.Prop1_2` | `IUT.PaperIV.LocalFields.tensorLog_padic_prop1_2_iv` | theorem | KERNEL_VERIFIED | model test |
+| `IUT4.Prop1_2.frag.tls_upper_inclusion` | `IUT4.Prop1_2` | `IUT.PaperIV.LocalFields.tensorLog_lattice_subset_shift` | theorem | KERNEL_VERIFIED |  |
 | `IUT4.Prop1_3.frag.bridge_d_with_log` | `IUT4.Prop1_3` | `IUT.PaperIV.LocalFields.padicBridge_log_bounds_and_differentOrder` | theorem | KERNEL_VERIFIED |  |
 | `IUT4.Prop1_3.frag.differentOrder` | `IUT4.Prop1_3` | `IUT.PaperIV.LocalFields.differentOrder` | definition | NOT_EXTRACTED |  |
+| `IUT4.Prop1_3.frag.different_upper_bound` | `IUT4.Prop1_3` | `IUT.PaperIV.LocalFields.diffBound_exponent_le` | theorem | KERNEL_VERIFIED | model test |
+| `IUT4.Prop1_3.frag.i_combined` | `IUT4.Prop1_3` | `IUT.PaperIV.LocalFields.diffBound_prop1_3i` | theorem | KERNEL_VERIFIED |  |
 | `IUT4.Prop1_3.frag.i_differentOrder_ge_tower` | `IUT4.Prop1_3` | `IUT.PaperIV.LocalFields.differentOrder_ge_tower` | theorem | KERNEL_VERIFIED |  |
 | `IUT4.Prop1_3.frag.i_differentOrder_ge` | `IUT4.Prop1_3` | `IUT.PaperIV.LocalFields.differentOrder_ge` | theorem | KERNEL_VERIFIED |  |
 | `IUT4.Prop1_3.frag.i_equality_iff_tame_padic` | `IUT4.Prop1_3` | `IUT.PaperIV.LocalFields.differentExponent_eq_ramificationIdx_sub_one_iff_padic` | theorem | KERNEL_VERIFIED |  |
@@ -236,13 +268,15 @@ Each row is one Lean lemma that checks a piece of the parent named. The parent k
 | `IUT4.Prop1_3.frag.i_padic_differentOrder_ge` | `IUT4.Prop1_3` | `IUT.PaperIV.LocalFields.padic_differentOrder_ge` | theorem | KERNEL_VERIFIED |  |
 | `IUT4.Prop1_3.frag.i_tame_equality_padic` | `IUT4.Prop1_3` | `IUT.PaperIV.LocalFields.differentExponent_eq_of_not_dvd_ramificationIdx_padic` | theorem | KERNEL_VERIFIED |  |
 | `IUT4.Prop1_3.frag.i_wild_inequality_padic` | `IUT4.Prop1_3` | `IUT.PaperIV.LocalFields.ramificationIdx_le_differentExponent_of_dvd_padic` | theorem | KERNEL_VERIFIED |  |
+| `IUT4.Prop1_3.frag.ii_all_finite` | `IUT4.Prop1_3` | `IUT.PaperIV.LocalFields.diffBound_prop1_3ii` | theorem | KERNEL_VERIFIED |  |
 | `IUT4.Prop1_3.frag.ii_base_padic` | `IUT4.Prop1_3` | `IUT.PaperIV.LocalFields.differentOrder_le_one_of_not_dvd_ramificationIdx_padic` | theorem | KERNEL_VERIFIED |  |
 | `IUT4.Prop1_3.frag.ii_base` | `IUT4.Prop1_3` | `IUT.PaperIV.Proposition1_3.ii_base` | theorem | CONDITIONALLY_VERIFIED |  |
 | `IUT4.Prop1_3.frag.ii_of_forall_eps` | `IUT4.Prop1_3` | `IUT.PaperIV.Proposition1_3.ii_of_forall_eps` | theorem | KERNEL_VERIFIED |  |
+| `IUT4.Prop1_3.frag.ii_statement_proved` | `IUT4.Prop1_3` | `IUT.PaperIV.LocalFields.diffBound_towerProp1_3iiStatement` | theorem | KERNEL_VERIFIED |  |
 | `IUT4.Prop1_3.frag.ii_step` | `IUT4.Prop1_3` | `IUT.PaperIV.Proposition1_3.ii_step` | theorem | CONDITIONALLY_VERIFIED |  |
 | `IUT4.Prop1_3.frag.tower_i_ge` | `IUT4.Prop1_3` | `IUT.PaperIV.LocalFields.towerProp1_3i_ge` | theorem | KERNEL_VERIFIED |  |
 | `IUT4.Prop1_3.frag.tower_i_tame_equality` | `IUT4.Prop1_3` | `IUT.PaperIV.LocalFields.towerProp1_3i_eq_of_tame` | theorem | KERNEL_VERIFIED |  |
-| `IUT4.Prop1_3.frag.tower_ii_exponent_bound` | `IUT4.Prop1_3` | `IUT.PaperIV.LocalFields.towerProp1_3ii_of_exponent_bound` | theorem | CONDITIONALLY_VERIFIED | model test |
+| `IUT4.Prop1_3.frag.tower_ii_exponent_bound` | `IUT4.Prop1_3` | `IUT.PaperIV.LocalFields.diffBound_prop1_3ii_of_classical` | theorem | KERNEL_VERIFIED | model test |
 | `IUT4.Prop1_3.frag.tower_ii_n_zero` | `IUT4.Prop1_3` | `IUT.PaperIV.LocalFields.towerProp1_3ii_of_not_dvd_finrank` | theorem | KERNEL_VERIFIED |  |
 | `IUT4.Prop1_3.frag.tower_ii_statement` | `IUT4.Prop1_3` | `IUT.PaperIV.LocalFields.towerProp1_3iiStatement` | definition | NOT_EXTRACTED |  |
 | `IUT4.Prop1_3.frag.tower_ii_tame` | `IUT4.Prop1_3` | `IUT.PaperIV.LocalFields.towerProp1_3ii_of_tame` | theorem | KERNEL_VERIFIED |  |
@@ -271,6 +305,14 @@ Each row is one Lean lemma that checks a piece of the parent named. The parent k
 | `IUT4.Prop1_4.frag.pk_floor_step` | `IUT4.Prop1_4` | `IUT.PaperIV.LocalFields.packet_muLog_floor_smul_le` | theorem | KERNEL_VERIFIED |  |
 | `IUT4.Prop1_4.frag.pk_packet_normalization` | `IUT4.Prop1_4` | `IUT.PaperIV.LocalFields.packet_muLog_normalization_tensor` | theorem | KERNEL_VERIFIED |  |
 | `IUT4.Prop1_4.frag.pk_pi_region` | `IUT4.Prop1_4` | `IUT.PaperIV.LocalFields.packet_muLog_pi_region` | theorem | KERNEL_VERIFIED | model test |
+| `IUT4.Prop1_4.frag.ti_bounds` | `IUT4.Prop1_4` | `IUT.PaperIV.LocalFields.tensorIdx_muLog_bounds` | theorem | KERNEL_VERIFIED | model test |
+| `IUT4.Prop1_4.frag.ti_compact_open` | `IUT4.Prop1_4` | `IUT.PaperIV.LocalFields.tensorIdx_coord_isOpen_isCompact` | theorem | KERNEL_VERIFIED | model test |
+| `IUT4.Prop1_4.frag.ti_index_formula` | `IUT4.Prop1_4` | `IUT.PaperIV.LocalFields.tensorIdx_muLog_eq` | theorem | KERNEL_VERIFIED | model test |
+| `IUT4.Prop1_4.frag.ti_muLog_nonpos` | `IUT4.Prop1_4` | `IUT.PaperIV.LocalFields.tensorIdx_muLog_nonpos` | theorem | KERNEL_VERIFIED |  |
+| `IUT4.Prop1_4.frag.tls_dI_aI` | `IUT4.Prop1_4` | `IUT.PaperIV.LocalFields.tensorLog_dI_add_aI_ge` | theorem | KERNEL_VERIFIED |  |
+| `IUT4.Prop1_4.frag.tls_iii_first` | `IUT4.Prop1_4` | `IUT.PaperIV.LocalFields.tensorLog_prop1_4_iii_lattice` | theorem | KERNEL_VERIFIED |  |
+| `IUT4.Prop1_4.frag.tls_iii_second` | `IUT4.Prop1_4` | `IUT.PaperIV.LocalFields.tensorLog_prop1_4_iii_shift` | theorem | KERNEL_VERIFIED |  |
+| `IUT4.Prop1_4.frag.tls_iv` | `IUT4.Prop1_4` | `IUT.PaperIV.LocalFields.tensorLog_prop1_4_iv` | theorem | KERNEL_VERIFIED |  |
 | `IUT4.Prop1_4.frag.uv_card_torsion` | `IUT4.Prop1_4` | `IUT.PaperIV.LocalFields.unitVol_card_torsion` | theorem | KERNEL_VERIFIED |  |
 | `IUT4.Prop1_4.frag.uv_ii_card` | `IUT4.Prop1_4` | `IUT.PaperIV.LocalFields.unitVol_muLog_logUnit_eq_card` | theorem | KERNEL_VERIFIED |  |
 | `IUT4.Prop1_4.frag.uv_ii_of_card` | `IUT4.Prop1_4` | `IUT.PaperIV.LocalFields.unitVol_muLog_logUnit_eq_of_card` | theorem | CONDITIONALLY_VERIFIED |  |
@@ -348,9 +390,9 @@ Statement records only; the fragment column counts checked fragments whose paren
 |---|---|---|---|---|---|---|---|
 | IUT1 | 166 | 166 | 7 | 0 | 0 | 3 | 108 |
 | IUT2 | 192 | 192 | 0 | 0 | 0 | 11 | 72 |
-| IUT3 | 189 | 189 | 0 | 0 | 0 | 35 | 130 |
-| IUT4 | 82 | 82 | 3 | 3 | 0 | 154 | 36 |
-| Critical path | 562 | 562 | 3 | 3 | 0 | 203 | 313 |
+| IUT3 | 189 | 189 | 0 | 0 | 0 | 37 | 130 |
+| IUT4 | 82 | 82 | 3 | 3 | 0 | 170 | 37 |
+| Critical path | 562 | 562 | 3 | 3 | 0 | 221 | 314 |
 
 ## Statement fidelity status
 
@@ -377,7 +419,7 @@ One table per kind of record, so that no table adds fragments to statements: ful
 
 | Status | IUT1 | IUT2 | IUT3 | IUT4 |
 |---|---|---|---|---|
-| STATEMENT_FORMALIZED | 30 | 11 | 56 | 194 |
+| STATEMENT_FORMALIZED | 30 | 11 | 71 | 221 |
 
 ## Proof status
 
@@ -386,9 +428,9 @@ One table per kind of record, so that no table adds fragments to statements: ful
 | Status | IUT1 | IUT2 | IUT3 | IUT4 |
 |---|---|---|---|---|
 | NOT_EXTRACTED | 84 | 47 | 4 | 2 |
-| EXTRACTED | 0 | 12 | 23 | 35 |
+| EXTRACTED | 0 | 12 | 23 | 37 |
 | PROOF_IN_PROGRESS | 0 | 1 | 0 | 0 |
-| BLOCKED_BY_MATHLIB | 1 | 27 | 0 | 5 |
+| BLOCKED_BY_MATHLIB | 1 | 27 | 0 | 3 |
 | BLOCKED_BY_EXTERNAL_THEOREM | 15 | 13 | 19 | 5 |
 | BLOCKED_BY_MISSING_JUSTIFICATION | 40 | 19 | 32 | 0 |
 | KERNEL_VERIFIED | 0 | 0 | 0 | 3 |
@@ -407,9 +449,9 @@ One table per kind of record, so that no table adds fragments to statements: ful
 
 | Status | IUT1 | IUT2 | IUT3 | IUT4 |
 |---|---|---|---|---|
-| NOT_EXTRACTED | 27 | 0 | 11 | 17 |
-| CONDITIONALLY_VERIFIED | 0 | 0 | 18 | 38 |
-| KERNEL_VERIFIED | 3 | 11 | 27 | 139 |
+| NOT_EXTRACTED | 27 | 0 | 14 | 18 |
+| CONDITIONALLY_VERIFIED | 0 | 0 | 18 | 37 |
+| KERNEL_VERIFIED | 3 | 11 | 39 | 166 |
 
 Statement status NOT_EXTRACTED means that the statement is not yet recorded to the standard of an extracted statement (content, hypotheses and conclusion from pages read); the record may already hold partial content. Proof status NOT_EXTRACTED means that no proof has been recorded to that standard, and it is also the proof status of a record whose Lean declaration is a definition. 172 statement records have a statement status other than NOT_EXTRACTED and proof status NOT_EXTRACTED.
 
@@ -422,9 +464,9 @@ Records whose id has a prefix of `records.EXTERNAL_PAPERS`: results and claims o
 
 | Measure | Count |
 |---|---|
-| Statements of other papers | 30 |
+| Statements of other papers | 32 |
 | Of these, stated in Lean (EXTERNAL_CLAIM, assumed, not proved) | 4 |
-| Their fragments checked in Lean, unconditionally | 17 |
+| Their fragments checked in Lean, unconditionally | 18 |
 | Their fragments checked in Lean, conditionally | 13 |
 
 | Id | Kind | Parent | Lean declaration | Statement | Proof | Assumes |
@@ -481,6 +523,13 @@ Records whose id has a prefix of `records.EXTERNAL_PAPERS`: results and claims o
 | `EXPL.Thm5_4.frag.c_bound` | fragment | `EXPL.Thm5_4` | `IUT.ExplicitEstimates.c_le_of_thm5_4Claim` | STATEMENT_FORMALIZED | CONDITIONALLY_VERIFIED | Thm5_4Claim (Theorem 5.4 of the paper) |
 | `EXPL.Thm5_4.frag.claim` | fragment | `EXPL.Thm5_4` | `IUT.ExplicitEstimates.Thm5_4Claim` | STATEMENT_FORMALIZED | NOT_EXTRACTED |  |
 | `EXPL.Thm5_4.frag.cube_step` | fragment | `EXPL.Thm5_4` | `IUT.ExplicitEstimates.thm5_4_cube_step` | STATEMENT_FORMALIZED | KERNEL_VERIFIED |  |
+| `GENELL.Def1_2` | external_statement |  |  | EXTRACTED | NOT_EXTRACTED |  |
+| `GENELL.Def1_2.frag.heightNF_algebraMap` | fragment | `GENELL.Def1_2` | `IUT.HeightExtension.htExt_heightNF_algebraMap` | STATEMENT_FORMALIZED | KERNEL_VERIFIED |  |
+| `GENELL.Def1_2.frag.oneThird_example` | fragment | `GENELL.Def1_2` | `IUT.HeightExtension.htExt_heightNF_oneThird` | STATEMENT_FORMALIZED | KERNEL_VERIFIED |  |
+| `GENELL.Def1_5` | external_statement |  |  | EXTRACTED | NOT_EXTRACTED |  |
+| `GENELL.Def1_5.frag.logCondNF_extension` | fragment | `GENELL.Def1_5` | `IUT.HeightExtension.htExt_finrank_mul_logCondNF_sub` | STATEMENT_FORMALIZED | KERNEL_VERIFIED |  |
+| `GENELL.Def1_5.frag.logDiffNF_not_invariant` | fragment | `GENELL.Def1_5` | `IUT.HeightExtension.htExt_logDiffNF_le` | STATEMENT_FORMALIZED | KERNEL_VERIFIED |  |
+| `GENELL.Def1_5.frag.minimal_field_equivalence` | fragment | `GENELL.Def1_5` | `IUT.HeightExtension.htExt_degreeAtMost_iff_anyField` | STATEMENT_FORMALIZED | KERNEL_VERIFIED |  |
 | `GENELL.Prop1_6` | external_statement |  |  | NOT_EXTRACTED | NOT_EXTRACTED |  |
 | `GENELL.Prop1_6.frag.log_cond_le_height` | fragment | `GENELL.Prop1_6` | `IUT.HeightComparison.htCmp_logCondNF_le` | STATEMENT_FORMALIZED | KERNEL_VERIFIED |  |
 | `GENELL.Sec1.ArithmeticDivisor` | external_statement |  |  | EXTRACTED | NOT_EXTRACTED |  |
@@ -516,7 +565,7 @@ None.
 
 ## Trust checks on the Lean library
 
-Modules checked: 83. Allowed axioms: Classical.choice, Quot.sound, propext.
+Modules checked: 89. Allowed axioms: Classical.choice, Quot.sound, propext.
 
 Unauthorized axioms:
 

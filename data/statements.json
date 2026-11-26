@@ -16946,6 +16946,12 @@
    "pdf_page": 93,
    "pdf_page_end": 97
   },
+  "fragments": [
+   "IUT3.Rem3_1_1.frag.wpkt_e_weighted",
+   "IUT3.Rem3_1_1.frag.wpkt_warning_model",
+   "IUT3.Rem3_1_1.frag.wpkt_weight",
+   "IUT3.Rem3_1_1.frag.wpkt_weight_dim_sum"
+  ],
   "has_proof_marker": false,
   "id": "IUT3.Rem3_1_1",
   "implicit_hypotheses": [],
@@ -16953,8 +16959,9 @@
   "lean_declaration": null,
   "number": "3.1.1",
   "obligations": [
-   "Verify the (iv) identity as a product-measure computation on M_{E*V} ≅ M_W (elementary once the spaces are fixed).",
-   "Fix the normalization factor of (iii) that relates (1/N_E)·log μ_E to the weighted sums of (ii); the page says only 'a suitable positive real number'."
+   "Verify the (iv) identity as a product-measure computation on M_{E*V} ≅ M_W (elementary once the spaces are fixed). Done on direct product regions, with the measure defined on M_W directly (IUT3.Rem3_1_1.frag.wpkt_e_weighted); M_{E*V} and its homeomorphism with M_W are not formalized.",
+   "Fix the normalization factor of (iii) that relates (1/N_E)·log μ_E to the weighted sums of (ii); the page says only 'a suitable positive real number'.",
+   "The normalized weight of (ii) is defined as printed (IUT3.Rem3_1_1.frag.wpkt_weight), with sum_t w_t dim_t = 1 (IUT3.Rem3_1_1.frag.wpkt_weight_dim_sum, a model test); the warning of (iii) is made precise in a model (IUT3.Rem3_1_1.frag.wpkt_warning_model, a model test)."
   ],
   "page_spans": [
    [
@@ -19513,7 +19520,12 @@
    "IUT4.Prop1_1.frag.pk_tensor_zp",
    "IUT4.Prop1_1.frag.td_different_ideal",
    "IUT4.Prop1_1.frag.td_generator",
-   "IUT4.Prop1_1.frag.td_order"
+   "IUT4.Prop1_1.frag.td_order",
+   "IUT4.Prop1_1.frag.ti_example",
+   "IUT4.Prop1_1.frag.ti_normalization",
+   "IUT4.Prop1_1.frag.ti_pow_smul",
+   "IUT4.Prop1_1.frag.ti_pow_smul_left",
+   "IUT4.Prop1_1.frag.ti_unramified"
   ],
   "has_proof_marker": true,
   "id": "IUT4.Prop1_1",
@@ -19525,7 +19537,7 @@
   "lean_declaration": null,
   "number": "1.1",
   "obligations": [
-   "For two factors (I = {1, 2}, I* = {2}) the inclusion p^(d_{I*}) (R_I)~ <= R_I is proved, with p^(d_2) any element of order d_2, a generator of the different ideal or any element of it (IUT4.Prop1_1.frag.td_order, IUT4.Prop1_1.frag.td_generator, IUT4.Prop1_1.frag.td_different_ideal); the route of page 10 through base change and faithful flatness is not followed. For two factors, K_1 (x) K_2 is proved reduced and a finite product of finite extensions of Q_p (IUT4.Prop1_1.frag.vb_tensor_decomposition), the closed unit ball and integral closure models of R_i agree (IUT4.Prop1_1.frag.vb_integral_models), and R_E <= (R_E)~ is proved with (R_E)~ the integral closure of Z_p in K_1 (x) K_2 (IUT4.Prop1_1.frag.packet_integers). For any finite number of factors the tensor product over Q_p is a finite product of finite extensions of Q_p (IUT4.Prop1_1.frag.pk_packet_decomposition), under which (R_E)~ is the product of their rings of integers (IUT4.Prop1_1.frag.pk_normalization_coordinates). The inclusion for more than two factors, the identification of the tensor product over Z_p with the one over Q_p beyond two factors, and that this integral closure is the normalization of R_E in its ring of fractions, are open."
+   "For two factors (I = {1, 2}, I* = {2}) the inclusion p^(d_{I*}) (R_I)~ <= R_I is proved, with p^(d_2) any element of order d_2, a generator of the different ideal or any element of it (IUT4.Prop1_1.frag.td_order, IUT4.Prop1_1.frag.td_generator, IUT4.Prop1_1.frag.td_different_ideal); the route of page 10 through base change and faithful flatness is not followed. For two factors, K_1 (x) K_2 is proved reduced and a finite product of finite extensions of Q_p (IUT4.Prop1_1.frag.vb_tensor_decomposition), the closed unit ball and integral closure models of R_i agree (IUT4.Prop1_1.frag.vb_integral_models), and R_E <= (R_E)~ is proved with (R_E)~ the integral closure of Z_p in K_1 (x) K_2 (IUT4.Prop1_1.frag.packet_integers). For any finite number of factors the tensor product over Q_p is a finite product of finite extensions of Q_p (IUT4.Prop1_1.frag.pk_packet_decomposition), under which (R_E)~ is the product of their rings of integers (IUT4.Prop1_1.frag.pk_normalization_coordinates). For two factors, this integral closure is the normalization of R_E in its ring of fractions (IUT4.Prop1_1.frag.ti_normalization). The inclusion for more than two factors, the identification of the tensor product over Z_p with the one over Q_p beyond two factors, and the normalization for more than two factors are open."
   ],
   "page_spans": [
    [
@@ -19602,7 +19614,17 @@
    "IUT4.Prop1_2.frag.i_model",
    "IUT4.Prop1_2.frag.i_equality_model",
    "IUT4.Prop1_2.frag.i_Qp_consistency",
-   "IUT4.Prop1_2.frag.td_log_span"
+   "IUT4.Prop1_2.frag.td_log_span",
+   "IUT4.Prop1_2.frag.tls_first_display",
+   "IUT4.Prop1_2.frag.tls_ii",
+   "IUT4.Prop1_2.frag.tls_ii_zero",
+   "IUT4.Prop1_2.frag.tls_iii",
+   "IUT4.Prop1_2.frag.tls_iii_zero",
+   "IUT4.Prop1_2.frag.tls_iv",
+   "IUT4.Prop1_2.frag.tls_lattice",
+   "IUT4.Prop1_2.frag.tls_lower_inclusion",
+   "IUT4.Prop1_2.frag.tls_padic_nonvacuity",
+   "IUT4.Prop1_2.frag.tls_upper_inclusion"
   ],
   "has_proof_marker": true,
   "id": "IUT4.Prop1_2",
@@ -19611,7 +19633,7 @@
   "lean_declaration": null,
   "number": "1.2",
   "obligations": [
-   "The inclusions (ii) to (iv) need the tensor products R_I and Proposition 1.1; they are not formalized, except the first display of the proof of (ii) for two factors in the stronger form with d_{I*} = d_2 in place of d_I (IUT4.Prop1_2.frag.td_log_span). Assertion (i) is proved for k_i = Q_p (IUT4.Prop1_2.frag.log_series_def, IUT4.Prop1_2.frag.log_series_norm, IUT4.Prop1_2.frag.log_hom, IUT4.Prop1_2.frag.i_Qp), for finite extensions of Q_p in a normed-field model with a hypothesis on e (IUT4.Prop1_2.frag.i_model, IUT4.Prop1_2.frag.i_equality_model), and for every finite extension L of Q_p with R_i = integralClosure Z_p L, e_i = Ideal.ramificationIdx and the spectral norm, with no hypothesis on the norm (IUT4.Prop1_2.frag.bridge_i). No declaration states the whole proposition.",
+   "For two factors (I = {1, 2}), with log_p(R_I^x) the image in K_1 (x)_{Q_p} K_2 of the tensor product over Z_p of the log_p(R_i^x), the inclusions (ii) to (iv) are proved (IUT4.Prop1_2.frag.tls_ii, IUT4.Prop1_2.frag.tls_ii_zero, IUT4.Prop1_2.frag.tls_iii, IUT4.Prop1_2.frag.tls_iii_zero, IUT4.Prop1_2.frag.tls_iv), with the first display of the proof of (ii) as printed (IUT4.Prop1_2.frag.tls_first_display) and in the stronger form with d_{I*} = d_2 in place of d_I (IUT4.Prop1_2.frag.td_log_span). More than two factors, and the injectivity of that tensor product over Z_p into K_1 (x)_{Q_p} K_2, are open. Assertion (i) is proved for k_i = Q_p (IUT4.Prop1_2.frag.log_series_def, IUT4.Prop1_2.frag.log_series_norm, IUT4.Prop1_2.frag.log_hom, IUT4.Prop1_2.frag.i_Qp), for finite extensions of Q_p in a normed-field model with a hypothesis on e (IUT4.Prop1_2.frag.i_model, IUT4.Prop1_2.frag.i_equality_model), and for every finite extension L of Q_p with R_i = integralClosure Z_p L, e_i = Ideal.ramificationIdx and the spectral norm, with no hypothesis on the norm (IUT4.Prop1_2.frag.bridge_i). No declaration states the whole proposition.",
    "Elementary facts about a_i, b_i used in the proof are checked in the fragments listed in `fragments`."
   ],
   "page_spans": [
@@ -19625,7 +19647,7 @@
   "pdf_page": 10,
   "pdf_page_end": 11,
   "printed_page": 10,
-  "proof_status": "BLOCKED_BY_MATHLIB",
+  "proof_status": "EXTRACTED",
   "repeated_header_lines": 0,
   "results_used": [
    "IUT4.Prop1_1"
@@ -19641,7 +19663,9 @@
   "title": "Differents and Logarithms"
  },
  {
-  "ambiguities": [],
+  "ambiguities": [
+   "Readings used by the fragments over a general base: the fields are abstract finite extensions of Q_p with algebra maps, not subfields of a fixed algebraic closure; d is differentOrder (the exponent of the different divided by the ramification index, so ord(p) = 1); tame is read as p not dividing e_{i/0} (finite residue fields); n_i is multiplicity p [k_i : k_0]."
+  ],
   "conclusion": "(i) d_i >= d_0 + (e_{i/0} - 1)/(e_{i/0} e_0) = d_0 + (e_{i/0} - 1)/e_i, with equality if k_i is tamely ramified over k_0; (ii) d_i <= d_0 + n_i + 1/e_0.",
   "content": "Estimates of differents: d_i >= d_0 + (e_{i/0} − 1)/e_i, with equality if tame; and d_i <= d_0 + n_i + 1/e_0 when k_i is Galois over a tame extension of k_0.",
   "cor3_12_dependency": "independent",
@@ -19682,7 +19706,11 @@
    "IUT4.Prop1_3.frag.tower_ii_n_zero",
    "IUT4.Prop1_3.frag.tower_ii_statement",
    "IUT4.Prop1_3.frag.tower_ii_tame",
-   "IUT4.Prop1_3.frag.tower_transitivity"
+   "IUT4.Prop1_3.frag.tower_transitivity",
+   "IUT4.Prop1_3.frag.different_upper_bound",
+   "IUT4.Prop1_3.frag.i_combined",
+   "IUT4.Prop1_3.frag.ii_all_finite",
+   "IUT4.Prop1_3.frag.ii_statement_proved"
   ],
   "has_proof_marker": true,
   "id": "IUT4.Prop1_3",
@@ -19691,7 +19719,7 @@
   "lean_declaration": null,
   "number": "1.3",
   "obligations": [
-   "Over a general base Q_p <= k_0 <= k_i, the transitivity of the different and of the ramification indices is proved (IUT4.Prop1_3.frag.tower_transitivity), the inequality of (i) and its equality in the tame case are proved as two declarations (IUT4.Prop1_3.frag.tower_i_ge, IUT4.Prop1_3.frag.tower_i_tame_equality), and (ii) is proved when k_i is tame over k_0 and when n_i = 0 (IUT4.Prop1_3.frag.tower_ii_tame, IUT4.Prop1_3.frag.tower_ii_n_zero). Assertion (ii) is stated with its hypotheses (IUT4.Prop1_3.frag.tower_ii_statement); its wild Galois case (the induction on n_i through Kummer extensions of degree p) and the converse of the tame equality over a general k_0 are not formalized. For k_0 = Q_p: the lower bound of (i) is proved for rings of integers of finite extensions of Q_p (IUT4.Prop1_3.frag.i_differentOrder_ge, IUT4.Prop1_3.frag.i_differentOrder_ge_tower, IUT4.Prop1_3.frag.i_padic_differentOrder_ge), the prime over p is unique (IUT.PaperIV.LocalFields.padicBridge_prime_eq_maximalIdeal), the equality in the tame case, the strict inequality in the wild case and their equivalence are proved (IUT4.Prop1_3.frag.i_tame_equality_padic, IUT4.Prop1_3.frag.i_wild_inequality_padic, IUT4.Prop1_3.frag.i_equality_iff_tame_padic), and (ii) is proved in its base case k_1 = k_i tame over Q_p (IUT4.Prop1_3.frag.ii_base_padic). These are separate declarations; none states (i) for k_0 = Q_p by itself.",
+   "Over a general base Q_p <= k_0 <= k_i, the transitivity of the different and of the ramification indices is proved (IUT4.Prop1_3.frag.tower_transitivity), the inequality of (i) and its equality in the tame case are proved as two declarations (IUT4.Prop1_3.frag.tower_i_ge, IUT4.Prop1_3.frag.tower_i_tame_equality), and (ii) is proved when k_i is tame over k_0 and when n_i = 0 (IUT4.Prop1_3.frag.tower_ii_tame, IUT4.Prop1_3.frag.tower_ii_n_zero). The two clauses of (i) are also proved in one declaration (IUT4.Prop1_3.frag.i_combined). Assertion (ii) is proved for every finite extension k_i/k_0, without the Galois and tameness hypotheses (IUT4.Prop1_3.frag.ii_all_finite), and in the form of the page with its hypotheses (IUT4.Prop1_3.frag.tower_ii_statement, proved in IUT4.Prop1_3.frag.ii_statement_proved), by a route different from page 12: the bound on the relative different from the trace of 1, not the induction on n_i through Kummer extensions of degree p, which is not formalized. The converse of the tame equality over a general k_0 is not formalized. No single declaration states (i) and (ii) together. For k_0 = Q_p: the lower bound of (i) is proved for rings of integers of finite extensions of Q_p (IUT4.Prop1_3.frag.i_differentOrder_ge, IUT4.Prop1_3.frag.i_differentOrder_ge_tower, IUT4.Prop1_3.frag.i_padic_differentOrder_ge), the prime over p is unique (IUT.PaperIV.LocalFields.padicBridge_prime_eq_maximalIdeal), the equality in the tame case, the strict inequality in the wild case and their equivalence are proved (IUT4.Prop1_3.frag.i_tame_equality_padic, IUT4.Prop1_3.frag.i_wild_inequality_padic, IUT4.Prop1_3.frag.i_equality_iff_tame_padic), and (ii) is proved in its base case k_1 = k_i tame over Q_p (IUT4.Prop1_3.frag.ii_base_padic). These are separate declarations; none states (i) for k_0 = Q_p by itself.",
    "Arithmetic steps of the proof are checked in the fragments listed in `fragments`."
   ],
   "page_spans": [
@@ -19705,7 +19733,7 @@
   "pdf_page": 11,
   "pdf_page_end": 12,
   "printed_page": 11,
-  "proof_status": "BLOCKED_BY_MATHLIB",
+  "proof_status": "EXTRACTED",
   "repeated_header_lines": 0,
   "results_used": [],
   "section": 1,
@@ -19833,7 +19861,15 @@
    "IUT4.Prop1_4.frag.uv_m_zero",
    "IUT4.Prop1_4.frag.uv_measure_units",
    "IUT4.Prop1_4.frag.uv_residue_degree",
-   "IUT4.Prop1_4.frag.uv_torsion_exponent"
+   "IUT4.Prop1_4.frag.uv_torsion_exponent",
+   "IUT4.Prop1_4.frag.ti_bounds",
+   "IUT4.Prop1_4.frag.ti_compact_open",
+   "IUT4.Prop1_4.frag.ti_index_formula",
+   "IUT4.Prop1_4.frag.ti_muLog_nonpos",
+   "IUT4.Prop1_4.frag.tls_dI_aI",
+   "IUT4.Prop1_4.frag.tls_iii_first",
+   "IUT4.Prop1_4.frag.tls_iii_second",
+   "IUT4.Prop1_4.frag.tls_iv"
   ],
   "has_proof_marker": true,
   "id": "IUT4.Prop1_4",
@@ -19842,8 +19878,8 @@
   "lean_declaration": null,
   "number": "1.4",
   "obligations": [
-   "The log-volume of [AbsTopIII], Proposition 5.7, is not read; mu^log is modeled as log(mu(A)/mu(R))/d for a Haar measure mu (IUT4.Prop1_4.frag.muLog_def), an interpretation. With it the normalization (i) is proved for one finite extension of Q_p on its ring of integers (IUT4.Prop1_4.frag.vb_field_normalization) for tensor packets of two factors on (R_E)~ (IUT4.Prop1_4.frag.vb_packet_normalization), and for tensor packets over Q_p of any finite number of factors (IUT4.Prop1_4.frag.pk_packet_normalization). The value (ii) is proved for every finite extension of Q_p, with the order of R_i^mu of page 13 (IUT4.Prop1_4.frag.uv_ii, IUT4.Prop1_4.frag.uv_card_torsion); the compatibility of the log-volume with log_p of [AbsTopIII], Proposition 5.7 is replaced by a counting argument inside k_i (IUT4.Prop1_4.frag.uv_kernel_count). The inclusions of (iii) and (iv), which need Proposition 1.1, and the additivity over tensor factors used on page 14 are not formalized.",
-   "The arithmetic fragments check the proof starting from supplied volume bounds; the per-index inequality d_i + a_i >= 1 (2 for p = 2) is proved for actual finite extensions of Q_p (IUT4.Prop1_4.frag.bridge_d_add_a). None of the fragments establishes the containments of (iii) and (iv)."
+   "The log-volume of [AbsTopIII], Proposition 5.7, is not read; mu^log is modeled as log(mu(A)/mu(R))/d for a Haar measure mu (IUT4.Prop1_4.frag.muLog_def), an interpretation. With it the normalization (i) is proved for one finite extension of Q_p on its ring of integers (IUT4.Prop1_4.frag.vb_field_normalization) for tensor packets of two factors on (R_E)~ (IUT4.Prop1_4.frag.vb_packet_normalization), and for tensor packets over Q_p of any finite number of factors (IUT4.Prop1_4.frag.pk_packet_normalization). The value (ii) is proved for every finite extension of Q_p, with the order of R_i^mu of page 13 (IUT4.Prop1_4.frag.uv_ii, IUT4.Prop1_4.frag.uv_card_torsion); the compatibility of the log-volume with log_p of [AbsTopIII], Proposition 5.7 is replaced by a counting argument inside k_i (IUT4.Prop1_4.frag.uv_kernel_count). For two factors, the second inequality of (iii) is proved for every I* (IUT4.Prop1_4.frag.tls_iii_second), its first inequality when p > 2 and e_1, e_2 <= p - 2 (IUT4.Prop1_4.frag.tls_iii_first), its last sentence (IUT4.Prop1_4.frag.tls_dI_aI), and (iv) (IUT4.Prop1_4.frag.tls_iv). The first inequality of (iii) when some e_i > p - 2, which page 14 obtains from the additivity over tensor factors, that additivity, and more than two factors are not formalized.",
+   "The arithmetic fragments check the proof starting from supplied volume bounds; the per-index inequality d_i + a_i >= 1 (2 for p = 2) is proved for actual finite extensions of Q_p (IUT4.Prop1_4.frag.bridge_d_add_a). For two factors the containments of (iii) and (iv) are established (IUT4.Prop1_4.frag.tls_iii_second, IUT4.Prop1_4.frag.tls_iv); for more than two factors none is."
   ],
   "page_spans": [
    [
@@ -22922,6 +22958,105 @@
    "title": "Explicit estimates in inter-universal Teichmüller theory"
   },
   "statement_status": "STATEMENT_FORMALIZED"
+ },
+ {
+  "ambiguities": [
+   "The direction of the relation printed in (ii) is reversed by correction (2) of the published corrections; IUT.Applications.VojtaNumberField uses the corrected direction."
+  ],
+  "conclusion": "Definitions: the height function ht_M on X(Qbar), well defined because the normalized degree is invariant under finite extension, and the relations <~, >~, ~ between real functions on a subset of X(Qbar).",
+  "content": "Page 4, after the invariance of the normalized degree under finite extension (GENELL.Sec1.ArithmeticDivisor): for x in X(Qbar), the union of the X(F) over number fields F in Qbar, and an arithmetic line bundle M on X, ht_M(x) = deg_F(x_F^* M) for any morphism x_F : Spec(O_F) -> X that gives rise to x (deg_F the normalized degree). Definition 1.2 (i) (page 5): ht_M : X(Qbar) -> R is the height function of M. (ii): for a subset F of X(Qbar) and functions alpha, beta on F, the relations alpha <~ beta, alpha >~ beta and alpha ~ beta up to a constant, and BD-classes.",
+  "curated_in": "external.json",
+  "definitions_required": [],
+  "explicit_hypotheses": [
+   "X a normal scheme, proper and flat over Spec(Z) (page 3)",
+   "M an arithmetic line bundle on X",
+   "F a subset of X(Qbar) (for (ii))"
+  ],
+  "external_dependencies": [],
+  "fragments": [
+   "GENELL.Def1_2.frag.heightNF_algebraMap",
+   "GENELL.Def1_2.frag.oneThird_example"
+  ],
+  "id": "GENELL.Def1_2",
+  "implicit_hypotheses": [],
+  "kind": "external_statement",
+  "lean_declaration": null,
+  "obligations": [
+   "Heights attached to arithmetic line bundles on a model X are not formalized; only the Weil height of P^1 (heightNF) is, and its identification with ht_{O(1)} is not. For the Weil height, the independence of the field through which a point is read is proved (GENELL.Def1_2.frag.heightNF_algebraMap)."
+  ],
+  "page_spans": [
+   [
+    null,
+    4,
+    4
+   ],
+   [
+    null,
+    5,
+    5
+   ]
+  ],
+  "paper": null,
+  "parent": null,
+  "proof_status": "NOT_EXTRACTED",
+  "results_used": [
+   "GENELL.Sec1.ArithmeticDivisor"
+  ],
+  "source": {
+   "authors": "Shinichi Mochizuki",
+   "journal": "Math. J. Okayama Univ. 52 (2010), pages 1 to 28",
+   "pages_in_paper": "pages 4 and 5",
+   "pages_read": "rendered pages 3, 4 and 5, checked against the renders",
+   "statement": "Definition 1.2, with the definition of the height on page 4",
+   "title": "Arithmetic Elliptic Curves in General Position"
+  },
+  "statement_status": "EXTRACTED"
+ },
+ {
+  "ambiguities": [],
+  "conclusion": "Definitions: the minimal field of definition of a point, the log-different function on X(Qbar) and the log-conductor function on U_X(Qbar), both evaluated at the minimal field of definition.",
+  "content": "(i) A point x in X(F), [F : Q] finite, has a well-defined minimal field of definition F_min in F, from the scheme-theoretic image of Spec(F) -> X. (ii) Reduced effective Cartier divisors. (iii) For x in X(F) with F a minimal field of definition of x, the different ideal of F gives an effective arithmetic divisor delta_x supported at the finite places, and log-diff_X(x) = deg_F(delta_x) (normalized degree) defines the log-different function on X(Qbar). (iv) For an effective Cartier divisor D of X, U_X = X \\ D and x in U_X(F) with F a minimal field of definition, the pull-back D_x of D to Spec(O_F), the conductor f_x^D = (D_x)_red, and log-cond_D(x) = deg_F(f_x^D) defines the log-conductor function on U_X(Qbar).",
+  "curated_in": "external.json",
+  "definitions_required": [],
+  "explicit_hypotheses": [
+   "X a normal scheme, proper and flat over Spec(Z) (page 3)",
+   "D an effective Cartier divisor of X (for (iv))"
+  ],
+  "external_dependencies": [],
+  "fragments": [
+   "GENELL.Def1_5.frag.logCondNF_extension",
+   "GENELL.Def1_5.frag.logDiffNF_not_invariant",
+   "GENELL.Def1_5.frag.minimal_field_equivalence"
+  ],
+  "id": "GENELL.Def1_5",
+  "implicit_hypotheses": [],
+  "kind": "external_statement",
+  "lean_declaration": null,
+  "obligations": [
+   "(iii) and (iv) are formalized for X = P^1 over Z and D = {0, 1, infinity}, as the definitions logDiffNF and logCondNF of IUT.Applications.VojtaNumberField, evaluated at a field generated by the point; (ii) and general X, D are not formalized. The fragments record how the values change when the point is read in a larger field; the page does not state these changes."
+  ],
+  "page_spans": [
+   [
+    null,
+    8,
+    8
+   ]
+  ],
+  "paper": null,
+  "parent": null,
+  "proof_status": "NOT_EXTRACTED",
+  "results_used": [
+   "GENELL.Sec1.ArithmeticDivisor"
+  ],
+  "source": {
+   "authors": "Shinichi Mochizuki",
+   "journal": "Math. J. Okayama Univ. 52 (2010), pages 1 to 28",
+   "pages_in_paper": "page 8",
+   "pages_read": "rendered pages 3 and 8, checked against the renders",
+   "statement": "Definition 1.5",
+   "title": "Arithmetic Elliptic Curves in General Position"
+  },
+  "statement_status": "EXTRACTED"
  },
  {
   "ambiguities": [],
@@ -32099,18 +32234,23 @@
   "fragments": [
    "IUT3.Prop3_9.i.frag.packet_normalization",
    "IUT3.Prop3_9.i.frag.region_interface",
-   "IUT3.Prop3_9.i.frag.pk_local_packet_normalization"
+   "IUT3.Prop3_9.i.frag.pk_local_packet_normalization",
+   "IUT3.Prop3_9.i.frag.wpkt_double_division",
+   "IUT3.Prop3_9.i.frag.wpkt_haar_comparison",
+   "IUT3.Prop3_9.i.frag.wpkt_logvol_def",
+   "IUT3.Prop3_9.i.frag.wpkt_logvol_tests",
+   "IUT3.Prop3_9.i.frag.wpkt_procession"
   ],
   "id": "IUT3.Prop3_9.i",
   "implicit_hypotheses": [],
   "kind": "Proposition",
   "lean_declaration": null,
   "obligations": [
-   "Define the local log-volume on each direct summand field K_v as the logarithm of Haar measure normalized by μ(O_{K_v}) = 1 (p_{v_Q}-adic; radial at archimedean v_Q), and form the packet log-volume with the normalized weights of Remark 3.1.1 (ii), page 94, namely 1/([K_v : (F_mod)_v]·Σ_{w | v_Q} [(F_mod)_w : Q_{v_Q}]). These weights already contain the division by the local degree: with one place over v_Q, (F_mod)_v = Q_p and K_v quadratic, the plain Haar log-volume of p·O_{K_v} is −2·log(p) and the weight is 1/2, giving −log(p) as page 115 requires. Equivalently, one may divide each local Haar log-volume by its degree (as IUT IV, Proposition 1.4 (i), page 13, does) and then use weights without that factor; doing both divides twice and gives −(1/2)·log(p) in the example. A formalization must use exactly one of the two conventions and check that the total shift under multiplication by p_v is −log(p_v).",
-   "Define the packet log-volume as the weighted sum over direct summands with the weights of Rem 3.1.1 (ii) on direct product regions, and extend it to other elements of M(−) through the E-weighted measure of Rem 3.1.1 (iv). Do not define it as the logarithm of a single normalized Haar measure on the product: Rem 3.1.1 (iii), page 95, says such weighted sums do not in general arise as a positive multiple of the log of an ordinary measure; on direct product regions page 96 identifies them with a normalized log of μ_E on M_{E*V}, not of a measure on the original product.",
-   "Check the scaling rule against the weights: multiplication by p_v shifts each summand log-volume, and the normalized weights make the total shift −log(p_v).",
-   "Define the procession-normalized log-volume as the average over j ∈ F*_l (stated on pages 173 and 181), factor 1/l*; Prop 3.4 (ii) (page 102) and Rem 3.9.3 (page 120) corroborate the labels j ∈ {1, ..., l*}. Fix how the j = 0 packet of the procession enters.",
-   "On one nonarchimedean summand the packet-normalization law (multiplication by p adds -log p; the normalizing set has log-volume 0) is proved for the normalized log-volume of IUT.Prerequisites.PadicVolume (IUT3.Prop3_9.i.frag.packet_normalization); the direct sums, the weights of Remark 3.1.1 and the archimedean case are not.",
+   "Define the local log-volume on each direct summand field K_v as the logarithm of Haar measure normalized by μ(O_{K_v}) = 1 (p_{v_Q}-adic; radial at archimedean v_Q), and form the packet log-volume with the normalized weights of Remark 3.1.1 (ii), page 94, namely 1/([K_v : (F_mod)_v]·Σ_{w | v_Q} [(F_mod)_w : Q_{v_Q}]). These weights already contain the division by the local degree: with one place over v_Q, (F_mod)_v = Q_p and K_v quadratic, the plain Haar log-volume of p·O_{K_v} is −2·log(p) and the weight is 1/2, giving −log(p) as page 115 requires. Equivalently, one may divide each local Haar log-volume by its degree (as IUT IV, Proposition 1.4 (i), page 13, does) and then use weights without that factor; doing both divides twice and gives −(1/2)·log(p) in the example. A formalization must use exactly one of the two conventions and check that the total shift under multiplication by p_v is −log(p_v). Done for tensor packets of finite extensions of Q_p on direct product regions with the first convention, weights applied to unnormalized summand log-volumes (IUT3.Prop3_9.i.frag.wpkt_logvol_def, IUT3.Prop3_9.i.frag.wpkt_logvol_tests); the second convention with the same weights gives the double division (IUT3.Prop3_9.i.frag.wpkt_double_division, a model test). Which convention the pages intend is a reading, recorded in the ambiguities of those fragments.",
+   "Define the packet log-volume as the weighted sum over direct summands with the weights of Rem 3.1.1 (ii) on direct product regions, and extend it to other elements of M(−) through the E-weighted measure of Rem 3.1.1 (iv). Do not define it as the logarithm of a single normalized Haar measure on the product: Rem 3.1.1 (iii), page 95, says such weighted sums do not in general arise as a positive multiple of the log of an ordinary measure; on direct product regions page 96 identifies them with a normalized log of μ_E on M_{E*V}, not of a measure on the original product. The weighted sum on direct product regions is defined (IUT3.Prop3_9.i.frag.wpkt_logvol_def) and the E-weighted measure with the display of (iv) is formalized (IUT3.Rem3_1_1.frag.wpkt_e_weighted); the extension to other regions is not.",
+   "Check the scaling rule against the weights: multiplication by p_v shifts each summand log-volume, and the normalized weights make the total shift −log(p_v). Done on direct product regions (IUT3.Prop3_9.i.frag.wpkt_logvol_tests).",
+   "Define the procession-normalized log-volume as the average over j ∈ F*_l (stated on pages 173 and 181), factor 1/l*; Prop 3.4 (ii) (page 102) and Rem 3.9.3 (page 120) corroborate the labels j ∈ {1, ..., l*}. Fix how the j = 0 packet of the procession enters. The average over a finite nonempty set of capsules with given label sets is defined and satisfies both normalizations (IUT3.Prop3_9.i.frag.wpkt_procession, a model test); the capsule sizes and the treatment of j = 0 are not fixed.",
+   "On one nonarchimedean summand the packet-normalization law (multiplication by p adds -log p; the normalizing set has log-volume 0) is proved for the normalized log-volume of IUT.Prerequisites.PadicVolume (IUT3.Prop3_9.i.frag.packet_normalization); the direct sums and the weights of Remark 3.1.1 are treated on direct product regions of tensor packets of finite extensions of Q_p (IUT3.Prop3_9.i.frag.wpkt_logvol_tests); the archimedean case is not.",
    "On an abstract finite product of finite extensions of Q_p the two normalizing properties hold for the unweighted normalized Haar log-volume (IUT3.Prop3_9.i.frag.pk_local_packet_normalization, a model test), which weights a summand by its degree over Q_p and is not the weighted log-volume of Remark 3.1.1."
   ],
   "page_spans": [
@@ -32146,13 +32286,17 @@
    "v ∈ V, v | v_Q ∈ V_Q"
   ],
   "external_dependencies": [],
+  "fragments": [
+   "IUT3.Prop3_9.ii.frag.wpkt_proc_average_layer"
+  ],
   "id": "IUT3.Prop3_9.ii",
   "implicit_hypotheses": [],
   "kind": "Proposition",
   "lean_declaration": null,
   "obligations": [
    "Prove invariance of the log-volume under every isomorphism in the poly-isomorphism (Ism at nonarchimedean v, independent ±1 at archimedean v).",
-   "Make the 'adjusting appropriately' of the discrepancy explicit (Remark 3.9.1 gives a factor of 2 at archimedean places)."
+   "Make the 'adjusting appropriately' of the discrepancy explicit (Remark 3.9.1 gives a factor of 2 at archimedean places).",
+   "Only the averaging step, on free real inputs, is identified with the abstract layer (IUT3.Prop3_9.ii.frag.wpkt_proc_average_layer, a model test)."
   ],
   "page_spans": [
    [
@@ -32594,7 +32738,12 @@
    "IUT3.Rem3_9_5.i.frag.pkt_hull_def",
    "IUT3.Rem3_9_5.i.frag.pkt_isLeast_spectral",
    "IUT3.Rem3_9_5.i.frag.pkt_union",
-   "IUT3.Rem3_9_5.i.frag.pkt_vs_dhHull"
+   "IUT3.Rem3_9_5.i.frag.pkt_vs_dhHull",
+   "IUT3.Rem3_9_5.i.frag.hull_deg_automorphisms",
+   "IUT3.Rem3_9_5.i.frag.hull_deg_defs",
+   "IUT3.Rem3_9_5.i.frag.hull_deg_monotone",
+   "IUT3.Rem3_9_5.i.frag.hull_deg_not_descent",
+   "IUT3.Rem3_9_5.i.frag.hull_deg_union_principal"
   ],
   "id": "IUT3.Rem3_9_5.i",
   "implicit_hypotheses": [],
@@ -32603,7 +32752,8 @@
   "obligations": [
    "Prove existence and uniqueness of a smallest λ·O containing a relatively compact U (componentwise this is the smallest scaled ring of integers containing the projection, which exists by discreteness of the value group).",
    "Prove the hull is independent of the choice of λ among those giving the same set.",
-   "On a finite product of finite extensions of Q_p in place of the direct sum of fields of I^Q(-), the smallest set lambda O containing a relatively compact U that contains a subset of positive Haar measure exists and is the hull (IUT3.Rem3_9_5.i.frag.pkt_isLeast_spectral); tensor packets, I^Q(-) itself and the archimedean case are open."
+   "On a finite product of finite extensions of Q_p in place of the direct sum of fields of I^Q(-), the smallest set lambda O containing a relatively compact U that contains a subset of positive Haar measure exists and is the hull (IUT3.Rem3_9_5.i.frag.pkt_isLeast_spectral); tensor packets, I^Q(-) itself and the archimedean case are open.",
+   "On Q_p^2, the log-volume of the hull is not a function of the log-volume of the region (IUT3.Rem3_9_5.i.frag.hull_deg_not_descent, a model test); this concerns the model, not the regions of the proof of Corollary 3.12."
   ],
   "page_spans": [
    [
@@ -35820,6 +35970,265 @@
   "statement_status": "STATEMENT_FORMALIZED"
  },
  {
+  "ambiguities": [],
+  "conclusion": "heightNF L (algebraMap K L y) = heightNF K y; equivalently Height.logHeight1 (algebraMap K L y) = [L : K] Height.logHeight1 y.",
+  "content": "For number fields K, L with an algebra map K -> L and y in K, the normalized height heightNF (Mathlib's Height.logHeight1 divided by the degree over Q) of y read in L equals that of y read in K. Proof: logHeight1 y is the degree deg_K of the polar divisor of y (coefficient max(0, -ord_v y) at finite places, [K_v : R] log+ |y|_v at archimedean places); its pull-back along degPbPullback is the polar divisor of y in L; deg_L of a pull-back is [L : K] deg_K. The same holds for y mapped by any ring homomorphism K -> L (htExt_heightNF_ringHom), in particular by an isomorphism.",
+  "cor3_12_dependency": "independent",
+  "covers": "GenEll page 4: the normalized degree is invariant under finite extension, so that ht(x) = deg_F(x_F^* M) may be computed through any morphism x_F : Spec(O_F) -> X giving rise to x; Definition 1.2 (i), page 5: ht is a function on X(Qbar). Checked for the Weil height on the projective line.",
+  "curated_in": "external.json",
+  "definitions_required": [
+   "IUT.VojtaNumberField.heightNF",
+   "IUT.HeightExtension.htExtPoleDiv"
+  ],
+  "explicit_hypotheses": [
+   "K, L number fields with an algebra map K -> L",
+   "y an element of K"
+  ],
+  "external_dependencies": [],
+  "id": "GENELL.Def1_2.frag.heightNF_algebraMap",
+  "implicit_hypotheses": [],
+  "kind": "fragment",
+  "lean_declaration": "IUT.HeightExtension.htExt_heightNF_algebraMap",
+  "lean_module": "IUT.Applications.HeightExtension",
+  "lemmas": [
+   "IUT.HeightExtension.htExtPoleCoeff",
+   "IUT.HeightExtension.htExtPoleCoeff_support_finite",
+   "IUT.HeightExtension.htExtPoleDiv",
+   "IUT.HeightExtension.htExt_posLog_finitePlace",
+   "IUT.HeightExtension.htExt_degF_poleDiv",
+   "IUT.HeightExtension.htExt_pullback_poleDiv",
+   "IUT.HeightExtension.htExt_logHeight₁_algebraMap",
+   "IUT.HeightExtension.htExt_heightNF_ringHom"
+  ],
+  "not_covered": "The height attached to an arithmetic line bundle on a model (here only the Weil height of the projective line, whose identification with ht_{omega_P(C)} up to a bounded function is not formalized).",
+  "obligations": [],
+  "page_spans": [
+   [
+    null,
+    4,
+    4
+   ],
+   [
+    null,
+    5,
+    5
+   ]
+  ],
+  "paper": null,
+  "parent": "GENELL.Def1_2",
+  "proof_status": "KERNEL_VERIFIED",
+  "results_used": [
+   "IUT4.Def1_9.frag.normalizedDeg_pullback"
+  ],
+  "scope": "X = P^1_Q, M = O(1), with ht represented by the Weil height heightNF (Mathlib's Height.logHeight1 divided by the degree); its identification with ht_{O(1)} of page 4 is not formalized",
+  "section": null,
+  "section_title": null,
+  "source": {
+   "pages_in_paper": "pages 4 and 5",
+   "pages_read": "[GenEll] rendered and checked: pages 4 and 5"
+  },
+  "statement_status": "STATEMENT_FORMALIZED"
+ },
+ {
+  "ambiguities": [],
+  "conclusion": "finrank Q (CyclotomicField 3 Q) = 2, heightNF Q (1/3) = log 3, heightNF (CyclotomicField 3 Q) (1/3) = log 3.",
+  "content": "Nonvacuity: CyclotomicField 3 Q (that is, Q(sqrt(-3))) has degree 2 over Q, and the point 1/3 has normalized height log 3 both in Q and in this quadratic field.",
+  "cor3_12_dependency": "independent",
+  "covers": "An instance of the invariance of ht under extension (page 4) at an explicit point and field.",
+  "curated_in": "external.json",
+  "definitions_required": [
+   "IUT.VojtaNumberField.heightNF"
+  ],
+  "explicit_hypotheses": [],
+  "external_dependencies": [],
+  "id": "GENELL.Def1_2.frag.oneThird_example",
+  "implicit_hypotheses": [],
+  "kind": "fragment",
+  "lean_declaration": "IUT.HeightExtension.htExt_heightNF_oneThird",
+  "lean_module": "IUT.Applications.HeightExtension",
+  "not_covered": "A single example.",
+  "obligations": [],
+  "page_spans": [
+   [
+    null,
+    4,
+    4
+   ]
+  ],
+  "paper": null,
+  "parent": "GENELL.Def1_2",
+  "proof_status": "KERNEL_VERIFIED",
+  "results_used": [
+   "GENELL.Def1_2.frag.heightNF_algebraMap"
+  ],
+  "scope": "model_test",
+  "section": null,
+  "section_title": null,
+  "source": {
+   "pages_in_paper": "page 4",
+   "pages_read": "[GenEll] rendered and checked: page 4"
+  },
+  "statement_status": "STATEMENT_FORMALIZED"
+ },
+ {
+  "ambiguities": [],
+  "conclusion": "htExt_finrank_mul_logCondNF_sub (the identity), htExt_logCondNF_algebraMap_le (the inequality), htExt_logCondNF_algebraMap_eq_of_unramified (the equality).",
+  "content": "For number fields K -> L, y in K \\ {0, 1} and S the finite set of primes of K at which y meets {0, 1, infinity}: [L : Q] (log-cond_K(y) - log-cond_L(y)) = sum over v in S and primes w of L over v of (e(w|v) - 1) log q_w. Hence log-cond_L(y) <= log-cond_K(y), with equality when every prime of L at which y meets the boundary is unramified over K.",
+  "cor3_12_dependency": "independent",
+  "covers": "Page 8, Definition 1.5 (iv): log-cond_D(x) is the normalized degree of the reduced divisor (D_x)_red on Spec O_F for a minimal field of definition F; the theorems show how the value read in a larger field differs (it drops under ramification at the conductor).",
+  "curated_in": "external.json",
+  "definitions_required": [
+   "IUT.VojtaNumberField.logCondNF"
+  ],
+  "explicit_hypotheses": [
+   "K, L number fields with an algebra map K -> L",
+   "y in K, y != 0, y != 1 (or, for the identity, a finite set S equal to the set of primes where y meets the boundary)",
+   "for the equality: e(w|v) = 1 at every prime w of L at which y meets the boundary"
+  ],
+  "external_dependencies": [],
+  "id": "GENELL.Def1_5.frag.logCondNF_extension",
+  "implicit_hypotheses": [],
+  "kind": "fragment",
+  "lean_declaration": "IUT.HeightExtension.htExt_finrank_mul_logCondNF_sub",
+  "lean_module": "IUT.Applications.HeightExtension",
+  "lemmas": [
+   "IUT.HeightExtension.htExt_logCondNF_eq_sum",
+   "IUT.HeightExtension.htExt_logCondNF_algebraMap_eq_sum",
+   "IUT.HeightExtension.htExt_logCondNF_algebraMap_le",
+   "IUT.HeightExtension.htExt_logCondNF_algebraMap_eq_of_unramified",
+   "IUT.HeightExtension.htExtConductorSet",
+   "IUT.HeightExtension.htExt_mem_conductorSet"
+  ],
+  "not_covered": "The page does not state these identities; they are consequences of the definitions recorded to justify reading log-cond on the minimal field. Only the model P^1_Z with the three sections is treated.",
+  "obligations": [],
+  "page_spans": [
+   [
+    null,
+    8,
+    8
+   ]
+  ],
+  "paper": null,
+  "parent": "GENELL.Def1_5",
+  "proof_status": "KERNEL_VERIFIED",
+  "results_used": [],
+  "scope": "model_test",
+  "section": null,
+  "section_title": null,
+  "source": {
+   "pages_in_paper": "page 8",
+   "pages_read": "[GenEll] rendered and checked: page 8"
+  },
+  "statement_status": "STATEMENT_FORMALIZED"
+ },
+ {
+  "ambiguities": [],
+  "conclusion": "logDiffNF K <= logDiffNF L; logDiffNF Q < logDiffNF (CyclotomicField 3 Q).",
+  "content": "The normalized log-different does not decrease along a tower of number fields K -> L (log-diff_K <= log-diff_L, from the tower formula of the different), and is not invariant: log-diff of Q is 0 and log-diff of Q(zeta_3) is (1/2) log 3.",
+  "cor3_12_dependency": "independent",
+  "covers": "Page 8, Definition 1.5 (iii): log-diff_X(x) is defined through the different ideal of a minimal field of definition F of x; the theorem shows why the minimal field must be specified (the value grows along extensions).",
+  "curated_in": "external.json",
+  "definitions_required": [
+   "IUT.VojtaNumberField.logDiffNF"
+  ],
+  "explicit_hypotheses": [
+   "K, L number fields with an algebra map K -> L (for the inequality)"
+  ],
+  "external_dependencies": [],
+  "id": "GENELL.Def1_5.frag.logDiffNF_not_invariant",
+  "implicit_hypotheses": [],
+  "kind": "fragment",
+  "lean_declaration": "IUT.HeightExtension.htExt_logDiffNF_le",
+  "lean_module": "IUT.Applications.HeightExtension",
+  "lemmas": [
+   "IUT.HeightExtension.htExt_logDiffNF_rat_lt_cyclotomicThree"
+  ],
+  "not_covered": "The page does not state the inequality; it is a consequence of the definitions, recorded to justify reading log-diff on the minimal field. Equality conditions are not treated.",
+  "obligations": [],
+  "page_spans": [
+   [
+    null,
+    8,
+    8
+   ]
+  ],
+  "paper": null,
+  "parent": "GENELL.Def1_5",
+  "proof_status": "KERNEL_VERIFIED",
+  "results_used": [],
+  "scope": "model_test",
+  "section": null,
+  "section_title": null,
+  "source": {
+   "pages_in_paper": "page 8",
+   "pages_read": "[GenEll] rendered and checked: page 8"
+  },
+  "statement_status": "STATEMENT_FORMALIZED"
+ },
+ {
+  "ambiguities": [],
+  "conclusion": "VojtaLineMinusThreePointsDegreeAtMost d <-> htExtDegreeAtMostAnyFieldStatement d.",
+  "content": "The registered statement VojtaLineMinusThreePointsDegreeAtMost d, which reads each point on its minimal field of definition, is equivalent with the same constants to htExtDegreeAtMostAnyFieldStatement d, which reads each point x in any number field F of degree at most d containing it. Ingredients: for x in L, the generator of Q(x) generates Q(x); the height of x in L equals its height in Q(x); and an inequality ht <= (1 + eps)(log-diff + log-cond) + C for y read in K implies it for y read in any L containing K, since ht is unchanged and log-diff + log-cond does not decrease.",
+  "cor3_12_dependency": "independent",
+  "covers": "Definition 1.5 (i) (page 8, minimal field of definition) together with the invariance of ht (page 4): the inequality of Theorem 2.1 (i) restricted to points of degree at most d can be read on any field of definition.",
+  "curated_in": "external.json",
+  "definitions_required": [
+   "IUT.VojtaNumberField.VojtaLineMinusThreePointsDegreeAtMost",
+   "IUT.HeightExtension.htExtDegreeAtMostAnyFieldStatement"
+  ],
+  "explicit_hypotheses": [
+   "d a natural number"
+  ],
+  "external_dependencies": [],
+  "id": "GENELL.Def1_5.frag.minimal_field_equivalence",
+  "implicit_hypotheses": [],
+  "kind": "fragment",
+  "lean_declaration": "IUT.HeightExtension.htExt_degreeAtMost_iff_anyField",
+  "lean_module": "IUT.Applications.HeightExtension",
+  "lemmas": [
+   "IUT.HeightExtension.htExt_adjoin_gen_eq_top",
+   "IUT.HeightExtension.htExt_heightNF_adjoin",
+   "IUT.HeightExtension.htExt_gen_ne_zero",
+   "IUT.HeightExtension.htExt_gen_ne_one",
+   "IUT.HeightExtension.htExt_ineq_algebraMap",
+   "IUT.HeightExtension.htExt_ineq_of_adjoin",
+   "IUT.HeightExtension.htExt_finrank_adjoin_le"
+  ],
+  "not_covered": "Neither side of the equivalence is proved. The analogous equivalence for the compactly bounded subsets (cbDegreeAtMostStatement) is not treated: membership of a point in a compactly bounded subset would have to be shown independent of the field in which it is read.",
+  "obligations": [],
+  "page_spans": [
+   [
+    null,
+    4,
+    4
+   ],
+   [
+    null,
+    5,
+    5
+   ],
+   [
+    null,
+    8,
+    8
+   ]
+  ],
+  "paper": null,
+  "parent": "GENELL.Def1_5",
+  "proof_status": "KERNEL_VERIFIED",
+  "results_used": [
+   "GENELL.Def1_2.frag.heightNF_algebraMap"
+  ],
+  "scope": "model_test",
+  "section": null,
+  "section_title": null,
+  "source": {
+   "pages_in_paper": "pages 4, 5 and 8",
+   "pages_read": "[GenEll] rendered and checked: pages 4, 5 and 8"
+  },
+  "statement_status": "STATEMENT_FORMALIZED"
+ },
+ {
   "ambiguities": [
    "Proposition 1.6 is stated for an arithmetic line bundle with L = O_X(D); here ht_D is replaced by 3 times the Weil height, the BD-class of ht_{O(3)}, an identification that is not formalized."
   ],
@@ -38235,6 +38644,212 @@
   "statement_status": "STATEMENT_FORMALIZED"
  },
  {
+  "ambiguities": [],
+  "conclusion": "(1/prod_v N_v) log mu_E(prod S_v) = sum_v (1/N_v) log mu_v(S_v).",
+  "content": "For a finite V with DecidableEq, nonempty finite sets E_v and sigma-finite measure spaces (M_v, mu_v): the E-weighted measure mu_E(S) is the product measure on M_W = prod_{w in W} M_{pi(w)}, W = Sigma_v prod_{v' != v} E_{v'}, of {m | for all e, (m_{(e_{!=v}, v)})_v in S}; for S = prod_v S_v with 0 < mu_v(S_v) < infinity, (1/N_E) log mu_E(S) = sum_v (1/N_v) log mu_v(S_v), N_v = |E_v|, N_E = prod_v N_v.",
+  "cor3_12_dependency": "independent",
+  "covers": "Page 97, the last display of Remark 3.1.1 (iv), and the definitions of E, E_{!=v}, W, S_E on pages 96 and 97.",
+  "curated_in": "iut3.json",
+  "definitions_required": [],
+  "explicit_hypotheses": [
+   "V finite",
+   "E_v nonempty finite",
+   "mu_v sigma-finite",
+   "0 < mu_v(S_v) < infinity"
+  ],
+  "external_dependencies": [],
+  "id": "IUT3.Rem3_1_1.frag.wpkt_e_weighted",
+  "implicit_hypotheses": [],
+  "kind": "fragment",
+  "lean_declaration": "IUT.PaperIII.Corollary312.wPkt_EMeasure_log",
+  "lean_module": "IUT.PaperIII.Corollary312.WeightedPacket",
+  "lemmas": [
+   "IUT.PaperIII.Corollary312.wPktEMeasure",
+   "IUT.PaperIII.Corollary312.wPktENe",
+   "IUT.PaperIII.Corollary312.wPktWIdx",
+   "IUT.PaperIII.Corollary312.wPkt_ESet_pi"
+  ],
+  "not_covered": "M_{E*V} itself and its homeomorphism with M_W are not formalized: the measure is defined on M_W directly; the page's topological hypotheses (locally compact, countable basis, complete Borel measure) are replaced by sigma-finiteness; S Borel is not required. V nonempty is not needed.",
+  "obligations": [],
+  "page_spans": [
+   [
+    3,
+    96,
+    96
+   ],
+   [
+    3,
+    97,
+    97
+   ]
+  ],
+  "paper": 3,
+  "parent": "IUT3.Rem3_1_1",
+  "pdf_page": 96,
+  "pdf_page_end": 97,
+  "proof_status": "KERNEL_VERIFIED",
+  "results_used": [],
+  "section": 3,
+  "section_title": "Multiradial Logarithmic Gaussian Procession Monoids",
+  "source": {
+   "pages_read": "rendered and checked: pages 93 to 97, 115 to 117, 127",
+   "paper": "Inter-universal Teichmuller Theory III",
+   "pdf_pages": "pages 96 and 97"
+  },
+  "statement_status": "STATEMENT_FORMALIZED"
+ },
+ {
+  "ambiguities": [],
+  "conclusion": "(exists nu c, 0 < c and the identity on direct product regions) iff a = b.",
+  "content": "Model: on R x R with Lebesgue measure on each factor and weights a, b > 0, there are a measure nu on R x R and c > 0 with c log nu(S1 x S2) = a log vol(S1) + b log vol(S2) for all compact S1, S2 of positive measure iff a = b; any such nu and real c force a = c = b.",
+  "cor3_12_dependency": "independent",
+  "covers": "Page 95, Remark 3.1.1 (iii): weighted sums of log-volumes do not in general arise as a positive multiple of the logarithm of a measure.",
+  "curated_in": "iut3.json",
+  "definitions_required": [],
+  "explicit_hypotheses": [
+   "a > 0, b > 0"
+  ],
+  "external_dependencies": [],
+  "id": "IUT3.Rem3_1_1.frag.wpkt_warning_model",
+  "implicit_hypotheses": [],
+  "kind": "fragment",
+  "lean_declaration": "IUT.PaperIII.Corollary312.wPkt_warning_iff",
+  "lean_module": "IUT.PaperIII.Corollary312.WeightedPacket",
+  "lemmas": [
+   "IUT.PaperIII.Corollary312.wPkt_warning_forces_equal",
+   "IUT.PaperIII.Corollary312.wPkt_equal_weights_measure",
+   "IUT.PaperIII.Corollary312.wPkt_split_forces",
+   "IUT.PaperIII.Corollary312.wPkt_model_facts"
+  ],
+  "not_covered": "A model on R x R, not the papers' summands; it concerns measures on the product itself, while the E-weighted measure of (iv) lives on another space and does give the weighted sum.",
+  "obligations": [],
+  "page_spans": [
+   [
+    3,
+    95,
+    95
+   ]
+  ],
+  "paper": 3,
+  "parent": "IUT3.Rem3_1_1",
+  "pdf_page": 95,
+  "pdf_page_end": 95,
+  "proof_status": "KERNEL_VERIFIED",
+  "results_used": [],
+  "scope": "model_test",
+  "section": 3,
+  "section_title": "Multiradial Logarithmic Gaussian Procession Monoids",
+  "source": {
+   "pages_read": "rendered and checked: pages 93 to 97, 115 to 117, 127",
+   "paper": "Inter-universal Teichmuller Theory III",
+   "pdf_pages": "page 95"
+  },
+  "statement_status": "STATEMENT_FORMALIZED"
+ },
+ {
+  "ambiguities": [],
+  "conclusion": "A definition; the denominator equals (sum_v f v)^|A|.",
+  "content": "Definition of the normalized weight of a tuple t : A -> V of places over a rational prime: w_t = 1 / ((prod_alpha e(t alpha)) * sum_{w : A -> V} prod_alpha f(w alpha)), with e(v) = [K_v : (F_mod)_v], f(v) = [(F_mod)_v : Q_p] given as natural numbers; the dimension dim_t = prod_alpha e(t alpha) f(t alpha); and the identity sum_{w : A -> V} prod_alpha f(w alpha) = (sum_v f(v))^|A|.",
+  "cor3_12_dependency": "independent",
+  "covers": "Page 94, the third display of Remark 3.1.1 (ii) (the normalized weight for direct sums over all collections {v_alpha}), exactly as printed; the second display (the unnormalized weight 1/prod_alpha [K_{v_alpha} : (F_mod)_{v_alpha}]) is the factor before the sum: the printed numerator is 1, and w_t = (1/prod_alpha e(t alpha)) / sum_w prod_alpha f(w alpha).",
+  "curated_in": "iut3.json",
+  "definitions_required": [],
+  "explicit_hypotheses": [
+   "V, A finite types",
+   "e, f : V -> N"
+  ],
+  "external_dependencies": [],
+  "id": "IUT3.Rem3_1_1.frag.wpkt_weight",
+  "implicit_hypotheses": [],
+  "kind": "fragment",
+  "lean_declaration": "IUT.PaperIII.Corollary312.wPktWeight",
+  "lean_module": "IUT.PaperIII.Corollary312.WeightedPacket",
+  "lemmas": [
+   "IUT.PaperIII.Corollary312.wPktDenom",
+   "IUT.PaperIII.Corollary312.wPktDim",
+   "IUT.PaperIII.Corollary312.wPktDenom_eq_pow",
+   "IUT.PaperIII.Corollary312.wPktDenom_pos"
+  ],
+  "not_covered": "The identification of the places of V over v_Q with those of V_mod is not modeled (one index set V). Archimedean places are covered only as arithmetic.",
+  "obligations": [],
+  "page_spans": [
+   [
+    3,
+    94,
+    94
+   ]
+  ],
+  "paper": 3,
+  "parent": "IUT3.Rem3_1_1",
+  "pdf_page": 94,
+  "pdf_page_end": 94,
+  "proof_status": "NOT_EXTRACTED",
+  "results_used": [],
+  "section": 3,
+  "section_title": "Multiradial Logarithmic Gaussian Procession Monoids",
+  "source": {
+   "pages_read": "rendered and checked: pages 93 to 97, 115 to 117, 127",
+   "paper": "Inter-universal Teichmuller Theory III",
+   "pdf_pages": "page 94"
+  },
+  "statement_status": "STATEMENT_FORMALIZED"
+ },
+ {
+  "ambiguities": [
+   "Pages 94, 95 and 115 do not decide whether the weights multiply the unnormalized log-volume of a summand or its log-volume divided by its dimension. Under the unnormalized reading the printed weights give the printed normalization for every choice of degrees; under the other reading the shift is -n (sum_t w_t) log p (IUT3.Prop3_9.i.frag.wpkt_double_division), which differs from -n log p in general, though not when sum_t w_t = 1. The unnormalized reading agrees with page 97, where the weights 1/N_v multiply the logarithm of a measure, and with [AbsTopIII], Proposition 5.7 (i), cited on page 115, where the log-volume of the n-th power of the maximal ideal is -f n log p; these support the reading without settling it. IUT IV, Proposition 1.4 (i), page 13, divides by the degree, in a setting without these weights."
+  ],
+  "conclusion": "sum_t wPktWeight e f t * wPktDim e f t = 1.",
+  "content": "For positive e, f and nonempty V: sum_t w_t * dim_t = 1. The weights themselves sum to (sum_v 1/e(v))^|A| / (sum_v f(v))^|A|, which is 1/2 for one place with e = 2, f = 1.",
+  "cor3_12_dependency": "independent",
+  "covers": "Pages 94 and 95: the weights are normalized so that multiplication by p_{v_Q} changes the weighted sum of log-volumes by log(p_{v_Q}), read for unnormalized summand log-volumes (scaling by p subtracts dim_t log p).",
+  "curated_in": "iut3.json",
+  "definitions_required": [],
+  "explicit_hypotheses": [
+   "V nonempty finite",
+   "A finite",
+   "e v > 0, f v > 0 for all v"
+  ],
+  "external_dependencies": [],
+  "id": "IUT3.Rem3_1_1.frag.wpkt_weight_dim_sum",
+  "implicit_hypotheses": [],
+  "kind": "fragment",
+  "lean_declaration": "IUT.PaperIII.Corollary312.wPkt_weight_dim_sum",
+  "lean_module": "IUT.PaperIII.Corollary312.WeightedPacket",
+  "lemmas": [
+   "IUT.PaperIII.Corollary312.wPkt_weight_sum",
+   "IUT.PaperIII.Corollary312.wPkt_weight_sum_example"
+  ],
+  "not_covered": "That the summand log-volumes are the unnormalized ones is an interpretation (see the double-division record). The identity gives the printed normalization only under the reading that the weights of page 94 multiply the unnormalized log-volume of each summand (the logarithm of a Haar measure with value 1 on the integral elements), not its log-volume divided by the dimension of the summand. Counted as a model test: the identity sum_t w_t dim_t = 1 is not printed; it is the algebraic content of the sentence of pages 94 and 95 on the effect of multiplication by p_{v_Q}, under the reading that the weights multiply unnormalized summand log-volumes (an inference, as for GENELL.Sec1.ArithmeticDivisor.frag.degF_principal).",
+  "obligations": [],
+  "page_spans": [
+   [
+    3,
+    94,
+    94
+   ],
+   [
+    3,
+    95,
+    95
+   ]
+  ],
+  "paper": 3,
+  "parent": "IUT3.Rem3_1_1",
+  "pdf_page": 94,
+  "pdf_page_end": 95,
+  "proof_status": "KERNEL_VERIFIED",
+  "results_used": [],
+  "scope": "model_test",
+  "section": 3,
+  "section_title": "Multiradial Logarithmic Gaussian Procession Monoids",
+  "source": {
+   "pages_read": "rendered and checked: pages 93 to 97, 115 to 117, 127",
+   "paper": "Inter-universal Teichmuller Theory III",
+   "pdf_pages": "pages 94 and 95"
+  },
+  "statement_status": "STATEMENT_FORMALIZED"
+ },
+ {
   "ambiguities": [
    "Whether Ind1 includes only permutations of labels compatible with the procession inclusions or also automorphisms of each D^⊢-prime-strip is not stated on the page.",
    "Page 154 does not state that the (Ind1) and (Ind2) actions commute; the joint indeterminacy is the action generated by the two, not a direct product, until commutation is proved."
@@ -40332,6 +40947,254 @@
  },
  {
   "ambiguities": [],
+  "conclusion": "tensorIdxRing p K K ne tensorIdxNormRing p K K; 2 <= relIndex and mu^log(R_E) < 0.",
+  "content": "For K1 = K2 = K with [K : Q_p] = 2 and pi in K with pi^2 = p (any prime p), p^-1 (pi tensor pi) is integral but not in R_E: R_E is not (R_E)^~, the index is at least 2 and mu^log(R_E) < 0. Such K exists (Q_p[X]/(X^2 - p)).",
+  "covers": "Not printed: an example where the first inclusion of Proposition 1.1 (page 9) is not an equality.",
+  "curated_in": "iut4.json",
+  "definitions_required": [],
+  "explicit_hypotheses": [
+   "p a prime",
+   "K a field, finite-dimensional of degree 2 over Q_p",
+   "pi in K with pi^2 = p"
+  ],
+  "external_dependencies": [],
+  "id": "IUT4.Prop1_1.frag.ti_example",
+  "implicit_hypotheses": [],
+  "kind": "fragment",
+  "lean_declaration": "IUT.PaperIV.LocalFields.tensorIdxEx_ne",
+  "lean_module": "IUT.PaperIV.LocalFields.TensorIndex",
+  "lemmas": [
+   "IUT.PaperIV.LocalFields.tensorIdxEx_muLog_neg",
+   "IUT.PaperIV.LocalFields.tensorIdxEx_exists",
+   "IUT.PaperIV.LocalFields.tensorIdxEx_coeff_le_one",
+   "IUT.PaperIV.LocalFields.tensorIdxEx_not_sq"
+  ],
+  "not_covered": "The exact index (p for p odd).",
+  "obligations": [],
+  "page_spans": [
+   [
+    4,
+    9,
+    9
+   ]
+  ],
+  "paper": 4,
+  "parent": "IUT4.Prop1_1",
+  "pdf_page": 9,
+  "pdf_page_end": 9,
+  "proof_status": "KERNEL_VERIFIED",
+  "results_used": [],
+  "scope": "model_test",
+  "section": 1,
+  "section_title": "Log-volume Estimates",
+  "source": {
+   "pages_read": "rendered and checked: pages 9, 10, 13, 14",
+   "paper": "Inter-universal Teichmuller Theory IV",
+   "pdf_pages": "page 9"
+  },
+  "statement_status": "STATEMENT_FORMALIZED"
+ },
+ {
+  "ambiguities": [],
+  "conclusion": "IsFractionRing (tensorIdxRing p K1 K2) (K1 tensor K2); and for every z, z is integral over tensorIdxRing iff z is in tensorIdxNormRing.",
+  "content": "R_E is a subring of K1 tensor_{Q_p} K2, the total ring of fractions of R_E is K1 tensor K2 (IsFractionRing), and an element is integral over R_E if and only if it is integral over Z_p, i.e. lies in (R_E)^~. Hence (R_E)^~ is the normalization of R_E in its ring of fractions.",
+  "covers": "Page 9: '(-)^~' is the normalization of the reduced ring in its ring of fractions; for |I| = 2 this identifies the normalization of R_E with the elements integral over Z_p used for (R_E)^~ in PadicVolume, Packets, TensorDifferent.",
+  "curated_in": "iut4.json",
+  "definitions_required": [],
+  "explicit_hypotheses": [
+   "p a prime",
+   "K1, K2 fields with Q_p-algebra structures",
+   "K1, K2 finite-dimensional over Q_p"
+  ],
+  "external_dependencies": [],
+  "id": "IUT4.Prop1_1.frag.ti_normalization",
+  "implicit_hypotheses": [],
+  "kind": "fragment",
+  "lean_declaration": "IUT.PaperIV.LocalFields.tensorIdx_isFractionRing",
+  "lean_module": "IUT.PaperIV.LocalFields.TensorIndex",
+  "lemmas": [
+   "IUT.PaperIV.LocalFields.tensorIdx_isIntegralElem_iff",
+   "IUT.PaperIV.LocalFields.tensorIdx_exists_pow_smul_mem_ring",
+   "IUT.PaperIV.LocalFields.tensorIdxRing",
+   "IUT.PaperIV.LocalFields.tensorIdxNormRing",
+   "IUT.PaperIV.LocalFields.tensorIdxRing_coe",
+   "IUT.PaperIV.LocalFields.tensorIdxRing_le",
+   "IUT.PaperIV.LocalFields.tensorIdx_smul_mem"
+  ],
+  "not_covered": "Setting: two factors only; tensor products over Q_p of the fields; R_E = tensorIdxRing (carrier padicPacketIntegers), (R_E)^~ = tensorIdxNormRing (carrier padicPacketNormalization); mu^log = padicPacketMuLog normalized at (R_E)^~. More than two factors; that R_E is reduced is not stated separately (it is a subring of the reduced K1 tensor K2, volBridge_tensor_isReduced). Counted as a model test: an identification of the set used for (R_E)^~ in this project (the elements integral over Z_p) with the normalization of R_E in its ring of fractions, which page 9 uses as the definition; the page prints the definition, not this identity (as for IUT4.Prop1_1.frag.pk_tensor_zp).",
+  "obligations": [],
+  "page_spans": [
+   [
+    4,
+    9,
+    9
+   ]
+  ],
+  "paper": 4,
+  "parent": "IUT4.Prop1_1",
+  "pdf_page": 9,
+  "pdf_page_end": 9,
+  "proof_status": "KERNEL_VERIFIED",
+  "results_used": [],
+  "scope": "model_test",
+  "section": 1,
+  "section_title": "Log-volume Estimates",
+  "source": {
+   "pages_read": "rendered and checked: pages 9, 10, 13, 14",
+   "paper": "Inter-universal Teichmuller Theory IV",
+   "pdf_pages": "page 9"
+  },
+  "statement_status": "STATEMENT_FORMALIZED"
+ },
+ {
+  "ambiguities": [],
+  "conclusion": "(p : Q_p)^(ceil (differentOrder Z_p R2 P)) . z is in tensorIdxRing p K1 K2.",
+  "content": "For a finite extension K2 of Q_p with R2 = integralClosure Z_p K2, P a prime of R2 over p, and z in (R_E)^~: p^(ceil d_2) z lies in R_E, where d_2 = differentOrder Z_p R2 P. More generally p^k z lies in R_E whenever differentExponent <= k e, because p^k then lies in the different ideal of R2.",
+  "covers": "Page 9, Proposition 1.1, first inclusion p^{d_{I*}} (R_I)^~ inside R_I for |I| = 2, I* = {2}, with p^{d_{I*}} replaced by the power of p with exponent ceil(d_2), an element of the different.",
+  "curated_in": "iut4.json",
+  "definitions_required": [],
+  "explicit_hypotheses": [
+   "p a prime",
+   "K1, K2 fields with Q_p-algebra structures",
+   "K2 finite-dimensional over Q_p with a compatible Z_p-algebra structure",
+   "P a prime of integralClosure Z_p K2 lying over the maximal ideal of Z_p",
+   "z in tensorIdxNormRing p K1 K2"
+  ],
+  "external_dependencies": [],
+  "id": "IUT4.Prop1_1.frag.ti_pow_smul",
+  "implicit_hypotheses": [],
+  "kind": "fragment",
+  "lean_declaration": "IUT.PaperIV.LocalFields.tensorIdx_ceil_smul_mem",
+  "lean_module": "IUT.PaperIV.LocalFields.TensorIndex",
+  "lemmas": [
+   "IUT.PaperIV.LocalFields.tensorIdx_pow_smul_mem",
+   "IUT.PaperIV.LocalFields.tensorIdx_pow_mem_differentIdeal",
+   "IUT.PaperIV.LocalFields.tensorIdx_exists_pow_smul_mem"
+  ],
+  "not_covered": "Setting: two factors only; tensor products over Q_p of the fields; R_E = tensorIdxRing (carrier padicPacketIntegers), (R_E)^~ = tensorIdxNormRing (carrier padicPacketNormalization); mu^log = padicPacketMuLog normalized at (R_E)^~. The page's element p^{d_2} of order exactly d_2 (that form is tensorDiff_order_mul_mem_packetIntegers in TensorDifferent, not this record); more than two factors; the tensor product over Z_p. Counted as a model test: the exponent ceil(d_2) is weaker than the printed p^{d_{I*}}, an element of order exactly d_2; the printed form is checked by IUT4.Prop1_1.frag.td_order.",
+  "obligations": [],
+  "page_spans": [
+   [
+    4,
+    9,
+    9
+   ]
+  ],
+  "paper": 4,
+  "parent": "IUT4.Prop1_1",
+  "pdf_page": 9,
+  "pdf_page_end": 9,
+  "proof_status": "KERNEL_VERIFIED",
+  "results_used": [],
+  "scope": "model_test",
+  "section": 1,
+  "section_title": "Log-volume Estimates",
+  "source": {
+   "pages_read": "rendered and checked: pages 9, 10, 13, 14",
+   "paper": "Inter-universal Teichmuller Theory IV",
+   "pdf_pages": "page 9"
+  },
+  "statement_status": "STATEMENT_FORMALIZED"
+ },
+ {
+  "ambiguities": [],
+  "conclusion": "(p : Q_p)^(ceil (differentOrder Z_p R1 P)) . z is in tensorIdxRing p K1 K2.",
+  "content": "As ti_pow_smul with the factors exchanged: p^(ceil d_1) z lies in R_E for z in (R_E)^~, with d_1 the order of the different of R1 = integralClosure Z_p K1 at the prime over p.",
+  "covers": "Page 9, Proposition 1.1, first inclusion for |I| = 2 with * = 2, I* = {1}, exponent ceil(d_1).",
+  "curated_in": "iut4.json",
+  "definitions_required": [],
+  "explicit_hypotheses": [
+   "p a prime",
+   "K1, K2 fields with Q_p-algebra structures",
+   "K1 finite-dimensional over Q_p with a compatible Z_p-algebra structure",
+   "P a prime of integralClosure Z_p K1 lying over the maximal ideal of Z_p",
+   "z in tensorIdxNormRing p K1 K2"
+  ],
+  "external_dependencies": [],
+  "id": "IUT4.Prop1_1.frag.ti_pow_smul_left",
+  "implicit_hypotheses": [],
+  "kind": "fragment",
+  "lean_declaration": "IUT.PaperIV.LocalFields.tensorIdx_ceil_smul_mem_left",
+  "lean_module": "IUT.PaperIV.LocalFields.TensorIndex",
+  "lemmas": [
+   "IUT.PaperIV.LocalFields.tensorIdx_comm_mem",
+   "IUT.PaperIV.LocalFields.tensorIdx_comm_comm"
+  ],
+  "not_covered": "Setting: two factors only; tensor products over Q_p of the fields; R_E = tensorIdxRing (carrier padicPacketIntegers), (R_E)^~ = tensorIdxNormRing (carrier padicPacketNormalization); mu^log = padicPacketMuLog normalized at (R_E)^~. The element of order exactly d_1; more than two factors. Counted as a model test: the exponent ceil(d_1) is weaker than the printed p^{d_{I*}}, an element of order exactly d_{I*}; the printed form is checked for I* = {2} by IUT4.Prop1_1.frag.td_order.",
+  "obligations": [],
+  "page_spans": [
+   [
+    4,
+    9,
+    9
+   ]
+  ],
+  "paper": 4,
+  "parent": "IUT4.Prop1_1",
+  "pdf_page": 9,
+  "pdf_page_end": 9,
+  "proof_status": "KERNEL_VERIFIED",
+  "results_used": [],
+  "scope": "model_test",
+  "section": 1,
+  "section_title": "Log-volume Estimates",
+  "source": {
+   "pages_read": "rendered and checked: pages 9, 10, 13, 14",
+   "paper": "Inter-universal Teichmuller Theory IV",
+   "pdf_pages": "page 9"
+  },
+  "statement_status": "STATEMENT_FORMALIZED"
+ },
+ {
+  "ambiguities": [],
+  "conclusion": "tensorIdxRing p K1 K2 = tensorIdxNormRing p K1 K2.",
+  "content": "If K2 (or K1) has ramification index 1 over Q_p, then R_E = (R_E)^~; then the index is 1 and mu^log(R_E) = 0.",
+  "covers": "Not printed: the case d_2 = 0 of Proposition 1.1 (page 9), via the tame equality of Proposition 1.3 (i).",
+  "curated_in": "iut4.json",
+  "definitions_required": [],
+  "explicit_hypotheses": [
+   "p a prime",
+   "K1, K2 fields with Q_p-algebra structures",
+   "the unramified factor finite-dimensional with a compatible Z_p-algebra structure",
+   "P a prime over p with ramificationIdx = 1"
+  ],
+  "external_dependencies": [],
+  "id": "IUT4.Prop1_1.frag.ti_unramified",
+  "implicit_hypotheses": [],
+  "kind": "fragment",
+  "lean_declaration": "IUT.PaperIV.LocalFields.tensorIdx_eq_of_ramificationIdx_eq_one",
+  "lean_module": "IUT.PaperIV.LocalFields.TensorIndex",
+  "lemmas": [
+   "IUT.PaperIV.LocalFields.tensorIdx_eq_of_ramificationIdx_eq_one_left",
+   "IUT.PaperIV.LocalFields.tensorIdx_muLog_eq_zero_of_eq"
+  ],
+  "not_covered": "Unramified but with the ramification hypothesis in another form (different ideal = top) is not stated separately.",
+  "obligations": [],
+  "page_spans": [
+   [
+    4,
+    9,
+    9
+   ]
+  ],
+  "paper": 4,
+  "parent": "IUT4.Prop1_1",
+  "pdf_page": 9,
+  "pdf_page_end": 9,
+  "proof_status": "KERNEL_VERIFIED",
+  "results_used": [],
+  "scope": "model_test",
+  "section": 1,
+  "section_title": "Log-volume Estimates",
+  "source": {
+   "pages_read": "rendered and checked: pages 9, 10, 13, 14",
+   "paper": "Inter-universal Teichmuller Theory IV",
+   "pdf_pages": "page 9"
+  },
+  "statement_status": "STATEMENT_FORMALIZED"
+ },
+ {
+  "ambiguities": [],
   "conclusion": "padicVolIntegral p x <-> spectralNorm x <= 1; padicVolIntegral p x <-> for all i, padicVolIntegral p (x i).",
   "content": "For a finite extension A of Q_p, x is integral over Z_p (padicVolIntegral) iff its spectral norm is at most 1; in a finite product of Q_p-algebras an element is integral over Z_p iff each component is.",
   "covers": "Page 9: R_i the ring of integers of k_i, and the normalization (-)^~ of R_E; identifies the closed unit ball model and the integral closure model of R_i used by the packet definitions.",
@@ -41392,6 +42255,495 @@
  },
  {
   "ambiguities": [],
+  "conclusion": "tensorLogShift p K1 K2 x y ⊆ (u1 tmul u2 * ·) '' padicPacketIntegers p K1 K2 (and the latter ⊆ padicPacketIntegers).",
+  "content": "For u_i in K_i of spectral norm p^(-a_i) and x, y with ||x|| ||y|| <= p^(-(d_1 + d_2 + a_1 + a_2)): (x tmul y) (R_I)^~ is contained in (u1 tmul u2) R_I, the image of p^{a_1} R_1 tmul p^{a_2} R_2; and (u1 tmul u2) R_I is contained in R_I.",
+  "covers": "Page 11, proof of Proposition 1.2 (ii), first display p^{d_I + a_I} (R_I)^~ ⊆ tensor of p^{a_i} R_i (⊆ R_I), with d_I = d_1 + d_2 as printed.",
+  "curated_in": "iut4.json",
+  "definitions_required": [],
+  "explicit_hypotheses": [
+   "p a prime",
+   "K1, K2 fields with finite-dimensional Q_p-algebra structures and compatible Z_p-algebra structures (IsScalarTower Z_p Q_p K_i); R_i = integralClosure Z_p K_i",
+   "P1, P2 prime ideals of R1, R2 lying over the maximal ideal of Z_p",
+   "u1, u2 with spectral norm p^(-a_i), a_i = Proposition1_2.a p (P_i.ramificationIdx Z_p)",
+   "x in K1, y in K2 with ||x|| ||y|| <= p^(-(d_1 + d_2 + (a_1 + a_2)))"
+  ],
+  "external_dependencies": [],
+  "id": "IUT4.Prop1_2.frag.tls_first_display",
+  "implicit_hypotheses": [],
+  "kind": "fragment",
+  "lean_declaration": "IUT.PaperIV.LocalFields.tensorLog_shift_subset_integers",
+  "lemmas": [
+   "IUT.PaperIV.LocalFields.tensorLog_mul_integers_subset_integers",
+   "IUT.PaperIV.LocalFields.tensorLog_tmul_mem_normalization",
+   "IUT.PaperIV.LocalFields.tensorLog_tmul_mem_of_integral",
+   "IUT.PaperIV.LocalFields.tensorLog_tmul_pow_eq",
+   "IUT.PaperIV.LocalFields.tensorLog_integral_of_norm_le_one",
+   "IUT.PaperIV.LocalFields.tensorLog_norm_pow_eq_zpow",
+   "IUT.PaperIV.LocalFields.tensorLog_norm_p_zpow_smul",
+   "IUT.PaperIV.LocalFields.tensorLog_mul_mem",
+   "IUT.PaperIV.LocalFields.tensorLog_add_mem",
+   "IUT.PaperIV.LocalFields.tensorLog_smul_mem",
+   "IUT.PaperIV.LocalFields.tensorLog_one_le_ramificationIdx",
+   "IUT.PaperIV.LocalFields.tensorLogDiffOrder_nonneg"
+  ],
+  "not_covered": "two factors only; more than two factors (the induction on |I|) is not addressed.",
+  "obligations": [],
+  "page_spans": [
+   [
+    4,
+    10,
+    11
+   ]
+  ],
+  "paper": 4,
+  "parent": "IUT4.Prop1_2",
+  "pdf_page": 10,
+  "pdf_page_end": 11,
+  "proof_status": "KERNEL_VERIFIED",
+  "results_used": [
+   "IUT4.Prop1_1"
+  ],
+  "scope": "two factors only (I = {1, 2}); K1 tmul_{Q_p} K2; R_I = padicPacketIntegers, (R_I)^~ = padicPacketNormalization (elements integral over Z_p); log_p(R_I^x) = tensorLogLattice, the Z_p-span in K1 tmul K2 of log_p(u1) tmul log_p(u2); p^mu (R_I)^~ = tensorLogShift x y with spectral norms ||x|| ||y|| = p^(-mu); ord read through the spectral norm; e_i, d_i at a prime P_i of R_i over p (d_i = tensorLogDiffOrder = differentOrder); phi a Q_p-linear automorphism of K1 tmul K2 with phi(log_p(R_I^x)) = log_p(R_I^x)",
+  "section": 1,
+  "section_title": "Log-volume Estimates",
+  "source": {
+   "pages_read": "rendered and checked: pages 10, 11",
+   "paper": "Inter-universal Teichmuller Theory IV",
+   "pdf_pages": "pages 10 to 11"
+  },
+  "statement_status": "STATEMENT_FORMALIZED"
+ },
+ {
+  "ambiguities": [],
+  "conclusion": "phi '' tensorLogShift t1 t2 ⊆ p^k • tensorLogLattice and p^k • tensorLogLattice ⊆ p^k • tensorLogShift z1 z2.",
+  "content": "Proposition 1.2 (ii) for two factors: for phi as in the scope, every real lam, t1, t2 with ||t1|| ||t2|| = p^(-lam), and z_i with ||z_i|| = p^(b_i): with k = floor(lam - (d_1 + d_2) - (a_1 + a_2)), phi((t1 tmul t2) (R_I)^~) ⊆ p^k log_p(R_I^x) ⊆ p^k ((z1 tmul z2) (R_I)^~).",
+  "covers": "Page 10, Proposition 1.2 (ii), first display phi(p^lam (R_I)^~) ⊆ p^{floor(lam - d_I - a_I)} log_p(R_I^x) ⊆ p^{floor(lam - d_I - a_I) - b_I} (R_I)^~, for every lam with a representative p^lam (in particular every lam in (1/e_i) Z, i in I); proof on page 11.",
+  "curated_in": "iut4.json",
+  "definitions_required": [],
+  "explicit_hypotheses": [
+   "p a prime",
+   "K1, K2 fields with finite-dimensional Q_p-algebra structures and compatible Z_p-algebra structures (IsScalarTower Z_p Q_p K_i); R_i = integralClosure Z_p K_i",
+   "P1, P2 prime ideals of R1, R2 lying over the maximal ideal of Z_p",
+   "phi : K1 tmul K2 ≃ₗ[Q_p] K1 tmul K2 with phi '' tensorLogLattice = tensorLogLattice",
+   "lam real; t1, t2 with ||t1|| ||t2|| = p^(-lam)",
+   "z1, z2 with ||z_i|| = p^(b_i), b_i = Proposition1_2.b p e_i"
+  ],
+  "external_dependencies": [],
+  "id": "IUT4.Prop1_2.frag.tls_ii",
+  "implicit_hypotheses": [],
+  "kind": "fragment",
+  "lean_declaration": "IUT.PaperIV.LocalFields.tensorLog_prop1_2_ii",
+  "lemmas": [
+   "IUT.PaperIV.LocalFields.tensorLogShift_subset",
+   "IUT.PaperIV.LocalFields.tensorLogShift_smul",
+   "IUT.PaperIV.LocalFields.tensorLogShift_one"
+  ],
+  "not_covered": "two factors only; more than two factors (the induction on |I|) is not addressed; the injectivity of log_p(R1^x) tmul_{Z_p} log_p(R2^x) into K1 tmul_{Q_p} K2 (the lattice is taken as its image).",
+  "obligations": [],
+  "page_spans": [
+   [
+    4,
+    10,
+    11
+   ]
+  ],
+  "paper": 4,
+  "parent": "IUT4.Prop1_2",
+  "pdf_page": 10,
+  "pdf_page_end": 11,
+  "proof_status": "KERNEL_VERIFIED",
+  "results_used": [
+   "IUT4.Prop1_1"
+  ],
+  "scope": "two factors only (I = {1, 2}); K1 tmul_{Q_p} K2; R_I = padicPacketIntegers, (R_I)^~ = padicPacketNormalization (elements integral over Z_p); log_p(R_I^x) = tensorLogLattice, the Z_p-span in K1 tmul K2 of log_p(u1) tmul log_p(u2); p^mu (R_I)^~ = tensorLogShift x y with spectral norms ||x|| ||y|| = p^(-mu); ord read through the spectral norm; e_i, d_i at a prime P_i of R_i over p (d_i = tensorLogDiffOrder = differentOrder); phi a Q_p-linear automorphism of K1 tmul K2 with phi(log_p(R_I^x)) = log_p(R_I^x)",
+  "section": 1,
+  "section_title": "Log-volume Estimates",
+  "source": {
+   "pages_read": "rendered and checked: pages 10, 11",
+   "paper": "Inter-universal Teichmuller Theory IV",
+   "pdf_pages": "pages 10 to 11"
+  },
+  "statement_status": "STATEMENT_FORMALIZED"
+ },
+ {
+  "ambiguities": [],
+  "conclusion": "phi '' padicPacketNormalization ⊆ p^{-ceil(d_I + a_I)} • tensorLogLattice ⊆ p^{-ceil(d_I + a_I)} • tensorLogShift z1 z2.",
+  "content": "Proposition 1.2 (ii), 'in particular', for two factors: phi((R_I)^~) ⊆ p^{-ceil(d_I + a_I)} log_p(R_I^x) ⊆ p^{-ceil(d_I + a_I)} ((z1 tmul z2) (R_I)^~) with ||z_i|| = p^(b_i).",
+  "covers": "Page 10, Proposition 1.2 (ii), second display ('In particular') phi((R_I)^~) ⊆ p^{-ceil(d_I + a_I)} log_p(R_I^x) ⊆ p^{-ceil(d_I + a_I) - b_I} (R_I)^~.",
+  "curated_in": "iut4.json",
+  "definitions_required": [],
+  "explicit_hypotheses": [
+   "p a prime",
+   "K1, K2 fields with finite-dimensional Q_p-algebra structures and compatible Z_p-algebra structures (IsScalarTower Z_p Q_p K_i); R_i = integralClosure Z_p K_i",
+   "P1, P2 prime ideals of R1, R2 lying over the maximal ideal of Z_p",
+   "phi : K1 tmul K2 ≃ₗ[Q_p] K1 tmul K2 with phi '' tensorLogLattice = tensorLogLattice",
+   "z1, z2 with ||z_i|| = p^(b_i)"
+  ],
+  "external_dependencies": [],
+  "id": "IUT4.Prop1_2.frag.tls_ii_zero",
+  "implicit_hypotheses": [],
+  "kind": "fragment",
+  "lean_declaration": "IUT.PaperIV.LocalFields.tensorLog_prop1_2_ii_zero",
+  "lemmas": [],
+  "not_covered": "two factors only; more than two factors (the induction on |I|) is not addressed; the injectivity of log_p(R1^x) tmul_{Z_p} log_p(R2^x) into K1 tmul_{Q_p} K2 (the lattice is taken as its image).",
+  "obligations": [],
+  "page_spans": [
+   [
+    4,
+    10,
+    11
+   ]
+  ],
+  "paper": 4,
+  "parent": "IUT4.Prop1_2",
+  "pdf_page": 10,
+  "pdf_page_end": 11,
+  "proof_status": "KERNEL_VERIFIED",
+  "results_used": [],
+  "scope": "two factors only (I = {1, 2}); K1 tmul_{Q_p} K2; R_I = padicPacketIntegers, (R_I)^~ = padicPacketNormalization (elements integral over Z_p); log_p(R_I^x) = tensorLogLattice, the Z_p-span in K1 tmul K2 of log_p(u1) tmul log_p(u2); p^mu (R_I)^~ = tensorLogShift x y with spectral norms ||x|| ||y|| = p^(-mu); ord read through the spectral norm; e_i, d_i at a prime P_i of R_i over p (d_i = tensorLogDiffOrder = differentOrder); phi a Q_p-linear automorphism of K1 tmul K2 with phi(log_p(R_I^x)) = log_p(R_I^x)",
+  "section": 1,
+  "section_title": "Log-volume Estimates",
+  "source": {
+   "pages_read": "rendered and checked: pages 10, 11",
+   "paper": "Inter-universal Teichmuller Theory IV",
+   "pdf_pages": "pages 10 to 11"
+  },
+  "statement_status": "STATEMENT_FORMALIZED"
+ },
+ {
+  "ambiguities": [],
+  "conclusion": "phi '' tensorLogShift t1 t2 ⊆ tensorLogShift w1 w2.",
+  "content": "Proposition 1.2 (iii) for two factors: if p > 2 and e_1, e_2 <= p - 2, then for phi as in the scope, every real lam, t1 tmul t2 with ||t1|| ||t2|| = p^(-lam) and w1 tmul w2 with ||w1|| ||w2|| = p^(-(lam - d_I - 1)): phi((t1 tmul t2)(R_I)^~) ⊆ (w1 tmul w2)(R_I)^~.",
+  "covers": "Page 11, Proposition 1.2 (iii), first display phi(p^lam (R_I)^~) ⊆ p^{lam - d_I - 1} (R_I)^~ under p > 2 and e_i <= p - 2 for all i in I.",
+  "curated_in": "iut4.json",
+  "definitions_required": [],
+  "explicit_hypotheses": [
+   "p a prime",
+   "K1, K2 fields with finite-dimensional Q_p-algebra structures and compatible Z_p-algebra structures (IsScalarTower Z_p Q_p K_i); R_i = integralClosure Z_p K_i",
+   "P1, P2 prime ideals of R1, R2 lying over the maximal ideal of Z_p",
+   "2 < p",
+   "P_i.ramificationIdx Z_p <= p - 2 for i = 1, 2",
+   "phi : K1 tmul K2 ≃ₗ[Q_p] K1 tmul K2 with phi '' tensorLogLattice = tensorLogLattice",
+   "lam real; ||t1|| ||t2|| = p^(-lam)",
+   "||w1|| ||w2|| = p^(-(lam - (d_1 + d_2) - 1))"
+  ],
+  "external_dependencies": [],
+  "id": "IUT4.Prop1_2.frag.tls_iii",
+  "implicit_hypotheses": [],
+  "kind": "fragment",
+  "lean_declaration": "IUT.PaperIV.LocalFields.tensorLog_prop1_2_iii",
+  "lemmas": [],
+  "not_covered": "two factors only; more than two factors (the induction on |I|) is not addressed; the injectivity of log_p(R1^x) tmul_{Z_p} log_p(R2^x) into K1 tmul_{Q_p} K2 (the lattice is taken as its image).",
+  "obligations": [],
+  "page_spans": [
+   [
+    4,
+    10,
+    11
+   ]
+  ],
+  "paper": 4,
+  "parent": "IUT4.Prop1_2",
+  "pdf_page": 10,
+  "pdf_page_end": 11,
+  "proof_status": "KERNEL_VERIFIED",
+  "results_used": [],
+  "scope": "two factors only (I = {1, 2}); K1 tmul_{Q_p} K2; R_I = padicPacketIntegers, (R_I)^~ = padicPacketNormalization (elements integral over Z_p); log_p(R_I^x) = tensorLogLattice, the Z_p-span in K1 tmul K2 of log_p(u1) tmul log_p(u2); p^mu (R_I)^~ = tensorLogShift x y with spectral norms ||x|| ||y|| = p^(-mu); ord read through the spectral norm; e_i, d_i at a prime P_i of R_i over p (d_i = tensorLogDiffOrder = differentOrder); phi a Q_p-linear automorphism of K1 tmul K2 with phi(log_p(R_I^x)) = log_p(R_I^x)",
+  "section": 1,
+  "section_title": "Log-volume Estimates",
+  "source": {
+   "pages_read": "rendered and checked: pages 10, 11",
+   "paper": "Inter-universal Teichmuller Theory IV",
+   "pdf_pages": "pages 10 to 11"
+  },
+  "statement_status": "STATEMENT_FORMALIZED"
+ },
+ {
+  "ambiguities": [],
+  "conclusion": "phi '' padicPacketNormalization ⊆ tensorLogShift w1 w2.",
+  "content": "Proposition 1.2 (iii), 'in particular', for two factors: under p > 2, e_i <= p - 2, phi((R_I)^~) ⊆ (w1 tmul w2)(R_I)^~ for ||w1|| ||w2|| = p^(d_I + 1).",
+  "covers": "Page 11, Proposition 1.2 (iii), second display phi((R_I)^~) ⊆ p^{-d_I - 1} (R_I)^~.",
+  "curated_in": "iut4.json",
+  "definitions_required": [],
+  "explicit_hypotheses": [
+   "p a prime",
+   "K1, K2 fields with finite-dimensional Q_p-algebra structures and compatible Z_p-algebra structures (IsScalarTower Z_p Q_p K_i); R_i = integralClosure Z_p K_i",
+   "P1, P2 prime ideals of R1, R2 lying over the maximal ideal of Z_p",
+   "2 < p",
+   "P_i.ramificationIdx Z_p <= p - 2 for i = 1, 2",
+   "phi : K1 tmul K2 ≃ₗ[Q_p] K1 tmul K2 with phi '' tensorLogLattice = tensorLogLattice",
+   "||w1|| ||w2|| = p^(d_1 + d_2 + 1)"
+  ],
+  "external_dependencies": [],
+  "id": "IUT4.Prop1_2.frag.tls_iii_zero",
+  "implicit_hypotheses": [],
+  "kind": "fragment",
+  "lean_declaration": "IUT.PaperIV.LocalFields.tensorLog_prop1_2_iii_zero",
+  "lemmas": [],
+  "not_covered": "two factors only; more than two factors (the induction on |I|) is not addressed; the injectivity of log_p(R1^x) tmul_{Z_p} log_p(R2^x) into K1 tmul_{Q_p} K2 (the lattice is taken as its image).",
+  "obligations": [],
+  "page_spans": [
+   [
+    4,
+    10,
+    11
+   ]
+  ],
+  "paper": 4,
+  "parent": "IUT4.Prop1_2",
+  "pdf_page": 10,
+  "pdf_page_end": 11,
+  "proof_status": "KERNEL_VERIFIED",
+  "results_used": [],
+  "scope": "two factors only (I = {1, 2}); K1 tmul_{Q_p} K2; R_I = padicPacketIntegers, (R_I)^~ = padicPacketNormalization (elements integral over Z_p); log_p(R_I^x) = tensorLogLattice, the Z_p-span in K1 tmul K2 of log_p(u1) tmul log_p(u2); p^mu (R_I)^~ = tensorLogShift x y with spectral norms ||x|| ||y|| = p^(-mu); ord read through the spectral norm; e_i, d_i at a prime P_i of R_i over p (d_i = tensorLogDiffOrder = differentOrder); phi a Q_p-linear automorphism of K1 tmul K2 with phi(log_p(R_I^x)) = log_p(R_I^x)",
+  "section": 1,
+  "section_title": "Log-volume Estimates",
+  "source": {
+   "pages_read": "rendered and checked: pages 10, 11",
+   "paper": "Inter-universal Teichmuller Theory IV",
+   "pdf_pages": "pages 10 to 11"
+  },
+  "statement_status": "STATEMENT_FORMALIZED"
+ },
+ {
+  "ambiguities": [],
+  "conclusion": "phi '' padicPacketNormalization ⊆ padicPacketNormalization.",
+  "content": "Proposition 1.2 (iv) for two factors: if p > 2 and e_1 = e_2 = 1, then phi((R_I)^~) ⊆ (R_I)^~.",
+  "covers": "Page 11, Proposition 1.2 (iv) phi((R_I)^~) ⊆ (R_I)^~ for p > 2 and e_i = 1, derived from (ii) with d_I = 0 and a_I = -b_I as on page 11.",
+  "curated_in": "iut4.json",
+  "definitions_required": [],
+  "explicit_hypotheses": [
+   "p a prime",
+   "K1, K2 fields with finite-dimensional Q_p-algebra structures and compatible Z_p-algebra structures (IsScalarTower Z_p Q_p K_i); R_i = integralClosure Z_p K_i",
+   "P1, P2 prime ideals of R1, R2 lying over the maximal ideal of Z_p",
+   "2 < p",
+   "P_i.ramificationIdx Z_p = 1 for i = 1, 2",
+   "phi : K1 tmul K2 ≃ₗ[Q_p] K1 tmul K2 with phi '' tensorLogLattice = tensorLogLattice"
+  ],
+  "external_dependencies": [],
+  "id": "IUT4.Prop1_2.frag.tls_iv",
+  "implicit_hypotheses": [],
+  "kind": "fragment",
+  "lean_declaration": "IUT.PaperIV.LocalFields.tensorLog_prop1_2_iv",
+  "lemmas": [],
+  "not_covered": "two factors only; more than two factors (the induction on |I|) is not addressed; the injectivity of log_p(R1^x) tmul_{Z_p} log_p(R2^x) into K1 tmul_{Q_p} K2 (the lattice is taken as its image).",
+  "obligations": [],
+  "page_spans": [
+   [
+    4,
+    10,
+    11
+   ]
+  ],
+  "paper": 4,
+  "parent": "IUT4.Prop1_2",
+  "pdf_page": 10,
+  "pdf_page_end": 11,
+  "proof_status": "KERNEL_VERIFIED",
+  "results_used": [
+   "IUT4.Prop1_3"
+  ],
+  "scope": "two factors only (I = {1, 2}); K1 tmul_{Q_p} K2; R_I = padicPacketIntegers, (R_I)^~ = padicPacketNormalization (elements integral over Z_p); log_p(R_I^x) = tensorLogLattice, the Z_p-span in K1 tmul K2 of log_p(u1) tmul log_p(u2); p^mu (R_I)^~ = tensorLogShift x y with spectral norms ||x|| ||y|| = p^(-mu); ord read through the spectral norm; e_i, d_i at a prime P_i of R_i over p (d_i = tensorLogDiffOrder = differentOrder); phi a Q_p-linear automorphism of K1 tmul K2 with phi(log_p(R_I^x)) = log_p(R_I^x)",
+  "section": 1,
+  "section_title": "Log-volume Estimates",
+  "source": {
+   "pages_read": "rendered and checked: pages 10, 11",
+   "paper": "Inter-universal Teichmuller Theory IV",
+   "pdf_pages": "pages 10 to 11"
+  },
+  "statement_status": "STATEMENT_FORMALIZED"
+ },
+ {
+  "ambiguities": [],
+  "conclusion": "tensorLogLattice p K1 K2 : Set (K1 tmul K2); Submodule.span Q_p (tensorLogLattice p K1 K2) = top.",
+  "content": "Definition: log_p(R_I^x) for two factors, as the additive span in K1 tmul_{Q_p} K2 of the a (x tmul y) with a in Z_p, x in log_p(R1^x), y in log_p(R2^x) (log_p the p-adic logarithm extLogUnit of the spectral norm, applied to the units of R_i). Its Q_p-span is all of K1 tmul K2 (tensorLog_span_lattice).",
+  "covers": "Page 10, the definition log_p(R_E^x) = tensor over Z_p of the log_p(R_i^x), for E = {1, 2}, and the vector space log_p(R_I^x) tmul Q_p on which phi acts.",
+  "curated_in": "iut4.json",
+  "definitions_required": [],
+  "explicit_hypotheses": [
+   "p a prime",
+   "K1, K2 fields with finite-dimensional Q_p-algebra structures and compatible Z_p-algebra structures (IsScalarTower Z_p Q_p K_i); R_i = integralClosure Z_p K_i"
+  ],
+  "external_dependencies": [],
+  "id": "IUT4.Prop1_2.frag.tls_lattice",
+  "implicit_hypotheses": [],
+  "kind": "fragment",
+  "lean_declaration": "IUT.PaperIV.LocalFields.tensorLogLattice",
+  "lemmas": [
+   "IUT.PaperIV.LocalFields.tensorLog_span_lattice",
+   "IUT.PaperIV.LocalFields.tensorLog_closure_subset_lattice",
+   "IUT.PaperIV.LocalFields.tensorLogShift",
+   "IUT.PaperIV.LocalFields.tensorLogUnits",
+   "IUT.PaperIV.LocalFields.tensorLogDiffOrder"
+  ],
+  "not_covered": "two factors only; more than two factors (the induction on |I|) is not addressed; the injectivity of log_p(R1^x) tmul_{Z_p} log_p(R2^x) into K1 tmul_{Q_p} K2 (the lattice is taken as its image).",
+  "obligations": [],
+  "page_spans": [
+   [
+    4,
+    10,
+    11
+   ]
+  ],
+  "paper": 4,
+  "parent": "IUT4.Prop1_2",
+  "pdf_page": 10,
+  "pdf_page_end": 11,
+  "proof_status": "NOT_EXTRACTED",
+  "results_used": [],
+  "scope": "two factors only (I = {1, 2}); K1 tmul_{Q_p} K2; R_I = padicPacketIntegers, (R_I)^~ = padicPacketNormalization (elements integral over Z_p); log_p(R_I^x) = tensorLogLattice, the Z_p-span in K1 tmul K2 of log_p(u1) tmul log_p(u2); p^mu (R_I)^~ = tensorLogShift x y with spectral norms ||x|| ||y|| = p^(-mu); ord read through the spectral norm; e_i, d_i at a prime P_i of R_i over p (d_i = tensorLogDiffOrder = differentOrder); phi a Q_p-linear automorphism of K1 tmul K2 with phi(log_p(R_I^x)) = log_p(R_I^x)",
+  "section": 1,
+  "section_title": "Log-volume Estimates",
+  "source": {
+   "pages_read": "rendered and checked: pages 10, 11",
+   "paper": "Inter-universal Teichmuller Theory IV",
+   "pdf_pages": "pages 10 to 11"
+  },
+  "statement_status": "STATEMENT_FORMALIZED"
+ },
+ {
+  "ambiguities": [],
+  "conclusion": "tensorLogShift p K1 K2 x y ⊆ tensorLogLattice p K1 K2.",
+  "content": "For x, y with ||x|| ||y|| <= p^(-(d_1 + d_2 + a_1 + a_2)): (x tmul y)(R_I)^~ ⊆ log_p(R_I^x) (tensorLogLattice).",
+  "covers": "Page 11, proof of Proposition 1.2 (ii): p^{d_I + a_I} (R_I)^~ ⊆ tensor of p^{a_i} R_i ⊆ log_p(R_I^x), the first display followed by Proposition 1.2 (i) on each factor.",
+  "curated_in": "iut4.json",
+  "definitions_required": [],
+  "explicit_hypotheses": [
+   "p a prime",
+   "K1, K2 fields with finite-dimensional Q_p-algebra structures and compatible Z_p-algebra structures (IsScalarTower Z_p Q_p K_i); R_i = integralClosure Z_p K_i",
+   "P1, P2 prime ideals of R1, R2 lying over the maximal ideal of Z_p",
+   "x in K1, y in K2 with ||x|| ||y|| <= p^(-(d_1 + d_2 + (a_1 + a_2)))"
+  ],
+  "external_dependencies": [],
+  "id": "IUT4.Prop1_2.frag.tls_lower_inclusion",
+  "implicit_hypotheses": [],
+  "kind": "fragment",
+  "lean_declaration": "IUT.PaperIV.LocalFields.tensorLog_shift_subset_lattice",
+  "lemmas": [
+   "IUT.PaperIV.LocalFields.tensorLog_mul_integers_subset_lattice"
+  ],
+  "not_covered": "two factors only; more than two factors (the induction on |I|) is not addressed; the injectivity of log_p(R1^x) tmul_{Z_p} log_p(R2^x) into K1 tmul_{Q_p} K2 (the lattice is taken as its image).",
+  "obligations": [],
+  "page_spans": [
+   [
+    4,
+    10,
+    11
+   ]
+  ],
+  "paper": 4,
+  "parent": "IUT4.Prop1_2",
+  "pdf_page": 10,
+  "pdf_page_end": 11,
+  "proof_status": "KERNEL_VERIFIED",
+  "results_used": [
+   "IUT4.Prop1_1"
+  ],
+  "scope": "two factors only (I = {1, 2}); K1 tmul_{Q_p} K2; R_I = padicPacketIntegers, (R_I)^~ = padicPacketNormalization (elements integral over Z_p); log_p(R_I^x) = tensorLogLattice, the Z_p-span in K1 tmul K2 of log_p(u1) tmul log_p(u2); p^mu (R_I)^~ = tensorLogShift x y with spectral norms ||x|| ||y|| = p^(-mu); ord read through the spectral norm; e_i, d_i at a prime P_i of R_i over p (d_i = tensorLogDiffOrder = differentOrder); phi a Q_p-linear automorphism of K1 tmul K2 with phi(log_p(R_I^x)) = log_p(R_I^x)",
+  "section": 1,
+  "section_title": "Log-volume Estimates",
+  "source": {
+   "pages_read": "rendered and checked: pages 10, 11",
+   "paper": "Inter-universal Teichmuller Theory IV",
+   "pdf_pages": "pages 10 to 11"
+  },
+  "statement_status": "STATEMENT_FORMALIZED"
+ },
+ {
+  "ambiguities": [],
+  "conclusion": "ramificationIdx = 1; LinearEquiv.neg '' tensorLogLattice = tensorLogLattice; LinearEquiv.neg ≠ LinearEquiv.refl; the inclusion of explicit sets.",
+  "content": "For K1 = K2 = Q_p and p > 2: the maximal ideal of integralClosure Z_p Q_p has e = 1; log_p(Z_p^x) = {z : ||z|| <= 1/p}; log_p(R_I^x) = {c (1 tmul 1) : ||c|| <= p^(-2)}; (R_I)^~ = {c (1 tmul 1) : ||c|| <= 1}; phi = -id is not the identity, maps log_p(R_I^x) onto itself, and Proposition 1.2 (iv) gives phi({c (1 tmul 1) : ||c|| <= 1}) ⊆ {c (1 tmul 1) : ||c|| <= 1}.",
+  "covers": "Page 10 and 11, Proposition 1.2 (iv): the hypotheses are satisfiable, with all sets explicit, for k_1 = k_2 = Q_p.",
+  "curated_in": "iut4.json",
+  "definitions_required": [],
+  "explicit_hypotheses": [
+   "p a prime",
+   "2 < p"
+  ],
+  "external_dependencies": [],
+  "id": "IUT4.Prop1_2.frag.tls_padic_nonvacuity",
+  "implicit_hypotheses": [],
+  "kind": "fragment",
+  "lean_declaration": "IUT.PaperIV.LocalFields.tensorLog_padic_prop1_2_iv",
+  "lemmas": [
+   "IUT.PaperIV.LocalFields.tensorLog_padic_ramificationIdx",
+   "IUT.PaperIV.LocalFields.tensorLog_padic_units",
+   "IUT.PaperIV.LocalFields.tensorLog_padic_lattice",
+   "IUT.PaperIV.LocalFields.tensorLog_padic_normalization",
+   "IUT.PaperIV.LocalFields.tensorLog_padic_spectralNorm",
+   "IUT.PaperIV.LocalFields.tensorLog_padic_tmul"
+  ],
+  "not_covered": "two factors only; an example (K1 = K2 = Q_p, p > 2) that checks no step of the papers; no explicit instance of the log-volume statements of Proposition 1.4 is given.",
+  "obligations": [],
+  "page_spans": [
+   [
+    4,
+    10,
+    11
+   ]
+  ],
+  "paper": 4,
+  "parent": "IUT4.Prop1_2",
+  "pdf_page": 10,
+  "pdf_page_end": 11,
+  "proof_status": "KERNEL_VERIFIED",
+  "results_used": [],
+  "scope": "model_test",
+  "section": 1,
+  "section_title": "Log-volume Estimates",
+  "source": {
+   "pages_read": "rendered and checked: pages 10, 11",
+   "paper": "Inter-universal Teichmuller Theory IV",
+   "pdf_pages": "pages 10 to 11"
+  },
+  "statement_status": "STATEMENT_FORMALIZED"
+ },
+ {
+  "ambiguities": [],
+  "conclusion": "tensorLogLattice p K1 K2 ⊆ tensorLogShift p K1 K2 z1 z2.",
+  "content": "For z_i with ||z_i|| = p^(b_i): log_p(R_I^x) ⊆ (z1 tmul z2)(R_I)^~, that is log_p(R_I^x) ⊆ p^{-b_I} (R_I)^~.",
+  "covers": "Page 10, Proposition 1.2 (ii), the last inclusion of the first display (with k = 0): log_p(R_I^x) ⊆ p^{-b_I} (R_I)^~, from Proposition 1.2 (i) log_p(R_i^x) ⊆ p^{-b_i} R_i on each factor (page 11).",
+  "curated_in": "iut4.json",
+  "definitions_required": [],
+  "explicit_hypotheses": [
+   "p a prime",
+   "K1, K2 fields with finite-dimensional Q_p-algebra structures and compatible Z_p-algebra structures (IsScalarTower Z_p Q_p K_i); R_i = integralClosure Z_p K_i",
+   "P1, P2 prime ideals of R1, R2 lying over the maximal ideal of Z_p",
+   "z1, z2 with ||z_i|| = p^(b_i), b_i = Proposition1_2.b p e_i"
+  ],
+  "external_dependencies": [],
+  "id": "IUT4.Prop1_2.frag.tls_upper_inclusion",
+  "implicit_hypotheses": [],
+  "kind": "fragment",
+  "lean_declaration": "IUT.PaperIV.LocalFields.tensorLog_lattice_subset_shift",
+  "lemmas": [],
+  "not_covered": "two factors only; more than two factors (the induction on |I|) is not addressed; the injectivity of log_p(R1^x) tmul_{Z_p} log_p(R2^x) into K1 tmul_{Q_p} K2 (the lattice is taken as its image).",
+  "obligations": [],
+  "page_spans": [
+   [
+    4,
+    10,
+    11
+   ]
+  ],
+  "paper": 4,
+  "parent": "IUT4.Prop1_2",
+  "pdf_page": 10,
+  "pdf_page_end": 11,
+  "proof_status": "KERNEL_VERIFIED",
+  "results_used": [],
+  "scope": "two factors only (I = {1, 2}); K1 tmul_{Q_p} K2; R_I = padicPacketIntegers, (R_I)^~ = padicPacketNormalization (elements integral over Z_p); log_p(R_I^x) = tensorLogLattice, the Z_p-span in K1 tmul K2 of log_p(u1) tmul log_p(u2); p^mu (R_I)^~ = tensorLogShift x y with spectral norms ||x|| ||y|| = p^(-mu); ord read through the spectral norm; e_i, d_i at a prime P_i of R_i over p (d_i = tensorLogDiffOrder = differentOrder); phi a Q_p-linear automorphism of K1 tmul K2 with phi(log_p(R_I^x)) = log_p(R_I^x)",
+  "section": 1,
+  "section_title": "Log-volume Estimates",
+  "source": {
+   "pages_read": "rendered and checked: pages 10, 11",
+   "paper": "Inter-universal Teichmuller Theory IV",
+   "pdf_pages": "pages 10 to 11"
+  },
+  "statement_status": "STATEMENT_FORMALIZED"
+ },
+ {
+  "ambiguities": [],
   "conclusion": "(e - 1)/e <= d and p^a R in log(R^x) in p^(-b) R with the same e and P; since P is the only prime over p, d is the paper's d_i.",
   "content": "For the unique prime P over p of R = integralClosure Z_p L, with e = P.ramificationIdx Z_p and d = differentOrder Z_p R P: (e - 1)/e <= d, together with the inclusions of Proposition 1.2 (i) for the same e.",
   "covers": "Pages 11 and 12: Proposition 1.3 (i) for k_0 = Q_p, now for the paper's unique prime, with the e of Proposition 1.2 (i).",
@@ -41477,6 +42829,105 @@
    "pages_read": "rendered pages 9 to 12",
    "paper": "Inter-universal Teichmuller Theory IV",
    "pdf_pages": "pages 9 to 12"
+  },
+  "statement_status": "STATEMENT_FORMALIZED"
+ },
+ {
+  "ambiguities": [],
+  "conclusion": "differentExponent R_K R_L P <= e_{L/K} - 1 + e_L * multiplicity p e_{L/K}.",
+  "content": "The classical upper bound for the different (a lemma used for (ii), not printed in IUT IV; Remark 1.3.1 cites [Ih], Lemma A, for similar estimates): v_P(D_{L/K}) <= e_{L/K} - 1 + e_L v_p(e_{L/K}) for every finite extension Q_p in K in L, where e_L v_p(e_{L/K}) is the valuation at P of the integer e_{L/K}. Proved by passing to the unramified subextension K(a), a a root of unity of order prime to p lifting a generator of the residue units (Hensel), and computing the trace of 1 in the totally ramified extension L/K(a). It discharges the hypothesis of towerProp1_3ii_of_exponent_bound.",
+  "cor3_12_dependency": "independent",
+  "covers": "No display of the paper. It performs the same reduction step as the first sentence of the proof on page 12 (passing to an unramified extension of k_0 inside k_i so that k_i is totally ramified), applied to the classical bound rather than to the paper's computation.",
+  "curated_in": "iut4.json",
+  "definitions_required": [],
+  "explicit_hypotheses": [
+   "p a prime",
+   "K, L fields with finite-dimensional Q_p-algebra structures, an algebra map K -> L compatible with them, and compatible Z_p-algebra structures",
+   "P_0 a prime of R_K over pZ_p; P a prime of R_L over pZ_p"
+  ],
+  "external_dependencies": [],
+  "id": "IUT4.Prop1_3.frag.different_upper_bound",
+  "implicit_hypotheses": [],
+  "kind": "fragment",
+  "lean_declaration": "IUT.PaperIV.LocalFields.diffBound_exponent_le",
+  "lean_module": "IUT.PaperIV.LocalFields.DifferentBound",
+  "lemmas": [
+   "IUT.PaperIV.LocalFields.diffBound_exponent_le_of_totallyRamified",
+   "IUT.PaperIV.LocalFields.diffBound_exponent_le_of_intermediate",
+   "IUT.PaperIV.LocalFields.diffBound_exists_residue_root",
+   "IUT.PaperIV.LocalFields.diffBound_ramificationIdx_eq_one",
+   "IUT.PaperIV.LocalFields.diffBound_finrank_eq_ramificationIdx"
+  ],
+  "not_covered": "Not a statement of IUT IV. The equality case of the bound is not checked.",
+  "obligations": [],
+  "page_spans": [
+   [
+    4,
+    11,
+    13
+   ]
+  ],
+  "paper": 4,
+  "parent": "IUT4.Prop1_3",
+  "pdf_page": 11,
+  "pdf_page_end": 13,
+  "proof_status": "KERNEL_VERIFIED",
+  "results_used": [],
+  "scope": "model_test",
+  "section": 1,
+  "section_title": "Log-volume Estimates",
+  "source": {
+   "pages_read": "rendered and checked: pages 11, 12, 13",
+   "paper": "Inter-universal Teichmuller Theory IV",
+   "pdf_pages": "pages 11 to 13"
+  },
+  "statement_status": "STATEMENT_FORMALIZED"
+ },
+ {
+  "ambiguities": [],
+  "conclusion": "The inequality, and the equality under the hypothesis p does not divide e_{L/K}.",
+  "content": "Proposition 1.3 (i) over a general base in one statement: d_L >= d_K + (e_{L/K} - 1)/e_L, with equality when p does not divide e_{L/K}.",
+  "cor3_12_dependency": "independent",
+  "covers": "Pages 11 and 12, assertion (i): the inequality and the equality in the tamely ramified case.",
+  "curated_in": "iut4.json",
+  "definitions_required": [],
+  "explicit_hypotheses": [
+   "p a prime",
+   "K, L fields with finite-dimensional Q_p-algebra structures, an algebra map K -> L compatible with them, and compatible Z_p-algebra structures",
+   "P_0 a prime of R_K over pZ_p; P a prime of R_L over pZ_p"
+  ],
+  "external_dependencies": [],
+  "id": "IUT4.Prop1_3.frag.i_combined",
+  "implicit_hypotheses": [],
+  "kind": "fragment",
+  "lean_declaration": "IUT.PaperIV.LocalFields.diffBound_prop1_3i",
+  "lean_module": "IUT.PaperIV.LocalFields.DifferentBound",
+  "lemmas": [
+   "IUT.PaperIV.LocalFields.towerProp1_3i_ge",
+   "IUT.PaperIV.LocalFields.towerProp1_3i_eq_of_tame"
+  ],
+  "not_covered": "The converse (equality forces tameness) over a general base is not included. Tame is read as p not dividing e_{L/K} (finite residue fields).",
+  "obligations": [],
+  "page_spans": [
+   [
+    4,
+    11,
+    13
+   ]
+  ],
+  "paper": 4,
+  "parent": "IUT4.Prop1_3",
+  "pdf_page": 11,
+  "pdf_page_end": 13,
+  "proof_status": "KERNEL_VERIFIED",
+  "results_used": [],
+  "scope": "k_0 = K, k_i = L finite extensions of Q_p; R_0 = integralClosure Z_p K, R_i = integralClosure Z_p L, R_K -> R_L given by towerAlgebra; e_0, e_i the ramification indices over pZ_p, e_{i/0} that of P over R_K; d = differentOrder (ord(p) = 1); n_i = multiplicity p [L : K]",
+  "section": 1,
+  "section_title": "Log-volume Estimates",
+  "source": {
+   "pages_read": "rendered and checked: pages 11, 12, 13",
+   "paper": "Inter-universal Teichmuller Theory IV",
+   "pdf_pages": "pages 11 to 13"
   },
   "statement_status": "STATEMENT_FORMALIZED"
  },
@@ -41812,6 +43263,57 @@
  },
  {
   "ambiguities": [],
+  "conclusion": "differentOrder Z_p R_L P <= differentOrder Z_p R_K P_0 + multiplicity p [L : K] + 1/e_K.",
+  "content": "Proposition 1.3 (ii) for every finite extension Q_p in K in L, without the Galois and tameness hypotheses of the page: d_L <= d_K + n + 1/e_K with n = v_p([L : K]). Proved from the bound v_P(D_{L/K}) <= e_{L/K} - 1 + e_L v_p([L : K]) (trace of 1 equals [L : K]) and transitivity of the different.",
+  "cor3_12_dependency": "independent",
+  "covers": "Page 12, assertion (ii): the inequality d_i <= d_0 + n_i + 1/e_0, here for all finite k_i/k_0.",
+  "curated_in": "iut4.json",
+  "definitions_required": [],
+  "explicit_hypotheses": [
+   "p a prime",
+   "K, L fields with finite-dimensional Q_p-algebra structures, an algebra map K -> L compatible with them, and compatible Z_p-algebra structures",
+   "P_0 a prime of R_K over pZ_p; P a prime of R_L over pZ_p"
+  ],
+  "external_dependencies": [],
+  "id": "IUT4.Prop1_3.frag.ii_all_finite",
+  "implicit_hypotheses": [],
+  "kind": "fragment",
+  "lean_declaration": "IUT.PaperIV.LocalFields.diffBound_prop1_3ii",
+  "lean_module": "IUT.PaperIV.LocalFields.DifferentBound",
+  "lemmas": [
+   "IUT.PaperIV.LocalFields.diffBound_differentExponent_lt",
+   "IUT.PaperIV.LocalFields.diffBound_intTrace_one",
+   "IUT.PaperIV.LocalFields.diffBound_map_span_natCast",
+   "IUT.PaperIV.LocalFields.diffBound_exponent_le_finrank",
+   "IUT.PaperIV.LocalFields.diffBound_prop1_3ii_of_classical"
+  ],
+  "not_covered": "The paper's proof (induction on n_i through Galois p-subextensions and Kummer extensions) is not formalized; the statement is proved by a different argument. Fields are abstract finite extensions of Q_p, not subfields of a fixed algebraic closure.",
+  "obligations": [],
+  "page_spans": [
+   [
+    4,
+    11,
+    13
+   ]
+  ],
+  "paper": 4,
+  "parent": "IUT4.Prop1_3",
+  "pdf_page": 11,
+  "pdf_page_end": 13,
+  "proof_status": "KERNEL_VERIFIED",
+  "results_used": [],
+  "scope": "k_0 = K, k_i = L finite extensions of Q_p; R_0 = integralClosure Z_p K, R_i = integralClosure Z_p L, R_K -> R_L given by towerAlgebra; e_0, e_i the ramification indices over pZ_p, e_{i/0} that of P over R_K; d = differentOrder (ord(p) = 1); n_i = multiplicity p [L : K]",
+  "section": 1,
+  "section_title": "Log-volume Estimates",
+  "source": {
+   "pages_read": "rendered and checked: pages 11, 12, 13",
+   "paper": "Inter-universal Teichmuller Theory IV",
+   "pdf_pages": "pages 11 to 13"
+  },
+  "statement_status": "STATEMENT_FORMALIZED"
+ },
+ {
+  "ambiguities": [],
   "conclusion": "d_i <= d_0 + 1/e_0.",
   "content": "If d_i = d_0 + (e'-1)/(e' e_0) with e', e_0 >= 1, then d_i <= d_0 + 1/e_0.",
   "cor3_12_dependency": "independent",
@@ -41936,6 +43438,55 @@
    "pages_read": "rendered pages 11 to 12",
    "paper": "Inter-universal Teichmuller Theory IV",
    "pdf_pages": "pages 11 to 12"
+  },
+  "statement_status": "STATEMENT_FORMALIZED"
+ },
+ {
+  "ambiguities": [],
+  "conclusion": "towerProp1_3iiStatement p K K_1 L.",
+  "content": "The statement towerProp1_3iiStatement (assertion (ii) with the hypotheses of page 12: an intermediate K_1 with L/K_1 Galois and K_1/K tame) holds for all finite extensions Q_p in K in K_1 in L.",
+  "cor3_12_dependency": "independent",
+  "covers": "Page 12, assertion (ii), in the form of the page.",
+  "curated_in": "iut4.json",
+  "definitions_required": [],
+  "explicit_hypotheses": [
+   "p a prime",
+   "K, L fields with finite-dimensional Q_p-algebra structures, an algebra map K -> L compatible with them, and compatible Z_p-algebra structures",
+   "P_0 a prime of R_K over pZ_p; P a prime of R_L over pZ_p",
+   "K_1 a third finite extension of Q_p with K -> K_1 -> L compatible algebra maps"
+  ],
+  "external_dependencies": [],
+  "id": "IUT4.Prop1_3.frag.ii_statement_proved",
+  "implicit_hypotheses": [],
+  "kind": "fragment",
+  "lean_declaration": "IUT.PaperIV.LocalFields.diffBound_towerProp1_3iiStatement",
+  "lean_module": "IUT.PaperIV.LocalFields.DifferentBound",
+  "lemmas": [
+   "IUT.PaperIV.LocalFields.diffBound_prop1_3ii",
+   "IUT.PaperIV.LocalFields.towerProp1_3iiStatement"
+  ],
+  "not_covered": "Same as IUT4.Prop1_3.frag.ii_all_finite: the hypotheses of the page are not used.",
+  "obligations": [],
+  "page_spans": [
+   [
+    4,
+    11,
+    13
+   ]
+  ],
+  "paper": 4,
+  "parent": "IUT4.Prop1_3",
+  "pdf_page": 11,
+  "pdf_page_end": 13,
+  "proof_status": "KERNEL_VERIFIED",
+  "results_used": [],
+  "scope": "k_0 = K, k_i = L finite extensions of Q_p; R_0 = integralClosure Z_p K, R_i = integralClosure Z_p L, R_K -> R_L given by towerAlgebra; e_0, e_i the ramification indices over pZ_p, e_{i/0} that of P over R_K; d = differentOrder (ord(p) = 1); n_i = multiplicity p [L : K]",
+  "section": 1,
+  "section_title": "Log-volume Estimates",
+  "source": {
+   "pages_read": "rendered and checked: pages 11, 12, 13",
+   "paper": "Inter-universal Teichmuller Theory IV",
+   "pdf_pages": "pages 11 to 13"
   },
   "statement_status": "STATEMENT_FORMALIZED"
  },
@@ -42093,27 +43644,28 @@
  {
   "ambiguities": [],
   "conclusion": "differentOrder Z_p R_L P <= differentOrder Z_p R_K P_0 + multiplicity p [L : K] + 1/e_K.",
-  "content": "Conditional form of Proposition 1.3 (ii) for every finite L/K (no Galois or tameness hypothesis): if the exponent of P in the different of R_L over R_K is at most e_{L/K} - 1 + e_L v_p(e_{L/K}), then d_L <= d_K + n + 1/e_K with n = multiplicity p [L : K].",
+  "content": "Proposition 1.3 (ii) for every finite L/K (no Galois or tameness hypothesis), through the classical upper bound for the different: the hypothesis v_P(D_{L/K}) <= e_{L/K} - 1 + e_L v_p(e_{L/K}) of towerProp1_3ii_of_exponent_bound is discharged by diffBound_exponent_le, giving d_L <= d_K + n + 1/e_K with n = multiplicity p [L : K].",
   "cor3_12_dependency": "independent",
-  "covers": "Page 12, Proposition 1.3 (ii), conclusion, under the stated bound.",
+  "covers": "Page 12, Proposition 1.3 (ii), conclusion, for every finite L/K, through the classical upper bound for the different.",
   "curated_in": "iut4.json",
   "definitions_required": [],
   "explicit_hypotheses": [
    "p a prime",
    "K, L fields with finite-dimensional Q_p-algebra structures, an algebra map K -> L compatible with them (IsScalarTower Q_p K L), and compatible Z_p-algebra structures (IsScalarTower Z_p Q_p K, IsScalarTower Z_p Q_p L)",
-   "P_0 a prime of R_K = integralClosure Z_p K over pZ_p; P a prime of R_L = integralClosure Z_p L over pZ_p",
-   "hbound: differentExponent R_K R_L P <= e_{L/K} - 1 + e_L * multiplicity p e_{L/K}"
+   "P_0 a prime of R_K = integralClosure Z_p K over pZ_p; P a prime of R_L = integralClosure Z_p L over pZ_p"
   ],
   "external_dependencies": [],
   "id": "IUT4.Prop1_3.frag.tower_ii_exponent_bound",
   "implicit_hypotheses": [],
   "kind": "fragment",
-  "lean_declaration": "IUT.PaperIV.LocalFields.towerProp1_3ii_of_exponent_bound",
-  "lean_module": "IUT.PaperIV.LocalFields.Tower",
-  "not_covered": "Setting: k_0 = K, k_i = L finite extensions of Q_p; R_0 = integralClosure Z_p K, R_i = integralClosure Z_p L, R_K -> R_L given by towerAlgebra; e_0 = ramificationIdx of P_0 over pZ_p, e_i = that of P, e_{i/0} = ramificationIdx of P over R_K (e_i = e_0 e_{i/0} by towerRamificationIdx_eq_mul); d = differentOrder (exponent of the different divided by the ramification index, ord(p) = 1); tame means p does not divide e_{i/0} (finite residue fields); n_i = multiplicity p [L : K]. The hypothesis hbound (the classical upper bound for the different of an extension of local fields) is not proved here and is not in Mathlib at the pinned version; it is not a statement of the IUT papers and no page of a source for it was read. Counted as a model test: the implication from the classical upper bound for the different is a reduction made here; the bound is neither printed on the pages read nor proved, and page 12 proves (ii) through Kummer extensions instead.",
-  "obligations": [
-   "the upper bound v_P(D_{L/K}) <= e_{L/K} - 1 + v_P(e_{L/K}) for an extension of finite extensions of Q_p (hypothesis hbound)"
+  "lean_declaration": "IUT.PaperIV.LocalFields.diffBound_prop1_3ii_of_classical",
+  "lean_module": "IUT.PaperIV.LocalFields.DifferentBound",
+  "lemmas": [
+   "IUT.PaperIV.LocalFields.towerProp1_3ii_of_exponent_bound",
+   "IUT.PaperIV.LocalFields.diffBound_exponent_le"
   ],
+  "not_covered": "Setting: k_0 = K, k_i = L finite extensions of Q_p; R_0 = integralClosure Z_p K, R_i = integralClosure Z_p L, R_K -> R_L given by towerAlgebra; e_0 = ramificationIdx of P_0 over pZ_p, e_i = that of P, e_{i/0} = ramificationIdx of P over R_K (e_i = e_0 e_{i/0} by towerRamificationIdx_eq_mul); d = differentOrder (exponent of the different divided by the ramification index, ord(p) = 1); tame means p does not divide e_{i/0} (finite residue fields); n_i = multiplicity p [L : K]. The classical upper bound for the different is proved in IUT.PaperIV.LocalFields.DifferentBound (IUT4.Prop1_3.frag.different_upper_bound); it is not a statement of the IUT papers and no page of a source for it was read. Counted as a model test so that its conclusion, checked as IUT4.Prop1_3.frag.ii_all_finite, is counted once; this record documents the route through the classical upper bound for the different, which is not printed on the pages read (page 12 proves (ii) through Kummer extensions).",
+  "obligations": [],
   "page_spans": [
    [
     4,
@@ -42125,7 +43677,7 @@
   "parent": "IUT4.Prop1_3",
   "pdf_page": 9,
   "pdf_page_end": 12,
-  "proof_status": "CONDITIONALLY_VERIFIED",
+  "proof_status": "KERNEL_VERIFIED",
   "results_used": [],
   "scope": "model_test",
   "section": 1,
@@ -42187,8 +43739,8 @@
  },
  {
   "ambiguities": [],
-  "conclusion": "A Prop; no proof.",
-  "content": "Definition (a Prop, stated not proved): for Q_p in K in K_1 in L finite, if L/K_1 is Galois and K_1/K is tamely ramified (p does not divide the ramification index of the prime of R_{K_1} over R_K), then d_L <= d_K + multiplicity p [L : K] + 1/e_K for the primes P_0, P over p.",
+  "conclusion": "A Prop; its proof is the separate record IUT4.Prop1_3.frag.ii_statement_proved.",
+  "content": "Definition (a Prop): for Q_p in K in K_1 in L finite, if L/K_1 is Galois and K_1/K is tamely ramified (p does not divide the ramification index of the prime of R_{K_1} over R_K), then d_L <= d_K + multiplicity p [L : K] + 1/e_K for the primes P_0, P over p.",
   "cor3_12_dependency": "independent",
   "covers": "Page 12, Proposition 1.3 (ii), the full assertion with its hypotheses.",
   "curated_in": "iut4.json",
@@ -42205,7 +43757,7 @@
   "kind": "fragment",
   "lean_declaration": "IUT.PaperIV.LocalFields.towerProp1_3iiStatement",
   "lean_module": "IUT.PaperIV.LocalFields.Tower",
-  "not_covered": "Not proved; the special cases are tower_ii_tame and tower_ii_n_zero, and the reduction to the different bound is tower_ii_exponent_bound.",
+  "not_covered": "Proved for all parameters by diffBound_towerProp1_3iiStatement (IUT4.Prop1_3.frag.ii_statement_proved), which uses neither the Galois nor the tameness hypothesis and does not follow the route of page 12; the special cases are tower_ii_tame and tower_ii_n_zero.",
   "obligations": [],
   "page_spans": [
    [
@@ -43474,6 +45026,390 @@
    "pages_read": "rendered and checked: IUT IV pages 9, 10, 13, 14",
    "paper": "Inter-universal Teichmuller Theory IV",
    "pdf_pages": "page 13"
+  },
+  "statement_status": "STATEMENT_FORMALIZED"
+ },
+ {
+  "ambiguities": [],
+  "conclusion": "The two inequalities for mu^log(R_E) and the bound on the index.",
+  "content": "-ceil(d_2) log p <= mu^log(R_E) <= 0 and [(R_E)^~ : R_E] <= p^(ceil(d_2) D), D = dim(K1 tensor K2); likewise with d_1.",
+  "covers": "Not printed: a consequence of Proposition 1.1 (page 9) and the normalization of page 13.",
+  "curated_in": "iut4.json",
+  "definitions_required": [],
+  "explicit_hypotheses": [
+   "p a prime",
+   "K1, K2 fields with Q_p-algebra structures",
+   "K1, K2 finite-dimensional over Q_p",
+   "compatible Z_p-algebra structure on K2 (resp. K1), P a prime over p",
+   "an additive Haar measure mu on the coordinate space (Borel)"
+  ],
+  "external_dependencies": [],
+  "id": "IUT4.Prop1_4.frag.ti_bounds",
+  "implicit_hypotheses": [],
+  "kind": "fragment",
+  "lean_declaration": "IUT.PaperIV.LocalFields.tensorIdx_muLog_bounds",
+  "lean_module": "IUT.PaperIV.LocalFields.TensorIndex",
+  "lemmas": [
+   "IUT.PaperIV.LocalFields.tensorIdx_muLog_bounds_left",
+   "IUT.PaperIV.LocalFields.tensorIdx_muLog_ge_of_pow"
+  ],
+  "not_covered": "The sharp bound -d_2 log p without the ceiling (needs Haar scaling by 1 tensor delta).",
+  "obligations": [],
+  "page_spans": [
+   [
+    4,
+    9,
+    9
+   ]
+  ],
+  "paper": 4,
+  "parent": "IUT4.Prop1_4",
+  "pdf_page": 9,
+  "pdf_page_end": 9,
+  "proof_status": "KERNEL_VERIFIED",
+  "results_used": [],
+  "scope": "model_test",
+  "section": 1,
+  "section_title": "Log-volume Estimates",
+  "source": {
+   "pages_read": "rendered and checked: pages 9, 10, 13, 14",
+   "paper": "Inter-universal Teichmuller Theory IV",
+   "pdf_pages": "page 9"
+  },
+  "statement_status": "STATEMENT_FORMALIZED"
+ },
+ {
+  "ambiguities": [],
+  "conclusion": "IsOpen and IsCompact of the coordinate images of R_E and (R_E)^~; relIndex ne 0; mu(R_E) ne 0, ne top, and the index formula for measures.",
+  "content": "In the coordinates of Module.finBasis of K1 tensor K2, R_E and (R_E)^~ are open and compact; (R_E)^~ / R_E is finite; R_E has positive finite Haar measure for every additive Haar measure, and mu((R_E)^~) = [(R_E)^~ : R_E] mu(R_E).",
+  "covers": "Page 13, Proposition 1.4 (i): the log-volume is defined on compact open subsets of the tensor products; this shows R_E is such a subset for |I| = 2, so mu^log(R_E) is defined (used on page 14).",
+  "curated_in": "iut4.json",
+  "definitions_required": [],
+  "explicit_hypotheses": [
+   "p a prime",
+   "K1, K2 fields with Q_p-algebra structures",
+   "K1, K2 finite-dimensional over Q_p",
+   "an additive Haar measure mu on the coordinate space (Borel)"
+  ],
+  "external_dependencies": [],
+  "id": "IUT4.Prop1_4.frag.ti_compact_open",
+  "implicit_hypotheses": [],
+  "kind": "fragment",
+  "lean_declaration": "IUT.PaperIV.LocalFields.tensorIdx_coord_isOpen_isCompact",
+  "lean_module": "IUT.PaperIV.LocalFields.TensorIndex",
+  "lemmas": [
+   "IUT.PaperIV.LocalFields.tensorIdx_relIndex_ne_zero",
+   "IUT.PaperIV.LocalFields.tensorIdx_measure",
+   "IUT.PaperIV.LocalFields.tensorIdx_measure_eq_relIndex",
+   "IUT.PaperIV.LocalFields.tensorIdx_finite_quotient",
+   "IUT.PaperIV.LocalFields.tensorIdxCoordMap"
+  ],
+  "not_covered": "Setting: two factors only; tensor products over Q_p of the fields; R_E = tensorIdxRing (carrier padicPacketIntegers), (R_E)^~ = tensorIdxNormRing (carrier padicPacketNormalization); mu^log = padicPacketMuLog normalized at (R_E)^~. More than two factors; the decomposition into fields is not used for R_E. Counted as a model test: that R_E and (R_E)^~ are compact and open, with finite index, is used implicitly on pages 13 and 14, not printed (as for IUT4.Prop1_1.frag.pk_lattice).",
+  "obligations": [],
+  "page_spans": [
+   [
+    4,
+    13,
+    13
+   ]
+  ],
+  "paper": 4,
+  "parent": "IUT4.Prop1_4",
+  "pdf_page": 13,
+  "pdf_page_end": 13,
+  "proof_status": "KERNEL_VERIFIED",
+  "results_used": [],
+  "scope": "model_test",
+  "section": 1,
+  "section_title": "Log-volume Estimates",
+  "source": {
+   "pages_read": "rendered and checked: pages 9, 10, 13, 14",
+   "paper": "Inter-universal Teichmuller Theory IV",
+   "pdf_pages": "page 13"
+  },
+  "statement_status": "STATEMENT_FORMALIZED"
+ },
+ {
+  "ambiguities": [],
+  "conclusion": "padicPacketMuLog ... (padicPacketIntegers p K1 K2) = -log(relIndex) / finrank (K1 tensor K2).",
+  "content": "The index formula: mu^log(R_E) = -log [(R_E)^~ : R_E] / dim_{Q_p}(K1 tensor K2), with mu^log normalized at (R_E)^~.",
+  "covers": "Not printed: the formula for mu^log(R_I) that the term mu^log(R_I) of page 14 refers to, in the normalization of page 13.",
+  "curated_in": "iut4.json",
+  "definitions_required": [],
+  "explicit_hypotheses": [
+   "p a prime",
+   "K1, K2 fields with Q_p-algebra structures",
+   "K1, K2 finite-dimensional over Q_p",
+   "an additive Haar measure mu on the coordinate space (Borel)"
+  ],
+  "external_dependencies": [],
+  "id": "IUT4.Prop1_4.frag.ti_index_formula",
+  "implicit_hypotheses": [],
+  "kind": "fragment",
+  "lean_declaration": "IUT.PaperIV.LocalFields.tensorIdx_muLog_eq",
+  "lean_module": "IUT.PaperIV.LocalFields.TensorIndex",
+  "not_covered": "More than two factors; the value of the index in terms of the differents.",
+  "obligations": [],
+  "page_spans": [
+   [
+    4,
+    13,
+    14
+   ]
+  ],
+  "paper": 4,
+  "parent": "IUT4.Prop1_4",
+  "pdf_page": 13,
+  "pdf_page_end": 14,
+  "proof_status": "KERNEL_VERIFIED",
+  "results_used": [],
+  "scope": "model_test",
+  "section": 1,
+  "section_title": "Log-volume Estimates",
+  "source": {
+   "pages_read": "rendered and checked: pages 9, 10, 13, 14",
+   "paper": "Inter-universal Teichmuller Theory IV",
+   "pdf_pages": "pages 13 to 14"
+  },
+  "statement_status": "STATEMENT_FORMALIZED"
+ },
+ {
+  "ambiguities": [],
+  "conclusion": "padicPacketMuLog p (K1 tensor K2) mu (padicPacketNormalization p K1 K2) (padicPacketIntegers p K1 K2) <= 0.",
+  "content": "mu^log(R_E) <= 0 = mu^log((R_E)^~) for the packet log-volume normalized at (R_E)^~ (any additive Haar measure in coordinates).",
+  "covers": "Page 14, proof of Proposition 1.4 (iii): 'by assertion (i), we have mu^log(R_I) <= mu^log((R_I)^~) = 0', for |I| = 2.",
+  "curated_in": "iut4.json",
+  "definitions_required": [],
+  "explicit_hypotheses": [
+   "p a prime",
+   "K1, K2 fields with Q_p-algebra structures",
+   "K1, K2 finite-dimensional over Q_p",
+   "an additive Haar measure mu on the coordinate space (Borel)"
+  ],
+  "external_dependencies": [],
+  "id": "IUT4.Prop1_4.frag.ti_muLog_nonpos",
+  "implicit_hypotheses": [],
+  "kind": "fragment",
+  "lean_declaration": "IUT.PaperIV.LocalFields.tensorIdx_muLog_nonpos",
+  "lean_module": "IUT.PaperIV.LocalFields.TensorIndex",
+  "not_covered": "More than two factors; the use of this inequality in the computation of page 14 (which also needs the additivity mu^log(log_p(R_I^x)) = sum mu^log(log_p(R_i^x)) + mu^log(R_I), not proved).",
+  "obligations": [],
+  "page_spans": [
+   [
+    4,
+    14,
+    14
+   ]
+  ],
+  "paper": 4,
+  "parent": "IUT4.Prop1_4",
+  "pdf_page": 14,
+  "pdf_page_end": 14,
+  "proof_status": "KERNEL_VERIFIED",
+  "results_used": [],
+  "scope": "two factors only; tensor products over Q_p of the fields; R_E = tensorIdxRing (carrier padicPacketIntegers), (R_E)^~ = tensorIdxNormRing (carrier padicPacketNormalization); mu^log = padicPacketMuLog normalized at (R_E)^~",
+  "section": 1,
+  "section_title": "Log-volume Estimates",
+  "source": {
+   "pages_read": "rendered and checked: pages 9, 10, 13, 14",
+   "paper": "Inter-universal Teichmuller Theory IV",
+   "pdf_pages": "page 14"
+  },
+  "statement_status": "STATEMENT_FORMALIZED"
+ },
+ {
+  "ambiguities": [],
+  "conclusion": "(2 < p -> 2 <= d_I + a_I) and (p = 2 -> 4 <= d_I + a_I).",
+  "content": "For two factors: d_1 + d_2 + (a_1 + a_2) >= 2 if p > 2, and >= 4 if p = 2. The two-factor case of padic_dI_add_aI_ge (IUT.PaperIV.LocalFields.Padic), stated with tensorLogDiffOrder.",
+  "covers": "Page 13, Proposition 1.4 (iii), 'Moreover, d_I + a_I >= |I| if p > 2; d_I + a_I >= 2 |I| if p = 2', for |I| = 2; proof on page 14.",
+  "curated_in": "iut4.json",
+  "definitions_required": [],
+  "explicit_hypotheses": [
+   "p a prime",
+   "K1, K2 fields with finite-dimensional Q_p-algebra structures and compatible Z_p-algebra structures (IsScalarTower Z_p Q_p K_i); R_i = integralClosure Z_p K_i",
+   "P1, P2 prime ideals of R1, R2 lying over the maximal ideal of Z_p"
+  ],
+  "external_dependencies": [],
+  "id": "IUT4.Prop1_4.frag.tls_dI_aI",
+  "implicit_hypotheses": [],
+  "kind": "fragment",
+  "lean_declaration": "IUT.PaperIV.LocalFields.tensorLog_dI_add_aI_ge",
+  "lemmas": [],
+  "not_covered": "two factors only; more than two factors (the induction on |I|) is not addressed; the general I is padic_dI_add_aI_ge.",
+  "obligations": [],
+  "page_spans": [
+   [
+    4,
+    13,
+    14
+   ]
+  ],
+  "paper": 4,
+  "parent": "IUT4.Prop1_4",
+  "pdf_page": 13,
+  "pdf_page_end": 14,
+  "proof_status": "KERNEL_VERIFIED",
+  "results_used": [],
+  "scope": "two factors only (I = {1, 2}); K1 tmul_{Q_p} K2; R_I = padicPacketIntegers, (R_I)^~ = padicPacketNormalization (elements integral over Z_p); log_p(R_I^x) = tensorLogLattice, the Z_p-span in K1 tmul K2 of log_p(u1) tmul log_p(u2); p^mu (R_I)^~ = tensorLogShift x y with spectral norms ||x|| ||y|| = p^(-mu); ord read through the spectral norm; e_i, d_i at a prime P_i of R_i over p (d_i = tensorLogDiffOrder = differentOrder); phi a Q_p-linear automorphism of K1 tmul K2 with phi(log_p(R_I^x)) = log_p(R_I^x)",
+  "section": 1,
+  "section_title": "Log-volume Estimates",
+  "source": {
+   "pages_read": "rendered and checked: pages 10, 11, 13, 14",
+   "paper": "Inter-universal Teichmuller Theory IV",
+   "pdf_pages": "pages 13 to 14"
+  },
+  "statement_status": "STATEMENT_FORMALIZED"
+ },
+ {
+  "ambiguities": [],
+  "conclusion": "padicPacketMuLog mu (R_I)^~ (p^k • tensorLogLattice) <= (-lam + (d_1 + d_2) + 1 + 4 |Istar| / p) log p.",
+  "content": "Proposition 1.4 (iii), first inequality, for two factors in the case p > 2, e_1, e_2 <= p - 2: for every I* ⊆ {1, 2} and real lam, mu^log(p^k log_p(R_I^x)) <= (-lam + d_I + 1 + 4 |I*| / p) log p, k = floor(lam - d_I - a_I).",
+  "covers": "Page 13, Proposition 1.4 (iii), first inequality mu^log(p^{floor(lam - d_I - a_I)} log_p(R_I^x)) <= (-lam + d_I + 1 + 4 |I*|/p) log(p), only when every e_i <= p - 2 (p > 2).",
+  "curated_in": "iut4.json",
+  "definitions_required": [],
+  "explicit_hypotheses": [
+   "p a prime",
+   "K1, K2 fields with finite-dimensional Q_p-algebra structures and compatible Z_p-algebra structures (IsScalarTower Z_p Q_p K_i); R_i = integralClosure Z_p K_i",
+   "P1, P2 prime ideals of R1, R2 lying over the maximal ideal of Z_p",
+   "MeasurableSpace and BorelSpace on Fin (finrank Q_p (K1 tmul K2)) -> Q_p",
+   "mu an additive Haar measure there",
+   "2 < p",
+   "P_i.ramificationIdx Z_p <= p - 2 for i = 1, 2",
+   "Istar : Finset (Fin 2)",
+   "lam real"
+  ],
+  "external_dependencies": [],
+  "id": "IUT4.Prop1_4.frag.tls_iii_first",
+  "implicit_hypotheses": [],
+  "kind": "fragment",
+  "lean_declaration": "IUT.PaperIV.LocalFields.tensorLog_prop1_4_iii_lattice",
+  "lemmas": [],
+  "not_covered": "two factors only; more than two factors (the induction on |I|) is not addressed; the case where some e_i > p - 2 (it needs the additivity mu^log(log_p(R_I^x)) = sum_i mu^log(log_p(R_i^x)) + mu^log(R_I) of page 14, not formalized); the Lean proof bounds mu^log(log_p(R_I^x)) by mu^log(p^{-b_I}(R_I)^~) instead of following page 14; the injectivity of log_p(R1^x) tmul_{Z_p} log_p(R2^x) into K1 tmul_{Q_p} K2 (the lattice is taken as its image).",
+  "obligations": [],
+  "page_spans": [
+   [
+    4,
+    13,
+    14
+   ]
+  ],
+  "paper": 4,
+  "parent": "IUT4.Prop1_4",
+  "pdf_page": 13,
+  "pdf_page_end": 14,
+  "proof_status": "KERNEL_VERIFIED",
+  "results_used": [],
+  "scope": "two factors only (I = {1, 2}); K1 tmul_{Q_p} K2; R_I = padicPacketIntegers, (R_I)^~ = padicPacketNormalization (elements integral over Z_p); log_p(R_I^x) = tensorLogLattice, the Z_p-span in K1 tmul K2 of log_p(u1) tmul log_p(u2); p^mu (R_I)^~ = tensorLogShift x y with spectral norms ||x|| ||y|| = p^(-mu); ord read through the spectral norm; e_i, d_i at a prime P_i of R_i over p (d_i = tensorLogDiffOrder = differentOrder); phi a Q_p-linear automorphism of K1 tmul K2 with phi(log_p(R_I^x)) = log_p(R_I^x)",
+  "section": 1,
+  "section_title": "Log-volume Estimates",
+  "source": {
+   "pages_read": "rendered and checked: pages 10, 11, 13, 14",
+   "paper": "Inter-universal Teichmuller Theory IV",
+   "pdf_pages": "pages 13 to 14"
+  },
+  "statement_status": "STATEMENT_FORMALIZED"
+ },
+ {
+  "ambiguities": [],
+  "conclusion": "padicPacketMuLog mu (R_I)^~ (p^k • tensorLogShift z1 z2) <= (-lam + (d_1 + d_2) + 1) log p + sum_{i in Istar} (3 + log e_i).",
+  "content": "Proposition 1.4 (iii), second inequality, for two factors: for I* ⊆ {1, 2} with e_i <= p - 2 for i not in I*, every real lam and z_i with ||z_i|| = p^(b_i): mu^log(p^k (z1 tmul z2)(R_I)^~) <= (-lam + d_I + 1) log p + sum over I* of (3 + log e_i), k = floor(lam - d_I - a_I), mu^log the packet log-volume with reference set (R_I)^~.",
+  "covers": "Page 13, Proposition 1.4 (iii), second inequality mu^log(p^{floor(lam - d_I - a_I) - b_I} (R_I)^~) <= (-lam + d_I + 1) log(p) + sum_{i in I*} {3 + log(e_i)}; proof on page 14.",
+  "curated_in": "iut4.json",
+  "definitions_required": [],
+  "explicit_hypotheses": [
+   "p a prime",
+   "K1, K2 fields with finite-dimensional Q_p-algebra structures and compatible Z_p-algebra structures (IsScalarTower Z_p Q_p K_i); R_i = integralClosure Z_p K_i",
+   "P1, P2 prime ideals of R1, R2 lying over the maximal ideal of Z_p",
+   "MeasurableSpace and BorelSpace on Fin (finrank Q_p (K1 tmul K2)) -> Q_p",
+   "mu an additive Haar measure there",
+   "Istar : Finset (Fin 2) with ![e_1, e_2] i <= p - 2 for i not in Istar",
+   "lam real",
+   "z1, z2 with ||z_i|| = p^(b_i)"
+  ],
+  "external_dependencies": [],
+  "id": "IUT4.Prop1_4.frag.tls_iii_second",
+  "implicit_hypotheses": [],
+  "kind": "fragment",
+  "lean_declaration": "IUT.PaperIV.LocalFields.tensorLog_prop1_4_iii_shift",
+  "lemmas": [
+   "IUT.PaperIV.LocalFields.tensorLog_muLog_shift",
+   "IUT.PaperIV.LocalFields.tensorLog_muLog_cocycle",
+   "IUT.PaperIV.LocalFields.tensorLog_muLog_mul_image",
+   "IUT.PaperIV.LocalFields.tensorLog_measure_of_subset",
+   "IUT.PaperIV.LocalFields.tensorLog_measure_zpow_smul",
+   "IUT.PaperIV.LocalFields.tensorLog_normalization_measure",
+   "IUT.PaperIV.LocalFields.tensorLog_finrank_pos"
+  ],
+  "not_covered": "two factors only; more than two factors (the induction on |I|) is not addressed; the first inequality is tls_iii_first; that (R_I)^~ is the normalization of R_I in its ring of fractions is proved for two factors in IUT.PaperIV.LocalFields.TensorIndex (IUT4.Prop1_1.frag.ti_normalization).",
+  "obligations": [],
+  "page_spans": [
+   [
+    4,
+    13,
+    14
+   ]
+  ],
+  "paper": 4,
+  "parent": "IUT4.Prop1_4",
+  "pdf_page": 13,
+  "pdf_page_end": 14,
+  "proof_status": "KERNEL_VERIFIED",
+  "results_used": [],
+  "scope": "two factors only (I = {1, 2}); K1 tmul_{Q_p} K2; R_I = padicPacketIntegers, (R_I)^~ = padicPacketNormalization (elements integral over Z_p); log_p(R_I^x) = tensorLogLattice, the Z_p-span in K1 tmul K2 of log_p(u1) tmul log_p(u2); p^mu (R_I)^~ = tensorLogShift x y with spectral norms ||x|| ||y|| = p^(-mu); ord read through the spectral norm; e_i, d_i at a prime P_i of R_i over p (d_i = tensorLogDiffOrder = differentOrder); phi a Q_p-linear automorphism of K1 tmul K2 with phi(log_p(R_I^x)) = log_p(R_I^x)",
+  "section": 1,
+  "section_title": "Log-volume Estimates",
+  "source": {
+   "pages_read": "rendered and checked: pages 10, 11, 13, 14",
+   "paper": "Inter-universal Teichmuller Theory IV",
+   "pdf_pages": "pages 13 to 14"
+  },
+  "statement_status": "STATEMENT_FORMALIZED"
+ },
+ {
+  "ambiguities": [],
+  "conclusion": "phi '' padicPacketNormalization ⊆ padicPacketNormalization ∧ padicPacketMuLog mu (R_I)^~ (R_I)^~ = 0.",
+  "content": "Proposition 1.4 (iv) for two factors: if p > 2 and e_1 = e_2 = 1, then phi((R_I)^~) ⊆ (R_I)^~ and mu^log((R_I)^~) = 0.",
+  "covers": "Page 13, Proposition 1.4 (iv) 'phi((R_I)^~) ⊆ (R_I)^~, and mu^log((R_I)^~) = 0'.",
+  "curated_in": "iut4.json",
+  "definitions_required": [],
+  "explicit_hypotheses": [
+   "p a prime",
+   "K1, K2 fields with finite-dimensional Q_p-algebra structures and compatible Z_p-algebra structures (IsScalarTower Z_p Q_p K_i); R_i = integralClosure Z_p K_i",
+   "P1, P2 prime ideals of R1, R2 lying over the maximal ideal of Z_p",
+   "MeasurableSpace and BorelSpace on Fin (finrank Q_p (K1 tmul K2)) -> Q_p",
+   "mu an additive Haar measure there",
+   "2 < p",
+   "P_i.ramificationIdx Z_p = 1 for i = 1, 2",
+   "phi : K1 tmul K2 ≃ₗ[Q_p] K1 tmul K2 with phi '' tensorLogLattice = tensorLogLattice"
+  ],
+  "external_dependencies": [],
+  "id": "IUT4.Prop1_4.frag.tls_iv",
+  "implicit_hypotheses": [],
+  "kind": "fragment",
+  "lean_declaration": "IUT.PaperIV.LocalFields.tensorLog_prop1_4_iv",
+  "lemmas": [],
+  "not_covered": "two factors only; more than two factors (the induction on |I|) is not addressed; the equality mu^log((R_I)^~) = 0 holds by the choice of (R_I)^~ as the reference set of mu^log (Proposition 1.4 (i)).",
+  "obligations": [],
+  "page_spans": [
+   [
+    4,
+    13,
+    14
+   ]
+  ],
+  "paper": 4,
+  "parent": "IUT4.Prop1_4",
+  "pdf_page": 13,
+  "pdf_page_end": 14,
+  "proof_status": "KERNEL_VERIFIED",
+  "results_used": [],
+  "scope": "two factors only (I = {1, 2}); K1 tmul_{Q_p} K2; R_I = padicPacketIntegers, (R_I)^~ = padicPacketNormalization (elements integral over Z_p); log_p(R_I^x) = tensorLogLattice, the Z_p-span in K1 tmul K2 of log_p(u1) tmul log_p(u2); p^mu (R_I)^~ = tensorLogShift x y with spectral norms ||x|| ||y|| = p^(-mu); ord read through the spectral norm; e_i, d_i at a prime P_i of R_i over p (d_i = tensorLogDiffOrder = differentOrder); phi a Q_p-linear automorphism of K1 tmul K2 with phi(log_p(R_I^x)) = log_p(R_I^x)",
+  "section": 1,
+  "section_title": "Log-volume Estimates",
+  "source": {
+   "pages_read": "rendered and checked: pages 10, 11, 13, 14",
+   "paper": "Inter-universal Teichmuller Theory IV",
+   "pdf_pages": "pages 13 to 14"
   },
   "statement_status": "STATEMENT_FORMALIZED"
  },
@@ -47859,6 +49795,336 @@
  },
  {
   "ambiguities": [],
+  "conclusion": "sum_t w_t mu^log_t(p^n X_t) = sum_t w_t mu^log_t(X_t) - n log p * sum_t w_t.",
+  "content": "If the page's weights are applied to log-volumes already divided by the dimension (padicPacketMuLog), multiplication by p^n shifts the weighted sum by -n (sum_t w_t) log p, and sum_t w_t is not 1 in general (1/2 in the example).",
+  "cor3_12_dependency": "independent",
+  "covers": "A test of the normalization chosen here against the normalization sentence of page 115.",
+  "curated_in": "iut3.json",
+  "definitions_required": [],
+  "explicit_hypotheses": [
+   "the setting of wpkt_logvol_def",
+   "each X_t of positive finite Haar measure"
+  ],
+  "external_dependencies": [],
+  "id": "IUT3.Prop3_9.i.frag.wpkt_double_division",
+  "implicit_hypotheses": [],
+  "kind": "fragment",
+  "lean_declaration": "IUT.PaperIII.Corollary312.wPkt_doubleDivision_zpow_smul",
+  "lean_module": "IUT.PaperIII.Corollary312.WeightedPacket",
+  "lemmas": [
+   "IUT.PaperIII.Corollary312.wPkt_weight_sum",
+   "IUT.PaperIII.Corollary312.wPkt_weight_sum_example"
+  ],
+  "not_covered": "Not a statement of the papers; a comparison of two normalizations chosen here.",
+  "obligations": [],
+  "page_spans": [
+   [
+    3,
+    94,
+    94
+   ],
+   [
+    3,
+    115,
+    115
+   ]
+  ],
+  "paper": 3,
+  "parent": "IUT3.Prop3_9.i",
+  "pdf_page": 94,
+  "pdf_page_end": 115,
+  "proof_status": "KERNEL_VERIFIED",
+  "results_used": [],
+  "scope": "model_test",
+  "section": 3,
+  "section_title": "Multiradial Logarithmic Gaussian Procession Monoids",
+  "source": {
+   "pages_read": "rendered and checked: pages 93 to 97, 115 to 117, 127",
+   "paper": "Inter-universal Teichmuller Theory III",
+   "pdf_pages": "pages 94 and 115"
+  },
+  "statement_status": "STATEMENT_FORMALIZED"
+ },
+ {
+  "ambiguities": [],
+  "conclusion": "wPkt_haar_region, wPkt_weight_eq_haar_mul, wPkt_weight_eq_haar_iff, wPkt_logVol_sub_haar, wPkt_logVol_eq_haar_of_const, wPkt_scaled_integral, wPkt_coeff_example.",
+  "content": "For a Q_p-algebra isomorphism G from a finite Q_p-algebra W onto prod_t of the summand packets, the dimension-normalized Haar log-volume of W on G^{-1}(prod_t X_t) is sum_t (1/dim W) L_t(X_t) with dim W = (sum_v e f)^|A|. The page's weight is w_t = (1/dim W) prod_alpha (ebar / e(t alpha)), ebar = sum e f / sum f; the weights coincide for all t (with A and V nonempty and positive degrees) iff e is constant, and then the two log-volumes agree on direct product regions; in general they differ by sum_t (w_t - 1/dim W) L_t(X_t); on regions p^{k_t} (R_E)^~_t the coefficients of -log p are sum_t w_t k_t dim_t and sum_t k_t dim_t / dim W, numerically 1/2 versus 1/3 for e = (1,2), f = (1,1), k = (1,0).",
+  "cor3_12_dependency": "independent",
+  "covers": "Comparison of the weights of page 94 with the dimension normalization of the whole packet (Packets.lean); both pass the tests of page 115.",
+  "curated_in": "iut3.json",
+  "definitions_required": [],
+  "explicit_hypotheses": [
+   "the setting of wpkt_logvol_def",
+   "W a finite commutative Q_p-algebra with Haar measure on its coordinates",
+   "G : W isomorphic as Q_p-algebra to prod_t summand_t (an input)",
+   "each X_t of positive finite Haar measure"
+  ],
+  "external_dependencies": [],
+  "id": "IUT3.Prop3_9.i.frag.wpkt_haar_comparison",
+  "implicit_hypotheses": [],
+  "kind": "fragment",
+  "lean_declaration": "IUT.PaperIII.Corollary312.wPkt_weight_eq_haar_iff",
+  "lean_module": "IUT.PaperIII.Corollary312.WeightedPacket",
+  "lemmas": [
+   "IUT.PaperIII.Corollary312.wPkt_muLog_pi_region",
+   "IUT.PaperIII.Corollary312.wPkt_haar_region",
+   "IUT.PaperIII.Corollary312.wPktHaarCoeff",
+   "IUT.PaperIII.Corollary312.wPktMeanDeg",
+   "IUT.PaperIII.Corollary312.wPkt_dim_sum",
+   "IUT.PaperIII.Corollary312.wPkt_weight_eq_haar_mul",
+   "IUT.PaperIII.Corollary312.wPkt_logVol_sub_haar",
+   "IUT.PaperIII.Corollary312.wPkt_logVol_eq_haar_of_const",
+   "IUT.PaperIII.Corollary312.wPkt_scaled_integral",
+   "IUT.PaperIII.Corollary312.wPkt_coeff_example"
+  ],
+  "not_covered": "The decomposition G (Proposition 3.1 (i)) is an input, not constructed. Not a statement of the papers. The comparison is made in the reading of IUT.PaperIII.Corollary312.WeightedPacket, where the weights of page 94 multiply unnormalized summand log-volumes (see the ambiguities of IUT3.Prop3_9.i.frag.wpkt_logvol_def); the pages do not decide that reading.",
+  "obligations": [],
+  "page_spans": [
+   [
+    3,
+    94,
+    94
+   ],
+   [
+    3,
+    115,
+    115
+   ]
+  ],
+  "paper": 3,
+  "parent": "IUT3.Prop3_9.i",
+  "pdf_page": 94,
+  "pdf_page_end": 115,
+  "proof_status": "KERNEL_VERIFIED",
+  "results_used": [],
+  "scope": "model_test",
+  "section": 3,
+  "section_title": "Multiradial Logarithmic Gaussian Procession Monoids",
+  "source": {
+   "pages_read": "rendered and checked: pages 93 to 97, 115 to 117, 127",
+   "paper": "Inter-universal Teichmuller Theory III",
+   "pdf_pages": "pages 94 and 115"
+  },
+  "statement_status": "STATEMENT_FORMALIZED"
+ },
+ {
+  "ambiguities": [
+   "The log-volume on a summand that the weights multiply is read as the unnormalized Haar log-volume; the other reading fails the normalization of page 115 (wPkt_doubleDivision_zpow_smul).",
+   "Pages 94, 95 and 115 do not decide whether the weights multiply the unnormalized log-volume of a summand or its log-volume divided by its dimension. Under the unnormalized reading the printed weights give the printed normalization for every choice of degrees; under the other reading the shift is -n (sum_t w_t) log p (IUT3.Prop3_9.i.frag.wpkt_double_division), which differs from -n log p in general, though not when sum_t w_t = 1. The unnormalized reading agrees with page 97, where the weights 1/N_v multiply the logarithm of a measure, and with [AbsTopIII], Proposition 5.7 (i), cited on page 115, where the log-volume of the n-th power of the maximal ideal is -f n log p; these support the reading without settling it. IUT IV, Proposition 1.4 (i), page 13, divides by the degree, in a setting without these weights."
+  ],
+  "conclusion": "Definitions; finrank of the summand is wPktDim e f t.",
+  "content": "Definitions on real objects: fields F v and K v finite over Q_p with K v finite over F v; e = [K v : F v] (wPktE), f = [F v : Q_p] (wPktF), [K v : Q_p] = e f (tower law); the summand of t is the packet PiTensorProduct over Q_p of the K(t alpha), of dimension dim_t; L_t = dim_t * padicPacketMuLog (unnormalized Haar log-volume, zero on the integral elements); wPktLogVol X = sum_t w_t L_t(X_t) on a direct product region.",
+  "cor3_12_dependency": "independent",
+  "covers": "Page 115, Proposition 3.9 (i): the log-volume determined by the p-adic log-volume on each summand together with the normalized weights of Remark 3.1.1 (ii), (iii), on direct product regions. Checked only under the reading that the weights multiply unnormalized summand log-volumes (see ambiguities).",
+  "curated_in": "iut3.json",
+  "definitions_required": [],
+  "explicit_hypotheses": [
+   "p prime",
+   "V, A finite types",
+   "F v, K v fields, finite over Q_p, K v finite over F v with compatible scalar towers",
+   "additive Haar measures on the coordinate spaces of the summands"
+  ],
+  "external_dependencies": [],
+  "id": "IUT3.Prop3_9.i.frag.wpkt_logvol_def",
+  "implicit_hypotheses": [],
+  "kind": "fragment",
+  "lean_declaration": "IUT.PaperIII.Corollary312.wPktLogVol",
+  "lean_module": "IUT.PaperIII.Corollary312.WeightedPacket",
+  "lemmas": [
+   "IUT.PaperIII.Corollary312.wPktSummand",
+   "IUT.PaperIII.Corollary312.wPktSummandLogVol",
+   "IUT.PaperIII.Corollary312.wPktE",
+   "IUT.PaperIII.Corollary312.wPktF",
+   "IUT.PaperIII.Corollary312.wPkt_finrank_tower",
+   "IUT.PaperIII.Corollary312.wPkt_summand_finrank",
+   "IUT.PaperIII.Corollary312.wPktE_pos",
+   "IUT.PaperIII.Corollary312.wPktF_pos"
+  ],
+  "not_covered": "The summands are packets of finite extensions, not the inductive limits of Proposition 3.1; the decomposition of the whole packet into the summands is not constructed; only direct product regions; archimedean places not treated. Checked only under the reading that the weights of page 94 multiply the unnormalized log-volume of each summand (the logarithm of a Haar measure with value 1 on the integral elements), not its log-volume divided by the dimension of the summand.",
+  "obligations": [],
+  "page_spans": [
+   [
+    3,
+    94,
+    94
+   ],
+   [
+    3,
+    95,
+    95
+   ],
+   [
+    3,
+    115,
+    115
+   ]
+  ],
+  "paper": 3,
+  "parent": "IUT3.Prop3_9.i",
+  "pdf_page": 94,
+  "pdf_page_end": 115,
+  "proof_status": "NOT_EXTRACTED",
+  "results_used": [],
+  "section": 3,
+  "section_title": "Multiradial Logarithmic Gaussian Procession Monoids",
+  "source": {
+   "pages_read": "rendered and checked: pages 93 to 97, 115 to 117, 127",
+   "paper": "Inter-universal Teichmuller Theory III",
+   "pdf_pages": "pages 94, 95 and 115"
+  },
+  "statement_status": "STATEMENT_FORMALIZED"
+ },
+ {
+  "ambiguities": [
+   "Pages 94, 95 and 115 do not decide whether the weights multiply the unnormalized log-volume of a summand or its log-volume divided by its dimension. Under the unnormalized reading the printed weights give the printed normalization for every choice of degrees; under the other reading the shift is -n (sum_t w_t) log p (IUT3.Prop3_9.i.frag.wpkt_double_division), which differs from -n log p in general, though not when sum_t w_t = 1. The unnormalized reading agrees with page 97, where the weights 1/N_v multiply the logarithm of a measure, and with [AbsTopIII], Proposition 5.7 (i), cited on page 115, where the log-volume of the n-th power of the maximal ideal is -f n log p; these support the reading without settling it. IUT IV, Proposition 1.4 (i), page 13, divides by the degree, in a setting without these weights."
+  ],
+  "conclusion": "wPktLogVol (R_E)^~ = 0; wPktLogVol (p^n X) = wPktLogVol X - n log p.",
+  "content": "The integral structure prod_t (R_E)^~_t has weighted log-volume 0; for a direct product region of positive finite measures, multiplying every component by p^n subtracts exactly n log p; in particular prod_t p^n (R_E)^~_t has log-volume -n log p.",
+  "cor3_12_dependency": "independent",
+  "covers": "Page 115: integral structures of log-volume zero and multiplication by p_v adding -log(p_v) (the packet-normalization), for the weighted log-volume of tensor packets over p. Checked only under the reading that the weights multiply unnormalized summand log-volumes (see ambiguities).",
+  "curated_in": "iut3.json",
+  "definitions_required": [],
+  "explicit_hypotheses": [
+   "the setting of wpkt_logvol_def",
+   "V nonempty (for the scaling law)",
+   "each X_t of positive finite Haar measure"
+  ],
+  "external_dependencies": [],
+  "id": "IUT3.Prop3_9.i.frag.wpkt_logvol_tests",
+  "implicit_hypotheses": [],
+  "kind": "fragment",
+  "lean_declaration": "IUT.PaperIII.Corollary312.wPkt_logVol_zpow_smul",
+  "lean_module": "IUT.PaperIII.Corollary312.WeightedPacket",
+  "lemmas": [
+   "IUT.PaperIII.Corollary312.wPkt_logVol_integral",
+   "IUT.PaperIII.Corollary312.wPkt_logVol_integral_zpow",
+   "IUT.PaperIII.Corollary312.wPkt_summandLogVol_zpow_smul",
+   "IUT.PaperIII.Corollary312.wPkt_summand_integral"
+  ],
+  "not_covered": "Archimedean case (page 116); regions that are not direct product regions; permutation invariance in A. Checked only under the reading that the weights of page 94 multiply the unnormalized log-volume of each summand (the logarithm of a Haar measure with value 1 on the integral elements), not its log-volume divided by the dimension of the summand.",
+  "obligations": [],
+  "page_spans": [
+   [
+    3,
+    115,
+    115
+   ]
+  ],
+  "paper": 3,
+  "parent": "IUT3.Prop3_9.i",
+  "pdf_page": 115,
+  "pdf_page_end": 115,
+  "proof_status": "KERNEL_VERIFIED",
+  "results_used": [],
+  "section": 3,
+  "section_title": "Multiradial Logarithmic Gaussian Procession Monoids",
+  "source": {
+   "pages_read": "rendered and checked: pages 93 to 97, 115 to 117, 127",
+   "paper": "Inter-universal Teichmuller Theory III",
+   "pdf_pages": "page 115"
+  },
+  "statement_status": "STATEMENT_FORMALIZED"
+ },
+ {
+  "ambiguities": [],
+  "conclusion": "wPktProcLogVol (p^n X) = wPktProcLogVol X - n log p; wPktProcLogVol (R_E)^~ = 0.",
+  "content": "Procession-normalization: wPktProcAvg v = (1/|J|) sum_j v_j and wPktProcLogVol = the average over capsules j (label sets L j given) of the packet-normalized log-volumes; it is 0 on the integral structures and decreases by exactly n log p when every component is multiplied by p^n (J, V nonempty).",
+  "cor3_12_dependency": "independent",
+  "covers": "Page 116, Proposition 3.9 (i): the procession-normalization, the average over the various capsules, with the two normalizing tests.",
+  "curated_in": "iut3.json",
+  "definitions_required": [],
+  "explicit_hypotheses": [
+   "J a finite type (nonempty for the scaling law)",
+   "label sets L j finite",
+   "the setting of wpkt_logvol_def for each capsule",
+   "each region of positive finite Haar measure"
+  ],
+  "external_dependencies": [],
+  "id": "IUT3.Prop3_9.i.frag.wpkt_procession",
+  "implicit_hypotheses": [],
+  "kind": "fragment",
+  "lean_declaration": "IUT.PaperIII.Corollary312.wPkt_procLogVol_zpow_smul",
+  "lean_module": "IUT.PaperIII.Corollary312.WeightedPacket",
+  "lemmas": [
+   "IUT.PaperIII.Corollary312.wPktProcAvg",
+   "IUT.PaperIII.Corollary312.wPktProcLogVol",
+   "IUT.PaperIII.Corollary312.wPktProcAvg_const",
+   "IUT.PaperIII.Corollary312.wPktProcAvg_sub",
+   "IUT.PaperIII.Corollary312.wPkt_procLogVol_integral"
+  ],
+  "not_covered": "The capsule sizes of a procession (Proposition 3.4, not read) are inputs; archimedean case not treated. Counted as a model test: page 116 prints the average over the capsules; that the average satisfies the two normalizations is an inference made here, and the capsules with their label sets are inputs.",
+  "obligations": [],
+  "page_spans": [
+   [
+    3,
+    116,
+    116
+   ]
+  ],
+  "paper": 3,
+  "parent": "IUT3.Prop3_9.i",
+  "pdf_page": 116,
+  "pdf_page_end": 116,
+  "proof_status": "KERNEL_VERIFIED",
+  "results_used": [],
+  "scope": "model_test",
+  "section": 3,
+  "section_title": "Multiradial Logarithmic Gaussian Procession Monoids",
+  "source": {
+   "pages_read": "rendered and checked: pages 93 to 97, 115 to 117, 127",
+   "paper": "Inter-universal Teichmuller Theory III",
+   "pdf_pages": "page 116"
+  },
+  "statement_status": "STATEMENT_FORMALIZED"
+ },
+ {
+  "ambiguities": [],
+  "conclusion": "((wPktProcAvg v : R) : EReal) = equalWeightAverage (coe o v) = labelAverage l (coe o v).",
+  "content": "On real values, equalWeightAverage of Comparison.lean is wPktProcAvg, and labelAverage of LabelAverage.lean over F_l^* (odd l) is wPktProcAvg: the abstract layer's average is the procession average of this file.",
+  "cor3_12_dependency": "independent",
+  "covers": "Page 116, Proposition 3.9 (ii): taking the average of the packet-normalized log-volumes gives the procession-normalized ones; here only the averaging step, identified with the abstract layer.",
+  "curated_in": "iut3.json",
+  "definitions_required": [],
+  "explicit_hypotheses": [
+   "J a finite type",
+   "l odd, for the label version"
+  ],
+  "external_dependencies": [],
+  "id": "IUT3.Prop3_9.ii.frag.wpkt_proc_average_layer",
+  "implicit_hypotheses": [],
+  "kind": "fragment",
+  "lean_declaration": "IUT.PaperIII.Corollary312.wPktProcAvg_eq_labelAverage",
+  "lean_module": "IUT.PaperIII.Corollary312.WeightedPacket",
+  "lemmas": [
+   "IUT.PaperIII.Corollary312.wPktProcAvg_eq_equalWeightAverage"
+  ],
+  "not_covered": "Mono-analytic log-shells and the compatibility with (i) through poly-isomorphisms are not formalized; the values averaged are free real inputs in this record. Counted as a model test: an identity between two averages defined in this project, on free real inputs; page 116 prints the averaging, not the identification of the labels with F_l^*.",
+  "obligations": [],
+  "page_spans": [
+   [
+    3,
+    116,
+    116
+   ]
+  ],
+  "paper": 3,
+  "parent": "IUT3.Prop3_9.ii",
+  "pdf_page": 116,
+  "pdf_page_end": 116,
+  "proof_status": "KERNEL_VERIFIED",
+  "results_used": [],
+  "scope": "model_test",
+  "section": 3,
+  "section_title": "Multiradial Logarithmic Gaussian Procession Monoids",
+  "source": {
+   "pages_read": "rendered and checked: pages 93 to 97, 115 to 117, 127",
+   "paper": "Inter-universal Teichmuller Theory III",
+   "pdf_pages": "page 116"
+  },
+  "statement_status": "STATEMENT_FORMALIZED"
+ },
+ {
+  "ambiguities": [],
   "conclusion": "Defines the global log-volume of a family of regions indexed by places.",
   "content": "Definitions: positive weights per place (PlaceWeights; unitPlaceWeights is weight 1 at each place), the support condition LogVolumeAlmostAllZero (log-volume zero at all but finitely many places), and the global log-volume as the finite sum over places of weight times log of the measure, in EReal.",
   "covers": "Prop 3.9 (iii), page 117: the domain condition and the summation; Rem 3.1.1 (ii), (iv), pages 94 and 97: weights per place.",
@@ -47945,6 +50211,269 @@
    "pages_read": "rendered and checked: pages 94 to 97, 116, 117; text: pages 115, 118 to 120",
    "paper": "Inter-universal Teichmuller Theory III",
    "pdf_pages": "page 117"
+  },
+  "statement_status": "STATEMENT_FORMALIZED"
+ },
+ {
+  "ambiguities": [],
+  "conclusion": "hullDegRigid (h U) = hullDegRigid U; for units and permutations also hullDegHull preserved; for the shear the stated values, with hullDegHull changed from (log p)/2 to log p.",
+  "content": "Every continuous Q_p-linear automorphism h of V with measure(h O) = measure(O) preserves mu^log of every set. Multiplication by a unit g of V with |g_s| = 1 for all s and every permutation of the coordinates of K^I preserve both mu^log and mu^log of hulls. The shear (x, y) -> (x + y, y) of Q_p^2 maps O onto O and preserves mu^log of every set, but for U0 = Z_p x p^-1 Z_p: mu^log(U0) = mu^log(hull U0) = (log p)/2, while the image of U0 has mu^log = (log p)/2, hull p^-1 O and mu^log of the hull = log p.",
+  "covers": "Page 127, Remark 3.9.5 (i): the hull is defined relative to the decomposition of the space as a direct sum of fields; the test checks which measure-preserving automorphisms commute with the log-volume of the hull.",
+  "curated_in": "iut3.json",
+  "definitions_required": [],
+  "explicit_hypotheses": [
+   "p a prime; the measure hypotheses of the model",
+   "for units: |g_s| = 1 for all s; for permutations: all factors equal to one field K"
+  ],
+  "external_dependencies": [],
+  "id": "IUT3.Rem3_9_5.i.frag.hull_deg_automorphisms",
+  "implicit_hypotheses": [],
+  "kind": "fragment",
+  "lean_declaration": "IUT.Countermodels.HullDegree.hullDeg_shear",
+  "lean_module": "IUT.Countermodels.HullDegree",
+  "lemmas": [
+   "IUT.Countermodels.HullDegree.hullDeg_rigid_image_equiv",
+   "IUT.Countermodels.HullDegree.hullDeg_units",
+   "IUT.Countermodels.HullDegree.hullDeg_perm",
+   "IUT.Countermodels.HullDegree.hullDeg_hull_perm",
+   "IUT.Countermodels.HullDegree.hullDeg_perm_principal",
+   "IUT.Countermodels.HullDegree.hullDeg_hull_image",
+   "IUT.Countermodels.HullDegree.hullDegPermEquiv",
+   "IUT.Countermodels.HullDegree.hullDegShear"
+  ],
+  "not_covered": "Tensor packets, log-shells, the archimedean places, the averaged log-volume over places and labels of Corollary 3.12, and the regions that arise in its proof (unions of possible images under (Ind1), (Ind2), (Ind3)) are not modeled; the statement says nothing about them. The indeterminacies (Ind1), (Ind2) of the papers are not modeled; the automorphisms here are arbitrary linear maps of the model.",
+  "obligations": [],
+  "page_spans": [
+   [
+    3,
+    127,
+    127
+   ]
+  ],
+  "paper": 3,
+  "parent": "IUT3.Rem3_9_5.i",
+  "pdf_page": 127,
+  "pdf_page_end": 127,
+  "proof_status": "KERNEL_VERIFIED",
+  "results_used": [],
+  "scope": "model_test",
+  "section": 3,
+  "section_title": "Multiradial Logarithmic Gaussian Procession Monoids",
+  "source": {
+   "pages_read": "rendered and checked: pages 127, 182, 183",
+   "paper": "Inter-universal Teichmuller Theory III",
+   "pdf_pages": "page 127"
+  },
+  "statement_status": "STATEMENT_FORMALIZED"
+ },
+ {
+  "ambiguities": [],
+  "conclusion": "Definitions; no conclusion.",
+  "content": "Definitions on the model V = prod_s L_s (normed fields that are finite-dimensional normed Q_p-algebras, product of Haar measures): hullDegRigid U = mu^log(U) and hullDegHull U = mu^log(pktHull U), both padicMuLog normalized at O = pktHullIntegers (the normalization of pktHull_muLog_principal); hullDegRegion U: closure U compact and product measure of U nonzero; and three Props: hullDegScalarDescent (some c > 0 with mu^log(hull U) = c mu^log(U) for all regions), hullDegShiftDescent (some c with mu^log(hull U) = mu^log(U) + c for all regions), hullDegDetermined (regions of equal mu^log have hulls of equal mu^log).",
+  "covers": "Page 127, Remark 3.9.5 (i): the hull of a relatively compact region containing a subset of finite log-volume; pages 182 and 183, Steps (xi-c), (xi-d): the log-volume is applied to the hull of the possible output data. The three descent Props are questions formulated for the model; they do not occur on the pages read.",
+  "curated_in": "iut3.json",
+  "definitions_required": [],
+  "explicit_hypotheses": [
+   "p a prime; I a finite type; L_s normed fields with a normed Q_p-algebra structure and a measurable structure",
+   "mu_s measures on L_s"
+  ],
+  "external_dependencies": [],
+  "id": "IUT3.Rem3_9_5.i.frag.hull_deg_defs",
+  "implicit_hypotheses": [],
+  "kind": "fragment",
+  "lean_declaration": "IUT.Countermodels.HullDegree.hullDegHull",
+  "lean_module": "IUT.Countermodels.HullDegree",
+  "lemmas": [
+   "IUT.Countermodels.HullDegree.hullDegRigid",
+   "IUT.Countermodels.HullDegree.hullDegRegion",
+   "IUT.Countermodels.HullDegree.hullDegScalarDescent",
+   "IUT.Countermodels.HullDegree.hullDegShiftDescent",
+   "IUT.Countermodels.HullDegree.hullDegDetermined"
+  ],
+  "not_covered": "Tensor packets, log-shells, the archimedean places, the averaged log-volume over places and labels of Corollary 3.12, and the regions that arise in its proof (unions of possible images under (Ind1), (Ind2), (Ind3)) are not modeled; the statement says nothing about them.",
+  "obligations": [],
+  "page_spans": [
+   [
+    3,
+    127,
+    127
+   ]
+  ],
+  "paper": 3,
+  "parent": "IUT3.Rem3_9_5.i",
+  "pdf_page": 127,
+  "pdf_page_end": 127,
+  "proof_status": "NOT_EXTRACTED",
+  "results_used": [],
+  "scope": "model_test",
+  "section": 3,
+  "section_title": "Multiradial Logarithmic Gaussian Procession Monoids",
+  "source": {
+   "pages_read": "rendered and checked: pages 127, 182, 183",
+   "paper": "Inter-universal Teichmuller Theory III",
+   "pdf_pages": "page 127"
+  },
+  "statement_status": "STATEMENT_FORMALIZED"
+ },
+ {
+  "ambiguities": [],
+  "conclusion": "hullDegRigid U <= hullDegHull U; equality iff measure U = measure (pktHull U), iff measure (pktHull U \\ U) = 0.",
+  "content": "For every region U of V = prod_s L_s (discretely valued proper factors, Haar measures): mu^log(U) <= mu^log(pktHull U); equality holds iff U and pktHull U have the same product measure, and, for null-measurable U, iff pktHull U minus U is a null set. If U is contained in lambda O and every coordinate bound |lambda_s| is attained on U, then pktHull U = lambda O; in particular pktHull (lambda O) = lambda O. The monotonicity is also stated for finite extensions of Q_p with the spectral norm.",
+  "covers": "Page 127, Remark 3.9.5 (i): the hull contains the region; here the consequence for log-volumes and the exact equality case are checked.",
+  "curated_in": "iut3.json",
+  "definitions_required": [],
+  "explicit_hypotheses": [
+   "p a prime; I finite; L_s normed fields, finite-dimensional normed Q_p-algebras, Borel, proper",
+   "mu_s additive Haar measures",
+   "hd: each L_s has discrete value group (pktHullDiscrete)",
+   "U a region (closure compact, product measure nonzero)",
+   "[Nonempty I] and null-measurability of U for the equality criteria"
+  ],
+  "external_dependencies": [],
+  "id": "IUT3.Rem3_9_5.i.frag.hull_deg_monotone",
+  "implicit_hypotheses": [],
+  "kind": "fragment",
+  "lean_declaration": "IUT.Countermodels.HullDegree.hullDeg_rigid_le_hull",
+  "lean_module": "IUT.Countermodels.HullDegree",
+  "lemmas": [
+   "IUT.Countermodels.HullDegree.hullDeg_rigid_eq_hull_iff",
+   "IUT.Countermodels.HullDegree.hullDeg_rigid_eq_hull_iff_sdiff",
+   "IUT.Countermodels.HullDegree.hullDeg_rigid_le_hull_spectral",
+   "IUT.Countermodels.HullDegree.hullDeg_hull_measure_ne_top",
+   "IUT.Countermodels.HullDegree.hullDeg_hull_eq_of_attained",
+   "IUT.Countermodels.HullDegree.hullDeg_hull_principal",
+   "IUT.Countermodels.HullDegree.hullDeg_region_of_subset"
+  ],
+  "not_covered": "Tensor packets, log-shells, the archimedean places, the averaged log-volume over places and labels of Corollary 3.12, and the regions that arise in its proof (unions of possible images under (Ind1), (Ind2), (Ind3)) are not modeled; the statement says nothing about them.",
+  "obligations": [],
+  "page_spans": [
+   [
+    3,
+    127,
+    127
+   ]
+  ],
+  "paper": 3,
+  "parent": "IUT3.Rem3_9_5.i",
+  "pdf_page": 127,
+  "pdf_page_end": 127,
+  "proof_status": "KERNEL_VERIFIED",
+  "results_used": [],
+  "scope": "model_test",
+  "section": 3,
+  "section_title": "Multiradial Logarithmic Gaussian Procession Monoids",
+  "source": {
+   "pages_read": "rendered and checked: pages 127, 182, 183",
+   "paper": "Inter-universal Teichmuller Theory III",
+   "pdf_pages": "page 127"
+  },
+  "statement_status": "STATEMENT_FORMALIZED"
+ },
+ {
+  "ambiguities": [],
+  "conclusion": "not hullDegScalarDescent, not hullDegShiftDescent, not hullDegDetermined, for the product measure on Fin 2 -> Q_p; and the stated values of the four witnesses.",
+  "content": "On Q_p^2 with the product of any Haar measure on Q_p, none of hullDegScalarDescent, hullDegShiftDescent, hullDegDetermined holds. Witnesses with (mu^log, mu^log of hull): O = Z_p^2 (0, 0); pO (-log p, -log p); (1,1) + pO (-log p, 0), hull O; ((1,p) + p^2 O) union ((p,1) + p^2 O) ((log 2)/2 - 2 log p, 0), hull O; pZ_p x p^-1 Z_p (0, 0).",
+  "covers": "Pages 182 and 183, Steps (xi-c), (xi-d), where the log-volume is applied to the hull of the region rather than to the region; page 127 for the hull. Tests whether the log-volume of the hull is a function of the log-volume of the region on the model: it is not.",
+  "curated_in": "iut3.json",
+  "definitions_required": [],
+  "explicit_hypotheses": [
+   "p a prime",
+   "a measurable structure on Q_p that is Borel",
+   "nu an additive Haar measure on Q_p"
+  ],
+  "external_dependencies": [],
+  "id": "IUT3.Rem3_9_5.i.frag.hull_deg_not_descent",
+  "implicit_hypotheses": [],
+  "kind": "fragment",
+  "lean_declaration": "IUT.Countermodels.HullDegree.hullDeg_not_determined",
+  "lean_module": "IUT.Countermodels.HullDegree",
+  "lemmas": [
+   "IUT.Countermodels.HullDegree.hullDeg_not_scalarDescent",
+   "IUT.Countermodels.HullDegree.hullDeg_not_shiftDescent",
+   "IUT.Countermodels.HullDegree.hullDeg_padic_integers",
+   "IUT.Countermodels.HullDegree.hullDeg_padic_pO",
+   "IUT.Countermodels.HullDegree.hullDeg_padic_shifted",
+   "IUT.Countermodels.HullDegree.hullDeg_padic_twoBalls",
+   "IUT.Countermodels.HullDegree.hullDeg_padic_ratio",
+   "IUT.Countermodels.HullDegree.hullDeg_padic_principal",
+   "IUT.Countermodels.HullDegree.hullDeg_padic_pp"
+  ],
+  "not_covered": "Tensor packets, log-shells, the archimedean places, the averaged log-volume over places and labels of Corollary 3.12, and the regions that arise in its proof (unions of possible images under (Ind1), (Ind2), (Ind3)) are not modeled; the statement says nothing about them. Whether the regions of the proof behave like the witnesses is not addressed.",
+  "obligations": [],
+  "page_spans": [
+   [
+    3,
+    127,
+    127
+   ]
+  ],
+  "paper": 3,
+  "parent": "IUT3.Rem3_9_5.i",
+  "pdf_page": 127,
+  "pdf_page_end": 127,
+  "proof_status": "KERNEL_VERIFIED",
+  "results_used": [],
+  "scope": "model_test",
+  "section": 3,
+  "section_title": "Multiradial Logarithmic Gaussian Procession Monoids",
+  "source": {
+   "pages_read": "rendered and checked: pages 127, 182, 183",
+   "paper": "Inter-universal Teichmuller Theory III",
+   "pdf_pages": "page 127"
+  },
+  "statement_status": "STATEMENT_FORMALIZED"
+ },
+ {
+  "ambiguities": [],
+  "conclusion": "pktHull (lambda O union lambda' O) = (max) O; the log-volume formulas above.",
+  "content": "For two sets lambda O, lambda' O: the hull of their union is m O with |m_s| = max(|lambda_s|, |lambda'_s|); their intersection is the box of the coordinatewise minima; measure of the union plus measure of the minimum box equals the sum of the two measures. For finite extensions of degrees d_s (spectral norm): mu^log(hull) = (sum_s d_s log max(|lambda_s|, |lambda'_s|)) / sum_s d_s. On Q_p^n: mu^log(union) = log(prod |lambda_s| + prod |lambda'_s| - prod min(|lambda_s|, |lambda'_s|)) / n, against mu^log(hull) = (sum_s log max) / n. On the sets lambda O, mu^log(hull) = mu^log, so equal mu^log gives equal mu^log of hulls.",
+  "covers": "Page 127, Remark 3.9.5 (i): the hull as the smallest lambda O, computed for a union of two such sets.",
+  "curated_in": "iut3.json",
+  "definitions_required": [],
+  "explicit_hypotheses": [
+   "p a prime; I finite; L_s normed fields with proper topology (and the measure hypotheses for the measure statements)",
+   "lambda, lambda' in prod_s L_s^x"
+  ],
+  "external_dependencies": [],
+  "id": "IUT3.Rem3_9_5.i.frag.hull_deg_union_principal",
+  "implicit_hypotheses": [],
+  "kind": "fragment",
+  "lean_declaration": "IUT.Countermodels.HullDegree.hullDeg_hull_union_principal",
+  "lean_module": "IUT.Countermodels.HullDegree",
+  "lemmas": [
+   "IUT.Countermodels.HullDegree.hullDegMax",
+   "IUT.Countermodels.HullDegree.hullDegMin",
+   "IUT.Countermodels.HullDegree.hullDegMax_norm",
+   "IUT.Countermodels.HullDegree.hullDegMin_norm",
+   "IUT.Countermodels.HullDegree.hullDeg_inter_principal",
+   "IUT.Countermodels.HullDegree.hullDeg_measure_union_principal",
+   "IUT.Countermodels.HullDegree.hullDeg_union_principal_spectral",
+   "IUT.Countermodels.HullDegree.hullDeg_padic_union_principal",
+   "IUT.Countermodels.HullDegree.hullDeg_padic_union_principal_hull",
+   "IUT.Countermodels.HullDegree.hullDeg_principal_determined"
+  ],
+  "not_covered": "Tensor packets, log-shells, the archimedean places, the averaged log-volume over places and labels of Corollary 3.12, and the regions that arise in its proof (unions of possible images under (Ind1), (Ind2), (Ind3)) are not modeled; the statement says nothing about them.",
+  "obligations": [],
+  "page_spans": [
+   [
+    3,
+    127,
+    127
+   ]
+  ],
+  "paper": 3,
+  "parent": "IUT3.Rem3_9_5.i",
+  "pdf_page": 127,
+  "pdf_page_end": 127,
+  "proof_status": "KERNEL_VERIFIED",
+  "results_used": [],
+  "scope": "model_test",
+  "section": 3,
+  "section_title": "Multiradial Logarithmic Gaussian Procession Monoids",
+  "source": {
+   "pages_read": "rendered and checked: pages 127, 182, 183",
+   "paper": "Inter-universal Teichmuller Theory III",
+   "pdf_pages": "page 127"
   },
   "statement_status": "STATEMENT_FORMALIZED"
  },

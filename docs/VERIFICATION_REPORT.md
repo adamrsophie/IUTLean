@@ -140,8 +140,11 @@ it, and adding one needs no change of the logic.
   `IUT.VojtaNumberField.VojtaLineMinusThreePointsDegreeAtMost` (open for `d ≥ 1`, trivially
   true for `d = 0`), `IUT.CompactlyBounded.cbDegreeAtMostStatement` (trivially true for
   `d = 0`), `IUT.CompactlyBounded.genEllTheorem2_1iiStatement` (trivial when the set of primes
-  contains a non-prime) and `IUT.ABC.Unconditional.uncondABCRestrictedToStatement` (equivalent
-  to `Challenge.ABC` for `D ≥ 1`, vacuously true for `D = 0`). No instance may be proved outright, for any
+  contains a non-prime), `IUT.ABC.Unconditional.uncondABCRestrictedToStatement` (equivalent
+  to `Challenge.ABC` for `D ≥ 1`, vacuously true for `D = 0`), and
+  `IUT.HeightExtension.htExtDegreeAtMostAnyFieldStatement` (proved equivalent to
+  `VojtaLineMinusThreePointsDegreeAtMost` with the same constants, vacuously true for `d = 0`).
+  No instance may be proved outright, for any
   argument; negated instances may (`not_abcWithExponent_of_le_one` refutes `κ ≤ 1`), and so
   may implications whose hypothesis is an instance (`abcWithExponent_mono`).
 * `authorStatements`: statements of results or claims of other papers that the library may

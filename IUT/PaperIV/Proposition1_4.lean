@@ -10,9 +10,11 @@ pages 13 and 14; the displays formalized here were checked against the renders.
 This file is not a formalization of Proposition 1.4. For one finite extension of `ℚ_p`, (ii) is
 proved with the normalized Haar log-volume in `IUT/PaperIV/LocalFields/UnitVolume.lean`, and (i)
 for tensor packets in `IUT/PaperIV/LocalFields/Packets.lean`; their identification with the
-log-volume of [AbsTopIII] is not formalized. The log-volume `μ^log` of [AbsTopIII],
-Proposition 5.7, on compact open subsets of `p`-adic fields and their tensor products, is not
-formalized. Its properties used in the proof enter here as real-number hypotheses:
+log-volume of [AbsTopIII] is not formalized. For two factors, (iv), the second inequality of
+(iii) and the first inequality of (iii) when every `e_i ≤ p − 2` are proved with the normalized
+Haar log-volume in `IUT/PaperIV/LocalFields/TensorLogShell.lean`. The log-volume `μ^log` of
+[AbsTopIII], Proposition 5.7, on compact open subsets of `p`-adic fields and their tensor
+products, is not formalized. Its properties used in the proof enter here as real-number hypotheses:
 
 * `μ^log(p^k·M) = μ^log(M) - k·log(p)` (normalization of (i));
 * `μ^log(log_p(R_I^×)) = ∑_{i ∈ I} μ^log(log_p(R_i^×)) + μ^log(R_I)` (the paper's display);

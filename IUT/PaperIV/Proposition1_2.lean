@@ -16,9 +16,11 @@ The paper defines, for a finite extension `k_i/ℚ_p` with ramification index `e
 
 This file is not a formalization of Proposition 1.2. The inclusions of (i) to (iv) concern
 `p`-adic logarithms of unit groups and tensor products of rings of integers (they rest on
-[Kobl], p. 81, and Proposition 1.1), which need local field theory not formalized here. This
-file checks every elementary statement about `a_i` and `b_i` that the proposition and its proof,
-and the proof of Proposition 1.4 (iii), use:
+[Kobl], p. 81, and Proposition 1.1), which need local field theory not formalized here. On the
+papers' objects, (ii) to (iv) are proved for two factors in
+`IUT/PaperIV/LocalFields/TensorLogShell.lean`. This file checks every elementary statement
+about `a_i` and `b_i` that the proposition and its proof, and the proof of Proposition 1.4 (iii),
+use:
 
 * `p > 2`, `e_i ≤ p - 2` imply `a_i = 1/e_i = -b_i` (`a_b_of_le`), and `e_i = 1`, `p > 2`
   imply `a_i = 1 = -b_i` (`a_b_of_e_one`, used in (iv));

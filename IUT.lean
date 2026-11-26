@@ -8,6 +8,7 @@ import IUT.Applications.CompactlyBounded
 import IUT.Applications.DupuyHilado
 import IUT.Applications.ExplicitEstimates
 import IUT.Applications.HeightComparison
+import IUT.Applications.HeightExtension
 import IUT.Applications.VojtaNumberField
 import IUT.Applications.ZhouExplicit
 import IUT.Audit.MochizukiResponses.LVEx
@@ -21,6 +22,7 @@ import IUT.Audit.ScholzeStix.Section1_3
 import IUT.Countermodels.Basic
 import IUT.Countermodels.CombinedIndeterminacies
 import IUT.Countermodels.HaarNormalization
+import IUT.Countermodels.HullDegree
 import IUT.Countermodels.HullTransport
 import IUT.Countermodels.JointWitness
 import IUT.Countermodels.LevelMismatch
@@ -38,6 +40,7 @@ import IUT.PaperIII.Corollary312.Numerical
 import IUT.PaperIII.Corollary312.PacketHull
 import IUT.PaperIII.Corollary312.Places
 import IUT.PaperIII.Corollary312.UpperSemiCompatibility
+import IUT.PaperIII.Corollary312.WeightedPacket
 import IUT.PaperIII.Remark3_9_5.HullOperator
 import IUT.PaperIV.ArithmeticDivisor
 import IUT.PaperIV.Corollary2_2.Arithmetic
@@ -49,11 +52,14 @@ import IUT.PaperIV.FreyReduction
 import IUT.PaperIV.LegendreFrey
 import IUT.PaperIV.LocalFields.Bridge
 import IUT.PaperIV.LocalFields.Different
+import IUT.PaperIV.LocalFields.DifferentBound
 import IUT.PaperIV.LocalFields.Logarithm
 import IUT.PaperIV.LocalFields.Packets
 import IUT.PaperIV.LocalFields.Padic
 import IUT.PaperIV.LocalFields.Tame
 import IUT.PaperIV.LocalFields.TensorDifferent
+import IUT.PaperIV.LocalFields.TensorIndex
+import IUT.PaperIV.LocalFields.TensorLogShell
 import IUT.PaperIV.LocalFields.Tower
 import IUT.PaperIV.LocalFields.UnitVolume
 import IUT.PaperIV.LocalFields.VolumeBridge

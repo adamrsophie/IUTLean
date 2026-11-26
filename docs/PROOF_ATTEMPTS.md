@@ -116,7 +116,7 @@ are in `docs/DASHBOARD.md`.
 
 ## Countermodels
 
-`IUT/Countermodels/`: eight modules of models in which a simplified abstraction of a step of
+`IUT/Countermodels/`: nine modules of models in which a simplified abstraction of a step of
 Corollary 3.12 fails when a compatibility condition is dropped, together with positive
 statements under the condition. Attempted statement: each abstraction listed in
 `docs/COUNTERMODELS.md`. Assumptions: those of each Lean theorem as listed there (for the

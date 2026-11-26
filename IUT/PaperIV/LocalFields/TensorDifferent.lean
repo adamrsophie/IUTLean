@@ -53,15 +53,12 @@ with the factors exchanged, which is not separately formalized.
 
 ## Not proved
 
-* That `(R_E)^∼` is the normalization of `R_E` in its total ring of fractions: not attempted
-  here. It needs `R_E` as a subring, the transitivity of integrality (integral over `R_E` iff
-  integral over `ℤ_p`), and that every `z` of `K₁ ⊗[ℚ_p] K₂` has a nonzero `a ∈ ℤ_p` with
-  `a • z ∈ R_E`, so that the total ring of fractions of `R_E` is `K₁ ⊗[ℚ_p] K₂`.
+* That `(R_E)^∼` is the normalization of `R_E` in its total ring of fractions: not proved here;
+  it is proved in `TensorIndex.lean` (`tensorIdx_isFractionRing`).
 * More than two factors (the induction on `|I|` of page 10), and the identification of
   `K₁ ⊗[ℤ_p] K₂` with `K₁ ⊗[ℚ_p] K₂`.
-* Proposition 1.2 (ii) to (iv) themselves: the automorphism `φ` of `log_p(R_I^×) ⊗ ℚ_p`, the
-  floor `⌊λ − 𝔡_I − a_I⌋`, the scaling by `p ^ λ` for `λ ∈ (1 / e_i) ℤ`, and the last inclusion
-  `log_p(R_I^×) ⊆ p ^ (−b_I) · (R_I)^∼`.
+* Proposition 1.2 (ii) to (iv) themselves: not proved here; they are proved for two factors in
+  `TensorLogShell.lean`.
 -/
 
 namespace IUT.PaperIV.LocalFields

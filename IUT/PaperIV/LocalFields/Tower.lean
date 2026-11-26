@@ -62,20 +62,19 @@ For `ℚ_p ⊆ K ⊆ L`:
    `towerProp1_3ii_of_exponent_bound`: (ii) for every finite `L/K`, with no Galois hypothesis,
    from the hypothesis `v_P(𝔇_{L/K}) ≤ e_{L/K} - 1 + e_L·v_p(e_{L/K})`. That hypothesis is the
    classical upper bound for the different of an extension of local fields; it is not in Mathlib
-   at the pinned version and it is not proved here.
+   at the pinned version, and it is proved in `IUT/PaperIV/LocalFields/DifferentBound.lean`
+   (`diffBound_exponent_le`), which also proves (ii) for every finite `L/K`.
 
 `towerProp1_3iiStatement` states assertion (ii) with the hypotheses of page 12 (an intermediate
-field `K₁` with `L/K₁` Galois and `K₁/K` tame). It is a definition, not a theorem.
+field `K₁` with `L/K₁` Galois and `K₁/K` tame). It is a definition, not a theorem. It is proved for
+all parameters in `DifferentBound.lean` (`diffBound_towerProp1_3iiStatement`).
 
 ## Not proved
 
-* Proposition 1.3 (ii) in the wild case: `L/K₁` Galois with `p ∣ e_{L/K₁}`. The paper's proof
-  (page 12) reduces to totally ramified extensions, then inducts on `n_i` through a Galois
-  `p`-subextension of degree `p`, enlarges `k_1` to contain a primitive `p`-th root of unity with
-  `e_1 ≥ p/ε`, and computes the different of a Kummer extension `x^p - ϖ_*`. None of this
-  (maximal unramified subextensions, Galois `p`-subextensions, Kummer generators) is formalized
-  here. Equivalently, the missing piece is the bound assumed in
-  `towerProp1_3ii_of_exponent_bound`.
+* The paper's proof of Proposition 1.3 (ii) (page 12: reduction to totally ramified extensions,
+  induction on `n_i` through a Galois `p`-subextension of degree `p`, a primitive `p`-th root of
+  unity with `e_1 ≥ p/ε`, the different of a Kummer extension `x^p - ϖ_*`) is not formalized;
+  (ii) is proved by another route in `DifferentBound.lean`.
 * The converse of the tame equality over a general base (that equality in (i) forces tameness)
   is not formalized here; for `k_0 = ℚ_p` it is
   `differentExponent_eq_ramificationIdx_sub_one_iff_padic`.
@@ -597,7 +596,8 @@ theorem towerProp1_3i_eq_of_tame (P₀ : Ideal (integralClosure ℤ_[p] K)) [P�
 
 /-- **Proposition 1.3 (ii) when `L/K` is tame** (page 12; the case `k_1 = k_i`, where the Galois
 hypothesis is empty): if `p ∤ e_{L/K}`, then `𝔡_L ≤ 𝔡_K + n + 1/e_K` with
-`n = v_p([L : K])` (the paper's `n_i`). In fact `𝔡_L ≤ 𝔡_K + 1/e_K`. -/
+`n = v_p([L : K])` (the paper's `n_i`). In fact `𝔡_L ≤ 𝔡_K + 1/e_K` (proved inside the proof,
+not exported). -/
 theorem towerProp1_3ii_of_tame (P₀ : Ideal (integralClosure ℤ_[p] K)) [P₀.IsPrime]
     [P₀.LiesOver (IsLocalRing.maximalIdeal ℤ_[p])] (P : Ideal (integralClosure ℤ_[p] L))
     [P.IsPrime] [P.LiesOver (IsLocalRing.maximalIdeal ℤ_[p])]
@@ -700,7 +700,8 @@ variable (p : ℕ) [Fact p.Prime] (K L : Type*) [Field K] [Field L]
 exponent of `P` in the different of `R_L` over `R_K` is at most `e_{L/K} - 1 + e_L·v_p(e_{L/K})`,
 where `e_L = e_{L/ℚ_p}`, so that `e_L·v_p(e_{L/K})` is the valuation at `P` of the integer
 `e_{L/K}` (this is the classical upper bound for the different of an extension of local fields;
-it is not in Mathlib at the pinned version and it is not proved here). Then
+it is not in Mathlib at the pinned version; it is proved in `DifferentBound.lean` as
+`diffBound_exponent_le`). Then
 `𝔡_L ≤ 𝔡_K + n + 1/e_K` with `n = v_p([L : K])`, with no Galois or tameness hypothesis. -/
 theorem towerProp1_3ii_of_exponent_bound (P₀ : Ideal (integralClosure ℤ_[p] K)) [P₀.IsPrime]
     [P₀.LiesOver (IsLocalRing.maximalIdeal ℤ_[p])] (P : Ideal (integralClosure ℤ_[p] L))
@@ -783,7 +784,8 @@ variable (p : ℕ) [Fact p.Prime] (K K₁ L : Type*) [Field K] [Field K₁] [Fie
 tamely ramified over `K` (`p` does not divide the ramification index of the prime of `R_{K₁}`
 over `R_K`), then `𝔡_L ≤ 𝔡_K + n + 1/e_K`, where `n = v_p([L : K])` (the paper's `n_i`, defined
 on page 11), `𝔡_K`, `𝔡_L` are the orders of the differents normalized by `ord(p) = 1`, and `e_K`
-is the ramification index of `K` over `ℚ_p`. Stated, not proved. -/
+is the ramification index of `K` over `ℚ_p`. Proved in `DifferentBound.lean`
+(`diffBound_towerProp1_3iiStatement`). -/
 def towerProp1_3iiStatement : Prop :=
   IsGalois K₁ L →
     (∀ P₁ : Ideal (integralClosure ℤ_[p] K₁), P₁.IsPrime →

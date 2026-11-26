@@ -2,7 +2,7 @@
 
 **None of the results in this document refutes a statement of the IUT papers.** Every countermodel below refutes a *simplified abstraction*: a general principle that an argument could be tempted to use and that is false without further hypotheses. Each is fully proved in Lean (no `sorry`; `#print axioms` shows only `propext`, `Classical.choice`, `Quot.sound`). Next to each countermodel a positive statement of the same flavor is proved, so that legitimate identifications are not ruled out by accident.
 
-Machine-readable index: `data/countermodels.json` (one record per listed theorem, 37 records; helper definitions are omitted).
+Machine-readable index: `data/countermodels.json` (one record per listed theorem, 43 records; helper definitions are omitted).
 
 ## Classification
 
@@ -21,9 +21,9 @@ Mochizuki, *Inter-universal Teichmüller Theory III* (May 2020 manuscript), from
 * Theorem 3.11 (i), (ii), (iii) (a) to (c): pages 153 to 157.
 * Corollary 3.12, its proof, and Remark 3.12.1 (i), (ii): pages 173 to 186.
 
-Remarks 3.9.5 and 3.11.1 were not read. The holomorphic hull and the properties (IPL), (SHE), (APT) are referred to only through the passages of pages 173, 174 and 181 to 184 that mention them.
+Remark 3.11.1 was not read; Remark 3.9.5 (i) (page 127) and Steps (xi-c), (xi-d) (pages 182 and 183) were read for entry 8. Apart from entry 8, the holomorphic hull and the properties (IPL), (SHE), (APT) are referred to only through the passages of pages 173, 174 and 181 to 184 that mention them.
 
-## The seven priority questions
+## The priority questions
 
 ### 1. Does multiplicative data determine additive structure?
 
@@ -141,6 +141,25 @@ File `IUT/Countermodels/ReconstructionComparison.lean`, namespace `IUT.Countermo
 
 *What the model does and does not satisfy.* It has two copies of a structure carrying a real-valued log-volume, a link identifying pilot objects, and internal computability of each log-volume. It has no Hodge theaters, Frobenioids, Kummer theory, log-links, log-Kummer correspondence, tensor packets, multiradial algorithm, indeterminacies, holomorphic hull, or the properties (IPL), (SHE), (APT). In the proof of Corollary 3.12, Steps (xi-b) to (xi-e) (pages 181 to 184) do not compare the two log-volumes through a bare link: they express both, through the multiradial representation and (SHE), relative to the single arithmetic holomorphic structure of the `1`-column. Volume compatibility in the model is the toy counterpart of what those steps are meant to supply. The model shows only that some such compatibility is indispensable; it does not show that the papers fail to supply it. The link is linear, so the model sits inside the hypothesis "(Lin)" of `IUT.Audit.ScholzeStix.Diagram`, which Mochizuki disputes for the situation of the papers.
 
+### 8. Is the log-volume of a hull determined by the log-volume of the region?
+
+File `IUT/Countermodels/HullDegree.lean`, namespace `IUT.Countermodels.HullDegree`.
+
+| Lean name | Kind | Statement |
+|---|---|---|
+| `IUT.Countermodels.HullDegree.hullDeg_not_scalarDescent` | countermodel | On `ℚ_p²`, no `c > 0` has `μ^log(hull U) = c · μ^log(U)` for all regions (witness `(1, 1) + p𝒪`). |
+| `hullDeg_not_shiftDescent` | countermodel | On `ℚ_p²`, no `c` has `μ^log(hull U) = μ^log(U) + c` for all regions (witnesses `𝒪`, `(1, 1) + p𝒪`). |
+| `hullDeg_not_determined` | countermodel | `p𝒪` and `(1, 1) + p𝒪` have the same log-volume `−log p`; their hulls have log-volumes `−log p` and `0`. |
+| `hullDeg_shear` | countermodel | The shear `(x, y) ↦ (x + y, y)` preserves `μ^log` of every set and maps `𝒪` onto `𝒪`, but changes the hull log-volume of `ℤ_p × p⁻¹ℤ_p` from `(log p)/2` to `log p`. |
+| `hullDeg_rigid_le_hull` | positive | `μ^log(U) ≤ μ^log(hull U)` for every region. |
+| `hullDeg_rigid_eq_hull_iff_sdiff` | positive | Equality holds exactly when `hull U \ U` is a null set (null-measurable `U`). |
+
+*Statements tested:* the three formulations made in the module: (a) the hull log-volume is a fixed positive multiple of the region log-volume; (b) it differs from it by a fixed additive constant; (c) regions of equal log-volume have hulls of equal log-volume.
+*Assumptions:* a finite product of finite extensions of `ℚ_p` (or copies of `ℚ_p`), the product of Haar measures, `μ^log` normalized at `𝒪`, regions relatively compact of positive measure, the hull of `PacketHull.lean`.
+*Outcome:* all three fail on `ℚ_p²`, with the witnesses `𝒪`, `p𝒪` and `(1, 1) + p𝒪`. Monotonicity holds, with equality exactly when `hull U \ U` is null.
+*Abstraction refuted:* that the log-volume of the hull is a function of the log-volume of the region in this model.
+*Bears on:* Remark 3.9.5 (i) (page 127) and Steps (xi-c), (xi-d) (pages 182 and 183), where the log-volume is applied to the hull of the region. The model has no tensor packets, log-shells, archimedean places, averaging over places and labels, or determinant of page 183. It does not say whether the regions of the proof of Corollary 3.12 behave like these examples.
+
 ## Build
 
-Each module imports only `Mathlib` and builds with, for example, `lake build IUT.Countermodels.ReconstructionComparison`. New modules: `IUT.Countermodels.MultiplicativeAdditive`, `IUT.Countermodels.LevelMismatch`, `IUT.Countermodels.HaarNormalization`, `IUT.Countermodels.JointWitness`, `IUT.Countermodels.CombinedIndeterminacies`, `IUT.Countermodels.HullTransport`, `IUT.Countermodels.ReconstructionComparison`.
+Each module imports only `Mathlib`, except `HullDegree.lean`, which imports `IUT.PaperIII.Corollary312.PacketHull`; each builds with, for example, `lake build IUT.Countermodels.ReconstructionComparison`. New modules: `IUT.Countermodels.MultiplicativeAdditive`, `IUT.Countermodels.LevelMismatch`, `IUT.Countermodels.HaarNormalization`, `IUT.Countermodels.JointWitness`, `IUT.Countermodels.CombinedIndeterminacies`, `IUT.Countermodels.HullTransport`, `IUT.Countermodels.ReconstructionComparison`, `IUT.Countermodels.HullDegree`.

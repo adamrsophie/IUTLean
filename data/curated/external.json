@@ -2487,5 +2487,263 @@
       "IUT.PaperIV.DegreePullback.degPb_finitePlace_pos"
     ],
     "scope": "model_test"
+  },
+  "GENELL.Def1_2": {
+    "kind": "external_statement",
+    "parent": null,
+    "source": {
+      "authors": "Shinichi Mochizuki",
+      "title": "Arithmetic Elliptic Curves in General Position",
+      "journal": "Math. J. Okayama Univ. 52 (2010), pages 1 to 28",
+      "statement": "Definition 1.2, with the definition of the height on page 4",
+      "pages_in_paper": "pages 4 and 5",
+      "pages_read": "rendered pages 3, 4 and 5, checked against the renders"
+    },
+    "content": "Page 4, after the invariance of the normalized degree under finite extension (GENELL.Sec1.ArithmeticDivisor): for x in X(Qbar), the union of the X(F) over number fields F in Qbar, and an arithmetic line bundle M on X, ht_M(x) = deg_F(x_F^* M) for any morphism x_F : Spec(O_F) -> X that gives rise to x (deg_F the normalized degree). Definition 1.2 (i) (page 5): ht_M : X(Qbar) -> R is the height function of M. (ii): for a subset F of X(Qbar) and functions alpha, beta on F, the relations alpha <~ beta, alpha >~ beta and alpha ~ beta up to a constant, and BD-classes.",
+    "explicit_hypotheses": [
+      "X a normal scheme, proper and flat over Spec(Z) (page 3)",
+      "M an arithmetic line bundle on X",
+      "F a subset of X(Qbar) (for (ii))"
+    ],
+    "implicit_hypotheses": [],
+    "conclusion": "Definitions: the height function ht_M on X(Qbar), well defined because the normalized degree is invariant under finite extension, and the relations <~, >~, ~ between real functions on a subset of X(Qbar).",
+    "definitions_required": [],
+    "results_used": [
+      "GENELL.Sec1.ArithmeticDivisor"
+    ],
+    "external_dependencies": [],
+    "lean_declaration": null,
+    "statement_status": "EXTRACTED",
+    "proof_status": "NOT_EXTRACTED",
+    "obligations": [
+      "Heights attached to arithmetic line bundles on a model X are not formalized; only the Weil height of P^1 (heightNF) is, and its identification with ht_{O(1)} is not. For the Weil height, the independence of the field through which a point is read is proved (GENELL.Def1_2.frag.heightNF_algebraMap)."
+    ],
+    "ambiguities": [
+      "The direction of the relation printed in (ii) is reversed by correction (2) of the published corrections; IUT.Applications.VojtaNumberField uses the corrected direction."
+    ],
+    "fragments": [
+      "GENELL.Def1_2.frag.heightNF_algebraMap",
+      "GENELL.Def1_2.frag.oneThird_example"
+    ]
+  },
+  "GENELL.Def1_2.frag.heightNF_algebraMap": {
+    "kind": "fragment",
+    "parent": "GENELL.Def1_2",
+    "lean_module": "IUT.Applications.HeightExtension",
+    "source": {
+      "pages_in_paper": "pages 4 and 5",
+      "pages_read": "[GenEll] rendered and checked: pages 4 and 5"
+    },
+    "content": "For number fields K, L with an algebra map K -> L and y in K, the normalized height heightNF (Mathlib's Height.logHeight1 divided by the degree over Q) of y read in L equals that of y read in K. Proof: logHeight1 y is the degree deg_K of the polar divisor of y (coefficient max(0, -ord_v y) at finite places, [K_v : R] log+ |y|_v at archimedean places); its pull-back along degPbPullback is the polar divisor of y in L; deg_L of a pull-back is [L : K] deg_K. The same holds for y mapped by any ring homomorphism K -> L (htExt_heightNF_ringHom), in particular by an isomorphism.",
+    "explicit_hypotheses": [
+      "K, L number fields with an algebra map K -> L",
+      "y an element of K"
+    ],
+    "implicit_hypotheses": [],
+    "conclusion": "heightNF L (algebraMap K L y) = heightNF K y; equivalently Height.logHeight1 (algebraMap K L y) = [L : K] Height.logHeight1 y.",
+    "definitions_required": [
+      "IUT.VojtaNumberField.heightNF",
+      "IUT.HeightExtension.htExtPoleDiv"
+    ],
+    "results_used": [
+      "IUT4.Def1_9.frag.normalizedDeg_pullback"
+    ],
+    "external_dependencies": [],
+    "lean_declaration": "IUT.HeightExtension.htExt_heightNF_algebraMap",
+    "covers": "GenEll page 4: the normalized degree is invariant under finite extension, so that ht(x) = deg_F(x_F^* M) may be computed through any morphism x_F : Spec(O_F) -> X giving rise to x; Definition 1.2 (i), page 5: ht is a function on X(Qbar). Checked for the Weil height on the projective line.",
+    "not_covered": "The height attached to an arithmetic line bundle on a model (here only the Weil height of the projective line, whose identification with ht_{omega_P(C)} up to a bounded function is not formalized).",
+    "statement_status": "STATEMENT_FORMALIZED",
+    "proof_status": "KERNEL_VERIFIED",
+    "obligations": [],
+    "ambiguities": [],
+    "cor3_12_dependency": "independent",
+    "lemmas": [
+      "IUT.HeightExtension.htExtPoleCoeff",
+      "IUT.HeightExtension.htExtPoleCoeff_support_finite",
+      "IUT.HeightExtension.htExtPoleDiv",
+      "IUT.HeightExtension.htExt_posLog_finitePlace",
+      "IUT.HeightExtension.htExt_degF_poleDiv",
+      "IUT.HeightExtension.htExt_pullback_poleDiv",
+      "IUT.HeightExtension.htExt_logHeight₁_algebraMap",
+      "IUT.HeightExtension.htExt_heightNF_ringHom"
+    ],
+    "scope": "X = P^1_Q, M = O(1), with ht represented by the Weil height heightNF (Mathlib's Height.logHeight1 divided by the degree); its identification with ht_{O(1)} of page 4 is not formalized"
+  },
+  "GENELL.Def1_2.frag.oneThird_example": {
+    "kind": "fragment",
+    "parent": "GENELL.Def1_2",
+    "lean_module": "IUT.Applications.HeightExtension",
+    "source": {
+      "pages_in_paper": "page 4",
+      "pages_read": "[GenEll] rendered and checked: page 4"
+    },
+    "content": "Nonvacuity: CyclotomicField 3 Q (that is, Q(sqrt(-3))) has degree 2 over Q, and the point 1/3 has normalized height log 3 both in Q and in this quadratic field.",
+    "explicit_hypotheses": [],
+    "implicit_hypotheses": [],
+    "conclusion": "finrank Q (CyclotomicField 3 Q) = 2, heightNF Q (1/3) = log 3, heightNF (CyclotomicField 3 Q) (1/3) = log 3.",
+    "definitions_required": [
+      "IUT.VojtaNumberField.heightNF"
+    ],
+    "results_used": [
+      "GENELL.Def1_2.frag.heightNF_algebraMap"
+    ],
+    "external_dependencies": [],
+    "lean_declaration": "IUT.HeightExtension.htExt_heightNF_oneThird",
+    "covers": "An instance of the invariance of ht under extension (page 4) at an explicit point and field.",
+    "not_covered": "A single example.",
+    "statement_status": "STATEMENT_FORMALIZED",
+    "proof_status": "KERNEL_VERIFIED",
+    "obligations": [],
+    "ambiguities": [],
+    "cor3_12_dependency": "independent",
+    "scope": "model_test"
+  },
+  "GENELL.Def1_5": {
+    "kind": "external_statement",
+    "parent": null,
+    "source": {
+      "authors": "Shinichi Mochizuki",
+      "title": "Arithmetic Elliptic Curves in General Position",
+      "journal": "Math. J. Okayama Univ. 52 (2010), pages 1 to 28",
+      "statement": "Definition 1.5",
+      "pages_in_paper": "page 8",
+      "pages_read": "rendered pages 3 and 8, checked against the renders"
+    },
+    "content": "(i) A point x in X(F), [F : Q] finite, has a well-defined minimal field of definition F_min in F, from the scheme-theoretic image of Spec(F) -> X. (ii) Reduced effective Cartier divisors. (iii) For x in X(F) with F a minimal field of definition of x, the different ideal of F gives an effective arithmetic divisor delta_x supported at the finite places, and log-diff_X(x) = deg_F(delta_x) (normalized degree) defines the log-different function on X(Qbar). (iv) For an effective Cartier divisor D of X, U_X = X \\ D and x in U_X(F) with F a minimal field of definition, the pull-back D_x of D to Spec(O_F), the conductor f_x^D = (D_x)_red, and log-cond_D(x) = deg_F(f_x^D) defines the log-conductor function on U_X(Qbar).",
+    "explicit_hypotheses": [
+      "X a normal scheme, proper and flat over Spec(Z) (page 3)",
+      "D an effective Cartier divisor of X (for (iv))"
+    ],
+    "implicit_hypotheses": [],
+    "conclusion": "Definitions: the minimal field of definition of a point, the log-different function on X(Qbar) and the log-conductor function on U_X(Qbar), both evaluated at the minimal field of definition.",
+    "definitions_required": [],
+    "results_used": [
+      "GENELL.Sec1.ArithmeticDivisor"
+    ],
+    "external_dependencies": [],
+    "lean_declaration": null,
+    "statement_status": "EXTRACTED",
+    "proof_status": "NOT_EXTRACTED",
+    "obligations": [
+      "(iii) and (iv) are formalized for X = P^1 over Z and D = {0, 1, infinity}, as the definitions logDiffNF and logCondNF of IUT.Applications.VojtaNumberField, evaluated at a field generated by the point; (ii) and general X, D are not formalized. The fragments record how the values change when the point is read in a larger field; the page does not state these changes."
+    ],
+    "ambiguities": [],
+    "fragments": [
+      "GENELL.Def1_5.frag.logCondNF_extension",
+      "GENELL.Def1_5.frag.logDiffNF_not_invariant",
+      "GENELL.Def1_5.frag.minimal_field_equivalence"
+    ]
+  },
+  "GENELL.Def1_5.frag.logCondNF_extension": {
+    "kind": "fragment",
+    "parent": "GENELL.Def1_5",
+    "lean_module": "IUT.Applications.HeightExtension",
+    "source": {
+      "pages_in_paper": "page 8",
+      "pages_read": "[GenEll] rendered and checked: page 8"
+    },
+    "content": "For number fields K -> L, y in K \\ {0, 1} and S the finite set of primes of K at which y meets {0, 1, infinity}: [L : Q] (log-cond_K(y) - log-cond_L(y)) = sum over v in S and primes w of L over v of (e(w|v) - 1) log q_w. Hence log-cond_L(y) <= log-cond_K(y), with equality when every prime of L at which y meets the boundary is unramified over K.",
+    "explicit_hypotheses": [
+      "K, L number fields with an algebra map K -> L",
+      "y in K, y != 0, y != 1 (or, for the identity, a finite set S equal to the set of primes where y meets the boundary)",
+      "for the equality: e(w|v) = 1 at every prime w of L at which y meets the boundary"
+    ],
+    "implicit_hypotheses": [],
+    "conclusion": "htExt_finrank_mul_logCondNF_sub (the identity), htExt_logCondNF_algebraMap_le (the inequality), htExt_logCondNF_algebraMap_eq_of_unramified (the equality).",
+    "definitions_required": [
+      "IUT.VojtaNumberField.logCondNF"
+    ],
+    "results_used": [],
+    "external_dependencies": [],
+    "lean_declaration": "IUT.HeightExtension.htExt_finrank_mul_logCondNF_sub",
+    "covers": "Page 8, Definition 1.5 (iv): log-cond_D(x) is the normalized degree of the reduced divisor (D_x)_red on Spec O_F for a minimal field of definition F; the theorems show how the value read in a larger field differs (it drops under ramification at the conductor).",
+    "not_covered": "The page does not state these identities; they are consequences of the definitions recorded to justify reading log-cond on the minimal field. Only the model P^1_Z with the three sections is treated.",
+    "statement_status": "STATEMENT_FORMALIZED",
+    "proof_status": "KERNEL_VERIFIED",
+    "obligations": [],
+    "ambiguities": [],
+    "cor3_12_dependency": "independent",
+    "scope": "model_test",
+    "lemmas": [
+      "IUT.HeightExtension.htExt_logCondNF_eq_sum",
+      "IUT.HeightExtension.htExt_logCondNF_algebraMap_eq_sum",
+      "IUT.HeightExtension.htExt_logCondNF_algebraMap_le",
+      "IUT.HeightExtension.htExt_logCondNF_algebraMap_eq_of_unramified",
+      "IUT.HeightExtension.htExtConductorSet",
+      "IUT.HeightExtension.htExt_mem_conductorSet"
+    ]
+  },
+  "GENELL.Def1_5.frag.logDiffNF_not_invariant": {
+    "kind": "fragment",
+    "parent": "GENELL.Def1_5",
+    "lean_module": "IUT.Applications.HeightExtension",
+    "source": {
+      "pages_in_paper": "page 8",
+      "pages_read": "[GenEll] rendered and checked: page 8"
+    },
+    "content": "The normalized log-different does not decrease along a tower of number fields K -> L (log-diff_K <= log-diff_L, from the tower formula of the different), and is not invariant: log-diff of Q is 0 and log-diff of Q(zeta_3) is (1/2) log 3.",
+    "explicit_hypotheses": [
+      "K, L number fields with an algebra map K -> L (for the inequality)"
+    ],
+    "implicit_hypotheses": [],
+    "conclusion": "logDiffNF K <= logDiffNF L; logDiffNF Q < logDiffNF (CyclotomicField 3 Q).",
+    "definitions_required": [
+      "IUT.VojtaNumberField.logDiffNF"
+    ],
+    "results_used": [],
+    "external_dependencies": [],
+    "lean_declaration": "IUT.HeightExtension.htExt_logDiffNF_le",
+    "covers": "Page 8, Definition 1.5 (iii): log-diff_X(x) is defined through the different ideal of a minimal field of definition F of x; the theorem shows why the minimal field must be specified (the value grows along extensions).",
+    "not_covered": "The page does not state the inequality; it is a consequence of the definitions, recorded to justify reading log-diff on the minimal field. Equality conditions are not treated.",
+    "statement_status": "STATEMENT_FORMALIZED",
+    "proof_status": "KERNEL_VERIFIED",
+    "obligations": [],
+    "ambiguities": [],
+    "cor3_12_dependency": "independent",
+    "scope": "model_test",
+    "lemmas": [
+      "IUT.HeightExtension.htExt_logDiffNF_rat_lt_cyclotomicThree"
+    ]
+  },
+  "GENELL.Def1_5.frag.minimal_field_equivalence": {
+    "kind": "fragment",
+    "parent": "GENELL.Def1_5",
+    "lean_module": "IUT.Applications.HeightExtension",
+    "source": {
+      "pages_in_paper": "pages 4, 5 and 8",
+      "pages_read": "[GenEll] rendered and checked: pages 4, 5 and 8"
+    },
+    "content": "The registered statement VojtaLineMinusThreePointsDegreeAtMost d, which reads each point on its minimal field of definition, is equivalent with the same constants to htExtDegreeAtMostAnyFieldStatement d, which reads each point x in any number field F of degree at most d containing it. Ingredients: for x in L, the generator of Q(x) generates Q(x); the height of x in L equals its height in Q(x); and an inequality ht <= (1 + eps)(log-diff + log-cond) + C for y read in K implies it for y read in any L containing K, since ht is unchanged and log-diff + log-cond does not decrease.",
+    "explicit_hypotheses": [
+      "d a natural number"
+    ],
+    "implicit_hypotheses": [],
+    "conclusion": "VojtaLineMinusThreePointsDegreeAtMost d <-> htExtDegreeAtMostAnyFieldStatement d.",
+    "definitions_required": [
+      "IUT.VojtaNumberField.VojtaLineMinusThreePointsDegreeAtMost",
+      "IUT.HeightExtension.htExtDegreeAtMostAnyFieldStatement"
+    ],
+    "results_used": [
+      "GENELL.Def1_2.frag.heightNF_algebraMap"
+    ],
+    "external_dependencies": [],
+    "lean_declaration": "IUT.HeightExtension.htExt_degreeAtMost_iff_anyField",
+    "covers": "Definition 1.5 (i) (page 8, minimal field of definition) together with the invariance of ht (page 4): the inequality of Theorem 2.1 (i) restricted to points of degree at most d can be read on any field of definition.",
+    "not_covered": "Neither side of the equivalence is proved. The analogous equivalence for the compactly bounded subsets (cbDegreeAtMostStatement) is not treated: membership of a point in a compactly bounded subset would have to be shown independent of the field in which it is read.",
+    "statement_status": "STATEMENT_FORMALIZED",
+    "proof_status": "KERNEL_VERIFIED",
+    "obligations": [],
+    "ambiguities": [],
+    "cor3_12_dependency": "independent",
+    "scope": "model_test",
+    "lemmas": [
+      "IUT.HeightExtension.htExt_adjoin_gen_eq_top",
+      "IUT.HeightExtension.htExt_heightNF_adjoin",
+      "IUT.HeightExtension.htExt_gen_ne_zero",
+      "IUT.HeightExtension.htExt_gen_ne_one",
+      "IUT.HeightExtension.htExt_ineq_algebraMap",
+      "IUT.HeightExtension.htExt_ineq_of_adjoin",
+      "IUT.HeightExtension.htExt_finrank_adjoin_le"
+    ]
   }
 }

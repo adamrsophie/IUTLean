@@ -48,9 +48,9 @@ of the point. The quantifier `∀ F : Type` ranges over number fields in the low
 number field has a copy there, so nothing is lost. Each point is represented by every pair
 `(F, x)` isomorphic to it; the statement quantifies over all of them. The log-different and the
 log-conductor are proved invariant under isomorphisms of pairs (`logCondNF_ringEquiv`, and
-`NumberField.discr_eq_discr_of_ringEquiv` for the discriminant); for the height this invariance is
-not formalized (Mathlib has no transport of its places along ring isomorphisms), but the height
-of a rational number is computed in every number field (`heightNF_algebraMap_rat`).
+`NumberField.discr_eq_discr_of_ringEquiv` for the discriminant); for the height it is proved in
+`IUT/Applications/HeightExtension.lean` (`htExt_heightNF_ringHom`, for any ring homomorphism of
+number fields).
 
 **The relation `≲`.** `α ≲ β` means `α(x) - β(x) ≤ C` for a constant `C`: [GenEll]
 Definition 1.2 (ii) (page 5) after correction (2), which reverses the printed direction, repeated

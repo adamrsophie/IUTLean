@@ -67,7 +67,11 @@ finite extension of `ℚ_p` with its spectral norm the closed unit ball is the r
   `padicMuLog` (normalized at `𝒪`, divided by `D = Σ d_s`) is
   `μ^log(λ · 𝒪) = (Σ_s d_s log ‖λ_s‖) / D`, a weighted sum with weights `d_s / D` that come from
   `Measure.pi` and the scaling law `μ_s(y • A) = ‖y‖ ^ d_s μ_s(A)`. Hence the log-volume of a
-  hull (`pktHull_muLog_hull`).
+  hull (`pktHull_muLog_hull`). These are the Haar weights of the whole product, not the
+  normalized weights of IUT III Remark 3.1.1 (ii); in the reading of `WeightedPacket.lean`,
+  `wPkt_weight_eq_haar_iff` shows that the two weight systems coincide for every tuple of places
+  if and only if `[K_v : (F_mod)_v]` is the same at all places over `p` (for nonempty label and
+  place sets and positive degrees).
 * *Comparison with the coordinatewise hull* `IUT.Applications.DupuyHilado.dhHull` (polydisc of
   the coordinate suprema of norms). On relatively compact sets they agree for discretely valued
   factors (`pktHull_eq_dhHull`), whether or not a projection is zero. On `ℚ_p × ℤ_p ⊆ ℚ_p²`

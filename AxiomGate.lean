@@ -253,7 +253,8 @@ def openFamilies : List (Name × Name) :=
     `IUT.Applications.VojtaNumberField),
    (`IUT.CompactlyBounded.cbDegreeAtMostStatement, `IUT.Applications.CompactlyBounded),
    (`IUT.CompactlyBounded.genEllTheorem2_1iiStatement, `IUT.Applications.CompactlyBounded),
-   (`IUT.ABC.Unconditional.uncondABCRestrictedToStatement, `IUT.ABC.Unconditional)]
+   (`IUT.ABC.Unconditional.uncondABCRestrictedToStatement, `IUT.ABC.Unconditional),
+   (`IUT.HeightExtension.htExtDegreeAtMostAnyFieldStatement, `IUT.Applications.HeightExtension)]
 
 /-- Author statements: constants of type `… → Prop` that state results or claims of other
 papers, which the library may assume but never proves outright. Same rule as closed forms,

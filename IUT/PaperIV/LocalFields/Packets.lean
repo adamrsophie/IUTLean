@@ -83,13 +83,19 @@ normalized at a set `Λ`; on a summand `A_j` it is the same construction with `d
   μ^log(R_I)`: an additivity over the tensor factors (not over the direct summands), which needs
   the index formula for tensor products of lattices; `log_p(R_I^×)` and `R_I` for more than two
   factors are not defined in Lean here.
-* That `R_E` (for any number of factors) has positive Haar measure, so the step
-  `μ^log(R_I) ≤ μ^log((R_I)^∼) = 0` of page 14 is not obtained.
+* That `R_E` has positive Haar measure for more than two factors; for two factors it is proved,
+  with the step `μ^log(R_I) ≤ μ^log((R_I)^∼) = 0` of page 14, in `TensorIndex.lean`
+  (`tensorIdx_muLog_nonpos`).
 * That `(R_E)^∼` is the normalization of `R_E` in its ring of fractions; here it is the integral
-  closure of `ℤ_p` in the packet.
+  closure of `ℤ_p` in the packet. For two factors it is proved in `TensorIndex.lean`
+  (`tensorIdx_isFractionRing`).
 * The weighted log-volumes of IUT III Proposition 3.9 (i) with the normalized weights of
-  Remark 3.1.1 (ii), which depend on global data.
-* IUT IV Proposition 1.1, `p ^ (𝔡_{I*}) · (R_I)^∼ ⊆ R_I`, and Proposition 1.4 (ii) to (iv).
+  Remark 3.1.1 (ii), which depend on global data. They are defined, with the weights as inputs,
+  on direct product regions in `IUT/PaperIII/Corollary312/WeightedPacket.lean`.
+* IUT IV Proposition 1.1 and Proposition 1.4 (iii), (iv) for more than two factors, and the
+  first inequality of 1.4 (iii) when some `e_i > p − 2` (two factors otherwise:
+  `TensorDifferent.lean`, `TensorIndex.lean`, `TensorLogShell.lean`; 1.4 (ii):
+  `UnitVolume.lean`).
 -/
 
 open MeasureTheory Measure IUT.Prerequisites.PadicVolume
