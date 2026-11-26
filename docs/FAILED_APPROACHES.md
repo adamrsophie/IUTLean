@@ -48,19 +48,24 @@ refutes a statement of the papers.
   field `K`, the `q`-parameter and the field of moduli of the curve, which are not available
   in the needed form. Only a partial collection is stated
   (`PartialInitialThetaConditions`). Evidence: `docs/INITIAL_THETA_DATA.md`.
-* **Pull-back invariance of the degree of arithmetic divisors** (IUT IV Definition 1.9 (i)).
-  The paper defines the pull-back "in the evident fashion"; choosing a pull-back so that the
-  identity holds would make it nearly definitional. Deferred until the convention of [GenEll]
-  §1 is fixed. Evidence: `docs/MATHLIB_GAP_ANALYSIS.md`.
-* **Degree zero of principal arithmetic divisors.** With weight `1` at every archimedean
-  place, a coefficient convention at complex places would have to be invented. Not defined;
-  only the product formula was formalized. Evidence: `docs/DECISIONS.md`, decision 7.
 * **A Grothendieck universe in `ZFSet`.** Mathlib provides the embedding at the `PSet` level
   only. The universe results take the existence axiom as the hypothesis `ExistenceAxiom`, which
   is independent of what Lean proves about `ZFSet.{u}`; the conditional results are vacuous in
   models where it fails.
 * **Morphisms of IUT I Definition 6.13.** Not found on the pages read. Evidence:
   `docs/PAPER_I_STRUCTURES.md`.
+
+## Blocked earlier, now resolved
+
+* **Pull-back invariance of the degree of arithmetic divisors** (IUT IV Definition 1.9 (i)).
+  Resolved in one reading: the pull-back is defined with the multipliers `e(w|v)` and
+  `[L_w : K_v]`, which make principal divisors pull back to principal divisors
+  (`degPb_pullback_principal`), and the invariance is proved for it
+  (`degPb_normalizedDeg_pullback`, `IUT/PaperIV/DegreePullback.lean`).
+* **Degree zero of principal arithmetic divisors.** [GenEll] page 4 fixes the convention that
+  IUT IV page 21 leaves open: the factor `[F_v : ℝ]` is in the coefficient of the principal
+  divisor, so the weight `1` of Definition 1.9 (i) gives degree zero (`degPb_degF_principal`,
+  `IUT/PaperIV/DegreePullback.lean`).
 
 ## A reading that conflicts with the text
 
@@ -78,6 +83,6 @@ groups for IUT I §§1 to 2. The passage from IUT IV Theorem A to the abc statem
 the level of statements: `IUT/Applications/ABCSpecialization.lean` proves that a statement about
 rational points of `ℙ¹ \ {0, 1, ∞}` is equivalent to `Challenge.ABC` (`vojta_iff_ABC`). The
 remaining gap is named there: IUT IV proves the compactly bounded form (ii) of [GenEll]
-Theorem 2.1, and reaching that statement needs the direction (ii) ⟹ (i), whose proof uses points
+Theorem 2.1 (stated in `IUT/Applications/CompactlyBounded.lean`), and reaching that statement needs the direction (ii) ⟹ (i), whose proof uses points
 of bounded degree over number fields and a noncritical Belyi map; neither is formalized
 (`OPEN_PROBLEMS.md`, T-GENELL).

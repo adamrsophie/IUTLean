@@ -35,10 +35,12 @@ identification `deg_E(𝔞) = deg(𝔞_E)` (normalized degree) under the hypothe
 degrees over `E` sum to `[F : ℚ]` (`degE_eq_normalizedDeg`), and its unconditional instance for
 the set of all archimedean valuations (`degE_arc_eq_normalizedDeg`).
 
-What is not formalized: the pull-back `𝔞|_K` of arithmetic divisors along a finite extension
-`K/F`, the set `E|K`, and both invariance statements (`deg(𝔞|_K) = deg(𝔞)` of (i) and
-`deg_{E|K}(𝔞|_K) = deg_E(𝔞)` of (ii)); the fact that the local degrees over all valuations above
-one finite `v_ℚ` sum to `[F : ℚ]` is also not proved here.
+What is not formalized here: the set `E|K` and the invariance `deg_{E|K}(𝔞|_K) = deg_E(𝔞)` of
+(ii). The pull-back `𝔞|_K` along a finite extension and the invariance `deg(𝔞|_K) = deg(𝔞)` of
+(i) are in `IUT/PaperIV/DegreePullback.lean`, for one reading of "the evident fashion"; the fact
+that the local degrees over all valuations above one finite `v_ℚ` sum to `[F : ℚ]` (fundamental
+identity) is used there, through Mathlib's `Ideal.sum_ramification_inertia_eq_finrank`, and is
+not proved in this file.
 -/
 
 open NumberField

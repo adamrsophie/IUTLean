@@ -36,7 +36,8 @@
   "obligations": [
    "Theorem A is Corollary 2.3; see that record.",
    "The specialization to the abc inequality (X = P^1, D = {0, 1, infinity}, d = 1) is described in docs/PAPER_IV_DERIVATION.md. At the level of statements it is formalized in IUT4.ThmA.frag.equiv_abc: the special case for rational points is equivalent to Challenge.ABC. Not formalized: Theorem A itself, the identification of the height attached to omega_X(D) with Mathlib's logarithmic height, and the direction (ii) implies (i) of [GenEll] Theorem 2.1 that the passage from the proof in IUT IV to this special case uses. The bounded degree statement for P^1 minus {0, 1, infinity} implies Challenge.ABC through its degree one piece (IUT4.ThmA.frag.bounded_degree_implies_abc).",
-   "Page 3 asserts that the Vojta conjecture for hyperbolic curves, the ABC conjecture and the Szpiro conjecture for elliptic curves all follow as special cases of Theorem A, referring to [Vjt]; these derivations are not given in the paper."
+   "Page 3 asserts that the Vojta conjecture for hyperbolic curves, the ABC conjecture and the Szpiro conjecture for elliptic curves all follow as special cases of Theorem A, referring to [Vjt]; these derivations are not given in the paper.",
+   "In degree one, the compactly bounded form for Sigma empty is equivalent to the abc inequality for triples whose ratios are bounded away from 0 (IUT4.ThmA.frag.cb_degree_one_iff_ratio_bounded, a model test), an auxiliary statement whose relation to Challenge.ABC is not addressed."
   ],
   "ambiguities": [
    "Page 3 and page 54: the statements of Theorem A and Corollary 2.3 agree word for word (checked against both renders), except that Theorem A points to the notation of [GenEll] as recalled before Corollary 2.2."
@@ -44,7 +45,9 @@
   "cor3_12_dependency": "conditional",
   "fragments": [
    "IUT4.ThmA.frag.equiv_abc",
-   "IUT4.ThmA.frag.bounded_degree_implies_abc"
+   "IUT4.ThmA.frag.bounded_degree_implies_abc",
+   "IUT4.ThmA.frag.cb_degree_one_iff_ratio_bounded",
+   "IUT4.ThmA.frag.compactly_bounded_degree_one_abc"
   ]
  },
  "IUT4.ThmA.frag.equiv_abc": {
@@ -89,7 +92,7 @@
    "IUT.ABCSpecialization.den_one_sub_eq_den"
   ],
   "covers": "Page 3: the sentence that the ABC Conjecture follows as a special case of Theorem A, for the rational-point specialization.",
-  "not_covered": "Theorem A itself and its proof; the general equivalence with Vojta's conjecture for hyperbolic curves (IUT IV page 40, via GenEll Theorem 2.1, page 11), whose proof of (ii) implies (i) passes through points of degree d' = d deg(Y/X) > 1 and a noncritical Belyi map.",
+  "not_covered": "Theorem A itself and its proof; the general equivalence with Vojta's conjecture for hyperbolic curves (IUT IV page 40, via GenEll Theorem 2.1, page 11), whose proof of (ii) implies (i) passes through points of degree d' = d deg(Y/X) > 1 and a noncritical Belyi map. The identification of ht_{omega_X(D)} = ht_{O(1)} on P^1 minus {0, 1, infinity} with the Weil height Height.logHeight₁ up to a bounded function is a standard computation that is not formalized (recorded in the module docstring of IUT.Applications.ABCSpecialization).",
   "statement_status": "STATEMENT_FORMALIZED",
   "proof_status": "KERNEL_VERIFIED",
   "obligations": [],
@@ -143,6 +146,83 @@
   "obligations": [],
   "ambiguities": []
  },
+ "IUT4.ThmA.frag.cb_degree_one_iff_ratio_bounded": {
+  "kind": "fragment",
+  "parent": "IUT4.ThmA",
+  "source": {
+   "paper": "Inter-universal Teichmuller Theory IV",
+   "pdf_pages": "page 3",
+   "pages_in_paper": "GenEll pages 5, 6 and 11",
+   "pages_read": "rendered IUT IV pages 3, 40 to 43 and 54 to 56; GenEll pages 3, 5, 6, 8 and 11 to 13; GenEll comments, pages 1 and 2"
+  },
+  "content": "cbDegreeOneAllStatement (cbDegreeAtMostStatement K 1 for every compactly bounded K) is equivalent to abcRatioBoundedStatement (for every delta > 0 and eps > 0 there is C with log c <= (1 + eps) log rad(abc) + C for coprime positive a + b = c with delta c <= a, delta c <= b). Supporting unconditional lemmas: every archimedean bounding domain lies at distance >= delta > 0 from 0 and 1 and is bounded; each triple with a/c in it has delta c <= a, b; a rational point at bounded distance from 0, 1, infinity gives a triple with ratios >= delta/(1 + R).",
+  "explicit_hypotheses": [],
+  "implicit_hypotheses": [],
+  "conclusion": "cbDegreeOneAllStatement <-> abcRatioBoundedStatement",
+  "definitions_required": [],
+  "results_used": [],
+  "external_dependencies": [],
+  "lean_declaration": "IUT.CompactlyBounded.cbDegreeOne_iff_abcRatioBounded",
+  "lean_module": "IUT.Applications.CompactlyBounded",
+  "lemmas": [
+   "IUT.CompactlyBounded.cbDegreeOneAllStatement",
+   "IUT.CompactlyBounded.abcRatioBoundedStatement",
+   "IUT.CompactlyBounded.exists_arch_bounds",
+   "IUT.CompactlyBounded.exists_ratio_bound",
+   "IUT.CompactlyBounded.exists_balanced_triple",
+   "IUT.CompactlyBounded.degreeOne_values",
+   "IUT.CompactlyBounded.cbMem_rat_iff_of_support_eq_empty",
+   "IUT.CompactlyBounded.norm_ratCast_eq",
+   "IUT.CompactlyBounded.norm_ratCast_sub_one_eq",
+   "IUT.CompactlyBounded.norm_ratCast_complex",
+   "IUT.CompactlyBounded.adjoin_rat_eq_top"
+  ],
+  "covers": "Page 3, the sentence after Theorem A ('the ABC Conjecture ... follow[s] as special cases of Theorem A'), compared with the compactly bounded form of GenEll Theorem 2.1 (ii) (page 11) to which the proof of Corollary 2.3 reduces (page 55): in degree one with Sigma empty, that form is equivalent to the abc inequality on triples with ratios bounded away from 0.",
+  "not_covered": "Whether abcRatioBoundedStatement implies Challenge.ABC; the degree one part for Sigma = {2}; Theorem A and its proof; neither side of the equivalence is proved. Counted as a model test: abcRatioBoundedStatement and the degree one statements are auxiliary statements of this project; neither side is printed on page 3, page 11 or page 55.",
+  "statement_status": "STATEMENT_FORMALIZED",
+  "proof_status": "KERNEL_VERIFIED",
+  "obligations": [],
+  "ambiguities": [],
+  "scope": "model_test"
+ },
+ "IUT4.ThmA.frag.compactly_bounded_degree_one_abc": {
+  "kind": "fragment",
+  "parent": "IUT4.ThmA",
+  "source": {
+   "paper": "Inter-universal Teichmuller Theory IV",
+   "pdf_pages": "page 3",
+   "pages_in_paper": "GenEll pages 5, 6 and 11",
+   "pages_read": "rendered IUT IV pages 3, 40 to 43 and 54 to 56; GenEll pages 3, 5, 6, 8 and 11 to 13; GenEll comments, pages 1 and 2"
+  },
+  "content": "Conditional consequences: Challenge.ABC implies cbDegreeAtMostStatement K 1 for every K and abcRatioBoundedStatement; for K with support {infinity}, cbDegreeAtMostStatement K 1 gives log c <= (1 + eps) log rad(abc) + C for the coprime triples with a/c in the archimedean bounding domain; cbDegreeOneSupportFreeStatement implies abcRatioBoundedStatement; abcRatioBoundedStatement implies cbDegreeAtMostStatement K 1 for every K; genEllTheorem2_1iiStatement empty implies abcRatioBoundedStatement.",
+  "explicit_hypotheses": [
+   "cbDegreeAtMostStatement K 1 and K.cbSupport = empty (for abc_on_arch_of_cbDegreeOne)"
+  ],
+  "implicit_hypotheses": [],
+  "conclusion": "For every eps > 0 there is C with log c <= (1 + eps) log rad(abc) + C for every coprime positive triple a + b = c with a/c in the archimedean bounding domain of K.",
+  "definitions_required": [],
+  "results_used": [],
+  "external_dependencies": [],
+  "lean_declaration": "IUT.CompactlyBounded.abc_on_arch_of_cbDegreeOne",
+  "lean_module": "IUT.Applications.CompactlyBounded",
+  "lemmas": [
+   "IUT.CompactlyBounded.cbDegreeOne_of_ABC",
+   "IUT.CompactlyBounded.abcRatioBounded_of_ABC",
+   "IUT.CompactlyBounded.abcRatioBounded_of_cbDegreeOne",
+   "IUT.CompactlyBounded.cbDegreeOne_of_abcRatioBounded",
+   "IUT.CompactlyBounded.abcRatioBounded_of_genEllEmpty",
+   "IUT.CompactlyBounded.cbDegreeOneSupportFreeStatement"
+  ],
+  "covers": "Page 3, the sentence after Theorem A, for the compactly bounded form (GenEll Theorem 2.1 (ii), page 11; IUT IV page 55) in degree one: which abc triples it controls.",
+  "not_covered": "Challenge.ABC is not derived from any compactly bounded statement; the open statements are not proved. Counted as a model test: abcRatioBoundedStatement and the degree one statements are auxiliary statements of this project; neither side is printed on page 3, page 11 or page 55.",
+  "statement_status": "STATEMENT_FORMALIZED",
+  "proof_status": "CONDITIONALLY_VERIFIED",
+  "obligations": [
+   "cbDegreeAtMostStatement K 1 (degree one piece of GenEll Theorem 2.1 (ii)); the listed lemmas assume one of Challenge.ABC, cbDegreeOneSupportFreeStatement, abcRatioBoundedStatement, genEllTheorem2_1iiStatement empty"
+  ],
+  "ambiguities": [],
+  "scope": "model_test"
+ },
  "IUT4.Prop1_1": {
   "source": {
    "paper": "Inter-universal Teichmuller Theory IV",
@@ -172,14 +252,23 @@
   "statement_status": "EXTRACTED",
   "proof_status": "EXTRACTED",
   "obligations": [
-   "Not formalized: the inclusion p^(d_{I*}) (R_I)~ <= R_I, which needs the different of R_i over Z_p acting on the tensor product. For two factors, K_1 (x) K_2 is proved reduced and a finite product of finite extensions of Q_p (IUT4.Prop1_1.frag.vb_tensor_decomposition), the closed unit ball and integral closure models of R_i agree (IUT4.Prop1_1.frag.vb_integral_models), and R_E <= (R_E)~ is proved with (R_E)~ the integral closure of Z_p in K_1 (x) K_2 (IUT4.Prop1_1.frag.packet_integers). More than two factors, and that this integral closure is the normalization of R_E in its ring of fractions, are open."
+   "For two factors (I = {1, 2}, I* = {2}) the inclusion p^(d_{I*}) (R_I)~ <= R_I is proved, with p^(d_2) any element of order d_2, a generator of the different ideal or any element of it (IUT4.Prop1_1.frag.td_order, IUT4.Prop1_1.frag.td_generator, IUT4.Prop1_1.frag.td_different_ideal); the route of page 10 through base change and faithful flatness is not followed. For two factors, K_1 (x) K_2 is proved reduced and a finite product of finite extensions of Q_p (IUT4.Prop1_1.frag.vb_tensor_decomposition), the closed unit ball and integral closure models of R_i agree (IUT4.Prop1_1.frag.vb_integral_models), and R_E <= (R_E)~ is proved with (R_E)~ the integral closure of Z_p in K_1 (x) K_2 (IUT4.Prop1_1.frag.packet_integers). For any finite number of factors the tensor product over Q_p is a finite product of finite extensions of Q_p (IUT4.Prop1_1.frag.pk_packet_decomposition), under which (R_E)~ is the product of their rings of integers (IUT4.Prop1_1.frag.pk_normalization_coordinates). The inclusion for more than two factors, the identification of the tensor product over Z_p with the one over Q_p beyond two factors, and that this integral closure is the normalization of R_E in its ring of fractions, are open."
   ],
   "ambiguities": [],
   "cor3_12_dependency": "independent",
   "fragments": [
    "IUT4.Prop1_1.frag.vb_tensor_decomposition",
    "IUT4.Prop1_1.frag.vb_integral_models",
-   "IUT4.Prop1_1.frag.packet_integers"
+   "IUT4.Prop1_1.frag.packet_integers",
+   "IUT4.Prop1_1.frag.pk_integers_span",
+   "IUT4.Prop1_1.frag.pk_lattice",
+   "IUT4.Prop1_1.frag.pk_normalization_coordinates",
+   "IUT4.Prop1_1.frag.pk_normalization_def",
+   "IUT4.Prop1_1.frag.pk_packet_decomposition",
+   "IUT4.Prop1_1.frag.pk_tensor_zp",
+   "IUT4.Prop1_1.frag.td_different_ideal",
+   "IUT4.Prop1_1.frag.td_generator",
+   "IUT4.Prop1_1.frag.td_order"
   ]
  },
  "IUT4.Prop1_1.frag.vb_tensor_decomposition": {
@@ -281,6 +370,292 @@
   ],
   "cor3_12_dependency": "independent"
  },
+ "IUT4.Prop1_1.frag.pk_integers_span": {
+  "kind": "fragment",
+  "parent": "IUT4.Prop1_1",
+  "source": {
+   "paper": "Inter-universal Teichmuller Theory IV",
+   "pdf_pages": "page 9",
+   "pages_read": "rendered and checked: IUT IV pages 9, 10, 13, 14"
+  },
+  "content": "For finite extensions K1, K2 of Q_p, the image padicPacketIntegers of R_1 (x)_{Z_p} R_2 in K1 (x)_{Q_p} K2 (the additive span of the x (x) y with x, y integral over Z_p) spans K1 (x)_{Q_p} K2 over Q_p.",
+  "explicit_hypotheses": [
+   "p a prime",
+   "K1, K2 fields with finite-dimensional Q_p-algebra structures"
+  ],
+  "implicit_hypotheses": [],
+  "conclusion": "Submodule.span Q_p (padicPacketIntegers p K1 K2) = top.",
+  "definitions_required": [],
+  "results_used": [],
+  "external_dependencies": [],
+  "lean_declaration": "IUT.PaperIV.LocalFields.packet_integers_span",
+  "covers": "Page 9: the image of R_E = R_1 (x)_{Z_p} R_2 in K1 (x)_{Q_p} K2 spans it over Q_p (part of R_E being a full lattice there). Two factors.",
+  "not_covered": "Setting: two factors; R_E as padicPacketIntegers in K1 (x)_{Q_p} K2. That R_E is finitely generated over Z_p, open, or of positive Haar measure; that the packet is the ring of fractions of R_E; more than two factors; that the map R_1 (x)_{Z_p} R_2 -> K1 (x)_{Q_p} K2 is injective. Counted as a model test: that R_E spans the packet over Q_p is not printed on the pages read; it supports the model.",
+  "statement_status": "STATEMENT_FORMALIZED",
+  "proof_status": "KERNEL_VERIFIED",
+  "obligations": [],
+  "ambiguities": [],
+  "scope": "model_test",
+  "lemmas": []
+ },
+ "IUT4.Prop1_1.frag.pk_lattice": {
+  "kind": "fragment",
+  "parent": "IUT4.Prop1_1",
+  "source": {
+   "paper": "Inter-universal Teichmuller Theory IV",
+   "pdf_pages": "pages 9 and 13",
+   "pages_read": "rendered and checked: IUT IV pages 9, 10, 13, 14"
+  },
+  "content": "For a packet PiTensorProduct Q_p K of finitely many finite extensions of Q_p, with Z_p acting through Q_p: the set (R_E)^~ of elements integral over Z_p is the integral closure of Z_p in the packet, a finitely generated Z_p-module, and it spans the packet over Q_p. The same holds for every finite-dimensional formally unramified commutative Q_p-algebra; every element z has a multiple p^n z in (R_E)^~.",
+  "explicit_hypotheses": [
+   "p a prime",
+   "iota a finite type; K i fields with finite-dimensional Q_p-algebra structures",
+   "the Z_p-algebra structure on the packet is Algebra.compHom through Z_p -> Q_p"
+  ],
+  "implicit_hypotheses": [],
+  "conclusion": "(integralClosure Z_p packet : Set) = packetNormalizationSet; its underlying Z_p-submodule is finitely generated; Submodule.span Q_p (packetNormalizationSet) = top.",
+  "definitions_required": [],
+  "results_used": [],
+  "external_dependencies": [],
+  "lean_declaration": "IUT.PaperIV.LocalFields.packet_normalization_lattice_tensor",
+  "covers": "Page 9: (R_E)^~ is a lattice in the packet (a finitely generated Z_p-module spanning it over Q_p), the property implicit in its use as the normalizing set of page 13.",
+  "not_covered": "Setting: packet = PiTensorProduct Q_p K; general statements for finite-dimensional formally unramified commutative Q_p-algebras W. That (R_E)^~ is free of rank dim over Z_p (true for a finitely generated torsion-free module over a PID, not derived here); R_E itself for more than two factors. Counted as a model test: that (R_E)^~ is a lattice is used implicitly, not printed on the pages read.",
+  "statement_status": "STATEMENT_FORMALIZED",
+  "proof_status": "KERNEL_VERIFIED",
+  "obligations": [],
+  "ambiguities": [],
+  "scope": "model_test",
+  "lemmas": [
+   "IUT.PaperIV.LocalFields.packet_normalization_lattice",
+   "IUT.PaperIV.LocalFields.packet_exists_pow_smul_mem",
+   "IUT.PaperIV.LocalFields.packet_field_exists_pow_smul"
+  ]
+ },
+ "IUT4.Prop1_1.frag.pk_normalization_coordinates": {
+  "kind": "fragment",
+  "parent": "IUT4.Prop1_1",
+  "source": {
+   "paper": "Inter-universal Teichmuller Theory IV",
+   "pdf_pages": "pages 9 and 13",
+   "pages_read": "rendered and checked: IUT IV pages 9, 10, 13, 14"
+  },
+  "content": "For a commutative Q_p-algebra W and any Q_p-algebra isomorphism e from W onto a finite product of commutative Q_p-algebras A_j, the set (R_E)^~ of elements of W integral over Z_p is the preimage under e of the product of the sets of elements of the A_j integral over Z_p (for fields, their rings of integers); its image under e is that product. It contains 0 and is stable under multiplication by p^k.",
+  "explicit_hypotheses": [
+   "p a prime",
+   "W a commutative ring with a Q_p-algebra structure",
+   "J a finite type, A j commutative rings with Q_p-algebra structures",
+   "e : W = prod_j A_j an isomorphism of Q_p-algebras"
+  ],
+  "implicit_hypotheses": [],
+  "conclusion": "packetNormalizationSet p W = e^(-1)(prod_j packetNormalizationSet p (A j)); e(packetNormalizationSet p W) = prod_j packetNormalizationSet p (A j).",
+  "definitions_required": [],
+  "results_used": [],
+  "external_dependencies": [],
+  "lean_declaration": "IUT.PaperIV.LocalFields.packet_normalization_eq_preimage",
+  "covers": "Pages 9 and 13: (R_E)^~ corresponds, under the decomposition of the packet into a direct sum of finite extensions of Q_p, to the product of the rings of integers of the summands.",
+  "not_covered": "Proposition 1.1's inclusion p^(d_{I*}) (R_I)^~ subset R_I.",
+  "statement_status": "STATEMENT_FORMALIZED",
+  "proof_status": "KERNEL_VERIFIED",
+  "obligations": [],
+  "ambiguities": [],
+  "scope": "any commutative Q_p-algebra with a decomposition into a finite product; integrality over Z_p via padicVolIntegral",
+  "lemmas": [
+   "IUT.PaperIV.LocalFields.packet_normalization_image",
+   "IUT.PaperIV.LocalFields.packet_zero_mem_normalization",
+   "IUT.PaperIV.LocalFields.packet_pow_smul_mem_normalization"
+  ]
+ },
+ "IUT4.Prop1_1.frag.pk_normalization_def": {
+  "kind": "fragment",
+  "parent": "IUT4.Prop1_1",
+  "source": {
+   "paper": "Inter-universal Teichmuller Theory IV",
+   "pdf_pages": "page 9",
+   "pages_read": "rendered and checked: IUT IV pages 9, 10, 13, 14"
+  },
+  "content": "Definition: in a commutative Q_p-algebra W, packetNormalizationSet p W is the set of elements integral over Z_p (through Z_p -> Q_p -> W). For W = K1 (x)_{Q_p} K2 it is padicPacketNormalization by definition.",
+  "explicit_hypotheses": [
+   "p a prime",
+   "W a commutative ring with a Q_p-algebra structure"
+  ],
+  "implicit_hypotheses": [],
+  "conclusion": "A subset of W, the model of (R_E)^~.",
+  "definitions_required": [],
+  "results_used": [],
+  "external_dependencies": [],
+  "lean_declaration": "IUT.PaperIV.LocalFields.packetNormalizationSet",
+  "covers": "Page 9: (R_E)^~, the normalization of the reduced ring R_E in its ring of fractions, modeled as the integral closure of Z_p in the packet.",
+  "not_covered": "That this set is the normalization of R_E in its ring of fractions (that the total ring of fractions of R_E is the packet) is not proved.",
+  "statement_status": "STATEMENT_FORMALIZED",
+  "proof_status": "NOT_EXTRACTED",
+  "obligations": [],
+  "ambiguities": [
+   "Page 9 defines (R_E)^~ as a normalization in the ring of fractions; the integral closure of Z_p in the packet is used."
+  ],
+  "scope": "any commutative Q_p-algebra W; for packets W = PiTensorProduct Q_p K",
+  "lemmas": [
+   "IUT.PaperIV.LocalFields.packetNormalizationSet_tensor"
+  ]
+ },
+ "IUT4.Prop1_1.frag.pk_packet_decomposition": {
+  "kind": "fragment",
+  "parent": "IUT4.Prop1_1",
+  "source": {
+   "paper": "Inter-universal Teichmuller Theory IV",
+   "pdf_pages": "pages 9 and 13",
+   "pages_read": "rendered and checked: IUT IV pages 9, 10, 13, 14"
+  },
+  "content": "For a finite family K : iota -> Type of finite extensions of Q_p (iota finite), the packet PiTensorProduct Q_p K is formally unramified over Q_p, reduced, of dimension prod_i [K_i : Q_p], and isomorphic as a Q_p-algebra to a finite product of finite separable field extensions of Q_p. The same holds for every finite-dimensional commutative Q_p-algebra that is formally unramified over Q_p.",
+  "explicit_hypotheses": [
+   "p a prime",
+   "iota a finite type; K i fields with finite-dimensional Q_p-algebra structures"
+  ],
+  "implicit_hypotheses": [],
+  "conclusion": "Algebra.FormallyUnramified Q_p (PiTensorProduct Q_p K); IsReduced; an algebra isomorphism onto a product of finitely many fields A_j, each finite-dimensional and separable over Q_p; finrank = prod_i finrank K_i.",
+  "definitions_required": [],
+  "results_used": [],
+  "external_dependencies": [],
+  "lean_declaration": "IUT.PaperIV.LocalFields.packet_equiv_pi",
+  "covers": "Page 9: the ambient ring of R_E = (x)_{i in E} R_i for any finite E is reduced; page 13, Proposition 1.4 (i): tensor products of finitely many finite extensions of Q_p decompose as direct sums of finitely many finite extensions of Q_p. Any finite number of factors.",
+  "not_covered": "The tensor product is taken over Q_p (PiTensorProduct Q_p K), not over Z_p; the identification of the two is formalized only for two factors (pk_tensor_zp). That the ring of fractions of R_E is the packet. The inclusion p^(d_{I*}) (R_I)^~ subset R_I.",
+  "statement_status": "STATEMENT_FORMALIZED",
+  "proof_status": "KERNEL_VERIFIED",
+  "obligations": [],
+  "ambiguities": [],
+  "scope": "packet = PiTensorProduct Q_p K for a finite family of finite extensions K i of Q_p; general statements for finite-dimensional formally unramified commutative Q_p-algebras W",
+  "lemmas": [
+   "IUT.PaperIV.LocalFields.packet_formallyUnramified",
+   "IUT.PaperIV.LocalFields.packet_isReduced",
+   "IUT.PaperIV.LocalFields.packet_finrank",
+   "IUT.PaperIV.LocalFields.packet_nontrivial",
+   "IUT.PaperIV.LocalFields.packet_isReduced_of_unramified",
+   "IUT.PaperIV.LocalFields.packet_equiv_pi_of_unramified"
+  ]
+ },
+ "IUT4.Prop1_1.frag.pk_tensor_zp": {
+  "kind": "fragment",
+  "parent": "IUT4.Prop1_1",
+  "source": {
+   "paper": "Inter-universal Teichmuller Theory IV",
+   "pdf_pages": "pages 9 and 13",
+   "pages_read": "rendered and checked: IUT IV pages 9, 10, 13, 14"
+  },
+  "content": "For fields K1, K2 with Q_p-algebra and Z_p-algebra structures forming scalar towers Z_p -> Q_p -> K_i, the natural algebra map K1 (x)_{Z_p} K2 -> K1 (x)_{Q_p} K2, x (x) y |-> x (x) y, is bijective.",
+  "explicit_hypotheses": [
+   "p a prime",
+   "K1, K2 fields with Q_p-algebra and Z_p-algebra structures and IsScalarTower Z_p Q_p K_i"
+  ],
+  "implicit_hypotheses": [],
+  "conclusion": "Function.Bijective (Algebra.TensorProduct.mapOfCompatibleSMul Q_p Z_p Z_p K1 K2).",
+  "definitions_required": [],
+  "results_used": [],
+  "external_dependencies": [],
+  "lean_declaration": "IUT.PaperIV.LocalFields.packet_tensor_zp_bijective",
+  "covers": "Pages 9 and 13 take tensor products over Z_p; for two fields containing Q_p the tensor product over Z_p is the tensor product over Q_p used in Lean.",
+  "not_covered": "Setting: two factors; any fields K1, K2 over Q_p with compatible Z_p-structures. The same identification for more than two factors (PiTensorProduct over Z_p versus over Q_p); finite dimensionality is not needed and not assumed. Counted as a model test: an identification of the tensor product over Z_p of the pages with the tensor product over Q_p used in Lean, not a statement printed on the pages read.",
+  "statement_status": "STATEMENT_FORMALIZED",
+  "proof_status": "KERNEL_VERIFIED",
+  "obligations": [],
+  "ambiguities": [],
+  "scope": "model_test",
+  "lemmas": []
+ },
+ "IUT4.Prop1_1.frag.td_different_ideal": {
+  "kind": "fragment",
+  "parent": "IUT4.Prop1_1",
+  "source": {
+   "paper": "Inter-universal Teichmuller Theory IV",
+   "pdf_pages": "pages 9 to 10",
+   "pages_read": "rendered and checked: pages 9, 10, 11"
+  },
+  "content": "For finite extensions K1, K2 of Q_p, delta any element of the different ideal of R2 = integralClosure Z_p K2 over Z_p, and z in K1 tmul_{Q_p} K2 integral over Z_p, the product (1 tmul delta) z lies in the additive span of the pure tensors x tmul y with x, y integral over Z_p.",
+  "explicit_hypotheses": [
+   "p a prime",
+   "K1 a field with a Q_p-algebra structure (no finiteness assumed)",
+   "K2 a field with a finite-dimensional Q_p-algebra structure and a compatible Z_p-algebra structure (IsScalarTower Z_p Q_p K2); R2 = integralClosure Z_p K2",
+   "delta in differentIdeal Z_p R2",
+   "z in padicPacketNormalization p K1 K2"
+  ],
+  "implicit_hypotheses": [],
+  "conclusion": "(1 tmul delta) * z is in padicPacketIntegers p K1 K2.",
+  "definitions_required": [],
+  "results_used": [],
+  "external_dependencies": [],
+  "lean_declaration": "IUT.PaperIV.LocalFields.tensorDiff_mul_mem_packetIntegers",
+  "covers": "Page 9, display of Proposition 1.1, first inclusion p^{d_{I*}} (R_I)^~ inside R_I, for |I| = 2 and I* = {2}, in the stronger form with any element of the different ideal in place of p^{d_2}; page 10, the case of cardinality two that the proof reduces to, proved from the definition of the different via the trace dual basis. The Lean proof does not follow the page's route (base change to the ring of integers of an algebraic closure and faithful flatness); it uses the trace dual basis of a Z_p-basis of R2 and the integrality of the trace over K1.",
+  "not_covered": "More than two factors (the induction on |I| of page 10); the choice I* = {1} (same statement with the factors exchanged, not separately stated); the identification of K1 tensor_{Z_p} K2 with K1 tensor_{Q_p} K2; that padicPacketNormalization is the normalization of R_E in its total ring of fractions; the second inclusion R_I inside (R_I)^~ is padicPacketIntegers_subset in IUT.Prerequisites.PadicVolume, not this record.",
+  "statement_status": "STATEMENT_FORMALIZED",
+  "proof_status": "KERNEL_VERIFIED",
+  "obligations": [],
+  "ambiguities": [],
+  "scope": "two factors only (I = {1, 2}, * = 1, I* = {2}); tensor products over Q_p of the fields, R_E = padicPacketIntegers (additive span of x tmul y with x, y integral over Z_p), (R_E)^~ = padicPacketNormalization (elements integral over Z_p); different = Mathlib differentIdeal Z_p R2",
+  "lemmas": [
+   "IUT.PaperIV.LocalFields.tensorDiff_trace_one_tmul",
+   "IUT.PaperIV.LocalFields.tensorDiff_isIntegralElem_trace",
+   "IUT.PaperIV.LocalFields.tensorDiff_padicVolIntegral_iff"
+  ]
+ },
+ "IUT4.Prop1_1.frag.td_generator": {
+  "kind": "fragment",
+  "parent": "IUT4.Prop1_1",
+  "source": {
+   "paper": "Inter-universal Teichmuller Theory IV",
+   "pdf_pages": "page 9",
+   "pages_read": "rendered and checked: pages 9, 10, 11"
+  },
+  "content": "As td_different_ideal, with delta a generator of the different ideal of R2 over Z_p (Ideal.span {delta} = differentIdeal Z_p R2), which is the page's element p^{d_2} of order d_2.",
+  "explicit_hypotheses": [
+   "p a prime",
+   "K1 a field with a Q_p-algebra structure (no finiteness assumed)",
+   "K2 a field with a finite-dimensional Q_p-algebra structure and a compatible Z_p-algebra structure (IsScalarTower Z_p Q_p K2); R2 = integralClosure Z_p K2",
+   "Ideal.span {delta} = differentIdeal Z_p R2",
+   "z in padicPacketNormalization p K1 K2"
+  ],
+  "implicit_hypotheses": [],
+  "conclusion": "(1 tmul delta) * z is in padicPacketIntegers p K1 K2.",
+  "definitions_required": [],
+  "results_used": [],
+  "external_dependencies": [],
+  "lean_declaration": "IUT.PaperIV.LocalFields.tensorDiff_generator_mul_mem_packetIntegers",
+  "covers": "Page 9, Proposition 1.1, p^{d_{I*}} (R_I)^~ inside R_I for |I| = 2, I* = {2}, with p^{d_{I*}} = p^{d_2} read as a generator of the different ideal of R_2 (the page: d_i is the order of any generator of the different ideal; p^{d_{I*}} may be a product of elements p^{d_i} of R_i).",
+  "not_covered": "More than two factors; I* = {1}; the identification of K1 tensor_{Z_p} K2 with K1 tensor_{Q_p} K2; that padicPacketNormalization is the normalization of R_E in its total ring of fractions. The order form is td_order.",
+  "statement_status": "STATEMENT_FORMALIZED",
+  "proof_status": "KERNEL_VERIFIED",
+  "obligations": [],
+  "ambiguities": [],
+  "scope": "two factors only (I = {1, 2}, * = 1, I* = {2}); tensor products over Q_p of the fields, R_E = padicPacketIntegers (additive span of x tmul y with x, y integral over Z_p), (R_E)^~ = padicPacketNormalization (elements integral over Z_p); different = Mathlib differentIdeal Z_p R2"
+ },
+ "IUT4.Prop1_1.frag.td_order": {
+  "kind": "fragment",
+  "parent": "IUT4.Prop1_1",
+  "source": {
+   "paper": "Inter-universal Teichmuller Theory IV",
+   "pdf_pages": "page 9",
+   "pages_read": "rendered and checked: pages 9, 10, 11"
+  },
+  "content": "For finite extensions K1, K2 of Q_p, a prime P of R2 = integralClosure Z_p K2 over p, d_2 = differentOrder Z_p R2 P (exponent of P in the different divided by the ramification index), any y in K2 with spectral norm p^(-d_2) (ord(y) = d_2), and z in K1 tmul_{Q_p} K2 integral over Z_p: (1 tmul y) z lies in the additive span of the x tmul y' with x, y' integral over Z_p.",
+  "explicit_hypotheses": [
+   "p a prime",
+   "K1 a field with a Q_p-algebra structure (no finiteness assumed)",
+   "K2 a field with a finite-dimensional Q_p-algebra structure and a compatible Z_p-algebra structure (IsScalarTower Z_p Q_p K2); R2 = integralClosure Z_p K2",
+   "P a prime ideal of R2 lying over the maximal ideal of Z_p",
+   "y in K2 with spectral norm p^(-differentOrder Z_p R2 P)",
+   "z in padicPacketNormalization p K1 K2"
+  ],
+  "implicit_hypotheses": [],
+  "conclusion": "(1 tmul y) * z is in padicPacketIntegers p K1 K2.",
+  "definitions_required": [],
+  "results_used": [],
+  "external_dependencies": [],
+  "lean_declaration": "IUT.PaperIV.LocalFields.tensorDiff_order_mul_mem_packetIntegers",
+  "covers": "Page 9, Proposition 1.1, p^{d_{I*}} (R_I)^~ inside R_I for |I| = 2, I* = {2}, with p^{d_2} any element of k_2 of order d_2, as printed (ord normalized by ord(p) = 1).",
+  "not_covered": "More than two factors (the induction on |I| of page 10); I* = {1}; the identification of K1 tensor_{Z_p} K2 with K1 tensor_{Q_p} K2; that padicPacketNormalization is the normalization of R_E in its total ring of fractions; the second inclusion R_I inside (R_I)^~ (padicPacketIntegers_subset in IUT.Prerequisites.PadicVolume).",
+  "statement_status": "STATEMENT_FORMALIZED",
+  "proof_status": "KERNEL_VERIFIED",
+  "obligations": [],
+  "ambiguities": [],
+  "scope": "two factors only (I = {1, 2}, * = 1, I* = {2}); tensor products over Q_p of the fields, R_E = padicPacketIntegers (additive span of x tmul y with x, y integral over Z_p), (R_E)^~ = padicPacketNormalization (elements integral over Z_p); different = Mathlib differentIdeal Z_p R2"
+ },
  "IUT4.Prop1_2": {
   "source": {
    "paper": "Inter-universal Teichmuller Theory IV",
@@ -313,7 +688,7 @@
   "statement_status": "EXTRACTED",
   "proof_status": "BLOCKED_BY_MATHLIB",
   "obligations": [
-   "The inclusions (ii) to (iv) need the tensor products R_I and Proposition 1.1; not formalized. Assertion (i) is proved for k_i = Q_p (IUT4.Prop1_2.frag.log_series_def, IUT4.Prop1_2.frag.log_series_norm, IUT4.Prop1_2.frag.log_hom, IUT4.Prop1_2.frag.i_Qp), for finite extensions of Q_p in a normed-field model with a hypothesis on e (IUT4.Prop1_2.frag.i_model, IUT4.Prop1_2.frag.i_equality_model), and for every finite extension L of Q_p with R_i = integralClosure Z_p L, e_i = Ideal.ramificationIdx and the spectral norm, with no hypothesis on the norm (IUT4.Prop1_2.frag.bridge_i). No declaration states the whole proposition.",
+   "The inclusions (ii) to (iv) need the tensor products R_I and Proposition 1.1; they are not formalized, except the first display of the proof of (ii) for two factors in the stronger form with d_{I*} = d_2 in place of d_I (IUT4.Prop1_2.frag.td_log_span). Assertion (i) is proved for k_i = Q_p (IUT4.Prop1_2.frag.log_series_def, IUT4.Prop1_2.frag.log_series_norm, IUT4.Prop1_2.frag.log_hom, IUT4.Prop1_2.frag.i_Qp), for finite extensions of Q_p in a normed-field model with a hypothesis on e (IUT4.Prop1_2.frag.i_model, IUT4.Prop1_2.frag.i_equality_model), and for every finite extension L of Q_p with R_i = integralClosure Z_p L, e_i = Ideal.ramificationIdx and the spectral norm, with no hypothesis on the norm (IUT4.Prop1_2.frag.bridge_i). No declaration states the whole proposition.",
    "Elementary facts about a_i, b_i used in the proof are checked in the fragments listed in `fragments`."
   ],
   "ambiguities": [
@@ -339,7 +714,8 @@
    "IUT4.Prop1_2.frag.ext_log_isometry",
    "IUT4.Prop1_2.frag.i_model",
    "IUT4.Prop1_2.frag.i_equality_model",
-   "IUT4.Prop1_2.frag.i_Qp_consistency"
+   "IUT4.Prop1_2.frag.i_Qp_consistency",
+   "IUT4.Prop1_2.frag.td_log_span"
   ]
  },
  "IUT4.Prop1_2.frag.a_b_of_le": {
@@ -992,6 +1368,39 @@
   ],
   "cor3_12_dependency": "independent"
  },
+ "IUT4.Prop1_2.frag.td_log_span": {
+  "kind": "fragment",
+  "parent": "IUT4.Prop1_2",
+  "source": {
+   "paper": "Inter-universal Teichmuller Theory IV",
+   "pdf_pages": "pages 10 to 11",
+   "pages_read": "rendered and checked: pages 9, 10, 11"
+  },
+  "content": "For finite extensions K1, K2 of Q_p with primes P_i of R_i = integralClosure Z_p K_i over p, e_i = P_i.ramificationIdx, a_i = Proposition1_2.a p e_i, u_i in K_i with spectral norm p^(-a_i) (ord(u_i) = a_i), delta in the different ideal of R2 over Z_p, and z in K1 tmul K2 integral over Z_p: (u1 tmul u2 delta) z lies in the additive span of x tmul y with x in log_p(R1^x) and y in log_p(R2^x).",
+  "explicit_hypotheses": [
+   "p a prime",
+   "K1, K2 fields with finite-dimensional Q_p-algebra structures and compatible Z_p-algebra structures (IsScalarTower Z_p Q_p K_i); R_i = integralClosure Z_p K_i",
+   "P1, P2 prime ideals of R1, R2 lying over the maximal ideal of Z_p",
+   "delta in differentIdeal Z_p R2",
+   "u1 in K1, u2 in K2 with spectral norm p^(-a_i), a_i = Proposition1_2.a p (P_i.ramificationIdx Z_p)",
+   "z in padicPacketNormalization p K1 K2"
+  ],
+  "implicit_hypotheses": [],
+  "conclusion": "(u1 tmul (u2 * delta)) * z is in the additive submonoid generated by the x tmul y with x in extLogUnit of the units of R1 and y in extLogUnit of the units of R2.",
+  "definitions_required": [],
+  "results_used": [
+   "IUT4.Prop1_1"
+  ],
+  "external_dependencies": [],
+  "lean_declaration": "IUT.PaperIV.LocalFields.tensorDiff_mul_mem_logUnit_span",
+  "covers": "Page 11, proof of Proposition 1.2 (ii), first display p^{d_I + a_I} (R_I)^~ inside tensor of p^{a_i} R_i, for two factors and with d_{I*} = d_2 in place of d_I (a stronger inclusion), followed by Proposition 1.2 (i) p^{a_i} R_i inside log_p(R_i^x) (padicBridge_extLogUnit_image_fractionalIdeal).",
+  "not_covered": "The page's display with d_I = d_1 + d_2 (only the stronger form with d_{I*} = d_2 is stated; the reduction is not derived in Lean); the intermediate inclusion into tensor of p^{a_i} R_i is not stated separately; Proposition 1.2 (ii) itself: the automorphism phi of log_p(R_I^x) tensor Q_p, the multiplication by p^lambda with lambda in (1/e_i)Z, the floor of lambda minus d_I minus a_I, and the inclusion log_p(R_I^x) inside p^{-b_I} (R_I)^~; (iii) and (iv); more than two factors.",
+  "statement_status": "STATEMENT_FORMALIZED",
+  "proof_status": "KERNEL_VERIFIED",
+  "obligations": [],
+  "ambiguities": [],
+  "scope": "two factors only (I = {1, 2}, * = 1, I* = {2}); tensor products over Q_p of the fields, R_E = padicPacketIntegers (additive span of x tmul y with x, y integral over Z_p), (R_E)^~ = padicPacketNormalization (elements integral over Z_p); different = Mathlib differentIdeal Z_p R2"
+ },
  "IUT4.Prop1_3": {
   "source": {
    "paper": "Inter-universal Teichmuller Theory IV",
@@ -1017,7 +1426,7 @@
   "statement_status": "EXTRACTED",
   "proof_status": "BLOCKED_BY_MATHLIB",
   "obligations": [
-   "Proposition 1.3 over a general base k_0 (the transitivity of the different over R_0, ramification in towers) and (ii) beyond its base case (Galois and Kummer extensions, the bound n_i) are not formalized. For k_0 = Q_p: the lower bound of (i) is proved for rings of integers of finite extensions of Q_p (IUT4.Prop1_3.frag.i_differentOrder_ge, IUT4.Prop1_3.frag.i_differentOrder_ge_tower, IUT4.Prop1_3.frag.i_padic_differentOrder_ge), the prime over p is unique (IUT.PaperIV.LocalFields.padicBridge_prime_eq_maximalIdeal), the equality in the tame case, the strict inequality in the wild case and their equivalence are proved (IUT4.Prop1_3.frag.i_tame_equality_padic, IUT4.Prop1_3.frag.i_wild_inequality_padic, IUT4.Prop1_3.frag.i_equality_iff_tame_padic), and (ii) is proved in its base case k_1 = k_i tame over Q_p (IUT4.Prop1_3.frag.ii_base_padic). These are separate declarations; none states (i) for k_0 = Q_p by itself.",
+   "Over a general base Q_p <= k_0 <= k_i, the transitivity of the different and of the ramification indices is proved (IUT4.Prop1_3.frag.tower_transitivity), the inequality of (i) and its equality in the tame case are proved as two declarations (IUT4.Prop1_3.frag.tower_i_ge, IUT4.Prop1_3.frag.tower_i_tame_equality), and (ii) is proved when k_i is tame over k_0 and when n_i = 0 (IUT4.Prop1_3.frag.tower_ii_tame, IUT4.Prop1_3.frag.tower_ii_n_zero). Assertion (ii) is stated with its hypotheses (IUT4.Prop1_3.frag.tower_ii_statement); its wild Galois case (the induction on n_i through Kummer extensions of degree p) and the converse of the tame equality over a general k_0 are not formalized. For k_0 = Q_p: the lower bound of (i) is proved for rings of integers of finite extensions of Q_p (IUT4.Prop1_3.frag.i_differentOrder_ge, IUT4.Prop1_3.frag.i_differentOrder_ge_tower, IUT4.Prop1_3.frag.i_padic_differentOrder_ge), the prime over p is unique (IUT.PaperIV.LocalFields.padicBridge_prime_eq_maximalIdeal), the equality in the tame case, the strict inequality in the wild case and their equivalence are proved (IUT4.Prop1_3.frag.i_tame_equality_padic, IUT4.Prop1_3.frag.i_wild_inequality_padic, IUT4.Prop1_3.frag.i_equality_iff_tame_padic), and (ii) is proved in its base case k_1 = k_i tame over Q_p (IUT4.Prop1_3.frag.ii_base_padic). These are separate declarations; none states (i) for k_0 = Q_p by itself.",
    "Arithmetic steps of the proof are checked in the fragments listed in `fragments`."
   ],
   "ambiguities": [],
@@ -1035,7 +1444,14 @@
    "IUT4.Prop1_3.frag.i_tame_equality_padic",
    "IUT4.Prop1_3.frag.i_wild_inequality_padic",
    "IUT4.Prop1_3.frag.i_equality_iff_tame_padic",
-   "IUT4.Prop1_3.frag.ii_base_padic"
+   "IUT4.Prop1_3.frag.ii_base_padic",
+   "IUT4.Prop1_3.frag.tower_i_ge",
+   "IUT4.Prop1_3.frag.tower_i_tame_equality",
+   "IUT4.Prop1_3.frag.tower_ii_exponent_bound",
+   "IUT4.Prop1_3.frag.tower_ii_n_zero",
+   "IUT4.Prop1_3.frag.tower_ii_statement",
+   "IUT4.Prop1_3.frag.tower_ii_tame",
+   "IUT4.Prop1_3.frag.tower_transitivity"
   ]
  },
  "IUT4.Prop1_3.frag.i_min": {
@@ -1455,6 +1871,251 @@
   "lemmas": [],
   "scope": "k_0 = Q_p (d_0 = 0, e_0 = 1, e_{i/0} = e); L = k_i a finite extension of Q_p; R_i = integralClosure Z_p L (local by IUT.PaperIV.LocalFields.padicBridge_isLocalRing, P unique by padicBridge_prime_eq_maximalIdeal); e = Ideal.ramificationIdx of P over pZ_p; d_i = differentOrder Z_p R_i P"
  },
+ "IUT4.Prop1_3.frag.tower_i_ge": {
+  "kind": "fragment",
+  "parent": "IUT4.Prop1_3",
+  "source": {
+   "paper": "Inter-universal Teichmuller Theory IV",
+   "pdf_pages": "pages 9 to 12",
+   "pages_read": "rendered and checked: pages 9, 11, 12, 13"
+  },
+  "content": "Proposition 1.3 (i), the inequality, for finite extensions Q_p in K in L: d_L >= d_K + (e_{L/K} - 1)/e_L.",
+  "explicit_hypotheses": [
+   "p a prime",
+   "K, L fields with finite-dimensional Q_p-algebra structures, an algebra map K -> L compatible with them (IsScalarTower Q_p K L), and compatible Z_p-algebra structures (IsScalarTower Z_p Q_p K, IsScalarTower Z_p Q_p L)",
+   "P_0 a prime of R_K = integralClosure Z_p K over pZ_p; P a prime of R_L = integralClosure Z_p L over pZ_p"
+  ],
+  "implicit_hypotheses": [],
+  "conclusion": "differentOrder Z_p R_K P_0 + (e_{L/K} - 1)/e_L <= differentOrder Z_p R_L P.",
+  "definitions_required": [],
+  "results_used": [],
+  "external_dependencies": [],
+  "lean_declaration": "IUT.PaperIV.LocalFields.towerProp1_3i_ge",
+  "lean_module": "IUT.PaperIV.LocalFields.Tower",
+  "covers": "Pages 11 and 12, Proposition 1.3 (i): d_i >= d_0 + (e_{i/0} - 1)/e_i, for a general subfield k_0.",
+  "not_covered": "The equality in the tame case (see tower_i_tame_equality); the converse that equality forces tameness over a general k_0; the paper's proof through an Eisenstein polynomial is not followed (the proof here uses Mathlib's bound P^{e-1} | D and transitivity).",
+  "statement_status": "STATEMENT_FORMALIZED",
+  "proof_status": "KERNEL_VERIFIED",
+  "obligations": [],
+  "ambiguities": [],
+  "cor3_12_dependency": "independent",
+  "scope": "k_0 = K, k_i = L finite extensions of Q_p; R_0 = integralClosure Z_p K, R_i = integralClosure Z_p L, R_K -> R_L given by towerAlgebra; e_0 = ramificationIdx of P_0 over pZ_p, e_i = that of P, e_{i/0} = ramificationIdx of P over R_K (e_i = e_0 e_{i/0} by towerRamificationIdx_eq_mul); d = differentOrder (exponent of the different divided by the ramification index, ord(p) = 1); tame means p does not divide e_{i/0} (finite residue fields); n_i = multiplicity p [L : K]"
+ },
+ "IUT4.Prop1_3.frag.tower_i_tame_equality": {
+  "kind": "fragment",
+  "parent": "IUT4.Prop1_3",
+  "source": {
+   "paper": "Inter-universal Teichmuller Theory IV",
+   "pdf_pages": "pages 9 to 12",
+   "pages_read": "rendered and checked: pages 9, 11, 12, 13"
+  },
+  "content": "Proposition 1.3 (i), the equality, for finite extensions Q_p in K in L: if p does not divide e_{L/K}, then d_L = d_K + (e_{L/K} - 1)/e_L. Proof: the relative different has exponent e_{L/K} - 1 (trace argument over the base R_K: the trace from R_L to R_K is, modulo P_0, e_{L/K} times a nonzero residue trace), then transitivity.",
+  "explicit_hypotheses": [
+   "p a prime",
+   "K, L fields with finite-dimensional Q_p-algebra structures, an algebra map K -> L compatible with them (IsScalarTower Q_p K L), and compatible Z_p-algebra structures (IsScalarTower Z_p Q_p K, IsScalarTower Z_p Q_p L)",
+   "P_0 a prime of R_K = integralClosure Z_p K over pZ_p; P a prime of R_L = integralClosure Z_p L over pZ_p",
+   "p does not divide the ramification index of P over R_K"
+  ],
+  "implicit_hypotheses": [],
+  "conclusion": "differentOrder Z_p R_L P = differentOrder Z_p R_K P_0 + (e_{L/K} - 1)/e_L.",
+  "definitions_required": [],
+  "results_used": [],
+  "external_dependencies": [],
+  "lean_declaration": "IUT.PaperIV.LocalFields.towerProp1_3i_eq_of_tame",
+  "lean_module": "IUT.PaperIV.LocalFields.Tower",
+  "covers": "Page 12: the '>=' of (i) is an equality if k_i is tamely ramified over k_0, for a general subfield k_0.",
+  "not_covered": "Tamely ramified is read as p not dividing e_{L/K} (the residue fields are finite, hence perfect); the converse direction over a general k_0 is not formalized.",
+  "statement_status": "STATEMENT_FORMALIZED",
+  "proof_status": "KERNEL_VERIFIED",
+  "obligations": [],
+  "ambiguities": [],
+  "cor3_12_dependency": "independent",
+  "scope": "k_0 = K, k_i = L finite extensions of Q_p; R_0 = integralClosure Z_p K, R_i = integralClosure Z_p L, R_K -> R_L given by towerAlgebra; e_0 = ramificationIdx of P_0 over pZ_p, e_i = that of P, e_{i/0} = ramificationIdx of P over R_K (e_i = e_0 e_{i/0} by towerRamificationIdx_eq_mul); d = differentOrder (exponent of the different divided by the ramification index, ord(p) = 1); tame means p does not divide e_{i/0} (finite residue fields); n_i = multiplicity p [L : K]",
+  "lemmas": [
+   "IUT.PaperIV.LocalFields.towerDifferentExponent_rel_eq_of_tame",
+   "IUT.PaperIV.LocalFields.tower_differentExponent_eq_of_ne_zero",
+   "IUT.PaperIV.LocalFields.tower_differentExponent_lt_of_intTrace_notMem",
+   "IUT.PaperIV.LocalFields.tower_intTrace_mk_eq",
+   "IUT.PaperIV.LocalFields.tower_trace_quotient_pow",
+   "IUT.PaperIV.LocalFields.tower_exists_span_eq",
+   "IUT.PaperIV.LocalFields.tower_le_comap_pow",
+   "IUT.PaperIV.LocalFields.tower_map_eq_pow",
+   "IUT.PaperIV.LocalFields.tower_finite_quotient",
+   "IUT.PaperIV.LocalFields.tower_natCast_ne_zero"
+  ]
+ },
+ "IUT4.Prop1_3.frag.tower_ii_exponent_bound": {
+  "kind": "fragment",
+  "parent": "IUT4.Prop1_3",
+  "source": {
+   "paper": "Inter-universal Teichmuller Theory IV",
+   "pdf_pages": "pages 9 to 12",
+   "pages_read": "rendered and checked: pages 9, 11, 12, 13"
+  },
+  "content": "Conditional form of Proposition 1.3 (ii) for every finite L/K (no Galois or tameness hypothesis): if the exponent of P in the different of R_L over R_K is at most e_{L/K} - 1 + e_L v_p(e_{L/K}), then d_L <= d_K + n + 1/e_K with n = multiplicity p [L : K].",
+  "explicit_hypotheses": [
+   "p a prime",
+   "K, L fields with finite-dimensional Q_p-algebra structures, an algebra map K -> L compatible with them (IsScalarTower Q_p K L), and compatible Z_p-algebra structures (IsScalarTower Z_p Q_p K, IsScalarTower Z_p Q_p L)",
+   "P_0 a prime of R_K = integralClosure Z_p K over pZ_p; P a prime of R_L = integralClosure Z_p L over pZ_p",
+   "hbound: differentExponent R_K R_L P <= e_{L/K} - 1 + e_L * multiplicity p e_{L/K}"
+  ],
+  "implicit_hypotheses": [],
+  "conclusion": "differentOrder Z_p R_L P <= differentOrder Z_p R_K P_0 + multiplicity p [L : K] + 1/e_K.",
+  "definitions_required": [],
+  "results_used": [],
+  "external_dependencies": [],
+  "lean_declaration": "IUT.PaperIV.LocalFields.towerProp1_3ii_of_exponent_bound",
+  "lean_module": "IUT.PaperIV.LocalFields.Tower",
+  "covers": "Page 12, Proposition 1.3 (ii), conclusion, under the stated bound.",
+  "not_covered": "Setting: k_0 = K, k_i = L finite extensions of Q_p; R_0 = integralClosure Z_p K, R_i = integralClosure Z_p L, R_K -> R_L given by towerAlgebra; e_0 = ramificationIdx of P_0 over pZ_p, e_i = that of P, e_{i/0} = ramificationIdx of P over R_K (e_i = e_0 e_{i/0} by towerRamificationIdx_eq_mul); d = differentOrder (exponent of the different divided by the ramification index, ord(p) = 1); tame means p does not divide e_{i/0} (finite residue fields); n_i = multiplicity p [L : K]. The hypothesis hbound (the classical upper bound for the different of an extension of local fields) is not proved here and is not in Mathlib at the pinned version; it is not a statement of the IUT papers and no page of a source for it was read. Counted as a model test: the implication from the classical upper bound for the different is a reduction made here; the bound is neither printed on the pages read nor proved, and page 12 proves (ii) through Kummer extensions instead.",
+  "statement_status": "STATEMENT_FORMALIZED",
+  "proof_status": "CONDITIONALLY_VERIFIED",
+  "obligations": [
+   "the upper bound v_P(D_{L/K}) <= e_{L/K} - 1 + v_P(e_{L/K}) for an extension of finite extensions of Q_p (hypothesis hbound)"
+  ],
+  "ambiguities": [],
+  "cor3_12_dependency": "independent",
+  "scope": "model_test"
+ },
+ "IUT4.Prop1_3.frag.tower_ii_n_zero": {
+  "kind": "fragment",
+  "parent": "IUT4.Prop1_3",
+  "source": {
+   "paper": "Inter-universal Teichmuller Theory IV",
+   "pdf_pages": "pages 9 to 12",
+   "pages_read": "rendered and checked: pages 9, 11, 12, 13"
+  },
+  "content": "Proposition 1.3 (ii) when n_i = 0 (p does not divide [L : K]), without the Galois hypothesis: d_L <= d_K + n + 1/e_K. Uses e_{L/K} | [L : K] (fundamental identity with one prime).",
+  "explicit_hypotheses": [
+   "p a prime",
+   "K, L fields with finite-dimensional Q_p-algebra structures, an algebra map K -> L compatible with them (IsScalarTower Q_p K L), and compatible Z_p-algebra structures (IsScalarTower Z_p Q_p K, IsScalarTower Z_p Q_p L)",
+   "P_0 a prime of R_K = integralClosure Z_p K over pZ_p; P a prime of R_L = integralClosure Z_p L over pZ_p",
+   "p does not divide finrank K L"
+  ],
+  "implicit_hypotheses": [],
+  "conclusion": "differentOrder Z_p R_L P <= differentOrder Z_p R_K P_0 + multiplicity p [L : K] + 1/e_K.",
+  "definitions_required": [],
+  "results_used": [],
+  "external_dependencies": [],
+  "lean_declaration": "IUT.PaperIV.LocalFields.towerProp1_3ii_of_not_dvd_finrank",
+  "lean_module": "IUT.PaperIV.LocalFields.Tower",
+  "covers": "Page 12, proof of (ii): 'assertion (ii) follows immediately from assertion (i) when n_i = 0'.",
+  "not_covered": "The cases n_i >= 1 with p dividing e_{L/K_1} (wild Galois case).",
+  "statement_status": "STATEMENT_FORMALIZED",
+  "proof_status": "KERNEL_VERIFIED",
+  "obligations": [],
+  "ambiguities": [],
+  "cor3_12_dependency": "independent",
+  "scope": "k_0 = K, k_i = L finite extensions of Q_p; R_0 = integralClosure Z_p K, R_i = integralClosure Z_p L, R_K -> R_L given by towerAlgebra; e_0 = ramificationIdx of P_0 over pZ_p, e_i = that of P, e_{i/0} = ramificationIdx of P over R_K (e_i = e_0 e_{i/0} by towerRamificationIdx_eq_mul); d = differentOrder (exponent of the different divided by the ramification index, ord(p) = 1); tame means p does not divide e_{i/0} (finite residue fields); n_i = multiplicity p [L : K]",
+  "lemmas": [
+   "IUT.PaperIV.LocalFields.towerRamificationIdx_dvd_finrank"
+  ]
+ },
+ "IUT4.Prop1_3.frag.tower_ii_statement": {
+  "kind": "fragment",
+  "parent": "IUT4.Prop1_3",
+  "source": {
+   "paper": "Inter-universal Teichmuller Theory IV",
+   "pdf_pages": "pages 9 to 12",
+   "pages_read": "rendered and checked: pages 9, 11, 12, 13"
+  },
+  "content": "Definition (a Prop, stated not proved): for Q_p in K in K_1 in L finite, if L/K_1 is Galois and K_1/K is tamely ramified (p does not divide the ramification index of the prime of R_{K_1} over R_K), then d_L <= d_K + multiplicity p [L : K] + 1/e_K for the primes P_0, P over p.",
+  "explicit_hypotheses": [
+   "p a prime",
+   "K, L fields with finite-dimensional Q_p-algebra structures, an algebra map K -> L compatible with them (IsScalarTower Q_p K L), and compatible Z_p-algebra structures (IsScalarTower Z_p Q_p K, IsScalarTower Z_p Q_p L)",
+   "P_0 a prime of R_K = integralClosure Z_p K over pZ_p; P a prime of R_L = integralClosure Z_p L over pZ_p",
+   "K_1 a further finite extension with K -> K_1 -> L compatible (IsScalarTower K K_1 L) and compatible Q_p and Z_p structures"
+  ],
+  "implicit_hypotheses": [],
+  "conclusion": "A Prop; no proof.",
+  "definitions_required": [],
+  "results_used": [],
+  "external_dependencies": [],
+  "lean_declaration": "IUT.PaperIV.LocalFields.towerProp1_3iiStatement",
+  "lean_module": "IUT.PaperIV.LocalFields.Tower",
+  "covers": "Page 12, Proposition 1.3 (ii), the full assertion with its hypotheses.",
+  "not_covered": "Not proved; the special cases are tower_ii_tame and tower_ii_n_zero, and the reduction to the different bound is tower_ii_exponent_bound.",
+  "statement_status": "STATEMENT_FORMALIZED",
+  "proof_status": "NOT_EXTRACTED",
+  "obligations": [],
+  "ambiguities": [],
+  "cor3_12_dependency": "independent",
+  "scope": "k_0 = K, k_i = L finite extensions of Q_p; R_0 = integralClosure Z_p K, R_i = integralClosure Z_p L, R_K -> R_L given by towerAlgebra; e_0 = ramificationIdx of P_0 over pZ_p, e_i = that of P, e_{i/0} = ramificationIdx of P over R_K (e_i = e_0 e_{i/0} by towerRamificationIdx_eq_mul); d = differentOrder (exponent of the different divided by the ramification index, ord(p) = 1); tame means p does not divide e_{i/0} (finite residue fields); n_i = multiplicity p [L : K]"
+ },
+ "IUT4.Prop1_3.frag.tower_ii_tame": {
+  "kind": "fragment",
+  "parent": "IUT4.Prop1_3",
+  "source": {
+   "paper": "Inter-universal Teichmuller Theory IV",
+   "pdf_pages": "pages 9 to 12",
+   "pages_read": "rendered and checked: pages 9, 11, 12, 13"
+  },
+  "content": "Proposition 1.3 (ii) in the case k_1 = k_i (L tame over K; the Galois hypothesis is then empty): d_L <= d_K + n + 1/e_K with n = multiplicity p [L : K].",
+  "explicit_hypotheses": [
+   "p a prime",
+   "K, L fields with finite-dimensional Q_p-algebra structures, an algebra map K -> L compatible with them (IsScalarTower Q_p K L), and compatible Z_p-algebra structures (IsScalarTower Z_p Q_p K, IsScalarTower Z_p Q_p L)",
+   "P_0 a prime of R_K = integralClosure Z_p K over pZ_p; P a prime of R_L = integralClosure Z_p L over pZ_p",
+   "p does not divide the ramification index of P over R_K"
+  ],
+  "implicit_hypotheses": [],
+  "conclusion": "differentOrder Z_p R_L P <= differentOrder Z_p R_K P_0 + multiplicity p [L : K] + 1/e_K.",
+  "definitions_required": [],
+  "results_used": [],
+  "external_dependencies": [],
+  "lean_declaration": "IUT.PaperIV.LocalFields.towerProp1_3ii_of_tame",
+  "lean_module": "IUT.PaperIV.LocalFields.Tower",
+  "covers": "Page 12, Proposition 1.3 (ii), in the special case k_1 = k_i.",
+  "not_covered": "The case where L is Galois over a tame K_1 with p dividing e_{L/K_1} (wild case): the paper's induction on n_i through Kummer extensions of degree p is not formalized.",
+  "statement_status": "STATEMENT_FORMALIZED",
+  "proof_status": "KERNEL_VERIFIED",
+  "obligations": [],
+  "ambiguities": [],
+  "cor3_12_dependency": "independent",
+  "scope": "k_0 = K, k_i = L finite extensions of Q_p; R_0 = integralClosure Z_p K, R_i = integralClosure Z_p L, R_K -> R_L given by towerAlgebra; e_0 = ramificationIdx of P_0 over pZ_p, e_i = that of P, e_{i/0} = ramificationIdx of P over R_K (e_i = e_0 e_{i/0} by towerRamificationIdx_eq_mul); d = differentOrder (exponent of the different divided by the ramification index, ord(p) = 1); tame means p does not divide e_{i/0} (finite residue fields); n_i = multiplicity p [L : K]"
+ },
+ "IUT4.Prop1_3.frag.tower_transitivity": {
+  "kind": "fragment",
+  "parent": "IUT4.Prop1_3",
+  "source": {
+   "paper": "Inter-universal Teichmuller Theory IV",
+   "pdf_pages": "pages 9 to 12",
+   "pages_read": "rendered and checked: pages 9, 11, 12, 13"
+  },
+  "content": "Transitivity of the different in the tower Q_p in K in L: e_L = e_K e_{L/K}; v_P(D_{L/Q_p}) = v_P(D_{L/K}) + e_{L/K} v_{P_0}(D_{K/Q_p}); in the normalization ord(p) = 1, d_L = d_K + d_{L/K}/e_K with d_{L/K} = differentOrder R_K R_L P.",
+  "explicit_hypotheses": [
+   "p a prime",
+   "K, L fields with finite-dimensional Q_p-algebra structures, an algebra map K -> L compatible with them (IsScalarTower Q_p K L), and compatible Z_p-algebra structures (IsScalarTower Z_p Q_p K, IsScalarTower Z_p Q_p L)",
+   "P_0 a prime of R_K = integralClosure Z_p K over pZ_p; P a prime of R_L = integralClosure Z_p L over pZ_p"
+  ],
+  "implicit_hypotheses": [],
+  "conclusion": "differentOrder Z_p R_L P = differentOrder Z_p R_K P_0 + differentOrder R_K R_L P / e_K.",
+  "definitions_required": [],
+  "results_used": [],
+  "external_dependencies": [],
+  "lean_declaration": "IUT.PaperIV.LocalFields.towerDifferentOrder_eq",
+  "lean_module": "IUT.PaperIV.LocalFields.Tower",
+  "covers": "Page 12, first display of the proof of (i): the passage from d_i to d_i - d_0 through the relative different of R_i over R_0.",
+  "not_covered": "Not a statement of the paper by itself; it is the transitivity the proof of (i) uses implicitly.",
+  "statement_status": "STATEMENT_FORMALIZED",
+  "proof_status": "KERNEL_VERIFIED",
+  "obligations": [],
+  "ambiguities": [],
+  "cor3_12_dependency": "independent",
+  "scope": "k_0 = K, k_i = L finite extensions of Q_p; R_0 = integralClosure Z_p K, R_i = integralClosure Z_p L, R_K -> R_L given by towerAlgebra; e_0 = ramificationIdx of P_0 over pZ_p, e_i = that of P, e_{i/0} = ramificationIdx of P over R_K (e_i = e_0 e_{i/0} by towerRamificationIdx_eq_mul); d = differentOrder (exponent of the different divided by the ramification index, ord(p) = 1); tame means p does not divide e_{i/0} (finite residue fields); n_i = multiplicity p [L : K]",
+  "lemmas": [
+   "IUT.PaperIV.LocalFields.towerDifferentExponent_eq",
+   "IUT.PaperIV.LocalFields.towerRamificationIdx_eq_mul",
+   "IUT.PaperIV.LocalFields.tower_liesOver",
+   "IUT.PaperIV.LocalFields.towerAlgebra",
+   "IUT.PaperIV.LocalFields.tower_isTorsionFree",
+   "IUT.PaperIV.LocalFields.tower_isIntegralClosure",
+   "IUT.PaperIV.LocalFields.tower_isSeparable",
+   "IUT.PaperIV.LocalFields.tower_isScalarTower_padicInt",
+   "IUT.PaperIV.LocalFields.tower_isScalarTower_int_int",
+   "IUT.PaperIV.LocalFields.tower_isScalarTower_padicInt_int",
+   "IUT.PaperIV.LocalFields.tower_algebraMap_mem"
+  ]
+ },
  "IUT4.Rem1_3_1": {
   "source": {
    "paper": "Inter-universal Teichmuller Theory IV",
@@ -1508,7 +2169,7 @@
   "statement_status": "EXTRACTED",
   "proof_status": "BLOCKED_BY_EXTERNAL_THEOREM",
   "obligations": [
-   "The log-volume of [AbsTopIII], Proposition 5.7, is not read; mu^log is modeled as log(mu(A)/mu(R))/d for a Haar measure mu (IUT4.Prop1_4.frag.muLog_def), an interpretation. With it the normalization (i) is proved for one finite extension of Q_p on its ring of integers (IUT4.Prop1_4.frag.vb_field_normalization) and for tensor packets of two factors on (R_E)~ (IUT4.Prop1_4.frag.vb_packet_normalization); more than two factors are open. The value (ii) is obtained only for p > 2 and e_i <= p - 2 and only when m_i = 0, which is not proved (IUT4.Prop1_4.frag.vb_logunit_eq_of_le); otherwise only bounds are proved (IUT4.Prop1_4.frag.logUnit_bounds, IUT4.Prop1_4.frag.vb_logunit_bounds). The inclusions of (iii) and (iv), which need Proposition 1.1, and the additivity over tensor factors used on page 14 are not formalized.",
+   "The log-volume of [AbsTopIII], Proposition 5.7, is not read; mu^log is modeled as log(mu(A)/mu(R))/d for a Haar measure mu (IUT4.Prop1_4.frag.muLog_def), an interpretation. With it the normalization (i) is proved for one finite extension of Q_p on its ring of integers (IUT4.Prop1_4.frag.vb_field_normalization) for tensor packets of two factors on (R_E)~ (IUT4.Prop1_4.frag.vb_packet_normalization), and for tensor packets over Q_p of any finite number of factors (IUT4.Prop1_4.frag.pk_packet_normalization). The value (ii) is proved for every finite extension of Q_p, with the order of R_i^mu of page 13 (IUT4.Prop1_4.frag.uv_ii, IUT4.Prop1_4.frag.uv_card_torsion); the compatibility of the log-volume with log_p of [AbsTopIII], Proposition 5.7 is replaced by a counting argument inside k_i (IUT4.Prop1_4.frag.uv_kernel_count). The inclusions of (iii) and (iv), which need Proposition 1.1, and the additivity over tensor factors used on page 14 are not formalized.",
    "The arithmetic fragments check the proof starting from supplied volume bounds; the per-index inequality d_i + a_i >= 1 (2 for p = 2) is proved for actual finite extensions of Q_p (IUT4.Prop1_4.frag.bridge_d_add_a). None of the fragments establishes the containments of (iii) and (iv)."
   ],
   "ambiguities": [
@@ -1541,7 +2202,19 @@
    "IUT4.Prop1_4.frag.vb_fractional_ideal",
    "IUT4.Prop1_4.frag.vb_logunit_eq_of_le",
    "IUT4.Prop1_4.frag.vb_packet_normalization",
-   "IUT4.Prop1_4.frag.vb_logunit_bounds"
+   "IUT4.Prop1_4.frag.vb_logunit_bounds",
+   "IUT4.Prop1_4.frag.pk_floor_step",
+   "IUT4.Prop1_4.frag.pk_packet_normalization",
+   "IUT4.Prop1_4.frag.pk_pi_region",
+   "IUT4.Prop1_4.frag.uv_card_torsion",
+   "IUT4.Prop1_4.frag.uv_ii",
+   "IUT4.Prop1_4.frag.uv_ii_card",
+   "IUT4.Prop1_4.frag.uv_ii_of_card",
+   "IUT4.Prop1_4.frag.uv_kernel_count",
+   "IUT4.Prop1_4.frag.uv_m_zero",
+   "IUT4.Prop1_4.frag.uv_measure_units",
+   "IUT4.Prop1_4.frag.uv_residue_degree",
+   "IUT4.Prop1_4.frag.uv_torsion_exponent"
   ]
  },
  "IUT4.Prop1_4.frag.ii_identity": {
@@ -2405,6 +3078,406 @@
    "IUT.PaperIV.LocalFields.volBridge_muLog_logShell_bounds"
   ]
  },
+ "IUT4.Prop1_4.frag.pk_floor_step": {
+  "kind": "fragment",
+  "parent": "IUT4.Prop1_4",
+  "source": {
+   "paper": "Inter-universal Teichmuller Theory IV",
+   "pdf_pages": "page 14",
+   "pages_read": "rendered and checked: IUT IV pages 9, 10, 13, 14"
+  },
+  "content": "For a commutative finite-dimensional Q_p-algebra W with 0 < dim W with the packet log-volume of an additive Haar measure, sets Lambda and A whose coordinate images have positive finite measure, and real x: mu^log(p^floor(x) A) <= (-x + 1) log p + mu^log(A), normalized at Lambda.",
+  "explicit_hypotheses": [
+   "p a prime",
+   "W a commutative finite-dimensional Q_p-algebra with 0 < finrank W, a Borel structure and an additive Haar measure on its coordinate space",
+   "Lambda, A subsets of W whose coordinate images have nonzero finite measure",
+   "x a real number"
+  ],
+  "implicit_hypotheses": [],
+  "conclusion": "padicPacketMuLog p W mu Lambda (p^floor(x) A) <= (-x + 1) log p + padicPacketMuLog p W mu Lambda A.",
+  "definitions_required": [],
+  "results_used": [],
+  "external_dependencies": [],
+  "lean_declaration": "IUT.PaperIV.LocalFields.packet_muLog_floor_smul_le",
+  "covers": "Page 14, first inequality of the computation proving Proposition 1.4 (iii): mu^log(p^floor(lambda - d_I - a_I) log_p(R_I^x)) <= (-lambda + d_I + a_I + 1) log(p) + mu^log(log_p(R_I^x)), with x = lambda - d_I - a_I and A = log_p(R_I^x).",
+  "not_covered": "That log_p(R_I^x) (defined on page 10 as a tensor product over Z_p) has positive finite measure; log_p(R_I^x) is not defined in Lean for several factors. The later lines of the computation, in particular the additivity over tensor factors.",
+  "statement_status": "STATEMENT_FORMALIZED",
+  "proof_status": "KERNEL_VERIFIED",
+  "obligations": [],
+  "ambiguities": [],
+  "scope": "abstract finite-dimensional Q_p-algebra; mu^log = padicPacketMuLog",
+  "lemmas": []
+ },
+ "IUT4.Prop1_4.frag.pk_packet_normalization": {
+  "kind": "fragment",
+  "parent": "IUT4.Prop1_4",
+  "source": {
+   "paper": "Inter-universal Teichmuller Theory IV",
+   "pdf_pages": "pages 9 and 13",
+   "pages_read": "rendered and checked: IUT IV pages 9, 10, 13, 14"
+  },
+  "content": "For a packet PiTensorProduct Q_p K of finitely many finite extensions of Q_p and every additive Haar measure mu on its coordinate space (Module.finBasis): (R_E)^~ is compact and open in coordinates, has positive finite measure, and the packet log-volume normalized at it satisfies mu^log((R_E)^~) = 0 and mu^log(p^n (R_E)^~) = -n log p for every integer n. The general version holds for every nonzero finite-dimensional formally unramified commutative Q_p-algebra.",
+  "explicit_hypotheses": [
+   "p a prime",
+   "iota a finite type; K i fields with finite-dimensional Q_p-algebra structures",
+   "a Borel measurable structure on the coordinate space Q_p^D, D = dim of the packet, and an additive Haar measure mu on it"
+  ],
+  "implicit_hypotheses": [],
+  "conclusion": "Compact and open in coordinates; mu((R_E)^~) neither 0 nor infinite; padicPacketMuLog((R_E)^~) = 0; padicPacketMuLog(p^n (R_E)^~) = -(n log p).",
+  "definitions_required": [],
+  "results_used": [],
+  "external_dependencies": [],
+  "lean_declaration": "IUT.PaperIV.LocalFields.packet_muLog_normalization_tensor",
+  "covers": "Page 13, Proposition 1.4 (i), second sentence: mu^log on compact open subsets of tensor products, normalized so that mu^log((R_E)^~) = 0 and mu^log(p (R_E)^~) = -log(p), for every nonempty finite E.",
+  "not_covered": "That mu^log is the log-volume of [AbsTopIII] Proposition 5.7 (an interpretation: log of Haar measure divided by the dimension); the tensor product is over Q_p; Proposition 1.4 (ii) to (iv).",
+  "statement_status": "STATEMENT_FORMALIZED",
+  "proof_status": "KERNEL_VERIFIED",
+  "obligations": [],
+  "ambiguities": [
+   "Page 13 does not say how the direct summands are weighted; the log of one Haar measure on the packet divided by its dimension is used, which weights a summand A_j by [A_j : Q_p] / dim (see pk_pi_region)."
+  ],
+  "scope": "packet = PiTensorProduct Q_p K; (R_E)^~ = packetNormalizationSet; mu^log = padicPacketMuLog in Module.finBasis coordinates",
+  "lemmas": [
+   "IUT.PaperIV.LocalFields.packet_muLog_normalization",
+   "IUT.PaperIV.LocalFields.packet_normalization_isCompact_isOpen"
+  ]
+ },
+ "IUT4.Prop1_4.frag.pk_pi_region": {
+  "kind": "fragment",
+  "parent": "IUT4.Prop1_4",
+  "source": {
+   "paper": "Inter-universal Teichmuller Theory IV",
+   "pdf_pages": "page 13",
+   "pages_read": "rendered and checked: IUT IV pages 9, 10, 13, 14"
+  },
+  "content": "Let W be a finite-dimensional commutative Q_p-algebra, e : W = prod_j A_j a decomposition into finite extensions A_j of Q_p, nu_j additive Haar measures on the coordinate spaces of the A_j, and S_j subsets of A_j of positive finite measure. Then the packet log-volume of the product region e^(-1)(prod_j S_j), normalized at (R_E)^~, equals sum_j ([A_j : Q_p] / dim W) mu^log_j(S_j), with mu^log_j normalized at the integral elements of A_j. Also: padicPacketMuLog may be computed in any linear coordinates with any Haar measure.",
+  "explicit_hypotheses": [
+   "p a prime",
+   "W a commutative finite-dimensional Q_p-algebra, with a Borel structure and an additive Haar measure mu on its coordinate space",
+   "J a finite type, A j fields with finite-dimensional Q_p-algebra structures, e : W = prod_j A_j a Q_p-algebra isomorphism",
+   "Borel structures and additive Haar measures nu_j on the coordinate spaces of the A_j",
+   "S j subsets of A j whose coordinate images have nonzero finite nu_j-measure"
+  ],
+  "implicit_hypotheses": [],
+  "conclusion": "padicPacketMuLog p W mu (R_E)^~ (e^(-1)(prod_j S_j)) = sum_j (finrank A_j / finrank W) * padicPacketMuLog p (A j) (nu j) (integral elements of A_j) (S j).",
+  "definitions_required": [],
+  "results_used": [],
+  "external_dependencies": [],
+  "lean_declaration": "IUT.PaperIV.LocalFields.packet_muLog_pi_region",
+  "covers": "Page 13, Proposition 1.4 (i): the log-volume on a tensor product obtained from its decomposition as a direct sum of finite extensions of Q_p, on direct product regions; the weights [A_j : Q_p] / dim W are derived from the normalization by the dimension.",
+  "not_covered": "Setting: abstract finite-dimensional Q_p-algebra with a decomposition into fields; mu^log = padicPacketMuLog in Module.finBasis coordinates. The weights are not printed on page 13; the normalized weights of IUT III Remark 3.1.1 (ii) (global degrees) are not formalized. The additivity over tensor factors used on page 14, mu^log(log_p(R_I^x)) = sum_i mu^log(log_p(R_i^x)) + mu^log(R_I), is a different statement and is not proved. Regions that are not direct products. Counted as a model test: the weights [A_j : Q_p] / dim W are derived from the normalization chosen here, not printed on page 13.",
+  "statement_status": "STATEMENT_FORMALIZED",
+  "proof_status": "KERNEL_VERIFIED",
+  "obligations": [],
+  "ambiguities": [
+   "The weighting of the direct summands is an interpretation: the plain normalized Haar log-volume, which gives weights [A_j : Q_p] / dim W."
+  ],
+  "scope": "model_test",
+  "lemmas": [
+   "IUT.PaperIV.LocalFields.packet_muLog_transport"
+  ]
+ },
+ "IUT4.Prop1_4.frag.uv_card_torsion": {
+  "kind": "fragment",
+  "parent": "IUT4.Prop1_4",
+  "source": {
+   "paper": "Inter-universal Teichmuller Theory IV",
+   "pdf_pages": "pages 13 to 14",
+   "pages_read": "rendered and checked: pages 9, 10, 13, 14"
+  },
+  "content": "|R^mu| = p^m (p^f - 1): reduction modulo P maps R^mu onto (R/P)^x (Hensel's lemma, R being P-adically complete, unitVol_isAdicComplete), with kernel the p-primary component.",
+  "explicit_hypotheses": [
+   "p a prime",
+   "L a field with a finite-dimensional Q_p-algebra structure and a compatible Z_p-algebra structure (IsScalarTower Z_p Q_p L)"
+  ],
+  "implicit_hypotheses": [],
+  "conclusion": "Nat.card (CommGroup.torsion R^x) = p^m * (p^f - 1).",
+  "definitions_required": [],
+  "results_used": [],
+  "external_dependencies": [],
+  "lean_declaration": "IUT.PaperIV.LocalFields.unitVol_card_torsion",
+  "lean_module": "IUT.PaperIV.LocalFields.UnitVolume",
+  "covers": "Page 13, preamble of Proposition 1.4: 'Thus, the order of R_i^mu is equal to p^{m_i} (p^{f_i} - 1)'.",
+  "not_covered": "Nothing of this sentence.",
+  "statement_status": "STATEMENT_FORMALIZED",
+  "proof_status": "KERNEL_VERIFIED",
+  "obligations": [],
+  "ambiguities": [],
+  "cor3_12_dependency": "independent",
+  "scope": "finite extension L of Q_p with Mathlib's spectral norm; R_i = integralClosure Z_p L; R_i^x the image of its unit group; R_i^mu = CommGroup.torsion of the unit group; e_i = Ideal.ramificationIdx of P; f_i = unitVolResidueDegree (Ideal.inertiaDeg); m_i = unitVolTorsionExponent; log_p = extLogUnit; mu^log = padicMuLog normalized at R",
+  "lemmas": [
+   "IUT.PaperIV.LocalFields.unitVol_isAdicComplete",
+   "IUT.PaperIV.LocalFields.unitVol_not_dvd_pow_sub_one"
+  ]
+ },
+ "IUT4.Prop1_4.frag.uv_ii": {
+  "kind": "fragment",
+  "parent": "IUT4.Prop1_4",
+  "source": {
+   "paper": "Inter-universal Teichmuller Theory IV",
+   "pdf_pages": "pages 13 to 14",
+   "pages_read": "rendered and checked: pages 9, 10, 13, 14"
+  },
+  "content": "IUT IV Proposition 1.4 (ii) for one finite extension: mu^log(log_p(R^x)) = -(1/e + m/(e f)) log p, with e = P.ramificationIdx Z_p, f = unitVolResidueDegree, m = unitVolTorsionExponent, for every additive Haar measure mu on L.",
+  "explicit_hypotheses": [
+   "p a prime",
+   "L a field with a finite-dimensional Q_p-algebra structure and a compatible Z_p-algebra structure (IsScalarTower Z_p Q_p L)",
+   "L normed by the spectral norm, with the Borel measurable structure",
+   "mu any additive Haar measure on L",
+   "P a prime ideal of R = integralClosure Z_p L lying over pZ_p"
+  ],
+  "implicit_hypotheses": [],
+  "conclusion": "padicMuLog p mu R (extLogUnit '' R^x) = -(1/e + m/(e f)) log p.",
+  "definitions_required": [],
+  "results_used": [],
+  "external_dependencies": [],
+  "lean_declaration": "IUT.PaperIV.LocalFields.unitVol_muLog_logUnit_eq",
+  "lean_module": "IUT.PaperIV.LocalFields.UnitVolume",
+  "covers": "Page 13, Proposition 1.4 (ii), the display, on the paper's objects for one k_i.",
+  "not_covered": "That padicMuLog (normalized Haar measure of L) is the log-volume of [AbsTopIII] Proposition 5.7 normalized as in (i): an identification of models, not a step of the proof; the packet setting of (iii) and (iv).",
+  "statement_status": "STATEMENT_FORMALIZED",
+  "proof_status": "KERNEL_VERIFIED",
+  "obligations": [],
+  "ambiguities": [],
+  "cor3_12_dependency": "independent",
+  "scope": "finite extension L of Q_p with Mathlib's spectral norm; R_i = integralClosure Z_p L; R_i^x the image of its unit group; R_i^mu = CommGroup.torsion of the unit group; e_i = Ideal.ramificationIdx of P; f_i = unitVolResidueDegree (Ideal.inertiaDeg); m_i = unitVolTorsionExponent; log_p = extLogUnit; mu^log = padicMuLog normalized at R"
+ },
+ "IUT4.Prop1_4.frag.uv_ii_card": {
+  "kind": "fragment",
+  "parent": "IUT4.Prop1_4",
+  "source": {
+   "paper": "Inter-universal Teichmuller Theory IV",
+   "pdf_pages": "pages 13 to 14",
+   "pages_read": "rendered and checked: pages 9, 10, 13, 14"
+  },
+  "content": "mu^log(log_p(R^x)) = (log(1 - p^(-f)) - log |R^mu|) / (e f), for every additive Haar measure.",
+  "explicit_hypotheses": [
+   "p a prime",
+   "L a field with a finite-dimensional Q_p-algebra structure and a compatible Z_p-algebra structure (IsScalarTower Z_p Q_p L)",
+   "L normed by the spectral norm, with the Borel measurable structure",
+   "mu any additive Haar measure on L",
+   "P a prime ideal of R = integralClosure Z_p L lying over pZ_p"
+  ],
+  "implicit_hypotheses": [],
+  "conclusion": "padicMuLog p mu R (log_p(R^x)) = (log(1 - (p^f)^(-1)) - log |R^mu|)/(e f).",
+  "definitions_required": [],
+  "results_used": [],
+  "external_dependencies": [],
+  "lean_declaration": "IUT.PaperIV.LocalFields.unitVol_muLog_logUnit_eq_card",
+  "lean_module": "IUT.PaperIV.LocalFields.UnitVolume",
+  "covers": "Page 14, proof of (ii): the identity e f mu^log(R^{x mu}) = e f mu^log(R^x) - log(p^m (p^f - 1)) with |R^mu| left as a number.",
+  "not_covered": "See uv_ii for the closed value; the [AbsTopIII] log-volume itself as in uv_kernel_count.",
+  "statement_status": "STATEMENT_FORMALIZED",
+  "proof_status": "KERNEL_VERIFIED",
+  "obligations": [],
+  "ambiguities": [],
+  "cor3_12_dependency": "independent",
+  "scope": "finite extension L of Q_p with Mathlib's spectral norm; R_i = integralClosure Z_p L; R_i^x the image of its unit group; R_i^mu = CommGroup.torsion of the unit group; e_i = Ideal.ramificationIdx of P; f_i = unitVolResidueDegree (Ideal.inertiaDeg); m_i = unitVolTorsionExponent; log_p = extLogUnit; mu^log = padicMuLog normalized at R"
+ },
+ "IUT4.Prop1_4.frag.uv_ii_of_card": {
+  "kind": "fragment",
+  "parent": "IUT4.Prop1_4",
+  "source": {
+   "paper": "Inter-universal Teichmuller Theory IV",
+   "pdf_pages": "pages 13 to 14",
+   "pages_read": "rendered and checked: pages 9, 10, 13, 14"
+  },
+  "content": "If |R^mu| = p^m (p^f - 1) then mu^log(log_p(R^x)) = -(1/e + m/(e f)) log p. The hypothesis is proved by unitVol_card_torsion, so this is used only as a step of uv_ii.",
+  "explicit_hypotheses": [
+   "p a prime",
+   "L a field with a finite-dimensional Q_p-algebra structure and a compatible Z_p-algebra structure (IsScalarTower Z_p Q_p L)",
+   "L normed by the spectral norm, with the Borel measurable structure",
+   "mu any additive Haar measure on L",
+   "P a prime ideal of R = integralClosure Z_p L lying over pZ_p",
+   "|CommGroup.torsion R^x| = p^m (p^f - 1) (a cardinality statement about defined objects)"
+  ],
+  "implicit_hypotheses": [],
+  "conclusion": "mu^log(log_p(R^x)) = -(1/e + m/(e f)) log p.",
+  "definitions_required": [],
+  "results_used": [],
+  "external_dependencies": [],
+  "lean_declaration": "IUT.PaperIV.LocalFields.unitVol_muLog_logUnit_eq_of_card",
+  "lean_module": "IUT.PaperIV.LocalFields.UnitVolume",
+  "covers": "Page 14, last two sentences of the proof of (ii).",
+  "not_covered": "Nothing beyond uv_ii; the hypothesis is discharged there.",
+  "statement_status": "STATEMENT_FORMALIZED",
+  "proof_status": "CONDITIONALLY_VERIFIED",
+  "obligations": [
+   "The order count |R_i^mu| = p^(m_i) (p^(f_i) - 1) printed on page 13 (a hypothesis of the lemma; proved separately in IUT4.Prop1_4.frag.uv_card_torsion and discharged in IUT4.Prop1_4.frag.uv_ii)"
+  ],
+  "ambiguities": [],
+  "cor3_12_dependency": "independent",
+  "scope": "finite extension L of Q_p with Mathlib's spectral norm; R_i = integralClosure Z_p L; R_i^x the image of its unit group; R_i^mu = CommGroup.torsion of the unit group; e_i = Ideal.ramificationIdx of P; f_i = unitVolResidueDegree (Ideal.inertiaDeg); m_i = unitVolTorsionExponent; log_p = extLogUnit; mu^log = padicMuLog normalized at R"
+ },
+ "IUT4.Prop1_4.frag.uv_kernel_count": {
+  "kind": "fragment",
+  "parent": "IUT4.Prop1_4",
+  "source": {
+   "paper": "Inter-universal Teichmuller Theory IV",
+   "pdf_pages": "pages 13 to 14",
+   "pages_read": "rendered and checked: pages 9, 10, 13, 14"
+  },
+  "content": "For u in R^x, log_p u = 0 iff u is torsion; R^mu is finite; and mu(log_p(R^x)) * |R^mu| = mu(R^x) for every additive Haar measure mu on L. Proved by counting cosets of U_r = 1 + B_r (r = 1/(2p)) and of B_r, on which log is a bijection.",
+  "explicit_hypotheses": [
+   "p a prime",
+   "L a field with a finite-dimensional Q_p-algebra structure and a compatible Z_p-algebra structure (IsScalarTower Z_p Q_p L)",
+   "L normed by the spectral norm, with the Borel measurable structure",
+   "mu any additive Haar measure on L"
+  ],
+  "implicit_hypotheses": [],
+  "conclusion": "ker(log_p on R^x) = R^mu; R^mu finite; mu(log_p(R^x)) |R^mu| = mu(R^x).",
+  "definitions_required": [],
+  "results_used": [],
+  "external_dependencies": [],
+  "lean_declaration": "IUT.PaperIV.LocalFields.unitVol_measure_logUnit_mul_card",
+  "lean_module": "IUT.PaperIV.LocalFields.UnitVolume",
+  "covers": "Page 14, proof of (ii): mu^log(log_p(R_i^x)) = mu^log(R_i^{x mu}) and e f mu^log(R_i^{x mu}) = e f mu^log(R_i^x) - log |R_i^mu|.",
+  "not_covered": "The quotient R_i^{x mu} with its induced log-volume and the compatibility of [AbsTopIII] Proposition 5.7 (i) (c): replaced by the counting argument inside L.",
+  "statement_status": "STATEMENT_FORMALIZED",
+  "proof_status": "KERNEL_VERIFIED",
+  "obligations": [],
+  "ambiguities": [],
+  "cor3_12_dependency": "independent",
+  "scope": "finite extension L of Q_p with Mathlib's spectral norm; R_i = integralClosure Z_p L; R_i^x the image of its unit group; R_i^mu = CommGroup.torsion of the unit group; e_i = Ideal.ramificationIdx of P; f_i = unitVolResidueDegree (Ideal.inertiaDeg); m_i = unitVolTorsionExponent; log_p = extLogUnit; mu^log = padicMuLog normalized at R",
+  "lemmas": [
+   "IUT.PaperIV.LocalFields.unitVol_measure_logUnit_mul_card_of_normed",
+   "IUT.PaperIV.LocalFields.unitVol_measure_range_eq_index",
+   "IUT.PaperIV.LocalFields.unitVol_extLogUnit_eq_zero_iff",
+   "IUT.PaperIV.LocalFields.unitVol_extLogUnit_mul"
+  ]
+ },
+ "IUT4.Prop1_4.frag.uv_m_zero": {
+  "kind": "fragment",
+  "parent": "IUT4.Prop1_4",
+  "source": {
+   "paper": "Inter-universal Teichmuller Theory IV",
+   "pdf_pages": "pages 13 to 14",
+   "pages_read": "rendered and checked: pages 9, 10, 13, 14"
+  },
+  "content": "For p > 2 and e <= p - 2: |R^mu| = p^f - 1 and m = 0, obtained by comparing the general value with volBridge_muLog_logUnit_eq_of_le (equality case of Proposition 1.2 (i)).",
+  "explicit_hypotheses": [
+   "p a prime",
+   "L a field with a finite-dimensional Q_p-algebra structure and a compatible Z_p-algebra structure (IsScalarTower Z_p Q_p L)",
+   "P a prime ideal of R = integralClosure Z_p L lying over pZ_p",
+   "2 < p",
+   "P.ramificationIdx Z_p <= p - 2"
+  ],
+  "implicit_hypotheses": [],
+  "conclusion": "|R^mu| = p^f - 1 and unitVolTorsionExponent p L = 0.",
+  "definitions_required": [],
+  "results_used": [],
+  "external_dependencies": [],
+  "lean_declaration": "IUT.PaperIV.LocalFields.unitVol_card_torsion_of_le",
+  "lean_module": "IUT.PaperIV.LocalFields.UnitVolume",
+  "covers": "Pages 10 and 13: consistency of Proposition 1.2 (i) (equality case, mu^log(log_p R^x) = -(1/e) log p) with (ii): the case m = 0.",
+  "not_covered": "Setting: finite extension L of Q_p with Mathlib's spectral norm; R_i = integralClosure Z_p L; R_i^x the image of its unit group; R_i^mu = CommGroup.torsion of the unit group; e_i = Ideal.ramificationIdx of P; f_i = unitVolResidueDegree (Ideal.inertiaDeg); m_i = unitVolTorsionExponent; log_p = extLogUnit; mu^log = padicMuLog normalized at R. The direct argument through the ramification of Q_p(zeta_p) is not used. Counted as a model test: a consistency check between Proposition 1.2 (i) and Proposition 1.4 (ii) made here; the pages read do not print m_i = 0 for e_i <= p - 2.",
+  "statement_status": "STATEMENT_FORMALIZED",
+  "proof_status": "KERNEL_VERIFIED",
+  "obligations": [],
+  "ambiguities": [],
+  "cor3_12_dependency": "independent",
+  "scope": "model_test"
+ },
+ "IUT4.Prop1_4.frag.uv_measure_units": {
+  "kind": "fragment",
+  "parent": "IUT4.Prop1_4",
+  "source": {
+   "paper": "Inter-universal Teichmuller Theory IV",
+   "pdf_pages": "pages 13 to 14",
+   "pages_read": "rendered and checked: pages 9, 10, 13, 14"
+  },
+  "content": "For every additive Haar measure mu on L: mu(R^x) = mu(R) - p^(-f) mu(R), i.e. mu(R^x) = (1 - p^(-f)) mu(R).",
+  "explicit_hypotheses": [
+   "p a prime",
+   "L a field with a finite-dimensional Q_p-algebra structure and a compatible Z_p-algebra structure (IsScalarTower Z_p Q_p L)",
+   "L normed by the spectral norm, with the Borel measurable structure",
+   "mu any additive Haar measure on L",
+   "P a prime ideal of R = integralClosure Z_p L lying over pZ_p"
+  ],
+  "implicit_hypotheses": [],
+  "conclusion": "mu(R^x) = mu(R) - (p^f)^(-1) mu(R) in ENNReal.",
+  "definitions_required": [],
+  "results_used": [],
+  "external_dependencies": [],
+  "lean_declaration": "IUT.PaperIV.LocalFields.unitVol_measure_units",
+  "lean_module": "IUT.PaperIV.LocalFields.UnitVolume",
+  "covers": "Page 14, proof of (ii): e_i f_i mu^log(R_i^x) = log(1 - p^(-f_i)).",
+  "not_covered": "The log-volume on the group R_i^x of [AbsTopIII] Proposition 5.7 (the model is the Haar measure of L restricted to R^x).",
+  "statement_status": "STATEMENT_FORMALIZED",
+  "proof_status": "KERNEL_VERIFIED",
+  "obligations": [],
+  "ambiguities": [],
+  "cor3_12_dependency": "independent",
+  "scope": "finite extension L of Q_p with Mathlib's spectral norm; R_i = integralClosure Z_p L; R_i^x the image of its unit group; R_i^mu = CommGroup.torsion of the unit group; e_i = Ideal.ramificationIdx of P; f_i = unitVolResidueDegree (Ideal.inertiaDeg); m_i = unitVolTorsionExponent; log_p = extLogUnit; mu^log = padicMuLog normalized at R"
+ },
+ "IUT4.Prop1_4.frag.uv_residue_degree": {
+  "kind": "fragment",
+  "parent": "IUT4.Prop1_4",
+  "source": {
+   "paper": "Inter-universal Teichmuller Theory IV",
+   "pdf_pages": "pages 13 to 14",
+   "pages_read": "rendered and checked: pages 9, 10, 13, 14"
+  },
+  "content": "Definition of f: the inertia degree (Ideal.inertiaDeg) of the maximal ideal of R = integralClosure Z_p L over Z_p. Proved alongside: |R/P| = p^f for every prime P over p (unitVol_card_residueField), P.inertiaDeg = f, f >= 1, and e f = [L : Q_p] (unitVol_ramificationIdx_mul_residueDegree).",
+  "explicit_hypotheses": [
+   "p a prime",
+   "L a field with a finite-dimensional Q_p-algebra structure and a compatible Z_p-algebra structure (IsScalarTower Z_p Q_p L)"
+  ],
+  "implicit_hypotheses": [],
+  "conclusion": "f is defined; |R/P| = p^f; e f = [L:Q_p]; f >= 1.",
+  "definitions_required": [],
+  "results_used": [],
+  "external_dependencies": [],
+  "lean_declaration": "IUT.PaperIV.LocalFields.unitVolResidueDegree",
+  "lean_module": "IUT.PaperIV.LocalFields.UnitVolume",
+  "covers": "Page 13, preamble of Proposition 1.4: p^{f_i} the cardinality of the residue field of k_i; page 14: the factor e_i f_i (the degree used to normalize mu^log).",
+  "not_covered": "The definition itself carries no claim; the claims are in the listed lemmas.",
+  "statement_status": "STATEMENT_FORMALIZED",
+  "proof_status": "NOT_EXTRACTED",
+  "obligations": [],
+  "ambiguities": [],
+  "cor3_12_dependency": "independent",
+  "scope": "finite extension L of Q_p with Mathlib's spectral norm; R_i = integralClosure Z_p L; R_i^x the image of its unit group; R_i^mu = CommGroup.torsion of the unit group; e_i = Ideal.ramificationIdx of P; f_i = unitVolResidueDegree (Ideal.inertiaDeg); m_i = unitVolTorsionExponent; log_p = extLogUnit; mu^log = padicMuLog normalized at R",
+  "lemmas": [
+   "IUT.PaperIV.LocalFields.unitVol_card_residueField",
+   "IUT.PaperIV.LocalFields.unitVol_ramificationIdx_mul_residueDegree",
+   "IUT.PaperIV.LocalFields.unitVol_inertiaDeg_eq",
+   "IUT.PaperIV.LocalFields.unitVol_residueDegree_pos"
+  ]
+ },
+ "IUT4.Prop1_4.frag.uv_torsion_exponent": {
+  "kind": "fragment",
+  "parent": "IUT4.Prop1_4",
+  "source": {
+   "paper": "Inter-universal Teichmuller Theory IV",
+   "pdf_pages": "pages 13 to 14",
+   "pages_read": "rendered and checked: pages 9, 10, 13, 14"
+  },
+  "content": "Definition of m: the exponent of p in the cardinality of the p-primary component (CommGroup.primaryComponent) of the unit group of R. Proved alongside (unitVol_card_primaryComponent): the torsion subgroup R^mu of R^x is finite, the p-primary component is finite, lies in R^mu, and has cardinality exactly p^m.",
+  "explicit_hypotheses": [
+   "p a prime",
+   "L a field with a finite-dimensional Q_p-algebra structure and a compatible Z_p-algebra structure (IsScalarTower Z_p Q_p L)"
+  ],
+  "implicit_hypotheses": [],
+  "conclusion": "m is defined; R^mu finite; |p-primary component| = p^m.",
+  "definitions_required": [],
+  "results_used": [],
+  "external_dependencies": [],
+  "lean_declaration": "IUT.PaperIV.LocalFields.unitVolTorsionExponent",
+  "lean_module": "IUT.PaperIV.LocalFields.UnitVolume",
+  "covers": "Page 13, preamble of Proposition 1.4: R_i^mu the torsion subgroup of R_i^x and p^{m_i} the order of its p-primary component.",
+  "not_covered": "The definition itself carries no claim; the claims are in the listed lemmas.",
+  "statement_status": "STATEMENT_FORMALIZED",
+  "proof_status": "NOT_EXTRACTED",
+  "obligations": [],
+  "ambiguities": [],
+  "cor3_12_dependency": "independent",
+  "scope": "finite extension L of Q_p with Mathlib's spectral norm; R_i = integralClosure Z_p L; R_i^x the image of its unit group; R_i^mu = CommGroup.torsion of the unit group; e_i = Ideal.ramificationIdx of P; f_i = unitVolResidueDegree (Ideal.inertiaDeg); m_i = unitVolTorsionExponent; log_p = extLogUnit; mu^log = padicMuLog normalized at R",
+  "lemmas": [
+   "IUT.PaperIV.LocalFields.unitVol_card_primaryComponent",
+   "IUT.PaperIV.LocalFields.unitVol_primaryComponent_le_torsion"
+  ]
+ },
  "IUT4.Prop1_5": {
   "source": {
    "paper": "Inter-universal Teichmuller Theory IV",
@@ -2718,7 +3791,7 @@
   "statement_status": "EXTRACTED",
   "proof_status": "BLOCKED_BY_MATHLIB",
   "obligations": [
-   "Not formalized: pull-back of arithmetic divisors along a finite extension K/F, the set E|K, and the invariance statements deg(a|_K) = deg(a) of (i) and deg_{E|K}(a|_K) = deg_E(a) of (ii).",
+   "The pull-back of arithmetic divisors along a finite extension is defined with the multipliers e(w|v) and [L_w : K_v], an interpretation of 'defined in the evident fashion' (IUT4.Def1_9.frag.pullback), and the invariance deg(a|_K) = deg(a) of (i) is proved for it (IUT4.Def1_9.frag.normalizedDeg_pullback). Not formalized: the set E|K and the invariance deg_{E|K}(a|_K) = deg_E(a) of (ii).",
    "Not proved: that the local degrees over all valuations above one finite v_Q sum to [F : Q] (proved only for the archimedean place)."
   ],
   "ambiguities": [
@@ -2729,7 +3802,10 @@
    "IUT4.Def1_9.frag.degF",
    "IUT4.Def1_9.frag.normalizedDeg",
    "IUT4.Def1_9.frag.degE",
-   "IUT4.Def1_9.frag.degE_arc_eq_normalizedDeg"
+   "IUT4.Def1_9.frag.degE_arc_eq_normalizedDeg",
+   "IUT4.Def1_9.frag.normalizedDeg_pullback",
+   "IUT4.Def1_9.frag.pullback",
+   "IUT4.Def1_9.frag.pullback_principal"
   ]
  },
  "IUT4.Def1_9.frag.degF": {
@@ -2838,6 +3914,112 @@
   "obligations": [],
   "ambiguities": [],
   "cor3_12_dependency": "independent"
+ },
+ "IUT4.Def1_9.frag.normalizedDeg_pullback": {
+  "kind": "fragment",
+  "parent": "IUT4.Def1_9",
+  "lean_module": "IUT.PaperIV.DegreePullback",
+  "source": {
+   "paper": "Inter-universal Teichmuller Theory IV",
+   "pdf_pages": "pages 21 to 22",
+   "pages_read": "rendered pages 21 and 22"
+  },
+  "content": "For a finite extension L of the number field K and an R-arithmetic divisor a on K, the normalized degree of the pull-back equals the normalized degree of a. Proof: deg_L(a|_L) = [L:K] deg_K(a), from sum over w|v of e(w|v) f(w|v) = [L:K] and q_w = q_v^f(w|v) at finite places, and sum over w|v of [L_w : K_v] = [L:K] at archimedean places.",
+  "explicit_hypotheses": [
+   "K, L number fields with an algebra map K -> L",
+   "a an R-arithmetic divisor on K (ADiv K)"
+  ],
+  "implicit_hypotheses": [],
+  "conclusion": "normalizedDeg (degPbPullback L a) = normalizedDeg a.",
+  "definitions_required": [],
+  "results_used": [],
+  "external_dependencies": [],
+  "lean_declaration": "IUT.PaperIV.DegreePullback.degPb_normalizedDeg_pullback",
+  "covers": "Page 22, Definition 1.9 (i): 'for any finite extension K of F, we have deg(a|_K) = deg(a)'.",
+  "not_covered": "The analogous invariance deg_{E|K}(a|_K) = deg_E(a) of Definition 1.9 (ii). The statement depends on the interpretation of the pull-back recorded in IUT4.Def1_9.frag.pullback.",
+  "statement_status": "STATEMENT_FORMALIZED",
+  "proof_status": "KERNEL_VERIFIED",
+  "obligations": [],
+  "ambiguities": [],
+  "cor3_12_dependency": "independent",
+  "lemmas": [
+   "IUT.PaperIV.DegreePullback.degPb_degF_pullback",
+   "IUT.PaperIV.DegreePullback.degPb_degF_single_inl",
+   "IUT.PaperIV.DegreePullback.degPb_degF_single_inr",
+   "IUT.PaperIV.DegreePullback.degPb_degF_smul",
+   "IUT.PaperIV.DegreePullback.degPb_finrank_int"
+  ]
+ },
+ "IUT4.Def1_9.frag.pullback": {
+  "kind": "fragment",
+  "parent": "IUT4.Def1_9",
+  "lean_module": "IUT.PaperIV.DegreePullback",
+  "source": {
+   "paper": "Inter-universal Teichmuller Theory IV",
+   "pdf_pages": "pages 21 to 22",
+   "pages_read": "rendered pages 21 and 22",
+   "pages_in_paper": "Arithmetic Elliptic Curves in General Position, page 4 (rendered and checked)"
+  },
+  "content": "The pull-back of arithmetic divisors along a finite extension L/K of number fields: the additive map ADiv(K) -> ADiv(L) whose coefficient at a finite place w of L is e(w|v) times the coefficient at the place v of K below w, and whose coefficient at an archimedean place w of L is the local degree [L_w : K_v] (Mathlib's InfinitePlace.inertiaDeg, 1 or 2) times the coefficient at the place v of K below w.",
+  "explicit_hypotheses": [
+   "K, L number fields with an algebra map K -> L"
+  ],
+  "implicit_hypotheses": [],
+  "conclusion": "Definition of degPbPullback; the coefficient formulas degPbPullback_apply_inl and degPbPullback_apply_inr are theorems.",
+  "definitions_required": [],
+  "results_used": [],
+  "external_dependencies": [],
+  "lean_declaration": "IUT.PaperIV.DegreePullback.degPbPullback",
+  "covers": "Page 22, Definition 1.9 (i): the pull-back a|_K in ADiv_R(K) of a to a finite extension, 'defined in the evident fashion'.",
+  "not_covered": "This is a definition: the kernel checks only that it is well typed. The multipliers are not printed on page 22 nor on [GenEll] page 4; they are derived from the requirement that principal divisors pull back to principal divisors (checked by degPb_pullback_principal). The identification with the pull-back of arithmetic line bundles through ADiv/APrc = APic of [GenEll] page 4 is not formalized.",
+  "statement_status": "STATEMENT_FORMALIZED",
+  "proof_status": "NOT_EXTRACTED",
+  "obligations": [],
+  "ambiguities": [
+   "The page says 'defined in the evident fashion'; the choice e(w|v) at finite places and [L_w : K_v] at archimedean places is an interpretation, justified by the principal divisor of [GenEll] page 4."
+  ],
+  "cor3_12_dependency": "independent",
+  "lemmas": [
+   "IUT.PaperIV.DegreePullback.degPbSingle",
+   "IUT.PaperIV.DegreePullback.degPbPrimeOf",
+   "IUT.PaperIV.DegreePullback.degPbPullback_single",
+   "IUT.PaperIV.DegreePullback.degPbPullback_apply_inl",
+   "IUT.PaperIV.DegreePullback.degPbPullback_apply_inr"
+  ]
+ },
+ "IUT4.Def1_9.frag.pullback_principal": {
+  "kind": "fragment",
+  "parent": "IUT4.Def1_9",
+  "lean_module": "IUT.PaperIV.DegreePullback",
+  "source": {
+   "paper": "Inter-universal Teichmuller Theory IV",
+   "pdf_pages": "pages 21 to 22",
+   "pages_read": "rendered pages 21 and 22",
+   "pages_in_paper": "Arithmetic Elliptic Curves in General Position, page 4 (rendered and checked)"
+  },
+  "content": "The pull-back to L of the principal divisor of x in K^x is the principal divisor of the image of x in L^x: ord_w(x) = e(w|v) ord_v(x) (Mathlib's valuation_liesOver) and [K_v : R][L_w : K_v] = [L_w : R] with |x|_w = |x|_v.",
+  "explicit_hypotheses": [
+   "K, L number fields with an algebra map K -> L",
+   "x a unit of K"
+  ],
+  "implicit_hypotheses": [],
+  "conclusion": "degPbPullback L (degPbPrincipal x) = degPbPrincipal (Units.map (algebraMap K L) x).",
+  "definitions_required": [],
+  "results_used": [],
+  "external_dependencies": [],
+  "lean_declaration": "IUT.PaperIV.DegreePullback.degPb_pullback_principal",
+  "covers": "Page 22, the pull-back 'defined in the evident fashion', checked against the principal divisors of [GenEll] page 4; this pins the multipliers of degPbPullback independently of the degree.",
+  "not_covered": "The pull-back of arithmetic line bundles of [GenEll] Definition 1.1 (ii), page 3. Counted as a model test: a check, made here, of the interpretation of the pull-back 'defined in the evident fashion'; the pages read print no statement on pull-backs of principal divisors.",
+  "statement_status": "STATEMENT_FORMALIZED",
+  "proof_status": "KERNEL_VERIFIED",
+  "obligations": [],
+  "ambiguities": [],
+  "cor3_12_dependency": "independent",
+  "lemmas": [
+   "IUT.PaperIV.DegreePullback.degPb_ord_algebraMap",
+   "IUT.PaperIV.DegreePullback.degPb_mult_mul_inertiaDeg"
+  ],
+  "scope": "model_test"
  },
  "IUT4.Thm1_10": {
   "source": {
@@ -3123,7 +4305,8 @@
   "statement_status": "EXTRACTED",
   "proof_status": "BLOCKED_BY_MATHLIB",
   "obligations": [
-   "The inequalities taken from Proposition 1.3 and from the outer inclusions Gal(F/F_tpd) -> GL_2(F_3) x GL_2(F_5) x Z/2Z and Gal(K/F) -> GL_2(F_l) are not formalized; they are hypotheses of the fragments."
+   "The inequalities taken from Proposition 1.3 and from the outer inclusions Gal(F/F_tpd) -> GL_2(F_3) x GL_2(F_5) x Z/2Z and Gal(K/F) -> GL_2(F_l) are not formalized; they are hypotheses of the fragments.",
+   "The first inequality of Step (ii), log(d^{F_tpd}) + log(f^{F_tpd}) <= log(d^F) + log(f^F), is proved for an arbitrary extension of number fields and an arbitrary reduced divisor together with the reduced divisor above it (IUT4.Thm1_10.StepII.frag.logDiff_add_cond_le), from the divisibility of the different in Mathlib rather than from Proposition 1.3; the divisor of q-parameters and the fields F_tpd and F are not defined."
   ],
   "ambiguities": [],
   "cor3_12_dependency": "independent",
@@ -3133,7 +4316,10 @@
    "IUT4.Thm1_10.StepII.frag.step_ii_final",
    "IUT4.Thm1_10.StepII.frag.log_E_ii",
    "IUT4.Thm1_10.StepII.frag.log_div_le_half",
-   "IUT4.Thm1_10.StepII.frag.one_add_four_div_le_two"
+   "IUT4.Thm1_10.StepII.frag.one_add_four_div_le_two",
+   "IUT4.Thm1_10.StepII.frag.logDiffNF_add_logCondNF_le",
+   "IUT4.Thm1_10.StepII.frag.logDiff_add_cond_le",
+   "IUT4.Thm1_10.StepII.frag.logDiff_tower"
   ]
  },
  "IUT4.Thm1_10.StepII.frag.step_ii_F": {
@@ -3299,6 +4485,108 @@
   "obligations": [],
   "ambiguities": [],
   "cor3_12_dependency": "independent"
+ },
+ "IUT4.Thm1_10.StepII.frag.logDiffNF_add_logCondNF_le": {
+  "kind": "fragment",
+  "parent": "IUT4.Thm1_10.StepII",
+  "lean_module": "IUT.PaperIV.DegreePullback",
+  "source": {
+   "paper": "Inter-universal Teichmuller Theory IV",
+   "pdf_pages": "pages 23 to 24",
+   "pages_read": "rendered pages 23 and 24",
+   "pages_in_paper": "Arithmetic Elliptic Curves in General Position, page 8, Definition 1.5 (iii), (iv) (rendered and checked)"
+  },
+  "content": "For a finite extension L of the number field K and y in K with y != 0 and y != 1 (a point of P^1 minus {0, 1, infinity} defined over K): logDiffNF K + logCondNF K y <= logDiffNF L + logCondNF L y, with the log-different and the log-conductor of IUT.Applications.VojtaNumberField, both evaluated at the field named. For such y only finitely many primes meet the boundary (degPb_meetsBoundaryAt_finite), and a prime w of O_L meets the boundary at y exactly when the prime of O_K below it does (degPb_meetsBoundaryAt_iff).",
+  "explicit_hypotheses": [
+   "K, L number fields with an algebra map K -> L",
+   "y an element of K",
+   "y != 0",
+   "y != 1"
+  ],
+  "implicit_hypotheses": [],
+  "conclusion": "logDiffNF K + logCondNF K y <= logDiffNF L + logCondNF L (algebraMap K L y).",
+  "definitions_required": [],
+  "results_used": [],
+  "external_dependencies": [],
+  "lean_declaration": "IUT.PaperIV.DegreePullback.degPb_logDiffNF_add_logCondNF_le",
+  "covers": "Page 24, first display of Step (ii), for a point y of P^1 minus {0, 1, infinity} over K (y off the boundary), with the conductor of that point ([GenEll] Definition 1.5 (iv)) in place of the q-parameter conductor of page 23.",
+  "not_covered": "The q-parameter conductor and the fields of Theorem 1.10. [GenEll] evaluates the functions at the minimal field of definition of the point; this inequality compares two fields of definition and is not a statement of [GenEll]. Counted as a model test: the conductor of a point of the line minus three points replaces the conductor of q-parameters of page 23, a specialization chosen here; the display itself is checked in IUT4.Thm1_10.StepII.frag.logDiff_add_cond_le.",
+  "statement_status": "STATEMENT_FORMALIZED",
+  "proof_status": "KERNEL_VERIFIED",
+  "obligations": [],
+  "ambiguities": [],
+  "cor3_12_dependency": "independent",
+  "lemmas": [
+   "IUT.PaperIV.DegreePullback.degPb_meetsBoundaryAt_finite",
+   "IUT.PaperIV.DegreePullback.degPb_valuation_ne_one_finite",
+   "IUT.PaperIV.DegreePullback.degPb_meetsBoundaryAt_iff",
+   "IUT.PaperIV.DegreePullback.degPb_pow_eq_one_iff",
+   "IUT.PaperIV.DegreePullback.degPb_card_quot",
+   "IUT.PaperIV.DegreePullback.degPb_under_primeOf",
+   "IUT.PaperIV.DegreePullback.degPb_primeOf_injective"
+  ],
+  "scope": "model_test"
+ },
+ "IUT4.Thm1_10.StepII.frag.logDiff_add_cond_le": {
+  "kind": "fragment",
+  "parent": "IUT4.Thm1_10.StepII",
+  "lean_module": "IUT.PaperIV.DegreePullback",
+  "source": {
+   "paper": "Inter-universal Teichmuller Theory IV",
+   "pdf_pages": "pages 23 to 24",
+   "pages_read": "rendered pages 23 and 24"
+  },
+  "content": "For a finite extension L of the number field K and a finite set S of primes of O_K: logDiffNF K + (sum over v in S of log q_v)/[K:Q] <= logDiffNF L + (sum over v in S, w | v of log q_w)/[L:Q]. The second terms are the normalized degrees of the reduced divisor supported on S and of the reduced divisor supported on the primes of L over S. Proof: the transitivity formula, w^{e(w|v)-1} divides D_{L/K} (Mathlib's pow_sub_one_dvd_differentIdeal_aux), and sum over w|v of e(w|v) log q_w = [L:K] log q_v.",
+  "explicit_hypotheses": [
+   "K, L number fields with an algebra map K -> L",
+   "S a finite set of nonzero primes of O_K"
+  ],
+  "implicit_hypotheses": [],
+  "conclusion": "logDiffNF K + (sum_{v in S} log N v)/[K:Q] <= logDiffNF L + (sum_{v in S} sum_{w over v} log N w)/[L:Q].",
+  "definitions_required": [],
+  "results_used": [],
+  "external_dependencies": [],
+  "lean_declaration": "IUT.PaperIV.DegreePullback.degPb_logDiff_add_cond_le",
+  "covers": "Page 24, first display of Step (ii), log(d^{F_tpd}) + log(f^{F_tpd}) <= log(d^F) + log(f^F), with F_tpd, F replaced by an arbitrary extension K, L of number fields and f by an arbitrary reduced divisor on K together with the reduced divisor on L supported over it (page 23: f is the reduced divisor with the support of q, and the support over F lies over the support over F_tpd).",
+  "not_covered": "The divisor q of q-parameters of E_F, the fields F_tpd, F, K of Theorem 1.10, and the fact that Supp(q^F) is exactly the set of places over Supp(q^{F_tpd}) (not formalized). The paper's route through Proposition 1.3 (i) is replaced by Mathlib's divisibility of the different. The other displays of Step (ii).",
+  "statement_status": "STATEMENT_FORMALIZED",
+  "proof_status": "KERNEL_VERIFIED",
+  "obligations": [],
+  "ambiguities": [],
+  "cor3_12_dependency": "independent",
+  "lemmas": [
+   "IUT.PaperIV.DegreePullback.degPb_sum_ramification_sub_one_le",
+   "IUT.PaperIV.DegreePullback.degPb_sum_ramificationIdx_log"
+  ]
+ },
+ "IUT4.Thm1_10.StepII.frag.logDiff_tower": {
+  "kind": "fragment",
+  "parent": "IUT4.Thm1_10.StepII",
+  "lean_module": "IUT.PaperIV.DegreePullback",
+  "source": {
+   "paper": "Inter-universal Teichmuller Theory IV",
+   "pdf_pages": "pages 23 to 24",
+   "pages_read": "rendered pages 23 and 24",
+   "pages_in_paper": "Arithmetic Elliptic Curves in General Position, page 8, Definition 1.5 (iii) (rendered and checked)"
+  },
+  "content": "For a finite extension L of the number field K: logDiffNF L = logDiffNF K + log N(D_{L/K}) / [L : Q], where D_{L/K} is the relative different ideal of O_L over O_K and logDiffNF F = log N(D_F)/[F : Q] (IUT.Applications.VojtaNumberField).",
+  "explicit_hypotheses": [
+   "K, L number fields with an algebra map K -> L"
+  ],
+  "implicit_hypotheses": [],
+  "conclusion": "logDiffNF L = logDiffNF K + Real.log (absNorm (differentIdeal (O K) (O L))) / [L : Q].",
+  "definitions_required": [],
+  "results_used": [],
+  "external_dependencies": [],
+  "lean_declaration": "IUT.PaperIV.DegreePullback.degPb_logDiffNF_tower",
+  "covers": "Page 24, first display of Step (ii): the different part of the comparison of log(d^{F_tpd}) with log(d^F), in the normalization log(d) = normalized degree of the different divisor (page 23).",
+  "not_covered": "The conductor part, treated in IUT4.Thm1_10.StepII.frag.logDiff_add_cond_le; the fields F_tpd and F of Theorem 1.10. Counted as a model test: the tower formula for the log-different is classical arithmetic behind the first display of Step (ii), which it does not state; the display itself is checked in IUT4.Thm1_10.StepII.frag.logDiff_add_cond_le.",
+  "statement_status": "STATEMENT_FORMALIZED",
+  "proof_status": "KERNEL_VERIFIED",
+  "obligations": [],
+  "ambiguities": [],
+  "cor3_12_dependency": "independent",
+  "scope": "model_test"
  },
  "IUT4.Thm1_10.StepIII": {
   "source": {
@@ -4794,12 +6082,19 @@
   "statement_status": "EXTRACTED",
   "proof_status": "BLOCKED_BY_EXTERNAL_THEOREM",
   "obligations": [
-   "Heights on the moduli of elliptic curves are not formalized. On the rational points a/c of triples, the comparison 6 h(lambda) - log(64/27) <= h(j(lambda)) <= 6 h(lambda) + 8 log 2 of Weil heights is proved (IUT4.Cor2_2.i.frag.height_j_triple); its identification with ht_infinity and ht_{omega_X(D)} is not."
+   "Heights on the moduli of elliptic curves are not formalized. On the rational points a/c of triples, the comparison 6 h(lambda) - log(64/27) <= h(j(lambda)) <= 6 h(lambda) + 8 log 2 of Weil heights is proved (IUT4.Cor2_2.i.frag.height_j_triple); its identification with ht_infinity and ht_{omega_X(D)} is not.",
+   "For every number field, |h(j(y)) - 6 h(y)| <= log 41 + 8 log 2 is proved for Weil heights (IUT4.Cor2_2.i.frag.height_j_uniform, a model test: the constant is computed here, not printed). For the Frey curve of a coprime triple, minimality, the reduction type and the valuation of the j-invariant at the odd primes are proved over Q_p (IUT4.Cor2_2.i.frag.frey_minimal_odd, IUT4.Cor2_2.i.frag.frey_reduction_type_odd, IUT4.Cor2_2.i.frag.frey_val_disc_j_odd, model tests); pages 41 to 43 print none of these facts, and the relation v(q) = -v(j) needs Tate curves, which are not formalized."
   ],
   "ambiguities": [],
   "cor3_12_dependency": "independent",
   "fragments": [
-   "IUT4.Cor2_2.i.frag.height_j_triple"
+   "IUT4.Cor2_2.i.frag.height_j_triple",
+   "IUT4.Cor2_2.i.frag.frey_minimal_odd",
+   "IUT4.Cor2_2.i.frag.frey_prime_two",
+   "IUT4.Cor2_2.i.frag.frey_reduction_type_odd",
+   "IUT4.Cor2_2.i.frag.frey_val_disc_j_odd",
+   "IUT4.Cor2_2.i.frag.height_j_triple_nf",
+   "IUT4.Cor2_2.i.frag.height_j_uniform"
   ]
  },
  "IUT4.Cor2_2.i.frag.height_j_triple": {
@@ -4827,11 +6122,252 @@
    "IUT.LegendreFrey.le_logHeight₁_legendreJ_triple"
   ],
   "covers": "An explicit form, on the rational points a/c of triples, of the degree-6 comparison used on page 43 (proof of (i)) for the equality of bounded discrepancy classes (1/6) ht_infinity ~ ht_{omega_X(D)} displayed in Corollary 2.2 (i), page 41, with the Weil height of j in place of ht_infinity and the Weil height of lambda in place of ht_{omega_X(D)}.",
-  "not_covered": "Points of degree d > 1, points that do not come from triples, the identification of ht_infinity and ht_{omega_X(D)} with these Weil heights, and the q-parameter functions log(q) of Corollary 2.2 (i).",
+  "not_covered": "Points of degree d > 1, points that do not come from triples, the identification of ht_infinity and ht_{omega_X(D)} with these Weil heights, and the q-parameter functions log(q) of Corollary 2.2 (i). Counted as a model test: pages 41 to 43 print the equality of BD-classes (1/6) ht_infinity ~ ht_{omega_X(D)} with no inequality and no constant; the inequality is stated for Weil heights, whose identification with ht_infinity (through the classifying morphism to the moduli stack) is not formalized, and its constant is computed here.",
   "statement_status": "STATEMENT_FORMALIZED",
   "proof_status": "KERNEL_VERIFIED",
   "obligations": [],
-  "ambiguities": []
+  "ambiguities": [],
+  "scope": "model_test"
+ },
+ "IUT4.Cor2_2.i.frag.frey_minimal_odd": {
+  "kind": "fragment",
+  "parent": "IUT4.Cor2_2.i",
+  "source": {
+   "paper": "Inter-universal Teichmuller Theory IV",
+   "pdf_pages": "pages 41 to 43",
+   "pages_read": "rendered and checked: pages 41, 42, 43"
+  },
+  "content": "Over the fraction field of any discrete valuation ring, an integral Weierstrass equation whose discriminant or c4 has valuation 1 is minimal (Mathlib IsMinimal), and two minimal equations related by a change of variables have discriminants of the same valuation. For coprime a + b = c and an odd prime p, the Frey model y^2 = x(x - a)(x + b), base changed from Z to Q_p, is integral over Z_p and minimal at p: if p does not divide abc its discriminant 16(abc)^2 is a unit, otherwise its c4 = 16(a^2 + ab + b^2) is a unit.",
+  "explicit_hypotheses": [
+   "a, b, c natural numbers with a + b = c and Nat.Coprime a b",
+   "p a prime ([Fact p.Prime]) with p != 2"
+  ],
+  "implicit_hypotheses": [],
+  "conclusion": "IsMinimal Z_p (freyRedModel p a b).",
+  "definitions_required": [
+   "WeierstrassCurve.IsMinimal",
+   "WeierstrassCurve.HasGoodReduction",
+   "WeierstrassCurve.HasMultiplicativeReduction",
+   "IUT.FreyReduction.freyRedModel",
+   "IUT.FreyReduction.freyRedVal"
+  ],
+  "results_used": [],
+  "external_dependencies": [],
+  "lean_declaration": "IUT.FreyReduction.freyRedModel_isMinimal",
+  "lemmas": [
+   "IUT.FreyReduction.freyRed_isMinimal_of_val",
+   "IUT.FreyReduction.freyRed_val_Δ_eq_of_isMinimal",
+   "IUT.FreyReduction.freyRedModel",
+   "IUT.FreyReduction.freyRedModel_isIntegral",
+   "IUT.FreyReduction.freyRedModel_Δ",
+   "IUT.FreyReduction.freyRedModel_c₄",
+   "IUT.FreyReduction.freyRedVal",
+   "IUT.FreyReduction.freyRedVal_natCast_eq_one_iff",
+   "IUT.FreyReduction.freyRedVal_p",
+   "IUT.FreyReduction.freyRedVal_natCast",
+   "IUT.FreyReduction.freyRedModel_val_Δ_eq_one_iff",
+   "IUT.FreyReduction.freyRedModel_val_c₄_eq_one"
+  ],
+  "covers": "The pages read do not name a triple, the Frey curve, its reduction at odd primes, or the relation v(q) = -v(j); this is classical arithmetic (Silverman) checked for the rational points a/c of the lambda-line coming from coprime triples, through the Frey curve y^2 = x(x - a)(x + b), a quadratic twist of the Legendre curve of page 41. It checks the minimality at odd primes on which the q-parameter orders at the primes not dividing 2 (log q^{not 2}, Corollary 2.2 (i), page 41) rest.",
+  "not_covered": "Number fields other than Q; points of the lambda-line not coming from triples; the Legendre model at lambda itself; the prime 2; every assertion of Corollary 2.2 (i), in particular the equalities of bounded discrepancy classes. Nothing is asserted for the Legendre model over Q at the point of the triple: minimality, reduction type, discriminant and conductor change under the quadratic twist relating it to the Frey curve. Counted as a model test: the pages read do not mention a triple, the Frey curve or its reduction; this is classical arithmetic behind the invariants of Corollary 2.2, as the record says.",
+  "statement_status": "STATEMENT_FORMALIZED",
+  "proof_status": "KERNEL_VERIFIED",
+  "obligations": [],
+  "ambiguities": [
+   "The paper works with q-parameters of curves over number fields; the identification with the Frey model over Q_p is the reader's specialization, not a statement of the paper."
+  ],
+  "scope": "model_test"
+ },
+ "IUT4.Cor2_2.i.frag.frey_prime_two": {
+  "kind": "fragment",
+  "parent": "IUT4.Cor2_2.i",
+  "source": {
+   "paper": "Inter-universal Teichmuller Theory IV",
+   "pdf_pages": "pages 41 to 43",
+   "pages_read": "rendered and checked: pages 41, 42, 43"
+  },
+  "content": "At p = 2 the Frey model over Q_2 has neither good nor multiplicative reduction in Mathlib's sense (Delta and c4 are divisible by 16), and for the triple 3 + 16 = 19 the model y^2 = x(x - 3)(x + 16) is not minimal over Z_2: the change of variables with u = 2, r = t = 0, s = 1 gives the integral equation y^2 + xy = x^3 + 3x^2 - 3x.",
+  "explicit_hypotheses": [
+   "a, b, c natural numbers with a + b = c (first statement)",
+   "the triple 3 + 16 = 19 (second statement)"
+  ],
+  "implicit_hypotheses": [],
+  "conclusion": "not HasGoodReduction Z_2 W and not HasMultiplicativeReduction Z_2 W; not IsMinimal Z_2 (freyRedModel 2 3 16).",
+  "definitions_required": [
+   "WeierstrassCurve.IsMinimal",
+   "WeierstrassCurve.HasGoodReduction",
+   "WeierstrassCurve.HasMultiplicativeReduction",
+   "IUT.FreyReduction.freyRedModel",
+   "IUT.FreyReduction.freyRedVal"
+  ],
+  "results_used": [],
+  "external_dependencies": [],
+  "lean_declaration": "IUT.FreyReduction.freyRedModel_two_not_isMinimal",
+  "lemmas": [
+   "IUT.FreyReduction.freyRedModel_two_not_good_not_mult"
+  ],
+  "covers": "The pages read do not name a triple, the Frey curve, its reduction at odd primes, or the relation v(q) = -v(j); this is classical arithmetic (Silverman) checked for the rational points a/c of the lambda-line coming from coprime triples, through the Frey curve y^2 = x(x - a)(x + b), a quadratic twist of the Legendre curve of page 41. It shows why the prime 2 is separated from the others, as log q^{not 2} is in Corollary 2.2 (i), page 41.",
+  "not_covered": "The minimal model, minimal discriminant and reduction type at 2 for a general triple; the condition (*_{j-inv}) at 2.",
+  "statement_status": "STATEMENT_FORMALIZED",
+  "proof_status": "KERNEL_VERIFIED",
+  "obligations": [],
+  "ambiguities": [],
+  "scope": "model_test"
+ },
+ "IUT4.Cor2_2.i.frag.frey_reduction_type_odd": {
+  "kind": "fragment",
+  "parent": "IUT4.Cor2_2.i",
+  "source": {
+   "paper": "Inter-universal Teichmuller Theory IV",
+   "pdf_pages": "pages 41 to 43",
+   "pages_read": "rendered and checked: pages 41, 42, 43"
+  },
+  "content": "For coprime a + b = c and an odd prime p, the Frey model over Q_p has multiplicative reduction at p (Mathlib HasMultiplicativeReduction over Z_p) exactly when p divides abc, good reduction (HasGoodReduction) exactly when p does not divide abc, and never additive reduction.",
+  "explicit_hypotheses": [
+   "a, b, c natural numbers with a + b = c and Nat.Coprime a b",
+   "p a prime ([Fact p.Prime]) with p != 2"
+  ],
+  "implicit_hypotheses": [],
+  "conclusion": "HasMultiplicativeReduction Z_p W <-> p | abc; HasGoodReduction Z_p W <-> not p | abc; not HasAdditiveReduction Z_p W.",
+  "definitions_required": [
+   "WeierstrassCurve.IsMinimal",
+   "WeierstrassCurve.HasGoodReduction",
+   "WeierstrassCurve.HasMultiplicativeReduction",
+   "IUT.FreyReduction.freyRedModel",
+   "IUT.FreyReduction.freyRedVal"
+  ],
+  "results_used": [],
+  "external_dependencies": [],
+  "lean_declaration": "IUT.FreyReduction.freyRedModel_hasMultiplicativeReduction_iff",
+  "lemmas": [
+   "IUT.FreyReduction.freyRedModel_hasGoodReduction_iff",
+   "IUT.FreyReduction.freyRedModel_not_hasAdditiveReduction"
+  ],
+  "covers": "The pages read do not name a triple, the Frey curve, its reduction at odd primes, or the relation v(q) = -v(j); this is classical arithmetic (Silverman) checked for the rational points a/c of the lambda-line coming from coprime triples, through the Frey curve y^2 = x(x - a)(x + b), a quadratic twist of the Legendre curve of page 41. It checks, for the Frey twist over Q (not for E_F over F), that the reduction at the odd primes is good or multiplicative. The paper obtains stable reduction of E_F at every nonarchimedean prime of F from Proposition 1.8 (v) (page 42), which this fragment does not address.",
+  "not_covered": "Split versus nonsplit multiplicative reduction; the prime 2; number fields other than Q; the stable reduction of E_F over F on page 42, which comes from Proposition 1.8 (v) and is not addressed. Nothing is asserted for the Legendre model over Q at the point of the triple: minimality, reduction type, discriminant and conductor change under the quadratic twist relating it to the Frey curve. Counted as a model test: the pages read do not mention a triple, the Frey curve or its reduction; this is classical arithmetic behind the invariants of Corollary 2.2, as the record says.",
+  "statement_status": "STATEMENT_FORMALIZED",
+  "proof_status": "KERNEL_VERIFIED",
+  "obligations": [],
+  "ambiguities": [],
+  "scope": "model_test"
+ },
+ "IUT4.Cor2_2.i.frag.frey_val_disc_j_odd": {
+  "kind": "fragment",
+  "parent": "IUT4.Cor2_2.i",
+  "source": {
+   "paper": "Inter-universal Teichmuller Theory IV",
+   "pdf_pages": "pages 41 to 43",
+   "pages_read": "rendered and checked: pages 41, 42, 43"
+  },
+  "content": "For coprime positive a + b = c and an odd prime p: the discriminant of the Frey model over Q_p has valuation exp(-2 multiplicity p (abc)) (additively v_p(Delta) = 2 v_p(abc)), and so does the discriminant of every minimal model C . W; if p divides abc, the j-invariant has valuation exp(2 multiplicity p (abc)), that is v_p(j) = -2 v_p(abc).",
+  "explicit_hypotheses": [
+   "0 < a, 0 < b",
+   "a, b, c natural numbers with a + b = c and Nat.Coprime a b",
+   "p a prime ([Fact p.Prime]) with p != 2",
+   "freyRedModel_val_j: p | abc; the Frey model is elliptic (instance argument, supplied by freyRedModel_isElliptic)",
+   "freyRedModel_val_minimal_Δ: C a change of variables over Q_p with IsMinimal Z_p (C . W)"
+  ],
+  "implicit_hypotheses": [],
+  "conclusion": "v(Delta(W)) = exp(-(2 multiplicity p (abc))); v(Delta(C . W)) = the same for every minimal C . W; v(j(W)) = exp(2 multiplicity p (abc)) when p | abc.",
+  "definitions_required": [
+   "WeierstrassCurve.IsMinimal",
+   "WeierstrassCurve.HasGoodReduction",
+   "WeierstrassCurve.HasMultiplicativeReduction",
+   "IUT.FreyReduction.freyRedModel",
+   "IUT.FreyReduction.freyRedVal"
+  ],
+  "results_used": [],
+  "external_dependencies": [],
+  "lean_declaration": "IUT.FreyReduction.freyRedModel_val_j",
+  "lemmas": [
+   "IUT.FreyReduction.freyRedModel_val_Δ",
+   "IUT.FreyReduction.freyRedModel_val_minimal_Δ",
+   "IUT.FreyReduction.freyRedModel_isElliptic"
+  ],
+  "covers": "The pages read do not name a triple, the Frey curve, its reduction at odd primes, or the relation v(q) = -v(j); this is classical arithmetic (Silverman) checked for the rational points a/c of the lambda-line coming from coprime triples, through the Frey curve y^2 = x(x - a)(x + b), a quadratic twist of the Legendre curve of page 41. It checks the order of the j-invariant at the odd primes of multiplicative reduction, which equals minus the order of the q-parameter entering log q^{not 2} (Corollary 2.2 (i), page 41).",
+  "not_covered": "The relation v(q) = -v(j) itself (needs Tate uniformization; Mathlib has no Tate curve or q-parameter); the normalized degree log q^{not 2} as a sum over primes; the prime 2; number fields other than Q. Nothing is asserted for the Legendre model over Q at the point of the triple: minimality, reduction type, discriminant and conductor change under the quadratic twist relating it to the Frey curve. Of the statements here only the one on v(j) transfers to the Legendre curve; the Lean term (freyRedModel p a b).j is not identified with legendreJ (a / c). Counted as a model test: the pages read do not mention a triple, the Frey curve or its reduction; this is classical arithmetic behind the invariants of Corollary 2.2, as the record says.",
+  "statement_status": "STATEMENT_FORMALIZED",
+  "proof_status": "KERNEL_VERIFIED",
+  "obligations": [],
+  "ambiguities": [],
+  "scope": "model_test"
+ },
+ "IUT4.Cor2_2.i.frag.height_j_triple_nf": {
+  "kind": "fragment",
+  "parent": "IUT4.Cor2_2.i",
+  "source": {
+   "paper": "Inter-universal Teichmuller Theory IV",
+   "pdf_pages": "pages 41 to 43",
+   "pages_read": "renders of pages 41, 42 and 43"
+  },
+  "content": "For positive natural numbers a, b, c with a + b = c and a, b coprime, and lambda = a / c in Q: 6 log c - log(64/27) <= heightNF Q (legendreJ lambda) <= 6 log c + 8 log 2.",
+  "explicit_hypotheses": [
+   "0 < a",
+   "0 < b",
+   "Nat.Coprime a b",
+   "a + b = c"
+  ],
+  "implicit_hypotheses": [],
+  "conclusion": "6 log c - log(64/27) <= heightNF Q (legendreJ (a / c)) <= 6 log c + 8 log 2.",
+  "definitions_required": [
+   "IUT.VojtaNumberField.heightNF",
+   "IUT.LegendreFrey.legendreJ"
+  ],
+  "results_used": [],
+  "external_dependencies": [],
+  "lean_declaration": "IUT.HeightComparison.htCmp_heightNF_legendreJ_triple",
+  "covers": "The degree 6 comparison of page 43 at the rational points of coprime triples, with the normalized height heightNF of the companion files and ht(lambda) = log c.",
+  "not_covered": "Same as IUT4.Cor2_2.i.frag.height_j_uniform: ht_infinity, ht_{omega_X(D)} and log(q) are not defined; only rational points of triples. Counted as a model test: pages 41 to 43 print the equality of BD-classes (1/6) ht_infinity ~ ht_{omega_X(D)} with no inequality and no constant; the inequality is stated for Weil heights, whose identification with ht_infinity (through the classifying morphism to the moduli stack) is not formalized, and its constant is computed here.",
+  "statement_status": "STATEMENT_FORMALIZED",
+  "proof_status": "KERNEL_VERIFIED",
+  "obligations": [],
+  "ambiguities": [],
+  "scope": "model_test"
+ },
+ "IUT4.Cor2_2.i.frag.height_j_uniform": {
+  "kind": "fragment",
+  "parent": "IUT4.Cor2_2.i",
+  "source": {
+   "paper": "Inter-universal Teichmuller Theory IV",
+   "pdf_pages": "pages 41 to 43",
+   "pages_read": "renders of pages 41, 42 and 43; [GenEll] renders of pages 4 to 6, 8 and 9"
+  },
+  "content": "For every number field K and every y in K, |heightNF K (legendreJ y) - 6 heightNF K y| <= log 41 + 8 log 2 (= log 10496), where heightNF is Mathlib's logHeight1 divided by [K : Q] and legendreJ y = 2^8 (y^2 - y + 1)^3 / (y^2 (y - 1)^2). One-sided forms: heightNF(j) <= 6 heightNF(y) + log 27 + 8 log 2 and 6 heightNF(y) <= heightNF(j) + log 41 + 8 log 2. The constant is the same for all number fields.",
+  "explicit_hypotheses": [
+   "K a number field",
+   "y in K (no further condition; at y = 0, 1 both sides are 0)"
+  ],
+  "implicit_hypotheses": [],
+  "conclusion": "|heightNF K (legendreJ y) - 6 heightNF K y| <= log 41 + 8 log 2, and there is one constant C valid for all number fields.",
+  "definitions_required": [
+   "IUT.VojtaNumberField.heightNF",
+   "IUT.LegendreFrey.legendreJ",
+   "Height.logHeight₁"
+  ],
+  "results_used": [],
+  "external_dependencies": [
+   "[GenEll] Proposition 1.4 (i), (iii), cited on page 43 for the degree 6 comparison"
+  ],
+  "lean_declaration": "IUT.HeightComparison.htCmp_abs_heightNF_legendreJ_sub_le",
+  "lemmas": [
+   "IUT.HeightComparison.htCmp_heightNF_legendreJ_le",
+   "IUT.HeightComparison.htCmp_le_heightNF_legendreJ",
+   "IUT.HeightComparison.htCmp_exists_uniform_constant",
+   "IUT.HeightComparison.htCmp_logHeight₁_ratio_le",
+   "IUT.HeightComparison.htCmp_le_logHeight₁_ratio",
+   "IUT.HeightComparison.htCmp_certificate_one",
+   "IUT.HeightComparison.htCmp_certificate_two",
+   "IUT.HeightComparison.htCmp_constant_eq"
+  ],
+  "covers": "The degree 6 comparison used on page 43 for the last equality of BD-classes (1/6) ht_infinity ~ ht_{omega_X(D)} in Corollary 2.2 (i) (page 41), in the form: the Weil height of the j-invariant of the Legendre curve is six times the Weil height of lambda up to an explicit constant independent of the number field.",
+  "not_covered": "The functions ht_infinity (height of the pullback of the divisor at infinity of the compactified moduli stack) and ht_{omega_X(D)} are not defined; their identification with the Weil heights of j and of lambda up to bounded functions is not formalized. The equalities with (1/6) log(q^forall) and (1/6) log(q^{dagger 2}) need q-parameters (Tate curves), which Mathlib lacks. The restriction to a compactly bounded subset K_V and condition (*_{j-inv}) play no role here. Invariance of heightNF under field extension is not proved. Counted as a model test: pages 41 to 43 print the equality of BD-classes (1/6) ht_infinity ~ ht_{omega_X(D)} with no inequality and no constant; the inequality is stated for Weil heights, whose identification with ht_infinity (through the classifying morphism to the moduli stack) is not formalized, and its constant is computed here.",
+  "statement_status": "STATEMENT_FORMALIZED",
+  "proof_status": "KERNEL_VERIFIED",
+  "obligations": [],
+  "ambiguities": [
+   "The pages print no explicit inequality or constant; the constant log 41 + 8 log 2 comes from the resultant certificate computed here, not from the paper."
+  ],
+  "scope": "model_test"
  },
  "IUT4.Cor2_2.ii": {
   "source": {
@@ -4877,54 +6413,51 @@
   "proof_status": "BLOCKED_BY_EXTERNAL_THEOREM",
   "obligations": [
    "Heights on the moduli of elliptic curves, finiteness of j-invariants of bounded height ([GenEll] Proposition 1.4 (iv)), the existence of initial Theta-data and Theorem 1.10 for them are not formalized; the arithmetic of the proof is checked in the fragments of the proof-step records.",
-   "The four j-values of the exceptional case and the points of the lambda-line over them are computed (IUT4.Cor2_2.ii.frag.special_j_values); that these are the j-invariants of curves without an F-core is cited, not proved."
+   "The four j-values of the exceptional case and the points of the lambda-line over them are computed (EXPL.Prop2_1.frag.special_j_values); that these are the j-invariants of curves without an F-core is cited, not proved.",
+   "The bound log-cond_D <= 3 ht + log 2 on P^1 minus {0, 1, infinity} is an instance of [GenEll] Proposition 1.6 (GENELL.Prop1_6.frag.log_cond_le_height). For the Frey curve of a coprime triple the odd primes of multiplicative reduction are the odd prime factors of abc (IUT4.Cor2_2.ii.frag.frey_mult_primes_rad, a model test); the conductor of an elliptic curve is not defined in Mathlib."
   ],
   "ambiguities": [],
   "cor3_12_dependency": "conditional",
   "fragments": [
-   "IUT4.Cor2_2.ii.frag.special_j_values"
+   "IUT4.Cor2_2.ii.frag.frey_mult_primes_rad"
   ]
  },
- "IUT4.Cor2_2.ii.frag.special_j_values": {
+ "IUT4.Cor2_2.ii.frag.frey_mult_primes_rad": {
   "kind": "fragment",
   "parent": "IUT4.Cor2_2.ii",
   "source": {
    "paper": "Inter-universal Teichmuller Theory IV",
-   "pdf_pages": "page 43",
-   "pages_read": "rendered page 43 of IUT IV; rendered page 21 of Explicit estimates in IUT"
+   "pdf_pages": "pages 41 to 43",
+   "pages_read": "rendered and checked: pages 41, 42, 43"
   },
-  "content": "For a field K of characteristic zero and t != 0, 1: legendreJ t = 1728 iff t in {-1, 2, 1/2}; legendreJ t = 2^2 73^3 3^-4 iff t in {9, -8, 9/8, -1/8, 8/9, 1/9}; legendreJ t = 2^14 31^3 5^-3 iff t is a root of t^2 - 125t + 125, t^2 + 123t + 1 or 125t^2 - 125t + 1; legendreJ t = 0 iff t^2 - t + 1 = 0. Over Q no t != 0, 1 has j = 2^14 31^3 5^-3 or j = 0 (no rational square equals 5; t^2 - t + 1 > 0). legendreJ (1/9) = 2^2 73^3 3^-4 and legendreJ (1/2) = 1728.",
+  "content": "For coprime positive a + b = c, the set of odd primes p at which the Frey model over Q_p has multiplicative reduction (Mathlib HasMultiplicativeReduction over Z_p) is the set of odd prime factors of abc, and 2 times the product of these primes is Challenge.rad (abc); abc is even.",
   "explicit_hypotheses": [
-   "K a field of characteristic zero, t in K, t != 0, t != 1 (for the rational statements t in Q)"
+   "0 < a, 0 < b, a + b = c, Nat.Coprime a b"
   ],
   "implicit_hypotheses": [],
-  "conclusion": "The solution sets listed in content.",
+  "conclusion": "{p | freyRedOddMultPrime a b p} = (abc).primeFactors.erase 2 and 2 * prod of (abc).primeFactors.erase 2 = Challenge.rad (abc).",
   "definitions_required": [
-   "IUT.LegendreFrey.legendreJ"
+   "WeierstrassCurve.IsMinimal",
+   "WeierstrassCurve.HasGoodReduction",
+   "WeierstrassCurve.HasMultiplicativeReduction",
+   "IUT.FreyReduction.freyRedModel",
+   "IUT.FreyReduction.freyRedVal"
   ],
   "results_used": [],
-  "external_dependencies": [
-   "Explicit estimates in IUT (Mochizuki, Fesenko, Hoshi, Minamide, Porowski): Proposition 2.1, page 21, the list of the four values (read); CanLift: Proposition 2.7 (not read)"
-  ],
-  "lean_declaration": "IUT.LegendreFrey.legendreJ_eq_73_iff",
+  "external_dependencies": [],
+  "lean_declaration": "IUT.FreyReduction.freyRed_oddMultPrimes_rad",
   "lemmas": [
-   "IUT.LegendreFrey.legendreJ_eq_1728_iff",
-   "IUT.LegendreFrey.legendreJ_eq_31_iff",
-   "IUT.LegendreFrey.legendreJ_eq_zero_iff",
-   "IUT.LegendreFrey.rat_sq_ne_five",
-   "IUT.LegendreFrey.legendreJ_ne_31_rat",
-   "IUT.LegendreFrey.legendreJ_ne_zero_rat",
-   "IUT.LegendreFrey.legendreJ_one_ninth",
-   "IUT.LegendreFrey.legendreJ_one_half"
+   "IUT.FreyReduction.freyRedOddMultPrime",
+   "IUT.FreyReduction.freyRedOddMultPrime_iff",
+   "IUT.FreyReduction.freyRed_two_dvd"
   ],
-  "covers": "The points of the lambda-line over the four possible j-invariants of a once-punctured elliptic curve without an F-core, which page 43 (proof of (ii)) puts into the exceptional set Exc_d; the four values are those of Explicit estimates, Proposition 2.1, page 21, since IUT IV page 43 says only 'four possibilities' and cites [CanLift], Proposition 2.7.",
-  "not_covered": "That these are the only j-invariants without an F-core ([CanLift], Proposition 2.7), the notion of F-core, and the rest of Corollary 2.2 (ii).",
+  "covers": "The pages read do not name a triple, the Frey curve, its reduction at odd primes, or the relation v(q) = -v(j); this is classical arithmetic (Silverman) checked for the rational points a/c of the lambda-line coming from coprime triples, through the Frey curve y^2 = x(x - a)(x + b), a quadratic twist of the Legendre curve of page 41. It is the arithmetic, for the Frey twist of a triple, behind the odd part of log-cond_D(x_E) and log(f^{F_tpd}) in condition (C2) (page 42) and on page 43; the definitions of these invariants are not on the pages read.",
+  "not_covered": "The conductor itself (Mathlib defines no conductor of an elliptic curve; the statement that the conductor exponent is 1 at the odd primes of multiplicative reduction is not formalized); the conductor exponent at 2; log-cond_D and the inequalities of page 43; number fields other than Q. Nothing is asserted for the Legendre model over Q at the point of the triple: minimality, reduction type, discriminant and conductor change under the quadratic twist relating it to the Frey curve. Counted as a model test: the pages read do not mention a triple, the Frey curve or its reduction; this is classical arithmetic behind the invariants of Corollary 2.2, as the record says.",
   "statement_status": "STATEMENT_FORMALIZED",
   "proof_status": "KERNEL_VERIFIED",
   "obligations": [],
-  "ambiguities": [
-   "IUT IV does not list the four values; they are taken from Explicit estimates, Proposition 2.1. Proved here: legendreJ (1/9) = 2^2 73^3 3^-4 (legendreJ_one_ninth) and the six-point solution set of that value (legendreJ_eq_73_iff); so the point 1/9 of the triple 1 + 8 = 9 has this j-value. That this value is the j-invariant of a curve without an F-core (Explicit estimates, Proposition 2.1; [CanLift], Proposition 2.7) and that such points are excluded into Exc_d (IUT IV page 43) are statements of the papers, not proved here."
-  ]
+  "ambiguities": [],
+  "scope": "model_test"
  },
  "IUT4.Cor2_2.ii.C1": {
   "source": {
@@ -5164,7 +6697,7 @@
   "statement_status": "EXTRACTED",
   "proof_status": "BLOCKED_BY_EXTERNAL_THEOREM",
   "obligations": [
-   "The definition of h through local heights h_v, the bound on theta_A from them (page 44), and the enlargement of Exc_d so that h^{1/2} >= xi_prm (finiteness of j-invariants, [GenEll] Proposition 1.4 (iv)) are not formalized; they are hypotheses of the fragments."
+   "The link of h and of the local heights h_v with the elliptic curve, and the enlargement of Exc_d so that h^{1/2} >= xi_prm (finiteness of j-invariants, [GenEll] Proposition 1.4 (iv)), are not formalized. On numerical data, h defined from the h_v, the bound on theta_A of pages 44 and 45 and the choice of l with (P1), (P2), (P3) are proved (IUT4.Cor2_2.ProofP1.frag.primeSel_thetaA_le, IUT4.Cor2_2.ProofP1.frag.primeSel_exists_prime)."
   ],
   "ambiguities": [],
   "cor3_12_dependency": "independent",
@@ -5174,7 +6707,11 @@
    "IUT4.Cor2_2.ProofP1.frag.P1_upper",
    "IUT4.Cor2_2.ProofP1.frag.P1_lower",
    "IUT4.Cor2_2.ProofP1.frag.P1_l_ge_seven",
-   "IUT4.Cor2_2.ProofP1.frag.P1_bound"
+   "IUT4.Cor2_2.ProofP1.frag.P1_bound",
+   "IUT4.Cor2_2.ProofP1.frag.primeSel_S2_sum_le",
+   "IUT4.Cor2_2.ProofP1.frag.primeSel_S3_sum_le",
+   "IUT4.Cor2_2.ProofP1.frag.primeSel_exists_prime",
+   "IUT4.Cor2_2.ProofP1.frag.primeSel_thetaA_le"
   ]
  },
  "IUT4.Cor2_2.ProofP1.frag.S1_bound": {
@@ -5351,6 +6888,177 @@
   "obligations": [],
   "ambiguities": [],
   "cor3_12_dependency": "independent"
+ },
+ "IUT4.Cor2_2.ProofP1.frag.primeSel_S2_sum_le": {
+  "kind": "fragment",
+  "parent": "IUT4.Cor2_2.ProofP1",
+  "source": {
+   "paper": "Inter-universal Teichmuller Theory IV",
+   "pdf_pages": "page 44",
+   "pages_read": "rendered and checked: page 44"
+  },
+  "content": "Second chain of page 44 for numerical data: with p_v prime, f_v > 0, n <= delta, delta >= 1 and h^{1/2} >= 1, sum over v with h_v >= h^{1/2} of log(h_v) is at most 2 delta h^{1/2} log(2 delta h); uses 2 f_v log(p_v) >= 2 log 2 >= 1 (property (E6)).",
+  "explicit_hypotheses": [
+   "V a finite type; p, hv, f : V -> N; n : N; delta : R",
+   "p v prime and 0 < f v for every v",
+   "n <= delta",
+   "1 <= delta",
+   "1 <= sqrt (primeSelHeight p hv f n)"
+  ],
+  "implicit_hypotheses": [],
+  "conclusion": "sum over {v : sqrt h <= hv v} of log(hv v) <= 2 delta sqrt h log(2 delta h).",
+  "definitions_required": [
+   "IUT.PaperIV.Corollary2_2.primeSelHeight",
+   "IUT.PaperIV.Corollary2_2.primeSelBig"
+  ],
+  "results_used": [],
+  "external_dependencies": [],
+  "lean_declaration": "IUT.PaperIV.Corollary2_2.primeSel_S2_sum_le",
+  "covers": "Page 44, the display 2 delta h^{1/2} log(2 delta h) >= 2 [F:Q] h^{1/2} log(2 [F:Q] h) >= ... >= sum_{h_v >= h^{1/2}} log(h_v), which bounds the (S2) part of theta_A on page 45. The intermediate term with [F:Q] is passed through directly (each 2 h_v f_v log(p_v) is at most 2 [F:Q] h <= 2 delta h). Only the outer inequality of the display is stated; the intermediate printed terms are not separate lemmas.",
+  "not_covered": "The data are numbers, not attached to an elliptic curve; [F:Q] <= delta is a hypothesis. The hypothesis h^{1/2} >= 1 is not printed with this display; it follows from h^{1/2} >= xi_prm >= 5 on the same page.",
+  "statement_status": "STATEMENT_FORMALIZED",
+  "proof_status": "KERNEL_VERIFIED",
+  "obligations": [],
+  "ambiguities": [],
+  "cor3_12_dependency": "independent",
+  "lean_module": "IUT.PaperIV.Corollary2_2.PrimeSelection",
+  "scope": "numerical data (places, primes, local heights as natural numbers), not the objects of the paper"
+ },
+ "IUT4.Cor2_2.ProofP1.frag.primeSel_S3_sum_le": {
+  "kind": "fragment",
+  "parent": "IUT4.Cor2_2.ProofP1",
+  "source": {
+   "paper": "Inter-universal Teichmuller Theory IV",
+   "pdf_pages": "page 44",
+   "pages_read": "rendered and checked: page 44"
+  },
+  "content": "First chain of page 44 for numerical data: with h = (1/n) sum_v h_v f_v log(p_v) > 0, f_v > 0 and n <= delta, sum over v with h_v >= h^{1/2} of log(p_v) is at most delta h^{1/2}.",
+  "explicit_hypotheses": [
+   "V a finite type; p, hv, f : V -> N; n : N; delta : R",
+   "0 < f v for every v",
+   "n <= delta",
+   "0 < primeSelHeight p hv f n"
+  ],
+  "implicit_hypotheses": [],
+  "conclusion": "sum over {v : sqrt h <= hv v} of log(p v) <= delta sqrt h.",
+  "definitions_required": [
+   "IUT.PaperIV.Corollary2_2.primeSelHeight",
+   "IUT.PaperIV.Corollary2_2.primeSelBig"
+  ],
+  "results_used": [],
+  "external_dependencies": [],
+  "lean_declaration": "IUT.PaperIV.Corollary2_2.primeSel_S3_sum_le",
+  "lemmas": [
+   "IUT.PaperIV.Corollary2_2.primeSel_sum_eq",
+   "IUT.PaperIV.Corollary2_2.primeSel_n_ne_zero",
+   "IUT.PaperIV.Corollary2_2.primeSel_term_nonneg"
+  ],
+  "covers": "Page 44, the display delta h^{1/2} >= [F:Q] h^{1/2} = sum_v h^{-1/2} h_v f_v log(p_v) >= ... >= sum_{h_v >= h^{1/2}} log(p_v), which bounds the (S3) part of theta_A on page 45. Only the outer inequality of the display is stated; the intermediate printed terms are not separate lemmas.",
+  "not_covered": "The data are numbers, not attached to an elliptic curve; [F:Q] <= delta is a hypothesis.",
+  "statement_status": "STATEMENT_FORMALIZED",
+  "proof_status": "KERNEL_VERIFIED",
+  "obligations": [],
+  "ambiguities": [],
+  "cor3_12_dependency": "independent",
+  "lean_module": "IUT.PaperIV.Corollary2_2.PrimeSelection",
+  "scope": "numerical data (places, primes, local heights as natural numbers), not the objects of the paper"
+ },
+ "IUT4.Cor2_2.ProofP1.frag.primeSel_exists_prime": {
+  "kind": "fragment",
+  "parent": "IUT4.Cor2_2.ProofP1",
+  "source": {
+   "paper": "Inter-universal Teichmuller Theory IV",
+   "pdf_pages": "pages 44 to 45",
+   "pages_read": "rendered and checked: pages 40, 43, 44, 45, 46"
+  },
+  "content": "There is a real xi_prm >= 5 with (2/3)x <= theta(x) <= (4/3)x for all x >= xi_prm such that the following holds. Let V be a finite set of places, and for each v let p_v be a prime, h_v a natural number and f_v a positive natural number; let n be a natural number and delta a real number, and put h = (1/n) sum_v h_v f_v log(p_v). If h^{1/2} >= xi_prm, n <= delta and delta >= 2, then there is a prime l with (P1) 5 <= h^{1/2} <= l <= 10 delta h^{1/2} log(2 delta h) <= 20 delta^2 h^2, (P2) l divides no nonzero h_v, (P3) l = p_v implies h_v < h^{1/2}. The proof follows pages 44 and 45: theta_A <= 2h^{1/2} + delta h^{1/2} + 2 delta h^{1/2} log(2 delta h) <= -xi_prm + 5 delta h^{1/2} log(2 delta h) for the set A of primes of (S1), (S2), (S3), and Proposition 2.1 (ii) gives a prime l not in A.",
+  "explicit_hypotheses": [
+   "V a finite type (Fintype V)",
+   "p, hv, f : V -> N with p v prime and 0 < f v for every v",
+   "n : N and delta, h : R with h = primeSelHeight p hv f n = (1/n) sum_v hv v * f v * log(p v)",
+   "xi_prm <= sqrt h, for the xi_prm of the existential",
+   "n <= delta",
+   "2 <= delta"
+  ],
+  "implicit_hypotheses": [],
+  "conclusion": "exists xi >= 5 with (2/3)x <= theta(x) <= (4/3)x for x >= xi, and for all data as above with xi <= sqrt h there is a prime l with 5 <= sqrt h, sqrt h <= l, l <= 10 delta sqrt h log(2 delta h), 10 delta sqrt h log(2 delta h) <= 20 delta^2 h^2; for every v, hv v != 0 implies not (l | hv v); for every v, l = p v implies hv v < sqrt h.",
+  "definitions_required": [
+   "IUT.PaperIV.Corollary2_2.primeSelHeight",
+   "IUT.PaperIV.Corollary2_2.primeSelA"
+  ],
+  "results_used": [
+   "IUT4.Prop2_1"
+  ],
+  "external_dependencies": [],
+  "lean_declaration": "IUT.PaperIV.Corollary2_2.primeSel_exists_prime",
+  "lemmas": [
+   "IUT.PaperIV.Corollary2_2.primeSel_exists_prime_of",
+   "IUT.PaperIV.Corollary2_2.primeSel_hypotheses_satisfiable"
+  ],
+  "covers": "Pages 44 and 45: the choice of the prime l, from the definition of h and the hypothesis h^{1/2} >= xi_prm >= 5 on page 44 to the conclusion (P1), (P2), (P3) on page 45, including the bound on theta_A and the application of Proposition 2.1 (i), (ii). The bridge left implicit on page 44 (primes of (S2) dividing some h_v < h^{1/2} lie in (S1)) is proved.",
+  "not_covered": "The data are numbers, not constructed from an elliptic curve: h is not shown to be log(q^forall) of E_F, h_v is not the local height of [GenEll] Definition 3.3, p_v is not a residue characteristic, f_v is not tied to F, n is not [F:Q] and delta is not the constant of the proof of Theorem 1.10 (the inequality [F:Q] <= delta from (E3), (E4), (E5) is a hypothesis). The enlargement of the exceptional set Exc_d that makes h^{1/2} >= xi_prm hold ([GenEll] Proposition 1.4 (iv)) is not addressed. Proposition 2.1 (ii) provides xi_prm only as an existential (via the prime number theorem in Mathlib), so no explicit value of xi_prm is given. (P4) to (P7) are not addressed. The quantity f_v is not defined on pages 44 and 45; it is taken to be a positive natural number.",
+  "statement_status": "STATEMENT_FORMALIZED",
+  "proof_status": "KERNEL_VERIFIED",
+  "obligations": [],
+  "ambiguities": [
+   "The page writes h^{1/2} <= l; the proof gives h^{1/2} < l, which is weakened to the printed form."
+  ],
+  "cor3_12_dependency": "independent",
+  "lean_module": "IUT.PaperIV.Corollary2_2.PrimeSelection",
+  "scope": "numerical data (places, primes, local heights as natural numbers), not the objects of the paper"
+ },
+ "IUT4.Cor2_2.ProofP1.frag.primeSel_thetaA_le": {
+  "kind": "fragment",
+  "parent": "IUT4.Cor2_2.ProofP1",
+  "source": {
+   "paper": "Inter-universal Teichmuller Theory IV",
+   "pdf_pages": "pages 44 to 45",
+   "pages_read": "rendered and checked: pages 44, 45"
+  },
+  "content": "For numerical data with p_v prime, f_v > 0, n <= delta, delta >= 1, xi >= 1, theta(x) <= (4/3)x for x >= xi, h > 0 and xi <= h^{1/2}: the set A of primes that are <= h^{1/2} (S1), divide some nonzero h_v (S2), or equal p_v for some v with h_v >= h^{1/2} (S3) has theta_A <= 2h^{1/2} + delta h^{1/2} + 2 delta h^{1/2} log(2 delta h).",
+  "explicit_hypotheses": [
+   "V a finite type; p, hv, f : V -> N; n : N; delta, xi : R",
+   "p v prime and 0 < f v for every v",
+   "n <= delta",
+   "1 <= delta",
+   "1 <= xi",
+   "theta x <= 4/3 x for all x >= xi",
+   "0 < primeSelHeight p hv f n",
+   "xi <= sqrt (primeSelHeight p hv f n)"
+  ],
+  "implicit_hypotheses": [],
+  "conclusion": "thetaA (primeSelA p hv (sqrt h)) <= 2 sqrt h + delta sqrt h + 2 delta sqrt h log(2 delta h).",
+  "definitions_required": [
+   "IUT.PaperIV.Corollary2_2.primeSelA",
+   "IUT.PaperIV.Corollary2_2.primeSelS1",
+   "IUT.PaperIV.Corollary2_2.primeSelS2",
+   "IUT.PaperIV.Corollary2_2.primeSelS3",
+   "IUT.PaperIV.Proposition2_1.thetaA"
+  ],
+  "results_used": [
+   "IUT4.Cor2_2.ProofP1.frag.primeSel_S3_sum_le",
+   "IUT4.Cor2_2.ProofP1.frag.primeSel_S2_sum_le",
+   "IUT4.Cor2_2.ProofP1.frag.S1_bound"
+  ],
+  "external_dependencies": [],
+  "lean_declaration": "IUT.PaperIV.Corollary2_2.primeSel_thetaA_le",
+  "lemmas": [
+   "IUT.PaperIV.Corollary2_2.primeSel_A_subset",
+   "IUT.PaperIV.Corollary2_2.primeSel_sum_union_le",
+   "IUT.PaperIV.Corollary2_2.primeSel_sum_biUnion_le",
+   "IUT.PaperIV.Corollary2_2.primeSel_sum_log_primeFactors_le"
+  ],
+  "covers": "Pages 44 and 45: the definition of A by (S1), (S2), (S3) and the first line of the display theta_A <= 2h^{1/2} + delta h^{1/2} + 2 delta h^{1/2} log(2 delta h), including the step left implicit on the page that the primes of (S2) dividing some h_v < h^{1/2} lie in (S1), and the bound of the primes dividing h_v by log(h_v).",
+  "not_covered": "The data are numbers, not attached to an elliptic curve. The lines theta_A <= 4 delta h^{1/2} log(2 delta h) <= -xi_prm + 5 delta h^{1/2} log(2 delta h) are the existing fragment thetaA_chain.",
+  "statement_status": "STATEMENT_FORMALIZED",
+  "proof_status": "CONDITIONALLY_VERIFIED",
+  "obligations": [
+   "Assumed claim of the paper (a hypothesis of the lemma): the upper Chebyshev bound of Proposition 2.1 (ii) (proved separately in IUT4.Prop2_1; discharged in primeSel_exists_prime)"
+  ],
+  "ambiguities": [],
+  "cor3_12_dependency": "independent",
+  "lean_module": "IUT.PaperIV.Corollary2_2.PrimeSelection",
+  "scope": "numerical data (places, primes, local heights as natural numbers), not the objects of the paper"
  },
  "IUT4.Cor2_2.ProofP2": {
   "source": {
@@ -6094,8 +7802,8 @@
   "statement_status": "EXTRACTED",
   "proof_status": "BLOCKED_BY_EXTERNAL_THEOREM",
   "obligations": [
-   "Corollary 2.3 is not stated in Lean for general curves. Its instance X = P^1_Q, D = {0, 1, infinity} at points of every bounded degree is stated as an open proposition, with the height, log-different and log-conductor of [GenEll] Definition 1.5 defined from Mathlib objects (IUT4.Cor2_3.frag.bounded_degree_P1_minus_three); its degree one piece is the rational case IUT4.Cor2_3.frag.rational_points_P1_minus_three. In both, Mathlib's logarithmic height stands for the height attached to omega_X(D) (their agreement up to a bounded function is not formalized). The compactly bounded form, general curves and the proof are open.",
-   "[GenEll] Theorem 2.1 (the reduction to the lambda-line) is external and not formalized. The proof derives its form (ii), on compactly bounded subsets; the special case of IUT4.Cor2_3.frag.rational_points_P1_minus_three is an instance of its form (i), so reaching it needs the direction (ii) implies (i), whose proof uses points of bounded degree over number fields and a noncritical Belyi map.",
+   "Corollary 2.3 is not stated in Lean for general curves. Its instance X = P^1_Q, D = {0, 1, infinity} at points of every bounded degree is stated as an open proposition, with the height, log-different and log-conductor of [GenEll] Definition 1.5 defined from Mathlib objects (IUT4.Cor2_3.frag.bounded_degree_P1_minus_three); its degree one piece is the rational case IUT4.Cor2_3.frag.rational_points_P1_minus_three. In both, Mathlib's logarithmic height stands for the height attached to omega_X(D) (their agreement up to a bounded function is not formalized). The compactly bounded form of [GenEll] Theorem 2.1 (ii) and the reduced form of page 55 are stated as open propositions (GENELL.Thm2_1.frag.genell_ii_compactly_bounded, IUT4.Cor2_3.frag.reduced_form_j_inv); general curves and the proof are open.",
+   "[GenEll] Theorem 2.1 (the reduction to the lambda-line) is external; its direction (i) implies (ii) is proved for the instance (P, C) of (i) (GENELL.Thm2_1.frag.genell_i_implies_ii), and the direction (ii) implies (i) is not formalized. The proof derives its form (ii), on compactly bounded subsets; the special case of IUT4.Cor2_3.frag.rational_points_P1_minus_three is an instance of its form (i), so reaching it needs the direction (ii) implies (i), whose proof uses points of bounded degree over number fields and a noncritical Belyi map.",
    "The fragments check only the logical form of the last step on K_V, as abstract lemmas on real functions on an arbitrary set."
   ],
   "ambiguities": [
@@ -6109,7 +7817,10 @@
    "IUT4.Cor2_3.frag.rational_points_P1_minus_three",
    "IUT4.Cor2_3.frag.frey_curve",
    "IUT4.Cor2_3.frag.frey_j_arithmetic",
-   "IUT4.Cor2_3.frag.bounded_degree_P1_minus_three"
+   "IUT4.Cor2_3.frag.bounded_degree_P1_minus_three",
+   "IUT4.Cor2_3.frag.compactly_bounded_nonvacuity",
+   "IUT4.Cor2_3.frag.reduced_form_j_inv",
+   "IUT4.Cor2_3.frag.reduced_form_of_genell"
   ]
  },
  "IUT4.Cor2_3.frag.cor2_3_on_KV": {
@@ -6392,6 +8103,107 @@
    "The height ht_{omega_X(D)} is defined in GenEll (page 4) through an arithmetic line bundle on a model over Z; heightNF is Mathlib's logarithmic Weil height divided by [F : Q], equal to the GenEll height up to a bounded function by a standard computation not stated in GenEll.",
    "The log-conductor depends on the model over Z; logCondNF is exact for P^1_Z with the three sections 0, 1, infinity. Other models differ at finitely many primes (GenEll Remark 1.5.1)."
   ]
+ },
+ "IUT4.Cor2_3.frag.compactly_bounded_nonvacuity": {
+  "kind": "fragment",
+  "parent": "IUT4.Cor2_3",
+  "source": {
+   "paper": "Inter-universal Teichmuller Theory IV",
+   "pdf_pages": "pages 41 and 55",
+   "pages_in_paper": "GenEll pages 5 and 6",
+   "pages_read": "rendered IUT IV pages 3, 40 to 43 and 54 to 56; GenEll pages 3, 5, 6, 8 and 11 to 13; GenEll comments, pages 1 and 2"
+  },
+  "content": "cbDiskQuarter (support {infinity}, archimedean domain the closed disk of radius 1/4 around 1/2) is a compactly bounded subset containing infinitely many rational points of U, among them 1/3 (triple 1 + 2 = 3, height log 3, log-different 0, log-conductor log 6). cbTwoAdic (support {2, infinity}, the same disk and the 2-adic ball |z - 1/2| <= 1, a bounding domain at 2) satisfies (*_{j-inv}) with N = 0 and contains 1/2 (triple 1 + 1 = 2).",
+  "explicit_hypotheses": [],
+  "implicit_hypotheses": [],
+  "conclusion": "The classes quantified over in genEllTheorem2_1iiStatement (for Sig = empty and Sig = {2}) and in iutIVCor2_3ReducedFormStatement are nonempty and contain rational points.",
+  "definitions_required": [],
+  "results_used": [],
+  "external_dependencies": [],
+  "lean_declaration": "IUT.CompactlyBounded.cbTwoAdic_nonvacuous",
+  "lean_module": "IUT.Applications.CompactlyBounded",
+  "lemmas": [
+   "IUT.CompactlyBounded.cbDisk",
+   "IUT.CompactlyBounded.cbDiskQuarter",
+   "IUT.CompactlyBounded.isArchBoundingDomain_closedBall",
+   "IUT.CompactlyBounded.ratCast_mem_closedBall_iff",
+   "IUT.CompactlyBounded.cbDiskQuarter_rat_infinite",
+   "IUT.CompactlyBounded.cbDiskQuarter_triple_one_two_three",
+   "IUT.CompactlyBounded.norm_two_padicAlgCl",
+   "IUT.CompactlyBounded.norm_half_padicAlgCl",
+   "IUT.CompactlyBounded.norm_eq_two_of_mem_ball_half",
+   "IUT.CompactlyBounded.isPadicBoundingDomain_two",
+   "IUT.CompactlyBounded.norm_legendreJ_le_one_of_mem",
+   "IUT.CompactlyBounded.cbTwoAdic"
+  ],
+  "covers": "Nonvacuity of the definitions of GenEll Example 1.3 (ii) (pages 5 and 6) and of the condition (*_{j-inv}) (IUT IV page 41) as used on page 55.",
+  "not_covered": "Infinitely many rational points in cbTwoAdic is not shown (only 1/2); no statement of the papers is checked beyond nonvacuity.",
+  "statement_status": "STATEMENT_FORMALIZED",
+  "proof_status": "KERNEL_VERIFIED",
+  "obligations": [],
+  "ambiguities": [],
+  "scope": "model_test"
+ },
+ "IUT4.Cor2_3.frag.reduced_form_j_inv": {
+  "kind": "fragment",
+  "parent": "IUT4.Cor2_3",
+  "source": {
+   "paper": "Inter-universal Teichmuller Theory IV",
+   "pdf_pages": "pages 41 and 55",
+   "pages_in_paper": "GenEll page 11",
+   "pages_read": "rendered IUT IV pages 3, 40 to 43 and 54 to 56; GenEll pages 3, 5, 6, 8 and 11 to 13; GenEll comments, pages 1 and 2"
+  },
+  "content": "JInvBoundedAtTwo K: there is N : Z such that for every z in the bounding domain at 2, legendreJ z = 2^N * o with |o| <= 1 in PadicAlgCl 2 (condition (*_{j-inv}) of Corollary 2.2, with the j-invariant of the Legendre curve). The open statement iutIVCor2_3ReducedFormStatement: for every d >= 1, every K_V with 2 in the support satisfying JInvBoundedAtTwo, cbDegreeAtMostStatement K d.",
+  "explicit_hypotheses": [
+   "genEllTheorem2_1iiStatement {2} (for iutIVCor2_3ReducedForm_of_genEll)"
+  ],
+  "implicit_hypotheses": [],
+  "conclusion": "iutIVCor2_3ReducedFormStatement",
+  "definitions_required": [],
+  "results_used": [],
+  "external_dependencies": [],
+  "lean_declaration": "IUT.CompactlyBounded.iutIVCor2_3ReducedFormStatement",
+  "lean_module": "IUT.Applications.CompactlyBounded",
+  "lemmas": [
+   "IUT.CompactlyBounded.JInvBoundedAtTwo"
+  ],
+  "covers": "IUT IV page 55, the four bullets of the proof of Corollary 2.3 (X = P^1_Q, D = {0, 1, infinity}, K_V compactly bounded with support containing 2, K_V satisfying (*_{j-inv})) and the display 'ht <~ (1 + eps)(log-diff + log-cond) on K_V cap U_X(Qbar)^{<=d}'; condition (*_{j-inv}) as printed on page 41.",
+  "not_covered": "Corollary 2.3 itself (all hyperbolic curves); Corollary 2.2 (i), (ii), (iii), from which page 55 derives the reduced form, since log(q^forall), log(q^{dagger 2}), ht_infinity, Exc_d, Exc_{eps,d}, eps_E, F_mod, F_tpd and the initial Theta-data of Theorem 1.10 are not defined in the library; the remark of page 55 that (*_{j-inv}) is vacuous for fixed d, so that the reduced form is equivalent to (ii) for Sigma = {2} (needs finiteness of extensions of Q_2 of bounded degree); the formula of the j-invariant is computed in IUT.PaperIV.LegendreFrey, not printed in IUT IV.",
+  "statement_status": "STATEMENT_FORMALIZED",
+  "proof_status": "NOT_EXTRACTED",
+  "obligations": [],
+  "ambiguities": []
+ },
+ "IUT4.Cor2_3.frag.reduced_form_of_genell": {
+  "kind": "fragment",
+  "parent": "IUT4.Cor2_3",
+  "source": {
+   "paper": "Inter-universal Teichmuller Theory IV",
+   "pdf_pages": "pages 41 and 55",
+   "pages_in_paper": "GenEll page 11",
+   "pages_read": "rendered IUT IV pages 3, 40 to 43 and 54 to 56; GenEll pages 3, 5, 6, 8 and 11 to 13; GenEll comments, pages 1 and 2"
+  },
+  "content": "genEllTheorem2_1iiStatement {2} implies iutIVCor2_3ReducedFormStatement, by dropping the condition (*_{j-inv}).",
+  "explicit_hypotheses": [
+   "genEllTheorem2_1iiStatement {2}"
+  ],
+  "implicit_hypotheses": [],
+  "conclusion": "iutIVCor2_3ReducedFormStatement",
+  "definitions_required": [],
+  "results_used": [],
+  "external_dependencies": [],
+  "lean_declaration": "IUT.CompactlyBounded.iutIVCor2_3ReducedForm_of_genEll",
+  "lean_module": "IUT.Applications.CompactlyBounded",
+  "lemmas": [],
+  "covers": "IUT IV page 55, first sentence of the proof of Corollary 2.3: it suffices to verify GenEll Theorem 2.1 (ii) (with support containing 2), and one may assume (*_{j-inv}); the direction from (ii) for Sigma = {2} to the reduced form.",
+  "not_covered": "The converse (page 55: (*_{j-inv}) is entirely vacuous for fixed d); Corollary 2.2 (i), (ii), (iii), from which page 55 derives the reduced form; both statements stay open. Counted as a model test: it proves the direction from (ii) for Sigma = {2} to the reduced form, which is immediate from the definitions; page 55 prints the converse reduction, which is not proved.",
+  "statement_status": "STATEMENT_FORMALIZED",
+  "proof_status": "CONDITIONALLY_VERIFIED",
+  "obligations": [
+   "genEllTheorem2_1iiStatement {2} (GenEll Theorem 2.1 (ii) for Sigma = {2})"
+  ],
+  "ambiguities": [],
+  "scope": "model_test"
  },
  "IUT4.Rem2_3_1": {
   "source": {

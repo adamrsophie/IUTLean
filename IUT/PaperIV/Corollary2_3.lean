@@ -26,7 +26,8 @@ Nothing here refers to curves, divisors, points of bounded degree, heights, log-
 log-conductors: these are arbitrary real functions on an arbitrary type, and the lemma holds for
 every `S`, including `S = ∅`. It says nothing about `K_V` unless the hypotheses are established
 for the actual functions, which requires Corollary 2.2 and is not done here. Corollary 2.3 itself
-is not stated in Lean.
+is not stated in Lean; the form to which its proof reduces it (page 55) is stated as an open
+proposition in `IUT/Applications/CompactlyBounded.lean` (`iutIVCor2_3ReducedFormStatement`).
 -/
 
 namespace IUT.PaperIV.Corollary2_3

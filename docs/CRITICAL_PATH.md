@@ -12,7 +12,7 @@ There is no Lean edge from `Challenge.ABC` to IUT IV Theorem A (`IUT4.ThmA`) or 
 
 Missing roots: none.
 
-## Size: 562 of 656 statement records
+## Size: 562 of 659 statement records
 
 | Paper | Corollary | Definition | Example | Lemma | Proposition | Remark | Theorem | part or step | Total |
 |---|---|---|---|---|---|---|---|---|---|
@@ -29,7 +29,7 @@ Not on the critical path (no chain of edges from the roots reaches them):
 | IUT2 | 0 | 5 | 2 | 0 | 0 | 0 | 7 |
 | IUT3 | 0 | 9 | 2 | 0 | 0 | 0 | 11 |
 | IUT4 | 0 | 11 | 0 | 1 | 0 | 0 | 12 |
-| IUTNone | 0 | 0 | 0 | 0 | 0 | 27 | 27 |
+| IUTNone | 0 | 0 | 0 | 0 | 0 | 30 | 30 |
 
 ## Most cited unresolved statements
 

@@ -57,8 +57,8 @@ statements take `K₁` and `K₂` in one universe.
    of page 10 at `e = P.ramificationIdx ℤ_[p]`.
 2. *An exact value.* `volBridge_muLog_logUnit_eq_of_le`: for `p > 2` and `e ≤ p − 2`,
    `μ^log(log_p(R^×)) = −(1 / e) log p`. This agrees with Proposition 1.4 (ii) exactly when
-   `m = 0`; that `m = 0` under these hypotheses (no element of order `p` in `R^×`) is not proved
-   here, and `m`, `f` are not defined in Lean.
+   `m = 0`; that `m = 0` under these hypotheses (no element of order `p` in `R^×`) is proved in
+   `UnitVolume.lean` (`unitVol_card_torsion_of_le`), where `m` and `f` are defined.
 3. *Tensor packets of two factors.* `volBridge_tensor_isReduced`: `K₁ ⊗[ℚ_p] K₂` is reduced
    (Mathlib: separable extensions are formally unramified, `Algebra.FormallyUnramified.base_change`,
    `.comp`, `.isReduced_of_field`). `volBridge_tensor_equiv_pi`: it is isomorphic, as a
@@ -75,18 +75,21 @@ statements take `K₁` and `K₂` in one universe.
 ## Not proved
 
 * That `(R_E)^∼` is a finitely generated `ℤ_p`-module spanning `K₁ ⊗ K₂` (a lattice); only
-  compactness and openness are proved, which is what the normalization needs.
+  compactness and openness are proved, which is what the normalization needs; it is proved for
+  any finite number of factors in `Packets.lean` (`packet_normalization_lattice_tensor`).
 * That `R_E` has positive Haar measure, so the step `μ^log(R_I) ≤ μ^log((R_I)^∼) = 0` of page 14
   is not obtained; the sublattice index formula.
 * That `padicPacketNormalization` is the normalization of `R_E` in its ring of fractions (that the
   total ring of fractions of `R_E` is `K₁ ⊗ K₂`); it is the integral closure of `ℤ_p` there.
-* Proposition 1.1, `p ^ (𝔡_{I*}) · (R_I)^∼ ⊆ R_I`: it needs the different of `R_i` over `ℤ_p`
-  acting on the tensor product; hence Proposition 1.2 (ii) to (iv) and the inequalities of
-  Proposition 1.4 (iii), (iv).
-* Proposition 1.4 (ii) in general (the residue field, the torsion of `R^×` and Haar measure on the
-  unit group), and the case `m = 0` above.
-* Packets with more than two factors, the weighting of `μ^log` over the factors of the
-  decomposition, and the additivity used on page 14.
+* Proposition 1.1, `p ^ (𝔡_{I*}) · (R_I)^∼ ⊆ R_I`, here; it is proved for two factors in
+  `TensorDifferent.lean`. Proposition 1.2 (ii) to (iv) (of (ii), only the first display of its
+  proof is in `TensorDifferent.lean`) and the inequalities of Proposition 1.4 (iii), (iv) remain
+  open.
+* Proposition 1.4 (ii) in general here; it is proved in `UnitVolume.lean`
+  (`unitVol_muLog_logUnit_eq`).
+* The weighting of `μ^log` over the factors of the decomposition and the additivity used on
+  page 14; packets of any finite number of factors are decomposed and normalized in
+  `Packets.lean`.
 -/
 
 open MeasureTheory Measure IUT.Prerequisites.PadicVolume
@@ -323,7 +326,7 @@ theorem volBridge_muLog_logShell_bounds (P : Ideal (integralClosure ℤ_[p] L)) 
 `R = integralClosure ℤ_[p] L` and `e = P.ramificationIdx ℤ_[p]`,
 `μ^log(log_p(R^×)) = −(1 / e) log p`, from the equality case `log_p(R^×) = p ^ (1 / e) · R` of
 Proposition 1.2 (i). This is the value `−(1 / e + m / (e f)) log p` of Proposition 1.4 (ii) when
-`m = 0`; that `m = 0` in this case is not proved here. -/
+`m = 0`; that `m = 0` in this case is proved in `UnitVolume.lean`. -/
 theorem volBridge_muLog_logUnit_eq_of_le (P : Ideal (integralClosure ℤ_[p] L)) [P.IsPrime]
     [P.LiesOver (IsLocalRing.maximalIdeal ℤ_[p])] (hp2 : 2 < p)
     (hep : P.ramificationIdx ℤ_[p] ≤ p - 2) :

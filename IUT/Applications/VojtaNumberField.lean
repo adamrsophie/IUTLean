@@ -106,7 +106,7 @@ number field `K` with `IsCyclotomicExtension {3} ℚ K`, and instantiated at Mat
 `CyclotomicField 3 ℚ` in `exists_point_cyclotomicFieldThree` (instance search does not find
 that instance here, so the proof supplies `CyclotomicField.isCyclotomicExtension` by name).
 
-**The compactly bounded form is not stated.** [GenEll] Theorem 2.1 (ii) (page 11) asserts the
+**The compactly bounded form is stated elsewhere.** [GenEll] Theorem 2.1 (ii) (page 11) asserts the
 same inequality on `K_V ∩ U_P(ℚ̄)^{≤d}` for every compactly bounded subset `K_V ⊆ U_P(ℚ̄)` whose
 support contains a fixed finite set `Σ` of primes; IUT IV takes `Σ = {2}` and adds the
 condition `(*_{j-inv})` (pages 41 and 55). By Example 1.3 (ii) (pages 5 and 6) with corrections
@@ -119,9 +119,11 @@ points of `X(ℂ)`, respectively `X(ℚ̄_v)`, determined by `x` lie in `K_v`. T
 `ℚ̄_v`, not of the completions of `F`. Mathlib has `ℚ̄_p` (`PadicAlgCl p`) with its norm, and ring
 homomorphisms from `F` into it; a faithful definition would quantify over the finite
 intermediate extensions of `PadicAlgCl p / ℚ_[p]` with their subspace topologies and over the
-`ℚ_[p]`-automorphisms of `PadicAlgCl p`. This file does not build that definition and does not
-state form (ii). It is implied by `VojtaLineMinusThreePointsBoundedDegree` by restriction
-(proof of Theorem 2.1: "The fact that (i) ⟹ (ii) is immediate from the definitions"), and is not shown here to imply `Challenge.ABC`.
+`ℚ_[p]`-automorphisms of `PadicAlgCl p`. This file does not build that definition;
+`IUT/Applications/CompactlyBounded.lean` does, states form (ii) as `genEllTheorem2_1iiStatement`,
+and proves that it follows from `VojtaLineMinusThreePointsBoundedDegree` by restriction (proof of
+Theorem 2.1: "The fact that (i) ⟹ (ii) is immediate from the definitions"). That form (ii)
+implies `Challenge.ABC` is not shown.
 
 **Open items between IUT IV and `VojtaLineMinusThreePointsBoundedDegree`.** None of these is
 formalized.

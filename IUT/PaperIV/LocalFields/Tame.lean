@@ -41,10 +41,9 @@ What is proved:
 * `differentOrder_le_one_of_not_dvd_ramificationIdx_padic`: Proposition 1.3 (ii) in its base case
   `k_0 = ℚ_p`, `k_1 = k_i` tame (`n_i = 0`): `𝔡 ≤ 1`, through `Proposition1_3.ii_base`.
 
-Not formalized here: Proposition 1.3 (i) and (ii) over a general base `k_0` (this needs the
-transitivity of the different over `R_0`, the ramification in towers, and, for (ii), Galois
-extensions and the bound `n_i`); Proposition 1.1 (the inclusions for the tensor products `R_I`
-and their normalizations).
+Not formalized here: Proposition 1.3 over a general base `k_0`, which is in `Tower.lean` ((i),
+and (ii) in the tame and `n_i = 0` cases); Proposition 1.1, of which the first inclusion for two
+factors is in `TensorDifferent.lean`.
 -/
 
 open Ideal nonZeroDivisors

@@ -84,9 +84,10 @@ map, real or complex, exactly as in the display of IUT IV Definition 1.9 (i).
 `IUT/Prerequisites/ProductFormula.lean` uses Mathlib's convention, with multiplicity `2` at a
 complex place (`NumberField.InfinitePlace.mult`), for which the product formula holds.
 
-Rationale: each module follows its source exactly. The papers do not fix the relation between
-the two conventions on the pages read, so no relation is asserted, and the degree of a
-principal divisor is not defined (`OPEN_PROBLEMS.md`, P-DEG0).
+Rationale: each module follows its source exactly. IUT IV pages 21 to 23 do not fix the
+coefficient of a principal divisor at a complex place; [GenEll] page 4 does, with the factor
+`[F_v : ℝ]` in the coefficient, and with that convention the degree of Definition 1.9 (i)
+vanishes on principal divisors (`degPb_degF_principal` in `IUT/PaperIV/DegreePullback.lean`).
 
 ## 8. Mechanical citation edges over-approximate dependence
 

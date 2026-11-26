@@ -124,18 +124,24 @@ open statement without assuming one. The open statements are three plain lists n
 of `AxiomGate.lean`; an entry is the full name of a definition and the module that declares
 it, and adding one needs no change of the logic.
 
-* `closedForms`: statements of type `Prop` that are open and that the library proves
-  equivalent to the abc conjecture: `Challenge.ABC`, `Challenge.ABCFinite`,
+* `closedForms`: open statements of type `Prop` related to the abc conjecture. First those
+  that the library proves equivalent to it: `Challenge.ABC`, `Challenge.ABCFinite`,
   `Challenge.ABCLog`, the three forms of `IUT.ABC.FormalConjectures`,
   `IUT.ABC.Variants.ABCInt`, `IUT.ABC.Variants.ABCIntSum`, and
-  `IUT.ABCSpecialization.VojtaLineMinusThreePointsRational` and `...UnitInterval`, and the
+  `IUT.ABCSpecialization.VojtaLineMinusThreePointsRational` and `...UnitInterval`; then the
   open statement `IUT.VojtaNumberField.VojtaLineMinusThreePointsBoundedDegree`, which implies
+  it; and, in `IUT.CompactlyBounded`, the open statements `iutIVCor2_3ReducedFormStatement`,
+  `abcRatioBoundedStatement`, `cbDegreeOneAllStatement` and `cbDegreeOneSupportFreeStatement`,
+  which abc or the bounded degree statement implies and which are not proved equivalent to
   it. Neither a form nor its negation may be proved outright.
 * `openFamilies`: constants of type `… → Prop` some of whose instances are open:
   `IUT.ABC.Variants.ABCWithExponent` (open for `κ > 1`) and
   `IUT.ABCSpecialization.RationalPointBoundFor` and
   `IUT.VojtaNumberField.VojtaLineMinusThreePointsDegreeAtMost` (open for `d ≥ 1`, trivially
-  true for `d = 0`). No instance may be proved outright, for any
+  true for `d = 0`), `IUT.CompactlyBounded.cbDegreeAtMostStatement` (trivially true for
+  `d = 0`), `IUT.CompactlyBounded.genEllTheorem2_1iiStatement` (trivial when the set of primes
+  contains a non-prime) and `IUT.ABC.Unconditional.uncondABCRestrictedToStatement` (equivalent
+  to `Challenge.ABC` for `D ≥ 1`, vacuously true for `D = 0`). No instance may be proved outright, for any
   argument; negated instances may (`not_abcWithExponent_of_le_one` refutes `κ ≤ 1`), and so
   may implications whose hypothesis is an instance (`abcWithExponent_mono`).
 * `authorStatements`: statements of results or claims of other papers that the library may

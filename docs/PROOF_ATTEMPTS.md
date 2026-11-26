@@ -33,7 +33,7 @@ are in `docs/DASHBOARD.md`.
 * **Definition 1.9 and arithmetic divisors.** `IUT/PaperIV/ArithmeticDivisor.lean`,
   `Definition1_9.lean`: `ADiv`, `degWeight`, `degE` with its basic properties (`degE_add`,
   `degE_nonneg`, `degE_eq_normalizedDeg`).
-  Proved; the pull-back to an extension is not defined (`OPEN_PROBLEMS.md`, P-PULL).
+  Proved. The pull-back to an extension and the invariance of (i) are in `IUT/PaperIV/DegreePullback.lean`, in one reading of "the evident fashion".
 * **Theorem 1.10.** `IUT/PaperIV/Theorem1_10/`: Steps (ii), (iii), (v), (viii), the elementary
   facts, and `final_inequality`. Each step is proved under the hypotheses the paper uses,
   including the inequality of IUT III Corollary 3.12 where the paper invokes it. Two

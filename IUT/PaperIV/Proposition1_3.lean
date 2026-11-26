@@ -18,7 +18,9 @@ valuation of `[k_i : k_0]`):
 
 This file is not a formalization of Proposition 1.3. The proof computes differents through
 Eisenstein and Kummer polynomials over local rings, which needs local field theory not
-formalized here. This file checks the arithmetic of the proof:
+formalized here. On the papers' objects over a general base, the inequality of (i), its tame
+equality and (ii) in the tame and `n_i = 0` cases are proved in
+`IUT/PaperIV/LocalFields/Tower.lean`. This file checks the arithmetic of the proof:
 
 * the minimum in the display of (i) (`i_min`);
 * the base case `n_i = 0` of the induction in (ii), i.e. that (i) with equality gives

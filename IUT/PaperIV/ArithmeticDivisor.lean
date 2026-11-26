@@ -18,9 +18,10 @@ with `q_v` the cardinality of the residue field, and an archimedean `v` to `1`.
   `NumberField.InfinitePlace F`. A pair of complex conjugate embeddings is one valuation.
 * The archimedean weight is `1` for real and complex places alike, exactly as in the display
   of Definition 1.9 (i). Other conventions weight a complex place by `2`.
-* The pull-back `𝔞|_K` to a finite extension, and the identity `deg(𝔞|_K) = deg(𝔞)` for the
-  normalized degree, are stated in the paper "in the evident fashion" and are not formalized
-  here. Part (ii) of the definition is not formalized here either.
+* The pull-back `𝔞|_K` to a finite extension, defined "in the evident fashion", and the
+  identity `deg(𝔞|_K) = deg(𝔞)` for the normalized degree are formalized in
+  `IUT/PaperIV/DegreePullback.lean`, in one reading of that phrase. Part (ii) of the definition
+  is not formalized here.
 -/
 
 open NumberField

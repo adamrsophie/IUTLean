@@ -62,17 +62,19 @@ both normalizations give the same `j`-invariant (`legendreJ_neg_div_eq`).
 6. Height comparison for triples: `6 h(λ) - log(64/27) ≤ h(j(λ)) ≤ 6 h(λ) + 8 log 2` for
    `λ = a / c`, with `h = Height.logHeight₁`. This is an explicit form, on the points of
    triples, of the degree-6 comparison behind `(1/6)·ht_∞ ≈ ht_{ω_X(D)}` (page 43); the
-   identification of `ht_∞` and `ht_{ω_X(D)}` with these Weil heights is not formalized.
+   identification of `ht_∞` and `ht_{ω_X(D)}` with these Weil heights is not formalized. A
+   uniform form over number fields is in `IUT/Applications/HeightComparison.lean`.
 
 **What Mathlib has and lacks.** Mathlib has `WeierstrassCurve` with `b₂ … b₈`, `c₄`, `c₆`,
 `Δ`, `IsElliptic`, `j`, variable changes and their action, models with given `j` (`ofJ`), the
 isomorphism of curves with equal `j` over a separably closed field, and, over the fraction
 field of a discrete valuation ring, integral and minimal models with `HasGoodReduction`,
 `HasMultiplicativeReduction`, `HasAdditiveReduction` and `HasSplitMultiplicativeReduction`.
-It lacks a criterion for minimality (such as: an integral model with `c₄` a unit is minimal),
-Tate curves, `q`-parameters, conductors and semistable reduction after extension. So the
-statement that the Frey curve has multiplicative reduction at the odd primes dividing `abc` is
-not proved here; item 4 proves only the arithmetic of `Δ` and `c₄` on which it rests.
+It lacks Tate curves, `q`-parameters, conductors and semistable reduction after extension.
+Minimality of the Frey model at odd primes, its multiplicative reduction at the odd primes
+dividing `abc` and the valuation of `j` there are proved in `IUT/PaperIV/FreyReduction.lean`,
+from the arithmetic of `Δ` and `c₄` of item 4; the relation `v(q) = -v(j)` needs Tate curves
+and is not proved.
 -/
 
 namespace IUT.LegendreFrey

@@ -36,10 +36,10 @@ included. Checks:
    the complete inventory of exempted helpers is printed.
 3. Open statements: no checked declaration proves an open statement without assuming one.
    Three registries, plain lists in this file: `closedForms` (the abc conjecture
-   `Challenge.ABC`, `ABCFinite`, `ABCLog`, and the statements the library proves equivalent to
-   it), `openFamilies` (constants of type `… → Prop` with open instances, such as
-   `ABCWithExponent`) and `authorStatements` (claims of other papers that the library may
-   assume but not prove). Each entry names a definition and its module. An entry whose module
+   `Challenge.ABC`, `ABCFinite`, `ABCLog`, the statements the library proves equivalent to
+   it, and other open statements related to it), `openFamilies` (constants of type
+   `… → Prop` with open instances, such as `ABCWithExponent`) and `authorStatements` (claims
+   of other papers that the library may assume but not prove). Each entry names a definition and its module. An entry whose module
    is not in the import closure is skipped with a note, except under continuous integration
    (`CI=true`), where it is an error, as is an entry that is missing although its module is
    imported. For every checked theorem, definition, opaque constant or axiom of type a
@@ -216,8 +216,9 @@ Three plain lists; an entry is the full name of a constant and the module that d
 new entry needs no change of the logic below. -/
 
 /-- Closed forms: open statements of type `Prop`: the abc conjecture, the statements that the
-library proves equivalent to it, and open statements that imply it
-(`VojtaLineMinusThreePointsBoundedDegree`). No checked declaration may
+library proves equivalent to it, and other open statements related to it: one that implies it
+(`VojtaLineMinusThreePointsBoundedDegree`) and four that it or the bounded degree statement
+implies (`IUT.CompactlyBounded`). No checked declaration may
 prove one, or its negation, without assuming a registered statement (check 3). -/
 def closedForms : List (Name × Name) :=
   [(`Challenge.ABC, `Challenge.Defs), (`Challenge.ABCFinite, `Challenge.Defs),
@@ -232,7 +233,11 @@ def closedForms : List (Name × Name) :=
    (`IUT.ABCSpecialization.VojtaLineMinusThreePointsUnitInterval,
     `IUT.Applications.ABCSpecialization),
    (`IUT.VojtaNumberField.VojtaLineMinusThreePointsBoundedDegree,
-    `IUT.Applications.VojtaNumberField)]
+    `IUT.Applications.VojtaNumberField),
+   (`IUT.CompactlyBounded.iutIVCor2_3ReducedFormStatement, `IUT.Applications.CompactlyBounded),
+   (`IUT.CompactlyBounded.abcRatioBoundedStatement, `IUT.Applications.CompactlyBounded),
+   (`IUT.CompactlyBounded.cbDegreeOneAllStatement, `IUT.Applications.CompactlyBounded),
+   (`IUT.CompactlyBounded.cbDegreeOneSupportFreeStatement, `IUT.Applications.CompactlyBounded)]
 
 /-- Open families: constants of type `α₁ → … → αₙ → Prop` some of whose instances are open
 (`ABCWithExponent κ` for `κ > 1`; `RationalPointBoundFor Height.logHeight₁` is the closed
@@ -245,7 +250,10 @@ def openFamilies : List (Name × Name) :=
   [(`IUT.ABC.Variants.ABCWithExponent, `IUT.ABC.Variants),
    (`IUT.ABCSpecialization.RationalPointBoundFor, `IUT.Applications.ABCSpecialization),
    (`IUT.VojtaNumberField.VojtaLineMinusThreePointsDegreeAtMost,
-    `IUT.Applications.VojtaNumberField)]
+    `IUT.Applications.VojtaNumberField),
+   (`IUT.CompactlyBounded.cbDegreeAtMostStatement, `IUT.Applications.CompactlyBounded),
+   (`IUT.CompactlyBounded.genEllTheorem2_1iiStatement, `IUT.Applications.CompactlyBounded),
+   (`IUT.ABC.Unconditional.uncondABCRestrictedToStatement, `IUT.ABC.Unconditional)]
 
 /-- Author statements: constants of type `… → Prop` that state results or claims of other
 papers, which the library may assume but never proves outright. Same rule as closed forms,

@@ -61,6 +61,7 @@ EXTERNAL_PAPERS = {
     "ZHOU1": ("Z.-P. Zhou, arXiv 2503.14510", ("2503.14510",)),
     "ZHOU2": ("Z.-P. Zhou, arXiv 2510.05448", ("2510.05448",)),
     "DH": ("T. Dupuy, A. Hilado, arXiv 2004.13228 and 2004.13108", ("2004.13228", "2004.13108")),
+    "GENELL": ("S. Mochizuki, \"Arithmetic Elliptic Curves in General Position\", Math. J. Okayama Univ. 52 (2010)", ()),
 }
 EXTERNAL_STATEMENT = "external_statement"
 EXTERNAL_SOURCE_FIELDS = ("authors", "title", "statement", "pages_in_paper")

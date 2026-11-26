@@ -3896,7 +3896,8 @@
       "Define the packet log-volume as the weighted sum over direct summands with the weights of Rem 3.1.1 (ii) on direct product regions, and extend it to other elements of M(−) through the E-weighted measure of Rem 3.1.1 (iv). Do not define it as the logarithm of a single normalized Haar measure on the product: Rem 3.1.1 (iii), page 95, says such weighted sums do not in general arise as a positive multiple of the log of an ordinary measure; on direct product regions page 96 identifies them with a normalized log of μ_E on M_{E*V}, not of a measure on the original product.",
       "Check the scaling rule against the weights: multiplication by p_v shifts each summand log-volume, and the normalized weights make the total shift −log(p_v).",
       "Define the procession-normalized log-volume as the average over j ∈ F*_l (stated on pages 173 and 181), factor 1/l*; Prop 3.4 (ii) (page 102) and Rem 3.9.3 (page 120) corroborate the labels j ∈ {1, ..., l*}. Fix how the j = 0 packet of the procession enters.",
-      "On one nonarchimedean summand the packet-normalization law (multiplication by p adds -log p; the normalizing set has log-volume 0) is proved for the normalized log-volume of IUT.Prerequisites.PadicVolume (IUT3.Prop3_9.i.frag.packet_normalization); the direct sums, the weights of Remark 3.1.1 and the archimedean case are not."
+      "On one nonarchimedean summand the packet-normalization law (multiplication by p adds -log p; the normalizing set has log-volume 0) is proved for the normalized log-volume of IUT.Prerequisites.PadicVolume (IUT3.Prop3_9.i.frag.packet_normalization); the direct sums, the weights of Remark 3.1.1 and the archimedean case are not.",
+      "On an abstract finite product of finite extensions of Q_p the two normalizing properties hold for the unweighted normalized Haar log-volume (IUT3.Prop3_9.i.frag.pk_local_packet_normalization, a model test), which weights a summand by its degree over Q_p and is not the weighted log-volume of Remark 3.1.1."
     ],
     "ambiguities": [
       "The extension of the weighted sum from direct product regions to all of M(−) is given only through Rem 3.1.1 (iv) with 'a suitable normalization factor' (page 96); the factor is not displayed.",
@@ -3904,7 +3905,8 @@
     ],
     "fragments": [
       "IUT3.Prop3_9.i.frag.packet_normalization",
-      "IUT3.Prop3_9.i.frag.region_interface"
+      "IUT3.Prop3_9.i.frag.region_interface",
+      "IUT3.Prop3_9.i.frag.pk_local_packet_normalization"
     ]
   },
   "IUT3.Prop3_9.i.frag.packet_normalization": {
@@ -3972,6 +3974,35 @@
     "ambiguities": [],
     "scope": "abstract interface instance, not the papers' objects",
     "cor3_12_dependency": "setup_only"
+  },
+  "IUT3.Prop3_9.i.frag.pk_local_packet_normalization": {
+    "kind": "fragment",
+    "parent": "IUT3.Prop3_9.i",
+    "source": {
+      "paper": "Inter-universal Teichmuller Theory III",
+      "pdf_pages": "pages 115 and 116",
+      "pages_read": "rendered and checked: IUT III pages 93, 94, 95, 96, 115, 116"
+    },
+    "content": "For a nonzero finite-dimensional commutative Q_p-algebra W that is formally unramified over Q_p (a finite product of finite extensions of Q_p) and every additive Haar measure on its coordinate space: the integral elements (R_E)^~ form a compact open set of positive finite measure, the normalized log-volume vanishes on it, and multiplication by p^n adds -n log p.",
+    "explicit_hypotheses": [
+      "p a prime",
+      "W a nonzero commutative finite-dimensional Q_p-algebra, formally unramified over Q_p",
+      "a Borel structure and an additive Haar measure mu on the coordinate space of W"
+    ],
+    "implicit_hypotheses": [],
+    "conclusion": "mu((R_E)^~) neither 0 nor infinite; mu^log((R_E)^~) = 0; mu^log(p^n (R_E)^~) = -(n log p).",
+    "definitions_required": [],
+    "results_used": [],
+    "external_dependencies": [],
+    "lean_declaration": "IUT.PaperIV.LocalFields.packet_muLog_normalization",
+    "covers": "Page 115, Proposition 3.9 (i), nonarchimedean case: the two normalizing properties of the packet-normalization (the integral structure has log-volume zero; multiplication by p adds -log(p)), checked for the unweighted normalized Haar log-volume on an abstract finite product of finite extensions of Q_p.",
+    "not_covered": "Setting: abstract finite etale Q_p-algebra, not the papers' objects of IUT III. The log-volumes of Proposition 3.9 (i) are weighted sums over the direct summands with the normalized weights of Remark 3.1.1 (ii), (iii), (iv), which depend on global degrees; page 95 warns that such weighted sums are not in general a positive multiple of the logarithm of a measure, whereas the log-volume here is one (it weights a summand A_j by [A_j : Q_p] / dim W). The objects of Proposition 3.9 (i) (the ind-topological modules I^Q(F_v) of Proposition 3.1 and their integral structures); the archimedean case; the procession-normalization. Counted as a model test: the log-volume here is unweighted, while Proposition 3.9 (i) uses the normalized weights of Remark 3.1.1, which page 95 says are not in general the logarithm of a measure; the Lean object is not the object of page 115.",
+    "statement_status": "STATEMENT_FORMALIZED",
+    "proof_status": "KERNEL_VERIFIED",
+    "obligations": [],
+    "ambiguities": [],
+    "scope": "model_test",
+    "lemmas": []
   },
   "IUT3.Prop3_9.ii": {
     "source": {
@@ -4533,10 +4564,190 @@
     "proof_status": "BLOCKED_BY_MISSING_JUSTIFICATION",
     "obligations": [
       "Prove existence and uniqueness of a smallest λ·O containing a relatively compact U (componentwise this is the smallest scaled ring of integers containing the projection, which exists by discreteness of the value group).",
-      "Prove the hull is independent of the choice of λ among those giving the same set."
+      "Prove the hull is independent of the choice of λ among those giving the same set.",
+      "On a finite product of finite extensions of Q_p in place of the direct sum of fields of I^Q(-), the smallest set lambda O containing a relatively compact U that contains a subset of positive Haar measure exists and is the hull (IUT3.Rem3_9_5.i.frag.pkt_isLeast_spectral); tensor packets, I^Q(-) itself and the archimedean case are open."
     ],
     "ambiguities": [
       "At archimedean components the ring O is a closed unit ball in C; 'smallest λ·O' then refers to the smallest closed ball, which exists by compactness; the text does not separate the cases."
+    ],
+    "fragments": [
+      "IUT3.Rem3_9_5.i.frag.pkt_excluded_cases",
+      "IUT3.Rem3_9_5.i.frag.pkt_hull_def",
+      "IUT3.Rem3_9_5.i.frag.pkt_isLeast_spectral",
+      "IUT3.Rem3_9_5.i.frag.pkt_union",
+      "IUT3.Rem3_9_5.i.frag.pkt_vs_dhHull"
+    ]
+  },
+  "IUT3.Rem3_9_5.i.frag.pkt_excluded_cases": {
+    "kind": "fragment",
+    "parent": "IUT3.Rem3_9_5.i",
+    "source": {
+      "paper": "Inter-universal Teichmuller Theory III",
+      "pdf_pages": "page 127",
+      "pages_read": "rendered and checked: pages 126, 127, 128"
+    },
+    "content": "pktHull U is the whole space for every U that is not relatively compact, in particular every unbounded U; for proper factors relatively compact is the same as bounded; for U = {0} (a zero projection) no set of the form lambda O containing U is smallest.",
+    "explicit_hypotheses": [
+      "I a finite type; L_s normed fields",
+      "U an unbounded subset of prod L_s"
+    ],
+    "implicit_hypotheses": [],
+    "conclusion": "pktHull U = univ. Further lemmas: IsCompact (closure U) iff U bounded when every L_s is proper (pktHull_relCompact_iff); no least lambda O contains {0} when I is nonempty and every L_s has discrete value group (pktHull_not_exists_isLeast_zero).",
+    "definitions_required": [],
+    "results_used": [],
+    "external_dependencies": [],
+    "lean_declaration": "IUT.PaperIII.Corollary312.pktHull_of_not_isBounded",
+    "lean_module": "IUT.PaperIII.Corollary312.PacketHull",
+    "covers": "Page 127, Remark 3.9.5 (i), the case 'not relatively compact', and the role of the condition that U contain a subset of finite log-volume.",
+    "not_covered": "The page does not discuss bounded sets with a zero projection beyond excluding them by its condition; the Lean value there is a convention.",
+    "statement_status": "STATEMENT_FORMALIZED",
+    "proof_status": "KERNEL_VERIFIED",
+    "obligations": [],
+    "ambiguities": [],
+    "scope": "finite product of finite extensions of Q_p (or of discretely valued normed fields) in place of the direct sum of fields I^Q(-); tensor packets and the archimedean case not treated; O = product of closed unit balls = product of the rings of integers",
+    "lemmas": [
+      "IUT.PaperIII.Corollary312.pktHull_relCompact_iff",
+      "IUT.PaperIII.Corollary312.pktHull_not_exists_isLeast_zero",
+      "IUT.PaperIII.Corollary312.pktHull_of_not_relCompact"
+    ]
+  },
+  "IUT3.Rem3_9_5.i.frag.pkt_hull_def": {
+    "kind": "fragment",
+    "parent": "IUT3.Rem3_9_5.i",
+    "source": {
+      "paper": "Inter-universal Teichmuller Theory III",
+      "pdf_pages": "page 127",
+      "pages_read": "rendered and checked: pages 126, 127, 128"
+    },
+    "content": "Definition of the hull on V = prod_s L_s: the sets lambda O for lambda in prod_s L_s^x (pktHullPrincipal, equal to the box {x | |x_s| <= |lambda_s|}), and pktHull U = the intersection of the sets lambda O containing U when closure U is compact, the whole space otherwise.",
+    "explicit_hypotheses": [
+      "I a finite type; L_s (s in I) fields",
+      "L_s normed fields"
+    ],
+    "implicit_hypotheses": [],
+    "conclusion": "A definition; no conclusion.",
+    "definitions_required": [],
+    "results_used": [],
+    "external_dependencies": [],
+    "lean_declaration": "IUT.PaperIII.Corollary312.pktHull",
+    "lean_module": "IUT.PaperIII.Corollary312.PacketHull",
+    "covers": "Page 127, Remark 3.9.5 (i): the hull is the smallest lambda O (all components of lambda nonzero) containing U for relatively compact U, and the whole space for U not relatively compact.",
+    "not_covered": "The intersection is the smallest set of the form only under the conditions of pktHull_isLeast; on bounded sets with a zero coordinate projection (excluded by the page) the value is a convention. Tensor packets I^Q(-) and the log-shell integral structure are not modeled.",
+    "statement_status": "STATEMENT_FORMALIZED",
+    "proof_status": "NOT_EXTRACTED",
+    "obligations": [],
+    "ambiguities": [],
+    "scope": "finite product of finite extensions of Q_p (or of discretely valued normed fields) in place of the direct sum of fields I^Q(-); tensor packets and the archimedean case not treated; O = product of closed unit balls = product of the rings of integers",
+    "lemmas": [
+      "IUT.PaperIII.Corollary312.pktHullPrincipal",
+      "IUT.PaperIII.Corollary312.pktHullForms",
+      "IUT.PaperIII.Corollary312.pktHullIntegers",
+      "IUT.PaperIII.Corollary312.pktHull_mem_principal",
+      "IUT.PaperIII.Corollary312.pktHullIntegers_eq_pi_integralClosure"
+    ]
+  },
+  "IUT3.Rem3_9_5.i.frag.pkt_isLeast_spectral": {
+    "kind": "fragment",
+    "parent": "IUT3.Rem3_9_5.i",
+    "source": {
+      "paper": "Inter-universal Teichmuller Theory III",
+      "pdf_pages": "page 127",
+      "pages_read": "rendered and checked: pages 126, 127, 128"
+    },
+    "content": "For a finite product of finite extensions of Q_p with spectral norms and any Haar measures, every relatively compact U containing a subset of positive product (outer) measure has pktHull U equal to the smallest set of the form lambda O containing U; lambda_s can be taken to be a point of the s-th projection of U of largest norm.",
+    "explicit_hypotheses": [
+      "p a prime",
+      "I a finite type; each L_s a field with a finite-dimensional Q_p-algebra structure and a compatible Z_p-algebra structure (IsScalarTower Z_p Q_p L_s)",
+      "each L_s normed by the spectral norm, with the Borel measurable structure",
+      "mu_s any additive Haar measure on L_s",
+      "U a subset of prod L_s with compact closure",
+      "some K subset of U with positive product measure"
+    ],
+    "implicit_hypotheses": [],
+    "conclusion": "IsLeast {H | U subset H and H of the form lambda O} (pktHull U).",
+    "definitions_required": [],
+    "results_used": [],
+    "external_dependencies": [],
+    "lean_declaration": "IUT.PaperIII.Corollary312.pktHull_isLeast_spectral",
+    "lean_module": "IUT.PaperIII.Corollary312.PacketHull",
+    "covers": "Page 127, Remark 3.9.5 (i), the relatively compact case: existence of the smallest lambda O containing U (the page's 'one verifies immediately that the holomorphic hull is well-defined').",
+    "not_covered": "Tensor packets (the identification of a packet with a product of fields is not applied); the archimedean case; 'finite log-volume' is read as positive outer product Haar measure of a subset; the generic theorem pktHull_isLeast needs only nonzero coordinate projections and a discrete value group.",
+    "statement_status": "STATEMENT_FORMALIZED",
+    "proof_status": "KERNEL_VERIFIED",
+    "obligations": [],
+    "ambiguities": [],
+    "scope": "finite product of finite extensions of Q_p (or of discretely valued normed fields) in place of the direct sum of fields I^Q(-); tensor packets and the archimedean case not treated; O = product of closed unit balls = product of the rings of integers",
+    "lemmas": [
+      "IUT.PaperIII.Corollary312.pktHull_isLeast",
+      "IUT.PaperIII.Corollary312.pktHull_eq_principal",
+      "IUT.PaperIII.Corollary312.pktHull_exists_max",
+      "IUT.PaperIII.Corollary312.pktHullDiscrete_spectral",
+      "IUT.PaperIII.Corollary312.pktHullDiscrete_padic",
+      "IUT.PaperIII.Corollary312.pktHullNondeg_of_measure",
+      "IUT.PaperIII.Corollary312.pktHull_haar_singleton_zero"
+    ]
+  },
+  "IUT3.Rem3_9_5.i.frag.pkt_union": {
+    "kind": "fragment",
+    "parent": "IUT3.Rem3_9_5.i",
+    "source": {
+      "paper": "Inter-universal Teichmuller Theory III",
+      "pdf_pages": "page 127",
+      "pages_read": "rendered and checked: pages 126, 127, 128"
+    },
+    "content": "The hull of a union contains the union of the hulls; in Q_p^2 with v = (1, p), w = (p, 1) the point (1, 1) lies in pktHull ({v} union {w}) but in neither pktHull {v} nor pktHull {w}.",
+    "explicit_hypotheses": [
+      "p a prime",
+      "V = Q_p^2 = Fin 2 -> Q_p, v = (1, p), w = (p, 1)"
+    ],
+    "implicit_hypotheses": [],
+    "conclusion": "(1, 1) is in pktHull ({v} union {w}) and in neither pktHull {v} nor pktHull {w}. Generic lemma pktHull_iUnion_subset: union_i pktHull (U i) subset pktHull (union_i U i) for any family.",
+    "definitions_required": [],
+    "results_used": [],
+    "external_dependencies": [],
+    "lean_declaration": "IUT.PaperIII.Corollary312.pktHull_union_strict_padic",
+    "lean_module": "IUT.PaperIII.Corollary312.PacketHull",
+    "covers": "Page 127, the hull of (i), applied to unions as in the hull of the union of possible images used for Corollary 3.12.",
+    "not_covered": "Setting: finite product of finite extensions of Q_p (or of discretely valued normed fields) in place of the direct sum of fields I^Q(-); tensor packets and the archimedean case not treated; O = product of closed unit balls = product of the rings of integers. The possible images of Corollary 3.12 and their union are not constructed. Counted as a model test: an example made here; page 127 prints no statement on hulls of unions.",
+    "statement_status": "STATEMENT_FORMALIZED",
+    "proof_status": "KERNEL_VERIFIED",
+    "obligations": [],
+    "ambiguities": [],
+    "scope": "model_test",
+    "lemmas": [
+      "IUT.PaperIII.Corollary312.pktHull_iUnion_subset",
+      "IUT.PaperIII.Corollary312.pktHull_singleton"
+    ]
+  },
+  "IUT3.Rem3_9_5.i.frag.pkt_vs_dhHull": {
+    "kind": "fragment",
+    "parent": "IUT3.Rem3_9_5.i",
+    "source": {
+      "paper": "Inter-universal Teichmuller Theory III",
+      "pdf_pages": "page 127",
+      "pages_read": "rendered and checked: pages 126, 127, 128"
+    },
+    "content": "Comparison with the coordinatewise polydisc hull dhHull (coordinate suprema of norms): on relatively compact sets over discretely valued fields pktHull U = dhHull U. For U = Q_p x Z_p in Q_p^2, pktHull U = Q_p^2 while dhHull U = U (radii infinity and 1), and U is not Q_p^2.",
+    "explicit_hypotheses": [
+      "I a finite type; L_s normed fields with discrete value group (pktHullDiscrete)",
+      "U a subset of prod L_s with compact closure"
+    ],
+    "implicit_hypotheses": [],
+    "conclusion": "pktHull U = dhHull U. In pktHull_dhHull_padic_test (p a prime, U = Q_p x Z_p in Q_p^2): pktHull U = univ, dhPolyRadius U 0 = infinity, dhPolyRadius U 1 = 1, dhHull U = U, U is not univ.",
+    "definitions_required": [],
+    "results_used": [],
+    "external_dependencies": [],
+    "lean_declaration": "IUT.PaperIII.Corollary312.pktHull_eq_dhHull",
+    "lean_module": "IUT.PaperIII.Corollary312.PacketHull",
+    "covers": "Page 127, Remark 3.9.5 (i), the two cases of the definition, compared with the polydisc construction.",
+    "not_covered": "Setting: finite product of finite extensions of Q_p (or of discretely valued normed fields) in place of the direct sum of fields I^Q(-); tensor packets and the archimedean case not treated; O = product of closed unit balls = product of the rings of integers. A comparison of two definitions; neither is the paper's hull on tensor packets. Counted as a model test: a comparison of the hull of page 127 with the polydisc construction of Dupuy and Hilado, not a statement printed on the pages read.",
+    "statement_status": "STATEMENT_FORMALIZED",
+    "proof_status": "KERNEL_VERIFIED",
+    "obligations": [],
+    "ambiguities": [],
+    "scope": "model_test",
+    "lemmas": [
+      "IUT.PaperIII.Corollary312.pktHull_dhHull_padic_test"
     ]
   },
   "IUT3.Rem3_9_5.ii": {
@@ -4561,7 +4772,7 @@
     "proof_status": "EXTRACTED",
     "obligations": [
       "Prove the closure claim for actual hulls: an intersection of hulls which has finite log-volume is a hull ('as is easily verified', page 127).",
-      "Prove that the hull map of Rem 3.9.5 (i) satisfies (P1), (P2), (P3) and maps ℙ into ℍ ('essentially a tautology', page 127). (Dupuy and Hilado's polydisc hull on a finite product of normed groups satisfies (P1) to (P3), IUT3.Rem3_9_5.ii.frag.dhHull_isHullMap; that is a model, not the hull of (i).)"
+      "Prove that the hull map of Rem 3.9.5 (i) satisfies (P1), (P2), (P3) and maps ℙ into ℍ ('essentially a tautology', page 127). (Dupuy and Hilado's polydisc hull on a finite product of normed groups satisfies (P1) to (P3), IUT3.Rem3_9_5.ii.frag.dhHull_isHullMap; that is a model, not the hull of (i). On a finite product of finite extensions of Q_p the hull of (i) satisfies (P1) to (P3) on the relatively compact sets with nonzero coordinate projections, a domain chosen in place of the direct product regions, IUT3.Rem3_9_5.ii.frag.pkt_isHullMap_spectral.)"
     ],
     "ambiguities": [
       "Assessment: the order-theoretic fragments show the formula follows from (P1), (P2), (P3), ℍ ⊆ ℙ and φ(ℙ) ⊆ ℍ without the closure claim; the closure claim is needed only for existence. The text presents it as the reason for the formula."
@@ -4570,7 +4781,8 @@
       "IUT3.Rem3_9_5.ii.frag.eq_sInter",
       "IUT3.Rem3_9_5.ii.frag.unique",
       "IUT3.Rem3_9_5.ii.frag.isHullMap_sInter",
-      "IUT3.Rem3_9_5.ii.frag.dhHull_isHullMap"
+      "IUT3.Rem3_9_5.ii.frag.dhHull_isHullMap",
+      "IUT3.Rem3_9_5.ii.frag.pkt_isHullMap_spectral"
     ]
   },
   "IUT3.Rem3_9_5.iii_iv": {
@@ -4598,6 +4810,44 @@
     ],
     "ambiguities": [
       "Page 128: in (Ξ^non1) the quantifier over Q ∈ ℙ and the role of the residue degree condition are stated without proof of why they suffice."
+    ],
+    "fragments": [
+      "IUT3.Rem3_9_5.iii_iv.frag.pkt_muLog"
+    ]
+  },
+  "IUT3.Rem3_9_5.iii_iv.frag.pkt_muLog": {
+    "kind": "fragment",
+    "parent": "IUT3.Rem3_9_5.iii_iv",
+    "source": {
+      "paper": "Inter-universal Teichmuller Theory III",
+      "pdf_pages": "pages 127 and 128",
+      "pages_read": "rendered and checked: pages 126, 127, 128"
+    },
+    "content": "For finite extensions L_s of Q_p of degrees d_s with spectral norms, Haar measures mu_s and the product measure, the normalized log-volume padicMuLog normalized at O = prod of rings of integers is mu^log(lambda O) = (sum_s d_s log|lambda_s|) / sum_s d_s; for relatively compact U with nonzero projections the log-volume of pktHull U is this sum with |lambda_s| the largest norm on the s-th projection of U.",
+    "explicit_hypotheses": [
+      "p a prime",
+      "I a finite type; each L_s a field with a finite-dimensional Q_p-algebra structure and a compatible Z_p-algebra structure (IsScalarTower Z_p Q_p L_s)",
+      "each L_s normed by the spectral norm, with the Borel measurable structure",
+      "mu_s any additive Haar measure on L_s",
+      "lambda in prod L_s^x"
+    ],
+    "implicit_hypotheses": [],
+    "conclusion": "padicMuLog (Measure.pi mu) O (lambda O) = (sum_s d_s log|lambda_s|) / sum_s d_s.",
+    "definitions_required": [],
+    "results_used": [],
+    "external_dependencies": [],
+    "lean_declaration": "IUT.PaperIII.Corollary312.pktHull_muLog_principal",
+    "lean_module": "IUT.PaperIII.Corollary312.PacketHull",
+    "covers": "Page 128, Remark 3.9.5 (iii): the log-volumes mu^log(phi(P)) and mu^log(H) of hulls; this computes the normalized log-volume of every set lambda O and of pktHull U, for the normalization padicMuLog on a product of finite extensions of Q_p.",
+    "not_covered": "Setting: finite product of finite extensions of Q_p (or of discretely valued normed fields) in place of the direct sum of fields I^Q(-); tensor packets and the archimedean case not treated; O = product of closed unit balls = product of the rings of integers. The sets Phi(P), Xi(P) and the claims of (iii) and (iv); that padicMuLog on the product is the paper's log-volume of Proposition 3.9 (i) and Remark 3.1.1 (pages not read for this file) is an interpretation; the weights d_s / D come from the product Haar measure, not from the paper; tensor packets. Counted as a model test: the formula with weights d_s / D comes from the product Haar measure chosen here; page 128 prints no formula for these log-volumes.",
+    "statement_status": "STATEMENT_FORMALIZED",
+    "proof_status": "KERNEL_VERIFIED",
+    "obligations": [],
+    "ambiguities": [],
+    "scope": "model_test",
+    "lemmas": [
+      "IUT.PaperIII.Corollary312.pktHull_muLog_hull",
+      "IUT.PaperIII.Corollary312.pktHull_measure_principal"
     ]
   },
   "IUT3.Rem3_9_5.vii": {
@@ -7378,6 +7628,43 @@
       "IUT.Applications.DupuyHilado.dhHull_polydisc",
       "IUT.Applications.DupuyHilado.dhPolyRadius_iUnion",
       "IUT.Applications.DupuyHilado.dhPolyRadius_mul"
+    ]
+  },
+  "IUT3.Rem3_9_5.ii.frag.pkt_isHullMap_spectral": {
+    "kind": "fragment",
+    "parent": "IUT3.Rem3_9_5.ii",
+    "source": {
+      "paper": "Inter-universal Teichmuller Theory III",
+      "pdf_pages": "page 127",
+      "pages_read": "rendered and checked: pages 126, 127, 128"
+    },
+    "content": "For a finite product of finite extensions of Q_p with spectral norms, pktHull satisfies IsHullMap (H subset P, maps P into H, (P1), (P2), (P3)) with H the sets lambda O and P the relatively compact sets with nonzero coordinate projections. On all subsets it fails, since pktHull univ = univ is not of the form lambda O. pktHull is extensive, monotone and idempotent on all subsets and commutes with multiplication by every unit of prod L_s.",
+    "explicit_hypotheses": [
+      "p a prime",
+      "I a finite type; each L_s a field with a finite-dimensional Q_p-algebra structure and a compatible Z_p-algebra structure (IsScalarTower Z_p Q_p L_s)",
+      "each L_s normed by the spectral norm, with the Borel measurable structure"
+    ],
+    "implicit_hypotheses": [],
+    "conclusion": "IsHullMap pktHullDomain pktHullForms pktHull; not IsHullMap univ pktHullForms pktHull (generic, I nonempty); pktHull (g U) = g pktHull U; pktHull (pktHull U) = pktHull U.",
+    "definitions_required": [],
+    "results_used": [],
+    "external_dependencies": [],
+    "lean_declaration": "IUT.PaperIII.Corollary312.pktHull_isHullMap_spectral",
+    "lean_module": "IUT.PaperIII.Corollary312.PacketHull",
+    "covers": "Page 127, Remark 3.9.5 (ii): (P1), (P2), (P3) for the hull of (i), and H consisting of proper subsets.",
+    "not_covered": "The paper's P (direct product regions, Remark 3.1.1 (iii), not read) is replaced by the chosen domain pktHullDomain; tensor packets not treated.",
+    "statement_status": "STATEMENT_FORMALIZED",
+    "proof_status": "KERNEL_VERIFIED",
+    "obligations": [],
+    "ambiguities": [],
+    "scope": "finite product of finite extensions of Q_p (or of discretely valued normed fields) in place of the direct sum of fields I^Q(-); tensor packets and the archimedean case not treated; O = product of closed unit balls = product of the rings of integers",
+    "lemmas": [
+      "IUT.PaperIII.Corollary312.pktHull_isHullMap",
+      "IUT.PaperIII.Corollary312.pktHull_not_isHullMap_univ",
+      "IUT.PaperIII.Corollary312.pktHull_extensive",
+      "IUT.PaperIII.Corollary312.pktHull_mono",
+      "IUT.PaperIII.Corollary312.pktHull_idem",
+      "IUT.PaperIII.Corollary312.pktHull_smul"
     ]
   },
   "IUT3.Cor3_12.Statement.frag.logVolume": {

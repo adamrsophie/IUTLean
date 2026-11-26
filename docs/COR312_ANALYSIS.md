@@ -236,13 +236,15 @@ The proof uses the first to relate the pilot objects, and the second to place th
 * hence at most one such map exists;
 * closure of 𝓗 under these intersections gives existence.
 
+`PacketHull.lean` constructs the hull of (i) on finite products of finite extensions of `ℚ_p` (`pktHull_isLeast_spectral`, `pktHull_isHullMap_spectral`).
+
 **Assessment.**
 
 * The text gives closure under intersections as the reason for the intersection formula. The Lean check shows the formula follows without it, and that closure is what gives existence.
 * The hull of a union `𝒰` that is not a direct product region needs the definition of (i), not that of (ii).
 * Transporting a region from the 0-column structure to the 1-column structure and then taking the hull is a choice of which holomorphic structure governs the hull. The text states this choice (page 175, page 182) but does not argue that the hull is independent of it.
 
-**Gap.** Category 3 for (a), (b). Item (c) is done in the abstract.
+**Gap.** Category 3 for (a), (b) on the papers' objects. Item (c) is done in the abstract. On a finite product of finite extensions of `ℚ_p`, the hull of (i) exists as the smallest `λ·O` containing a relatively compact set with a subset of positive measure, is the whole space otherwise, and satisfies (P1) to (P3) on the relatively compact sets with nonzero coordinate projections (`IUT/PaperIII/Corollary312/PacketHull.lean`); tensor packets, `I^ℚ(−)` and the archimedean case are open.
 
 ### 7. Are the indeterminacies simultaneous and consistent?
 
