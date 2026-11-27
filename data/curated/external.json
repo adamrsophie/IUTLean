@@ -2319,7 +2319,14 @@
       "GENELL.Thm2_1.frag.fermat_lift",
       "GENELL.Thm2_1.frag.fermat_lift_conductor",
       "GENELL.Thm2_1.frag.fermat_lift_degree",
-      "GENELL.Thm2_1.frag.fermat_lift_height"
+      "GENELL.Thm2_1.frag.fermat_lift_height",
+      "GENELL.Thm2_1.frag.different_classical_bound",
+      "GENELL.Thm2_1.frag.different_galois_sharp",
+      "GENELL.Thm2_1.frag.fermat_galois_different",
+      "GENELL.Thm2_1.frag.fermat_good_primes",
+      "GENELL.Thm2_1.frag.fermat_kummer_unramified",
+      "GENELL.Thm2_1.frag.fermat_logdiff_classical",
+      "GENELL.Thm2_1.frag.fermat_logdiff_unconditional"
     ]
   },
   "GENELL.Thm2_1.frag.genell_i_implies_ii": {
@@ -2456,7 +2463,7 @@
       "IUT.FermatCover.fermatCover_logCondNF_second_le"
     ],
     "covers": "No sentence of the pages states this inequality. It bounds the log-conductor of the coordinates of the lifted point on the Fermat cover; the pages bound log-differents and log-conductors through Proposition 1.7 (i) (GenEll page 12: log-diff_Y <~ log-diff_X + log-cond_D; page 13 with e = 1: log-diff_P + log-cond_C <~ log-diff_X + log-cond_E).",
-    "not_covered": "The upper bound of page 12 in the form log-diff_L <= log-diff_K + log-cond_K(x) + c(n) for L = K(u, v): it needs the unramifiedness of K(u, v)/K at primes not dividing n where x reduces away from {0, 1, infinity} and a bound for the exponents of the global different; neither is formalized.",
+    "not_covered": "The upper bound of page 12 in the form log-diff_L <= log-diff_K + log-cond_K(x) + c(n) for L = K(u, v): it is proved in GENELL.Thm2_1.frag.fermat_logdiff_unconditional (constant 4 log n), from the unramifiedness of K(u, v)/K at primes not dividing n where x reduces away from {0, 1, infinity} (GENELL.Thm2_1.frag.fermat_good_primes) and a bound for the exponents of the global different.",
     "statement_status": "STATEMENT_FORMALIZED",
     "proof_status": "KERNEL_VERIFIED",
     "obligations": [],
@@ -2528,6 +2535,269 @@
     "proof_status": "KERNEL_VERIFIED",
     "obligations": [],
     "ambiguities": []
+  },
+  "GENELL.Thm2_1.frag.different_classical_bound": {
+    "kind": "fragment",
+    "parent": "GENELL.Thm2_1",
+    "scope": "model_test",
+    "lean_module": "IUT.Applications.DifferentBridge",
+    "source": {
+      "pages_in_paper": "pages 9 to 10, 12",
+      "pages_read": "rendered and checked: GenEll pages 9, 10 and 12"
+    },
+    "content": "The classical upper bound for the different of number fields: for number fields K, L with an algebra map K -> L and a height one prime P of O_L with ramification index e_P over O_K, the multiplicity of P in differentIdeal (O_K) (O_L) is at most e_P - 1 + the multiplicity of P in the ideal e_P O_L. Hence IUT.FermatDifferent.fermatDiff_classicalDifferentBoundStatement holds (diffBr_statement). Proof without completions, through inertia fields: M the normal closure of L/K in an algebraic closure of L, Q a prime of O_M over P, T the inertia field of Q in M/K, E the inertia field of Q in M/L; T is contained in E, Q cap E is unramified over P, Q cap T is unramified over O_K, Q cap E is the only prime of O_E over Q cap T with ramification index [E : T] = e_P (diffBr_inertia_facts, from Mathlib's Ideal.card_inertia_eq_ramificationIdxIn applied to Gal(M/F) and to the inertia group acting over the inertia field); then the different tower formula and the trace bound for a prime alone over its base (diffBr_multiplicity_lt_of_unique).",
+    "explicit_hypotheses": [
+      "K, L number fields with an algebra map K -> L",
+      "P a height one prime of O_L"
+    ],
+    "implicit_hypotheses": [],
+    "conclusion": "multiplicity P (differentIdeal (O_K) (O_L)) <= e_P - 1 + multiplicity P (span {(e_P : O_L)}), e_P = P.ramificationIdx (O_K)",
+    "definitions_required": [
+      "IUT.FermatDifferent.fermatDiff_classicalDifferentBoundStatement"
+    ],
+    "results_used": [],
+    "external_dependencies": [],
+    "lean_declaration": "IUT.DifferentBridge.diffBr_classical_bound",
+    "lemmas": [
+      "IUT.DifferentBridge.diffBr_statement",
+      "IUT.DifferentBridge.diffBr_multiplicity_le_of_tower",
+      "IUT.DifferentBridge.diffBr_bound_of_inertia_towers",
+      "IUT.DifferentBridge.diffBr_bound_of_inertia_tower",
+      "IUT.DifferentBridge.diffBr_inertia_facts",
+      "IUT.DifferentBridge.diffBr_unique_mid",
+      "IUT.DifferentBridge.diffBr_ramificationIdx_mid",
+      "IUT.DifferentBridge.diffBr_multiplicity_lt_of_unique",
+      "IUT.DifferentBridge.diffBr_map_pow_dvd_of_unique",
+      "IUT.DifferentBridge.diffBr_multiplicity_span_natCast",
+      "IUT.DifferentBridge.diffBr_not_dvd_of_ramificationIdx_eq_one"
+    ],
+    "covers": "GenEll page 10, proof of Proposition 1.7 (i): the page says that 'the prime-to-Sigma portion' of the inequality 'follows immediately from the elementary theory of differents', and over Sigma it reduces to a claim that the different of a finite Galois extension of finite extensions of Q_p of bounded degree contains p^n O_L. The Lean theorem is the classical global upper bound for the different of number fields, the nearest printed relative being that local claim; the bound is not printed on the pages, so this is a model test. No global analog of the page 10 claim is stated in Lean.",
+    "not_covered": "Proposition 1.7 itself (coverings of arithmetic surfaces) and its lower bound; the local claim of page 10 for extensions of Q_p; the comparison of the global different with the differents of completions.",
+    "statement_status": "STATEMENT_FORMALIZED",
+    "proof_status": "KERNEL_VERIFIED",
+    "obligations": [],
+    "ambiguities": []
+  },
+  "GENELL.Thm2_1.frag.different_galois_sharp": {
+    "kind": "fragment",
+    "parent": "GENELL.Thm2_1",
+    "scope": "model_test",
+    "lean_module": "IUT.Applications.DifferentBridge",
+    "source": {
+      "pages_in_paper": "pages 9 to 10, 12",
+      "pages_read": "rendered and checked: GenEll pages 9, 10 and 12"
+    },
+    "content": "The sharp bound for the different of a Galois extension: for a Galois extension M/K of number fields and a height one prime P of O_M with ramification index e_P over O_K, the multiplicity of P in differentIdeal (O_K) (O_M) is at most e_P - 1 + the multiplicity of P in e_P O_M. Proof: with T the inertia field of P, P cap T is unramified over O_K, so P does not divide the extension of differentIdeal (O_K) (O_T), and M/T has degree e_P with P the only prime over P cap T, where the trace bound applies.",
+    "explicit_hypotheses": [
+      "K, M number fields with an algebra map K -> M",
+      "IsGalois K M",
+      "P a height one prime of O_M"
+    ],
+    "implicit_hypotheses": [],
+    "conclusion": "multiplicity P (differentIdeal (O_K) (O_M)) <= e_P - 1 + multiplicity P (span {(e_P : O_M)})",
+    "definitions_required": [],
+    "results_used": [],
+    "external_dependencies": [],
+    "lean_declaration": "IUT.DifferentBridge.diffBr_multiplicity_le_of_isGalois",
+    "covers": "GenEll page 10, proof of Proposition 1.7 (i): the Galois case of the classical global upper bound for the different of number fields; the nearest printed relative is the page 10 claim on finite Galois extensions of finite extensions of Q_p, which the Lean statement does not check (a model test).",
+    "not_covered": "The local claim of page 10 itself; Proposition 1.7.",
+    "statement_status": "STATEMENT_FORMALIZED",
+    "proof_status": "KERNEL_VERIFIED",
+    "obligations": [],
+    "ambiguities": []
+  },
+  "GENELL.Thm2_1.frag.fermat_galois_different": {
+    "kind": "fragment",
+    "parent": "GENELL.Thm2_1",
+    "scope": "model_test",
+    "lean_module": "IUT.Applications.FermatDifferentGalois",
+    "source": {
+      "pages_in_paper": "pages 9 to 10, 12",
+      "pages_read": "rendered and checked: GenEll pages 9, 10 and 12; arXiv 1601.03572 page 9"
+    },
+    "content": "For number fields K in L in M with M/K Galois and a prime P of O_L over the prime p of O_K, with ramification index e_P: v_P(D_{L/K}) < e_P (v_p([M : K]) + 1), that is v_P(D_{L/K}) <= e_P - 1 + v_P([M : K]). In the Galois case (L = M) the different is stable under the Galois group and all primes over p have the same exponent in it. Proof: trace dual of O_L is Galois stable; if p^s O_L divides D then [L : K] p^{-s} is contained in O_K by the trace; the tower formula for the different and e(Q|p) = e(Q|P) e(P|p) pass to subextensions.",
+    "explicit_hypotheses": [
+      "K, L, M number fields, algebra maps K -> L -> M, K -> M, scalar tower",
+      "M/K Galois",
+      "P a height one prime of O_L"
+    ],
+    "implicit_hypotheses": [],
+    "conclusion": "multiplicity P (differentIdeal O_K O_L) < e_P * (multiplicity p (span {[M : K]}) + 1)",
+    "definitions_required": [],
+    "results_used": [],
+    "external_dependencies": [],
+    "lean_declaration": "IUT.FermatDifferentGalois.fermatGal_multiplicity_lt_of_tower",
+    "lemmas": [
+      "IUT.FermatDifferentGalois.fermatGal_smul_mem_differentIdeal",
+      "IUT.FermatDifferentGalois.fermatGal_pow_dvd_of_under_eq",
+      "IUT.FermatDifferentGalois.fermatGal_multiplicity_eq_of_under_eq",
+      "IUT.FermatDifferentGalois.fermatGal_dvd_span_finrank_of_map_dvd",
+      "IUT.FermatDifferentGalois.fermatGal_map_pow_dvd",
+      "IUT.FermatDifferentGalois.fermatGal_multiplicity_lt",
+      "IUT.FermatDifferentGalois.fermatGal_mem_differentIdeal_iff",
+      "IUT.FermatDifferentGalois.fermatGal_differentIdeal_le_map"
+    ],
+    "covers": "GenEll page 10, proof of Proposition 1.7 (i): the bound on the different 'depending only on p and the degree' over the primes of Sigma, in the global form for number fields (the page verifies it for p-adic Kummer extensions); here for any subextension of a Galois extension, with the degree [M : K]. Used for the Fermat cover chosen here: a model test.",
+    "not_covered": "The classical bound with v_P(e_P) in place of v_P([M : K]), which is proved by another route in GENELL.Thm2_1.frag.different_classical_bound; the tame equality v_P(D) = e_P - 1; Proposition 1.7 for coverings of arithmetic surfaces.",
+    "statement_status": "STATEMENT_FORMALIZED",
+    "proof_status": "KERNEL_VERIFIED",
+    "obligations": [],
+    "ambiguities": []
+  },
+  "GENELL.Thm2_1.frag.fermat_good_primes": {
+    "kind": "fragment",
+    "parent": "GENELL.Thm2_1",
+    "scope": "model_test",
+    "lean_module": "IUT.Applications.FermatDifferent",
+    "source": {
+      "pages_in_paper": "pages 9 to 10, 12",
+      "pages_read": "rendered and checked: GenEll pages 9, 10 and 12; arXiv 1601.03572 page 9"
+    },
+    "content": "For number fields K, L, x in K, n, and u, v in L with u^n = x, v^n = 1 - x and L = K(u, v): every prime w of O_L lying over a prime p of O_K with n not in p, at which x reduces modulo p to a point of P^1 minus {0, 1, infinity} (ReducesAwayFromBoundary), does not divide the relative different, hence is unramified. Equivalently, a prime dividing the different lies over a prime containing n or over a prime where x meets {0, 1, infinity}. With the existence of L = K(u, v) of degree at most n^2 over K (fermatDiff_point_exists), the lift is unramified at all good primes (fermatDiff_lift_unramified).",
+    "explicit_hypotheses": [
+      "K, L number fields with an algebra map K -> L",
+      "x in K, n a natural number",
+      "u, v in L with u^n = x and v^n = 1 - x",
+      "IntermediateField.adjoin K {u, v} = top",
+      "w a height one prime of O_L",
+      "(n : O_K) not in the prime under w",
+      "ReducesAwayFromBoundary K (under w) x"
+    ],
+    "implicit_hypotheses": [],
+    "conclusion": "w does not divide differentIdeal (O_K) (O_L)",
+    "definitions_required": [
+      "IUT.VojtaNumberField.ReducesAwayFromBoundary",
+      "IUT.VojtaNumberField.MeetsBoundaryAt"
+    ],
+    "results_used": [],
+    "external_dependencies": [],
+    "lean_declaration": "IUT.FermatDifferent.fermatDiff_not_dvd_differentIdeal_of_reduces",
+    "lemmas": [
+      "IUT.FermatDifferent.fermatDiff_dvd_differentIdeal_imp",
+      "IUT.FermatDifferent.fermatDiff_point_exists",
+      "IUT.FermatDifferent.fermatDiff_lift_unramified"
+    ],
+    "covers": "arXiv 1601.03572 page 9 (the cover pi_n is unramified outside pi_n^{-1}{0, 1, infinity}) read arithmetically, and the unramified part of the prime-to-Sigma portion of GenEll page 10 (Proposition 1.7 (i)), with Sigma taken here (a choice, not printed) to be the primes dividing n, for the Fermat cover chosen here: a model test.",
+    "not_covered": "The tame part of the prime-to-Sigma portion: the value of the different exponent at the primes where x meets the boundary (only the classical upper bound is proved, GENELL.Thm2_1.frag.different_classical_bound); the exponent at the primes over n; the curve C_n and the covering of arithmetic surfaces; GenEll Proposition 1.7 for general coverings.",
+    "statement_status": "STATEMENT_FORMALIZED",
+    "proof_status": "KERNEL_VERIFIED",
+    "obligations": [],
+    "ambiguities": []
+  },
+  "GENELL.Thm2_1.frag.fermat_kummer_unramified": {
+    "kind": "fragment",
+    "parent": "GENELL.Thm2_1",
+    "scope": "model_test",
+    "lean_module": "IUT.Applications.FermatDifferent",
+    "source": {
+      "pages_in_paper": "pages 9 to 10, 12",
+      "pages_read": "rendered and checked: GenEll pages 9, 10 and 12; arXiv 1601.03572 page 9"
+    },
+    "content": "Kummer criterion for the relative different, element form: for number fields K, L with an algebra map K -> L, theta in L generating L over K with theta^n = c, c in the ring of integers of K, and a prime P of O_L such that neither n nor c lies in the prime P cap O_K, P does not divide differentIdeal (O_K) (O_L); hence P is unramified over O_K. Proof: the minimal polynomial g of theta over O_K divides X^n - c, so g'(theta) divides n theta^(n-1), and g'(theta) lies in the different (Mathlib aeval_derivative_mem_differentIdeal). A tower lemma: for K in F in L, if P cap O_F does not divide the different of F/K and P does not divide the different of L/F, then P does not divide the different of L/K (Mathlib transitivity of differentIdeal). Unit form (fermatDiff_not_dvd_differentIdeal_of_valuation): L = K(u), u^n = a in K, n not in p and the p-adic valuation of a equal to 1 imply that no prime of O_L over p divides the different.",
+    "explicit_hypotheses": [
+      "K, L number fields with an algebra map K -> L",
+      "n a natural number, theta in L, c in O_K, theta^n = c",
+      "IntermediateField.adjoin K {theta} = top",
+      "P a prime ideal of O_L",
+      "(n : O_K) not in comap P",
+      "c not in comap P"
+    ],
+    "implicit_hypotheses": [],
+    "conclusion": "P does not divide differentIdeal (O_K) (O_L)",
+    "definitions_required": [],
+    "results_used": [],
+    "external_dependencies": [],
+    "lean_declaration": "IUT.FermatDifferent.fermatDiff_not_dvd_differentIdeal",
+    "lemmas": [
+      "IUT.FermatDifferent.fermatDiff_not_dvd_differentIdeal_of_valuation",
+      "IUT.FermatDifferent.fermatDiff_isUnramifiedAt_of_not_dvd",
+      "IUT.FermatDifferent.fermatDiff_not_dvd_differentIdeal_tower",
+      "IUT.FermatDifferent.fermatDiff_adjoin_smul_eq"
+    ],
+    "covers": "GenEll page 10, proof of Proposition 1.7 (i): the unramified part of 'the prime-to-Sigma portion ... follows immediately from the elementary theory of differents', in the instance of a Kummer generator; Sigma taken here (a choice, not printed) to contain the primes dividing n. The Fermat cover (arXiv 1601.03572 page 9) is a choice made here, so this is a model test.",
+    "not_covered": "Proposition 1.7 itself (coverings of arithmetic surfaces); primes dividing n or where a is not a unit; the tame part of the prime-to-Sigma portion (the different exponent e - 1 at tamely ramified primes); the value of the different exponent at ramified primes.",
+    "statement_status": "STATEMENT_FORMALIZED",
+    "proof_status": "KERNEL_VERIFIED",
+    "obligations": [],
+    "ambiguities": []
+  },
+  "GENELL.Thm2_1.frag.fermat_logdiff_classical": {
+    "kind": "fragment",
+    "parent": "GENELL.Thm2_1",
+    "scope": "model_test",
+    "lean_module": "IUT.Applications.DifferentBridge",
+    "source": {
+      "pages_in_paper": "pages 9 to 10, 12",
+      "pages_read": "rendered and checked: GenEll pages 9, 10 and 12"
+    },
+    "content": "For number fields K, L with an algebra map K -> L, x in K with x != 0, 1, n >= 1 and u, v in L with u^n = x, v^n = 1 - x, L = K(u, v): logDiffNF L <= logDiffNF K + logCondNF K x + log n + log([L : K]!). Existence form (diffBr_fermat_lift_logDiffNF_le): such L with [L : K] <= n^2 exists, with constant log n + log((n^2)!). These are the theorems IUT.FermatDifferent.fermatDiff_logDiffNF_le_of_bound and IUT.FermatDifferent.fermatDiff_lift_logDiffNF_le_of_bound, whose hypothesis (the classical bound for the different of number fields, IUT.FermatDifferent.fermatDiff_classicalDifferentBoundStatement) is proved by IUT.DifferentBridge.diffBr_statement. The uniform constant is larger than the 4 log n of IUT.FermatDifferentGalois.fermatGal_lift_logDiffNF_le.",
+    "explicit_hypotheses": [
+      "K, L number fields in Type with an algebra map K -> L",
+      "x in K, x != 0, x != 1",
+      "n a natural number with 0 < n",
+      "u, v in L with u^n = x and v^n = 1 - x",
+      "IntermediateField.adjoin K {u, v} = top"
+    ],
+    "implicit_hypotheses": [],
+    "conclusion": "logDiffNF L <= logDiffNF K + logCondNF K x + log n + log ((finrank K L)!)",
+    "definitions_required": [
+      "IUT.VojtaNumberField.logDiffNF",
+      "IUT.VojtaNumberField.logCondNF"
+    ],
+    "results_used": [],
+    "external_dependencies": [],
+    "lean_declaration": "IUT.DifferentBridge.diffBr_fermat_logDiffNF_le",
+    "lemmas": [
+      "IUT.DifferentBridge.diffBr_fermat_lift_logDiffNF_le",
+      "IUT.DifferentBridge.diffBr_statement",
+      "IUT.FermatDifferent.fermatDiff_logDiffNF_le_of_bound",
+      "IUT.FermatDifferent.fermatDiff_lift_logDiffNF_le_of_bound"
+    ],
+    "covers": "GenEll page 12: 'log-diff_Y <~ log-diff_X + log-cond_D on U_Y(Qbar)^{<= d'}' (from Proposition 1.7 (i)), for the Fermat cover chosen here, with an explicit constant: a model test.",
+    "not_covered": "Proposition 1.7 (i) for general coverings, its lower bound and the factor (1 - 1/e).",
+    "statement_status": "STATEMENT_FORMALIZED",
+    "proof_status": "KERNEL_VERIFIED",
+    "obligations": [],
+    "ambiguities": [
+      "The constant: page 12 writes <~ without a constant; the constants here are those obtained, not the paper's."
+    ]
+  },
+  "GENELL.Thm2_1.frag.fermat_logdiff_unconditional": {
+    "kind": "fragment",
+    "parent": "GENELL.Thm2_1",
+    "scope": "model_test",
+    "lean_module": "IUT.Applications.FermatDifferentGalois",
+    "source": {
+      "pages_in_paper": "pages 9 to 10, 12",
+      "pages_read": "rendered and checked: GenEll pages 9, 10 and 12; arXiv 1601.03572 page 9"
+    },
+    "content": "For a number field K, x in K minus {0, 1} and n >= 1 there are a number field L with [L : K] <= n^2 and u, v in L with u^n = x, v^n = 1 - x, L = K(u, v), and logDiffNF L <= logDiffNF K + logCondNF K x + 4 log n. General form (fermatGal_logDiffNF_le): for L = K(u, v) inside a Galois M, the constant is log n + log [M : K]; M = K(zeta_n, u, v) is Galois of degree at most n^3 (fermatGal_galois_field_exists). No hypothesis beyond the data.",
+    "explicit_hypotheses": [
+      "K a number field",
+      "x in K, x != 0, x != 1",
+      "n a natural number with 0 < n"
+    ],
+    "implicit_hypotheses": [],
+    "conclusion": "There exist L, [L : K] <= n^2, u, v with u^n = x, v^n = 1 - x, L = K(u, v), and logDiffNF L <= logDiffNF K + logCondNF K x + 4 log n.",
+    "definitions_required": [
+      "IUT.VojtaNumberField.logDiffNF",
+      "IUT.VojtaNumberField.logCondNF"
+    ],
+    "results_used": [],
+    "external_dependencies": [],
+    "lean_declaration": "IUT.FermatDifferentGalois.fermatGal_lift_logDiffNF_le",
+    "lemmas": [
+      "IUT.FermatDifferentGalois.fermatGal_logDiffNF_le",
+      "IUT.FermatDifferentGalois.fermatGal_galois_field_exists"
+    ],
+    "covers": "GenEll page 12: 'log-diff_Y <~ log-diff_X + log-cond_D on U_Y(Qbar)^{<= d'}' (obtained there from Proposition 1.7 (i)), for the Fermat cover chosen here, with the explicit constant c(n) = 4 log n: a model test, unconditional.",
+    "not_covered": "Proposition 1.7 (i) for general coverings, its lower bound and the factor (1 - 1/e); the classical bound for the different (not needed here).",
+    "statement_status": "STATEMENT_FORMALIZED",
+    "proof_status": "KERNEL_VERIFIED",
+    "obligations": [],
+    "ambiguities": [
+      "The constant: page 12 writes <~ without a constant; c(n) = 4 log n is the one obtained here."
+    ]
   },
   "GENELL.Sec1.ArithmeticDivisor": {
     "kind": "external_statement",
@@ -3511,11 +3781,11 @@
       "version": "1",
       "date": "29 October 2026",
       "license": "CC BY 4.0",
-      "statement": "Theorem 5.1, with Lemmas 4.1 and 4.2 and identity (0.1)",
-      "sections_in_paper": "sections 0, 4, 5 and 14",
+      "statement": "Theorem 5.1, with Lemmas 2.1, 2.2, 3.1, 4.1 and 4.2 and identity (0.1)",
+      "sections_in_paper": "sections 0, 2 to 5 and 14",
       "pages_read": "checked against the TeX source of version 1: sections 0, 2 to 5, 8 to 10, 14 and 16 and Appendix A; no page render exists"
     },
-    "content": "For K/Q_p Galois of degree d with discriminant d_K, and n >= 1: Phi identifies the n-fold tensor power of K over Q_p with a product of d^{n-1} copies of K; P_n is the product of the rings of integers and O_n the image of the n-fold tensor power of O_K. Lemma 4.1: disc(P_n) = d_K^{d^{n-1}}. Lemma 4.2: disc(O_n) = d_K^{n d^{n-1}}. Theorem 5.1: the index rho_n = [P_n : Phi(O_n)] equals |d_K|^{(n-1) d^{n-1}/2}, as an identity of positive integers. Identity (0.1): for Z_p-lattices Lambda' <= Lambda of the same rank, disc(Lambda') = [Lambda : Lambda']^2 disc(Lambda).",
+    "content": "For K/Q_p Galois of degree d with discriminant d_K, and n >= 1: Phi identifies the n-fold tensor power of K over Q_p with a product of d^{n-1} copies of K (Lemma 2.1: Phi is an isomorphism of Q_p-algebras); P_n is the product of the rings of integers and O_n the image of the n-fold tensor power of O_K. Lemma 2.2: Phi(O_n) is contained in P_n. Lemma 3.1: for a pure tensor z, the trace of Phi(z) in the product equals the product of the traces of its factors, which is the trace of z in the tensor power. Lemma 4.1: disc(P_n) = d_K^{d^{n-1}}. Lemma 4.2: disc(O_n) = d_K^{n d^{n-1}}. Theorem 5.1: the index rho_n = [P_n : Phi(O_n)] equals |d_K|^{(n-1) d^{n-1}/2}, as an identity of positive integers. Identity (0.1): for Z_p-lattices Lambda' <= Lambda of the same rank, disc(Lambda') = [Lambda : Lambda']^2 disc(Lambda).",
     "explicit_hypotheses": [
       "K/Q_p a finite Galois extension of degree d",
       "n >= 1"
@@ -3529,7 +3799,7 @@
     "statement_status": "EXTRACTED",
     "proof_status": "NOT_EXTRACTED",
     "obligations": [
-      "Checked for two factors (n = 2) in the Galois case; the general two-factor identity without the Galois hypothesis takes a basis of the normalization as data, whose existence is not proved here. Not formalized: three or more factors, and the identification of v_p(d_K)/d with the order of the different used in IUT IV, Proposition 1.1."
+      "Checked for every n >= 1 in the Galois case, in squared form, with |d_K| read through the p-adic norm of the discriminant of an integral basis (ZENGHULL.Thm5_1.frag.many_index_galois), with Lemmas 2.1, 2.2, 3.1, 4.1 and 4.2 for n factors. The general two-factor identity without the Galois hypothesis takes a basis of the normalization as data, whose existence is proved (IUT.PaperIV.LocalFields.locDisc_exists_normBasis). For K = Q_3(3^{1/3}), which is not Galois, the formula fails and the index for two factors is 3^7 (ZENGHULL.Thm5_1.frag.locdisccu_exact_index). The identification of v_p(d_K)/d with the order of the different used in IUT IV, Proposition 1.1 is proved (IUT4.Prop1_1.frag.locdisc_disc_different)."
     ],
     "ambiguities": [
       "Identity (0.1) holds in Z_p only up to a unit (a discriminant is defined up to the square of a unit); it is checked with the index read through the p-adic norm."
@@ -3539,7 +3809,18 @@
       "ZENGHULL.Thm5_1.frag.lemma4_1_two",
       "ZENGHULL.Thm5_1.frag.lemma4_2_two",
       "ZENGHULL.Thm5_1.frag.two_factor_galois",
-      "ZENGHULL.Thm5_1.frag.two_factor_general"
+      "ZENGHULL.Thm5_1.frag.two_factor_general",
+      "ZENGHULL.Thm5_1.frag.locdisc_index_general",
+      "ZENGHULL.Thm5_1.frag.locdisccu_exact_index",
+      "ZENGHULL.Thm5_1.frag.locdisccu_norm_discr",
+      "ZENGHULL.Thm5_1.frag.locdiscex_galois_formula_fails",
+      "ZENGHULL.Thm5_1.frag.locdiscex_index_bounds",
+      "ZENGHULL.Thm5_1.frag.many_index_galois",
+      "ZENGHULL.Thm5_1.frag.many_lemma2_2",
+      "ZENGHULL.Thm5_1.frag.many_lemma3_1",
+      "ZENGHULL.Thm5_1.frag.many_lemma4_1",
+      "ZENGHULL.Thm5_1.frag.many_lemma4_2",
+      "ZENGHULL.Thm5_1.frag.many_phi"
     ]
   },
   "ZENGHULL.Thm5_1.frag.identity_0_1": {
@@ -3602,7 +3883,7 @@
     "lean_declaration": "IUT.Audit.TensorOrderIndex.tOrdIdx_discr_pi",
     "lean_module": "IUT.Audit.TensorOrderIndex",
     "covers": "Section 4, Lemma 4.1 (TeX source): \"disc(P_n) = d_K^{d^{n-1}}.\" Covered for n = 2.",
-    "not_covered": "n >= 3.",
+    "not_covered": "n >= 3 (ZENGHULL.Thm5_1.frag.many_lemma4_1).",
     "statement_status": "STATEMENT_FORMALIZED",
     "proof_status": "KERNEL_VERIFIED",
     "obligations": [],
@@ -3637,7 +3918,7 @@
     "lean_declaration": "IUT.Audit.TensorOrderIndex.tOrdIdx_discr_tensor",
     "lean_module": "IUT.Audit.TensorOrderIndex",
     "covers": "Section 4, Lemma 4.2 (TeX source): \"disc(O_n) = d_K^{n d^{n-1}}.\" Covered for n = 2.",
-    "not_covered": "n >= 3.",
+    "not_covered": "n >= 3 (ZENGHULL.Thm5_1.frag.many_lemma4_2).",
     "statement_status": "STATEMENT_FORMALIZED",
     "proof_status": "KERNEL_VERIFIED",
     "obligations": [],
@@ -3678,7 +3959,7 @@
     "lean_declaration": "IUT.Audit.TensorOrderIndex.tOrdIdx_index_sq_galois",
     "lean_module": "IUT.Audit.TensorOrderIndex",
     "covers": "Section 5, Theorem 5.1 (TeX source): \"Let K/Q_p be a Galois extension of degree d with discriminant d_K. Then for every n >= 1, rho_n = |d_K|^{(n-1)d^{n-1}/2} as an identity of positive integers.\" Covered for n = 2, with rho_2 the index of R_E in its normalization.",
-    "not_covered": "n >= 3 factors; the paper's rho_n is the index of Phi(O_n) in P_n, which for n = 2 is the index of R_E in (R_E)^~ because Phi maps (R_E)^~ onto P_2 (tOrdIdx_normRing_eq_lattice).",
+    "not_covered": "n >= 3 factors (ZENGHULL.Thm5_1.frag.many_index_galois); the paper's rho_n is the index of Phi(O_n) in P_n, which for n = 2 is the index of R_E in (R_E)^~ because Phi maps (R_E)^~ onto P_2 (tOrdIdx_normRing_eq_lattice).",
     "statement_status": "STATEMENT_FORMALIZED",
     "proof_status": "KERNEL_VERIFIED",
     "obligations": [],
@@ -3719,7 +4000,7 @@
     "lean_declaration": "IUT.Audit.TensorOrderIndex.tOrdIdx_index_sq_general",
     "lean_module": "IUT.Audit.TensorOrderIndex",
     "covers": "Not a statement printed by the paper: section 14 states that the proof of Theorem 5.1 depends on K/Q_p being Galois and that for non-Galois K the closed form must be rebuilt from the composita. This record is the general identity of which Theorem 5.1 (n = 2) is the Galois case.",
-    "not_covered": "The existence of the basis n (true because (R_E)^~ is a free Z_p-module, not proved here); a closed form of disc n for non-Galois K; any explicit non-Galois example.",
+    "not_covered": "The existence of the basis n here (it is proved in IUT.PaperIV.LocalFields.locDisc_exists_normBasis); a closed form of disc n for non-Galois K; the explicit non-Galois example of section 14 is ZENGHULL.Thm5_1.frag.locdisccu_exact_index.",
     "statement_status": "STATEMENT_FORMALIZED",
     "proof_status": "KERNEL_VERIFIED",
     "obligations": [],
@@ -3730,6 +4011,425 @@
       "IUT.Audit.TensorOrderIndex.tOrdIdx_discr_change",
       "IUT.Audit.TensorOrderIndex.tOrdIdx_discr_tensor",
       "IUT.Audit.TensorOrderIndex.tOrdIdx_ring_eq_lattice"
+    ]
+  },
+  "ZENGHULL.Thm5_1.frag.locdisc_index_general": {
+    "kind": "fragment",
+    "parent": "ZENGHULL.Thm5_1",
+    "source": {
+      "sections_in_paper": "section 14.2",
+      "pages_read": "checked against the TeX source of version 1: sections 0, 2 to 5, 8 to 10, 14 and 16 and Appendix A; no page render exists"
+    },
+    "content": "For any finite extensions K_1, K_2 of Q_p (no Galois hypothesis) with integral bases b, c, (R_E)^~ is the Z_p-span of a Q_p-basis n of K_1 tensor K_2, and for every such n: [(R_E)^~ : R_E]^2 ||disc b||^{d_2} ||disc c||^{d_1} = ||disc n|| and 2 v_p([(R_E)^~ : R_E]) = d_2 v_p(disc b) + d_1 v_p(disc c) - v_p(disc n). Here v_p of the index is multiplicity p (Mathlib's p-adic valuation of a natural number) and v_p of a discriminant is Padic.valuation.",
+    "explicit_hypotheses": [
+      "p a prime",
+      "K_1, K_2 fields, finite-dimensional Q_p-algebras",
+      "b, c integral bases of K_1, K_2"
+    ],
+    "implicit_hypotheses": [],
+    "conclusion": "exists n with (R_E)^~ = tOrdIdxLattice n, the norm identity, and the valuation identity.",
+    "definitions_required": [
+      "IUT.Audit.TensorOrderIndex.tOrdIdxLattice",
+      "IUT.Audit.TensorOrderIndex.tOrdIdxIntegralBasis"
+    ],
+    "results_used": [],
+    "external_dependencies": [],
+    "lean_declaration": "IUT.PaperIV.LocalFields.locDisc_index_general",
+    "lean_module": "IUT.PaperIV.LocalFields.LocalDiscriminant",
+    "covers": "Section 14.2 (TeX source): rho^2 = disc(O tensor O) / prod_j disc(K_j), 'same argument as Theorem 5.1'. Covered: the general identity with disc n in place of prod_j disc(K_j), for any two factors.",
+    "not_covered": "The identification v_p(disc n) = sum_j v_p(disc O_{K_j}) through the decomposition of K tensor K into composita, hence rho_NG^2 = rho_G^2 / p^Delta and Delta >= 0; the example Q_3(3^{1/3}).",
+    "statement_status": "STATEMENT_FORMALIZED",
+    "proof_status": "KERNEL_VERIFIED",
+    "obligations": [],
+    "ambiguities": [],
+    "scope": "model_test",
+    "lemmas": [
+      "IUT.PaperIV.LocalFields.locDisc_exists_normBasis",
+      "IUT.PaperIV.LocalFields.locDisc_index_valuation"
+    ]
+  },
+  "ZENGHULL.Thm5_1.frag.locdisccu_exact_index": {
+    "kind": "fragment",
+    "parent": "ZENGHULL.Thm5_1",
+    "source": {
+      "sections_in_paper": "section 14",
+      "pages_read": "checked against the TeX source of version 1: sections 0, 2 to 5, 8 to 10, 14 and 16 and Appendix A; no page render exists"
+    },
+    "explicit_hypotheses": [
+      "K a field, finite-dimensional Q_3-algebra with finrank Q_3 K = 3",
+      "pi in K with pi^3 = 3"
+    ],
+    "implicit_hypotheses": [],
+    "definitions_required": [
+      "IUT.PaperIV.LocalFields.tensorIdxRing",
+      "IUT.PaperIV.LocalFields.tensorIdxNormRing"
+    ],
+    "external_dependencies": [],
+    "lean_module": "IUT.PaperIV.LocalFields.LocalDiscriminantCubic",
+    "statement_status": "STATEMENT_FORMALIZED",
+    "proof_status": "KERNEL_VERIFIED",
+    "obligations": [],
+    "ambiguities": [],
+    "scope": "model_test",
+    "content": "For K = Q_3(pi), pi^3 = 3, the index of R_E = O_K tensor O_K in its normalization (R_E)^~ inside K tensor_{Q_3} K is exactly 3^7. The normalization is identified as the set of z = sum c_{3i+j} pi^i tensor pi^j at which nine explicit integer linear forms (an upper triangular matrix of determinant -3^7) take values in Z_3: one inclusion through the multiplication map to K and an algebra map to a field L containing a sixth root w of -3 (pi tensor 1 to -w^2, 1 tensor pi to w^2 (w^3 + 1)/2), where integral elements have integral coordinates in 1, ..., w^5; the other through the integral elements x = (pi tensor pi^2)/3, e = (1 + x + x^2)/3 and w' = (pi tensor pi - 1 tensor pi^2)/3 (w'^7 + 3 w' = 0).",
+    "conclusion": "relIndex (tensorIdxRing 3 K K) (tensorIdxNormRing 3 K K) = 3^7.",
+    "results_used": [
+      "IUT4.Prop1_1.frag.vb_integral_models"
+    ],
+    "lean_declaration": "IUT.PaperIV.LocalFields.locDiscCu_index",
+    "covers": "Section 14 (TeX source) treats the non-Galois case, with the example Q_2(2^{1/3}). The field Q_3(3^{1/3}) is not an example of version 1 and is chosen here; version 2 of the paper lists Q(3^{1/3}) at p = 3 in its table of non-Galois samples, with 3-adic valuation 7 of the index. Covered: the exact index [(R_E)^~ : R_E] = 3^7 of the two-factor normalization for K tensor K.",
+    "not_covered": "Nothing about the general statement of Theorem 5.1 or its use for Corollary 3.12; the splitting K tensor K = K x K(sqrt(-3)) is not formalized (not needed).",
+    "lemmas": [
+      "IUT.PaperIV.LocalFields.locDiscCu_normRing_eq",
+      "IUT.PaperIV.LocalFields.locDiscCu_bound_aux",
+      "IUT.PaperIV.LocalFields.locDiscCu_mem_aux",
+      "IUT.PaperIV.LocalFields.locDiscCu_coeff_le_one",
+      "IUT.PaperIV.LocalFields.locDiscCu_norm_le_sum",
+      "IUT.PaperIV.LocalFields.locDiscCu_exists_sixth",
+      "IUT.PaperIV.LocalFields.locDiscCu_ring_identity",
+      "IUT.PaperIV.LocalFields.locDiscCu_det",
+      "IUT.PaperIV.LocalFields.locDiscCuMatZ_det",
+      "IUT.Audit.TensorOrderIndex.tOrdIdx_ring_eq_lattice",
+      "IUT.Audit.TensorOrderIndex.tOrdIdx_relIndex_eq",
+      "IUT.PaperIV.LocalFields.locDiscExBasis_integral",
+      "IUT.PaperIV.LocalFields.locDiscEx_coeff_le_one",
+      "IUT.Prerequisites.PadicVolume.padicVolIntegral_map"
+    ]
+  },
+  "ZENGHULL.Thm5_1.frag.locdisccu_norm_discr": {
+    "kind": "fragment",
+    "parent": "ZENGHULL.Thm5_1",
+    "source": {
+      "sections_in_paper": "section 14",
+      "pages_read": "checked against the TeX source of version 1: sections 0, 2 to 5, 8 to 10, 14 and 16 and Appendix A; no page render exists"
+    },
+    "explicit_hypotheses": [
+      "K a field, finite-dimensional Q_3-algebra with finrank Q_3 K = 3",
+      "pi in K with pi^3 = 3"
+    ],
+    "implicit_hypotheses": [],
+    "definitions_required": [
+      "IUT.PaperIV.LocalFields.tensorIdxRing",
+      "IUT.PaperIV.LocalFields.tensorIdxNormRing"
+    ],
+    "external_dependencies": [],
+    "lean_module": "IUT.PaperIV.LocalFields.LocalDiscriminantCubic",
+    "statement_status": "STATEMENT_FORMALIZED",
+    "proof_status": "KERNEL_VERIFIED",
+    "obligations": [],
+    "ambiguities": [],
+    "scope": "model_test",
+    "content": "For K = Q_3(pi), pi^3 = 3, and any Q_3-basis n of K tensor K whose Z_3-span is the normalization (R_E)^~, v_3(disc n) = 16; such a basis exists. From the exact index 3^7 and 2 v_3(index) = 3 v_3(disc O_K) + 3 v_3(disc O_K) - v_3(disc n) with v_3(disc O_K) = 5.",
+    "conclusion": "(Algebra.discr Q_3 n).valuation = 16.",
+    "results_used": [],
+    "lean_declaration": "IUT.PaperIV.LocalFields.locDiscCu_normDiscr_valuation",
+    "covers": "Section 14 (TeX source) treats the non-Galois case, with the example Q_2(2^{1/3}). The field Q_3(3^{1/3}) is not an example of version 1 and is chosen here; version 2 of the paper lists Q(3^{1/3}) at p = 3 in its table of non-Galois samples, with 3-adic valuation 7 of the index. Covered: the discriminant exponent 16 of the normalization, against d v_3(disc O_K) = 15 in the Galois formula.",
+    "not_covered": "The decomposition 16 = 5 + 11 into the two field factors (splitting K tensor K = K x K(sqrt(-3)), v_3(disc O_{K(sqrt(-3))}) = 11) is not formalized.",
+    "lemmas": [
+      "IUT.PaperIV.LocalFields.locDiscCu_index",
+      "IUT.PaperIV.LocalFields.locDiscCu_exists_normDiscr",
+      "IUT.PaperIV.LocalFields.locDisc_index_valuation",
+      "IUT.PaperIV.LocalFields.locDisc_exists_normBasis",
+      "IUT.PaperIV.LocalFields.locDiscEx_three_valuation"
+    ]
+  },
+  "ZENGHULL.Thm5_1.frag.locdiscex_galois_formula_fails": {
+    "kind": "fragment",
+    "parent": "ZENGHULL.Thm5_1",
+    "source": {
+      "sections_in_paper": "section 14",
+      "pages_read": "checked against the TeX source of version 1: sections 0, 2 to 5, 8 to 10, 14 and 16 and Appendix A; no page render exists"
+    },
+    "content": "For K = Q_3(pi), pi^3 = 3, the two-factor identity [(R_E)^~ : R_E]^2 = (||disc b||^-1)^d, proved under the Galois hypothesis (tOrdIdx_index_sq_galois), fails for K tensor K for every Q_3-basis b of K: v_3(disc b) is odd and d = 3, while the left side is the square of a natural number. Consequences: K is not Galois over Q_3; for an integral basis b and any basis n of (R_E)^~, v_3(disc n) is even, hence differs from d v_3(disc b) = 15.",
+    "explicit_hypotheses": [
+      "K a field, finite-dimensional Q_3-algebra with finrank Q_3 K = 3",
+      "pi in K with pi^3 = 3",
+      "b a Q_3-basis of K (any basis for the main statement; an integral basis for the parity of v_3(disc n))",
+      "n a basis of K tensor K whose Z_3-span is tensorIdxNormRing 3 K K"
+    ],
+    "implicit_hypotheses": [],
+    "conclusion": "(relIndex : R)^2 != (||Algebra.discr Q_3 b||^-1)^(finrank Q_3 K).",
+    "definitions_required": [
+      "IUT.PaperIV.LocalFields.tensorIdxRing",
+      "IUT.PaperIV.LocalFields.tensorIdxNormRing",
+      "IUT.Audit.TensorOrderIndex.tOrdIdxLattice"
+    ],
+    "results_used": [
+      "ZENGHULL.Thm5_1.frag.identity_0_1",
+      "ZENGHULL.Thm5_1.frag.two_factor_galois"
+    ],
+    "external_dependencies": [],
+    "lean_declaration": "IUT.PaperIV.LocalFields.locDiscEx_index_sq_ne",
+    "lean_module": "IUT.PaperIV.LocalFields.LocalDiscriminantExample",
+    "covers": "Section 14 (TeX source) treats the non-Galois case, with the example Q_2(2^{1/3}). The field Q_3(3^{1/3}) is not an example of version 1 and is chosen here; version 2 of the paper lists Q(3^{1/3}) at p = 3 in its table of non-Galois samples, with 3-adic valuation 7 of the index. Covered: the formula of Theorem 5.1 in its Galois form does not hold for this field, by parity.",
+    "not_covered": "The value of the index (hand value 3^7) and any inequality between the non-Galois and Galois quantities.",
+    "statement_status": "STATEMENT_FORMALIZED",
+    "proof_status": "KERNEL_VERIFIED",
+    "obligations": [],
+    "ambiguities": [],
+    "scope": "model_test",
+    "lemmas": [
+      "IUT.PaperIV.LocalFields.locDiscEx_valuation_odd",
+      "IUT.PaperIV.LocalFields.locDiscEx_not_isGalois",
+      "IUT.PaperIV.LocalFields.locDiscEx_normDiscr_even",
+      "IUT.PaperIV.LocalFields.locDiscEx_three_valuation",
+      "IUT.PaperIV.LocalFields.locDisc_index_valuation"
+    ]
+  },
+  "ZENGHULL.Thm5_1.frag.locdiscex_index_bounds": {
+    "kind": "fragment",
+    "parent": "ZENGHULL.Thm5_1",
+    "source": {
+      "sections_in_paper": "section 14",
+      "pages_read": "checked against the TeX source of version 1: sections 0, 2 to 5, 8 to 10, 14 and 16 and Appendix A; no page render exists"
+    },
+    "content": "For K = Q_3(pi), pi^3 = 3: 9 divides [(R_E)^~ : R_E] (the idempotent (1 + x + x^2)/3 with x = (pi tensor pi^2)/3, x^3 = 1, lies in (R_E)^~ and has coordinate 1/9 at pi tensor pi^2), and v_3([(R_E)^~ : R_E]) <= 15 (v_3(disc n) >= 0 because the trace form is Z_p-valued on (R_E)^~, for any two factors).",
+    "explicit_hypotheses": [
+      "K a field, finite-dimensional Q_3-algebra with finrank Q_3 K = 3",
+      "pi in K with pi^3 = 3"
+    ],
+    "implicit_hypotheses": [],
+    "conclusion": "9 | relIndex and multiplicity 3 relIndex <= 15.",
+    "definitions_required": [
+      "IUT.PaperIV.LocalFields.tensorIdxRing",
+      "IUT.PaperIV.LocalFields.tensorIdxNormRing"
+    ],
+    "results_used": [],
+    "external_dependencies": [],
+    "lean_declaration": "IUT.PaperIV.LocalFields.locDiscEx_index_bounds",
+    "lean_module": "IUT.PaperIV.LocalFields.LocalDiscriminantExample",
+    "covers": "Section 14 (TeX source) treats the non-Galois case, with the example Q_2(2^{1/3}). The field Q_3(3^{1/3}) is not an example of version 1 and is chosen here; version 2 of the paper lists Q(3^{1/3}) at p = 3 in its table of non-Galois samples, with 3-adic valuation 7 of the index. Covered: bounds 2 <= v_3(index) <= 15 for the exponent whose hand value is 7.",
+    "not_covered": "The exact exponent 7 (equivalently v_3(disc n) = 16) is not proved in this module; it is proved in IUT.PaperIV.LocalFields.LocalDiscriminantCubic (record ZENGHULL.Thm5_1.frag.locdisccu_exact_index) by a route that does not use the splitting K tensor K = K x K(sqrt(-3)).",
+    "statement_status": "STATEMENT_FORMALIZED",
+    "proof_status": "KERNEL_VERIFIED",
+    "obligations": [],
+    "ambiguities": [],
+    "scope": "model_test",
+    "lemmas": [
+      "IUT.PaperIV.LocalFields.locDiscEx_nine_dvd_index",
+      "IUT.PaperIV.LocalFields.locDiscEx_index_multiplicity_le",
+      "IUT.PaperIV.LocalFields.locDiscEx_norm_discr_le_one",
+      "IUT.PaperIV.LocalFields.locDiscEx_norm_trace_le_one",
+      "IUT.PaperIV.LocalFields.locDisc_exists_normBasis",
+      "IUT.PaperIV.LocalFields.locDisc_index_valuation",
+      "IUT.PaperIV.LocalFields.tensorDiff_isIntegralElem_trace",
+      "IUT.Audit.TensorOrderIndex.tOrdIdx_ring_eq_lattice"
+    ]
+  },
+  "ZENGHULL.Thm5_1.frag.many_index_galois": {
+    "kind": "fragment",
+    "parent": "ZENGHULL.Thm5_1",
+    "source": {
+      "sections_in_paper": "section 5",
+      "pages_read": "checked against the TeX source of version 1: sections 0, 2 to 5, 8 to 10, 14 and 16 and Appendix A; no page render exists"
+    },
+    "content": "Theorem 5.1 for n = |I| factors on the library's objects: for K/Q_p finite Galois of degree d with an integral basis b, [(R_I)^~ : R_I]^2 = (||disc b||^-1)^((n-1) d^(n-1)), where R_I is tdManyIntegers (as the subgroup tOrdManyRingGrp) and (R_I)^~ is packetNormalizationSet (as the subgroup tOrdManyNormGrp) in the packet PiTensorProduct over Q_p of n copies of K.",
+    "explicit_hypotheses": [
+      "p a prime",
+      "K a field, finite-dimensional and Galois over Q_p",
+      "I a finite type with a distinguished element s (n = |I| >= 1)",
+      "b a Q_p-basis of K that is an integral basis (tOrdIdxIntegralBasis)"
+    ],
+    "implicit_hypotheses": [],
+    "conclusion": "(relIndex R_I (R_I)^~ : R)^2 = (||Algebra.discr Q_p b||^-1)^((card I - 1) * finrank Q_p K ^ (card I - 1)).",
+    "definitions_required": [
+      "IUT.Audit.TensorOrderIndexMany.tOrdManyRingGrp",
+      "IUT.Audit.TensorOrderIndexMany.tOrdManyNormGrp",
+      "IUT.Audit.TensorOrderIndexMany.tOrdManyPhi",
+      "IUT.Audit.TensorOrderIndexMany.tOrdManyNormBasis"
+    ],
+    "results_used": [],
+    "external_dependencies": [],
+    "lean_declaration": "IUT.Audit.TensorOrderIndexMany.tOrdMany_index_sq",
+    "lean_module": "IUT.Audit.TensorOrderIndexMany",
+    "covers": "Section 5, Theorem 5.1 (TeX source): \"Let K/Q_p be a Galois extension of degree d with discriminant d_K. Then for every n >= 1, rho_n = |d_K|^{(n-1)d^{n-1}/2} as an identity of positive integers.\" Covered for every n >= 1, squared (no square root), with |d_K| read as ||disc b||^-1.",
+    "not_covered": "The positive square root (rho_n itself as an integer power of p) is not stated; distinct factor fields and non-Galois K are not covered; R_I is the library's span of integral pure tensors over Q_p, not the tensor product over Z_p (injectivity of the comparison map is not proved for n >= 3).",
+    "statement_status": "STATEMENT_FORMALIZED",
+    "proof_status": "KERNEL_VERIFIED",
+    "obligations": [],
+    "ambiguities": [],
+    "scope": "n factors equal to one Galois K; tensor products over Q_p of the fields",
+    "lemmas": [
+      "IUT.Audit.TensorOrderIndexMany.tOrdMany_lattices",
+      "IUT.Audit.TensorOrderIndexMany.tOrdMany_integers_eq_lattice",
+      "IUT.Audit.TensorOrderIndexMany.tOrdMany_norm_eq_lattice",
+      "IUT.Audit.TensorOrderIndexMany.tOrdManyRingGrp_coe",
+      "IUT.Audit.TensorOrderIndexMany.tOrdManyNormGrp_coe"
+    ]
+  },
+  "ZENGHULL.Thm5_1.frag.many_lemma2_2": {
+    "kind": "fragment",
+    "parent": "ZENGHULL.Thm5_1",
+    "source": {
+      "sections_in_paper": "section 2",
+      "pages_read": "checked against the TeX source of version 1: sections 0, 2 to 5, 8 to 10, 14 and 16 and Appendix A; no page render exists"
+    },
+    "content": "Lemma 2.2: for z in R_I (tdManyIntegers), every component Phi(z)_g is integral over Z_p, that is, Phi(R_I) lies in the product of the O_K.",
+    "explicit_hypotheses": [
+      "p a prime",
+      "K a field, finite-dimensional and Galois over Q_p",
+      "I a finite type with a distinguished element s (n = |I| >= 1)",
+      "z in tdManyIntegers",
+      "g : (I minus s) -> Gal(K/Q_p)"
+    ],
+    "implicit_hypotheses": [],
+    "conclusion": "padicVolIntegral p (tOrdManyPhi p s K z g).",
+    "definitions_required": [
+      "IUT.Audit.TensorOrderIndexMany.tOrdManyPhi"
+    ],
+    "results_used": [],
+    "external_dependencies": [],
+    "lean_declaration": "IUT.Audit.TensorOrderIndexMany.tOrdMany_phi_integers",
+    "lean_module": "IUT.Audit.TensorOrderIndexMany",
+    "covers": "Section 2, Lemma 2.2 (TeX source): \"Phi(O_n) subset P_n.\"",
+    "not_covered": "None for the inclusion; the converse description of (R_I)^~ is the lemma tOrdMany_normalization_iff.",
+    "statement_status": "STATEMENT_FORMALIZED",
+    "proof_status": "KERNEL_VERIFIED",
+    "obligations": [],
+    "ambiguities": [],
+    "scope": "n factors equal to one Galois K",
+    "lemmas": [
+      "IUT.Audit.TensorOrderIndexMany.tOrdMany_normalization_iff"
+    ]
+  },
+  "ZENGHULL.Thm5_1.frag.many_lemma3_1": {
+    "kind": "fragment",
+    "parent": "ZENGHULL.Thm5_1",
+    "source": {
+      "sections_in_paper": "section 3",
+      "pages_read": "checked against the TeX source of version 1: sections 0, 2 to 5, 8 to 10, 14 and 16 and Appendix A; no page render exists"
+    },
+    "content": "Lemma 3.1 for n factors: Tr(Phi(tensor_i x_i)) = prod_i Tr_K(x_i), and this equals the trace of tensor_i x_i in the packet.",
+    "explicit_hypotheses": [
+      "p a prime",
+      "K a field, finite-dimensional and Galois over Q_p",
+      "I a finite type with a distinguished element s (n = |I| >= 1)",
+      "x : I -> K"
+    ],
+    "implicit_hypotheses": [],
+    "conclusion": "trace(tOrdManyPhi (tprod x)) = prod_i trace(x i) and trace(tprod x) = prod_i trace(x i).",
+    "definitions_required": [
+      "IUT.Audit.TensorOrderIndexMany.tOrdManyPhi"
+    ],
+    "results_used": [],
+    "external_dependencies": [],
+    "lean_declaration": "IUT.Audit.TensorOrderIndexMany.tOrdMany_trace_phi",
+    "lean_module": "IUT.Audit.TensorOrderIndexMany",
+    "covers": "Section 3, Lemma 3.1 (TeX source): \"For any z = x_1 (x) ... (x) x_n in A_n: Tr_{B_n}(Phi(z)) = prod_{i=1}^n Tr_K(x_i) = Tr_{A_n}(z).\"",
+    "not_covered": "None for pure tensors; the proof uses that Phi is an algebra isomorphism and tdMany_trace_tprod of the library, not the paper's Galois sum.",
+    "statement_status": "STATEMENT_FORMALIZED",
+    "proof_status": "KERNEL_VERIFIED",
+    "obligations": [],
+    "ambiguities": [],
+    "scope": "n factors equal to one Galois K",
+    "lemmas": [
+      "IUT.Audit.TensorOrderIndexMany.tOrdManyPhi_tprod"
+    ]
+  },
+  "ZENGHULL.Thm5_1.frag.many_lemma4_1": {
+    "kind": "fragment",
+    "parent": "ZENGHULL.Thm5_1",
+    "source": {
+      "sections_in_paper": "section 4",
+      "pages_read": "checked against the TeX source of version 1: sections 0, 2 to 5, 8 to 10, 14 and 16 and Appendix A; no page render exists"
+    },
+    "content": "Lemma 4.1 for any finite index set J: the product basis (k, j) -> b_k in the j-component of prod_J K has discriminant disc b ^ |J|; with J = G^(n-1) and transported by Phi, the basis of (R_I)^~ has discriminant disc b ^ (d^(n-1)) (tOrdMany_discr_normBasis).",
+    "explicit_hypotheses": [
+      "F a field, K a commutative F-algebra (a field)",
+      "J a finite type",
+      "b an F-basis of K indexed by a finite type"
+    ],
+    "implicit_hypotheses": [],
+    "conclusion": "Algebra.discr F (tOrdManyPiBasis F K J b) = Algebra.discr F b ^ card J.",
+    "definitions_required": [
+      "IUT.Audit.TensorOrderIndexMany.tOrdManyPiBasis"
+    ],
+    "results_used": [],
+    "external_dependencies": [],
+    "lean_declaration": "IUT.Audit.TensorOrderIndexMany.tOrdMany_discr_pi",
+    "lean_module": "IUT.Audit.TensorOrderIndexMany",
+    "covers": "Section 4, Lemma 4.1 (TeX source): \"disc(P_n) = d_K^{d^{n-1}}\", with the proof \"The Gram matrix is block-diagonal, with d^{n-1} blocks\".",
+    "not_covered": "The paper's d_K is a field discriminant up to units; here disc b for the chosen integral basis b (exact equality of elements of Q_p).",
+    "statement_status": "STATEMENT_FORMALIZED",
+    "proof_status": "KERNEL_VERIFIED",
+    "obligations": [],
+    "ambiguities": [],
+    "scope": "any finite index set; the statement of the paper is the case J = G^(n-1)",
+    "lemmas": [
+      "IUT.Audit.TensorOrderIndexMany.tOrdMany_discr_normBasis",
+      "IUT.Audit.TensorOrderIndexMany.tOrdMany_traceMatrix_pi"
+    ]
+  },
+  "ZENGHULL.Thm5_1.frag.many_lemma4_2": {
+    "kind": "fragment",
+    "parent": "ZENGHULL.Thm5_1",
+    "source": {
+      "sections_in_paper": "section 4",
+      "pages_read": "checked against the TeX source of version 1: sections 0, 2 to 5, 8 to 10, 14 and 16 and Appendix A; no page render exists"
+    },
+    "content": "Lemma 4.2: for a Q_p-basis b of K with |b| = d and a finite index type I with |I| = m, the tensor basis of the PiTensorProduct of m copies of K has discriminant disc b ^ (m d^(m-1)).",
+    "explicit_hypotheses": [
+      "p a prime",
+      "K a finite-dimensional field extension of Q_p",
+      "b a Q_p-basis of K",
+      "I a finite type with card I = m"
+    ],
+    "implicit_hypotheses": [],
+    "conclusion": "Algebra.discr Q_p (Basis.piTensorProduct (fun _ => b)) = Algebra.discr Q_p b ^ (m * card kappa ^ (m - 1)).",
+    "definitions_required": [],
+    "results_used": [],
+    "external_dependencies": [],
+    "lean_declaration": "IUT.Audit.TensorOrderIndexMany.tOrdMany_discr_tensor",
+    "lean_module": "IUT.Audit.TensorOrderIndexMany",
+    "covers": "Section 4, Lemma 4.2 (TeX source): \"disc(O_n) = d_K^{n d^{n-1}}\".",
+    "not_covered": "The paper's proof (triangularization of the Kronecker power, display (kron-det)) is not followed; the proof here is by induction on m through the split and the two-factor tOrdIdx_discr_tensor. The Kronecker determinant identity itself is not stated as a matrix lemma.",
+    "statement_status": "STATEMENT_FORMALIZED",
+    "proof_status": "KERNEL_VERIFIED",
+    "obligations": [],
+    "ambiguities": [],
+    "scope": "any finite-dimensional K (Galois not needed)",
+    "lemmas": [
+      "IUT.Audit.TensorOrderIndexMany.tOrdMany_card_eq"
+    ]
+  },
+  "ZENGHULL.Thm5_1.frag.many_phi": {
+    "kind": "fragment",
+    "parent": "ZENGHULL.Thm5_1",
+    "source": {
+      "sections_in_paper": "section 2",
+      "pages_read": "checked against the TeX source of version 1: sections 0, 2 to 5, 8 to 10, 14 and 16 and Appendix A; no page render exists"
+    },
+    "content": "Lemma 2.1 for n factors: the Q_p-algebra isomorphism tOrdManyPhi from the PiTensorProduct of n copies of K onto the functions G^(I minus s) -> K, with Phi(tensor_i x_i)_g = x_s * prod_{i != s} g_i(x_i).",
+    "explicit_hypotheses": [
+      "p a prime",
+      "K a field, finite-dimensional and Galois over Q_p",
+      "I a finite type with a distinguished element s (n = |I| >= 1)",
+      "x : I -> K",
+      "g : (I minus s) -> Gal(K/Q_p)"
+    ],
+    "implicit_hypotheses": [],
+    "conclusion": "tOrdManyPhi p s K (tprod x) g = x s * prod_i g i (x i), tOrdManyPhi being an AlgEquiv.",
+    "definitions_required": [
+      "IUT.Audit.TensorOrderIndexMany.tOrdManyPhi",
+      "IUT.Audit.TensorOrderIndexMany.tOrdManyPhiGen",
+      "IUT.Audit.TensorOrderIndexMany.tOrdManyHom"
+    ],
+    "results_used": [],
+    "external_dependencies": [],
+    "lean_declaration": "IUT.Audit.TensorOrderIndexMany.tOrdManyPhi_tprod",
+    "lean_module": "IUT.Audit.TensorOrderIndexMany",
+    "covers": "Section 2 (TeX source): the definition Phi(x_1 (x) ... (x) x_n) = (x_1 sigma_{g_2}(x_2) ... sigma_{g_n}(x_n))_g and Lemma 2.1 \"Phi is an isomorphism of Q_p-algebras.\"",
+    "not_covered": "The paper's proof (induction through n = 2 with idempotents) is not followed: the proof here is by independence of characters and dimension; the first factor of the paper is the index s.",
+    "statement_status": "STATEMENT_FORMALIZED",
+    "proof_status": "KERNEL_VERIFIED",
+    "obligations": [],
+    "ambiguities": [],
+    "scope": "n factors equal to one Galois K",
+    "lemmas": [
+      "IUT.Audit.TensorOrderIndexMany.tOrdManyPhi",
+      "IUT.Audit.TensorOrderIndexMany.tOrdManyPhiGen_bijective",
+      "IUT.Audit.TensorOrderIndexMany.tOrdManyHom_injective",
+      "IUT.Audit.TensorOrderIndexMany.tOrdMany_card_index"
     ]
   }
 }

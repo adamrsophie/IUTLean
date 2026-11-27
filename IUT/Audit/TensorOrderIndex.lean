@@ -59,12 +59,13 @@ discriminants of the trace form. Throughout, `|𝔡_K|` of the paper is read as
 
 ## Not proved
 
-* The `n`-factor formula `ρ_n = |𝔡_K|^{(n−1) d^{n−1}/2}`: the library's `R_E` has two factors;
-  the `n`-fold version needs iterated tensor products of the Galois splitting.
+* The `n`-factor formula `ρ_n = |𝔡_K|^{(n−1) d^{n−1}/2}`, here (the library's `R_E` has two
+  factors); its squared form for any number of factors is
+  `IUT.Audit.TensorOrderIndexMany.tOrdMany_index_sq`.
 * The identification `v/d = 𝔡` of the valuation of the discriminant with the order of the
-  different: the pinned Mathlib relates the norm of the different to the discriminant for
-  number fields only (`NumberField.absNorm_differentIdeal`). So the statement "half of the
-  allowance `𝔡_{I*} log p` of Proposition 1.1" is a model test here.
+  different, here; it is proved in `IUT.PaperIV.LocalFields.LocalDiscriminant`
+  (`locDisc_valuation_discr`). The statement "half of the allowance `𝔡_{I*} log p` of
+  Proposition 1.1" stays a model test (`IUT.Audit.TensorOrderIndexAllowance`).
 * Which normalization the hull step of IUT III Corollary 3.12 uses: this file computes the
   index and its value under the normalization of Proposition 1.4 (i) only.
 -/

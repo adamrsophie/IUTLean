@@ -60,14 +60,12 @@ None of these is a statement of the papers; they are elementary facts about the 
 **Not proved.**
 * The upper bound that page 12 takes from Proposition 1.7 (i), in the form it would take here:
   `log-diff_L ≤ log-diff_K + log-cond_K(x) + c(n)` for `L = K(u, v)` and a constant `c(n)`
-  depending on `n` only. Two inputs are missing. (a) `L/K` is unramified at every prime of `K`
-  not dividing `n` at which `x` reduces away from `{0, 1, ∞}`: this needs the Kummer criterion
-  for `X^n - a` with `a` a unit and `n` invertible, and its transfer to the compositum
-  `K(u) ⊔ K(v)`; Mathlib's `dvd_differentIdeal_iff` identifies the primes dividing the
-  different with the ramified ones, but the unramifiedness itself is not formalized. (b) The
-  bound `v_w(𝔇_{L/K}) ≤ e_w - 1 + v_w(e_w)` for the global different;
-  `IUT.PaperIV.LocalFields.DifferentBound` proves it only for finite extensions of `ℚ_p`, and
-  the passage from the global different to its completions is not formalized.
+  depending on `n` only, here. It is proved in `IUT.FermatDifferentGalois` with
+  `c(n) = 4 log n` (`fermatGal_lift_logDiffNF_le`), from the unramifiedness of `L/K` at the
+  primes not dividing `n` at which `x` reduces away from `{0, 1, ∞}`
+  (`IUT.FermatDifferent.fermatDiff_not_dvd_differentIdeal_of_reduces`). The bound
+  `v_w(𝔇_{L/K}) ≤ e_w - 1 + v_w(e_w)` for the global different is
+  `IUT.DifferentBridge.diffBr_classical_bound`.
 * The heights on `C_n` of displays (7) and (8) of arXiv 1601.03572 page 9 (heights attached to
   presented Cartier divisors on a curve); curves, their divisors and their heights are not
   defined in the library. Only the coordinate heights `h(u)`, `h(v)` are treated.

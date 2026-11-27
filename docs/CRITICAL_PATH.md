@@ -655,11 +655,11 @@ Distance is the shortest chain of edges from a root.
 | Id | Kind | Title | PDF pages | Distance | Statement | Proof |
 |---|---|---|---|---|---|---|
 | `IUT4.ThmA` | Theorem | Diophantine Inequalities | 3 | 0 | EXTRACTED | BLOCKED_BY_EXTERNAL_THEOREM |
-| `IUT4.Prop1_1` | Proposition | Multiple Tensor Products and Differents | 9 to 10 | 4 | EXTRACTED | EXTRACTED |
+| `IUT4.Prop1_1` | Proposition | Multiple Tensor Products and Differents | 9 to 10 | 4 | STATEMENT_FORMALIZED | KERNEL_VERIFIED |
 | `IUT4.Prop1_2` | Proposition | Differents and Logarithms | 10 to 11 | 3 | EXTRACTED | EXTRACTED |
 | `IUT4.Prop1_3` | Proposition | Estimates of Differents | 11 to 12 | 3 | STATEMENT_FORMALIZED | KERNEL_VERIFIED |
 | `IUT4.Prop1_4` | Proposition | Nonarchimedean Normalized Log-volume Estimates | 13 to 14 | 3 | EXTRACTED | BLOCKED_BY_EXTERNAL_THEOREM |
-| `IUT4.Prop1_5` | Proposition | Archimedean Metric Estimates | 14 to 16 | 3 | EXTRACTED | BLOCKED_BY_MATHLIB |
+| `IUT4.Prop1_5` | Proposition | Archimedean Metric Estimates | 14 to 16 | 3 | EXTRACTED | EXTRACTED |
 | `IUT4.Prop1_6` | Proposition | The Prime Number Theorem | 16 | 3 | STATEMENT_FORMALIZED | KERNEL_VERIFIED |
 | `IUT4.Prop1_7` | Proposition | Weighted Averages | 16 to 17 | 3 | STATEMENT_FORMALIZED | KERNEL_VERIFIED |
 | `IUT4.Rem1_7_1` | Remark |  | 17 to 18 | 3 | EXTRACTED | EXTRACTED |

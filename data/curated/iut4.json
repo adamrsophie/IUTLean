@@ -227,7 +227,7 @@
   "source": {
    "paper": "Inter-universal Teichmuller Theory IV",
    "pdf_pages": "pages 9 to 10",
-   "pages_read": "renders of pages 9 and 10"
+   "pages_read": "renders of pages 9 and 10; the statement compared clause by clause with the render of page 9"
   },
   "content": "Multiple tensor products and differents. For a fixed index * in I and I* = I minus {*}, the normalization (R_I)^~ of the tensor product R_I = tensor over Z_p of the R_i satisfies p^{d_{I*}} (R_I)^~ inside R_I inside (R_I)^~, where d_{I*} is the sum of the orders d_i of the differents over i in I*.",
   "explicit_hypotheses": [
@@ -248,14 +248,16 @@
   ],
   "results_used": [],
   "external_dependencies": [],
-  "lean_declaration": null,
-  "statement_status": "EXTRACTED",
-  "proof_status": "EXTRACTED",
+  "lean_declaration": "IUT.PaperIV.LocalFields.psuit_proposition1_1",
+  "statement_status": "STATEMENT_FORMALIZED",
+  "proof_status": "KERNEL_VERIFIED",
   "obligations": [
-   "For two factors (I = {1, 2}, I* = {2}) the inclusion p^(d_{I*}) (R_I)~ <= R_I is proved, with p^(d_2) any element of order d_2, a generator of the different ideal or any element of it (IUT4.Prop1_1.frag.td_order, IUT4.Prop1_1.frag.td_generator, IUT4.Prop1_1.frag.td_different_ideal); the route of page 10 through base change and faithful flatness is not followed. For two factors, K_1 (x) K_2 is proved reduced and a finite product of finite extensions of Q_p (IUT4.Prop1_1.frag.vb_tensor_decomposition), the closed unit ball and integral closure models of R_i agree (IUT4.Prop1_1.frag.vb_integral_models), and R_E <= (R_E)~ is proved with (R_E)~ the integral closure of Z_p in K_1 (x) K_2 (IUT4.Prop1_1.frag.packet_integers). For any finite number of factors the tensor product over Q_p is a finite product of finite extensions of Q_p (IUT4.Prop1_1.frag.pk_packet_decomposition), under which (R_E)~ is the product of their rings of integers (IUT4.Prop1_1.frag.pk_normalization_coordinates). For two factors, this integral closure is the normalization of R_E in its ring of fractions (IUT4.Prop1_1.frag.ti_normalization). For any finite number of factors, with R_I the image in the tensor product over Q_p of the tensor product over Z_p of the R_i and (R_I)~ the integral closure of Z_p there, the assertions of page 9 are proved: p^(d_{I*}) (R_I)~ <= R_I with p^(d_{I*}) a product of elements of order d_i (IUT4.Prop1_1.frag.many_order) or of elements of the differents (IUT4.Prop1_1.frag.many_different_ideal), R_I <= (R_I)~ (IUT4.Prop1_1.frag.many_trivial_inclusion), the independence of the choice of p^(d_{I*}) (IUT4.Prop1_1.frag.many_choice_independent), and the three together (IUT4.Prop1_1.frag.many_whole), through trace duals over the field k_* rather than the base change and induction of page 10. Open for more than two factors: that this integral closure is the normalization of R_I in its ring of fractions, and that the tensor product over Z_p of the R_i injects into the tensor product over Q_p (so that R_I is the printed tensor product)."
+   "For two factors (I = {1, 2}, I* = {2}) the inclusion p^(d_{I*}) (R_I)~ <= R_I is proved, with p^(d_2) any element of order d_2, a generator of the different ideal or any element of it (IUT4.Prop1_1.frag.td_order, IUT4.Prop1_1.frag.td_generator, IUT4.Prop1_1.frag.td_different_ideal); the route of page 10 through base change and faithful flatness is not followed. For two factors, K_1 (x) K_2 is proved reduced and a finite product of finite extensions of Q_p (IUT4.Prop1_1.frag.vb_tensor_decomposition), the closed unit ball and integral closure models of R_i agree (IUT4.Prop1_1.frag.vb_integral_models), and R_E <= (R_E)~ is proved with (R_E)~ the integral closure of Z_p in K_1 (x) K_2 (IUT4.Prop1_1.frag.packet_integers). For any finite number of factors the tensor product over Q_p is a finite product of finite extensions of Q_p (IUT4.Prop1_1.frag.pk_packet_decomposition), under which (R_E)~ is the product of their rings of integers (IUT4.Prop1_1.frag.pk_normalization_coordinates). For two factors, this integral closure is the normalization of R_E in its ring of fractions (IUT4.Prop1_1.frag.ti_normalization). For any finite number of factors, with R_I the image in the tensor product over Q_p of the tensor product over Z_p of the R_i and (R_I)~ the integral closure of Z_p there, the assertions of page 9 are proved: p^(d_{I*}) (R_I)~ <= R_I with p^(d_{I*}) a product of elements of order d_i (IUT4.Prop1_1.frag.many_order) or of elements of the differents (IUT4.Prop1_1.frag.many_different_ideal), R_I <= (R_I)~ (IUT4.Prop1_1.frag.many_trivial_inclusion), the independence of the choice of p^(d_{I*}) (IUT4.Prop1_1.frag.many_choice_independent), and the three together (IUT4.Prop1_1.frag.many_whole), through trace duals over the field k_* rather than the base change and induction of page 10. For any finite number of factors, the tensor product over Z_p of the R_i injects into the tensor product over Q_p with image R_I (IUT4.Prop1_1.frag.id_injective, IUT4.Prop1_1.frag.id_range), R_I is reduced (IUT4.Prop1_1.frag.id_reduced), its ring of fractions is the tensor product over Q_p (IUT4.Prop1_1.frag.id_fraction_ring), and the integral closure of Z_p there is the normalization of R_I in it (IUT4.Prop1_1.frag.id_normalization). On the printed tensor product over Z_p, IUT.PaperIV.LocalFields.packetId_proposition1_1 states the display of page 9 with p^(d_{I*}) a pure tensor of elements of order d_i (IUT4.Prop1_1.frag.id_whole), and IUT.PaperIV.LocalFields.psuit_proposition1_1 states it, with the independence of the choice, for every element of the tensor product over Q_p of order d_{I*} in each field component (IUT4.Prop1_1.frag.suit_whole); the page's products are instances (IUT4.Prop1_1.frag.suit_examples), such elements exist (IUT.PaperIV.LocalFields.psuit_exists_hasOrder), and the setting of subfields of one algebraic closure is an instance (IUT4.Prop1_1.frag.suit_closure). psuit_proposition1_1 is the declaration of the whole proposition, compared clause by clause with the render of page 9; its readings are listed in the ambiguities. The route is not that of page 10 (base change and induction on |I|): it goes through trace duals over k_* and the decomposition of the tensor product over Q_p into fields."
   ],
   "ambiguities": [
-   "'Suitable p^(d_{I*})' is read as a pure tensor of elements of order d_i, i in I*, with 1 at *, or of elements of the differents; an arbitrary element of the tensor product with order d_i in each component is not treated (its ratio to such a product is a unit of (R_I)~, so the module is the same, but this is not proved). The existence of elements of order d_i is not part of the statement of IUT4.Prop1_1.frag.many_whole."
+   "'Suitable p^(d_{I*})' is read in psuit_proposition1_1 as an element of the tensor product over Q_p of order d_{I*} in every field component, equivalently under every Q_p-algebra map to an algebraic closure of Q_p (IUT.PaperIV.LocalFields.psuitHasOrder, IUT4.Prop1_1.frag.suit_components); the page's products of elements p^(d_i) are instances (IUT4.Prop1_1.frag.suit_examples). The page writes p^(d_{I*}) as an element of the algebraic closure and gives no action of such an element on (R_I)~; that reading is not formalized. In IUT4.Prop1_1.frag.many_whole and IUT4.Prop1_1.frag.id_whole the reading is a pure tensor of elements of order d_i, with 1 at *; elements of order d_i exist (IUT4.Prop1_1.frag.id_generator_order).",
+   "In packetId_proposition1_1 and psuit_proposition1_1 the fields k_i are abstract finite extensions of Q_p, not subfields of a fixed algebraic closure; every subfield of the algebraic closure is such a field (IUT4.Prop1_1.frag.suit_closure states the two main clauses in that setting), and R_i, the integral closure of Z_p in k_i, is then the intersection printed on page 9 (that identification is not stated in Lean).",
+   "d_i is differentOrder at a prime P_i of R_i over p, universally quantified (R_i is local, so P_i is its maximal ideal), and order is read through the spectral norm, p^(-d_i). One generator of the different of that order is shown to exist (IUT4.Prop1_1.frag.id_generator_order); generators differ by units of norm one."
   ],
   "cor3_12_dependency": "independent",
   "fragments": [
@@ -283,7 +285,24 @@
    "IUT4.Prop1_1.frag.many_split",
    "IUT4.Prop1_1.frag.many_trivial_inclusion",
    "IUT4.Prop1_1.frag.many_whole",
-   "IUT4.Prop1_1.frag.tord_half_allowance"
+   "IUT4.Prop1_1.frag.tord_half_allowance",
+   "IUT4.Prop1_1.frag.id_fraction_ring",
+   "IUT4.Prop1_1.frag.id_generator_order",
+   "IUT4.Prop1_1.frag.id_injective",
+   "IUT4.Prop1_1.frag.id_normalization",
+   "IUT4.Prop1_1.frag.id_range",
+   "IUT4.Prop1_1.frag.id_reduced",
+   "IUT4.Prop1_1.frag.id_whole",
+   "IUT4.Prop1_1.frag.id_zp_tensor_def",
+   "IUT4.Prop1_1.frag.locdisc_disc_different",
+   "IUT4.Prop1_1.frag.locdisc_half_allowance",
+   "IUT4.Prop1_1.frag.locdiscex_cubic_different",
+   "IUT4.Prop1_1.frag.many_allowance_compare",
+   "IUT4.Prop1_1.frag.suit_closure",
+   "IUT4.Prop1_1.frag.suit_components",
+   "IUT4.Prop1_1.frag.suit_examples",
+   "IUT4.Prop1_1.frag.suit_order_def",
+   "IUT4.Prop1_1.frag.suit_whole"
   ]
  },
  "IUT4.Prop1_1.frag.vb_tensor_decomposition": {
@@ -567,7 +586,7 @@
   "external_dependencies": [],
   "lean_declaration": "IUT.PaperIV.LocalFields.packet_tensor_zp_bijective",
   "covers": "Pages 9 and 13 take tensor products over Z_p; for two fields containing Q_p the tensor product over Z_p is the tensor product over Q_p used in Lean.",
-  "not_covered": "Setting: two factors; any fields K1, K2 over Q_p with compatible Z_p-structures. The same identification for more than two factors (PiTensorProduct over Z_p versus over Q_p); finite dimensionality is not needed and not assumed. Counted as a model test: an identification of the tensor product over Z_p of the pages with the tensor product over Q_p used in Lean, not a statement printed on the pages read.",
+  "not_covered": "Setting: two factors; any fields K1, K2 over Q_p with compatible Z_p-structures. The same identification for more than two factors (PiTensorProduct over Z_p versus over Q_p), which is IUT4.Prop1_1.frag.id_injective; finite dimensionality is not needed and not assumed. Counted as a model test: an identification of the tensor product over Z_p of the pages with the tensor product over Q_p used in Lean, not a statement printed on the pages read.",
   "statement_status": "STATEMENT_FORMALIZED",
   "proof_status": "KERNEL_VERIFIED",
   "obligations": [],
@@ -874,7 +893,7 @@
   "lean_declaration": "IUT.PaperIV.LocalFields.tdMany_choice_independent",
   "lean_module": "IUT.PaperIV.LocalFields.TensorDifferentMany",
   "covers": "Page 9, the sentence after the display: the left-hand side of the first inclusion is well-defined for suitable p^{d_{I*}} (products of elements p^{d_i} of R_i, i in I*) and independent of the choice.",
-  "not_covered": "Choices of p^{d_{I*}} that are not pure tensors of elements of order d_i. Not covered: that (R_I)^~ (the integral closure of Z_p in the packet) is the normalization of R_I in its ring of fractions; that the tensor product over Z_p of the page maps injectively onto R_I in the packet over Q_p for more than two factors; elements p^{d_{I*}} of the packet other than pure tensors. The page's route (base change to the integers of an algebraic closure, faithful flatness, induction on |I|) is not followed.",
+  "not_covered": "Choices of p^{d_{I*}} that are not pure tensors of elements of order d_i. Not covered here: elements p^{d_{I*}} of the packet other than pure tensors (every element of order d_{I*} in each field component is IUT4.Prop1_1.frag.suit_whole). That (R_I)^~ is the normalization of R_I in its ring of fractions and that the tensor product over Z_p of the page maps injectively onto R_I are proved for any finite number of factors (IUT4.Prop1_1.frag.id_whole, IUT4.Prop1_1.frag.id_injective, IUT4.Prop1_1.frag.id_normalization). The page's route (base change to the integers of an algebraic closure, faithful flatness, induction on |I|) is not followed.",
   "statement_status": "STATEMENT_FORMALIZED",
   "proof_status": "KERNEL_VERIFIED",
   "obligations": [],
@@ -910,7 +929,7 @@
   "lean_declaration": "IUT.PaperIV.LocalFields.tdMany_mul_mem_integers",
   "lean_module": "IUT.PaperIV.LocalFields.TensorDifferentMany",
   "covers": "Page 9, display of Proposition 1.1, first inclusion p^{d_{I*}} (R_I)^~ inside R_I, for any finite I, in the stronger form with any element of the different ideal of R_i in place of p^{d_i} (i in I*).",
-  "not_covered": "The order form is many_order. Not covered: that (R_I)^~ (the integral closure of Z_p in the packet) is the normalization of R_I in its ring of fractions; that the tensor product over Z_p of the page maps injectively onto R_I in the packet over Q_p for more than two factors; elements p^{d_{I*}} of the packet other than pure tensors. The page's route (base change to the integers of an algebraic closure, faithful flatness, induction on |I|) is not followed.",
+  "not_covered": "The order form is many_order. Not covered here: elements p^{d_{I*}} of the packet other than pure tensors (every element of order d_{I*} in each field component is IUT4.Prop1_1.frag.suit_whole). That (R_I)^~ is the normalization of R_I in its ring of fractions and that the tensor product over Z_p of the page maps injectively onto R_I are proved for any finite number of factors (IUT4.Prop1_1.frag.id_whole, IUT4.Prop1_1.frag.id_injective, IUT4.Prop1_1.frag.id_normalization). The page's route (base change to the integers of an algebraic closure, faithful flatness, induction on |I|) is not followed.",
   "statement_status": "STATEMENT_FORMALIZED",
   "proof_status": "KERNEL_VERIFIED",
   "obligations": [],
@@ -947,7 +966,7 @@
   "lean_declaration": "IUT.PaperIV.LocalFields.tdManyIntegers",
   "lean_module": "IUT.PaperIV.LocalFields.TensorDifferentMany",
   "covers": "Page 9: R_E = tensor product over Z_p of the R_i (i in E), modeled as the image of that tensor product in the tensor product of the fields K_i over Q_p.",
-  "not_covered": "That the map from the tensor product over Z_p of the R_i to the packet over Q_p is injective (so that the image is R_E itself) for more than two factors; that for two indices this set corresponds to padicPacketIntegers on the binary tensor product.",
+  "not_covered": "The injectivity of the map from the tensor product over Z_p of the R_i to the packet over Q_p (so that the image is R_E itself), proved in IUT4.Prop1_1.frag.id_injective; that for two indices this set corresponds to padicPacketIntegers on the binary tensor product.",
   "statement_status": "STATEMENT_FORMALIZED",
   "proof_status": "NOT_EXTRACTED",
   "obligations": [],
@@ -983,7 +1002,7 @@
   "lean_declaration": "IUT.PaperIV.LocalFields.tdMany_order_mul_mem_integers",
   "lean_module": "IUT.PaperIV.LocalFields.TensorDifferentMany",
   "covers": "Page 9, display of Proposition 1.1, first inclusion p^{d_{I*}} (R_I)^~ inside R_I for any finite I, with p^{d_{I*}} the product of elements p^{d_i} of order d_i (i in I*), as the page suggests.",
-  "not_covered": "Readings in scope. Not covered: that (R_I)^~ (the integral closure of Z_p in the packet) is the normalization of R_I in its ring of fractions; that the tensor product over Z_p of the page maps injectively onto R_I in the packet over Q_p for more than two factors; elements p^{d_{I*}} of the packet other than pure tensors. The page's route (base change to the integers of an algebraic closure, faithful flatness, induction on |I|) is not followed.",
+  "not_covered": "Readings in scope. Not covered here: elements p^{d_{I*}} of the packet other than pure tensors (every element of order d_{I*} in each field component is IUT4.Prop1_1.frag.suit_whole). That (R_I)^~ is the normalization of R_I in its ring of fractions and that the tensor product over Z_p of the page maps injectively onto R_I are proved for any finite number of factors (IUT4.Prop1_1.frag.id_whole, IUT4.Prop1_1.frag.id_injective, IUT4.Prop1_1.frag.id_normalization). The page's route (base change to the integers of an algebraic closure, faithful flatness, induction on |I|) is not followed.",
   "statement_status": "STATEMENT_FORMALIZED",
   "proof_status": "KERNEL_VERIFIED",
   "obligations": [],
@@ -1018,7 +1037,7 @@
   "lean_declaration": "IUT.PaperIV.LocalFields.tdMany_split_mul_mem",
   "lean_module": "IUT.PaperIV.LocalFields.TensorDifferentMany",
   "covers": "Not a display of the page: the inclusion in the form K_* tensor (tensor of the K_i, i in I*), with coordinates over K_*; an argument chosen here in place of the page's route (the page regards R_I as an R_*-algebra, page 9).",
-  "not_covered": "The packet form is many_different_ideal. Not covered: that (R_I)^~ (the integral closure of Z_p in the packet) is the normalization of R_I in its ring of fractions; that the tensor product over Z_p of the page maps injectively onto R_I in the packet over Q_p for more than two factors; elements p^{d_{I*}} of the packet other than pure tensors. The page's route (base change to the integers of an algebraic closure, faithful flatness, induction on |I|) is not followed.",
+  "not_covered": "The packet form is many_different_ideal. Not covered here: elements p^{d_{I*}} of the packet other than pure tensors (every element of order d_{I*} in each field component is IUT4.Prop1_1.frag.suit_whole). That (R_I)^~ is the normalization of R_I in its ring of fractions and that the tensor product over Z_p of the page maps injectively onto R_I are proved for any finite number of factors (IUT4.Prop1_1.frag.id_whole, IUT4.Prop1_1.frag.id_injective, IUT4.Prop1_1.frag.id_normalization). The page's route (base change to the integers of an algebraic closure, faithful flatness, induction on |I|) is not followed.",
   "statement_status": "STATEMENT_FORMALIZED",
   "proof_status": "KERNEL_VERIFIED",
   "obligations": [],
@@ -1053,7 +1072,7 @@
   "lean_declaration": "IUT.PaperIV.LocalFields.tdMany_integers_subset",
   "lean_module": "IUT.PaperIV.LocalFields.TensorDifferentMany",
   "covers": "Page 9, display of Proposition 1.1, second inclusion R_I inside (R_I)^~, any finite I; the proof's sentence 'It is immediate from the definitions that R_I inside (R_I)^~'.",
-  "not_covered": "Readings in scope. Not covered: that (R_I)^~ (the integral closure of Z_p in the packet) is the normalization of R_I in its ring of fractions; that the tensor product over Z_p of the page maps injectively onto R_I in the packet over Q_p for more than two factors; elements p^{d_{I*}} of the packet other than pure tensors. The page's route (base change to the integers of an algebraic closure, faithful flatness, induction on |I|) is not followed.",
+  "not_covered": "Readings in scope. Not covered here: elements p^{d_{I*}} of the packet other than pure tensors (every element of order d_{I*} in each field component is IUT4.Prop1_1.frag.suit_whole). That (R_I)^~ is the normalization of R_I in its ring of fractions and that the tensor product over Z_p of the page maps injectively onto R_I are proved for any finite number of factors (IUT4.Prop1_1.frag.id_whole, IUT4.Prop1_1.frag.id_injective, IUT4.Prop1_1.frag.id_normalization). The page's route (base change to the integers of an algebraic closure, faithful flatness, induction on |I|) is not followed.",
   "statement_status": "STATEMENT_FORMALIZED",
   "proof_status": "KERNEL_VERIFIED",
   "obligations": [],
@@ -1088,7 +1107,7 @@
   "lean_declaration": "IUT.PaperIV.LocalFields.tdMany_proposition1_1",
   "lean_module": "IUT.PaperIV.LocalFields.TensorDifferentMany",
   "covers": "Page 9, the display of Proposition 1.1, p^{d_{I*}} (R_I)^~ inside R_I inside (R_I)^~, for every finite I and every * in I, together with the sentence that the left-hand side is well-defined for suitable p^{d_{I*}}, such as products of elements p^{d_i} of R_i (i in I*), and independent of the choice of such suitable p^{d_{I*}}.",
-  "not_covered": "The readings listed in scope. Not covered: that (R_I)^~ (the integral closure of Z_p in the packet) is the normalization of R_I in its ring of fractions; that the tensor product over Z_p of the page maps injectively onto R_I in the packet over Q_p for more than two factors; elements p^{d_{I*}} of the packet other than pure tensors. The page's route (base change to the integers of an algebraic closure, faithful flatness, induction on |I|) is not followed.",
+  "not_covered": "The readings listed in scope. Not covered here: elements p^{d_{I*}} of the packet other than pure tensors (every element of order d_{I*} in each field component is IUT4.Prop1_1.frag.suit_whole). That (R_I)^~ is the normalization of R_I in its ring of fractions and that the tensor product over Z_p of the page maps injectively onto R_I are proved for any finite number of factors (IUT4.Prop1_1.frag.id_whole, IUT4.Prop1_1.frag.id_injective, IUT4.Prop1_1.frag.id_normalization). The page's route (base change to the integers of an algebraic closure, faithful flatness, induction on |I|) is not followed.",
   "statement_status": "STATEMENT_FORMALIZED",
   "proof_status": "KERNEL_VERIFIED",
   "obligations": [],
@@ -1124,12 +1143,605 @@
   "lean_declaration": "IUT.Audit.TensorOrderIndex.tOrdIdx_normExp_eq_half",
   "lean_module": "IUT.Audit.TensorOrderIndex",
   "covers": "Page 9, Proposition 1.1: p^{d_{I*}} (R_I)^~ <= R_I <= (R_I)^~ (no ceiling on the page). Only the arithmetic comparison is formalized.",
-  "not_covered": "The identification v/d = order of the different (the pinned Mathlib has the norm of the different equal to the discriminant only for number fields, NumberField.absNorm_differentIdeal); n-factor tensor products of the library.",
+  "not_covered": "The identification v/d = order of the different here; it is proved in IUT4.Prop1_1.frag.locdisc_disc_different, and the n-factor comparison is IUT4.Prop1_1.frag.many_allowance_compare.",
   "statement_status": "STATEMENT_FORMALIZED",
   "proof_status": "KERNEL_VERIFIED",
   "obligations": [],
   "ambiguities": [],
   "scope": "model_test"
+ },
+ "IUT4.Prop1_1.frag.id_fraction_ring": {
+  "kind": "fragment",
+  "parent": "IUT4.Prop1_1",
+  "source": {
+   "paper": "Inter-universal Teichmuller Theory IV",
+   "pdf_pages": "pages 9 to 10",
+   "pages_read": "rendered and checked: pages 9, 10"
+  },
+  "content": "The packet over Q_p, as an R_I-algebra through packetIdMap, is the localization of R_I at its nonzero divisors (its total ring of fractions).",
+  "explicit_hypotheses": [
+   "p a prime",
+   "I a finite type; K : I -> Type a family of fields with finite-dimensional Q_p-algebra structures and compatible Z_p-algebra structures (IsScalarTower Z_p Q_p K_i); R_i = integralClosure Z_p K_i"
+  ],
+  "implicit_hypotheses": [],
+  "conclusion": "IsLocalization (nonZeroDivisors R_I) (PiTensorProduct Q_p K) for the algebra structure given by packetIdMap.",
+  "definitions_required": [],
+  "results_used": [],
+  "external_dependencies": [],
+  "lean_declaration": "IUT.PaperIV.LocalFields.packetId_isLocalization",
+  "lean_module": "IUT.PaperIV.LocalFields.PacketIdentifications",
+  "covers": "Not a display of the page: realizes the ring of fractions of R_I, used by the page's definition of (-)^~ on page 9, as the packet over Q_p.",
+  "not_covered": "Comparison only.",
+  "statement_status": "STATEMENT_FORMALIZED",
+  "proof_status": "KERNEL_VERIFIED",
+  "obligations": [],
+  "ambiguities": [],
+  "cor3_12_dependency": "independent",
+  "scope": "model_test",
+  "lemmas": [
+   "IUT.PaperIV.LocalFields.packetId_exists_integer_multiple",
+   "IUT.PaperIV.LocalFields.packetId_algebraMap_isUnit"
+  ]
+ },
+ "IUT4.Prop1_1.frag.id_generator_order": {
+  "kind": "fragment",
+  "parent": "IUT4.Prop1_1",
+  "source": {
+   "paper": "Inter-universal Teichmuller Theory IV",
+   "pdf_pages": "pages 9 to 10",
+   "pages_read": "rendered and checked: pages 9, 10"
+  },
+  "content": "For a finite extension K of Q_p and a prime P of R = integralClosure Z_p K over p, the different ideal of R over Z_p is generated by an element d with spectral norm p^(-d_P), d_P = differentOrder at P.",
+  "explicit_hypotheses": [
+   "p a prime",
+   "K a field, finite-dimensional over Q_p, with a compatible Z_p-algebra structure",
+   "P a prime ideal of R lying over the maximal ideal of Z_p"
+  ],
+  "implicit_hypotheses": [],
+  "conclusion": "There is d in R with differentIdeal Z_p R = span {d} and the spectral norm of d equal to p^(-differentOrder at P).",
+  "definitions_required": [],
+  "results_used": [],
+  "external_dependencies": [],
+  "lean_declaration": "IUT.PaperIV.LocalFields.packetId_exists_generator_order",
+  "lean_module": "IUT.PaperIV.LocalFields.PacketIdentifications",
+  "covers": "Not a display of the page: the existence of a generator of the different ideal of order d_i, which the page's definition of d_i (page 9, the order of any generator of the different ideal) presupposes, so that elements p^{d_i} exist.",
+  "not_covered": "Only existence of one generator of that order; not that every generator has that order.",
+  "statement_status": "STATEMENT_FORMALIZED",
+  "proof_status": "KERNEL_VERIFIED",
+  "obligations": [],
+  "ambiguities": [],
+  "cor3_12_dependency": "independent",
+  "scope": "model_test",
+  "lemmas": [
+   "IUT.PaperIV.LocalFields.packetId_exists_admissible"
+  ]
+ },
+ "IUT4.Prop1_1.frag.id_injective": {
+  "kind": "fragment",
+  "parent": "IUT4.Prop1_1",
+  "source": {
+   "paper": "Inter-universal Teichmuller Theory IV",
+   "pdf_pages": "pages 9 to 10",
+   "pages_read": "rendered and checked: pages 9, 10"
+  },
+  "content": "The natural map from the tensor product over Z_p of the R_i to the tensor product over Q_p of the K_i is injective, for any finite index type.",
+  "explicit_hypotheses": [
+   "p a prime",
+   "I a finite type; K : I -> Type a family of fields with finite-dimensional Q_p-algebra structures and compatible Z_p-algebra structures (IsScalarTower Z_p Q_p K_i); R_i = integralClosure Z_p K_i"
+  ],
+  "implicit_hypotheses": [],
+  "conclusion": "packetIdMap is injective.",
+  "definitions_required": [],
+  "results_used": [],
+  "external_dependencies": [],
+  "lean_declaration": "IUT.PaperIV.LocalFields.packetId_map_injective",
+  "lean_module": "IUT.PaperIV.LocalFields.PacketIdentifications",
+  "covers": "Not a display of the page: identifies the page's R_I (tensor product over Z_p) with a subring of the tensor product of the fields over Q_p, the setting of tdMany_proposition1_1.",
+  "not_covered": "Nothing of the page's display; this is a comparison of the page's object with the library's model.",
+  "statement_status": "STATEMENT_FORMALIZED",
+  "proof_status": "KERNEL_VERIFIED",
+  "obligations": [],
+  "ambiguities": [],
+  "cor3_12_dependency": "independent",
+  "scope": "model_test",
+  "lemmas": [
+   "IUT.PaperIV.LocalFields.packetId_exists_bases"
+  ]
+ },
+ "IUT4.Prop1_1.frag.id_normalization": {
+  "kind": "fragment",
+  "parent": "IUT4.Prop1_1",
+  "source": {
+   "paper": "Inter-universal Teichmuller Theory IV",
+   "pdf_pages": "pages 9 to 10",
+   "pages_read": "rendered and checked: pages 9, 10"
+  },
+  "content": "An element of the packet over Q_p is integral over R_I (through packetIdMap) if and only if it is integral over Z_p.",
+  "explicit_hypotheses": [
+   "p a prime",
+   "I a finite type; K : I -> Type a family of fields with finite-dimensional Q_p-algebra structures and compatible Z_p-algebra structures (IsScalarTower Z_p Q_p K_i); R_i = integralClosure Z_p K_i"
+  ],
+  "implicit_hypotheses": [],
+  "conclusion": "For every w, (packetIdMap).IsIntegralElem w iff w is in packetNormalizationSet.",
+  "definitions_required": [],
+  "results_used": [],
+  "external_dependencies": [],
+  "lean_declaration": "IUT.PaperIV.LocalFields.packetId_isIntegralElem_iff",
+  "lean_module": "IUT.PaperIV.LocalFields.PacketIdentifications",
+  "covers": "Not a display of the page: with id_fraction_ring, identifies the normalization of R_I in its ring of fractions (page 9) with the library's packetNormalizationSet.",
+  "not_covered": "Comparison only.",
+  "statement_status": "STATEMENT_FORMALIZED",
+  "proof_status": "KERNEL_VERIFIED",
+  "obligations": [],
+  "ambiguities": [],
+  "cor3_12_dependency": "independent",
+  "scope": "model_test"
+ },
+ "IUT4.Prop1_1.frag.id_range": {
+  "kind": "fragment",
+  "parent": "IUT4.Prop1_1",
+  "source": {
+   "paper": "Inter-universal Teichmuller Theory IV",
+   "pdf_pages": "pages 9 to 10",
+   "pages_read": "rendered and checked: pages 9, 10"
+  },
+  "content": "For nonempty I, the image of the tensor product over Z_p of the R_i in the packet over Q_p is tdManyIntegers, the additive span of the pure tensors of elements integral over Z_p.",
+  "explicit_hypotheses": [
+   "p a prime",
+   "I a finite type; K : I -> Type a family of fields with finite-dimensional Q_p-algebra structures and compatible Z_p-algebra structures (IsScalarTower Z_p Q_p K_i); R_i = integralClosure Z_p K_i",
+   "I nonempty"
+  ],
+  "implicit_hypotheses": [],
+  "conclusion": "Set.range packetIdMap = tdManyIntegers p K.",
+  "definitions_required": [],
+  "results_used": [],
+  "external_dependencies": [],
+  "lean_declaration": "IUT.PaperIV.LocalFields.packetId_range_eq",
+  "lean_module": "IUT.PaperIV.LocalFields.PacketIdentifications",
+  "covers": "Not a display of the page: identifies the library's tdManyIntegers with the image of the page's R_I.",
+  "not_covered": "Empty I is excluded (there tdManyIntegers is N * 1 while the image is Z_p * 1); the page has |I| >= 2.",
+  "statement_status": "STATEMENT_FORMALIZED",
+  "proof_status": "KERNEL_VERIFIED",
+  "obligations": [],
+  "ambiguities": [],
+  "cor3_12_dependency": "independent",
+  "scope": "model_test"
+ },
+ "IUT4.Prop1_1.frag.id_reduced": {
+  "kind": "fragment",
+  "parent": "IUT4.Prop1_1",
+  "source": {
+   "paper": "Inter-universal Teichmuller Theory IV",
+   "pdf_pages": "pages 9 to 10",
+   "pages_read": "rendered and checked: pages 9, 10"
+  },
+  "content": "The tensor product over Z_p of the R_i is a reduced ring.",
+  "explicit_hypotheses": [
+   "p a prime",
+   "I a finite type; K : I -> Type a family of fields with finite-dimensional Q_p-algebra structures and compatible Z_p-algebra structures (IsScalarTower Z_p Q_p K_i); R_i = integralClosure Z_p K_i"
+  ],
+  "implicit_hypotheses": [],
+  "conclusion": "IsReduced (packetIdZpTensor p K).",
+  "definitions_required": [],
+  "results_used": [],
+  "external_dependencies": [],
+  "lean_declaration": "IUT.PaperIV.LocalFields.packetId_isReduced",
+  "lean_module": "IUT.PaperIV.LocalFields.PacketIdentifications",
+  "covers": "Page 9: the bracketed word [reduced] in the description of (-)^~ as the normalization of the [reduced] ring in parentheses in its ring of fractions, for the ring R_I.",
+  "not_covered": "Only reducedness of R_I; the normalization itself is id_normalization.",
+  "statement_status": "STATEMENT_FORMALIZED",
+  "proof_status": "KERNEL_VERIFIED",
+  "obligations": [],
+  "ambiguities": [],
+  "cor3_12_dependency": "independent"
+ },
+ "IUT4.Prop1_1.frag.id_whole": {
+  "kind": "fragment",
+  "parent": "IUT4.Prop1_1",
+  "source": {
+   "paper": "Inter-universal Teichmuller Theory IV",
+   "pdf_pages": "pages 9 to 10",
+   "pages_read": "rendered and checked: pages 9, 10"
+  },
+  "content": "Proposition 1.1 on R_I = tensor product over Z_p of the R_i, with |I| >= 2 and s in I: (0) R_I is reduced; (1) the packet over Q_p is the localization of R_I at its nonzero divisors (through packetIdMap); (2) for every delta with delta_s = 1 and spectral norm of delta_i equal to p^(-d_i) for i != s, tprod delta * w lies in the image of R_I for every w of the packet integral over R_I; (3) the image of every element of R_I is integral over R_I; (4) for two such families, the sets tprod delta * {w integral over R_I} and tprod delta' * {w integral over R_I} are equal.",
+  "explicit_hypotheses": [
+   "p a prime",
+   "I a finite type; K : I -> Type a family of fields with finite-dimensional Q_p-algebra structures and compatible Z_p-algebra structures (IsScalarTower Z_p Q_p K_i); R_i = integralClosure Z_p K_i",
+   "2 <= card I",
+   "s in I",
+   "for each i, P_i a prime ideal of R_i lying over the maximal ideal of Z_p"
+  ],
+  "implicit_hypotheses": [],
+  "conclusion": "The conjunction of (0) to (4).",
+  "definitions_required": [],
+  "results_used": [],
+  "external_dependencies": [],
+  "lean_declaration": "IUT.PaperIV.LocalFields.packetId_proposition1_1",
+  "lean_module": "IUT.PaperIV.LocalFields.PacketIdentifications",
+  "covers": "Page 9: R_E the tensor product over Z_p; the display p^{d_{I*}} (R_I)^~ inside R_I inside (R_I)^~ with (-)^~ the normalization of the [reduced] ring in its ring of fractions; the sentence that the left-hand side is well-defined for suitable p^{d_{I*}}, such as products of elements p^{d_i} of R_i (i in I*), and independent of the choice.",
+  "not_covered": "The k_i are abstract finite extensions of Q_p, not subfields of a fixed algebraic closure; p^{d_{I*}} is only taken as a pure tensor of elements of order d_i (spectral norm), not other suitable elements; d_i is differentOrder at a chosen prime P_i. The page's route (base change to the integers of an algebraic closure, faithful flatness, induction on |I|) is not followed.",
+  "statement_status": "STATEMENT_FORMALIZED",
+  "proof_status": "KERNEL_VERIFIED",
+  "obligations": [],
+  "ambiguities": [],
+  "cor3_12_dependency": "independent",
+  "scope": "R_I = PiTensorProduct Z_p (integralClosure Z_p K_i); ring of fractions realized as PiTensorProduct Q_p K through packetIdMap; (R_I)^~ = elements of the packet integral over R_I; * = s; p^{d_{I*}} = tprod delta with delta_s = 1",
+  "lemmas": [
+   "IUT.PaperIV.LocalFields.packetId_isReduced",
+   "IUT.PaperIV.LocalFields.packetId_isLocalization",
+   "IUT.PaperIV.LocalFields.packetId_range_eq",
+   "IUT.PaperIV.LocalFields.packetId_isIntegralElem_iff"
+  ]
+ },
+ "IUT4.Prop1_1.frag.id_zp_tensor_def": {
+  "kind": "fragment",
+  "parent": "IUT4.Prop1_1",
+  "source": {
+   "paper": "Inter-universal Teichmuller Theory IV",
+   "pdf_pages": "pages 9 to 10",
+   "pages_read": "rendered and checked: pages 9, 10"
+  },
+  "content": "The ring R_I = PiTensorProduct over Z_p of the R_i (packetIdZpTensor) and the natural Z_p-algebra map to PiTensorProduct over Q_p of the K_i sending a pure tensor of the r_i to the pure tensor of the r_i.",
+  "explicit_hypotheses": [
+   "p a prime",
+   "I a finite type; K : I -> Type a family of fields with finite-dimensional Q_p-algebra structures and compatible Z_p-algebra structures (IsScalarTower Z_p Q_p K_i); R_i = integralClosure Z_p K_i"
+  ],
+  "implicit_hypotheses": [],
+  "conclusion": "Definitions: packetIdZpTensor, packetIdMultilinear, packetIdMap; packetId_map_tprod computes packetIdMap on pure tensors.",
+  "definitions_required": [],
+  "results_used": [],
+  "external_dependencies": [],
+  "lean_declaration": "IUT.PaperIV.LocalFields.packetIdMap",
+  "lean_module": "IUT.PaperIV.LocalFields.PacketIdentifications",
+  "covers": "Page 9: R_E is the tensor product of the R_i, i in E, where the tensor product is over Z_p.",
+  "not_covered": "The k_i are abstract finite extensions of Q_p, not subfields of a fixed algebraic closure.",
+  "statement_status": "STATEMENT_FORMALIZED",
+  "proof_status": "NOT_EXTRACTED",
+  "obligations": [],
+  "ambiguities": [],
+  "cor3_12_dependency": "independent",
+  "lemmas": [
+   "IUT.PaperIV.LocalFields.packetIdZpTensor",
+   "IUT.PaperIV.LocalFields.packetIdMultilinear",
+   "IUT.PaperIV.LocalFields.packetId_map_tprod"
+  ]
+ },
+ "IUT4.Prop1_1.frag.locdisc_disc_different": {
+  "kind": "fragment",
+  "parent": "IUT4.Prop1_1",
+  "source": {
+   "paper": "Inter-universal Teichmuller Theory IV",
+   "pdf_pages": "pages 9, 13",
+   "pages_read": "rendered and checked: pages 9, 13"
+  },
+  "content": "For a finite extension K of Q_p of degree d with an integral basis b, the p-adic valuation of disc b equals d times the order of the different (differentOrder Z_p R P, normalized by ord(p) = 1). Norm and integer forms: ||disc b||^e = (p^-1)^(d n) and v_p(disc b) e = d n, with n the exponent of P in the different and e the ramification index.",
+  "explicit_hypotheses": [
+   "p a prime",
+   "K a field, finite-dimensional Q_p-algebra with a compatible Z_p-algebra structure",
+   "P a prime of R = integralClosure Z_p K lying over the maximal ideal of Z_p",
+   "b an integral basis of K (tOrdIdxIntegralBasis)"
+  ],
+  "implicit_hypotheses": [],
+  "conclusion": "(Padic.valuation (Algebra.discr Q_p b) : R) = finrank Q_p K * differentOrder Z_p R P.",
+  "definitions_required": [
+   "IUT.PaperIV.LocalFields.differentOrder",
+   "IUT.PaperIV.LocalFields.differentExponent",
+   "IUT.Audit.TensorOrderIndex.tOrdIdxIntegralBasis"
+  ],
+  "results_used": [],
+  "external_dependencies": [],
+  "lean_declaration": "IUT.PaperIV.LocalFields.locDisc_valuation_discr",
+  "lean_module": "IUT.PaperIV.LocalFields.LocalDiscriminant",
+  "covers": "Page 9, Proposition 1.1: d_i is the order ord(-), normalized by ord(p) = 1, of any generator of the different ideal of R_i over Z_p. The lemma relates this d_i to the discriminant; the relation itself is not printed on the page.",
+  "not_covered": "Nothing of the inclusions of Proposition 1.1 is proved here; the relation is a standard fact used to read the index of R_E in terms of d_i.",
+  "statement_status": "STATEMENT_FORMALIZED",
+  "proof_status": "KERNEL_VERIFIED",
+  "obligations": [],
+  "ambiguities": [],
+  "scope": "model_test",
+  "lemmas": [
+   "IUT.PaperIV.LocalFields.locDisc_norm_discr_pow",
+   "IUT.PaperIV.LocalFields.locDisc_valuation_discr_mul",
+   "IUT.PaperIV.LocalFields.locDisc_norm_algNorm_uniformizer",
+   "IUT.PaperIV.LocalFields.locDisc_norm_algNorm_unit",
+   "IUT.PaperIV.LocalFields.locDisc_trace_mem_iff"
+  ]
+ },
+ "IUT4.Prop1_1.frag.locdisc_half_allowance": {
+  "kind": "fragment",
+  "parent": "IUT4.Prop1_1",
+  "source": {
+   "paper": "Inter-universal Teichmuller Theory IV",
+   "pdf_pages": "pages 9, 13",
+   "pages_read": "rendered and checked: pages 9, 13"
+  },
+  "content": "For K/Q_p finite Galois and E = {1, 2} with K_1 = K_2 = K: 0 <= mu^log(R_E) + d log p, and mu^log(R_E) - (-(d log p)) = (1/2) d log p, where d is the order of the different; the exact value is half of the allowance d log p coming from p^d (R_E)^~ <= R_E.",
+  "explicit_hypotheses": [
+   "p a prime",
+   "K a field, finite-dimensional Galois Q_p-algebra with a compatible Z_p-algebra structure",
+   "mu an additive Haar measure on the coordinate space",
+   "P a prime of R over p"
+  ],
+  "implicit_hypotheses": [],
+  "conclusion": "0 <= mu^log(R_E) + d log p and mu^log(R_E) + d log p = (1/2) d log p.",
+  "definitions_required": [
+   "IUT.PaperIV.LocalFields.differentOrder"
+  ],
+  "results_used": [],
+  "external_dependencies": [],
+  "lean_declaration": "IUT.PaperIV.LocalFields.locDisc_muLog_galois_allowance",
+  "lean_module": "IUT.PaperIV.LocalFields.LocalDiscriminant",
+  "covers": "Page 9, Proposition 1.1: p^{d_{I*}} (R_I)^~ <= R_I <= (R_I)^~, here for I = {1, 2}, * = 1, K_1 = K_2 = K Galois, read through the normalized log-volume of page 13. The comparison is computed, not printed.",
+  "not_covered": "Non-Galois K and different factors; the general sharp bound without ceiling (the library's general bound tensorIdx_muLog_bounds has the ceiling of d).",
+  "statement_status": "STATEMENT_FORMALIZED",
+  "proof_status": "KERNEL_VERIFIED",
+  "obligations": [],
+  "ambiguities": [],
+  "scope": "model_test",
+  "lemmas": [
+   "IUT.PaperIV.LocalFields.locDisc_muLog_galois"
+  ]
+ },
+ "IUT4.Prop1_1.frag.locdiscex_cubic_different": {
+  "kind": "fragment",
+  "parent": "IUT4.Prop1_1",
+  "source": {
+   "paper": "Inter-universal Teichmuller Theory IV",
+   "pdf_pages": "pages 9, 13",
+   "pages_read": "rendered and checked: pages 9, 13"
+  },
+  "content": "Example K = Q_3(pi), pi^3 = 3. The power basis 1, pi, pi^2 is an integral basis (spectral norm of a + b pi + c pi^2 is the maximum of the three terms), its discriminant is -27 p^2 for pi^3 = p, so v_3(disc) = 5 for p = 3, and the order of the different is d = 5/3.",
+  "explicit_hypotheses": [
+   "K a field, finite-dimensional Q_3-algebra with finrank Q_3 K = 3",
+   "pi in K with pi^3 = 3",
+   "for the different: a compatible Z_3-algebra structure on K and a prime P of integralClosure Z_3 K over the maximal ideal of Z_3"
+  ],
+  "implicit_hypotheses": [],
+  "conclusion": "differentOrder Z_3 (integralClosure Z_3 K) P = 5 / 3; Padic.valuation (Algebra.discr Q_3 (locDiscExBasis 3 hK _)) = 5.",
+  "definitions_required": [
+   "IUT.PaperIV.LocalFields.differentOrder",
+   "IUT.PaperIV.LocalFields.locDiscExBasis",
+   "IUT.Audit.TensorOrderIndex.tOrdIdxIntegralBasis"
+  ],
+  "results_used": [
+   "IUT4.Prop1_1.frag.locdisc_disc_different"
+  ],
+  "external_dependencies": [],
+  "lean_declaration": "IUT.PaperIV.LocalFields.locDiscEx_three_differentOrder",
+  "lean_module": "IUT.PaperIV.LocalFields.LocalDiscriminantExample",
+  "covers": "Page 9, Proposition 1.1: d_i, the order of the different. An explicit value of d_i for one wildly ramified cubic field.",
+  "not_covered": "No statement of Proposition 1.1 is proved; this is a numerical instance of the quantity d_i.",
+  "statement_status": "STATEMENT_FORMALIZED",
+  "proof_status": "KERNEL_VERIFIED",
+  "obligations": [],
+  "ambiguities": [],
+  "scope": "model_test",
+  "lemmas": [
+   "IUT.PaperIV.LocalFields.locDiscEx_three_valuation",
+   "IUT.PaperIV.LocalFields.locDiscEx_discr",
+   "IUT.PaperIV.LocalFields.locDiscExBasis_integral",
+   "IUT.PaperIV.LocalFields.locDiscEx_spectralNorm",
+   "IUT.PaperIV.LocalFields.locDiscEx_coeff_le_one",
+   "IUT.PaperIV.LocalFields.locDiscEx_coeff_eq_zero",
+   "IUT.PaperIV.LocalFields.locDiscEx_not_cube",
+   "IUT.PaperIV.LocalFields.locDiscEx_exists"
+  ]
+ },
+ "IUT4.Prop1_1.frag.many_allowance_compare": {
+  "kind": "fragment",
+  "parent": "IUT4.Prop1_1",
+  "source": {
+   "paper": "Inter-universal Teichmuller Theory IV",
+   "pdf_pages": "pages 9, 13",
+   "pages_read": "rendered and checked: pages 9, 13"
+  },
+  "content": "On the same packet (n = card I >= 2 copies of a Galois K, distinguished factor s): the two inclusions of Proposition 1.1 as tdMany_proposition1_1 states them (multiplication by tensor delta, delta_s = 1 and delta_i of spectral norm p^(-D), maps (R_I)^~ into R_I; R_I in (R_I)^~), the exact value mu^log(R_I) = -((n-1)/2) D log p, the bound -(n-1) D log p <= mu^log(R_I), and mu^log(R_I) = (1/2) * (-(n-1) D log p). The allowance of Proposition 1.1 for the repeated field is D_{I*} = (n-1) D.",
+  "explicit_hypotheses": [
+   "p a prime",
+   "K a field, finite-dimensional and Galois over Q_p, with Algebra Z_p K and IsScalarTower Z_p Q_p K",
+   "P a prime of integralClosure Z_p K lying over the maximal ideal of Z_p",
+   "D = differentOrder Z_p (integralClosure Z_p K) P, the order (ord(p) = 1) of the different of the ring of integers of K, for a prime P over p",
+   "I a finite type with card I >= 2 and a distinguished element s",
+   "mu an additive Haar measure on the coordinate space"
+  ],
+  "implicit_hypotheses": [],
+  "conclusion": "(the inclusion of Proposition 1.1 for every admissible delta) and R_I subset (R_I)^~ and mu^log(R_I) = -((n-1)/2)(D log p) and -((n-1)(D log p)) <= mu^log(R_I) and mu^log(R_I) = (1/2) * -((n-1)(D log p)).",
+  "definitions_required": [],
+  "results_used": [
+   "IUT4.Prop1_4.frag.tord_many_mulog",
+   "IUT4.Prop1_1.frag.locdisc_disc_different"
+  ],
+  "external_dependencies": [],
+  "lean_declaration": "IUT.Audit.TensorOrderIndexAllowance.tOrdAllow_compare",
+  "lean_module": "IUT.Audit.TensorOrderIndexAllowance",
+  "covers": "Page 9, Proposition 1.1: \"p^{d_{I*}} . (R_I)^~ subset R_I subset (R_I)^~\", here for I of n copies of one Galois K, so d_{I*} = (n-1) D. The log-volume statements are not displays of IUT IV.",
+  "not_covered": "The bound -(n-1) D log p <= mu^log(R_I) is derived from the exact value (D >= 0, log p > 0), not from the inclusion through the log-volume: the Haar scaling of multiplication by tensor delta (the p-adic absolute value of its norm from the packet to Q_p) is not formalized. Distinct factor fields and non-Galois K are not covered.",
+  "statement_status": "STATEMENT_FORMALIZED",
+  "proof_status": "KERNEL_VERIFIED",
+  "obligations": [],
+  "ambiguities": [
+   "The paper's d_i presupposes a principal different; the library states it for every prime P over p (one prime, as the ring of integers is local, though that locality is not proved in the library)."
+  ],
+  "scope": "model_test",
+  "lemmas": [
+   "IUT.Audit.TensorOrderIndexAllowance.tOrdAllow_muLog"
+  ]
+ },
+ "IUT4.Prop1_1.frag.suit_closure": {
+  "kind": "fragment",
+  "parent": "IUT4.Prop1_1",
+  "source": {
+   "paper": "Inter-universal Teichmuller Theory IV",
+   "pdf_pages": "page 9",
+   "pages_read": "rendered and checked: page 9"
+  },
+  "content": "For finite intermediate fields k_i of AlgebraicClosure Q_p over Q_p, clauses (2) and (4) of psuit_proposition1_1 with K_i = k_i.",
+  "explicit_hypotheses": [
+   "p a prime",
+   "I a finite type with decidable equality",
+   "k_i intermediate fields of the algebraic closure of Q_p, finite-dimensional over Q_p",
+   "2 <= card I",
+   "s in I",
+   "P_i prime ideals of integralClosure Z_p k_i lying over the maximal ideal of Z_p"
+  ],
+  "implicit_hypotheses": [],
+  "conclusion": "u * (R_I)^~ lies in the image of R_I for every u of order d_{I*}, and u * (R_I)^~ does not depend on u.",
+  "definitions_required": [],
+  "results_used": [],
+  "external_dependencies": [],
+  "lean_declaration": "IUT.PaperIV.LocalFields.psuit_proposition1_1_closure",
+  "lean_module": "IUT.PaperIV.LocalFields.PacketSuitable",
+  "covers": "Page 9: \"k_i inside the algebraic closure of Q_p be a finite extension of Q_p\": the page's setting of subfields of one algebraic closure, as an instance of the abstract statement.",
+  "not_covered": "R_i is integralClosure Z_p k_i, not literally the intersection of k_i with the integers of the algebraic closure (the identification is not stated).",
+  "statement_status": "STATEMENT_FORMALIZED",
+  "proof_status": "KERNEL_VERIFIED",
+  "obligations": [],
+  "ambiguities": [],
+  "cor3_12_dependency": "independent",
+  "scope": "model_test"
+ },
+ "IUT4.Prop1_1.frag.suit_components": {
+  "kind": "fragment",
+  "parent": "IUT4.Prop1_1",
+  "source": {
+   "paper": "Inter-universal Teichmuller Theory IV",
+   "pdf_pages": "page 9",
+   "pages_read": "rendered and checked: page 9"
+  },
+  "content": "For every Q_p-algebra isomorphism e : W -> product of finite extensions L_j of Q_p, u has order lambda if and only if every component e(u)_j has spectral norm p^(-lambda) in L_j.",
+  "explicit_hypotheses": [
+   "p a prime",
+   "W a commutative Q_p-algebra",
+   "J finite; L_j fields finite-dimensional over Q_p",
+   "e : W isomorphic to the product of the L_j as Q_p-algebras"
+  ],
+  "implicit_hypotheses": [],
+  "conclusion": "psuitHasOrder p u lambda iff for all j, spectralNorm Q_p (L j) (e u j) = p^(-lambda).",
+  "definitions_required": [],
+  "results_used": [],
+  "external_dependencies": [],
+  "lean_declaration": "IUT.PaperIV.LocalFields.psuit_hasOrder_iff_components",
+  "lean_module": "IUT.PaperIV.LocalFields.PacketSuitable",
+  "covers": "Not a display: shows the definition of order is the reading \"of order lambda in every field component\" and is independent of the decomposition.",
+  "not_covered": "Comparison of two readings of order, not a step of the page.",
+  "statement_status": "STATEMENT_FORMALIZED",
+  "proof_status": "KERNEL_VERIFIED",
+  "obligations": [],
+  "ambiguities": [],
+  "cor3_12_dependency": "independent",
+  "scope": "model_test",
+  "lemmas": [
+   "IUT.PaperIV.LocalFields.psuit_algHom_pi_factor",
+   "IUT.PaperIV.LocalFields.psuit_spectralNorm_algHom",
+   "IUT.PaperIV.LocalFields.psuit_normalization_eq"
+  ]
+ },
+ "IUT4.Prop1_1.frag.suit_examples": {
+  "kind": "fragment",
+  "parent": "IUT4.Prop1_1",
+  "source": {
+   "paper": "Inter-universal Teichmuller Theory IV",
+   "pdf_pages": "page 9",
+   "pages_read": "rendered and checked: page 9"
+  },
+  "content": "If delta_i in K_i has spectral norm p^(-d_i) for every i != s, then the product over i in I \\ {s} of the elements delta_i, placed in the packet by singleAlgHom, has order d_{I*} (psuitHasOrder).",
+  "explicit_hypotheses": [
+   "p a prime",
+   "I a finite type with decidable equality; K : I -> Type a family of fields with finite-dimensional Q_p-algebra structures and compatible Z_p-algebra structures (IsScalarTower Z_p Q_p K_i); R_i = integralClosure Z_p K_i",
+   "s in I",
+   "P_i ideals of R_i (the d_i are differentOrder at P_i)",
+   "delta a family with spectral norm of delta_i equal to p^(-d_i) for i != s"
+  ],
+  "implicit_hypotheses": [],
+  "conclusion": "psuitHasOrder p (prod over i in univ.erase s of singleAlgHom i (delta i)) (psuitDiffSum p K s P).",
+  "definitions_required": [],
+  "results_used": [],
+  "external_dependencies": [],
+  "lean_declaration": "IUT.PaperIV.LocalFields.psuit_examples_hasOrder",
+  "lean_module": "IUT.PaperIV.LocalFields.PacketSuitable",
+  "covers": "Page 9, the bracket \"[such as products of elements p^{d_i} in R_i, for i in I*]\": the page's examples of suitable p^{d_{I*}} are suitable in the sense of psuitHasOrder.",
+  "not_covered": "Only the reading of \"suitable\" by psuitHasOrder; the elements delta_i are not required to lie in R_i (if d_i >= 0 they do, by the spectral norm bound).",
+  "statement_status": "STATEMENT_FORMALIZED",
+  "proof_status": "KERNEL_VERIFIED",
+  "obligations": [],
+  "ambiguities": [],
+  "cor3_12_dependency": "independent",
+  "lemmas": [
+   "IUT.PaperIV.LocalFields.psuit_prod_single_hasOrder",
+   "IUT.PaperIV.LocalFields.psuit_tprod_hasOrder",
+   "IUT.PaperIV.LocalFields.psuit_admissible_hasOrder",
+   "IUT.PaperIV.LocalFields.psuit_tprod_eq_prod"
+  ]
+ },
+ "IUT4.Prop1_1.frag.suit_order_def": {
+  "kind": "fragment",
+  "parent": "IUT4.Prop1_1",
+  "source": {
+   "paper": "Inter-universal Teichmuller Theory IV",
+   "pdf_pages": "page 9",
+   "pages_read": "rendered and checked: page 9"
+  },
+  "content": "Definition: u in a commutative Q_p-algebra W has order lambda if every Q_p-algebra map W -> AlgebraicClosure Q_p sends u to an element of spectral norm p^(-lambda).",
+  "explicit_hypotheses": [
+   "p a prime",
+   "W a commutative Q_p-algebra",
+   "lambda real"
+  ],
+  "implicit_hypotheses": [],
+  "conclusion": "A proposition about u and lambda.",
+  "definitions_required": [],
+  "results_used": [],
+  "external_dependencies": [],
+  "lean_declaration": "IUT.PaperIV.LocalFields.psuitHasOrder",
+  "lean_module": "IUT.PaperIV.LocalFields.PacketSuitable",
+  "covers": "Not a display: a reading of page 9's \"p^lambda for some element of the algebraic closure with ord(p^lambda) = lambda\", extended to elements of the packet, chosen here to give \"suitable\" a meaning.",
+  "not_covered": "That this is the intended meaning of \"suitable\" is a reading; the condition is vacuous for algebras with no map to the algebraic closure (not the case for the packet, psuit_exists_hasOrder).",
+  "statement_status": "STATEMENT_FORMALIZED",
+  "proof_status": "NOT_EXTRACTED",
+  "obligations": [],
+  "ambiguities": [],
+  "cor3_12_dependency": "independent",
+  "scope": "model_test",
+  "lemmas": [
+   "IUT.PaperIV.LocalFields.psuitDiffSum"
+  ]
+ },
+ "IUT4.Prop1_1.frag.suit_whole": {
+  "kind": "fragment",
+  "parent": "IUT4.Prop1_1",
+  "source": {
+   "paper": "Inter-universal Teichmuller Theory IV",
+   "pdf_pages": "page 9",
+   "pages_read": "rendered and checked: page 9"
+  },
+  "content": "Proposition 1.1 on R_I = tensor product over Z_p of the R_i, with |I| >= 2 and s in I, for every element u of the packet over Q_p of order d_{I*} (psuitHasOrder: every Q_p-algebra map of the packet to an algebraic closure of Q_p sends u to an element of spectral norm p^(-d_{I*}), d_{I*} = sum over i != s of differentOrder at P_i): (0) R_I is reduced; (1) the packet is the localization of R_I at its nonzero divisors (through packetIdMap); (2) u * w lies in the image of R_I for every such u and every w of the packet integral over R_I; (3) the image of every element of R_I is integral over R_I; (4) for two such elements u, u', the sets u * {w integral over R_I} and u' * {w integral over R_I} are equal.",
+  "explicit_hypotheses": [
+   "p a prime",
+   "I a finite type with decidable equality; K : I -> Type a family of fields with finite-dimensional Q_p-algebra structures and compatible Z_p-algebra structures (IsScalarTower Z_p Q_p K_i); R_i = integralClosure Z_p K_i",
+   "2 <= card I",
+   "s in I",
+   "for each i, P_i a prime ideal of R_i lying over the maximal ideal of Z_p"
+  ],
+  "implicit_hypotheses": [],
+  "conclusion": "The conjunction of (0) to (4).",
+  "definitions_required": [],
+  "results_used": [],
+  "external_dependencies": [],
+  "lean_declaration": "IUT.PaperIV.LocalFields.psuit_proposition1_1",
+  "lean_module": "IUT.PaperIV.LocalFields.PacketSuitable",
+  "covers": "Page 9: R_E the tensor product over Z_p; the display p^{d_{I*}} (R_I)^~ inside R_I inside (R_I)^~ with (-)^~ the normalization of the [reduced] ring in its ring of fractions; the sentence that the left-hand side \"is well-defined for suitable\" p^{d_{I*}} \"[such as products of elements p^{d_i} in R_i, for i in I*] and independent of the choice of such suitable\" p^{d_{I*}}.",
+  "not_covered": "\"Suitable\" is read as an element of the packet of order d_{I*} in every field component (equivalently under every Q_p-algebra map to an algebraic closure); the page does not define the word, and an element of the algebraic closure of Q_p acting on (R_I)^~ is not formalized. The k_i are abstract finite extensions of Q_p (the subfield case is psuit_proposition1_1_closure); d_i is differentOrder at a chosen prime P_i. The page's route (base change, faithful flatness, induction) is not followed.",
+  "statement_status": "STATEMENT_FORMALIZED",
+  "proof_status": "KERNEL_VERIFIED",
+  "obligations": [],
+  "ambiguities": [],
+  "cor3_12_dependency": "independent",
+  "scope": "R_I = PiTensorProduct Z_p (integralClosure Z_p K_i); ring of fractions realized as PiTensorProduct Q_p K through packetIdMap; (R_I)^~ = elements of the packet integral over R_I; * = s; suitable p^{d_{I*}} = any element of order d_{I*} in every field component",
+  "lemmas": [
+   "IUT.PaperIV.LocalFields.psuit_image_eq_of_hasOrder",
+   "IUT.PaperIV.LocalFields.psuit_exists_hasOrder",
+   "IUT.PaperIV.LocalFields.psuit_image_eq_tprod"
+  ]
  },
  "IUT4.Prop1_2": {
   "source": {
@@ -1163,7 +1775,7 @@
   "statement_status": "EXTRACTED",
   "proof_status": "EXTRACTED",
   "obligations": [
-   "For two factors (I = {1, 2}), with log_p(R_I^x) the image in K_1 (x)_{Q_p} K_2 of the tensor product over Z_p of the log_p(R_i^x), the inclusions (ii) to (iv) are proved (IUT4.Prop1_2.frag.tls_ii, IUT4.Prop1_2.frag.tls_ii_zero, IUT4.Prop1_2.frag.tls_iii, IUT4.Prop1_2.frag.tls_iii_zero, IUT4.Prop1_2.frag.tls_iv), with the first display of the proof of (ii) as printed (IUT4.Prop1_2.frag.tls_first_display) and in the stronger form with d_{I*} = d_2 in place of d_I (IUT4.Prop1_2.frag.td_log_span). More than two factors, and the injectivity of that tensor product over Z_p into K_1 (x)_{Q_p} K_2, are open. Assertion (i) is proved for k_i = Q_p (IUT4.Prop1_2.frag.log_series_def, IUT4.Prop1_2.frag.log_series_norm, IUT4.Prop1_2.frag.log_hom, IUT4.Prop1_2.frag.i_Qp), for finite extensions of Q_p in a normed-field model with a hypothesis on e (IUT4.Prop1_2.frag.i_model, IUT4.Prop1_2.frag.i_equality_model), and for every finite extension L of Q_p with R_i = integralClosure Z_p L, e_i = Ideal.ramificationIdx and the spectral norm, with no hypothesis on the norm (IUT4.Prop1_2.frag.bridge_i). No declaration states the whole proposition.",
+   "For two factors (I = {1, 2}), with log_p(R_I^x) the image in K_1 (x)_{Q_p} K_2 of the tensor product over Z_p of the log_p(R_i^x), the inclusions (ii) to (iv) are proved (IUT4.Prop1_2.frag.tls_ii, IUT4.Prop1_2.frag.tls_ii_zero, IUT4.Prop1_2.frag.tls_iii, IUT4.Prop1_2.frag.tls_iii_zero, IUT4.Prop1_2.frag.tls_iv), with the first display of the proof of (ii) as printed (IUT4.Prop1_2.frag.tls_first_display) and in the stronger form with d_{I*} = d_2 in place of d_I (IUT4.Prop1_2.frag.td_log_span). For any finite number of factors, with log_p(R_I^x) the image in the tensor product over Q_p of the tensor product over Z_p of the log_p(R_i^x) and (R_I)~ the integral closure of Z_p there, (ii) to (iv) are proved (IUT4.Prop1_2.frag.tlsm_ii, IUT4.Prop1_2.frag.tlsm_ii_zero, IUT4.Prop1_2.frag.tlsm_iii, IUT4.Prop1_2.frag.tlsm_iii_zero, IUT4.Prop1_2.frag.tlsm_iv), with the first display of the proof of (ii) as printed (IUT4.Prop1_2.frag.tlsm_first_display). Open: the injectivity of the tensor product over Z_p of the log_p(R_i^x) into the tensor product over Q_p, for any number of factors (the lattices are taken as their images; the injectivity for the tensor product of the R_i themselves is IUT4.Prop1_1.frag.id_injective). Assertion (i) is proved for k_i = Q_p (IUT4.Prop1_2.frag.log_series_def, IUT4.Prop1_2.frag.log_series_norm, IUT4.Prop1_2.frag.log_hom, IUT4.Prop1_2.frag.i_Qp), for finite extensions of Q_p in a normed-field model with a hypothesis on e (IUT4.Prop1_2.frag.i_model, IUT4.Prop1_2.frag.i_equality_model), and for every finite extension L of Q_p with R_i = integralClosure Z_p L, e_i = Ideal.ramificationIdx and the spectral norm, with no hypothesis on the norm (IUT4.Prop1_2.frag.bridge_i). No declaration states the whole proposition.",
    "Elementary facts about a_i, b_i used in the proof are checked in the fragments listed in `fragments`."
   ],
   "ambiguities": [
@@ -1200,7 +1812,16 @@
    "IUT4.Prop1_2.frag.tls_lattice",
    "IUT4.Prop1_2.frag.tls_lower_inclusion",
    "IUT4.Prop1_2.frag.tls_padic_nonvacuity",
-   "IUT4.Prop1_2.frag.tls_upper_inclusion"
+   "IUT4.Prop1_2.frag.tls_upper_inclusion",
+   "IUT4.Prop1_2.frag.tlsm_first_display",
+   "IUT4.Prop1_2.frag.tlsm_ii",
+   "IUT4.Prop1_2.frag.tlsm_ii_zero",
+   "IUT4.Prop1_2.frag.tlsm_iii",
+   "IUT4.Prop1_2.frag.tlsm_iii_zero",
+   "IUT4.Prop1_2.frag.tlsm_iv",
+   "IUT4.Prop1_2.frag.tlsm_lattice_def",
+   "IUT4.Prop1_2.frag.tlsm_pure_tensor",
+   "IUT4.Prop1_2.frag.tlsm_span"
   ]
  },
  "IUT4.Prop1_2.frag.a_b_of_le": {
@@ -1911,7 +2532,7 @@
   "external_dependencies": [],
   "lean_declaration": "IUT.PaperIV.LocalFields.tensorLog_shift_subset_integers",
   "covers": "Page 11, proof of Proposition 1.2 (ii), first display p^{d_I + a_I} (R_I)^~ ⊆ tensor of p^{a_i} R_i (⊆ R_I), with d_I = d_1 + d_2 as printed.",
-  "not_covered": "two factors only; more than two factors (the induction on |I|) is not addressed.",
+  "not_covered": "two factors only; more than two factors is IUT4.Prop1_2.frag.tlsm_first_display.",
   "statement_status": "STATEMENT_FORMALIZED",
   "proof_status": "KERNEL_VERIFIED",
   "obligations": [],
@@ -1958,7 +2579,7 @@
   "external_dependencies": [],
   "lean_declaration": "IUT.PaperIV.LocalFields.tensorLog_prop1_2_ii",
   "covers": "Page 10, Proposition 1.2 (ii), first display phi(p^lam (R_I)^~) ⊆ p^{floor(lam - d_I - a_I)} log_p(R_I^x) ⊆ p^{floor(lam - d_I - a_I) - b_I} (R_I)^~, for every lam with a representative p^lam (in particular every lam in (1/e_i) Z, i in I); proof on page 11.",
-  "not_covered": "two factors only; more than two factors (the induction on |I|) is not addressed; the injectivity of log_p(R1^x) tmul_{Z_p} log_p(R2^x) into K1 tmul_{Q_p} K2 (the lattice is taken as its image).",
+  "not_covered": "two factors only; more than two factors is IUT4.Prop1_2.frag.tlsm_ii; the injectivity of log_p(R1^x) tmul_{Z_p} log_p(R2^x) into K1 tmul_{Q_p} K2 (the lattice is taken as its image).",
   "statement_status": "STATEMENT_FORMALIZED",
   "proof_status": "KERNEL_VERIFIED",
   "obligations": [],
@@ -1993,7 +2614,7 @@
   "external_dependencies": [],
   "lean_declaration": "IUT.PaperIV.LocalFields.tensorLog_prop1_2_ii_zero",
   "covers": "Page 10, Proposition 1.2 (ii), second display ('In particular') phi((R_I)^~) ⊆ p^{-ceil(d_I + a_I)} log_p(R_I^x) ⊆ p^{-ceil(d_I + a_I) - b_I} (R_I)^~.",
-  "not_covered": "two factors only; more than two factors (the induction on |I|) is not addressed; the injectivity of log_p(R1^x) tmul_{Z_p} log_p(R2^x) into K1 tmul_{Q_p} K2 (the lattice is taken as its image).",
+  "not_covered": "two factors only; more than two factors is IUT4.Prop1_2.frag.tlsm_ii_zero; the injectivity of log_p(R1^x) tmul_{Z_p} log_p(R2^x) into K1 tmul_{Q_p} K2 (the lattice is taken as its image).",
   "statement_status": "STATEMENT_FORMALIZED",
   "proof_status": "KERNEL_VERIFIED",
   "obligations": [],
@@ -2027,7 +2648,7 @@
   "external_dependencies": [],
   "lean_declaration": "IUT.PaperIV.LocalFields.tensorLog_prop1_2_iii",
   "covers": "Page 11, Proposition 1.2 (iii), first display phi(p^lam (R_I)^~) ⊆ p^{lam - d_I - 1} (R_I)^~ under p > 2 and e_i <= p - 2 for all i in I.",
-  "not_covered": "two factors only; more than two factors (the induction on |I|) is not addressed; the injectivity of log_p(R1^x) tmul_{Z_p} log_p(R2^x) into K1 tmul_{Q_p} K2 (the lattice is taken as its image).",
+  "not_covered": "two factors only; more than two factors is IUT4.Prop1_2.frag.tlsm_iii; the injectivity of log_p(R1^x) tmul_{Z_p} log_p(R2^x) into K1 tmul_{Q_p} K2 (the lattice is taken as its image).",
   "statement_status": "STATEMENT_FORMALIZED",
   "proof_status": "KERNEL_VERIFIED",
   "obligations": [],
@@ -2060,7 +2681,7 @@
   "external_dependencies": [],
   "lean_declaration": "IUT.PaperIV.LocalFields.tensorLog_prop1_2_iii_zero",
   "covers": "Page 11, Proposition 1.2 (iii), second display phi((R_I)^~) ⊆ p^{-d_I - 1} (R_I)^~.",
-  "not_covered": "two factors only; more than two factors (the induction on |I|) is not addressed; the injectivity of log_p(R1^x) tmul_{Z_p} log_p(R2^x) into K1 tmul_{Q_p} K2 (the lattice is taken as its image).",
+  "not_covered": "two factors only; more than two factors is IUT4.Prop1_2.frag.tlsm_iii_zero; the injectivity of log_p(R1^x) tmul_{Z_p} log_p(R2^x) into K1 tmul_{Q_p} K2 (the lattice is taken as its image).",
   "statement_status": "STATEMENT_FORMALIZED",
   "proof_status": "KERNEL_VERIFIED",
   "obligations": [],
@@ -2094,7 +2715,7 @@
   "external_dependencies": [],
   "lean_declaration": "IUT.PaperIV.LocalFields.tensorLog_prop1_2_iv",
   "covers": "Page 11, Proposition 1.2 (iv) phi((R_I)^~) ⊆ (R_I)^~ for p > 2 and e_i = 1, derived from (ii) with d_I = 0 and a_I = -b_I as on page 11.",
-  "not_covered": "two factors only; more than two factors (the induction on |I|) is not addressed; the injectivity of log_p(R1^x) tmul_{Z_p} log_p(R2^x) into K1 tmul_{Q_p} K2 (the lattice is taken as its image).",
+  "not_covered": "two factors only; more than two factors is IUT4.Prop1_2.frag.tlsm_iv; the injectivity of log_p(R1^x) tmul_{Z_p} log_p(R2^x) into K1 tmul_{Q_p} K2 (the lattice is taken as its image).",
   "statement_status": "STATEMENT_FORMALIZED",
   "proof_status": "KERNEL_VERIFIED",
   "obligations": [],
@@ -2234,6 +2855,346 @@
   "ambiguities": [],
   "scope": "two factors only (I = {1, 2}); K1 tmul_{Q_p} K2; R_I = padicPacketIntegers, (R_I)^~ = padicPacketNormalization (elements integral over Z_p); log_p(R_I^x) = tensorLogLattice, the Z_p-span in K1 tmul K2 of log_p(u1) tmul log_p(u2); p^mu (R_I)^~ = tensorLogShift x y with spectral norms ||x|| ||y|| = p^(-mu); ord read through the spectral norm; e_i, d_i at a prime P_i of R_i over p (d_i = tensorLogDiffOrder = differentOrder); phi a Q_p-linear automorphism of K1 tmul K2 with phi(log_p(R_I^x)) = log_p(R_I^x)",
   "lemmas": []
+ },
+ "IUT4.Prop1_2.frag.tlsm_first_display": {
+  "kind": "fragment",
+  "parent": "IUT4.Prop1_2",
+  "source": {
+   "paper": "Inter-universal Teichmuller Theory IV",
+   "pdf_pages": "pages 10 to 11",
+   "pages_read": "rendered and checked: pages 10, 11"
+  },
+  "content": "First display of the proof of Proposition 1.2 (ii) for any finite I: for u_i of order a_i and a pure tensor tprod x with prod ||x_i|| <= p^(-(d_I + a_I)), (tprod x) . (R_I)^~ is contained in (tprod u) . R_I, the image of the tensor product of the p^(a_i) R_i.",
+  "explicit_hypotheses": [
+   "p a prime",
+   "I a finite type with decidable equality; K : I -> Type a family of fields with finite-dimensional Q_p-algebra structures and compatible Z_p-algebra structures (IsScalarTower Z_p Q_p (K i)); R_i = integralClosure Z_p (K i)",
+   "P i a prime ideal of R_i lying over the maximal ideal of Z_p, for every i",
+   "s : I (the page's distinguished index *)",
+   "||u_i|| = p^(-a_i) for all i",
+   "prod_i ||x_i|| <= p^(-(d_I + a_I))"
+  ],
+  "implicit_hypotheses": [],
+  "conclusion": "tlsmShift p K x ⊆ (tprod u * .) '' tdManyIntegers p K",
+  "definitions_required": [],
+  "results_used": [
+   "IUT4.Prop1_1"
+  ],
+  "external_dependencies": [],
+  "lean_declaration": "IUT.PaperIV.LocalFields.tlsm_shift_subset_integers",
+  "lean_module": "IUT.PaperIV.LocalFields.TensorLogShellMany",
+  "covers": "Page 11, proof of Proposition 1.2, the display \"p^{d_I + a_I} · (R_I)^~ ⊆ ⊗_{i ∈ I} p^{a_i} · R_i (⊆ R_I = ⊗_{i ∈ I} R_i)\" (the first inclusion; p^{d_I + a_I} · (R_I)^~ as tlsmShift x with prod ||x_i|| <= p^(-(d_I + a_I)), ⊗ p^{a_i} · R_i as (tprod u) · R_I).",
+  "not_covered": "the injectivity of the tensor product over Z_p of the log_p(R_i^x) into the packet over Q_p (the lattice is taken as its image); the identification, for a two-element I, with the binary tensorLog_ theorems",
+  "statement_status": "STATEMENT_FORMALIZED",
+  "proof_status": "KERNEL_VERIFIED",
+  "obligations": [],
+  "ambiguities": [
+   "The tensor product over Z_p of the log_p(R_i^x) is read as its image in the packet over Q_p."
+  ],
+  "cor3_12_dependency": "independent",
+  "scope": "any finite index type I (nonempty where an index is needed); packet = PiTensorProduct Q_p K; R_I = tdManyIntegers, (R_I)^~ = packetNormalizationSet (elements integral over Z_p); log_p(R_I^x) = tlsmLattice, the Z_p-span of the pure tensors of logarithms of units; p^lambda (R_I)^~ = tlsmShift x with prod_i ||x_i|| = p^(-lambda) (spectral norms); d_i = tensorLogDiffOrder, a_i, b_i = Proposition1_2.a, b at e_i = ramificationIdx of P_i; d_I, a_I, b_I = tlsmDiffSum, tlsmASum, tlsmBSum",
+  "lemmas": [
+   "IUT.PaperIV.LocalFields.tlsm_tprod_mem_normalization",
+   "IUT.PaperIV.LocalFields.tlsmShift_subset"
+  ]
+ },
+ "IUT4.Prop1_2.frag.tlsm_ii": {
+  "kind": "fragment",
+  "parent": "IUT4.Prop1_2",
+  "source": {
+   "paper": "Inter-universal Teichmuller Theory IV",
+   "pdf_pages": "pages 10 to 11",
+   "pages_read": "rendered and checked: pages 10, 11"
+  },
+  "content": "Proposition 1.2 (ii) for any finite I: phi(p^lambda (R_I)^~) ⊆ p^floor(lambda - d_I - a_I) log_p(R_I^x) ⊆ p^floor(lambda - d_I - a_I) p^(-b_I) (R_I)^~.",
+  "explicit_hypotheses": [
+   "p a prime",
+   "I a finite type with decidable equality; K : I -> Type a family of fields with finite-dimensional Q_p-algebra structures and compatible Z_p-algebra structures (IsScalarTower Z_p Q_p (K i)); R_i = integralClosure Z_p (K i)",
+   "P i a prime ideal of R_i lying over the maximal ideal of Z_p, for every i",
+   "I nonempty",
+   "phi : PiTensorProduct Q_p K ≃ₗ[Q_p] PiTensorProduct Q_p K with phi '' tlsmLattice = tlsmLattice",
+   "lambda real; prod_i ||t_i|| = p^(-lambda)",
+   "||z_i|| = p^(b_i) for all i"
+  ],
+  "implicit_hypotheses": [],
+  "conclusion": "phi '' tlsmShift t ⊆ p^k . tlsmLattice and p^k . tlsmLattice ⊆ p^k . tlsmShift z, with k = floor(lambda - d_I - a_I)",
+  "definitions_required": [],
+  "results_used": [
+   "IUT4.Prop1_1"
+  ],
+  "external_dependencies": [],
+  "lean_declaration": "IUT.PaperIV.LocalFields.tlsm_prop1_2_ii",
+  "lean_module": "IUT.PaperIV.LocalFields.TensorLogShellMany",
+  "covers": "Page 10, Proposition 1.2 (ii): \"We have: φ(p^λ · (R_I)^~) ⊆ p^{⌊λ − d_I − a_I⌋} · log_p(R_I^×) ⊆ p^{⌊λ − d_I − a_I⌋ − b_I} · (R_I)^~ for any λ ∈ (1/e_i) · Z, i ∈ I.\"",
+  "not_covered": "the injectivity of the tensor product over Z_p of the log_p(R_i^x) into the packet over Q_p (the lattice is taken as its image); the identification, for a two-element I, with the binary tensorLog_ theorems; lambda in (1/e_i)Z is represented by a pure tensor whose norm product is p^(-lambda) (the page's p^lambda is an element of order lambda)",
+  "statement_status": "STATEMENT_FORMALIZED",
+  "proof_status": "KERNEL_VERIFIED",
+  "obligations": [],
+  "ambiguities": [
+   "The tensor product over Z_p of the log_p(R_i^x) is read as its image in the packet over Q_p."
+  ],
+  "cor3_12_dependency": "independent",
+  "scope": "any finite index type I (nonempty where an index is needed); packet = PiTensorProduct Q_p K; R_I = tdManyIntegers, (R_I)^~ = packetNormalizationSet (elements integral over Z_p); log_p(R_I^x) = tlsmLattice, the Z_p-span of the pure tensors of logarithms of units; p^lambda (R_I)^~ = tlsmShift x with prod_i ||x_i|| = p^(-lambda) (spectral norms); d_i = tensorLogDiffOrder, a_i, b_i = Proposition1_2.a, b at e_i = ramificationIdx of P_i; d_I, a_I, b_I = tlsmDiffSum, tlsmASum, tlsmBSum",
+  "lemmas": [
+   "IUT.PaperIV.LocalFields.tlsm_shift_subset_lattice",
+   "IUT.PaperIV.LocalFields.tlsm_lattice_subset_shift",
+   "IUT.PaperIV.LocalFields.tlsm_mul_integers_subset_lattice",
+   "IUT.PaperIV.LocalFields.tlsmShift_smul",
+   "IUT.PaperIV.LocalFields.tlsm_prod_update"
+  ]
+ },
+ "IUT4.Prop1_2.frag.tlsm_ii_zero": {
+  "kind": "fragment",
+  "parent": "IUT4.Prop1_2",
+  "source": {
+   "paper": "Inter-universal Teichmuller Theory IV",
+   "pdf_pages": "page 10",
+   "pages_read": "rendered and checked: pages 10, 11"
+  },
+  "content": "Proposition 1.2 (ii), in particular, for any finite I: phi((R_I)^~) ⊆ p^(-ceil(d_I + a_I)) log_p(R_I^x) ⊆ p^(-ceil(d_I + a_I)) p^(-b_I) (R_I)^~.",
+  "explicit_hypotheses": [
+   "p a prime",
+   "I a finite type with decidable equality; K : I -> Type a family of fields with finite-dimensional Q_p-algebra structures and compatible Z_p-algebra structures (IsScalarTower Z_p Q_p (K i)); R_i = integralClosure Z_p (K i)",
+   "P i a prime ideal of R_i lying over the maximal ideal of Z_p, for every i",
+   "I nonempty",
+   "phi : PiTensorProduct Q_p K ≃ₗ[Q_p] PiTensorProduct Q_p K with phi '' tlsmLattice = tlsmLattice",
+   "||z_i|| = p^(b_i) for all i"
+  ],
+  "implicit_hypotheses": [],
+  "conclusion": "phi '' (R_I)^~ ⊆ p^(-ceil(d_I + a_I)) . tlsmLattice ⊆ p^(-ceil(d_I + a_I)) . tlsmShift z",
+  "definitions_required": [],
+  "results_used": [
+   "IUT4.Prop1_1"
+  ],
+  "external_dependencies": [],
+  "lean_declaration": "IUT.PaperIV.LocalFields.tlsm_prop1_2_ii_zero",
+  "lean_module": "IUT.PaperIV.LocalFields.TensorLogShellMany",
+  "covers": "Page 10, Proposition 1.2 (ii): \"In particular, φ((R_I)^~) ⊆ p^{−⌈d_I + a_I⌉} · log_p(R_I^×) ⊆ p^{−⌈d_I + a_I⌉ − b_I} · (R_I)^~.\"",
+  "not_covered": "the injectivity of the tensor product over Z_p of the log_p(R_i^x) into the packet over Q_p (the lattice is taken as its image); the identification, for a two-element I, with the binary tensorLog_ theorems",
+  "statement_status": "STATEMENT_FORMALIZED",
+  "proof_status": "KERNEL_VERIFIED",
+  "obligations": [],
+  "ambiguities": [
+   "The tensor product over Z_p of the log_p(R_i^x) is read as its image in the packet over Q_p."
+  ],
+  "cor3_12_dependency": "independent",
+  "scope": "any finite index type I (nonempty where an index is needed); packet = PiTensorProduct Q_p K; R_I = tdManyIntegers, (R_I)^~ = packetNormalizationSet (elements integral over Z_p); log_p(R_I^x) = tlsmLattice, the Z_p-span of the pure tensors of logarithms of units; p^lambda (R_I)^~ = tlsmShift x with prod_i ||x_i|| = p^(-lambda) (spectral norms); d_i = tensorLogDiffOrder, a_i, b_i = Proposition1_2.a, b at e_i = ramificationIdx of P_i; d_I, a_I, b_I = tlsmDiffSum, tlsmASum, tlsmBSum"
+ },
+ "IUT4.Prop1_2.frag.tlsm_iii": {
+  "kind": "fragment",
+  "parent": "IUT4.Prop1_2",
+  "source": {
+   "paper": "Inter-universal Teichmuller Theory IV",
+   "pdf_pages": "page 11",
+   "pages_read": "rendered and checked: pages 10, 11"
+  },
+  "content": "Proposition 1.2 (iii) for any finite I: if p > 2 and e_i <= p - 2 for all i, then phi(p^lambda (R_I)^~) ⊆ p^(lambda - d_I - 1) (R_I)^~.",
+  "explicit_hypotheses": [
+   "p a prime",
+   "I a finite type with decidable equality; K : I -> Type a family of fields with finite-dimensional Q_p-algebra structures and compatible Z_p-algebra structures (IsScalarTower Z_p Q_p (K i)); R_i = integralClosure Z_p (K i)",
+   "P i a prime ideal of R_i lying over the maximal ideal of Z_p, for every i",
+   "I nonempty",
+   "2 < p",
+   "e_i <= p - 2 for all i",
+   "phi : PiTensorProduct Q_p K ≃ₗ[Q_p] PiTensorProduct Q_p K with phi '' tlsmLattice = tlsmLattice",
+   "prod_i ||t_i|| = p^(-lambda)",
+   "prod_i ||w_i|| = p^(-(lambda - d_I - 1))"
+  ],
+  "implicit_hypotheses": [],
+  "conclusion": "phi '' tlsmShift t ⊆ tlsmShift w",
+  "definitions_required": [],
+  "results_used": [
+   "IUT4.Prop1_1"
+  ],
+  "external_dependencies": [],
+  "lean_declaration": "IUT.PaperIV.LocalFields.tlsm_prop1_2_iii",
+  "lean_module": "IUT.PaperIV.LocalFields.TensorLogShellMany",
+  "covers": "Page 11, Proposition 1.2 (iii): \"Suppose that p > 2, and that e_i ≤ p − 2 for all i ∈ I. Then we have: φ(p^λ · (R_I)^~) ⊆ p^{λ − d_I − 1} · (R_I)^~ for any λ ∈ (1/e_i) · Z, i ∈ I.\"",
+  "not_covered": "the injectivity of the tensor product over Z_p of the log_p(R_i^x) into the packet over Q_p (the lattice is taken as its image); the identification, for a two-element I, with the binary tensorLog_ theorems",
+  "statement_status": "STATEMENT_FORMALIZED",
+  "proof_status": "KERNEL_VERIFIED",
+  "obligations": [],
+  "ambiguities": [
+   "The tensor product over Z_p of the log_p(R_i^x) is read as its image in the packet over Q_p."
+  ],
+  "cor3_12_dependency": "independent",
+  "scope": "any finite index type I (nonempty where an index is needed); packet = PiTensorProduct Q_p K; R_I = tdManyIntegers, (R_I)^~ = packetNormalizationSet (elements integral over Z_p); log_p(R_I^x) = tlsmLattice, the Z_p-span of the pure tensors of logarithms of units; p^lambda (R_I)^~ = tlsmShift x with prod_i ||x_i|| = p^(-lambda) (spectral norms); d_i = tensorLogDiffOrder, a_i, b_i = Proposition1_2.a, b at e_i = ramificationIdx of P_i; d_I, a_I, b_I = tlsmDiffSum, tlsmASum, tlsmBSum"
+ },
+ "IUT4.Prop1_2.frag.tlsm_iii_zero": {
+  "kind": "fragment",
+  "parent": "IUT4.Prop1_2",
+  "source": {
+   "paper": "Inter-universal Teichmuller Theory IV",
+   "pdf_pages": "page 11",
+   "pages_read": "rendered and checked: pages 10, 11"
+  },
+  "content": "Proposition 1.2 (iii), in particular, for any finite I: phi((R_I)^~) ⊆ p^(-d_I - 1) (R_I)^~.",
+  "explicit_hypotheses": [
+   "p a prime",
+   "I a finite type with decidable equality; K : I -> Type a family of fields with finite-dimensional Q_p-algebra structures and compatible Z_p-algebra structures (IsScalarTower Z_p Q_p (K i)); R_i = integralClosure Z_p (K i)",
+   "P i a prime ideal of R_i lying over the maximal ideal of Z_p, for every i",
+   "I nonempty",
+   "2 < p",
+   "e_i <= p - 2 for all i",
+   "phi : PiTensorProduct Q_p K ≃ₗ[Q_p] PiTensorProduct Q_p K with phi '' tlsmLattice = tlsmLattice",
+   "prod_i ||w_i|| = p^(d_I + 1)"
+  ],
+  "implicit_hypotheses": [],
+  "conclusion": "phi '' (R_I)^~ ⊆ tlsmShift w",
+  "definitions_required": [],
+  "results_used": [
+   "IUT4.Prop1_1"
+  ],
+  "external_dependencies": [],
+  "lean_declaration": "IUT.PaperIV.LocalFields.tlsm_prop1_2_iii_zero",
+  "lean_module": "IUT.PaperIV.LocalFields.TensorLogShellMany",
+  "covers": "Page 11, Proposition 1.2 (iii): \"In particular, φ((R_I)^~) ⊆ p^{−d_I − 1} · (R_I)^~.\"",
+  "not_covered": "the injectivity of the tensor product over Z_p of the log_p(R_i^x) into the packet over Q_p (the lattice is taken as its image); the identification, for a two-element I, with the binary tensorLog_ theorems",
+  "statement_status": "STATEMENT_FORMALIZED",
+  "proof_status": "KERNEL_VERIFIED",
+  "obligations": [],
+  "ambiguities": [
+   "The tensor product over Z_p of the log_p(R_i^x) is read as its image in the packet over Q_p."
+  ],
+  "cor3_12_dependency": "independent",
+  "scope": "any finite index type I (nonempty where an index is needed); packet = PiTensorProduct Q_p K; R_I = tdManyIntegers, (R_I)^~ = packetNormalizationSet (elements integral over Z_p); log_p(R_I^x) = tlsmLattice, the Z_p-span of the pure tensors of logarithms of units; p^lambda (R_I)^~ = tlsmShift x with prod_i ||x_i|| = p^(-lambda) (spectral norms); d_i = tensorLogDiffOrder, a_i, b_i = Proposition1_2.a, b at e_i = ramificationIdx of P_i; d_I, a_I, b_I = tlsmDiffSum, tlsmASum, tlsmBSum"
+ },
+ "IUT4.Prop1_2.frag.tlsm_iv": {
+  "kind": "fragment",
+  "parent": "IUT4.Prop1_2",
+  "source": {
+   "paper": "Inter-universal Teichmuller Theory IV",
+   "pdf_pages": "page 11",
+   "pages_read": "rendered and checked: pages 10, 11"
+  },
+  "content": "Proposition 1.2 (iv) for any finite I: if p > 2 and e_i = 1 for all i, then phi((R_I)^~) ⊆ (R_I)^~.",
+  "explicit_hypotheses": [
+   "p a prime",
+   "I a finite type with decidable equality; K : I -> Type a family of fields with finite-dimensional Q_p-algebra structures and compatible Z_p-algebra structures (IsScalarTower Z_p Q_p (K i)); R_i = integralClosure Z_p (K i)",
+   "P i a prime ideal of R_i lying over the maximal ideal of Z_p, for every i",
+   "I nonempty",
+   "2 < p",
+   "e_i = 1 for all i",
+   "phi : PiTensorProduct Q_p K ≃ₗ[Q_p] PiTensorProduct Q_p K with phi '' tlsmLattice = tlsmLattice"
+  ],
+  "implicit_hypotheses": [],
+  "conclusion": "phi '' (R_I)^~ ⊆ (R_I)^~",
+  "definitions_required": [],
+  "results_used": [
+   "IUT4.Prop1_1",
+   "IUT4.Prop1_3"
+  ],
+  "external_dependencies": [],
+  "lean_declaration": "IUT.PaperIV.LocalFields.tlsm_prop1_2_iv",
+  "lean_module": "IUT.PaperIV.LocalFields.TensorLogShellMany",
+  "covers": "Page 11, Proposition 1.2 (iv): \"If p > 2 and e_i = 1 for all i ∈ I, then φ((R_I)^~) ⊆ (R_I)^~.\"",
+  "not_covered": "the injectivity of the tensor product over Z_p of the log_p(R_i^x) into the packet over Q_p (the lattice is taken as its image); the identification, for a two-element I, with the binary tensorLog_ theorems",
+  "statement_status": "STATEMENT_FORMALIZED",
+  "proof_status": "KERNEL_VERIFIED",
+  "obligations": [],
+  "ambiguities": [
+   "The tensor product over Z_p of the log_p(R_i^x) is read as its image in the packet over Q_p."
+  ],
+  "cor3_12_dependency": "independent",
+  "scope": "any finite index type I (nonempty where an index is needed); packet = PiTensorProduct Q_p K; R_I = tdManyIntegers, (R_I)^~ = packetNormalizationSet (elements integral over Z_p); log_p(R_I^x) = tlsmLattice, the Z_p-span of the pure tensors of logarithms of units; p^lambda (R_I)^~ = tlsmShift x with prod_i ||x_i|| = p^(-lambda) (spectral norms); d_i = tensorLogDiffOrder, a_i, b_i = Proposition1_2.a, b at e_i = ramificationIdx of P_i; d_I, a_I, b_I = tlsmDiffSum, tlsmASum, tlsmBSum",
+  "lemmas": [
+   "IUT.PaperIV.LocalFields.tlsm_sums_of_e_one"
+  ]
+ },
+ "IUT4.Prop1_2.frag.tlsm_lattice_def": {
+  "kind": "fragment",
+  "parent": "IUT4.Prop1_2",
+  "source": {
+   "paper": "Inter-universal Teichmuller Theory IV",
+   "pdf_pages": "page 10",
+   "pages_read": "rendered and checked: pages 10, 11"
+  },
+  "content": "Definition: tlsmLattice p K is the additive span, in PiTensorProduct Q_p K, of the elements a . tprod x with a in Z_p and every x_i in log_p(R_i^x) (tensorLogUnits).",
+  "explicit_hypotheses": [
+   "p a prime",
+   "I a finite type with decidable equality; K : I -> Type a family of fields with finite-dimensional Q_p-algebra structures and compatible Z_p-algebra structures (IsScalarTower Z_p Q_p (K i)); R_i = integralClosure Z_p (K i)"
+  ],
+  "implicit_hypotheses": [],
+  "conclusion": "A subset of the packet, the model of log_p(R_I^x).",
+  "definitions_required": [],
+  "results_used": [],
+  "external_dependencies": [],
+  "lean_declaration": "IUT.PaperIV.LocalFields.tlsmLattice",
+  "lean_module": "IUT.PaperIV.LocalFields.TensorLogShellMany",
+  "covers": "Page 10: log_p(R_I^x) = tensor product over Z_p of the log_p(R_i^x), i in I, modeled as its image in the packet over Q_p.",
+  "not_covered": "the injectivity of the tensor product over Z_p of the log_p(R_i^x) into the packet over Q_p (the lattice is taken as its image); the identification, for a two-element I, with the binary tensorLog_ theorems",
+  "statement_status": "STATEMENT_FORMALIZED",
+  "proof_status": "NOT_EXTRACTED",
+  "obligations": [],
+  "ambiguities": [
+   "The tensor product over Z_p of the log_p(R_i^x) is read as its image in the packet over Q_p."
+  ],
+  "cor3_12_dependency": "independent",
+  "scope": "any finite index type I (nonempty where an index is needed); packet = PiTensorProduct Q_p K; R_I = tdManyIntegers, (R_I)^~ = packetNormalizationSet (elements integral over Z_p); log_p(R_I^x) = tlsmLattice, the Z_p-span of the pure tensors of logarithms of units; p^lambda (R_I)^~ = tlsmShift x with prod_i ||x_i|| = p^(-lambda) (spectral norms); d_i = tensorLogDiffOrder, a_i, b_i = Proposition1_2.a, b at e_i = ramificationIdx of P_i; d_I, a_I, b_I = tlsmDiffSum, tlsmASum, tlsmBSum"
+ },
+ "IUT4.Prop1_2.frag.tlsm_pure_tensor": {
+  "kind": "fragment",
+  "parent": "IUT4.Prop1_2",
+  "source": {
+   "paper": "Inter-universal Teichmuller Theory IV",
+   "pdf_pages": "pages 10 to 11",
+   "pages_read": "rendered and checked: pages 10, 11"
+  },
+  "content": "A pure tensor tprod x in the packet with prod_i ||x_i|| <= 1 is integral over Z_p (single factors may have norm larger than 1): a power of it is p^m . tprod u with m >= 0 and every ||u_i|| = 1.",
+  "explicit_hypotheses": [
+   "p a prime",
+   "I a finite type with decidable equality; K : I -> Type a family of fields with finite-dimensional Q_p-algebra structures and compatible Z_p-algebra structures (IsScalarTower Z_p Q_p (K i)); R_i = integralClosure Z_p (K i)",
+   "prod_i ||x_i|| <= 1"
+  ],
+  "implicit_hypotheses": [],
+  "conclusion": "tprod x ∈ packetNormalizationSet",
+  "definitions_required": [],
+  "results_used": [],
+  "external_dependencies": [],
+  "lean_declaration": "IUT.PaperIV.LocalFields.tlsm_tprod_mem_normalization",
+  "lean_module": "IUT.PaperIV.LocalFields.TensorLogShellMany",
+  "covers": "Not a display of the page: the step that makes p^lambda (R_I)^~ independent of how p^lambda is distributed among the factors, used throughout the proofs here.",
+  "not_covered": "nothing beyond the statement",
+  "statement_status": "STATEMENT_FORMALIZED",
+  "proof_status": "KERNEL_VERIFIED",
+  "obligations": [],
+  "ambiguities": [
+   "The tensor product over Z_p of the log_p(R_i^x) is read as its image in the packet over Q_p."
+  ],
+  "cor3_12_dependency": "independent",
+  "scope": "model_test"
+ },
+ "IUT4.Prop1_2.frag.tlsm_span": {
+  "kind": "fragment",
+  "parent": "IUT4.Prop1_2",
+  "source": {
+   "paper": "Inter-universal Teichmuller Theory IV",
+   "pdf_pages": "page 10",
+   "pages_read": "rendered and checked: pages 10, 11"
+  },
+  "content": "The Q_p-span of tlsmLattice is the whole packet, so the automorphisms phi of Proposition 1.2 are Q_p-linear automorphisms of the packet.",
+  "explicit_hypotheses": [
+   "p a prime",
+   "I a finite type with decidable equality; K : I -> Type a family of fields with finite-dimensional Q_p-algebra structures and compatible Z_p-algebra structures (IsScalarTower Z_p Q_p (K i)); R_i = integralClosure Z_p (K i)",
+   "P i a prime ideal of R_i lying over the maximal ideal of Z_p, for every i",
+   "I nonempty"
+  ],
+  "implicit_hypotheses": [],
+  "conclusion": "Submodule.span Q_p tlsmLattice = top",
+  "definitions_required": [],
+  "results_used": [],
+  "external_dependencies": [],
+  "lean_declaration": "IUT.PaperIV.LocalFields.tlsm_span_lattice",
+  "lean_module": "IUT.PaperIV.LocalFields.TensorLogShellMany",
+  "covers": "Not a display of the page: page 10 regards phi as an automorphism of log_p(R_I^x) tensor Q_p; this identifies that space with the packet.",
+  "not_covered": "the injectivity of the tensor product over Z_p of the log_p(R_i^x) into the packet over Q_p (the lattice is taken as its image); the identification, for a two-element I, with the binary tensorLog_ theorems",
+  "statement_status": "STATEMENT_FORMALIZED",
+  "proof_status": "KERNEL_VERIFIED",
+  "obligations": [],
+  "ambiguities": [
+   "The tensor product over Z_p of the log_p(R_i^x) is read as its image in the packet over Q_p."
+  ],
+  "cor3_12_dependency": "independent",
+  "scope": "model_test"
  },
  "IUT4.Prop1_3": {
   "source": {
@@ -3194,8 +4155,8 @@
   "statement_status": "EXTRACTED",
   "proof_status": "BLOCKED_BY_EXTERNAL_THEOREM",
   "obligations": [
-   "The log-volume of [AbsTopIII], Proposition 5.7, is not read; mu^log is modeled as log(mu(A)/mu(R))/d for a Haar measure mu (IUT4.Prop1_4.frag.muLog_def), an interpretation. With it the normalization (i) is proved for one finite extension of Q_p on its ring of integers (IUT4.Prop1_4.frag.vb_field_normalization) for tensor packets of two factors on (R_E)~ (IUT4.Prop1_4.frag.vb_packet_normalization), and for tensor packets over Q_p of any finite number of factors (IUT4.Prop1_4.frag.pk_packet_normalization). The value (ii) is proved for every finite extension of Q_p, with the order of R_i^mu of page 13 (IUT4.Prop1_4.frag.uv_ii, IUT4.Prop1_4.frag.uv_card_torsion); the compatibility of the log-volume with log_p of [AbsTopIII], Proposition 5.7 is replaced by a counting argument inside k_i (IUT4.Prop1_4.frag.uv_kernel_count). For two factors, the second inequality of (iii) is proved for every I* (IUT4.Prop1_4.frag.tls_iii_second), its first inequality when p > 2 and e_1, e_2 <= p - 2 (IUT4.Prop1_4.frag.tls_iii_first) and, through the additivity of page 14 over the two tensor factors (IUT4.Prop1_4.frag.tadd_additivity), for every I* with e_i <= p - 2 for i not in I*, as printed (IUT4.Prop1_4.frag.tadd_iii_first), its last sentence (IUT4.Prop1_4.frag.tls_dI_aI), and (iv) (IUT4.Prop1_4.frag.tls_iv). More than two factors, and the injectivity of the tensor product over Z_p of the log_p(R_i^x) into the tensor product over Q_p (the lattices are taken as their images), are not formalized.",
-   "The arithmetic fragments check the proof starting from supplied volume bounds; the per-index inequality d_i + a_i >= 1 (2 for p = 2) is proved for actual finite extensions of Q_p (IUT4.Prop1_4.frag.bridge_d_add_a). For two factors the containments of (iii) and (iv) are established (IUT4.Prop1_4.frag.tls_iii_second, IUT4.Prop1_4.frag.tls_iv); for more than two factors none is."
+   "The log-volume of [AbsTopIII], Proposition 5.7, is not read; mu^log is modeled as log(mu(A)/mu(R))/d for a Haar measure mu (IUT4.Prop1_4.frag.muLog_def), an interpretation. With it the normalization (i) is proved for one finite extension of Q_p on its ring of integers (IUT4.Prop1_4.frag.vb_field_normalization) for tensor packets of two factors on (R_E)~ (IUT4.Prop1_4.frag.vb_packet_normalization), and for tensor packets over Q_p of any finite number of factors (IUT4.Prop1_4.frag.pk_packet_normalization). The value (ii) is proved for every finite extension of Q_p, with the order of R_i^mu of page 13 (IUT4.Prop1_4.frag.uv_ii, IUT4.Prop1_4.frag.uv_card_torsion); the compatibility of the log-volume with log_p of [AbsTopIII], Proposition 5.7 is replaced by a counting argument inside k_i (IUT4.Prop1_4.frag.uv_kernel_count). For two factors, the second inequality of (iii) is proved for every I* (IUT4.Prop1_4.frag.tls_iii_second), its first inequality when p > 2 and e_1, e_2 <= p - 2 (IUT4.Prop1_4.frag.tls_iii_first) and, through the additivity of page 14 over the two tensor factors (IUT4.Prop1_4.frag.tadd_additivity), for every I* with e_i <= p - 2 for i not in I*, as printed (IUT4.Prop1_4.frag.tadd_iii_first), its last sentence (IUT4.Prop1_4.frag.tls_dI_aI), and (iv) (IUT4.Prop1_4.frag.tls_iv). For any finite number of factors, (i) (IUT4.Prop1_4.frag.tlsm_i), (iv) (IUT4.Prop1_4.frag.tlsm_iv), the additivity of page 14 (IUT4.Prop1_4.frag.tam_A_logLattice) and the first inequality of (iii) for every I* as printed (IUT4.Prop1_4.frag.tam_iii_first) are proved. Not formalized: the second inequality of (iii) and the inclusions of (iii) for more than two factors, and the injectivity of the tensor product over Z_p of the log_p(R_i^x) into the tensor product over Q_p (the lattices are taken as their images).",
+   "The arithmetic fragments check the proof starting from supplied volume bounds; the per-index inequality d_i + a_i >= 1 (2 for p = 2) is proved for actual finite extensions of Q_p (IUT4.Prop1_4.frag.bridge_d_add_a). For two factors the containments of (iii) and (iv) are established (IUT4.Prop1_4.frag.tls_iii_second, IUT4.Prop1_4.frag.tls_iv); for any finite number of factors the containment of (iv) is established (IUT4.Prop1_4.frag.tlsm_iv), and those of (iii) are not."
   ],
   "ambiguities": [
    "The first display of (iii) writes p^{lambda − d_I − a_I}; the render shows a floor, which accounts for the +1."
@@ -3250,7 +4211,20 @@
    "IUT4.Prop1_4.frag.tls_iv",
    "IUT4.Prop1_4.frag.tadd_additivity",
    "IUT4.Prop1_4.frag.tadd_iii_first",
-   "IUT4.Prop1_4.frag.tord_mulog_galois"
+   "IUT4.Prop1_4.frag.tord_mulog_galois",
+   "IUT4.Prop1_4.frag.locdisc_mulog_galois",
+   "IUT4.Prop1_4.frag.many_muLog_average",
+   "IUT4.Prop1_4.frag.many_muLog_different",
+   "IUT4.Prop1_4.frag.tam_A_lattices",
+   "IUT4.Prop1_4.frag.tam_A_logLattice",
+   "IUT4.Prop1_4.frag.tam_ii_n",
+   "IUT4.Prop1_4.frag.tam_iii_first",
+   "IUT4.Prop1_4.frag.tam_index_n",
+   "IUT4.Prop1_4.frag.tam_integers_compact_open",
+   "IUT4.Prop1_4.frag.tam_replace_index",
+   "IUT4.Prop1_4.frag.tlsm_i",
+   "IUT4.Prop1_4.frag.tlsm_iv",
+   "IUT4.Prop1_4.frag.tord_many_mulog"
   ]
  },
  "IUT4.Prop1_4.frag.ii_identity": {
@@ -4639,7 +5613,7 @@
   "lean_declaration": "IUT.PaperIV.LocalFields.tensorIdx_muLog_nonpos",
   "lean_module": "IUT.PaperIV.LocalFields.TensorIndex",
   "covers": "Page 14, proof of Proposition 1.4 (iii): 'by assertion (i), we have mu^log(R_I) <= mu^log((R_I)^~) = 0', for |I| = 2.",
-  "not_covered": "More than two factors; the use of this inequality in the computation of page 14 (which also needs the additivity mu^log(log_p(R_I^x)) = sum mu^log(log_p(R_i^x)) + mu^log(R_I), not proved).",
+  "not_covered": "More than two factors; the use of this inequality in the computation of page 14 (which also needs the additivity mu^log(log_p(R_I^x)) = sum mu^log(log_p(R_i^x)) + mu^log(R_I), proved for two factors in IUT4.Prop1_4.frag.tadd_additivity and for any finite number of factors in IUT4.Prop1_4.frag.tam_A_logLattice).",
   "statement_status": "STATEMENT_FORMALIZED",
   "proof_status": "KERNEL_VERIFIED",
   "obligations": [],
@@ -4702,7 +5676,7 @@
   "external_dependencies": [],
   "lean_declaration": "IUT.PaperIV.LocalFields.tensorLog_prop1_4_iii_lattice",
   "covers": "Page 13, Proposition 1.4 (iii), first inequality mu^log(p^{floor(lam - d_I - a_I)} log_p(R_I^x)) <= (-lam + d_I + 1 + 4 |I*|/p) log(p), only when every e_i <= p - 2 (p > 2).",
-  "not_covered": "two factors only; more than two factors (the induction on |I|) is not addressed; the case where some e_i > p - 2, covered by IUT4.Prop1_4.frag.tadd_iii_first through the additivity mu^log(log_p(R_I^x)) = sum_i mu^log(log_p(R_i^x)) + mu^log(R_I) of page 14, proved for two factors (IUT4.Prop1_4.frag.tadd_additivity); the Lean proof of this record bounds mu^log(log_p(R_I^x)) by mu^log(p^{-b_I}(R_I)^~) instead of following page 14; the injectivity of log_p(R1^x) tmul_{Z_p} log_p(R2^x) into K1 tmul_{Q_p} K2 (the lattice is taken as its image).",
+  "not_covered": "two factors only; more than two factors is IUT4.Prop1_4.frag.tam_iii_first; the case where some e_i > p - 2, covered by IUT4.Prop1_4.frag.tadd_iii_first through the additivity mu^log(log_p(R_I^x)) = sum_i mu^log(log_p(R_i^x)) + mu^log(R_I) of page 14, proved for two factors (IUT4.Prop1_4.frag.tadd_additivity); the Lean proof of this record bounds mu^log(log_p(R_I^x)) by mu^log(p^{-b_I}(R_I)^~) instead of following page 14; the injectivity of log_p(R1^x) tmul_{Z_p} log_p(R2^x) into K1 tmul_{Q_p} K2 (the lattice is taken as its image).",
   "statement_status": "STATEMENT_FORMALIZED",
   "proof_status": "KERNEL_VERIFIED",
   "obligations": [],
@@ -4778,7 +5752,7 @@
   "external_dependencies": [],
   "lean_declaration": "IUT.PaperIV.LocalFields.tensorLog_prop1_4_iv",
   "covers": "Page 13, Proposition 1.4 (iv) 'phi((R_I)^~) ⊆ (R_I)^~, and mu^log((R_I)^~) = 0'.",
-  "not_covered": "two factors only; more than two factors (the induction on |I|) is not addressed; the equality mu^log((R_I)^~) = 0 holds by the choice of (R_I)^~ as the reference set of mu^log (Proposition 1.4 (i)).",
+  "not_covered": "two factors only; more than two factors is IUT4.Prop1_4.frag.tlsm_iv; the equality mu^log((R_I)^~) = 0 holds by the choice of (R_I)^~ as the reference set of mu^log (Proposition 1.4 (i)).",
   "statement_status": "STATEMENT_FORMALIZED",
   "proof_status": "KERNEL_VERIFIED",
   "obligations": [],
@@ -4809,7 +5783,7 @@
   "lean_declaration": "IUT.PaperIV.LocalFields.tensorAdd_muLog_logLattice",
   "lean_module": "IUT.PaperIV.LocalFields.TensorAdditivity",
   "covers": "Page 14, proof of Proposition 1.4 (iii), the second line of the chain: '= (-lambda + d_I + a_I + 1) log(p) + {sum_{i in I} mu^log(log_p(R_i^x))} + mu^log(R_I)', that is the identity mu^log(log_p(R_I^x)) = sum_{i in I} mu^log(log_p(R_i^x)) + mu^log(R_I), for I = {1, 2}.",
-  "not_covered": "two factors only; more than two factors (the induction on |I|) is not addressed; the injectivity of log_p(R1^x) tmul_{Z_p} log_p(R2^x) into K1 tmul_{Q_p} K2 (the lattice is taken as its image). The page gives no proof of the identity; the index formula behind it (tensorAdd_relIndex) and its general form for lattices (tensorAdd_muLog_add) are lemmas, not printed lines.",
+  "not_covered": "two factors only; more than two factors is IUT4.Prop1_4.frag.tam_A_logLattice; the injectivity of log_p(R1^x) tmul_{Z_p} log_p(R2^x) into K1 tmul_{Q_p} K2 (the lattice is taken as its image). The page gives no proof of the identity; the index formula behind it (tensorAdd_relIndex) and its general form for lattices (tensorAdd_muLog_add) are lemmas, not printed lines.",
   "statement_status": "STATEMENT_FORMALIZED",
   "proof_status": "KERNEL_VERIFIED",
   "obligations": [],
@@ -4863,7 +5837,7 @@
   "lean_declaration": "IUT.PaperIV.LocalFields.tensorAdd_prop1_4_iii_lattice",
   "lean_module": "IUT.PaperIV.LocalFields.TensorAdditivity",
   "covers": "Page 13, Proposition 1.4 (iii), first inequality 'mu^log(p^{floor(lambda - d_I - a_I)} log_p(R_I^x)) <= (-lambda + d_I + 1 + 4 |I*|/p) log(p)' with I* as printed (e_i <= p - 2 for i in I \\ I*), for I = {1, 2}; proof on page 14 (the chain through identity (A)).",
-  "not_covered": "two factors only; more than two factors (the induction on |I|) is not addressed; the injectivity of log_p(R1^x) tmul_{Z_p} log_p(R2^x) into K1 tmul_{Q_p} K2 (the lattice is taken as its image).",
+  "not_covered": "two factors only; more than two factors is IUT4.Prop1_4.frag.tam_iii_first; the injectivity of log_p(R1^x) tmul_{Z_p} log_p(R2^x) into K1 tmul_{Q_p} K2 (the lattice is taken as its image).",
   "statement_status": "STATEMENT_FORMALIZED",
   "proof_status": "KERNEL_VERIFIED",
   "obligations": [],
@@ -4901,7 +5875,7 @@
   "lean_declaration": "IUT.Audit.TensorOrderIndex.tOrdIdx_muLog_galois",
   "lean_module": "IUT.Audit.TensorOrderIndex",
   "covers": "Page 13, Proposition 1.4 (i), normalization \"[i.e., by dividing by the degree of the finite extension]\" with mu^log((R_E)^~) = 0; the value computed here is not printed on the page.",
-  "not_covered": "More than two factors; the identification v/d = d_K (order of the different).",
+  "not_covered": "More than two factors (IUT4.Prop1_4.frag.tord_many_mulog); the identification v/d = d_K (order of the different), which is IUT4.Prop1_1.frag.locdisc_disc_different.",
   "statement_status": "STATEMENT_FORMALIZED",
   "proof_status": "KERNEL_VERIFIED",
   "obligations": [],
@@ -4910,6 +5884,544 @@
   "lemmas": [
    "IUT.Audit.TensorOrderIndex.tOrdIdx_muLog_galois_valuation",
    "IUT.Audit.TensorOrderIndex.tOrdIdx_index_sq_galois"
+  ]
+ },
+ "IUT4.Prop1_4.frag.locdisc_mulog_galois": {
+  "kind": "fragment",
+  "parent": "IUT4.Prop1_4",
+  "source": {
+   "paper": "Inter-universal Teichmuller Theory IV",
+   "pdf_pages": "pages 9, 13",
+   "pages_read": "rendered and checked: pages 9, 13"
+  },
+  "content": "For K/Q_p finite Galois, the normalized log-volume of R_E inside K tensor K (normalized at (R_E)^~ and divided by the dimension) is -(1/2) * d * log p, with d the order of the different of K.",
+  "explicit_hypotheses": [
+   "p a prime",
+   "K a field, finite-dimensional Galois Q_p-algebra with a compatible Z_p-algebra structure",
+   "mu an additive Haar measure on the coordinate space",
+   "P a prime of R over p"
+  ],
+  "implicit_hypotheses": [],
+  "conclusion": "padicPacketMuLog p (K tensor K) mu (R_E)^~ R_E = -(1/2) * (differentOrder Z_p R P * log p).",
+  "definitions_required": [
+   "IUT.Prerequisites.PadicVolume.padicPacketMuLog",
+   "IUT.PaperIV.LocalFields.differentOrder"
+  ],
+  "results_used": [],
+  "external_dependencies": [],
+  "lean_declaration": "IUT.PaperIV.LocalFields.locDisc_muLog_galois",
+  "lean_module": "IUT.PaperIV.LocalFields.LocalDiscriminant",
+  "covers": "Page 13, Proposition 1.4 (i): log-volumes normalized by dividing by the degree, with mu^log((R_E)^~) = 0 and mu^log(p (R_E)^~) = -log(p). The value of mu^log(R_E) is not printed on the page; it is computed here for two copies of a Galois K.",
+  "not_covered": "Non-Galois K, two different factors, more than two factors.",
+  "statement_status": "STATEMENT_FORMALIZED",
+  "proof_status": "KERNEL_VERIFIED",
+  "obligations": [],
+  "ambiguities": [],
+  "scope": "model_test"
+ },
+ "IUT4.Prop1_4.frag.many_muLog_average": {
+  "kind": "fragment",
+  "parent": "IUT4.Prop1_4",
+  "source": {
+   "paper": "Inter-universal Teichmuller Theory IV",
+   "pdf_pages": "pages 9, 13",
+   "pages_read": "rendered and checked: pages 9, 13"
+  },
+  "content": "For K/Q_p Galois, J >= 1, and Haar measures mu_j on the coordinates of the packets of j+1 copies of K: (1/J) * sum_{j=1}^{J} mu^log(R_{I_j}) = -((J+1)/4) * D * log p, with sum = -(J(J+1)/4) D log p (tOrdAllow_muLog_sum).",
+  "explicit_hypotheses": [
+   "p a prime",
+   "K a field, finite-dimensional and Galois over Q_p, with Algebra Z_p K and IsScalarTower Z_p Q_p K",
+   "P a prime of integralClosure Z_p K lying over the maximal ideal of Z_p",
+   "D = differentOrder Z_p (integralClosure Z_p K) P, the order (ord(p) = 1) of the different of the ring of integers of K, for a prime P over p",
+   "J a natural number, J != 0",
+   "mu_j an additive Haar measure on the coordinates of the packet of Fin (j+1) copies of K, for every j"
+  ],
+  "implicit_hypotheses": [],
+  "conclusion": "(1/J) * sum_{j in Icc 1 J} padicPacketMuLog p (packet of Fin (j+1) copies) (mu j) (packetNormalizationSet) (tdManyIntegers) = -((J+1)/4) * (D * log p).",
+  "definitions_required": [],
+  "results_used": [
+   "IUT4.Prop1_4.frag.tord_many_mulog",
+   "IUT4.Prop1_1.frag.locdisc_disc_different"
+  ],
+  "external_dependencies": [],
+  "lean_declaration": "IUT.Audit.TensorOrderIndexAllowance.tOrdAllow_muLog_avg",
+  "lean_module": "IUT.Audit.TensorOrderIndexAllowance",
+  "covers": "Page 13, Proposition 1.4 (i): the normalization of the log-volume. The sum and average are not displays of IUT IV.",
+  "not_covered": "Distinct factor fields and non-Galois K; R_I is the library's span of integral pure tensors over Q_p.",
+  "statement_status": "STATEMENT_FORMALIZED",
+  "proof_status": "KERNEL_VERIFIED",
+  "obligations": [],
+  "ambiguities": [
+   "The paper's d_i presupposes a principal different; the library states it for every prime P over p (one prime, as the ring of integers is local, though that locality is not proved in the library)."
+  ],
+  "scope": "model_test",
+  "lemmas": [
+   "IUT.Audit.TensorOrderIndexAllowance.tOrdAllow_muLog_sum",
+   "IUT.Audit.TensorOrderIndexAllowance.tOrdAllow_muLog"
+  ]
+ },
+ "IUT4.Prop1_4.frag.many_muLog_different": {
+  "kind": "fragment",
+  "parent": "IUT4.Prop1_4",
+  "source": {
+   "paper": "Inter-universal Teichmuller Theory IV",
+   "pdf_pages": "pages 9, 13",
+   "pages_read": "rendered and checked: pages 9, 13"
+  },
+  "content": "For K/Q_p Galois and n = card I copies of K, with the normalization of IUT IV Proposition 1.4 (i) on the library's packet (padicPacketMuLog normalized at (R_I)^~ = packetNormalizationSet, divided by the dimension): mu^log(R_I) = -((n-1)/2) * D * log p, R_I = tdManyIntegers.",
+  "explicit_hypotheses": [
+   "p a prime",
+   "K a field, finite-dimensional and Galois over Q_p, with Algebra Z_p K and IsScalarTower Z_p Q_p K",
+   "P a prime of integralClosure Z_p K lying over the maximal ideal of Z_p",
+   "D = differentOrder Z_p (integralClosure Z_p K) P, the order (ord(p) = 1) of the different of the ring of integers of K, for a prime P over p",
+   "I a nonempty finite type",
+   "mu an additive Haar measure on the coordinate space"
+  ],
+  "implicit_hypotheses": [],
+  "conclusion": "padicPacketMuLog p (packet) mu (packetNormalizationSet) (tdManyIntegers) = -((card I - 1)/2) * (D * log p).",
+  "definitions_required": [],
+  "results_used": [
+   "IUT4.Prop1_4.frag.tord_many_mulog",
+   "IUT4.Prop1_1.frag.locdisc_disc_different"
+  ],
+  "external_dependencies": [],
+  "lean_declaration": "IUT.Audit.TensorOrderIndexAllowance.tOrdAllow_muLog",
+  "lean_module": "IUT.Audit.TensorOrderIndexAllowance",
+  "covers": "Page 13, Proposition 1.4 (i): the normalization \"by dividing by the degree of the finite extension\" with mu^log((R_E)^~) = 0; page 9: d_i is \"the order ... of any generator of the different ideal of R_i over Z_p\". The value itself is not a display of IUT IV.",
+  "not_covered": "Distinct factor fields and non-Galois K; R_I is the library's span of integral pure tensors over Q_p, not the tensor product over Z_p.",
+  "statement_status": "STATEMENT_FORMALIZED",
+  "proof_status": "KERNEL_VERIFIED",
+  "obligations": [],
+  "ambiguities": [
+   "The paper's d_i presupposes a principal different; the library states it for every prime P over p (one prime, as the ring of integers is local, though that locality is not proved in the library)."
+  ],
+  "scope": "model_test"
+ },
+ "IUT4.Prop1_4.frag.tam_A_lattices": {
+  "kind": "fragment",
+  "parent": "IUT4.Prop1_4",
+  "source": {
+   "paper": "Inter-universal Teichmuller Theory IV",
+   "pdf_pages": "page 14",
+   "pages_read": "rendered and checked: pages 10, 13, 14"
+  },
+  "content": "Identity (A) for lattices, n factors: for Z_p-submodules L_i with p^{k_i} R_i <= L_i <= p^{-k_i} R_i, the image of tensor L_i has positive finite Haar measure in coordinates and mu^log(tensor L_i) = sum_i mu^log(L_i) + mu^log(R_I).",
+  "explicit_hypotheses": [
+   "p a prime",
+   "I a finite type with decidable equality; K : I -> Type a family of fields with finite-dimensional Q_p-algebra structures and compatible Z_p-algebra structures (IsScalarTower Z_p Q_p (K i)); R_i = integralClosure Z_p (K i)",
+   "mu an additive Haar measure on the coordinate space Fin (finrank of the packet) -> Q_p",
+   "I nonempty",
+   "L_i Z_p-submodules of K_i, k_i in N, p^{k_i} R_i subset L_i subset p^{-k_i} R_i"
+  ],
+  "implicit_hypotheses": [],
+  "conclusion": "measure nonzero and finite; padicPacketMuLog (tamSpan L) = sum_i tensorAddMuLog (L i) + padicPacketMuLog (tdManyIntegers)",
+  "definitions_required": [
+   "IUT.PaperIV.LocalFields.tamSpan",
+   "padicPacketMuLog",
+   "tensorAddMuLog"
+  ],
+  "results_used": [
+   "IUT4.Prop1_4.frag.tam_index_n",
+   "IUT4.Prop1_4.frag.tam_integers_compact_open",
+   "IUT4.Prop1_4.frag.packet"
+  ],
+  "external_dependencies": [
+   "Mathlib: PiTensorProduct, Basis.piTensorProduct, AddSubgroup.relIndex, additive Haar measure"
+  ],
+  "lean_declaration": "IUT.PaperIV.LocalFields.tam_muLog_add",
+  "lean_module": "IUT.PaperIV.LocalFields.TensorAdditivityMany",
+  "covers": "Model test: general lattice form, not printed; the printed instance is record tam_A_logLattice.",
+  "not_covered": "Setting: any finite index type I; packet = PiTensorProduct Q_p K; image of the tensor product over Z_p of A_i = tamSpan A (additive span of a . tprod x, a in Z_p, x_i in A_i); R_I = tdManyIntegers; (R_I)^~ = packetNormalizationSet; log_p(R_I^x) = tlsmLattice; packet mu^log = padicPacketMuLog normalized by mu^log((R_I)^~) = 0; mu^log on K_i = tensorAddMuLog normalized by mu^log(R_i) = 0. Counted as a model test: not a statement printed on the pages read.",
+  "statement_status": "STATEMENT_FORMALIZED",
+  "proof_status": "KERNEL_VERIFIED",
+  "obligations": [],
+  "ambiguities": [
+   "The tensor product over Z_p is read as its image in the packet over Q_p (injectivity is proved for the rings of integers in PacketIdentifications, not for the logarithm lattices)."
+  ],
+  "cor3_12_dependency": "independent",
+  "scope": "model_test",
+  "lemmas": [
+   "IUT.PaperIV.LocalFields.tam_degOff_mul"
+  ]
+ },
+ "IUT4.Prop1_4.frag.tam_A_logLattice": {
+  "kind": "fragment",
+  "parent": "IUT4.Prop1_4",
+  "source": {
+   "paper": "Inter-universal Teichmuller Theory IV",
+   "pdf_pages": "page 14",
+   "pages_read": "rendered and checked: pages 10, 13, 14"
+  },
+  "content": "Identity (A), n factors: mu^log(log_p(R_I^x)) = sum_{i in I} mu^log(log_p(R_i^x)) + mu^log(R_I), and log_p(R_I^x) has positive finite Haar measure in coordinates.",
+  "explicit_hypotheses": [
+   "p a prime",
+   "I a finite type with decidable equality; K : I -> Type a family of fields with finite-dimensional Q_p-algebra structures and compatible Z_p-algebra structures (IsScalarTower Z_p Q_p (K i)); R_i = integralClosure Z_p (K i)",
+   "mu an additive Haar measure on the coordinate space Fin (finrank of the packet) -> Q_p",
+   "I nonempty"
+  ],
+  "implicit_hypotheses": [],
+  "conclusion": "padicPacketMuLog (tlsmLattice) = sum_i tensorAddMuLog (tensorLogUnits (K i)) + padicPacketMuLog (tdManyIntegers)",
+  "definitions_required": [
+   "tlsmLattice",
+   "tensorLogUnits",
+   "IUT.PaperIV.LocalFields.tamSpan"
+  ],
+  "results_used": [
+   "IUT4.Prop1_4.frag.tam_A_lattices"
+  ],
+  "external_dependencies": [
+   "Mathlib: PiTensorProduct, Basis.piTensorProduct, AddSubgroup.relIndex, additive Haar measure"
+  ],
+  "lean_declaration": "IUT.PaperIV.LocalFields.tam_muLog_logLattice",
+  "lean_module": "IUT.PaperIV.LocalFields.TensorAdditivityMany",
+  "covers": "Page 14, the first two lines of the display: \"μ^log(p^{⌊λ−𝔡_I−a_I⌋} · log_p(R_I^×)) ≤ (−λ + 𝔡_I + a_I + 1) · log(p) + μ^log(log_p(R_I^×)) = (−λ + 𝔡_I + a_I + 1) · log(p) + {∑_{i∈I} μ^log(log_p(R_i^×))} + μ^log(R_I)\"; the declaration checks the equality of the last terms, μ^log(log_p(R_I^×)) = ∑_{i∈I} μ^log(log_p(R_i^×)) + μ^log(R_I).",
+  "not_covered": "the measure-theoretic identification of the tensor product over Z_p with its image in the packet (injectivity for the logarithm lattices)",
+  "statement_status": "STATEMENT_FORMALIZED",
+  "proof_status": "KERNEL_VERIFIED",
+  "obligations": [],
+  "ambiguities": [
+   "The tensor product over Z_p is read as its image in the packet over Q_p (injectivity is proved for the rings of integers in PacketIdentifications, not for the logarithm lattices).",
+   "mu^log(log_p(R_i^x)) is read as the log-volume of K_i normalized by mu^log(R_i) = 0 (page 13 (i): \"normalized so that μ^log(R_i) = 0\")."
+  ],
+  "cor3_12_dependency": "independent",
+  "scope": "any finite index type I; packet = PiTensorProduct Q_p K; image of the tensor product over Z_p of A_i = tamSpan A (additive span of a . tprod x, a in Z_p, x_i in A_i); R_I = tdManyIntegers; (R_I)^~ = packetNormalizationSet; log_p(R_I^x) = tlsmLattice; packet mu^log = padicPacketMuLog normalized by mu^log((R_I)^~) = 0; mu^log on K_i = tensorAddMuLog normalized by mu^log(R_i) = 0",
+  "lemmas": [
+   "IUT.PaperIV.LocalFields.tamSpan_logUnits"
+  ]
+ },
+ "IUT4.Prop1_4.frag.tam_ii_n": {
+  "kind": "fragment",
+  "parent": "IUT4.Prop1_4",
+  "source": {
+   "paper": "Inter-universal Teichmuller Theory IV",
+   "pdf_pages": "page 13",
+   "pages_read": "rendered and checked: pages 10, 13, 14"
+  },
+  "content": "Proposition 1.4 (ii) inserted in identity (A): mu^log(log_p(R_I^x)) = sum_i -(1/e_i + m_i/(e_i f_i)) log(p) + mu^log(R_I).",
+  "explicit_hypotheses": [
+   "p a prime",
+   "I a finite type with decidable equality; K : I -> Type a family of fields with finite-dimensional Q_p-algebra structures and compatible Z_p-algebra structures (IsScalarTower Z_p Q_p (K i)); R_i = integralClosure Z_p (K i)",
+   "mu an additive Haar measure on the coordinate space Fin (finrank of the packet) -> Q_p",
+   "I nonempty",
+   "P_i a prime of R_i over p"
+  ],
+  "implicit_hypotheses": [],
+  "conclusion": "padicPacketMuLog (tlsmLattice) = sum_i -(1/e_i + m_i/(e_i f_i)) log p + padicPacketMuLog (tdManyIntegers)",
+  "definitions_required": [
+   "unitVolTorsionExponent",
+   "unitVolResidueDegree"
+  ],
+  "results_used": [
+   "IUT4.Prop1_4.frag.tam_A_logLattice"
+  ],
+  "external_dependencies": [
+   "Mathlib: PiTensorProduct, Basis.piTensorProduct, AddSubgroup.relIndex, additive Haar measure"
+  ],
+  "lean_declaration": "IUT.PaperIV.LocalFields.tam_prop1_4_ii",
+  "lean_module": "IUT.PaperIV.LocalFields.TensorAdditivityMany",
+  "covers": "Model test: the combination is not printed. Proposition 1.4 (ii) itself (page 13: \"μ^log(log_p(R_i^×)) = −(1/e_i + m_i/(e_i f_i)) · log(p)\") is per factor and is tensorAddMuLog_logUnits.",
+  "not_covered": "Setting: any finite index type I; packet = PiTensorProduct Q_p K; image of the tensor product over Z_p of A_i = tamSpan A (additive span of a . tprod x, a in Z_p, x_i in A_i); R_I = tdManyIntegers; (R_I)^~ = packetNormalizationSet; log_p(R_I^x) = tlsmLattice; packet mu^log = padicPacketMuLog normalized by mu^log((R_I)^~) = 0; mu^log on K_i = tensorAddMuLog normalized by mu^log(R_i) = 0. Counted as a model test: not a statement printed on the pages read.",
+  "statement_status": "STATEMENT_FORMALIZED",
+  "proof_status": "KERNEL_VERIFIED",
+  "obligations": [],
+  "ambiguities": [
+   "The tensor product over Z_p is read as its image in the packet over Q_p (injectivity is proved for the rings of integers in PacketIdentifications, not for the logarithm lattices)."
+  ],
+  "cor3_12_dependency": "independent",
+  "scope": "model_test"
+ },
+ "IUT4.Prop1_4.frag.tam_iii_first": {
+  "kind": "fragment",
+  "parent": "IUT4.Prop1_4",
+  "source": {
+   "paper": "Inter-universal Teichmuller Theory IV",
+   "pdf_pages": "page 13",
+   "pages_read": "rendered and checked: pages 10, 13, 14"
+  },
+  "content": "Proposition 1.4 (iii), first inequality, n factors: for I* with e_i <= p - 2 for i not in I*, and every real lambda, mu^log(p^{floor(lambda - d_I - a_I)} . log_p(R_I^x)) <= (-lambda + d_I + 1 + 4 |I*|/p) log(p).",
+  "explicit_hypotheses": [
+   "p a prime",
+   "I a finite type with decidable equality; K : I -> Type a family of fields with finite-dimensional Q_p-algebra structures and compatible Z_p-algebra structures (IsScalarTower Z_p Q_p (K i)); R_i = integralClosure Z_p (K i)",
+   "mu an additive Haar measure on the coordinate space Fin (finrank of the packet) -> Q_p",
+   "I nonempty",
+   "P_i a prime of R_i over p",
+   "I* a Finset with e_i <= p - 2 for i not in I*",
+   "lambda real"
+  ],
+  "implicit_hypotheses": [],
+  "conclusion": "padicPacketMuLog (p^floor(lambda - tlsmDiffSum - tlsmASum) . tlsmLattice) <= (-lambda + tlsmDiffSum + 1 + 4 |I*|/p) log p",
+  "definitions_required": [
+   "tlsmDiffSum",
+   "tlsmASum",
+   "tlsmLattice"
+  ],
+  "results_used": [
+   "IUT4.Prop1_4.frag.tam_A_logLattice",
+   "IUT4.Prop1_4.frag.pk_floor_step",
+   "IUT4.Prop1_4.frag.iii_first"
+  ],
+  "external_dependencies": [
+   "Mathlib: PiTensorProduct, Basis.piTensorProduct, AddSubgroup.relIndex, additive Haar measure"
+  ],
+  "lean_declaration": "IUT.PaperIV.LocalFields.tam_prop1_4_iii_first",
+  "lean_module": "IUT.PaperIV.LocalFields.TensorAdditivityMany",
+  "covers": "Page 13 (iii): \"Let I* ⊆ I be a subset such that for each i ∈ I \\ I*, it holds that p − 2 ≥ e_i (≥ 1). Then for any λ ∈ (1/e_{i†}) · Z, i† ∈ I, we have … inequalities μ^log(p^{⌊λ−𝔡_I−a_I⌋} · log_p(R_I^×)) ≤ (−λ + 𝔡_I + 1 + 4 · |I*|/p) · log(p)\"; proof on page 14.",
+  "not_covered": "the inclusions of (iii) and the second inequality μ^log(p^{⌊λ−𝔡_I−a_I⌋−b_I} · (R_I)^~) ≤ (−λ + 𝔡_I + 1) · log(p) + ∑_{i∈I*} {3 + log(e_i)} for n factors",
+  "statement_status": "STATEMENT_FORMALIZED",
+  "proof_status": "KERNEL_VERIFIED",
+  "obligations": [],
+  "ambiguities": [
+   "The tensor product over Z_p is read as its image in the packet over Q_p (injectivity is proved for the rings of integers in PacketIdentifications, not for the logarithm lattices).",
+   "The declaration holds for every real λ, not only λ ∈ (1/e_{i†}) · Z."
+  ],
+  "cor3_12_dependency": "independent",
+  "scope": "any finite index type I; packet = PiTensorProduct Q_p K; image of the tensor product over Z_p of A_i = tamSpan A (additive span of a . tprod x, a in Z_p, x_i in A_i); R_I = tdManyIntegers; (R_I)^~ = packetNormalizationSet; log_p(R_I^x) = tlsmLattice; packet mu^log = padicPacketMuLog normalized by mu^log((R_I)^~) = 0; mu^log on K_i = tensorAddMuLog normalized by mu^log(R_i) = 0"
+ },
+ "IUT4.Prop1_4.frag.tam_index_n": {
+  "kind": "fragment",
+  "parent": "IUT4.Prop1_4",
+  "source": {
+   "paper": "Inter-universal Teichmuller Theory IV",
+   "pdf_pages": "page 14",
+   "pages_read": "rendered and checked: pages 10, 13, 14"
+  },
+  "content": "Index of a tensor product of n lattices: for Z_p-lattices L_i <= M_i of K_i (finitely generated, spanning), [image of tensor M_i : image of tensor L_i] = prod_s [M_s : L_s] ^ (prod_{i != s} [K_i : Q_p]). Generalizes tensorAdd_relIndex.",
+  "explicit_hypotheses": [
+   "p a prime",
+   "I a finite type with decidable equality; K : I -> Type a family of fields with finite-dimensional Q_p-algebra structures and compatible Z_p-algebra structures (IsScalarTower Z_p Q_p (K i)); R_i = integralClosure Z_p (K i)",
+   "L_i <= M_i Z_p-submodules of K_i, finitely generated, with Q_p-span K_i"
+  ],
+  "implicit_hypotheses": [],
+  "conclusion": "relIndex (tamSpan L) (tamSpan M) = prod_s relIndex (L s) (M s) ^ tamDegOff s",
+  "definitions_required": [
+   "IUT.PaperIV.LocalFields.tamSpan",
+   "IUT.PaperIV.LocalFields.tamDegOff",
+   "IUT.PaperIV.LocalFields.tamHybrid"
+  ],
+  "results_used": [
+   "IUT4.Prop1_4.frag.tam_replace_index"
+  ],
+  "external_dependencies": [
+   "Mathlib: PiTensorProduct, Basis.piTensorProduct, AddSubgroup.relIndex, additive Haar measure"
+  ],
+  "lean_declaration": "IUT.PaperIV.LocalFields.tam_relIndex",
+  "lean_module": "IUT.PaperIV.LocalFields.TensorAdditivityMany",
+  "covers": "Model test: not a printed sentence (n-factor form of the index computation behind identity (A) on page 14).",
+  "not_covered": "Setting: any finite index type I; packet = PiTensorProduct Q_p K; image of the tensor product over Z_p of A_i = tamSpan A (additive span of a . tprod x, a in Z_p, x_i in A_i); R_I = tdManyIntegers; (R_I)^~ = packetNormalizationSet; log_p(R_I^x) = tlsmLattice; packet mu^log = padicPacketMuLog normalized by mu^log((R_I)^~) = 0; mu^log on K_i = tensorAddMuLog normalized by mu^log(R_i) = 0. Counted as a model test: not a statement printed on the pages read.",
+  "statement_status": "STATEMENT_FORMALIZED",
+  "proof_status": "KERNEL_VERIFIED",
+  "obligations": [],
+  "ambiguities": [
+   "The tensor product over Z_p is read as its image in the packet over Q_p (injectivity is proved for the rings of integers in PacketIdentifications, not for the logarithm lattices)."
+  ],
+  "cor3_12_dependency": "independent",
+  "scope": "model_test"
+ },
+ "IUT4.Prop1_4.frag.tam_integers_compact_open": {
+  "kind": "fragment",
+  "parent": "IUT4.Prop1_4",
+  "source": {
+   "paper": "Inter-universal Teichmuller Theory IV",
+   "pdf_pages": "page 13",
+   "pages_read": "rendered and checked: pages 10, 13, 14"
+  },
+  "content": "R_I is the image of the tensor product over Z_p of the R_i, contains p^k (R_I)^~ for some k in N, and is open and compact of positive finite Haar measure in coordinates.",
+  "explicit_hypotheses": [
+   "p a prime",
+   "I a finite type with decidable equality; K : I -> Type a family of fields with finite-dimensional Q_p-algebra structures and compatible Z_p-algebra structures (IsScalarTower Z_p Q_p (K i)); R_i = integralClosure Z_p (K i)",
+   "mu an additive Haar measure on the coordinate space Fin (finrank of the packet) -> Q_p",
+   "I nonempty"
+  ],
+  "implicit_hypotheses": [],
+  "conclusion": "IsOpen and IsCompact of the coordinate image of tdManyIntegers, with mu nonzero and finite; tamSpan of the R_i = tdManyIntegers; exists k, p^k (R_I)^~ subset R_I",
+  "definitions_required": [
+   "IUT.PaperIV.LocalFields.tamSpan",
+   "tdManyIntegers",
+   "packetNormalizationSet"
+  ],
+  "results_used": [
+   "IUT4.Prop1_1.frag.many_order",
+   "IUT4.Prop1_2.frag.tlsm_pure_tensor",
+   "IUT4.Prop1_4.frag.pk_packet_normalization"
+  ],
+  "external_dependencies": [
+   "Mathlib: PiTensorProduct, Basis.piTensorProduct, AddSubgroup.relIndex, additive Haar measure"
+  ],
+  "lean_declaration": "IUT.PaperIV.LocalFields.tam_integers_coord",
+  "lean_module": "IUT.PaperIV.LocalFields.TensorAdditivityMany",
+  "covers": "Model test: page 13 (i) defines the log-volume \"on compact open subsets of such tensor products\"; that R_I is one of them is not printed.",
+  "not_covered": "Setting: any finite index type I; packet = PiTensorProduct Q_p K; image of the tensor product over Z_p of A_i = tamSpan A (additive span of a . tprod x, a in Z_p, x_i in A_i); R_I = tdManyIntegers; (R_I)^~ = packetNormalizationSet; log_p(R_I^x) = tlsmLattice; packet mu^log = padicPacketMuLog normalized by mu^log((R_I)^~) = 0; mu^log on K_i = tensorAddMuLog normalized by mu^log(R_i) = 0. Counted as a model test: not a statement printed on the pages read.",
+  "statement_status": "STATEMENT_FORMALIZED",
+  "proof_status": "KERNEL_VERIFIED",
+  "obligations": [],
+  "ambiguities": [
+   "The tensor product over Z_p is read as its image in the packet over Q_p (injectivity is proved for the rings of integers in PacketIdentifications, not for the logarithm lattices)."
+  ],
+  "cor3_12_dependency": "independent",
+  "scope": "model_test",
+  "lemmas": [
+   "IUT.PaperIV.LocalFields.tamSpan_smul",
+   "IUT.PaperIV.LocalFields.tamSpan_integers",
+   "IUT.PaperIV.LocalFields.tam_pow_smul_mem_integers"
+  ]
+ },
+ "IUT4.Prop1_4.frag.tam_replace_index": {
+  "kind": "fragment",
+  "parent": "IUT4.Prop1_4",
+  "source": {
+   "paper": "Inter-universal Teichmuller Theory IV",
+   "pdf_pages": "page 14",
+   "pages_read": "rendered and checked: pages 10, 13, 14"
+  },
+  "content": "One-factor replacement: for Z_p-lattices A_i (i != s, finitely generated, spanning K_i) and Z_p-submodules N <= N' of K_s, the index of the image of (tensor_{i != s} A_i) tensor N in the image of (tensor_{i != s} A_i) tensor N' is [N' : N] ^ (prod_{i != s} [K_i : Q_p]).",
+  "explicit_hypotheses": [
+   "p a prime",
+   "I a finite type with decidable equality; K : I -> Type a family of fields with finite-dimensional Q_p-algebra structures and compatible Z_p-algebra structures (IsScalarTower Z_p Q_p (K i)); R_i = integralClosure Z_p (K i)",
+   "A_i finitely generated over Z_p with Q_p-span K_i for i != s",
+   "N, N' Z_p-submodules of K_s"
+  ],
+  "implicit_hypotheses": [],
+  "conclusion": "relIndex (tamSpan (update A s N)) (tamSpan (update A s N')) = relIndex N N' ^ tamDegOff s",
+  "definitions_required": [
+   "IUT.PaperIV.LocalFields.tamSpan",
+   "IUT.PaperIV.LocalFields.tamReplace",
+   "IUT.PaperIV.LocalFields.tamDegOff"
+  ],
+  "results_used": [],
+  "external_dependencies": [
+   "Mathlib: PiTensorProduct, Basis.piTensorProduct, AddSubgroup.relIndex, additive Haar measure"
+  ],
+  "lean_declaration": "IUT.PaperIV.LocalFields.tam_relIndex_replace",
+  "lean_module": "IUT.PaperIV.LocalFields.TensorAdditivityMany",
+  "covers": "Model test: not a printed sentence. It is the computation behind the identity mu^log(log_p(R_I^x)) = sum mu^log(log_p(R_i^x)) + mu^log(R_I) used on page 14.",
+  "not_covered": "Setting: any finite index type I; packet = PiTensorProduct Q_p K; image of the tensor product over Z_p of A_i = tamSpan A (additive span of a . tprod x, a in Z_p, x_i in A_i); R_I = tdManyIntegers; (R_I)^~ = packetNormalizationSet; log_p(R_I^x) = tlsmLattice; packet mu^log = padicPacketMuLog normalized by mu^log((R_I)^~) = 0; mu^log on K_i = tensorAddMuLog normalized by mu^log(R_i) = 0. Counted as a model test: not a statement printed on the pages read.",
+  "statement_status": "STATEMENT_FORMALIZED",
+  "proof_status": "KERNEL_VERIFIED",
+  "obligations": [],
+  "ambiguities": [
+   "The tensor product over Z_p is read as its image in the packet over Q_p (injectivity is proved for the rings of integers in PacketIdentifications, not for the logarithm lattices)."
+  ],
+  "cor3_12_dependency": "independent",
+  "scope": "model_test",
+  "lemmas": [
+   "IUT.PaperIV.LocalFields.tamCoord_injective",
+   "IUT.PaperIV.LocalFields.tamReplace_injective",
+   "IUT.PaperIV.LocalFields.tam_splitMap_tprod",
+   "IUT.PaperIV.LocalFields.tamReplace_map",
+   "IUT.PaperIV.LocalFields.tamSpan_coe",
+   "IUT.PaperIV.LocalFields.tamSpan_mono",
+   "IUT.PaperIV.LocalFields.tdMany_splitMap_bijective",
+   "IUT.PaperIV.LocalFields.tensorAdd_relIndex_pi"
+  ]
+ },
+ "IUT4.Prop1_4.frag.tlsm_i": {
+  "kind": "fragment",
+  "parent": "IUT4.Prop1_4",
+  "source": {
+   "paper": "Inter-universal Teichmuller Theory IV",
+   "pdf_pages": "page 13",
+   "pages_read": "rendered and checked: pages 13, 14"
+  },
+  "content": "Proposition 1.4 (i) for any finite I: mu^log((R_I)^~) = 0 and mu^log(p (R_I)^~) = -log p.",
+  "explicit_hypotheses": [
+   "p a prime",
+   "I a finite type with decidable equality; K : I -> Type a family of fields with finite-dimensional Q_p-algebra structures and compatible Z_p-algebra structures (IsScalarTower Z_p Q_p (K i)); R_i = integralClosure Z_p (K i)",
+   "mu an additive Haar measure on the coordinates of the packet"
+  ],
+  "implicit_hypotheses": [],
+  "conclusion": "padicPacketMuLog (R_I)^~ (R_I)^~ = 0 and padicPacketMuLog (R_I)^~ (p . (R_I)^~) = -log p",
+  "definitions_required": [],
+  "results_used": [],
+  "external_dependencies": [],
+  "lean_declaration": "IUT.PaperIV.LocalFields.tlsm_prop1_4_i",
+  "lean_module": "IUT.PaperIV.LocalFields.TensorLogShellMany",
+  "covers": "Page 13, Proposition 1.4 (i): \"a notion of log-volume ... defined on compact open subsets of such tensor products, valued in R, and normalized so that μ^log((R_E)^~) = 0, μ^log(p · (R_E)^~) = −log(p), for any nonempty set E ⊆ I\" (for E = I).",
+  "not_covered": "the normalization of the log-volume by the dimension of the packet as on page 13 (padicPacketMuLog divides by the dimension)",
+  "statement_status": "STATEMENT_FORMALIZED",
+  "proof_status": "KERNEL_VERIFIED",
+  "obligations": [],
+  "ambiguities": [
+   "mu^log is padicPacketMuLog relative to (R_I)^~ in the coordinates of Module.finBasis."
+  ],
+  "cor3_12_dependency": "independent",
+  "scope": "any finite index type I (nonempty where an index is needed); packet = PiTensorProduct Q_p K; R_I = tdManyIntegers, (R_I)^~ = packetNormalizationSet (elements integral over Z_p); log_p(R_I^x) = tlsmLattice, the Z_p-span of the pure tensors of logarithms of units; p^lambda (R_I)^~ = tlsmShift x with prod_i ||x_i|| = p^(-lambda) (spectral norms); d_i = tensorLogDiffOrder, a_i, b_i = Proposition1_2.a, b at e_i = ramificationIdx of P_i; d_I, a_I, b_I = tlsmDiffSum, tlsmASum, tlsmBSum"
+ },
+ "IUT4.Prop1_4.frag.tlsm_iv": {
+  "kind": "fragment",
+  "parent": "IUT4.Prop1_4",
+  "source": {
+   "paper": "Inter-universal Teichmuller Theory IV",
+   "pdf_pages": "page 13",
+   "pages_read": "rendered and checked: pages 13, 14"
+  },
+  "content": "Proposition 1.4 (iv) for any finite I: if p > 2 and e_i = 1 for all i, then phi((R_I)^~) ⊆ (R_I)^~, mu^log(phi((R_I)^~)) <= 0 and mu^log((R_I)^~) = 0.",
+  "explicit_hypotheses": [
+   "p a prime",
+   "I a finite type with decidable equality; K : I -> Type a family of fields with finite-dimensional Q_p-algebra structures and compatible Z_p-algebra structures (IsScalarTower Z_p Q_p (K i)); R_i = integralClosure Z_p (K i)",
+   "P i a prime ideal of R_i lying over the maximal ideal of Z_p, for every i",
+   "I nonempty",
+   "2 < p",
+   "e_i = 1 for all i",
+   "phi : PiTensorProduct Q_p K ≃ₗ[Q_p] PiTensorProduct Q_p K with phi '' tlsmLattice = tlsmLattice",
+   "mu an additive Haar measure"
+  ],
+  "implicit_hypotheses": [],
+  "conclusion": "phi '' (R_I)^~ ⊆ (R_I)^~ ∧ padicPacketMuLog (R_I)^~ (phi '' (R_I)^~) <= 0 ∧ padicPacketMuLog (R_I)^~ (R_I)^~ = 0",
+  "definitions_required": [],
+  "results_used": [
+   "IUT4.Prop1_2",
+   "IUT4.Prop1_3"
+  ],
+  "external_dependencies": [],
+  "lean_declaration": "IUT.PaperIV.LocalFields.tlsm_prop1_4_iv",
+  "lean_module": "IUT.PaperIV.LocalFields.TensorLogShellMany",
+  "covers": "Page 13, Proposition 1.4 (iv): \"If p > 2 and e_i = 1 for all i ∈ I, then φ((R_I)^~) ⊆ (R_I)^~, and μ^log((R_I)^~) = 0.\"",
+  "not_covered": "the injectivity of the tensor product over Z_p of the log_p(R_i^x) into the packet over Q_p (the lattice is taken as its image); the identification, for a two-element I, with the binary tensorLog_ theorems",
+  "statement_status": "STATEMENT_FORMALIZED",
+  "proof_status": "KERNEL_VERIFIED",
+  "obligations": [],
+  "ambiguities": [
+   "The tensor product over Z_p of the log_p(R_i^x) is read as its image in the packet over Q_p."
+  ],
+  "cor3_12_dependency": "independent",
+  "scope": "any finite index type I (nonempty where an index is needed); packet = PiTensorProduct Q_p K; R_I = tdManyIntegers, (R_I)^~ = packetNormalizationSet (elements integral over Z_p); log_p(R_I^x) = tlsmLattice, the Z_p-span of the pure tensors of logarithms of units; p^lambda (R_I)^~ = tlsmShift x with prod_i ||x_i|| = p^(-lambda) (spectral norms); d_i = tensorLogDiffOrder, a_i, b_i = Proposition1_2.a, b at e_i = ramificationIdx of P_i; d_I, a_I, b_I = tlsmDiffSum, tlsmASum, tlsmBSum",
+  "lemmas": [
+   "IUT.PaperIV.LocalFields.tlsm_muLog_le_zero"
+  ]
+ },
+ "IUT4.Prop1_4.frag.tord_many_mulog": {
+  "kind": "fragment",
+  "parent": "IUT4.Prop1_4",
+  "source": {
+   "paper": "Inter-universal Teichmuller Theory IV",
+   "pdf_pages": "page 13",
+   "pages_read": "rendered and checked: pages 9, 13"
+  },
+  "content": "With the library's normalized log-volume padicPacketMuLog on the packet of n copies of K (normalized at (R_I)^~, divided by the dimension d^n), mu^log(R_I) = -((n-1)/2) (v/d) log p for an integral basis b, v = v_p(disc b).",
+  "explicit_hypotheses": [
+   "p a prime",
+   "K a field, finite-dimensional and Galois over Q_p",
+   "I a nonempty finite type",
+   "mu an additive Haar measure on the coordinate space",
+   "b an integral basis of K"
+  ],
+  "implicit_hypotheses": [],
+  "conclusion": "padicPacketMuLog p (packet) mu (packetNormalizationSet) (tdManyIntegers) = -((card I - 1)/2) * (v_p(disc b) / finrank Q_p K) * log p.",
+  "definitions_required": [],
+  "results_used": [],
+  "external_dependencies": [],
+  "lean_declaration": "IUT.Audit.TensorOrderIndexMany.tOrdMany_muLog",
+  "lean_module": "IUT.Audit.TensorOrderIndexMany",
+  "covers": "Page 13, Proposition 1.4 (i), normalization \"[i.e., by dividing by the degree of the finite extension]\" with mu^log((R_E)^~) = 0; the value computed here is not printed on the page. It is the exponent of Corollary 5.2 of C. Zeng, hexagon 2610.00646 version 1 (TeX source), v_p(rho_n) = ((n-1) d^{n-1}/2) v_p(d_K), divided by the dimension d^n.",
+  "not_covered": "The identification v/d = the order of the different (differentOrder) is not made in this declaration; it is made in IUT.Audit.TensorOrderIndexAllowance.tOrdAllow_muLog through locDisc_valuation_discr.",
+  "statement_status": "STATEMENT_FORMALIZED",
+  "proof_status": "KERNEL_VERIFIED",
+  "obligations": [],
+  "ambiguities": [],
+  "scope": "model_test",
+  "lemmas": [
+   "IUT.Audit.TensorOrderIndexMany.tOrdMany_muLog_lattice",
+   "IUT.Audit.TensorOrderIndexMany.tOrdMany_lattice_coord"
   ]
  },
  "IUT4.Prop1_5": {
@@ -4935,15 +6447,16 @@
   ],
   "lean_declaration": null,
   "statement_status": "EXTRACTED",
-  "proof_status": "BLOCKED_BY_MATHLIB",
+  "proof_status": "EXTRACTED",
   "obligations": [
-   "(i) is checked on C (x)_R C with the tensor product inner product (IUT4.Prop1_5.frag.i_metric, IUT4.Prop1_5.frag.i_length), and (ii) with the primitive automorphisms (IUT4.Prop1_5.frag.primitive_group, IUT4.Prop1_5.frag.primitive_card, IUT4.Prop1_5.frag.ii_preserved). (iii) and (iv) are open: Mathlib v4.36.0 has an inner product only on the binary tensor product, so the metric on a tensor product of more than two factors, the decomposition of M_I into copies of C, the factor 2^{|I|-1}, the integral structure B_I and the inclusion of (iv) are not formalized."
+   "(i) is checked on C (x)_R C with the tensor product inner product (IUT4.Prop1_5.frag.i_metric, IUT4.Prop1_5.frag.i_length), and (ii) with the primitive automorphisms (IUT4.Prop1_5.frag.primitive_group, IUT4.Prop1_5.frag.primitive_card, IUT4.Prop1_5.frag.ii_preserved). (iii) and (iv) are checked on M_I, the tensor product over R of copies of the functions V -> C, with a tensor product metric defined here (IUT4.Prop1_5.frag.tensor_metric): the decomposition into 2^{|I|-1}|V|^{|I|} copies of C with the factor 2^{|I|-1} (IUT4.Prop1_5.frag.iii_decomposition), its uniqueness (IUT4.Prop1_5.frag.iii_unique), the integral structure B_I (IUT4.Prop1_5.frag.integral_structure) and its preservation (IUT4.Prop1_5.frag.iii_preserved), and (iv) (IUT4.Prop1_5.frag.iv). No declaration states (i) to (iv) together, and two points are weaker than the page: the topology of M_I is carried over from the direct sum through one decomposition, so that 'the topological ring structure on each C_v determines a topological ring structure on M_I' is not proved for a topology defined on the tensor product independently of the decomposition; and the metric of (iii) and (iv) is not identified, for two factors, with the tensor product inner product used for (i) and (ii)."
   ],
   "ambiguities": [
    "Page 15, (i): 'compatible up to a factor of 2' refers to the metric (the square of the length); the bracket says lengths differ by a factor sqrt(2). The fragment crt_normSq checks the squared-norm form.",
    "'Metric' (page 15) is read as the real inner product Re(z conj w) on C, multiplied on pure tensors of C (x)_R C and summed on C x C; preservation of a complex Hermitian pairing is not claimed.",
    "'Isomorphism of topological rings' (page 15) is read as a continuous ring isomorphism for the topology of the tensor product norm; continuity gives R-linearity.",
-   "'Preserves the decomposition' in (ii) is read as preserving the unordered pair of direct summands (each summand onto a summand), with the metric; conjugation on one factor exchanges the two summands, so preservation summand by summand is false."
+   "'Preserves the decomposition' in (ii) is read as preserving the unordered pair of direct summands (each summand onto a summand), with the metric; conjugation on one factor exchanges the two summands, so preservation summand by summand is false.",
+   "'Topological ring structure on M_I' (page 15) is read in IUT.PaperIV.Proposition1_5.tmetProp1_5_iii_topological as the topology carried over from the product of copies of C by the decomposition at a chosen index; ring isomorphisms continuous for it are R-linear."
   ],
   "cor3_12_dependency": "independent",
   "fragments": [
@@ -4954,7 +6467,13 @@
    "IUT4.Prop1_5.frag.i_metric",
    "IUT4.Prop1_5.frag.ii_preserved",
    "IUT4.Prop1_5.frag.primitive_card",
-   "IUT4.Prop1_5.frag.primitive_group"
+   "IUT4.Prop1_5.frag.primitive_group",
+   "IUT4.Prop1_5.frag.iii_decomposition",
+   "IUT4.Prop1_5.frag.iii_preserved",
+   "IUT4.Prop1_5.frag.iii_unique",
+   "IUT4.Prop1_5.frag.integral_structure",
+   "IUT4.Prop1_5.frag.iv",
+   "IUT4.Prop1_5.frag.tensor_metric"
   ]
  },
  "IUT4.Prop1_5.frag.crt_pure": {
@@ -5193,6 +6712,215 @@
   "obligations": [],
   "ambiguities": [],
   "cor3_12_dependency": "independent"
+ },
+ "IUT4.Prop1_5.frag.iii_decomposition": {
+  "kind": "fragment",
+  "parent": "IUT4.Prop1_5",
+  "source": {
+   "paper": "Inter-universal Teichmuller Theory IV",
+   "pdf_pages": "pages 15 and 16",
+   "pages_read": "rendered and checked: pages 14, 15, 16"
+  },
+  "content": "For a chosen i0 in I, the R-algebra isomorphism Phi from M_I onto the direct sum of copies of C indexed by (v : I -> V, eps : conjugation pattern on I minus i0), with components tensor m_i to prod_i c_{s_i}(m_i(v_i)); the index set has 2^{|I|-1} |V|^{|I|} elements, and the direct sum metric of Phi x, Phi y is 2^{|I|-1} times the tensor product metric.",
+  "explicit_hypotheses": [
+   "I, V finite types",
+   "i0 in I"
+  ],
+  "implicit_hypotheses": [],
+  "conclusion": "tmetPhi i0 is an R-algebra isomorphism; card TmetIdx = 2^(|I|-1) * |V|^|I|; tmetDs (Phi x) (Phi y) = 2^(|I|-1) * tmetForm x y.",
+  "definitions_required": [],
+  "results_used": [],
+  "external_dependencies": [],
+  "lean_declaration": "IUT.PaperIV.Proposition1_5.tmetPhi_ds",
+  "lean_module": "IUT.PaperIV.Proposition1_5Many",
+  "covers": "Page 15, (iii): 'M_I admits a ... direct sum decomposition as a direct sum of 2^{|I|-1} |V|^{|I|} copies of C' and 'The direct sum metric on M_I ... is equal to 2^{|I|-1} times the original tensor product metric on M_I'.",
+  "not_covered": "Uniqueness is the separate fragment iii_unique. Reading: the topological ring structure is taken as the R-algebra structure.",
+  "statement_status": "STATEMENT_FORMALIZED",
+  "proof_status": "KERNEL_VERIFIED",
+  "obligations": [],
+  "ambiguities": [],
+  "cor3_12_dependency": "independent",
+  "scope": "M = V -> C with the direct sum metric; M_I = PiTensorProduct over R of copies of M with its R-algebra structure; decompositions read as R-algebra isomorphisms onto J -> C",
+  "lemmas": [
+   "IUT.PaperIV.Proposition1_5.tmetPhi",
+   "IUT.PaperIV.Proposition1_5.tmetIdx_card",
+   "IUT.PaperIV.Proposition1_5.tmetPhiHom_ds",
+   "IUT.PaperIV.Proposition1_5.tmetPhiHom_bijective",
+   "IUT.PaperIV.Proposition1_5.tmetChar"
+  ]
+ },
+ "IUT4.Prop1_5.frag.iii_preserved": {
+  "kind": "fragment",
+  "parent": "IUT4.Prop1_5",
+  "source": {
+   "paper": "Inter-universal Teichmuller Theory IV",
+   "pdf_pages": "pages 15 and 16",
+   "pages_read": "rendered and checked: pages 14, 15, 16"
+  },
+  "content": "For primitive automorphisms f i v of the summands C_v of the factors M_i, the induced automorphism T of M_I preserves the tensor product metric, the direct sum metric and B_I (T(B_I) = B_I), and Phi T Phi^{-1} maps each summand onto a summand.",
+  "explicit_hypotheses": [
+   "i0 in I",
+   "f i v in archPrimitive for all i, v"
+  ],
+  "implicit_hypotheses": [],
+  "conclusion": "tmetProp1_5_iii_preserved.",
+  "definitions_required": [
+   "IUT4.Prop1_5.frag.primitive_group"
+  ],
+  "results_used": [],
+  "external_dependencies": [],
+  "lean_declaration": "IUT.PaperIV.Proposition1_5.tmetProp1_5_iii_preserved",
+  "lean_module": "IUT.PaperIV.Proposition1_5Many",
+  "covers": "Pages 15 and 16, (iii): 'the tensor product metric on M_I, the direct sum decomposition of M_I, the direct sum metric on M_I, and the integral structure B_I are preserved by the automorphisms of M_I induced by the various primitive automorphisms of the direct summands C_v that appear in the factors M_i'.",
+  "not_covered": "Reading: a summand may go to another summand (conjugation on a factor permutes summands); the statement for decompositions other than tmetPhi follows from iii_unique.",
+  "statement_status": "STATEMENT_FORMALIZED",
+  "proof_status": "KERNEL_VERIFIED",
+  "obligations": [],
+  "ambiguities": [],
+  "cor3_12_dependency": "independent",
+  "scope": "M = V -> C with the direct sum metric; M_I = PiTensorProduct over R of copies of M with its R-algebra structure; decompositions read as R-algebra isomorphisms onto J -> C",
+  "lemmas": [
+   "IUT.PaperIV.Proposition1_5.tmetInduced",
+   "IUT.PaperIV.Proposition1_5.tmetInduced_monomial",
+   "IUT.PaperIV.Proposition1_5.tmetChar_induced",
+   "IUT.PaperIV.Proposition1_5.tmetInduced_mapsTo"
+  ]
+ },
+ "IUT4.Prop1_5.frag.iii_unique": {
+  "kind": "fragment",
+  "parent": "IUT4.Prop1_5",
+  "source": {
+   "paper": "Inter-universal Teichmuller Theory IV",
+   "pdf_pages": "pages 15 and 16",
+   "pages_read": "rendered and checked: pages 14, 15, 16"
+  },
+  "content": "Any two R-algebra isomorphisms psi1 : M_I to (J1 -> C), psi2 : M_I to (J2 -> C) have |J1| = |J2|, the same summands, the same direct sum metric and the same direct product of unit balls; any such psi (I nonempty) has |J| = 2^{|I|-1} |V|^{|I|} and direct sum metric 2^{|I|-1} times the tensor product metric. Any R-algebra isomorphism between direct sums of copies of C is a permutation of the summands followed by id or conjugation on each.",
+  "explicit_hypotheses": [
+   "psi1, psi2 R-algebra isomorphisms from M_I onto finite direct sums of copies of C",
+   "I nonempty (for the count)"
+  ],
+  "implicit_hypotheses": [],
+  "conclusion": "tmetDecomp_unique, tmetProp1_5_iii_metric, tmetProp1_5_iii_topological, tmetAlgEquiv_monomial, tmetIntegral_eq.",
+  "definitions_required": [],
+  "results_used": [],
+  "external_dependencies": [],
+  "lean_declaration": "IUT.PaperIV.Proposition1_5.tmetProp1_5_iii_metric",
+  "lean_module": "IUT.PaperIV.Proposition1_5Many",
+  "covers": "Page 15, (iii): 'with respect to which M_I admits a unique direct sum decomposition as a direct sum of 2^{|I|-1} |V|^{|I|} copies of C' and the metric factor 2^{|I|-1}.",
+  "not_covered": "The topology of M_I is the one carried over from the direct sum by tmetPhi (product topology); ring isomorphisms continuous for it are R-linear (tmetAlgEquivOfContinuous, tmetProp1_5_iii_topological). Agreement with a topology defined on PiTensorProduct independently of the decomposition is not proved.",
+  "statement_status": "STATEMENT_FORMALIZED",
+  "proof_status": "KERNEL_VERIFIED",
+  "obligations": [],
+  "ambiguities": [],
+  "cor3_12_dependency": "independent",
+  "scope": "M = V -> C with the direct sum metric; M_I = PiTensorProduct over R of copies of M with its R-algebra structure; decompositions read as R-algebra isomorphisms onto J -> C",
+  "lemmas": [
+   "IUT.PaperIV.Proposition1_5.tmetDecomp_unique",
+   "IUT.PaperIV.Proposition1_5.tmetAlgEquiv_monomial",
+   "IUT.PaperIV.Proposition1_5.tmetAlgHom_coord",
+   "IUT.PaperIV.Proposition1_5.tmetIntegral_eq",
+   "IUT.PaperIV.Proposition1_5.tmetAlgEquivOfContinuous",
+   "IUT.PaperIV.Proposition1_5.tmetProp1_5_iii_topological"
+  ]
+ },
+ "IUT4.Prop1_5.frag.integral_structure": {
+  "kind": "fragment",
+  "parent": "IUT4.Prop1_5",
+  "source": {
+   "paper": "Inter-universal Teichmuller Theory IV",
+   "pdf_pages": "pages 15 and 16",
+   "pages_read": "rendered and checked: pages 14, 15, 16"
+  },
+  "content": "B_I, the direct product of the closed unit balls of the copies of C in the decomposition of M_I.",
+  "explicit_hypotheses": [
+   "i0 in I"
+  ],
+  "implicit_hypotheses": [],
+  "conclusion": "tmetIntegral i0 = Phi^{-1}(product of closed unit balls); it equals psi^{-1}(product of unit balls) for every decomposition psi.",
+  "definitions_required": [],
+  "results_used": [],
+  "external_dependencies": [],
+  "lean_declaration": "IUT.PaperIV.Proposition1_5.tmetIntegral",
+  "lean_module": "IUT.PaperIV.Proposition1_5Many",
+  "covers": "Page 15, (iii): 'B_I in M_I for the integral structure ... given by the direct product of the unit balls of the copies of C that occur in the direct sum decomposition of M_I'.",
+  "not_covered": "Definition only.",
+  "statement_status": "STATEMENT_FORMALIZED",
+  "proof_status": "NOT_EXTRACTED",
+  "obligations": [],
+  "ambiguities": [],
+  "cor3_12_dependency": "independent",
+  "scope": "M = V -> C with the direct sum metric; M_I = PiTensorProduct over R of copies of M with its R-algebra structure; decompositions read as R-algebra isomorphisms onto J -> C",
+  "lemmas": [
+   "IUT.PaperIV.Proposition1_5.tmetBall",
+   "IUT.PaperIV.Proposition1_5.tmetIntegral_eq"
+  ]
+ },
+ "IUT4.Prop1_5.frag.iv": {
+  "kind": "fragment",
+  "parent": "IUT4.Prop1_5",
+  "source": {
+   "paper": "Inter-universal Teichmuller Theory IV",
+   "pdf_pages": "page 16",
+   "pages_read": "rendered and checked: pages 14, 15, 16"
+  },
+  "content": "Fix lambda > 0. If every component m_i(v) of every m_i has length lambda, then the pure tensor of the m_i lies in lambda^{|I|} B_I.",
+  "explicit_hypotheses": [
+   "i0 in I",
+   "lambda > 0",
+   "norm (m i v) = lambda for all i, v"
+  ],
+  "implicit_hypotheses": [],
+  "conclusion": "tprod m in lambda^|I| * tmetIntegral i0.",
+  "definitions_required": [],
+  "results_used": [],
+  "external_dependencies": [],
+  "lean_declaration": "IUT.PaperIV.Proposition1_5.tmetProp1_5_iv",
+  "lean_module": "IUT.PaperIV.Proposition1_5Many",
+  "covers": "Page 16, (iv): 'M_I contains tensor_{i in I} m_i in lambda^{|I|} B_I for any collection of elements m_i in M_i such that the component of m_i in each direct summand C_v of M_i is of length lambda'.",
+  "not_covered": "Nothing of (iv).",
+  "statement_status": "STATEMENT_FORMALIZED",
+  "proof_status": "KERNEL_VERIFIED",
+  "obligations": [],
+  "ambiguities": [],
+  "cor3_12_dependency": "independent",
+  "scope": "M = V -> C with the direct sum metric; M_I = PiTensorProduct over R of copies of M with its R-algebra structure; decompositions read as R-algebra isomorphisms onto J -> C",
+  "lemmas": [
+   "IUT.PaperIV.Proposition1_5.tmetTprod_mem_of_le"
+  ]
+ },
+ "IUT4.Prop1_5.frag.tensor_metric": {
+  "kind": "fragment",
+  "parent": "IUT4.Prop1_5",
+  "source": {
+   "paper": "Inter-universal Teichmuller Theory IV",
+   "pdf_pages": "pages 15 and 16",
+   "pages_read": "rendered and checked: pages 14, 15, 16"
+  },
+  "content": "The tensor product metric on M_I = tensor over R of copies of M = direct sum of copies C_v (v in V), defined as the real bilinear form with <tensor a_i, tensor b_i> = product of the direct sum inner products <a_i, b_i>; it is symmetric and positive definite (the product of the bases {1, sqrt(-1)} of the C_v is orthonormal).",
+  "explicit_hypotheses": [
+   "I, V finite types"
+  ],
+  "implicit_hypotheses": [],
+  "conclusion": "tmetForm is the real bilinear form on M_I with <tensor a_i, tensor b_i> = product of <a_i, b_i> (tmetForm_tprod); supporting lemmas prove it symmetric (tmetForm_comm) and positive definite (tmetForm_self, tmetForm_self_eq_zero).",
+  "definitions_required": [],
+  "results_used": [],
+  "external_dependencies": [],
+  "lean_declaration": "IUT.PaperIV.Proposition1_5.tmetForm",
+  "lean_module": "IUT.PaperIV.Proposition1_5Many",
+  "covers": "Page 15, (iii): 'M_I ... which we regard as equipped with the tensor product metric'.",
+  "not_covered": "Definition only; the record does not claim a printed statement of positive definiteness.",
+  "statement_status": "STATEMENT_FORMALIZED",
+  "proof_status": "NOT_EXTRACTED",
+  "obligations": [],
+  "ambiguities": [],
+  "cor3_12_dependency": "independent",
+  "scope": "M = V -> C with the direct sum metric; M_I = PiTensorProduct over R of copies of M with its R-algebra structure; decompositions read as R-algebra isomorphisms onto J -> C",
+  "lemmas": [
+   "IUT.PaperIV.Proposition1_5.tmetForm_tprod",
+   "IUT.PaperIV.Proposition1_5.tmetForm_comm",
+   "IUT.PaperIV.Proposition1_5.tmetForm_self",
+   "IUT.PaperIV.Proposition1_5.tmetForm_self_eq_zero"
+  ]
  },
  "IUT4.Prop1_6": {
   "source": {
@@ -6810,15 +8538,16 @@
   "statement_status": "EXTRACTED",
   "proof_status": "BLOCKED_BY_EXTERNAL_THEOREM",
   "obligations": [
-   "The obligation of Step (vi): for v_Q in V_Q^non minus V_Q^dst, the inclusion phi((R_I)^~) in (R_I)^~ of Proposition 1.4 (iv) shows that the tensor product of log-shells (which contains the union of possible images of a Theta-pilot object) has log-volume at most mu^log((R_I)^~) = 0; neither the container, the log-shells nor mu^log is formalized.",
-   "No Lean declaration: averaging the constant bound 0 checks nothing about the container."
+   "The obligation of Step (vi): for v_Q in V_Q^non minus V_Q^dst, the inclusion phi((R_I)^~) in (R_I)^~ of Proposition 1.4 (iv) shows that the tensor product of log-shells (which contains the union of possible images of a Theta-pilot object) has log-volume at most mu^log((R_I)^~) = 0; the inclusion and the bound mu^log(phi((R_I)^~)) <= 0 are proved for two factors (IUT4.Thm1_10.StepVI.frag.two_factors) and for every j (IUT4.Thm1_10.StepVI.frag.tlsm_many_factors), with (R_I)^~ the integral closure of Z_p in the tensor product over Q_p and mu^log the normalized Haar log-volume; that the container contains the possible images of a Theta-pilot object, and the identification of the union of the images with the tensor product of log-shells, are not formalized.",
+   "The procession-normalized bound 0 is IUT4.Thm1_10.StepVI.frag.procession_zero; the bound itself comes from the container (IUT4.Thm1_10.StepVI.frag.packet_container), not from the averaging."
   ],
   "ambiguities": [],
   "cor3_12_dependency": "setup_only",
   "fragments": [
    "IUT4.Thm1_10.StepVI.frag.packet_container",
    "IUT4.Thm1_10.StepVI.frag.procession_zero",
-   "IUT4.Thm1_10.StepVI.frag.two_factors"
+   "IUT4.Thm1_10.StepVI.frag.two_factors",
+   "IUT4.Thm1_10.StepVI.frag.tlsm_many_factors"
   ]
  },
  "IUT4.Thm1_10.StepVI.frag.packet_container": {
@@ -6843,7 +8572,7 @@
   "lean_declaration": "IUT.PaperIV.Theorem1_10.stepsVI_packet_container",
   "lean_module": "IUT.PaperIV.Theorem1_10.StepsIVtoVII",
   "covers": "Page 29: the upper bound '0' for the log-volume of the container (R_I)^~, 'given in the final equality of Proposition 1.4 (iv)'.",
-  "not_covered": "The inclusion phi((R_I)^~) subset (R_I)^~ for more than two factors; the tensor product over Z_p (here over Q_p); that the container contains the possible images of a Theta-pilot object.",
+  "not_covered": "The inclusion phi((R_I)^~) subset (R_I)^~ (for every j it is IUT4.Thm1_10.StepVI.frag.tlsm_many_factors); the tensor product over Z_p (here over Q_p); that the container contains the possible images of a Theta-pilot object.",
   "statement_status": "STATEMENT_FORMALIZED",
   "proof_status": "KERNEL_VERIFIED",
   "obligations": [],
@@ -6907,11 +8636,48 @@
   "lean_declaration": "IUT.PaperIV.Theorem1_10.stepsVI_two_factors",
   "lean_module": "IUT.PaperIV.Theorem1_10.StepsIVtoVII",
   "covers": "Page 29: 'the inclusion phi((R_I)^~) subset (R_I)^~ of Proposition 1.4 (iv) implies ...', with the upper bound 0, for j = 1.",
-  "not_covered": "j = 1 only; that v_Q not distinguished gives p > 2 and e_i = 1 ((D4) to (D7), page 25); the identification of (R_I)^~ with the tensor product of log-shells ('precisely equal').",
+  "not_covered": "j = 1 only (every j: IUT4.Thm1_10.StepVI.frag.tlsm_many_factors); that v_Q not distinguished gives p > 2 and e_i = 1 ((D4) to (D7), page 25); the identification of (R_I)^~ with the tensor product of log-shells ('precisely equal').",
   "statement_status": "STATEMENT_FORMALIZED",
   "proof_status": "KERNEL_VERIFIED",
   "obligations": [],
   "ambiguities": []
+ },
+ "IUT4.Thm1_10.StepVI.frag.tlsm_many_factors": {
+  "kind": "fragment",
+  "parent": "IUT4.Thm1_10.StepVI",
+  "source": {
+   "paper": "Inter-universal Teichmuller Theory IV",
+   "pdf_pages": "pages 28 to 30",
+   "pages_read": "rendered and checked: pages 28, 29, 30"
+  },
+  "content": "Step (vi) for every j: for K : Fin (j + 1) -> Type with p > 2 and every e_i = 1, every phi preserving log_p(R_I^x) maps (R_I)^~ into itself with mu^log <= 0, and the union of all phi((R_I)^~) is (R_I)^~.",
+  "explicit_hypotheses": [
+   "p a prime",
+   "j a natural number; K : Fin (j + 1) -> Type finite extensions of Q_p with compatible Z_p-algebra structures",
+   "P i primes of R_i over p",
+   "2 < p",
+   "e_i = 1 for all i",
+   "mu an additive Haar measure"
+  ],
+  "implicit_hypotheses": [],
+  "conclusion": "(forall phi, phi '' tlsmLattice = tlsmLattice -> phi '' (R_I)^~ ⊆ (R_I)^~ ∧ mu^log(phi '' (R_I)^~) <= 0) ∧ union over such phi of phi '' (R_I)^~ = (R_I)^~",
+  "definitions_required": [],
+  "results_used": [
+   "IUT4.Prop1_4"
+  ],
+  "external_dependencies": [],
+  "lean_declaration": "IUT.PaperIV.Theorem1_10.tlsm_stepVI",
+  "lean_module": "IUT.PaperIV.LocalFields.TensorLogShellMany",
+  "covers": "Page 29, Step (vi): \"We would like to apply Proposition 1.4, (iv), to the present situation, by taking “I” to be S^±_{j+1}; “k_i” to be K_{v_i}\" and \"the inclusion “φ((R_I)^~) ⊆ (R_I)^~” of Proposition 1.4, (iv) ... Such an upper bound “0” is given in the final equality of Proposition 1.4, (iv).\" The declaration checks the inclusion and the bound μ^log(φ((R_I)^~)) ≤ 0 for every j; the union equality is a reading of \"union of possible images\" and is not printed.",
+  "not_covered": "the injectivity of the tensor product over Z_p of the log_p(R_i^x) into the packet over Q_p (the lattice is taken as its image); the identification, for a two-element I, with the binary tensorLog_ theorems; that a non-distinguished v_Q forces p > 2 and e_i = 1 ((D4) to (D7), global objects); that the union is precisely the tensor product of log-shells",
+  "statement_status": "STATEMENT_FORMALIZED",
+  "proof_status": "KERNEL_VERIFIED",
+  "obligations": [],
+  "ambiguities": [
+   "The tensor product over Z_p of the log_p(R_i^x) is read as its image in the packet over Q_p."
+  ],
+  "cor3_12_dependency": "independent",
+  "scope": "any finite index type I (nonempty where an index is needed); packet = PiTensorProduct Q_p K; R_I = tdManyIntegers, (R_I)^~ = packetNormalizationSet (elements integral over Z_p); log_p(R_I^x) = tlsmLattice, the Z_p-span of the pure tensors of logarithms of units; p^lambda (R_I)^~ = tlsmShift x with prod_i ||x_i|| = p^(-lambda) (spectral norms); d_i = tensorLogDiffOrder, a_i, b_i = Proposition1_2.a, b at e_i = ramificationIdx of P_i; d_I, a_I, b_I = tlsmDiffSum, tlsmASum, tlsmBSum"
  },
  "IUT4.Thm1_10.StepVII": {
   "source": {
@@ -6935,7 +8701,7 @@
   "statement_status": "EXTRACTED",
   "proof_status": "BLOCKED_BY_EXTERNAL_THEOREM",
   "obligations": [
-   "The container pi^{j+1} B_I of Proposition 1.5 (iii), (iv) and its log-volume (j+1) log pi are not formalized; only the averaging and the final estimate are checked."
+   "The container pi^{j+1} B_I on M_I and its log-volume (j+1) log pi are a model test (IUT4.Thm1_10.StepVII.frag.container_B_I), with the normalization by the real dimension and the transported Lebesgue measure as readings; that it contains the possible images of a Theta-pilot object is not formalized. The averaging and the final estimate are checked (IUT4.Thm1_10.StepVII.frag.step_vii_average, IUT4.Thm1_10.StepVII.frag.step_vii_archimedean)."
   ],
   "ambiguities": [],
   "cor3_12_dependency": "setup_only",
@@ -6943,7 +8709,8 @@
    "IUT4.Thm1_10.StepVII.frag.step_vii_average",
    "IUT4.Thm1_10.StepVII.frag.step_vii_archimedean",
    "IUT4.Thm1_10.StepVII.frag.container_logVolume",
-   "IUT4.Thm1_10.StepVII.frag.procession"
+   "IUT4.Thm1_10.StepVII.frag.procession",
+   "IUT4.Thm1_10.StepVII.frag.container_B_I"
   ]
  },
  "IUT4.Thm1_10.StepVII.frag.step_vii_average": {
@@ -7019,7 +8786,7 @@
   "lean_declaration": "IUT.PaperIV.Theorem1_10.stepsVII_logVolume_container",
   "lean_module": "IUT.PaperIV.Theorem1_10.StepsIVtoVII",
   "covers": "Page 30: the container pi^(j+1) B_I and the upper bound (j+1) log(pi), from 'the log-volume of B_I is equal to 0'.",
-  "not_covered": "The normalization (division by the real dimension) is chosen here; IUT III Proposition 3.9 (iii) is not formalized. M_I, its decomposition and B_I are taken in coordinates; Proposition 1.5 (iii), (iv) (that the container contains the tensor products of elements of the log-shells) is not proved.",
+  "not_covered": "The normalization (division by the real dimension) is chosen here; IUT III Proposition 3.9 (iii) is not formalized. M_I, its decomposition and B_I are taken in coordinates; Proposition 1.5 (iii), (iv) on M_I itself are IUT4.Prop1_5.frag.iii_unique and IUT4.Prop1_5.frag.iv, and the container on M_I is IUT4.Thm1_10.StepVII.frag.container_B_I.",
   "statement_status": "STATEMENT_FORMALIZED",
   "proof_status": "KERNEL_VERIFIED",
   "obligations": [],
@@ -7065,6 +8832,40 @@
   "scope": "model_test",
   "lemmas": [
    "IUT.PaperIV.Theorem1_10.stepsVII_procession_le"
+  ]
+ },
+ "IUT4.Thm1_10.StepVII.frag.container_B_I": {
+  "kind": "fragment",
+  "parent": "IUT4.Thm1_10.StepVII",
+  "source": {
+   "paper": "Inter-universal Teichmuller Theory IV",
+   "pdf_pages": "pages 29 and 30",
+   "pages_read": "rendered and checked: pages 14, 15, 16, 29, 30"
+  },
+  "content": "On M_I with V nonempty: pure tensors whose components have length at most pi lie in pi^{|I|} B_I; this container is preserved by automorphisms induced by primitive automorphisms; and its log-volume relative to B_I (Lebesgue measure transported by Phi, divided by the real dimension) is |I| log(pi).",
+  "explicit_hypotheses": [
+   "i0 in I",
+   "V nonempty"
+  ],
+  "implicit_hypotheses": [],
+  "conclusion": "tmetStepVII_container_logVolume: membership, preservation and log-volume = card I * log pi; tmetPhi_image_integral identifies B_I with the product of unit balls (stepsVIIUnitBalls shape).",
+  "definitions_required": [
+   "IUT4.Prop1_5.frag.integral_structure"
+  ],
+  "results_used": [],
+  "external_dependencies": [],
+  "lean_declaration": "IUT.PaperIV.Proposition1_5.tmetStepVII_container_logVolume",
+  "lean_module": "IUT.PaperIV.Proposition1_5Many",
+  "covers": "Page 30: 'pi^{j+1} B_I serves as a container' and 'Such an upper bound (j+1) log(pi) follows ... the log-volume of B_I is equal to 0', with |I| = j+1.",
+  "not_covered": "The Theta-pilot object, its possible images and the indeterminacies are not constructed; 'elements of the log-shells' is read as components of length at most pi; the normalization by the real dimension and the transported Lebesgue measure are readings; C_v = C rather than K_v.",
+  "statement_status": "STATEMENT_FORMALIZED",
+  "proof_status": "KERNEL_VERIFIED",
+  "obligations": [],
+  "ambiguities": [],
+  "cor3_12_dependency": "independent",
+  "scope": "model_test",
+  "lemmas": [
+   "IUT.PaperIV.Proposition1_5.tmetPhi_image_integral"
   ]
  },
  "IUT4.Thm1_10.StepVIII": {
@@ -10444,10 +12245,105 @@
   "statement_status": "EXTRACTED",
   "proof_status": "NOT_EXTRACTED",
   "obligations": [
-   "A definition: nothing to prove. Species are not formalized."
+   "A definition: nothing to prove. Species are defined in IUT.PaperIV.Species; the formula library of the proviso of page 68 is tested in IUT4.Def3_1.frag.sx_formula_library. Formulas whose quantifiers are bounded by iterated power sets of their variables satisfy the proviso as well (IUT4.Def3_1.frag.sa_pow_absolute)."
   ],
   "ambiguities": [],
-  "cor3_12_dependency": "independent"
+  "cor3_12_dependency": "independent",
+  "fragments": [
+   "IUT4.Def3_1.frag.sa_pow_absolute",
+   "IUT4.Def3_1.frag.sx_formula_library"
+  ]
+ },
+ "IUT4.Def3_1.frag.sa_pow_absolute": {
+  "kind": "fragment",
+  "parent": "IUT4.Def3_1",
+  "source": {
+   "paper": "Inter-universal Teichmuller Theory IV",
+   "pdf_pages": "pages 67 to 68",
+   "pages_read": "rendered and checked: pages 67, 68"
+  },
+  "content": "Formulas of speciesLang whose quantifiers are bounded by variables or by iterated power sets P^k(w1 u w2) of variables (SaIsPowBounded) mean the same in a transitive domain closed under power sets and binary unions as in all of ZFSet. Consequently they satisfy the absoluteness proviso of page 68 for universes V in W.",
+  "explicit_hypotheses": [
+   "phi a formula with SaIsPowBounded phi",
+   "for the transfer: D transitive, closed under ZFSet.powerset and binary union"
+  ],
+  "implicit_hypotheses": [],
+  "conclusion": "speciesHolds D phi x iff the values of x lie in D and phi holds in ZFSet; SpeciesAbsolute phi.",
+  "definitions_required": [],
+  "results_used": [],
+  "external_dependencies": [],
+  "lean_declaration": "IUT.PaperIV.SpeciesAbsoluteness.saAbsolute_of_powBounded",
+  "lean_module": "IUT.PaperIV.SpeciesAbsoluteness",
+  "covers": "Model test of the proviso of page 68 (formulas are absolute) for formulas with power-set bounds, which the descriptions of categories, topologies and isomorphism classes require.",
+  "not_covered": "Unbounded quantifiers are not covered. The hypotheses are transitivity, power-set closure and union closure, more than closure under subsets.",
+  "statement_status": "STATEMENT_FORMALIZED",
+  "proof_status": "KERNEL_VERIFIED",
+  "obligations": [],
+  "ambiguities": [],
+  "cor3_12_dependency": "independent",
+  "lemmas": [
+   "IUT.PaperIV.SpeciesAbsoluteness.saPowIter",
+   "IUT.PaperIV.SpeciesAbsoluteness.saMemPowF",
+   "IUT.PaperIV.SpeciesAbsoluteness.saPAll",
+   "IUT.PaperIV.SpeciesAbsoluteness.SaIsPowBounded",
+   "IUT.PaperIV.SpeciesAbsoluteness.saIsPowBounded_of_delta0",
+   "IUT.PaperIV.SpeciesAbsoluteness.saPowBounded_realize_iff",
+   "IUT.PaperIV.SpeciesAbsoluteness.saHolds_iff",
+   "IUT.PaperIV.SpeciesAbsoluteness.saModel_holds_iff",
+   "IUT.PaperIV.SpeciesAbsoluteness.saPowSubF_realizeU"
+  ],
+  "scope": "model_test"
+ },
+ "IUT4.Def3_1.frag.sx_formula_library": {
+  "kind": "fragment",
+  "parent": "IUT4.Def3_1",
+  "source": {
+   "paper": "Inter-universal Teichmuller Theory IV",
+   "pdf_pages": "pages 68 to 69",
+   "pages_read": "rendered and checked: pages 68, 69"
+  },
+  "content": "A library of set-theoretic formulas with bounded quantifiers only: membership, equality, bounded existential quantifier, z = {a}, z = {a, b}, z is the Kuratowski pair (a, b), (a, b) lies in a graph, f is a function from x to y, the composition condition for graphs, the identity condition. Each is proved to be bounded, hence absolute in the sense of the proviso of page 68, and its truth in ZFSet is computed; truth in any transitive domain agrees with truth in ZFSet.",
+  "explicit_hypotheses": [
+   "Formulas of speciesLang; models are domains of Mathlib's ZFSet; the transfer lemma assumes the domain is transitive"
+  ],
+  "implicit_hypotheses": [],
+  "conclusion": "For each formula: IsSpeciesDelta0, and its realization in ZFSet equals the stated ZFSet relation (for the function formula, ZFSet.IsFunc; for the Kuratowski pair, ZFSet.pair).",
+  "definitions_required": [],
+  "results_used": [],
+  "external_dependencies": [],
+  "lean_declaration": "IUT.PaperIV.SpeciesExamples.sxFuncF_realizeU",
+  "lean_module": "IUT.PaperIV.SpeciesExamples",
+  "covers": "Model test of the proviso of page 68 (every set-theoretic formula is absolute) for the conventional descriptions of pairs, functions, composition and identities that Remark 3.1.3 (i) leaves implicit.",
+  "not_covered": "Formulas with quantifiers bounded by power sets (needed for categories, topologies, isomorphism classes of functors) are not covered here; they are IUT4.Def3_1.frag.sa_pow_absolute.",
+  "statement_status": "STATEMENT_FORMALIZED",
+  "proof_status": "KERNEL_VERIFIED",
+  "obligations": [],
+  "ambiguities": [],
+  "cor3_12_dependency": "independent",
+  "lemmas": [
+   "IUT.PaperIV.SpeciesExamples.sxMemF",
+   "IUT.PaperIV.SpeciesExamples.sxEqF",
+   "IUT.PaperIV.SpeciesExamples.sxBex",
+   "IUT.PaperIV.SpeciesExamples.sxSglF",
+   "IUT.PaperIV.SpeciesExamples.sxDblF",
+   "IUT.PaperIV.SpeciesExamples.sxKPairF",
+   "IUT.PaperIV.SpeciesExamples.sxAppF",
+   "IUT.PaperIV.SpeciesExamples.sxFuncF",
+   "IUT.PaperIV.SpeciesExamples.sxCompF",
+   "IUT.PaperIV.SpeciesExamples.sxIdF",
+   "IUT.PaperIV.SpeciesExamples.sxKPairF_realizeU",
+   "IUT.PaperIV.SpeciesExamples.sxAppF_realizeU",
+   "IUT.PaperIV.SpeciesExamples.sxCompF_realizeU",
+   "IUT.PaperIV.SpeciesExamples.sxIdF_realizeU",
+   "IUT.PaperIV.SpeciesExamples.sxFuncF_delta0",
+   "IUT.PaperIV.SpeciesExamples.sxCompF_delta0",
+   "IUT.PaperIV.SpeciesExamples.sxKPairF_delta0",
+   "IUT.PaperIV.SpeciesExamples.sxIdF_delta0",
+   "IUT.PaperIV.SpeciesExamples.sxHolds_iff",
+   "IUT.PaperIV.SpeciesExamples.sx_eq_graphComp_iff",
+   "IUT.PaperIV.SpeciesExamples.sx_eq_idGraph_iff"
+  ],
+  "scope": "model_test"
  },
  "IUT4.Def3_1.i": {
   "source": {
@@ -10651,12 +12547,14 @@
   "statement_status": "EXTRACTED",
   "proof_status": "NOT_EXTRACTED",
   "obligations": [
-   "A definition: nothing to prove, except the stated observation on composites of species-isomorphisms. Species are not formalized."
+   "A definition: nothing to prove, except the stated observation on composites of species-isomorphisms. Species are defined in IUT.PaperIV.Species (IUT4.Def3_1.iii.frag.species), and the observation on composites is checked (IUT4.Def3_1.iii.frag.sx_iso_composite)."
   ],
   "ambiguities": [],
   "cor3_12_dependency": "independent",
   "fragments": [
-   "IUT4.Def3_1.iii.frag.species"
+   "IUT4.Def3_1.iii.frag.species",
+   "IUT4.Def3_1.iii.frag.sx_iso_composite",
+   "IUT4.Def3_1.iii.frag.sx_set_species"
   ]
  },
  "IUT4.Def3_1.iii.frag.species": {
@@ -10700,6 +12598,83 @@
    "IUT.PaperIV.Species.IsModelFreeZeroSpecimen",
    "IUT.PaperIV.Species.IsModelFreeOneSpecimen"
   ]
+ },
+ "IUT4.Def3_1.iii.frag.sx_iso_composite": {
+  "kind": "fragment",
+  "parent": "IUT4.Def3_1.iii",
+  "source": {
+   "paper": "Inter-universal Teichmuller Theory IV",
+   "pdf_pages": "page 69",
+   "pages_read": "rendered and checked: page 69"
+  },
+  "content": "In a model in which conditions (c), (d), (e) of Definition 3.1 (ii) hold for a species S, if F : E -> E' and F' : E' -> E'' are species-isomorphisms and F'' is a composite of F with F', then F'' is a species-isomorphism. Proved through the equivalence between species-isomorphisms and isomorphisms of the category determined by S in that model.",
+  "explicit_hypotheses": [
+   "S a species datum; D a domain of ZFSet; SpeciesAxiomsAt D S (conditions (c), (d), (e) in D)",
+   "SpeciesIsIsoAt D S E E' F",
+   "SpeciesIsIsoAt D S E' E'' F'",
+   "speciesComposite D S E E' E'' F F' F''"
+  ],
+  "implicit_hypotheses": [],
+  "conclusion": "SpeciesIsIsoAt D S E E'' F''.",
+  "definitions_required": [],
+  "results_used": [],
+  "external_dependencies": [],
+  "lean_declaration": "IUT.PaperIV.SpeciesExamples.sxIsIsoAt_composite",
+  "lean_module": "IUT.PaperIV.SpeciesExamples",
+  "covers": "Page 69, Definition 3.1 (iii), the bracketed sentence: one verifies immediately that composites of species-isomorphisms are species-isomorphisms.",
+  "not_covered": "Stated model by model; for a species (IsSpecies) the hypothesis SpeciesAxiomsAt holds in every model of IsSpeciesModel, which is the class of ZFC-models of IUT.PaperIV.Species.",
+  "statement_status": "STATEMENT_FORMALIZED",
+  "proof_status": "KERNEL_VERIFIED",
+  "obligations": [],
+  "ambiguities": [],
+  "cor3_12_dependency": "independent",
+  "lemmas": [
+   "IUT.PaperIV.SpeciesExamples.sxIsIsoAt_iff_isIso"
+  ]
+ },
+ "IUT4.Def3_1.iii.frag.sx_set_species": {
+  "kind": "fragment",
+  "parent": "IUT4.Def3_1.iii",
+  "source": {
+   "paper": "Inter-universal Teichmuller Theory IV",
+   "pdf_pages": "pages 68 to 70",
+   "pages_read": "rendered and checked: pages 68, 69, 70"
+  },
+  "content": "For a formula phi in one variable with bounded quantifiers, the species sxSetSpecies phi (species-objects: sets satisfying phi; species-morphisms: graphs of functions; composites: graphs of composite functions) is a species in the sense of Definition 3.1 (iii) and is 1-small; its identity species-morphisms are the graphs of identity functions. The species of all sets (phi = top) is a species, is not 0-small, and in every model has a species-object with two distinct species-morphisms to itself.",
+  "explicit_hypotheses": [
+   "phi a formula of speciesLang in one free variable with IsSpeciesDelta0 phi (for the species statement)"
+  ],
+  "implicit_hypotheses": [],
+  "conclusion": "IsSpecies (sxSetSpecies phi); IsOneSmall (sxSetSpecies phi); not IsZeroSmall for the species of sets; two distinct species-morphisms in every model of IsSpeciesModel.",
+  "definitions_required": [],
+  "results_used": [],
+  "external_dependencies": [],
+  "lean_declaration": "IUT.PaperIV.SpeciesExamples.sxSetSpecies_isSpecies",
+  "lean_module": "IUT.PaperIV.SpeciesExamples",
+  "covers": "Test of Definition 3.1 (i) to (iii) on a species with more than one species-morphism between two species-objects. The species is chosen here; it is not printed in the paper (Example 3.2 lists only categories).",
+  "not_covered": "Example 3.4 is not formalized. Of Example 3.2 (categories and isomorphism classes of functors), the formulas and their absoluteness are IUT4.Ex3_2.frag.sa_cat_species; the rest is not formalized.",
+  "statement_status": "STATEMENT_FORMALIZED",
+  "proof_status": "KERNEL_VERIFIED",
+  "obligations": [],
+  "ambiguities": [
+   "The composition formula is the condition that (a, c) lies in F'' whenever (a, b) lies in F and (b, c) in F'; with the function conditions it says F'' is the graph of the composite."
+  ],
+  "cor3_12_dependency": "independent",
+  "lemmas": [
+   "IUT.PaperIV.SpeciesExamples.sxSetSpecies",
+   "IUT.PaperIV.SpeciesExamples.sxSet_axiomsAt",
+   "IUT.PaperIV.SpeciesExamples.sxSet_isIdentityAt_iff",
+   "IUT.PaperIV.SpeciesExamples.sxSetSpecies_isOneSmall",
+   "IUT.PaperIV.SpeciesExamples.sxSets",
+   "IUT.PaperIV.SpeciesExamples.sxSets_isSpecies",
+   "IUT.PaperIV.SpeciesExamples.sxSets_not_isZeroSmall",
+   "IUT.PaperIV.SpeciesExamples.sxSets_two_morphisms",
+   "IUT.PaperIV.SpeciesExamples.sxSet_two_morphisms",
+   "IUT.PaperIV.SpeciesExamples.sxUniv_pairSet_mem",
+   "IUT.PaperIV.SpeciesExamples.sxUniv_prod_mem",
+   "IUT.PaperIV.SpeciesExamples.sxModel_mem_of_subset_prod"
+  ],
+  "scope": "model_test"
  },
  "IUT4.Def3_1.iv": {
   "source": {
@@ -10981,12 +12956,53 @@
   "statement_status": "EXTRACTED",
   "proof_status": "EXTRACTED",
   "obligations": [
-   "The set-theoretic formulas are not written out; that composition of isomorphism classes of functors is well defined and that species-isomorphisms are exactly isomorphism classes of equivalences is asserted as easily verified."
+   "The set-theoretic formulas are written out in an arrows-only encoding and satisfy the absoluteness proviso of page 68 (IUT4.Ex3_2.frag.sa_cat_species). Not proved: that they satisfy conditions (c) to (e) of a species in every model (that composition of isomorphism classes of functors is well defined), and that species-isomorphisms are exactly isomorphism classes of equivalences of categories; the page asserts both as easily verified."
   ],
   "ambiguities": [
    "Page 72: the sentence speaks of 'species-isomorphisms between 0-species'; it is read as species-isomorphisms between species-objects (0-specimens), i.e. between categories."
   ],
-  "cor3_12_dependency": "independent"
+  "cor3_12_dependency": "independent",
+  "fragments": [
+   "IUT4.Ex3_2.frag.sa_cat_species"
+  ]
+ },
+ "IUT4.Ex3_2.frag.sa_cat_species": {
+  "kind": "fragment",
+  "parent": "IUT4.Ex3_2",
+  "source": {
+   "paper": "Inter-universal Teichmuller Theory IV",
+   "pdf_pages": "page 72",
+   "pages_read": "rendered and checked: page 72"
+  },
+  "content": "Formulas for the species of small categories: species-objects are pairs (A, C) of arrows and composition relations ((f, g), g o f); species-morphisms are isomorphism classes of functors (sets of graphs of maps on arrows, closed under natural isomorphism, quantified over P^3(A u A')); composites contain the composites of members. All three formulas satisfy the proviso of page 68, and their meaning in every model is computed in ZFSet.",
+  "explicit_hypotheses": [
+   "D with IsSpeciesModel D (for the specimen characterizations)"
+  ],
+  "implicit_hypotheses": [],
+  "conclusion": "IsZeroSpecies of the object formula; SpeciesAbsolute of the morphism and composition formulas; zeroSpecimen and oneSpecimen equal the ZFSet predicates saIsCat and saIsIsoClass.",
+  "definitions_required": [],
+  "results_used": [],
+  "external_dependencies": [],
+  "lean_declaration": "IUT.PaperIV.SpeciesAbsoluteness.saCatSpecies_absolute",
+  "lean_module": "IUT.PaperIV.SpeciesAbsoluteness",
+  "covers": "Page 72, Example 3.2: the encoding of categories and isomorphism classes of functors by set-theoretic formulas, and their absoluteness.",
+  "not_covered": "Not proved: that saCatSpecies satisfies the axioms of a species (conditions (c) to (e)), and the correspondence between species-isomorphisms and isomorphism classes of equivalences. Example 3.4 (ii) is not covered.",
+  "statement_status": "STATEMENT_FORMALIZED",
+  "proof_status": "KERNEL_VERIFIED",
+  "obligations": [],
+  "ambiguities": [],
+  "cor3_12_dependency": "independent",
+  "lemmas": [
+   "IUT.PaperIV.SpeciesAbsoluteness.saCatF",
+   "IUT.PaperIV.SpeciesAbsoluteness.saIsoClassF",
+   "IUT.PaperIV.SpeciesAbsoluteness.saClassCompF",
+   "IUT.PaperIV.SpeciesAbsoluteness.saCatF_realizeU",
+   "IUT.PaperIV.SpeciesAbsoluteness.saIsoClassF_realizeU",
+   "IUT.PaperIV.SpeciesAbsoluteness.saIsoClassF_powBounded",
+   "IUT.PaperIV.SpeciesAbsoluteness.saCat_zeroSpecimen_iff",
+   "IUT.PaperIV.SpeciesAbsoluteness.saCat_oneSpecimen_iff"
+  ],
+  "scope": "model_test"
  },
  "IUT4.Rem3_2_1": {
   "source": {
@@ -11037,10 +13053,51 @@
   "statement_status": "EXTRACTED",
   "proof_status": "NOT_EXTRACTED",
   "obligations": [
-   "A definition: nothing to prove, except the observation in (iii). Mutations are not formalized."
+   "A definition: nothing to prove, except the observation in (iii). Mutations are defined in IUT.PaperIV.Species (IUT4.Def3_3.i.frag.mutation); the composite of two mutations between species is a mutation for the composite with the conditions on the source species added (IUT4.Def3_3.frag.sa_mutation_comp)."
   ],
   "ambiguities": [],
-  "cor3_12_dependency": "independent"
+  "cor3_12_dependency": "independent",
+  "fragments": [
+   "IUT4.Def3_3.frag.sa_mutation_comp"
+  ]
+ },
+ "IUT4.Def3_3.frag.sa_mutation_comp": {
+  "kind": "fragment",
+  "parent": "IUT4.Def3_3",
+  "source": {
+   "paper": "Inter-universal Teichmuller Theory IV",
+   "pdf_pages": "pages 72 to 73",
+   "pages_read": "rendered and checked: pages 72, 73"
+  },
+  "content": "A corrected composite of mutations saMutationComp N M adds to mutationAfter N M the conditions Phi_0(E) on objects and Phi_0(E), Phi_0(E'), Phi_1(E, E', F) on morphisms. It agrees with mutationAfter on species-objects and species-morphisms of the source species, and for species S, T, U and mutations M : S to T, N : T to U it is a mutation S to U.",
+  "explicit_hypotheses": [
+   "IsSpecies S, IsSpecies T",
+   "IsMutation M, IsMutation N"
+  ],
+  "implicit_hypotheses": [],
+  "conclusion": "IsMutation (saMutationComp N M).",
+  "definitions_required": [],
+  "results_used": [],
+  "external_dependencies": [],
+  "lean_declaration": "IUT.PaperIV.SpeciesAbsoluteness.saMutationComp_isMutation",
+  "lean_module": "IUT.PaperIV.SpeciesAbsoluteness",
+  "covers": "Page 73, the evident notion of composite of mutations, with the hypothesis of page 72 that the source and target are species.",
+  "not_covered": "mutationAfter itself is not shown to be a mutation; it differs from saMutationComp only off the source species.",
+  "statement_status": "STATEMENT_FORMALIZED",
+  "proof_status": "KERNEL_VERIFIED",
+  "obligations": [],
+  "ambiguities": [],
+  "cor3_12_dependency": "independent",
+  "lemmas": [
+   "IUT.PaperIV.SpeciesAbsoluteness.saMutationComp",
+   "IUT.PaperIV.SpeciesAbsoluteness.saMorGuard",
+   "IUT.PaperIV.SpeciesAbsoluteness.saComp_obj_agree",
+   "IUT.PaperIV.SpeciesAbsoluteness.saComp_mor_agree",
+   "IUT.PaperIV.SpeciesAbsoluteness.saComp_axiomsAt",
+   "IUT.PaperIV.SpeciesAbsoluteness.saComp_obj_transfer",
+   "IUT.PaperIV.SpeciesAbsoluteness.saComp_mor_transfer"
+  ],
+  "scope": "model_test"
  },
  "IUT4.Def3_3.i": {
   "source": {
@@ -11063,14 +13120,16 @@
   "statement_status": "EXTRACTED",
   "proof_status": "NOT_EXTRACTED",
   "obligations": [
-   "A definition; that M is a functor in each ZFC-model is immediate. Mutations are not formalized."
+   "A definition; that M is a functor in each ZFC-model is immediate. Mutations are defined in IUT.PaperIV.Species (IUT4.Def3_3.i.frag.mutation). That the composite of two mutations between species is a mutation is proved for the composite whose object formula carries Phi_0(E) and whose morphism formula carries Phi_0(E), Phi_0(E'), Phi_1(E, E', F) (IUT4.Def3_3.frag.sa_mutation_comp); it agrees with mutationAfter of IUT.PaperIV.Species on species-objects and species-morphisms of the source species. Not proved: that mutationAfter as defined, whose formulas lack these conditions, is a mutation."
   ],
   "ambiguities": [],
   "cor3_12_dependency": "independent",
   "fragments": [
    "IUT4.Def3_3.i.frag.evident_notions",
    "IUT4.Def3_3.i.frag.functor",
-   "IUT4.Def3_3.i.frag.mutation"
+   "IUT4.Def3_3.i.frag.mutation",
+   "IUT4.Def3_3.i.frag.sx_after_axioms",
+   "IUT4.Def3_3.i.frag.sx_inclusion_mutation"
   ]
  },
  "IUT4.Def3_3.i.frag.evident_notions": {
@@ -11093,7 +13152,7 @@
   "lean_declaration": "IUT.PaperIV.Species.isMutation_mutationIdentity",
   "lean_module": "IUT.PaperIV.Species",
   "covers": "Page 73: 'There are evident notions of composition of mutations and identity mutations.'",
-  "not_covered": "That the composite of two mutations is a mutation (including absoluteness of its formulas) is not proved.",
+  "not_covered": "That the composite of two mutations is a mutation is not proved for mutationAfter as defined; it is proved for the composite with the conditions on the source species added (IUT4.Def3_3.frag.sa_mutation_comp).",
   "statement_status": "STATEMENT_FORMALIZED",
   "proof_status": "KERNEL_VERIFIED",
   "obligations": [],
@@ -11196,6 +13255,82 @@
    "IUT.PaperIV.Species.MutationAxiomsAt"
   ]
  },
+ "IUT4.Def3_3.i.frag.sx_after_axioms": {
+  "kind": "fragment",
+  "parent": "IUT4.Def3_3.i",
+  "source": {
+   "paper": "Inter-universal Teichmuller Theory IV",
+   "pdf_pages": "page 73",
+   "pages_read": "rendered and checked: page 73"
+  },
+  "content": "In any model D: if formula collections M : S to T and N : T to U satisfy conditions (a) and (b) of Definition 3.3 (i) in D, so does their composite mutationAfter N M (the composite fixed in IUT.PaperIV.Species); the composite morphism formula is computed.",
+  "explicit_hypotheses": [
+   "MutationAxiomsAt D M",
+   "MutationAxiomsAt D N"
+  ],
+  "implicit_hypotheses": [],
+  "conclusion": "MutationAxiomsAt D (mutationAfter N M).",
+  "definitions_required": [],
+  "results_used": [],
+  "external_dependencies": [],
+  "lean_declaration": "IUT.PaperIV.SpeciesExamples.sxAfter_axiomsAt",
+  "lean_module": "IUT.PaperIV.SpeciesExamples",
+  "covers": "Page 73: 'There are evident notions of composition of mutations'; the model-level part of the claim that a composite of mutations is a mutation.",
+  "not_covered": "The absoluteness proviso for the formulas of mutationAfter is not proved; the formula of mutationAfter does not require Phi_0(E), and absoluteness for assignments E that are not species-objects is open. Hence IsMutation (mutationAfter N M) is not proved; the composite with Phi_0(E) added is a mutation (IUT4.Def3_3.frag.sa_mutation_comp).",
+  "statement_status": "STATEMENT_FORMALIZED",
+  "proof_status": "KERNEL_VERIFIED",
+  "obligations": [],
+  "ambiguities": [
+   "The composite of mutations is the choice made in IUT.PaperIV.Species (mutationAfter); the page does not write it out."
+  ],
+  "cor3_12_dependency": "independent",
+  "lemmas": [
+   "IUT.PaperIV.SpeciesExamples.sxAfter_mor_holds",
+   "IUT.PaperIV.SpeciesExamples.sxAfter_objRel_iff",
+   "IUT.PaperIV.SpeciesExamples.sxAfter_morRel_of",
+   "IUT.PaperIV.SpeciesExamples.sxAfter_morRel_dest"
+  ],
+  "scope": "model_test"
+ },
+ "IUT4.Def3_3.i.frag.sx_inclusion_mutation": {
+  "kind": "fragment",
+  "parent": "IUT4.Def3_3.i",
+  "source": {
+   "paper": "Inter-universal Teichmuller Theory IV",
+   "pdf_pages": "pages 72 to 73",
+   "pages_read": "rendered and checked: pages 72, 73"
+  },
+  "content": "The inclusion mutation from sxSetSpecies phi to sxSetSpecies psi (Psi_0 and Psi_1 are equalities) is a mutation when every phi-set is a psi-set in every model. For the species of nonempty sets and the species of sets: it is a mutation between distinct species, its object assignment misses the species-object empty set, and it sends two distinct species-morphisms to two distinct species-morphisms in every model.",
+  "explicit_hypotheses": [
+   "For the general statement: for every model D of IsSpeciesModel and every E, if phi holds at E in D then psi holds at E in D"
+  ],
+  "implicit_hypotheses": [],
+  "conclusion": "IsMutation (sxInclusion phi psi); for nonempty sets into sets: IsMutation, a species-object outside the image, two distinct morphisms with distinct images.",
+  "definitions_required": [],
+  "results_used": [],
+  "external_dependencies": [],
+  "lean_declaration": "IUT.PaperIV.SpeciesExamples.sxInclusion_isMutation",
+  "lean_module": "IUT.PaperIV.SpeciesExamples",
+  "covers": "Test of Definition 3.3 (i) (a), (b) on a mutation between two distinct species, with Psi_1 evaluated on more than one morphism.",
+  "not_covered": "Example 3.4 (iii), the fundamental group mutation, is not formalized.",
+  "statement_status": "STATEMENT_FORMALIZED",
+  "proof_status": "KERNEL_VERIFIED",
+  "obligations": [],
+  "ambiguities": [],
+  "cor3_12_dependency": "independent",
+  "lemmas": [
+   "IUT.PaperIV.SpeciesExamples.sxInclusion",
+   "IUT.PaperIV.SpeciesExamples.sxNonemptyF",
+   "IUT.PaperIV.SpeciesExamples.sxNonemptySets",
+   "IUT.PaperIV.SpeciesExamples.sxNonemptySets_isSpecies",
+   "IUT.PaperIV.SpeciesExamples.sxNonemptyInclusion_isMutation",
+   "IUT.PaperIV.SpeciesExamples.sxNonemptyInclusion_not_surjective",
+   "IUT.PaperIV.SpeciesExamples.sxNonemptyInclusion_two_morphisms",
+   "IUT.PaperIV.SpeciesExamples.sxInclusion_objRel_iff",
+   "IUT.PaperIV.SpeciesExamples.sxInclusion_morRel_iff"
+  ],
+  "scope": "model_test"
+ },
  "IUT4.Def3_3.ii": {
   "source": {
    "paper": "Inter-universal Teichmuller Theory IV",
@@ -11218,14 +13353,15 @@
   "statement_status": "EXTRACTED",
   "proof_status": "EXTRACTED",
   "obligations": [
-   "The equivalence 'isomorphism of mutations iff invertible' is stated as immediate; not formalized."
+   "The equivalence 'isomorphism of mutations iff invertible' is stated as immediate. The direction 'if' is proved, with the composites read model by model (IUT4.Def3_3.ii.frag.sa_iso_of_inverse). The direction 'only if' is stated and not proved (IUT.PaperIV.SpeciesAbsoluteness.saMutationIsoInverseClaim), and so is the existence of composites of morphisms of mutations (IUT.PaperIV.SpeciesAbsoluteness.saMutationMorphismCompClaim)."
   ],
   "ambiguities": [],
   "cor3_12_dependency": "independent",
   "fragments": [
    "IUT4.Def3_3.ii.frag.morphism",
    "IUT4.Def3_3.ii.frag.nat_trans",
-   "IUT4.Def3_3.ii.frag.point_iso"
+   "IUT4.Def3_3.ii.frag.point_iso",
+   "IUT4.Def3_3.ii.frag.sa_iso_of_inverse"
   ]
  },
  "IUT4.Def3_3.ii.frag.morphism": {
@@ -11248,7 +13384,7 @@
   "lean_declaration": "IUT.PaperIV.Species.IsMutationIso",
   "lean_module": "IUT.PaperIV.Species",
   "covers": "Definition 3.3 (ii) (a), (b) and the definition of isomorphism of mutations, page 73.",
-  "not_covered": "Composition and identity of morphisms of mutations are not defined; the claim that Z is an isomorphism iff it has an inverse is not proved.",
+  "not_covered": "Composition and identity of morphisms of mutations are not defined (the existence of composites is stated and not proved, IUT.PaperIV.SpeciesAbsoluteness.saMutationMorphismCompClaim); of the claim that Z is an isomorphism iff it has an inverse, only the direction 'if' is proved (IUT4.Def3_3.ii.frag.sa_iso_of_inverse).",
   "statement_status": "STATEMENT_FORMALIZED",
   "proof_status": "NOT_EXTRACTED",
   "obligations": [
@@ -11334,6 +13470,35 @@
   "ambiguities": [
    "Degenerate witness: every species-morphism of pointSpecies is the same, so the formula Psi_1 of mutationAfter is not tested."
   ],
+  "cor3_12_dependency": "independent",
+  "scope": "model_test"
+ },
+ "IUT4.Def3_3.ii.frag.sa_iso_of_inverse": {
+  "kind": "fragment",
+  "parent": "IUT4.Def3_3.ii",
+  "source": {
+   "paper": "Inter-universal Teichmuller Theory IV",
+   "pdf_pages": "page 73",
+   "pages_read": "rendered and checked: page 73"
+  },
+  "content": "If Z : M to M' and Z' : M' to M are morphisms of mutations whose composites at every species-object are identity species-morphisms in every model, then Z is an isomorphism of mutations.",
+  "explicit_hypotheses": [
+   "IsMutationMorphism M M' Z, IsMutationMorphism M' M Z'",
+   "composites identities model by model (SpeciesIsIdentityAt)"
+  ],
+  "implicit_hypotheses": [],
+  "conclusion": "IsMutationIso M M' Z.",
+  "definitions_required": [],
+  "results_used": [],
+  "external_dependencies": [],
+  "lean_declaration": "IUT.PaperIV.SpeciesAbsoluteness.saIsMutationIso_of_inverse",
+  "lean_module": "IUT.PaperIV.SpeciesAbsoluteness",
+  "covers": "Page 73, Definition 3.3 (ii): the direction 'if' of the characterization of isomorphisms of mutations by inverses.",
+  "not_covered": "The direction 'only if' is stated as saMutationIsoInverseClaim and not proved. 'Composites are identity morphisms of mutations' is read model by model.",
+  "statement_status": "STATEMENT_FORMALIZED",
+  "proof_status": "KERNEL_VERIFIED",
+  "obligations": [],
+  "ambiguities": [],
   "cor3_12_dependency": "independent",
   "scope": "model_test"
  },

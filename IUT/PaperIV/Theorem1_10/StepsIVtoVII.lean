@@ -98,14 +98,17 @@ Step (vii).
   images is the content of the IUT III input and is not formalized.
 * Step (vi): that `v_ℚ ∈ 𝕍_ℚ^non \ 𝕍_ℚ^dst` gives `p > 2` and `e_i = 1` (conditions (D4) to
   (D7), page 25, on the global objects); here they are the hypotheses of Proposition 1.4 (iv).
-  The inclusion `φ((R_I)^∼) ⊆ (R_I)^∼` for more than two factors (`j ≥ 2`): the library proves
-  Proposition 1.4 (iv) for two factors only. The identification of `(R_I)^∼` with the tensor
+  The inclusion `φ((R_I)^∼) ⊆ (R_I)^∼` for more than two factors (`j ≥ 2`), here; it is proved
+  for every `j` in `IUT.PaperIV.LocalFields.TensorLogShellMany` (`tlsm_stepVI`). The
+  identification of `(R_I)^∼` with the tensor
   product of the log-shells ("precisely equal", page 29).
 * Step (vii): the space `M_I` with its tensor product metric, the decomposition of Proposition
   1.5 (iii) into `2^{|I|−1}·|V|^{|I|}` copies of `ℂ`, the invariance of `B_I` under the
   primitive automorphisms, and the inclusion of Proposition 1.5 (iv) that puts the tensor
   products of elements of the log-shells into `π^{j+1} · B_I`. Here `B_I` enters through
-  coordinates only (`stepsVIIUnitBalls`), and the container property is not proved.
+  coordinates only (`stepsVIIUnitBalls`), and the container property is not proved here. Its
+  form on `M_I` with a tensor product metric is a model test in
+  `IUT.PaperIV.Proposition1_5Many` (`tmetStepVII_container_logVolume`).
 -/
 
 open Finset MeasureTheory

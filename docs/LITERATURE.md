@@ -93,7 +93,10 @@ counts), computes for a Galois extension `K` of `ℚ_p` the index of the image o
 tensor power of its ring of integers in the maximal order (Theorem 5.1), and from it draws a
 conclusion about the passage from Theorem 3.11 to Corollary 3.12 (sections 8 to 10 and 16); the
 author states that the paper is "not a verdict on IUT". `IUT/Audit/TensorOrderIndex.lean`
-checks the case of two factors; see [`COR312_ANALYSIS.md`](COR312_ANALYSIS.md). The search did not return the
+and `IUT/Audit/TensorOrderIndexMany.lean` check the index formula for every number of factors
+when `K/ℚ_p` is Galois; for `K = ℚ_3(∛3)`, which is not Galois, the formula fails and the index
+for two factors is `3^7` (`IUT/PaperIV/LocalFields/LocalDiscriminantCubic.lean`); see
+[`COR312_ANALYSIS.md`](COR312_ANALYSIS.md). The search did not return the
 manuscript of P. Scholze and J. Stix; the project's account of the
 dispute is in [`data/dispute_map.json`](../data/dispute_map.json).
 

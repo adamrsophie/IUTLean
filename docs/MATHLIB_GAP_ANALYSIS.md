@@ -567,7 +567,7 @@ In Mathlib:
 Missing:
 
 * Higher ramification groups (no declaration with "RamificationGroup" or "lowerNumbering" found). Classes 3.
-* Estimates of the different of local fields and of tensor products of local fields, IUT IV Propositions 1.1 to 1.3 (Multiple Tensor Products and Differents; Differents and Logarithms; Estimates of Differents; pages 9 to 13; for finite extensions of Q_p and k_0 = Q_p, Proposition 1.2 (i), the inequality of Proposition 1.3 (i) with equality exactly in the tame case, and the base case of Proposition 1.3 (ii) are proved in IUT/PaperIV/LocalFields/; over a general base, the transitivity of the different, the inequality of Proposition 1.3 (i) with its tame equality and Proposition 1.3 (ii) in the tame and n_i = 0 cases are proved there (Tame.lean, Tower.lean), and (ii) for every finite extension, with the classical upper bound for the different, in DifferentBound.lean; the first inclusion of Proposition 1.1 (TensorDifferent.lean), the normalization of Proposition 1.1 (TensorIndex.lean) and Proposition 1.2 (ii) to (iv) (TensorLogShell.lean) are proved for two factors; Proposition 1.1 and 1.2 for more than two factors are open). Classes 2, 3.
+* Estimates of the different of local fields and of tensor products of local fields, IUT IV Propositions 1.1 to 1.3 (Multiple Tensor Products and Differents; Differents and Logarithms; Estimates of Differents; pages 9 to 13; for finite extensions of Q_p and k_0 = Q_p, Proposition 1.2 (i), the inequality of Proposition 1.3 (i) with equality exactly in the tame case, and the base case of Proposition 1.3 (ii) are proved in IUT/PaperIV/LocalFields/; over a general base, the transitivity of the different, the inequality of Proposition 1.3 (i) with its tame equality and Proposition 1.3 (ii) in the tame and n_i = 0 cases are proved there (Tame.lean, Tower.lean), and (ii) for every finite extension, with the classical upper bound for the different, in DifferentBound.lean; the first inclusion of Proposition 1.1 (TensorDifferent.lean), the normalization of Proposition 1.1 (TensorIndex.lean) and Proposition 1.2 (ii) to (iv) (TensorLogShell.lean) are proved for two factors, and for any finite number of factors in PacketIdentifications.lean and TensorLogShellMany.lean, with the suitable elements of Proposition 1.1 read as the elements of order 𝔡_{I*} in each field component in PacketSuitable.lean). Classes 2, 3.
 
 Other Lean libraries:
 
@@ -616,7 +616,7 @@ In Mathlib:
 
 Missing:
 
-* Decomposition of a tensor product of finite extensions of Q_p into a product of fields, integral structures, and differents (IUT IV Proposition 1.1; IUT III Propositions 3.1 and 3.2 on tensor packets; titles only, not read). The decomposition of a tensor product over Q_p of finitely many finite extensions into finite extensions of Q_p is proved (IUT/PaperIV/LocalFields/Packets.lean), and for two factors the different acting on the tensor product (TensorDifferent.lean). The normalization of the tensor product of two rings of integers is identified (TensorIndex.lean). Classes 2, 3.
+* Decomposition of a tensor product of finite extensions of Q_p into a product of fields, integral structures, and differents (IUT IV Proposition 1.1; IUT III Propositions 3.1 and 3.2 on tensor packets; titles only, not read). The decomposition of a tensor product over Q_p of finitely many finite extensions into finite extensions of Q_p is proved (IUT/PaperIV/LocalFields/Packets.lean), and for two factors the different acting on the tensor product (TensorDifferent.lean). The normalization of the tensor product of two rings of integers is identified (TensorIndex.lean), and for any finite number of factors that of the tensor product over Z_p (PacketIdentifications.lean). Classes 2, 3.
 
 Other Lean libraries:
 
@@ -691,7 +691,7 @@ Missing:
 
 * The existence axiom (dagger G): every set lies in a Grothendieck universe. Not a theorem of ZFC; the paper assumes it (IUT IV page 67) and leaves the existence of ZFCG-models aside, citing Feferman (page 68). In Lean, `ExistenceAxiom` is independent of what can be proved about `ZFSet.{u}` (see the module docstring of `IUT/Foundations/GrothendieckUniverse.lean`). Classes 5.
 * No Grothendieck universe on ZFSet is exhibited (for example the image of ZFSet.{u} inside ZFSet.{u+1}); Mathlib has the embedding only at the PSet level (PSet.embed). Classes 2.
-* Species, set-theoretic formulas, and absoluteness of formulas between universes (IUT IV Definition 3.1 and page 68); needs a formal syntax for set-theoretic formulas. Classes 3, 5.
+* Species, set-theoretic formulas, and absoluteness of formulas between universes (IUT IV Definition 3.1 and page 68); a syntax for formulas with bounded quantifiers and their absoluteness between universes are in IUT/PaperIV/Species.lean; formulas with quantifiers bounded by iterated power sets, which Examples 3.2 and 3.4 need, satisfy the same absoluteness (SpeciesAbsoluteness.lean). Classes 3, 5.
 
 Bibliography keys: [McLn], [Drk], [Ffmn].
 

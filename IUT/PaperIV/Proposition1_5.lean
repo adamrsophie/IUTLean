@@ -13,7 +13,9 @@ of `2` (the metric on the right is `2` times the metric on the left; lengths dif
 
 This file is not a formalization of Proposition 1.5. Tensor products of metrized real vector
 spaces, the primitive automorphisms of (ii), the integral structures `B_I` of (iii) and the
-inclusion of (iv) are not formalized. This file checks:
+inclusion of (iv) are not formalized here; (i) and (ii) are proved on the tensor product in
+`IUT.PaperIV.Proposition1_5Full`, and (iii) and (iv) are checked with a tensor product metric in
+`IUT.PaperIV.Proposition1_5Many`. This file checks:
 
 * (i) in coordinates: writing an element of `ℂ ⊗_ℝ ℂ` as
   `x₁₁·(1⊗1) + x_{i1}·(i⊗1) + x_{1i}·(1⊗i) + x_{ii}·(i⊗i)` (an orthonormal basis for the tensor

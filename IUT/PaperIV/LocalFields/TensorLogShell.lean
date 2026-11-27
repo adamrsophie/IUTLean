@@ -91,7 +91,8 @@ prime `P_i` of `R_i` over `p` (`tensorLogDiffOrder`); `a_i`, `b_i` are `Proposit
 * That `log_p(R_1^×) ⊗_{ℤ_p} log_p(R_2^×) → K₁ ⊗[ℚ_p] K₂` is injective, so that the image used
   here is the printed tensor product. The normalization property of `(R_I)^∼` is proved for two
   factors in `IUT.PaperIV.LocalFields.TensorIndex` (`tensorIdx_isFractionRing`).
-* More than two factors.
+* More than two factors, here; Proposition 1.2 (ii) to (iv) and Proposition 1.4 (i), (iv) for any
+  finite number of factors are in `IUT.PaperIV.LocalFields.TensorLogShellMany`.
 -/
 
 open MeasureTheory IUT.Prerequisites.PadicVolume

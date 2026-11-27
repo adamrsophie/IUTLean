@@ -78,24 +78,31 @@ normalized at a set `Λ`; on a summand `A_j` it is the same construction with `d
 ## Not proved
 
 * For more than two factors, that the tensor product over `ℤ_p` of the pages equals
-  `PiTensorProduct ℚ_[p] K`; and `R_E = ⊗_{i ∈ E} R_i` itself for more than two factors.
+  `PiTensorProduct ℚ_[p] K`; and `R_E = ⊗_{i ∈ E} R_i` itself for more than two factors, here.
+  The tensor product over `ℤ_p` maps injectively onto `R_E` for any finite number of factors in
+  `PacketIdentifications.lean` (`packetId_map_injective`, `packetId_range_eq`).
 * The second line of the computation on page 14, `μ^log(log_p(R_I^×)) = ∑_i μ^log(log_p(R_i^×)) +
   μ^log(R_I)`, an additivity over the tensor factors (not over the direct summands), for more
-  than two factors: `log_p(R_I^×)` and `R_I` for more than two factors are not defined in Lean
-  here. For two factors it is proved in `TensorAdditivity.lean` (`tensorAdd_muLog_logLattice`).
+  than two factors, here. For two factors it is proved in `TensorAdditivity.lean`
+  (`tensorAdd_muLog_logLattice`), and for any finite number of factors in
+  `TensorAdditivityMany.lean` (`tam_muLog_logLattice`).
 * That `R_E` has positive Haar measure for more than two factors; for two factors it is proved,
   with the step `μ^log(R_I) ≤ μ^log((R_I)^∼) = 0` of page 14, in `TensorIndex.lean`
   (`tensorIdx_muLog_nonpos`).
 * That `(R_E)^∼` is the normalization of `R_E` in its ring of fractions; here it is the integral
   closure of `ℤ_p` in the packet. For two factors it is proved in `TensorIndex.lean`
-  (`tensorIdx_isFractionRing`).
+  (`tensorIdx_isFractionRing`), and for any finite number of factors in
+  `PacketIdentifications.lean` (`packetId_isLocalization`, `packetId_isIntegralElem_iff`).
 * The weighted log-volumes of IUT III Proposition 3.9 (i) with the normalized weights of
   Remark 3.1.1 (ii), which depend on global data. They are defined, with the weights as inputs,
   on direct product regions in `IUT/PaperIII/Corollary312/WeightedPacket.lean`.
-* IUT IV Proposition 1.4 (iii), (iv) for more than two factors (two factors:
-  `TensorLogShell.lean`, `TensorAdditivity.lean`; 1.4 (ii): `UnitVolume.lean`). Proposition
-  1.1 is proved for two factors in `TensorDifferent.lean` and `TensorIndex.lean`, and its
-  inclusions for any finite number of factors in `TensorDifferentMany.lean`.
+* IUT IV Proposition 1.4 (iii), (iv) for more than two factors, here (two factors:
+  `TensorLogShell.lean`, `TensorAdditivity.lean`; 1.4 (ii): `UnitVolume.lean`). For any finite
+  number of factors, (iv) and the first inequality of (iii) are proved in
+  `TensorLogShellMany.lean` and `TensorAdditivityMany.lean`. Proposition 1.1 is proved for two
+  factors in `TensorDifferent.lean` and `TensorIndex.lean`, its inclusions for any finite number
+  of factors in `TensorDifferentMany.lean`, and on the tensor product over `ℤ_p` in
+  `PacketIdentifications.lean`.
 -/
 
 open MeasureTheory Measure IUT.Prerequisites.PadicVolume

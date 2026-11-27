@@ -120,15 +120,18 @@ from the definitions, each listed below.
 * The species-theoretic claim of Example 3.2 that species-isomorphisms correspond to
   isomorphism classes of equivalences of categories.
 * The claim of Definition 3.1 (iii) that composites of species-isomorphisms are
-  species-isomorphisms.
+  species-isomorphisms, here; it is proved in every model where conditions (c) to (e) hold in
+  `IUT.PaperIV.SpeciesExamples` (`sxIsIsoAt_composite`).
 * The claim of Definition 3.3 (ii) that `Z` is an isomorphism of mutations if and only if it
   has an inverse morphism of mutations; composition of morphisms of mutations and identity
   morphisms of mutations (also "evident notions" of the page) are not defined.
 * The claim of Definition 3.3 (iii) that a mutation-equivalence between 1-small species
   induces bijections on species-morphisms and species-isomorphisms.
 * That the composite of two mutations is a mutation (in particular that its formulas satisfy
-  the absoluteness proviso). The definitions of observables and mutation-equivalences use the
-  composite formulas without this claim.
+  the absoluteness proviso), for `mutationAfter` as defined here. For the composite with the
+  conditions on the source species added, it is proved in `IUT.PaperIV.SpeciesAbsoluteness`
+  (`saMutationComp_isMutation`). The definitions of observables and mutation-equivalences use
+  the composite formulas without this claim.
 * "Model-free" for an `i`-specimen is stated for pairs of universes `V₁ ∈ V₂`, as on page 69;
   if `ZFSet.{u}` contains no such pair, the condition is vacuous.
 * Absoluteness: the formula combinators `mutationAfter` use unbounded quantifiers over tuples,
@@ -833,7 +836,10 @@ noncomputable def mutationIdentity (S : SpeciesData) : MutationData S S where
 /-- The composite mutation `𝔑 ∘ 𝔐 : 𝔖 ⇝ 𝔘` of `𝔐 : 𝔖 ⇝ 𝔗` and `𝔑 : 𝔗 ⇝ 𝔘`:
 `Ψ₀(E, C)` is `∃ B, Φ₀^𝔗(B) ∧ Ψ₀^𝔐(E, B) ∧ Ψ₀^𝔑(B, C)`, and `Ψ₁(E, E', F, H)` is
 `∃ B B' G, Φ₀^𝔗(B) ∧ Φ₀^𝔗(B') ∧ Φ₁^𝔗(B, B', G) ∧ Ψ₀^𝔐(E, B) ∧ Ψ₀^𝔐(E', B') ∧
-Ψ₁^𝔐(E, E', F, G) ∧ Ψ₁^𝔑(B, B', G, H)`. A choice made in this file. -/
+Ψ₁^𝔐(E, E', F, G) ∧ Ψ₁^𝔑(B, B', G, H)`. A choice made in this file. The object formula
+does not require `Φ₀(E)`, and the morphism formula does not require `Φ₀(E)`, `Φ₀(E')`,
+`Φ₁(E, E', F)`; the composite with these conditions is `saMutationComp` of
+`IUT.PaperIV.SpeciesAbsoluteness`. -/
 noncomputable def mutationAfter {S T U : SpeciesData} (N : MutationData T U)
     (M : MutationData S T) : MutationData S U where
   mutObjFormula := FirstOrder.Language.Formula.iExs (Fin T.objArity)

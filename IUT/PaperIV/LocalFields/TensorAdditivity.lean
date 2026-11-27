@@ -52,7 +52,9 @@ That `log_p(R^×)` is a `ℤ_p`-lattice between `p ^ k R` and `p ^ (−k) R` is
 
 ## Not proved
 
-* More than two factors (the induction on `|I|`); every statement here is for `I = {1, 2}`.
+* More than two factors (the induction on `|I|`), here; every statement here is for
+  `I = {1, 2}`. The additivity and the first inequality of Proposition 1.4 (iii) for any finite
+  number of factors are in `IUT.PaperIV.LocalFields.TensorAdditivityMany`.
 * The injectivity of `log_p(R_1^×) ⊗_{ℤ_p} log_p(R_2^×)` into `K₁ ⊗[ℚ_p] K₂`, as in
   `TensorLogShell`: the lattices are taken as their images.
 * The multiplicativity of the index of `R_E` in `(R_E)^∼` left open by `Packets`: its "Not

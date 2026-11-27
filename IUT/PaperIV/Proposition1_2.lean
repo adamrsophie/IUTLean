@@ -18,7 +18,8 @@ This file is not a formalization of Proposition 1.2. The inclusions of (i) to (i
 `p`-adic logarithms of unit groups and tensor products of rings of integers (they rest on
 [Kobl], p. 81, and Proposition 1.1), which need local field theory not formalized here. On the
 papers' objects, (ii) to (iv) are proved for two factors in
-`IUT/PaperIV/LocalFields/TensorLogShell.lean`. This file checks every elementary statement
+`IUT/PaperIV/LocalFields/TensorLogShell.lean` and for any finite number of factors in
+`IUT/PaperIV/LocalFields/TensorLogShellMany.lean`. This file checks every elementary statement
 about `a_i` and `b_i` that the proposition and its proof, and the proof of Proposition 1.4 (iii),
 use:
 

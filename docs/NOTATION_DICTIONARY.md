@@ -201,4 +201,5 @@ label `0`. The theta exponent `j²` uses the representative `j ∈ {0, …, l*}`
 | core, coricity | observable whose edge morphisms are isomorphisms | IUT IV 74 |
 
 The Lean counterparts of the universe axioms are in `IUT/Foundations/GrothendieckUniverse.lean`
-(`IsGrothendieckUniverse`, `ExistenceAxiom`). Species and mutations are not formalized.
+(`IsGrothendieckUniverse`, `ExistenceAxiom`). Species and mutations are defined in `IUT/PaperIV/Species.lean` and tested in
+`IUT/PaperIV/SpeciesExamples.lean`.

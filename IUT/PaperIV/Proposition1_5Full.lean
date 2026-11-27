@@ -10,8 +10,8 @@ three were checked against rendered images, including every formula used below.
 
 This file is not a formalization of the whole of Proposition 1.5. It proves assertions (i)
 and (ii) in full on the objects of the page, together with the bracketed claim that the
-primitive automorphisms form a group of order `8`. Assertions (iii) and (iv) are not proved;
-see "Not proved" below. The module `IUT.PaperIV.Proposition1_5` checks the same factor `2`
+primitive automorphisms form a group of order `8`. Assertions (iii) and (iv) are not proved
+here; see "Not proved" below. The module `IUT.PaperIV.Proposition1_5` checks the same factor `2`
 in coordinates and the count `2^{|I|-1}·|V|^{|I|}`; this file works on the tensor product
 itself.
 
@@ -70,9 +70,11 @@ primitive automorphism is `z ↦ u·z` or `z ↦ u·z̄` with `u⁴ = 1` (`archP
   on the tensor product `PiTensorProduct` of a family indexed by a finite set `I` (only the
   projective and injective seminorms, which are other norms), and it has no decomposition of
   `⊗_{i ∈ I} (V → ℂ)` over `ℝ` into copies of `ℂ`. Building these is a separate piece of work;
-  no weaker statement is given under the name of (iii).
-* Assertion (iv): it is stated in the situation of (iii) and uses `B_I`; not proved for the
-  same reason.
+  no weaker statement is given under the name of (iii) here. `IUT.PaperIV.Proposition1_5Many`
+  defines a tensor product metric on `M_I` (`tmetForm`) and checks (iii) for it; that metric is
+  not identified, for two factors, with the inner product used in this file.
+* Assertion (iv), here; it is checked for that metric in `IUT.PaperIV.Proposition1_5Many`
+  (`tmetProp1_5_iv`).
 * The proof on page 16 refers to IUT III, Remark 3.9.1 (ii); the arguments here are direct
   and do not formalize that remark.
 

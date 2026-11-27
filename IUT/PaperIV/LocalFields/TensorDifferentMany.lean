@@ -66,16 +66,19 @@ the exponent: coordinates over `ℚ_p` would only give `p ^ (𝔡_I) · (R_I)^�
 ## Not proved
 
 * That `(R_I)^∼` (the integral closure of `ℤ_p` in the packet) is the normalization of `R_I` in
-  its ring of fractions: this needs that the ring of fractions of `R_I` is the packet and the
-  transitivity of integrality through `R_I`.
-* That the tensor product over `ℤ_p` of the page is the image `R_I` in the packet over `ℚ_p`, that
-  is, that `⊗_{i ∈ I} R_i → ⊗_{i ∈ I} K_i` is injective, for more than two factors.
+  its ring of fractions, and that `⊗_{i ∈ I} R_i → ⊗_{i ∈ I} K_i` is injective, here; both are
+  proved in `IUT.PaperIV.LocalFields.PacketIdentifications` (`packetId_isLocalization`,
+  `packetId_isIntegralElem_iff`, `packetId_map_injective`), with the inclusions on the tensor
+  product over `ℤ_p` (`packetId_proposition1_1`).
 * The fields `k_i` are abstract finite extensions of `ℚ_p`, not subfields of a fixed `ℚ̄_p`;
-  "suitable `p ^ (𝔡_{I*})`" beyond products `⊗_i δ_i` is not formalized.
+  "suitable `p ^ (𝔡_{I*})`" beyond products `⊗_i δ_i` is not formalized here; every element of
+  order `𝔡_{I*}` in each field component is treated in
+  `IUT.PaperIV.LocalFields.PacketSuitable` (`psuit_proposition1_1`).
 * That the statements here, for a two-element index type, specialize to the two-factor theorems
   of `IUT.PaperIV.LocalFields.TensorDifferent` (stated on the binary `TensorProduct`): the
   identification of `PiTensorProduct` over two indices with `TensorProduct` is not made.
-* That an element of order `𝔡_i` exists in `K_i` (needed for the order form to apply); the
+* That an element of order `𝔡_i` exists in `K_i` (needed for the order form to apply), here; it
+  is `IUT.PaperIV.LocalFields.packetId_exists_generator_order`. The
   ideal form `tdMany_mul_mem_integers` applies to any element of the different, for instance a
   generator.
 -/

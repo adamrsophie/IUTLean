@@ -57,7 +57,9 @@ with the factors exchanged, which is not separately formalized.
   it is proved in `TensorIndex.lean` (`tensorIdx_isFractionRing`).
 * More than two factors (the induction on `|I|` of page 10), here; the inclusions are proved
   for any finite number of factors in `TensorDifferentMany.lean` (`tdMany_proposition1_1`).
-* The identification of `K₁ ⊗[ℤ_p] K₂` with `K₁ ⊗[ℚ_p] K₂`.
+* The identification of `K₁ ⊗[ℤ_p] K₂` with `K₁ ⊗[ℚ_p] K₂`, here; the tensor product over `ℤ_p`
+  of the rings of integers is identified with its image over `ℚ_p` for any finite number of
+  factors in `PacketIdentifications.lean`.
 * Proposition 1.2 (ii) to (iv) themselves: not proved here; they are proved for two factors in
   `TensorLogShell.lean`.
 -/
