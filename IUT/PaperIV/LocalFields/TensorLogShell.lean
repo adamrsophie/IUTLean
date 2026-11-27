@@ -84,9 +84,10 @@ prime `P_i` of `R_i` over `p` (`tensorLogDiffOrder`); `a_i`, `b_i` are `Proposit
 
 ## Not proved
 
-* The first inequality of Proposition 1.4 (iii) when some `e_i > p − 2`. The page 14 proof uses
-  `μ^log(log_p(R_I^×)) = ∑_i μ^log(log_p(R_i^×)) + μ^log(R_I)` (additivity over the tensor
-  factors) and `μ^log(R_I) ≤ 0`; the additivity is not formalized.
+* The first inequality of Proposition 1.4 (iii) when some `e_i > p − 2`, here. The page 14
+  proof uses `μ^log(log_p(R_I^×)) = ∑_i μ^log(log_p(R_i^×)) + μ^log(R_I)` (additivity over the
+  tensor factors) and `μ^log(R_I) ≤ 0`; both are proved for two factors in
+  `TensorAdditivity.lean` (`tensorAdd_muLog_logLattice`, `tensorAdd_prop1_4_iii_lattice`).
 * That `log_p(R_1^×) ⊗_{ℤ_p} log_p(R_2^×) → K₁ ⊗[ℚ_p] K₂` is injective, so that the image used
   here is the printed tensor product. The normalization property of `(R_I)^∼` is proved for two
   factors in `IUT.PaperIV.LocalFields.TensorIndex` (`tensorIdx_isFractionRing`).
@@ -1104,7 +1105,8 @@ theorem tensorLog_prop1_4_iii_shift (Istar : Finset (Fin 2))
 `I* ⊆ I` and real `λ`, `μ^log(p ^ ⌊λ − 𝔡_I − a_I⌋ · log_p(R_I^×)) ≤
 (−λ + 𝔡_I + 1 + 4 |I*| / p) log p`. The proof bounds `μ^log(log_p(R_I^×))` by
 `μ^log(p ^ (−b_I) · (R_I)^∼) = b_I log p = −a_I log p` instead of the additivity over the tensor
-factors used on page 14; for `e_i > p − 2` that bound is too weak and the case is not covered. -/
+factors used on page 14; for `e_i > p − 2` that bound is too weak and the case is not covered
+here (see `tensorAdd_prop1_4_iii_lattice`). -/
 theorem tensorLog_prop1_4_iii_lattice (hp2 : 2 < p) (he₁ : P₁.ramificationIdx ℤ_[p] ≤ p - 2)
     (he₂ : P₂.ramificationIdx ℤ_[p] ≤ p - 2) (Istar : Finset (Fin 2)) (lam : ℝ) :
     padicPacketMuLog p (TensorProduct ℚ_[p] K₁ K₂) μ (padicPacketNormalization p K₁ K₂)

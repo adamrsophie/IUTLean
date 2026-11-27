@@ -313,12 +313,23 @@ Found and opened:
    proposes reorganizing IUT into blackboxes plus purely formal arguments ((MthFm), (BBxFm)). No
    Lean code.
 
-Found, opened only in part: **Project LANA, "Interim report on IUT theory"**, dated 2026-07-16, 50
-pages, <https://ncatlab.org/nlab/files/LANAProject-Report-July2026.pdf>. Only the abstract and table
-of contents were read: it treats the passage from Theorem 3.11 to Corollary 3.12, isolates a
-compatibility problem at the final stage, compares it with Scholze and Stix, and states that the
-project "has not yet reconstructed a proof of the required compatibility". This is the report cited
-as "[LANA]" in `lana-agents/iut/Iut/WallEquiv/README.md`.
+Read from its TeX source: **Project LANA (F. Kato, J. Commelin, Y. Hoshi, K. Kedlaya, A. Topaz),
+"Project LANA Interim Report on IUT Theory"**, July 2026, GitHub repository
+`katobungen/LANA_report_202607` at commit `293bdd8` (the repository has no license file); a PDF
+is at <https://ncatlab.org/nlab/files/LANAProject-Report-July2026.pdf>. Read: sections 1.2, 1.3,
+5 and 9 to 11, and the further sections listed in the records of the model module. No Lean code is
+published with the report. Its main goal (section 10.2) is to show that there exists a suitable
+`S` with `η^q = η^anab_S`. Both are isomorphisms of pointed real lines from `ℝ^val`, the line of
+the value-group portion of a basic prime strip, to `ℝ^ss`, the classes of adelic measurable
+subsets of a volume container up to equal volume. The first comes from the q-pilot; the second
+from an action of `ℕ` on the volume container, obtained by anabelian steps after an isomorphism
+to the Θ-pilot strip of a Hodge theater is fixed, together with a subset `S` taken as the
+integral structure. The report describes those anabelian steps in outline only. In section 11
+the report agrees with Scholze and Stix that their hexagon does not commute, states that its own
+analysis does not give rise to that diagram, and states: "we, the LANA project, do not have a
+proof of [the main goal] at this time." The report's simplified objects are modeled in
+`IUT/Audit/LANA/EtaGoal.lean`, with the main goal as a schema whose action is data. This is the
+report cited as "[LANA]" in `lana-agents/iut/Iut/WallEquiv/README.md`.
 
 Downloaded copies are kept in a local, untracked directory; the URLs above are the sources.
 

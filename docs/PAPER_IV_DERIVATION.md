@@ -14,8 +14,9 @@ each theorem.
 
 In `data/curated/iut4.json` every Lean lemma that checks one step is its own fragment record
 (`<parent>.frag.<name>`); the records for the statements and proof steps themselves carry no Lean
-declaration and the status `EXTRACTED`, except Propositions 1.6, 1.7 and 2.1, whose Lean theorems
-(`proposition1_6`, `weighted_averages`, `proposition2_1`) state the whole proposition.
+declaration and the status `EXTRACTED`, except Propositions 1.3, 1.6, 1.7 and 2.1, whose Lean
+theorems (`prop1_3Full`, `proposition1_6`, `weighted_averages`, `proposition2_1`) state the whole
+proposition.
 
 ## The chain
 

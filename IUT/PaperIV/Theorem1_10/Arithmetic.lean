@@ -22,6 +22,14 @@ variable here:
 What is proved: given the hypotheses on these numbers that the paper derives elsewhere, the
 conclusions the paper draws from them by "applying the estimate ..." do follow. What is not
 proved here: that the arithmetic objects of the paper satisfy those hypotheses.
+
+## Limits
+
+`final_inequality` and `final_inequality_F` combine supplied inequalities between free real
+numbers. Their conclusions have the shape of the final inequality of Theorem 1.10, but no
+height, divisor, conductor or log-volume occurs in them: they show only that the passage from
+the supplied inequalities to that shape is correct arithmetic. Neither gives any information
+about `log(𝔮)` of an actual elliptic curve.
 -/
 
 namespace IUT.PaperIV.Theorem1_10
@@ -157,7 +165,10 @@ IUT III, Corollary 3.12), then
 
 The hypotheses `7 ≤ l`, `1 ≤ d` are the facts the paper cites. `0 ≤ D` and `0 ≤ E` hold in
 the paper because both are sums of nonnegative quantities. No sign condition on `Q` is
-needed. -/
+needed.
+
+Limits: every argument is a free real number and `hC` is supplied, not derived; the theorem
+is the arithmetic of the last step only. -/
 theorem final_inequality {l d D E Q q : ℝ} (hl : 7 ≤ l) (hd : 1 ≤ d) (hD : 0 ≤ D)
     (hE : 0 ≤ E) (hq : 0 < q) (hC : -1 ≤ constant l d D E Q q) :
     1 / 6 * Q ≤ (1 + 20 * d / l) * D + 20 * E := by
@@ -186,7 +197,10 @@ theorem final_inequality {l d D E Q q : ℝ} (hl : 7 ≤ l) (hd : 1 ≤ d) (hD :
 
 /-- The second line of the final display: replacing the `F_tpd` quantities by the `F`
 quantities, given the inequality `D_tpd ≤ D_F` that the paper takes from "the first display
-of Step (ii)". -/
+of Step (ii)".
+
+Limits: `hstep_ii` and `h` are supplied inequalities between free real numbers; the theorem is
+monotonicity in `D` and nothing else. -/
 theorem final_inequality_F {l d Dtpd DF E Q : ℝ} (hl : 0 < l) (hd : 0 ≤ d)
     (hstep_ii : Dtpd ≤ DF) (h : 1 / 6 * Q ≤ (1 + 20 * d / l) * Dtpd + 20 * E) :
     1 / 6 * Q ≤ (1 + 20 * d / l) * DF + 20 * E := by

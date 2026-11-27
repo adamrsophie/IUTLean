@@ -26,13 +26,31 @@ said about the two numbers once they are given: the shape of the conclusion, the
 reformulation in the statement, the reduction at the start of the proof, and the purely
 numerical content of Steps (xi-d) to (xi-f). The structure below has no field that assumes
 any conclusion of the paper.
+
+## Limits
+
+* `PilotLogVolumes` takes its two numbers as free inputs: every `θ ≠ −∞` and every `q > 0`
+  give a value, and for real `θ` its `Conclusion` is the inequality `−q ≤ θ` between them
+  (`pilotLogVolumes_conclusion_iff_real`); some values satisfy `Conclusion` and some do not
+  (`pilotLogVolumes_exists_not_conclusion`). A theorem about an arbitrary `PilotLogVolumes`
+  therefore carries no arithmetic of the paper; it carries content only through the way the
+  two numbers are obtained (`Comparison.lean`, `Places.lean`).
+* `ConstantForm` holds vacuously when `− |log(Θ)| = +∞` (`constantForm_of_top`), so it does
+  not imply `Conclusion` (`pilotLogVolumes_exists_constantForm_not_conclusion`); the two are
+  equivalent only under finiteness (`conclusion_iff_constantForm`).
+* At `− |log(Θ)| = +∞` the subset `ℝ_{≤ −|log(Θ)|}` is all of `ℝ`
+  (`possibleLogVolumes_of_top`), so the membership of Step (xi-f) holds and says nothing about
+  finiteness.
 -/
 
 namespace IUT.PaperIII.Corollary312
 
 /-- The two numbers that the statement of Corollary 3.12 defines, with the two properties
 that the statement attributes to them *by definition*: the value set `ℝ ∪ {+∞}` of
-`− |log(Θ)|`, and `|log(q)| > 0`. Nothing here is constructed from initial Θ-data. -/
+`− |log(Θ)|`, and `|log(q)| > 0`. Nothing here is constructed from initial Θ-data.
+
+Limits: both numbers are free inputs, subject only to the two side conditions; any `θ ≠ −∞`
+and `q > 0` form a value (`pilotLogVolumes_conclusion_iff_real`). -/
 structure PilotLogVolumes where
   /-- `− |log(Θ)| ∈ ℝ ∪ {+∞}`. -/
   negLogTheta : EReal
@@ -50,7 +68,11 @@ def Conclusion : Prop :=
   v.negLogTheta ≠ ⊤ ∧ ((-v.absLogQ : ℝ) : EReal) ≤ v.negLogTheta
 
 /-- The reformulation after "i.e." in the statement: `C_Θ ≥ −1` for any real number `C_Θ`
-such that `− |log(Θ)| ≤ C_Θ · |log(q)|`. -/
+such that `− |log(Θ)| ≤ C_Θ · |log(q)|`.
+
+Limits: when `− |log(Θ)| = +∞` no real `C_Θ` satisfies the hypothesis, so `ConstantForm` holds
+vacuously (`constantForm_of_top`) while the finiteness conjunct of `Conclusion` fails
+(`pilotLogVolumes_exists_constantForm_not_conclusion`). -/
 def ConstantForm : Prop :=
   ∀ C : ℝ, v.negLogTheta ≤ ((C * v.absLogQ : ℝ) : EReal) → -1 ≤ C
 
@@ -89,6 +111,26 @@ theorem conclusion_iff_constantForm (hfin : v.negLogTheta ≠ ⊤) :
     Conclusion v ↔ ConstantForm v :=
   ⟨constantForm_of_conclusion v, conclusion_of_constantForm v hfin⟩
 
+/-- **Limits: the inputs are free.** For any real `θ` and any `q > 0`, the value with
+`− |log(Θ)| = θ` and `|log(q)| = q` satisfies `Conclusion` exactly when `−q ≤ θ`. Nothing
+beyond this inequality between the two given numbers is involved. -/
+theorem pilotLogVolumes_conclusion_iff_real (θ q : ℝ) (hq : 0 < q) :
+    Conclusion ⟨(θ : EReal), EReal.coe_ne_bot θ, q, hq⟩ ↔ -q ≤ θ := by
+  simp only [Conclusion, ne_eq, EReal.coe_ne_top, not_false_eq_true, true_and]
+  exact EReal.coe_le_coe_iff
+
+/-- **Limits.** Some value of `PilotLogVolumes` violates `Conclusion` (`θ = −2`, `q = 1`); with
+`example_conclusion` of `Comparison.lean`, the structure alone decides nothing. -/
+theorem pilotLogVolumes_exists_not_conclusion : ∃ v : PilotLogVolumes, ¬ Conclusion v :=
+  ⟨⟨((-2 : ℝ) : EReal), EReal.coe_ne_bot _, 1, one_pos⟩, by
+    rw [pilotLogVolumes_conclusion_iff_real]; norm_num⟩
+
+/-- **Limits.** The "i.e." form does not imply the conclusion: the value with
+`− |log(Θ)| = +∞` and `|log(q)| = 1` satisfies `ConstantForm` and not `Conclusion`. -/
+theorem pilotLogVolumes_exists_constantForm_not_conclusion :
+    ∃ v : PilotLogVolumes, ConstantForm v ∧ ¬ Conclusion v :=
+  ⟨⟨⊤, top_ne_bot, 1, one_pos⟩, constantForm_of_top _ rfl, fun h => h.1 rfl⟩
+
 /-- The reduction at the start of the proof: "we may assume without loss of generality that
 `− |log(Θ)| < 0`", because `− |log(Θ)| ≥ 0` gives `− |log(Θ)| ≥ 0 > − |log(q)|`. -/
 theorem inequality_of_nonneg (h : 0 ≤ v.negLogTheta) :
@@ -99,6 +141,11 @@ theorem inequality_of_nonneg (h : 0 ≤ v.negLogTheta) :
 
 /-- The subset `ℝ_{≤ −|log(Θ)|} = {λ ∈ ℝ | λ ≤ − |log(Θ)|}` of Step (xi-d). -/
 def possibleLogVolumes : Set ℝ := {lam | (lam : EReal) ≤ v.negLogTheta}
+
+/-- **Limits.** At `− |log(Θ)| = +∞` the subset `ℝ_{≤ −|log(Θ)|}` is all of `ℝ`, so the
+membership of Step (xi-f) holds for every real `− |log(q)|` and carries no finiteness. -/
+theorem possibleLogVolumes_of_top (h : v.negLogTheta = ⊤) : possibleLogVolumes v = Set.univ := by
+  ext lam; simp [possibleLogVolumes, h]
 
 /-- **Step (xi-f) at the level of numbers.** The proof ends: "The inclusion
 `− |log(q)| ∈ ℝ_{≤ −|log(Θ)|}`, hence also the inequality `− |log(q)| ≤ − |log(Θ)|`, then

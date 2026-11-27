@@ -2315,7 +2315,11 @@
     "ambiguities": [],
     "fragments": [
       "GENELL.Thm2_1.frag.genell_i_implies_ii",
-      "GENELL.Thm2_1.frag.genell_ii_compactly_bounded"
+      "GENELL.Thm2_1.frag.genell_ii_compactly_bounded",
+      "GENELL.Thm2_1.frag.fermat_lift",
+      "GENELL.Thm2_1.frag.fermat_lift_conductor",
+      "GENELL.Thm2_1.frag.fermat_lift_degree",
+      "GENELL.Thm2_1.frag.fermat_lift_height"
     ]
   },
   "GENELL.Thm2_1.frag.genell_i_implies_ii": {
@@ -2385,6 +2389,145 @@
       "A compactly bounded subset is recorded by its data (support and bounding domains); inclusion of point sets is CbSubsetLE.",
       "Conditions are stated in the affine coordinate (C, E); since bounding domains avoid infinity and the affine line is open in P^1, this agrees with the conditions in X(C), X(K)."
     ]
+  },
+  "GENELL.Thm2_1.frag.fermat_lift": {
+    "kind": "fragment",
+    "parent": "GENELL.Thm2_1",
+    "scope": "model_test",
+    "lean_module": "IUT.Applications.FermatCover",
+    "source": {
+      "pages_in_paper": "pages 11 to 13",
+      "pages_read": "rendered and checked: GenEll pages 11, 12 and 13; arXiv 1601.03572 pages 3 and 9"
+    },
+    "content": "For a number field K, x in K \\ {0, 1} and n >= 1 there are a number field L with K -> L and u, v in L with: [L : K] <= n^2 and [L : Q] <= n^2 [K : Q]; u^n = x, v^n = 1 - x, u^n + v^n = 1; u, v not in {0, 1}; heightNF L u = heightNF K x / n, heightNF L v = heightNF K (1 - x) / n; logCondNF L u <= logCondNF K x, logCondNF L v <= logCondNF K x; logDiffNF K <= logDiffNF L; logDiffNF K + logCondNF K x <= logDiffNF L + logCondNF L x.",
+    "explicit_hypotheses": [
+      "K a number field, x in K with x != 0 and x != 1",
+      "n a natural number with 0 < n"
+    ],
+    "implicit_hypotheses": [],
+    "conclusion": "The existence of L, u, v with the listed properties.",
+    "definitions_required": [
+      "IUT.VojtaNumberField.heightNF",
+      "IUT.VojtaNumberField.logDiffNF",
+      "IUT.VojtaNumberField.logCondNF"
+    ],
+    "results_used": [
+      "GENELL.Thm2_1.frag.fermat_lift_degree",
+      "GENELL.Thm2_1.frag.fermat_lift_height",
+      "GENELL.Thm2_1.frag.fermat_lift_conductor"
+    ],
+    "external_dependencies": [],
+    "lean_declaration": "IUT.FermatCover.fermatCover_lift",
+    "covers": "GenEll page 12, the lifting sentence with d' = d deg(Y/X), for the Fermat cover of degree n^2 of arXiv 1601.03572 page 9 (the choice of this cover is made here), together with the elementary behavior of the three functions of the point under the lift.",
+    "not_covered": "GenEll Theorem 2.1 (ii) implies (i) and every step of its proof that concerns curves other than the projective line: Propositions 1.4, 1.6, 1.7, the compactness argument, and the noncritical Belyi map of [Mzk1] Theorem 2.5 (not stated in Lean: curves, their morphisms and the noncritical condition are not defined in the library).",
+    "statement_status": "STATEMENT_FORMALIZED",
+    "proof_status": "KERNEL_VERIFIED",
+    "obligations": [],
+    "ambiguities": []
+  },
+  "GENELL.Thm2_1.frag.fermat_lift_conductor": {
+    "kind": "fragment",
+    "parent": "GENELL.Thm2_1",
+    "scope": "model_test",
+    "lean_module": "IUT.Applications.FermatCover",
+    "source": {
+      "pages_in_paper": "pages 12 and 13",
+      "pages_read": "rendered and checked: GenEll pages 11, 12 and 13; arXiv 1601.03572 pages 3 and 9"
+    },
+    "content": "A point y of a number field meets {0, 1, infinity} at a prime only if y^n does (n >= 1); hence logCondNF L y <= logCondNF L (y^n) when y^n is not 0 or 1. For x in K \\ {0, 1}, n >= 1 and u, v in L with u^n = x and v^n = 1 - x: logCondNF L u <= logCondNF K x and logCondNF L v <= logCondNF K x.",
+    "explicit_hypotheses": [
+      "K, L number fields with an algebra map K -> L",
+      "x in K with x != 0 and x != 1",
+      "n a natural number with 0 < n",
+      "u in L with u^n = algebraMap K L x (respectively v in L with v^n = 1 - algebraMap K L x)"
+    ],
+    "implicit_hypotheses": [],
+    "conclusion": "logCondNF L u <= logCondNF K x; logCondNF L v <= logCondNF K x.",
+    "definitions_required": [
+      "IUT.VojtaNumberField.logCondNF",
+      "IUT.VojtaNumberField.MeetsBoundaryAt"
+    ],
+    "results_used": [],
+    "external_dependencies": [],
+    "lean_declaration": "IUT.FermatCover.fermatCover_logCondNF_root_le",
+    "lemmas": [
+      "IUT.FermatCover.fermatCover_meetsBoundaryAt_of_pow",
+      "IUT.FermatCover.fermatCover_logCondNF_le_pow",
+      "IUT.FermatCover.fermatCover_logCondNF_second_le"
+    ],
+    "covers": "No sentence of the pages states this inequality. It bounds the log-conductor of the coordinates of the lifted point on the Fermat cover; the pages bound log-differents and log-conductors through Proposition 1.7 (i) (GenEll page 12: log-diff_Y <~ log-diff_X + log-cond_D; page 13 with e = 1: log-diff_P + log-cond_C <~ log-diff_X + log-cond_E).",
+    "not_covered": "The upper bound of page 12 in the form log-diff_L <= log-diff_K + log-cond_K(x) + c(n) for L = K(u, v): it needs the unramifiedness of K(u, v)/K at primes not dividing n where x reduces away from {0, 1, infinity} and a bound for the exponents of the global different; neither is formalized.",
+    "statement_status": "STATEMENT_FORMALIZED",
+    "proof_status": "KERNEL_VERIFIED",
+    "obligations": [],
+    "ambiguities": []
+  },
+  "GENELL.Thm2_1.frag.fermat_lift_degree": {
+    "kind": "fragment",
+    "parent": "GENELL.Thm2_1",
+    "scope": "model_test",
+    "lean_module": "IUT.Applications.FermatCover",
+    "source": {
+      "pages_in_paper": "pages 11 and 12",
+      "pages_read": "rendered and checked: GenEll pages 11, 12 and 13; arXiv 1601.03572 pages 3 and 9"
+    },
+    "content": "For a number field K, x in K and n >= 1 there are a number field L with an algebra map K -> L, [L : K] <= n^2, and u, v in L with u^n = x and v^n = 1 - x. The field is K(u) sup K(v) in an algebraic closure of K; in any field extension E/K, if u^n and v^n lie in K then [K(u) sup K(v) : K] <= n^2, since the minimal polynomial of u divides X^n - u^n.",
+    "explicit_hypotheses": [
+      "K a number field, x an element of K",
+      "n a natural number with 0 < n"
+    ],
+    "implicit_hypotheses": [],
+    "conclusion": "There exist a number field L, an algebra map K -> L with finrank K L <= n^2, and u, v in L with u^n = x and v^n = 1 - x.",
+    "definitions_required": [],
+    "results_used": [],
+    "external_dependencies": [],
+    "lean_declaration": "IUT.FermatCover.fermatCover_point_exists",
+    "lemmas": [
+      "IUT.FermatCover.fermatCover_isIntegral_root",
+      "IUT.FermatCover.fermatCover_finrank_adjoin_root_le",
+      "IUT.FermatCover.fermatCover_finrank_adjoin_le"
+    ],
+    "covers": "GenEll page 12: 'Since every point of U_X(Qbar)^{<= d} clearly lifts to a point of U_Y(Qbar)^{<= d'}', with d' = d deg(Y/X), for the Fermat cover pi_n : C_n -> P^1, [X : Y : Z] -> [X^n : Z^n], deg pi_n = n^2 (arXiv 1601.03572 page 9). The Fermat cover as the covering U_Y -> U_X of GenEll page 11 is a choice made here, so this is a model test of the lifting sentence, not a check of it.",
+    "not_covered": "The general covering of page 11 (a connected finite etale Galois covering with ramification index e over D for an arbitrary hyperbolic curve); the curve C_n itself (only its affine points (u, v) are treated); that pi_n is unramified over U_P with ramification index n over 0, 1, infinity.",
+    "statement_status": "STATEMENT_FORMALIZED",
+    "proof_status": "KERNEL_VERIFIED",
+    "obligations": [],
+    "ambiguities": []
+  },
+  "GENELL.Thm2_1.frag.fermat_lift_height": {
+    "kind": "fragment",
+    "parent": "GENELL.Thm2_1",
+    "scope": "model_test",
+    "lean_module": "IUT.Applications.FermatCover",
+    "source": {
+      "pages_in_paper": "page 12",
+      "pages_read": "rendered and checked: GenEll pages 11, 12 and 13; arXiv 1601.03572 pages 3 and 9"
+    },
+    "content": "For number fields K, L with an algebra map K -> L, x in K, n >= 1 and u in L with u^n = x, the normalized height satisfies heightNF L u = heightNF K x / n. Proof: Mathlib's Height.logHeight1_pow and the invariance htExt_heightNF_algebraMap.",
+    "explicit_hypotheses": [
+      "K, L number fields with an algebra map K -> L",
+      "x in K, n a natural number with 0 < n",
+      "u in L with u^n = algebraMap K L x"
+    ],
+    "implicit_hypotheses": [],
+    "conclusion": "heightNF L u = heightNF K x / n",
+    "definitions_required": [
+      "IUT.VojtaNumberField.heightNF"
+    ],
+    "results_used": [
+      "GENELL.Def1_2.frag.heightNF_algebraMap"
+    ],
+    "external_dependencies": [],
+    "lean_declaration": "IUT.FermatCover.fermatCover_heightNF_root",
+    "lemmas": [
+      "IUT.FermatCover.fermatCover_heightNF_pow"
+    ],
+    "covers": "No sentence of the pages states this identity. It is the coordinate height of the lifted point for the Fermat cover; GenEll page 12 compares heights on X and Y through Proposition 1.4 (i), (ii), (iii), and arXiv 1601.03572 page 9 displays (7) and (8) compare heights on C_n with h(pi(Q)) and h(P).",
+    "not_covered": "The heights on C_n of displays (7) and (8) of arXiv 1601.03572 page 9 and the heights ht_{omega_Y} of GenEll page 12 (curves and heights of their line bundles are not defined in the library).",
+    "statement_status": "STATEMENT_FORMALIZED",
+    "proof_status": "KERNEL_VERIFIED",
+    "obligations": [],
+    "ambiguities": []
   },
   "GENELL.Sec1.ArithmeticDivisor": {
     "kind": "external_statement",
@@ -2744,6 +2887,849 @@
       "IUT.HeightExtension.htExt_ineq_algebraMap",
       "IUT.HeightExtension.htExt_ineq_of_adjoin",
       "IUT.HeightExtension.htExt_finrank_adjoin_le"
+    ]
+  },
+  "DIM.Thm": {
+    "kind": "external_statement",
+    "parent": null,
+    "source": {
+      "authors": "Vesselin Dimitrov",
+      "title": "Effectivity in Mochizuki's work on the abc-conjecture",
+      "arxiv": "1601.03572",
+      "statement": "Theorem (page 3)",
+      "pages_in_paper": "page 3",
+      "pages_read": "rendered pages 3 and 9, checked against the renders"
+    },
+    "content": "There are computable functions eta, c : N x (0, 1) x N -> (0, 1) and C : N x (0, 1) x N -> R such that, for a finite set Sigma of places of Q and a function A : R x (0, 1) -> R: if every P in K_Sigma(eta(d, eps, |Sigma|)) with [Q(P) : Q] <= d satisfies h(P) <= (1 + eps)(cond_{[0]+[1]+[inf]}(P) + d(P)) + A(d, eps) for all (d, eps), then every P in P^1(Qbar) \\ {0, 1, inf} with [Q(P) : Q] <= d satisfies h(P) <= (1 + eps)(cond_{[0]+[1]+[inf]}(P) + d(P)) + 2 A(150 d eps^-2, c(d, eps, |Sigma|)) + C(d, eps, |Sigma|).",
+    "explicit_hypotheses": [
+      "Sigma a finite set of places of Q",
+      "A : R x (0, 1) -> R a function",
+      "K_Sigma(eta) the compactly bounded subset of page 2, supported at Sigma"
+    ],
+    "implicit_hypotheses": [],
+    "conclusion": "An effective reduction of the bounded degree inequality on P^1 minus three points to compactly bounded subsets.",
+    "definitions_required": [],
+    "results_used": [],
+    "external_dependencies": [],
+    "lean_declaration": null,
+    "statement_status": "EXTRACTED",
+    "proof_status": "NOT_EXTRACTED",
+    "obligations": [
+      "Not formalized. The fragment checks one step of the proof (page 9): a point of the Fermat curve over a given point of P^1 and the degree of its field. The heights on C_n of displays (7) and (8), the Belyi maps and the effective Nullstellensatz are not formalized."
+    ],
+    "ambiguities": [],
+    "fragments": [
+      "DIM.Thm.frag.fermat_lift"
+    ]
+  },
+  "DIM.Thm.frag.fermat_lift": {
+    "kind": "fragment",
+    "parent": "DIM.Thm",
+    "lean_module": "IUT.Applications.FermatCover",
+    "source": {
+      "pages_in_paper": "page 9",
+      "pages_read": "rendered pages 3 and 9, checked against the renders"
+    },
+    "content": "For a number field K, x in K and n >= 1 there are a number field L with [L : K] <= n^2 and u, v in L with u^n = x and v^n = 1 - x: in the chart Z = 1, a point [u : v : 1] of the Fermat curve C_n : X^n + Y^n = Z^n over the point [x : 1] of P^1, defined over a field of degree at most n^2 over K.",
+    "explicit_hypotheses": [
+      "K a number field, x an element of K",
+      "n a natural number with 0 < n"
+    ],
+    "implicit_hypotheses": [],
+    "conclusion": "There exist a number field L, an algebra map K -> L with finrank K L <= n^2, and u, v in L with u^n = x and v^n = 1 - x.",
+    "definitions_required": [],
+    "results_used": [],
+    "external_dependencies": [],
+    "lean_declaration": "IUT.FermatCover.fermatCover_point_exists",
+    "lemmas": [
+      "IUT.FermatCover.fermatCover_isIntegral_root",
+      "IUT.FermatCover.fermatCover_finrank_adjoin_root_le",
+      "IUT.FermatCover.fermatCover_finrank_adjoin_le"
+    ],
+    "covers": "Page 9, beginning of section 5: pi_n : C_n -> P^1, [X : Y : Z] -> [X^n : Z^n], deg pi_n = n^2, and for P in P^1(Qbar) \\ {0, 1, inf} with [Q(P) : Q] <= d the choice of a point Q in pi_n^{-1}(P), here in the chart Z = 1, over a field of degree at most n^2 over a field of definition of P.",
+    "not_covered": "The curve C_n as a scheme, its points at infinity and the ramification of pi_n; the heights of displays (7) and (8); the rest of the proof of the Theorem. The same declaration is a model test for [GenEll] Theorem 2.1 (GENELL.Thm2_1.frag.fermat_lift_degree), where the Fermat cover is a choice made here; on page 9 of this paper the cover is printed.",
+    "statement_status": "STATEMENT_FORMALIZED",
+    "proof_status": "KERNEL_VERIFIED",
+    "obligations": [],
+    "ambiguities": []
+  },
+  "LANA.Sec10": {
+    "kind": "external_statement",
+    "parent": null,
+    "source": {
+      "authors": "LANA project (F. Kato, J. Commelin, Y. Hoshi, K. Kedlaya, A. Topaz)",
+      "title": "Project LANA Interim Report on IUT Theory",
+      "server": "GitHub",
+      "identifier": "katobungen/LANA_report_202607",
+      "version": "commit 293bdd8",
+      "date": "July 2026 (released 17 July 2026)",
+      "statement": "Section 10.2, the main goal: eta^q = eta^anab_S for some suitable S",
+      "sections_in_paper": "sections 10, 10.1, 10.2 and 11.5",
+      "pages_read": "TeX source at commit 293bdd8, sections 1.4, 4.7 to 4.10, 5, 6, 7.2, 8.1, 9, 10 and 11"
+    },
+    "content": "Section 10.1: the eta algorithm (steps 1 to 9) constructs, from a BPS and a fixed isomorphism to the Theta-BPS of a Hodge theater, an action of N on the volume container of the log-shell; its anabelian steps are described without construction. Section 10.2: R^ss is the set of adelic measurable subsets of the container modulo equal volume; a subset S of the log-shell gives an isomorphism eta^anab_S from R^val to R^ss sending the pilot to the class of the image of S under 1 in N; the q-BPS gives eta^q, sending the pilot to the class of {q_v O_v}. The main goal is to show that there is some suitable S with eta^q = eta^anab_S. The introduction of section 10 states the authors' belief that a solution of this problem would give Corollary 3.12; section 11.5 states that the project has no proof of the equality.",
+    "explicit_hypotheses": [
+      "a BPS with a fixed isomorphism to the Theta-BPS of a Hodge theater (section 10.1)"
+    ],
+    "implicit_hypotheses": [],
+    "conclusion": "An open goal of the report, not a result.",
+    "definitions_required": [],
+    "results_used": [],
+    "external_dependencies": [],
+    "lean_declaration": null,
+    "statement_status": "EXTRACTED",
+    "proof_status": "NOT_EXTRACTED",
+    "obligations": [
+      "The action of N that the eta algorithm would produce is not constructed in the report and is not constructed here. IUT.Audit.LANA.lanaEtaGoalFor is a schema with the action as data: it holds for some actions and fails for others (LANA.Sec10.frag.eta_goal_both_outcomes), so no proved or refuted instance of it bears on the report's goal."
+    ],
+    "ambiguities": [
+      "'Suitable' is not defined in the report; the schema asks for a measurable S inside the log-shell.",
+      "'Adelic' is not defined in the report; the model has one place, where the condition is empty.",
+      "The report does not say how R^ss is a real vector space; the model assumes only an injective placement of the classes in a real line."
+    ],
+    "fragments": [
+      "LANA.Sec10.frag.eta_goal_both_outcomes",
+      "LANA.Sec10.frag.eta_goal_schema",
+      "LANA.Sec10.frag.rss_eta_reduction"
+    ]
+  },
+  "LANA.Sec10.frag.eta_goal_both_outcomes": {
+    "kind": "fragment",
+    "parent": "LANA.Sec10",
+    "source": {
+      "sections_in_paper": "section 10.2",
+      "pages_read": "TeX source at commit 293bdd8, sections 1.4, 4.7 to 4.10, 5, 6, 7.2, 8.1, 9, 10 and 11"
+    },
+    "content": "On the container Q_p with the Haar measure normalized on Z_p, log-shell I = Z_p and q-pilot region p Z_p, the schema lanaEtaGoalFor holds for the action S -> p S (take S = I) and fails for the action S -> p^2 S (every S inside Z_p has volume of p^2 S at most p^-2 < p^-1). Neither action is the one of the report's eta algorithm.",
+    "explicit_hypotheses": [
+      "p prime; Borel measurable structure on Q_p"
+    ],
+    "implicit_hypotheses": [],
+    "conclusion": "lanaEtaGoalFor holds for theta = (p .) and fails for theta = (p^2 .).",
+    "definitions_required": [],
+    "results_used": [],
+    "external_dependencies": [],
+    "lean_declaration": "IUT.Audit.LANA.lanaEtaGoalFor_padic_fails",
+    "lean_module": "IUT.Audit.LANA.EtaGoal",
+    "covers": "Section 10.2: the schema with a free action is true for some actions and false for others, so the content of the report's goal lies in the action the eta algorithm would produce.",
+    "not_covered": "Nothing about the action constructed by the report's eta algorithm.",
+    "statement_status": "STATEMENT_FORMALIZED",
+    "proof_status": "KERNEL_VERIFIED",
+    "obligations": [],
+    "ambiguities": [],
+    "scope": "model_test",
+    "lemmas": [
+      "IUT.Audit.LANA.lanaEtaGoalFor_padic_holds",
+      "IUT.Audit.LANA.lana_padicQ_measurable"
+    ]
+  },
+  "LANA.Sec10.frag.eta_goal_schema": {
+    "kind": "fragment",
+    "parent": "LANA.Sec10",
+    "source": {
+      "sections_in_paper": "sections 10.1 and 10.2",
+      "pages_read": "TeX source at commit 293bdd8, sections 1.4, 4.7 to 4.10, 5, 6, 7.2, 8.1, 9, 10 and 11"
+    },
+    "content": "A schema with the action as data, modeled on the main goal of section 10.2: given a measure space (the volume container), the log-shell I, the q-pilot region Q and a map theta on subsets (the action of the generator of N), there is a measurable S inside I with theta S measurable and of the same class in R^ss as Q. The report's goal is the instance for the action its eta algorithm would produce; the report does not construct that action (its anabelian steps 2 to 6 are given without construction), and the schema does not contain it.",
+    "explicit_hypotheses": [
+      "a measure space, sets I and Q, Q measurable, a map theta on subsets"
+    ],
+    "implicit_hypotheses": [],
+    "conclusion": "Definition lanaEtaGoalFor : Prop, a schema in the action theta; not proved, and no instance of it is the report's goal.",
+    "definitions_required": [],
+    "results_used": [],
+    "external_dependencies": [],
+    "lean_declaration": "IUT.Audit.LANA.lanaEtaGoalFor",
+    "lean_module": "IUT.Audit.LANA.EtaGoal",
+    "covers": "Section 10.2, the shape of the display eta^q = eta^anab_S with 'there exists some suitable S', with the action of N as a free parameter.",
+    "not_covered": "The action produced by the eta algorithm of section 10.1 is not constructed, so the report's goal itself is not stated; 'suitable' is not defined in the report; only a one-place container is used in the examples (LANA.Sec10.frag.eta_goal_both_outcomes).",
+    "statement_status": "STATEMENT_FORMALIZED",
+    "proof_status": "NOT_EXTRACTED",
+    "obligations": [],
+    "ambiguities": [
+      "'Suitable S' read as a measurable S inside the log-shell."
+    ],
+    "scope": "model_test"
+  },
+  "LANA.Sec10.frag.rss_eta_reduction": {
+    "kind": "fragment",
+    "parent": "LANA.Sec10",
+    "source": {
+      "sections_in_paper": "section 10.2",
+      "pages_read": "TeX source at commit 293bdd8, sections 1.4, 4.7 to 4.10, 5, 6, 7.2, 8.1, 9, 10 and 11"
+    },
+    "content": "R^ss as measurable sets of a measure space modulo equal volume; two sets have the same class iff they have the same volume. For any injective placement of these classes in a real line, two linear maps out of a line R^val sending the pilot to the classes of Q and of theta S are equal iff Q and theta S have the same volume.",
+    "explicit_hypotheses": [
+      "a measure space X with measure mu",
+      "finrank C = 1, phi in C nonzero",
+      "iota an injective map from R^ss to a real vector space C'",
+      "eta^q phi = iota [Q], eta^anab phi = iota [T], Q and T measurable"
+    ],
+    "implicit_hypotheses": [],
+    "conclusion": "eta^q = eta^anab iff mu Q = mu T.",
+    "definitions_required": [],
+    "results_used": [],
+    "external_dependencies": [],
+    "lean_declaration": "IUT.Audit.LANA.lana_eta_eq_iff_volume",
+    "lean_module": "IUT.Audit.LANA.EtaGoal",
+    "covers": "Section 10.2, the definition of R^ss and the meaning of the equality eta^q = eta^anab_S.",
+    "not_covered": "'Adelic' (undefined in the report) is not represented; the real-line structure of R^ss is not given by the report and is replaced by an arbitrary injective placement.",
+    "statement_status": "STATEMENT_FORMALIZED",
+    "proof_status": "KERNEL_VERIFIED",
+    "obligations": [],
+    "ambiguities": [
+      "How R^ss is a real vector space is not stated in the report."
+    ],
+    "scope": "model_test",
+    "lemmas": [
+      "IUT.Audit.LANA.lanaSSSetoid",
+      "IUT.Audit.LANA.lanaRss",
+      "IUT.Audit.LANA.lanaRssClass",
+      "IUT.Audit.LANA.lanaRssClass_eq_iff",
+      "IUT.Audit.LANA.lana_eta_eq_iff_class"
+    ]
+  },
+  "LANA.Sec11": {
+    "kind": "external_statement",
+    "parent": null,
+    "source": {
+      "authors": "LANA project (F. Kato, J. Commelin, Y. Hoshi, K. Kedlaya, A. Topaz)",
+      "title": "Project LANA Interim Report on IUT Theory",
+      "server": "GitHub",
+      "identifier": "katobungen/LANA_report_202607",
+      "version": "commit 293bdd8",
+      "date": "July 2026 (released 17 July 2026)",
+      "statement": "Section 11.2, the Scholze and Stix hexagon, with the provisional assessment of section 11.5",
+      "sections_in_paper": "sections 11.2 and 11.5",
+      "pages_read": "TeX source at commit 293bdd8, sections 1.4, 4.7 to 4.10, 5, 6, 7.2, 8.1, 9, 10 and 11"
+    },
+    "content": "Section 11.2 interprets the diagram of Scholze and Stix in the report's terms and confirms that it does not commute: the composite through the Theta-pilot scales by (1^2 + ... + (l*)^2)/l* and the one through the q-pilot by 1. The report states that in its understanding the inequality of Corollary 3.12 is obtained by comparing degrees within the arithmetic holomorphic structure on one side of the Theta-link, not by comparing pilots on its two sides, so that it does not read the non-commutativity as an obstruction to the intended strategy. Section 11.5 agrees that repairing the diagram would need a factor too large for the abc conjecture.",
+    "explicit_hypotheses": [],
+    "implicit_hypotheses": [],
+    "conclusion": "A comparison and a provisional assessment, not a theorem.",
+    "definitions_required": [],
+    "results_used": [],
+    "external_dependencies": [],
+    "lean_declaration": null,
+    "statement_status": "EXTRACTED",
+    "proof_status": "NOT_EXTRACTED",
+    "obligations": [
+      "Issue 2 of the report's repository (the j^2 scaling under the abstract Theta-link) is modeled by the fragment as the non-commutativity already recorded in the Scholze and Stix modules; its second half (a one-directional comparison inside the common container) is not tested. Nothing here is an argument for or against IUT III, Corollary 3.12."
+    ],
+    "ambiguities": [],
+    "fragments": [
+      "LANA.Sec11.frag.issue2_model"
+    ]
+  },
+  "LANA.Sec11.frag.issue2_model": {
+    "kind": "fragment",
+    "parent": "LANA.Sec11",
+    "source": {
+      "sections_in_paper": "sections 8.1.1 and 11.2",
+      "pages_read": "TeX source at commit 293bdd8, sections 1.4, 4.7 to 4.10, 5, 6, 7.2, 8.1, 9, 10 and 11; issue 2 of the report's repository"
+    },
+    "content": "The abstract isomorphism Phi of two pointed lines is unique and sends pilot to pilot. If degree maps send the Theta-pilot to s D and the q-pilot to D (D nonzero), with s = avgSq l* = (1^2 + ... + l*^2)/l*, then d_Theta = s (d_q o Phi), and d_q o Phi = d_Theta iff s = 1. For l* >= 2 the square does not commute and the corresponding cycle of the ScholzeStix Diagram module is inconsistent; avgSq 1 = 1.",
+    "explicit_hypotheses": [
+      "pointed lines L_Theta, L_q and an isomorphism Phi",
+      "linear maps d_Theta, d_q to R with d_Theta(pilot) = avgSq l* * D, d_q(pilot) = D, D nonzero",
+      "for the second theorem: 2 <= l*"
+    ],
+    "implicit_hypotheses": [],
+    "conclusion": "d_Theta = avgSq l* . (d_q o Phi) and (d_q o Phi = d_Theta iff avgSq l* = 1); for l* >= 2, d_q o Phi != d_Theta and the cycle is not Consistent.",
+    "definitions_required": [],
+    "results_used": [],
+    "external_dependencies": [],
+    "lean_declaration": "IUT.Audit.LANA.lana_issue2_model",
+    "lean_module": "IUT.Audit.LANA.EtaGoal",
+    "covers": "Section 11.2: the composites R_{odot,Theta} -> R_Theta and R_{odot,q} -> R_q scale by (1/l*)(1^2 + ... + l*^2) and by 1; the first half of issue 2 (the j^2 scaling belongs to the concrete realization, not to the abstract link).",
+    "not_covered": "The second half of issue 2 (a one-directional comparison inside the common container) is the main goal of section 10.2 in other words and is not tested. Not an argument for or against IUT III Corollary 3.12.",
+    "statement_status": "STATEMENT_FORMALIZED",
+    "proof_status": "KERNEL_VERIFIED",
+    "obligations": [],
+    "ambiguities": [
+      "Degrees are taken as data without a sign claim (see the sign ambiguity of section 5)."
+    ],
+    "scope": "model_test",
+    "lemmas": [
+      "IUT.Audit.LANA.lana_issue2_not_commute",
+      "IUT.Audit.LANA.lana_avgSq_one"
+    ]
+  },
+  "LANA.Sec5": {
+    "kind": "external_statement",
+    "parent": null,
+    "source": {
+      "authors": "LANA project (F. Kato, J. Commelin, Y. Hoshi, K. Kedlaya, A. Topaz)",
+      "title": "Project LANA Interim Report on IUT Theory",
+      "server": "GitHub",
+      "identifier": "katobungen/LANA_report_202607",
+      "version": "commit 293bdd8",
+      "date": "July 2026 (released 17 July 2026)",
+      "statement": "Section 5.1, basic prime strips: definitions, the remark on a fixed product formula, and the lemma on isomorphic BPS",
+      "sections_in_paper": "sections 5.1.1 to 5.1.3",
+      "pages_read": "TeX source at commit 293bdd8, sections 1.4, 4.7 to 4.10, 5, 6, 7.2, 8.1, 9, 10 and 11"
+    },
+    "content": "The report replaces the prime-strips of IUT by basic prime strips (BPS). An etale BPS is a family, over the places, of topological groups isomorphic to the local Galois groups; an etale-unit BPS is a family of mono-analytic GM-data with compact structure, isomorphic to the reference data; a value-group BPS is a one-dimensional oriented real vector space with nonzero local pilots whose sum over the bad places is nonzero, with product formula the kernel of the map from the direct sum of copies of R over the places; isomorphisms are families of isomorphisms, resp. linear isomorphisms matching the local pilots. Remark: when the product formula is fixed, a value-group BPS is given by a pointed oriented real line with a negative pilot. A BPS is a pair of an etale-unit BPS and a value-group BPS. Lemma (section 5.1.3): two BPS are isomorphic if and only if their product formulas agree.",
+    "explicit_hypotheses": [
+      "the places of the initial Theta-data and the bad places (sections 3 and 4 of the report)"
+    ],
+    "implicit_hypotheses": [],
+    "conclusion": "Definitions of BPS and their isomorphisms, and the lemma that two BPS are isomorphic exactly when their product formulas agree.",
+    "definitions_required": [],
+    "results_used": [],
+    "external_dependencies": [],
+    "lean_declaration": null,
+    "statement_status": "EXTRACTED",
+    "proof_status": "NOT_EXTRACTED",
+    "obligations": [
+      "The reference objects (the local Galois groups, the monoids with their compact structures) are not constructed; the fragments take them as parameters and are model tests on the report's simplified objects, not on the prime-strips of IUT I to IV."
+    ],
+    "ambiguities": [
+      "Section 5.2.3 gives the q-pilot value-group BPS with positive local pilots in C = R, while the remark of section 5.1.2 calls the pilot negative; the report does not say how the two agree."
+    ],
+    "fragments": [
+      "LANA.Sec5.frag.etale_bps",
+      "LANA.Sec5.frag.pointed_line",
+      "LANA.Sec5.frag.value_group_pf"
+    ]
+  },
+  "LANA.Sec5.frag.etale_bps": {
+    "kind": "fragment",
+    "parent": "LANA.Sec5",
+    "source": {
+      "sections_in_paper": "sections 1.4.3, 4.7 to 4.10 and 5.1.1",
+      "pages_read": "TeX source at commit 293bdd8, sections 1.4, 4.7 to 4.10, 5, 6, 7.2, 8.1, 9, 10 and 11"
+    },
+    "content": "Etale BPS and etale-unit BPS of the report, relative to a reference family given as a parameter: a family of topological groups each isomorphic to the reference group; per place, GM-data G acting continuously on a topological monoid M with a compact structure (submonoids indexed by open subgroups); isomorphisms of GM-data with compact structure (continuous isomorphisms compatible with the actions and carrying N_H to N'_{phi_G(H)}), their inverses and composites; any two etale BPS, and any two etale-unit BPS, isomorphic to one reference are isomorphic.",
+    "explicit_hypotheses": [
+      "V a type of places; reference families Gref (groups), resp. Gr acting on Mr with compact structure Nr",
+      "each object isomorphic to the reference at every place"
+    ],
+    "implicit_hypotheses": [],
+    "conclusion": "Definitions lanaIsEtaleBPS, LanaEtaleBPSIso, LanaGMIso, lanaGMIsoInv, lanaGMIsoComp, lanaIsEtUnitBPS; Nonempty isomorphism between any two objects with the same reference.",
+    "definitions_required": [],
+    "results_used": [],
+    "external_dependencies": [],
+    "lean_declaration": "IUT.Audit.LANA.lana_etUnitBPS_iso_exists",
+    "lean_module": "IUT.Audit.LANA.EtaGoal",
+    "covers": "Section 5.1.1, definitions of etale BPS, etale-unit BPS and their isomorphisms; first sentence of the proof of the lemma of section 5.1.3 (the etale-unit portions are always isomorphic).",
+    "not_covered": "The reference objects (the local Galois group of K_v for initial Theta-data, the monoid O-bar^x_v / mu with its Kummer structure I^kappa_H) are parameters, not constructed. The action is a MulAction with ContinuousSMul, not required to be by monoid automorphisms.",
+    "statement_status": "STATEMENT_FORMALIZED",
+    "proof_status": "KERNEL_VERIFIED",
+    "obligations": [],
+    "ambiguities": [
+      "The report's 'continuous group action' is read as MulAction plus ContinuousSMul."
+    ],
+    "scope": "model_test",
+    "lemmas": [
+      "IUT.Audit.LANA.lanaIsEtaleBPS",
+      "IUT.Audit.LANA.LanaEtaleBPSIso",
+      "IUT.Audit.LANA.lana_etaleBPS_iso_exists",
+      "IUT.Audit.LANA.LanaGMIso",
+      "IUT.Audit.LANA.lanaGMIsoInv",
+      "IUT.Audit.LANA.lanaGMIsoComp",
+      "IUT.Audit.LANA.lanaIsEtUnitBPS"
+    ]
+  },
+  "LANA.Sec5.frag.pointed_line": {
+    "kind": "fragment",
+    "parent": "LANA.Sec5",
+    "source": {
+      "sections_in_paper": "sections 5.1.2 and 10.2",
+      "pages_read": "TeX source at commit 293bdd8, sections 1.4, 4.7 to 4.10, 5, 6, 7.2, 8.1, 9, 10 and 11"
+    },
+    "content": "Pointed oriented real lines (one-dimensional real vector space, orientation as a ray, negative pilot) and their isomorphisms. A linear map out of a line is determined by its value on a nonzero vector; an isomorphism of pointed lines is unique; one exists between any two; a linear isomorphism sending a negative pilot to a negative pilot preserves the orientations; the real line with a negative pilot is an example.",
+    "explicit_hypotheses": [
+      "C, C' real vector spaces; finrank C = 1 where used"
+    ],
+    "implicit_hypotheses": [],
+    "conclusion": "lana_linearMap_eq_iff_pilot: f = g iff f phi = g phi; lana_pointedLineIso_unique: e = e'; lana_pointedLineIso_exists; lana_mapOrient_of_mapPilot.",
+    "definitions_required": [],
+    "results_used": [],
+    "external_dependencies": [],
+    "lean_declaration": "IUT.Audit.LANA.lana_pointedLineIso_unique",
+    "lean_module": "IUT.Audit.LANA.EtaGoal",
+    "covers": "Section 5.1.2, closing remark: with the product formula fixed, a value-group BPS is a pointed oriented real line; section 10.2: eta^q and eta^anab_S are isomorphisms of pointed real lines.",
+    "not_covered": "The reduction from the local-pilot form to the pointed form under a fixed product formula is not formalized. The q-pilot BPS of section 5.2.3 has positive pilots in C = R, which the remark calls negative; not reconciled.",
+    "statement_status": "STATEMENT_FORMALIZED",
+    "proof_status": "KERNEL_VERIFIED",
+    "obligations": [],
+    "ambiguities": [
+      "Sign of the pilot: negative in the remark of section 5.1.2, positive local degrees in section 5.2.3."
+    ],
+    "scope": "model_test",
+    "lemmas": [
+      "IUT.Audit.LANA.LanaPointedLine",
+      "IUT.Audit.LANA.LanaPointedLineIso",
+      "IUT.Audit.LANA.lana_linearMap_eq_iff_pilot",
+      "IUT.Audit.LANA.lana_mapOrient_of_mapPilot",
+      "IUT.Audit.LANA.lanaLineCoord",
+      "IUT.Audit.LANA.lanaLineCoord_one",
+      "IUT.Audit.LANA.lana_pointedLineIso_exists",
+      "IUT.Audit.LANA.lanaRealPointedLine"
+    ]
+  },
+  "LANA.Sec5.frag.value_group_pf": {
+    "kind": "fragment",
+    "parent": "LANA.Sec5",
+    "source": {
+      "sections_in_paper": "sections 5.1.2 and 5.1.3",
+      "pages_read": "TeX source at commit 293bdd8, sections 1.4, 4.7 to 4.10, 5, 6, 7.2, 8.1, 9, 10 and 11"
+    },
+    "content": "Value-group BPS with local pilots (a one-dimensional oriented real vector space C, nonzero local pilots, nonzero sum over the bad places), the product formula PF (kernel of the finitely supported sum map to C), isomorphisms (linear isomorphisms sending each local pilot to the corresponding one). The map to C is surjective, and two value-group BPS are isomorphic if and only if their product formulas agree.",
+    "explicit_hypotheses": [
+      "V a type of places, bad a finite set of places",
+      "B, B' value-group BPS on real vector spaces C, C'"
+    ],
+    "implicit_hypotheses": [],
+    "conclusion": "Nonempty (LanaValBPSIso B B') iff lanaPF B = lanaPF B'.",
+    "definitions_required": [],
+    "results_used": [],
+    "external_dependencies": [],
+    "lean_declaration": "IUT.Audit.LANA.lana_valBPS_iso_iff_PF",
+    "lean_module": "IUT.Audit.LANA.EtaGoal",
+    "covers": "Section 5.1.2, definition of value-group BPS, product formula, isomorphisms; section 5.1.3, the lemma that two BPS are isomorphic iff their product formulas agree (value-group portion; the etale-unit portion is the fragment etale_bps).",
+    "not_covered": "The q-pilot value-group BPS of section 5.2.3 (built from initial Theta-data) is not constructed.",
+    "statement_status": "STATEMENT_FORMALIZED",
+    "proof_status": "KERNEL_VERIFIED",
+    "obligations": [],
+    "ambiguities": [
+      "The isomorphisms of section 5.1.2 carry no orientation clause; kept as printed."
+    ],
+    "scope": "model_test",
+    "lemmas": [
+      "IUT.Audit.LANA.LanaValBPS",
+      "IUT.Audit.LANA.lanaPF",
+      "IUT.Audit.LANA.LanaValBPSIso",
+      "IUT.Audit.LANA.lanaValBPS_surjective"
+    ]
+  },
+  "LANA.Sec9": {
+    "kind": "external_statement",
+    "parent": null,
+    "source": {
+      "authors": "LANA project (F. Kato, J. Commelin, Y. Hoshi, K. Kedlaya, A. Topaz)",
+      "title": "Project LANA Interim Report on IUT Theory",
+      "server": "GitHub",
+      "identifier": "katobungen/LANA_report_202607",
+      "version": "commit 293bdd8",
+      "date": "July 2026 (released 17 July 2026)",
+      "statement": "Section 9.2, the properties (IPL), (SHE) and (APT) and the remark after (IPL)",
+      "sections_in_paper": "section 9.2",
+      "pages_read": "TeX source at commit 293bdd8, sections 1.4, 4.7 to 4.10, 5, 6, 7.2, 8.1, 9, 10 and 11"
+    },
+    "content": "The report quotes the properties (IPL), (SHE) and (APT) from IUT III, Remark 3.11.1, and translates (IPL): the intermediate BPS in the construction of the output region of Theorem 3.11 is linked by the full poly-isomorphism to the q-pilot BPS. Its remark after (IPL): being linked, in the sense that an isomorphism exists, is vacuous for BPS, since their category is a connected groupoid, so the notion of a link needs a more precise definition.",
+    "explicit_hypotheses": [],
+    "implicit_hypotheses": [],
+    "conclusion": "A remark, not a theorem: the existence of an isomorphism between two BPS distinguishes none of them.",
+    "definitions_required": [],
+    "results_used": [],
+    "external_dependencies": [],
+    "lean_declaration": null,
+    "statement_status": "EXTRACTED",
+    "proof_status": "NOT_EXTRACTED",
+    "obligations": [
+      "(SHE) and (APT) are quoted in words that are not definitions; nothing is stated about them. The fragment makes the remark precise for BPS whose value-group portions are pointed lines; for value-group BPS with local pilots the groupoid is not connected (its classes are the product formulas), so the remark presupposes the convention of section 5.1.2 that the product formula is fixed."
+    ],
+    "ambiguities": [],
+    "fragments": [
+      "LANA.Sec9.frag.connected_groupoid"
+    ]
+  },
+  "LANA.Sec9.frag.connected_groupoid": {
+    "kind": "fragment",
+    "parent": "LANA.Sec9",
+    "source": {
+      "sections_in_paper": "section 9.2",
+      "pages_read": "TeX source at commit 293bdd8, sections 1.4, 4.7 to 4.10, 5, 6, 7.2, 8.1, 9, 10 and 11"
+    },
+    "content": "Any two BPS whose etale-unit portions are isomorphic to one reference and whose value-group portions are pointed oriented lines are isomorphic. So (IPL), read as mere existence of an isomorphism to the input prime strip, holds for every pair and distinguishes none. For the local-pilot form the isomorphism classes are the product formulas.",
+    "explicit_hypotheses": [
+      "two etale-unit BPS with the same reference",
+      "two pointed oriented real lines"
+    ],
+    "implicit_hypotheses": [],
+    "conclusion": "Nonempty of a pair (family of LanaGMIso, LanaPointedLineIso).",
+    "definitions_required": [],
+    "results_used": [],
+    "external_dependencies": [],
+    "lean_declaration": "IUT.Audit.LANA.lana_bps_iso_exists",
+    "lean_module": "IUT.Audit.LANA.EtaGoal",
+    "covers": "Section 9.2, the remark that being linked by an isomorphism is vacuous because the category of BPS is a connected groupoid.",
+    "not_covered": "Holds for the pointed form only; with local pilots the groupoid is not connected (lana_valBPS_iso_iff_PF). (SHE) and (APT) are not represented.",
+    "statement_status": "STATEMENT_FORMALIZED",
+    "proof_status": "KERNEL_VERIFIED",
+    "obligations": [],
+    "ambiguities": [
+      "The remark presupposes the convention of section 5.1.2 that the product formula is fixed."
+    ],
+    "scope": "model_test"
+  },
+  "ZENGHULL.Sec10": {
+    "kind": "external_statement",
+    "parent": null,
+    "source": {
+      "authors": "Chunping Zeng",
+      "title": "An Integral-Structure Inflation in the Hull Operation of IUT Corollary 3.12",
+      "server": "hexagon",
+      "identifier": "2610.00646",
+      "version": "1",
+      "date": "29 October 2026",
+      "license": "CC BY 4.0",
+      "statement": "Section 10.2, layer (1) and equation (closed)",
+      "sections_in_paper": "section 10.2",
+      "pages_read": "checked against the TeX source of version 1: sections 0, 2 to 5, 8 to 10, 14 and 16 and Appendix A; no page render exists"
+    },
+    "content": "Section 10.2 takes n = j + 1 factors for j = 1, ..., J and sums the exponent of Theorem 5.1 over j (layer (1)): with v = v_p(d_K), the averaged exponent is v-bar = (v / 2J) sum_{j <= J} j d^j. Equation (closed): sum_{j=1}^{J} j 2^j = (J - 1) 2^{J+1} + 2. The section then tabulates the growth against a target of size h^kappa, which the paper relates to IUT III, Corollary 3.12; that comparison is not extracted here.",
+    "explicit_hypotheses": [
+      "J >= 1"
+    ],
+    "implicit_hypotheses": [],
+    "conclusion": "sum_{j=1}^{J} j 2^j = (J - 1) 2^{J+1} + 2.",
+    "definitions_required": [],
+    "results_used": [],
+    "external_dependencies": [],
+    "lean_declaration": null,
+    "statement_status": "EXTRACTED",
+    "proof_status": "NOT_EXTRACTED",
+    "obligations": [
+      "Equation (closed) is checked. The growth of the raw sum and of the sum divided by the dimension, as in IUT IV, Proposition 1.4 (i), are model tests. Not extracted: the paper's identification of the hull index with the raw index (section 8.4) and its comparison with Corollary 3.12."
+    ],
+    "ambiguities": [],
+    "fragments": [
+      "ZENGHULL.Sec10.frag.closed_form_d2",
+      "ZENGHULL.Sec10.frag.normalized_growth",
+      "ZENGHULL.Sec10.frag.raw_growth"
+    ]
+  },
+  "ZENGHULL.Sec10.frag.closed_form_d2": {
+    "kind": "fragment",
+    "parent": "ZENGHULL.Sec10",
+    "source": {
+      "sections_in_paper": "section 10.2",
+      "pages_read": "checked against the TeX source of version 1: sections 0, 2 to 5, 8 to 10, 14 and 16 and Appendix A; no page render exists"
+    },
+    "content": "The closed forms of section 10.2: sum_{j=1}^J j 2^j = (J-1) 2^{J+1} + 2, and for any d, (d-1)^2 sum_{j=1}^J j d^j = d((J(d-1)-1) d^J + 1).",
+    "explicit_hypotheses": [
+      "J a natural number",
+      "d a real number"
+    ],
+    "implicit_hypotheses": [],
+    "conclusion": "tOrdIdx_sum_two_pow and tOrdIdx_sum_pow_closed.",
+    "definitions_required": [],
+    "results_used": [],
+    "external_dependencies": [],
+    "lean_declaration": "IUT.Audit.TensorOrderIndex.tOrdIdx_sum_two_pow",
+    "lean_module": "IUT.Audit.TensorOrderIndex",
+    "covers": "Section 10.2 (TeX source), equation (closed): \"sum_{j=1}^{J} j 2^j = S(2) = (J-1) 2^{J+1} + 2.\"",
+    "not_covered": "Only the identity of the display; the use the paper makes of the sum in section 10.2 is not covered.",
+    "statement_status": "STATEMENT_FORMALIZED",
+    "proof_status": "KERNEL_VERIFIED",
+    "obligations": [],
+    "ambiguities": [
+      "The paper has no page render here; the quoted statement is from its TeX source."
+    ],
+    "scope": "real and integer arithmetic",
+    "lemmas": [
+      "IUT.Audit.TensorOrderIndex.tOrdIdx_sum_pow_closed"
+    ]
+  },
+  "ZENGHULL.Sec10.frag.normalized_growth": {
+    "kind": "fragment",
+    "parent": "ZENGHULL.Sec10",
+    "source": {
+      "sections_in_paper": "section 10.2",
+      "pages_read": "checked against the TeX source of version 1: sections 0, 2 to 5, 8 to 10, 14 and 16 and Appendix A; no page render exists"
+    },
+    "content": "Model test: the raw exponent divided by the dimension d^{j+1} is (j/2)(v/d); its sum over j <= J is (v/d) J (J+1)/4 and its average (v/d)(J+1)/4, polynomial in J.",
+    "explicit_hypotheses": [
+      "d, v real numbers, d nonzero for the division",
+      "J a natural number"
+    ],
+    "implicit_hypotheses": [],
+    "conclusion": "tOrdIdx_norm_eq_raw_div, tOrdIdx_normSum_eq, tOrdIdx_normAvg_eq.",
+    "definitions_required": [
+      "IUT.Audit.TensorOrderIndex.tOrdIdxRawExp",
+      "IUT.Audit.TensorOrderIndex.tOrdIdxNormExp"
+    ],
+    "results_used": [],
+    "external_dependencies": [],
+    "lean_declaration": "IUT.Audit.TensorOrderIndex.tOrdIdx_normSum_eq",
+    "lean_module": "IUT.Audit.TensorOrderIndex",
+    "covers": "Arithmetic of the normalization by the dimension of IUT IV Proposition 1.4 (i), page 13, applied to the paper's raw exponent; not a statement of either paper.",
+    "not_covered": "Which normalization the hull step of IUT III Corollary 3.12 uses.",
+    "statement_status": "STATEMENT_FORMALIZED",
+    "proof_status": "KERNEL_VERIFIED",
+    "obligations": [],
+    "ambiguities": [],
+    "scope": "model_test",
+    "lemmas": [
+      "IUT.Audit.TensorOrderIndex.tOrdIdx_norm_eq_raw_div",
+      "IUT.Audit.TensorOrderIndex.tOrdIdx_normAvg_eq"
+    ]
+  },
+  "ZENGHULL.Sec10.frag.raw_growth": {
+    "kind": "fragment",
+    "parent": "ZENGHULL.Sec10",
+    "source": {
+      "sections_in_paper": "section 10.2",
+      "pages_read": "checked against the TeX source of version 1: sections 0, 2 to 5, 8 to 10, 14 and 16 and Appendix A; no page render exists"
+    },
+    "content": "Model test of sections 8.4 and 10: the raw exponent (j/2) d^j v of n = j + 1 factors; its sum over j <= J is at least (v/2) J d^J (d >= 1, v >= 0), and J d^J <= sum_{j<=J} j d^j <= 2 J d^J for d >= 2.",
+    "explicit_hypotheses": [
+      "d, v real numbers with the stated signs",
+      "J a natural number"
+    ],
+    "implicit_hypotheses": [],
+    "conclusion": "tOrdIdx_rawSum_ge and tOrdIdx_sum_pow_bounds.",
+    "definitions_required": [
+      "IUT.Audit.TensorOrderIndex.tOrdIdxRawExp"
+    ],
+    "results_used": [],
+    "external_dependencies": [],
+    "lean_declaration": "IUT.Audit.TensorOrderIndex.tOrdIdx_rawSum_ge",
+    "lean_module": "IUT.Audit.TensorOrderIndex",
+    "covers": "Arithmetic about the paper's layer (1) of section 10.2, v-bar = (v/2J) sum_{j<=J} j d^j; not a printed statement.",
+    "not_covered": "The paper's identification of the hull index with the raw index (section 8.4).",
+    "statement_status": "STATEMENT_FORMALIZED",
+    "proof_status": "KERNEL_VERIFIED",
+    "obligations": [],
+    "ambiguities": [],
+    "scope": "model_test",
+    "lemmas": [
+      "IUT.Audit.TensorOrderIndex.tOrdIdx_sum_pow_bounds"
+    ]
+  },
+  "ZENGHULL.Thm5_1": {
+    "kind": "external_statement",
+    "parent": null,
+    "source": {
+      "authors": "Chunping Zeng",
+      "title": "An Integral-Structure Inflation in the Hull Operation of IUT Corollary 3.12",
+      "server": "hexagon",
+      "identifier": "2610.00646",
+      "version": "1",
+      "date": "29 October 2026",
+      "license": "CC BY 4.0",
+      "statement": "Theorem 5.1, with Lemmas 4.1 and 4.2 and identity (0.1)",
+      "sections_in_paper": "sections 0, 4, 5 and 14",
+      "pages_read": "checked against the TeX source of version 1: sections 0, 2 to 5, 8 to 10, 14 and 16 and Appendix A; no page render exists"
+    },
+    "content": "For K/Q_p Galois of degree d with discriminant d_K, and n >= 1: Phi identifies the n-fold tensor power of K over Q_p with a product of d^{n-1} copies of K; P_n is the product of the rings of integers and O_n the image of the n-fold tensor power of O_K. Lemma 4.1: disc(P_n) = d_K^{d^{n-1}}. Lemma 4.2: disc(O_n) = d_K^{n d^{n-1}}. Theorem 5.1: the index rho_n = [P_n : Phi(O_n)] equals |d_K|^{(n-1) d^{n-1}/2}, as an identity of positive integers. Identity (0.1): for Z_p-lattices Lambda' <= Lambda of the same rank, disc(Lambda') = [Lambda : Lambda']^2 disc(Lambda).",
+    "explicit_hypotheses": [
+      "K/Q_p a finite Galois extension of degree d",
+      "n >= 1"
+    ],
+    "implicit_hypotheses": [],
+    "conclusion": "rho_n = |d_K|^{(n-1) d^{n-1}/2}.",
+    "definitions_required": [],
+    "results_used": [],
+    "external_dependencies": [],
+    "lean_declaration": null,
+    "statement_status": "EXTRACTED",
+    "proof_status": "NOT_EXTRACTED",
+    "obligations": [
+      "Checked for two factors (n = 2) in the Galois case; the general two-factor identity without the Galois hypothesis takes a basis of the normalization as data, whose existence is not proved here. Not formalized: three or more factors, and the identification of v_p(d_K)/d with the order of the different used in IUT IV, Proposition 1.1."
+    ],
+    "ambiguities": [
+      "Identity (0.1) holds in Z_p only up to a unit (a discriminant is defined up to the square of a unit); it is checked with the index read through the p-adic norm."
+    ],
+    "fragments": [
+      "ZENGHULL.Thm5_1.frag.identity_0_1",
+      "ZENGHULL.Thm5_1.frag.lemma4_1_two",
+      "ZENGHULL.Thm5_1.frag.lemma4_2_two",
+      "ZENGHULL.Thm5_1.frag.two_factor_galois",
+      "ZENGHULL.Thm5_1.frag.two_factor_general"
+    ]
+  },
+  "ZENGHULL.Thm5_1.frag.identity_0_1": {
+    "kind": "fragment",
+    "parent": "ZENGHULL.Thm5_1",
+    "source": {
+      "sections_in_paper": "section 0",
+      "pages_read": "checked against the TeX source of version 1: sections 0, 2 to 5, 8 to 10, 14 and 16 and Appendix A; no page render exists"
+    },
+    "content": "Identity (0.1): for Q_p-bases e1, e2 of a Q_p-algebra, disc e1 = (det_{e2} e1)^2 disc e2 (tOrdIdx_discr_change); for Z_p-lattices L1 <= L2 spanned by e1, e2, [L2 : L1] = ||det_{e2} e1||^-1 (tOrdIdx_relIndex_eq). Together: ||disc e1|| = [L2 : L1]^-2 ||disc e2||.",
+    "explicit_hypotheses": [
+      "p a prime",
+      "V a Q_p-vector space",
+      "e1, e2 bases of V with tOrdIdxLattice e1 <= tOrdIdxLattice e2"
+    ],
+    "implicit_hypotheses": [],
+    "conclusion": "Algebra.discr e1 = e2.det e1 ^ 2 * Algebra.discr e2; with the lemma, relIndex = ||e2.det e1||^-1.",
+    "definitions_required": [
+      "IUT.Audit.TensorOrderIndex.tOrdIdxLattice"
+    ],
+    "results_used": [],
+    "external_dependencies": [],
+    "lean_declaration": "IUT.Audit.TensorOrderIndex.tOrdIdx_discr_change",
+    "lean_module": "IUT.Audit.TensorOrderIndex",
+    "covers": "Section 0 (TeX source): \"if Lambda' <= Lambda are Z_p-lattices of the same rank, then disc(Lambda') = [Lambda : Lambda']^2 disc(Lambda).\" Covered with the index read through the p-adic norm (equality up to a unit of Z_p).",
+    "not_covered": "The literal equality in Z_p, which holds only up to a unit.",
+    "statement_status": "STATEMENT_FORMALIZED",
+    "proof_status": "KERNEL_VERIFIED",
+    "obligations": [],
+    "ambiguities": [
+      "The paper has no page render here; the quoted statement is from its TeX source."
+    ],
+    "scope": "lattices given by bases",
+    "lemmas": [
+      "IUT.Audit.TensorOrderIndex.tOrdIdx_relIndex_eq",
+      "IUT.Audit.TensorOrderIndex.tOrdIdx_card_quot"
+    ]
+  },
+  "ZENGHULL.Thm5_1.frag.lemma4_1_two": {
+    "kind": "fragment",
+    "parent": "ZENGHULL.Thm5_1",
+    "source": {
+      "sections_in_paper": "section 4",
+      "pages_read": "checked against the TeX source of version 1: sections 0, 2 to 5, 8 to 10, 14 and 16 and Appendix A; no page render exists"
+    },
+    "content": "Lemma 4.1 for n = 2: the product basis of prod_{Gal} K, b_k in the sigma-component, has discriminant disc b ^ |Gal(K/F)|; K (x)_F K is isomorphic to prod_{Gal} K by x (x) y -> (x sigma(y))_sigma.",
+    "explicit_hypotheses": [
+      "F a field, K a finite Galois extension of F",
+      "b an F-basis of K"
+    ],
+    "implicit_hypotheses": [],
+    "conclusion": "Algebra.discr F (tOrdIdxPiBasis F K b) = Algebra.discr F b ^ card (K ~ K), and tOrdIdxPhi is bijective.",
+    "definitions_required": [
+      "IUT.Audit.TensorOrderIndex.tOrdIdxPhi",
+      "IUT.Audit.TensorOrderIndex.tOrdIdxPhiEquiv",
+      "IUT.Audit.TensorOrderIndex.tOrdIdxPiBasis"
+    ],
+    "results_used": [],
+    "external_dependencies": [],
+    "lean_declaration": "IUT.Audit.TensorOrderIndex.tOrdIdx_discr_pi",
+    "lean_module": "IUT.Audit.TensorOrderIndex",
+    "covers": "Section 4, Lemma 4.1 (TeX source): \"disc(P_n) = d_K^{d^{n-1}}.\" Covered for n = 2.",
+    "not_covered": "n >= 3.",
+    "statement_status": "STATEMENT_FORMALIZED",
+    "proof_status": "KERNEL_VERIFIED",
+    "obligations": [],
+    "ambiguities": [
+      "The paper has no page render here; the quoted statement is from its TeX source."
+    ],
+    "scope": "two factors only",
+    "lemmas": [
+      "IUT.Audit.TensorOrderIndex.tOrdIdx_traceMatrix_pi",
+      "IUT.Audit.TensorOrderIndex.tOrdIdx_trace_pi",
+      "IUT.Audit.TensorOrderIndex.tOrdIdxPhi_bijective"
+    ]
+  },
+  "ZENGHULL.Thm5_1.frag.lemma4_2_two": {
+    "kind": "fragment",
+    "parent": "ZENGHULL.Thm5_1",
+    "source": {
+      "sections_in_paper": "section 4",
+      "pages_read": "checked against the TeX source of version 1: sections 0, 2 to 5, 8 to 10, 14 and 16 and Appendix A; no page render exists"
+    },
+    "content": "Lemma 4.2 for n = 2, for any two finite-dimensional commutative algebras: disc (b (x) c) = disc b ^ dim B * disc c ^ dim A (Kronecker product of trace forms). With A = B = K this is disc b ^ (2d).",
+    "explicit_hypotheses": [
+      "F a field",
+      "A, B finite-dimensional commutative F-algebras",
+      "b, c bases"
+    ],
+    "implicit_hypotheses": [],
+    "conclusion": "Algebra.discr F (b.tensorProduct c) = Algebra.discr F b ^ card kappa * Algebra.discr F c ^ card iota.",
+    "definitions_required": [],
+    "results_used": [],
+    "external_dependencies": [],
+    "lean_declaration": "IUT.Audit.TensorOrderIndex.tOrdIdx_discr_tensor",
+    "lean_module": "IUT.Audit.TensorOrderIndex",
+    "covers": "Section 4, Lemma 4.2 (TeX source): \"disc(O_n) = d_K^{n d^{n-1}}.\" Covered for n = 2.",
+    "not_covered": "n >= 3.",
+    "statement_status": "STATEMENT_FORMALIZED",
+    "proof_status": "KERNEL_VERIFIED",
+    "obligations": [],
+    "ambiguities": [
+      "The paper has no page render here; the quoted statement is from its TeX source."
+    ],
+    "scope": "two factors only",
+    "lemmas": [
+      "IUT.Audit.TensorOrderIndex.tOrdIdx_traceMatrix_tensor",
+      "IUT.Audit.TensorOrderIndex.tOrdIdx_trace_tmul"
+    ]
+  },
+  "ZENGHULL.Thm5_1.frag.two_factor_galois": {
+    "kind": "fragment",
+    "parent": "ZENGHULL.Thm5_1",
+    "source": {
+      "sections_in_paper": "section 5",
+      "pages_read": "checked against the TeX source of version 1: sections 0, 2 to 5, 8 to 10, 14 and 16 and Appendix A; no page render exists"
+    },
+    "content": "Theorem 5.1 for n = 2 on the library's objects: for K/Q_p finite Galois of degree d with an integral basis b, [(R_E)^~ : R_E]^2 = (||disc b||^-1)^d, where R_E = tensorIdxRing p K K and (R_E)^~ = tensorIdxNormRing p K K. With |d_K| read as ||disc b||^-1 = p^v this is rho_2 = |d_K|^(d/2), with no square root.",
+    "explicit_hypotheses": [
+      "p a prime",
+      "K a field, finite-dimensional Galois Q_p-algebra",
+      "b a Q_p-basis of K that is an integral basis (tOrdIdxIntegralBasis)"
+    ],
+    "implicit_hypotheses": [],
+    "conclusion": "(relIndex R_E (R_E)^~ : R)^2 = (||Algebra.discr Q_p b||^-1)^(finrank Q_p K).",
+    "definitions_required": [
+      "IUT.Audit.TensorOrderIndex.tOrdIdxIntegralBasis",
+      "IUT.Audit.TensorOrderIndex.tOrdIdxLattice",
+      "IUT.Audit.TensorOrderIndex.tOrdIdxPhi",
+      "IUT.Audit.TensorOrderIndex.tOrdIdxPhiEquiv",
+      "IUT.Audit.TensorOrderIndex.tOrdIdxPiBasis",
+      "IUT.Audit.TensorOrderIndex.tOrdIdxNormBasis"
+    ],
+    "results_used": [],
+    "external_dependencies": [],
+    "lean_declaration": "IUT.Audit.TensorOrderIndex.tOrdIdx_index_sq_galois",
+    "lean_module": "IUT.Audit.TensorOrderIndex",
+    "covers": "Section 5, Theorem 5.1 (TeX source): \"Let K/Q_p be a Galois extension of degree d with discriminant d_K. Then for every n >= 1, rho_n = |d_K|^{(n-1)d^{n-1}/2} as an identity of positive integers.\" Covered for n = 2, with rho_2 the index of R_E in its normalization.",
+    "not_covered": "n >= 3 factors; the paper's rho_n is the index of Phi(O_n) in P_n, which for n = 2 is the index of R_E in (R_E)^~ because Phi maps (R_E)^~ onto P_2 (tOrdIdx_normRing_eq_lattice).",
+    "statement_status": "STATEMENT_FORMALIZED",
+    "proof_status": "KERNEL_VERIFIED",
+    "obligations": [],
+    "ambiguities": [
+      "The paper has no page render here; the quoted statement is from its TeX source."
+    ],
+    "scope": "two factors only; tensor products over Q_p of the fields; R_E = tensorIdxRing, (R_E)^~ = tensorIdxNormRing",
+    "lemmas": [
+      "IUT.Audit.TensorOrderIndex.tOrdIdx_index_sq_general",
+      "IUT.Audit.TensorOrderIndex.tOrdIdx_normRing_eq_lattice",
+      "IUT.Audit.TensorOrderIndex.tOrdIdx_discr_pi",
+      "IUT.Audit.TensorOrderIndex.tOrdIdxPhiEquiv",
+      "IUT.Audit.TensorOrderIndex.tOrdIdx_exists_integralBasis"
+    ]
+  },
+  "ZENGHULL.Thm5_1.frag.two_factor_general": {
+    "kind": "fragment",
+    "parent": "ZENGHULL.Thm5_1",
+    "source": {
+      "sections_in_paper": "sections 5 and 14",
+      "pages_read": "checked against the TeX source of version 1: sections 0, 2 to 5, 8 to 10, 14 and 16 and Appendix A; no page render exists"
+    },
+    "content": "Two-factor index identity without a Galois hypothesis: for finite extensions K1, K2 of Q_p with integral bases b, c and any Q_p-basis n of K1 (x) K2 whose Z_p-span is (R_E)^~, [(R_E)^~ : R_E]^2 * ||disc b||^{d2} * ||disc c||^{d1} = ||disc n||.",
+    "explicit_hypotheses": [
+      "p a prime",
+      "K1, K2 finite-dimensional field extensions of Q_p",
+      "b, c integral bases",
+      "n a basis whose Z_p-lattice equals tensorIdxNormRing p K1 K2"
+    ],
+    "implicit_hypotheses": [],
+    "conclusion": "(relIndex R_E (R_E)^~ : R)^2 * (||disc b||^{card kappa} * ||disc c||^{card iota}) = ||disc n||.",
+    "definitions_required": [
+      "IUT.Audit.TensorOrderIndex.tOrdIdxIntegralBasis",
+      "IUT.Audit.TensorOrderIndex.tOrdIdxLattice"
+    ],
+    "results_used": [],
+    "external_dependencies": [],
+    "lean_declaration": "IUT.Audit.TensorOrderIndex.tOrdIdx_index_sq_general",
+    "lean_module": "IUT.Audit.TensorOrderIndex",
+    "covers": "Not a statement printed by the paper: section 14 states that the proof of Theorem 5.1 depends on K/Q_p being Galois and that for non-Galois K the closed form must be rebuilt from the composita. This record is the general identity of which Theorem 5.1 (n = 2) is the Galois case.",
+    "not_covered": "The existence of the basis n (true because (R_E)^~ is a free Z_p-module, not proved here); a closed form of disc n for non-Galois K; any explicit non-Galois example.",
+    "statement_status": "STATEMENT_FORMALIZED",
+    "proof_status": "KERNEL_VERIFIED",
+    "obligations": [],
+    "ambiguities": [],
+    "scope": "model_test",
+    "lemmas": [
+      "IUT.Audit.TensorOrderIndex.tOrdIdx_relIndex_eq",
+      "IUT.Audit.TensorOrderIndex.tOrdIdx_discr_change",
+      "IUT.Audit.TensorOrderIndex.tOrdIdx_discr_tensor",
+      "IUT.Audit.TensorOrderIndex.tOrdIdx_ring_eq_lattice"
     ]
   }
 }

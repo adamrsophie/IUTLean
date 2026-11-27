@@ -113,6 +113,17 @@ coric container; (iii) at archimedean places, a surjection from a closed ball on
 (Proposition 3.5 (ii) (b)), which is not a containment and is not modeled; (iv) indexing by
 `ℤ` with a translation symmetry (page 106), not modeled.
 
+## Limits
+
+* Over `ℚ_p` the iterate family is empty from the second step on, so its union is the union of
+  its first two regions (`padicIterateFamily_columnUnion_eq`), and any statement quantified over
+  the regions of index at least `2`, such as a containment in an arbitrary set, holds vacuously
+  there (`padicIterateFamily_columnRegion_add_two_subset`). The proof of
+  `padicIterateFamily_upperSemiCompatible` has content only at the indices `0` and `1`.
+* Every result of this file bounds the possible image of the Θ side **from above**. None gives a
+  lower bound, and none compares any region with the q-pilot region: the q side does not occur
+  in this file, and the comparison remains the unproved hypothesis of `Comparison.lean`.
+
 ## Examples (part 3)
 
 * `padic_iUnion_nonzeroIntegers`: with `start = O^▷ = ℤ_p \ {0}` (Remark 1.2.2), the union of
@@ -260,7 +271,11 @@ variable {X ι : Type*} (F : VerticalRegionFamily X ι)
 
 /-- Upper semi-compatibility in the nonarchimedean reading: every region lies in the container
 (Proposition 3.5 (ii) (a), pages 104 and 105). A proposition about the family, proved for the
-iterate families of part 1 and a hypothesis elsewhere. -/
+iterate families of part 1 and a hypothesis elsewhere.
+
+Limits: it is a containment only, an upper bound; it says nothing about how large the regions
+are, and over `ℚ_p` the regions of index at least `2` are empty
+(`padicIterateFamily_columnRegion_add_two_subset`). -/
 def UpperSemiCompatible : Prop := ∀ m, F.columnRegion m ⊆ F.shellContainer
 
 /-- The union of the regions along the vertical line. -/
@@ -412,6 +427,29 @@ noncomputable def padicIterateFamily (p : ℕ) [Fact p.Prime] (start : Set ℚ_[
 theorem padicIterateFamily_upperSemiCompatible (p : ℕ) [Fact p.Prime] {start : Set ℚ_[p]}
     (hstart : start ⊆ {x | ‖x‖ ≤ 1}) : (padicIterateFamily p start).UpperSemiCompatible :=
   padicLogShell_contains_logUnitIterateRegion p hstart
+
+/-- **Limits.** Over `ℚ_p` the union of the iterate family is the union of its first two
+regions: the regions of index at least `2` are empty. -/
+theorem padicIterateFamily_columnUnion_eq (p : ℕ) [Fact p.Prime] (start : Set ℚ_[p]) :
+    (padicIterateFamily p start).columnUnion =
+      (padicIterateFamily p start).columnRegion 0 ∪
+        (padicIterateFamily p start).columnRegion 1 := by
+  apply Subset.antisymm
+  · refine iUnion_subset fun n => ?_
+    match n with
+    | 0 => exact subset_union_left
+    | 1 => exact subset_union_right
+    | k + 2 =>
+      show logUnitIterateRegion start _ _ (k + 2) ⊆ _
+      rw [padic_logUnitIterateRegion_add_two]; exact empty_subset _
+  · exact union_subset (subset_iUnion _ 0) (subset_iUnion _ 1)
+
+/-- **Limits.** Over `ℚ_p` every region of index at least `2` of the iterate family lies in any
+set `T`: a statement quantified over those regions holds vacuously. -/
+theorem padicIterateFamily_columnRegion_add_two_subset (p : ℕ) [Fact p.Prime]
+    (start T : Set ℚ_[p]) (k : ℕ) : (padicIterateFamily p start).columnRegion (k + 2) ⊆ T := by
+  show logUnitIterateRegion start _ _ (k + 2) ⊆ T
+  rw [padic_logUnitIterateRegion_add_two]; exact empty_subset _
 
 /-- The iterate family in the finite extension model: container `extLogShell p K`. -/
 noncomputable def extIterateFamily (p : ℕ) (K : Type*) [NormedField K] (start : Set K) :

@@ -80,7 +80,8 @@ the quotient group and no result of [AbsTopIII] is used.
 * Tensor packets: (ii) concerns one field `k_i`; the sums over `i ∈ I` used on page 14 for (iii)
   are not formalized here. For two factors, (iv), the second inequality of (iii) and the first
   inequality of (iii) when every `e_i ≤ p − 2` are proved in `TensorLogShell.lean`, without the
-  additivity over the factors.
+  additivity over the factors; the additivity and the first inequality of (iii) for every `I*`
+  are proved for two factors in `TensorAdditivity.lean`.
 -/
 
 open MeasureTheory Measure IUT.Prerequisites.PadicVolume

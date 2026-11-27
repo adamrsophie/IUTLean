@@ -37,7 +37,7 @@ def pages(s):
     a, b = s.get("pdf_page"), s.get("pdf_page_end")
     if a is None:
         src = s.get("source")
-        return str(src.get("pdf_pages", "")) if isinstance(src, dict) else ""
+        return str(src.get("pdf_pages") or src.get("sections_in_paper") or "") if isinstance(src, dict) else ""
     return str(a) if b in (None, a) else f"{a} to {b}"
 
 

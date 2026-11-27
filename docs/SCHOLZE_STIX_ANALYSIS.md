@@ -111,3 +111,10 @@ Columns: **Def** = do the two sides use equivalent definitions; **Kind** = disag
 * `Blurring.lean`: SS-14 averaged, SS-16 under (Lin) and a chosen tolerance model, and the exact relation between (1.5) and (1.6).
 
 None of these settles the dispute: every disputed step enters as a hypothesis or lies outside the files.
+
+`IUT/Audit/LANA/EtaGoal.lean` is a related model outside `IUT/Audit/ScholzeStix/`: a third
+party's isolation of the step from Theorem 3.11 to Corollary 3.12 (the LANA interim report), in
+a simplified setting and not a statement of the papers. It types the report's main goal as a
+schema with the action as data (`lanaEtaGoalFor`), and its model of issue 2 of the report's
+repository is the non-commutativity of the hexagon of Scholze and Stix in that setting
+(`lana_issue2_model`).

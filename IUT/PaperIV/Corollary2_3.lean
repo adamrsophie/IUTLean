@@ -28,6 +28,13 @@ every `S`, including `S = ∅`. It says nothing about `K_V` unless the hypothese
 for the actual functions, which requires Corollary 2.2 and is not done here. Corollary 2.3 itself
 is not stated in Lean; the form to which its proof reduces it (page 55) is stated as an open
 proposition in `IUT/Applications/CompactlyBounded.lean` (`iutIVCor2_3ReducedFormStatement`).
+
+## Limits
+
+The relation `≲` is vacuous on finite sets: `BDle S f g` holds for every finite `S` and all
+functions `f`, `g` (`corTwoThree_BDle_of_finite`), in particular for `S = ∅`
+(`corTwoThree_BDle_empty`). So `cor2_3_on_KV` has content only on an infinite `S`, and only
+for functions for which its hypotheses have been proved.
 -/
 
 namespace IUT.PaperIV.Corollary2_3
@@ -65,6 +72,15 @@ theorem BDle_of_finite_exceptions {S : Set α} (Exc : Finset α) {f g : α → �
     linarith [le_abs_self (f x - g x)]
   · linarith [h x hx hxE]
 
+/-- **Limits.** `≲` is vacuous on a finite set: `BDle S f g` holds for every finite `S` and
+all functions `f`, `g`. -/
+theorem corTwoThree_BDle_of_finite {S : Set α} (hS : S.Finite) (f g : α → ℝ) : BDle S f g :=
+  BDle_of_finite_exceptions hS.toFinset 0 fun _ hx hxE => absurd (hS.mem_toFinset.mpr hx) hxE
+
+/-- **Limits.** On the empty set `BDle` holds for all functions. -/
+theorem corTwoThree_BDle_empty (f g : α → ℝ) : BDle (∅ : Set α) f g :=
+  corTwoThree_BDle_of_finite Set.finite_empty f g
+
 /-- **Abstract form of the step of the proof of Corollary 2.3 on `K_V ∩ U_X(ℚ̄)^{≤d}`**
 (page 55). This is a lemma about arbitrary real functions on an arbitrary set `S`; it holds for
 every `S`, so it carries information about `K_V` only once its hypotheses are proved for the
@@ -78,7 +94,10 @@ the invariant `ε_E` of Corollary 2.2 (ii). Assume:
 * (Corollary 2.2 (iii)) `ε_E(x) ≤ ε` for `x ∈ S` outside `Exc`;
 * `Λ ≥ 0` on `S` (log-differents and log-conductors are degrees of effective divisors).
 
-Then `ht ≲ (1 + ε)·Λ` on `S`. -/
+Then `ht ≲ (1 + ε)·Λ` on `S`.
+
+Limits: the functions are arbitrary and `S` is arbitrary. On a finite `S`, in particular on
+`S = ∅`, the conclusion holds with no hypothesis at all (`corTwoThree_BDle_of_finite`). -/
 theorem cor2_3_on_KV {S : Set α} (Exc : Finset α) {ht H Λ εE : α → ℝ} {ε CK : ℝ}
     (hi : BDeq S ht (fun x => 1 / 6 * H x))
     (hC2 : ∀ x ∈ S, x ∉ Exc → 1 / 6 * H x ≤ (1 + εE x) * Λ x + CK)

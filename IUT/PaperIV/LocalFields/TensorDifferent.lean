@@ -55,8 +55,9 @@ with the factors exchanged, which is not separately formalized.
 
 * That `(R_E)^∼` is the normalization of `R_E` in its total ring of fractions: not proved here;
   it is proved in `TensorIndex.lean` (`tensorIdx_isFractionRing`).
-* More than two factors (the induction on `|I|` of page 10), and the identification of
-  `K₁ ⊗[ℤ_p] K₂` with `K₁ ⊗[ℚ_p] K₂`.
+* More than two factors (the induction on `|I|` of page 10), here; the inclusions are proved
+  for any finite number of factors in `TensorDifferentMany.lean` (`tdMany_proposition1_1`).
+* The identification of `K₁ ⊗[ℤ_p] K₂` with `K₁ ⊗[ℚ_p] K₂`.
 * Proposition 1.2 (ii) to (iv) themselves: not proved here; they are proved for two factors in
   `TensorLogShell.lean`.
 -/

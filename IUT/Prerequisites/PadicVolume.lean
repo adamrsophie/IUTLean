@@ -90,7 +90,12 @@ Pages checked against rendered images: the same.
 * *Real values.* `padicMuLog` is real valued with Lean's `Real.log 0 = 0`; it is meaningful on
   sets of positive finite measure (the compact open sets of page 13), and every law below that
   needs it assumes it. The value `padicMuLog_self` holds for every `Λ`, so it carries content only
-  when `0 < μ Λ < ∞`.
+  when `0 < μ Λ < ∞`. Limits: if `μ Λ` is `0` or `∞`, `padicMuLog p μ Λ A = 0` for every `A`
+  (`padicMuLog_of_degenerate_normalizer`), and if `μ A` is `0` or `∞`, the value at `A` is `0`
+  for every `Λ` (`padicMuLog_of_degenerate_set`). So `μ^log(Λ) = 0` alone does not show that
+  `Λ` is a normalizing set; that needs `0 < μ Λ < ∞` (for the unit ball,
+  `padicVol_unitBall_ne_zero`, `padicVol_unitBall_ne_top`). The same holds for
+  `padicPacketMuLog_self`.
 * *Tensor packets.* Page 13 obtains the log-volume on `⊗ k_i` from the decomposition into a
   direct sum of fields without saying how the summands are weighted. Here the packet log-volume
   is `log (μ A / μ Λ) / D` for one Haar measure `μ` on the `D`-dimensional space `⊗ k_i`, which
@@ -113,10 +118,13 @@ Pages checked against rendered images: the same.
   fields), its openness that it contains a lattice.
 * The general index formula `μ(Λ') = [Λ : Λ']⁻¹ μ(Λ)` for sublattices; only the case
   `Λ' = p Λ` of a coordinate box is proved (`padicVolBox_measure_one`).
-* IUT IV Proposition 1.1 (`p ^ 𝔡 · (R_I)^∼ ⊆ R_I`), hence Proposition 1.2 (ii) to (iv).
+* IUT IV Proposition 1.1 (`p ^ 𝔡 · (R_I)^∼ ⊆ R_I`), hence Proposition 1.2 (ii) to (iv), here;
+  they are proved in `IUT/PaperIV/LocalFields/` (`TensorDifferent.lean`,
+  `TensorDifferentMany.lean`, `TensorLogShell.lean`).
 * The additivity used on page 14, `μ^log(⊗ A_i) = ∑ μ^log(A_i) + μ^log(R_I)`: it needs the
   index formula for tensor products of lattices, or the determinant formula for Haar measure
-  over `ℚ_p` (Mathlib has the latter only over `ℝ`).
+  over `ℚ_p` (Mathlib has the latter only over `ℝ`). For two factors it is proved through the
+  index formula in `IUT/PaperIV/LocalFields/TensorAdditivity.lean`.
 * IUT IV Proposition 1.4 (ii), the exact value `−(1/e_i + m_i/(e_i f_i)) log p`: it needs the
   residue field, the torsion of `R_i^×`, and Haar measure on the unit group. The bounds of
   `padicMuLog_logUnit_bounds` come from Proposition 1.2 (i) only and are weaker.
@@ -363,12 +371,32 @@ noncomputable def padicMuLog (Λ A : Set V) : ℝ :=
   Real.log ((μ A).toReal / (μ Λ).toReal) / (Module.finrank ℚ_[p] V : ℝ)
 
 omit [FiniteDimensional ℚ_[p] V] [BorelSpace V] in
-/-- `μ^log(Λ) = 0`, the first normalizing value of IUT IV page 13. -/
+/-- `μ^log(Λ) = 0`, the first normalizing value of IUT IV page 13.
+
+Limits: this holds for every `Λ`, also when `μ Λ = 0` or `μ Λ = ∞`, where the normalized
+log-volume is identically `0` (`padicMuLog_of_degenerate_normalizer`). It is a normalization
+only together with `0 < μ Λ < ∞`. -/
 theorem padicMuLog_self (Λ : Set V) : padicMuLog p μ Λ Λ = 0 := by
   unfold padicMuLog
   by_cases h : (μ Λ).toReal = 0
   · simp [h]
   · simp [div_self h]
+
+omit [FiniteDimensional ℚ_[p] V] [BorelSpace V] in
+/-- **Limits: a degenerate normalizing set.** If `μ Λ` is `0` or `∞`, the normalized log-volume
+at `Λ` is `0` on every set. -/
+theorem padicMuLog_of_degenerate_normalizer {Λ : Set V} (hΛ : μ Λ = 0 ∨ μ Λ = ⊤)
+    (A : Set V) : padicMuLog p μ Λ A = 0 := by
+  have h := (ENNReal.toReal_eq_zero_iff _).mpr hΛ
+  simp [padicMuLog, h]
+
+omit [FiniteDimensional ℚ_[p] V] [BorelSpace V] in
+/-- **Limits: a degenerate set.** If `μ A` is `0` or `∞`, its normalized log-volume is `0`
+whatever the normalizing set. -/
+theorem padicMuLog_of_degenerate_set (Λ : Set V) {A : Set V} (hA : μ A = 0 ∨ μ A = ⊤) :
+    padicMuLog p μ Λ A = 0 := by
+  have h := (ENNReal.toReal_eq_zero_iff _).mpr hA
+  simp [padicMuLog, h]
 
 /-- The `EReal` form `ENNReal.log ((μ A / μ Λ) ^ (1 / d))` of the normalized log-volume. It is
 defined and monotone on all sets (`padicMuLogE_mono`), with `−∞` on null sets. -/

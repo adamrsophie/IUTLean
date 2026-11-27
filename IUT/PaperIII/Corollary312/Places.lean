@@ -72,8 +72,22 @@ is `−∞`. Nothing below depends on that case being meaningful:
   has positive finite measure, so the case `⊥ + ⊤` does not arise on either side.
 
 If the support condition `LogVolumeAlmostAllZero` fails, `∑ᶠ` returns `0` by Mathlib's
-convention; every theorem that uses the sum assumes the support condition, so that value is
-never used.
+convention (`globalLogVolume_eq_zero_of_not_almostAllZero`).
+
+## Limits
+
+A global log-volume `0` does not mean that the local terms are small: with infinitely many
+places and every local term negative, the value is `0`
+(`globalLogVolume_infinite_support_example`). `globalLogVolume_mono` and the bridge
+`conclusion_of_placewiseContainment` assume the support condition for both families. The
+finiteness lemmas `globalLogVolume_ne_bot`, `globalLogVolume_ne_top`, `globalLogVolume_finite`
+and the definitions `globalPilotLogVolumes`, `conclusion_globalPilotLogVolumes_iff` do not; on an
+infinite support they are true because the value is `0`. In particular, if the hull family
+violates the support condition, the conclusion of Corollary 3.12 holds for the global numbers as
+soon as the global q-side log-volume is negative
+(`conclusion_globalPilotLogVolumes_of_not_almostAllZero`): that case is an artifact of the
+convention, not a comparison of regions. A use of these numbers that is meant to carry content
+needs the support condition for the hull family (part (b) of the finiteness obligation).
 
 ## Interpretation choices
 
@@ -138,10 +152,36 @@ noncomputable def weightedLocalLogVolume (w : PlaceWeights P) (μ : ∀ v, Measu
   ((w.placeWeight v : ℝ) : EReal) * logVolume (μ v) (R v)
 
 /-- The global log-volume `∑_v w_v · log μ_v (R_v)` (Proposition 3.9 (iii), page 117), as a
-finite sum. It is meaningful under `LogVolumeAlmostAllZero`; otherwise `∑ᶠ` returns `0`. -/
+finite sum. It is meaningful under `LogVolumeAlmostAllZero`; otherwise `∑ᶠ` returns `0`.
+
+Limits: the value `0` is ambiguous. It is returned whenever infinitely many local terms are
+nonzero (`globalLogVolume_eq_zero_of_not_almostAllZero`), for instance when all of them are
+negative (`globalLogVolume_infinite_support_example`). -/
 noncomputable def globalLogVolume (w : PlaceWeights P) (μ : ∀ v, Measure (X v))
     (R : ∀ v, Set (X v)) : EReal :=
   ∑ᶠ v, weightedLocalLogVolume w μ R v
+
+/-- **Limits: the value `0` on an infinite support.** If infinitely many local log-volumes are
+nonzero, the global log-volume is `0`, Mathlib's value of `∑ᶠ` on an infinite support. -/
+theorem globalLogVolume_eq_zero_of_not_almostAllZero (w : PlaceWeights P)
+    {μ : ∀ v, Measure (X v)} {R : ∀ v, Set (X v)} (h : ¬ LogVolumeAlmostAllZero μ R) :
+    globalLogVolume w μ R = 0 := by
+  refine finsum_of_infinite_support fun hfin => h (hfin.subset fun v hv => ?_)
+  have hw : ((w.placeWeight v : ℝ) : EReal) ≠ 0 := by
+    exact_mod_cast (w.placeWeight_pos v).ne'
+  exact Function.mem_support.mpr fun h0 => hv ((mul_eq_zero.mp h0).resolve_left hw)
+
+/-- **Limits, an example.** On the places `ℕ` with unit weights, the region `[0, 1/2]` of
+Lebesgue measure at every place has negative local log-volume at every place and global
+log-volume `0`. -/
+theorem globalLogVolume_infinite_support_example :
+    logVolume (volume : Measure ℝ) (Icc 0 (1 / 2)) < 0 ∧
+      globalLogVolume (unitPlaceWeights ℕ) (fun _ => (volume : Measure ℝ))
+        (fun _ => Icc (0 : ℝ) (1 / 2)) = 0 := by
+  have hneg : logVolume (volume : Measure ℝ) (Icc 0 (1 / 2)) < 0 := by
+    rw [logVolume_neg_iff, Real.volume_Icc, ENNReal.ofReal_lt_one]; norm_num
+  refine ⟨hneg, globalLogVolume_eq_zero_of_not_almostAllZero _ fun hfin => ?_⟩
+  exact Set.infinite_univ (hfin.subset fun _ _ => hneg.ne)
 
 theorem hasFiniteSupport_weightedLocalLogVolume (w : PlaceWeights P) {μ : ∀ v, Measure (X v)}
     {R : ∀ v, Set (X v)} (h : LogVolumeAlmostAllZero μ R) :
@@ -254,6 +294,20 @@ theorem conclusion_of_placewiseContainment (hq0 : ∀ v, (S v).μ (S v).qPilot �
   (conclusion_globalPilotLogVolumes_iff S w hq0 hneg hΘ0).mpr
     ⟨globalLogVolume_ne_top w fun v => (logVolume_eq_top_iff _ _).not.mpr (hfin v),
       globalLogVolumeComparison_of_placewiseContainment S w hqs hΘs hcont⟩
+
+/-- **Limits: the conclusion on an infinite support.** If the hull family violates the support
+condition, the global Θ-side log-volume is `0`, and the conclusion of Corollary 3.12 holds for
+the global numbers from the sign condition `hneg` alone. This is an artifact of the value of
+`∑ᶠ` on an infinite support, not a comparison of regions. -/
+theorem conclusion_globalPilotLogVolumes_of_not_almostAllZero
+    (hq0 : ∀ v, (S v).μ (S v).qPilot ≠ 0)
+    (hneg : globalQLogVolume S w < 0) (hΘ0 : ∀ v, (S v).μ (S v).hullOfUnion ≠ 0)
+    (hΘs : ¬ LogVolumeAlmostAllZero (fun v => (S v).μ) fun v => (S v).hullOfUnion) :
+    Conclusion (globalPilotLogVolumes S w hq0 hneg hΘ0) := by
+  have h0 : globalThetaLogVolume S w = 0 := globalLogVolume_eq_zero_of_not_almostAllZero w hΘs
+  refine (conclusion_globalPilotLogVolumes_iff S w hq0 hneg hΘ0).mpr ⟨?_, ?_⟩
+  · rw [h0]; exact EReal.zero_ne_top
+  · rw [GlobalLogVolumeComparison, h0]; exact hneg.le
 
 end Bridge
 

@@ -59,7 +59,7 @@ hypotheses that encode unformalized inputs. Unless stated, Lean names are in the
 | `(l+5)/4`, `(l+1)/24`, `l+5` | 29 | same with `l = 2l*+1` | Steps (v), (vii) | `procession_average_l`, `step_vii_average` |
 | `20/3`, `4(l+5)/(l+1) ≤ 20/3`, `1/(l+1) ≤ 1/l` | 29 | final display of Step (v) | Step (v) | `step_v_final` (kernel checked; needs `l ≥ 5`, nonnegativity) |
 | `log π`, `4` | 29, 30 | archimedean bound `(l+5)/4·log π ≤ (l+1)/4·4` | Step (vii) | `step_vii_archimedean` (existing), `step_vii_average` |
-| `0` | 29 | local bound at nondistinguished places | Step (vi) | none; the bound is `μ^log((R_I)^∼) = 0` with the inclusion of Prop 1.4 (iv), proved for two factors (`tensorLog_prop1_4_iv`) |
+| `0` | 29 | local bound at nondistinguished places | Step (vi) | `stepsVI_packet_container` (any number of factors), `stepsVI_two_factors`, `stepsVI_procession_le_zero`; the bound is `μ^log((R_I)^∼) = 0` with the inclusion of Prop 1.4 (iv), proved for two factors (`tensorLog_prop1_4_iv`) |
 | `56` | 30 | `52 + 4` | Step (viii) | `step_viii_raw` |
 | `(l+1)/4·(1/6)·(12/l²) ≥ 1/(2l)` | 30 | absorbs the `log 𝔮` term | Step (viii) | `step_viii_estimate` (existing), `step_viii_raw` |
 | `4/3·(e*_mod·l + η_prm)` | 31 | bound on `l*_mod·log(𝔰^≤)` | Step (viii) | `step_viii_prime_count` (two cases), `step_viii_prime_count_prm` |

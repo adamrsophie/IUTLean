@@ -776,6 +776,13 @@ EXTERNAL_CLAIM: a statement of another paper, stated in Lean as a proposition an
 | Id | Kind | Title | PDF pages | Statement | Proof | Lean declaration | Path |
 |---|---|---|---|---|---|---|---|
 | `IUT4.Prop1_1` | Proposition | Multiple Tensor Products and Differents | 9 to 10 | EXTRACTED | EXTRACTED |  | yes |
+| &nbsp;&nbsp;`IUT4.Prop1_1.frag.many_choice_independent` | fragment | (scope: tensor products over Q_p of the fields; R_I = tdManyIntegers (additive span of the pure tensors with every factor integral over Z_p); (R_I)^~ = packetNormalizationSet (elements of the packet integral over Z_p); * = s; p^{d_{I*}} = tprod delta with delta_s = 1; d_i = differentOrder at a prime P_i of R_i over p (ord(p) = 1), elements of order d_i given by the spectral norm; abstract fields, not subfields of an algebraic closure) | 9 | STATEMENT_FORMALIZED | KERNEL_VERIFIED | `IUT.PaperIV.LocalFields.tdMany_choice_independent` |  |
+| &nbsp;&nbsp;`IUT4.Prop1_1.frag.many_different_ideal` | fragment | (scope: tensor products over Q_p of the fields; R_I = tdManyIntegers (additive span of the pure tensors with every factor integral over Z_p); (R_I)^~ = packetNormalizationSet (elements of the packet integral over Z_p); * = s; p^{d_{I*}} = tprod delta with delta_s = 1; d_i = differentOrder at a prime P_i of R_i over p (ord(p) = 1), elements of order d_i given by the spectral norm; abstract fields, not subfields of an algebraic closure) | 9 to 10 | STATEMENT_FORMALIZED | KERNEL_VERIFIED | `IUT.PaperIV.LocalFields.tdMany_mul_mem_integers` |  |
+| &nbsp;&nbsp;`IUT4.Prop1_1.frag.many_integers_def` | fragment | (scope: any finite family of fields with Q_p-algebra structures; R_I as a subset of PiTensorProduct Q_p K) | 9 | STATEMENT_FORMALIZED | NOT_EXTRACTED | `IUT.PaperIV.LocalFields.tdManyIntegers` |  |
+| &nbsp;&nbsp;`IUT4.Prop1_1.frag.many_order` | fragment | (scope: tensor products over Q_p of the fields; R_I = tdManyIntegers (additive span of the pure tensors with every factor integral over Z_p); (R_I)^~ = packetNormalizationSet (elements of the packet integral over Z_p); * = s; p^{d_{I*}} = tprod delta with delta_s = 1; d_i = differentOrder at a prime P_i of R_i over p (ord(p) = 1), elements of order d_i given by the spectral norm; abstract fields, not subfields of an algebraic closure) | 9 | STATEMENT_FORMALIZED | KERNEL_VERIFIED | `IUT.PaperIV.LocalFields.tdMany_order_mul_mem_integers` |  |
+| &nbsp;&nbsp;`IUT4.Prop1_1.frag.many_split` | fragment | (scope: model_test) | 9 to 10 | STATEMENT_FORMALIZED | KERNEL_VERIFIED | `IUT.PaperIV.LocalFields.tdMany_split_mul_mem` |  |
+| &nbsp;&nbsp;`IUT4.Prop1_1.frag.many_trivial_inclusion` | fragment | (scope: tensor products over Q_p of the fields; R_I = tdManyIntegers (additive span of the pure tensors with every factor integral over Z_p); (R_I)^~ = packetNormalizationSet (elements of the packet integral over Z_p); * = s; p^{d_{I*}} = tprod delta with delta_s = 1; d_i = differentOrder at a prime P_i of R_i over p (ord(p) = 1), elements of order d_i given by the spectral norm; abstract fields, not subfields of an algebraic closure) | 9 | STATEMENT_FORMALIZED | KERNEL_VERIFIED | `IUT.PaperIV.LocalFields.tdMany_integers_subset` |  |
+| &nbsp;&nbsp;`IUT4.Prop1_1.frag.many_whole` | fragment | (scope: tensor products over Q_p of the fields; R_I = tdManyIntegers (additive span of the pure tensors with every factor integral over Z_p); (R_I)^~ = packetNormalizationSet (elements of the packet integral over Z_p); * = s; p^{d_{I*}} = tprod delta with delta_s = 1; d_i = differentOrder at a prime P_i of R_i over p (ord(p) = 1), elements of order d_i given by the spectral norm; abstract fields, not subfields of an algebraic closure) | 9 to 10 | STATEMENT_FORMALIZED | KERNEL_VERIFIED | `IUT.PaperIV.LocalFields.tdMany_proposition1_1` |  |
 | &nbsp;&nbsp;`IUT4.Prop1_1.frag.packet_integers` | fragment |  | 9, 14 | STATEMENT_FORMALIZED | KERNEL_VERIFIED | `IUT.Prerequisites.PadicVolume.padicPacketIntegers_subset` |  |
 | &nbsp;&nbsp;`IUT4.Prop1_1.frag.pk_integers_span` | fragment | (scope: model_test) | 9 | STATEMENT_FORMALIZED | KERNEL_VERIFIED | `IUT.PaperIV.LocalFields.packet_integers_span` |  |
 | &nbsp;&nbsp;`IUT4.Prop1_1.frag.pk_lattice` | fragment | (scope: model_test) | 9, 13 | STATEMENT_FORMALIZED | KERNEL_VERIFIED | `IUT.PaperIV.LocalFields.packet_normalization_lattice_tensor` |  |
@@ -791,6 +798,7 @@ EXTERNAL_CLAIM: a statement of another paper, stated in Lean as a proposition an
 | &nbsp;&nbsp;`IUT4.Prop1_1.frag.ti_pow_smul` | fragment | (scope: model_test) | 9 | STATEMENT_FORMALIZED | KERNEL_VERIFIED | `IUT.PaperIV.LocalFields.tensorIdx_ceil_smul_mem` |  |
 | &nbsp;&nbsp;`IUT4.Prop1_1.frag.ti_pow_smul_left` | fragment | (scope: model_test) | 9 | STATEMENT_FORMALIZED | KERNEL_VERIFIED | `IUT.PaperIV.LocalFields.tensorIdx_ceil_smul_mem_left` |  |
 | &nbsp;&nbsp;`IUT4.Prop1_1.frag.ti_unramified` | fragment | (scope: model_test) | 9 | STATEMENT_FORMALIZED | KERNEL_VERIFIED | `IUT.PaperIV.LocalFields.tensorIdx_eq_of_ramificationIdx_eq_one` |  |
+| &nbsp;&nbsp;`IUT4.Prop1_1.frag.tord_half_allowance` | fragment | (scope: model_test) | 9, 13 | STATEMENT_FORMALIZED | KERNEL_VERIFIED | `IUT.Audit.TensorOrderIndex.tOrdIdx_normExp_eq_half` |  |
 | &nbsp;&nbsp;`IUT4.Prop1_1.frag.vb_integral_models` | fragment | (scope: two factors K1, K2 (finite extensions of Q_p); (R_E)^~ = padicPacketNormalization (elements of K1 (x) K2 integral over Z_p); mu^log = padicPacketMuLog in Module.finBasis coordinates) | 9 | STATEMENT_FORMALIZED | KERNEL_VERIFIED | `IUT.PaperIV.LocalFields.volBridge_padicVolIntegral_iff` |  |
 | &nbsp;&nbsp;`IUT4.Prop1_1.frag.vb_tensor_decomposition` | fragment | (scope: two factors K1, K2 (finite extensions of Q_p); (R_E)^~ = padicPacketNormalization (elements of K1 (x) K2 integral over Z_p); mu^log = padicPacketMuLog in Module.finBasis coordinates) | 9, 13 | STATEMENT_FORMALIZED | KERNEL_VERIFIED | `IUT.PaperIV.LocalFields.volBridge_tensor_equiv_pi` |  |
 | `IUT4.Prop1_2` | Proposition | Differents and Logarithms | 10 to 11 | EXTRACTED | EXTRACTED |  | yes |
@@ -824,7 +832,7 @@ EXTERNAL_CLAIM: a statement of another paper, stated in Lean as a proposition an
 | &nbsp;&nbsp;`IUT4.Prop1_2.frag.tls_lower_inclusion` | fragment | (scope: two factors only (I = {1, 2}); K1 tmul_{Q_p} K2; R_I = padicPacketIntegers, (R_I)^~ = padicPacketNormalization (elements integral over Z_p); log_p(R_I^x) = tensorLogLattice, the Z_p-span in K1 tmul K2 of log_p(u1) tmul log_p(u2); p^mu (R_I)^~ = tensorLogShift x y with spectral norms \|\|x\|\| \|\|y\|\| = p^(-mu); ord read through the spectral norm; e_i, d_i at a prime P_i of R_i over p (d_i = tensorLogDiffOrder = differentOrder); phi a Q_p-linear automorphism of K1 tmul K2 with phi(log_p(R_I^x)) = log_p(R_I^x)) | 10 to 11 | STATEMENT_FORMALIZED | KERNEL_VERIFIED | `IUT.PaperIV.LocalFields.tensorLog_shift_subset_lattice` |  |
 | &nbsp;&nbsp;`IUT4.Prop1_2.frag.tls_padic_nonvacuity` | fragment | (scope: model_test) | 10 to 11 | STATEMENT_FORMALIZED | KERNEL_VERIFIED | `IUT.PaperIV.LocalFields.tensorLog_padic_prop1_2_iv` |  |
 | &nbsp;&nbsp;`IUT4.Prop1_2.frag.tls_upper_inclusion` | fragment | (scope: two factors only (I = {1, 2}); K1 tmul_{Q_p} K2; R_I = padicPacketIntegers, (R_I)^~ = padicPacketNormalization (elements integral over Z_p); log_p(R_I^x) = tensorLogLattice, the Z_p-span in K1 tmul K2 of log_p(u1) tmul log_p(u2); p^mu (R_I)^~ = tensorLogShift x y with spectral norms \|\|x\|\| \|\|y\|\| = p^(-mu); ord read through the spectral norm; e_i, d_i at a prime P_i of R_i over p (d_i = tensorLogDiffOrder = differentOrder); phi a Q_p-linear automorphism of K1 tmul K2 with phi(log_p(R_I^x)) = log_p(R_I^x)) | 10 to 11 | STATEMENT_FORMALIZED | KERNEL_VERIFIED | `IUT.PaperIV.LocalFields.tensorLog_lattice_subset_shift` |  |
-| `IUT4.Prop1_3` | Proposition | Estimates of Differents | 11 to 12 | EXTRACTED | EXTRACTED |  | yes |
+| `IUT4.Prop1_3` | Proposition | Estimates of Differents | 11 to 12 | STATEMENT_FORMALIZED | KERNEL_VERIFIED | `IUT.PaperIV.LocalFields.prop1_3Full` | yes |
 | &nbsp;&nbsp;`IUT4.Prop1_3.frag.bridge_d_with_log` | fragment | (scope: finite extension L of Q_p (Field, finite-dimensional Q_p-algebra, compatible Z_p-algebra) with Mathlib's spectral norm spectralNorm Q_p L; R_i = integralClosure Z_p L; e_i = Ideal.ramificationIdx of a prime P over pZ_p (proved unique)) | 9 to 12 | STATEMENT_FORMALIZED | KERNEL_VERIFIED | `IUT.PaperIV.LocalFields.padicBridge_log_bounds_and_differentOrder` |  |
 | &nbsp;&nbsp;`IUT4.Prop1_3.frag.differentOrder` | fragment | (scope: general Dedekind domains; specialized to Z_p by IUT.PaperIV.LocalFields.padic_differentOrder_ge) | 9 to 12 | STATEMENT_FORMALIZED | NOT_EXTRACTED | `IUT.PaperIV.LocalFields.differentOrder` |  |
 | &nbsp;&nbsp;`IUT4.Prop1_3.frag.different_upper_bound` | fragment | (scope: model_test) | 11 to 13 | STATEMENT_FORMALIZED | KERNEL_VERIFIED | `IUT.PaperIV.LocalFields.diffBound_exponent_le` |  |
@@ -842,6 +850,7 @@ EXTERNAL_CLAIM: a statement of another paper, stated in Lean as a proposition an
 | &nbsp;&nbsp;`IUT4.Prop1_3.frag.ii_of_forall_eps` | fragment |  | 11 to 12 | STATEMENT_FORMALIZED | KERNEL_VERIFIED | `IUT.PaperIV.Proposition1_3.ii_of_forall_eps` |  |
 | &nbsp;&nbsp;`IUT4.Prop1_3.frag.ii_statement_proved` | fragment | (scope: k_0 = K, k_i = L finite extensions of Q_p; R_0 = integralClosure Z_p K, R_i = integralClosure Z_p L, R_K -> R_L given by towerAlgebra; e_0, e_i the ramification indices over pZ_p, e_{i/0} that of P over R_K; d = differentOrder (ord(p) = 1); n_i = multiplicity p [L : K]) | 11 to 13 | STATEMENT_FORMALIZED | KERNEL_VERIFIED | `IUT.PaperIV.LocalFields.diffBound_towerProp1_3iiStatement` |  |
 | &nbsp;&nbsp;`IUT4.Prop1_3.frag.ii_step` | fragment |  | 11 to 12 | STATEMENT_FORMALIZED | CONDITIONALLY_VERIFIED | `IUT.PaperIV.Proposition1_3.ii_step` |  |
+| &nbsp;&nbsp;`IUT4.Prop1_3.frag.n_i_unique` | fragment |  | 11 | STATEMENT_FORMALIZED | KERNEL_VERIFIED | `IUT.PaperIV.LocalFields.prop1_3Full_nExponent_iff` |  |
 | &nbsp;&nbsp;`IUT4.Prop1_3.frag.tower_i_ge` | fragment | (scope: k_0 = K, k_i = L finite extensions of Q_p; R_0 = integralClosure Z_p K, R_i = integralClosure Z_p L, R_K -> R_L given by towerAlgebra; e_0 = ramificationIdx of P_0 over pZ_p, e_i = that of P, e_{i/0} = ramificationIdx of P over R_K (e_i = e_0 e_{i/0} by towerRamificationIdx_eq_mul); d = differentOrder (exponent of the different divided by the ramification index, ord(p) = 1); tame means p does not divide e_{i/0} (finite residue fields); n_i = multiplicity p [L : K]) | 9 to 12 | STATEMENT_FORMALIZED | KERNEL_VERIFIED | `IUT.PaperIV.LocalFields.towerProp1_3i_ge` |  |
 | &nbsp;&nbsp;`IUT4.Prop1_3.frag.tower_i_tame_equality` | fragment | (scope: k_0 = K, k_i = L finite extensions of Q_p; R_0 = integralClosure Z_p K, R_i = integralClosure Z_p L, R_K -> R_L given by towerAlgebra; e_0 = ramificationIdx of P_0 over pZ_p, e_i = that of P, e_{i/0} = ramificationIdx of P over R_K (e_i = e_0 e_{i/0} by towerRamificationIdx_eq_mul); d = differentOrder (exponent of the different divided by the ramification index, ord(p) = 1); tame means p does not divide e_{i/0} (finite residue fields); n_i = multiplicity p [L : K]) | 9 to 12 | STATEMENT_FORMALIZED | KERNEL_VERIFIED | `IUT.PaperIV.LocalFields.towerProp1_3i_eq_of_tame` |  |
 | &nbsp;&nbsp;`IUT4.Prop1_3.frag.tower_ii_exponent_bound` | fragment | (scope: model_test) | 9 to 12 | STATEMENT_FORMALIZED | KERNEL_VERIFIED | `IUT.PaperIV.LocalFields.diffBound_prop1_3ii_of_classical` |  |
@@ -874,6 +883,8 @@ EXTERNAL_CLAIM: a statement of another paper, stated in Lean as a proposition an
 | &nbsp;&nbsp;`IUT4.Prop1_4.frag.pk_floor_step` | fragment | (scope: abstract finite-dimensional Q_p-algebra; mu^log = padicPacketMuLog) | 14 | STATEMENT_FORMALIZED | KERNEL_VERIFIED | `IUT.PaperIV.LocalFields.packet_muLog_floor_smul_le` |  |
 | &nbsp;&nbsp;`IUT4.Prop1_4.frag.pk_packet_normalization` | fragment | (scope: packet = PiTensorProduct Q_p K; (R_E)^~ = packetNormalizationSet; mu^log = padicPacketMuLog in Module.finBasis coordinates) | 9, 13 | STATEMENT_FORMALIZED | KERNEL_VERIFIED | `IUT.PaperIV.LocalFields.packet_muLog_normalization_tensor` |  |
 | &nbsp;&nbsp;`IUT4.Prop1_4.frag.pk_pi_region` | fragment | (scope: model_test) | 13 | STATEMENT_FORMALIZED | KERNEL_VERIFIED | `IUT.PaperIV.LocalFields.packet_muLog_pi_region` |  |
+| &nbsp;&nbsp;`IUT4.Prop1_4.frag.tadd_additivity` | fragment | (scope: two factors only (I = {1, 2}); K1 tmul_{Q_p} K2; R_I = padicPacketIntegers, (R_I)^~ = padicPacketNormalization; log_p(R_i^x) = tensorLogUnits (extLogUnit of the spectral norm on the units of R_i), a Z_p-submodule tensorAddLogSubmodule; log_p(R_I^x) = tensorLogLattice = tensorAddSpan of the log_p(R_i^x) (the image of the tensor product over Z_p); mu^log on K1 tmul K2 the packet log-volume with reference set (R_I)^~, on K_i tensorAddMuLog (spectral norm, Borel sets, Measure.addHaar, reference set R_i); e_i, d_i at a prime P_i of R_i over p) | 13 to 14 | STATEMENT_FORMALIZED | KERNEL_VERIFIED | `IUT.PaperIV.LocalFields.tensorAdd_muLog_logLattice` |  |
+| &nbsp;&nbsp;`IUT4.Prop1_4.frag.tadd_iii_first` | fragment | (scope: two factors only (I = {1, 2}); K1 tmul_{Q_p} K2; R_I = padicPacketIntegers, (R_I)^~ = padicPacketNormalization; log_p(R_i^x) = tensorLogUnits (extLogUnit of the spectral norm on the units of R_i), a Z_p-submodule tensorAddLogSubmodule; log_p(R_I^x) = tensorLogLattice = tensorAddSpan of the log_p(R_i^x) (the image of the tensor product over Z_p); mu^log on K1 tmul K2 the packet log-volume with reference set (R_I)^~, on K_i tensorAddMuLog (spectral norm, Borel sets, Measure.addHaar, reference set R_i); e_i, d_i at a prime P_i of R_i over p) | 13 to 14 | STATEMENT_FORMALIZED | KERNEL_VERIFIED | `IUT.PaperIV.LocalFields.tensorAdd_prop1_4_iii_lattice` |  |
 | &nbsp;&nbsp;`IUT4.Prop1_4.frag.ti_bounds` | fragment | (scope: model_test) | 9 | STATEMENT_FORMALIZED | KERNEL_VERIFIED | `IUT.PaperIV.LocalFields.tensorIdx_muLog_bounds` |  |
 | &nbsp;&nbsp;`IUT4.Prop1_4.frag.ti_compact_open` | fragment | (scope: model_test) | 13 | STATEMENT_FORMALIZED | KERNEL_VERIFIED | `IUT.PaperIV.LocalFields.tensorIdx_coord_isOpen_isCompact` |  |
 | &nbsp;&nbsp;`IUT4.Prop1_4.frag.ti_index_formula` | fragment | (scope: model_test) | 13 to 14 | STATEMENT_FORMALIZED | KERNEL_VERIFIED | `IUT.PaperIV.LocalFields.tensorIdx_muLog_eq` |  |
@@ -882,6 +893,7 @@ EXTERNAL_CLAIM: a statement of another paper, stated in Lean as a proposition an
 | &nbsp;&nbsp;`IUT4.Prop1_4.frag.tls_iii_first` | fragment | (scope: two factors only (I = {1, 2}); K1 tmul_{Q_p} K2; R_I = padicPacketIntegers, (R_I)^~ = padicPacketNormalization (elements integral over Z_p); log_p(R_I^x) = tensorLogLattice, the Z_p-span in K1 tmul K2 of log_p(u1) tmul log_p(u2); p^mu (R_I)^~ = tensorLogShift x y with spectral norms \|\|x\|\| \|\|y\|\| = p^(-mu); ord read through the spectral norm; e_i, d_i at a prime P_i of R_i over p (d_i = tensorLogDiffOrder = differentOrder); phi a Q_p-linear automorphism of K1 tmul K2 with phi(log_p(R_I^x)) = log_p(R_I^x)) | 13 to 14 | STATEMENT_FORMALIZED | KERNEL_VERIFIED | `IUT.PaperIV.LocalFields.tensorLog_prop1_4_iii_lattice` |  |
 | &nbsp;&nbsp;`IUT4.Prop1_4.frag.tls_iii_second` | fragment | (scope: two factors only (I = {1, 2}); K1 tmul_{Q_p} K2; R_I = padicPacketIntegers, (R_I)^~ = padicPacketNormalization (elements integral over Z_p); log_p(R_I^x) = tensorLogLattice, the Z_p-span in K1 tmul K2 of log_p(u1) tmul log_p(u2); p^mu (R_I)^~ = tensorLogShift x y with spectral norms \|\|x\|\| \|\|y\|\| = p^(-mu); ord read through the spectral norm; e_i, d_i at a prime P_i of R_i over p (d_i = tensorLogDiffOrder = differentOrder); phi a Q_p-linear automorphism of K1 tmul K2 with phi(log_p(R_I^x)) = log_p(R_I^x)) | 13 to 14 | STATEMENT_FORMALIZED | KERNEL_VERIFIED | `IUT.PaperIV.LocalFields.tensorLog_prop1_4_iii_shift` |  |
 | &nbsp;&nbsp;`IUT4.Prop1_4.frag.tls_iv` | fragment | (scope: two factors only (I = {1, 2}); K1 tmul_{Q_p} K2; R_I = padicPacketIntegers, (R_I)^~ = padicPacketNormalization (elements integral over Z_p); log_p(R_I^x) = tensorLogLattice, the Z_p-span in K1 tmul K2 of log_p(u1) tmul log_p(u2); p^mu (R_I)^~ = tensorLogShift x y with spectral norms \|\|x\|\| \|\|y\|\| = p^(-mu); ord read through the spectral norm; e_i, d_i at a prime P_i of R_i over p (d_i = tensorLogDiffOrder = differentOrder); phi a Q_p-linear automorphism of K1 tmul K2 with phi(log_p(R_I^x)) = log_p(R_I^x)) | 13 to 14 | STATEMENT_FORMALIZED | KERNEL_VERIFIED | `IUT.PaperIV.LocalFields.tensorLog_prop1_4_iv` |  |
+| &nbsp;&nbsp;`IUT4.Prop1_4.frag.tord_mulog_galois` | fragment | (scope: model_test) | 9, 13 | STATEMENT_FORMALIZED | KERNEL_VERIFIED | `IUT.Audit.TensorOrderIndex.tOrdIdx_muLog_galois` |  |
 | &nbsp;&nbsp;`IUT4.Prop1_4.frag.uv_card_torsion` | fragment | (scope: finite extension L of Q_p with Mathlib's spectral norm; R_i = integralClosure Z_p L; R_i^x the image of its unit group; R_i^mu = CommGroup.torsion of the unit group; e_i = Ideal.ramificationIdx of P; f_i = unitVolResidueDegree (Ideal.inertiaDeg); m_i = unitVolTorsionExponent; log_p = extLogUnit; mu^log = padicMuLog normalized at R) | 13 to 14 | STATEMENT_FORMALIZED | KERNEL_VERIFIED | `IUT.PaperIV.LocalFields.unitVol_card_torsion` |  |
 | &nbsp;&nbsp;`IUT4.Prop1_4.frag.uv_ii` | fragment | (scope: finite extension L of Q_p with Mathlib's spectral norm; R_i = integralClosure Z_p L; R_i^x the image of its unit group; R_i^mu = CommGroup.torsion of the unit group; e_i = Ideal.ramificationIdx of P; f_i = unitVolResidueDegree (Ideal.inertiaDeg); m_i = unitVolTorsionExponent; log_p = extLogUnit; mu^log = padicMuLog normalized at R) | 13 to 14 | STATEMENT_FORMALIZED | KERNEL_VERIFIED | `IUT.PaperIV.LocalFields.unitVol_muLog_logUnit_eq` |  |
 | &nbsp;&nbsp;`IUT4.Prop1_4.frag.uv_ii_card` | fragment | (scope: finite extension L of Q_p with Mathlib's spectral norm; R_i = integralClosure Z_p L; R_i^x the image of its unit group; R_i^mu = CommGroup.torsion of the unit group; e_i = Ideal.ramificationIdx of P; f_i = unitVolResidueDegree (Ideal.inertiaDeg); m_i = unitVolTorsionExponent; log_p = extLogUnit; mu^log = padicMuLog normalized at R) | 13 to 14 | STATEMENT_FORMALIZED | KERNEL_VERIFIED | `IUT.PaperIV.LocalFields.unitVol_muLog_logUnit_eq_card` |  |
@@ -901,6 +913,11 @@ EXTERNAL_CLAIM: a statement of another paper, stated in Lean as a proposition an
 | &nbsp;&nbsp;`IUT4.Prop1_5.frag.count_iii` | fragment |  | 15 to 16 | STATEMENT_FORMALIZED | KERNEL_VERIFIED | `IUT.PaperIV.Proposition1_5.count_iii` |  |
 | &nbsp;&nbsp;`IUT4.Prop1_5.frag.crt_normSq` | fragment |  | 15 to 16 | STATEMENT_FORMALIZED | KERNEL_VERIFIED | `IUT.PaperIV.Proposition1_5.crt_normSq` |  |
 | &nbsp;&nbsp;`IUT4.Prop1_5.frag.crt_pure` | fragment |  | 15 to 16 | STATEMENT_FORMALIZED | KERNEL_VERIFIED | `IUT.PaperIV.Proposition1_5.crt_pure` |  |
+| &nbsp;&nbsp;`IUT4.Prop1_5.frag.i_length` | fragment |  | 15 | STATEMENT_FORMALIZED | KERNEL_VERIFIED | `IUT.PaperIV.Proposition1_5.archProp1_5_i_length` |  |
+| &nbsp;&nbsp;`IUT4.Prop1_5.frag.i_metric` | fragment | (scope: C with Mathlib's real inner product Re(z conj w); C tensor_R C = TensorProduct R C C with Mathlib's tensor product inner product; C + C = C x C with archDsInner (sum of the inner products of the components)) | 15 | STATEMENT_FORMALIZED | KERNEL_VERIFIED | `IUT.PaperIV.Proposition1_5.archProp1_5_i` |  |
+| &nbsp;&nbsp;`IUT4.Prop1_5.frag.ii_preserved` | fragment |  | 15 | STATEMENT_FORMALIZED | KERNEL_VERIFIED | `IUT.PaperIV.Proposition1_5.archProp1_5_ii` |  |
+| &nbsp;&nbsp;`IUT4.Prop1_5.frag.primitive_card` | fragment |  | 14 | STATEMENT_FORMALIZED | KERNEL_VERIFIED | `IUT.PaperIV.Proposition1_5.archPrimitive_card` |  |
+| &nbsp;&nbsp;`IUT4.Prop1_5.frag.primitive_group` | fragment |  | 14 | STATEMENT_FORMALIZED | NOT_EXTRACTED | `IUT.PaperIV.Proposition1_5.archPrimitive` |  |
 | `IUT4.Prop1_6` | Proposition | The Prime Number Theorem | 16 | STATEMENT_FORMALIZED | KERNEL_VERIFIED | `IUT.PaperIV.Proposition1_6.proposition1_6` | yes |
 | `IUT4.Prop1_7` | Proposition | Weighted Averages | 16 to 17 | STATEMENT_FORMALIZED | KERNEL_VERIFIED | `IUT.PaperIV.Proposition1_7.weighted_averages` | yes |
 | `IUT4.Rem1_7_1` | Remark |  | 17 to 18 | EXTRACTED | EXTRACTED |  | yes |
@@ -939,6 +956,9 @@ EXTERNAL_CLAIM: a statement of another paper, stated in Lean as a proposition an
 | &nbsp;&nbsp;&nbsp;&nbsp;`IUT4.Thm1_10.StepIII.frag.step_iii_p_eq_l` | fragment |  | 25 to 26 | STATEMENT_FORMALIZED | KERNEL_VERIFIED | `IUT.PaperIV.Theorem1_10.step_iii_p_eq_l` |  |
 | &nbsp;&nbsp;&nbsp;&nbsp;`IUT4.Thm1_10.StepIII.frag.step_iii_sQ` | fragment |  | 25 to 26 | STATEMENT_FORMALIZED | CONDITIONALLY_VERIFIED | `IUT.PaperIV.Theorem1_10.step_iii_sQ` |  |
 | &nbsp;&nbsp;`IUT4.Thm1_10.StepIV` | part |  | 26 to 27 | EXTRACTED | BLOCKED_BY_EXTERNAL_THEOREM |  | yes |
+| &nbsp;&nbsp;&nbsp;&nbsp;`IUT4.Thm1_10.StepIV.frag.label_bijective` | fragment |  | 26 to 27 | STATEMENT_FORMALIZED | KERNEL_VERIFIED | `IUT.PaperIV.Theorem1_10.stepsIVLabel_bijective` |  |
+| &nbsp;&nbsp;&nbsp;&nbsp;`IUT4.Thm1_10.StepIV.frag.procession_averaging` | fragment | (scope: model_test) | 26 to 29 | STATEMENT_FORMALIZED | KERNEL_VERIFIED | `IUT.PaperIV.Theorem1_10.stepsIVProcession_stepV` |  |
+| &nbsp;&nbsp;&nbsp;&nbsp;`IUT4.Thm1_10.StepIV.frag.tensor_components` | fragment | (scope: model_test) | 26 to 27 | STATEMENT_FORMALIZED | KERNEL_VERIFIED | `IUT.PaperIV.Theorem1_10.stepsIV_tensor_components` |  |
 | &nbsp;&nbsp;`IUT4.Thm1_10.StepV` | part |  | 27 to 29 | EXTRACTED | BLOCKED_BY_EXTERNAL_THEOREM |  | yes |
 | &nbsp;&nbsp;&nbsp;&nbsp;`IUT4.Thm1_10.StepV.frag.betaAvg_affine` | fragment |  | 28 to 29 | STATEMENT_FORMALIZED | KERNEL_VERIFIED | `IUT.PaperIV.Theorem1_10.betaAvg_affine` |  |
 | &nbsp;&nbsp;&nbsp;&nbsp;`IUT4.Thm1_10.StepV.frag.procession_average` | fragment |  | 28 to 29 | STATEMENT_FORMALIZED | KERNEL_VERIFIED | `IUT.PaperIV.Theorem1_10.procession_average` |  |
@@ -949,7 +969,12 @@ EXTERNAL_CLAIM: a statement of another paper, stated in Lean as a proposition an
 | &nbsp;&nbsp;&nbsp;&nbsp;`IUT4.Thm1_10.StepV.frag.sum_Istar_le` | fragment |  | 28 to 29 | STATEMENT_FORMALIZED | CONDITIONALLY_VERIFIED | `IUT.PaperIV.Theorem1_10.sum_Istar_le` |  |
 | &nbsp;&nbsp;&nbsp;&nbsp;`IUT4.Thm1_10.StepV.frag.weighted_average_normalized` | fragment |  | 28 to 29 | STATEMENT_FORMALIZED | KERNEL_VERIFIED | `IUT.PaperIV.Theorem1_10.weighted_average_normalized` |  |
 | &nbsp;&nbsp;`IUT4.Thm1_10.StepVI` | part |  | 29 | EXTRACTED | BLOCKED_BY_EXTERNAL_THEOREM |  | yes |
+| &nbsp;&nbsp;&nbsp;&nbsp;`IUT4.Thm1_10.StepVI.frag.packet_container` | fragment |  | 29 | STATEMENT_FORMALIZED | KERNEL_VERIFIED | `IUT.PaperIV.Theorem1_10.stepsVI_packet_container` |  |
+| &nbsp;&nbsp;&nbsp;&nbsp;`IUT4.Thm1_10.StepVI.frag.procession_zero` | fragment |  | 29 | STATEMENT_FORMALIZED | KERNEL_VERIFIED | `IUT.PaperIV.Theorem1_10.stepsVI_procession_le_zero` |  |
+| &nbsp;&nbsp;&nbsp;&nbsp;`IUT4.Thm1_10.StepVI.frag.two_factors` | fragment |  | 29 | STATEMENT_FORMALIZED | KERNEL_VERIFIED | `IUT.PaperIV.Theorem1_10.stepsVI_two_factors` |  |
 | &nbsp;&nbsp;`IUT4.Thm1_10.StepVII` | part |  | 29 to 30 | EXTRACTED | BLOCKED_BY_EXTERNAL_THEOREM |  | yes |
+| &nbsp;&nbsp;&nbsp;&nbsp;`IUT4.Thm1_10.StepVII.frag.container_logVolume` | fragment | (scope: model_test) | 29 to 30 | STATEMENT_FORMALIZED | KERNEL_VERIFIED | `IUT.PaperIV.Theorem1_10.stepsVII_logVolume_container` |  |
+| &nbsp;&nbsp;&nbsp;&nbsp;`IUT4.Thm1_10.StepVII.frag.procession` | fragment | (scope: model_test) | 29 to 30 | STATEMENT_FORMALIZED | KERNEL_VERIFIED | `IUT.PaperIV.Theorem1_10.stepsVII_procession` |  |
 | &nbsp;&nbsp;&nbsp;&nbsp;`IUT4.Thm1_10.StepVII.frag.step_vii_archimedean` | fragment |  | 29 to 30 | STATEMENT_FORMALIZED | KERNEL_VERIFIED | `IUT.PaperIV.Theorem1_10.step_vii_archimedean` |  |
 | &nbsp;&nbsp;&nbsp;&nbsp;`IUT4.Thm1_10.StepVII.frag.step_vii_average` | fragment |  | 29 to 30 | STATEMENT_FORMALIZED | KERNEL_VERIFIED | `IUT.PaperIV.Theorem1_10.step_vii_average` |  |
 | &nbsp;&nbsp;`IUT4.Thm1_10.StepVIII` | part |  | 30 to 31 | EXTRACTED | BLOCKED_BY_EXTERNAL_THEOREM |  | yes |
@@ -1057,6 +1082,8 @@ EXTERNAL_CLAIM: a statement of another paper, stated in Lean as a proposition an
 | Id | Kind | Title | PDF pages | Statement | Proof | Lean declaration | Path |
 |---|---|---|---|---|---|---|---|
 | `IUT4.Sec3.Universes` | convention |  | 67 to 68 | EXTRACTED | EXTRACTED |  |  |
+| &nbsp;&nbsp;`IUT4.Sec3.Universes.frag.delta0_absolute` | fragment | (scope: model_test) | 68 | STATEMENT_FORMALIZED | KERNEL_VERIFIED | `IUT.PaperIV.Species.speciesAbsolute_of_delta0` |  |
+| &nbsp;&nbsp;`IUT4.Sec3.Universes.frag.formulas_models` | fragment | (scope: model of the papers' set theory chosen here: domains of Mathlib's ZFSet) | 67 to 68 | STATEMENT_FORMALIZED | NOT_EXTRACTED | `IUT.PaperIV.Species.SpeciesAbsolute` |  |
 
 ### Section 3: Inter-universal Formalism: the Language of Species
 
@@ -1064,20 +1091,37 @@ EXTERNAL_CLAIM: a statement of another paper, stated in Lean as a proposition an
 |---|---|---|---|---|---|---|---|
 | `IUT4.Def3_1` | Definition |  | 68 to 70 | EXTRACTED | NOT_EXTRACTED |  | yes |
 | &nbsp;&nbsp;`IUT4.Def3_1.i` | part |  | 68 | EXTRACTED | NOT_EXTRACTED |  | yes |
+| &nbsp;&nbsp;&nbsp;&nbsp;`IUT4.Def3_1.i.frag.zero_species` | fragment |  | 68 | STATEMENT_FORMALIZED | NOT_EXTRACTED | `IUT.PaperIV.Species.IsZeroSpecies` |  |
 | &nbsp;&nbsp;`IUT4.Def3_1.ii` | part |  | 68 to 69 | EXTRACTED | NOT_EXTRACTED |  | yes |
+| &nbsp;&nbsp;&nbsp;&nbsp;`IUT4.Def3_1.ii.frag.identity_unique` | fragment |  | 69 | STATEMENT_FORMALIZED | KERNEL_VERIFIED | `IUT.PaperIV.Species.speciesIdentity_unique` |  |
+| &nbsp;&nbsp;&nbsp;&nbsp;`IUT4.Def3_1.ii.frag.one_species` | fragment |  | 68 to 69 | STATEMENT_FORMALIZED | NOT_EXTRACTED | `IUT.PaperIV.Species.IsOneSpecies` |  |
 | &nbsp;&nbsp;`IUT4.Def3_1.iii` | part |  | 69 | EXTRACTED | NOT_EXTRACTED |  | yes |
+| &nbsp;&nbsp;&nbsp;&nbsp;`IUT4.Def3_1.iii.frag.species` | fragment |  | 69 | STATEMENT_FORMALIZED | NOT_EXTRACTED | `IUT.PaperIV.Species.IsSpecies` |  |
 | &nbsp;&nbsp;`IUT4.Def3_1.iv` | part |  | 70 | EXTRACTED | NOT_EXTRACTED |  | yes |
+| &nbsp;&nbsp;&nbsp;&nbsp;`IUT4.Def3_1.iv.frag.category` | fragment |  | 70 | STATEMENT_FORMALIZED | NOT_EXTRACTED | `IUT.PaperIV.Species.speciesCategoryAt` |  |
 | `IUT4.Rem3_1_1` | Remark |  | 70 | EXTRACTED | EXTRACTED |  | yes |
+| &nbsp;&nbsp;`IUT4.Rem3_1_1.frag.point_species` | fragment | (scope: model_test) | 70 | STATEMENT_FORMALIZED | KERNEL_VERIFIED | `IUT.PaperIV.Species.pointSpecies_isSpecies` |  |
 | `IUT4.Rem3_1_2` | Remark |  | 70 to 71 | EXTRACTED | EXTRACTED |  | yes |
 | `IUT4.Rem3_1_3` | Remark |  | 71 | EXTRACTED | EXTRACTED |  | yes |
 | `IUT4.Rem3_1_4` | Remark |  | 71 | EXTRACTED | EXTRACTED |  | yes |
 | `IUT4.Rem3_1_5` | Remark |  | 71 | EXTRACTED | EXTRACTED |  | yes |
 | `IUT4.Def3_3` | Definition |  | 72 to 74 | EXTRACTED | NOT_EXTRACTED |  | yes |
 | &nbsp;&nbsp;`IUT4.Def3_3.i` | part |  | 72 to 73 | EXTRACTED | NOT_EXTRACTED |  | yes |
+| &nbsp;&nbsp;&nbsp;&nbsp;`IUT4.Def3_3.i.frag.evident_notions` | fragment | (scope: model_test) | 73 | STATEMENT_FORMALIZED | KERNEL_VERIFIED | `IUT.PaperIV.Species.isMutation_mutationIdentity` |  |
+| &nbsp;&nbsp;&nbsp;&nbsp;`IUT4.Def3_3.i.frag.functor` | fragment |  | 73 | STATEMENT_FORMALIZED | NOT_EXTRACTED | `IUT.PaperIV.Species.mutationFunctorAt` |  |
+| &nbsp;&nbsp;&nbsp;&nbsp;`IUT4.Def3_3.i.frag.mutation` | fragment |  | 72 to 73 | STATEMENT_FORMALIZED | NOT_EXTRACTED | `IUT.PaperIV.Species.IsMutation` |  |
 | &nbsp;&nbsp;`IUT4.Def3_3.ii` | part |  | 73 | EXTRACTED | EXTRACTED |  | yes |
+| &nbsp;&nbsp;&nbsp;&nbsp;`IUT4.Def3_3.ii.frag.morphism` | fragment |  | 73 | STATEMENT_FORMALIZED | NOT_EXTRACTED | `IUT.PaperIV.Species.IsMutationIso` |  |
+| &nbsp;&nbsp;&nbsp;&nbsp;`IUT4.Def3_3.ii.frag.nat_trans` | fragment |  | 73 | STATEMENT_FORMALIZED | NOT_EXTRACTED | `IUT.PaperIV.Species.mutationNatTransAt` |  |
+| &nbsp;&nbsp;&nbsp;&nbsp;`IUT4.Def3_3.ii.frag.point_iso` | fragment | (scope: model_test) | 73 to 74 | STATEMENT_FORMALIZED | KERNEL_VERIFIED | `IUT.PaperIV.Species.isMutationIso_toPoint` |  |
 | &nbsp;&nbsp;`IUT4.Def3_3.iii` | part |  | 73 to 74 | EXTRACTED | EXTRACTED |  | yes |
+| &nbsp;&nbsp;&nbsp;&nbsp;`IUT4.Def3_3.iii.frag.equivalence` | fragment | (scope: model_test) | 73 to 74 | STATEMENT_FORMALIZED | NOT_EXTRACTED | `IUT.PaperIV.Species.IsMutationEquivalence` |  |
+| &nbsp;&nbsp;&nbsp;&nbsp;`IUT4.Def3_3.iii.frag.point_equivalence` | fragment | (scope: model_test) | 73 to 74 | STATEMENT_FORMALIZED | KERNEL_VERIFIED | `IUT.PaperIV.Species.pointSpecies_isMutationEquivalence_identity` |  |
 | &nbsp;&nbsp;`IUT4.Def3_3.iv` | part |  | 74 | EXTRACTED | NOT_EXTRACTED |  | yes |
+| &nbsp;&nbsp;&nbsp;&nbsp;`IUT4.Def3_3.iv.frag.history` | fragment |  | 74 | STATEMENT_FORMALIZED | NOT_EXTRACTED | `IUT.PaperIV.Species.IsMutationHistory` |  |
 | &nbsp;&nbsp;`IUT4.Def3_3.v` | part |  | 74 | EXTRACTED | NOT_EXTRACTED |  | yes |
+| &nbsp;&nbsp;&nbsp;&nbsp;`IUT4.Def3_3.v.frag.observables` | fragment | (scope: model_test) | 74 | STATEMENT_FORMALIZED | NOT_EXTRACTED | `IUT.PaperIV.Species.IsCore` |  |
+| &nbsp;&nbsp;&nbsp;&nbsp;`IUT4.Def3_3.v.frag.point_core` | fragment | (scope: model_test) | 73 to 74 | STATEMENT_FORMALIZED | KERNEL_VERIFIED | `IUT.PaperIV.Species.pointObservable_isCore` |  |
 | `IUT4.Ex3_2` | Example | Categories | 72 | EXTRACTED | EXTRACTED |  | yes |
 | `IUT4.Rem3_2_1` | Remark |  | 72 | EXTRACTED | EXTRACTED |  |  |
 | `IUT4.Rem3_3_1` | Remark |  | 74 to 76 | EXTRACTED | EXTRACTED |  | yes |
@@ -1200,6 +1244,49 @@ Results and claims of papers other than IUT I to IV, with the Lean fragments tha
 | &nbsp;&nbsp;`GENELL.Sec1.ArithmeticDivisor.frag.degF_principal` | fragment |  | 4 | STATEMENT_FORMALIZED | KERNEL_VERIFIED | `IUT.PaperIV.DegreePullback.degPb_degF_principal` |  |
 | &nbsp;&nbsp;`GENELL.Sec1.ArithmeticDivisor.frag.principal` | fragment |  | 4 | STATEMENT_FORMALIZED | NOT_EXTRACTED | `IUT.PaperIV.DegreePullback.degPbPrincipal` |  |
 | `GENELL.Thm2_1` | external_statement | Theorem 2.1 | 11 to 13 | NOT_EXTRACTED | NOT_EXTRACTED |  |  |
+| &nbsp;&nbsp;`GENELL.Thm2_1.frag.fermat_lift` | fragment |  | 11 to 13 | STATEMENT_FORMALIZED | KERNEL_VERIFIED | `IUT.FermatCover.fermatCover_lift` |  |
+| &nbsp;&nbsp;`GENELL.Thm2_1.frag.fermat_lift_conductor` | fragment |  | 12, 13 | STATEMENT_FORMALIZED | KERNEL_VERIFIED | `IUT.FermatCover.fermatCover_logCondNF_root_le` |  |
+| &nbsp;&nbsp;`GENELL.Thm2_1.frag.fermat_lift_degree` | fragment |  | 11, 12 | STATEMENT_FORMALIZED | KERNEL_VERIFIED | `IUT.FermatCover.fermatCover_point_exists` |  |
+| &nbsp;&nbsp;`GENELL.Thm2_1.frag.fermat_lift_height` | fragment |  | 12 | STATEMENT_FORMALIZED | KERNEL_VERIFIED | `IUT.FermatCover.fermatCover_heightNF_root` |  |
 | &nbsp;&nbsp;`GENELL.Thm2_1.frag.genell_i_implies_ii` | fragment |  | 11 | STATEMENT_FORMALIZED | CONDITIONALLY_VERIFIED | `IUT.CompactlyBounded.genEllTheorem2_1ii_of_boundedDegree` |  |
 | &nbsp;&nbsp;`GENELL.Thm2_1.frag.genell_ii_compactly_bounded` | fragment |  | 5, 6, 11 | STATEMENT_FORMALIZED | NOT_EXTRACTED | `IUT.CompactlyBounded.genEllTheorem2_1iiStatement` |  |
+
+### `LANA`: LANA project (F. Kato, J. Commelin, Y. Hoshi, K. Kedlaya, A. Topaz), "Project LANA Interim Report on IUT Theory", July 2026, repository katobungen/LANA_report_202607
+
+| Id | Kind | Title | PDF pages | Statement | Proof | Lean declaration | Path |
+|---|---|---|---|---|---|---|---|
+| `LANA.Sec10` | external_statement | Section 10.2, the main goal: eta^q = eta^anab_S for some suitable S | sections 10, 10.1, 10.2 and 11.5 | EXTRACTED | NOT_EXTRACTED |  |  |
+| &nbsp;&nbsp;`LANA.Sec10.frag.eta_goal_both_outcomes` | fragment |  | section 10.2 | STATEMENT_FORMALIZED | KERNEL_VERIFIED | `IUT.Audit.LANA.lanaEtaGoalFor_padic_fails` |  |
+| &nbsp;&nbsp;`LANA.Sec10.frag.eta_goal_schema` | fragment |  | sections 10.1 and 10.2 | STATEMENT_FORMALIZED | NOT_EXTRACTED | `IUT.Audit.LANA.lanaEtaGoalFor` |  |
+| &nbsp;&nbsp;`LANA.Sec10.frag.rss_eta_reduction` | fragment |  | section 10.2 | STATEMENT_FORMALIZED | KERNEL_VERIFIED | `IUT.Audit.LANA.lana_eta_eq_iff_volume` |  |
+| `LANA.Sec11` | external_statement | Section 11.2, the Scholze and Stix hexagon, with the provisional assessment of section 11.5 | sections 11.2 and 11.5 | EXTRACTED | NOT_EXTRACTED |  |  |
+| &nbsp;&nbsp;`LANA.Sec11.frag.issue2_model` | fragment |  | sections 8.1.1 and 11.2 | STATEMENT_FORMALIZED | KERNEL_VERIFIED | `IUT.Audit.LANA.lana_issue2_model` |  |
+| `LANA.Sec5` | external_statement | Section 5.1, basic prime strips: definitions, the remark on a fixed product formula, and the lemma on isomorphic BPS | sections 5.1.1 to 5.1.3 | EXTRACTED | NOT_EXTRACTED |  |  |
+| &nbsp;&nbsp;`LANA.Sec5.frag.etale_bps` | fragment |  | sections 1.4.3, 4.7 to 4.10 and 5.1.1 | STATEMENT_FORMALIZED | KERNEL_VERIFIED | `IUT.Audit.LANA.lana_etUnitBPS_iso_exists` |  |
+| &nbsp;&nbsp;`LANA.Sec5.frag.pointed_line` | fragment |  | sections 5.1.2 and 10.2 | STATEMENT_FORMALIZED | KERNEL_VERIFIED | `IUT.Audit.LANA.lana_pointedLineIso_unique` |  |
+| &nbsp;&nbsp;`LANA.Sec5.frag.value_group_pf` | fragment |  | sections 5.1.2 and 5.1.3 | STATEMENT_FORMALIZED | KERNEL_VERIFIED | `IUT.Audit.LANA.lana_valBPS_iso_iff_PF` |  |
+| `LANA.Sec9` | external_statement | Section 9.2, the properties (IPL), (SHE) and (APT) and the remark after (IPL) | section 9.2 | EXTRACTED | NOT_EXTRACTED |  |  |
+| &nbsp;&nbsp;`LANA.Sec9.frag.connected_groupoid` | fragment |  | section 9.2 | STATEMENT_FORMALIZED | KERNEL_VERIFIED | `IUT.Audit.LANA.lana_bps_iso_exists` |  |
+
+### `DIM`: V. Dimitrov, "Effectivity in Mochizuki's work on the abc-conjecture", arXiv 1601.03572
+
+| Id | Kind | Title | PDF pages | Statement | Proof | Lean declaration | Path |
+|---|---|---|---|---|---|---|---|
+| `DIM.Thm` | external_statement | Theorem (page 3) | 3 | EXTRACTED | NOT_EXTRACTED |  |  |
+| &nbsp;&nbsp;`DIM.Thm.frag.fermat_lift` | fragment |  | 9 | STATEMENT_FORMALIZED | KERNEL_VERIFIED | `IUT.FermatCover.fermatCover_point_exists` |  |
+
+### `ZENGHULL`: C. Zeng, "An Integral-Structure Inflation in the Hull Operation of IUT Corollary 3.12", hexagon 2610.00646, version 1, October 2026
+
+| Id | Kind | Title | PDF pages | Statement | Proof | Lean declaration | Path |
+|---|---|---|---|---|---|---|---|
+| `ZENGHULL.Sec10` | external_statement | Section 10.2, layer (1) and equation (closed) | section 10.2 | EXTRACTED | NOT_EXTRACTED |  |  |
+| &nbsp;&nbsp;`ZENGHULL.Sec10.frag.closed_form_d2` | fragment |  | section 10.2 | STATEMENT_FORMALIZED | KERNEL_VERIFIED | `IUT.Audit.TensorOrderIndex.tOrdIdx_sum_two_pow` |  |
+| &nbsp;&nbsp;`ZENGHULL.Sec10.frag.normalized_growth` | fragment |  | section 10.2 | STATEMENT_FORMALIZED | KERNEL_VERIFIED | `IUT.Audit.TensorOrderIndex.tOrdIdx_normSum_eq` |  |
+| &nbsp;&nbsp;`ZENGHULL.Sec10.frag.raw_growth` | fragment |  | section 10.2 | STATEMENT_FORMALIZED | KERNEL_VERIFIED | `IUT.Audit.TensorOrderIndex.tOrdIdx_rawSum_ge` |  |
+| `ZENGHULL.Thm5_1` | external_statement | Theorem 5.1, with Lemmas 4.1 and 4.2 and identity (0.1) | sections 0, 4, 5 and 14 | EXTRACTED | NOT_EXTRACTED |  |  |
+| &nbsp;&nbsp;`ZENGHULL.Thm5_1.frag.identity_0_1` | fragment |  | section 0 | STATEMENT_FORMALIZED | KERNEL_VERIFIED | `IUT.Audit.TensorOrderIndex.tOrdIdx_discr_change` |  |
+| &nbsp;&nbsp;`ZENGHULL.Thm5_1.frag.lemma4_1_two` | fragment |  | section 4 | STATEMENT_FORMALIZED | KERNEL_VERIFIED | `IUT.Audit.TensorOrderIndex.tOrdIdx_discr_pi` |  |
+| &nbsp;&nbsp;`ZENGHULL.Thm5_1.frag.lemma4_2_two` | fragment |  | section 4 | STATEMENT_FORMALIZED | KERNEL_VERIFIED | `IUT.Audit.TensorOrderIndex.tOrdIdx_discr_tensor` |  |
+| &nbsp;&nbsp;`ZENGHULL.Thm5_1.frag.two_factor_galois` | fragment |  | section 5 | STATEMENT_FORMALIZED | KERNEL_VERIFIED | `IUT.Audit.TensorOrderIndex.tOrdIdx_index_sq_galois` |  |
+| &nbsp;&nbsp;`ZENGHULL.Thm5_1.frag.two_factor_general` | fragment |  | sections 5 and 14 | STATEMENT_FORMALIZED | KERNEL_VERIFIED | `IUT.Audit.TensorOrderIndex.tOrdIdx_index_sq_general` |  |
 

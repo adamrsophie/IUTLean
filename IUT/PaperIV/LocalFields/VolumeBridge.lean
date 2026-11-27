@@ -84,14 +84,14 @@ statements take `K₁` and `K₂` in one universe.
   total ring of fractions of `R_E` is `K₁ ⊗ K₂`); it is the integral closure of `ℤ_p` there.
   Proved in `TensorIndex.lean` (`tensorIdx_isFractionRing`).
 * Proposition 1.1, `p ^ (𝔡_{I*}) · (R_I)^∼ ⊆ R_I`, here; it is proved for two factors in
-  `TensorDifferent.lean`. Proposition 1.2 (ii) to (iv) and Proposition 1.4 (iii), (iv) are
-  proved for two factors in `TensorLogShell.lean`, the first inequality of 1.4 (iii) only when
-  every `e_i ≤ p − 2`.
+  `TensorDifferent.lean` and for any finite number of factors in `TensorDifferentMany.lean`.
+  Proposition 1.2 (ii) to (iv) and Proposition 1.4 (iii), (iv) are proved for two factors in
+  `TensorLogShell.lean` and `TensorAdditivity.lean`.
 * Proposition 1.4 (ii) in general here; it is proved in `UnitVolume.lean`
   (`unitVol_muLog_logUnit_eq`).
-* The weighting of `μ^log` over the factors of the decomposition and the additivity used on
-  page 14; packets of any finite number of factors are decomposed and normalized in
-  `Packets.lean`.
+* The weighting of `μ^log` over the factors of the decomposition, here. The additivity used on
+  page 14 is proved for two factors in `TensorAdditivity.lean`; packets of any finite number
+  of factors are decomposed and normalized in `Packets.lean`.
 -/
 
 open MeasureTheory Measure IUT.Prerequisites.PadicVolume

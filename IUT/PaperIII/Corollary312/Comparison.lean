@@ -55,6 +55,23 @@ gives evidence for or against it.
   (`example_comparison_fails`), and one where no single possible image, and not the union
   either, contains the q-pilot region but the hull of the union does (`example_union_matters`).
 
+## Limits
+
+* `PilotLogVolumes.ofLogVolumes` accepts any two extended reals with the side conditions; the
+  numbers carry content only through the setting they are computed from.
+* `LogVolumeComparison` is the inequality conjunct of `Conclusion` for the numbers defined from
+  a setting (`RegionComparison.conclusion_iff`), and it is the same proposition as the
+  membership `− |log(q)| ∈ ℝ_{≤ −|log(Θ)|}` of Step (xi-f)
+  (`RegionComparison.logVolumeComparison_iff_mem_possibleLogVolumes`). Taking it as a
+  hypothesis assumes that conjunct.
+* The single-image forms `SingleImageContainment` (some possible image has a hull containing the
+  q-pilot region) and `SingleImageLogVolumeComparison` (the log-volume version) are sufficient
+  for `Containment`, respectively `LogVolumeComparison`, and are not necessary: in the interval
+  setting with q-pilot region `[0, 1/2]` both fail while `Containment` holds
+  (`IntervalExample.example_singleImage_fails`). The single-image forms are simplified
+  abstractions, not statements of the papers; that the example refutes them is a counterexample
+  to a simplified abstraction and says nothing about the papers.
+
 ## Interpretation choices
 
 1. *Regions and log-volume.* Proposition 3.9 (i), pages 115 and 116, defines log-volumes on
@@ -250,6 +267,42 @@ theorem containment_iff_forall_hull :
   exact ⟨fun h H hH hU => h H ⟨hH, iUnion_subset hU⟩,
     fun h H hH => h H hH.1 fun i => (subset_iUnion S.image i).trans hH.2⟩
 
+/-- **Single-image form, region version.** Some possible image lies in the hull domain and
+its own hull contains the q-pilot region. A sufficient condition for `Containment`
+(`containment_of_singleImageContainment`), not a necessary one
+(`IntervalExample.example_singleImage_fails`); **not** formalized here. -/
+def SingleImageContainment : Prop :=
+  ∃ i, S.image i ∈ S.hullDomain ∧ S.qPilot ⊆ S.hull (S.image i)
+
+/-- **Single-image form, numerical version.** Some possible image lies in the hull domain and
+the log-volume of its own hull is at least that of the q-pilot region. Sufficient for
+`LogVolumeComparison`, not necessary; **not** formalized here. -/
+def SingleImageLogVolumeComparison : Prop :=
+  ∃ i, S.image i ∈ S.hullDomain ∧ S.qLogVolume ≤ S.logVol (S.hull (S.image i))
+
+/-- The hull of one possible image lies in the hull of the union, by (P3). -/
+theorem hull_image_subset_hullOfUnion {i : ι} (hi : S.image i ∈ S.hullDomain) :
+    S.hull (S.image i) ⊆ S.hullOfUnion :=
+  S.isHullMap.P3 _ hi _ S.union_mem (subset_iUnion S.image i)
+
+/-- The single-image region form implies `Containment`. -/
+theorem containment_of_singleImageContainment (h : S.SingleImageContainment) :
+    S.Containment := by
+  obtain ⟨i, hi, hQ⟩ := h
+  exact hQ.trans (S.hull_image_subset_hullOfUnion hi)
+
+/-- The single-image region form implies the single-image numerical form. -/
+theorem singleImageLogVolumeComparison_of_singleImageContainment
+    (h : S.SingleImageContainment) : S.SingleImageLogVolumeComparison := by
+  obtain ⟨i, hi, hQ⟩ := h
+  exact ⟨i, hi, S.logVol_mono _ _ hQ (S.isHullMap.hull_sub (S.isHullMap.maps_to _ hi))⟩
+
+/-- The single-image numerical form implies `LogVolumeComparison`. -/
+theorem logVolumeComparison_of_singleImageLogVolumeComparison
+    (h : S.SingleImageLogVolumeComparison) : S.LogVolumeComparison := by
+  obtain ⟨i, hi, hQ⟩ := h
+  exact hQ.trans (S.logVol_mono _ _ (S.hull_image_subset_hullOfUnion hi) S.hullOfUnion_mem)
+
 end RegionComparison
 
 /-! ## The bridge to `PilotLogVolumes` -/
@@ -257,7 +310,11 @@ end RegionComparison
 /-- Two log-volumes `a` (the q side) and `b` (the Θ side) as a `PilotLogVolumes`:
 `negLogTheta = b` and `absLogQ = −a`. The hypotheses are the facts `PilotLogVolumes` requires:
 `b ≠ −∞` (value set `ℝ ∪ {+∞}`, page 173) and `a` real and negative (`|log(q)| > 0`, page
-174). -/
+174).
+
+Limits: `a` and `b` are arbitrary; nothing ties them to regions. Only the constructions that
+feed it computed log-volumes (`RegionComparison.toPilotLogVolumes` and its variants) give the
+numbers a meaning. -/
 noncomputable def PilotLogVolumes.ofLogVolumes (a b : EReal) (ha : a ≠ ⊥) (hneg : a < 0)
     (hb : b ≠ ⊥) : PilotLogVolumes where
   negLogTheta := b
@@ -318,6 +375,19 @@ theorem conclusion_of_containment (hq : S.qLogVolume ≠ ⊥) (hneg : S.qLogVolu
     Conclusion (S.toPilotLogVolumes hq hneg
       (ne_bot_of_le_ne_bot hq (S.logVolumeComparison_of_containment hcont))) :=
   S.conclusion_of_logVolumeComparison _ _ _ hfin (S.logVolumeComparison_of_containment hcont)
+
+/-- **Limits: `LogVolumeComparison` is the membership of Step (xi-f).** For the numbers defined
+from a setting, `LogVolumeComparison` is the same proposition as
+`− |log(q)| ∈ ℝ_{≤ −|log(Θ)|}` (`stepXIf_inclusion_iff_inequality`). Assuming it assumes the
+inequality conjunct of the conclusion. -/
+theorem logVolumeComparison_iff_mem_possibleLogVolumes (hq : S.qLogVolume ≠ ⊥)
+    (hneg : S.qLogVolume < 0) (hΘ : S.thetaLogVolume ≠ ⊥) :
+    S.LogVolumeComparison ↔ -(S.toPilotLogVolumes hq hneg hΘ).absLogQ ∈
+      possibleLogVolumes (S.toPilotLogVolumes hq hneg hΘ) := by
+  have hcoe := EReal.coe_toReal (hneg.trans EReal.zero_lt_top).ne hq
+  simp only [possibleLogVolumes, Set.mem_ofPred_eq, toPilotLogVolumes,
+    PilotLogVolumes.ofLogVolumes, neg_neg, hcoe]
+  rfl
 
 end RegionComparison
 
@@ -710,6 +780,15 @@ theorem example_union_matters :
     · norm_num at h
     · norm_num at h
   · exact example_bridge_hypotheses.2.2.2.2
+
+/-- **The single-image forms are not necessary.** With q-pilot region `[0, 1/2]`, neither
+single-image form holds, while `Containment` does. -/
+theorem example_singleImage_fails :
+    ¬ (setting (Icc 0 (1 / 2))).toRegionComparison.SingleImageContainment ∧
+    ¬ (setting (Icc 0 (1 / 2))).toRegionComparison.SingleImageLogVolumeComparison ∧
+    (setting (Icc 0 (1 / 2))).Containment := by
+  obtain ⟨h1, h2, -, h4⟩ := example_union_matters
+  exact ⟨fun ⟨i, _, hi⟩ => h1 i hi, fun ⟨i, _, hi⟩ => h2 i hi, h4⟩
 
 end IntervalExample
 

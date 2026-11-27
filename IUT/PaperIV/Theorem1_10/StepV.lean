@@ -25,10 +25,10 @@ arithmetic the paper performs on them:
   final inequality of Step (v) (`step_v_final`);
 * the averaging of Step (vii) (`step_vii_average`).
 
-Step (vi) (page 29) has no declaration here. Its content is the bound `0` on the log-volume of
-the container `(R_I)^∼` given by the inclusion and the final equality of Proposition 1.4 (iv);
-neither the container nor its log-volume is formalized, and averaging the constant `0` checks
-nothing about them.
+Step (vi) (page 29) is in `StepsIVtoVII.lean`: the container `(R_I)^∼` with log-volume `0`
+for any number of factors (`stepsVI_packet_container`), the inclusion of Proposition 1.4 (iv)
+for two factors (`stepsVI_two_factors`), and the procession-normalized bound `0`
+(`stepsVI_procession_le_zero`).
 
 Notation: `n` is `l* = (l-1)/2`, a natural number with `l = 2n+1`; `A = log(𝔡^K_{v_ℚ})`,
 `B = log(𝔮_{v_ℚ})`, `C = log(𝔰^ℚ_{v_ℚ})`, `T = l*_mod·log(𝔰^≤_{v_ℚ})`, `L = l*_mod`.

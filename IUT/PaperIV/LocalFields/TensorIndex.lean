@@ -81,17 +81,15 @@ over `ℚ_p` (for fields it agrees with the one over `ℤ_p`, `packet_tensor_zp_
   by the multiplication by `1 ⊗ δ`, whose modulus is `‖N_{K₂/ℚ_p}(δ)‖ ^ [K₁ : ℚ_p]`; Haar scaling
   by an element of a tensor product (a determinant formula over `ℚ_p`) is not available here.
 * The exact index in the example (it is `p` for `p` odd by a computation of the ring of integers
-  of `K ⊗ K ≅ K × K`); only the lower bound `2` is proved.
+  of `K ⊗ K ≅ K × K`); only the lower bound `2` is proved here. For `K/ℚ_p` Galois the index is
+  computed from the discriminant in `IUT/Audit/TensorOrderIndex.lean`
+  (`tOrdIdx_index_sq_galois`); it is not specialized to this example.
 * More than two factors, and the identification of `K₁ ⊗[ℤ_p] K₂` with `K₁ ⊗[ℚ_p] K₂` for more
   than two factors.
-* The additivity of page 14, `μ^log(log_p(R_I^×)) = ∑_i μ^log(log_p(R_i^×)) + μ^log(R_I)`, is out
-  of scope here. For two factors it would need: that the image `L` of
-  `log_p(R₁^×) ⊗_{ℤ_p} log_p(R₂^×)` in `K₁ ⊗ K₂` is a lattice and the index formula
-  relating the generalized index of `L` relative to `R_E` to those of `L_i = log_p(R_i^×)`
-  relative to `R_i`; that is, the multiplicativity of generalized indices under tensor products
-  of `ℤ_p`-lattices, `[R₁ ⊗ R₂ : L₁ ⊗ L₂] = [R₁ : L₁] ^ (dim K₂) · [R₂ : L₂] ^ (dim K₁)` (true by
-  elementary divisors, not formalized), together with the identification of the image of
-  `L₁ ⊗_{ℤ_p} L₂` with the lattice spanned by the `x ⊗ y`, `x ∈ L₁`, `y ∈ L₂`.
+* The additivity of page 14, `μ^log(log_p(R_I^×)) = ∑_i μ^log(log_p(R_i^×)) + μ^log(R_I)`, here.
+  For two factors it is proved in `TensorAdditivity.lean` (`tensorAdd_muLog_logLattice`),
+  through the multiplicativity of generalized indices under tensor products of
+  `ℤ_p`-lattices (`tensorAdd_relIndex`).
 -/
 
 open MeasureTheory Measure IUT.Prerequisites.PadicVolume

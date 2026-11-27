@@ -21,7 +21,13 @@ has kind "external_statement" and no parent, or it is a fragment of such a recor
 are pages of that paper, in `source.pages_in_paper`; it never carries `source.pages` or
 `source.pdf_pages`, which hold pages of IUT I to IV. Its `source` also names the authors, the
 title, the arXiv identifier (`arxiv`) or a journal reference (`journal`), and the statement
-number (`statement`). Its `lean_declaration` is null unless a `def ... : Prop` states it
+number (`statement`). A text with neither an arXiv identifier nor a journal reference (a
+report in a public repository, a preprint on another server) is cited by `server` (the host or
+preprint server), `identifier` (its name or number there), `version` (a commit or a version
+number) and `date` instead. When only its source text was read and no page was rendered, its
+places are sections, in `source.sections_in_paper` ("sections 5.1.2 and 5.1.3", "section 10.2"),
+in place of `source.pages_in_paper`. Its
+`lean_declaration` is null unless a `def ... : Prop` states it
 exactly; then its statuses are STATEMENT_FORMALIZED and EXTERNAL_CLAIM (stated in Lean, used
 only as a hypothesis, not proved here). The dashboard and the catalog report these records
 apart from the four papers. `source.pages_in_paper` is also accepted on records of IUT I to
@@ -62,9 +68,18 @@ EXTERNAL_PAPERS = {
     "ZHOU2": ("Z.-P. Zhou, arXiv 2510.05448", ("2510.05448",)),
     "DH": ("T. Dupuy, A. Hilado, arXiv 2004.13228 and 2004.13108", ("2004.13228", "2004.13108")),
     "GENELL": ("S. Mochizuki, \"Arithmetic Elliptic Curves in General Position\", Math. J. Okayama Univ. 52 (2010)", ()),
+    "LANA": ("LANA project (F. Kato, J. Commelin, Y. Hoshi, K. Kedlaya, A. Topaz), \"Project LANA "
+             "Interim Report on IUT Theory\", July 2026, repository katobungen/LANA_report_202607",
+             ()),
+    "DIM": ("V. Dimitrov, \"Effectivity in Mochizuki's work on the abc-conjecture\", arXiv "
+            "1601.03572", ("1601.03572",)),
+    "ZENGHULL": ("C. Zeng, \"An Integral-Structure Inflation in the Hull Operation of IUT "
+                 "Corollary 3.12\", hexagon 2610.00646, version 1, October 2026", ()),
 }
 EXTERNAL_STATEMENT = "external_statement"
-EXTERNAL_SOURCE_FIELDS = ("authors", "title", "statement", "pages_in_paper")
+EXTERNAL_SOURCE_FIELDS = ("authors", "title", "statement")
+# The source form of a text on another server (see the module docstring).
+SERVER_FIELDS = ("server", "identifier", "version", "date")
 SECTION_ITEM = re.compile(r"^IUT([1-4])\.Sec(\d+)\.[A-Za-z][A-Za-z0-9_]*$")
 FRAGMENT = re.compile(r"^(.+)\.frag\.[A-Za-z0-9_']+$")
 # A qualified name of this library in a JSON string: IUT.*, Challenge.*, Solution.*.
@@ -130,6 +145,33 @@ def parse_pages(text, paper=None):
             if last < first:
                 return None
             out.append((p, first, last))
+    return out
+
+
+_SECTION = r"\d+(?:\.\d+)*"
+_SECTION_SPAN = _SECTION + r"(?:\s+to\s+" + _SECTION + r")?"
+SECTION_SEGMENT = re.compile(r"^\s*sections?\s+(?P<spans>" + _SECTION_SPAN + r"(?:\s*(?:,\s*and|,|and)\s*"
+                             + _SECTION_SPAN + r")*)\s*$")
+
+
+def parse_sections(text):
+    """Section spans of a section description, as a list of (first, last) tuples of integers, or
+    None when the text is not of the accepted form: segments separated by ";", each "section" or
+    "sections" followed by section numbers ("5", "5.1.2") or spans "4.7 to 4.10", separated by ",",
+    "and" or ", and". A span whose last section precedes its first is rejected."""
+    if not isinstance(text, str) or not text.strip():
+        return None
+    out = []
+    for segment in text.split(";"):
+        m = SECTION_SEGMENT.match(segment)
+        if not m:
+            return None
+        for span in re.findall(_SECTION_SPAN, m.group("spans")):
+            ends = [tuple(int(n) for n in x.split(".")) for x in re.findall(_SECTION, span)]
+            first, last = ends[0], ends[-1]
+            if last < first:
+                return None
+            out.append((first, last))
     return out
 
 
@@ -298,6 +340,9 @@ def external_errors(s, where, by_id):
         if key in src:
             errors.append(f"{where}: source.{key} holds pages of IUT I to IV; pages of the "
                           f"paper {prefix} go in source.pages_in_paper")
+    if "sections_in_paper" in src and not parse_sections(src["sections_in_paper"]):
+        errors.append(f"{where}: source.sections_in_paper {src['sections_in_paper']!r} is not of "
+                      f"the form \"sections 5.1.2 and 10.2\" or \"sections 4.7 to 4.10\"")
     if is_fragment(s):
         parent = by_id.get(s.get("parent"))
         if parent is not None and parent.get("kind") != EXTERNAL_STATEMENT:
@@ -312,9 +357,19 @@ def external_errors(s, where, by_id):
     for key in EXTERNAL_SOURCE_FIELDS:
         if not nonempty(src.get(key)):
             errors.append(f"{where}: external_statement without source.{key}")
+    server = nonempty(src.get("server"))
+    for key in SERVER_FIELDS if server else ():
+        if not nonempty(src.get(key)):
+            errors.append(f"{where}: a source on another server needs source.{key} (with "
+                          f"{', '.join(SERVER_FIELDS)})")
+    if not nonempty(src.get("pages_in_paper")) and not (server and nonempty(
+            src.get("sections_in_paper"))):
+        errors.append(f"{where}: external_statement without source.pages_in_paper (or, for a "
+                      f"source on another server, source.sections_in_paper)")
     arxiv, ids = src.get("arxiv"), EXTERNAL_PAPERS[prefix][1]
-    if not nonempty(arxiv) and not nonempty(src.get("journal")):
-        errors.append(f"{where}: external_statement without source.arxiv or source.journal")
+    if not nonempty(arxiv) and not nonempty(src.get("journal")) and not server:
+        errors.append(f"{where}: external_statement without source.arxiv, source.journal or "
+                      f"source.server")
     elif nonempty(arxiv) and ids and arxiv not in ids:
         errors.append(f"{where}: source.arxiv {arxiv} is not an identifier of {prefix} "
                       f"({', '.join(ids)})")
@@ -425,6 +480,45 @@ def _self_test():
     wrong = {"id": "IUT1.X", "proof_status": "EXTERNAL_CLAIM", "statement_status": "EXTRACTED"}
     assert any("only the proof status of an external_statement" in e
                for e in structural_errors([wrong]))
+    assert parse_sections("sections 5.1.2 and 5.1.3") == [((5, 1, 2), (5, 1, 2)),
+                                                          ((5, 1, 3), (5, 1, 3))]
+    assert parse_sections("section 10.2; sections 4.7 to 4.10, 5") == [
+        ((10, 2), (10, 2)), ((4, 7), (4, 10)), ((5,), (5,))]
+    for bad in ("", "10.2", "sections 4.10 to 4.7", "section 9.2, remark after (IPL)",
+                "sections 5.1.1 (TeX source)", None, "pages 3 to 4"):
+        assert parse_sections(bad) is None, bad
+    repo = {"id": "LANA.Sec10", "kind": EXTERNAL_STATEMENT, "statement_status": "EXTRACTED",
+            "proof_status": "NOT_EXTRACTED", "content": "c", "conclusion": "c",
+            "explicit_hypotheses": [], "curated_in": "external.json",
+            "source": {"authors": "LANA project", "title": "t", "statement": "Section 10.2",
+                       "server": "GitHub", "identifier": "owner/name",
+                       "version": "commit 293bdd8", "date": "July 2026",
+                       "sections_in_paper": "sections 10.1 and 10.2"}}
+    assert structural_errors([repo]) == [], structural_errors([repo])
+    assert page_spans(repo) is None
+    frag = {"id": "LANA.Sec10.frag.x", "kind": "fragment", "parent": "LANA.Sec10",
+            "source": {"sections_in_paper": "section 10.2"}}
+    assert not [e for e in structural_errors([dict(repo, fragments=["LANA.Sec10.frag.x"]), frag])
+                if "sections_in_paper" in e]
+    for key in SERVER_FIELDS:
+        src = {k: v for k, v in repo["source"].items() if k != key}
+        errs = structural_errors([dict(repo, source=src)])
+        assert any(f"needs source.{key}" in e or "without source.arxiv" in e for e in errs), errs
+    src = {k: v for k, v in repo["source"].items() if k != "sections_in_paper"}
+    assert any("without source.pages_in_paper" in e
+               for e in structural_errors([dict(repo, source=src)]))
+    badsec = dict(repo, source=dict(repo["source"], sections_in_paper="section 9.2, a remark"))
+    assert any("sections_in_paper" in e for e in structural_errors([badsec]))
+    nosrc = dict(ext, id="ZHOU1.Thm3_4", source={k: v for k, v in ext["source"].items()
+                                                  if k not in ("arxiv", "pages_in_paper")})
+    errs = structural_errors([nosrc])
+    assert any("without source.arxiv, source.journal or source.server" in e for e in errs)
+    assert any("without source.pages_in_paper" in e for e in errs), errs
+    dated = dict(ext, source=dict(ext["source"], date="2025"))  # a date alone is not the form
+    assert structural_errors([dated]) == [], structural_errors([dated])
+    dim = dict(ext, id="DIM.Thm", source=dict(ext["source"], arxiv="1601.03573"))
+    assert any("is not an identifier of DIM" in e for e in structural_errors([dim]))
+    assert structural_errors([dict(dim, source=dict(ext["source"], arxiv="1601.03572"))]) == []
     print("records self-test OK")
 
 
