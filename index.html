@@ -46,7 +46,7 @@
 <div class="sky-top">
 <div class="sky-head">
 <p class="sky-title">2,265 public theorems in 110 library modules, checked by the Lean kernel. The abc conjecture is not proved here.</p>
-<p class="sky-sub">Generated from commit <code>4c5d7b3</code></p>
+<p class="sky-sub">Generated from commit <code>057bf43</code></p>
 </div>
 <div class="sky-search">
 <label for="sky-q" class="sky-vh">Search theorems, modules and lines</label>
@@ -240,17 +240,17 @@ The project takes no side in the dispute about the theory: it neither assumes th
 
 <span class="k">def</span> <span class="n">ABC</span> : <span class="k">Prop</span> :=
   <span class="k">∀</span> ε : <span class="t">ℝ</span>, 0 &lt; ε → <span class="k">∃</span> K : <span class="t">ℝ</span>, 0 &lt; K ∧ <span class="k">∀</span> a b c : <span class="t">ℕ</span>, 0 &lt; a → 0 &lt; b → 0 &lt; c →
-    Nat.Coprime a b → a + b = c → (c : <span class="t">ℝ</span>) ≤ K * (rad (a * b * c) : <span class="t">ℝ</span>) ^ (1 + ε)</code></pre><p class="src-link">From <a href="https://github.com/adamrsophie/IUTLean/blob/4c5d7b30c56fe38ba0a90b569ae1c75ed68489da/Challenge/Defs.lean"><code>Challenge/Defs.lean</code></a></p>
+    Nat.Coprime a b → a + b = c → (c : <span class="t">ℝ</span>) ≤ K * (rad (a * b * c) : <span class="t">ℝ</span>) ^ (1 + ε)</code></pre><p class="src-link">From <a href="https://github.com/adamrsophie/IUTLean/blob/057bf437ffb616815c69f7f0e532e55c49a7a9c7/Challenge/Defs.lean"><code>Challenge/Defs.lean</code></a></p>
 
 <div class="stats" aria-label="Library statistics">
-<div class="stat"><b>134</b><small>Lean files at this commit: the 110 library modules under <code>IUT/</code>, the root import file, the trusted definitions, the challenge and solution files, the axiom gate and its control files, and the Lean helpers of the scripts</small></div>
-<div class="stat"><b>54,437</b><small>lines of Lean</small></div>
+<div class="stat"><b>139</b><small>Lean files at this commit: the 110 library modules under <code>IUT/</code>, the root import file, the trusted definitions, the challenge and solution files, the axiom gate and its control files, and the Lean helpers of the scripts</small></div>
+<div class="stat"><b>54,760</b><small>lines of Lean</small></div>
 <div class="stat"><b>2,265</b><small>public theorems in the library modules, one dot each on the map</small></div>
 <div class="stat"><b>0</b><small>uses of sorry, admit, native_decide or added axioms in the library (<code>IUT.lean</code> and <code>IUT/</code>; <code>Challenge.lean</code> states its theorems with sorry on purpose, and the control files of the axiom gate use such constructs on purpose, to test the gate)</small></div>
 <div class="stat"><b>369</b><small>Statements in the mechanical index (numbered and lettered)</small></div>
 <div class="stat"><b>5</b><small>Statement records proved in full, unconditionally</small></div>
 </div>
-<p class="note">These numbers measure the size of the library and say little about the distance to a proof. Library counts are computed from commit <code>4c5d7b3</code> by the site generator; the last two are values of <code>data/dashboard.json</code>, with their captions from <a href="doc-DASHBOARD.html"><code>docs/DASHBOARD.md</code></a>. The <a href="status.html">status page</a> has every figure, the coverage per paper and the list of fragments.</p>
+<p class="note">These numbers measure the size of the library and say little about the distance to a proof. Library counts are computed from commit <code>057bf43</code> by the site generator; the last two are values of <code>data/dashboard.json</code>, with their captions from <a href="doc-DASHBOARD.html"><code>docs/DASHBOARD.md</code></a>. The <a href="status.html">status page</a> has every figure, the coverage per paper and the list of fragments.</p>
 
 <h2 id="status">What is and is not proved</h2>
 <div class="grid">
@@ -270,19 +270,19 @@ The project takes no side in the dispute about the theory: it neither assumes th
 </div>
 
 <h2 id="latest">Latest milestones</h2>
-<p class="sub">Each entry is a verified commit on the main branch. Times are local (UTC−5). The <a href="milestones.html">full timeline</a> has 13 entries.</p>
+<p class="sub">Each entry is a verified commit on the main branch. Times are local (UTC−5). The <a href="milestones.html">full timeline</a> has 14 entries.</p>
 <ol class="timeline" reversed>
+<li class="event"><time datetime="2026-11-28T01:41">28 November 2026, 01:41</time><p class="ev-title"><b>Gate: the name abcConjecture reserved, conclusions inspected completely; four model tests reclassified.</b> <span class="cls trust">trust tooling</span> Check 3 announces a resolution only for a whole registered closed form, walks every binder and every level of conjunctions and equivalences, and reports an incomplete inspection as an error; four fragments are now counted as model tests.</p></li>
 <li class="event"><time datetime="2026-11-27T18:26">27 November 2026, 18:26</time><p class="ev-title"><b>Fifteen modules: Proposition 1.1 in full, tensor packets of any number of factors and the classical bound for the different.</b> <span class="cls full">full statement proved in Lean</span> IUT IV, Propositions 1.1, 1.2 and 1.4 for any number of tensor factors, Proposition 1.1 for every suitable element; Proposition 1.5 (iii) and (iv) on M_I; the index of a paper of C. Zeng for any number of factors and a non-Galois example; species examples, the species of categories and the composite of mutations; the classical bound for the different.</p></li>
 <li class="event"><time datetime="2026-11-26T23:36">26 November 2026, 23:36</time><p class="ev-title"><b>Nine modules: Proposition 1.3 in full, tensor packets of any number of factors and the steps of Theorem 1.10.</b> <span class="cls full">full statement proved in Lean</span> IUT IV, Proposition 1.3 as one theorem for finite extensions of Q_p; Proposition 1.1 for any number of factors; the additivity of page 14 for two factors; Steps (iv) to (vii) of Theorem 1.10; two modules on documents about Corollary 3.12.</p></li>
 <li class="event"><time datetime="2026-11-26T12:05">12:05</time><p class="ev-title"><b>Six modules: differents, tensor log-shells and weighted log-volumes.</b> <span class="cls fragment">fragment checked in Lean</span> Both assertions of IUT IV Proposition 1.3 as separate theorems for finite extensions of Q_p, Proposition 1.2 (ii) to (iv) for two tensor factors, the weights of IUT III Remark 3.1.1, and a countermodel on hulls.</p></li>
-<li class="event"><time datetime="2026-11-26T02:26">02:26</time><p class="ev-title"><b>Eleven modules: towers, tensor packets, divisor pull-back and compactly bounded subsets.</b> <span class="cls fragment">fragment checked in Lean</span> Proposition 1.3 over a general base; tensor packets of any number of factors; the pull-back of arithmetic divisors; the hull on products of p-adic fields; [GenEll] Theorem 2.1 (ii) as an open family.</p></li>
 </ol>
 
 </main>
 </div>
 <footer class="site-footer"><div class="wrap">
 <p>Maintained by Adam R Sophie. Source: <a href="https://github.com/adamrsophie/IUTLean">github.com/adamrsophie/IUTLean</a>. Built on Lean 4 and Mathlib.</p>
-<p>Built on November 27, 2026 from commit <a href="https://github.com/adamrsophie/IUTLean/commit/4c5d7b30c56fe38ba0a90b569ae1c75ed68489da"><code>4c5d7b3</code></a>.</p>
+<p>Built on November 28, 2026 from commit <a href="https://github.com/adamrsophie/IUTLean/commit/057bf437ffb616815c69f7f0e532e55c49a7a9c7"><code>057bf43</code></a>.</p>
 </div></footer>
 </body>
 </html>
