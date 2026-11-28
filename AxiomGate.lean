@@ -14,8 +14,8 @@ The command ends with one summary line and fails (nonzero exit status) if any ch
 This file is metaprogramming that runs only at elaboration time. It is not part of the
 mathematical trust base: it adds no declarations that any theorem of the project uses, and
 it only reads the environment produced by the kernel. All definitions here are total; the
-graph traversal is a worklist loop bounded by explicit fuel, so no `partial` or `unsafe`
-is used.
+graph traversal is a worklist loop and the walks of check 3 are recursions, each bounded by
+explicit fuel whose exhaustion is an error, so no `partial` or `unsafe` is used.
 
 Checked constants: every constant whose defining module is `IUT`, `IUT.*` (except
 `IUT.Experimental.*`), `Challenge.Defs` or `Solution`, private and auxiliary declarations
@@ -42,11 +42,13 @@ included. Checks:
    of other papers that the library may assume but not prove). Each entry names a definition and its module. An entry whose module
    is not in the import closure is skipped with a note, except under continuous integration
    (`CI=true`), where it is an error, as is an entry that is missing although its module is
-   imported. For every checked theorem, definition, opaque constant or axiom of type a
-   proposition, the gate compares the statement and then, stripping the leading `∀` binders
-   one at a time (each time after reducible unfolding), each conclusion; of each it compares
-   the whole, the two conjuncts of an `∧`, and each side of an `↔` whose other side mentions
-   no registered constant. A part matches an entry `c` when, after both are expanded (every
+   imported. Check 3 is a syntactic heuristic, bounded by a heartbeat budget per statement,
+   not a semantic detector. For every checked theorem, definition, opaque constant or axiom
+   of type a proposition, the gate compares the statement and then, stripping the leading `∀`
+   binders one at a time (each time after reducible unfolding) until the statement is no
+   longer a `∀`, each conclusion; of each it compares the whole and, splitting to any depth,
+   the two conjuncts of an `∧` and each side of an `↔` whose other side mentions no registered
+   constant. A part matches an entry `c` when, after both are expanded (every
    definition of the project and of the file, instances excepted, and `Not` unfolded,
    whatever their reducibility: `expandProject`), it is equal to `c ?x₁ … ?xₙ` for fresh
    metavariables, or, for closed forms and author statements, to its negation, by
@@ -55,11 +57,20 @@ included. Checks:
    irreducible, and a near miss on `ℝ` fails at once instead of unfolding the reals. A match is an error unless a stripped hypothesis mentions a registered
    constant (by name, without unfolding), in which case the declaration is a conditional
    statement and accepted (`abc_of_abcLog : ABCLog → ABC`, `abcWithExponent_mono`). A match of
-   the whole statement with a closed form is reported as "states ... but is not named
-   abcConjecture"; a theorem named `abcConjecture` is printed prominently with its axioms
-   instead of being an error. An axiom is also rejected by check 2. Comparisons are skipped
-   when the reducible weak head normal forms differ in shape (`∀` or head constant), and each
-   statement has its own heartbeat budget; running out of it is an error, never a pass. Negated instances of
+   the whole statement (no binder stripped, no connective split) with a closed form or its
+   negation is reported as "states ... but is not named abcConjecture"; a declaration named
+   `abcConjecture` whose whole statement is such a match, with no hypothesis, is printed
+   prominently as a resolution with its axioms instead of being an error. The name is
+   reserved for that case and never suffices: a declaration named `abcConjecture` with any
+   other statement (hypotheses or other parts around a registered statement, a family
+   instance or an author statement, or no match) is an error. An axiom is also rejected by
+   check 2. Comparisons are skipped when the reducible weak head normal forms differ in shape
+   (`∀` or head constant), and each statement has its own heartbeat budget; running out of it
+   is an error, never a pass. The binder walk and the split of `∧` and `↔` have no small
+   bound of their own: their fuel equals the budget counted in heartbeats, and should it run
+   out the inspection is reported as incomplete, which is an error. So each
+   statement ends in a match, a complete inspection without a match (the only outcome that
+   passes, together with a conditional statement), or an error. Negated instances of
    a family are not reported (`not_abcWithExponent_of_le_one` is proved). Not detected:
    statements only propositionally equivalent to a registered one (an extra hypothesis
    `True → Challenge.ABC`, an equivalence with a true statement whose side mentions a
@@ -67,7 +78,8 @@ included. Checks:
    a registered constant without assuming it (`(h : Challenge.ABC → True)` exempts the
    declaration), a statement equal to a registered one only after unfolding a Mathlib
    definition, an alias that hides the binders or connectives around a registered statement
-   (they are read up to reducible unfolding), an alias of a registered statement used as
+   (they are read up to reducible unfolding), a `∀` inside a conjunct or a side of an `↔`
+   (`True ∧ ∀ n : ℕ, Challenge.ABC`: the binders of a part are not stripped), an alias of a registered statement used as
    a hypothesis (it is not recognized as assumed, which fails closed), and a structure field
    that assumes a form. Consequences of the conjecture other than the registered statements
    are a matter for reading the statements.
@@ -151,6 +163,16 @@ def allowedAxioms : List Name := [``propext, ``Classical.choice, ``Quot.sound]
 /-- Modules where placeholders are allowed and which the library must never import. -/
 def isExperimental (m : Name) : Bool := (`IUT.Experimental).isPrefixOf m
 
+/-- Heartbeat budget (in thousands) of one comparison of check 3. -/
+def settlesBudget : Nat := 20000
+
+/-- Fuel of the two walks of check 3, the binder walk of `openConclusion` and the split of `∧`
+and `↔` in `conclusionParts`: the heartbeat budget of one statement, counted in heartbeats, so
+that the walks have no bound of their own far below that budget. Whichever runs out first, the
+result is an error: an exhausted budget is reported as such, an exhausted fuel as an
+incomplete inspection. -/
+def defaultWalkFuel : Nat := settlesBudget * 1000
+
 /-- Which constants the gate checks. -/
 structure Config where
   /-- Modules whose constants are checked. -/
@@ -170,6 +192,9 @@ structure Config where
   /-- Check 3: entries added to the registries for this run (used by the controls); same
   shape as `registered`. -/
   extraRegistered : List (Name × Name × Bool × String) := []
+  /-- Check 3: fuel of the binder walk and of the split of `∧` and `↔` (a control lowers it
+  to see that running out is reported as an incomplete inspection). -/
+  walkFuel : Nat := defaultWalkFuel
 
 /-- Configuration for the controls: check only the declarations of the current file. -/
 def controlConfig : Config :=
@@ -349,45 +374,62 @@ def mentionsRegistered (reg : List (Name × Name × Bool × String)) (e : Expr) 
 
 /-- The parts of a conclusion that check 3 compares: the conclusion itself, the conjuncts of
 an `∧`, and each side of an `↔` whose other side mentions no registered constant (after
-reducible unfolding of the connective; `fuel` bounds the nesting). -/
+reducible unfolding of the connective), at any depth. Also returns the depth of the split
+(`0` when nothing is split). `none` when `fuel` runs out before every part was split: the
+inspection is incomplete. -/
 def conclusionParts (reg : List (Name × Name × Bool × String)) :
-    Nat → Expr → MetaM (Array Expr)
-  | 0, e => return #[e]
+    Nat → Expr → MetaM (Option (Array Expr × Nat))
+  | 0, _ => return none
   | fuel + 1, e => do
     let w ← Meta.whnfR e
     if w.isAppOfArity ``And 2 then
-      return #[e] ++ (← conclusionParts reg fuel w.appFn!.appArg!) ++
-        (← conclusionParts reg fuel w.appArg!)
+      let some (pa, da) ← conclusionParts reg fuel w.appFn!.appArg! | return none
+      let some (pb, db) ← conclusionParts reg fuel w.appArg! | return none
+      return some (#[e] ++ pa ++ pb, max da db + 1)
     if w.isAppOfArity ``Iff 2 then
       let a := w.appFn!.appArg!
       let b := w.appArg!
       let mut out := #[e]
-      unless mentionsRegistered reg b do out := out ++ (← conclusionParts reg fuel a)
-      unless mentionsRegistered reg a do out := out ++ (← conclusionParts reg fuel b)
-      return out
-    return #[e]
+      let mut depth := 0
+      unless mentionsRegistered reg b do
+        let some (pa, da) ← conclusionParts reg fuel a | return none
+        out := out ++ pa
+        depth := max depth (da + 1)
+      unless mentionsRegistered reg a do
+        let some (pb, db) ← conclusionParts reg fuel b | return none
+        out := out ++ pb
+        depth := max depth (db + 1)
+      return some (out, depth)
+    return some (#[e], 0)
 
-/-- Check 3 for one statement `ty`: the first registered statement that a part of a
-conclusion of `ty` states, found by stripping the leading `∀` binders one at a time (after
-reducible unfolding), with `true` when no binder was stripped (the statement itself). Returns
-`none` as soon as a stripped hypothesis mentions a registered constant. -/
-def openConclusion (reg : List (Name × Name × Bool × String)) :
-    Nat → Expr → Bool → MetaM (Option (Name × Bool × String × Bool))
-  | 0, _, _ => return none
-  | fuel + 1, e, top => do
-    for part in ← conclusionParts reg 4 e do
+/-- Check 3 for one statement: the first registered statement that a part of a conclusion
+states, found by stripping the leading `∀` binders one at a time (after reducible unfolding)
+until the statement is no longer a `∀`, with `true` when no binder was stripped (the statement
+itself). `.ok none` when the statement was inspected completely and nothing was found, or as
+soon as a stripped hypothesis mentions a registered constant (a conditional statement);
+`.error` when the inspection is incomplete because `fuel` ran out. `k` counts the binders
+stripped so far and `d` is the deepest split of `∧` and `↔` so far; the final values are
+returned with the result. -/
+def openConclusion (reg : List (Name × Name × Bool × String)) (partsFuel : Nat) :
+    Nat → Nat → Nat → Expr →
+      MetaM (Except String (Option (Name × Bool × String × Bool)) × Nat × Nat)
+  | 0, k, d, _ =>
+    return (.error s!"the binder walk ran out of fuel after {k} binders", k, d)
+  | fuel + 1, k, d, e => do
+    let some (parts, pd) ← conclusionParts reg partsFuel e
+      | return (.error s!"the split of ∧ and ↔ after {k} binders ran out of fuel", k, d)
+    let d := max d pd
+    for part in parts do
       if let some (c, neg, kind) ← registeredMatch reg part then
-        return some (c, neg, kind, top && part == e)
+        return (.ok (some (c, neg, kind, k == 0 && part == e)), k, d)
     let w ← Meta.whnfR e
-    unless w.isForall do return none
+    unless w.isForall do return (.ok none, k, d)
     Meta.forallBoundedTelescope w (some 1) fun xs body => do
+      if xs.isEmpty then
+        return (.error s!"binder {k + 1} could not be opened", k, d)
       for x in xs do
-        if mentionsRegistered reg (← x.fvarId!.getType) then return none
-      if xs.isEmpty then return none
-      openConclusion reg fuel body false
-
-/-- Heartbeat budget (in thousands) of one comparison of check 3. -/
-def settlesBudget : Nat := 20000
+        if mentionsRegistered reg (← x.fvarId!.getType) then return (.ok none, k + 1, d)
+      openConclusion reg partsFuel fuel (k + 1) d body
 
 /-- Names that check 6 accepts, by exact full name. Each entry was read.
 
@@ -781,28 +823,46 @@ def run (cfg : Config := {}) : CommandElabM Unit := do
     ci matches .thmInfo _ || ci matches .defnInfo _ || ci matches .opaqueInfo _ ||
       ci matches .axiomInfo _
   let commandEnv ← getEnv
-  let (found, undecided) ← liftCoreM do
+  let (found, undecided, incomplete, maxBinders, maxDepth) ← liftCoreM do
     setEnv env
     let mut found : Array (ConstantInfo × Name × Bool × String × Bool) := #[]
-    let mut undecided : Array Name := #[]
+    let mut undecided : Array (Name × String) := #[]
+    let mut incomplete : Array (Name × String) := #[]
+    let mut maxBinders : Nat := 0
+    let mut maxDepth : Nat := 0
     for ci in candidates do
       let r ← tryCatchRuntimeEx
         (withCurrHeartbeats <|
           withTheReader Core.Context (fun c => { c with maxHeartbeats := settlesBudget * 1000 })
-            (Except.ok <$> (openConclusion reg 32 ci.type true).run'))
-        (fun _ => pure (Except.error ()))
+            (Except.ok <$> (openConclusion reg cfg.walkFuel cfg.walkFuel 0 0 ci.type).run'))
+        (fun ex => do
+          let why ← if ex.isMaxHeartbeat then pure "ran out of its heartbeat budget"
+            else if ex.isMaxRecDepth then pure "reached the maximum recursion depth"
+            else pure s!"failed: {← ex.toMessageData.toString}"
+          pure (Except.error why))
       match r with
-      | .ok (some cb) => found := found.push (ci, cb)
-      | .ok none => pure ()
-      | .error _ => undecided := undecided.push ci.name
-    return (found, undecided)
+      | .ok (res, k, d) =>
+        maxBinders := max maxBinders k
+        maxDepth := max maxDepth d
+        match res with
+        | .ok (some cb) => found := found.push (ci, cb)
+        | .ok none => pure ()
+        | .error why => incomplete := incomplete.push (ci.name, why)
+      | .error why => undecided := undecided.push (ci.name, why)
+    return (found, undecided, incomplete, maxBinders, maxDepth)
   setEnv commandEnv
-  for n in undecided do
-    errors := errors.push m!"{n}: comparison with the registered statements ran out of its \
-      heartbeat budget"
+  for (n, why) in undecided do
+    errors := errors.push m!"{n}: comparison with the registered statements {why}"
+  for (n, why) in incomplete do
+    errors := errors.push m!"{n}: inspection by check 3 incomplete: {why}"
   notes := notes.push m!"conjecture check: {candidates.size} statements compared up to \
     unfolding with {reg.length - missing.size} registered statements, {found.size} \
-    matches, {undecided.size} undecided, {(← IO.monoMsNow) - t30} ms"
+    matches, {undecided.size} undecided, {incomplete.size} incomplete; longest binder walk \
+    {maxBinders} binders, deepest split of ∧ and ↔ {maxDepth}; {(← IO.monoMsNow) - t30} ms"
+  -- The name `abcConjecture` is reserved for a resolution: a declaration whose whole statement,
+  -- with no hypothesis, is a registered closed form or its negation.
+  let isReserved (n : Name) : Bool := n matches .str _ "abcConjecture"
+  let mut resolved : NameSet := {}
   for (ci, conj, neg, kind, top) in found do
     if provedInstances.contains (ci.name, ci.type.hash) then continue
     if provedInstances.any (·.1 == ci.name) then
@@ -810,15 +870,30 @@ def run (cfg : Config := {}) : CommandElabM Unit := do
         ({ci.type.hash})"
       continue
     let what := if neg then s!"the negation of {conj}" else toString conj
-    if ci.name matches .str _ "abcConjecture" then
+    if isReserved ci.name && top && kind == "form" then
       let axs ← collectAxioms ci.name
+      resolved := resolved.insert ci.name
       resolutions := resolutions.push
         m!"!!! RESOLUTION: {ci.name} proves {what}; axioms: {axs.toList} !!!"
+    else if isReserved ci.name && top then
+      errors := errors.push m!"{ci.name}: named abcConjecture, but its statement is {what}, a \
+        registered {kind}, not a closed form"
+    else if isReserved ci.name then
+      errors := errors.push m!"{ci.name}: named abcConjecture, but its statement has \
+        hypotheses or other parts around {what} (registered {kind}); only a statement that is \
+        a registered closed form as a whole may carry this name"
     else if top && kind == "form" then
       errors := errors.push m!"{ci.name}: states {what} but is not named abcConjecture"
     else
       errors := errors.push m!"{ci.name}: concludes {what} (registered {kind}) without a \
         hypothesis that mentions a registered statement (statement hash {ci.type.hash})"
+  let reported : NameSet := (found.map (·.1.name) ++ undecided.map (·.1) ++
+    incomplete.map (·.1)).foldl (·.insert ·) {}
+  for ci in consts do
+    if isReserved ci.name && !resolved.contains ci.name && !reported.contains ci.name then
+      errors := errors.push m!"{ci.name}: named abcConjecture, but its statement is not a \
+        registered closed form: it matches no registered statement, or only after a hypothesis \
+        that mentions one"
   logInfo (m!"exempted compiler helpers ({helpers.size}):\n" ++
     MessageData.joinSep helpers.toList "\n")
   for r in notes do logInfo r

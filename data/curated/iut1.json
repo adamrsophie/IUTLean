@@ -2316,7 +2316,7 @@
   "IUT1.Ex3_5.frag.frd_partial_frobenioid_example": {
     "kind": "fragment",
     "parent": "IUT1.Ex3_5",
-    "scope": "prerequisite from The Geometry of Frobenioids I (Definition 1.3, Proposition 1.5); not the objects of IUT I",
+    "scope": "model_test",
     "source": {
       "paper": "Inter-universal Teichmuller Theory I",
       "pdf_pages": "pages 84 to 86",
@@ -2384,7 +2384,7 @@
       "IUT.Prerequisites.Frobenioid.natPoint_frobCondVIIB"
     ],
     "covers": "Frobenioids I, Definition 1.3 (pages 24 and 25): a verified example of every stated clause, jointly; Proposition 1.5 (i) (page 27) for the one example D = Discrete PUnit, Φ = N, restricted to the stated clauses.",
-    "not_covered": "Clauses (i) (c) and (iii) (d) of Definition 1.3 for the example (not stated in Lean); Proposition 1.5 for general D and Φ, its types (Aut-ample, End-ample, and so on) and parts (ii), (iii).",
+    "not_covered": "Setting: prerequisite from The Geometry of Frobenioids I (Definition 1.3, Proposition 1.5); not the objects of IUT I. Clauses (i) (c) and (iii) (d) of Definition 1.3 for the example (not stated in Lean); Proposition 1.5 for general D and Φ, its types (Aut-ample, End-ample, and so on) and parts (ii), (iii). Counted as a model test: the category Discrete PUnit and the constant monoid N are chosen here; the declaration shows that the stated clauses of Definition 1.3 of The Geometry of Frobenioids I are jointly satisfiable, and it addresses no statement of IUT I.",
     "statement_status": "STATEMENT_FORMALIZED",
     "proof_status": "KERNEL_VERIFIED",
     "obligations": [

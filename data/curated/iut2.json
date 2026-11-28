@@ -1816,7 +1816,7 @@
   ],
   "lean_declaration": "IUT.Prerequisites.ThetaFunction.padic_five_norm_thetaRatio",
   "covers": "Nonvacuity check of the fragments above in the base field Q_p; no specific display of the parent.",
-  "not_covered": "Everything of Remark 2.5.1 beyond the classical identities; finite extensions of Q_p; the Tate parameter of an actual elliptic curve.",
+  "not_covered": "Setting: instance over Q_p. Everything of Remark 2.5.1 beyond the classical identities; finite extensions of Q_p; the Tate parameter of an actual elliptic curve. Counted as a model test: a nonvacuity check; the parameter r = p (q_X = p^2) and the field Q_5 are chosen here, and page 73 prints no statement about them.",
   "statement_status": "STATEMENT_FORMALIZED",
   "proof_status": "KERNEL_VERIFIED",
   "obligations": [],
@@ -1827,7 +1827,7 @@
    "IUT.Prerequisites.ThetaFunction.padic_norm_thetaRatio",
    "IUT.Prerequisites.ThetaFunction.exists_sq_eq_neg_one_padic_five"
   ],
-  "scope": "instance over Q_p"
+  "scope": "model_test"
  },
  "IUT2.Rem2_6_3.frag.gammaNorm_eq": {
   "kind": "fragment",

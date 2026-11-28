@@ -3648,7 +3648,7 @@
       "license": "CC BY 4.0",
       "statement": "Section 10.2, layer (1) and equation (closed)",
       "sections_in_paper": "section 10.2",
-      "pages_read": "checked against the TeX source of version 1: sections 0, 2 to 5, 8 to 10, 14 and 16 and Appendix A; no page render exists"
+      "pages_read": "checked against the TeX source of version 1: sections 0, 2 to 5, 8 to 10, 14 and 16 and Appendix A; no page render exists. Section numbers here are those of version 1; version 2 inserts two sections, so that sections 9, 10, 14 and 16 of version 1 are sections 10, 12, 16 and 18 of version 2"
     },
     "content": "Section 10.2 takes n = j + 1 factors for j = 1, ..., J and sums the exponent of Theorem 5.1 over j (layer (1)): with v = v_p(d_K), the averaged exponent is v-bar = (v / 2J) sum_{j <= J} j d^j. Equation (closed): sum_{j=1}^{J} j 2^j = (J - 1) 2^{J+1} + 2. The section then tabulates the growth against a target of size h^kappa, which the paper relates to IUT III, Corollary 3.12; that comparison is not extracted here.",
     "explicit_hypotheses": [
@@ -3677,7 +3677,7 @@
     "parent": "ZENGHULL.Sec10",
     "source": {
       "sections_in_paper": "section 10.2",
-      "pages_read": "checked against the TeX source of version 1: sections 0, 2 to 5, 8 to 10, 14 and 16 and Appendix A; no page render exists"
+      "pages_read": "checked against the TeX source of version 1: sections 0, 2 to 5, 8 to 10, 14 and 16 and Appendix A; no page render exists. Section numbers here are those of version 1; version 2 inserts two sections, so that sections 9, 10, 14 and 16 of version 1 are sections 10, 12, 16 and 18 of version 2"
     },
     "content": "The closed forms of section 10.2: sum_{j=1}^J j 2^j = (J-1) 2^{J+1} + 2, and for any d, (d-1)^2 sum_{j=1}^J j d^j = d((J(d-1)-1) d^J + 1).",
     "explicit_hypotheses": [
@@ -3709,7 +3709,7 @@
     "parent": "ZENGHULL.Sec10",
     "source": {
       "sections_in_paper": "section 10.2",
-      "pages_read": "checked against the TeX source of version 1: sections 0, 2 to 5, 8 to 10, 14 and 16 and Appendix A; no page render exists"
+      "pages_read": "checked against the TeX source of version 1: sections 0, 2 to 5, 8 to 10, 14 and 16 and Appendix A; no page render exists. Section numbers here are those of version 1; version 2 inserts two sections, so that sections 9, 10, 14 and 16 of version 1 are sections 10, 12, 16 and 18 of version 2"
     },
     "content": "Model test: the raw exponent divided by the dimension d^{j+1} is (j/2)(v/d); its sum over j <= J is (v/d) J (J+1)/4 and its average (v/d)(J+1)/4, polynomial in J.",
     "explicit_hypotheses": [
@@ -3743,7 +3743,7 @@
     "parent": "ZENGHULL.Sec10",
     "source": {
       "sections_in_paper": "section 10.2",
-      "pages_read": "checked against the TeX source of version 1: sections 0, 2 to 5, 8 to 10, 14 and 16 and Appendix A; no page render exists"
+      "pages_read": "checked against the TeX source of version 1: sections 0, 2 to 5, 8 to 10, 14 and 16 and Appendix A; no page render exists. Section numbers here are those of version 1; version 2 inserts two sections, so that sections 9, 10, 14 and 16 of version 1 are sections 10, 12, 16 and 18 of version 2"
     },
     "content": "Model test of sections 8.4 and 10: the raw exponent (j/2) d^j v of n = j + 1 factors; its sum over j <= J is at least (v/2) J d^J (d >= 1, v >= 0), and J d^J <= sum_{j<=J} j d^j <= 2 J d^J for d >= 2.",
     "explicit_hypotheses": [
@@ -3783,7 +3783,7 @@
       "license": "CC BY 4.0",
       "statement": "Theorem 5.1, with Lemmas 2.1, 2.2, 3.1, 4.1 and 4.2 and identity (0.1)",
       "sections_in_paper": "sections 0, 2 to 5 and 14",
-      "pages_read": "checked against the TeX source of version 1: sections 0, 2 to 5, 8 to 10, 14 and 16 and Appendix A; no page render exists"
+      "pages_read": "checked against the TeX source of version 1: sections 0, 2 to 5, 8 to 10, 14 and 16 and Appendix A; no page render exists. Section numbers here are those of version 1; version 2 inserts two sections, so that sections 9, 10, 14 and 16 of version 1 are sections 10, 12, 16 and 18 of version 2"
     },
     "content": "For K/Q_p Galois of degree d with discriminant d_K, and n >= 1: Phi identifies the n-fold tensor power of K over Q_p with a product of d^{n-1} copies of K (Lemma 2.1: Phi is an isomorphism of Q_p-algebras); P_n is the product of the rings of integers and O_n the image of the n-fold tensor power of O_K. Lemma 2.2: Phi(O_n) is contained in P_n. Lemma 3.1: for a pure tensor z, the trace of Phi(z) in the product equals the product of the traces of its factors, which is the trace of z in the tensor power. Lemma 4.1: disc(P_n) = d_K^{d^{n-1}}. Lemma 4.2: disc(O_n) = d_K^{n d^{n-1}}. Theorem 5.1: the index rho_n = [P_n : Phi(O_n)] equals |d_K|^{(n-1) d^{n-1}/2}, as an identity of positive integers. Identity (0.1): for Z_p-lattices Lambda' <= Lambda of the same rank, disc(Lambda') = [Lambda : Lambda']^2 disc(Lambda).",
     "explicit_hypotheses": [
@@ -3828,7 +3828,7 @@
     "parent": "ZENGHULL.Thm5_1",
     "source": {
       "sections_in_paper": "section 0",
-      "pages_read": "checked against the TeX source of version 1: sections 0, 2 to 5, 8 to 10, 14 and 16 and Appendix A; no page render exists"
+      "pages_read": "checked against the TeX source of version 1: sections 0, 2 to 5, 8 to 10, 14 and 16 and Appendix A; no page render exists. Section numbers here are those of version 1; version 2 inserts two sections, so that sections 9, 10, 14 and 16 of version 1 are sections 10, 12, 16 and 18 of version 2"
     },
     "content": "Identity (0.1): for Q_p-bases e1, e2 of a Q_p-algebra, disc e1 = (det_{e2} e1)^2 disc e2 (tOrdIdx_discr_change); for Z_p-lattices L1 <= L2 spanned by e1, e2, [L2 : L1] = ||det_{e2} e1||^-1 (tOrdIdx_relIndex_eq). Together: ||disc e1|| = [L2 : L1]^-2 ||disc e2||.",
     "explicit_hypotheses": [
@@ -3864,7 +3864,7 @@
     "parent": "ZENGHULL.Thm5_1",
     "source": {
       "sections_in_paper": "section 4",
-      "pages_read": "checked against the TeX source of version 1: sections 0, 2 to 5, 8 to 10, 14 and 16 and Appendix A; no page render exists"
+      "pages_read": "checked against the TeX source of version 1: sections 0, 2 to 5, 8 to 10, 14 and 16 and Appendix A; no page render exists. Section numbers here are those of version 1; version 2 inserts two sections, so that sections 9, 10, 14 and 16 of version 1 are sections 10, 12, 16 and 18 of version 2"
     },
     "content": "Lemma 4.1 for n = 2: the product basis of prod_{Gal} K, b_k in the sigma-component, has discriminant disc b ^ |Gal(K/F)|; K (x)_F K is isomorphic to prod_{Gal} K by x (x) y -> (x sigma(y))_sigma.",
     "explicit_hypotheses": [
@@ -3902,7 +3902,7 @@
     "parent": "ZENGHULL.Thm5_1",
     "source": {
       "sections_in_paper": "section 4",
-      "pages_read": "checked against the TeX source of version 1: sections 0, 2 to 5, 8 to 10, 14 and 16 and Appendix A; no page render exists"
+      "pages_read": "checked against the TeX source of version 1: sections 0, 2 to 5, 8 to 10, 14 and 16 and Appendix A; no page render exists. Section numbers here are those of version 1; version 2 inserts two sections, so that sections 9, 10, 14 and 16 of version 1 are sections 10, 12, 16 and 18 of version 2"
     },
     "content": "Lemma 4.2 for n = 2, for any two finite-dimensional commutative algebras: disc (b (x) c) = disc b ^ dim B * disc c ^ dim A (Kronecker product of trace forms). With A = B = K this is disc b ^ (2d).",
     "explicit_hypotheses": [
@@ -3936,7 +3936,7 @@
     "parent": "ZENGHULL.Thm5_1",
     "source": {
       "sections_in_paper": "section 5",
-      "pages_read": "checked against the TeX source of version 1: sections 0, 2 to 5, 8 to 10, 14 and 16 and Appendix A; no page render exists"
+      "pages_read": "checked against the TeX source of version 1: sections 0, 2 to 5, 8 to 10, 14 and 16 and Appendix A; no page render exists. Section numbers here are those of version 1; version 2 inserts two sections, so that sections 9, 10, 14 and 16 of version 1 are sections 10, 12, 16 and 18 of version 2"
     },
     "content": "Theorem 5.1 for n = 2 on the library's objects: for K/Q_p finite Galois of degree d with an integral basis b, [(R_E)^~ : R_E]^2 = (||disc b||^-1)^d, where R_E = tensorIdxRing p K K and (R_E)^~ = tensorIdxNormRing p K K. With |d_K| read as ||disc b||^-1 = p^v this is rho_2 = |d_K|^(d/2), with no square root.",
     "explicit_hypotheses": [
@@ -3980,7 +3980,7 @@
     "parent": "ZENGHULL.Thm5_1",
     "source": {
       "sections_in_paper": "sections 5 and 14",
-      "pages_read": "checked against the TeX source of version 1: sections 0, 2 to 5, 8 to 10, 14 and 16 and Appendix A; no page render exists"
+      "pages_read": "checked against the TeX source of version 1: sections 0, 2 to 5, 8 to 10, 14 and 16 and Appendix A; no page render exists. Section numbers here are those of version 1; version 2 inserts two sections, so that sections 9, 10, 14 and 16 of version 1 are sections 10, 12, 16 and 18 of version 2"
     },
     "content": "Two-factor index identity without a Galois hypothesis: for finite extensions K1, K2 of Q_p with integral bases b, c and any Q_p-basis n of K1 (x) K2 whose Z_p-span is (R_E)^~, [(R_E)^~ : R_E]^2 * ||disc b||^{d2} * ||disc c||^{d1} = ||disc n||.",
     "explicit_hypotheses": [
@@ -4000,7 +4000,7 @@
     "lean_declaration": "IUT.Audit.TensorOrderIndex.tOrdIdx_index_sq_general",
     "lean_module": "IUT.Audit.TensorOrderIndex",
     "covers": "Not a statement printed by the paper: section 14 states that the proof of Theorem 5.1 depends on K/Q_p being Galois and that for non-Galois K the closed form must be rebuilt from the composita. This record is the general identity of which Theorem 5.1 (n = 2) is the Galois case.",
-    "not_covered": "The existence of the basis n here (it is proved in IUT.PaperIV.LocalFields.locDisc_exists_normBasis); a closed form of disc n for non-Galois K; the explicit non-Galois example of section 14 is ZENGHULL.Thm5_1.frag.locdisccu_exact_index.",
+    "not_covered": "The existence of the basis n here (it is proved in IUT.PaperIV.LocalFields.locDisc_exists_normBasis); a closed form of disc n for non-Galois K; an explicit non-Galois example, chosen here, is ZENGHULL.Thm5_1.frag.locdisccu_exact_index (the example of section 14 of version 1 is Q_2(2^{1/3})).",
     "statement_status": "STATEMENT_FORMALIZED",
     "proof_status": "KERNEL_VERIFIED",
     "obligations": [],
@@ -4018,7 +4018,7 @@
     "parent": "ZENGHULL.Thm5_1",
     "source": {
       "sections_in_paper": "section 14.2",
-      "pages_read": "checked against the TeX source of version 1: sections 0, 2 to 5, 8 to 10, 14 and 16 and Appendix A; no page render exists"
+      "pages_read": "checked against the TeX source of version 1: sections 0, 2 to 5, 8 to 10, 14 and 16 and Appendix A; no page render exists. Section numbers here are those of version 1; version 2 inserts two sections, so that sections 9, 10, 14 and 16 of version 1 are sections 10, 12, 16 and 18 of version 2"
     },
     "content": "For any finite extensions K_1, K_2 of Q_p (no Galois hypothesis) with integral bases b, c, (R_E)^~ is the Z_p-span of a Q_p-basis n of K_1 tensor K_2, and for every such n: [(R_E)^~ : R_E]^2 ||disc b||^{d_2} ||disc c||^{d_1} = ||disc n|| and 2 v_p([(R_E)^~ : R_E]) = d_2 v_p(disc b) + d_1 v_p(disc c) - v_p(disc n). Here v_p of the index is multiplicity p (Mathlib's p-adic valuation of a natural number) and v_p of a discriminant is Padic.valuation.",
     "explicit_hypotheses": [
@@ -4053,7 +4053,7 @@
     "parent": "ZENGHULL.Thm5_1",
     "source": {
       "sections_in_paper": "section 14",
-      "pages_read": "checked against the TeX source of version 1: sections 0, 2 to 5, 8 to 10, 14 and 16 and Appendix A; no page render exists"
+      "pages_read": "checked against the TeX source of version 1: sections 0, 2 to 5, 8 to 10, 14 and 16 and Appendix A; no page render exists. Section numbers here are those of version 1; version 2 inserts two sections, so that sections 9, 10, 14 and 16 of version 1 are sections 10, 12, 16 and 18 of version 2"
     },
     "explicit_hypotheses": [
       "K a field, finite-dimensional Q_3-algebra with finrank Q_3 K = 3",
@@ -4101,7 +4101,7 @@
     "parent": "ZENGHULL.Thm5_1",
     "source": {
       "sections_in_paper": "section 14",
-      "pages_read": "checked against the TeX source of version 1: sections 0, 2 to 5, 8 to 10, 14 and 16 and Appendix A; no page render exists"
+      "pages_read": "checked against the TeX source of version 1: sections 0, 2 to 5, 8 to 10, 14 and 16 and Appendix A; no page render exists. Section numbers here are those of version 1; version 2 inserts two sections, so that sections 9, 10, 14 and 16 of version 1 are sections 10, 12, 16 and 18 of version 2"
     },
     "explicit_hypotheses": [
       "K a field, finite-dimensional Q_3-algebra with finrank Q_3 K = 3",
@@ -4138,7 +4138,7 @@
     "parent": "ZENGHULL.Thm5_1",
     "source": {
       "sections_in_paper": "section 14",
-      "pages_read": "checked against the TeX source of version 1: sections 0, 2 to 5, 8 to 10, 14 and 16 and Appendix A; no page render exists"
+      "pages_read": "checked against the TeX source of version 1: sections 0, 2 to 5, 8 to 10, 14 and 16 and Appendix A; no page render exists. Section numbers here are those of version 1; version 2 inserts two sections, so that sections 9, 10, 14 and 16 of version 1 are sections 10, 12, 16 and 18 of version 2"
     },
     "content": "For K = Q_3(pi), pi^3 = 3, the two-factor identity [(R_E)^~ : R_E]^2 = (||disc b||^-1)^d, proved under the Galois hypothesis (tOrdIdx_index_sq_galois), fails for K tensor K for every Q_3-basis b of K: v_3(disc b) is odd and d = 3, while the left side is the square of a natural number. Consequences: K is not Galois over Q_3; for an integral basis b and any basis n of (R_E)^~, v_3(disc n) is even, hence differs from d v_3(disc b) = 15.",
     "explicit_hypotheses": [
@@ -4181,7 +4181,7 @@
     "parent": "ZENGHULL.Thm5_1",
     "source": {
       "sections_in_paper": "section 14",
-      "pages_read": "checked against the TeX source of version 1: sections 0, 2 to 5, 8 to 10, 14 and 16 and Appendix A; no page render exists"
+      "pages_read": "checked against the TeX source of version 1: sections 0, 2 to 5, 8 to 10, 14 and 16 and Appendix A; no page render exists. Section numbers here are those of version 1; version 2 inserts two sections, so that sections 9, 10, 14 and 16 of version 1 are sections 10, 12, 16 and 18 of version 2"
     },
     "content": "For K = Q_3(pi), pi^3 = 3: 9 divides [(R_E)^~ : R_E] (the idempotent (1 + x + x^2)/3 with x = (pi tensor pi^2)/3, x^3 = 1, lies in (R_E)^~ and has coordinate 1/9 at pi tensor pi^2), and v_3([(R_E)^~ : R_E]) <= 15 (v_3(disc n) >= 0 because the trace form is Z_p-valued on (R_E)^~, for any two factors).",
     "explicit_hypotheses": [
@@ -4221,7 +4221,7 @@
     "parent": "ZENGHULL.Thm5_1",
     "source": {
       "sections_in_paper": "section 5",
-      "pages_read": "checked against the TeX source of version 1: sections 0, 2 to 5, 8 to 10, 14 and 16 and Appendix A; no page render exists"
+      "pages_read": "checked against the TeX source of version 1: sections 0, 2 to 5, 8 to 10, 14 and 16 and Appendix A; no page render exists. Section numbers here are those of version 1; version 2 inserts two sections, so that sections 9, 10, 14 and 16 of version 1 are sections 10, 12, 16 and 18 of version 2"
     },
     "content": "Theorem 5.1 for n = |I| factors on the library's objects: for K/Q_p finite Galois of degree d with an integral basis b, [(R_I)^~ : R_I]^2 = (||disc b||^-1)^((n-1) d^(n-1)), where R_I is tdManyIntegers (as the subgroup tOrdManyRingGrp) and (R_I)^~ is packetNormalizationSet (as the subgroup tOrdManyNormGrp) in the packet PiTensorProduct over Q_p of n copies of K.",
     "explicit_hypotheses": [
@@ -4262,7 +4262,7 @@
     "parent": "ZENGHULL.Thm5_1",
     "source": {
       "sections_in_paper": "section 2",
-      "pages_read": "checked against the TeX source of version 1: sections 0, 2 to 5, 8 to 10, 14 and 16 and Appendix A; no page render exists"
+      "pages_read": "checked against the TeX source of version 1: sections 0, 2 to 5, 8 to 10, 14 and 16 and Appendix A; no page render exists. Section numbers here are those of version 1; version 2 inserts two sections, so that sections 9, 10, 14 and 16 of version 1 are sections 10, 12, 16 and 18 of version 2"
     },
     "content": "Lemma 2.2: for z in R_I (tdManyIntegers), every component Phi(z)_g is integral over Z_p, that is, Phi(R_I) lies in the product of the O_K.",
     "explicit_hypotheses": [
@@ -4297,7 +4297,7 @@
     "parent": "ZENGHULL.Thm5_1",
     "source": {
       "sections_in_paper": "section 3",
-      "pages_read": "checked against the TeX source of version 1: sections 0, 2 to 5, 8 to 10, 14 and 16 and Appendix A; no page render exists"
+      "pages_read": "checked against the TeX source of version 1: sections 0, 2 to 5, 8 to 10, 14 and 16 and Appendix A; no page render exists. Section numbers here are those of version 1; version 2 inserts two sections, so that sections 9, 10, 14 and 16 of version 1 are sections 10, 12, 16 and 18 of version 2"
     },
     "content": "Lemma 3.1 for n factors: Tr(Phi(tensor_i x_i)) = prod_i Tr_K(x_i), and this equals the trace of tensor_i x_i in the packet.",
     "explicit_hypotheses": [
@@ -4331,7 +4331,7 @@
     "parent": "ZENGHULL.Thm5_1",
     "source": {
       "sections_in_paper": "section 4",
-      "pages_read": "checked against the TeX source of version 1: sections 0, 2 to 5, 8 to 10, 14 and 16 and Appendix A; no page render exists"
+      "pages_read": "checked against the TeX source of version 1: sections 0, 2 to 5, 8 to 10, 14 and 16 and Appendix A; no page render exists. Section numbers here are those of version 1; version 2 inserts two sections, so that sections 9, 10, 14 and 16 of version 1 are sections 10, 12, 16 and 18 of version 2"
     },
     "content": "Lemma 4.1 for any finite index set J: the product basis (k, j) -> b_k in the j-component of prod_J K has discriminant disc b ^ |J|; with J = G^(n-1) and transported by Phi, the basis of (R_I)^~ has discriminant disc b ^ (d^(n-1)) (tOrdMany_discr_normBasis).",
     "explicit_hypotheses": [
@@ -4365,7 +4365,7 @@
     "parent": "ZENGHULL.Thm5_1",
     "source": {
       "sections_in_paper": "section 4",
-      "pages_read": "checked against the TeX source of version 1: sections 0, 2 to 5, 8 to 10, 14 and 16 and Appendix A; no page render exists"
+      "pages_read": "checked against the TeX source of version 1: sections 0, 2 to 5, 8 to 10, 14 and 16 and Appendix A; no page render exists. Section numbers here are those of version 1; version 2 inserts two sections, so that sections 9, 10, 14 and 16 of version 1 are sections 10, 12, 16 and 18 of version 2"
     },
     "content": "Lemma 4.2: for a Q_p-basis b of K with |b| = d and a finite index type I with |I| = m, the tensor basis of the PiTensorProduct of m copies of K has discriminant disc b ^ (m d^(m-1)).",
     "explicit_hypotheses": [
@@ -4397,7 +4397,7 @@
     "parent": "ZENGHULL.Thm5_1",
     "source": {
       "sections_in_paper": "section 2",
-      "pages_read": "checked against the TeX source of version 1: sections 0, 2 to 5, 8 to 10, 14 and 16 and Appendix A; no page render exists"
+      "pages_read": "checked against the TeX source of version 1: sections 0, 2 to 5, 8 to 10, 14 and 16 and Appendix A; no page render exists. Section numbers here are those of version 1; version 2 inserts two sections, so that sections 9, 10, 14 and 16 of version 1 are sections 10, 12, 16 and 18 of version 2"
     },
     "content": "Lemma 2.1 for n factors: the Q_p-algebra isomorphism tOrdManyPhi from the PiTensorProduct of n copies of K onto the functions G^(I minus s) -> K, with Phi(tensor_i x_i)_g = x_s * prod_{i != s} g_i(x_i).",
     "explicit_hypotheses": [

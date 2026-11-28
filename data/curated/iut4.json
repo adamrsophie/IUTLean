@@ -6412,7 +6412,7 @@
   "external_dependencies": [],
   "lean_declaration": "IUT.Audit.TensorOrderIndexMany.tOrdMany_muLog",
   "lean_module": "IUT.Audit.TensorOrderIndexMany",
-  "covers": "Page 13, Proposition 1.4 (i), normalization \"[i.e., by dividing by the degree of the finite extension]\" with mu^log((R_E)^~) = 0; the value computed here is not printed on the page. It is the exponent of Corollary 5.2 of C. Zeng, hexagon 2610.00646 version 1 (TeX source), v_p(rho_n) = ((n-1) d^{n-1}/2) v_p(d_K), divided by the dimension d^n.",
+  "covers": "Page 13, Proposition 1.4 (i), normalization \"[i.e., by dividing by the degree of the finite extension]\" with mu^log((R_E)^~) = 0; the value computed here is not printed on the page. It is the exponent of Corollary 5.2 of C. Zeng, hexagon 2610.00646 version 1 (TeX source; the number is that of version 1, Corollary 5.3 in version 2), v_p(rho_n) = ((n-1) d^{n-1}/2) v_p(d_K), divided by the dimension d^n.",
   "not_covered": "The identification v/d = the order of the different (differentOrder) is not made in this declaration; it is made in IUT.Audit.TensorOrderIndexAllowance.tOrdAllow_muLog through locDisc_valuation_discr.",
   "statement_status": "STATEMENT_FORMALIZED",
   "proof_status": "KERNEL_VERIFIED",

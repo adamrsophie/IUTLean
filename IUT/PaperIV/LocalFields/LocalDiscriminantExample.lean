@@ -6,8 +6,11 @@ import IUT.PaperIV.LocalFields.LocalDiscriminant
 
 Sources: IUT IV, Proposition 1.1 (page 9; the different `𝔡` of a local field) and
 Proposition 1.4 (i) (page 13; the log-volume normalized at the normalization of a tensor
-product), both checked against page renders; the hexagon paper (arXiv 2610.00646), Theorem 5.1
-and its section 14, read in the TeX source (no page render). Everything here is a model test:
+product), both checked against page renders; the paper of C. Zeng (hexagon 2610.00646),
+Theorem 5.1 and its section 14, read in the TeX source of version 1 (no page render). The field
+`ℚ_3(3^{1/3})` is chosen here: section 14 of version 1 treats the non-Galois case with the
+example `ℚ_2(2^{1/3})`, and version 2 of the paper lists `ℚ(3^{1/3})` at `p = 3` in its table
+of non-Galois samples, with 3-adic valuation 7 of the index. Everything here is a model test:
 an explicit computation for one field, not a printed statement.
 
 ## What is proved

@@ -85,8 +85,11 @@ Pages checked against rendered images: the same.
   norm extending the `p`-adic norm, `p ^ λ · R_i` by the closed ball of radius `p ^ (−λ)`, and the
   ramification index by a positive integer `e` with `‖x‖ ^ e ≤ 1 / p` on the open unit disc
   (`hval`). A uniformizer is an element `π` with `‖π‖ ^ e = 1 / p` (`hπ`). Both are standing
-  properties of a finite extension with its ramification index, not claims of the papers; their
-  derivation from `integralClosure ℤ_p k_i` and `Ideal.ramificationIdx` is not formalized.
+  properties of a finite extension with its ramification index, not claims of the papers. Their
+  derivation from `integralClosure ℤ_p k_i` and `Ideal.ramificationIdx` is not made here; it is
+  proved for the spectral norm in `IUT.PaperIV.LocalFields.Bridge`
+  (`padicBridge_norm_le_one_iff_isIntegral`, `padicBridge_uniformizer`,
+  `padicBridge_ramificationIdx_le_of_hval`).
 * *Real values.* `padicMuLog` is real valued with Lean's `Real.log 0 = 0`; it is meaningful on
   sets of positive finite measure (the compact open sets of page 13), and every law below that
   needs it assumes it. The value `padicMuLog_self` holds for every `Λ`, so it carries content only
@@ -101,36 +104,55 @@ Pages checked against rendered images: the same.
   is `log (μ A / μ Λ) / D` for one Haar measure `μ` on the `D`-dimensional space `⊗ k_i`, which
   has the two normalizing values of page 13 whenever `0 < μ Λ < ∞`. On a product region with
   respect to the decomposition it should be the sum of the log-volumes of the factors weighted
-  by `[K_j : ℚ_p] / D` (not formalized; the decomposition itself is not formalized); other
+  by `[K_j : ℚ_p] / D`. Neither is proved here; the decomposition and this weighting on product
+  regions are proved in `IUT.PaperIV.LocalFields.Packets` (`packet_equiv_pi`,
+  `packet_muLog_pi_region`). Other
   weightings are possible (IUT III Remark 3.1.1 (iii), page 95), and
   this one is a choice.
 * *Normalization of `R_E`.* Page 9 defines `(R_E)^∼` as the normalization of the reduced ring
   `R_E` in its ring of fractions. Here `padicPacketNormalization` is the set of elements of
   `K₁ ⊗ K₂` integral over `ℤ_p`. The two agree because the ring of fractions of `R_E` is
-  `K₁ ⊗ K₂` and `R_E` is integral over `ℤ_p`; neither fact is formalized.
+  `K₁ ⊗ K₂` and `R_E` is integral over `ℤ_p`. Neither fact is proved here. For two factors they
+  are proved in `IUT.PaperIV.LocalFields.TensorIndex` (`tensorIdx_isFractionRing`,
+  `tensorIdx_isIntegralElem_iff`), and for any finite number of factors in
+  `IUT.PaperIV.LocalFields.PacketIdentifications` (`packetId_isLocalization`,
+  `packetId_isIntegralElem_iff`).
 
 ## Not proved
 
 * That `padicPacketNormalization` (that is `(R_E)^∼`) is compact and open in `K₁ ⊗ K₂`, so has
-  positive finite Haar measure; without it the normalization `μ^log((R_E)^∼) = 0`,
+  positive finite Haar measure, here; in this file the normalization `μ^log((R_E)^∼) = 0`,
   `μ^log(p · (R_E)^∼) = −log p` of page 13 is only an instance of the general laws for sets of
-  positive finite measure. Its finiteness needs that `K₁ ⊗ K₂` is reduced (a product of
-  fields), its openness that it contains a lattice.
-* The general index formula `μ(Λ') = [Λ : Λ']⁻¹ μ(Λ)` for sublattices; only the case
-  `Λ' = p Λ` of a coordinate box is proved (`padicVolBox_measure_one`).
+  positive finite measure. It is proved for two factors in
+  `IUT.PaperIV.LocalFields.VolumeBridge` (`volBridge_packetNormalization_isCompact_isOpen`,
+  `volBridge_packet_muLog_normalization`) and for any finite number of factors in
+  `IUT.PaperIV.LocalFields.Packets` (`packet_muLog_normalization_tensor`, with reducedness
+  from `packet_isReduced`).
+* The general index formula `μ(Λ') = [Λ : Λ']⁻¹ μ(Λ)` for sublattices, here; only the case
+  `Λ' = p Λ` of a coordinate box is proved in this file (`padicVolBox_measure_one`). The form
+  `μ(Λ) = [Λ : Λ'] · μ(Λ')`, for a measurable subgroup `Λ'` of finite index in `Λ` and a
+  translation invariant `μ`, is proved in `IUT.PaperIV.LocalFields.TensorIndex`
+  (`tensorIdx_measure_eq_relIndex`).
 * IUT IV Proposition 1.1 (`p ^ 𝔡 · (R_I)^∼ ⊆ R_I`), hence Proposition 1.2 (ii) to (iv), here;
   they are proved in `IUT/PaperIV/LocalFields/` (`TensorDifferent.lean`,
   `TensorDifferentMany.lean`, `TensorLogShell.lean`).
 * The additivity used on page 14, `μ^log(⊗ A_i) = ∑ μ^log(A_i) + μ^log(R_I)`: it needs the
   index formula for tensor products of lattices, or the determinant formula for Haar measure
-  over `ℚ_p` (Mathlib has the latter only over `ℝ`). For two factors it is proved through the
-  index formula in `IUT/PaperIV/LocalFields/TensorAdditivity.lean`.
-* IUT IV Proposition 1.4 (ii), the exact value `−(1/e_i + m_i/(e_i f_i)) log p`: it needs the
-  residue field, the torsion of `R_i^×`, and Haar measure on the unit group. The bounds of
+  over `ℚ_p` (Mathlib has the latter only over `ℝ`). It is not proved here. Through the index
+  formula it is proved for two factors in `IUT.PaperIV.LocalFields.TensorAdditivity`
+  (`tensorAdd_muLog_add`), and for any finite number of factors, for `ℤ_p`-lattices `L_i` with
+  `p ^ k_i · R_i ⊆ L_i ⊆ p ^ (−k_i) · R_i`, in `IUT.PaperIV.LocalFields.TensorAdditivityMany`
+  (`tam_muLog_add`).
+* IUT IV Proposition 1.4 (ii), the exact value `−(1/e_i + m_i/(e_i f_i)) log p`, here: it needs
+  the residue field, the torsion of `R_i^×`, and Haar measure on the unit group. It is proved in
+  `IUT.PaperIV.LocalFields.UnitVolume` (`unitVol_muLog_logUnit_eq`). The bounds of
   `padicMuLog_logUnit_bounds` come from Proposition 1.2 (i) only and are weaker.
 * The identification of the closed unit ball with `integralClosure ℤ_p k_i` and of `π`, `e` with
   a uniformizer and the ramification index, and `μ (x • A) = ‖x‖ ^ d μ A` for every `x ∈ K^×`
-  without the hypothesis on a power of `‖x‖`.
+  without the hypothesis on a power of `‖x‖`, here. For a finite extension with its spectral
+  norm they are proved in `IUT.PaperIV.LocalFields.Bridge`
+  (`padicBridge_norm_le_one_iff_isIntegral`, `padicBridge_uniformizer`) and in
+  `IUT.PaperIV.LocalFields.VolumeBridge` (`volBridge_measure_smul`).
 -/
 
 namespace IUT.Prerequisites.PadicVolume
@@ -366,7 +388,10 @@ variable (p : ℕ) [hp : Fact p.Prime] {V : Type*} [NormedAddCommGroup V] [Norme
 /-- **The normalized log-volume** `μ^log(A) = log (μ A / μ Λ) / d`, `d = dim_{ℚ_p} V`, normalized
 at `Λ`: the normalization "by dividing by the degree" of IUT IV Proposition 1.4 (i), page 13.
 Real valued, with Lean's `Real.log 0 = 0`; it is meaningful when `μ A` and `μ Λ` are positive
-and finite. -/
+and finite. It is not monotone on all sets: on `ℚ_p` normalized at `ℤ_p`, the empty set has
+value `0` (from `Real.log 0 = 0`), while its superset `p ℤ_p` has value `−log p`. It is monotone
+on sets of positive finite measure (`padicMuLog_mono`); for arbitrary sets the form to use is
+`padicMuLogE`, which is monotone on all sets (`padicMuLogE_mono`). -/
 noncomputable def padicMuLog (Λ A : Set V) : ℝ :=
   Real.log ((μ A).toReal / (μ Λ).toReal) / (Module.finrank ℚ_[p] V : ℝ)
 
@@ -399,7 +424,11 @@ theorem padicMuLog_of_degenerate_set (Λ : Set V) {A : Set V} (hA : μ A = 0 ∨
   simp [padicMuLog, h]
 
 /-- The `EReal` form `ENNReal.log ((μ A / μ Λ) ^ (1 / d))` of the normalized log-volume. It is
-defined and monotone on all sets (`padicMuLogE_mono`), with `−∞` on null sets. -/
+defined and monotone on all sets (`padicMuLogE_mono`). In positive dimension `d` its value on
+a null set is `−∞` for every `Λ` (`ENNReal.zero_div`, `ENNReal.zero_rpow_of_pos`,
+`ENNReal.log_zero`). In dimension `0` the exponent `(0 : ℝ)⁻¹` is `0` (`inv_zero`), so
+`(μ A / μ Λ) ^ (0 : ℝ) = 1` (`ENNReal.rpow_zero`) and the value is `ENNReal.log 1 = 0` on
+every set (`ENNReal.log_one`). -/
 noncomputable def padicMuLogE (Λ A : Set V) : EReal :=
   ENNReal.log ((μ A / μ Λ) ^ ((Module.finrank ℚ_[p] V : ℝ)⁻¹))
 
@@ -919,7 +948,8 @@ theorem padicPacketMuLog_self (Λ : Set W) : padicPacketMuLog p W μ Λ Λ = 0 :
 /-- **The scaling law on a packet**: `μ^log(p ^ n • A) = μ^log(A) − n log p` when the images of
 `Λ` and `A` have positive finite measure. With `A = Λ = (R_E)^∼` and `n = 1` it would give the
 normalization `μ^log(p · (R_E)^∼) = −log(p)` of IUT IV page 13, but that `(R_E)^∼`
-(`padicPacketNormalization`) has positive finite measure is not proved here. -/
+(`padicPacketNormalization`) has positive finite measure is not proved here. It is proved in
+`IUT.PaperIV.LocalFields.VolumeBridge` (`volBridge_packet_muLog_normalization`). -/
 theorem padicPacketMuLog_p_zpow_smul (hD : 0 < Module.finrank ℚ_[p] W) {Λ A : Set W}
     (hΛ0 : μ ((Module.finBasis ℚ_[p] W).equivFun '' Λ) ≠ 0)
     (hΛ : μ ((Module.finBasis ℚ_[p] W).equivFun '' Λ) ≠ ⊤)

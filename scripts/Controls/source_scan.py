@@ -151,14 +151,18 @@ ALLOWED_INSTANCES = {
 # Tracked Lean files that are tooling, not proof sources: no default target contains them and
 # nothing in the library imports them. Exact paths; a new control or helper is added here.
 TOOLING = {
-    'AxiomGate.lean', 'GateControls/Clean.lean', 'GateControls/EquivalentForm.lean',
+    'AxiomGate.lean', 'GateControls/Clean.lean', 'GateControls/DeepConclusions.lean',
+    'GateControls/DeepConclusionsClean.lean', 'GateControls/EquivalentForm.lean',
     'GateControls/ExperimentalImport.lean', 'GateControls/ExponentThree.lean',
     'GateControls/ForbiddenAxiom.lean', 'GateControls/ForeignInstances.lean',
-    'GateControls/GateProbe.lean', 'GateControls/NativeDecide.lean',
+    'GateControls/GateProbe.lean', 'GateControls/NamedConditional.lean',
+    'GateControls/NativeDecide.lean',
     'GateControls/OpenStatements.lean', 'GateControls/OpenStatementsClean.lean',
     'GateControls/PrivateShadowing.lean', 'GateControls/RenamedConjecture.lean',
+    'GateControls/ResolutionModel.lean',
     'GateControls/Shadowing.lean', 'GateControls/Sorry.lean', 'GateControls/SourceScan.lean',
     'GateControls/TrustedNames.lean', 'GateControls/VojtaRestated.lean',
+    'GateControls/WalkFuel.lean',
     'scripts/Controls/Fingerprints.lean', 'scripts/LeanDeclarations.lean',
 }
 

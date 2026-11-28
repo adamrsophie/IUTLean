@@ -8194,14 +8194,14 @@
     ],
     "lean_declaration": "IUT.Applications.DupuyHilado.dhHull_isHullMap",
     "covers": "The clauses (P1) to (P3) of IUT III Remark 3.9.5 (ii), page 127, for the polydisc hull of Dupuy and Hilado (arXiv 2004.13108, section 6.1) on a finite product of normed groups, with all regions as the family P and the polydiscs as the family H; and that section's rules for unions and scalings.",
-    "not_covered": "The holomorphic hull of IUT III Remark 3.9.5 (i) on tensor packets of log-shells, which is the hull the parent's obligation concerns; tensor products and their splitting into factors; log-volumes.",
+    "not_covered": "Setting: finite family of normed groups standing for the factors of a tensor product; not the papers' tensor packets. The holomorphic hull of IUT III Remark 3.9.5 (i) on tensor packets of log-shells, which is the hull the parent's obligation concerns; tensor products and their splitting into factors; log-volumes. Counted as a model test: the polydisc hull is the construction of Dupuy and Hilado (arXiv 2004.13108, section 6.1) on a product of normed groups, not the holomorphic hull of Remark 3.9.5 (i); the obligation of IUT3.Rem3_9_5.ii calls it a model.",
     "statement_status": "STATEMENT_FORMALIZED",
     "proof_status": "KERNEL_VERIFIED",
     "obligations": [],
     "ambiguities": [
       "The polydisc hull is the one of Dupuy and Hilado's reading of Corollary 3.12 (arXiv 2004.13108, section 6.1), not the holomorphic hull of IUT III Remark 3.9.5 (i)."
     ],
-    "scope": "finite family of normed groups standing for the factors of a tensor product; not the papers' tensor packets",
+    "scope": "model_test",
     "lemmas": [
       "IUT.Applications.DupuyHilado.dh_subset_hull",
       "IUT.Applications.DupuyHilado.dhPolyRadius_mono",
@@ -8406,12 +8406,12 @@
     "external_dependencies": [],
     "lean_declaration": "IUT.PaperIII.Corollary312.TwoPlaceExample.example_global_not_placewise",
     "covers": "Step (xi-f), page 184, asserts a global numerical inequality; page 174 indexes regions by places.",
-    "not_covered": "The paper's regions; whether the paper's comparison holds placewise is not addressed.",
+    "not_covered": "Setting: abstract interface, not the papers' objects. The paper's regions; whether the paper's comparison holds placewise is not addressed. Counted as a model test: the q-pilot regions [0, 3/4] and [0, 1/8], at two places with unit weights, and the possible images are intervals of R chosen here (the interval setting of IUT.PaperIII.Corollary312.Comparison), not regions constructed from the objects of pages 174 and 184.",
     "statement_status": "STATEMENT_FORMALIZED",
     "proof_status": "KERNEL_VERIFIED",
     "obligations": [],
     "ambiguities": [],
-    "scope": "abstract interface, not the papers' objects"
+    "scope": "model_test"
   },
   "IUT3.Cor3_12.Statement.frag.conclusion_iff": {
     "kind": "fragment",

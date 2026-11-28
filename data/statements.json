@@ -23464,7 +23464,7 @@
    "date": "29 October 2026",
    "identifier": "2610.00646",
    "license": "CC BY 4.0",
-   "pages_read": "checked against the TeX source of version 1: sections 0, 2 to 5, 8 to 10, 14 and 16 and Appendix A; no page render exists",
+   "pages_read": "checked against the TeX source of version 1: sections 0, 2 to 5, 8 to 10, 14 and 16 and Appendix A; no page render exists. Section numbers here are those of version 1; version 2 inserts two sections, so that sections 9, 10, 14 and 16 of version 1 are sections 10, 12, 16 and 18 of version 2",
    "sections_in_paper": "section 10.2",
    "server": "hexagon",
    "statement": "Section 10.2, layer (1) and equation (closed)",
@@ -23520,7 +23520,7 @@
    "date": "29 October 2026",
    "identifier": "2610.00646",
    "license": "CC BY 4.0",
-   "pages_read": "checked against the TeX source of version 1: sections 0, 2 to 5, 8 to 10, 14 and 16 and Appendix A; no page render exists",
+   "pages_read": "checked against the TeX source of version 1: sections 0, 2 to 5, 8 to 10, 14 and 16 and Appendix A; no page render exists. Section numbers here are those of version 1; version 2 inserts two sections, so that sections 9, 10, 14 and 16 of version 1 are sections 10, 12, 16 and 18 of version 2",
    "sections_in_paper": "sections 0, 2 to 5 and 14",
    "server": "hexagon",
    "statement": "Theorem 5.1, with Lemmas 2.1, 2.2, 3.1, 4.1 and 4.2 and identity (0.1)",
@@ -37981,7 +37981,7 @@
    "IUT.Prerequisites.Frobenioid.natPoint_frobCondVIIA",
    "IUT.Prerequisites.Frobenioid.natPoint_frobCondVIIB"
   ],
-  "not_covered": "Clauses (i) (c) and (iii) (d) of Definition 1.3 for the example (not stated in Lean); Proposition 1.5 for general D and Φ, its types (Aut-ample, End-ample, and so on) and parts (ii), (iii).",
+  "not_covered": "Setting: prerequisite from The Geometry of Frobenioids I (Definition 1.3, Proposition 1.5); not the objects of IUT I. Clauses (i) (c) and (iii) (d) of Definition 1.3 for the example (not stated in Lean); Proposition 1.5 for general D and Φ, its types (Aut-ample, End-ample, and so on) and parts (ii), (iii). Counted as a model test: the category Discrete PUnit and the constant monoid N are chosen here; the declaration shows that the stated clauses of Definition 1.3 of The Geometry of Frobenioids I are jointly satisfiable, and it addresses no statement of IUT I.",
   "obligations": [
    "Axioms: propext, Classical.choice, Quot.sound only."
   ],
@@ -38000,7 +38000,7 @@
   "results_used": [
    "IUT1.Ex3_3.frag.frd_monoid_examples"
   ],
-  "scope": "prerequisite from The Geometry of Frobenioids I (Definition 1.3, Proposition 1.5); not the objects of IUT I",
+  "scope": "model_test",
   "section": 3,
   "section_title": "Chains of Θ-Hodge Theaters",
   "source": {
@@ -38620,7 +38620,7 @@
    "IUT.Prerequisites.ThetaFunction.padic_norm_thetaRatio",
    "IUT.Prerequisites.ThetaFunction.exists_sq_eq_neg_one_padic_five"
   ],
-  "not_covered": "Everything of Remark 2.5.1 beyond the classical identities; finite extensions of Q_p; the Tate parameter of an actual elliptic curve.",
+  "not_covered": "Setting: instance over Q_p. Everything of Remark 2.5.1 beyond the classical identities; finite extensions of Q_p; the Tate parameter of an actual elliptic curve. Counted as a model test: a nonvacuity check; the parameter r = p (q_X = p^2) and the field Q_5 are chosen here, and page 73 prints no statement about them.",
   "obligations": [],
   "page_spans": [
    [
@@ -38635,7 +38635,7 @@
   "pdf_page_end": 73,
   "proof_status": "KERNEL_VERIFIED",
   "results_used": [],
-  "scope": "instance over Q_p",
+  "scope": "model_test",
   "section": 2,
   "section_title": "Galois-theoretic Theta Evaluation",
   "source": {
@@ -49278,7 +49278,7 @@
   "ambiguities": [],
   "conclusion": "padicPacketMuLog p (packet) mu (packetNormalizationSet) (tdManyIntegers) = -((card I - 1)/2) * (v_p(disc b) / finrank Q_p K) * log p.",
   "content": "With the library's normalized log-volume padicPacketMuLog on the packet of n copies of K (normalized at (R_I)^~, divided by the dimension d^n), mu^log(R_I) = -((n-1)/2) (v/d) log p for an integral basis b, v = v_p(disc b).",
-  "covers": "Page 13, Proposition 1.4 (i), normalization \"[i.e., by dividing by the degree of the finite extension]\" with mu^log((R_E)^~) = 0; the value computed here is not printed on the page. It is the exponent of Corollary 5.2 of C. Zeng, hexagon 2610.00646 version 1 (TeX source), v_p(rho_n) = ((n-1) d^{n-1}/2) v_p(d_K), divided by the dimension d^n.",
+  "covers": "Page 13, Proposition 1.4 (i), normalization \"[i.e., by dividing by the degree of the finite extension]\" with mu^log((R_E)^~) = 0; the value computed here is not printed on the page. It is the exponent of Corollary 5.2 of C. Zeng, hexagon 2610.00646 version 1 (TeX source; the number is that of version 1, Corollary 5.3 in version 2), v_p(rho_n) = ((n-1) d^{n-1}/2) v_p(d_K), divided by the dimension d^n.",
   "curated_in": "iut4.json",
   "definitions_required": [],
   "explicit_hypotheses": [
@@ -51504,7 +51504,7 @@
   "section": null,
   "section_title": null,
   "source": {
-   "pages_read": "checked against the TeX source of version 1: sections 0, 2 to 5, 8 to 10, 14 and 16 and Appendix A; no page render exists",
+   "pages_read": "checked against the TeX source of version 1: sections 0, 2 to 5, 8 to 10, 14 and 16 and Appendix A; no page render exists. Section numbers here are those of version 1; version 2 inserts two sections, so that sections 9, 10, 14 and 16 of version 1 are sections 10, 12, 16 and 18 of version 2",
    "sections_in_paper": "section 10.2"
   },
   "statement_status": "STATEMENT_FORMALIZED"
@@ -51543,7 +51543,7 @@
   "section": null,
   "section_title": null,
   "source": {
-   "pages_read": "checked against the TeX source of version 1: sections 0, 2 to 5, 8 to 10, 14 and 16 and Appendix A; no page render exists",
+   "pages_read": "checked against the TeX source of version 1: sections 0, 2 to 5, 8 to 10, 14 and 16 and Appendix A; no page render exists. Section numbers here are those of version 1; version 2 inserts two sections, so that sections 9, 10, 14 and 16 of version 1 are sections 10, 12, 16 and 18 of version 2",
    "sections_in_paper": "section 10.2"
   },
   "statement_status": "STATEMENT_FORMALIZED"
@@ -51580,7 +51580,7 @@
   "section": null,
   "section_title": null,
   "source": {
-   "pages_read": "checked against the TeX source of version 1: sections 0, 2 to 5, 8 to 10, 14 and 16 and Appendix A; no page render exists",
+   "pages_read": "checked against the TeX source of version 1: sections 0, 2 to 5, 8 to 10, 14 and 16 and Appendix A; no page render exists. Section numbers here are those of version 1; version 2 inserts two sections, so that sections 9, 10, 14 and 16 of version 1 are sections 10, 12, 16 and 18 of version 2",
    "sections_in_paper": "section 10.2"
   },
   "statement_status": "STATEMENT_FORMALIZED"
@@ -51621,7 +51621,7 @@
   "section": null,
   "section_title": null,
   "source": {
-   "pages_read": "checked against the TeX source of version 1: sections 0, 2 to 5, 8 to 10, 14 and 16 and Appendix A; no page render exists",
+   "pages_read": "checked against the TeX source of version 1: sections 0, 2 to 5, 8 to 10, 14 and 16 and Appendix A; no page render exists. Section numbers here are those of version 1; version 2 inserts two sections, so that sections 9, 10, 14 and 16 of version 1 are sections 10, 12, 16 and 18 of version 2",
    "sections_in_paper": "section 0"
   },
   "statement_status": "STATEMENT_FORMALIZED"
@@ -51664,7 +51664,7 @@
   "section": null,
   "section_title": null,
   "source": {
-   "pages_read": "checked against the TeX source of version 1: sections 0, 2 to 5, 8 to 10, 14 and 16 and Appendix A; no page render exists",
+   "pages_read": "checked against the TeX source of version 1: sections 0, 2 to 5, 8 to 10, 14 and 16 and Appendix A; no page render exists. Section numbers here are those of version 1; version 2 inserts two sections, so that sections 9, 10, 14 and 16 of version 1 are sections 10, 12, 16 and 18 of version 2",
    "sections_in_paper": "section 4"
   },
   "statement_status": "STATEMENT_FORMALIZED"
@@ -51703,7 +51703,7 @@
   "section": null,
   "section_title": null,
   "source": {
-   "pages_read": "checked against the TeX source of version 1: sections 0, 2 to 5, 8 to 10, 14 and 16 and Appendix A; no page render exists",
+   "pages_read": "checked against the TeX source of version 1: sections 0, 2 to 5, 8 to 10, 14 and 16 and Appendix A; no page render exists. Section numbers here are those of version 1; version 2 inserts two sections, so that sections 9, 10, 14 and 16 of version 1 are sections 10, 12, 16 and 18 of version 2",
    "sections_in_paper": "section 4"
   },
   "statement_status": "STATEMENT_FORMALIZED"
@@ -51743,7 +51743,7 @@
   "section": null,
   "section_title": null,
   "source": {
-   "pages_read": "checked against the TeX source of version 1: sections 0, 2 to 5, 8 to 10, 14 and 16 and Appendix A; no page render exists",
+   "pages_read": "checked against the TeX source of version 1: sections 0, 2 to 5, 8 to 10, 14 and 16 and Appendix A; no page render exists. Section numbers here are those of version 1; version 2 inserts two sections, so that sections 9, 10, 14 and 16 of version 1 are sections 10, 12, 16 and 18 of version 2",
    "sections_in_paper": "section 14.2"
   },
   "statement_status": "STATEMENT_FORMALIZED"
@@ -51796,7 +51796,7 @@
   "section": null,
   "section_title": null,
   "source": {
-   "pages_read": "checked against the TeX source of version 1: sections 0, 2 to 5, 8 to 10, 14 and 16 and Appendix A; no page render exists",
+   "pages_read": "checked against the TeX source of version 1: sections 0, 2 to 5, 8 to 10, 14 and 16 and Appendix A; no page render exists. Section numbers here are those of version 1; version 2 inserts two sections, so that sections 9, 10, 14 and 16 of version 1 are sections 10, 12, 16 and 18 of version 2",
    "sections_in_paper": "section 14"
   },
   "statement_status": "STATEMENT_FORMALIZED"
@@ -51838,7 +51838,7 @@
   "section": null,
   "section_title": null,
   "source": {
-   "pages_read": "checked against the TeX source of version 1: sections 0, 2 to 5, 8 to 10, 14 and 16 and Appendix A; no page render exists",
+   "pages_read": "checked against the TeX source of version 1: sections 0, 2 to 5, 8 to 10, 14 and 16 and Appendix A; no page render exists. Section numbers here are those of version 1; version 2 inserts two sections, so that sections 9, 10, 14 and 16 of version 1 are sections 10, 12, 16 and 18 of version 2",
    "sections_in_paper": "section 14"
   },
   "statement_status": "STATEMENT_FORMALIZED"
@@ -51886,7 +51886,7 @@
   "section": null,
   "section_title": null,
   "source": {
-   "pages_read": "checked against the TeX source of version 1: sections 0, 2 to 5, 8 to 10, 14 and 16 and Appendix A; no page render exists",
+   "pages_read": "checked against the TeX source of version 1: sections 0, 2 to 5, 8 to 10, 14 and 16 and Appendix A; no page render exists. Section numbers here are those of version 1; version 2 inserts two sections, so that sections 9, 10, 14 and 16 of version 1 are sections 10, 12, 16 and 18 of version 2",
    "sections_in_paper": "section 14"
   },
   "statement_status": "STATEMENT_FORMALIZED"
@@ -51931,7 +51931,7 @@
   "section": null,
   "section_title": null,
   "source": {
-   "pages_read": "checked against the TeX source of version 1: sections 0, 2 to 5, 8 to 10, 14 and 16 and Appendix A; no page render exists",
+   "pages_read": "checked against the TeX source of version 1: sections 0, 2 to 5, 8 to 10, 14 and 16 and Appendix A; no page render exists. Section numbers here are those of version 1; version 2 inserts two sections, so that sections 9, 10, 14 and 16 of version 1 are sections 10, 12, 16 and 18 of version 2",
    "sections_in_paper": "section 14"
   },
   "statement_status": "STATEMENT_FORMALIZED"
@@ -51977,7 +51977,7 @@
   "section": null,
   "section_title": null,
   "source": {
-   "pages_read": "checked against the TeX source of version 1: sections 0, 2 to 5, 8 to 10, 14 and 16 and Appendix A; no page render exists",
+   "pages_read": "checked against the TeX source of version 1: sections 0, 2 to 5, 8 to 10, 14 and 16 and Appendix A; no page render exists. Section numbers here are those of version 1; version 2 inserts two sections, so that sections 9, 10, 14 and 16 of version 1 are sections 10, 12, 16 and 18 of version 2",
    "sections_in_paper": "section 5"
   },
   "statement_status": "STATEMENT_FORMALIZED"
@@ -52017,7 +52017,7 @@
   "section": null,
   "section_title": null,
   "source": {
-   "pages_read": "checked against the TeX source of version 1: sections 0, 2 to 5, 8 to 10, 14 and 16 and Appendix A; no page render exists",
+   "pages_read": "checked against the TeX source of version 1: sections 0, 2 to 5, 8 to 10, 14 and 16 and Appendix A; no page render exists. Section numbers here are those of version 1; version 2 inserts two sections, so that sections 9, 10, 14 and 16 of version 1 are sections 10, 12, 16 and 18 of version 2",
    "sections_in_paper": "section 2"
   },
   "statement_status": "STATEMENT_FORMALIZED"
@@ -52056,7 +52056,7 @@
   "section": null,
   "section_title": null,
   "source": {
-   "pages_read": "checked against the TeX source of version 1: sections 0, 2 to 5, 8 to 10, 14 and 16 and Appendix A; no page render exists",
+   "pages_read": "checked against the TeX source of version 1: sections 0, 2 to 5, 8 to 10, 14 and 16 and Appendix A; no page render exists. Section numbers here are those of version 1; version 2 inserts two sections, so that sections 9, 10, 14 and 16 of version 1 are sections 10, 12, 16 and 18 of version 2",
    "sections_in_paper": "section 3"
   },
   "statement_status": "STATEMENT_FORMALIZED"
@@ -52095,7 +52095,7 @@
   "section": null,
   "section_title": null,
   "source": {
-   "pages_read": "checked against the TeX source of version 1: sections 0, 2 to 5, 8 to 10, 14 and 16 and Appendix A; no page render exists",
+   "pages_read": "checked against the TeX source of version 1: sections 0, 2 to 5, 8 to 10, 14 and 16 and Appendix A; no page render exists. Section numbers here are those of version 1; version 2 inserts two sections, so that sections 9, 10, 14 and 16 of version 1 are sections 10, 12, 16 and 18 of version 2",
    "sections_in_paper": "section 4"
   },
   "statement_status": "STATEMENT_FORMALIZED"
@@ -52132,7 +52132,7 @@
   "section": null,
   "section_title": null,
   "source": {
-   "pages_read": "checked against the TeX source of version 1: sections 0, 2 to 5, 8 to 10, 14 and 16 and Appendix A; no page render exists",
+   "pages_read": "checked against the TeX source of version 1: sections 0, 2 to 5, 8 to 10, 14 and 16 and Appendix A; no page render exists. Section numbers here are those of version 1; version 2 inserts two sections, so that sections 9, 10, 14 and 16 of version 1 are sections 10, 12, 16 and 18 of version 2",
    "sections_in_paper": "section 4"
   },
   "statement_status": "STATEMENT_FORMALIZED"
@@ -52177,7 +52177,7 @@
   "section": null,
   "section_title": null,
   "source": {
-   "pages_read": "checked against the TeX source of version 1: sections 0, 2 to 5, 8 to 10, 14 and 16 and Appendix A; no page render exists",
+   "pages_read": "checked against the TeX source of version 1: sections 0, 2 to 5, 8 to 10, 14 and 16 and Appendix A; no page render exists. Section numbers here are those of version 1; version 2 inserts two sections, so that sections 9, 10, 14 and 16 of version 1 are sections 10, 12, 16 and 18 of version 2",
    "sections_in_paper": "section 2"
   },
   "statement_status": "STATEMENT_FORMALIZED"
@@ -52226,7 +52226,7 @@
   "section": null,
   "section_title": null,
   "source": {
-   "pages_read": "checked against the TeX source of version 1: sections 0, 2 to 5, 8 to 10, 14 and 16 and Appendix A; no page render exists",
+   "pages_read": "checked against the TeX source of version 1: sections 0, 2 to 5, 8 to 10, 14 and 16 and Appendix A; no page render exists. Section numbers here are those of version 1; version 2 inserts two sections, so that sections 9, 10, 14 and 16 of version 1 are sections 10, 12, 16 and 18 of version 2",
    "sections_in_paper": "section 5"
   },
   "statement_status": "STATEMENT_FORMALIZED"
@@ -52259,7 +52259,7 @@
    "IUT.Audit.TensorOrderIndex.tOrdIdx_discr_tensor",
    "IUT.Audit.TensorOrderIndex.tOrdIdx_ring_eq_lattice"
   ],
-  "not_covered": "The existence of the basis n here (it is proved in IUT.PaperIV.LocalFields.locDisc_exists_normBasis); a closed form of disc n for non-Galois K; the explicit non-Galois example of section 14 is ZENGHULL.Thm5_1.frag.locdisccu_exact_index.",
+  "not_covered": "The existence of the basis n here (it is proved in IUT.PaperIV.LocalFields.locDisc_exists_normBasis); a closed form of disc n for non-Galois K; an explicit non-Galois example, chosen here, is ZENGHULL.Thm5_1.frag.locdisccu_exact_index (the example of section 14 of version 1 is Q_2(2^{1/3})).",
   "obligations": [],
   "paper": null,
   "parent": "ZENGHULL.Thm5_1",
@@ -52269,7 +52269,7 @@
   "section": null,
   "section_title": null,
   "source": {
-   "pages_read": "checked against the TeX source of version 1: sections 0, 2 to 5, 8 to 10, 14 and 16 and Appendix A; no page render exists",
+   "pages_read": "checked against the TeX source of version 1: sections 0, 2 to 5, 8 to 10, 14 and 16 and Appendix A; no page render exists. Section numbers here are those of version 1; version 2 inserts two sections, so that sections 9, 10, 14 and 16 of version 1 are sections 10, 12, 16 and 18 of version 2",
    "sections_in_paper": "sections 5 and 14"
   },
   "statement_status": "STATEMENT_FORMALIZED"
@@ -56433,7 +56433,7 @@
    "IUT.Applications.DupuyHilado.dhPolyRadius_iUnion",
    "IUT.Applications.DupuyHilado.dhPolyRadius_mul"
   ],
-  "not_covered": "The holomorphic hull of IUT III Remark 3.9.5 (i) on tensor packets of log-shells, which is the hull the parent's obligation concerns; tensor products and their splitting into factors; log-volumes.",
+  "not_covered": "Setting: finite family of normed groups standing for the factors of a tensor product; not the papers' tensor packets. The holomorphic hull of IUT III Remark 3.9.5 (i) on tensor packets of log-shells, which is the hull the parent's obligation concerns; tensor products and their splitting into factors; log-volumes. Counted as a model test: the polydisc hull is the construction of Dupuy and Hilado (arXiv 2004.13108, section 6.1) on a product of normed groups, not the holomorphic hull of Remark 3.9.5 (i); the obligation of IUT3.Rem3_9_5.ii calls it a model.",
   "obligations": [],
   "page_spans": [
    [
@@ -56448,7 +56448,7 @@
   "pdf_page_end": 127,
   "proof_status": "KERNEL_VERIFIED",
   "results_used": [],
-  "scope": "finite family of normed groups standing for the factors of a tensor product; not the papers' tensor packets",
+  "scope": "model_test",
   "section": 3,
   "section_title": "Multiradial Logarithmic Gaussian Procession Monoids",
   "source": {
@@ -61876,7 +61876,7 @@
   "implicit_hypotheses": [],
   "kind": "fragment",
   "lean_declaration": "IUT.PaperIII.Corollary312.TwoPlaceExample.example_global_not_placewise",
-  "not_covered": "The paper's regions; whether the paper's comparison holds placewise is not addressed.",
+  "not_covered": "Setting: abstract interface, not the papers' objects. The paper's regions; whether the paper's comparison holds placewise is not addressed. Counted as a model test: the q-pilot regions [0, 3/4] and [0, 1/8], at two places with unit weights, and the possible images are intervals of R chosen here (the interval setting of IUT.PaperIII.Corollary312.Comparison), not regions constructed from the objects of pages 174 and 184.",
   "obligations": [],
   "page_spans": [
    [
@@ -61896,7 +61896,7 @@
   "pdf_page_end": 184,
   "proof_status": "KERNEL_VERIFIED",
   "results_used": [],
-  "scope": "abstract interface, not the papers' objects",
+  "scope": "model_test",
   "section": 3,
   "section_title": "Multiradial Logarithmic Gaussian Procession Monoids",
   "source": {

@@ -13,19 +13,22 @@ library, so the registered `IUT.ABC.Variants.ABCInt` (a closed form) and
 file declares provable local models `GateControls.ABCIntModel` (registered for this run as a
 closed form, through `extraRegistered`), `GateControls.ExponentModel` (as an open family) and
 `GateControls.ZhouModel` (as an author statement). Each theorem below proves one of them
-without a hypothesis that mentions a registered statement, packaged in a different way. Two
-more theorems conclude the library's `ABCInt` and `ABCWithExponent 24` from a hypothesis
-`False`, which mentions no registered constant; they check that both stay in the registries of
-the gate.
+without a hypothesis that mentions a registered statement, packaged in a different way. Three
+more theorems conclude the library's `ABCInt` and `ABCWithExponent 24`, and `Challenge.ABC`,
+from a hypothesis `False`, which mentions no registered constant; they check that these stay
+in the registries of the gate, and that a hypothesis `False` does not exempt a declaration
+whose name is not `abcConjecture` (`GateControls/NamedConditional.lean` has the same statement
+under that name).
 
-Expected result: the gate rejects this file with 9 problems, one per theorem:
+Expected result: the gate rejects this file with 10 problems, one per theorem:
 `GateControls.viaAlias: states GateControls.ABCIntModel but is not named abcConjecture`
 (the statement is a local alias `Y` of the closed form),
 `GateControls.viaBinders`, `GateControls.viaAnd`, `GateControls.viaIff` (the closed form
 behind `∀` binders, as a conjunct, as a side of an equivalence with a true statement),
 `GateControls.exp24`, `GateControls.expAll` (instances of the family, without and with
-binders), `GateControls.zhou` (the author statement), and `GateControls.libraryInt`,
-`GateControls.libraryExp` (the registered statements of the library).
+binders), `GateControls.zhou` (the author statement), `GateControls.libraryInt`,
+`GateControls.libraryExp` (the registered statements of the library) and
+`GateControls.conditionalABC` (the abc conjecture itself).
 -/
 
 namespace GateControls
@@ -66,6 +69,9 @@ theorem libraryInt (h : False) : IUT.ABC.Variants.ABCInt := h.elim
 
 /-- An instance of the registered family of the library, likewise. -/
 theorem libraryExp (h : False) : IUT.ABC.Variants.ABCWithExponent 24 := h.elim
+
+/-- The abc conjecture from a hypothesis that mentions no registered constant. -/
+theorem conditionalABC (h : False) : Challenge.ABC := h.elim
 
 end GateControls
 

@@ -58,10 +58,14 @@ with the PDFs. `data/statements.json` is regenerated from `data/mechanical_index
 `docs/dependency_graph.svg` is regenerated but not compared, because its bytes depend on the
 Graphviz version.
 
-No second, independent kernel is configured. `lake check` and `lake comparator` replay the
-exported declarations through the kernel of the pinned toolchain; no independent checker for
-this toolchain is installed as a package of this project, and adding one would add a
-dependency.
+No second, independent kernel has been run on this project. The pinned toolchain bundles
+external checkers besides Lean's own kernel (`leanchecker-paranoid`, `lean4lean`, `nanoda`,
+`con-leche` and `con-ron`); `lake check --paranoid` and `lake comparator --paranoid` run
+them, and neither has been run on this project. `lake check` and `lake comparator` replay
+the exported declarations through the kernel of the pinned toolchain; they need Linux (the
+bubblewrap sandbox) and run in CI, both without `--paranoid`. A second kernel would confirm
+that the declarations are accepted; it would not decide whether a formal statement says what
+the page says.
 
 ## What each script does
 
@@ -178,6 +182,7 @@ the code owners of `.github/CODEOWNERS` and branch protection that requires thei
 which must be enabled in the repository settings.
 
 Limits that no script removes: the axiom gate detects registered forms of the abc conjecture
-up to definitional unfolding only; and a vacuous hypothesis (`h : False`, or hypotheses that
+up to definitional unfolding only, by a syntactic heuristic bounded by a heartbeat budget per
+statement (running out of it is an error, never a pass), not by a semantic test; and a vacuous hypothesis (`h : False`, or hypotheses that
 cannot hold together) makes any conclusion provable and cannot be caught mechanically.
 Hypotheses and statements are a matter for reading.

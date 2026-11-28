@@ -139,7 +139,7 @@ EXTERNAL_CLAIM: a statement of another paper, stated in Lean as a proposition an
 | `IUT1.Rem3_4_3` | Remark |  | 83 to 84 | EXTRACTED | BLOCKED_BY_MISSING_JUSTIFICATION |  | yes |
 | `IUT1.Ex3_5` | Example | Global Realified Frobenioids | 84 to 86 | BLOCKED_BY_MATHLIB | NOT_EXTRACTED |  | yes |
 | &nbsp;&nbsp;`IUT1.Ex3_5.frag.frd_partial_frobenioid` | fragment | (scope: prerequisite from The Geometry of Frobenioids I (Definition 1.3); not the objects of IUT I) | 84 to 86 | STATEMENT_FORMALIZED | NOT_EXTRACTED | `IUT.Prerequisites.Frobenioid.PartialFrobenioidConditions` |  |
-| &nbsp;&nbsp;`IUT1.Ex3_5.frag.frd_partial_frobenioid_example` | fragment | (scope: prerequisite from The Geometry of Frobenioids I (Definition 1.3, Proposition 1.5); not the objects of IUT I) | 84 to 86 | STATEMENT_FORMALIZED | KERNEL_VERIFIED | `IUT.Prerequisites.Frobenioid.natPoint_partialFrobenioidConditions` |  |
+| &nbsp;&nbsp;`IUT1.Ex3_5.frag.frd_partial_frobenioid_example` | fragment | (scope: model_test) | 84 to 86 | STATEMENT_FORMALIZED | KERNEL_VERIFIED | `IUT.Prerequisites.Frobenioid.natPoint_partialFrobenioidConditions` |  |
 | `IUT1.Rem3_5_1` | Remark |  | 86 to 87 | EXTRACTED | NOT_EXTRACTED |  | yes |
 | `IUT1.Def3_6` | Definition |  | 87 to 88 | BLOCKED_BY_MATHLIB | NOT_EXTRACTED |  | yes |
 | `IUT1.Rem3_5_2` | Remark |  | 87 | EXTRACTED | NOT_EXTRACTED |  | yes |
@@ -351,7 +351,7 @@ EXTERNAL_CLAIM: a statement of another paper, stated in Lean as a proposition an
 | `IUT2.Rem2_4_1` | Remark |  | 71 | EXTRACTED | NOT_EXTRACTED |  |  |
 | `IUT2.Rem2_5_1` | Remark |  | 72 to 73 | EXTRACTED | BLOCKED_BY_MATHLIB |  | yes |
 | &nbsp;&nbsp;`IUT2.Rem2_5_1.frag.labelRep_bijective` | fragment |  | 72 | STATEMENT_FORMALIZED | KERNEL_VERIFIED | `IUT.PaperII.Labels.labelRep_bijective` |  |
-| &nbsp;&nbsp;`IUT2.Rem2_5_1.frag.theta_series_padic_instance` | fragment | (scope: instance over Q_p) | 72 to 73 | STATEMENT_FORMALIZED | KERNEL_VERIFIED | `IUT.Prerequisites.ThetaFunction.padic_five_norm_thetaRatio` |  |
+| &nbsp;&nbsp;`IUT2.Rem2_5_1.frag.theta_series_padic_instance` | fragment | (scope: model_test) | 72 to 73 | STATEMENT_FORMALIZED | KERNEL_VERIFIED | `IUT.Prerequisites.ThetaFunction.padic_five_norm_thetaRatio` |  |
 | &nbsp;&nbsp;`IUT2.Rem2_5_1.frag.theta_series_quasi_periodicity` | fragment | (scope: classical theta series evaluated at points of a complete normed field; not the etale theta function) | 72 to 73 | STATEMENT_FORMALIZED | KERNEL_VERIFIED | `IUT.Prerequisites.ThetaFunction.thetaSeries_zpow_mul` |  |
 | &nbsp;&nbsp;`IUT2.Rem2_5_1.frag.theta_series_zeros` | fragment | (scope: classical theta series evaluated at points of a complete normed field; not the etale theta function) | 72 to 73 | STATEMENT_FORMALIZED | KERNEL_VERIFIED | `IUT.Prerequisites.ThetaFunction.thetaSeries_zpow` |  |
 | &nbsp;&nbsp;`IUT2.Rem2_5_1.frag.theta_value_label_orbit` | fragment | (scope: classical theta series evaluated at points of a complete normed field; not the etale theta function) | 72 to 73 | STATEMENT_FORMALIZED | KERNEL_VERIFIED | `IUT.Prerequisites.ThetaFunction.pow_mul_thetaRatio_sq_eq_one_iff` |  |
@@ -659,7 +659,7 @@ EXTERNAL_CLAIM: a statement of another paper, stated in Lean as a proposition an
 | &nbsp;&nbsp;&nbsp;&nbsp;`IUT3.Rem3_9_5.i.frag.pkt_union` | fragment | (scope: model_test) | 127 | STATEMENT_FORMALIZED | KERNEL_VERIFIED | `IUT.PaperIII.Corollary312.pktHull_union_strict_padic` |  |
 | &nbsp;&nbsp;&nbsp;&nbsp;`IUT3.Rem3_9_5.i.frag.pkt_vs_dhHull` | fragment | (scope: model_test) | 127 | STATEMENT_FORMALIZED | KERNEL_VERIFIED | `IUT.PaperIII.Corollary312.pktHull_eq_dhHull` |  |
 | &nbsp;&nbsp;`IUT3.Rem3_9_5.ii` | part |  | 127 to 128 | EXTRACTED | EXTRACTED |  | yes |
-| &nbsp;&nbsp;&nbsp;&nbsp;`IUT3.Rem3_9_5.ii.frag.dhHull_isHullMap` | fragment | (scope: finite family of normed groups standing for the factors of a tensor product; not the papers' tensor packets) | 127 | STATEMENT_FORMALIZED | KERNEL_VERIFIED | `IUT.Applications.DupuyHilado.dhHull_isHullMap` |  |
+| &nbsp;&nbsp;&nbsp;&nbsp;`IUT3.Rem3_9_5.ii.frag.dhHull_isHullMap` | fragment | (scope: model_test) | 127 | STATEMENT_FORMALIZED | KERNEL_VERIFIED | `IUT.Applications.DupuyHilado.dhHull_isHullMap` |  |
 | &nbsp;&nbsp;&nbsp;&nbsp;`IUT3.Rem3_9_5.ii.frag.eq_sInter` | fragment |  | 127 | STATEMENT_FORMALIZED | KERNEL_VERIFIED | `IUT.PaperIII.Remark3_9_5.IsHullMap.eq_sInter` |  |
 | &nbsp;&nbsp;&nbsp;&nbsp;`IUT3.Rem3_9_5.ii.frag.isHullMap_sInter` | fragment |  | 127 | STATEMENT_FORMALIZED | CONDITIONALLY_VERIFIED | `IUT.PaperIII.Remark3_9_5.isHullMap_sInter` |  |
 | &nbsp;&nbsp;&nbsp;&nbsp;`IUT3.Rem3_9_5.ii.frag.pkt_isHullMap_spectral` | fragment | (scope: finite product of finite extensions of Q_p (or of discretely valued normed fields) in place of the direct sum of fields I^Q(-); tensor packets and the archimedean case not treated; O = product of closed unit balls = product of the rings of integers) | 127 | STATEMENT_FORMALIZED | KERNEL_VERIFIED | `IUT.PaperIII.Corollary312.pktHull_isHullMap_spectral` |  |
@@ -748,7 +748,7 @@ EXTERNAL_CLAIM: a statement of another paper, stated in Lean as a proposition an
 | &nbsp;&nbsp;&nbsp;&nbsp;`IUT3.Cor3_12.StepXI.d` | part |  | 183 | INTERPRETATION_AMBIGUOUS | EXTRACTED |  | yes |
 | &nbsp;&nbsp;&nbsp;&nbsp;`IUT3.Cor3_12.StepXI.e` | part |  | 183 to 184 | EXTRACTED | BLOCKED_BY_MISSING_JUSTIFICATION |  | yes |
 | &nbsp;&nbsp;&nbsp;&nbsp;`IUT3.Cor3_12.StepXI.f` | part |  | 184 | INTERPRETATION_AMBIGUOUS | BLOCKED_BY_MISSING_JUSTIFICATION |  | yes |
-| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`IUT3.Cor3_12.StepXI.f.frag.example_global_not_placewise` | fragment | (scope: abstract interface, not the papers' objects) | 174, 184 | STATEMENT_FORMALIZED | KERNEL_VERIFIED | `IUT.PaperIII.Corollary312.TwoPlaceExample.example_global_not_placewise` |  |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`IUT3.Cor3_12.StepXI.f.frag.example_global_not_placewise` | fragment | (scope: model_test) | 174, 184 | STATEMENT_FORMALIZED | KERNEL_VERIFIED | `IUT.PaperIII.Corollary312.TwoPlaceExample.example_global_not_placewise` |  |
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`IUT3.Cor3_12.StepXI.f.frag.logVolumeComparison_of_containment` | fragment |  | 115 to 117, 127, 173 to 175, 181 to 184 | STATEMENT_FORMALIZED | CONDITIONALLY_VERIFIED | `IUT.PaperIII.Corollary312.ComparisonSetting.logVolumeComparison_of_containment` |  |
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`IUT3.Cor3_12.StepXI.f.frag.stepXIf_inclusion_iff_inequality` | fragment |  | 183, 184 | STATEMENT_FORMALIZED | CONDITIONALLY_VERIFIED | `IUT.PaperIII.Corollary312.stepXIf_inclusion_iff_inequality` |  |
 | &nbsp;&nbsp;&nbsp;&nbsp;`IUT3.Cor3_12.StepXI.g` | part |  | 184 to 185 | INTERPRETATION_AMBIGUOUS | BLOCKED_BY_MISSING_JUSTIFICATION |  | yes |

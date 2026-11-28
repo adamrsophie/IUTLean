@@ -12,7 +12,7 @@
   "ambiguous": 315,
   "extracted_by_reading": 562,
   "formalized_in_full": 5,
-  "fragments_checked": 258,
+  "fragments_checked": 254,
   "proved_in_full_conditional": 0,
   "proved_in_full_unconditional": 5,
   "statement_records": 562
@@ -22,7 +22,7 @@
    "ambiguous": 108,
    "extracted_by_reading": 166,
    "formalized_in_full": 7,
-   "fragments_checked": 3,
+   "fragments_checked": 2,
    "proved_in_full_conditional": 0,
    "proved_in_full_unconditional": 0,
    "statement_records": 166
@@ -31,7 +31,7 @@
    "ambiguous": 72,
    "extracted_by_reading": 192,
    "formalized_in_full": 0,
-   "fragments_checked": 11,
+   "fragments_checked": 10,
    "proved_in_full_conditional": 0,
    "proved_in_full_unconditional": 0,
    "statement_records": 192
@@ -40,7 +40,7 @@
    "ambiguous": 130,
    "extracted_by_reading": 189,
    "formalized_in_full": 0,
-   "fragments_checked": 37,
+   "fragments_checked": 35,
    "proved_in_full_conditional": 0,
    "proved_in_full_unconditional": 0,
    "statement_records": 189
@@ -80,7 +80,7 @@
  "formalized_in_full": 12,
  "fragments": 433,
  "fragments_checked_conditional": 53,
- "fragments_checked_unconditional": 205,
+ "fragments_checked_unconditional": 201,
  "lean_declarations_claimed_but_missing": [],
  "lean_modules_checked": [
   "Challenge.Defs",
@@ -199,10 +199,13 @@
  ],
  "lean_modules_on_disk_not_checked": [],
  "model_test_records": [
+  "IUT1.Ex3_5.frag.frd_partial_frobenioid_example",
   "IUT1.Prop2_2.frag.semi_graph_examples",
+  "IUT2.Rem2_5_1.frag.theta_series_padic_instance",
   "IUT3.Cor3_12.Statement.frag.example_bridge_hypotheses",
   "IUT3.Cor3_12.Statement.frag.example_comparison_fails",
   "IUT3.Cor3_12.Statement.frag.example_union_matters",
+  "IUT3.Cor3_12.StepXI.f.frag.example_global_not_placewise",
   "IUT3.Prop1_2.v.frag.padic_union_examples",
   "IUT3.Prop3_5.frag.padic_chain",
   "IUT3.Prop3_9.i.frag.pk_local_packet_normalization",
@@ -219,6 +222,7 @@
   "IUT3.Rem3_9_5.i.frag.hull_deg_union_principal",
   "IUT3.Rem3_9_5.i.frag.pkt_union",
   "IUT3.Rem3_9_5.i.frag.pkt_vs_dhHull",
+  "IUT3.Rem3_9_5.ii.frag.dhHull_isHullMap",
   "IUT3.Rem3_9_5.iii_iv.frag.pkt_muLog",
   "IUT3.Thm3_11.ii.Ind3.frag.interval_examples",
   "IUT4.Cor2_2.i.frag.frey_minimal_odd",
@@ -302,11 +306,10 @@
   "IUT4.ThmA.frag.cb_degree_one_iff_ratio_bounded",
   "IUT4.ThmA.frag.compactly_bounded_degree_one_abc"
  ],
- "model_tests": 97,
+ "model_tests": 101,
  "obligation_entries": 965,
  "parents_with_checked_fragments": [
   "IUT1.Ex3_3",
-  "IUT1.Ex3_5",
   "IUT2.Prop4_1",
   "IUT2.Rem2_5_1",
   "IUT2.Rem2_6_3",

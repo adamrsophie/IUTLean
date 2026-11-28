@@ -87,15 +87,25 @@ from IUT IV, and state them as conditional:
 cannot arbitrate a dispute that has to be settled before formalization begins. Y. Lu
 (arXiv:2603.21074) gives a heuristic argument doubting the main inequality of Corollary 3.12,
 and the author states that it is not fully justified.
-C. Zeng, "An Integral-Structure Inflation in the Hull Operation of IUT Corollary 3.12"
-(hexagon 2610.00646, version 1, 29 October 2026; not on arXiv, so outside this survey and its
-counts), computes for a Galois extension `K` of `ℚ_p` the index of the image of the `n`-fold
-tensor power of its ring of integers in the maximal order (Theorem 5.1), and from it draws a
-conclusion about the passage from Theorem 3.11 to Corollary 3.12 (sections 8 to 10 and 16); the
-author states that the paper is "not a verdict on IUT". `IUT/Audit/TensorOrderIndex.lean`
-and `IUT/Audit/TensorOrderIndexMany.lean` check the index formula for every number of factors
-when `K/ℚ_p` is Galois; for `K = ℚ_3(∛3)`, which is not Galois, the formula fails and the index
-for two factors is `3^7` (`IUT/PaperIV/LocalFields/LocalDiscriminantCubic.lean`); see
+C. Zeng, "An Integral-Structure Inflation in the Hull Operation of IUT Corollary 3.12" (hexagon
+2610.00646; not on arXiv, so outside this survey and its counts), computes for a Galois
+extension `K` of `ℚ_p` the index of the image of the `n`-fold tensor power of its ring of
+integers in the maximal order (Theorem 5.1), and from it draws a conclusion about the passage
+from Theorem 3.11 to Corollary 3.12; the author states that the paper is "not a verdict on
+IUT". The library's records refer to version 1 (29 October 2026) and use its section numbers.
+Version 2 (6 November 2026; its title page still reads October 2026) keeps the wording of
+Theorem 5.1, Lemmas 4.1 and 4.2, identity (0.1) and the closed form of the sum over the labels,
+and inserts two sections, so that sections 10 and 14 of version 1 are sections 12 and 16 of
+version 2; in section 5 a new Corollary 5.2 moves the later corollaries up by one. Version 2
+adds a section on the indeterminacies of IUT III, a section on the archimedean places, a
+subsection that places the index in the inequality of IUT IV, Theorem 1.10, a case distinction
+in place of version 1's statement on the direction of the net effect, and, for fields that are
+not Galois, a table of examples and a formula for pure cubic fields. One row of that table,
+`ℚ(∛3)` at `p = 3`, gives the index `3^7`, the value that
+`IUT/PaperIV/LocalFields/LocalDiscriminantCubic.lean` computes.
+`IUT/Audit/TensorOrderIndex.lean` and `IUT/Audit/TensorOrderIndexMany.lean` check the index
+formula of Theorem 5.1 for every number of factors when `K/ℚ_p` is Galois; for
+`K = ℚ_3(∛3)`, which is not Galois, the formula fails; see
 [`COR312_ANALYSIS.md`](COR312_ANALYSIS.md). The search did not return the
 manuscript of P. Scholze and J. Stix; the project's account of the
 dispute is in [`data/dispute_map.json`](../data/dispute_map.json).

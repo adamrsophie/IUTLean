@@ -12,7 +12,9 @@
 #
 # Passes only if the clean control exits 0 with the summary line, and each rejecting control
 # exits with status 1 (a normal Lean error exit), reports the expected number of problems, and
-# prints its intended diagnostic line. Any other status (a crash or a signal), a panic, or a
+# prints its intended diagnostic line (and, for NamedConditional, no resolution line). The
+# clean controls ResolutionModel and DeepConclusionsClean must also print their resolution
+# line and the length of their binder walk. Any other status (a crash or a signal), a panic, or a
 # missing diagnostic fails the runner. Also runs the gate on the library with a tracked file
 # list that names a file the root does not import (must fail and name it), the source scan
 # on its controls GateControls/SourceScan.lean, GateControls/SourceScanLakefile.toml and
@@ -63,7 +65,7 @@ report() {
 
 # expect NAME STATUS LINE...: compiles GateControls/NAME.lean against the temporary modules
 # (and the probe folder when PROBE is set) and checks the exit status, the absence of a
-# panic, and each line.
+# panic, and each line. A LINE of the form 'absent:TEXT' requires that TEXT does not occur.
 expect() {
   name=$1; want=$2; shift 2
   log="$tmp/$name.log"
@@ -76,7 +78,13 @@ expect() {
   fi
   if grep -q 'PANIC' "$log"; then echo "FAIL $name: panic"; ok=0; fi
   for line in "$@"; do
-    grep -qF -- "$line" "$log" || { echo "FAIL $name: missing line: $line"; ok=0; }
+    case $line in
+      absent:*)
+        if grep -qF -- "${line#absent:}" "$log"; then
+          echo "FAIL $name: unexpected line: ${line#absent:}"; ok=0
+        fi ;;
+      *) grep -qF -- "$line" "$log" || { echo "FAIL $name: missing line: $line"; ok=0; } ;;
+    esac
   done
   report "$name (exit $status)" "$ok" "$log"
 }
@@ -130,7 +138,7 @@ check VojtaRestated 1 9 \
   'GateControls.heightConductorBound: states IUT.ABCSpecialization.VojtaLineMinusThreePointsRational but is not named abcConjecture' \
   'GateControls.rationalPointBound: states IUT.ABCSpecialization.VojtaLineMinusThreePointsRational but is not named abcConjecture' \
   'GateControls.noVojta: states the negation of IUT.ABCSpecialization.VojtaLineMinusThreePointsRational but is not named abcConjecture'
-check OpenStatements 1 9 \
+check OpenStatements 1 10 \
   'GateControls.viaAlias: states GateControls.ABCIntModel but is not named abcConjecture' \
   'GateControls.viaBinders: concludes GateControls.ABCIntModel (registered form) without a hypothesis that mentions a registered statement' \
   'GateControls.viaAnd: concludes GateControls.ABCIntModel (registered form)' \
@@ -139,11 +147,30 @@ check OpenStatements 1 9 \
   'GateControls.expAll: concludes GateControls.ExponentModel (registered family)' \
   'GateControls.zhou: concludes GateControls.ZhouModel (registered author statement)' \
   'GateControls.libraryInt: concludes IUT.ABC.Variants.ABCInt (registered form)' \
-  'GateControls.libraryExp: concludes IUT.ABC.Variants.ABCWithExponent (registered family)'
+  'GateControls.libraryExp: concludes IUT.ABC.Variants.ABCWithExponent (registered family)' \
+  'GateControls.conditionalABC: concludes Challenge.ABC (registered form) without a hypothesis that mentions a registered statement'
 check OpenStatementsClean 0 - \
   'matches, 0 undecided'
 check ExponentThree 0 - \
   '0 matches, 0 undecided'
+check NamedConditional 1 5 \
+  'GateControls.abcConjecture: named abcConjecture, but its statement has hypotheses or other parts around Challenge.ABC (registered form)' \
+  'GateControls.Refutation.abcConjecture: named abcConjecture, but its statement has hypotheses or other parts around the negation of Challenge.ABC (registered form)' \
+  'GateControls.Family.abcConjecture: named abcConjecture, but its statement is GateControls.ExponentModel, a registered family, not a closed form' \
+  'GateControls.Conditional.abcConjecture: named abcConjecture, but its statement is not a registered closed form' \
+  'GateControls.Plain.abcConjecture: named abcConjecture, but its statement is not a registered closed form' \
+  'absent:!!! RESOLUTION'
+check DeepConclusions 1 3 \
+  'GateControls.deepBinders: concludes Challenge.ABC (registered form) without a hypothesis that mentions a registered statement' \
+  'GateControls.nestedAnd: concludes Challenge.ABC (registered form)' \
+  'GateControls.nestedIff: concludes Challenge.ABC (registered form)'
+check DeepConclusionsClean 0 - \
+  '0 matches, 0 undecided, 0 incomplete; longest binder walk 40 binders, deepest split of ∧ and ↔ 6'
+check ResolutionModel 0 - \
+  '!!! RESOLUTION: GateControls.abcConjecture proves GateControls.ABCIntModel; axioms: []'
+check WalkFuel 1 2 \
+  'GateControls.fiveBinders: inspection by check 3 incomplete: the binder walk ran out of fuel after 4 binders' \
+  'GateControls.nestedFive: inspection by check 3 incomplete: the split of ∧ and ↔ after 0 binders ran out of fuel'
 PROBE=1 check ExperimentalImport 1 1 \
   'module IUT.Experimental.GateProbe is experimental and must not be in the import closure'
 

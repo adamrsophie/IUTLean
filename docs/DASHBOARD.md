@@ -17,11 +17,11 @@ A statement counts as formalized only when one Lean declaration states its entir
 | Statement records formalized in full | 12 |
 | Statement records proved in full, unconditionally | 5 |
 | Statement records proved in full, conditionally (named hypotheses) | 0 |
-| Fragments checked in Lean, unconditionally | 205 |
+| Fragments checked in Lean, unconditionally | 201 |
 | Fragments checked in Lean, conditionally | 53 |
-| Model tests (fragments that test a model or an example, not a step of the papers; scope model_test) | 97 |
+| Model tests (fragments that test a model or an example, not a step of the papers; scope model_test) | 101 |
 | Records (statements and fragments) whose declaration is a definition, structure or other non-theorem typed in Lean (never counted as proved) | 84 |
-| Parents with at least one checked fragment (not counted as formalized) | 47 |
+| Parents with at least one checked fragment (not counted as formalized) | 46 |
 | Obligation entries (items of the obligations lists, open claims and notes alike) | 965 |
 | Records with at least one obligation entry | 661 |
 | Statement records with an ambiguity (status INTERPRETATION_AMBIGUOUS or a nonempty ambiguities list) | 348 |
@@ -62,7 +62,7 @@ Each row is one Lean lemma that checks a piece of the parent named. The parent k
 | `IUT1.Ex3_3.frag.frd_monoid_classes` | `IUT1.Ex3_3` | `IUT.Prerequisites.Frobenioid.IsDivisorialMonoid` | definition | NOT_EXTRACTED |  |
 | `IUT1.Ex3_3.frag.frd_monoid_examples` | `IUT1.Ex3_3` | `IUT.Prerequisites.Frobenioid.isCharacteristicTypeMonoid_of_isIntegralMonoid` | theorem | KERNEL_VERIFIED |  |
 | `IUT1.Ex3_3.frag.frd_remark_1_1_1` | `IUT1.Ex3_3` | `IUT.Prerequisites.Frobenioid.frobDeg_compose` | theorem | KERNEL_VERIFIED |  |
-| `IUT1.Ex3_5.frag.frd_partial_frobenioid_example` | `IUT1.Ex3_5` | `IUT.Prerequisites.Frobenioid.natPoint_partialFrobenioidConditions` | theorem | KERNEL_VERIFIED |  |
+| `IUT1.Ex3_5.frag.frd_partial_frobenioid_example` | `IUT1.Ex3_5` | `IUT.Prerequisites.Frobenioid.natPoint_partialFrobenioidConditions` | theorem | KERNEL_VERIFIED | model test |
 | `IUT1.Ex3_5.frag.frd_partial_frobenioid` | `IUT1.Ex3_5` | `IUT.Prerequisites.Frobenioid.PartialFrobenioidConditions` | definition | NOT_EXTRACTED |  |
 | `IUT1.Prop2_1.frag.anabelioid_morphism` | `IUT1.Prop2_1` | `IUT.Prerequisites.AnabelioidMorphism` | definition | NOT_EXTRACTED |  |
 | `IUT1.Prop2_1.frag.connected_anabelioid` | `IUT1.Prop2_1` | `IUT.Prerequisites.IsConnectedAnabelioid` | definition | NOT_EXTRACTED |  |
@@ -80,7 +80,7 @@ Each row is one Lean lemma that checks a piece of the parent named. The parent k
 | `IUT1.Sec0.TemperoidMorphism.frag.morphism_class` | `IUT1.Sec0.TemperoidMorphism` | `IUT.PaperI.TemperoidMorphismClass` | definition | NOT_EXTRACTED |  |
 | `IUT2.Prop4_1.frag.sum_exponents` | `IUT2.Prop4_1` | `IUT.PaperII.Labels.sum_exponents` | theorem | KERNEL_VERIFIED |  |
 | `IUT2.Rem2_5_1.frag.labelRep_bijective` | `IUT2.Rem2_5_1` | `IUT.PaperII.Labels.labelRep_bijective` | theorem | KERNEL_VERIFIED |  |
-| `IUT2.Rem2_5_1.frag.theta_series_padic_instance` | `IUT2.Rem2_5_1` | `IUT.Prerequisites.ThetaFunction.padic_five_norm_thetaRatio` | theorem | KERNEL_VERIFIED |  |
+| `IUT2.Rem2_5_1.frag.theta_series_padic_instance` | `IUT2.Rem2_5_1` | `IUT.Prerequisites.ThetaFunction.padic_five_norm_thetaRatio` | theorem | KERNEL_VERIFIED | model test |
 | `IUT2.Rem2_5_1.frag.theta_series_quasi_periodicity` | `IUT2.Rem2_5_1` | `IUT.Prerequisites.ThetaFunction.thetaSeries_zpow_mul` | theorem | KERNEL_VERIFIED |  |
 | `IUT2.Rem2_5_1.frag.theta_series_zeros` | `IUT2.Rem2_5_1` | `IUT.Prerequisites.ThetaFunction.thetaSeries_zpow` | theorem | KERNEL_VERIFIED |  |
 | `IUT2.Rem2_5_1.frag.theta_value_label_orbit` | `IUT2.Rem2_5_1` | `IUT.Prerequisites.ThetaFunction.pow_mul_thetaRatio_sq_eq_one_iff` | theorem | KERNEL_VERIFIED |  |
@@ -112,7 +112,7 @@ Each row is one Lean lemma that checks a piece of the parent named. The parent k
 | `IUT3.Cor3_12.Statement.frag.logVolume` | `IUT3.Cor3_12.Statement` | `IUT.PaperIII.Corollary312.logVolume` | definition | NOT_EXTRACTED |  |
 | `IUT3.Cor3_12.StepX.frag.logVolume_orbitImage_eq` | `IUT3.Cor3_12.StepX` | `IUT.PaperIII.Corollary312.IndeterminacyOrbit.logVolume_orbitImage_eq` | theorem | CONDITIONALLY_VERIFIED |  |
 | `IUT3.Cor3_12.StepX.frag.smul_hull_orbitUnion` | `IUT3.Cor3_12.StepX` | `IUT.PaperIII.Corollary312.IndeterminacyOrbit.smul_hull_orbitUnion` | theorem | CONDITIONALLY_VERIFIED |  |
-| `IUT3.Cor3_12.StepXI.f.frag.example_global_not_placewise` | `IUT3.Cor3_12.StepXI.f` | `IUT.PaperIII.Corollary312.TwoPlaceExample.example_global_not_placewise` | theorem | KERNEL_VERIFIED |  |
+| `IUT3.Cor3_12.StepXI.f.frag.example_global_not_placewise` | `IUT3.Cor3_12.StepXI.f` | `IUT.PaperIII.Corollary312.TwoPlaceExample.example_global_not_placewise` | theorem | KERNEL_VERIFIED | model test |
 | `IUT3.Cor3_12.StepXI.f.frag.logVolumeComparison_of_containment` | `IUT3.Cor3_12.StepXI.f` | `IUT.PaperIII.Corollary312.ComparisonSetting.logVolumeComparison_of_containment` | theorem | CONDITIONALLY_VERIFIED |  |
 | `IUT3.Cor3_12.StepXI.f.frag.stepXIf_inclusion_iff_inequality` | `IUT3.Cor3_12.StepXI.f` | `IUT.PaperIII.Corollary312.stepXIf_inclusion_iff_inequality` | theorem | CONDITIONALLY_VERIFIED |  |
 | `IUT3.Def1_1.frag.log_shell_Qp` | `IUT3.Def1_1` | `IUT.Prerequisites.PadicLog.padicLogShell_eq_range_coe` | theorem | KERNEL_VERIFIED |  |
@@ -149,7 +149,7 @@ Each row is one Lean lemma that checks a piece of the parent named. The parent k
 | `IUT3.Rem3_9_5.i.frag.pkt_isLeast_spectral` | `IUT3.Rem3_9_5.i` | `IUT.PaperIII.Corollary312.pktHull_isLeast_spectral` | theorem | KERNEL_VERIFIED |  |
 | `IUT3.Rem3_9_5.i.frag.pkt_union` | `IUT3.Rem3_9_5.i` | `IUT.PaperIII.Corollary312.pktHull_union_strict_padic` | theorem | KERNEL_VERIFIED | model test |
 | `IUT3.Rem3_9_5.i.frag.pkt_vs_dhHull` | `IUT3.Rem3_9_5.i` | `IUT.PaperIII.Corollary312.pktHull_eq_dhHull` | theorem | KERNEL_VERIFIED | model test |
-| `IUT3.Rem3_9_5.ii.frag.dhHull_isHullMap` | `IUT3.Rem3_9_5.ii` | `IUT.Applications.DupuyHilado.dhHull_isHullMap` | theorem | KERNEL_VERIFIED |  |
+| `IUT3.Rem3_9_5.ii.frag.dhHull_isHullMap` | `IUT3.Rem3_9_5.ii` | `IUT.Applications.DupuyHilado.dhHull_isHullMap` | theorem | KERNEL_VERIFIED | model test |
 | `IUT3.Rem3_9_5.ii.frag.eq_sInter` | `IUT3.Rem3_9_5.ii` | `IUT.PaperIII.Remark3_9_5.IsHullMap.eq_sInter` | theorem | KERNEL_VERIFIED |  |
 | `IUT3.Rem3_9_5.ii.frag.isHullMap_sInter` | `IUT3.Rem3_9_5.ii` | `IUT.PaperIII.Remark3_9_5.isHullMap_sInter` | theorem | CONDITIONALLY_VERIFIED |  |
 | `IUT3.Rem3_9_5.ii.frag.pkt_isHullMap_spectral` | `IUT3.Rem3_9_5.ii` | `IUT.PaperIII.Corollary312.pktHull_isHullMap_spectral` | theorem | KERNEL_VERIFIED |  |
@@ -488,11 +488,11 @@ Statement records only; the fragment column counts checked fragments whose paren
 
 | Scope | Statement records | Extracted by reading | Formalized in full | Proved in full, unconditional | Proved in full, conditional | Fragments checked (of these parents) | Ambiguous |
 |---|---|---|---|---|---|---|---|
-| IUT1 | 166 | 166 | 7 | 0 | 0 | 3 | 108 |
-| IUT2 | 192 | 192 | 0 | 0 | 0 | 11 | 72 |
-| IUT3 | 189 | 189 | 0 | 0 | 0 | 37 | 130 |
+| IUT1 | 166 | 166 | 7 | 0 | 0 | 2 | 108 |
+| IUT2 | 192 | 192 | 0 | 0 | 0 | 10 | 72 |
+| IUT3 | 189 | 189 | 0 | 0 | 0 | 35 | 130 |
 | IUT4 | 82 | 82 | 5 | 5 | 0 | 207 | 38 |
-| Critical path | 562 | 562 | 5 | 5 | 0 | 258 | 315 |
+| Critical path | 562 | 562 | 5 | 5 | 0 | 254 | 315 |
 
 ## Statement fidelity status
 
